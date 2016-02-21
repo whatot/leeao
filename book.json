@@ -1,0 +1,9 @@
+{
+	"title": "大李敖全集",
+	"author": "李敖 wjm_tcy",
+	"language": "zh",
+	"plugins": [
+		"betterchinese",
+		"-search"
+	]
+}
