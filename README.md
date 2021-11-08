@@ -30,6 +30,7 @@ gitbook 已经转向付费，于是迁移到 mdbook 实现。
 
 ```shell
 cargo install mdbook
+cargo install mdbook-linkcheck
 cargo install mdbook-toc
 cargo install mdbook-epub
 cargo install mdbook-open-on-gh

@@ -7,22 +7,27 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v1
+      - uses: jontze/action-mdbook@v1
         with:
-          mdbook-version: 'latest'
-
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-      - run: cargo install mdbook-toc
-      - run: cargo install mdbook-open-on-gh
+          token: ${{secrets.GITHUB_TOKEN}}
+          use-linkcheck: true
+          use-mermaid: false
+          use-toc: true
+          use-opengh: true
+      - name: Show mdbook version
+        run: mdbook --version
+      - name: Show linkchecker version
+        run: mdbook-linkcheck --version
+      - name: Show toc version
+        run: mdbook-toc --version
+      - name: Show open-on-gh version
+        run: mdbook-open-on-gh --version
 
       - name: Build
         run: mdbook build
