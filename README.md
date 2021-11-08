@@ -2,6 +2,12 @@
 
 <!-- toc -->
 
+## 在线浏览
+
+<https://whatot.github.io/leeao/index.html>
+
+> 由 github action 驱动自动构建部署 master 最新版到 github page 中
+
 ## 所有权说明
 
 **这个 github 帐号 whatot 并非原著者，whatot 只是将 wjm_tcy 编著的大李敖全集进行格式化，没有其它额外加工。
