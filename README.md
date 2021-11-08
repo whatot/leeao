@@ -21,15 +21,15 @@
 ## 文件处理流程
 
 * using enca to convert files to UTF-8/LF
-	enca -L zh_CN -x UTF-8 */*.txt
+	``enca -L zh_CN -x UTF-8 */*.txt``
 * check all the txt files's coding
-	find -type f -name '*.txt' | xargs file
+	``find -type f -name '*.txt' | xargs file``
 * delete unneeded lines
-	find -type f -name '*.txt' | xargs sed -i '/李敖研究网/d'
+	``find -type f -name '*.txt' | xargs sed -i '/李敖研究网/d'``
 * deleted trailing spaces
-	find -type f -name '*.txt' | xargs sed -i 's/[ \t\r ]\+$//'
+	``find -type f -name '*.txt' | xargs sed -i 's/[ \t\r ]\+$//'``
 * delete all spaces
-	find -type f -name '*.md' | xargs sed -i 's/[  ]//'
+	``find -type f -name '*.md' | xargs sed -i 's/[  ]//'``
 * rename all *.txt to *.md
-	for f in *.txt; do mv -- "$f" "${f%.txt}.md"; done
+	``for f in *.txt; do mv -- "$f" "${f%.txt}.md"; done``
 
