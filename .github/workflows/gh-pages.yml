@@ -7,16 +7,19 @@ on:
 
 jobs:
   deploy:
-    runs-on: rust:latest
+    runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
       - run: cargo install mdbook --no-default-features --features output
       - run: cargo install mdbook-toc
       - run: cargo install mdbook-epub
       - run: cargo install mdbook-open-on-gh
-
-      - uses: actions/checkout@v2
 
       - name: Build
         run: mdbook build
