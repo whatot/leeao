@@ -1,0 +1,935 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>波波颂 - 大李敖全集</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">项目简介</a></li><li class="chapter-item expanded affix "><a href="../wjm_tcy.html">wjm_tcy 简介</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/index.html"><strong aria-hidden="true">1.</strong> 自传回忆类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01.自传回忆类/我最难忘的事和人.html"><strong aria-hidden="true">1.1.</strong> 我最难忘的事和人</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖回忆录.html"><strong aria-hidden="true">1.2.</strong> 李敖回忆录</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖快意恩仇录.html"><strong aria-hidden="true">1.3.</strong> 李敖快意恩仇录</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖自传与回忆.html"><strong aria-hidden="true">1.4.</strong> 李敖自传与回忆</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖议坛哀思录.html"><strong aria-hidden="true">1.5.</strong> 李敖议坛哀思录</a></li></ol></li><li class="chapter-item expanded "><a href="../02.精品散文类/index.html"><strong aria-hidden="true">2.</strong> 精品散文类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02.精品散文类/传统下的独白.html"><strong aria-hidden="true">2.1.</strong> 传统下的独白</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/李敖文存.html"><strong aria-hidden="true">2.2.</strong> 李敖文存</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/李敖文存二集.html"><strong aria-hidden="true">2.3.</strong> 李敖文存二集</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/波波颂.html" class="active"><strong aria-hidden="true">2.4.</strong> 波波颂</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/独白下的传统.html"><strong aria-hidden="true">2.5.</strong> 独白下的传统</a></li></ol></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/index.html"><strong aria-hidden="true">3.</strong> 惊世杂文类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03.惊世杂文类/上下古今谈.html"><strong aria-hidden="true">3.1.</strong> 上下古今谈</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/世论新语.html"><strong aria-hidden="true">3.2.</strong> 世论新语</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/为中国思想趋向求答案.html"><strong aria-hidden="true">3.3.</strong> 为中国思想趋向求答案</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/为自由招魂.html"><strong aria-hidden="true">3.4.</strong> 为自由招魂</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/你是景福门.html"><strong aria-hidden="true">3.5.</strong> 你是景福门</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/你笨蛋，你笨蛋.html"><strong aria-hidden="true">3.6.</strong> 你笨蛋，你笨蛋</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/历史与人像.html"><strong aria-hidden="true">3.7.</strong> 历史与人像</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/我是天安门.html"><strong aria-hidden="true">3.8.</strong> 我是天安门</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/我梦碎所以我梦醒.html"><strong aria-hidden="true">3.9.</strong> 我梦碎所以我梦醒</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/教育与脸谱.html"><strong aria-hidden="true">3.10.</strong> 教育与脸谱</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/文化论战丹火录.html"><strong aria-hidden="true">3.11.</strong> 文化论战丹火录</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/李敖杂文集.html"><strong aria-hidden="true">3.12.</strong> 李敖杂文集</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/求是新语.html"><strong aria-hidden="true">3.13.</strong> 求是新语</a></li></ol></li><li class="chapter-item expanded "><a href="../04.小说剧本类/index.html"><strong aria-hidden="true">4.</strong> 小说剧本类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04.小说剧本类/上山上山爱.html"><strong aria-hidden="true">4.1.</strong> 上山上山爱</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/北京法源寺.html"><strong aria-hidden="true">4.2.</strong> 北京法源寺</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/第73烈士.html"><strong aria-hidden="true">4.3.</strong> 第 73 烈士</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/红色11.html"><strong aria-hidden="true">4.4.</strong> 红色 11</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/虚拟的十七岁.html"><strong aria-hidden="true">4.5.</strong> 虚拟的十七岁</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/阳痿美国.html"><strong aria-hidden="true">4.6.</strong> 阳痿美国</a></li></ol></li><li class="chapter-item expanded "><a href="../05.诗集语录类/index.html"><strong aria-hidden="true">5.</strong> 诗集语录类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../05.诗集语录类/李敖语萃.html"><strong aria-hidden="true">5.1.</strong> 李敖语萃</a></li><li class="chapter-item expanded "><a href="../05.诗集语录类/李语录.html"><strong aria-hidden="true">5.2.</strong> 李语录</a></li><li class="chapter-item expanded "><a href="../05.诗集语录类/爱情的秘密.html"><strong aria-hidden="true">5.3.</strong> 爱情的秘密</a></li></ol></li><li class="chapter-item expanded "><a href="../06.沉思日记类/index.html"><strong aria-hidden="true">6.</strong> 沉思日记类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../06.沉思日记类/一个预备军官的日记.html"><strong aria-hidden="true">6.1.</strong> 一个预备军官的日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/大学日记后期乙集.html"><strong aria-hidden="true">6.2.</strong> 大学日记后期乙集</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/大学日记后期甲集.html"><strong aria-hidden="true">6.3.</strong> 大学日记后期甲集</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/大学札记.html"><strong aria-hidden="true">6.4.</strong> 大学札记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/早年日记.html"><strong aria-hidden="true">6.5.</strong> 早年日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖五五日记.html"><strong aria-hidden="true">6.6.</strong> 李敖五五日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖札记.html"><strong aria-hidden="true">6.7.</strong> 李敖札记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖秘藏日记.html"><strong aria-hidden="true">6.8.</strong> 李敖秘藏日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖随写录前集.html"><strong aria-hidden="true">6.9.</strong> 李敖随写录前集</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖随写录后集.html"><strong aria-hidden="true">6.10.</strong> 李敖随写录后集</a></li></ol></li><li class="chapter-item expanded "><a href="../07.采访序跋类/index.html"><strong aria-hidden="true">7.</strong> 采访序跋类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖书序集.html"><strong aria-hidden="true">7.1.</strong> 李敖书序集</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖书序集续集.html"><strong aria-hidden="true">7.2.</strong> 李敖书序集续集</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖对话录.html"><strong aria-hidden="true">7.3.</strong> 李敖对话录</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖报刊集.html"><strong aria-hidden="true">7.4.</strong> 李敖报刊集</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖访谈录1996-2014.html"><strong aria-hidden="true">7.5.</strong> 李敖访谈录 1996-2014</a></li></ol></li><li class="chapter-item expanded "><a href="../08.书信函件类/index.html"><strong aria-hidden="true">8.</strong> 书信函件类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.书信函件类/坐牢家爸爸给女儿的八十封信.html"><strong aria-hidden="true">8.1.</strong> 坐牢家爸爸给女儿的八十封信</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书信集.html"><strong aria-hidden="true">8.2.</strong> 李敖书信集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书函集.html"><strong aria-hidden="true">8.3.</strong> 李敖书函集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书启集.html"><strong aria-hidden="true">8.4.</strong> 李敖书启集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书札集.html"><strong aria-hidden="true">8.5.</strong> 李敖书札集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书牍集.html"><strong aria-hidden="true">8.6.</strong> 李敖书牍集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书笺集.html"><strong aria-hidden="true">8.7.</strong> 李敖书笺集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书简集.html"><strong aria-hidden="true">8.8.</strong> 李敖书简集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书翰集.html"><strong aria-hidden="true">8.9.</strong> 李敖书翰集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖情书集.html"><strong aria-hidden="true">8.10.</strong> 李敖情书集</a></li></ol></li><li class="chapter-item expanded "><a href="../09.历史文化类/index.html"><strong aria-hidden="true">9.</strong> 历史文化类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../09.历史文化类/中国命研究.html"><strong aria-hidden="true">9.1.</strong> 中国命研究</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国性研究.html"><strong aria-hidden="true">9.2.</strong> 中国性研究</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国现代史定论.html"><strong aria-hidden="true">9.3.</strong> 中国现代史定论</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国现代史正论.html"><strong aria-hidden="true">9.4.</strong> 中国现代史正论</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国艺术新研.html"><strong aria-hidden="true">9.5.</strong> 中国艺术新研</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国近代史新论.html"><strong aria-hidden="true">9.6.</strong> 中国近代史新论</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国迷信新研.html"><strong aria-hidden="true">9.7.</strong> 中国迷信新研</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/为历史拨云.html"><strong aria-hidden="true">9.8.</strong> 为历史拨云</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/要把金针度与人.html"><strong aria-hidden="true">9.9.</strong> 要把金针度与人</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/读史指南.html"><strong aria-hidden="true">9.10.</strong> 读史指南</a></li></ol></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/index.html"><strong aria-hidden="true">10.</strong> 李敖节目演讲合集</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖大哥大.html"><strong aria-hidden="true">10.1.</strong> 李敖大哥大</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖有话说1-735全集.html"><strong aria-hidden="true">10.2.</strong> 李敖有话说 1-735 全集</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖演讲集.html"><strong aria-hidden="true">10.3.</strong> 李敖演讲集</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖秘密书房.html"><strong aria-hidden="true">10.4.</strong> 李敖秘密书房</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖笑傲江湖.html"><strong aria-hidden="true">10.5.</strong> 李敖笑傲江湖</a></li></ol></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/index.html"><strong aria-hidden="true">11.</strong> 李敖电子报合集</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖发电集.html"><strong aria-hidden="true">11.1.</strong> 李敖发电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖放电集.html"><strong aria-hidden="true">11.2.</strong> 李敖放电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖来电集.html"><strong aria-hidden="true">11.3.</strong> 李敖来电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖送电集.html"><strong aria-hidden="true">11.4.</strong> 李敖送电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖通电集.html"><strong aria-hidden="true">11.5.</strong> 李敖通电集</a></li></ol></li><li class="chapter-item expanded "><a href="../12.人物研究类/index.html"><strong aria-hidden="true">12.</strong> 人物研究类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../12.人物研究类/丑陋的中国人研究.html"><strong aria-hidden="true">12.1.</strong> 丑陋的中国人研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/你不知道的彭明敏.html"><strong aria-hidden="true">12.2.</strong> 丑陋的中国人研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/大江大海骗了你.html"><strong aria-hidden="true">12.3.</strong> 大江大海骗了你</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/孙中山研究.html"><strong aria-hidden="true">12.4.</strong> 孙中山研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/孙逸仙和中国西化医学.html"><strong aria-hidden="true">12.5.</strong> 孙逸仙和中国西化医学</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/李敖论人物.html"><strong aria-hidden="true">12.6.</strong> 李敖论人物</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/李登辉的假面具.html"><strong aria-hidden="true">12.7.</strong> 李登辉的假面具</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/李登辉的真面目.html"><strong aria-hidden="true">12.8.</strong> 李登辉的真面目</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/胡适与我.html"><strong aria-hidden="true">12.9.</strong> 胡适与我</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/胡适研究.html"><strong aria-hidden="true">12.10.</strong> 胡适研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/胡适评传.html"><strong aria-hidden="true">12.11.</strong> 胡适评传</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石的真面目.html"><strong aria-hidden="true">12.12.</strong> 蒋介石的真面目</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究一集.html"><strong aria-hidden="true">12.13.</strong> 蒋介石研究一集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究三集.html"><strong aria-hidden="true">12.14.</strong> 蒋介石研究三集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究五集.html"><strong aria-hidden="true">12.15.</strong> 蒋介石研究五集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究六集.html"><strong aria-hidden="true">12.16.</strong> 蒋介石研究六集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究四集.html"><strong aria-hidden="true">12.17.</strong> 蒋介石研究四集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究续集.html"><strong aria-hidden="true">12.18.</strong> 蒋介石研究续集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石评传.html"><strong aria-hidden="true">12.19.</strong> 蒋介石评传</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋家臭史.html"><strong aria-hidden="true">12.20.</strong> 蒋家臭史</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋经国研究.html"><strong aria-hidden="true">12.21.</strong> 蒋经国研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/论定蒋经国.html"><strong aria-hidden="true">12.22.</strong> 论定蒋经国</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/郑南榕研究.html"><strong aria-hidden="true">12.23.</strong> 郑南榕研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/陈水扁的真面目.html"><strong aria-hidden="true">12.24.</strong> 陈水扁的真面目</a></li></ol></li><li class="chapter-item expanded "><a href="../13.国民党史政类/index.html"><strong aria-hidden="true">13.</strong> 国民党史政类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../13.国民党史政类/国民党研究.html"><strong aria-hidden="true">13.1.</strong> 国民党研究</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/国民党研究续集.html"><strong aria-hidden="true">13.2.</strong> 国民党研究续集</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/国民党臭史.html"><strong aria-hidden="true">13.3.</strong> 国民党臭史</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/给国民党难看.html"><strong aria-hidden="true">13.4.</strong> 给国民党难看</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/给外省人难看.html"><strong aria-hidden="true">13.5.</strong> 给外省人难看</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/老贼臭史.html"><strong aria-hidden="true">13.6.</strong> 老贼臭史</a></li></ol></li><li class="chapter-item expanded "><a href="../14.台湾史政类/index.html"><strong aria-hidden="true">14.</strong> 台湾史政类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../14.台湾史政类/你不知道的二二八.html"><strong aria-hidden="true">14.1.</strong> 你不知道的二二八</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/法眼看台湾.html"><strong aria-hidden="true">14.2.</strong> 法眼看台湾</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/另一面的二二八.html"><strong aria-hidden="true">14.3.</strong> 另一面的二二八</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/民进党研究.html"><strong aria-hidden="true">14.4.</strong> 民进党研究</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/冷眼看台湾.html"><strong aria-hidden="true">14.5.</strong> 冷眼看台湾</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/白眼看台湾.html"><strong aria-hidden="true">14.6.</strong> 白眼看台湾</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/白色恐怖述奇.html"><strong aria-hidden="true">14.7.</strong> 白色恐怖述奇</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/给台湾人难看.html"><strong aria-hidden="true">14.8.</strong> 给台湾人难看</a></li></ol></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/index.html"><strong aria-hidden="true">15.</strong> 雷霆法律类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖刀笔集.html"><strong aria-hidden="true">15.1.</strong> 李敖刀笔集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖好讼集.html"><strong aria-hidden="true">15.2.</strong> 李敖好讼集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖弄法集.html"><strong aria-hidden="true">15.3.</strong> 李敖弄法集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖放刁集.html"><strong aria-hidden="true">15.4.</strong> 李敖放刁集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖闹衙集.html"><strong aria-hidden="true">15.5.</strong> 李敖闹衙集</a></li></ol></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/index.html"><strong aria-hidden="true">16.</strong> 李敖祸台十书</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../16.李敖祸台十书/从万宝囊到臭屎堆.html"><strong aria-hidden="true">16.1.</strong> 从万宝囊到臭屎堆</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/只爱一点点.html"><strong aria-hidden="true">16.2.</strong> 只爱一点点</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/君子爱人以色.html"><strong aria-hidden="true">16.3.</strong> 君子爱人以色</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/启发你的小故事.html"><strong aria-hidden="true">16.4.</strong> 启发你的小故事</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/恰似我的温柔.html"><strong aria-hidden="true">16.5.</strong> 恰似我的温柔</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/我们没有明天.html"><strong aria-hidden="true">16.6.</strong> 我们没有明天</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/李敖智慧书.html"><strong aria-hidden="true">16.7.</strong> 李敖智慧书</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/李敖生死书.html"><strong aria-hidden="true">16.8.</strong> 李敖生死书</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/笑傲五十年.html"><strong aria-hidden="true">16.9.</strong> 笑傲五十年</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/第一流人的境界.html"><strong aria-hidden="true">16.10.</strong> 第一流人的境界</a></li></ol></li><li class="chapter-item expanded "><a href="../17.百家论李敖合集/index.html"><strong aria-hidden="true">17.</strong> 百家论李敖合集</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../17.百家论李敖合集/李敖研究fashion文集.html"><strong aria-hidden="true">17.1.</strong> 李敖研究 fashion 文集</a></li><li class="chapter-item expanded "><a href="../17.百家论李敖合集/百家论李敖.html"><strong aria-hidden="true">17.2.</strong> 百家论李敖</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">大李敖全集</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="波波颂目录"><a class="header" href="#波波颂目录">《波波颂》目录</a></h1>
+<ul>
+<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#%E6%B3%A2%E6%B3%A2%E9%A2%82%E8%87%AA%E5%BA%8F">《波波颂》自序</a></li>
+<li><a href="#%E5%AF%B9%E8%87%AA%E7%84%B6%E8%A6%81%E8%87%AA%E7%84%B6">对自然要自然</a></li>
+<li><a href="#%E4%B8%8E%E9%98%B3%E5%85%89%E6%9C%89%E7%BA%A6">与阳光有约</a></li>
+<li><a href="#%E6%97%B6%E4%B8%8D%E6%88%91%E4%B8%8E%E6%88%91%E4%B8%8D%E4%B8%8E%E6%97%B6">时不我与，我不与时</a></li>
+<li><a href="#%E7%94%A8%E5%86%B0%E5%86%B7%E8%A1%A8%E7%8E%B0%E6%B4%81%E7%99%BD">用冰冷表现洁白</a></li>
+<li><a href="#%E6%9C%8B%E5%8F%8B%E7%9A%84%E6%B2%A1%E8%90%BD">朋友的没落</a></li>
+<li><a href="#%E6%B4%BB%E5%9C%A8%E6%B9%BF%E5%BA%A6%E8%AE%A1%E9%87%8C">活在湿度计里</a></li>
+<li><a href="#%E5%AD%A4%E7%8B%AC%E4%B8%8E%E9%AC%BC">孤独与鬼</a></li>
+<li><a href="#%E8%AE%BA%E5%9D%90%E7%89%A2%E7%9A%84%E5%A5%BD%E5%A4%84">论坐牢的好处</a></li>
+<li><a href="#%E6%98%BE%E6%80%A7%E4%BC%AA%E5%90%9B%E5%AD%90%E5%92%8C%E9%9A%90%E6%80%A7%E4%BC%AA%E5%90%9B%E5%AD%90">“显性伪君子”和“隐性伪君子”</a></li>
+<li><a href="#%E4%B8%89%E6%AF%9B%E5%BC%8F%E4%BC%AA%E5%96%84%E5%92%8C%E9%87%91%E5%BA%B8%E5%BC%8F%E4%BC%AA%E5%96%84">“三毛式伪善”和“金庸式伪善”</a></li>
+<li><a href="#%E5%91%9C%E5%91%BC%E6%96%B0%E5%A5%B3%E6%80%A7">呜呼新女性</a></li>
+<li><a href="#%E5%B0%8F%E5%85%AC%E7%8C%B4%E4%B8%8E%E5%B0%8F%E6%AF%8D%E7%8B%97">小公猴与小母狗</a></li>
+<li><a href="#%E4%BA%BA%E5%88%B0%E5%BA%95%E8%AF%A5%E6%80%8E%E4%B9%88%E9%80%89%E6%8B%A9">人到底该怎么选择？</a></li>
+<li><a href="#%E7%88%B1%E4%B8%BD%E4%B8%9D%E4%B8%8E%E6%96%B0%E5%85%9A">爱丽丝与新党</a></li>
+<li><a href="#%E5%88%AB%E5%BC%84%E6%8B%A7%E4%BA%86%E5%A0%82%E5%90%89%E8%AF%83%E5%BE%B7">别弄拧了堂吉诃德</a></li>
+<li><a href="#%E6%88%91%E6%98%AF%E5%9C%A3%E4%BA%BA">我是圣人</a></li>
+<li><a href="#%E8%AE%BA%E5%90%91%E5%B0%86%E5%86%9B%E9%81%93%E6%AD%89">论“向将军道歉”</a></li>
+<li><a href="#%E7%9A%AE%E5%B0%94%E9%80%8A%E4%B8%8E%E9%BB%91%E8%B5%84%E6%96%99">皮尔逊与黑资料</a></li>
+<li><a href="#%E5%88%AB%E5%AD%B5%E9%82%A3%E8%B4%BC%E8%9B%8B">别孵那贼蛋！</a></li>
+<li><a href="#%E6%8A%8A%E6%9D%8E%E6%95%96%E6%B5%81%E5%8E%BB%E5%A4%A7%E9%99%86">“把李敖‘流’去大陆”</a></li>
+<li><a href="#%E6%B3%A2%E6%B3%A2%E9%A2%82">波波颂</a></li>
+<li><a href="#%E8%83%BD%E4%B8%8B%E5%BA%8A%E5%B0%B1%E6%98%AF%E5%A5%BD%E7%8C%AB">能下床就是好猫</a></li>
+<li><a href="#%E6%9C%AC%E5%A7%91%E5%A8%98%E4%B9%9F%E7%82%B9%E4%B8%80%E4%B8%AA">“本姑娘也点一个”</a></li>
+<li><a href="#%E5%8F%A4%E8%91%A3%E4%B8%8E%E4%BB%8A%E8%91%A3">古董与今董</a></li>
+<li><a href="#%E5%A4%A9%E5%A0%82%E4%B8%8D%E6%98%AF%E6%88%91%E4%BB%AC%E7%9A%84">天堂不是我们的</a></li>
+<li><a href="#%E7%94%A8%E6%9B%BF%E8%BA%AB%E5%8F%AF%E4%B9%9F">用替身可也！</a></li>
+<li><a href="#%E7%BE%8E%E5%9B%BD%E4%BA%BA%E5%BF%98%E4%BA%86%E4%BB%80%E4%B9%88">美国人忘了什么？</a></li>
+<li><a href="#%E7%A5%9E%E5%83%8F%E7%99%BE%E5%B9%B4%E4%B8%80%E6%84%9F">神像百年一感</a></li>
+<li><a href="#%E7%BA%B5%E8%A3%B8%E5%A5%B3%E6%88%98%E6%96%97">纵裸女战斗</a></li>
+<li><a href="#%E9%99%B6%E6%BD%9C%E8%80%85%E4%BB%8A%E4%B9%8B%E6%88%91%E4%B9%9F">陶潜者，今之我也</a></li>
+<li><a href="#%E5%9B%BD%E6%B0%91%E5%85%9A%E5%92%8C%E5%AE%83%E5%90%8C%E8%B7%AF%E4%BA%BA%E7%9A%84%E7%9F%A5%E8%AF%86%E6%B0%B4%E5%B9%B3">国民党和它同路人的知识水平</a></li>
+<li><a href="#%E5%86%8D%E8%AE%B0%E5%9B%BD%E6%B0%91%E5%85%9A%E5%92%8C%E5%AE%83%E5%90%8C%E8%B7%AF%E4%BA%BA%E7%9A%84%E7%9F%A5%E8%AF%86%E6%B0%B4%E5%B9%B3">再记国民党和它同路人的知识水平</a></li>
+<li><a href="#%E4%BC%98%E5%85%88%E5%8F%8D%E5%8F%9B%E5%B9%B2%E6%AD%BB%E4%BB%96%E4%BB%AC">优先反叛，干死他们</a></li>
+<li><a href="#%E6%9D%8E%E8%80%81%E5%93%A5%E6%89%8B%E5%A4%8D">李老哥手复</a></li>
+<li><a href="#%E7%87%95%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%96%B0%E9%97%BB%E7%B3%BB%E6%AF%95%E4%B8%9A">“燕京大学新闻系毕业”？</a></li>
+<li><a href="#%E5%90%B4%E5%BF%83%E6%9F%B3%E5%86%92%E5%85%85%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A">吴心柳冒充大学毕业</a></li>
+<li><a href="#%E7%AB%A5%E5%AD%90%E5%8A%9F%E5%8A%A0%E8%80%81%E5%AD%90%E5%8A%9F">童子功加老子功</a></li>
+<li><a href="#%E4%BD%A0%E5%81%9A%E6%88%90%E6%88%91%E7%9A%84%E6%A2%A6">“你做成我的梦”</a></li>
+<li><a href="#%E6%8E%A2%E6%8E%A2%E5%92%8C%E4%BA%8B%E4%BD%AC%E7%9A%84%E5%BA%95">探探和事佬的底</a></li>
+<li><a href="#%E4%BB%8B%E7%BB%8D%E6%89%98%E6%96%AF%E5%9F%BA%E5%A4%A7%E4%BD%9C">介绍托斯基大作</a></li>
+<li><a href="#%E9%A1%BA%E9%A3%8E%E4%B8%8E%E9%80%86%E9%A3%8E">顺风与逆风</a></li>
+<li><a href="#%E6%88%91%E6%9C%80%E4%BD%A9%E6%9C%8D%E4%BB%A5%E8%89%B2%E5%88%97%E4%BA%BA">我最佩服以色列人</a></li>
+<li><a href="#%E8%85%B0%E6%96%A9%E4%B8%A4%E6%AC%A1%E4%B8%8E%E5%86%8D%E5%8A%A0%E4%B8%A4%E6%9E%AA">腰斩两次与再加两枪</a></li>
+<li><a href="#%E6%89%93%E7%A2%8E%E7%8E%89%E5%A3%B6%E4%B9%9F%E6%98%AF%E5%86%B0">打碎玉壶也是冰</a></li>
+<li><a href="#%E6%8B%B3%E7%8E%8B%E7%9A%84%E7%B4%A2%E5%AF%9E">拳王的索寞</a></li>
+<li><a href="#%E6%83%B3%E8%B5%B7%E6%96%BD%E6%B4%97%E8%80%85%E7%BA%A6%E7%BF%B0">想起施洗者约翰</a></li>
+<li><a href="#%E4%BB%A5%E5%BE%97%E7%A4%BC%E5%A7%8B%E4%BB%A5%E5%A4%B1%E7%A4%BC%E7%BB%88">以得礼始，以失礼终</a></li>
+<li><a href="#%E6%96%87%E4%BA%BA%E4%B9%8B%E9%9B%84">文人之雄</a></li>
+<li><a href="#%E5%B9%B3%E7%94%9F%E4%B9%8B%E5%BF%97%E4%B8%8D%E5%9C%A8%E6%B8%A9%E9%A5%B1">“平生之志，不在温饱”</a></li>
+<li><a href="#%E4%B8%80%E7%94%9F%E4%B8%8D%E5%BE%97%E4%B8%BA%E4%BA%BA%E5%B8%88">一生不得为人师</a></li>
+<li><a href="#%E8%B7%91%E5%87%BA%E6%9D%A5%E7%9A%84%E7%90%86%E7%94%B1">跑出来的理由</a></li>
+<li><a href="#%E9%AD%82%E7%89%B5%E6%A2%A6%E8%90%A6%E8%B4%9D%E5%85%8B%E7%89%B9">魂牵梦萦贝克特</a></li>
+<li><a href="#%E7%B4%A2%E5%B0%94%E4%BB%81%E5%B0%BC%E7%90%B4%E9%94%99%E5%9C%A8%E5%93%AA%E5%84%BF">索尔仁尼琴错在哪儿？</a></li>
+</ul>
+<h2 id="目录"><a class="header" href="#目录">目录</a></h2>
+<ul>
+<li>《波波颂》自序</li>
+<li>一、对自然要自然</li>
+<li>二、与阳光有约</li>
+<li>三、时不我与，我不与时</li>
+<li>四、用冰冷表现洁白</li>
+<li>五、朋友的没落</li>
+<li>六、活在湿度计里</li>
+<li>七、孤独与鬼</li>
+<li>八、论坐牢的好处</li>
+<li>九、“显性伪君子”和“隐性伪君子”</li>
+<li>十、“三毛式伪善”和“金庸式伪善”</li>
+<li>十一、呜呼新女性</li>
+<li>十二、小公猴与小母狗</li>
+<li>十三、人到底该怎么选择？</li>
+<li>十四、爱丽丝与新党</li>
+<li>十五、别弄拧了堂吉诃德</li>
+<li>十六、我是圣人</li>
+<li>十七、论“向将军道歉”</li>
+<li>十八、皮尔逊与黑资料</li>
+<li>十九、别孵那贼蛋！</li>
+<li>二十、“把李敖‘流’去大陆”</li>
+<li>二一、波波颂</li>
+<li>二二、能下床就是好猫</li>
+<li>二三、“本姑娘也点一个”</li>
+<li>二四、古董与今董</li>
+<li>二五、天堂不是我们的</li>
+<li>二六、用替身可也！</li>
+<li>二七、美国人忘了什么？</li>
+<li>二八、神像百年一感</li>
+<li>二九、纵裸女战斗</li>
+<li>三十、陶潜者，今之我也</li>
+<li>三一、国民党和它同路人的知识水平</li>
+<li>三二、再记国民党和它同路人的知识水平</li>
+<li>三三、优先反叛，干死他们</li>
+<li>三四、李老哥手复</li>
+<li>三五、“燕京大学新闻系毕业”？</li>
+<li>三六、吴心柳冒充大学毕业</li>
+<li>三七、童子功加老子功</li>
+<li>三八、“你做成我的梦”</li>
+<li>三九、探探和事佬的底</li>
+<li>四十、介绍托斯基大作</li>
+<li>四一、顺风与逆风</li>
+<li>四二、我最佩服以色列人</li>
+<li>四三、腰斩两次与再加两枪</li>
+<li>四四、打碎玉壶也是冰</li>
+<li>四五、拳王的索寞</li>
+<li>四六、想起施洗者约翰</li>
+<li>四七、以得礼始，以失礼终</li>
+<li>四八、文人之雄</li>
+<li>四九、“平生之志，不在温饱”</li>
+<li>五十、一生不得为人师</li>
+<li>五一、跑出来的理由</li>
+<li>五二、魂牵梦萦贝克特</li>
+<li>五三、索尔仁尼琴错在哪儿？</li>
+</ul>
+<h2 id="波波颂自序"><a class="header" href="#波波颂自序">《波波颂》自序</a></h2>
+<p>《波波颂》出版前，先有广告如下：</p>
+<p>李敖写文，从少年写到中年、从桌上写到床上、从钢笔写到毛笔、从牢里写到牢外，写得人见人怕鬼见愁，神仙也为之小便。这本选集，就是李敖奇情之作的一部分，由李敖亲自选定，特别有味。</p>
+<p>看了这则广告，读者自然知道这书是一本选集。</p>
+<p>不过，读者有所不知的是：自来所谓选集，都是选好的，不选坏的，所以选出来的，往往比落选的要好。但我李敖的选集则不然。我的文章，不论说理、不论叙情、不论踪迹大纲、不论情怀小样，都有上海人所谓“叫花子吃死蟹——只只好”的味道，而是篇篇都好的。既然篇篇都好，自然就无所谓选。而所谓选，其实与奖券开出的号码无异。对财迷而言，固有射倖之快；但对阿拉伯数字而言，并无雀屏之喜也。</p>
+<p>二次大战后艾森豪威尔将军百战荣归，记者争相报道，并访问到他母亲，对他母亲说，你有子如此，当引以为荣。不期他母亲回答竟是两个字：“Whichone?”（哪一个？）原来老太太有子六人，个个有成而得时誉，在“只只好”的情况下，固一门人杰也，又奚论谁好谁坏哉？</p>
+<p>写到这里，《波波颂》是什么样的选集，也就伏笔而出，从上海叫花子到美国老太太，都是本书的佐证。李敖奇情之作，固不止此一波耳，看李敖此书而波逐李敖他书，方是上智，读者幸识之！</p>
+<p>1990年9月25日</p>
+<h2 id="对自然要自然"><a class="header" href="#对自然要自然">对自然要自然</a></h2>
+<p>昨天收到你1日的信。你写看到秋天枯叶遍地，增添凄凉感伤一段，我另有不同的看法。</p>
+<p>自然对人的意义，既不该是迷信宗教式的敬畏，也不该是骚人墨客式的感伤。自然本身并没有任何种类的感情，更没有感伤。但有些人总错误地把感情赋给自然，认为自然有情，于是天地为愁，草木含悲，落花有意，流水无情……这些人先把自然变成一个“多情体”，再把自己的情绪随着这多情体转，于是悲从中来一这实在是一个很有问题的人生态度。至于黛玉葬花之类，那更是病态了。</p>
+<p>自然对人的意义，应该只有两点：第一点，自然本身是变化无穷的壮观，不论是朝晖夕阴，不论是暴雨明霞，不论是飞絮满天或落叶满地……种种奇景，都值得人在恬静中或快乐中赏心悦目。第二点，自然应带给人对宇宙的远大看法，物换星移，时序代谢……都是使人了解宇宙真相的凭借。西方的诗人从一粒沙中看世界，从一朵花中看天国；东方的诗人从长江中看逝者如斯，从明月中看盈虚者如彼……这种种观察都可在赏心悦目以外，别有妙悟：人与自然本是一体。《圣经》上说：“你是从土而出的，你本是尘土，仍要归于尘土。”但说这话的先知并不了解这一现象的科学原理。现在我们知道了“氮化循环”（nitrogencycle）等化学现象，知道了万物都要复归原始，人生只是过眼云烟，“自己乃是不断的在死亡中”。有了这种达观的心胸，再回过头来看人世，人才会觉悟到这辈子该怎么活才不虚此生，才会觉悟到此生已为错误的安排浪费许多，实在不应该再浪费下去。这时候人会活得更积极起劲，肯定适合自己的，摆脱不适合自己的，使自己的生命愈来愈发光，而不是愈来愈黯淡。这种炉火纯青的人生看法与做法，人都可以从孤独地面对自然中学到。诗人华兹华斯（Wordsworth）说“让自然做你的老师”（Letnaturebeyourteacher.），我想就是这个意思。</p>
+<p>感伤一类的情绪，是对短暂生命的浪费，实在是没有必要的。</p>
+<p>1973年11月18日狱中作</p>
+<p>〔附记〕对自然的不滥用情，我最喜欢胡适的一首《沁园春》（1916年4月14日）：</p>
+<p>更不伤春，更不悲秋，以此誓诗。任花开也好，花飞也好，月圆固好，落日尤奇，春去秋来，干卿甚事，何必与之为笑啼？吾狂甚，耻与天和地，作个奴厮。何须刻意雕辞。看一朵芙蓉出水时。倘言之不文，行之，不远，言之无物，何以文为，为大中华，造新文学，此业吾曹欲让谁？诗材料，有簇新世界，供我驱驰。</p>
+<p>另一首《月诗》（1916年12月6日），我也喜欢：</p>
+<p>明月照我床，卧看不肯睡。窗上青藤影，随风舞娟媚。</p>
+<p>我但玩明月，更不想什么，月可使人愁，定不能愁我。</p>
+<p>月冷寒江静，心头百念消。欲眠君照我，无梦到明朝。</p>
+<h2 id="与阳光有约"><a class="header" href="#与阳光有约">与阳光有约</a></h2>
+<p>每天午饭后，到下午开始做运动前，有两个多小时特别安静的一段时间，比夜里还安静，因为经常梦魇的邻居们午睡时倒不叫。我认为午睡是浪费，所以从来不睡午睡。所以我特别能清醒的独占这两个多小时的特别安静。本来每天二十四小时都属于我，但这两小时好像更属于我，尤其是星期天的这两小时。</p>
+<p>只要天气好，我每天中午都有一个约会，约会的对象不是人，也不是人活在上面的地球，而是比地球大一百万倍的太阳。冬天时候，太阳午后会从高窗下透进几块——真是成块的，于是在这小房间里，除了我外，又增加了动态。</p>
+<p>阳光总是先照上水泥台，再照上地板，再很快就上了墙，再很快就上了胸前那么高，就断了。为了利益均沾，我把塑胶碗、塑胶筷、塑胶杯等，分放在几处阳光下面，然后自己也挤进去。因为阳光只有几块，所以就像照X光一样，要一部分一部分照，照完了这只胳臂，再照那只，若想同时全照到，那就只有“失之交臂”了。</p>
+<p>太阳虽好像是个小气鬼，只照进那么少、那么短，但对我已是奢侈品（过去一年没见过）。阳光在冬天虽然热力有限，但至少看起来也暖和——几块暖和。这种光与热，都是在人群中、在地球上得不到的东西，它们从天而降，从九千多万英里的地方直达而来，没有停留、没有转运，前后只不过八分钟，光热从太阳身上已到你身上。这种宇宙的神秘，我不知道有多少人能同时感受到，有了这种感受，你仿佛觉得，虽然阳光普照，可是却与你独亲，世态炎凉，太阳反倒是朋友了。</p>
+<p>1973年12月9日狱中作</p>
+<h2 id="时不我与我不与时"><a class="header" href="#时不我与我不与时">时不我与，我不与时</a></h2>
+<p>因为太久太久没有钟也没有表，甚至没有计时烛（markedcandle），没有滴漏（clepsydra），也没有沙漏（hourglass），看时间的习惯已经退化。你无法准确的知道时间有多短或有多长，你开始没有一分钟、没有五分钟、十分钟……没有一小时、两小时。任何完整的时间感已经没有了。代替准确时间的，只是一些模糊的大段落：邻居早起者的声音，大概是5点多；早饭推进来，大概是6点半；午饭推进来，大概是11点；又是塑胶小壶来，大概是2点半；晚饭推进来，大概也推进了5点（17点）；6点起身和9点（21点）入睡的两次音乐通知是一天中最准确的两次，9点过后，擦地、洗脸、铺被、看书等，总拖到大概10点才睡。自己好像一个大沙漏，从起身到入睡，十六七个小时正好漏完。</p>
+<p>第二天，一开始，就好像把沙漏倒过来，一切又从头开始。——从和昨天一样的地方开始，从和前天一样的地方开始……小时早已不是时间的单位，甚至天也不是。前天和昨天一样，昨天和今天一样，今天自然也和明天一样。甚至星期也不是时间的单位，每个星期跟上个星期、下个星期也一样。比较近似的时间单位，反倒是月，一两个月或两三个月，也许会冒出一点变化——别人的变化。</p>
+<p>每月生活都是大同、大同、大同……小异都很少。大同而小不异。</p>
+<p>因为时间的单位变长，相对的，衡量时间也跟着大手大脚。过一个月，再过一个月，多过一个月，根本是稀松平常的事，你不会指望一天要怎样有趣、一星期要怎样灵通，自然也不指望一个月会有什么奇迹，再过一个月，多过一个月，这就是你对时间的信仰。无趣味、无消息、无奇迹，也无所谓。你是时间的批发商，你已学会不再计较小段的岁月。空间是短的，时间是长的，空间跟时间已在你身上做了奇妙的交会，真可惜爱因斯坦的理论，竟没在这方面寻找证明。</p>
+<p>1973年12月23日午后狱中作</p>
+<h2 id="用冰冷表现洁白"><a class="header" href="#用冰冷表现洁白">用冰冷表现洁白</a></h2>
+<p>二十五年没见过雪，这次久别重逢，你的感觉自然是深刻动人的。你说“假如人的品德能像雪那样的洁白，心地不像雪那么冰冷该有多好”，但你有没有注意到，有些洁白，却正用冰冷来表现？</p>
+<p>一般情的标准，是人情之常的标准，生离死别、送往迎来，接人待物等等，无不在人情之常标准上朝前滑，大家也照例办事，不以为异。但有些人——极少的一些人，他们的表现却好像不近人情的，冰冷的：有的人好朋友死了，他只三号而出（秦失）；有的人太太死了，他却鼓盆而歌（庄周）；有的人弟弟死了，他却不办丧事（张良）；有的人独生子少小离乡，到外埠求学，临走前她一滴眼泪都不掉（胡适母亲）！</p>
+<p>有个小男孩，跟他爷爷感情最好，两个常常一块儿去钓鱼。后来他大了，一天爷爷死了，在开追悼会的时候，他却没有参加，他独自一个，跑到常跟爷爷钓鱼的地方，流连了一下午——参加追悼会，是人情之常；但不参加，却是用冰冷表现了另一种方式。</p>
+<p>有个绝代佳人（汉武帝李夫人），病得快死了，她心上的人来看她，她拒绝见面，她要她心上的人的印象里，永远留下一个最美丽的她，而不是一个人老珠黄的她——死前见最后一面，是人情之常；但不见面，却是用冰冷表现了另一种方式。</p>
+<p>有个公认的伟人（林肯），跟他父亲却别扭。他寄钱给父亲养老，却不肯回去看看。父亲临死前，他也不肯，他说：“我们再见面痛苦多于快乐。”——死前见最后一面，是人情之常；但不见面，却是用冰冷表现了另一种方式。</p>
+<p>雪的表面很冰冷，但雪化成溪，溪汇成河，作用就非常明显了。但人们总怪雪冰冷，雪却不解释，它只用洁白答复了一切。</p>
+<p>1974年1月11日狱中作</p>
+<h2 id="朋友的没落"><a class="header" href="#朋友的没落">朋友的没落</a></h2>
+<p>时代变了，朋友的定义好像也不同了。对某些行业的人说来，朋友是奢侈品。</p>
+<p>古人说“大夫无私交”，只讲公益的人，几乎不需要私人的友谊，至少不需要较亲近的私人友谊。可以进你家门的朋友，一定会知道太多没有必要知道的，而会在有意无意之间，把你出卖。敌人永远不会出卖你，因为他知道你太少。所以敌人有一个长处——他不会使你伤心。</p>
+<p>有人认为保持距离是不够朋友的一种征象，淡如水的君子之交是不够味儿的，因而主张亲近。我认为：很多因亲近而发生的流弊都会一一发生，从大的观点、长远的观点看，是得不偿失的。</p>
+<p>老话说“富易交”，其实这不是势利眼，而是同一层次的人容易做朋友。当你水准愈高的时候，你的朋友的水准若老是很低，就会发生距离。真正的友谊一定要靠人格和公益结合，全凭旧情和私利，是对生命的浪费。</p>
+<p>基于人格和公益，无须彼此是朋友仍可成事而对国家人类有益，且在一个过于重视人情的社会，朋友反倒是种累赘和阻力，对某些行业的人说来，水准若不够，倒不如宁缺毋滥。</p>
+<p>清朝的学者说“交友以自大其身”，但“自大其身”的方法很多，朋友反倒是最不实际的一种。</p>
+<p>一个人需要朋友的真正原因，恐怕还是耐不住寂寞。耐得住寂寞的人，尤其以寂寞为他行业条件之一的人，在这种时代里，一定会承认朋友的没落。朋友是历史的遗迹，自己的朋友是自己历史的遗迹。时代变了，古典的交友方式必须改正。时代往往把维系朋友情味的条件摧毁，这是必须承认的现实。</p>
+<p>皇帝好像从来不交朋友，至少跟朋友保持很大的距离。大概皇帝最知道朋友对他的超然地位有妨碍。</p>
+<p>1974年5月4日狱中作</p>
+<h2 id="活在湿度计里"><a class="header" href="#活在湿度计里">活在湿度计里</a></h2>
+<p>为了使光线好一点，为了干净一点，我买了两刀稿纸，来糊四面斑驳的墙，印格子的一面朝墙，四边抹糨糊，贴上去，立刻弄平。从最下面贴起，墙与地板接缝处露缝宽窄不一，先用桥牌拦腰一摺，成九十度角，一边贴墙上，一边贴地板上，再盖上稿纸，一张稿纸可盖住四张半桥牌。桥牌也是正面朝墙，于是自王（King）到后（Queen）和什么保皇党贾克（Jack）等，都像法国路易十六（LouisXVI）和玛丽安托内特（MarieAntoinette）等等一样，都完了。糨糊干了的时候，稿纸就绷得很平。大功告成以后，一行行稿纸背面，白里透绿，一个个小格子都衬出来，每个格子都是空白的，就好像每天的生活一样。</p>
+<p>原来糊的时候，只求光线好一点、干净一点，并无其他奢求——稿纸已为自己做了这么伟大的服务，还奢求什么？当然它们不够白，但白纸买不到。白报纸虽可买到，但质料太差，快变成褐报纸了。打字纸又太薄，糊上去什么都盖不住，所以还是稿纸最好。想到当年字稿纸惹祸，今天把槁纸用来糊墙，颇有焚琴煮鹤的味道。</p>
+<p>阴天来了的时候，我才意外的发现来了新作用。房间湿气重了，关节上的风湿开始隐隐作怪，稿纸们吸足了湿气，纷纷鼓了起来，好像也在作怪。随着抹浆糊的痕迹，纷纷鼓出了各形各状的“浮雕”。一个个看去，颇为好玩，有美女侧影、有妖怪半身、有戴高乐的鼻子、还有好几条香肠。打蚊子留下的痕迹，有时用湿抹布探不干净，索性加贴一小块稿纸上去，加贴的部分，因为全部是浆糊，引起四面八方的起伏，活像一只白螃蟹，在那里横行。整个的感觉是，自己不但活在湿气里，还活在一台千奇百怪的湿度计里。</p>
+<p>1974年6月2日夜狱中作</p>
+<h2 id="孤独与鬼"><a class="header" href="#孤独与鬼">孤独与鬼</a></h2>
+<p>我想到“老僧闭关”时的孤独情味。</p>
+<p>孤独有很明显的两类：在光明里，并不完全是你自己，至少有一个陪你的，就是你的影。它沉默地模仿你的一举一动，像是一只黑猩猩，一只被压路机压扁了的黑猩猩，在你的前后左右。在小房里，你背着光走，走到第三步，黑猩猩就蹿上了墙，走到第四步，它已挤在你和墙中间。它既代表你，也代表墙，你不能再挤，挤它就是挤你自己，就是挤墙。墙比黑猩猩高，铁栏杆又比墙高，你会想起动物园那头黑猩猩，但没有人陪它；现在眼前这头有人陪，而陪的不是别人，就是你，不单是你，是你自己，你自己和黑猩猩，黑猩猩和你自己。虽然是形单影只，却亲密得形影相随。</p>
+<p>当黑暗来的时候，孤独明显的转入另一类。黑暗来时，你的影都离开你了。你本身就是一个影。影喜欢黑暗，黑暗就是它的家。一回到黑暗它就变成了主人。因为它本身就是黑暗，跟黑暗同一颜色，你以为你是形，其实你错了，至少在黑暗笼罩你的时候，你错了。你不是纯粹的形，你的形中有影，光明把影从形中推出，但影紧追不舍，直到光明疲倦的时候。在黑暗里，你会慢慢感觉：影进入了形、重合了形，使形融化——不是影没有了，而是形没有了。影之于形犹梦之于眠、犹刃之于刀。影并没在黑暗里消失，只是染了更深的颜色，影不徙。这时候，灵魂好像无所依附了。你从不知道灵魂是什么，现在更什么都不是。如果有这东西，也是个在黑暗中最先背弃人的，灵魂只是影的影。</p>
+<p>鬼呢？孤独久了的人是不怕鬼的。有鬼倒也不错，可使生活少一点单调。但是，没有鬼。鬼是很古典的，现代人很少见到它。鬼是胆小的、迷信的、自由的。它不会到使它忌讳害怕的地方。凡是有七分像它的，它都敬而远之。并且，最重要的是，它进不来。鬼是没有影子的。</p>
+<p>1974年7月7日夜狱中作</p>
+<h2 id="论坐牢的好处"><a class="header" href="#论坐牢的好处">论坐牢的好处</a></h2>
+<p>坐牢的坏处有五百种，但是也有五种好处：</p>
+<p>第一，你没有时间了。你对时间的感觉，完全变了。表给没收了，时间单位对自己已经拉长、已经不再那么精确。过去有表，一分钟是一分钟、五分钟是五分钟，一坐牢，一切都变成大约了，无须再争取一分钟、赶几分钟、提前几分钟，或再过几分钟就迟到了、来不及了。换句话说，永远不要再赶什么时间或限定什么时间了，你永远来得及做任何事——除了后悔莫及，如果你后悔的话。</p>
+<p>第二，你没有空间了。你对空间的感觉，也完全变了。空间的单位已经缩小，已经不再那么动不动就多少坪、多少里，或什么几千米了。你开始真正认识，什么是墙。墙在你眼前、在你左边、在你右边、在你背后。四面墙围住一块小地方给你，那简直不叫空间，而像是一个计算空间的最小单位，你坐在地上，双手抱住膝，用屁股做中心，脚尖着力，转个三百六十度，你会感到，你仿佛坐在立体几何里。立体几何谈遍了空间，但它自己，只是一本小立体。</p>
+<p>第三，你没有敌人了。你的敌人把你关起来，就是把你和他们分割，大家一了百了。所以，一切都一了百了，你不再见到他们那一张张讨厌的丑脸，不再听到他们一声声同样的噪音，你的眼前不再有他们查问，背后不再有他们跟踪，你开始落得清静。</p>
+<p>第四，你没有朋友了。朋友胆大的已经同你一起坐牢，胆小的心中庆幸你总算进去了。他们的心情，就好像守在病房外面探望一个得传染病要死又不死的朋友，病人死了，对双方都是解脱。你刚坐牢的时候，他们有的会来看你一次，也只是一次，以后，他们不再好奇了，一个人到动物园看过斑马以后，可以十年无须再看斑马。所以那次来看你，不是来探望，而是来了清心愿或来永别。但是，无论怎么说，他们在胆小的朋友中，是伤人心最少的。</p>
+<p>第五，你没有女人了。坐牢时候，你的形而上和形而下是一起坐的，除了犯的是风化罪，十九都是形而上惹祸，形而下遭殃。在午夜梦回，形而下向你抬头抗议或向你揭竿而起的时候，你当然对它抱歉。不过反过来说，从形而下惹来的种种女人的苦恼，也因坐牢而一笔勾销。为什么？男女关系本来是铁链关系，难分难解，可是一坐牢，就从铁链关系变为铁栏关系，就易分易解了，因为女人是你坐牢时离开你最迅速的动物。女人不离开，你只是男性；女人离开了，你才是男人，坐牢可使你变成纯男人，从一物两用变成一物一职，倒蛮适合精简原则，倒也不错。</p>
+<p>1981年7月19日</p>
+<h2 id="显性伪君子和隐性伪君子"><a class="header" href="#显性伪君子和隐性伪君子">“显性伪君子”和“隐性伪君子”</a></h2>
+<p>耶稣虽然爱人，但对一种人却痛恨不已，这种人，就是“伪君子”。在《新约》中，我们可以一再看到耶稣痛恨这种人的话。伪君子的问题，对人类说来，是个又老又大的问题。希腊谚语说：“伪君子生着一张总主教的脸，却有着一颗磨坊主人的心。”如果一个人没有总主教的脸，只有磨坊主人的脸，加上磨坊主人的心，这种人，不算伪君子。只有戴上总主教的面具的，才算伪君子。伪君子的可恶，不在他不是好东西；他的可恶，在他不是好东西却冒充好东西。不是好东西只是“真小人”，冒充好东西就是“伪君子”了。在品级上，真小人要比伪君子诚实得太多了、漂亮得太多了。</p>
+<p>每想到伪君子，我就想起四个故事。</p>
+<p>第一个故事是和富兰克林有关的。富兰克林说清教徒从欧洲坐船去美洲，半路上碰到海盗，清教徒是反对战争的，所以不肯打，他们纷纷跑到船舱里，听甲板上打来打去。这时候，忽然一个仆人也从甲板上下来了，清教徒们一起骂他说：“你不是清教徒呀！你怎么不上去打，上去保护我们呀！”</p>
+<p>第二个故事是和巴顿将军有关的。巴顿巡视伤兵医院，看到一个小兵，一点伤都没有。巴顿问你是什么病，说是得了战争疲劳的毛病。巴顿大怒，给小兵一个耳光，说你是懦夫，你怎么配住伤兵医院，你怎么配和这些受伤的英雄们住在一起？这下子闯了大祸，美国新闻界全体起哄，说将军打小兵，不民主、不人道、是法西斯。结果巴顿被撤职查办，他多年为保卫民主、保卫人道、反抗法西斯的汗马功劳都被歪曲。巴顿大为感慨：原来这些伪君子是他妈这样的！他讽刺说，早知如此，我当时真该吻那小兵才对！</p>
+<p>第三个故事是和我自己有关的。萧孟能把他白手起家的发妻抛弃，把十五户房地都过户给别的女人，要跟发妻离婚。我认为感情有变化，要离婚，也是人之常情。但夫妻一起赚的钱，总不能由丈夫一个人独吞，至少该分太太一半，但萧太太始终分不到。后来穷得给人做下女，每月挣八千元糊口。我气不过，要主持正义，陪她去找萧孟能理论，这就是国民党新闻界大加渲染的“捉奸案”。国民党新闻界和所谓“正义之士”骂我不该陪萧太太去找萧孟能，但他们全体坐视这样可怜的女人遭遇这样不公平的待遇，他们的“正义”竟凉薄得一至于此！被骂的时候，我笑着说：“大概我通奸被人捉，都不会挨这么多的骂吧？”“大概我跑去献花，才能符合他们的正义标准吧？”</p>
+<p>第四个故事也是和我自己有关的。我离婚后，接到一张明信片，上面写：“李敖，你这不要脸的爱情骗子，你离婚为什么不付赡养费？希望不良分子杀掉你！”下面是匿名的——这种品级的“正义之士”总是匿名的，只写“一群主持正义的人同启”。奇怪吧？他们主持正义，为什么不亲自动手来杀我呢？为什么要他们看不起的“不良分子”来动手呢？</p>
+<p>上面四个故事，可以归纳出伪君子的一个特色，就是：他们都会以离奇的正义标准，去说风凉话——使人恶心的风凉话。不但话是风凉的，还俨然以道德的仲裁人、是非的评鉴人自居，这种伪君子，是好发议论型的，可叫做“显性的伪君子”。</p>
+<p>另一种伪君子，伪得比较消极，是以躲避的方法行其伪善的。《孟子》里说“君子远庖厨”（君子要躲屠宰场、厨房远一点），为的是，看到动物被宰割，君子会“见其生不忍见其死；闻其声，不忍食其肉”。这样一来，岂不倒了胃口？君子既然不能不吃鸡鸭鱼肉，所以庖厨就不得不远了，这是一种变形的伪善。前一阵子国民党新闻界大登谢东闵参观鹿茸工厂，看到一条条鹿被锯角取血的惨状，说谢东闵表现了仁爱之心。后来得知，谢东闵仁爱过后，还是捧起血杯，大喝起鹿茸之血来了！东闵云乎哉？东悯云乎哉？</p>
+<p>我小学时候，在《西风》杂志上看到一幅漫画，画着一位君子，坐在餐桌前面大吃特吃。无意间抬头一望，看到窗外有个乞丐，正在眼巴巴的望着他。他大为不忍，因此站起来，走到窗前，伸出手来把窗帘拉起来了。然后转身回座，继续大吃特吃了。这种伪君子，就是典型的“远庖厨”派的传人。我说他们伪得消极，因为他们只是逃避，不太唱高调，不是好发议论型的。他们的伪善不明显，伪善得很安静，善于“无声的伪善”，所以这一型，可以叫“隐性的伪君子”。</p>
+<p>不论“显性的伪君子”或是“隐性的伪君子”，他们都很注意造型。一个最有名的例子就是汉朝的大臣公孙弘。公孙弘是个坏东西，但在造型上，他为了复兴中国文化，生活得很节俭；穿布衣服，盖破棉被，一派高人逸士的道骨仙风。为了表示招揽人才，他来了好多名堂像“钦贤馆”、像“翘材馆”、像“接士馆”等等，但到的人，他都给粗茶淡饭吃。最后，他的老朋友高贺揭穿了真相：原来公孙弘外面穿布衣，里头穿貂皮；外面吃客饭，里头吃大餐，完全是个伪善的家伙。中国的伪君子，很多都是曲学阿世的公孙弘派，中国传统认定节俭是美德，所以一个人只要以节俭示人，先天上就不被误为坏蛋。其实这种“布衣破被”型的坏蛋，才是加级的坏蛋，从民意代表到名政论家、从封疆大吏到党国要人，这种德性的可太多了！</p>
+<p>与这种德性相对的，是一种“花枝招展”的影歌星派，他们最喜欢搞慈善演唱会，叫别人捐钱义卖，自己却带着星妈一毛不拔。这种以“文化美容”为号召的人，整天打着慈善的招牌作秀，真是伪中之尤。一个笑话说：小茵的爸爸问小茵：“你有十块钱，为什么不捐给红十字会呢？”小茵答道：“我本来想捐的，可是由卖冰淇淋的去捐，不更好吗？”我每次看到脸这样美的，心这样丑，我就想到小茵和她的冰淇淋。</p>
+<p>1981年</p>
+<h2 id="三毛式伪善和金庸式伪善"><a class="header" href="#三毛式伪善和金庸式伪善">“三毛式伪善”和“金庸式伪善”</a></h2>
+<p>有一次，皇冠的平鑫涛请我吃饭，由皇冠的几位同仁作陪，我到了以后，平鑫涛说：“有一位作家很仰慕李先生，我也请她来了，就是三毛。”于是他把三毛介绍了给我。</p>
+<p>三毛很友善，但我对她印象欠佳。三毛说她：“不是个喜欢把自己落在框子里去说话的人”，我看却正好相反，我看她整天在兜她的框框，这个框框就是她那个一再重复的爱情故事，其中有白虎星式的克夫、白云乡式的逃世、白血病式的国际路线，和白开水式的泛滥感情。如果三毛是个美人，也许她可以以不断的风浪韵事传世，因为这算是美人的特权，但三毛显然不是，所以，她的“美丽的”爱情故事，是她真人不胜负荷的，她的荷西也不胜负荷，所以一命归西了事。我想，造型和干哪一行还是很重要的。前一阵子林青霞同我晚餐，餐后在我家谈了十小时，我仔细看了她，我看她就是明星造型，正好干明星；美丽岛军法大审时，陈菊在电视里出现肉身，面目坚毅肃杀，我仔细看了她，我看她就是政治造型，正好搞政治。如果林妹妹搞政治，陈姐姐干明星，我想就说不出来的不对劲。三毛现在整天以“悲泣的爱神”来来去去，我总觉得造型不对劲，她年纪越大，越不对劲。有一次我在远东百货公司看到她以十七岁的发型、七岁的娃娃装出现，我真忍不住笑，这种忍不住笑，只有看到沈剑虹戴假发时，才能比拟。</p>
+<p>比起琼瑶来，三毛其实是琼瑶的一个变种。琼瑶的主题是花草月亮淡淡的哀愁，三毛则是花草月亮淡淡的哀愁之外，又加上一大把黄沙。而三毛的毛病，就出在这大把黄沙上。三毛的黄沙里有所谓“燃烧是我不灭的爱”，她跟我说：她去非洲沙漠，是要帮助那些黄沙中的黑人，他们要她的帮助。她是基督徒，她佩服去非洲的史怀哲，所以，她也去非洲了。我说：“你说你帮助黄沙中的黑人，你为什么不帮助黑暗中的黄人？你自己的同胞更需要你的帮助啊！舍近而求远，去亲而就疏，这可有点不对劲吧？并且，史怀哲不会又帮助黑人，又在加那利群岛留下别墅和‘外汇存底’吧？你怎么解释你的财产呢？”</p>
+<p>三毛听了我的话，有点窘，她答复不出来。她当然答复不出来，为什么？因为三毛所谓帮助黄沙中的黑人，其实是中一种“秀”，其性质与影歌星等慈善演唱并无不同，他们做“秀”的成分大于一切，你绝不能认真。比如说，你真的信三毛是基督徒吗？她在关庙下跪求签，这是哪一门子的基督徒呢？她迷信星相命运之学，这又是哪一门子的基督徒呢……所以，三毛的言行，无非白虎星式的克夫，白云乡式的逃世、白血病式的国际路线，和白开水式的泛滥感情。她是伪善的，这种伪善，自成一家，可叫做“三毛式伪善”。</p>
+<p>“三毛式伪善”，比起另一种伪善来，还算是小焉者也。另一种伪善是金庸式的。金庸到台湾来，有一天晚上到我家，一谈八小时。我责备他不该参加什么“国建会”，自失他过去的立场。他说他参加，也说了不少批评的话。我说这是不够的、得不偿失的、小骂帮大忙的，你参加这种会，真叫人失望。接着谈到他写的武侠，我说胡适之说武侠小说“下流”，我有同感。我是不看武侠的，以我所受的理智训练、认知训练、文学训练、中学训练，我是无法接受这种荒谬的内容的，虽然我知道你在这方面有着空前的大成绩，并且发了财。金庸的风度极好，他对我的话，不以为忤（虽然他此后在他的报上不断诽谤我了）。他很谦虚的解释他的观点。他特别提到他儿子死后，他精研佛学，他已是很虔诚的佛教徒了。我说：“佛经里讲‘七法财’‘七圣财’‘七德财’，虽然《报恩经》《未曾有因缘经》《宝积经》《长阿含经》《中阿含经》等等所说的有点出入，但大体上，无不以舍弃财产为要件。所谓‘舍离一切，而无染着’，所谓‘随求经施，无所吝惜’。你有这么多的财产在身边，你说你是虔诚的佛教徒，你怎么解释你的财产呢？”</p>
+<p>金庸听了我的话，有点窘，他答复不出来。为什么？因为金庸所谓信佛，其实是一种“选择法”，凡是对他有利的，他就信；对他不利的，他就佯装不见，其性质，与善男信女并无不同，自私的成分大于一切，你绝不能认真。他是伪善的，这种伪善，自成一家，可叫做“金庸式伪善”。</p>
+<p>《新约》里说：“没有仆人能侍奉两个主人：不是恨这个，就得爱那个；不是重这个，就得轻那个。你不能同时侍奉上帝，又侍奉财神。”</p>
+<p>看了三毛的例子和金庸的例子，我不得不说，那位基督徒和这位佛教徒，其实都是伪君子。他们同时又要上帝，又要财神。真正上帝的信徒不会这样，真正财神的信徒也不会那样，只有把上帝当财神或把财神当上帝的伪君子，才会这样。</p>
+<p>1981年作</p>
+<h2 id="呜呼新女性"><a class="header" href="#呜呼新女性">呜呼新女性</a></h2>
+<p>人一有好的条件就难免不知天高地厚，但这种不知天高地厚，发生在男人身上和发生在“新女性”身上，程度就完全不一样。男人可能有五分好条件，就自我膨胀为十分不知天高地厚；可是“新女性”可能有五分好条件，就自我膨胀为五十分不知天高地厚。结果呢，所有有好条件的“新女性”，下场大都很悲惨，都因为她们不知天高地厚而把她们已经到手或可以到手的幸福亲手毁灭掉。</p>
+<p>因为不知天高地厚，所以即使在自我毁灭时，她们还在神气活现，还在招待记者，还在自以为“择善固执”“替天行道”“大义灭亲”……结果呢，全世界没人能够吃得消她，但她绝不自知，绝不自己检讨检讨，反倒觉得全世界都对不起她。最后，当红颜老去，当掌声已歇，当她那点作秀式的程度被淘汰、被厌倦，最后自然是“红颜薄命”的下场。古话说“红颜薄命”，现在时代变了，女人抬头了，这四个字的解释自然要现代化一点：红颜不止于美色、薄命不在于早夭，而是“有好条件的女人，下场都悲惨”。这种情形，大概统计学可以用得上：若统计一下，自女权运动以来，男女平等以后，凡是成为名女人的人，究竟有几个是好下场的？有几个是幸福的？这种统计，若以电影明星和女作秀家抽样，就可得到惊人的结论。这种女人中，尤以灵性才女出道的、以文化美容出现的、以美人或第几美人出场的，更为明显，因为这一类的觉醒得最迟，嘉宝最后说：“我把我一生搞得乱七八糟。”她终于有了这种迟来的自知之明。嘉宝毕竟还算高人，等而下之的，可能一辈子都不会醒，到死都还怨天尤人。</p>
+<p>这类女人一生，可分三阶段：第一阶段是“奇怪阶段”，自十六七到二十六七，是她的黄金档，她引人好奇，自己对人生也充满了进取与好奇，她的声名、专业、爱情等，都在这一阶段铸成，大错也在这一阶段铸成；二十六七以后，她的巅峰状态开始下降，人也开始走样、过气。为了抢救，自然不择手段，进入第二阶段——“作怪阶段”，作怪的程度因人而异，有的大穿奇装、有的大脱卖肉（年轻时候不脱，年纪大了，肉松了，反倒演裸戏，做“迟来的脱星”，真是六朝怪谈）。作怪期间，可以持续到人老珠黄境界，然后转人第三阶段——“妖怪阶段”。妖怪就是老妖怪，从陈香梅到香奈儿，到七十多岁老太太玛琳黛德丽展示大腿，这都是老妖怪，老妖怪。老妖怪是青春一点也没有的“新中性”（中性，因为月经也没有了），美容医院和法国香水的挽救效果也愈来愈小，小到最后香水是香水，她是她。这时候的她，本该是个老太太的打扮的，可是她不，她一定要老妖怪。打扮如此，作风自然也老妖怪，教人看了难过得要命。别人人人都知道她是老妖怪，可是她自己不知道，真他妈的。十五年前，有个“法国夫人”在台湾时装界招摇，老得鸡皮鹤发，看了她，除了鸡皮疙瘩外，你不会起任何反应，可是她自己“不知老之将至”，也不知“妖怪之将至”，真要命。</p>
+<p>“新女性”要成正果，的确困难太多。以前看过一场尤蒙顿和莎莉麦克琳的电影，丈夫很优秀，太太也很优秀，可是太太是“新女性”，老是想争自己人的风，闹得婚姻出了问题。后来太太到日本表演，碰到一个艺妓，艺妓一语道破了如何维系婚姻之道——“绝不要站在你丈夫前面”。莎莉麦克琳恍然大悟，于是骄气顿敛，救回了丈夫，也救回自己。</p>
+<p>英国维多利亚女王做了女王，自然难免骄气。一天晚上敲房门，丈夫Albert问是谁，她神气的说：“维多利亚女王！”Albert不理她，直到她小心的说：“Yourwife,Albert!”（你的太太，阿尔伯特！）门才开了。作为一个女人，不论自己有多少分好条件，如果不能明辨自己的立场，不能清楚自己是老几，老是想争自己人的风，老是想打倒她不该打倒也打不倒的对象，这样的女人，我认为她不够水准。这种女人总叫嚣什么抵制“大男人主义”，其实该抵制的，是她不均衡的偏见、她的自卑感。够水准的女人眼中，没有什么“大男人主义”，她潜移默化了一切矛盾，她不胜利，也不失败，因她根本就不把和平的事，当作战争处理。维多利亚女王毕竟是女王，她在不该站在前面的时候，绝不站在前面——她知道天高地厚。</p>
+<p>“新女性”的最可厌一点是她们的“受迫害意识”，在这一点上，费兰西的一段评论最为生动，她说：</p>
+<p>我对她们烦厌透了。过去我总是说，女权革命是我们这个时代最伟大的革命，这样说了几年，直到她们开始捏破我的卵蛋，变得实在令人无法忍受为止。她们那种受害者的姿态使我不快，我觉得这就像独裁统治，如果你默默忍受，那活该。如果老百姓不那么胆小那么沉默，独裁者也独裁不了。</p>
+<p>关于如何被捏破了卵蛋，费兰西接着说：</p>
+<p>她们再也不来和我商谈，忽视我、对付我。我写好《斯人》，把书稿寄给《女士杂志》，她们回说：“我们没有兴趣出版。”我就这样被放逐了。这样很好，反正我也不愿意和“宗教狂”扯上关系。这是又一种的宗教狂热，妇解分子真正要我做的是站起来疾声高呼：“你们看，不管男人怎么捣蛋，我达到了今天的成就！”我的意思是，我正巧是个反面的例子。如果要挑出几个当代成功妇女的典型，你一定得挑我。我虽不是苏俄的凯瑟琳、以色列的梅厄，但我是有成就的一个。她们希望我的成功完全归功于自己的勇猛努力，与男人无关，可是我说：“不对，不是这样的。身为女人对我的事业有帮助，很有帮助！”</p>
+<p>有两件事对我很有好处——生为女人和出身贫穷，使我一直鞭策自己努力向前。我曾说过，假使我的名字是奥瑞安诺，是个男人而且是马尔波若公爵的儿子，现在很可能只是个他妈的白痴，因为没有什么可奋斗的。而且，具有我这种气质，作为女人要比男人制造更多新闻，如果是奥瑞安诺写这些访问和书，一定不会像现在这么快变得这么有名。所以，显然是作为女人比较有利，这惹恼了妇解分子。我讨厌她们的受迫害意识，老是哭诉：“因为我是女人才发生这种事。”我要说：“不对，发生这种事不是因为你是女人，是因为你不行！”（《八十年代》，1981年1月15日《费兰西访问记》炎竝译）</p>
+<p>但是，“新女性”有几个了解到这一关键呢？今日以“新女性”为号召的人，她们整天吃男人、喝男人、花男人的钱、戴男人的玉、坐男人的车、抄男人的文章出书。结果却不知天高地厚、不辨亲疏与是非，反过头来，与男人虚荣争胜，或以伪证方式“大义灭亲”，争自己人的风，然后哭诉“因为我是女人才发生这种事”，这不是令人恶心的卑鄙小人吗？</p>
+<p>真正够水准的女人，她聪明、柔美、清秀、妩媚、努力、有深度、善解人意、体贴自己心爱的人。她的可爱，毫不属于“新女性”那种嚣张型，但她的好条件，也不比她们少，只是有些条件是隐性的、蜜蜜柔柔的、淡出淡入的，像空谷幽兰，不容易被发现而已。当你发现了这种女人，你才知道她多彩多姿，多么动人。一通电话，她可使你魂牵；一封来信，她可使你梦萦；一张花下照片，她可使你进入“丝路之旅”，在大千世界里，在“神秘的百慕大三角”里，两情神驰。</p>
+<p>中国的谚语说“女子无才便是德”，意大利的谚语说Alearnedwomanistwiceafool.（有学问的女人是双料愚人），如果不做古典的解释，这两段谚语倒真是“新女性”的写照与警告，翻成现代语言，该是“女人没有好条件才不是混蛋”，“女人有好条件都不会处理，不如没好条件。”看了那么多的混蛋“新女性”，我真愈来愈凝固了我的这种偏见。</p>
+<p>1982年3月18日</p>
+<h2 id="小公猴与小母狗"><a class="header" href="#小公猴与小母狗">小公猴与小母狗</a></h2>
+<p>下午散步，看到一个小公猴在笼子里，面目干净而清秀，脖子上还绑了一条铁链。我从几个角度去想跟它四目相对，但它有一股苍茫的骄傲、羞怯与冷漠——它总是一股目中无人的样子，不肯看我。我想起我在狱里时，别人来“参观”时候我的表情，我不禁对这小公猴顿起一股同情与同调。</p>
+<p>这种感情上的深沉，直到我看到一只胖乎乎的小熊狗时候，才开始散开。这只小熊狗同几只其他品种的小狗圈在一起。别人都在休息或安静的在一边，它小先生却精力过剩，逐一搅每一只难友，与每一只闹着玩，冲到别人身上，咬呀咬的，直到咬痛了一只小白狗，小白狗大叫一声，起来追咬它一下，它才停止。然后撇开后腿，以大便姿态，撒了一泡小便——是条小母狗。</p>
+<p>1982年9月8日</p>
+<h2 id="人到底该怎么选择"><a class="header" href="#人到底该怎么选择">人到底该怎么选择？</a></h2>
+<p>小痴兄：</p>
+<p>你写的为我辩冤白谤的文章，和前后一再劝我“勿做祢衡”的信，我很感谢。我一直没有公开或私下答复你，因为老是想好好答复一下——承你这么用心、这么认真，我不能潦草答复，我一定得好好答复一下。</p>
+<p>你万语千言，重点是不愿看到我做祢衡、做现代祢衡。你不愿看到我因做祢衡而牺牲掉，而被国民党干掉。你追记前年你对我说的话，你说：</p>
+<p>我们十八年前初识之时，我曾劝你勿为祢衡。因为那是于人无益于己有害的典型。你答我说：“你看我像不像载福的寿考之相？”认为做祢衡也没有什么不好。当时我看你单薄的身躯，弱不禁风的体气，也没有再劝下去。现在事过十八九年，你现在已养得白白胖胖，又加上娶一个如花美眷电影明星做老婆，如果明年再生一个儿子，到“妻财子禄”全有了，人生如此，尚复何求！因此，我今天是劝你当年的老话，勿做祢衡。</p>
+<p>你说这些话的时候，我感于你的好意，没有多说什么。今年又承你来信，一再以“勿做祢衡”相劝，说：</p>
+<p>当你我初识之时，当前年你我再见之时，我都向你做过“勿为现代祢衡”的谏劝。在你再次系狱之时，我在《文坛》发表的那一篇《“哀”我的朋友李敖》芜文中，我仍反复表达此一心意。</p>
+<p>现在我拜读你的“千秋评论丛书”第十二册，我欣赏你的文章愈写愈老辣，也惊觉到你愈来愈像祢衡，甚至愈来愈凌驾祢衡之上。这是作为一个你的朋友的人，所绝对不忍和不愿看到的事，相信你能了解我这一区区心意。</p>
+<p>我想，我实在该统一答复你一下了。</p>
+<p>我所面临的问题，其实是一个老问题。这个问题是：“人到底该怎么选择？”千百年前，孟轲就提出这种选择的困惑，在鱼与熊掌之间，他做了深入的讨论。他的结论是：生命虽然是我想保持的，但是如果有比生命更令我追求的，我就会舍生取义；死亡虽然是我想避免的，但是如果“所恶有甚于死者，故患有所不辟也”。“患有所不辟”不是一定要死，而是有牺牲的危险也不躲避——并不因为有牺牲、有危险，就不干了。</p>
+<p>孟轲的问题其实也是屈原的问题。屈原见太卜郑詹尹，说：“余有所疑，愿因先生决之。”他把“疑”说了一大段，重点只是两句：</p>
+<p>宁正言不讳，以危身乎？</p>
+<p>将从俗富贵，以偷生乎？</p>
+<p>这就是一个选择的当口。最后，屈原做了选择，他不肯“从俗富贵”，不肯“偷生”，走了与世俗相反的路线。</p>
+<p>三国的祢衡，也有同样的问题。他也做了选择。他的选择是“宁正言不讳，以危身”的路线。他的路线是对的，至少在曹操、在刘表面前，你不能说他有什么不对。问题是他最后碰到了黄祖，黄祖是没有起码的水准的老粗，结果把祢衡杀了。</p>
+<p>我不太觉得祢衡是有意找死，或是“寿星老吃砒霜——活得不耐烦了”。他只是“宁正言不讳”而已。至于“正言不讳”以后别人杀不杀他，他无所谓。他没有兴趣去教育敌人，或揣摩敌人的水准。当然，他这种作风，“上的山多终遇虎”，最后碰到了黄祖型的敌人，他也一死了之——“患有所不辟也”！</p>
+<p>小痴兄，“人活着不仅是为了面包”，对志士仁人说来，尤其不仅如此。你说：“‘妻财子禄’全有了，人生如此，尚复何求！”这话用在凡夫俗子身上，全没有错；但是用在志士仁人身上，就把他们看得太小了！当然你没有丝毫把老朋友看小的意思，你的动机与下笔是一片真诚与爱护，你只是“绝对不忍看和不愿看到”老朋友给牺牲掉而已。但是，小痴兄，难道老朋友以意气风发献身理想起、以妻财子禄屈服现状终，这种局面，是你“忍看”“愿看”的吗？你的朋友里面、我的朋友里面、你我共同的朋友里面，这种人还算少吗？又何必多我一个李敖呢？</p>
+<p>记得我出世前四百年死的那位英国殉道者托马斯摩尔（SirThomasMore,1478-1535）吗？再远一点，记得我出世前七百六十五年死的那位英国殉道者托马斯贝克特（ThomasBecket，1117-1170）吗？他们都有着太好的“尚复何求”的条件，但是最后，最后，最后，最后还是无法弃其所守，还是都死于非命。小痴兄，这些人并不都是有意送死的人，但他们都是为了真理，“患有所不辟也”的人。结果既然命中难逃一死，最后除了一死，又“尚复何求”？——谁让他们都碰到黄祖型的统治者呢？</p>
+<p>所以，结论是：小痴兄，你别劝我“勿做祢衡”了，你还是劝他们“勿做黄祖”吧！（当然你是不屑于劝他们的，不是吗？）</p>
+<p>真要谢谢你。</p>
+<p>敖之1982年9月14日</p>
+<h2 id="爱丽丝与新党"><a class="header" href="#爱丽丝与新党">爱丽丝与新党</a></h2>
+<p>十七年前，我写《〈蒋廷黻选集〉序》（《李敖全集》第三册），谈到1949年组织新党的事，我结论说：</p>
+<p>这是蒋廷黻的一个最构想完整的梦。如今，胡适死了，蒋廷黻也死了，这个“中国自由党”，也伴同着这两个“书呆子”，一块儿走进了爱丽丝的梦境。我提议：胡适、蒋廷黻、爱丽丝三个人，应该合组一个党，白发红颜，情趣倍增，并且也无形具备了妇女和年轻人的保障名额。我这种提议，乃是基于在目前的中国现状下，所谓“中国自由党”根本就是童话的产品，它在先天上，就具备了不能成立和无法生存的悲剧性。既然这样，爱丽丝小姑娘的加入，也就更玉成了它的童话性质，且对胡蒋二公的“返公还童”，至少多一个青春偶像的示范。</p>
+<p>这种十七年前的看法，我直到今年也没有基本的改变，今年7月1日，我发表《反对党，党反对》一万字的长文，收在“李敖千秋评论丛书”第十一期《放火放水逃》里，国民党很快的查禁了它。为什么我没有基本的改变呢？因为我太了解国民党了，我太了解国民党对开放党禁的事，一直是说了不算的：照国民党答应我们的组党远期支票，辛亥革命前答应的不算，1912年答应的不算，1913年答应的不算，1929年答应的不算，1947年答应的不算，我们眼巴巴的等了七八十年，等了五六十年，等了三四十年，等的结果竟永远是“非常时期”、永远是“大敌当前”、永远是“环境特殊”、永远是“国情不同”、永远是“将革命事业从头做起”，这样的等来等去，这样的等呀等的，难道我们还相信他们吗？难道我们还指望他们吗？</p>
+<p>到了今天，国民党索性连答应都不答应了，连远期支票都不开了，也许有人说，这是国民党的退步，我却认为，这是国民党的“进步”——国民党为怕言而无信，索性连言都不言了，这当然是“进步”啊！</p>
+<p>在一连几十年的骑虎政策下，要国民党开放党禁，的确已经为时太迟，任何公平竞争，都有为虎所噬的危险。所以，我不相信国民党有生之年会开放，清政府那样做过，但是已经来不及了。由此可见，有的政权是不见棺材不流泪的，但国民党似乎不属于这一种，因为国民党是开棺材店的，他们的口号是“总有一天等到你”，所以国民党看到棺材，就姑娘的酒窝，就笑笑。</p>
+<p>自杀而死的国民党大员戴传贤，早在1944年就说过：“周朝的天下是八百年，国民党至少要掌握政权一千年！”我们虽已等了七八十年、五六十年、三四十年，可是用一千年一减，我们即使寿比八百岁的彭祖、寿比九百三十岁的亚当、寿比九百五十岁的拉麦、寿比九百六十九岁的玛士撒拉，也还是空等一场！所以，爱丽丝小姑娘若想等到国民党皇恩浩荡之日，允许组党，只得像小说《她》（SHE）中的女王一样，有千年不坏之身，才有指望。此时此地的爱丽丝，是不会同我们组织新党的。我们少做梦吧！</p>
+<p>1982年10月23日</p>
+<h2 id="别弄拧了堂吉诃德"><a class="header" href="#别弄拧了堂吉诃德">别弄拧了堂吉诃德</a></h2>
+<p>这次索尔仁尼琴到台湾来，有人说他像堂吉诃德（DonQuixote），这种比喻，显然对堂吉诃德太不了解了。</p>
+<p>堂吉诃德虽然疯疯癫癫，但他对信仰一往直前，嫉恶如仇，抑强扶弱，他的毛病在他不能辨别真正的敌友，他的幻想症，使他甚至把风车都当成巨人，结果竟同风车作战。他的人格是肯定的，行为却是否定的。他的悲剧在不知道有些行为是不能做的，中国古话说“知其不可而为之”，堂吉诃德却是“不知其不可而为之”，因此他养天地正气，法古今疯人，自己却不知其疯也。</p>
+<p>屠格涅夫说堂吉诃德代表信仰，哈姆雷特代表怀疑，人类的进步是靠这两种性格的推动。但这两种人是很难维持纯度的，因为遭遇和打击总使他们牺牲掉。堂吉诃德的可贵，是他的纯度一点也没因遭遇和打击而减退，他的格调一点也没退化，正是郑所南所谓的“愈久愈不变，愈不可为愈为”。</p>
+<p>在这一点上，索尔仁尼琴显然没法跟堂吉诃德相比。索尔仁尼琴在信仰的辨别能力上，显然发生了故障。海涅说堂吉诃德把风车看成了巨人，他自己却把巨人看成了风车。索尔仁尼琴的不幸，正是如此巨人的下场，他变成了风车——在国民党和国民党同路人吴三连之流的掌声中，他随风摇滚，完全变成了一个活宝。</p>
+<p>那么，索尔仁尼琴来这一趟，究竟有没有跟堂吉诃德相像之处呢？我的看法是：跟堂吉诃德没有相像之处，但跟《堂吉诃德》一书的作者的一个故事，倒好有一比。</p>
+<p>《堂吉诃德》一书的作者塞万提斯，一生饱更忧患。战争中，他失掉了左手；又被海盗掳去，关了五年；又被政府以莫须有的罪名，一再下狱，但他终于在千劫百难中完成了《堂吉诃德》这部传世之作。塞万提斯在这部书的下卷前页，曾以游戏的口吻，说中国皇帝有信给他，要把他的作品收作教科书之用。如今，三百六十六年过去了，“中国皇帝”的后人，居然要把索尔仁尼琴的演说收作教科书之用了（并且老混蛋“立委”还说：谁反对谁就是共产党了）。这一个故事，真可算是好有一比了。</p>
+<p>1982年11月17日</p>
+<h2 id="我是圣人"><a class="header" href="#我是圣人">我是圣人</a></h2>
+<p>妮娜：</p>
+<p>你的信和喜帖都收到了，你知道我婚丧喜庆概不参加，“隐而不退”以后，当然更变本加厉，你和新郎的喜事，我不能参加，你们俩当不会见怪。请特别代我向佐藤利和先生致意。</p>
+<p>你结婚后，自然离开台湾，远托异国。你为理想坐过牢、受过难，如今离开这个令人痛苦的岛，去过一种新生活，似乎该为你庆幸。按说人不该老是做战士，总该新陈代谢，总得有个退休、有个变化。所以你此后远走高飞，不能说你不对。人要为同胞活，也得为自己活，不然岂不是圣人了？要人做圣人，总是强人所难的。你年纪轻轻的，就被国民党关那么久，如今苦海余生，别做打算，也是合情合理的。</p>
+<p>至于我，显然老是做战士，无新陈代谢之可言，没有退休、没有变化。似乎该以圣人论了。套句明朝哲人的话：我做圣人，我做不到；但是圣人做我，也不过如此吧？我想，即使孔夫子在台湾，在国民党这样统治之下，做的也不会比我更多吧？孔夫子也许认为“邦无道”，该“乘桴浮于海”，但他做梦也没想到：国民党不会给他出境证去周游列国啊！</p>
+<p>你说：“想想这一离开，要见面的日子可能没有了。”其实这是一件好事。在牢里的人，整天见面，见了又如何？不再见面表示总算有人能够“冲决网罗”了，不论网罗内的还是网罗外的，都该庆幸这种不见面，你说是吗？</p>
+<p>“仁爱教育实验所”学长李敖，1982年12月12日</p>
+<h2 id="论向将军道歉"><a class="header" href="#论向将军道歉">论“向将军道歉”</a></h2>
+<p>在美国的一次酒会上，美国驻日大使格鲁做司仪，他一时粗心，把艾森豪威尔将军的夫人玛咪，称做马歇尔将军夫人。当时艾森豪威尔将军、马歇尔将军和所有宾客都笑起来。格鲁大窘，赶忙说：“我要向将军道歉！”玛咪反应快，即时打趣他说：“向哪一位〔将军〕道歉啊？”此言一出，大家笑得更厉害了。向将军道歉的格鲁，更窘上加窘了。</p>
+<p>有错误，向人道歉，是人之常情，但是向将军道歉，却有点那个，这并不是说将军不是人，而是说，将军虽是人，但总是挂武士刀的人，向将军道歉，总像是在理屈之下，又为力所屈，人愿因屈于理而道歉，不愿因屈于力而道歉，屈于力的道歉，是歉不由衷的。</p>
+<p>美国的最有名的专栏作家皮尔逊，一生写文章整达官显要，自杜鲁门总统以下，无一幸免。他骂总统，总统气不过，也回骂他，说皮尔逊这小子是“狗娘养的”。他又骂麦克阿瑟将军，将军震怒，告他诽谤，要他道歉，皮尔逊岂是易与之辈，他说他才不向将军道歉，大家打好了！于是他以笔对剑，打起来了。他运气好，他挖出将军的一项秘密——将军有个小情妇，情妇手中有将军的肉麻情书及其他，于是，他与将军谈判，逼将军识相，撤回告诉了事——皮尔逊不向将军道歉，他贏了。</p>
+<p>麦克阿瑟将军生虽逢辰，却不逢地，他如生在台湾，以五星上将之尊，做个警备总司令是不在话下的。所以，一旦碰到皮尔逊之流太岁头上动土，他不消告诽谤，只要滥用职权，叫手下把写文章的请到保安处一谈，就乐见道歉上报了。</p>
+<p>本非同根生</p>
+<p>7月25日的《生根》杂志第十三期上，有一篇《妈袓笑不出来》，内容如下：</p>
+<p>本刊十二期刊登《妈祖婆一笑陈守山》一文，描述陈清波是日本“八纮会”下效命皇军的“魁队”队长。当年的“魁队”经常“进出”广东、海南，“屠杀我军民同胞无数”。而陈清波正是陈守山的老爸。</p>
+<p>事后，陈守山透过警总政六处曹健中处长向本刊表示抗议，指出陈清波并非陈守山的尊翁。本刊获悉犯错之后，为了郑重起见，也为了负责起见，除了在7月18日的《中国时报》与《联合报》刊登道歉启事外，也于本期刊登同样的道歉启事。</p>
+<p>道歉启事</p>
+<p>本刊7月10日出版之第十二期第二十五页，《妈祖婆一笑陈守山》一文，内容失实，并误指陈清波先生为陈守山将军之尊翁等情。蒙陈将军宽容不究。特向陈将军郑重致歉。</p>
+<p>《生根》杂志社社长吴乃仁</p>
+<p>今后，为了向读者负责起见，本刊将继续探寻陈清波此人的身份背景与作为，以免又向读者提供不实的消息。同时，我们希望读者之中，若有人熟悉陈清波的为人与事迹，也请向本刊联系。</p>
+<p>在《生根》这篇文字登出前一星期，7月19日的《中国时报》上，有这样的报道：</p>
+<p>陈守山襟怀宽宏</p>
+<p>〔本报记者吴国栋特稿〕《生根》杂志本月10日出版的第十二期中，有一篇署名“加官”所撰写的短文《妈祖婆一笑陈守山》，指曾替日本皇军效命的“魁队”队长陈清波是陈守山上将的父亲。</p>
+<p>警备总司令陈守山上将看到这篇文章后，当然很生气，但认为这篇文章涉及的只是他个人，与国家安全并无关联，因此以宽大的态度处理，并未依法深加追究。《生根》杂志在发现这项错误后，昨天也在报上刊登启事，对陈守山将军的宽容不究，表达他们最大的歉意。</p>
+<p>据了解：这篇短文刊出后，一度引起警总与《生根》杂志之间的紧张局面，《生根》杂志以为它必被查禁，而事实上警总最初也有釆取法律途径的意思，但经层报后，陈守山将军指示这是涉及他个人的事，不能据此而查禁杂志，使得《生根》杂志第十二期得以在市面上继续贩售。</p>
+<p>法界人士认为这是一个很好的案例，因为诽谤罪依法得告诉乃论。陈守山将军既然不予追究，《生根》杂志公开道歉，这件事也就结束了。</p>
+<p>《生根》这篇文字登出前一天，7月24日的《民众日报》上，有这样的报道：</p>
+<p>陈守山上将表示</p>
+<p>与《生根》误会不会影响大局，绝不“把他们抓起来”</p>
+<p>〔台北〕警备总司令陈守山上将昨天表示，为了促进团结，希望《生根》杂志报道失实的小误会，不会影响大局。</p>
+<p>陈守山上将对于国建会学人询问有关《生根》杂志登报向他道歉一事，提出他的看法。</p>
+<p>他说，他们家是个大家族，由大陆迁徙来台已有九代，《生根》杂志未把关系搞清楚，将一位本家叔叔说成是他的父亲。</p>
+<p>他表示，他原本可以提出告诉，但为了促进团结，并没有这么做，何况《生根》杂志已向他道歉并于次期登出更正启事，这是一个民主国家，他不会吆喝一声：“把他们抓起来！”由于陈守山上将语带幽默，引起学人们的笑声和掌声。</p>
+<p>我的评论</p>
+<p>乍看起来，这一公案是以“军爱民，民敬军”的官方模式收场，但是骨子里却没这样简单。据7月18日的《自立晚报》透露：</p>
+<p>该期杂志出版后，警总有关方面即主动向《生根》杂志社联系，要求澄清有关对陈总司令失实的报道，双方经过三次的“恳谈”，最后《生根》杂志接受警总有关方面的意见：在报上刊登道歉启事，而警总方面不再追究此篇失实文章的作者和背景动机。</p>
+<p>从这一透露中，我们不难看出过程是很麻烦的，麻烦到要“经过三次的‘恳谈’”、麻烦到“警总方面不再追究……文章的作者和背景动机”做交换条件，最后才达到陈守山将军的目的。</p>
+<p>据我事后调查，《生根》杂志同人的确受到“恳谈”的劝告，但这一“恳谈”，最后却附丽在警总保安处“约谈”的基础上，这当然就有泰山压顶之势了。《生根》杂志同人的被迫“向将军道歉”，显然是很勉强的，这由出面者是“社长吴乃仁”而非“发行人许国泰”可证，也由道歉广告在各报只登一次可证（登一次后，官方意犹未足，表示愿由官方出钱，多登几次，但是《生根》拒绝了）。《生根》杂志的社长在抵制这种压力下的努力，是值得我们同情的，虽然这种努力，表现得错误而软弱。如果我是《生根》的社长，我会坦然正告陈守山将军和将军的左右：《生根》杂志如果发生报道的错误，即请陈守山将军惠示更正函或辩驳书（“出版法”第15条），由《生根》刊出；《生根》如不这样做，官方可依官方之法（“出版法”第38条）处罚；陈守山将军若仍不满意，复可依法控告《生根》诽谤（“刑法”第310条）。总之，这一案件本质上是涉及陈守山将军个人的事、个人名誉的事，是更正乃登、告诉乃论的事，是司法的事，不是军方的事。警备总司令部可管的公事很多，但却不能管警备总司令的私事。如果陈守山将军硬要公家衙门管他的私事，这是玩法！这是利用职权！这是《生根》不能接受的！如果因不能接受而遭到任何伤害、逮捕或意外，我们愿意面对，我们不怕坐牢。</p>
+<p>双方都该反省反省</p>
+<p>我不知道《生根》同人有没有义正词严的表达了上面这些话，但我知道他们并没坚持不屈，反而接受了屈辱的条件。《生根》同人似乎不知道：即使诽谤官司打败了，在报上的花样，充其量，也不过是由败诉一方出钱登判决书全文而已，还轮不到“郑重致歉”的！如今官司还没打呢，就签了比降书更苛刻的条件，《生根》的错误与软弱，不是很明显的吗？</p>
+<p>前些日子《八十年代》杂志的对警察局长的致歉案，是典型的能战胜却投降的案子；这次《生根》杂志的对警备总司令的致歉案，是典型的未战败却投降的案子，都是党外人士“放水型”的错误与软弱。这些败绩，都说明了党外人士的自以为是，不肯就教于高明，党外人士实在该反省反省了（在《生根》致歉案中，许国泰表现得最强硬，是很好的。但这一事件，他应以去就力争，他应该辞职或“整肃”鸽派）。</p>
+<p>在另一方面，陈守山将军“不战而屈人之兵”、不告而得告人之果，表面上，得其“宽容不究”“襟怀宽宏”“宽大的态度”等美名，实际上，在识大体的人看来，陈守山将军和《生根》一样，也是有问题的。陈守山将军身为军方的统帅，却不知严守公私之分，也不能严格约束左右尊重职权和法治，反而以逼人登报道歉为宽大、以私人问题制造警总与民间“紧张局面”为得计、以拿公帑的机关为他私人向民间“要求澄清”为办事手段……这些不识大体，都不该是将军级的人干的事，更不该是高呼“警总是大家的”的人干的事。陈守山将军对“国建会”那些曲学阿世的学人说，他为了“促进团结”而不会“吆喝一声”“把他们抓起来”，现代的将军虽然已经进步到不会吆喝抓人，但是和颜悦色的按住人脖子大登其报，似乎也不是不小气的事。陈守山将军实在也该反省反省了。</p>
+<p>综合以上的论述，我不得不惊讶的发现：《生根》杂志“向将军道歉”事件，其实双方都是输家，一方面输在错误而软弱，一方面输在横行而小气。至于陈守山将军以羞辱党外、压迫党外的方法来“促进团结”，更是异想天开的鲜事——我实在看不下去，我非得把我的发现写出来不可。如果党外是我们的，就别怪我佛头着粪；如果“警总是大家的”，就得看我太岁头上动土，我李敖有话，总是要说的。</p>
+<p>1983年8月4日</p>
+<p>（附记）国民党垄断的报纸，是不登党外的广告的。但这次《生根》的道歉广告，国民党却大登特登，国民党“与人为善”“闻过则喜”，竟一至于此！</p>
+<h2 id="皮尔逊与黑资料"><a class="header" href="#皮尔逊与黑资料">皮尔逊与黑资料</a></h2>
+<p>1983年8月4日，在《生根》杂志社社长吴乃仁，被迫向警备总司令陈守山将军道歉之后，我批评吴乃仁和陈守山，写了《论〈向将军道歉〉》（收在“李敖千秋评论号外”第二期《开枪斗牛蛋》），举了一个故事，我说：</p>
+<p>美国最有名的专栏作家皮尔逊，一生写文章整达官显要，自杜鲁门总统以下，无一幸免。他骂总统，总统气不过，也回骂他，说皮尔逊这小子是“狗娘养的”。他又骂麦克阿瑟将军，将军震怒，告他诽谤，要他道歉，皮尔逊岂是易与之辈，他说他才不向将军道歉，大家打好了！于是他以笔对剑，打起来了。他运气好，他挖出将军的一项秘密——将军有个小倩妇，情妇手中有将军的肉麻情书及其他，于是，他与将军谈判，逼将军识相，撤回告诉了事——皮尔逊不向将军道歉，他赢了。</p>
+<p>这篇文章里所说的皮尔逊（DrewPearson）讲，他一辈子所作所为，正是一个“用笔如剑”的好模范。此公生性好斗，他在美国报上主持专栏，任何人只要有劣迹在身，他都要斗他一斗。因此，他曾被人告了两百七十五次，而他花在打官司上的钱，总和也在两亿美金之上。他打官司虽多，但由于美国司法清明，前后只输了一次。他的专栏主题多在揭发美国华府大官人的劣迹，他一个人搜集大官人的黑资料，他的四千万读者也提供他黑资料，所以他愈写愈欢喜。他对华府大官人的腐化、诈欺、骗局、无耻的揭发，曾把许多人送进牢里、把许多人毁在他的笔下，甚至还有一个自杀也为了他。</p>
+<p>皮尔逊为人倔强固执，对是非不稍宽贷。他自己是老板，也是编辑人。他为文虽然凶悍，但是为人却面孔温和，脸色红润，举止文雅，却也威严，威严得像个“正和垦殖公司闹翻的赫赫肯德基上校”（LikeacourtlyKentuckyColoneltakingabreakfromplantationbusiness）。</p>
+<p>皮尔逊死后，他的日记——DrewPearson:Diaries1949-1959（Holt,Rine-hart,Winston）也印了出来，其中颇可看到他的怀抱。像1949年3月一天中记：</p>
+<p>国内税以政治手腕迅速通过了……当小人物正因漏小税受罚时，逃税大户却正受到庇护。（“TheInternalRevenueisshotthroughwithpolitics……thebigtaxdodgersarebeingprotectedwhilethelittlefellowisbeingpunished.”）</p>
+<p>也可看到他随时在输入别人的黑资料。像1957年5月一天中记：</p>
+<p>尼克松还未卖出他的第一栋房子，而他又买新屋一栋，所付两万五千元的头款，又从何而来呢？（“Nixonstillhasn'tsoldhisfirsthouse,sowheredidhegetthe$25，000foradownpaymentonanewone?”）</p>
+<p>由于皮尔逊的行为专门在“得罪巨室”，当然惹得大官人群情愤激。罗斯福总统就回骂他，说他是“说谎惯犯”（chronicliar）、杜鲁门总统也回骂他，说他是“狗娘养的”（s.o.b.）、参议员麦卡锡（JoeMcCarthy）甚至用膝盖踢他的卵叫。此外中央情报局偷听他的电话也、税务机关明查他的税也，当然不在话下。但是，皮尔逊依然故我、依然做他的文化独行侠、依然使大头头痛、小头称快。直到他1969年七十一岁时死去，大家才松了一口气。</p>
+<p>1985年10月8日午</p>
+<h2 id="别孵那贼蛋"><a class="header" href="#别孵那贼蛋">别孵那贼蛋！</a></h2>
+<p>——第六层巢在等我们</p>
+<p>“千秋评论”第十八期里，我写了一篇《政治动物学》。我说，“政治动物学”是政治学者或动物学者都不懂的一门学问，因为它是我创立的，是一门新的“科际整合”。“政治动物学”中有一个旁支，就是“国民党动物学”。我接着为“国民党动物学”举例，说国民党中“首先出来一种人，就是蝙蝠”，像陶百川、徐复观是也。然后，在这种外省人的示范下，土头土脑的台湾人，也就自然跟进了。于是，从吴三连身上、从高玉树身上，我们——看到了五“蝠”临门——台湾人也青出于蓝了。青出于蓝还不够呢！青出于蓝就必然胜于蓝。于是，台湾人后来居上，不做蝙蝠了，干脆做变色龙（chameleon）了。</p>
+<p>变色龙的体形一般虽不过二十厘米大，但却是个大头仔，丑得令人讨厌。政治上的大头仔，发现做政治变色龙的好处，其实比做政治蝙蝠大得多，于是，说时迟、那时快，政客们摇身一变，苏南成出场了。</p>
+<p>为什么政治蝙蝠不如政治变色龙好处多呢？因为蝙蝠两头飞来飞去，飞得再辛苦，也是变身段，不能变颜色；变色龙却技高一筹，可以以逸待劳，随时“以色侍人”，从共识而同志，这样在颜色上认同，而不在身段上认同，乃是政治技术上的一种升级，当然也是道德无耻上的一种升级。但是，对政客说来，要的只是升级而已，谁管其他呢？</p>
+<p>我这篇“政治动物学”，是今年1月12日写的。近八个月来，我看到政客的升级，在党外人士方面，已经有更高于苏南成的表演了。换句话说，做蝙蝠，落伍了；做变色龙，也落伍了。如今流行的政治动物，是做椋鸟（cowbird）了。而“党外动物学”，已经凌驾“国民党动物学”了。</p>
+<p>椋鸟也叫cowblackbird（直译牛黑鸟），也叫cowbunting（直译牛小雀），它属山鸟类（blackbird），跟画眉等鸟是一家。它的全名是brown-headedcowbird（直译褐头椋鸟），特产于北美。它是候鸟（migrantbirds）的一种，特色最为有趣——自己不筑巢，专朝别人的巢里下蛋。</p>
+<p>椋鸟把自己的蛋，趁别的鸟出门，偷偷和别的鸟蛋混在一起，瞒天过海，要别的鸟替它孵。按说“幼吾幼以及人之幼”，替它孵孵也没什么，无奈孵出来以后，它的传人块头比别人的传人大，结果呢，它挤死了别的小鸟，自己通吃在“同志”家里了。</p>
+<p>中国的《诗经》说：“维鹊有巢，维鸠居之。”这句古诗后来演变出成语“鹊巢鸠居”或“鹊巢鸠占”。其实中国鸠之为鸟，实在比不上北美椋之为鸟，因为段数差一大截：占了喜鹊的家，不算本领，叫喜鹊为你傻不鸡鸡的服务，不知不觉中牺牲自己的家来给你要，这才算本领！</p>
+<p>椋鸟就是这样有本领的鸟，它自己一开始就以逸待劳，看别人辛苦成巢、看别人下蛋，然后自己跑去下蛋，最后通吃，通吃以后，别人还不知道呢！</p>
+<p>有一种“黄莺”（yellowwarbler），是比较精明的鸟，它一出门回家，就检查家里是否有异（我就是这么精明的，所以，十二年前，国民党治安人员趁我出门，派出“扒窃小组”成员，潜进我家，偷装了窃听器，我一回家就査出来了）。当这种黄莺发现蛋中有贼蛋，它就气起来了，它就拒孵贼蛋。但是，鸟很可怜，它的嘴与爪，都无法清除这些蛋，只好在蛋上加做一个新巢，重新下蛋。鸟类学家见过五层的黄莺巢，每层都有黄莺蛋和椋鸟蛋，可见这种相持的剧烈。这种“黄莺”是一种明智的鸟，它宁肯自己的蛋、自己的心血作废，也不养贼为患。它永远坚定，拒绝让贼蛋占名器、拒绝把自己的家沦为贼窝。</p>
+<p>也许“黄莺”会筑第六层巢，也许它不再有机会筑第六层，总之，为了敌人在前，它自己不再有后。它没有自己的小“黄莺”了。</p>
+<p>今天的党外的所谓主流派政客，他们对国民党，愈来愈“西线无战事”了，他们的主力，都用来维系他们既得的利益，处心积虑的在捡“同志”的便宜。比如说，当“同志”搞“党外后援会”的设计时候，他们毫不热心，“看别人辛苦成巢、看别人下蛋。”但是，一旦有眉目了，他们便以逸待劳，飞到上面，下上他们“拥有公职地位才有发言权”的贼蛋，把后援会改为自援会、把民主制度改为强奸民意的保送制度……他们这种作风，就是典型的椋鸟作风；他们这种“政治技术上的一种升级，当然也是道德无耻上的一种升级”。</p>
+<p>今天党外的小黄莺们，面对这种“同志”其外贼蛋其中的进退维谷，不必怀忧丧志。大家应该“联合以平等待我之民族，共同奋斗”。让我们拆穿这些假党外，让我们同他们争、吵、斗、咬，也许目前我们还推不开这些贼蛋，但我们要发愿不再与他们同巢、发愿不孵他们的蛋——第六层巢在等我们，让我们去筑第六层巢吧！</p>
+<p>1983年9月5日晨以一小时半写成</p>
+<h2 id="把李敖流去大陆"><a class="header" href="#把李敖流去大陆">“把李敖‘流’去大陆”</a></h2>
+<p>台美基金会来信</p>
+<p>李敖先生台鉴：</p>
+<p>本基金会第一届颁奖典礼定于11月27日假加州长堤市举行，敬请吾兄拨冗前来参加盛会。</p>
+<p>本基金会负担入选人之来回机票外，还负担入选人在长堤市拉玛达大旅馆（RamadaInn）三天之住食费用（11月25日至11月28日），若有家属随行者，费用敬请自备，但亦请通知几人参加，以便安排车子接送。</p>
+<p>台美基金会，会长王赛美，总干事郭三仪，电话、（213）283-3872</p>
+<p>李敖回信</p>
+<p>赛美会长，三仪总干事先生：</p>
+<p>来信、请柬和回卡都于今晚收到，抱歉我不能前往美国参加贵会的邀宴和颁奖。一来是我隐居独处，不参加任何婚丧喜庆；二来是国民党政府不准我出境。我始终不明白他们为何不准我出境，我猜他们判断我出境后会去中国大陆，因为我在1949年十四岁时候从大陆到台湾，他们认为“李敖回归”将对他们构成大伤害。</p>
+<p>虽然如此，国民党的极右派杂志却提出有趣的论点，今年8月5日出版“应将李敖送往大陆”文字，说国民党“近两年来显然吃足了李敖的苦头”，因此建议：</p>
+<p>对付李敖最佳的、唯一的有效办法只有一个：就是把他送到大陆去。这不但是合理合情，而且合法。</p>
+<p>合理方面：中共近年来不断放一些人来对台湾统战，又要求“三通四流”，海外的人常说国民党太被动。今把李敖“流”去大陆，不是很合理吗？合情方面：李敖公开说生平讨厌国民党，而又不见他公开批评共产党。显见李敖心仪中共不已。送他去大陆，不是“有情人终成眷属”吗？合法方面：依戒严法第11条第9款规定，政府自得将不适宜在台湾居住的中国人送往大陆。因为大陆是我们的领土，把李敖“移出戒严地域”，不是很合法吗？</p>
+<p>以上管见，不知国民党以为如何？若国民党舍得割爱，天下人必拍手称快！</p>
+<p>这段妙文充分显示了国民党的矛盾心态，特别写来，供你们二位一笑（附我在1979年7月12日日记一则，同样可供一笑）。</p>
+<p>李敖1983年11月21日夜</p>
+<p>附录</p>
+<p>谨防被空投</p>
+<p>（3点到6点，国民党文工会总干事龚声涛约谈于财神大酒店。）龚声涛向信疆提议：由《中国时报》发动暑假中青年学生，向家家户户募旧衣旧书，整理后以气球空投大陆。信疆转过头来，请我写发起文字。我摇头又摇手说：“这我可不干，搞不好，连我也被空投了！”他们大笑。</p>
+<p>过去中农学院院长王志鹄，曾建议将胡适空投大陆；我入狱时，《新闻天地》曾建议送李敖去大陆。此皆国民党之“流刑”也！（1979年7月12日）</p>
+<h2 id="波波颂"><a class="header" href="#波波颂">波波颂</a></h2>
+<p>我是不过旧历年的，但是朋友要过。朋友离开台北几天，知道我照样工作，不会乱跑，特以其宠物波斯猫相托，代为照顾吃喝拉撒睡，我就答应下来了。</p>
+<p>我素来爱猫爱狗，但是深知它们会抓书咬板凳，影响我日常生活的时间与秩序，所以忍痛不养，只是备些猫狗图片顾而乐之。</p>
+<p>四年前，有暹罗猫跷家，我弟弟李放捡到，送了过来，该暹罗猫作息有定，只在中午12点、下午6点，跃上我书桌，表示：“老爷开饭了，停工吧！”其他时间一切自理，绝对尊重我的私生活，给我印象不恶。后来此跷家猫去，香港邵氏公司马芳踪送另一暹罗猫给胡茵梦。于是胡茵梦和我就养起马家猫。不料胡星妈大叫一个人寂寞，坚持要把马家猫给她。胡茵梦说另找一马家猫给胡星妈，胡星妈不肯，非此马家猫不要，大闹不已。我意不能平。我说：“当初说把这猫给她，她不要，现在我们养了，她又抢，这是什么意思？”但胡茵梦，孝女也，仍忍痛予之。于是我家缺猫，正好李放养了一只暹罗猫，说还不错，愿暂借养。于是李家猫到。但该李家猫绝非李家猫，因为太没骨头与志气：在没骨头方面，不论你怎么摆它，它就怎么成姿，你把它横披在脖子上，它就像巴黎贵妇人脖子上的狐狸披肩一样，完全成国音字母“冂”字符号，动也不动，“冂”在你脖子上，浑身若无骨焉；在没有志气方面，该猫极贪食，你吃饭时，它跳到你腿上吵着要吃，屡骂无效、屡打不退，愈关愈鬼哭狼嚎，太不成体统。如此没骨头没志气的家伙，虽极美丽，然为我所不喜，我把它叫做“全世界最不要脸的猫”。最后，李家猫出局，我跑到信义路新生南路口，在猫店笼子里，物色到一新暹罗猫，此猫下巴很胖，是暹罗猫中的上品，我抱它回家，正值胡茵梦出浴，她欣然裸迎此猫，这是我一生中，看到的最美的人猫画面。</p>
+<p>我离婚时，鉴于胡茵梦“守玉如身”“爱猫如己”，把古玉和猫都让她留在身边，当然这不是“陪嫁”，这是“陪离婚”。从此我不再养猫，也不再收购古玉，一个人做工快活。一天在杂志上看到，说胡星妈胡茵梦为了怕猫生小猫，乃予阉割，猫从高楼跳下，自杀身死，我见此消息，心中惨沮，不乐终日。这只猫店笼中猫，极为通灵，我常对它开玩笑说：“要不是我把你救出来，你恐怕还在监狱里！”它若有所悟。它的离去，使我想起金露华电影中那只猫的离去，使我颇为感伤。胡茵梦那么迷信，我想她如看过爱伦坡的《黑猫》短篇，一定若有所悟了。</p>
+<p>胡茵梦说她以前养过一只波斯猫，但懒得给它洗澡，结果浑身沾了泥土粪便，积重难返，乃予以把毛剪短，结果不成样子，不要了。我说：“你这不是爱猫，你是害猫。你对猫的爱，我看是假的。”（我笑胡茵梦是“假爱猫家”，而我却是“爱假猫家”，因我不养猫，只看猫照片。）</p>
+<p>这次过旧年，朋友的波斯猫来借住，此猫是大公猫，全身干净雪白，气宇轩昂，一看就是真正爱猫家细心照料下的珍品。波斯猫的特色是长毛，尤其尾巴有长毛，胖胖的状若狐狸之尾，不像其他的猫尾巴，十足只像尾巴，全无气派。朋友说此波斯猫有怪癖，慢慢你就知道了，好在只借住几天，你就委屈一下。</p>
+<p>朋友走后，我才领教这家伙的怪癖是什么了。</p>
+<p>朋友叫此猫为咪咪，我不喜欢，改叫波波。波波任我叫咪咪或波波或波咪或咪波，一概不理，先藏身在书架之中，大有新娘子的娇态。</p>
+<p>初来之日，虽如新娘子，尚知怕羞，不料未隔二十四小时，就变成花和尚鲁智深式的假新娘，完全不怕我了。不久，它的怪癖就显现出来了，原来它哪里都不爱，就是爱书桌，一天到晚，要赖在书桌上，非上桌不乐。在桌上，轻则昏睡，重则你写字，它咬笔；你翻书，它不起。耐心捣蛋，永远没完。我每天要伏案十多小时，但是除非人猫大战，这小家伙总要霸占书桌少说也有八小时以上，并且霸占时，姿势多端、怪态百出，或横或纵、或俯或仰、或下巴抵地、或四脚朝天，让你纵使让步，愿割据湖山少许，供其租界一脔，它也没完没了，并且全不领情。因为它在桌上，是他妈的吉卜赛式的，要以游荡为乐、以逐书纸而居，所以全无规矩，喧宾夺主，悍然极矣！</p>
+<p>我在无奈之余，心想总该有一物可降此物，想来想去，想到我的拍立得（Polaroid）SLR680照相机，这一照相机是最新型立刻自动冲洗的美国奇技淫巧，闪光过后，照片就像伸舌头一般，脱机而出，不但可从刹那捕捉永恒，并且伸舌作态，有做鬼脸之乐。于是，我拿出拍立得，照着波波，就咔嚓一声。波波来自波斯，波斯者，今之伊朗也，与美国已断交，对美货敌意，自然无远弗届，波波心怀故国，故一照之下，大惊跳起，抗议而逃。我大喜，心想这下子可好了，总有老美可制此霍梅尼的小老乡了。不料好梦不长，波波逃后，跟我断交时间，不过两小时，就自动修好，再度上桌，全套劣迹，又复重来。我再照，它再跳，再绝交。可是到了后来，绝交时间愈来愈自动缩短，每照必逃，但是一旦相机甫放，它就纵身上桌。旋照旋逃，旋逃旋返，屡吓屡逃，逃而不退。到了最后，它索性不逃了，坚守桌面上，死爱面子，不再跳下，被拍立得时，它至多从桌上此端移到彼端，聊示厌恶而已。于是人猫大战，猫赢；老美霍梅尼海外大战，霍梅尼赢。</p>
+<p>在战败之后，我搂住波波，一边摸它、揉它、亲它，一边说：“我对你这小家伙没办法哟！你是一个小赖皮哟！”波波顾我而乐之，它居然闭上一只眼，只用另一只看我，憨态可掬，我爱死它了。</p>
+<p>现在，波波占去书桌要津大半，我只好扭着腰，躲在旁边，死心塌地的在一小块桌面上写稿子。我不但写稿子，还为波波写了一首《波波颂》，以示输诚、以拍猫屁。颂曰：</p>
+<p>三分白脸七分娇，</p>
+<p>粉墨活像小曹操，</p>
+<p>桌上低姿走台步，</p>
+<p>床头高卧不捉刀。</p>
+<p>故国不堪犹回首，</p>
+<p>小岛昂然领风骚。</p>
+<p>曾经利他难为我，</p>
+<p>除却波斯不是猫。</p>
+<p>1984年2月5日在猫脚爪旁以两小时作</p>
+<p>〔附记〕《世说新语-容止篇》描写曹操（魏武）说：“魏武将见匈奴使，自以形陋，不足雄远国，使崔季珪代，帝自捉刀立床头。既毕，令间谍问曰：‘魏王何如？’匈奴使答曰：‘魏王雅望非常；然床头捉刀人，此乃英雄也！’魏武闻之，追杀此使。”这真是个有趣的小故事。</p>
+<h2 id="能下床就是好猫"><a class="header" href="#能下床就是好猫">能下床就是好猫</a></h2>
+<p>《伊索寓言》里有一条“猫和爱神”，说一只猫爱上一位美男子，请求爱神把它化成美女，爱神答应了。化成美女后，美男子喜欢上它，就和它结婚。当天晚上，爱神要试试猫变美女后，是否还猫性没改，乃在卧室中放出老鼠一只。美女一见之下，故态复萌一跃下床，直追老鼠。爱神大失所望，只好把美女再恢复成猫。寓言的教训是：“本性胜过教养。”（Natureexceedsnurture.）</p>
+<p>这种由猫变人的故事，此理中西本自同，中国也有。古书中《北梦琐言》中记严遵美听猫狗对话、《履园丛话》中记王阮亭家猫作人言、《坚瓠集》中记金华猫吸月精华后逢男则变美女等，都不乏其例，当然这些故事并无《伊索寓言》式的教训，《伊索寓言》式的教训毕竟含义深长。</p>
+<p>《伊索寓言》里，最后爱神把美女恢复成猫的本相，虽然不免失之杀风景，但是，在“本性胜过教养”之中，我却觉得，这只猫纵为美女，却也不失其本职与本色，床上欢乐，不忘床下战斗，其为人生观也，淋漓尽致矣！</p>
+<p>寓言的新教训是：“不论黑猫白猫，能下床就是好猫。”</p>
+<p>1984年2月12日</p>
+<h2 id="本姑娘也点一个"><a class="header" href="#本姑娘也点一个">“本姑娘也点一个”</a></h2>
+<p>有人以为历来女人不论在床上床下，一直压在男人下面，这是不正确的。女人曾有过压人的时代，只是那种风光，后来被男人反压了。到了18世纪以后，女权运动逐渐形成，于是女人开始夺权。女人夺权，在某些争平等的目标上是好的，不幸的是，女人在争平等时，常常得意忘形，为打倒“大男人主义”而沦为“大女人主义”，她争平等，却不与人平等相处，最要命的，她又想压人，要以“行同男人”的愚蠢来压男人，于是，一切器小易盈的局面，便一一发生。雷克洛（J.Leclercq）教授在他的专书里，指出新女性“以行同男人为新理想，可是这种行为，反倒害了女人。因为女人要行同男人，只能做个失败的男人”。</p>
+<p>我的一位漫画家朋友，讨了一位新女性做太太，这位新女性漂亮多才，只可惜爱犯“行同男人”的毛病。她对老公管理得宽中带严，老公要同朋友逛酒家，可以，不过她也要一起去，去了还不说，她还要当场也和男生一样搂女生：“本姑娘也点一个。”这种太妹作风与“诈为丈夫”的娄逞作风，想来真有点好笑。我认识一位新女性导演，人家问她你和男导演有什么不同，她说除了上女厕所之外，其他完全一样。我想这位漫画家太太，恐怕更胜一筹了——她下一步，就要上男厕所了！</p>
+<p>1984年2月20日晨</p>
+<h2 id="古董与今董"><a class="header" href="#古董与今董">古董与今董</a></h2>
+<p>我小时候住在故都，对古董有所见闻，我又是学历史的人，对古董的了解，自然又高出别人。和胡茵梦在一起的时候，胡茵梦好古董，我随喜之，但只是陪美人玩物而已，绝不丧志。胡茵梦就像是20世纪的古董，有她在，复有何玩？何况台湾比起故都来，实在是文物边陲，所谓古董，实不足论。此地有所谓中国文物爱好名家，事实上，只是一些文物外行。试以郭良蕙而论，郭良蕙者，新女性又复女作家者也，竟俨然成为陶瓷家。外行当道，竟一至于此！1981年7月，她在《艺术家》杂志写了一篇专文，文中大放厥词，把一件宋朝窑枕上面刻的唐朝白居易的诗：“时难年荒世业空，弟兄羁旅各西东。田园寥落干戈后，骨肉流离道路中。吊影分为千里雁，辞根散作九秋蓬。共看明月应垂泪，一夜乡心五处同。”误作为宋人“不具真名诗人”的作品，并大放其屁，说这个价值七千美元的窑枕，单单以此感人肺腑的“宋代诗文”，便值回票值了。白居易这首诗是最普通的一首唐诗，见于《唐诗三百首》，但是郭良蕙都不知道，这种对中国文化如此不及格的人，竟成为此地中国文物爱好名家，国民党统治下的附庸风雅，能不笑死人吗？</p>
+<p>其实，这种假古董家，也是代有遗传的，只是笑话没闹得这么大而已、只是出之精神状态有异者而已。《增新事林广记》中写有秦士是古董迷，有人弄来破席骗他，说“此鲁哀公坐孔子之席也”；又弄来手杖骗他，说“此太王避狄所操之马箠也”；又弄来朽椀骗他，说“此殷商物，乃桀〔纣〕所造”。每件古董，都大敲他竹杠，他也照单全收，收到后来，弄得倾家荡产，在街上讨起饭来：“于是披哀公之席，把太王之杖，执桀〔纣〕之椀，行丐于市曰：‘衣食父母：有太公九府钱，乞一文！’”沦到做叫花子了，还讨古钱呢！《笑笑录》中写杨朝麟为苏藩司，判卖古董的被骗诉状，也说：“尔何不携陋巷之瓢，提叩胫之杖，披曾子之箦，而吹伍子胥之箫？岂无舍太公九圆钱者？”也是同一笑话。</p>
+<p>假古董家虽然可笑，但是他们却执迷得甘愿倾家荡产，比起台湾的文物市侩来，人高一等。他们的缺点是强不知以为知，“好古”而不“敏求”，但是虽然不知，却比台湾这些国民党统治下的知道得太多太多了。</p>
+<p>我爸爸告诉我一个故事。宋小濂，字铁梅，吉林永吉人。他做过清朝时候黑龙江巡抚，辛亥革命后，改任黑龙江都督兼民政长，后来做到参政院参政。退休以后，在天津做寓公，雅好古董。雅好尚不可怕，雅好之后，还发明出他自己一套理论（就好像国民党革命尚不可怕，唯革命之后，还发明出它自己一套理论最要人命），于是被内行的古董商人看中，视为凯子，可欺之以方焉。正巧宋小濂有宋版书一部已残破，古董商人提议代他重新装订一次，他同意了。古董商人在装订时做手脚，把每一本书的第一页和最后一页两张空白偷下，就利用这些宋朝的纸，造了一部假书给宋小濂，书中都是就宋小濂强不知以为知的理论发挥出来的，然后技巧的与一大批古董接龙。假书送给宋小濂后，宋小濂一阅之下，大喜自己立论竟有宋人与之暗合，于是理论益发，假古董排山倒海收购，不可收拾，最后倾家荡产而死。死后他太太姨太太想出清古董以变细软，不料没人肯要，因为全是假的。</p>
+<p>恰像开赌场的人自己绝不赌博一样，真正懂古董的人绝不玩古董。有一次在李翰祥家，看他家琳琅满目，李翰祥说：“我玩的是今董，不是古董，我是明知它们是假的，才玩起来好玩的。”如今我想起许多20世纪的古董美女来，真相其外，假象其中，我真觉得她们是今董了呢！</p>
+<p>1984年3月6日清晨</p>
+<h2 id="天堂不是我们的"><a class="header" href="#天堂不是我们的">天堂不是我们的</a></h2>
+<p>——鸡犬升天，猫在哪里？</p>
+<p>凯斯特勒（ArthurKoestler）在他名著《昏黑日午》（DarknessatNoon）里，曾对“职业革命家”有过最精彩的道白，垂死前的苏联老一辈“职业革命家”卢巴雪夫（Rubashov）曾表示：“我们全走了！只留下你们，历史在你们手里，我要能教你们明白我当年的好梦和一开始就做错的地方就好了！……我的儿子，休想能硬把天堂造出来！”</p>
+<p>“休想能硬把天堂造出来！”这是一句多么凄惨的哀呼！这种哀呼的深刻意义，在于告诉人们，天堂是渺茫的，想在人间造天堂的人，是一场好梦、一场一开始就错了的好梦，天堂是可望而不可即的。</p>
+<p>可是，受苦受难的人，他们总有这样的好梦，他们或在桃花源、或在锡安山，千辛万苦，想建造他们人间的天堂，但是，人间何处有天堂？在这些人“不知有汉，无论魏晋”的逃世里，穿制服的和穿便衣的，早就渔郎问津，把他们十面埋伏、一网成擒了。</p>
+<p>受苦受难的人，他们在饱受摧残之余，心存自慰，他们说，他们的人间天堂只是暂时的，他们的永生希望是在未来的伊甸、死后的伊甸，但是，那一场未来的、死后的好梦，又岂易做哉？</p>
+<p>中国传统的道家思想中，有一说法，就对死后上天堂表示了疑虑，《太平广记》据《神仙传》，写超级老寿星彭祖问白石先生说：“何不服升天之药？”白石先生答道：“天上复能比乐人间乎？但莫使老死耳！天上多至尊，相奉事，更苦于人间！”这显然是说，天堂上达神贵仙太多了，伺候他们，会苦不堪言，不如在人间长寿，做地上之仙，落得痛快①。</p>
+<p>中国古话说“一人得道，鸡犬升天”。《太平广记》据《续仙传》说：“全家人物鸡犬一时飞去……唯猫弃而未去。”元好问《游天坛杂诗》说：“同向燕家舐丹鼎，不随鸡犬上青云。”诗下自注说：“仙猫洞，土人传燕家鸡犬升天，猫独不去。”这一记录，引起我最大的兴趣。为什么有天堂可上，猫仍不上天堂呢？难道猫也要学白石先生，只要长生不上天吗？</p>
+<p>事实上，显然不是的。</p>
+<p>《水经注》记唐公房得仙，“白日升天，鸡鸣天上，犬呔云中，唯以鼠恶，留之。”这是说鸡犬同升之时，老鼠是坏东西，是不配上天堂的，索性留它在人间作恶。我想，“鸡犬升天，猫独不去”，答案就在这里了。猫是有使命感的伟大动物，人间老鼠还在，猫就要继续打击魔鬼，不要上天堂。地藏菩萨在众生不成佛时他宁下地狱，我看猫却在众鼠不消灭时，它宁不上天堂。猫的猫生观是：人间若还黑暗，天堂不是我们的！写到这里，真觉得猫不但伟大，简直就是菩萨呢！</p>
+<p>1984年3月23日</p>
+<p>①《抱朴子》上有这样一段：“若且欲留在世间者，但服半剂而录其半。……不死之事已定，无复奄忽之虑，正复且游地上，或入名山。……彭祖言：‘天上多尊官大神，新仙者位卑，所奉事非一，但更劳苦。’故不足役役于登天，而止人间八百余年也！……笃而论之，求长生者，正惜今日之所欲耳，本不汲汲于升虚，以飞腾为胜于地上也！若幸可止家而不死者，亦何必求于速登天乎？”若戏言之，彭祖在人间活八百岁还不肯上天堂，显然是袭白石先生之故智了。这里所说“但服半剂而录其半”，就是《太平广记》所说的“不乐升天，但服半剂为地仙，恒居人间”之意。“半剂”就是只吃一半仙丹，仙丹若全吃了，就升天了，只吃一半，就在人间长寿，做地上之仙。</p>
+<h2 id="用替身可也"><a class="header" href="#用替身可也">用替身可也！</a></h2>
+<p>今年2月号《花花公子》（Playboy）杂志有漫画一幅，画修道院中洋和尚师徒对面打坐，结果师父以假象示人，真身却在背后偷睡。这一图画，使我想起顾恺之。</p>
+<p>顾恺之，字长素，江苏无锡人。《晋书》说他：“博学有才气，尝为《筝赋》成，谓人曰：‘吾赋之比嵇康琴，不赏者必以后出相遗，深识者亦当以高奇见贵。’”这表示他是很坦率的，他不做无谓的谦虚。</p>
+<p>顾恺之“好谐谑，人多爱狎之”。他“每食甘蔗，恒自尾至本”。人家问他为什么吃法这么怪，他说这样吃，可以“渐入佳境”。</p>
+<p>顾恺之是大画家，《晋书》把他写得神龙活现：</p>
+<p>尤善丹青，图写特妙，谢安深重之，以为有苍生以来未之有也。恺之每画人成，或数年不点目睛。人问其故，答曰：“四体妍蚩，本无阙少于妙处，传神写照，正在阿堵中。”尝悦一邻女，挑之弗从，乃圆其形于壁，以棘针钉其心，女遂患心痛。恺之因致其情，女从之，遂密去针而愈。</p>
+<p>顾恺之活了六十二岁，他的生卒年，一般以为是咸康七年（341）到元兴元年（402），我也一直以为没错，但是后来看到他的祭牙文（牙是军中牙旗，祭牙就是祭旗，誓师仪式也），明明有“录尚书事，豫章郡公裕”的字眼，刘裕封“豫章郡公”在义熙二年（406），“录尚书事”在义熙四年（408），他的誓师在义熙五年（409）以后，顾恺之当时还在世，可见顾悟之的生年，约在永和四年（348）以后才对。</p>
+<p>《晋书》说：“恺之在桓温府，常云：‘体中痴黠各半。’”所以天真可爱，有时是个小迷糊。传说中他有三绝：“才绝、画绝、痴绝。”他向谢瞻“月下长咏”，谢瞻跟他保持距离，坐在远处称赞，顾恺之长咏忘我也忘人，谢瞻困了，偷着找人替他坐在老地方称赞，顾恺之不觉有异，其痴一至于此！</p>
+<p>由此可见，当一个人被称赞的时候，他对他的称赞者的确可以马虎一点、从宽录取一点，称赞者实在不妨以替身代行。《花花公子》杂志的漫画，在师徒对面打坐的意味上，与谢瞻的替身恶作剧，有异曲同工之妙，今天兴起，特别把两者串联，完成这篇小文章。</p>
+<p>1984年6月27日</p>
+<h2 id="美国人忘了什么"><a class="header" href="#美国人忘了什么">美国人忘了什么？</a></h2>
+<p>——寄美国在台协会文化中心的头儿</p>
+<p>何龙（DavidHess）先生：</p>
+<p>你的请帖收到了，抱歉我不能参加你的晚宴。</p>
+<p>二十年前（1964年5月18日），我收到发自贵国大使馆克拉夫（RalphN.Clough）先生的信，邀请我访问贵国；两星期后（1964年6月1日），我又收到林诺华（LynnH.Noah）先生的信，洽商访美细节，但是我没有成行。没有成行的原因有两个：一个是国民党刁难我的出境，他们要跟我“交换条件”才让我走，但我拒绝；另一个是我对贵国政府一路支持国民党这种法西斯政权，深致不满。</p>
+<p>当伊朗法西斯政权倒台的时候，霍梅尼（Khomeini）扣留美国大使馆人员，种种行为令美国人不解，美国人说他们对伊朗流亡在外国王的关切是基于人道，但他们忘了，当霍梅尼流亡在外的时候，美国的人道又在哪儿？霍梅尼是美国一路支持伊朗法西斯政权的长年受害者，一朝他得以翻身，他会谅解美国这种伪君子的理由吗？</p>
+<p>同类的例子太多了。中共在延安时代，美国政府是一路支持国民党法西斯政权的（虽然美国新闻处的主持人费正清JohnK.Fairbank等支持中共），美国大使都懒得到延安去；但是，一朝中共得以翻身，美国总统都得勤于上北京了。中共领导人以几近无礼的大架子“临时通知接见”美国总统，美国人同样不解，为什么？因为美国人又健忘了。</p>
+<p>如何学到从被美国间接迫害的人的观点看事情，对骄傲的美国人说来，太重要了。</p>
+<p>如今，在美国在台机构和我相忘二十年后的今天，你老兄走马上任，想补救你们过去的错误，我很欣赏你的慧眼，可是，好像有点太迟了。至少对我说来，除非美国政府彻底放弃支持法西斯政权，我对与美国官员会见，全无兴趣。此祝</p>
+<p>大安并请代问尊夫人好</p>
+<p>李敖1984年8月16日</p>
+<h2 id="神像百年一感"><a class="header" href="#神像百年一感">神像百年一感</a></h2>
+<p>今年7月3至6日，就是美国纽约自由女神像一百年了。美联社的消息说，在庆典活动上，将动用多架直升机、二百三十艘辅助船、六千五百名警察联合警戒。美国总统里根将在7月3日重新点燃神像上的火把，象征维护自由云云。</p>
+<p>相对之下，益觉美国可羡，中国堪怜。中国人收了美国许多美援，但从没收到自由神像——美国也不会像法国那样“落坎”（意为大方——编者），把自由神像渡海送人。美国渡海送给中国的，多是维护蒋家反动政权的金钱与子弹，爱好自由的美国人，如此助纣为虐，真是美国人的耻辱！当年美国独立，法国拉斐特（Lafayette）将军渡海相助；后来第一次世界大战，法国有难，美国潘兴（Pershing）将军渡海驰援，1917年7月4日，潘兴的参谋斯坦顿（C.E.Stanton）上校妙语天成，说：“拉斐特，吾人在此！”（“Lafayette,wearehere!”）在拉斐特作古七十三年之后，美国人犹有豪情如此！</p>
+<p>今天的美国人则豪气全无，到处支援各地法西斯政权，但求一时靠这种政权苟安，不思施加同步压力，迫使它给人民自由，结果一个个病入膏肓，垮台之日，欲求苟安而不可得。</p>
+<p>美联社6月28日电：“尼加拉瓜总统奥尔特加说，美国众议院批准以一亿美元援助企图推翻尼国政府的反抗军，即等于美国向尼国宣战。大约有两万人昨天集会，纪念1979年桑解阵军队重编，当年底并以革命推翻尼国强人索摩查周年时，奥尔特加发表上述谈话。”尼加拉瓜索摩查反动政权，当年以美国卵翼下，父以传子，兄以授弟，与蒋家手法正同，但是一朝垮台，美国虽九牛二虎，苟安终不可得——欲求苟安反得不到苟安，美国人哀哉！</p>
+<p>1986年6月29日晨</p>
+<h2 id="纵裸女战斗"><a class="header" href="#纵裸女战斗">纵裸女战斗</a></h2>
+<p>佛教里观音的造型，在一般习惯是女性。一般善男信女，都以为观音是女的，但一般稍通佛理的人，却说观音不是女的，只不过看起来像女人而已，观音实际“男人女身”，根本是男的。这个观音是男是女的糊涂账，所以发生，是由于一般人不看书的缘故，其实观音是男是女，早在《琅嬛记》里有了精巧的解释：</p>
+<p>一人问应元曰：“观音大士女子乎？”答曰：“女子也。”又一人曰：“经云观音菩萨，勇猛丈夫，何也？”答曰：“男子也。”又一人曰：“观音一人，而子一男之一女之者，非矛盾乎？”答曰：“非也。观世音无形，故普门品述现众身为人说法，既能现众身，则飞走之物以至蠛蠓醯鸡，皆可耳，岂直男女乎？”</p>
+<p>由此可见，高明的解释是观音不男不女、亦男亦女、可男可女。不但可男可女，并且可以“现众身”，上自飞禽，下至走兽，无一不可。因为观音本身是“无形”的，佛门弟子却枉费心机为观音造像、画像，当然是可笑的。</p>
+<p>但据《大圣欢喜供养法》等佛经，却说大圣自在天和乌摩女为夫妇，生了三千子女，其中一千五百个是做恶事的，一千五百个是做善事的。做善事的是“观音之化身”，跟那一千五百个做恶事的配成兄弟夫妇，以性交方法来软化恶行。在这种设计之下，观音自然是女性造型了。</p>
+<p>这种菩萨心肠，推而广之，最后变成不只神与神间的性交了，也有神与人间的性交了。《西湖二集》（“巧妓佐夫成名”）有一个故事说，唐朝延州有位妓女，“不接钱钞”、不要钱，让人白嫖，原来这妓女是在“舍身菩萨化身，以济贫人之欲（慾）！”以身为布施如此，其为菩萨心肠，明矣！</p>
+<p>《续玄怪录》（“延州妇人”）有这样一段：</p>
+<p>一淫纵女子早死，瘗于道左，忽有胡僧敬礼墓前曰：“斯乃大圣，慈悲喜舍，世俗之欲，无不徇焉。此即鏁骨菩萨。”</p>
+<p>宋朝叶廷珪《海录碎事》也有：</p>
+<p>释氏书：昔有贤女马郎妇，于金沙滩上施一切人淫；凡与交者，永绝其淫。死葬后，一梵僧来云：“求我侣。”掘开乃鏁子骨，梵僧以杖挑起，升云而去。</p>
+<p>这两段文字中所说的“鏁子骨”，就是“锁子骨”。据唐朝李蘩《李邺侯家传》，传说李泌行辟谷术，每导引，骨节珊然有声，时人谓之“锁子骨”。《续玄怪录》也提到这“延州妇人”死后，遍身之骨，钩结皆如锁状，“鏁骨菩萨”，就因这一情状而来。《海录碎事》说“贤女马郎妇”死后也是“鏁子骨”，自然也是“鏁骨菩萨”。宋朝黄庭坚《豫章黄先生集》（“观世音赞”）中说：“设欲真见观世音，金沙滩头马郎妇。”《山谷内集》（“戏答陈季常寄黄州山中连理松枝”）中说：“金沙滩头鏁子骨，不妨随俗暂参禅。”都是指此。《西湖二集》（“邢君瑞五载幽期”）中说金沙滩卖鱼女子嫁马小官，“马郎妇”之名，当是这样来的。</p>
+<p>《维摩诘所说经》（“佛道品”第八）说：“或现作淫女，引诸好色者。先以欲（慾）出牵，后令入佛智。”《宗镜录》（卷二十一述“圆人又有染爱法门”）说：“先以欲出牵，后令入佛智，斯乃非欲之欲，以欲止欲，如以楔出楔，将声止声。”这一佛门理论，最为有趣。这种理论主张“以欲（慾）止欲（慾）”，主张用风情万种的美女，吸引好色之徒，以引你性欲为手段，以导你信佛为目的——为了使你进入我的信仰，不惜以“美人计”对付你，从“小头”人手，达到“大头”皈依。这一“‘大头’问题，‘小头’解决”的妙举，不是最有趣的吗？</p>
+<p>我在文章中喜欢涉及“性自由”，我在“千秋评论”“万岁评论”中也喜欢以裸女参战，消极的目的固然在打破禁忌、从“性自由”入手；但在积极的目的上，却是佛门中的以“淫女”诱人，引起趣味，然“后令入佛智”。我一直欣赏裸女，因为裸女是战斗中第一流的武器，幸亏不解风情的国民党不知道，你可别告诉他。</p>
+<p>1984年9月24日晨</p>
+<h2 id="陶潜者今之我也"><a class="header" href="#陶潜者今之我也">陶潜者，今之我也</a></h2>
+<p>4至5世纪的陶潜，在刘裕篡晋以后，把名字陶渊明改为陶潜，他不用刘宋的年号，表示了他的不合作主义。</p>
+<p>陶潜死后八十年，才被昭明皇太子看中，给他肯定。他在中国文学史的地位，属于生前倒霉死后走运型。</p>
+<p>陶潜生值东晋末年的乱世，看到现实政治的黑暗，决心弃官归隐。他的时代的文风是清谈的、雕饰的，但他却是清淡的、自然的。他宁愿过穷困的日子，可是却自适其适，穿着破鞋子，在山里云游，与现实政治概不合作。</p>
+<p>有人以为陶潜是山林派田园派的隐士，这是不能了解这个“少时壮且厉”“猛志逸四海”的人物的。陶潜说他自己“性刚才拙，与物多忤”，他十足是一个刚正而有火气的人，能够表现出“衣沾不足惜，但使愿无违”的决绝的人，绝不是温吞吞的家伙。他在乱世里，在积极上，没有什么作为；但在消极上，他完成了不合作主义的最伟大的身教。《晋书-陶潜传》说：</p>
+<p>以亲老家贫，起为州祭酒，不堪吏职，少日自解归。州召主薄，不就，躬耕自资，遂抱赢疾。复为镇军、建威参军，谓亲朋曰：“聊欲弦歌，以为三径之资可乎？”执事者闻之，以为彭泽令。在县公田悉令种秫谷，曰：“令吾常醉于酒足矣！”妻子固请种粳，乃使一顷五十亩种秫，五十亩种粳。素简贵，不私事上官。郡遣督邮至县，吏白应束带见之，潜叹曰：“吾不能为五斗米折腰，拳拳事乡里小人邪！”义熙二年，解印去县，乃赋《归去来》。</p>
+<p>陶潜“不能为五斗米折腰，拳拳事乡里小人”，（何法盛《晋中兴书》卷七作：“吾不能为五斗米，折腰向乡里小竖。”）显示了他根本看不起那时候的国民党（国民党在今天，只不过是“外省小人”“外省小竖”）。国民党多次拉我吃他们的“五斗米”，但是我却不肯折腰。陶潜生在现代，他的作风也必然和我一样也！</p>
+<p>1985年7月11日晨</p>
+<h2 id="国民党和它同路人的知识水平"><a class="header" href="#国民党和它同路人的知识水平">国民党和它同路人的知识水平</a></h2>
+<p>白纸黑字的错误有三种：第一种是“手民之误”，是排字先生的误植；第二种是“笔误”，是作者自己的误写，承认了也无妨，不承认，推给手民先生，当然更佳；第三种最要命，绝非“手民之误”或“笔误”，而是自己怎么赖也赖不掉的错误，这种错误，是不容分说的、没什么见仁见智的，把“冯京”写成“马凉”、把“银河”（MilkyWay）翻成“牛奶路”、把张飞大战了尉迟恭，这种粗心、这种马虎，可以被原谅，可是不能不被识者所笑、被大方之家所笑。“哀矜而勿喜”是好的，但不妨碍寻寻开心、逗个乐子，字面上戏套《诗经》的话，这叫“谑浪笑敖，中心是悼”。这篇文章，在随手举出一些国民党和它同路人的第三种错误，用来检查他们是如何不学，不学还不知藏拙，还要暴殄文字、附庸风雅。我这篇心存忠恕、文存消遣的小手笔，在用纯证据驳倒纯错误，使大家警惕一——下一写文章要细心、要量力，笔杆不是那么好耍的！</p>
+<p>蒋介石弄错史密斯的话</p>
+<p>蒋介石在《复国建国的方向和实践》里说：</p>
+<p>我们现阶段的任务，乃是要从敌人的手里，争回民族生存的领域，恢复人民基本的自由，固然我们应该“以更多的民主，去革除民主的流弊”（总理语），但是也必不可能以一味讲民主来取胜，更不能为一般利用民主之名行反民主之实的人所胡闹，而驯致迷惘无主。事实很显然，假使我们反攻复国战争不能得到彻底的胜利，那就再也没有任何民主自由之可言了。</p>
+<p>事实上，“以更多的民主，去革除民主的流弊”不是孙中山的话，乃是美国前纽约州长史密斯（AifredEmmmanuelSmith）1933年6月27日演说中的话。原文是“Alltheillsofdemocracycanbecuredbymoredemocracy.”，蒋介石全弄错了。</p>
+<p>萨孟武弄错印度人</p>
+<p>国民党干部训练的“师表”头子萨孟武，在《中国社会问题之社会学的研究》第三章“民族问题”里说：</p>
+<p>有六百万人口的纽约，当初只有数千人的印度人在那里经营其狩猎生活。</p>
+<p>事实上，萨孟武所说的“印度人”其实是“印第安人”。国民党这种学者，竟犯上哥伦布（ChristopherColumbus）时代的人的错误！——“数千人的印度人”要到纽约去“狩猎”，纽约何辜、印度人又何辜啊！</p>
+<p>曾宝荪弄错爱迪生的话</p>
+<p>国民党同路人、国大代表、联合国妇女地位委员会代表曾宝荪，在《中央月刊》发表《漫谈科学精神》里说：</p>
+<p>爱迪生对于全世界都有影响，所以他的百年诞辰纪念，也是全世界的纪念，我们在大陆时候也纪念过。他有一句名言也可以提一提：“治科学灵感只有百分之一，而流汗（工作）是百分之九十九。”</p>
+<p>事实上，爱迪生（ThomasAlvaEdison）这段话，出自对一家报社的访问谈话，最早收入1931年4月的《金书》（GoldenBook）里，原文是“Geniusisonepercentinspirationandninety-ninepercentperspiration.”，原文指的是“天才”（Genius），不是“治科学”。正确的译文是：“天才是百分之一灵感，百分之九十九流汗（苦干）。”</p>
+<p>钱穆弄错安特生国籍</p>
+<p>国民党同路人、“中央研究院院士”、并住进蒋介石拿公款给他盖外双溪别墅的钱穆，在原版《国史大纲》第一编《上古三代之部》里说：</p>
+<p>民国十八年，北平地质调查所，在周口店发现古代猿人之完整头骨，嗣后并络续发现，美人安达生名此曰北京人。</p>
+<p>事实上，按“名从主人”规矩，“安达生”该译“安特生”（J.G.Andersson），他是瑞典人，不是美国人。Andersson名字中有双S的，其实一看就知道是瑞典原装，探险家像KarlJohanAndersson、田径家像ArneAndersson都是。钱穆不会英文，所以一出手就出洋相。</p>
+<p>余英时弄错胡适挽联</p>
+<p>国民党同路人、“中央研究院院士”“君有召”坐摩托车赶去晋见的余英时，在1981年10月10日《联合报》发表《从思想史角度看辛亥革命》里说：</p>
+<p>孙中山先生的观念是来自各方，来自古今中外的，许多人对他思想都有所影响，包括保守派的康有为、梁启超，梁启超对民权的宣传，是使国人接受的最重要人物。梁启超逝世时，胡适之先生写了一副挽联，上联说：文字秀工，神助革命。也就是赞美他文字锋芒，使他所说的观念深入人心，直接推动辛亥革命。</p>
+<p>事实上，胡适挽梁启超的联原文是：“文字收功，神州革命；平生自许，中国新民。”余英时根本没有仔细看书，结果把胡适给弄成“以神道设教”的另一面人物了。</p>
+<p>叶庆炳弄错尹常名字</p>
+<p>国民党台大中文系主任、愈晚愈鸣写肉麻文章拍蒋介石马屁的叶庆炳，在《中国文学史》第二十六讲“宋代话本与诸宫调”里说：</p>
+<p>现在宋代话本，数量甚少，且大都为南宋作品；衡之两宋说话之盛行，极不相称。究其原因，不外二点：一、话本为说话人底本，其写作目的，仅供自身参考；非供大众阅读，如明、清小说然。故往往记录大纲，细节则临场补充。此类底本，并非常人所能阅读，故乏流传价值，亦不易流传。若现存叙述详尽之宋人话本，在当时殆属极少数。其次，宋代说话人职业竞争激烈，故无不视其底本为独传之秘。如《东京梦华录》载：“霍四究说三分，尹常卖五代史。”霍四究于三国故事，尹常卖于五代史话，必有精至独到之处；则其底本宁肯轻易示人？……</p>
+<p>事实上，《东京梦华录》中所提“尹常卖五代史”，“卖”字乃说书之意，并非跟上面“尹常”两字连在一起而成人名“尹常卖”也！叶庆炳中文这样糟，连古字基本解释都不懂，竟还当中文系主任！</p>
+<p>郎裕宪弄错甘地夫人身份</p>
+<p>国民党教授郎裕宪，在《云五社会科学大辞典》第三册《政治学》中“印度联邦共和国（India）政党”条下说：</p>
+<p>国民大会党（简称国大党）：尼嚇鲁为该党领袖，并任印度总理达十七年之久。1964年尼氏逝世后由夏斯屈继任总理，但1966年夏氏亦逝世，由尼嚇鲁之妹甘地（IndiraGandhi）夫人继任总理至今。……</p>
+<p>事实上，甘地夫人是尼赫鲁（JawaharlalNehru）的女儿，不是妹妹。尼赫鲁也不是“尼嚇鲁”，赫斯可矣，又嚇个什么呀！</p>
+<p>杨国枢弄错迪斯累里原意</p>
+<p>国民党教授杨国枢，在1976年3月31日《中央日报》发表《人人都能成龙成凤吗？》里说：</p>
+<p>英国的作家及政治家迪斯累里（BenjaminDisraeli）曾经说过：“人生太短暂，不能显得卑微。”这样所说的“不能显得卑微”，未必是指成大功、立大业，而是说人要活得有尊严。自卑、怯懦、嫉妒、怀恨、偏见、残忍会使人矮化，而只有超越这些不良的特质，透过信心、恒毅、谅解、慈悲及自我的接受，人才远卑微而近尊严，才能过一种自敬敬人的生活。</p>
+<p>事实上，杨国枢所引迪斯累里的话，原文是“Lifeistooshorttobelittle.”，原意是指“人生短得不够扯鸡毛蒜皮”的意思。little在这里是“琐细的”“不重要的”意思，不是“卑微的”意思。杨国枢发挥了半天，其实全弄错了。</p>
+<p>冷欣弄错文天祥的诗</p>
+<p>国民党将军、教授、中央评议委员冷欣，在《从参加抗战到目睹日军受降》中“大武汉保卫战中的庐山血战”里说：</p>
+<p>我又在秀峰寺内，青玉岬三叠泉前面大石旁，流连了十数分钟，默想能在此大石上镌刻两句文文山的正气歌词：“人生自古谁无死？留取丹心照汗青！”原来想要师部一个参谋替我做的，想来想去，未便启口，因为这样固足表示必死决心，倘若生还，难免被人讥为沽名钓誉，军人以木讷为上，遂作罢论。</p>
+<p>事实上，文天祥《正气歌》中并没有这两句诗，而是他《过零丁洋》诗中才有这两句诗。这说明了，这位国民党的“儒将”，其实《正气歌》都搞不清楚。</p>
+<p>何凡弄错了莎士比亚字义</p>
+<p>国民党同路人何凡，在《玻璃垫上》发表《难民世纪》里说：</p>
+<p>我们幸生于这个多姿多彩的“勇敢的新世界”（bravenewworld）。这个20世纪的新世界真了不起，人们敢于在前半世纪的三十年间连打两次大战，但是人们也发现了原子能，它可以为大恶，也可以为大善。同时在各方面都有了长足的进步，人类的平均寿命突然增加了二十年，于是又产生了人满之患。但是万一有一天原子战争突然临头，顷刻间人类又会自相残杀掉一大半。我们将以能躬逢此一伟大的世纪，立足于此一“勇敢的新世界”而自豪；同时又在惧怕它所隐藏的可怕的杀机。</p>
+<p>事实上，bravenewworld中的brave，不是“勇敢的”意思，而是“大好的”“美丽的”意思。bravenewworld原出自莎士比亚（Shakespeare）的《暴风雨》（TheTempest）第五幕第一景，原文是“Howbeauteousmankindis!Obravenewworld/Thathassuchpeoplein't!”（人类有多么美！啊美丽的新世界，有这样的人在里头！）后来赫胥黎（AldousHuxley）把BraveNewWorld作为自己的书名来用，也是指“美丽的新世界”的意思，并不是“勇敢的新世界”也。何凡不懂莎士比亚，望文生义，所以闹出笑话来了。</p>
+<p>1985年12月6日夜12时</p>
+<h2 id="再记国民党和它同路人的知识水平"><a class="header" href="#再记国民党和它同路人的知识水平">再记国民党和它同路人的知识水平</a></h2>
+<p>我在“千秋评论”第五十一期里，发表了一篇《国民党和它同路人的知识水平》，列举蒋介石、萨孟武、曾宝荪、钱穆、余英时、叶庆炳、郎裕宪、杨国枢、冷欣、何凡等十个人在知识上所闹的错误和笑话。现在再列举一些。</p>
+<p>李方晨弄错腓力老婆</p>
+<p>国民党干校教授李方晨，在《九国革命史》第二部《荷兰革命史》里说：</p>
+<p>西班牙的强大，惊动了英国。于是英国公然帮助荷兰联邦对抗西班牙。1582年西班牙王腓力二世遂策动其妻苏格兰女王玛丽及旧教徒暗杀英格兰女王伊丽莎白，事泄不果，而英王把苏格兰女王玛丽处死。腓力二世故而恨英，即决心粉碎他的主要敌人——掠夺西班牙殖民地和船舶的英国。</p>
+<p>事实上，一边说“英王把苏格兰女王玛丽处死”，一边又说“西班牙王腓力二世遂策动其妻苏格兰女王玛丽”云云，是把两个玛丽弄错成一个人了。这种菜教授，竟不知苏格兰女王玛丽（Mary,QueenofScots）并非腓力之妻也！苏格兰女王玛丽一生三嫁，但从没嫁给过西班牙王腓力二世（PhilipIIofSpain），嫁给腓力二世的乃是英国女王玛丽一世（QueenMaryIofEngland），就是外号“血腥玛丽”（BloodyMary）的那位，这两位玛丽，除都是狂热的天主教徒外，殊少相同之处。国民党教授如此乱来，真是“乱点鸳鸯谱”了！</p>
+<p>林语堂弄错梁启超著作</p>
+<p>国民党同路人、蒋介石的谄媚者林语堂，1967年1月9日在《中央日报》发表《论文艺复兴的法子》里说：</p>
+<p>我想到梁任公《清代学术概论》。这小册子……后十余年（1936）把这小册子扩大成《中国近三百年学术史》。</p>
+<p>事实上，只要真的一翻梁启超的《中国近三百年学术史》，便可看到“今年是公历1923年”以及“我三年前曾做过一部清代学术概论”的话，由此可知林语堂致误的由来，乃是根本读书粗心、没有看到梁启超这段自述的缘故。另一方面，梁启超是1929年死的，林语堂竟说1936年还在扩大写书，死人竟还能写书，这更是奇迹了！</p>
+<p>陶百川弄错梁启超的诗</p>
+<p>国民党戕害人权的军法处长出身的伪君子陶百川，在1970年8月7日《大华晚报》写文引所谓石达开的诗，错误处处，经两位读者指出后，他乃在14日刊出“来函”如下：</p>
+<p>贵报7日登载拙文所引石达开诗，顷承阮、罗二先生指出错误数处，兹将原诗订正如下：</p>
+<p>扬鞭慷慨莅中原，不为仇雠不为恩。</p>
+<p>只觉苍天方聩聩，莫凭赤手拯元元。</p>
+<p>三年搅辔悲羸马，万众梯山似病猿。</p>
+<p>我志未酬人亦苦，东南到处有啼痕。</p>
+<p>事实上，所谓石达开的诗，最早见于梁启超的《饮冰室诗话》。诗话中说：“太平翼王石达开，其用兵之才，尽人知之，而不知其娴于文学也。近友人传诵其诗五章，盖曾文正曾招降彼，而彼赋此以答也。”其实这五首诗是梁启超为了排满而伪作的。后来高旭辑刊石达开遗诗二十五首（残山剩水楼刊本），一个晚上又伪作了二十多首，此事发生在民国前六年。最早指出石达开诗为伪作的人是罗尔纲，后来简又文采纳了这一意见，在《大风旬刊》上发表《太平天国文献赝品考》，接着柳亚子来了两篇题跋，指出梁启超与高旭是做假诗的“真凶”。这些定论，已是国学常识，可是无知的陶百川不知道，还乱引呢！</p>
+<p>庄因弄错陶渊明的诗</p>
+<p>国民党同路人、整天不知民生疾苦只会诗酒螃蟹的庄因，在1974年11月1日《中国时报》发表《晨曦》里说：</p>
+<p>在朱老伯背后的那面墙上，悬挂着一幅字，龙飞凤舞的写了陶潜归去来辞中“纵浪大化中，不喜亦不惧”一句。</p>
+<p>事实上，陶渊明《归去来辞》并没有这“一句”。这原是陶渊明《神释》诗中的句子。庄因是台大中文系、中文研究所毕业的，竟会闹出这样没水准的笑话，真不知道他的书是怎么念的。</p>
+<p>1986年12月5日晨</p>
+<h2 id="优先反叛干死他们"><a class="header" href="#优先反叛干死他们">优先反叛，干死他们</a></h2>
+<p>李昂致李敖</p>
+<p>李敖大人：</p>
+<p>香港的妇女朋友寄来一些文章，发现到这篇小文对“您老人家”赞赏有加，很开心的寄给你看看。</p>
+<p>我们大家都很想念你，祝你快乐，顺利，真的，祝福你。</p>
+<p>李昂7月3日</p>
+<p>独欠女性刚阳之笔（小芊）</p>
+<p>最近，小芊也慕李敖之名而拿起他的著作，一瞻他老人家风采。李敖的战斗性文字，果然教小芊读得连声叫好，我读的并不是他的治史心得，也不是他的政治评论，而只是一本揪这个来评扯那个来骂的“论人物”结集。虽然是论人，李敖的气魄、李敖的眼界，已万二分自觉地流露在这人物弹赞之间。姑勿论是否同意李敖对这批知名人士的痛斥与爱怜，他那一泻而下的精练文字，真个是看得人大快人心的。</p>
+<p>可小芊在感到痛快之余，心里又有点“戚戚然”的感觉。为什么那些谈时论政谈得气象万千，品评人物品评得奔放淋漓的文字，尽出于男性笔下？久远的不说，就以这百年为例：五四时候，中国有鲁迅；六十年代，台湾有李敖；当今之势，香港也有个方卡缪。这些作者笔锋所到之处，都教人精神一振，为的是他们骂人骂得到血到肉，论事论得入情入理。</p>
+<p>但我们那些女性作者又如何？自五四至今，以文字优美、笔触细腻而成名的倒有不少，但仍还是秉承阴柔的传统，以感性笔调勾画身边人物、以轻柔句语描写身边琐事居多。即使自命文字泼辣、作品掷地有金属声的专栏女作家亦舒，由于眼界的狭隘，再泼辣也不过仅止于她自己及其视野三十米范围以内的事与人而已。我这样说，并无菲薄女作家之嫌；也并不是要鼓吹所有女性写作者弃柔从刚，一一打硬仗去也。毕竟，阴柔的文字，也可给我们展示人间世的某些面貌，实也有可取之处。我只是有感于男女文字之差异、风格之迥然，其实跟培养或训练我们的“性别与性格论”的荒谬常识及成见有关。</p>
+<p>一个常见的错误假设是：“男子是理性的动物，女子是感性的动物”，于是乎，女性最适合看温情的冰心、看细致的张爱玲；男性最适合看辛辣的鲁迅、看豪情的李敖。</p>
+<p>有此不合理逻辑存在，对女性作者的不合理要求亦随之而起。从方块文章到皇皇巨著，人们都期望女性下笔柔细，感性动人。世人只喜欢女人低徊浅诉、风花雪月；女人要是严肃地讨论问题或诚意地提出问题，注定是不受欢迎的。就以“妇人之见”这小框框为例，曾有相识的男性朋友不下一次的批评我们写得不够感性，写不出“女性的感触”来。究竟什么是“女性的感触”呢？雨、雪、雾、云、花、草、树、木、丈夫、情人、诗韵、花生漫画、云呢拿冰淇淋……这些就是“女性的感触”了吗？那么，我倒以为我们的报章副刊里实在有太多“女性感触”而独欠女性雄浑刚劲的笔锋。（1984年12月2日）</p>
+<p>李敖答李昂</p>
+<p>李家妹妹：</p>
+<p>你寄给我的信和剪报早就收到了，可是一直神忙，直到今天才写这封信。不过信虽没回，倒时常见到你的新闻，也常常在散步时，路过你家。我散步时，为防国特与国特派出的竹联帮等暗算，总是改变路线，出没无常，行踪靡定，有时路过你家，总想到你们一对优秀的姊妹和以前在你家大家聊天吃饭的情景（尤其是席德进为我画像那一次）。可惜我已退出这种聚会和交游，变成了孤僻的隐而不退的“李敖大人”。郑玄注《礼记》，有句曰“辉光于外而形体不见”，正本大人之谓也！</p>
+<p>今晚得便，看了屠申虹的《〈暗夜〉，〈杀夫〉》，觉得申虹毕竟是搞政战出身的，一下笔就提防“毒素意识”、提防“盒子里的毒菌”，把我们李家妹妹的“语文暴力”如是观，真是去文学角度远矣！申虹说你的《杀夫》，是“仿冒”陈定山《春申旧闻》中的一则“掌故轶事”，但莎士比亚全部剧作，无一不是“仿冒”当时的“英伦旧闻”，此又何说乎？虽然如此，申虹的某些看法也不无可供你做“反面教材”的参考。依我看来，你的问题似乎在反叛性不够、反叛面太窄，这个地区的文宣人马能够同你相处甚得，就是证明，如你的反叛性真的够了、反叛面真的宽了，他们一定不容忍你。而文艺工作者做到了不为当道所容，毋宁才是自己的大成功。台湾的文艺工作者的普遍悲剧是跟国民党关系太好或相安无事，这是要不得的，盼你在这方面优先反叛，干死他们，这样才好呀！</p>
+<p>李敖1985年12月25日</p>
+<h2 id="李老哥手复"><a class="header" href="#李老哥手复">李老哥手复</a></h2>
+<p>申虹老弟也如晤：</p>
+<p>元月16日手教拜读。</p>
+<p>你说你一直没写信给我老哥，因为怕看到汝辈之信，会在闭关中“泛起一阵杂念，顿时真气涣散，六脉倒流……而陷于走火入魔的不幸境遇”。其实都不正确。真正破本老哥闭关功的乃是许多老弟向我周转，使本老哥“金脉倒流……而陷打肿脸充胖子或羊肉包子打狗的不幸境遇”。这年头做大丈夫，光“仗义”是不行的，要兼“输财”才行。所以大丈夫还得身兼五路财神，如今连义气如山的关公都被当成财神而供成恩主公，何况义气如海的李老哥乎！</p>
+<p>逗完乐子，言归正传。你说我“曲护回庇”“李家妹子”，说我“呵护过甚，大有重色轻友之嫌”，实不公允。因我一直主张是非挂帅，以不怕得罪人自豪，如我对某人有所保护，一定是先在是非上站得住，我才保护之，除此以外，我绝不牺牲主张保护人。即以我上次写《优先反叛，干死他们》为例，你对李昂的打击面甚广，但我只就“文学角度”一面，对你老弟有所轻怒薄怨而已，我说申虹毕竟是搞政战出身的，一下笔就提防“毒意识”、提防“盒子里的毒菌”，把我们李家妹妹的“语文暴力”如是观，真是去文学角度远矣！申虹说《杀夫》是“仿冒”陈定山《春申旧闻》中的一则“掌故轶事”，但莎士比亚全部剧作，无一不是“仿冒”当时的“英伦旧闻”，此又何说乎？我这番主张，至今未变，即以你老弟这次来信为例，你口口声声说的，其实多在“修辞学”部分，仍不在“文学角度”部分。“李家妹妹”的中文当然没有“李家哥哥”好，但对整个“文学角度”，并非致命大碍。莎士比亚的英文原文，今日读之，可议之处，并非没有，但就“文学角度”观之，不足为大碍也。</p>
+<p>至于你老弟叫我开“一份名单”，说：“凡对老哥情有所钟的小姐，我可以避而不碰。”你可真该打！第一，只要基于事实，任何人都可以被批评，包括任何小姐。我们不可因怕得罪人而不说话。第二，你的“惜玉怜香”“重色轻友”“情有所钟”云云，全是胡扯。下笔不就事论事，扯这些全非事实的题外话，此真政工积习也，务请痛改！第三，请相信人间仍有单纯的正义与友情，我对李昂的支持，恰属此类。</p>
+<p>李老哥手复，1986年1月23日</p>
+<h2 id="燕京大学新闻系毕业"><a class="header" href="#燕京大学新闻系毕业">“燕京大学新闻系毕业”？</a></h2>
+<p>——妇产科医生林永丰</p>
+<p>永丰兄：</p>
+<p>3月25日你给吴心柳信的副本收到了。29日与你和长廷草山之游，也得知了吴心柳在《民生报》主持“民生论坛”对你的种种歧视，我很为你不平。</p>
+<p>吴心柳给你的信，口口声声他们那些执笔人是专家，但是他们那些人，究竟几分是专家、几分是垄断，我看却大有问题。他们基本上都是国民党垄断传播媒体的受益者，正因为报纸被垄断，所以他们遮掩了别人的声音，一个个口沫横飞，成了所谓专家，群众听不到真实的、高明的、反对的声音，自然久而久之，也误以为他们是专家，其实他们的真面目，只要仔细查证一下，我们就会恍然。</p>
+<p>即以吴专家心柳本人而论，此人现任《民生报》总主笔（据1984年2月19日《联合报》），但在《联合报》上写《未名集》，再加上自有之《音乐与音响》，俨然“两报一刊”的亨级人物。他以专家身份，著文说教，大道理层出不穷，但我只注意了一组大道理。1983年10月28日，他在《联合报》发表《谈知名度》，说：</p>
+<p>为了打知名度，不难发现有的人正在“身份扩张”，身兼许多名衔；有的人在“角色蔓延”，任何场合他都爱轧上一脚。这都是迷信打知名度者的设计与行动。特别是较年轻的一辈，他们从来不曾想到其名的大小“一定”得符合一个人的内在承受量才行。不然就会像一个半透明的大气球似的，用根针一戳就完了。</p>
+<p>1985年4月19日，他又发表《自欺》，又说：</p>
+<p>一个人活在今天，因为社会变化太快、压力太大，谁都不免染上一部分或是某种程度的自欺，但居高位、主大策者必须特别警觉。培根写过一篇叫《装假与隐饰》（SimulationandDissimulation）的短文，第一句就说“隐饰不过是一种昏庸的权谋与智能”。时至今日，凡事唯资讯是尚，更得凡事要来真的。不能欺人，更不能自欺，近来令人扑朔迷离的事情实在是太多了，日来又兴起“官否核四之争”，因而想起先贤“毋自欺”这三个字来，不觉益感沉重。</p>
+<p>1985年11月22日，他又发表《夸张的年代》，又说：</p>
+<p>因此，人活在今天，一面天天为排山倒海而来的新鲜资讯所困；一面又要想办法练成一身防止劣信（BadFaith）侵入心房的“金钟罩”功夫，至少要设法从沉思中训练“明辨”的能力。这样，才能清醒、无误的走完一生。如果已经是一位知识分子，并经常制造资讯，不妨牢记两千多年前孟子说过的八个字：</p>
+<p>“声闻过情，君于耻之。”</p>
+<p>既然我们已经活在一个“声闻过情”的年代，只好赖“知耻”以自处、自励了。</p>
+<p>看了这些大道理的人，一定会有一组印象，就是人不能为“打知名度”而“身份扩张”，“不能欺人，更不能自欺，近来令人扑朔迷离的事情实在是太多了”。人应该“防止劣信”，“声闻过情，君子耻之”。</p>
+<p>永丰兄，吴专家的大道理无一不好，但是仔细查证一下吴专家本人的身份，我就立刻大惑不解。</p>
+<p>照台湾中华书局出版的《中华民国当代名人录》，在“张继高先生”条下，全文如后：</p>
+<p>字绪阡，笔名吴心柳，河北静海人，民国十五年生。燕京大学新闻系毕业，英国汤姆森电视学院研究。张氏研习新闻；热爱音乐，故其事业中分两方面：新闻方面，历任中央社、《新生报》记者，《香港时报》、台北《中国时报》副总编辑，中国广播公司节目部副主任、新闻部主任，以及中国电视公司新闻部经理。自毕业后，即投身新闻界凡二十三年。由于其本身爱好音乐，精研音乐史，故在新闻界工作期间，经常以吴心柳之笔名，撰写音乐评论，主持电台之音乐节目。民国四十五年，更与师范大学教授江良规博士共同创办远东音乐社，负责策划，此为国内第一所现代化之音乐经理公司，二十余年来，对推广乐教，及促成国际音乐文化交流，贡献良深。</p>
+<p>民国六十二年3月，张氏辞卸新闻界工作，全心投身于音乐与音响界工作。7月1日，创办《音乐与音响》月刊，以“音响是手段，音乐才是目的”为号召，使台湾快速进入音响时代。六十四年元月，创办台湾第一次的音响大展（GAST-75），七日之中，参观者逾十数万人。六十五年元月，再创办《音响技术》月刊，倡导“自己装”及引发鼓励囯内音响工业之进步及成长。六十七年，又协助政府有关当局，对有关音响、电视方面之“商品标准分类”工作，重新予以整理及分类，使当局对音响工业之奖励、进出口及管理，得有一清晰实用之类分。凡此种种，对国内音响工业及风气之成长，均有其一定作用；间而对音乐之普及，亦有其影响。</p>
+<p>这段名人履历，我看就不合乎吴专家自己的大道理标准。履历中说吴专家历任“中央社”记者，我循“中央通讯社总社”人事室的“职员名册”查证，发现“截至三十七年9月15日止”，我们的“记者”张继高先生，当时的学历也不过是“天津工商大学”——不见经传的“天津工商大学”，而绝非大名鼎鼎中外知名的“燕京大学新闻系毕业”！“职员名册”上明列张继高“二五”岁，“三七、七”到社，月薪“二〇〇”元。吴专家既然早在“三七、七”（1948年7月）到了中央社总社所在地南京任职，自然就不可能在北京燕京大学学新闻了。并且北京在1949年1月31日就落到共产党手里，吴专家纵使回去念燕京大学新闻系，恐也不可能矣！</p>
+<p>这个例子告诉了我们：不“打知名度”的吴专家、不“身份扩张”的吴专家、不“自欺”“欺人”的吴专家、不制造“劣信”的吴专家、不“声闻过情”的吴专家，实在该好好站出来，把书刊报章上对他学历的“扑朔迷离”，做一有力的澄清，在“夸张的年代”里，自己先不“史盲”，这样才叫英雄好汉。否则的话，一切仍是“半透明的大气球”，心情再感“沉重”，也要“君子耻之”的啊！</p>
+<p>花了五十分钟写此信，希望能给你一点觉醒。即祝帮人早生贵子</p>
+<p>敖之1986年4月1日午后</p>
+<p>〔附记〕说张继高是燕京大学毕业的，如果只是中华书局出版的《中华民国当代名人录》一本书这样说，也就视作笔误算了。事实上，许多有关张继高的书都是这样说的。例如1981年11月出版的《21世纪世界彩色百科全书》（蔡辰男发行的）就说他是“燕京大学毕业”；1982年1月国民党《黄河》杂志就说他是“燕京大学新闻系毕业”；1982年6月中国名人传记中心出版的《中华民国现代名人录》就说他是“燕京大学新闻系毕业”……可见众口一声，积非成是，实在不能以笔误视之了。</p>
+<h2 id="吴心柳冒充大学毕业"><a class="header" href="#吴心柳冒充大学毕业">吴心柳冒充大学毕业</a></h2>
+<p>——致妇产科医生林永丰的信</p>
+<p>永丰兄：</p>
+<p>4月1日我写信给你，谈到《民生报》总主笔吴心柳（张继高）、也就是《音乐与音响》杂志的老板吴心柳，三十多年来，一路冒充北平燕京大学新闻系毕业的事。燕大新闻系是国际知名响当当的学系，程度极高，最近自杀的中美大间谍金旡怠就出身于此，冒充这个学校、这个学系毕业，实属非同小可，因此我特予揭发，昭告天下。</p>
+<p>在上封信中，我根据通行的吴心柳履历，从“中央社”的记录追起，我说：</p>
+<p>我循“中央通讯社总社”人事室的“职员名册”查证，发现“截至三十七年9月15日止”，我们的“记者”张继高先生，当时的学历也不过是“天津工商大学”——不见经传的“天津工商大学”，而绝非大名鼎鼎中外知名的“燕京大学新闻系毕业”！“职员名册”上明列张继高“二五”岁，“三七、七”到社，月薪“二〇〇”元。吴专家既然早在“三七、七”（1948年7月）到了中央社总社所在地南京任职，自然就不可能在北京燕京大学学新闻了。并且北京在1949年1月31日就落到共产党手里，吴专家纵使回去念燕京大学新闻系，恐也不可能矣！</p>
+<p>这段话中说吴心柳当时的学历不过是“天津工商大学”——不见经传的“天津工商大学”，根据的是“中央通讯社总社”人事室“职员名册”的登录，只是就登录而登录言之而已，并未别做细说。今早得便，特再细说一下。</p>
+<p>所谓“天津工商大学”，其实也是吴心柳冒充的，因为并没有这种名称的学校，有的只是“天津工商学院”而已。据1948年12月教育部教育年鉴编纂委员会编纂的《第二次中国教育年鉴》，“私立天津工商学院”院址在天津市第十区马场道，院长是刘乃仁。“该院于民国十二年成立预科，十四年成立工、商两科，十九年奉令停办预科，改设高级中学。二十二年8月经教育部批准立案。二十六年秋部令工科分为土木系、建筑系。商科分为会计财政系、国际贸易系，三十二年添设文学院，内分国文系及西语系。三十四年秋又添设家政系及史地系。三十五年秋更在工科添设机械系，在商科添设工商管理系，现有三院十系。”这学校的规模很小，三十六学年度第一学期教员九十一人，职员二十人，学生不过七百六十一人。图书设备也很差，外文书只33631册，中文书只21369册，合计55000册。还没我李敖一个人书多呢！</p>
+<p>天津的大学只有两个，一个是张伯苓的南开大学、一个是张含英的北洋大学，都是国立的。所以所谓“天津工商大学”，根本是子虚乌有的鬼学府！吴心柳为了虚张声势，竟在进中央社时，把天津一家小私立学院，蒙混升级为大学，这种行为岂不太可笑了吗？</p>
+<p>敖之1986年7月11日</p>
+<h2 id="童子功加老子功"><a class="header" href="#童子功加老子功">童子功加老子功</a></h2>
+<p>施珂大哥：</p>
+<p>这次承大哥来台之便，代为校正《“军中乐园”的血与泪》，重温二十七年前的军中往事，真是恍然如昨。</p>
+<p>上月30日晚上，王杏庆偕同香港的黎则奋（即方卡缪）、张小姐来访问我。则奋问我一生中在志愿方面今昔有什么不同没有，我说：“我早在小学初中期间，就决定了我一生中想要做的一种人，今昔并无不同。我的志愿在用文字救世、鼓动风潮、关切苍生，我最看不起知识分子逃避现实。”正因为我这一志愿下得很早，所以，我的许多文章都是早就蓄意要写了的，准备过程，有的也日积月累得盖有年矣，人们看李敖文章，惊叹于文章的体大思精、资料渊博，却不知道这是我多年练就的童子功加老子功，绝非幸致，更绝非今天加入什么党外编联会就以为会写文章的数典忘祖之徒所可企及（今天这些党外杂碎，头一天还做骗子、做瘪三、借钱不还、退票无信呢，第二天就打着党外旗号，摇身一变坐直升机蹿入党外矣！党外被这些品格极坏的小子们掺入，洁身之士当然是羞与为伍的！）。</p>
+<p>上月31日起写《“军中乐园”的血与泪》，就是我早就蓄意要写的文章之一。我在1959年和大哥一起做预备军官起，就从事这一专题的打底，如今过了二十七年，方才完成。光此一例，可见李敖邃密深沉之一斑——李敖志在挖国民党老根，立志之坚、用心之远、发愿之早、落笔之勤，真是前无古人后无来者矣！</p>
+<p>……（编者略）</p>
+<p>国民党有史以来从没领教过像李敖这样高段的敌人，他们做梦也想不到有这么一个难缠好斗的文海游魂，目无刀枪斧钺，不顾一切，抓住他们穷追猛打，想来实堪自笑。明末清初的不合作主义者杜子皇（杜浚，湖北黄冈人），在《变雅堂文集卷》二《初刻文集自序》中说：“刻才及数篇，杜子手之而笑。客或问：‘翁何笑？’杜子曰：‘昔范詹事自赞其后汉书为天下奇作，吾尝笑之。今吾意中之言，仿佛詹事，吾恐后之人又将笑吾也，是以先自笑也！’”“天下奇作”写出，“先自笑”是不够的，请大哥一起来笑，才别有奇趣啊！</p>
+<p>敖之1986年4月8日</p>
+<h2 id="你做成我的梦"><a class="header" href="#你做成我的梦">“你做成我的梦”</a></h2>
+<p>——给王荣文的信</p>
+<p>荣文：</p>
+<p>《李敖全集》平装本前三册赠书都收到。《李敖著作年表》中1951年下漏掉“高中一年级”、1952年应为高中“二”年级、1953年应为高中“三”年级，都是我的笔误，嗣后请代为更正付印，至感。</p>
+<p>《李敖全集》能有远流版问世，使我想起当年热门歌曲排行榜上的一首歌——《你做成我的梦》（YouMakeMyDreams），虽然这梦对你说来，也许不无噩梦的成分，但噩梦也有它的好处，至少梦醒时分，你会感到如释重负。</p>
+<p>我在《远流版〈李敖全集〉序》中提到叶圣康当年“有这样大的眼光和魄力，出版这样大部头的永恒性的书，我至今感念他”。我写这些话，圣康在美，可能现在还没看到，我却在上月生日，收到他寄来的贺卡。贺卡正面是一条圣伯纳狗和酒桶画面，卡内有圣康亲笔如下：</p>
+<p>敖之：</p>
+<p>这个世界缺少的仍是雪中送炭的人。这只SaintBernard狗Attached是一桶BRANDY酒，在冰天雪地的山区，它协助寻找受难的旅人，让他们能及时得到一点温暖，并引领他们走出被冰封的山区。在这个世界，狗与酒都是人类的至友。</p>
+<p>你在这个世界偶尔也扮演狗的角色，不论是外国记者笔下的疯狗也好，寒天雪地引路送酒的St.Bernard也好，你都做得令我激赏与佩服。值你五十晋一大寿，寄上小卡一张，聊表祝贺。</p>
+<p>圣康</p>
+<p>1986于弗州</p>
+<p>圣康这些旧情缭绕之词，你看了作何感想？如今圣康已如释重负了，但重温旧梦，却别有余情，可见大家为了千秋之业的一番共同努力，不论付了多大代价，在事后回味起来，却犹有噩梦堪寻之乐也！勉之荣文、勉之荣文，圣康前事，可师也；圣康前车，亦可鉴也。</p>
+<p>这次生日前夜，为支持郑南榕发起的抗议国民党戒严三十八年“五一九运动”，捐了十万元给他。我给的是郁慕明付的一张支票，我还开玩笑说：“就算国民党郁慕明老弟捐的吧！”这张支票是郁慕明说我吃了叶圣康而被我告诽谤后“和解”的产品之一，郁慕明后来“不打不相识”，跟我交上了朋友。他最后真的了解了李敖没吃叶圣康，全是他们《秋海棠》杂志自己搞错了。如今他若看到圣康这张贺卡的题字，他更会明白李敖是多么像“雪中送炭”的圣伯纳狗了。——李敖若吃了叶圣康，叶圣康还会远从美国写这种话吗？</p>
+<p>总之，人生百年，缘归一梦，猿鹤虫沙，例皆尘土，但在百年孤寂之后、尘土长封之时，总希望有些永存的功业与交情留为雪泥爪印。这些雪泥爪印，我不知道我能留下多少，但即使不多，我想也有你老弟的一份。真要谢谢你！</p>
+<h2 id="探探和事佬的底"><a class="header" href="#探探和事佬的底">探探和事佬的底</a></h2>
+<p>19世纪山阴南菁书院的山长——大儒黄以周，在屋里墙上写了八个大字：“实事求是，莫作调人。”调人就是和事佬。人间的纠纷事，并非不可和，但要和得有立场、有原则、有主张，并不是和稀泥，和稀泥就不是“实事求是”。做“调人”的，如果不能在“实事求是”标准下达成调和的使命，这种“调人”是要不得的。不幸的是，大凡做“调人”的，做来做去，很少不对“实事求是”的真理造成伤害，结果总是以和事之“老”收场，人一成为“老”，其身份可知矣！</p>
+<p>19世纪的和事佬不能“实事求是”，如果为人中正持平、立身不令人起疑，纵使不足以语真理，倒还讨人喜欢。但是，在国民党的败坏世风下，今天20世纪的和事佬，甚至连19世纪的遗风犹不可得。今天20世纪的和事佬，连为人中正持平、立身不令人起疑都不及格，原来他们根本不是什么双方的“调人”，探探他们的底，就赫然发现：他们根本是跟一方里应外合的，以这样的可疑身份，竟出而做和事佬，其最后目标可知矣！</p>
+<p>今天国民党搞沟通阳谋，它所派出来的和事佬，恰恰如此！5月8日的报上，登出蒋经国在国民党中常会指示中央政策委员会，“应本着诚心诚意的态度，与社会各方面人士进行意见沟通，以促进政治和谐与民众福祉”。配合得可真好！当天报上，就登出陶百川、杨国枢、胡佛、李鸿禧，一“国策顾问”三“学者”具名邀请的饭局！邀请国民党钦定的党外花瓶们共餐，以进行沟通。和事佬本以为这种赐宴式的沟通，自可一沟即通、不辱君命的。不料党外花瓶们在广大党外正义之声的压力下，总觉卖身为难，因而不无扭捏，结果害得和事佬不能从速向主子报命，导致陶百川愤而退席、胡佛托词去美的妙事，我旁观者清，一直好笑。我笑的是双方沟通，当事人双方还在沟里比划，和事佬居然先没耐心了，这种和事佬，心里有鬼，不是昭然若揭了吗？这可真是笑剧！</p>
+<p>探探陶百川的底</p>
+<p>我想，对和事佬身份做点背景调查，更有助于我们对这出笑剧的了解，我就先从陶百川、胡佛说起吧。</p>
+<p>“中华书局”出版的《中华民国当代名人录》中，有“陶百川先生”一条，说陶百川“早年曾任上海特别市临时参议会参议员、国民参政会参政员及制宪国民大会代表，行宪后当选为监察院监察委员，民国六十六年自动引退，被聘为总统府国策顾问”。这种履历，是瞒天过海的。事实上，陶百川当年在上海，真正显赫的身份是国民党上海市党部的大龙头、是杀人不眨眼的军法处长！</p>
+<p>1931年九一八事变发生，导因于蒋介石与日本有秘密卖国协议，并下令不抵抗，但是国民党要卖国、要做懦种，全国血性青年是不答应的。九一八事变后第三天（20日），国立中央大学学生就示威游行，并且——像五四运动打卖国贼一样的——打了国民党外交部长王正廷。各地民情愤激，都说国民党不抗日。到了国庆日那天，广州学生举行抗日提灯大会，为反对日货，与国民党瞀察发生冲突，国民党警察厅长杜煊泰下令开枪，打死同胞二十多人、打伤八十多人、紧急拘提一百多人。11月28日，全国各地学生、工会、社团等，纷纷向国民党政府请愿抗日。12月4日，国民党政府明令禁止各地学生到南京请愿；11日，成立特种教育委员会，在国民党中央党部举行第一次会议，决定各地学生请愿，由该会负责办理；15日，北方学生南下请愿团竟冲入国民党中央党部，直到国民党派出军警，才算平定；18日，国民党政府明令制止学生请愿，坚持不抗日，也不准学生请愿抗日。</p>
+<p>其实这些情形，只是电影上的远景和近景，还有大特写呢！当时北方学生南下请愿团的北京大学代表，到上海后，国民党竟用绑票手段对付他们，主持绑票作业的，不是别人，就是后来做了军法处长的今天“国之大老”陶百川！支持他的不是别人，就是那时上海市长今天“国之大大老”张群！</p>
+<p>后来陶百川做军法处长，不但公然下令枪杀人，并且在特务横行，大批爱国青年被秘密逮捕、活生生装入麻布袋、拋进黄浦江之际，他也不无责任。前几年苏秋镇在“立法院”为陶百川说了点话，事后老委员偷着告诉苏秋镇：“苏委员，你别为陶百川说话了吧！当年那些被装在麻布袋、抛到黄浦江的戕害人权行为，是谁干的啊？”</p>
+<p>这位两手有血的陶百川，曾几何时，居然在台湾海峡偷偷洗了血手，到了台湾，摇身一变，变成所谓“人权御史”、变成所谓“学者”“清流”了，这真是欺尽台湾苍生！如今他受蒋经国的两次秘密召见后，承命搞沟通阳谋，这种和事老，能为人中正持平、立身不令人起疑吗？真是天晓得！</p>
+<p>探探胡佛的底</p>
+<p>像陶百川这样人品的人，胡佛在1982年5月24日《自立晚报》上写《陶百川先生的公道》，竟誉之以“高风亮节”。由此可见，胡佛的人品标准，自然也就“武大郎玩夜猫子——什么人玩什么鸟”矣！关于胡佛的身世，“中华书局”《中华民国当代名人录》有“胡佛先生”一条，有文如下：</p>
+<p>自民国五十年始，胡氏任教国立台湾大学政治系，先后为讲师、副教授、教授，其间曾一度兼任中央研究院行政职务及行政院国家科学委员会研究员。……胡氏有感近世中国政治之动荡，多由于民主文化与制度之未能确立，乃力倡民主宪政，曾就理论与时弊发为文字，因操心甚危，且具远虑，而为当世所重。胡氏虽择善固执，唯秉性平和诚挚，处世尤恬淡自守。</p>
+<p>这种履历，又是瞒天过海的。所谓“其间一度兼任中央研究院行政职务，……处世尤恬淡自守”等说词，对照起我所掌握的资料，却大异其趣。事实上，胡佛1962年11月到“中央研究院”时，身份是台湾大学讲师。他来做情治系统有关的人事室主任，因为没有空缺，就先移花接木，借用了“中央研究院”近代史研究所助理研究员的空缺，这是与制度不合的。事为台湾大学得悉，便去函“中央研究院”，要求说明胡佛究竟是以何种身份做人事室主任，如身份为专任职，则台大方面，于法就不能续聘他为讲师。1962年底，“中央研究院”去函台大，竟说胡佛不是专任，只是该院的兼任助理研究员云云，于是台大眼开眼闭，不再追问。到了1964年下半年，铨叙部正式发给胡佛为“中央研究院”人事室主任任用状，目的已达，原借自近代史研究所的助理研究员的空缺，方予归还。不料师管区召集预备军官时，因为依法专任学术研究工作者可由服务学术机构出具证明，申请缓召（包括服役、教育召集等等），胡佛竟又摇身一变，又转成了研究人员，而名列该院每年报师管区的缓召名册中。事实上，他的身份只是情治系统有关的人事室主任，已非研究人员。以上种种公文，都是胡佛自办、并由“中央研究院”总干事袁贻瑾画行的。到了1957年五六月间，“中央级”公教住宅分配办法公布了，“中央研究院”又出了怪公文，致函“行政院”公教住宅委员会，说胡佛为该院人事室简任主任，要求配房子。但按规定，配房子须是专任职在该机关请领实物配给者始合条件。而胡佛只是台大专任讲师（后升副教授），薪水、实物配给是在台大领的，又何能这样行文乎？按当时胡佛的收入，来路极多，薪水、实物配给是在台大领的；兼任交通费六百元、专任主任级下女费五百元、主任房租津贴及水电费三百八十元是在“中央研究院”领的。奇怪的是，胡佛在“中央研究院”上下班既有专车接送，为何还要拿兼任人员的交通费？既领了兼任人员的收入，为何还要拿专任人员的下女费及房租津贴？“中华书局”《中华民国当代名人录》说胡佛为人，“尤恬淡自守”，胡佛在台大时，办《台大思潮》，发起“再展开新文化运动”（1953年12月15日《台大思潮》第一卷第二期），公然标榜“反拜金”。以上我所公布的真相，其去“恬淡自守”“反拜金”，恐怕有段距离吧？如今胡佛这种和事老，能为人中正持平、立身不令人起疑吗？也真是天晓得！</p>
+<p>话说回来，陶百川、胡佛这种跟国民党的大小内幕关系，并不只是他们少数几位，其实这是很普遍的。以职业学生出身的现任台大校长孙震为例，孙震1973年起进经合会经建会，做副主任委员，十多年间，他在台大经济系，每周只讲授两小时的课，连兼任教授都成问题，却一直挂名专任，领专任的薪水、配专任的宿舍。尽管教育部明文规定专任教授课不得少于八小时，但孙震却凭特权，照取台大教授资格不误，且还摇身一变，成为台大校长呢！</p>
+<p>今天的陶百川也好、胡佛也罢，他们都是摇身一变后的“学术与政治之间”人物，表面上，他们貌似清高、俨若“调人”，骨子里，却无一不是国民党的核心人物或准核心人物。他们是国民党官僚资本下的受益人、是国民党民主丑剧下的拥护者与分肥者，他们为人既不足以语中正持平，立身的种种背景，也极令人起疑，这种人出面搞沟通，党外花瓶还尊敬他们、相信他们，这种党外，实去傻瓜不远矣！</p>
+<p>以上所探和事佬的底，只以陶百川、胡佛为已足，其他国民党大特务之婿杨国枢，以及喜欢吹牛的非日本博士李鸿禧，更不足论，也就不再多写了。</p>
+<p>1986年6月10日以三小时一气写成</p>
+<h2 id="介绍托斯基大作"><a class="header" href="#介绍托斯基大作">介绍托斯基大作</a></h2>
+<p>——《醉翁亭记》仿作也</p>
+<p>好像人的名字一斯基，就怪怪的也。托洛斯基，共党之叛者也；维辛斯基，俄酋之悍者也；波兰斯基，导演之诱奸女生者也。最妙的，此公诱奸的女生名娜塔莎金斯基。——彼以斯基来也，我以斯基往也，人人斯基如此，真难怪司机公会老是出问题也！</p>
+<p>托斯基虽托名斯基也，但既名斯基，自以诸斯基表哥论也，而不以托懿芳堂弟论也。其为文也，怪怪的起来，也就不足为怪也！</p>
+<p>托斯基为文也，构思之精、比喻之灵、布局之鬼、对答之怪，在白话文中，足可五十年来五百年内继李敖而考第四名也。孔老夫子说：“谏有五，吾从其讽。”孔老夫子都赞成以讽刺文笔，表达自己意见也。不过比起托斯基来，他老夫子只能考第五也，前四名者，李敖、李敖、李敖、托斯基也！</p>
+<p>也许托斯基不服气也，说前三名都是李敖、李敖、李敖，心有未甘也。但是，这又有什么法子呢？初唐四杰，名字一排，就是王、杨、卢、骆也，杨兄不服，大叫：“吾愧居卢前，耻居王后！”但你大叫归大叫，没人理你也！</p>
+<p>不过，为了安抚托斯基，我李敖愿稍做让步也。从今天起，我改名李敖斯基、李敖斯基、李敖斯基——吾有三斯基，尔只有一斯基，再不服气，是无天理也！</p>
+<p>1986年7月26日以十分钟写毕</p>
+<p>（“托斯基”，就是“苦苓”，当年文网太密，他不敢用“苦苓”写这种文章，所以化名“托斯基”。现在戒严已解，“托斯基”可以见天日了。1990年6月1日李敖附记。）</p>
+<h2 id="顺风与逆风"><a class="header" href="#顺风与逆风">顺风与逆风</a></h2>
+<p>——复陈淑华</p>
+<p>淑华：</p>
+<p>谢谢你们送我的花。英国唯美派的王尔德（OscarWilde）路过花店，要求店员把橱窗里的几朵花拿开，理由是那几朵花看起来太累了。看到你们送我的花，我恍然大悟原来你们在做慈善事业！</p>
+<p>谢谢你的信。你信中说“畅谈”以后，“编辑部的伙伴大家都很开心”，其实我也很开心。你们的开心，真的原因恐怕属于没买门票就跳进动物园那种；而我的开心，则是从动物园里逃出来回眸一笑那种，陶渊明写“久在樊笼里，复得返自然”，那种开心，你们在台湾顺风里长大的小朋友不知也！</p>
+<p>至于我，恰像那罗马哲人塞内加（Seneca）所说的，对不知道航向哪个港口的人，哪一种风，都不是顺风。塞内加自己，以天纵之姿、稀世之才，横死于乱世，可见浮海之人，即便到处是逆风，也不该进港。</p>
+<p>这次你们五位小女生一位小男生来做访问，我感到我更近距离的看到了办“软”性杂志者的自在，使办“硬”性杂志的我们，真是“自叹弗如”。你们可以公开印三万本，堂皇上市；我们偷偷摸摸印三千本，还得躲躲藏藏，还每期都不能免于被査禁、被覆灭。这是非常明显的不允许公平竞争的怪现象。当年美国大法官霍姆斯（OliverWendellHolmes,Jr.）评《修曼法案》，他说：“修曼法案是不公平的，因为它不让强者在比赛中获胜。”（TheShermanActisn'tfair.Itwon'tletthestrongmanwintherace.）我在台湾的处境与感觉，恰是如此。</p>
+<p>我给你的所有手写的和影印的，都将在“千秋评论”发表，其中一部或全部，如果你们觉得可在《黛》上亮相，我不反对。</p>
+<p>祝进步，其他五位小朋友都好</p>
+<p>李敖1986年9月7日</p>
+<h2 id="我最佩服以色列人"><a class="header" href="#我最佩服以色列人">我最佩服以色列人</a></h2>
+<p>维桢：</p>
+<p>你13日深夜的信收到，知你立赴香港，所以未即回信。今天下午在大安分局为吴某涉嫌恐吓及预备杀人事，浪费了五十分钟。因为我报案的依据，是你上月14日的信，警方为手续周全，托我转告，想麻烦你做一次笔录（所录范围当然与你上月14日信中内容别无二致，只是转入文书形式耳）。他们盼你能在24日或29日办公时间内，带身份证与图章，到大安分局刑事第三组找尤先生。此事麻烦到你头上，至感抱歉。不过有三点“收获”，试为你陈之：</p>
+<p>第一，你可以见识一下警察局的作业方式和他们的生活方式，不失为人生的一种历练（今天下午我就顺便以这种心情“参观”的。所以花掉五十分钟，尚觉不无收获，虽然对写作而言，未免浪费也）。</p>
+<p>第二，你可以做一次公正诚实的证人，也不失为人生的一种历练。你上月14日信上说：“处理‘吴事’如可用得着我时，请随时吩咐。”既然警方想请你走一趟，我想你把信中所写内容，再亲自陈述一遍，自属必要。</p>
+<p>第三，你可以对社会有一次光明磊落的交代，也不失为人生的一种历练。吴某是你捧起来的……竟又涉嫌恐吓与预备杀人被传（他没有到），这种作风与纪录，未免太逸出我们这些党外前辈的理解与规格之外。我有点觉得，你和荣文多少要负点捧人的责任，而对社会有所交代。</p>
+<p>你上月14日信上说你知道我“不对任何人示弱”，你真是观察入微的深知我者。记得五年前我遭冤狱前夜，国民党报纸连番臭我，有人打匿名电话来，对话如下：</p>
+<p>匿名者：李敖，我要杀你全家。</p>
+<p>李敖：我家只有我一个人，怎么办？</p>
+<p>匿名者：那我就杀你一个人。</p>
+<p>李敖：好吧，你去排队吧！</p>
+<p>如今五年后居然还有排队上来对杀李敖感到兴趣者，岂非妙事哉！……</p>
+<p>我最佩服以色列人。以色列人生于忧患，深信一种强者的哲学，对任何骚扰一律大力报复，你丢他一颗手榴弹，他扔你一百颗炸弹，真是要得。以色列不但有立即的报复手段，还有长程的报复手段，当年在集中营陷害他们的纳粹，在多年以后，一个个都被以色列人抓到。——以色列人绝不忘记。因为忘记报复就是亵渎正义！</p>
+<p>今天是我在警总军法处出狱十周年纪念日，晚上写信给你，重诉生平，大谈强理，快何如之！</p>
+<p>敖之1986年11月19日夜</p>
+<h2 id="腰斩两次与再加两枪"><a class="header" href="#腰斩两次与再加两枪">腰斩两次与再加两枪</a></h2>
+<p>无知的国民党政工出身的万年“立委”费希平，1982年10月16日，在《政治家》第三十九期上，发表《亟待澄清的观念差距》说：</p>
+<p>……康有为、梁启超等上书，主张变法维新，为光绪皇帝所采纳。维新之政刚刚开始，慈禧自颐和园回銮听政，囚光绪于瀛台，腰斩六君子，康梁逃亡海外，百日维新之政，犹如昙花一现。</p>
+<p>文章发表后第二年，1983年6月16日，费希平又在《民主人》第十期上，发表《政治家与国运》说：</p>
+<p>……康有为、梁启超公车上书，主张变法维新，以谋救国之道，为光绪皇帝所采纳。变法开始，权臣告密，慈禧回銮，罢黜新政，腰斩六君子，幽德宗于瀛台，康梁逃亡海外，百日维新之政，犹如罢花一现。</p>
+<p>费希平两次谈到“腰斩六君子”，是一种很荒谬的笑话，因为“腰斩”是中国秦汉以至中古时期的刑名，到了清朝早已不来这玩意儿，但在无知的国民党政工出身的万年“立委”费希平大脑里，却还如此万年犹存呢，真是丢死人。——戊戌六君子何辜，砍头一次不够，还要腰斩两次也！</p>
+<p>写到这里，顺便想起1984年刘家昌导演《洪队长》的事。这年12月30日《民众日报》登载：</p>
+<p>《洪队长》描述扫黑中因公殉职的洪旭队长一生，由于匆促开拍成了讥论最多的一部戏……《洪队长》标榜真人实事，实地拍摄，片中洪队长擒匪高潮戏全在发生现场拍过，其家庭状况亦做真实描写，唯有为表洪队长勇猛，将洪队长身中一弹改成了身中三弹。</p>
+<p>跟费希平腰斩两次杰作比较下，刘家昌毕竟脱出中古时期多多矣！只是洪队长何辜，枪毙一次不够，还要补上两枪也！</p>
+<p>1987年2月12日</p>
+<h2 id="打碎玉壶也是冰"><a class="header" href="#打碎玉壶也是冰">打碎玉壶也是冰</a></h2>
+<p>维桢：</p>
+<p>你从香港带来的四本书，都收到了，既名贵，又耐看，真谢谢你的破费和好意。</p>
+<p>这个月光在中旬下旬，我就有六起官司，其中五起我是原告，可见官非之盛。去年12月24日《台湾日报》登《杂志诽谤官司遽增，显示法治观念普及》，说“台北地方法院在过去几个月内受理自诉杂志诽谤案严重急速增加”，举出六起：</p>
+<p>一、纪政、杨传广分别自诉《开放》杂志诽谤案。</p>
+<p>二、洪文栋、杨丽花自诉《雷声》《翡翠》两周刊诽谤案。</p>
+<p>三、李敖自诉林正杰等《前进》周刊诽谤案。</p>
+<p>四、李敖自诉康宁祥等《八十年代》《薪火》两杂志诽谤案。</p>
+<p>五、李敖自诉朱高正等《自由台湾》周刊诽谤案。</p>
+<p>六、王羽自诉黄珊等《美华报导》诽谤案。</p>
+<p>所举六起官司中，光李敖就占了一半！</p>
+<p>事实还不止一半呢！我还有几个官司要打。正因为我在舆论上、工具上、传播媒体上，和“假党外的公道与是非标准”上，遭到太不公平的对待，所以我决心打一阵官司来出这口气。我当然不是说诉诸司法就一定换得回公道，但即使换不回，也可留下司法有问题的历史记录。所以从正反两方面来看，官司都值得一打。何况在“不能办报”“不能办杂志”“不是台湾人”等等不利于我的条件下，“去打官司”似乎已是唯一形式上残存的“武器”，犹堪一战也。</p>
+<p>我老是觉得，在这岛上，自己的优点总是不能展开，明明是神枪手，可是跟人作战却只准用弹弓、用弓箭，你必须接受用弹弓、用弓箭的规则和“武器”，然后去跟私下用枪的敌人开打，想来真有滑稽之感。但你如拒用弹弓、弓箭，你就空手挨黑枪，这也太便宜了敌人也！</p>
+<p>写到这里，成诗一首：</p>
+<p>海到无边自己岸，</p>
+<p>山到无峰自己峰。</p>
+<p>海山合一又合我，</p>
+<p>我合正义与人争。</p>
+<p>争起正义无大小，</p>
+<p>绝不忍气又吞声。</p>
+<p>漫写快意恩仇录，</p>
+<p>打碎玉壶也是冰。</p>
+<p>敖之1987年2月13日午</p>
+<h2 id="拳王的索寞"><a class="header" href="#拳王的索寞">拳王的索寞</a></h2>
+<p>绰号“褐色轰炸机”（BrownBomber）的重量级拳王乔路易斯（JoeLouis），从1937年到1949年，独霸拳坛十二年。他在三十多年前，到台湾做过一次表演赛，美中不足的是：在众目睽睽之下，竟然没有可堪一击的对手能配他一战，他在台上，表情只是一片索寞。一个不量力的美国军官颇有拳名，上台跟乔路易斯比划，可是拳未伸出，人已被撂倒，乔路易斯表情继续索寞——他索寞，因为在这个岛上，没有真正可堪一击的“敌人”。</p>
+<p>乔路易斯来台湾时，我正念中学，看到报上对他的描写，我茫然一直难忘；可是十多年后，当我在文坛上独霸之余，我想到乔路易斯，却又恍然若有所悟。</p>
+<p>乔路易斯在美国，有一次与朋友们外出，途遇有眼不识泰山的小子们寻衅，小子们打过来，朋友们打过去，但是大家交手，乔路易斯本人只是闪躲而已。朋友们大叫老乔你怎么不打，乔路易斯说：“我这一拳多值钱啊！怎么可以用来打这些小子们。”乔路易斯说这话的时候，也可想到他的索寞——上台的“敌人”固然不堪一击；台下的小子们，他也不屑一揍啊！</p>
+<p>乔路易斯到这岛上，刚下飞机的时候，记者们问他对台湾观感，他说了一句“Sofarsogood”。这句英文原意是“到目前为止还不错”的意思，可是无知的国民党《中央日报》记者和编辑，却把它翻成“它如此遥远，又如此美妙”，变成了空前大笑话。不过，将错就错言之，乔路易斯的索寞神情，在某些场合，倒真给了我“它如此遥远，又如此美妙”的感觉，这句错话倒真不错呢！</p>
+<p>1987年3月31日午</p>
+<h2 id="想起施洗者约翰"><a class="header" href="#想起施洗者约翰">想起施洗者约翰</a></h2>
+<p>想起施洗者约翰（JohntheBaptist）。</p>
+<p>施洗者约翰是预告耶稣来临的先驱者。《马可福音》记施洗者约翰传道说：“有一位在我以后来的、能力比我更大，我就是弯腰给他解鞋带，也是不配的。我是用水给你们施洗，他却要用圣灵给你们施洗。”《马太福音》说：“耶稣从加利利来到约旦河，见了约翰，要受他的洗。约翰想要拦住他，说，我当受你的洗，你反倒上我这里来么？耶稣回答说，你暂且许我，因为我们理当这样尽诸般的义。于是约翰许了他。耶稣受了洗，随即从水里上来，天忽然为他开了。他就看见神的灵。”这些记录，都把施洗者约翰当成了配角。</p>
+<p>除了施洗的事外，我很怀疑上面这些说的话。我认为这些话，是耶稣系（包括耶稣自己）自抬身价的宣传。事实上，施洗者约翰是耶稣以前最伟大的先知，他一直是主角，但他不幸被捕，他的徒众也鸟兽散，所以耶稣系蹿起来了。</p>
+<p>施洗者约翰被关在当时“警备总司令部”的时候，耶稣在传道中，绝口不提这位为他受洗、因义受难的先知，但却提到更遥远的古先知们，这种态度，尤其可以看出耶稣的心态。一直到了施洗者约翰派人传出话来，耶稣口中才提到这位为他施洗的人，但却予以小化，说施洗者约翰是“预备道路”的神使，为谁“预备道路”呢？当然是为我耶稣了。</p>
+<p>施洗者约翰最后身首异处，他生不逢时，做了陈胜、吴广式的前卫牺牲者，他这一系徒众也全部完了。相对起来，耶稣是比较幸运的。因为他比施洗者约翰有更多的、更佳的机会，虽然他自己仍未免于身钉十字架、他的部分徒众也未能免于“我以我血荐耶稣”，但他这一系，显然在历史上是成功者，是施洗者约翰受难蒙难的得利者。</p>
+<p>耶稣的渺小在于他为了派系的利益，不敢肯定施洗者约翰的伟大；耶稣的伟大在于他自己并不闪躲，最后还是为“革命”牺牲了。比起世间那些总是忘恩负义、坐享其成的传道者，他毕竟是“人之子”而非“台湾人之子”。所以，耶稣仍能伟大到现在。</p>
+<p>1987年6月17日</p>
+<h2 id="以得礼始以失礼终"><a class="header" href="#以得礼始以失礼终">以得礼始，以失礼终</a></h2>
+<p>棣华：</p>
+<p>去年3月收到你寄来的包裹，就好像收到了一个小型的联合国，各国名牌尽在于是，享受之余，很想写一封信感谢你——当然不是客套的感谢，因为你送我名贵礼品一大包，目的在“钦佩之余，愿你有幸被多关几次”，你送的，是战斗补给品，而非俗礼，俗礼才适用客套的感谢也。</p>
+<p>可是这种非客套的感谢信并不好写，竟被我给拖下来了，并且一拖一年四个多月，足见以得礼始，以失礼终，想来不无你怨我艾之可能，虽然我知道你一片好意，绝不会怨；但是我却每一想到，就有一股不安之情，可见坦荡受礼的训练，犹嫌不足也。古话说“待人接物”，其真意实在该解作“等待人送礼物而接受之”（我最喜把古话做新解，当然是歪解），因为世上像你这种好心人太少，致我收礼太少、致我“待人接物”经验太少，为了帮我充实这种经验，世上好心人尚有待加勉也。</p>
+<p>为了弥补我一年四个多月的失礼之情，这次到高雄办事，其中一件，就是亲自带来这封信。</p>
+<p>最后，送段《后汉书-范冉传》给你：</p>
+<p>冉好违时绝俗，为激诡之行。常慕梁伯鸾、闵仲叔之为人。与汉中李固、河内王奂亲善，而鄙贾伟节、郭林宗焉。奂后为考城令，境接外黄，屡遣书请冉，冉不至。及奂迁汉阳太守，将行，冉乃与弟协步赍麦酒，于道侧设坛以待之。冉见奂车徒骆驿，遂不自闻，唯与弟共辩论于路。奂识其声，即下车与相揖对。奂曰：“行路仓卒，非陈（契）阔之所，可共到前亭宿息，以叙分隔。”冉曰：“子前在考城，思欲相从，以贱质自绝豪友耳。今子远适千里，会面无期，故轻行相候，以展诀别。如其相追，将有慕贵之讥矣。”便起告违，拂衣而去。奂瞻望弗及，冉长逝不顾。</p>
+<p>“狷急不能从俗”的范冉，是这样自绝于“豪友”的。最后如此洒脱送行、洒脱来去，这种高风，中国人罕有也。</p>
+<p>李敖1987年7月24日</p>
+<p>〔附告〕我可不像谢东闵那样笨，我从不亲拆包裹，所有包襄都由我的一个IQ零蛋的“敌人”代拆，任何炸弹都炸不到我。当然你不会寄炸弹，所以附告者，戏言耳！</p>
+<h2 id="文人之雄"><a class="header" href="#文人之雄">文人之雄</a></h2>
+<p>——潘毓刚</p>
+<p>小潘：</p>
+<p>你和林希翎的电话，挂掉后我一直笑个不停。林希翎真是未见如故的痛快朋友，请你代我多多照料她——虽然她来台湾，我不肯见她。她说我摆臭架子，这话姑算有理。</p>
+<p>收到刘会云寄来的海外版《蒋介石研究》一至四集的广告，颇有感想。</p>
+<p>巴黎人在拿破仑铜像前致敬，巴尔扎克却写了一张字条，套在铜像的手指上。上面写着：“拿破仑！拿破仑！你不能征服的地方，我可以用笔征服。”——文人之雄，自有奇趣也。</p>
+<p>自古以来，文人与武人的征服方式，就根本不同。文人征服是千秋的、武人征服是一时的，最鲜明的对比是司马迁与汉武帝，千载以下，虎虎生风者，司马迁之《史记》也；但汉武帝呢？又留下什么呢？</p>
+<p>蒋介石是武人，但终其一生，有武无功，可为定论。但蒋介石本人和他的走狗们，却厚颜丑表其功，从在大陆时举国上下、到逃到台湾后全岛上下，都众口一声。这种现象，别人能受，我绝不受，因此奋笔为文，以千秋之笔，斥一时之谎，虽在蒋家天下统治下，却一无所惧，我这种人格与文格，可谓古今中外文人的第一名，自己想来，不禁频频佩服自己也。</p>
+<p>你在岛外所做的努力，我极感佩。林希翎要我写的文章，不日即可寄上。</p>
+<p>即祝双安</p>
+<p>敖之1988年1月7日</p>
+<h2 id="平生之志不在温饱"><a class="header" href="#平生之志不在温饱">“平生之志，不在温饱”</a></h2>
+<p>宋朝魏泰的《东轩笔录》里，有一条记王曾（沂公）的故事。王曾状元及第，翰林学士刘筠（子仪）向他开玩笑说：“状元试三场，一生吃着不尽。”不料王曾却板着脸回答说：“曾平生之志，不在温饱！”</p>
+<p>“平生之志，不在温饱。”表示人生所追求的，除了衣暖食足以外，除了好的、富裕的生活以外，还有别的、还有更高层面的，这种人有他超越尘根的境界，凡夫俗子不知也。</p>
+<p>《新旧约全书-马太福音》里，有一条记耶稣的故事。耶稣被圣灵引到旷野，受魔鬼的试探。他禁食四十昼夜，后来就饿了。那试探人对他说，你若是神的儿子，可以吩咐这些石头变成食物。耶稣却引经上的话回答说：“人活着，不仅仅为了面包，乃是靠神口里所出的一切话。”这表示人生所追求的，别有使命与信仰，丰衣足食，非所志也。这种人超越尘根的境界，凡夫俗子不知也。</p>
+<p>前几年中华航空公司驾驶员王锡爵驾机飞回大陆，国民党上上下下口口声声说：王锡爵服务华航已二十年、月入新台市二十多万元、生活条件良好、婚姻家庭都美满、儿女皆已成年、小孙子即将出世，不久就可含怡弄孙、安享天伦，岂有抛弃妻儿去“投匪”的道理？有人问我意见，我嗤之以鼻，答复说：“太小看人了吧！人活着，不仅仅为了面包。”</p>
+<p>前几年常听人说：李敖真是不可解的人，他有名有钱有才华、有高楼大廈、有明星老婆、有八缸的凯迪拉克名牌轿车，他为什么不知足、不安分，还要惹政府、还要叛乱、革命？我每听到这种“妻财子禄”的话，我就嗤之以鼻，答复说：“太小看人了吧！人活着，不仅仅为了面包。”</p>
+<p>正因为凡夫俗子不能理解别的和更高层面的境界，所以，他们所见者小，遇到有高人出现，他们就大惑不解了。</p>
+<p>文天祥在年轻时候，是非常温饱的。《宋史-文天祥传》说他“性豪华，平生自奉甚厚，声伎满前”。无异家中自养歌星给他唱歌跳舞。可是国亡之日，他却视死如归，原来温饱非其所志，而要以殉国成仁取义，这种高人，更不是凡夫俗子所能理解的了。</p>
+<p>从上面一些人生不志在温饱的例证中，我联想到最近一件事。国民党十三全大会期间，陈立夫等三十四位中央评议委员提案，说在中共放弃四个坚持和武力犯台的前提下，台湾可提供五十亿至一百亿美金的低利长期贷款给大陆，在双方建立互信、消除敌意后，并进一步协商政治整合，以谋和平统一。</p>
+<p>陈立夫等这一提案，比起台湾政客的井蛙之见来，固有它较广的视野，但是，从政治层次上看，他们所提的条件，却是“商人根性”的，基本上，他们竟以为可花钱买下别人的政治原则，这就未免太小看了人！中共是以“人穷志不穷”“宁要核子，不要裤子”做号召的，他们若志在温饱，当年也就打不败国民党了。国民党自豪反共几十年，但几十年后，对中共的了解竟还如此浅薄、如此“经济挂帅”，实在未免可笑；至于以商人眼光作为金钱收买，更属层次上的堕落，显然是住在台湾太久了，不自觉的被感染上了。台湾是“岛国”心态与浅盘经济为视野的小地方，这小地方的人，不能想象一个以思想、政治、军事为第一优先的大地方的视野，一厢情愿以为别人也爱钱，适见自己是政治市侩耳！</p>
+<p>1988年8月2日</p>
+<h2 id="一生不得为人师"><a class="header" href="#一生不得为人师">一生不得为人师</a></h2>
+<p>——寄车之鉴</p>
+<p>之鉴台弟：</p>
+<p>在报上一再看到你为争取“被赶出门外”的教师人权所做的奋斗，十分佩服；但在奋斗之余，似乎也该为那些“根本不准进门”的“同”教师人权同时奋斗一下。像我本人，一生好为人师，但始终欲教北一女、中山女、铭传专、台湾大而不可得，人权之被剥夺，比你们还要惨也，我们还没闹，你们反倒先闹起来。这就好像吃客饭的，你们大吃特吃好一阵，最后因被餐厅赶出而大闹特闹，而我们呢，却根本不能进餐厅。你们觉得公道吗？这就是你们的公道吗？</p>
+<p>古人说人之患在好为人师，我却觉得国民党之患在好禁异己为人师。我一直觉得我是第一流的老师，可是在国民党的冰河期里，我失掉了育英才或蠢材之乐。每天只孤独写作以终老，虽然别有势力，但总缺少了中国传统中的“师徒势力”。我的人缘不好，跟从无弟子尾随揄扬极有关系。孔夫子之道得传，七十二子有力焉，有七十二子，才有“为往圣继绝学”之徒附骥；耶稣之道得传，十二门徒有力焉，纵有犹大出卖他，但出卖也是一种刺激，刺激他人对耶稣更忠实。至于袁随园有女弟子之类，更是人间大乐，虽然女人不能搞历史。</p>
+<p>每想到一生不得为人师，就恨国民党不已。</p>
+<p>李学长1988年11月26日晨</p>
+<h2 id="跑出来的理由"><a class="header" href="#跑出来的理由">跑出来的理由</a></h2>
+<p>二十年前，李翰祥请我到他家打梭哈，骆明道等在座，一起玩得高兴。李翰祥牌打得好，去取之间，纵横捭阖，极见功夫。有一道牌，骆明道出了钱，事后李翰祥摊开双方的牌，说按牌理你骆明道没有这样出钱的理由，请你说说你的理由看。骆明道大而化之，一时也说不出为什么这样出了钱，有一点窘。打完牌后，骆明道坐我的车回家，路上大笑，说：“翰祥真荒唐，玩牌就是玩牌嘛，谁还要花脑筋找什么理由！”骆明道这番话，当时我也一笑置之，后来所见人间万象已多，发现也不无至理在，因为理由、理由，无须别寻理由的事，人间也有很多，又何必一定找理由呢？许多事，理由是“不证自明的”（self-evident），理由就在单纯的、原始的本义之中，又何必巧立名目呢？</p>
+<p>但是，在国民党的荒唐统治下、在民进党的呼拥配合下，我们发现，许许多多巧立名目的理由，却泛滥成灾了，令人讨厌之至。试以跑步为例。国民党用跑步来巧立名目，源远流长，最先是搞“为中华民国前途而跑”“为三民主义统一中国而跑”，食髓知味以后，开始跑的并发症，一发不可收拾。试看：</p>
+<p>1986年9月28日，由“中华民国田径协会”主办了“为仲尼而跑”的活动，在台北展开。令人费解的是，纪念孔老二，每年祭典庄严，具备于斯，又跑个什么？跑又与孔老二何干？明明是为纪政竞选“立法委员”铺路，却巧立名目在孔老二头上，太胡闹了吧？</p>
+<p>1986年11月9日，朱高正也来了。他在嘉义举行“为民主而跑”的活动。先在火车站吴凤铜像前发表演说，然后扬言在崇文国小操场跑十圈，可是仅跑了七圈，就跑不动了，“为民主而跑”七折放水。其实“朱放水”比“尤放水”还略擅胜场，因为一个月前，尤清在板桥搞“为自由民主而跑”活动，地方民众反应冷淡，结果无疾而终。可见能跑它几圈，亦有大难呢！</p>
+<p>1987年4月26日，国民党为纪念先“总统”蒋公逝世十二周年与庆祝复活节，举办了“为热爱生命而跑”，由宋美龄特颁祝词、“经济部次长”王建煊、“教育部次长”阮大年等一体参加，足见死去十二年的死者之复活，跟彼辈之跑攸关也！</p>
+<p>1987年5月10日，台北市私立佑德高中、协和工商为庆祝“总统”、“副总统”就职三周年，主办了“为胜利而跑”，沿途书有“总统、副总统，我们敬爱您！”的看板以激励士气，足见士气跟马屁攸关、马屁又跟“胜利”攸关也！</p>
+<p>1987年8月14日，《中国时报》《时报周刊》推出蒲仲强主办“为同心协力而跑”；1988年1月6日，台湾奥林匹克委员会发起“为奥林匹克精神而跑”；1988年5月15日，国民党中央党部副秘书长马英九带头，“为明日更美好的环境而跑”；1989年1月22日，就是今天，“世盟中国分会”、“救国团”等衙门发起，又“为自由而跑”……</p>
+<p>信手写来，真是写不胜写了。我提议大家别跑了，换个花样吧。根据1987年3月9日的路透社传真，二十八岁的模特儿安妮佛瑞儿宣称，为了支持马科斯，她决定在老马返国前，“为马科斯停止性交”！我建议从今以后，不论国民党、民进党，如有跑难忍，不如以停止性交代替，这样大家一绝“交”，对减轻台湾的人口压力，也可不无小补呢！</p>
+<p>1989年1月22日</p>
+<h2 id="魂牵梦萦贝克特"><a class="header" href="#魂牵梦萦贝克特">魂牵梦萦贝克特</a></h2>
+<p>我是学历史的人，在独与天地精神往来的当儿，会有一些历史人物，不可思议的进入我的意识里，令我神往，令我对他们别有灵犀，而起古今同调之感、异代遥怜之悲。这些人中，在我出世前七百六十五年死去的那位英国殉道者托马斯贝克特（ThomasBecket），就是最使我魂牵梦萦的一位。</p>
+<p>贝克特是12世纪的英国人。他是诺曼底武士阶级之后、是商人之子。他生在1118年，二十一岁从法国学成归来，自商界转入教会。二十五岁起，见知于坎特伯雷总主教休贝德（ArchbishopTheobaldofCanterbury），自此副主教也、教堂牧师也、修道院院长也，诸般神职，一一荣膺不绝。三十七岁后，又见知于英国国王亨利二世（HenryⅡ），开始官教两栖。亨利二世任命他做大臣，自此他变成国王的亲信，他忠于国王，为战争募款、为军队补给、为外交带队、为人事掌舵，并且还为小太子做家庭教师，君臣之间关系密切，水乳交融，前后达七年之久。他对国王权益的维护，七年于兹，不遗余力，是一位极称职的干才。</p>
+<p>贝克特做大臣期间，雍容华贵，排场甚奢。在朝廷上、在狩猎场上，他都是亨利二世一位受欢迎的伙伴和亲密的朋友，而有助于国王大行其君主集权政策，即使那政策不利于教会（ToHenryhimselfThomaswasawelcomecompanionandintimatefriend,bothatcourtandinthechase,aidingtheKinginhispolicyofgatheringallpowerintothehandsofthemonarchy,evenwhenthatpolicywentagainstclaimsofthechurch.）但是，一旦1162年，亨利二世任命他为坎特伯雷总主教以后，一切都变样了。亨利二世原以为这位亲信可以帮他向教会夺权的，殊不知衣冠易人，贝克特却真的认真干起总主教的职务来了。他从一名国王的忠仆，突变而为国王政策的顽强反对者；从一名世俗的执事，突变而为一位严正苦修的总主教（…SuddenchangefromadevotedservantoftheKingintoanobstinateopponentofhispolicy,fromaworldlyclerkintoanansterearchbishop.），这下子可把亨利二世气炸了。亨利二世为了消灭这一绊脚石，决定以当年贪污渎职诬陷他，并进而治他以叛国罪。在这种迫害下，贝克特两度离英未遂，直到1164年，他才逃到法国。在罗马教皇的压力下，六年后，贝克特重返坎特伯雷，于是冲突又起。亨利二世慨乎言曰：“在我四周，难道就没有人有种去为我干掉那匹夫教头吗？”（&quot;HaveInotaboutmeonemanofenoughspirittoridmeofasingleinsolentprelate?&quot;）于是，四个“秉承领袖意旨，体念领袖苦心”的武士，在1170年12月29日黄昏，进入了坎特伯雷教堂，把五十二岁的贝克特砍杀。他的最后言语是：为了保卫基督教会，他接受一死（HislastwordswereanacceptanceofdeathindefenseofthechurchofChrist.）</p>
+<p>消息传出，举世大哗。亨利二世辩称他不知情，那是武士的“个人行为”。但是没人信他的，他被迫亲到贝克特的墓地忏悔认罪。贝克特死难之处成了圣地，武士被迫在该处服务十四年，以示惩罚。</p>
+<p>贝克特生前与国王的政教之争，内容已与草木同腐；但是这一既在其位、必谋其政的认真精神，却万古长新。贝克特为了敬业、为了真理，他不惜与知己翻脸、与同志翻脸、与皇上翻脸、与荣华富贵翻脸、与过去的自己翻脸。这种气魄，求之豪杰之士，也真绝无仅有啊！</p>
+<p>1989年3月20日</p>
+<h2 id="索尔仁尼琴错在哪儿"><a class="header" href="#索尔仁尼琴错在哪儿">索尔仁尼琴错在哪儿？</a></h2>
+<p>在西方民主社会里日渐过气的索尔仁尼琴，到了台湾，突然被奉为至宝，大大的风光了十一天，全世界肯用43辆车队追逐他的，除了这个地方，又到哪儿去找？难怪他活像大独裁者出巡一般的，踌躇满志了。最后，号称分文不取的他，拿了5000美金走路。12月10日，东京来的消息证实了他的确拿了钱，于是，在他使我们倒胃这么多天以后，我们最后，可真要吐一次了。</p>
+<p>索尔仁尼琴的“给自由中国”演说发表后，因为整个调门全是谷正纲演说的俄语发音，以致国民党大快，党外大不快。党外批评索尔仁尼琴，说他是大斯拉夫主义者啦，有集体主义信念啦，对西方民主社会不了解啦……都没说错。但是这种认识，似乎不该到今天才产生，只要留意一下索尔仁尼琴的著作，和他被放逐后的一些言论，我们早就该有这种认识了。所以，凡是对他这种“给自由中国”演讲内容感到失望的或愤怒的，显然犯了不读书或读书不够多的毛病。</p>
+<p>太驴了一点</p>
+<p>索尔仁尼琴到西方民主社会后，发生了很多错误，但这些错误大多都是言论的，而不是行动的。索尔仁尼琴学自然科学出身，长年的教书、当兵、坐牢，在自然科学以外的功力，毕竟有他的窄门。他虽然得了诺贝尔文学奖，但对他这种窄门，并没有本质的改变，反倒有些执迷的不幸。所以，他的作品，从文学观点上看可以，从思想观点上看就漏洞百出，这从他被放逐后，他的言论，被思想家和苏联专家抓小辫一点上，就可以看出来。其实严格说来，这也不足为索尔仁尼琴病，索尔仁尼琴给我们的，毋宁不是很好的文学作品，而是一股伟大的精神——一股向极权政府抗议的精神。除了这点以外，索尔仁尼琴的文学作品并不怎么好，其他的言论，更是漏洞百出了。其中反共言论，尤其八股而幼稚，一个人，他的反共言论是谷正纲级的，又怎么可能高明呢？意大利谚语说：“一个纯粹的数学家，就是一头纯粹的驴。”索尔仁尼琴学的是数学，教的是数学，他不算是纯粹的数学家，所以幸好不算是纯粹的驴，虽然这一次来台湾，可真未免太驴了一点。</p>
+<p>为什么呢？</p>
+<p>因为索尔仁尼琴给我们的是一股向极权政府抗议的精神，所以他的立身与进退，反倒成为一个焦点一种象征。索尔仁尼琴本人，自然应该知道他本人这种意义，甚至高出他的作品之上，他不能不谨慎，自然不在话下。但他这种谨慎，显然被两个原因推翻了。</p>
+<p>两种极不得体</p>
+<p>第一个原因是他对苏联共产政权的憎恶，使他误以为反共是可以不择手段不讲原则的，为了反共，为了反对极左的政权，甚至极右的法西斯式的政权都可以去联合、可以去捧场、可以去鼓励。这是他绝对的大错误！索尔仁尼琴出身于俄国极权空气里，他对西方民主的真谛，显然了解得不够，他又缺乏这方面的思考训练，所以他误以为凡是反共的政权都是可取的政权，这种看法，不但不通，而且幼稚。希特勒的政权、东条英机的政权、佛朗哥的政权，……都是反共的，但那种反共，只是王八蛋要打龟儿子式的反共，这样的政权，是不配反共的，当然也不值得人们去支持。反共的目的就是追求自由民主，反共不是黑暗统治的护符，忽视了自由民主的反共，只是一场骗局而已。以索尔仁尼琴的地位，去帮助这种政权贴牢护符，当然是极不得体的。</p>
+<p>第二个原因是他对帮闲集团的手法，没存戒心或故意没存戒心，以致甘心给人利用了。索尔仁尼琴在来台湾以前，说是不要接受官方的安排，但他不知道或有意不知道，在极右的政权统治下，又何来纯民间的基金会？纯民间的基金会，又如何能存在？吴三连纵使年轻时代的记录再英雄，他今天若不老而不死给国民党帮闲，国民党会让他办报、办基金会吗？所以，整个的所谓民间团体邀请，骨子里的作业，早就变成了官方的。索尔仁尼琴10月16日下午抵达前，10月8日、10月13日，官方的新闻局长和文工会主任早就出了面，10月16日上午，基金会的负责人“11时半至总统府就安排索氏来访事向马秘书长作简报，12时至中央党部向蒋秘书长作简报”，大官们对他们“表示嘉许”，这种细腻的官方作业，若还说不是官方的，又怎么可能呢？所以，索尔仁尼琴其实一开始就给官方利用了。以索尔仁尼琴的地位，去帮助这种政权，为之利用，当然是极不得体的。</p>
+<p>忘了古拉格</p>
+<p>大概索尔仁尼琴最后心里有数了，他显然越来越不计较官方对他“仙人偷桃”了。慢慢的，他不但看了特工人员为他安排参观的民宅、党务人员为他安排欣赏的电影，甚至和国民党文工会主任会面了，最后，在临行前夜，他甚至在国宾饭店十楼总统套房里，跟世盟荣誉主席谷正纲、立法院长倪文亚、总统府秘书长马纪壮、青年党主席李璜、民社党主席杨毓、国民党秘书长蒋彦士、政大校长欧阳勋、文建会主委陈奇禄、外交部次长钱复、新闻局长宋楚瑜、中央日报社长姚朋、情报人员王兆徽一干人等，大吃起“一生中最长”晚宴来了。索尔仁尼琴在国民党帮心帮闲的双簧软功下，最后高兴地说：“哪一天贵国遭遇最坏的状况时，我会再来为你们说话。”难怪国民党垄断的新闻媒体要兴奋的说：索尔仁尼琴和他们“立场相同，态度一致”了，索尔仁尼琴是他们“志同道合的战友”了！</p>
+<p>索尔仁尼琴来台之初，曾经表示：“他对中华民国不想预先了解太多，他要亲眼去看、亲自去听，才能了解最真实的中华民国。”但是，从他全部的行踪里，我们发现他显然都在浮面上走马看花，而不肯看看花下的泥土与阴暗，这样的“了解”，又叫什么“最真实的”呢？</p>
+<p>最最令人奇怪的是，索尔仁尼琴11天的行程中，从天上神像到人间造船，无一不看，但他为什么不看看台湾的《地狱第一层》呢？他定“地狱第一层”那本书，第54章描写美国一位大政治家的R夫人（罗斯福夫人）到苏联，还要参观参观他们的监狱，如今他自己，为什么这么一点人道的共鸣都不肯做一下呢？“古拉格群岛”发迹的受难者，居然在11天中，没对“古拉格群岛”的兄弟探望一次，甚至连一句关心的话都说，一句慰问的话都不带一下，这算什么呢？就中10月19日的大捧特捧他的同一张报上，我们就可看到台湾古拉格上那服刑30多年的囚犯的消息，这种对比，索尔仁尼琴又做何感想呢，我们又做何感想呢？</p>
+<p>不会对第二流的失望</p>
+<p>显然的，索尔仁尼琴显然没有对他们有任何感想，他的良知、他的仗义、他的道德勇气，显然都腐蚀在他口里的“给自由中国”之中，于是，在连“自由中国”四个字做杂志名字都不准的地方，索尔仁尼琴视若无睹地说：</p>
+<p>我常常很痛心地想，中国大陆上“古拉格群岛”里许多无名囚犯，他们的苦难也许要到21世纪才能向世人宣泄。</p>
+<p>这样的舍近求远、这样的铁口直断、这样的索尔仁尼琴，可真太令我们摇头了。</p>
+<p>当我们看到：法国文豪左拉（EmileZole）在为魔鬼岛的囚犯义正辞严，写“我控诉”（J'accuse）等文字的时候；当我们又看到：西班牙大提琴家卡沙斯（PabloCasols），在为自由民主原则声色俱厉，拒绝到任何有极权政权的地方去演奏的时候，我们毕竟得到了安慰。我们发现：世界毕竟有第一流的志士仁人，他们绝对有原则的为受难的挺身而出、对质极权的危邦不入，他们毕竟不像索尔仁尼琴那样的，使正义蒙羞、使真理破相。</p>
+<p>让我们对左拉、对卡沙斯致敬，有了他们第一流的，对任何第二流的，我们都不必失望。索尔仁尼琴证明了自己是二流货，因为第一流的，是不会这样来，也不会这样去的。</p>
+<p>1982年11月11日夜</p>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/02.精品散文类/波波颂.md">Edit this file on GitHub.</a></footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../02.精品散文类/李敖文存二集.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../02.精品散文类/独白下的传统.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../02.精品散文类/李敖文存二集.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../02.精品散文类/独白下的传统.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

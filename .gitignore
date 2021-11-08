@@ -1,0 +1,6 @@
+*.epub
+*.mobi
+*.swp
+*.azw3
+node_modules/
+book/

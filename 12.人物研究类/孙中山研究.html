@@ -1,0 +1,916 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>孙中山研究 - 大李敖全集</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">项目简介</a></li><li class="chapter-item expanded affix "><a href="../wjm_tcy.html">wjm_tcy 简介</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/index.html"><strong aria-hidden="true">1.</strong> 自传回忆类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01.自传回忆类/我最难忘的事和人.html"><strong aria-hidden="true">1.1.</strong> 我最难忘的事和人</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖回忆录.html"><strong aria-hidden="true">1.2.</strong> 李敖回忆录</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖快意恩仇录.html"><strong aria-hidden="true">1.3.</strong> 李敖快意恩仇录</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖自传与回忆.html"><strong aria-hidden="true">1.4.</strong> 李敖自传与回忆</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖议坛哀思录.html"><strong aria-hidden="true">1.5.</strong> 李敖议坛哀思录</a></li></ol></li><li class="chapter-item expanded "><a href="../02.精品散文类/index.html"><strong aria-hidden="true">2.</strong> 精品散文类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02.精品散文类/传统下的独白.html"><strong aria-hidden="true">2.1.</strong> 传统下的独白</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/李敖文存.html"><strong aria-hidden="true">2.2.</strong> 李敖文存</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/李敖文存二集.html"><strong aria-hidden="true">2.3.</strong> 李敖文存二集</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/波波颂.html"><strong aria-hidden="true">2.4.</strong> 波波颂</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/独白下的传统.html"><strong aria-hidden="true">2.5.</strong> 独白下的传统</a></li></ol></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/index.html"><strong aria-hidden="true">3.</strong> 惊世杂文类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03.惊世杂文类/上下古今谈.html"><strong aria-hidden="true">3.1.</strong> 上下古今谈</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/世论新语.html"><strong aria-hidden="true">3.2.</strong> 世论新语</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/为中国思想趋向求答案.html"><strong aria-hidden="true">3.3.</strong> 为中国思想趋向求答案</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/为自由招魂.html"><strong aria-hidden="true">3.4.</strong> 为自由招魂</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/你是景福门.html"><strong aria-hidden="true">3.5.</strong> 你是景福门</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/你笨蛋，你笨蛋.html"><strong aria-hidden="true">3.6.</strong> 你笨蛋，你笨蛋</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/历史与人像.html"><strong aria-hidden="true">3.7.</strong> 历史与人像</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/我是天安门.html"><strong aria-hidden="true">3.8.</strong> 我是天安门</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/我梦碎所以我梦醒.html"><strong aria-hidden="true">3.9.</strong> 我梦碎所以我梦醒</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/教育与脸谱.html"><strong aria-hidden="true">3.10.</strong> 教育与脸谱</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/文化论战丹火录.html"><strong aria-hidden="true">3.11.</strong> 文化论战丹火录</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/李敖杂文集.html"><strong aria-hidden="true">3.12.</strong> 李敖杂文集</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/求是新语.html"><strong aria-hidden="true">3.13.</strong> 求是新语</a></li></ol></li><li class="chapter-item expanded "><a href="../04.小说剧本类/index.html"><strong aria-hidden="true">4.</strong> 小说剧本类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04.小说剧本类/上山上山爱.html"><strong aria-hidden="true">4.1.</strong> 上山上山爱</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/北京法源寺.html"><strong aria-hidden="true">4.2.</strong> 北京法源寺</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/第73烈士.html"><strong aria-hidden="true">4.3.</strong> 第 73 烈士</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/红色11.html"><strong aria-hidden="true">4.4.</strong> 红色 11</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/虚拟的十七岁.html"><strong aria-hidden="true">4.5.</strong> 虚拟的十七岁</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/阳痿美国.html"><strong aria-hidden="true">4.6.</strong> 阳痿美国</a></li></ol></li><li class="chapter-item expanded "><a href="../05.诗集语录类/index.html"><strong aria-hidden="true">5.</strong> 诗集语录类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../05.诗集语录类/李敖语萃.html"><strong aria-hidden="true">5.1.</strong> 李敖语萃</a></li><li class="chapter-item expanded "><a href="../05.诗集语录类/李语录.html"><strong aria-hidden="true">5.2.</strong> 李语录</a></li><li class="chapter-item expanded "><a href="../05.诗集语录类/爱情的秘密.html"><strong aria-hidden="true">5.3.</strong> 爱情的秘密</a></li></ol></li><li class="chapter-item expanded "><a href="../06.沉思日记类/index.html"><strong aria-hidden="true">6.</strong> 沉思日记类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../06.沉思日记类/一个预备军官的日记.html"><strong aria-hidden="true">6.1.</strong> 一个预备军官的日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/大学日记后期乙集.html"><strong aria-hidden="true">6.2.</strong> 大学日记后期乙集</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/大学日记后期甲集.html"><strong aria-hidden="true">6.3.</strong> 大学日记后期甲集</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/大学札记.html"><strong aria-hidden="true">6.4.</strong> 大学札记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/早年日记.html"><strong aria-hidden="true">6.5.</strong> 早年日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖五五日记.html"><strong aria-hidden="true">6.6.</strong> 李敖五五日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖札记.html"><strong aria-hidden="true">6.7.</strong> 李敖札记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖秘藏日记.html"><strong aria-hidden="true">6.8.</strong> 李敖秘藏日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖随写录前集.html"><strong aria-hidden="true">6.9.</strong> 李敖随写录前集</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖随写录后集.html"><strong aria-hidden="true">6.10.</strong> 李敖随写录后集</a></li></ol></li><li class="chapter-item expanded "><a href="../07.采访序跋类/index.html"><strong aria-hidden="true">7.</strong> 采访序跋类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖书序集.html"><strong aria-hidden="true">7.1.</strong> 李敖书序集</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖书序集续集.html"><strong aria-hidden="true">7.2.</strong> 李敖书序集续集</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖对话录.html"><strong aria-hidden="true">7.3.</strong> 李敖对话录</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖报刊集.html"><strong aria-hidden="true">7.4.</strong> 李敖报刊集</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖访谈录1996-2014.html"><strong aria-hidden="true">7.5.</strong> 李敖访谈录 1996-2014</a></li></ol></li><li class="chapter-item expanded "><a href="../08.书信函件类/index.html"><strong aria-hidden="true">8.</strong> 书信函件类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.书信函件类/坐牢家爸爸给女儿的八十封信.html"><strong aria-hidden="true">8.1.</strong> 坐牢家爸爸给女儿的八十封信</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书信集.html"><strong aria-hidden="true">8.2.</strong> 李敖书信集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书函集.html"><strong aria-hidden="true">8.3.</strong> 李敖书函集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书启集.html"><strong aria-hidden="true">8.4.</strong> 李敖书启集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书札集.html"><strong aria-hidden="true">8.5.</strong> 李敖书札集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书牍集.html"><strong aria-hidden="true">8.6.</strong> 李敖书牍集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书笺集.html"><strong aria-hidden="true">8.7.</strong> 李敖书笺集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书简集.html"><strong aria-hidden="true">8.8.</strong> 李敖书简集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书翰集.html"><strong aria-hidden="true">8.9.</strong> 李敖书翰集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖情书集.html"><strong aria-hidden="true">8.10.</strong> 李敖情书集</a></li></ol></li><li class="chapter-item expanded "><a href="../09.历史文化类/index.html"><strong aria-hidden="true">9.</strong> 历史文化类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../09.历史文化类/中国命研究.html"><strong aria-hidden="true">9.1.</strong> 中国命研究</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国性研究.html"><strong aria-hidden="true">9.2.</strong> 中国性研究</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国现代史定论.html"><strong aria-hidden="true">9.3.</strong> 中国现代史定论</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国现代史正论.html"><strong aria-hidden="true">9.4.</strong> 中国现代史正论</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国艺术新研.html"><strong aria-hidden="true">9.5.</strong> 中国艺术新研</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国近代史新论.html"><strong aria-hidden="true">9.6.</strong> 中国近代史新论</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国迷信新研.html"><strong aria-hidden="true">9.7.</strong> 中国迷信新研</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/为历史拨云.html"><strong aria-hidden="true">9.8.</strong> 为历史拨云</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/要把金针度与人.html"><strong aria-hidden="true">9.9.</strong> 要把金针度与人</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/读史指南.html"><strong aria-hidden="true">9.10.</strong> 读史指南</a></li></ol></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/index.html"><strong aria-hidden="true">10.</strong> 李敖节目演讲合集</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖大哥大.html"><strong aria-hidden="true">10.1.</strong> 李敖大哥大</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖有话说1-735全集.html"><strong aria-hidden="true">10.2.</strong> 李敖有话说 1-735 全集</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖演讲集.html"><strong aria-hidden="true">10.3.</strong> 李敖演讲集</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖秘密书房.html"><strong aria-hidden="true">10.4.</strong> 李敖秘密书房</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖笑傲江湖.html"><strong aria-hidden="true">10.5.</strong> 李敖笑傲江湖</a></li></ol></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/index.html"><strong aria-hidden="true">11.</strong> 李敖电子报合集</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖发电集.html"><strong aria-hidden="true">11.1.</strong> 李敖发电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖放电集.html"><strong aria-hidden="true">11.2.</strong> 李敖放电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖来电集.html"><strong aria-hidden="true">11.3.</strong> 李敖来电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖送电集.html"><strong aria-hidden="true">11.4.</strong> 李敖送电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖通电集.html"><strong aria-hidden="true">11.5.</strong> 李敖通电集</a></li></ol></li><li class="chapter-item expanded "><a href="../12.人物研究类/index.html"><strong aria-hidden="true">12.</strong> 人物研究类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../12.人物研究类/丑陋的中国人研究.html"><strong aria-hidden="true">12.1.</strong> 丑陋的中国人研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/你不知道的彭明敏.html"><strong aria-hidden="true">12.2.</strong> 丑陋的中国人研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/大江大海骗了你.html"><strong aria-hidden="true">12.3.</strong> 大江大海骗了你</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/孙中山研究.html" class="active"><strong aria-hidden="true">12.4.</strong> 孙中山研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/孙逸仙和中国西化医学.html"><strong aria-hidden="true">12.5.</strong> 孙逸仙和中国西化医学</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/李敖论人物.html"><strong aria-hidden="true">12.6.</strong> 李敖论人物</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/李登辉的假面具.html"><strong aria-hidden="true">12.7.</strong> 李登辉的假面具</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/李登辉的真面目.html"><strong aria-hidden="true">12.8.</strong> 李登辉的真面目</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/胡适与我.html"><strong aria-hidden="true">12.9.</strong> 胡适与我</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/胡适研究.html"><strong aria-hidden="true">12.10.</strong> 胡适研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/胡适评传.html"><strong aria-hidden="true">12.11.</strong> 胡适评传</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石的真面目.html"><strong aria-hidden="true">12.12.</strong> 蒋介石的真面目</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究一集.html"><strong aria-hidden="true">12.13.</strong> 蒋介石研究一集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究三集.html"><strong aria-hidden="true">12.14.</strong> 蒋介石研究三集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究五集.html"><strong aria-hidden="true">12.15.</strong> 蒋介石研究五集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究六集.html"><strong aria-hidden="true">12.16.</strong> 蒋介石研究六集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究四集.html"><strong aria-hidden="true">12.17.</strong> 蒋介石研究四集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究续集.html"><strong aria-hidden="true">12.18.</strong> 蒋介石研究续集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石评传.html"><strong aria-hidden="true">12.19.</strong> 蒋介石评传</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋家臭史.html"><strong aria-hidden="true">12.20.</strong> 蒋家臭史</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋经国研究.html"><strong aria-hidden="true">12.21.</strong> 蒋经国研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/论定蒋经国.html"><strong aria-hidden="true">12.22.</strong> 论定蒋经国</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/郑南榕研究.html"><strong aria-hidden="true">12.23.</strong> 郑南榕研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/陈水扁的真面目.html"><strong aria-hidden="true">12.24.</strong> 陈水扁的真面目</a></li></ol></li><li class="chapter-item expanded "><a href="../13.国民党史政类/index.html"><strong aria-hidden="true">13.</strong> 国民党史政类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../13.国民党史政类/国民党研究.html"><strong aria-hidden="true">13.1.</strong> 国民党研究</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/国民党研究续集.html"><strong aria-hidden="true">13.2.</strong> 国民党研究续集</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/国民党臭史.html"><strong aria-hidden="true">13.3.</strong> 国民党臭史</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/给国民党难看.html"><strong aria-hidden="true">13.4.</strong> 给国民党难看</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/给外省人难看.html"><strong aria-hidden="true">13.5.</strong> 给外省人难看</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/老贼臭史.html"><strong aria-hidden="true">13.6.</strong> 老贼臭史</a></li></ol></li><li class="chapter-item expanded "><a href="../14.台湾史政类/index.html"><strong aria-hidden="true">14.</strong> 台湾史政类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../14.台湾史政类/你不知道的二二八.html"><strong aria-hidden="true">14.1.</strong> 你不知道的二二八</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/法眼看台湾.html"><strong aria-hidden="true">14.2.</strong> 法眼看台湾</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/另一面的二二八.html"><strong aria-hidden="true">14.3.</strong> 另一面的二二八</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/民进党研究.html"><strong aria-hidden="true">14.4.</strong> 民进党研究</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/冷眼看台湾.html"><strong aria-hidden="true">14.5.</strong> 冷眼看台湾</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/白眼看台湾.html"><strong aria-hidden="true">14.6.</strong> 白眼看台湾</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/白色恐怖述奇.html"><strong aria-hidden="true">14.7.</strong> 白色恐怖述奇</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/给台湾人难看.html"><strong aria-hidden="true">14.8.</strong> 给台湾人难看</a></li></ol></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/index.html"><strong aria-hidden="true">15.</strong> 雷霆法律类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖刀笔集.html"><strong aria-hidden="true">15.1.</strong> 李敖刀笔集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖好讼集.html"><strong aria-hidden="true">15.2.</strong> 李敖好讼集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖弄法集.html"><strong aria-hidden="true">15.3.</strong> 李敖弄法集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖放刁集.html"><strong aria-hidden="true">15.4.</strong> 李敖放刁集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖闹衙集.html"><strong aria-hidden="true">15.5.</strong> 李敖闹衙集</a></li></ol></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/index.html"><strong aria-hidden="true">16.</strong> 李敖祸台十书</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../16.李敖祸台十书/从万宝囊到臭屎堆.html"><strong aria-hidden="true">16.1.</strong> 从万宝囊到臭屎堆</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/只爱一点点.html"><strong aria-hidden="true">16.2.</strong> 只爱一点点</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/君子爱人以色.html"><strong aria-hidden="true">16.3.</strong> 君子爱人以色</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/启发你的小故事.html"><strong aria-hidden="true">16.4.</strong> 启发你的小故事</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/恰似我的温柔.html"><strong aria-hidden="true">16.5.</strong> 恰似我的温柔</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/我们没有明天.html"><strong aria-hidden="true">16.6.</strong> 我们没有明天</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/李敖智慧书.html"><strong aria-hidden="true">16.7.</strong> 李敖智慧书</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/李敖生死书.html"><strong aria-hidden="true">16.8.</strong> 李敖生死书</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/笑傲五十年.html"><strong aria-hidden="true">16.9.</strong> 笑傲五十年</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/第一流人的境界.html"><strong aria-hidden="true">16.10.</strong> 第一流人的境界</a></li></ol></li><li class="chapter-item expanded "><a href="../17.百家论李敖合集/index.html"><strong aria-hidden="true">17.</strong> 百家论李敖合集</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../17.百家论李敖合集/李敖研究fashion文集.html"><strong aria-hidden="true">17.1.</strong> 李敖研究 fashion 文集</a></li><li class="chapter-item expanded "><a href="../17.百家论李敖合集/百家论李敖.html"><strong aria-hidden="true">17.2.</strong> 百家论李敖</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">大李敖全集</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>#《孙中山研究》目录</p>
+<ul>
+<li>《孙中山研究》自序</li>
+<li>一、孙中山见了李鸿章吗？</li>
+<li>二、孙中山向清吏下跪求饶</li>
+<li>三、孙中山的一个错误</li>
+<li>四、孙中山反对双十国庆</li>
+<li>五、孙中山《国父遗教》不可不读也！</li>
+<li>六、孙中山蒋介石逼反老同志</li>
+<li>七、孙中山蒋介石为什么不殉国？</li>
+<li>八、孙中山不准再打炮</li>
+<li>九、孙中山与林肯名言</li>
+<li>十、孙中山把三民主义作为“统战工具”</li>
+<li>十一、孙中山的第二兴趣是“女人”</li>
+<li>十二、孙中山与陈粹芬</li>
+</ul>
+<p>《孙中山研究》自序</p>
+<p>中国国民党的总理孙中山有两个，一个是他自己那个孙中山；一个是别人变造的孙中山。别人变造的孙中山，不论基于任何立场，总未免走样，孙中山本人，概不负责、可以侧过脸去；但他自己那个孙中山，却责无旁贷、必须面对。这种面对，不论孙中山生前死后，在优秀的历史家笔下，都难逃斧钺。就某种讽世意味来说，优秀的历史家逼人面对，生则为“袋鼠法庭”（kangaroocourt）的法官，死则为阎王爷，在生死线外，历史人物应负的罪责，都无所遁形。</p>
+<p>换句话说，优秀的历史家是真正的最后审判者，——上帝嘛，请靠边站！最后审判孙中山，不是一件容易的事。因为这位中国国民党的总理，生前死后，都被政治迷雾包装着，使真面目难以显现，直到死后几十年的今天，他仍是被海峡两岸政治尸布争相缠裹的木乃伊，这可真教人看不惯！凭着优秀的历史家的本领，我终于解开尸布，把真正孙中山的功过，加以论定。这种论定，从1965年我推出《孙逸仙和中国西化医学》，到1987年我出版《孙中山研究》，都是一个主线。主线是求真，方法是从干尸里把孙中山开棺论定。</p>
+<p>孙中山一生的大成功是推翻中国帝制，一生的大失败是自己夺权不择手段，甚至一再勾结帝国主义而不惜。西太后明与八国联军为敌，固属离奇；孙中山私通日、英、德、俄等国为友，也未尝不荒谬，孙中山既是爱国者，又是卖国者，爱国爱到以卖国为手段，这种荒谬，也真是青史罕见！至于他搞出三民主义等讨厌透顶的“遗教”来闭门造车、提拔蒋介石等等而下之的“同志”来开门揖盗，则更属荒谬之外者。这本《孙中山研究》，特就孙中山一生的荒谬处多加笔墨、以启苍生。海峡两岸读是书而不窃笑于中山陵者，非人也！</p>
+<p>1987年8月16日在台湾台北写</p>
+<p>孙中山见了李鸿章吗？</p>
+<p>八十三岁的老国民党桂崇基，在6月1日的《传记文学》上，写了一篇《中山先生见李鸿章》，原文如下：</p>
+<p>中山先生上李鸿章书，世人固多知之。他是否见过李鸿章，则因缺乏资料，难以臆断。据唐绍仪言，一次，他返回香港，曾晤中山先生，见其器宇轩昂，其时不过二十许人，即怀有大志，便断言其必将为大器。中山先生出示其所拟上李鸿章书，并请唐设法介绍见李鸿章。时唐在高丽袁世凯幕府任事，对于北洋有关人物多直接或间接认识，便代为介绍天津海关候补道徐秋畦。中山先生去天津，由徐秋畦向李鸿章为之先容。届期，徐秋畦陪中山先生往见。李鸿章见中山先生即问你叫什么名字？中山先生答孙文，其时中山先生发音犹带浓重广东音，把文字念门音。李鸿章一听，便说，你官话都不会讲，怎能做官？未及二三语，即端茶，差官乃高呼送客。徐秋畦乃拉中山先生一同起身告辞。行至二门，中山先生便在庭中大骂李鸿章是官僚。徐秋畦见状大为恐慌，直冒冷汗，未久，唐绍仪来天津，徐秋畦告其与中山先生谒见李鸿章经过，并言以后你不要再请我介绍任何人晋见李中堂了！</p>
+<p>看了这篇文字，我忍不住要对自己说：“国民党又造假历史了，我非拆穿它不可！”下面就是我这违章历史拆除大队的一次成绩。</p>
+<p>唐绍仪见了孙中山吗？</p>
+<p>桂崇基是江西贵溪人，美国哥伦比亚大学硕士，1925年回国任教广东大学（中山大学前身），后任考选委员、国大代表。来台后任东吴大学校长。他因为在国民党内斗中，很早就给斗下来，所以早就过气了。不料他不甘寂寞，写《中国国民党与中国共产党》等书之不足，又来这么一段历史，有历史训练的人，一眼就可看出它是捏造的，为什么呢？</p>
+<p>原因很简单，一核对唐绍仪和孙中山的生平，便明白了。</p>
+<p>唐绍仪，广东香山（中山）人，1859年生，1874年清廷派出幼童赴美留学生，他是其中之一，毕业于耶鲁大学。光绪初年回国。1884年，由北洋派驻朝鲜帮办税务，得到袁世凯赏识，1895年，随袁世凯在小站练兵。1899年4月，李鸿章出任两广总督，他随同赴任；11月，袁世凯出任山东巡抚，他又随同赴任。后来历任奉天巡抚、邮传部大臣。辛亥革命后，任北方代表与南方谈判。民国成立，任临时政府内阁总理，后来历任外交总长等职务。他虽跟孙中山关系不错，但孙中山死后，不容于国民党南京党中央。1928年9月30日，国民党以他会被日本人利用做借口，派特务以利斧把他劈死在上海，死时八十岁。</p>
+<p>照桂崇基所说，唐绍仪在香港见到“二十许人”的孙中山，孙中山“出示其所拟上李鸿章书”，但按此书写作年代，该是1894年，这年唐绍仪正在北方追随袁世凯，跑到香港去见比他小七岁的孙中山（孙中山那年二十九岁），已极可疑，因为当时孙中山无籍籍之名，唐绍仪“返回香港”去见他，又所为何来呢？</p>
+<p>何况，既说唐绍仪“返回香港”见孙中山，则孙中山本人，必须人在香港，才有见到的可能，无奈这年孙中山根本不在香港，他人在广州做医生，并且2月起就“以医务委之于尹文楷，自偕陆皓东自湖南循长江东下，抵上海”（《国父年谱初稿》）了，纵使唐绍仪“返回香港”，也见不到孙中山啊！</p>
+<p>陈少白回忆</p>
+<p>1882年，孙中山十七岁时候就结交了陈少白等，被呼为“四大寇”。陈少白后来在《兴中会革命史要》里，曾有这样的追忆：</p>
+<p>有一天，我在香港，他在广州，忽然药房里有信来，说：“孙先生失踪了，药房中开销很难，收入不敷只剩十几块钱了。”我接到信，就到广州去，替他维持店务。等了多天，一点消息都没有，心里非常焦急。到十六那天，他忽然跑来了，手里拿了很大一卷像文件的东西，他见了我就说：“对不起！对不起！”我问他：“你跑到什么地方去的？”他说：“这些事情不要去管他了。”就打开手里的一卷纸给我，我拿起来一看，里面乃是一篇上李鸿章书，我方才知道他是跑到翠亨村的家里关起门来做文章去的。他叫我替他修改修改，我就随便修改一下，以后，他对于药房也不管理了，就到上海去要把这封信上给李鸿章。我没有办法，就让他去，同时我就替他把两间药房收拾起来，交回那些出过股本的人。</p>
+<p>孙先生到了上海，找着了一个香山人，就是著《盛世危言》的郑观应（字陶斋）托他想方法见李鸿章。有一天，在陶斋家里碰到一位太平天国的状元王韬（号紫铨，别号天南遯叟），王韬曾到过香港助英国牧师沥博（Dr.Legge）翻译四书五经，沥博士回英国也请王韬同去，在英国住了几年，后来回到香港，为《循环日报》主笔。再回上海来，声名很盛，笔底对于世界知识，也很充分，并且他是和太平天囯有关系的人，所以孙先生在陶斋家里一见如故，就把那篇大文章，同王韬商量起来，王韬也重新替他加以修正。</p>
+<p>这时候，王韬有一个朋友在李鸿章幕下当文案，王韬就写了封信，介绍孙先生到天津，见这位李鸿章幕下的老夫子，同老夫子商量，或者可以见李鸿章，孙先生快乐极了，就到天津去见老夫子。那时候，刚刚中日大战，打得很厉害，李鸿章至芦台督师，军书旁午，老夫子把孙先生的大文章送到李鸿章那边去，李鸿章是否看过，就不得而知了。不过后来李鸿章说：“打仗完了以后再见吧！”孙先生听了这句话，知道没有办法，闷闷不乐的回到上海，陶斋看见了，就替他想方法到江海关去领了一张护照，请他出国去设法，孙先生也就乘轮到檀香山去了。</p>
+<p>孙先生所以要上李鸿章书，就因为李鸿章在当时算为识时务之大员，如果能够听他的话，办起来也未尝不可挽救当时的中国，岂知所有希望完全成泡影。所以到了这时候，孙先生的志向益发坚决，在檀香山就积极筹备兴中会，找人入会，一定要反抗满洲政府。大约在是年（甲午）八九月之间，就正式成立兴中会。</p>
+<p>由于陈少白是孙中山的老友，他的回忆，最值得重视。当然他的回忆也须加以考订。例如他说郑观应与孙中山的关系，就太疏略了，此事牵涉到上李鸿章书的内容，不可不先弄清楚。</p>
+<p>郑观应影响孙中山</p>
+<p>郑观应（1841-1923），原名官应，字陶斋，广东香山人。他生于鸦片战争时代，觉醒于英法联军时代，在成年以后，为了救国，放弃科举，改行从商，努力学习西方语文，了解西方富强之道。</p>
+<p>在清末洋务运动中，郑观应曾多方面的参与，他做过不少有关富强的文字。1862年，他出版《救时揭要》，后来三十年间，陆续增订，最后成为《盛世危言》。</p>
+<p>《盛世危言》全书共分十四卷，一至四卷为《富国》、五至七卷为《开源》、八至十一卷为《强兵》、十二至十四卷为《节流》，共一百零二篇。有某些篇后还附有英、法、德、俄等国有关资料和张之洞、薛福成等人有关文章。</p>
+<p>1892年，郑观应在这书初刊自序中写道：</p>
+<p>六十年来，万国通商，中外汲汲，然言维新、言守旧、言洋务、言海防，或是古而非今、或逐末而忘本，求其洞见本原、深明大略者，有几人哉？孙子曰知己知彼，百战百胜，此言虽小，可以喻大。应虽不敏……乃知其治乱之源、富强之本，不尽在船坚炮利，而在议院上下同心、教养得法。兴学校、广书院、重技艺、别考课，使人尽其才；讲农学、利水道、化瘠土为良田，使地尽其利；造铁路、设电线、薄税敛、保商务，使物畅其流。……</p>
+<p>这些议论，自然是两年后孙中山上李鸿章书中“人尽其才”“地尽其利”“货畅其流”的张本。孙中山是郑观应的老乡，也是朋友。郑观应影响孙中山，自不待言了。</p>
+<p>国民党捏造历史</p>
+<p>现在再回看陈少白的追忆，便知道上李鸿章书，乃是孙中山完稿在上海见过郑观应之后，不但不成于广州，更不成于香港了。既然这样，又何来桂崇基所说的孙中山在香港向唐绍仪出示上李鸿章书呢？</p>
+<p>至于桂崇基说孙中山因唐绍仪之介，得识徐秋畦的事，也不能成立。据《国父年谱初稿》，1894年6月，孙中山“偕陆皓东至天津，上书李鸿章”，“先生在沪遇香山同乡郑官应，由其函托王韬介绍于李鸿章幕僚罗丰禄。迨先生偕皓东抵天津后，先访罗，又得徐秋畦为先容，求介见鸿章，先以书进。”则徐秋畦和孙中山的搭线，是罗丰禄而非唐绍仪。徐秋畦是李鸿章的幕僚，陈少白回忆中的“李鸿章幕下的老夫子”，该是指他。桂崇基说徐秋畦带孙中山见李鸿章的一些细节，虽然有趣，但是非常可疑。原因无他，以李鸿章的忙、李鸿章的大架子，他是根本不会见孙中山的！</p>
+<p>但是，若说李鸿章根本不会见孙中山，这对国民党的附会之徒说来，是认为脸上无光的，所以，他们就开始捏造历史。胡去非在《孙中山先生传》（1931年8月上海商务印书馆版）里，曾集这种捏造之大成，胡去非说：</p>
+<p>至北京时，冒险谒李鸿章，密陈北京政府之横暴腐败，革命之不可缓，议论雄快。李谢之曰：“今日之革命，余亦知其不可已；然余年七十有九，精力既衰，断不能大有为，幸君努力为之，中囯前途，唯君等是赖，余必为君后援”云云（见时事新报馆编《中国革命记革命党小传》）。吴稚晖编年系“别传”云，中日交战前，先生由湖南出扬子江口，由海路入北京，深夜冒险晤李鸿章于私邸，陈说大计，劝李革命。李以年耄辞。此为癸巳二十八岁以前之历史，即自传所谓“十年如一日”也。</p>
+<p>到台湾后又大造特造</p>
+<p>胡去非本人后来也不信这些捏造，他在《总理事略》（1937年10月上海商务印书馆版）中，就有“先生见李鸿章不遂”的更正。但是国民党逃到台湾后，却把这一捏造，花样翻新起来。首先是1965年11月11日《新生报》登出“中央社特稿”——《万世风范的国父》，其中说：“在国父演讲时曾担任过记录的中国广播公司董事长梁寒操，讲了八个有关国父生前的小故事，来纪念国父百年诞辰。”梁寒操讲的第一个故事是：</p>
+<p>国父在二十七八岁的时候巳经出来行医，有一次他满怀爱国报国的热忱，上书李鸿章，并由唐绍仪陪同，去见李鸿章。当时李鸿章还没有看完国父所上的书，就老气横秋地对国父说：“天下大事困难重重，不是你们年轻人所能够了解的。”国父辞出后，大为光火，眼睛冒出愤怒的光芒对唐绍仪说：“我起先以为李鸿章很行，现在才知道他根本不行，我的建议他干不了，我自己来干！”</p>
+<p>梁寒操做过国民党中央宣传部部长，也是老广（广东人），他带头造这种谣，由“中央社特稿”方式发出，自然就愈来愈绘影绘声了。难怪此后国民党宣传媒体上，不但把孙中山见李鸿章的电视画面，弄成李鸿章一派诚惶诚恐模样，并且干脆就说孙中山当时是去“招降李鸿章”了！——国民党捏造历史，竟逸出常识，一至于此，国民党真太目中无人了！</p>
+<p>梁寒操捏造历史中，提到孙中山见李鸿章是“由唐绍仪陪同”的，这种捏造，未免太粗糙；所以十八年后，这一捏造由桂崇基翻做，变成唐绍仪是中间人了，而“陪同”的，又换成徐秋畦！当《传记文学》的编者向桂崇基专函请教出处的时候，桂崇基说：这是“民国二十年左右”唐绍仪亲口对他说的！他居然把这段秘史埋在心里五十多年，真是天晓得他在干什么啊！</p>
+<p>介绍人还有盛宣怀</p>
+<p>最近，我的老师吴相湘《孙逸仙先生传》出版了，他对孙中山这段公案，有了新的资料与解释，他根据大陆资料，提出了一封郑观应给盛宣怀的信，信中说：</p>
+<p>敝邑有孙逸仙者，少年英俊，曩在香港考取英国医士，留心西学，有志农桑生殖之要术，欲游历法国讲求养蚕之法；及游西北各省履勘荒旷之区，招人开垦，免致华工受困于外洋。其志不可谓不高，其说亦颇切近，而非若狂士之大言欺世者比。兹欲北游津门，上书傅相（李鸿章），一白其胸中之素蕴。弟特敢以尺函为其介，俾其叩谒台端，尚祈进而教之，则同深纫佩矣。</p>
+<p>再肃者：孙逸仙医士拟自备资斧，先游泰西各国，学习农务，艺成尔后返中国，与同志集资设书院教人；并游历新疆、琼州、台湾，招人开垦。嘱弟恳我公代求傅相，转请总署给予游历泰西各国护照一纸，俾到外国向该国外部发结游学执照，以利遄行。想我公有心世道，必俯如所请也。</p>
+<p>吴相湘说：</p>
+<p>盛宣怀接阅郑观应信后，曾致函李鸿章，介绍孙先生往见。孙是否见到李，文献无征。但多数记载肯定孙李没有晤面。因当时中日为朝鲜东学党之乱，两国正调兵遣将前往三韩。李鸿章忙于这军国大事，自无暇接见孙。但孙先生在三年以后一论文中指出：“当我在中日甲午战争爆发前夕，正停留天津；那时曾亲眼见到有许多文武官员自全国各地赶来向当时权倾一时的宰相李鸿章晋见，在蒙允晋见之前，无不需与馈赠巨额红包给他的僚属。”孙先生既正努力革除陋习，当不会纳贿求见。</p>
+<p>吴相湘说：“孙先生既正努力革除陋习，当不会纳贿求见。”以这一理由而不能见李鸿章，是可疑的。因为见李鸿章是大事，孙中山识其大者，当不致因小失大。我看根本的原因还是孙中山当时人微望轻，李鸿章不肯见他而已。</p>
+<p>吴相湘的新见解</p>
+<p>吴相《补注》里，提出一个孙中山上李鸿章书的新说法，他说：</p>
+<p>孙先生所以如此不惮烦请托，请人作书转求李鸿章，完全是八十余年以前，满清皇朝除选派十五岁左右幼童赴美留学，并另选派福州马江海军学堂等校毕业生赴英习海军以外，根本再没有其他官费生、自费生赴外国留学（自1898年以后，才逐渐有少数人东渡赴日游学，因不需护照）。自然更没有如民国以来的留学规程，以及近年的公自费留学生考试，或外国大学给予研究奖学金，甚至出国观光等都可以申请发给出国护照，经过外国使领馆签证即可启程。而当时赴欧洲必需护照，尤其美国1882年成立禁止华工入境规条后，由国人前往美国非常困难，有时大小商人前往也被视作“苦力”（劳工）不准入境，或被拘留后逐回。孙先生是广东人熟知这些情形，权衡轻重利害，如其徒粍金钱时间冒险远行而被虐待侮辱逐回，不如在出国以前尽一切可能设法求取护照，以策安全。</p>
+<p>当时自费出国求学既无成例。孙先生这一请求完全是借重李鸿章一言九鼎的重要地位，以及李与香港西医书院关系能致函总署特准这一“破例”或“创例”。能否成功，并不可预料。并且郑观应致盛宣怀书中虽言明孙的学历以及他自备资斧，并无金钱上请求；但自医士改习农事，无论如何是一转变。……故孙先生上李鸿章书是深望李“玉成其志”万不可少的“敲门砖”。</p>
+<p>因此，吴相湘认为孙中山“上书李鸿章请发出洋护照”一点上，才是当时实情。这一立论固非无见，但是孙中山若目的只在“请发出洋护照”，似乎不必这么麻烦的上万言书，也与郑观应给盛宣怀信中所说的“一白其胸中之素蕴”目的不合，他如只志在护照，盛宣怀的八行书直达李府应该就够了，盛宣怀“介绍孙先生往见”李鸿章，就未免多事了。</p>
+<p>改良与革命</p>
+<p>我在《孙逸仙和中国西化医学》一书里，曾有专章——《“改良”与“革命”之间》——讨论孙中山的转变过程，我说：</p>
+<p>在这种“参与”的过程里，孙中山不但认识了郑官应，并且还在郑官应家里会到了绰号“长毛状元”的王韬。王韬还为孙中山写了介绍信给李鸿章的幕僚罗丰禄，以达成孙中山“上李傅相书”的积极效果。但当孙中山最后知道“上书请愿”的方式走不通以后、当他深切知道“改良主义”的手法达不到以后，他又回归到革命的路线。</p>
+<p>我又说：</p>
+<p>这个分野，也就是从“改良”观点到“革命”观点的分野；这个分野，它的最后爆破点是《上李傅相书》的失败。</p>
+<p>关于上书的事、关于这次走改革路线的经过，我们在孙中山的自述《伦敦被难记》中也可得到主要的说明：</p>
+<p>予在澳门，始知有一种政治运动，其宗旨在改造中国，故名之曰“兴中会”。其党有见于中国之政体不合于时势之所需，故欲以和平手段、渐进方法，请愿于朝廷，俾倡行新政。其最要者，则在改行立宪政体，以代专制及腐败的政治。予当时深表同情，即投身为党员，自信固为国利民福计耳。</p>
+<p>中国睡梦至此，维新之机，苟非发之自上，殆无可望，此兴中会之所由设也。兴中会之所以偏重于请愿上书等方法，冀万乘之尊或一垂听，政府之或可奋起。且近年以来，北京当道诸人与各国外交团接触较近，其于外国宪政当必略有所知，以是吾党党员本利国福民之诚意，会合全体联名上书。时则日本正以雄师进逼北京，在吾党固欲利用此时机，而在朝廷亦恐以惩治新党，失全国之心，遂暂搁不报。但中日战争既息，和议告成，而朝廷即悍然下诏，不特对于上书请愿者加以叱责，且云此等陈请变法条陈，以后不得擅上云云。</p>
+<p>吾党于是抚然长叹，知和平方法无可复施。然望治之心愈坚、要求之念愈切，积渐而知和平之手段，不得不稍易以强迫。且同志之人，所在皆是，其上等社会，多不满意于海陆军人之腐败贪黩，平时骄奢淫逸，外患既逼，则一败涂地。因此人民怨望之心，愈推愈远、愈积愈深，多有慷慨自矢，徐图所以倾覆而变更之者。</p>
+<p>在这段话中，孙中山原始的改良主义的色彩，是非常明显的。所谓“和平手段”、所谓“渐进方法”、所谓“请愿于朝廷”、所谓“冀万乘之尊或一垂听”、所谓“政府之或可奋起”、所谓“全体联名上书”、所谓“和平方法”等话，都是明显的改良主义的语句，都不是革命的立意与手段。直到这些立意与手段都“无可复施”的时候，才轮到“不得不稍易以强迫”、“徐图所以倾覆而变更之者”。</p>
+<p>今天宣传孙中山革命历史的人，他们总是把孙中山一开始就描绘成一个反对改良的革命派，甚至从幼年就开始“蓄革命之机”了。这是很不了解孙中山真正怀抱的说法，是很不通的。</p>
+<p>改良张本与革命张本</p>
+<p>我仔细观察孙中山一生的言论，发现他的和平改革的色彩、缓进的色彩，始终很浓厚。孙中山远在民国前六年，就演说指出“革命的事情，是万不得已才用，不可频频用之”（《三民主义与中华民族之前途》）；在这篇演说后十六年，他同样的说：“诸君要晓得，革命是不得已而为的事。”（《三民主义为造成新世界之工具》）在1923年的一次演说中，他甚至带着一点似乎“挖苦”的意味，来指出“中国式之革命家”的性质，他说：</p>
+<p>我即自称革命家，社会疑义纷起，多所误会，其实中国式之革命家，究不过抱温和主义，其所主张者非极端主义，乃争一良好稳健之政府。</p>
+<p>在1919年和1924年的两次演说中，他甚至明白的指出：“改造”“维新”的意思，与“革命”并无不同。他说革命两字，有许多人听了，觉得可怕，但革命的意思，与改造是完全一样的。”（《改造中国之第一步只有革命》）他又说：“外国革命，有许多是成功的。离我们最近的就有日本，日本维新，大家都知道是成功的，维新事业和革命事业是相同的，维新成功就是革命成功。”（《革命成功始得享国民幸福》）这些明明白白的改良论调，岂不正正都是这个伟大革命家的论调吗？</p>
+<p>所以，从这些角度来看，孙中山不但是一个伟大的革命家，更是一个伟大的改良家。只有了解他那种改良的怀抱，才会明白他为什么要上书李鸿章，为什么要走上一段改良主义的路线。</p>
+<p>罗香林在《国父之大学时代》中说：</p>
+<p>世人以上书文章闳肆，疑非国父自作；或以李氏为满清重臣，非创导革命之国父所欲合作，疑上书非国父本意。不知国父在西医书院，于现行科学与政事及农功论学，研讨至精，而国学用力甚深，文章亦所素习；李氏为当时倡办洋务人物，且为西医书院赞助人，与其有医学教育因缘，观李氏复西医书院函，知其非于革新政治不相能者。故国父欲试探李氏意志，俾为实行革命张本，非谓欲与满清政府妥协也。</p>
+<p>罗香林对怀疑上李鸿章书真伪的人的指摘，是可通的，但是他说孙中山“欲试探李氏意志，俾为实行革命张本”的推论，却未免牵强。孙中山上书无效，就是最好的“革命张本”，原来那个上书的“张本”，事实上该是“改良张本”才对。《伦敦被难记》中自述清吏向他说“汝前尝上策于总理衙门，请其转奏朝廷，汝策良佳”等话，也是孙中山当时走改良路线的一个有力旁证。</p>
+<p>演化眼光</p>
+<p>罗香林在《香港早期之西医书院及其在医术与科学上之贡献》中说：</p>
+<p>唯孙先生在该院，除于学校规定课程外，亦兼喜研究农田、舆地与经史诸学。尤嗜于中夜起床读书，法国革命史与达尔文《物种原始》（《物种起源——编者》）一类专书，最所喜读。盖是时适值达尔文逝世后数年，其进化论学说风靡全欧，康德黎博士即首为介绍其学说于香港。孙先生殆为国人研究进化论之最早起者。</p>
+<p>唯孙先生于科学研究特深、于生理学为最有心得、于进化论为探索最殷，故俟配合其毕业后之经验，遂能发明“知难行易”之学说，与修正进化论，而引伸其体系，斯则尤属西医书院曾获致其预期成效之明征也。</p>
+<p>罗香林又说：</p>
+<p>近人有谓中国人知有进化论，乃自严复于1895年出版所译赫胥黎（T.H.Huxley）之天演论（EvolutionandEthicsandOtherEssays）始者，其实，孙先生之首治进化论学说，乃在1887年至1892年肄业西医书院之时代，较严氏译书时代为早。</p>
+<p>这些阐发，大体上都是很独到的。但是最重要的一点阐发，我认为罗香林应该做出而没做出的，则该是：</p>
+<p>一、达尔文的学说是“演化”的，并没有中国译名中“进化”的意味。旧译“进化论”是不通的，也是以词害意的。</p>
+<p>二、孙中山受达尔文的影响是不错的，这从他自述“于西学则雅癖达文之道（Darwinism即达尔文主义）”可得证明。但是达尔文真正影响孙中山的，“知难行易”学说还属小焉者也，并且还待考。真正影响他的，乃是一种对人际看法的“演化眼光”。由于具有“演化眼光”，所以即使革命，也“究不过抱温和主义，其所主张者非极端主义”。这种因达尔文而来的影响，对当时深信“演化论”的人，不论是严复或孙中山，都没有例外。而介绍“演化论”到中国来的人，从伟大的严复以下，他们的最大“孤独”，也许却正是感到中国人并没真正的了解“达尔文之道”！中国人所能了解的，只是“物竞天择”“适者生存”那一套，并不是真正的“演化眼光”那一套。因此之故，中国人近百年来，最多的是鲁莽灭裂的所谓“革命家”“革命英雄”“终身革命者”和“吃革命饭者”。他们“彻底”这个、“极端”那个，整天“革”别人的“命”，可是革来革去，不但没达到“彻底”“极端”的“革命”的大效果，甚至连他们所看不起的“改良”的小效果都没达到。虽然这样，他们却还日复一日的高叫“革命”“革命”、年复一年的高叫“革命”“革命”。总还迷信鲁莽灭裂的方法，妄想“一了百了”、妄想“一蹴而就”、妄想“迎头赶上”、妄想“一次解决”，而其结果，却永远是欲速则反迟、想快却更慢。这些悲剧，追究起来，都是没有深刻了解“演化眼光”的缘故。他们这些人的智慧，比起严复和孙中山来，真是太远了、太远了！</p>
+<p>没有一件可以成立</p>
+<p>虽然有“演化眼光”的孙中山，最后自己从“改良”走向“革命”，并且直革到死，还有“革命尚未成功”之叹，但当他一旦走上了“革命”的路，他对他曾有“改良”的记录，显然就没有兴趣也没有必要再提起了，这就是在孙中山在世之年，人们一直不知道他曾上书李鸿章的缘故！他自己绝口不提这件事！</p>
+<p>直到孙中山死后，他生前的一个“敌人”陈垣（援菴，做过辅仁大学校长）以史学家的博闻强记，挖出了这件事。陈垣告诉了另一个博闻强记的史学家顾颉刚，顾颉刚亲自去找，终于在1894年9月10日的上海广学会《万国公报》第六九、七〇号上，找到了“广东香山来稿”的《上李傅相书》！</p>
+<p>清朝根据祖训，不设宰相，殿阁大学士都名过其实。但有“大学士”“太子太傅”头衔的人，都被尊称做“傅相”。李鸿章在1870年得到“大学士”头衔、1879年得到“太子太傅”头衔，所以孙中山称他“李傅相”，这种称呼，是非常合乎规格的。</p>
+<p>吴敬恒在《中山先生年系》1894年二十九岁条下写道：</p>
+<p>是年七月一日中日开始宣战。自传曰：“至甲午中东战起，以为时机可乘，乃赴檀岛美洲。”出洋后，邮上李鸿章一书。所以知其邮上者，因书中有“文于回华后……”云云也。邮书必在八月，因是年八月十月份之上海万国公报已登该书矣。又此书首言“窃文籍隶粤东，世居香邑，曾于香港考授英国医士”云云，若甲午前曾深夜晤李于私邸，必不做此开端。则别传冒险之说，必系传闻之误。</p>
+<p>吴敬恒这里所说：“若甲午前曾深夜晤李于私邸，必不做此开端。”是对的。但必须证明上李鸿章书乃在求见李鸿章之后，这种推论，才能成立。若上书在先，上书且是求见前的先容步骤，这种推论，就大有问题。孙中山《上李傅相书》发表于《万国公报》显然在正本早就送达以后。他在正本送达后南下，以“广东香山来稿”方式投书《万国公报》，显然又不是桂崇基笔下“大骂李鸿章是官僚”的北上情况。所以，结论是：国民党绘影绘声说孙中山见李鸿章的事，从旧式捏造到新式捏造，没有一件可以成立。</p>
+<p>文章写到这里，一切就都水落石出。国民党还是好好想想吧：只要李敖在台湾，你们就休想捏造历史。金钱、枪杆、镇暴车都在你们手里，但是历史绝不在你们手里，还是放明白点吧！</p>
+<p>1983年6月26日下午在草山之阳</p>
+<p>孙中山向清吏下跪求饶</p>
+<p>——伦敦蒙难罗生门</p>
+<p>11月7日，国民党《中央日报》上有消息如下：</p>
+<p>纪念国父逝世五十九周年</p>
+<p>中视制播《伦敦蒙难记》</p>
+<p>根据国父亲撰《伦敦被难记》《党史会藏》，胡汉民编《总理全集》与《中国古代名人列传》等书编剧而成的《国父伦敦蒙难记》，11日下午4时将在中视频道播出，这是一出国语电视剧。</p>
+<p>《国父伦敦蒙难记》的历史背景是国父在前往英国，准备组织华侨，扩大革命力量时，腐败专横的清廷竟以诡计将国父诱入“中国公使馆”，幸亏国父大仁大勇的精神和机智应变的能力，以及国父英籍老师康德黎的全力协助，才脱离虎口。</p>
+<p>当时，由于舆论的报道和介绍，使全世界不但公认国父是中国革命领袖，同时也促使国父在大英博物馆完成了三民主义的理论基础。《国父伦敦蒙难记》即完全依据史实演出国父伦敦蒙难十二天的经过，借以向逝世五十九周年的国父，表达敬意。</p>
+<p>中视当家小生崔浩然在演出国父时，内心严肃而庄重，生怕无法将一代伟人的凜然正气，表现出来，而老牌演员李影的“康德黎”角色，将康与国父间的师生之情，发挥得淋漓尽致。</p>
+<p>为了看看国民党最近在宣传上“新猷”些什么，我在11月11日下午，居然浪费了一点时间，一边做工，一边断断续续看了这出电视剧。一看之下会失望，早在意中；但是边看边骂，却也稍嫌意外，边看边骂了国民党这种busy宣传以后，我真忍不住要再写上一笔。</p>
+<p>孙中山如是说</p>
+<p>国民党笔下的伦敦蒙难事件，其实真相是很“罗生门”的。换句话说，真相是有不同的说法的，并且有的说法还是矛盾的、对立的，包括孙中山自己的说法在内。我们先看孙中山自己的说法。《伦敦被难记》（《伦敦被难记》原文系英文，名为“KidnappedinLondon”，由甘作霖中译，中华民国元年5月初版，上海商务印书馆印行，以后各处所翻印均本此）中说法如下：</p>
+<p>1896年10月1日，予始抵伦敦，投宿于斯屈朗（Strand，伦敦路名）之赫胥旅馆①。翌日即至波德兰（Portlandplace，伦敦区名）覃文省街（DevonshireStreet）46号康德黎②君之寓所相访。康君夫妇招待甚殷，并为予觅相近之舍馆曰葛兰旅店（Gray'sInn），使徙止焉③。予自是即暂居，每日独处无聊，辄往伦敦博物院游览，或访各处之遗迹，观其车马之盛、贸易之繁，而来往道途，绝不如东方之喧哗纷扰。且警察敏活，人民和易，在在均足使人怦怦向往也。予无日不造访康德黎君，每至必取其藏书，读而消遣。一日，予饭于其家，康德黎君戏谓中国使馆与伊家为邻，盍过访之，因相视而笑。康德黎夫人戒曰：“子毋然，彼公使馆中人睹子之面，行当出而相捕，解送回国耳。”予闻夫人言，益相与大笑，初不料后日竟成实事也。一夕，孟生医学博士（Dr.Manson）④邀余往餐，孟生君亦予香港旧识，曾授予医学者。君亦笑谓予曰：“慎勿行中国使馆，致堕陷阱。”予以是于中国使馆之可畏，及其相距之不远，历经良友之告诫，非全无措意者。然予至伦敦，为日犹浅，途径未熟，彼良友之告诫，于予初无所济也。</p>
+<p>是年10月11日，适值星期，予于上午10点半钟时，自葛兰旅店（葛兰旅店在伦敦霍尔庞Holborn之葛兰旅店街。霍尔庞区名）赴覃文省街，意欲随康德黎君等赴礼拜堂祈祷。正踯躅间，一华人悄然自后至，操英语问予曰：“君为日本人欤？抑中国人欤？”予答曰：“予中国人也。”其人叩予以何省籍，予答曰：“广东。”其人仍操英语曰：“然则我与君为同乡，我亦来自广州者也。”夫中国盛行不规则之英语，名曰Pigeon英语，意即商业英语也。华人虽同隶一国，而言语多相扞格。譬如汕头之与广州，相距仅一百八十英里，视伦敦之与利物浦犹相近，然其商人之言语，乃彼此不相通，以是不得不借商业英语相通款。彼汕头人与广州人之商于香港者，多以英语相晋接，此足以见我国言语之歧杂矣。</p>
+<p>予途遇之华人，既知予为粤产，始以粵语相谈，且行且语，步履颇舒缓。俄而又一华人来，与予辈交谈，于是予之左右，乃有二人相并而行矣。二人且坚请予过其所居，谓当烹茶进点，略叙乡谊，予婉却之，遂相与伫立于道旁阶砌。未几，又有一华人至，其最先与予相遇者，即迤逦去。于是此留而未去之二人，或推予、或挽予，必欲强予过从，其情意诚挚非常，予是时已至于阶砌傍屋之侧。正趦趄间，忽闻邻近之屋门砉然而辟，左右二人挟予而入，其形容态度又似谐谑、又似周旋。一纷扰间，而予已入，门已闭，键已下矣。然予尚未知此屋为谁之所居，故中心无所疑惧。初予之所以犹豫不即入者，盖急欲往访康德黎君及孟生博士冀同往礼拜堂，恐中途迟回而不及耳。迨予既入门，睹其急遽之状，且屋宇若是宽广，公服之华人若是众多，因陡然动念曰：是殆即中国使馆乎？又忆中国使馆在覃文省街之邻，意者予向时踯躅之所，必中国使馆左右之道途也。</p>
+<p>予入门后，被引至一室，室中有一二人与予接谈数语，又自相磋商数语，遂遣二人挟予登楼，予亦不之抗。既登楼，复入一室，令予坐候。未几，而二人又至，更挟予上，是为第三层楼，仍令入一室中，其室有窗，护以铁栅，窗外即使馆之屋后也。须臾来一须发俱白之老人，施施然饶有官气，一入室即谓予曰：“汝到此即到中国，此间即中国也。”</p>
+<p>言已就座，徐徐询予：“汝即孙文乎？”予曰：“然。”</p>
+<p>其人曰：“实告汝，予得驻美使臣来电，谓汝乘麦歇斯的号轮船游历至英，故令我拘汝于此。”</p>
+<p>予问曰：“拘予何为耶？”</p>
+<p>其人曰：“汝前尝上策于总理衙门，请其转奏朝廷，汝策良佳，唯今者总理衙门急欲得汝，因令余暂相羁留，以待朝廷之命。”</p>
+<p>予曰：“然则予之留此，可告吾友乎？”</p>
+<p>曰：“否！是不能。唯旅馆中之行李，汝可草一函，此间人当为汝取之。”</p>
+<p>予告以欲致书于孟生博士，其人乃命人给予纸笔，予书中大意谓此身已被禁于中国使馆，请转告康德黎君，俾取予之行李带下云云。其人阅竟。曰：“函中何能书及被禁二字，汝可别缮一函。”予乃另缮曰：“顷予在中国使馆，乞告康德黎君，为予送行李至此云云。”</p>
+<p>是老人者，予初不知为何许人，厥后而始知其即声名鼎盛之马凯尼（SirHallidayMarcartney）也。</p>
+<p>马凯尼君一转念间，忽又谓予可径函告旅馆，不必托友代取。予答以予所寓者并非旅馆，除康德黎君外无知者，因以改缮之函授之。马凯尼唯唯，许为代寄。马凯尼之所以忽然转念者，盖欲借是以搜予行箧，或能得吾同党之姓名及往来之函耳。计诚狡哉。</p>
+<p>照孙中山的说法，他的被关入伦敦中国使馆，是走在路上，碰到广东老乡，两人以乡音交谈，“且行且语，步履颇舒缓”的，后来又来了一个老乡，大家一起聊，在他左右，就一边一个人了。他们请他到家里坐坐，“烹茶进点，略叙乡谊”，他谢绝了，遂在路边又聊天。后来，又来了一位，最先跟他聊天的先走了，剩下的两位，一阵“情意诚挚非常”的推拉，他已到了路边的房子旁边了。“正趦趄间，忽闻邻近之屋门砉然而辟，左右二人挟予而入，其形容态度又似谐谴、又似周旋。一纷扰间，而予已人，门已闭，键已下矣。”照孙中山这种说法，他的被关在伦敦中国使馆，是在一片粤语发音中的半推半就，是非自愿入使馆的。不但如此，在康德黎老师戏言何不一访中国使馆的时候，康师母还特别警告过他，并且孟生医学博士也警告他“慎勿行中国使馆，致堕陷阱”。可见他从1896年10月1日抵伦敦，到11日被关进使馆前，十一天中，绝未近中国使馆一步，更别提身入虎穴，自行进入使馆了。</p>
+<p>只是“派人密尾行踪”而已</p>
+<p>但是，孙中山这一说法，若是真的“完全依据史实”，即跟现在已经能够看到的当时秘件不符。现在我们得知：孙中山在美国时，行踪就早已被清廷注意，清廷驻旧金山总领事冯咏蘅，就曾向清廷驻美公使杨儒有报告如下：</p>
+<p>孙文……身材短小，面黑微须，剪发洋装，由檀山行抵金山。同伴有二洋人：一名卑涉，亦美国金山人，素系檀岛银行副买办；一名威隆，亦美国人，向在檀岛服官，前次创议废主，因其未隶檀籍，所谋不逞。均挟厚资，居檀日久，是否孙文同党，尚难臆断。唯见同船偕来，交情甚洽。孙文借寓金山沙加冕街第706号门牌华商联胜杂货铺内。闻不日往施家谷⑤转纽约，前赴英法，再到新加坡。并闻有沿途联络会党、购买军火、欲图报复之说。该犯随身携带私刊书册两本，虽无悖逆实迹，检其上傅相⑥书，确有该犯之名，显系孙文无疑。现将原书设法觅取寄呈，俟访问该犯赴纽行期，再行电禀。查阅该犯书册两本：一系摘录明黄梨洲《明夷待访录》中《原君》《原臣》二篇，卷端加一小引，自称杞忧公子⑦；一系上李傅相书，洋洋万余言，自称文素在香港习西医，已蒙考取，敬乞傅相专委办农务。两种文笔倶畅达，昨已附致总署备核矣。</p>
+<p>杨儒得冯咏蘅报告后，就电报北京总署。总署回电说：“孙文将往欧洲何国？偕行洋人系何国人？附搭某船？希确查密电龚使（清廷驻英公使龚照瑗）酌办。英能援香港、缅甸交犯约代拿固妙；否则该匪若由新加坡潜结党恶内渡，应先电粤督预防，新加坡领事亦应饬其认真查访。”7月18日，清廷驻美公使致函驻英公使，说：“因中美交犯（引渡）另约，迄无成绪，此间无从措手，总署深知，故有转电尊处，援约代拿。”“援约”就是援咸丰八年（1858）《中英条约》第二十一款⑧和光绪二十年（1894）《滇缅条约》第十五款⑨，当时清廷盼能援这两个引渡条约由英国官方“代拿”孙中山，可是，英国政府采罪刑法定主义，引渡条约中既然只限于“香港”和“缅甸”，英国本土就不能适用。8月8日，清廷驻英公使复驻美公使信，就提到：</p>
+<p>唯查此种罪犯，按西洋章程情形视之，在本国固法无可逭；迨逃至他国，他国即视为公犯，向无交出之例。俄之于白彦虎，即其明证也。弟已密饬代理新加坡总领事刘牧玉麟，预为筹备，并密查孙文有无党羽以及熟识之人在坡。如该犯果来欧洲，俟尊处探确电知后，弟当援约与英廷商办。若英不能代拿，则唯有窥其动静、探其逃踪，遵照署电，电知粵督预防，于其内渡时设法兜拿耳。</p>
+<p>正因为驻英公使全无把握，所以在10月2日，在孙中山抵英后第二天，这位公使在致北京总署电中，有这样的文字：</p>
+<p>接杨使函电悉。饬拿粵犯孙文，该犯现由美到英，改洋装无辫，外部以无在英交犯约，不能代拿，现派人密尾行踪。瑗寝。</p>
+<p>这样过了八天，10月10日，他致电给驻美公使，也说：</p>
+<p>密。孙文已到英，外部以此间无交犯约，不能代拿。闻将往法，现派人密尾。瑗支。</p>
+<p>这些文件，都证明了直到10月10日——孙中山抵英第十天——的时候，清廷中国使馆对他都没有亲自捉拿的意思，只是“派人密尾行踪”而已、“派人密尾”而已。</p>
+<p>孙中山自己大意</p>
+<p>不料到了10月11日，突然有了转机。现查当时往来密电如下：10月11日，驻英公使致北京总署电：</p>
+<p>密。孙文到英，前已电达。顷该犯来使馆，洋装，改姓陈，按使馆即中国地，应即扣留，唯时解回，约颇不易，当相机设法办理。祈速示复，勿令窦使⑩知，并请电粤督。瑗歌。</p>
+<p>同一天，有“札稿”说孙中山这一“洋装，改姓陈”的事：</p>
+<p>为札饬事：照得本大臣接准出使美国大臣杨函电内开：“接奉总理衙门迭次函电内称，粵东要犯孙文谋乱发觉，潜逃外洋，饬即随时查拿”等因。该犯现由美到英，改装易姓，适来本署。查公法：使馆即中国地，自应扣留，除电请总署示遵，并饬参赞马格里密查外，相应派员监守。查翻译官邓丞廷铿，精细耐劳，即派该员督同武弁车德文，并洋仆二名，轮流看管。事关谋逆要犯，该员务当格外小心，毋任泄漏消息，趁间遁逸，致干大咎，切切，此礼。</p>
+<p>上札驻英翻译官邓丞廷铿准此</p>
+<p>第二天（10月12日），北京总署复电：</p>
+<p>歌电悉。能按公法扣留，英不问，固好。解粤应设何法，能免英阻，且必到粵，望详商律师。谋定后动，无令援英例反噬，英又从而庇之，为害滋大，切望详慎。鱼。</p>
+<p>10月14日，驻英公使再电北京总署：</p>
+<p>密。鱼电敬悉。孙无忌惮，自来使馆，势应扣留。据问看管之邓翻译言，〔孙〕欲谋大事，唯时未至等语。有西人知粵督几为所害，是反形已露。外部既以香港、緬甸约不能施之英京，现筹购商船，径送粤，不泊英岸，可无他虞。船价煤工约需七千镑，得载二千余吨船一只，不用，变价亦可。否则释放，仍派人密尾，穷其所往，亦不露痕迹。统乞速示遵行。瑗庚。</p>
+<p>10月16日，驻英公使再电北京总署：</p>
+<p>庚电未奉复，扣留至今，外无知者；释放亦宜早，免露痕迹，乞速示。瑗蒸。</p>
+<p>10月17日，北京总署复电：</p>
+<p>庚电悉。购商船径解粤，系上策，即照行。七千镑不足惜，即在汇丰暂拨，本署再与划扣。唯登舟便应镣，管解亦须加慎，望荩筹周备，起解电闻，以便电粵。蒸。</p>
+<p>10月23日，驻英公使再致电北京总署：</p>
+<p>孙犯已在馆扣留十三日，有犯党在馆旁逻，馆中人出入，亦必尾随，日夜无间，竟无法送出。外间亦有风声，船行亦不敢送，只得将购定之船退去。与外部商允，如孙回香港，必由港督严察，并请具文以凭饬港督照办等语。因将孙犯释放，仍派人密跟。瑗筱。</p>
+<p>根据上面这些当时的原始文件(11)，我们清楚看到：当时直到10月10日为止，驻英中国使馆的人，都没有亲自捉拿孙中山的意思：直到10月11日孙中山自己大意，“改装易姓”、“无忌惮，自来使馆”，他们才见人起意，觉得“使馆即中国地，自应扣留”。于是案情急转直下，好戏出场矣！</p>
+<p>钦命要犯上了门</p>
+<p>孙中山自己大意，显然低估了清廷的办事能力。清廷虽然无法搞今天“校园间谍”那一套，但是雇老外来跟踪，却也相当拿手。我们试看一下当时洋侦探在10月1日到5日间的跟踪报告：</p>
+<p>马格里爵士(12)</p>
+<p>波德兰</p>
+<p>关于孙文事件</p>
+<p>爵士：</p>
+<p>关于我们10月1日通信上所提的事，我们现在报告你。我们在赫胥旅馆方面，做有系统的监视。在1日那天，就是星期四，此人于下午四点半钟外出，沿着斯屈朗走，经过佛立特街（FleetStreet），到露朅特场（LudgateCircus），看看商店的破璃窗子，以后又回到旅馆。那时候是下午6点30分，以后就没有看见他出来了。</p>
+<p>在2日星期五那天，他于上午10点30分离开赫胥旅馆，雇了一个10880号四轮马车装行李，坐到葛兰旅店街8号，将行李运入，该人亦进去。</p>
+<p>他在该处到上午11点30分才出来，步行到牛津街（OxfordStreet），看看商店的玻璃窗子，于是走进上霍尔庞（HighHolborn）119号（文具店），再进加快食堂（ExpressDairyCo.），吃了中饭，于下午1点45分回到葛兰旅店街8号。</p>
+<p>下午6点45分他再出来，走到霍尔庞的一个饭馆里停留了三刻钟，再回到葛兰旅店街8号的时候，已经8点30分钟，就不再看见他了。</p>
+<p>以后每天都有人监视他，但是没有什么重要的事情发生。此人常在主要的街道上散步，四周顾望。他不在家里吃饭，到各种饭馆去吃。</p>
+<p>提起你电报里所说的一层，我们可以说在监视期间，他不曾见过什么中国人。在利物浦听说有几个在“Majestic”和他同船的人，答应到伦敦来看他。</p>
+<p>讲到照相这个问题，我们恐怕非等到天气好些，不能办到。</p>
+<p>无论如何，我们对于这点总是尽力注意。</p>
+<p>你忠实的司赖特侦探社（签名）(13)</p>
+<p>可见孙中山的一举一动，都已在清廷中国使馆的雇人窥视之中。在这种情形下，孙中山居然还“洋装，改姓陈”，跑到使馆中去，钦命要犯上了门，不惹出麻烦来，又岂可得乎？</p>
+<p>“不得不如此立论耳！”</p>
+<p>既然是孙中山自己进入使馆的，孙中山为什么要在《伦敦被难记》里说与真相不符的话呢？这个答案，孙中山“四大寇”老友之一陈少白，在《兴中会革命史要》里道出了原委。陈少白说：</p>
+<p>当时孙先生怎样会被公使馆拘留起来呢？照孙先生自己做的《伦敦蒙难记》所说：是道遇公使随员邓廷铿（号琴斋），自言是香山同乡，他乡遇故，就拉到邓家内谈天。原来他的家，就是中国公使馆。以后先生又遇到好几次，末了一回，就被挟持登楼，禁诸室中。但是实际，并不是这样一回事。当时孙先生对我说，他早已知道公使馆，他故意改换姓名，天天跑到公使馆去宣传革命，后来公使馆的人疑惑起来，因为当时广州起义之事，传闻还盛，以为这人或者就是孙逸仙，公使随员邓廷铿因为是同乡，就试出他的确是孙逸仙，于是孙先生就被他们拘禁起来了。</p>
+<p>孙中山另一位老同志邓慕韩在《孙中山先生传记》里也说：</p>
+<p>按先生伦敦使馆被难有二说：一为使馆计诱，即先生自著《伦敦被难记》所述；一为先生自进，即先生事后对人所言。……以情理论，应取自进说，缘诱先生为邓廷铿，时不过为一使馆微员，途遇一乡人，安知即为先生？即知之，于仓卒间安敢行此非常手段。必须奉准公使，详商办法，然后进行。须历若干时间，方能办到，断无即遇即禁如此之速。《伦敦被难记》所云计诱者，盖著是书时，欲得外人同情，增加满清罪戾，不得不如此立论耳。夫明知使馆尚敢进去，益见先生革命之勇敢精神。特将釆录理由，附识于此，以释群疑。</p>
+<p>孙中山另一位老同志冯自由在《革命逸史》第一集中也说：</p>
+<p>中山每日造康寓叙谈，因于途上与使馆随员邓琴斋邂逅，邓与中山为旧识，他乡遇故，颇与往还。邓之友人亦以乡谊之故，渐相结识，但不知为孙文耳。九月初五（阳历10月11日）中山偶过使馆门外，遇同乡数人于道，各以粤语问讯，并邀中山入室，略叙乡谊。中山从之，入门后，即被二人挟持登楼，禁诸室中。</p>
+<p>可见孙中山早就知道他自动去的地方是哪里，他写《伦敦被难记》故意说不知是使馆，并说自己在入门前被挟持，目的是“欲得外人同情，增加满清罪戾，不得不如此立论耳”！</p>
+<p>由此可见，《伦敦被难记》的写作，是当时政治宣传品，政治宣传品的目的是政治宣传，不能算是信史，用信史眼光去看，就未免太不了解政治人物了、就未免太天真了（梁启超在《中国历史研究法》里自承：“吾二十年前所著《戌戌政变记》，后之作清史者记戌戌事，谁不认为可贵之史料？然谓所记悉为信史，吾已不敢自承。何则？感情作用所支配，不免将真迹放大也！治史者明乎此义，处处打几分折头，庶无大过矣！”《戌戌政变记》在当时也是政治宣传品，不能算是信史）(14)。</p>
+<p>孙中山写悔过书</p>
+<p>孙中山在使馆被禁后次年，他在《伦敦被难记》中回忆：</p>
+<p>马凯尼君临去时，即阖予室之门，并下键焉；自是予遂幽禁矣。未几，闻门外有匠人施斧凿之声，则于原键外更增一键也。且特遣中西人各一监守门外，有时或于二监者之外更添一人。当最初之二十四小时内，其中国监守二人，时或入室与予相语。其于被禁之原因，虽无一语宣泄，予亦不之问。然曾告予以顷者相见之老人即马大爷，予审为马凯尼也。大爷者官场通俗之尊称，犹当时驻英公使龚某之称龚大人也。使臣与外人酬酢不用真名，遂使外国人称之曰大人。时不知英政府公牍上之往还，亦称龚大人否耳。中国官场及外交礼节，往往有以一字之微，而易尊重为侮慢者。西人之于中国文学风俗未经殚心研究者，实难明了。故彼外交官辄喜于晋接之间，以言语文字愚弄外国人，偶或占胜，即洋洋然自得曰：“洋鬼子被屈于我矣。”其可笑一至于此。</p>
+<p>予被禁后数小时，忽有一监守者入，谓率马凯尼君之命，搜检予身，因探取予钥匙、铅笔、小刀等物；然幸予另有一衣袋，中藏钞票数纸，未被检取，故彼所挈以去者，仅无重大关系之文件数纸而巳。监守者复询予需何饮食，予仅令取牛乳少许而已。</p>
+<p>他又说：</p>
+<p>被禁之第四日晨，有一自称唐先生者来视予，彼盖诱予入使馆之人也。唐先生就座，傲然曰：“前日之强君至此，乃公事公办，义不容辞，今日之来，则所以尽一己之私情。我意君不如直认为孙文，讳亦无益。（李敖按：前引《伦敦被难记》，孙中山已向“一须发俱白之老人”承认自己是孙文，“唐先生”又何能再出此言？）盖此间均已定夺一切，且君在中国卓有声望，皇上及总理衙门均稔知汝之为人，君姓名已震铄环球，即死亦可以无憾。总之，君在此间实生死所关，君知之乎？”</p>
+<p>予曰：“不然，此间为英国辖境，非中国之属地，公等将何以处余？按诸国际交犯之例，公等必先将拘予之事闻于英政府，予意英政府必不能任公等随意处置也。”</p>
+<p>唐答曰：“吾侪不愿更与英政府为正式之授受，今已事事停妥，轮舟亦已雇定，届时当钳君口，束君肢体，畀赴舟上，而置于严密之所。及轮抵香港，当有中国炮舰泊于港口之外，即以君移交彼舰，载往广州，听官吏鞫审，并明正典刑。”</p>
+<p>予曰：“公等此举，未免草率过甚。盖予在舟中，或得乘机与在舟英人通消息也。”唐微笑曰：“否否，君虽万能，亦难出此。盖君登舟之后，即有人严密监视，与在此无异。苟有可与外人通消息之处，吾等必先事杜绝，绝不使君有丝毫间隙可乘也。”予又曰：“舟中员司未必与使馆沆瀣一气，其中安知无矜悯我而为我援应者？”</p>
+<p>唐曰：“愚哉君也。是轮船公司乃马凯尼君所深识者，该公司人员自当遵马君之命而行，绝不为吾辈梗。”</p>
+<p>唐又续曰：“是轮船者，属于格来公司（Glen），本星期内未必启程（按：唐某与予谈话之日为10月14日即星期三），盖公使为经济起见，不欲专雇是船，因令其先载货物，而行旅之费，则由使馆全认。迨次星期，装载货物既竟，君亦须附载以行矣。”</p>
+<p>予谓：“此等计划，欲见诸实行亦良难。”</p>
+<p>唐曰：“此着如不果行，则予侪亦不妨戮汝于此，借免周折。盖此间即中国，凡使馆中所为之事，绝非他人所能干涉者也。”</p>
+<p>唐言已，又侃侃然举高丽某志士事为我劝慰，并资启迪。盖某志士自高丽出奔至日本，被其同国人诱赴上海，戕毙于英租界内，由华人将志士遗骸运往高丽，高丽政府戮尸示惩，而其狀毙志士之凶徒，则获重赏并擢高位焉。唐口述时，手舞足蹈，意兴甚豪。盖彼以为此次捕予有功，将来中国政府亦必加以重赏，赐以高位也。</p>
+<p>予问曰：“予殊不解公等何残忍若是。”</p>
+<p>唐曰：“皇上有命，凡能生致汝或取汝死命者，皇上均当加以不次之赏。”</p>
+<p>予又进逼曰：“君须知高丽志士之案，即中日开衅之一因。今公等致予于此，或招起极大之交涉，未可知也。将来英政府对于使馆中人，不免要求中国政府全数惩治。况君为粵人，吾党之在粵省者甚多，他日必出而为予复仇，岂第君之一身可虑，甚或累及君之家族，其时君将追悔莫及矣。”</p>
+<p>唐某闻予言，不觉色变，顿易其豪悍之口吻曰：“凡我所为，皆公使之命，我此来不过为彼此私情计，俾君知前途之危险耳。”</p>
+<p>是夜12点钟时，唐又至吾室，与我谈话。</p>
+<p>予曰：“君如真为我友，则将何以援我？”</p>
+<p>唐答曰：“此即我之所以来也，我当竭尽吾力，希望脱君于厄。吾今方令匠人密制二钥，一可启此室之门，一可启使馆之前门，我之所以如此者，因掌钥者系公使之亲随，绝不肯授我以钥也。”</p>
+<p>余问以出险当在何时？唐答称：“必须俟诸次日即星期五（按：此时已在礼拜三夜12点钟以后，已为星期四，故所谓次日即星期五）。星期五清晨2点钟时，我或能乘隙而来，援君出此罗网，未可知也。”</p>
+<p>当唐辞出时，又告我星期五清晨必来相援，汝可预备云云。然唐去后，予仍取片纸，书数语，俟星期四（即10月15日）上午授于英仆，乞其密交康德黎先生。及下午，唐又来云：“此纸已由英仆径呈使馆，马凯尼君见之，即向我大肆诟詈，谓不应以使馆密谋告汝。是在吾虽有援救之心，而汝此举实足破坏吾计划，未免自误。”</p>
+<p>予乃问以尚有一线生机否？唐曰：“生机尚未尽绝，但君以后必须依我命而行，切勿再误。”</p>
+<p>唐乃劝我致书公使，求其相宥。吾从之。唐立命西仆柯尔取纸笔墨水至，吾请换中国文具，因上书公使应用汉文，未便做西字也。</p>
+<p>唐曰：“否。英文甚好，因此间大权均操于马凯尼之手，公使不过坐拥虚名而已。君之此书，宜畀马凯尼也。”</p>
+<p>予问书中宜如何写法？唐曰：“君必须极力表白，谓身系良民，并非乱党，只以华官诬陷至被嫌疑，因亲到使馆，意在吁求昭雪云云。”</p>
+<p>予即在唐某之前，照其授意书成一长函，折叠既毕，照例应于纸背标明受书人之姓名，唐乃为予读马凯尼姓名之拼法曰：“SirHallidayMarcartney”。盖此时予但知其姓氏之音为马凯尼，而犹未知其拼法。既而吾授信于唐，唐怀之而去，此后遂不再见此人之面矣。</p>
+<p>吾此举实堕入唐某之奸计，可谓愚极。盖书中有亲至使馆吁求昭雪等语，岂非授以口实，谓吾之至使馆，乃出于自愿，而非由诱劫耶？虽然，人当陷入深渊之时，苟有毫发可以凭借者，即不惜攀援以登，初不遑从容审择，更何能辨其为奸伪耶？</p>
+<p>唐曾告我，凡我所书各函，均由仆人出首于使馆，并未达于诸友。此时吾自思希望巳绝，唯有坐以待毙耳。</p>
+<p>孙中山笔下“自称唐先生者”就是邓廷铿，他是当时的翻译。邓廷铿出现，目的是在骗取孙中山“求其相宥”的悔过书，孙中山自承被骗“可谓愚极”，但是“人当陷人深渊之时，苟有毫发可以凭借者，即不惜攀援以登”。他自感无法，只好“吾从之”。</p>
+<p>“不免一时愚昧”</p>
+<p>吴相湘《孙逸仙先生传》写这一悔过书的经过说：</p>
+<p>这是邓针对孙急切脱险愿望，进一步施用这种言语使孙产生恐惧懊悔感。“未免自误”就是说已濒临绝境。但孙追问邓“尚有一线生机否”？邓听到这句话，真是“恰中下怀”。因改以诱惑语态答复孙：“生机尚未尽绝，但君以后依我命而行，切勿再误！”</p>
+<p>邓所谓“依我命而行”，即劝孙“致书公使（龚照瑗），求其相宥”。孙先生自述：“吾从之。邓立命柯尔取纸笔墨水至。吾请换中国文具，因上书公使自应用汉文，未便做西字。邓曰：‘否。英文甚好。因此间大权均操于马格里之手，公使不过坐拥虚名而已。君之此书，宜畀马格里。’”</p>
+<p>邓又进一步指示书翰内容：“君必须极力表白，谓身系良民，并非乱党。只以华官诬陷致被嫌疑，经美时曾往使馆请求昭雪，未得晤见，故特来英，亲到使馆，意在吁求昭雪。”孙面对当时残酷现实，唯有以死里求生保存此身再图辩正决心，按照邓所授意写成一函，折叠后，邓又指示写上受信人马格里的英文姓名。于是邓满意的怀挟这一文件离去。</p>
+<p>孙先生在康德黎等援救出险后，是年11月4日，对英国政府律师陈述：当时所以一切听邓摆布，实因确认这是唯一仅有的一条获得自由的万一可能的机会。满清使馆确实是在进行押解他回国“正法”——如果竟成为事实，对中国革命前途的影响实在非常恶劣。至于手写“亲至使馆吁求昭雪”是绝对不符事实，只是为求出险，听从邓廷铿授意书写而已。孙先生于《伦敦蒙难记》中指陈：</p>
+<p>吾此举实堕入邓某之奸计，可谓愚极。盖书中有“亲至使馆求昭雪”等语，岂非授以口实：谓吾之至使馆，乃出于自愿，而非诱劫耶？虽然，人当陷入深渊之时，苟有丝毫可以凭借者，即不惜攀援以登。初不遑从容审择，更何能辨其为奸伪耶？</p>
+<p>孙先生又进一步说明：</p>
+<p>予之所以惴惴以惧者，目前之生命事小，将来之政体事大。万一吾果被递解回国，清政府必宣示全国：吾之被逮回华，实由英政府正式移交。自是以后，中国国事犯将永无在英存身之地。吾党一闻此言，必且回想金田（太平）义军起义之后，清政府实赖英人扶助之力，始奏凯旋。国人又见吾之被逮于英而被戮于华，亦必且以为近日革命事业之失败，仍出英国相助之功。自是而吾中华革命主义永无成功之望矣。</p>
+<p>且予在旅馆中行李之外，尚有文件若干。如为中国使馆所得，则株连之祸，不知伊于胡底。幸康德黎夫人能为予预料及此，毅然赴旅馆，尽取予书牍，捆载而归，付之一炬。是其识力，诚大有造于吾党也。</p>
+<p>可见孙先生在九死一生之际，仍随时面对“历史镜子”以吸收教训，引用金玉均及英国协助清廷打击太平军往事。但濒临绝望，固不免一时愚昧。孙先生于此反省自责，以资警惕。因革命工作冒险犯难，随时有再陷虎口的可能。</p>
+<p>吴宗濂《随轺笔记》</p>
+<p>虽然“伦敦蒙难”的内情已如上述，但是，另一面的“罗生门”故事，在我们历史家眼中，却也不能不注意。所谓另一面的“罗生门”故事，就是针对孙中山《伦敦被难记》的吴宗濂《随轺笔记》。这部书对洗刷老K的历史，显然有决定性的作用。</p>
+<p>《随轺笔记》是清朝光绪二十七年（1901）的出版品，书前廖寿丰的序写于光绪二十四年（1898）、俞钟颖的序写于光绪二十五年（1899），内容所记，却是光绪十九年（1893）起龚照瑗出使英国的事。当时龚照瑗以候补三品京堂出使英、法、意、比四国，需要翻译人才，乃由安徽巡抚沈仲复推荐，由江苏嘉定的吴宗濂担任。吴宗濂字挹清，中华民国成立后，做过驻意大利公使、外交部特派吉林交涉员、1918年参议院议员，他是个通晓洋务的有心人。在他随龚照瑗出使的时候，虽然“派司译务”，但是也为老龚写《起居注》、起草文件等等，这部书的产生，就因此而起。《随轺笔记》共四卷，分类及标题如下：</p>
+<p>卷一记程合肥龚照瑗仰蘧鉴定嘉定吴宗濂景周著</p>
+<p>卷二记事合肥龚照瑗仰蘧鉴定嘉定吴宗濂挹清编辑</p>
+<p>卷三记闻合肥龚照瑗仰蘧鉴定嘉定吴宗濂挹清编辑</p>
+<p>卷四记游嘉定吴宗濂景周译纂</p>
+<p>在这书卷二记事中，收有两篇重要的文字，一篇是《龚星宪计擒孙文致总署总办公函》、一篇是《龚星宪计擒粤犯孙文复行释放缘由》，都是孙中山“伦敦蒙难”当时的记录和第二年（1899）的追记。这两篇文字因为是当时驻英使馆的内部文件和当事人文件，所以极富史料价值，并且帮助我们了解非一面之词的真相。因为这些文件太珍贵了、太罕见了，我把全文收在后面。</p>
+<p>龚星宪计擒孙文致总署总办公函</p>
+<p>敬密启者：七月间接杨子通星使函称：“粤东要犯孙文，谋乱发觉，潜逃赴美。钧署电令确查该犯欲往何处，密电敝处，援香港缅甸交犯约代拿”等因，并附录节略前来。嗣于八月十九日接通使电称：“孙文于西9月23日由纽约搭轮船至英国梨花埔海口登岸”等语。当即婉询英外部，拟援香港及缅甸交犯约，请为代拿。据该部答称：“二约只能行于香港及缅甸，而不能施之他处。设竟代拿，必为刑司驳诘”云云。英既不能代拿，敝处遂雇包探前赴梨花埔，密尾行踪。该犯于八月二十四日登岸，即日乘火车至伦敦，剪发洋装，偕行有二西人与之稔熟，伦敦则有二西医，一名坎特立、一名门森，曾住香港，与该犯交最厚。前该犯由粤垣逃至香港，即潜匿坎特立之宅也。讵意该犯于九月初四日，改名陈载之，来至使署，询有无粤人；次日复自来使署，探问中国情形。按公法，使署即中国之地，彼既肆无忌惮，势不能不暂行扣留，电请钧署核示。迨奉复后，即赶紧购定轮船，拟设法潜送到船，径解粵省。乃该匪党以其久不归寓，疑其必在使署，日夜在外伺察，意图截劫，势难送出。旋据外部私向参赞马格里云：“中英交犯约经曾前大臣议而未成，刻下既无约可援，如解犯潜过友邦之地，殊与公例未符。”盖业经孙党贿通日报并报知外部也。当与商允，如该犯回香港，必饬港督严察以戢乱谋，并请弟具文，以凭转饬照办。爰于十七日，将该犯释放，仍派包探密跟，计扣留在署十有三日。二十日复奉钧署巧电，内开香港交犯约指为谋反，辄不肯交，具文外部，宜商律师，具见堂宪审虑周详之意，当商据律师哈华托云：“如以匪人多借香港为谋乱之地，请外部饬香港地方官概加严察而不专指孙文，非特无碍香港交犯约，且可补该约未备之辞。”外部侍郎山德生亦言：“英不能准匪人借其属地谋乱友邦。”因即按哈律师言，于二十日照会外部堪纾盖系。又查该犯来英意在煽惑，英人固不为所动，即华人除使馆各员外，虽有在海口当水手者数十人，亦无被其诱惑之事，合并附陈。除一切情形节经电达，所有孙文与看管委员邓翻译廷铿问答节略另录呈览，统析代为回明堂宪为荷（英字第21号丙申九月二十九日）。</p>
+<p>附录邓翻译与孙文问答节略</p>
+<p>九月初四日，孙文来署，询：“有无广东同乡，特来拜见。”比时翻译邓廷铿出见，问其姓名，答以“姓陈，号载之”。问其到英何事？答：“前来游历，但已游数日，各处均得其大概，唯行宫不能任人游玩，阁下可设法令我一观其盛否？”邓云：“日后当可设法往游。”孙问：“英国有广东人否？”答：“有，均在海口。”孙问：“可带见否？”答以“可”。</p>
+<p>遂订翌日同赴海口。此约其次日来署情形也。初五日，孙于早晨11点钟到使署，并在署早饭，拟赴海口。邓云：“2点钟方可以去。”即带见马参赞，〔马参赞〕告以曾在曾文正公幕府。孙云：“前洪秀全得地之后，何以不能自守？”马答曰：“凡反叛得地，不善布置政体，即不能守。”孙云：“中日之役，华兵溃败如此，实为可惨，殆因不重洋务之故。现今中国重洋务者，唯李中堂一人而已。如中堂能以西法变华，谅可不致如此。”邓云：“尔曾晋谒中堂否？”孙曰：“去过一次，与罗稷臣相见。据云中堂不愿见我，盖因改装剪辫之故。此次中国之败，若在别国，必早变民主。”邓云：“天下事不必深谈，可到别处房间看看。”</p>
+<p>即带其上第二层楼，顺路过随员李盛钟卧房，与李相见数语后，即问：“贵省改行西法，可易办否？火车铁路可易通行否？”李答甚难，有山石之阻。孙云：“我在美国看见山可穿洞而行。”答：“如果定要开设，不过工本较大耳。”孙转向邓曰：“我俟游遍各国，意欲往中国各口岸，溯扬子江而上，看中国各地如何局面。但我现改西装，未晓内地行走有无关碍，请明指教。”邓答：“此事我无把握。”适参赞马来问邓译件，邓告以在三层楼上，随带孙同往楼上。此时楼上房子已备齐全，引孙入房，马邓二员一立在门内，一立在门外，比孙入房，即将房门闭上，外面加锁。马参赞开口云：“尔非姓陈，尔之金表内刊孙文二字，尔定是孙文，现奉钦差之谕，将扣留，问你在广东所做何事。现正电告总署，必俟总署回电，方能放出你。但安住在此房，不做犯人看待，只不许出门，如要看书，均可取来。”此将孙文引上楼房扣留之详细情形也。斯时马出来邓进去，问：“你是孙文，号逸仙，再号帝像，字载之否？”孙低头不答，唯云：“可准我回客栈，然后再来，或与人同去否？”邓答：“皆不能准。”初六日早饭，翻译邓与之同食，以探其滋事情形。邓云：“昨日将你扣留，此系公事公办，你以为何如？”孙答：“你系奉公而行，我不怪你。但钦差留我，有何主意？我昨夜三思，此地乃系英国，钦差在此，断难致我之罪，否则我亦不自来署。”邓云：“钦差并不定你罪，窃恐你来署，将署中公事在外误传，故扣留也。”孙云：“虽可扣留，实不济事。钦差在英无办犯之权，中国与英国又无交犯之约，我早查明，然后敢来。昨夜细想，钦差唯有密租船只，将我困在囚笼，私解回粤而已，其余则无别法。”邓云：“绝无此事，且你亦通英语，即困笼中，亦可求救。”孙云：“倘或将我之口闭塞，无从求救。不过我已入美籍，美国得知，亦是不了。”邓云：“你在美国生长耶？且华人不能入籍。我曾在金山多年，亦稍知美例。”孙不答，以病告求医，邓答：“代回钦差即问你在广东谋反，因事不密，被人先觉，以致不成，是否属实？”孙答：“我虽有大志，而时尚未至，唯广东有一富人，欲谋是事，被我阻之。”邓云：“何不同谋，反阻何故？”孙云：“他是为己，我是为民。”邓云：“请将为己为民四字明白告我。”孙云：“他之为己，欲得天下自专其利；我之为民，不过设议院变政治。但中国百姓不灵，时尚未至。故现在未便即行。盖该富人不知审时，我所以阻之也。我素重西学，深洋习，欲将中国格外振兴，喜在广报上发议论，此我谋反之是非所由起也。”</p>
+<p>初八日，邓又与孙谈，并以话引话，冀得实据，邓云：“我以公事扣你，若论私情，你我同乡，如有黑白不分，被人欺你之处，何妨将此事细微曲折，一一告我。倘有一线可原之路，我亦可念同乡之谊，代求钦差，为你申雪。你亦可回籍，再谋生业。况广东近事，我亦略知，且听你说看，与人言合否？”孙云：“事可明言，但不知钦差愿意排解否？”邓云：“钦差最喜替人申冤，只要将实情说出，我必竭力代求。”孙即跪下，叩头流泪云：“如事能直，恩同再造，感德不忘。”邓云：“请说，不可乱言。”孙云：“我是孙文，非陈姓也。号逸仙，再号帝像，此号是母所名，因我母向日奉关帝像，生平信佛，取号帝像者，望我将来像关帝耳。载之二字系由成语文以载道而来，并无别情。向在广东洗基设西医局，因治病有效，常与绅士来往，其时北京开强学会，我在省设农学会，总会在厢门底，分会在咸虾栏，凡入会者，将姓名籍贯登薄，当发凭票一纸，交其人收执，曾托尚书罗椒生之侄罗古香向前抚台马说情，请其批准开办，因抚台病后，迁延未批，而农学会早先开办不过教民种植，意欲开垦清远县之荒田，此田系会中所置，以为如有成效，即可将广东官地一并开垦。入会者有绅士、船主、同文馆学生等人。不料前年九月初八九左右，李家焯忽然带勇前来，将总会分会一概查封，在总会查出名册一本，分会查出铁锅两个、大斧多张，并拿去会友数名。其中有一姓陆者，本系蚕师，过堂苦打，强逼成招，已被正法，其余尚在狱中。所可恨者，绅士如罗古香等，则不敢拿，镇涛、广丙两船主托人取保出去；而事亦了。同文馆学生因是旗籍，亦置不问。独以我为首，专意拿我。且三天之后，又闻有西门丁泥六桶，内系洋枪，由香港付至农学会，亦被李家焯拿住，以为我谋反之据。又在火船拿获散勇五十余名，作为我之党羽。后讯知是台湾散勇，因有两人因别案与陆姓同罪，其余均由总督给资回籍，此非谋反之党羽，可立明也。查香港买洋枪，非由的保不卖，若往香港，一查便知虚实。此系李家焯私买废枪以坐我罪也。且我暂避藩署，一经事发，方将托人与陆设法，不料他一见刑具，即妄招认，无可挽回。徜有军火，何难电阻，三天后寄来，又谁收谁用耶？”邓云：“李家焯何故与你为仇？”孙云：“他之仇我因机房之事也。缘他部下勇丁直入机房抢丝，被人捉住，李家焯得知，派勇夺固，随往抚辕控告以不服稽查、挟制官长为辞。有人求我替机房定计，与李互讼，李知事败，以故仇我，即借农学会以控我，指为暗藏三合会，有谋反之举。我之误处误在专讲西学，即以西国之规，行于中国。所有中国忌禁，概不得知。故有今日之祸。”邓云：“前日所说富人，何妨明说？”孙云：“谋反之事，我实无之，前日说有人商之于我，意图谋反，此人系广东大绅曾中进士并且大富姓某名某是也（按：此人近颇为当道倚重，或系孙之妄扳，故删其姓名）。我行医时，素与绅士往来，唯他尤为亲密，平时互发议论，以为即是国计民生之道，只知洋务亟宜讲求，所说之话，他甚为然。以我之才干，可当重任。故于中日相接莫解之时，专函请我回广东相商要事。我在香港得信即回，见他，他曰：‘我有密事告你，万勿宣扬。’乃述其梦云：‘我身穿龙袍，位登九五，我弟叩头贺喜，故请你商量，何以助我？’我即问曰：‘你有钱多少？’他答曰：‘我本人有数百万两，且我承充闱姓，揭晓后始派彩红，现存我手将近千万，如立行谋事，此款可以动用，迟则失此机会。’我又问：‘有人马多少？’他云：‘我有法可招四万之众。’我答云：‘凡谋事者，必要先通在上位之人，方得有济。尔于政府，能通声气否？’他不能应。况他之品行最低，无事不作，声名狼藉，我早尽知，他之所谋，只知自利，并无为民之意，我故却之，决其不能成事也。他寄我之函，的系亲笔，虽未将谋反之言说出，其暗指此事，可以意会之词，亦可为证。是欲谋反者是他，而非我也。乃李家焯故意张大其词，以重我罪，藩署官场中人及绅士等，均有意替我申雪，因事关重大，不敢干预，即递公呈代办亦恐无济。其时制台派兵搜查，我由藩署坐轿而出，直至火船，径赴香港，幸无人知此，我真有莫白之冤也！李家焯此次害我，不独家散人亡，我所有田地均已被封，不知尚能复见天日，得雪此恨否？况我曾上禀请设内河轮船公司，已蒙张香帅批准，不遇此事，我早往上海开办矣。李家焯之害我，其毒无穷，自我避往香港之后，去年又造谣言说我私买军火，在外国招募洋匠五千，进攻粵省。我不得已，潜往各国游历，及抵英国，我所往各处均系游玩之所，凡制造军火各厂，我概未去，此亦可见我非有谋反之事也。万望钦差代为申雪，俾得回国，另谋事业，断不敢再行为乱。况中国近来颇讲洋务，我意中主意甚多，不难致富，又何必行险耶？你果念同乡之谊，还当代我力求钦差。”</p>
+<p>上口供系以话引话而得，看其情形，实在善为粉饰一面之词，无人作证，据情照录，虚实难分。但观其放出之后，绝无求白之意，可见绝非安分者流。翻译邓廷铿谨呈。又参赞马格里探据久住香港之西人云：“孙文于光绪二十年秋冬间，在香港雇人五百名，到广东拟先计困广东总督于机器局，然后滋事。孰意事机漏泄，败于垂成。广督闭城搜拿，孙则匿在藩署。嗣由其党用箩筐将伊由城墙坠下，逃往香港”等语，合并附陈。</p>
+<p>龚星宪计擒粤犯孙文复行释放缘由</p>
+<p>光绪二十二年七月，准出使美日秘大臣杨子通星使函称：“粵东要犯孙文，谋乱发觉，潜逃赴美，奉总督电令确查该犯行踪，并饬电知龚星使援香港缅甸交犯约转恳英国代拿”等因，并附节略，叙其面貌年岁籍贯。八月十九日，复准通使电称：“孙文于西9月23日即华八月十七日，由纽约搭船至英国梨花埔海口登岸”等语，时星使卧病已久，神志甚清，当遣参赞马格里婉询英外部，拟援香港及缅甸交犯约，请拿该犯。外部答以二约只能行于香港缅甸，不能施之他处，设竟代拿，必为刑司驳阻。星使之犹子仙舟司马（心湛）乃雇包探赴梨花埔守候。旋据该探密报：孙文剪发作洋装，于八月二十四日登岸，即日乘火车至伦敦，下榻客店，有二西人随行。九月初四日，孙文行经使署之门，遇学生宋芝田，询其有无粤人在署，宋曰：“有之。”孙即请见，乃进署门入。厅事英文四等翻译官邓琴斋刺史（廷铿），粤产也，遂与接谈，该犯以异地遇同乡，分外惬意。自言姓陈号载之，继出金表，以觇时刻，刺史索观，则镌有英文拼切之孙字，刺史恍然，然不动声色。</p>
+<p>孙约翌日再来，同赴海口探望粤商，刺史欣诺。孙既去，急密告仙舟，转禀星使。星使与马格里、王鹏九两参赞密商办法，皆曰：“可拿。”初五日午前，孙果贸贸然来，饭后，邓刺史请孙登楼，先至首层，观星宪之会客厅、签押房；继至二层，入李琴伯明府（盛钟）卧房，坐谈良久。适马参赞到，刺史遂告孙曰：“君能更上一层楼，往顾弟房乎？”孙曰：“甚好。”遂随刺史拾级而升，马参赞在前引导，先入预备之空房内，做开门待客状，邓指曰：“此即弟房，请君先进。”孙刚涉足，错愣间，马参赞即将房门关闭。告曰：“奉有总署及驻美杨子通星使密电，捉拿要犯孙文，尔即是也，既经到此，请暂留一日一夜，静候总署回电。”</p>
+<p>孙见已识破，无可如何，唯唯应命。星使遂饬邓刺史，武弁车焕章、谢邦清，造炮学生宋芝田及洋仆二名，日夜轮守。初七日，接总署回电，力嘱慎密办理，不可为英所知，致被反噬，应如何措手，悉听主裁。初八日，星使嘱宗濂代拟电稿，言唯有专雇一船，径解粤省，否则只可释放，派探密跟，穷其所往，请示只遵。此电去后，总署无复。十三日，星使又发电云：“释放宜早，免有痕迹。”仍无复电。时署外已有人日夜守伺。十六日，英国格罗孛夜报忽刊其事，不直使署所为，他报访事人接踵来访，邓刺史力辩其无，马参赞直认不讳。翌晨各报刊布，指为使署拐骗监禁，哗然而起，甚有以使署房屋绘为图画者，亦有以此事标题特印大字告白兜销报章者，使署门口，自朝至于日中昃，聚众至百数。英外部沙侯闻此消息，即柬请马参赞去，婉告曰：“中英交犯约，经曾前大臣议而未成，刻既无约可援，如解犯潜过英地，殊与公例不符，宜将孙文即日开释。”马参赞诺诺连声而退，急即回禀星使，不移时而外部总办及巡捕头果皆戾止，索领孙文。马参赞遂将孙文放出，交该总办及巡捕头由后门坐车而去，盖避前门聚观之众也。是夜各报刻有孙文对答之辞，殊形荒谬，据谓邓刺史告以拟将其装入箱中运至船上，或先行毒死解华戮尸，此盖该犯臆造，借以骇人听闻也。西国久无此等刑法，见此数语，益笑中国之教化毫无。</p>
+<p>十八日，接总署复电，内称：“雇船解粵甚是，需款六千余镑即令汇丰拨解”等因，惜其时孙文已为英廷索去，无可挽回，当即据实电复。十九日，仙舟接短工洋仆查耳时来信，内言孙文起初几次着伊送信，优给金钱，伊皆一律缴呈马格里爵参赞，未得分毫奖赏。嗣孙复许酬英金五百镑送一密信，并嘱其事后离开使署，随孙度日。故伊甘冒不法，以洋信密报孙友坎特立及门森两英医。两英医因即在外设法派人伺守，并报外部及巡捕房，各报闻之，遂亦附和做不平鸣，致贵署不能不将孙文释放，曷胜怅怅。马爵参赞当时曾经恫吓，谓如有走漏风声者，当送官严办，余是以照实供明，听候惩治云云。仙舟司马以此信示马参赞，马参赞无计可施，徒形愤愤。各报议论纷如，痛斥马参赞及中国使署者又数日，而孙则致函日报，遍谢英廷、英报、英民，文过饰非，倾动众听。英国议绅之不明事理者，且举以诘责政府，拟请勒令使馆不得再用马格里，幸沙侯相顾全大体，片言解纷，星使又无所闻见，得以恰然养疴，更幸英外部允照星宪照会中所请各节，移知香港总督，严查不法，以戢乱谋，而杜后患。即日由星宪咨报总署，此案遂结。然传递密信之奸仆，以孙文所酬只有英金二十五镑，控诸刑司，又不得直，至今迄不甘服。孙逆亦以港督悬有厉禁，不敢回华，以身试法，故辗转窜匿，溷迹东瀛，而我中国东南半壁，即借此得以谧安，则我星宪龚公之一纸公文，保全者诚大而远哉！粤民有知，尚其铸像以祀也可。时光绪二十五年八月，嘉定吴宗濂追识于汉皋铁路局之牟隐庐。</p>
+<p>孙中山下跪</p>
+<p>根据以上这绝无仅有的历史纪录里，我们可以惊讶的发现，在孙中山和国民党御用史家的一面之词之外，至少有这些翻案的大内幕：</p>
+<p>一、清廷中国使馆扣留孙中山，是因为孙中山居然敢“改名陈载之”到使馆来，使馆“即中国之地，彼既肆无忌惮，势不能不暂行扣留”。因此，事件是偶发的，不是设计的。孙中山是自投罗网，中国使馆并没把他半推半就式的弄进来。</p>
+<p>二、孙中山在使馆时，留下了重要的“口供”，就是“邓翻译与孙文问答节略”，透露不为人知的内幕极多。孙中山进入使馆，原因是跑去问“有无广东同乡，特来拜见”，又“以异地遇同乡，分外惬意”。他前来英国游历，但无法进入皇宫参观，想托使馆帮忙，“设法令我一观其盛。”</p>
+<p>三、“伦敦蒙难”的当天，孙中山且在使馆吃早餐，以便饭后一起到“海口”去“带见”广东人、“探望粵商”，他完全没有警觉与防范。</p>
+<p>四、早餐吃过后，孙中山与“马参赞”聊天，谈到他去见李鸿章，但“与罗稷臣相见，据云中堂不愿见我，盖因改装剪辫之故”。可证国民党宣传孙中山见了李鸿章，是乱盖的。胡去非在《孙中山先生传》中说孙中山“至北京时，冒险谒李鸿章，密陈北京政府之横暴腐败，革命之不可缓，议论雄快。李谢之曰：‘今日之革命，余亦知其不可已；然余年七十有九，精力既衰，断不能大有为，幸君努力为之，中国前途，唯君等是赖，余必为君后援’云云（见时事新报馆编《中国革命记革命党小传》”。吴稚晖编年系《别传》云，“中日交战前，先生由湖南出扬子江口，由海路入北京，深夜冒险晤李鸿章于私邸，陈说大计，劝李革命。李以年耄辞”等等，都是鬼话。</p>
+<p>五、孙中山自一楼上二楼上三楼，直到被关进加锁的房子，是逐层参观而上，都没有被强迫情事。并且要他“安住此房，不做犯人看待，只不许出门，如要看书，均可取来”。</p>
+<p>六、日夜看守孙中山的是“邓剌史（廷铿）、武弁车焕章、谢邦清、造炮学生宋芝田及洋仆二名”。</p>
+<p>七、第二天清早，邓廷铿陪孙中山早餐，孙中山说：“此地乃系英国，钦差在此，断难致我之罪。”正因为他相信奈何不了他，所以他才敢来使馆，“否则我亦不自来署。”</p>
+<p>八、孙中山提到他“已入美籍”，是美国人，“美国得知”会提出干涉。邓廷铿却说“华人不能入籍”，说我：“曾在〔旧〕金山多年，亦稍知美例。”因而不予相信。</p>
+<p>九、孙中山提到“广东有一富人”要谋反，“该富人不知审时，我所以阻之也。”“欲谋反者是他，而非我也。”但据清廷官吏看法，这位“当道倚重”的富人，是被孙中山“妄扳”的。</p>
+<p>十、孙中山被关后的第四天（10月14、旧历九月初八）的谈话，最重要。当邓廷铿表示如有委曲，何妨一说，“倘有一线可原〔谅〕之路，我亦可念同乡之谊，代求钦差，为你申雪。”你也可回到家乡，“再谋生业”。并告诉他我邓某人也有情报，并非全不知情，你且说说看，看看与情报合不合，以证明是否“输诚”。孙中山遂说：“事可明言，但不知钦差愿意排解否？”邓廷铿说：“钦差最喜替人申冤，只要将实情说出，我必竭力代求。”于是孙中山“即跪下，叩头流泪云：‘如事能直，恩同再造，感德不忘’”。</p>
+<p>十一、《国父年谱》中说孙中山“幼名帝像”，他对邓廷铿道出这一命名原委是：“再号帝像，此号是母所名，因我母向日奉关帝像，生平信佛，取号帝像者，望我将来像关帝耳。”此一声明，显然表示并无在人间称帝为王之意。</p>
+<p>十二、孙中山透露“其中有一姓陆者（陆皓东），本系蚕师，过堂苦打，强逼成招”，成了叛乱犯，“已被正法”，这是冤枉的。因为孙中山组织“农学会”，虽然未得官方批准（今日内政部长吴伯雄听着：孙中山在专制时代，尚有未经官方批准即行结社的自由！并且该“农学会”成立于民国以前，故照你的王八蛋逻辑，至今犹可无须登记而存在也！），但该会“不过教民种植，意欲开垦清远县之荒田”而已，并没有谋反，“谋反之事，我实无之。”“我真有莫白之冤也。”他们实在是遭到了嫁祸与迫害，是被诬为革命党的。被诬以后，陆皓东“一见刑具，即妄招认”，以致“无可挽回”。这一说法，与今天的国民党革命史南辕北辙，并且根本否定了陆皓东的革命性。</p>
+<p>十三、孙中山对邓廷铿说：“万望钦差，代为申雪，俾得回国，另谋事业，断不敢再行为乱(15)。”</p>
+<p>十四、孙中山对外国报纸说使馆中人说要把他“先行毒死，解华戮尸”的事，《随轺笔记》透露“此盖该犯臆造，借以骇人听闻也”。</p>
+<p>十五、孙中山《伦敦被难记》中说他对使馆中英国仆人柯尔（GeorgeCole）晓以大义，请他带信，只是“酬以二十镑”(16)据陈少白《兴中会革命史要》中说：“再当时柯尔答应救孙中山先生的时候，孙先生除了把身上所有的钱给他，还允许他将来出去之后，再要酬报他，所以后来康德黎博士介绍孙先生到处演说请大家帮助，所捐到的几百英镑，也统统送给柯尔。柯尔为了这事，早已被使馆辞退了。”可见在“二十镑”外，别有承诺。据吴相湘《海外新见中国现代史史料》（《中国现代史丛刊》第一册），在英国政府档案中，得知柯尔“承认孙允许给予一千镑之酬劳金并且立即付给二十镑”。足证《随轺笔记》所述，并非空穴来风。《随轺笔记》中说：“19日，仙舟接短工洋仆查耳时来信，内言孙文起初几次着伊送信，优给金钱，伊皆一律缴呈马格里爵参赞，未得分毫奖赏。嗣孙复许酬英金五百镑送一密信，并嘱其事后离开使署，随孙度日，故伊甘冒不法，以洋信密报孙友坎特立及门森两英医。两英医因即在外设法派人伺守，并报外部及巡捕房，各报闻之，遂亦附和做不平鸣，致贵署不能不将孙文释放，曷胜怅怅。马爵参赞当时曾经恫吓，谓如有走漏风声者，当送官严办，余是以照实洪明，听候惩治云云。仙舟司马以此信示马参赞，马参赞无计可施，徒形愤愤。……然传递密信之奸仆，以孙文所酬只有英金二十五镑，控诸刑司，又不得直，至今迄不甘服。”这一内幕，也极为有趣。</p>
+<p>以上所写伦敦蒙难的一些“罗生门”(17)，足见我们多年来，在国民党一面之词的宣传下所得的印象，实不足凭。现在史料的陆续出现，证明孙中山《伦敦被难记》所说，也不无错误(18)。我们在研究这一问题的时候，实在该注意别上国民党的大当才好(19)。</p>
+<p>1984年12月15日午</p>
+<p>①HaxellesHotel。</p>
+<p>②SirJamesCantlie。</p>
+<p>③《国父年谱》：“康氏夫妇招待甚殷，并为觅居附近之葛兰法学协会场（Gray'sInnplace）8号宝勒特小姐（MissPollard）开设之私人公寓（BoardingHome）。翌日，携先生迁往。”</p>
+<p>④Dr.PatrickManson。</p>
+<p>⑤即芝加哥。</p>
+<p>⑥即李鸿章。</p>
+<p>⑦杞优公子是郑观应，不是孙中山。</p>
+<p>⑧原文：“中国民人因犯法逃在香港或潜往英国船中者，中国官照会英国官访查严拿，查明实系罪犯，即行交出。通商各口但有中国犯罪民人潜匿英船中房屋，一经中国官员照会，领事官即行交出，不得隐匿袒庇。”</p>
+<p>⑨原文：“英国之民有犯罪逃至中国地界者，一经行文请交逃犯，两国即应设法查拿，查有可信其为犯罪之据，交与索犯之官。行文将交逃犯之意，系言无论两国何官，只要有官印关防便可行文请交；此种请交逃犯之文书，亦可行于犯罪逃往之地最近之边界官。”</p>
+<p>⑩“窦使”是英国驻华公使窦纳乐（SirClaudeMacDonald），恐怕他得知后打电报，英国政府会干涉也。《随轺笔记》卷二有《龚星宪论英国驻华新使致总署总办公函》，说：“该使姓窦乃乐，名克罗特，系苏格兰之世族。其父曾任陆军提督，而渠亦行伍出身，年约四十余岁，初次膺使臣之职，沙外部立意欲将驻华公使一缺，以素未奉使之人补授，似别有深意焉。渠在英国陆军中职如中国之都司，光绪三年，曾赴香港，随营小驻，继而英平埃及叛党之乱，与敌战于石勒甘蒲，功绩卓著。自光绪八年以后，历办阿非利加事务，因转用文职，人甚精明，颇愿学习中国语言。”“沙外部”是指英国外相沙里斯伯侯爵（LordSalisbury）。</p>
+<p>(11)以上文件都根据王宠惠《总理伦敦蒙难史料》，1930年上海《建国月刊》第三卷第五期。王宠惠原记：“民国十八年10月，宠惠有事于国际法庭，道出英伦，于我国使馆中，得阅昔年馆中所存总理被难时文牒，亟录一份，携之回国，并摘其于党史有关，足为参考资料者，发表于建国月刊中，以供同志研览。”</p>
+<p>(12)马格里系据史馆档中呈报的正式译名，《伦敦被难记》中做“马凯尼”，当“名从主人”改正。</p>
+<p>(13)“司赖特侦探社”原文是SlateisDetectiveAgency。见罗家伦《中山先生伦敦蒙难史料考订》。</p>
+<p>(14)吴相湘在《〈大革命家孙逸仙〉影印本前言》里说：</p>
+<p>按罗家伦编撰《中山先生伦敦蒙难史料考订》，是罗君自诩史学成名之作。民国四十七年罗君主编《国父年谱初稿》中于伦敦蒙难仍多从《考订》之说。但以今看来：实在是一无可原谅的谬误。</p>
+<p>原来自孙先生蒙难事件发生，英国外部之所以采取干涉态度，即在清使馆非法使用管辖权违反孙先生本人意旨而加以诱拐。清使馆所持以辩护的理由则谓：孙在被幽禁之先一日曾到过清使馆，即被禁当日亦彼个人自动前来。这一论调正式形之文字，首见于1896年10月24日清使馆参赞马格里致伦敦泰晤士报投函中；其后包齐《马格里传》（TheLifeofSirHallidayMacartneybyD.C.Boulger）采录此函。清使馆随员吴宗濂归国后梓行《随轺笔记》，着意描述被禁先一日孙先生与使馆学生宋芝田的谈话，用意正复相同：企图脱卸诱拐责任。</p>
+<p>民国四十八年10月，笔者幸有机会游伦敦并获阅英国外交部档案：F.O.1718《英国领土内之中国革命党》，副题即“KidnappingofSunYat-senbyChineseLegation”，其中1896年11月16日英外部印行之机密文件（据以编印之原始文件亦存同档），第一附件即讨论孙先生是否曾先一日至清使馆一问题：因为这是此一事件是非的主要关键，也是英国政府能否采取干涉态度的重要枢纽。英内务部司法人员因为马格里坚持孙先生曾先一日至清使馆的论调；孙先生则矢口否认，其他人证又均予支持；故再三详细调查审问有关人证，虽以未能至清使馆调查为憾（事实上曾与清使馆主谋之马格里谈话多次），但综合详勘反复推敲各种可能后的结论，认定孙先生的说法是真实的（HavingfoundSuntruthfulonMaterialPoints）。就是说：孙先生在被诱禁前一日未曾到过清使馆，他完全是被诱拐入内的。项外部这一专档题名开宗明义着明“Kidnapping”，可说正名综实（评见正中书局印行《中国现代史丛刊》第一册拙撰《海外新见中国现代史史料》）。</p>
+<p>但令人诧异的是：罗家伦编国父年谱（上册第67页）竟着明：孙先生“先一日并曾行经清使馆，遇学生宋芝田……询以馆中有无粵人？欲向其宣传革命大义，宋答有。先生遂入晤邓廷铿……相约次日再来……是日（10月11日）上午，先生果至……”。这是很明白地指出：孙先生曾两次进入清使馆，并且都是根据自己的意愿！而不是“被诱拐”！这不仅与上述英国档案纪录完全不符（上文曾指明：英政府于此曾特别注意审慎，有事实根据判定为“诱拐”后才采取干涉行动），也与孙先生早经发表的《伦敦被难记》背道而驰——然而罗家伦编《国父年谱》注脚竟指明是根据孙先生《伦敦被难记》及罗著《中山先生伦敦蒙难史料考订》所引清使馆密档。就是说国父年谱这一段记载是揉合孙先生和清吏两方完全对立的说词而成的。</p>
+<p>任何一具备史学训练粗浅知识的人都知道：处理两种对立立场的说词，应尽可能寻找旁证来判断是非；万不得已，无第三方面资料可据则唯有存疑：绝对不能揉合两方对立见解而成“中庸之道”。尤其是这一事例，英政府既采取干涉态度，清吏之诡辩不足采信，已昭然若揭；这一段记载，遵依《伦敦被难记》说词，更为义不容辞之责任。然而其所主编之《国父年谱》中竟出现揉合两说的怪特现象，而又自作聪明擅加“盖欲向其宣传革命大义”一语以为揉合的媒介。但这一语句不仅不见于孙先生之《伦敦被难记》（吴宗濂《随轺笔记》有孙与宋芝田对话，但《国父年谱》注脚未着录，故今不采），并且与《伦敦被难记》原文精神完全背道而驰，更出乎一般情理之外。这一“揉合”真是匪夷所思。中国现代史一中华民国史的研究成绩迄不显著，这些自诩“成名之作”具有“劣币驱逐良币”的作用，实在是主要原因，怎能不令人感慨系之！</p>
+<p>国民党御用文人罗刚写《罗编国父年谱纠谬》根据吴相湘说，又杠上开花曰：“本条记事，在纲文虽书被‘诱禁’，但在目文中则言国父系自投罗网。如云：‘先生遂人晤邓廷铿，自言为陈载之，晤谈甚惬，相约次日再来。……是日上午，先生果至，……迨既入门，被引至一室。’此与国父伦敦被难记所述被‘诱禁’，完全不同，亦为对国父自述之翻案。”罗刚又说：“何况国父之为人，正如吴敬恒所言品格自然伟大”其一生言行，暾若天日，为天下所共晓，……〔国父年谱〕使全党所共仰之总理，全国所共仰之国父，蒙受‘诳言’之嫌。”其实吴相湘、罗刚的论证都不能成立。最大的错误在他们把孙中山主动入使馆和入使馆后被扣留弄成一件事。使馆扣留孙中山固系滥用外交特权，是违法的，但孙中山在扣留以前的行为，却不能记在驻英公使他们账上。马格里在10月24日致函泰晤士报，说：“孙逸仙之至使馆，系出己意，且为使馆中人所不料。其初之来在星期六（10月10日），二次之来在星期日（10月11日）。治国际法学者对于孙逸仙被清使馆拘留一节，无论做何评论抱何见解，然必先知本来并无诱骗。即其来使馆时，亦并未尝施以强力或欺诈，此为本案之事实，而亦至可凭信者也。”这些话是可信的。孙中山的到使馆，的确“为使馆中人所不料”，但一旦他进了使馆，“使馆中人”自然就要“计擒”他了。“诱拐”也、“Kidnapping”也，均从此处方行开始、自此方行非法，以前并无不法也。吴相湘是博学多闻的史学家，他当然知道陈少白《兴中会革命史要》、邓慕韩《孙中山先生传记》、冯自由《革命逸史》中的话，他知道却把账算在罗家伦头上而加以挞伐，就真令我们不解了！</p>
+<p>(15)“断不敢再行为乱”自是表示悔意。孙中山后有致香港道济会堂区凤墀书，说：“初六、七日内，无人知觉，弟身在牢中，自分必死，无再生之望，穷则呼天，痛痒则呼父母，人之情也。弟此时唯有痛心忏悔，恳切祈祷而已。一连六七日，日夜不绝祈祷，愈祈愈切。至第七日，心中忽然安慰，全无忧色，不期然而然，自云此祈祷有应，蒙神施恩矣。”信中说“痛心忏悔”，想是自悔干上此行耳丨</p>
+<p>(16)《伦敦被难记》：“及星期五（10月16日）上午，予祈祷既毕，起立后，觉心神一舒，一若所祷者已上达天听，因决计再尽人力，俟英仆柯尔来，又向之哀求脱险。于向柯尔曰：‘君能为我尽力乎？’柯尔反诘我曰：‘君为如何人也？’吾曰：‘吾为中国之国事犯而出亡于海外者。’柯尔于国事犯之名称，若未能领会。予乃问其尝闻阿美尼亚人之历史否？柯尔点头。予遂迎机利导，告以中国皇帝之欲杀我，犹土耳其苏丹之欲杀阿美尼亚人，土耳其苏丹之所疾视者，乃阿美尼亚之基督徒，故欲聚而杀之。中国皇帝之所疾视者，为中国之基督徒，故欲捕而杀之。吾即中国基督徒之一，且曾尽力以谋政治之改革者。凡英国人民咸表同情于阿美尼亚人，故吾之生平及目前状况，苟为英国人所知，则其表同情于我，可不言而可决也。柯尔云：‘不识英政府亦肯援否？’予曰：‘英政府之乐于相助，无待赘言。不然中国使馆只须明告英政府请其捕我，而交与中国可也。又何必幽禁于斯，且恐外人闻之，加以扃燏耶？’吾更进迫之曰：‘吾之生命，实悬君手。君若能以此事闻于外，则吾命获全。否则予唯有束手受缚，任其杀戳耳。君试思救人于死与致人于死，其善恶之相去几何？又试思吾人尽职于上帝为重乎？抑尽职于雇主为重乎？更试思保全正直无私之英政府为重乎？抑袒助腐败之中国政府为重乎？请三思之！并望于下次相见时，以君之决心示我！’翌晨，柯尔取煤来，投煤炉后，复以手微指煤篓。予见其所指者为一纸，不觉中心跳荡不已，盖吾之生死，全赖此片纸所书也。及柯尔既出，急取而读之，其词日：‘吾当为君递书于君友，唯君书时切勿据案而坐，因监守者伺察极严，得于钥中窥见君之所为，幸君伏于卧榻书之为要。’予于是卧伏榻上，取出名片一纸，面壁疾书，致康德黎君。晌午，柯尔复来，取是书去，予酬以二十镑，自此而予囊罄矣。既而柯尔又持煤篓至，以目示意，予待其去后，急搜煤萎，得一纸，读之，大喜过望。其词曰：‘勉之！毋自馁！吾政府正为君尽力，不日即可见释。’因此予知祈祷之诚，果能上达于天，而上帝固默加呵护也。计自被逮后，衣未尝解带夜未尝安睡，至此始得酣眠，及旦而醒。”</p>
+<p>(17)当然还有别的“罗生门”，不过太荒谬了。吴相湘《孙逸仙先生传》有注如下：“又叶夏声述：国父民初革命纪略书内三处述及一中国仆役‘燕人赵昇夫妇数数窥之门隙。国父适拟遗书英友康德黎，投置牖外，赵昇慨然拾而代致之，遂终获救而得释’（第10页）。又记孙先生云：‘翌日晨起，余以身畔之笔，正就致余英友康德黎一纸，乘仆从在门外洒扫之际，启窗投之玻璃屋顶之上。少时似有拾者，无何，有男子口操北方语者，隔门与余语……先生之函，小的愿为致之贵友。’‘馆仆赵姓，夫妇同佣，唯当时切嘱勿泄，以全首领。故民国前十年间，无以为报。民国成立，则赵佣亦失所踪矣，此余所常引为遗憾者也。’（第182-183页）又云：‘幸馆中北方侍役赵某夫妇，颇具同情。（孙）总理乃为书致英友，而自铁窗中投诸玻璃顶篷上，赵某洒扫得之，为赉函致英友，始震动舆论，而卒出于险。’（第187页）比照柯尔陈述有中国仆人Chow拾得孙书字条事。Chow与赵音相近。可能即指赵。但字条立即被柯尔抢去送呈马格里，并无转送康德黎之事。孙先生幽禁室内，自不明其后真相。且赵隔门相语，也少可能性，因除中英仆人两人监守外，中国武弁随时巡视，赵如敢如此作为，早被解回国处刑矣。叶夏声记录孙先生所言与《伦敦蒙难记》完全不符，殆事后得之传闻，不是当时真相，今录之以供异闻耳。”</p>
+<p>(18)如孙中山说“柯尔之妻尤为尽力”，不知此乃霍维太太（Mrs.Howe），非“柯尔之妻”也。据吴相湘《海外新见中国现代史史料》：“孙蒙难后之能获释，消息外泄于康德黎是一重要关键。据上述档卷中是年10月22日（孙尚未获释）康德黎在高等法庭（HighCourtofJustice）证词：10月15日，康遇孙所居留之葛兰旅店之波奈尔女士（MissPollard）言：孙自11日来，四日未回旅店不知去向，即已关切之至；至17日夜，康家信箱内忽有一末签名信言其中国友人被禁清使馆，康乃报警。这一寄发未签名信予康氏者为何人？不仅为一有兴趣问题，并且是重要关键所在。孙中山自撰《伦敦蒙难记》谓为使馆英仆柯尔之妻，今党史会刊行之国父年谱（上册第73-74页）考订说不是柯尔之妻，乃女管家霍太太，但究竟是何处的女管家‘尚待考’。现就上述专档确知这一女管家即伦敦清使馆的管家妇霍维太太（Mrs.Howe）。并且据档卷中柯尔证辞：孙被禁后，马格里即嘱其小心看管，如孙托其传递任何消息，应即报告，每次必予奖金一镑。柯尔均遵行，故孙两次托致信康，柯尔均呈马而获奖金，嗣经孙苦求，10月17日，柯尔偶与女管家霍维太太言及，霍维太太极力鼓励其传信，柯尔之意乃决。翌日遂将孙之名片递送康家。但当晚康家却发现有一未签名之信函报告此事。柯尔证辞说：他不能确知更不能确言此信是否即霍维太太所寄发。这是柯尔宣誓不能做伪证的负责话，但以今论霍太太寄发的可能很大，因为当时他只和她谈及此。并且不论如何，柯尔之心意由遵守马格里之吩咐转变至不听吩咐而为孙传递消息，霍维太太的影响力最大，这是柯尔证辞承认的。”再据《国父年谱》（增订本）：“唯关于作书与递书之女子，据罗家伦最近在英文《康德黎爵士传》中所发现（此书为康氏之子NeilCantlie与GeorgeSeaver合著，原名“SirJamesCantlie”1939年伦敦出版，系根据康氏文件写成），谓‘柯耳以此事告知英籍女管家霍维太太（TheEnglishhousekeeper,Mrs.Howe），霍太太对被囚者同情，乃作此函，于10月17日夜间11时投至康寓’。今据StatementofGeorgeCole1896.11.2亦同。”</p>
+<p>(19)最有趣的一个尾声是冯自由《革命逸史》第二集所述的邓廷铿与孙中山民国成立后的再见面：“按邓廷铿号琴斋，广东三水县人，乙未前孙总理在广州行医时尝与邓有一面之雅，故丙申远游伦敦，以他乡遇故，自容易受骗，邓曾任广州某报记者，自称‘环球三周客’，盖邓时以生平曾三度环游世界之经历炫耀人前也。辛亥革命后，邓于民元2月尝诣南京临时大总统府投刺求谒孙总理，总统府副官某等知其曾陷害总理，欲治以汉奸之罪，特向总理请示。总理曰：‘桀犬吠尧，各为其主，已过之事，无庸深究，彼来求官，但不予之官足矣。’即令副官护送邓出府，庶免发生危险，是可见总理器量之广，殊非常人所及也。”又胡汉民《题总理蒙难记念室》诗注中说：“总理曾言至伦敦遇粤人邓某，喜其颇识时务，欲晓以大义，辄与偕行，遂误陷使馆。”足见孙中山当时与邓廷铿不无交情。</p>
+<p>孙中山的一个错误</p>
+<p>1912年（民国元年）9月里，孙中山有一次山西行，据《国父年谱》，这一行程如下：</p>
+<p>先生既受任筹划全国铁路全权，乃一面从事计划，一面亲往各地视察。先于9月6日赴张家口，视察中国工程师詹天佑自行设计修建之第一条铁路，旋返北京。时山西各界纷电邀请先生赴晋视察，国民党山西支部并派代表谷思慎、梁上栋来京迎迓，先生乃于17日离京去晋。同行者除谷、梁二代表外，尚有同志张继、吴铁城、景耀月及澳人端纳，交通部亦派叶恭绰沿途照料一切。先生于正太路车中，曾询梁上栋曰：“你是学工程的，你对于正太路用窄轨有何意见？”梁答：“除非万不得已，仍以用标准轨为宜”。先生复问：“你对于我的建筑铁路计划，有何意见？”梁答：“尚不清楚先生计划。”先生乃对梁说明其十年内建筑二十万里铁路之计划。继询山西矿务及军政情形，梁据实以答。先生颇以山西内部不协为忧，嘱张继、梁上栋等设法调和。18日抵太原，晚，邀山西都督阎锡山谈话，言及吴禄贞被刺事，不胜惋惜。19日上午，山西军政界在山西大学礼堂开会欢迎先生，先生即席演说，勖各界仍本革命牺牲精神，努力前进，因建设时代较破坏时代更应加倍牺牲。下午，山西农工商学界在劝工陈列所开欢迎会，先生演讲“吾人必牺牲目前小利，以求将来之幸福”。20日，赴国民党山西支部指示关于国会选举事宜。21日离晋，仍搭正太路车，阎再派梁上栋送至石家庄①。</p>
+<p>孙中山在山西，有过三次演讲，据《国父全书》，三次演讲都在9月19日，第一次是在太原各界欢迎会演讲，题目是《建设时代要比破坏时代加倍牺牲》；第二次是在太原商学界欢迎会演讲，题目是《吾人必牺牲目前小利以求将来之幸福》；第三次是在太原阎都督欢迎会上演讲，题目是《山西赞助共和之功》。在这三次演讲中，孙中山有这些话：</p>
+<p>第一次——“去岁武昌起义，不半载竟告成功，此实山西之力，阎君百川之功。不唯山西人当感戴阎君，即十八行省亦当致谢。何也？广东为革命之原初省份，然屡次失败，满清政府防卫甚严，不能稍有施展，其他可想而知。使非山西起义，断绝南北交通，天下事未可知也。”</p>
+<p>第二次——“前在日本之时，尝与现任都督阎君谋划，令阎君于南部各省起义时，以晋省遥应。此所以去年晋省闻风响应，一面鼓励各省进行，一面牵掣满兵南下，而使革命之势力，迅疾造成也。然革命虽成，而吾侪不能睱豫，以天下事往往破坏易而建设难也。今日最要之事，乃各省当统一是也。晋省于民军起义之际，既立此好榜样，则今后于中国重行建立之事业，亦当为各省模范，庶民国数月来外患迭生险象，消灭于无形。”</p>
+<p>第三次——“武昌起义，山西首先响应，共和成立，须首推山西阎都督之力为最。”孙中山提到的阎都督百川（阎锡山），事后在“回忆录”中，在引了上面三段演说后写道这对我实在是过奖之辞，而山西革命同志与全体军民，受此鼓励，则感到万分兴奋，并对我们伟大领袖孙总理永远崇拜不已。”</p>
+<p>其实，阎锡山所说的“过奖之辞”，并非谦虚之言，倒真是过了奖的了。因为孙中山所说的“武昌起义，山西首先响应”，是与事实不符的。事实上，自1911年辛亥革命到1912年民国成立时，各地的响应次序，是这样的：</p>
+<p>起义日期/旧历/在武昌起义后/地点/首先发动人/起义时都督</p>
+<p>10月10日/八月十九日//武昌/孙武、蒋翊武、熊秉坤/黎元洪</p>
+<p>10月22日/九月一日/第十二天/长沙	焦达峰、陈作新/焦达峰（后为谭延闿）</p>
+<p>10月22日/九月一日/第十二天/西安/张凤翙、钱鼎、张钫/张凤翙</p>
+<p>10月23日/九月二日/第十三天/九江/徐世法/马毓宝</p>
+<p>10月29日/九月八日/第十九天/太原//阎锡山</p>
+<p>10月31日/九月十日/第二十一天/昆明/张文光、彭蓂、赵复祥、罗佩金、李根源/蔡锷</p>
+<p>10月31日/九月十日/第二十一天/南昌//吴介璋（后为彭程万、李烈钧）</p>
+<p>11月4日/九月十四日/第二十五天/上海/李平书、陈其美、李燮和/陈其美</p>
+<p>11月4日/九月十四日/第二十五天/贵阳/张百霖、黄泽霖、贺国昌/杨荩城（后为杨伯舟）</p>
+<p>11月5日/九月十五日/第二十六天/杭州/周承业、朱瑞/汤寿潜</p>
+<p>11月5日/九月十五日/第二十六天/苏州/章梓/程德全</p>
+<p>11月7日/九月十七日/第二十八天/镇江/林述庆、许崇灏/林述庆（镇军都督）</p>
+<p>11月7日/九月十七日/第二十八天/桂林/章陶岩、陈元伯/沈秉堃（后为王芝祥、陆荣廷）</p>
+<p>11月7日/九月十七日/第二十八天/石家庄/（吴录贞起义，失败）</p>
+<p>11月9日/九月十九日/第三十天/广州/胡汉民、朱执信/胡汉民</p>
+<p>11月10日/九月二十日/第三十一天/福州/彭寿松、许崇智/孙道仁</p>
+<p>11月11日/九月二十一日/第三十二天/安庆/张汇滔、管鹏、吴晹谷/朱家宝（后为孙毓筠）</p>
+<p>11月13日/九月二十三日/第三十四天/济南/丁世峄/孙宝琦（旋取消独立）</p>
+<p>11月22日/十月二日/第四十三天/重庆/张培爵、杨庶堪、谢持、朱之洪/张培爵</p>
+<p>11月25日/十月五日/第四十六天/泸州//刘朝望（川南都督）</p>
+<p>11月26日/十月六日/第四十七天/沈阳/（蓝天蔚起义，失败）</p>
+<p>11月27日/十月七日/第四十八天/成都/尹昌衡、董修武、周骏/蒲殿俊（后为尹昌衡）</p>
+<p>12月2日/十月十二日/第五十三天/南京/徐绍桢/程德全</p>
+<p>12月22日/十一月三日/第七十四天/开封/（张钟端起义，失败）</p>
+<p>民国元年1月2日/第八十五天/溧州/（王金铭、施从云起义，失败）</p>
+<p>民国元年1月7日/第九十天/伊犁/杨缵绪/广福</p>
+<p>民国元年3月11日/第一百五十四天/天水/黄钺</p>
+<p>由此可见，山西并非首先响应武昌起义的，而是第十九天后才响应的，已在长沙、西安、九江响应之后，只是第四名。阎锡山“回忆录”中也说是“决定于九月初八日起义，时为武昌起义后第十九日”②。可见孙中山所说的“武昌起义，山西首先响应”，是错误的。</p>
+<p>孙中山是革命元勋，他当然清清楚楚知道武昌起义后各地的响应次序、他当然清清楚楚知道山西不是首先响应的。既然清清楚楚知道，却还故意说与历史真相不同的话，除了政治原因外，别无其他解释。由此可见，对政治人物的话，我们必须求证以后，才能决定信不信。</p>
+<p>1984年12月17日</p>
+<p>①参看梁上栋《总理民元视察太原追忆》（《国父九十诞辰纪念论文集》）。</p>
+<p>②据阎锡山《回忆录》，是“原与孙先生约定革命军到河南时，山西再动”，但“不得已而早动”，是别有原因的。阎锡山说：</p>
+<p>我没有等到革命军到河南，就紧跟着湖北武昌之后，在太原起义，这并不是既定的计划，而是受了事实的逼迫，使我不得不提早行动。在山西巡抚陆钟琪于武昌起义后，特召其子亮臣来晋，做缓和革命之计，亮臣与我是日本士官学校同学，但属泛泛交，主张亦不接近，不过他知道我曾参加同盟会，且是铁血丈夫团中人。他到晋翌晨，即访我谈话。一见面就说：“我此次来，即为与兄研究晋省对武昌事件当如何应付。兄有意见，弟对家父尚可转移。”我当时答复他说：“武昌事件的真相，我尚不知，黎元洪究竟系为革命而起义，抑系别有原因，我也不明白。是不是我们现在谈应付武昌事件的话，还有点太早。”他又说：“我们还可以再观察几天，不过我可以和你说，最后需要家父离开时，我也能设法。”我笑了一笑说：“这话说得哪里去了，你来，我们更说不到那样的话了。”他临行时，又和我说：“过两天，我们是不是可以和兰荪（姚鸿发字）一起谈谈？”我说：“可以，你通知他，还是我通知他？”他说：“我通知吧！”</p>
+<p>在这时候，有两件事逼迫得我实在不能等候；一件是山西有五千支德国造的新枪，要借给河南三千支，随带子弹，且已运走一部分。一件是要把一二两标分别开往临汾与代州，而由巡防部队接替太原的防务。……</p>
+<p>阎锡山又说：</p>
+<p>越数日，首先接到开拔命令的是一标一营，开拔日期为阴历九月初八日（阳历10月29日）。我得到这个消息后，认为起义的时间不能再缓，即决定于九月初八日起义，时为武昌起义之后十九日。起义的前一天，我派张树帜同志去一标运动，并吩咐他先运动同志中的下级官和头目，再影响非同志的下级官和头目，将下级官和头目运动好后，以下级官和头目带起军队来，逼迫营长，只要他们不障碍，就不可毁伤他们。一面并嘱该标见习高冠南糾合同志暗中协助，先从一营入手。因一营奉令于九月初八日出发，出发之营，于出发前一日，方发给四万粒子弹，二、三两营尚未奉到出发命令，故未领到子弹。联系的暗号，约定运用好后，即在电话上告我：“债讨起。”如运用不好，则告我：“债不能讨。”张树帜同志临行时，我又告诉他说：“你纵然运用不好，也不可离开一标的队伍，如二标发动时，你在一标能拉多少算多少，至少也要纠合我们的同志带队响应。”</p>
+<p>张树帜同志走后，我即召集二标中下级军官同志十一人开会，我首先问他们说：“我们是遵令开拔，还是起义？”大家同声说：“我们应该起义。”我又问他们说：“一标不同情怎么样？骑炮营有没有办法？”他们说：“炮兵可以设法，骑兵没什关系，一标至少也能拉出一半人来！”我说：“好吧！那么我们等等看，先把二标的动作研究研究！”讨论至午夜，一标有电话来，知道运用成功，当时就决定让他们回去照计划于翌日早晨开城门动作，一标打抚署前门，二标打抚署后门。开会的同志刚出了我的门，瑞墉之弟瑞禄就拦住大家，拉住排长李执中的手问：“你们开会做什么来？”机警一点的同志说：“研究开拔的事、”但李执中认为事已败露，遂跳了井。他们返回来报告我，我很着急，但仍命大家随时与我保持联系，照原计划行动。实则当时官场中对革命的警觉性不够，他们虽知道我们开会，并未防我们起义。</p>
+<p>又说：</p>
+<p>九月初八日（阳历10月29日）天刚亮，我就到二标二营，因将该营管带瑞墉囚禁之后，须我特为照料。我并告知一二两标对陆巡抚及其公子暂囚勿伤。兵动后，我督率二标先攻抚署后门之巡防队，因非攻破巡防队，不能攻抚署后门。一标向抚署前门进攻时，协统（旅长）谭振德在抚署门前厉声的说：“你们造反啦！赶紧回去，不究！”我革命军中有一位杨潜甫同志（杨乃山东曲阜人，亦为同盟会盟友，系盟友赵守钰任二标三营督队官（营附）时，经另一盟友贾铭甫之介绍召其来晋者，起义前一日晚，一标破釜沉舟的行动，也是他领导起来做的），反激他说：“协统也知道革命的大义么？如知，指挥我们向前，否则，请退！”谭尚力阻不退，杨潜甫同志乃举枪将其击毙，奋勇当前，带队冲入抚署，抚署卫兵未做抵抗即纷纷溃散。陆巡抚此时衣冠整齐，立于三堂楼前，陆公子亮臣随其旁。陆公子说：“你们不要动枪，我们可以商量。”陆巡抚说：“不要，你们照我打吧！”当时因陆巡抚之随侍有开枪者，遂引起革命军之枪火，陆巡抚与其公子亮臣均死于乱枪之中。陆巡抚谭协统陆公子与我们的立场虽异，而他们忠勇孝的精神与人格则值得我们敬佩。因为立场是各别的，人格是共同的，故我对他们的尸体均礼葬之。</p>
+<p>又梁上栋《总理民元视察太原追忆》中记阎锡山对孙中山说：“陆巡抚有感革命势力之威胁，调其子亮臣来晋，对我说：‘山西不要早有举动，大势需要赞成革命时，可整个赞成。’但不数日陆巡抚命令山西新军两标（相当团），一标开平阳府（临汾），二标开代州，调巡防队七营接太原防务。并令黄国梁的一标先开拔，我的二标后开，我认为这是反革命的布置，开拔之日，不得不于一标弹药到手之后，即冒险发动。”</p>
+<p>③由于孙中山对阎锡山有了错误的“过奖之辞”，所以阎锡山的左右也就“居之不疑”了。例如《阁百川先生纪念集》中收有《阎夫人徐竹青女士率家属祭文》，就有“辛亥八月，义旗首举。各省响应，清廷退步”的话，颠倒历史，变本加厉啦！</p>
+<p>孙中山反对双十国庆</p>
+<p>奉孙中山为总理为国父的国民党，又大张旗鼓，庆祝双十国庆了，我看了不禁好笑。国民党口口声声“恪遵总理遗教”，却不知道孙中山是反对双十节的。</p>
+<p>双十节是1912年9月28日由临时政府公布参议院的决定而产生的，是纪念辛亥革命武昌首义而来。武昌首义是阴历八月十九日，换算成阳历正好是10月10日，于是就成了双十节。以双十作为国庆，有推翻“家天下”的意义，本来是很好的，但是出来个中华民国总统袁世凯，他要把政权交到儿子手里，想父死子继，把中华民国变成他们“袁”家的，于是，“中华民国”以双十为国庆的意义，就给搅局了。孙中山有鉴于此，遂大力主张把双十节作废，改以反对“家天下”的云南起义（1915年12月25日）为国庆。孙中山这一鲜明立场，表明在他1916年12月13日在上海打给黎元洪的电报里。孙中山说：</p>
+<p>溯自清帝退位，五族共和，囯基已定，四万万人方想望太平。不图乘权者野心未除，诞生帝孽，筹安称制，民国几亡。虽其时，义士人人奋起相争，期以身殉，然首先宣告独立，誓师申讨者，实推滇省。遂使西南响应，举国普从，以有今日。方之武昌首义，一则为民国开创之功，一则为民国中兴之业，皆我五族人民人人所宜永留纪念者也。伏乞总统国务院主持，将云南起义日，定为国庆日外，更予唐督军（继免）暨起事诸人以懋赏，以彰勋劳，昭示来兹，临电无任盼祷。</p>
+<p>由这一电报里，我们清楚的看到：孙中山要把双十节作废，正表示了他对把“中华民国”变成“家天下”的厌恶：他要把“云南起义日，定为国庆日”，正表示了他对把“中华民国”里小朝廷推翻的向往。可笑的是，奉孙中山为总理为国父的国民党，显然对孙中山这一反对“家天下”的心意，倍感“感冒”，国民党不肯照孙中山的遗教，把双十节废除，只是把12月25日定为“云南起义纪念”，聊资敷衍。甚至这一敷衍，也在国民党在台湾巩固小朝廷以后，连敷衍都不敷衍了。不但连敷衍都不敷衍了，并且干脆把这反对“中华民国”“家天下”的伟大节日给取消，改为博“洋人大笑”的圣诞式节日了。本来每在12月25日，国民党总裁就经常发表“耶稣圣诞节广播词”的，后来国民党把12月25日索性定为“行宪纪念日”，12月24日晚上可大跳圣诞之舞，第二天以“行宪纪念日”大放其假，虽无圣诞节之名，却有圣诞节之实；虽无媚外之名，却有崇洋之实。就这样的，“云南起义日”不见了，双十节是国庆，“行宪纪念日”是圣诞节，国民党小朝廷的一贯作业，就在人不知鬼不觉之中，大功告成了。</p>
+<p>袁世凯消灭不了的“云南起义日”，可是国民党消灭了它；孙中山建议出来的“中华民国”国庆日，可是国民党否决了它。国民党口口声声“打倒洪宪帝制”、“恪遵总理遗教”，看了国民党的一番手脚，我们真不知道它“打倒”了什么、“恪遵”了什么。</p>
+<p>1984年10月11日晨</p>
+<p>孙中山《国父遗教》不可不读也！</p>
+<p>——竹联帮必读</p>
+<p>竹联帮老大陈启礼跟我说：“李先生，你学问太大、文章太好、读书太多。我们不能跟你比，我们只在管训时读读国父遗教，我们是不读书的。”我说：“《国父遗教》如果读书得间，也开卷有益。我就喜欢读《国父遗教》。”</p>
+<p>如今，陈启礼又坐牢了，牢中管制读物，准读之书恐怕不多，不过读《国父遗教》绝不虞匮乏，我要是他，就可读出这些史料：</p>
+<p>一、蔡元培、张相文联名致孙中山函</p>
+<p>中山先生大鉴：</p>
+<p>顷接方兄寰如来函，欣悉国史征集，荷蒙先生允为间日演讲，逖听之余，至为佩慰。盖以民国成立以来，群言淆乱，是非不明，不有信史，曷以昭示来兹？且饮水思源，尤不容忘其本来，故元培与编纂诸君公开斟酌，拟自南京政府取消之日止，上溯清世秘密诸党会，仿司马公通鉴外纪之例，辑为一书，名曰国史前编，所以示民国开创如斯其难也。唯兹诸党会既属秘密组织，迄今事过情迁，往往不能言其始末，再阅数十年间，窃恐昔年事迹不免日益湮没，滋可惧也。所幸先生以创始元勋，不吝教诲，征文</p>
+<p>勋安</p>
+<p>蔡元培、张相文谨启</p>
+<p>二、孙中山批复蔡元培、张相文函</p>
+<p>答以方君云云，乃彼想当然耳，文实未之知也。然此事亦文所乐为者，但以近方从事于著述，其中一段为革命缘起，至民国建元之日止，已略述此共和革命之概略，可为贵史之骨格也。至其详细，当从海外各地再行收集材料乃可呈采。此事现尚可办，文当发征文于海外各机关也。各秘密会党于共和革命，实无大关系，不可混入民囯史中，当另编秘密会党史。</p>
+<p>三、孙中山复蔡元培、张相文函</p>
+<p>孑民、蔚西先生惠鉴：</p>
+<p>顷诵惠教，知方君寰如函称，囯史征集，文已允为间日讲演。此乃方君之意，以为当然，文实未之知也。然述革命之概略，为信史之资，此固文所乐为者。唯以文近方从事著述，无暇以兼及此耳。文所著述，盖欲以政治哲理，发挥平生所志，与民国建划暨知难行易之理，撰为一编，以启迪国人，俾灼知共和政治之真相为何，国民之所宜自力者为何。草创将半，再阅数月，或可杀青。其中一章，所述者为“革命缘起”，至民国建元之日止，已略述此数十年来共和革命之概略，足为尊处编纂国史之干骼。若更求其详，当从海外各地征集材料，乃可汇备釆择。此事现尚可办，文当通告海外各机关征集材料；然事颇繁重，欲汇集其稿，恐亦需一载之时。顾国史造端宏大，关系至重，亦不宜仓卒速成，要须经以岁月，几经审慎，是非昭然，事实不谬，乃足垂诸久远，成为信史耳。至尊函主《国史前编》上溯清世秘密诸党会，文于此意，犹有异同。以清世秘密诸党会皆缘起于明末遗民，其主旨在覆清扶明。故民族之主义虽甚溥及，而内部组织仍为专制，阶级甚严，于共和原理，民权主义，皆概乎未有所闻。故于共和革命，关系实浅，似宜另编为秘密会党史，而不以杂厕民国史中，庶界划井然不紊；此亦希注意及之也。文所著述之稿，现尚未有定名，顾卒业以后，意在溥及国民，广行广布，若完全由沪印行，恐卷帙繁重，分运为艰，拟备资于京沪分别印刷。执事闻见较详，倘知北京有优良之印局，足以印行，或完全由沪印行分运，如何为便，均望以办法见示，俾得有所折衷，甚幸。专此</p>
+<p>奉复，并颂</p>
+<p>撰祉</p>
+<p>孙文八年1月14日</p>
+<p>四、蔡元培、张相文联名复孙中山函</p>
+<p>中山先生大人尊鉴：</p>
+<p>捧诵来教，感佩无量！清世党会，来源最古，大要以天地会为鼻祖，确系明末遗老所创立，递衍而为三合、为哥老，蛛丝马迹，具有线索可寻，彼其初意，不过反清复明而已。至同盟会兴，乃与共和有直接关系，然固亦秘密党会也，且亦多吸收各会分子，此中离合之迹，诚未易分明，要非广事搜罗，不足以资考证，诚如尊谕所谓，须经以岁月，几经审慎，乃可成为信史者也。可恨者，前此处专制时代，国内书籍几无一字可考，元培前亦曾托旅外诸友代为搜集，迄今年余，报告尚属寥寥。</p>
+<p>先生以开国元老，望重环球，海外各机关大半亲手创造，幸蒙俯允，通告征集，此诚元培相文等所翘首跤踵，日夜所祷祀以求者也。并恳就大著中所述关于“革命缘起”一章，先行抄示，庶乎先睹为快，得以略识指归也。京中印刷诸局，相文因印行地学杂志，曾有数家相识，近就询之，皆以先须告以书之格式，及用何纸张，刷印多少，乃可定其价格云云。大著杀青后，如蒙在京分印，请即先将样本见示，是荷。肃此敬复，并请</p>
+<p>大安</p>
+<p>蔡元培、张相文同叩八年1月21日</p>
+<p>陈启礼如果会读书，至少能从这四封信里，看到极有趣的“前事不忘”：</p>
+<p>第一、国民党革命成功，本来是靠着黑社会的帮助，所以老同志蔡元培、张相文写信给孙中山，说我们写历史，对黑社会的帮助“饮水思源，尤不容忘其本来”。</p>
+<p>第二、不料孙中山却批复他的老同志，竟说黑社会“于共和革命，实无大关系，不可混入民国史中”！</p>
+<p>第三、孙中山批复以外，又回信说他不赞成肯定黑社会的帮助——“文于此意，犹有异同。”黑社会“于共和革命，关系实浅”，所以不要“杂厕民国史中”！</p>
+<p>第四、老同志不服气，他们再写信表示：“至同盟会兴，乃与共和有直接关系，然固亦秘密党会也，且亦多吸收各会分子……”老同志话说得很客气，但是历史就是历史，是抹杀不掉的！</p>
+<p>从这些“前事不忘”的文件中，陈启礼早该看出国民党“利用黑社会，然后踢掉黑社会”的章法，早就载诸史册了。早就载诸史册还不提髙警觉，敬国民党而远之，宜乎有今日之下场也！陈启礼不好好读《国父遗教》于先，以致空呼负负于后，不亦悲乎，不亦悲乎！故黑社会什么书都可不读，唯《国父遗教》不可不读。切记呀，切记！</p>
+<p>1985年4月19日</p>
+<p>孙中山蒋介石逼反老同志</p>
+<p>——替陈炯明翻翻案</p>
+<p>《国民中学历史》第三册，在《中国国民党的改组》一条下，有这样两段：</p>
+<p>民国七年，南方的军政府全被桂系军人所把持，国父辞去大元帅职，离开广州，前往上海，加强革命组织与阐扬革命理论，写成《孙文学说》一书。民国八年，将中华革命党改组为中国国民党。民国十年，国父在广州召开非常会议，会议议决中华民国组织大纲，并选举国父为非常大总统，重振革命声威。但不幸直系军阀吴佩孚暗地鼓动陈炯明叛变，于十一年6月炮轰观音山总统府，国父蒙难。蒋总统中正先生在上海闻讯后，立刻冒险南下，追随国父左右，成为国父最得力的膀臂。</p>
+<p>民国十二年，叛乱平定，国父回到广州，组织大本营，自任大元帅，以蒋中正先生为参谋长。民国十三年，国父为了革新党务，乃召开中国国民党第一次全国代表大会，改订党章，发表宣言，说明中国受列强的压迫，只有从事囯民革命，实行三民主义，才能解救国家。从此党的组织更为严密，革命的力量也更为坚强了。</p>
+<p>从教科书的文字看来，陈炯明当然是受“直系军阀吴佩孚暗地鼓动”“叛变”的坏蛋，但是，内情真的如此吗？事实上，蒋介石“成为国父最得力的膀臂”前，他曾是陈炯明的手下，陈炯明事件使蒋介石在孙中山的心目中地位高涨，真正的受益人是蒋介石，这段内情相当复杂，绝不像国民党历来宣传的那么黑白分明、善恶两清。国民党后来变得走火入魔，和这一内情极有关系，所以非常值得加以追查、探讨。</p>
+<p>陈炯明</p>
+<p>陈炯明字竞存，是老广（广东海丰人）、也是老革命。生于1878年，那是清朝光绪年间。他小时念私塾，长大后进广东法政学堂，渐露头角。1907年，他只是一名学生，却领衔控告惠州知府陈召棠严酷扰民，使知府大人下台。这使他得到鼓励，感到事有可为。1908年，他密约马育航等三十余人宣誓缔盟，分头展开民族革命运动。同时又倡办海丰地方自治会、戒烟局，整理育婴堂及县仓等有关社会事业，热心公益。后来，他以最优等在法政学堂毕业了。正值清朝宣布预备立宪，各省设立咨议局，1909年，他被委为海丰县司选员。不久办起《海丰自治报》，被选为广咨议局议员。咨议局开议后，他提出很多激烈主张，如裁撤广东善后局、革除衙局署积弊、废除就地正法等，其中与副议长丘逢甲（丘念台的老爸）等职名禁绝一切赌博案，更是要得。这年冬天各省咨议局推派代表在上海举行联合会，他和丘逢甲等三人被推代表广东与会，在那里，他与革命党取得直接联系，正式加入同盟会，在香港设立乐群书报社，以为革命党联络机关。</p>
+<p>此后他参加了多次革命行动，1910年参与倪映典广东新军起义之役失败，逃到香港，后回海丰主持《海丰自治报》。这年秋天，咨议局集会，陈炯明又提出禁赌案，人家以五万元送他，要他不出席，他拒绝了。但是其他议员多有受贿的，所以表决时，竟通过缓禁。于是丘逢甲、陈炯明联络各界，通电北京、上海、香港、澳门各地的老广，群起攻击，结果受贿的议员三十五人，一一下台，禁赌主张遂得实现。</p>
+<p>黄花岗的生还者</p>
+<p>到了1911年，广州三二九之役，陈炯明也参加了。失败以后，他和刘师复等组织东方暗杀团，想直接暗杀满清大员，解决问题。暗杀广州水师提督李准失败了，但暗杀广州将军凤山却成功了。</p>
+<p>辛亥革命成功后，陈炯明由广东副都督变为代理都督，1913年任都督。以反对袁世凯失败，远走海外，这时他参与黄兴系的政治路线，与孙中山并不接近，他自行筹款讨袁，不肯参加孙中山的中华革命党。1916年他回国讨袁，成功后把部队遂给广东省长朱庆澜，飘然北上，被授“定威将军”。北游一阵后，回到上海。</p>
+<p>1917年，孙中山共商护法，陈炯明随他南下。当时陈炯明建议，革命党要自己有武力才成。孙中山心动，靠着陈炯明与朱庆澜的老关系，跟朱庆澜要人。原来袁世凯死后，朱庆澜出任广东省长，陈炯明声明“军人拥兵重为国之弊”，自愿把他的部队交中央改编，中央派张天骥来惠州改编军队，编成二十营，这二十营后来编人朱庆澜的省长亲军。现在向朱庆澜要人，只不过是重新把部队拨还陈炯明而已，朱庆澜也就同意了。朱庆澜说，现在广东天下都是广西部队，他自己所辖，只有全省的警卫军，如果陈炯明以前任省长之尊，愿屈居省长公署亲军司令，则他可拨出二十个营的兵，交给陈炯明带。陈炯明为了急着使国民党有点军队，就不计较名义，接受下来。</p>
+<p>孙中山在1917年就任广州军政府大元帅时，是个空头大元帅，除少数卫队外，没有一兵一卒。这回有了二十营的兵，当然喜从天降。就用这二十营的兵，成立了“援闽粤军”，由陈炯明做总司令。这是国民党手中唯一的枪杆子，得来极为不易。</p>
+<p>虽然由陈炯明做了总司令，孙中山却不放心，于是派许崇智、邓铿等去“挖墙脚”①，陈炯明同意许崇智做第二支队司令，带四个营；邓铿做参谋长，第二年（1918），在总司令部还来了个三十二岁的作战科主任，不是别人，蒋介石也！</p>
+<p>陈炯明有大功于国民党</p>
+<p>当时陈炯明为了培育国民党唯一的枪杆子，艰苦备尝。孙中山1918年7月13日写信来，形容陈炯明的处境是“兄身当敌冲，后援难恃，强敌在前，所部又饷械俱乏”②。虽然如此，陈炯明还是苦撑下来。相对的，许崇智、蒋介石、邓铿等人，在苦撑待变之际，反倒不无动摇。孙中山1918年12月13日写信给许崇智、蒋介石，勉以“不可遽怀退志”③；同一天写信给邓铿，认为“闻兄颇有离去之意，文意以为不然。……若兄行，则竞兄（陈炯明字竞存）失有力之臂助，将来愈形困难”④，就是证明——今天国民党口口声声“让史料自己说话”，史料所说，真相就是如此！</p>
+<p>“援闽粤军”的总部在漳州，陈炯明在这地区领有二十六个县，很努力的为国民党建立根据地。他在漳州不但拆城造路、美化环境、整顿洁安、革除陋规、推行卫生工作，并且还在开书局、办学校之外，培养人才，派遣留学生八十三人分赴英、法、美、日留学，他还资助国民党在上海的机关刊物——《建设》，文治武功，样样全来。陈炯明有大功于国民党，自不消说。</p>
+<p>“援闽粤军”于1920年8月16日在漳州誓师，率军回粤，替国民党抢广东做根据地。四天以后（8月20日），就进入了汕头。21日，孙中山电陈炯明祝捷，电文中说“所向大捷”的原因是“良由执事等指挥素定，谋略兼备”⑤，可算确评。</p>
+<p>值得注意的是，国民党这唯一的主力进军广州之际，蒋介石本人并不在军中。8月16日，陈炯明在漳州誓师之日，蒋介石本人正在家乡游山玩水⑥；8月18日，陈炯明在大埔、潮州、梅县作战下汕头前，蒋介石本人仍在家乡游山玩水⑦！蒋介石游山玩水，直到8月29日才回家。8月的作战他都没参加，9月的作战也没参加，直到10月11日，他才到了老隆前线总部，距离攻下广州（10月29日），只差18天耳！换句话说，蒋介石在这次两个半月的战役中，他只参加了最后的十八天，如让“史料自己说话”，则今天十分之九的《蒋总统传》，都要改写矣！并且，最后十八天中，他在最后十三天（10月16日）才赶上本军，最后9天（10月20日），因许崇智“病假”，才“以个人关系代许军长统率第二军作战，过了1天多（10月22日），就拿下了惠州。我想，古往今来任何正义的历史家，核定丰功伟业，账都得搬搬位，改记在别人头上吧？</p>
+<p>10月29日拿下广州后，孙中山大喜，当天写信给蒋介石，表示了他对陈炯明的倚仗之殷：</p>
+<p>……竞兄此番回粤，实举全身气力，以为党为国，吾人亦不惜全力，以为竞兄之助。同德同心，岂复寻常可拟。我望竞兄为民国元年前之克强（黄克强），为民国二年后之英士（陈英士）。我即以当时信托克强、英士者信托之。我所求者，唯期主义政策，与我一致，即我所谓服从我三十年来共和主义，而岂若专制之君主，以言莫予违为得意耶？兄与英士共事最久，亦知我所以待英士矣！兄不妨以我之意思尽告竞兄也。</p>
+<p>蒋介石反对孙中山做总统</p>
+<p>陈炯明在1920年11月1日当了广东省长兼粤军总司令：1921年5月5日孙中山就任非常大总统，陈炯明且当了陆军总长兼内务总长。这时他在政见上，与孙中山愈来愈相左了。孙中山这回有总统可做，乃是陈烟明自漳州回师广州，赶走护法军政府岑春煊等，才得来的机会。因为孙中山的大元帅，早就在1918年给挤下台了，下台后在上海⑨著《孙文学说》，潦倒得连书店都不肯给他印。他这次回广州后，一心想先干个总统。这个念头，引起同志们的不以为然。据当时粤军总司令部军务处长并一度代理参谋长的张醁村，在《陈炯明与孙中山的矛盾及其分裂》⑩中回忆：</p>
+<p>陈炯明认为孙暂不就职，即使就职，也尽可以大总统名义赴欧美各国做政治活动。在就职问题还没有解决的时候，有一天，陈炯明正在省长公署午餐，忽报中山先生来了，陈忙着出来迎接。坐下时，中山先生笑说：“竞存！你回粤来做了很多事情，同时大家都有了差事；不过独我一人还在向隅，望你委任委任吧。”这些辛辣的讽刺说话，使陈哑口无言，只得殷勤敷衍一番，从而决定了5月5日为大总统就职日期。</p>
+<p>其实，不赞成孙中山做总统，并不是陈炯明一个人，甚至孙中山的亲信蒋介石都反对。在孙中山就任总统前两个月（1921年3月5日），蒋介石有密信上孙中山，劝他不要干总统。蒋介石说：</p>
+<p>然目前为中正之所切忧，有一不忍言而又不能不言者，厥为选举总统问题是也。上次因此意见纷歧，致滋误会，嗣经商榷一再，始行解决。唯现在为期伊迩，根基尚虚，桂逆既未铲除，西南难望统一，议员又未足数，国会尚非正式，则选举总统一节，鄙见以俯顺各方舆论，从缓进行为是。此事前在粤时，亦同汝为细加研究，彼言对党唯有服从，于此固无异议。然以事实上之利害关系而言，平桂之后，首举大元帅，再选总统，则凡百进行，较为稳当。此汝为对中正一人之私言，乃中正对先生亦一人之私言，谅勿以此视汝为亦反对先生之人也。……若以选举总统之后，党见随以歧异，内部因之不一，西南局势亦顿形涣散，仍蹈民国七年之覆辙，所谓对抗北京政府者安在哉(11)。</p>
+<p>虽然蒋介石有此“私言”，孙中山还是要干，于是，他终于当上了非法的总统。带来的恶果，完全不出蒋介石所料。陈炯明预见孙中山做总统会树敌于全国，也完全不出所料。</p>
+<p>陈炯明主张联省自治</p>
+<p>孙中山当上总统后，就下令讨伐广西陆荣廷，12月4日，他到了桂林，设立大本营。这时他开始扩充军力，除粤军第二军许崇智部、福军李福林部外，并派朱培德为滇军总司令、彭程万为赣军总司令、谷正伦为黔军总司令、李烈钧为参谋长，准备北伐。1921年到了，1月26日，孙中山的外交部长伍廷芳照会美国，要求承认广州政府，但是老外只承认北京政府，断定孙中山的政府是非法的叛乱团体，所以概不承认。</p>
+<p>对孙中山执意北伐的事，陈炯明是不以为然的，陈炯明主张粤人治粤，联省自治。他认为中国问题要走美国的联邦制才能解决，不能迷信武力统一，武力统一只能造成中国的更形糜烂、更形衰弱。联省自治的主张被引起注意(12)，起于1921年6月4日浙江都督卢永祥的通电。卢永祥主张“先以省宪定自治之基础，继以国宪保统一之旧规”。要求改弦更张，不再搞中央集权制。陈炯明首先通电赞成。陈炯明说：</p>
+<p>盲论之士，往往以主张分治，即为破坏统一。曾不知分治与集权本为对待之名词，于统一何与？北美合众，成例倶在，岂容指鹿为马！民国以来，正坐盲论者误解集权为统一，于是野心者遂假统一以夺权。及其威信坠地，号令不行，犹复盗窃名义，以伺便而行。凡此种罪状，皆国民所深痛心疾首者。乱极思治，改弦更张，诚不容缓，且以吾国地大人众，各地方往往自为风气。欲民治发达唯有予以自由，俾之自谋进步，此不特为国家统一计，即为民治完成计，亦舍此无以达也。分治之论，为国情及世界现势所近，殆将由言论以底于实行。唯进行之道，条理万端，今得卢督军以热心毅力出而提倡，如获南针(13)。</p>
+<p>陈炯明又因卢永祥原电有各省区长官派代表、择定妥善地点先筹妥善办法，所以加发一电，补充说：</p>
+<p>民国建立于今十年，祸乱相寻，迄无宁岁。内则群奸卖国，外则军阀擅权，宇内河山分崩离析。推厥原因，良由大法不立，国基未固，至使强徒暴客各肆其奸，言国是者或侈谈集权、或倡言统一；徒饰外观，终无实际。循是以往，国将不国。敬读卢督军通电，先定省宪以树民治之基；进议国宪以图统一之效。宏谋伟划，诚为今日救国良方，至为钦佩……先招各省区代赴沪开议，协定大法，付诸国民公议。是诚得共和真谛，足以建吾国永久和平之基(14)。</p>
+<p>谁“勾结军阀”？</p>
+<p>很显然的，陈炯明绝不承认联省自治是“破坏统一”，相反的，他指出统一论者乃是“野心者”“假统一以夺权”，“徒饰外观，终无实际。”这话当然是隐指孙中山诸公说的。陈炯明认为广州成立护法政府，其实护法不足以号召，因为国会议员在广州者仅两百多个，距离选举总统的法定人数，还差了一大截(15)，与其非法搞小朝廷，不如先完成广东省的自治，广东站稳了，再徐图团结整个西南，以与北方抗衡，进而使中国成为美国联邦式的统一，才是正途。其实陈炯明这种主张，在内曾得吴敬恒、张继、汪兆铭、李煜瀛、褚辅成等的赞同，在外也得章炳麟、唐继尧、谭延闿、赵恒惕等的支持，可见这不是陈炯明一人的私见，只不过是不合孙中山的脾胃而已、只不过是首当其冲却又敢于独行其是而已。</p>
+<p>《国民中学历史》所谓的“直系军阀吴佩孚暗地鼓动陈炯明叛变”，是与史实不合的(16)，相反的，“勾结军阀”的行为，孙中山自己固优为之。孙中山一意孤行，要武力统一，但武力统一力量又不够，只好勾结“军阀”来打“军阀”。例如1921年12月4日孙中山在桂林设大本营，十一天后（12月15日）就通电骂北方的总统徐世昌卖国；但是，只过了一星期（12月22日），徐树铮就到了广州。徐世昌代表的，固然是“军阀”，但徐树铮代表的，此徐却比彼徐更“军阀”，但孙中山却与之勾结，这又是何等原则乎，何等“革命精神”乎？在树铮到广州这一天，孙中山密电廖仲恺、汪兆铭，就说：“徐君惠临，慰我数年渴望。”(17)一年后他写信给杨大实，透露“汝为与又铮（徐树铮）情感尤洽，又铮联好吾党亦既有年”(18)。则谁“勾结军阀”既深且久，不言可喻。其实，南方国民党集团本身就是“军阀嚣张”，这是《吴铁城回忆录》中早就自承不讳的。所以说，扣陈炯明“勾结军阀”的帽子，而说他发动叛变，是不公平的。</p>
+<p>但是，国民党在乱扣帽子下，一切历史便大肆改写。以胡汉民《在东路前敌总指挥部举行总理蒙难五周年纪念大会演讲词》——《六月十六之回顾》为例，胡汉民说：</p>
+<p>当陈炯明率粵军回粵的时候，总理在上海，曾用全副的力量帮助他，等他到了石龙，他就不想请总理回粤了。却因为当时赶走岑春煊一班人，陈炯明自己又不敢独立，名义上非恢复总裁制不可，于是他发电报，请总理及伍秩庸（廷芳）、唐少川（绍仪）诸人在上海办事，总理不答应。等总理同伍、唐诸人既到了广东，后来唐继尧也就到了。总理以为事权不一，诸事不能进行，主张将总裁制改为元首制，陈炯明就竭力反对。他为什么竭力反对呢？因为他心里深怕总理一做了总统，必定就要举兵北伐，举兵北伐，他就要失掉北洋军阀的欢心，这是他反对的原因。</p>
+<p>但是，当时反对孙中山做总统，并非陈炯明一人，连蒋介石都在内，若此论成立，则求“北洋军阀的欢心”的罪名，也一体适用了，国民党又如何自圆其说？</p>
+<p>利用完毕兔死狗烹</p>
+<p>1922年2月27日，北阀的誓师典礼，在桂林举行，但是3月21日，发生了邓铿被刺事件，据《国父年谱》（增订本）3月26日条下：</p>
+<p>邓铿既遇害，后方无人可以信赖，且因陈炯明与湘省赵恒惕勾结，许崇智主张回兵，蒋中正主张讨伐陈炯明。先生曰：“此事可问展堂（胡汉民）。”汉民言：“前为大局计，凡事都取宽容，今竞存如此，自然回兵。”先生韪之。因召集紧急会议，卒决议班师回粤，改道赣南北伐。时前方已过全州，先生于是下令，全体动员回粤。</p>
+<p>这次回广东，事实上是“潜师回粤”，瞒着陈炯明，秘密进行的。直到部队到了梧州，陈炯明才知道。这种作风，当然不是相见以诚。《国父年谱》（增订本）4月12日条下：</p>
+<p>是日北伐大军主力全部抵梧州。其本意在解决后方接济问题。陈炯明不意回师之速，乃致电胡汉民询问先生是否班师？汉民以欲进不能，乃做归计复之。</p>
+<p>是晚，蒋中正到梧，陈炯明先派廖仲恺来迎接，并致炯明电云：“先生遽归，意旨在添调军队图赣，并谋饷弹补充之确实，使此举不致无功，以坠声威，此外无他希冀。桂林调归各军，经三水、潖江口，集中韶、雄，宜于一星期内予以通过，俾勿别生枝节。”</p>
+<p>蒋介石是4月12日先带部队主力到梧州的，自然引起陈炯明的误会。4月16日孙中山抵梧州，电召陈炯明来，《国父年谱》（增订本）上说：“先生待之三日，炯明仍未来，蒋中正遂进兵肇庆。”仿佛其过在陈炯明，其实早在3月26日已明明是“蒋中正主张讨伐陈炯明”局面了。陈炯明能来吗？邓泽如《总理广州蒙难记别录》(19)记：</p>
+<p>孙总统遂在桂林开紧急会议，决议改道北伐，并先旋粵解决半年以来之后方问题。计划已定，遂率全军返粤；甫抵梧州，即数电陈炯明令赴梧州协商一切；讵陈得谢文炳电告密后，即疑总统此行具有假途灭虢之作用。……</p>
+<p>事实上既然3月26日蒋中正主张讨伐陈炯明在先，并且秘密班师，“假途灭虢”，自然可信。据章炳麟《定威将军陈君墓志铭》：“十一年，孙公谋北伐，君以兵力未充辞，孙公疑君有他志，随令部将以手枪伺君，其人弗忍，事稍泄。”可见孙中山准备用手枪干掉老同志陈炯明，早在领袖召见时，就已萌凶兆矣！陈炯明后来写信给吴敬恒，说：“唯有一事，至今我所不解者：南宁劳军之日，即欲演烹狗之剧，事后闻之，毛发倶悚，我诚无状，然至今想不出获罪至此？”在陈炯明自感被利用完毕兔死狗烹的情况下，再要他前来送死，岂可得乎？于是，他只好辞职了。</p>
+<p>据许玉麟《革命北伐纪略》(20)回忆：</p>
+<p>时赖世璜于开大会时，曾出而请总理免陈逆之罪，总理怒曰：汝是他的党吗？汝是他的党吗？杀！杀！杀！时无人敢保，参谋长部次长蒋伯器出而保免之。总理至广州，大为改制，于是一方下令陈炯明免内务部总长、广东省长、两广盐务督办、粤军总司令、粤桂联军总司令、北伐第一路粤桂湘联军总司令等本兼各职，取消粤军总司令职，由大总统亲兼，准陈炯明以陆军总长名义在家乡暂时休息；一方面则令李烈钧先统诸路军出攻江西，而广州总统府又连日连夜委出大本营十八路司令。……</p>
+<p>可见当时孙中山在梧州，在开会之际，已经情绪不能控制了，他全无体统，而要当场违法杀同志赖世璜（兆周），只为了赖世璜替陈炯明缓颊。其实早在一年半前（1920年8月），孙中山就致电陈炯明，介绍赖世璜是“协和（李烈钧）遗部”，要陈炯明接济饷械，“则友谊上亦极圆满也。”(21)足见孙中山明知赖世璜不是陈炯明一窝里的人，既明知不是，却要一怒杀立大功于革命之人、杀眼中“勋劳甚著，义勇可钦”(22)之人，所谓“知难行易”，由此可见一斑矣！连不相干的第三者赖世璜都要给“杀！杀！杀！”，陈炯明在场，其能活乎？</p>
+<p>“中正罪过，诚万死不能赎矣”</p>
+<p>这种志在消灭陈炯明的作业，在《国父年谱》（增订本）4月20日条下，更见明显：</p>
+<p>先生以炯明拒不来晤，乃下令准陈炯明辞去粵军总司令暨广东省长职，仍任以陆军部长。令伍廷芳继任广东省长。寻即令诸军前进肇庆，直向三水。是晚陈炯明离广州，赴石龙，转赴惠州，其亲信部队悉退出广州，布防于石龙、虎门等处。蒋中正时为粵军第二军参谋长，建议北伐军宜留粤缓发，先清内患，再图中原。力主即时进攻石龙、惠州，消灭陈部，再行回师消灭在桂林叶举等各部。先生以陈叛迹未彰，在桂粤军数年奋斗，犹欲保存，并主张亲自督师北伐，两广仍交陈办理，给以殊恩，当能感奋。且奉直战争方炽，不可失此良机。若按兵不动，则与拥兵自卫者何异？遂未纳。</p>
+<p>这里明说蒋中正“力主即时进攻石龙、惠州，消灭陈部”，可见蓄谋之坚。当时孙中山“以陈叛迹未彰”，又专意不可先失北伐“良机”，所以反对“先清内患，再图中原”。蒋中正乃在4月23日“决计辞归”。最不可思议的，他在这天写了一封信于“轮次”，收件人是陈炯明，信中自承：</p>
+<p>此次改道攻赣，以致内部纷纠至此，皆由中正一人隐忍贻误之咎。然当时以为反对过甚，竟无从中维持之策，故不能不顺从一时，以为权宜之变，万不料有今日之现象也。中正罪过，诚万死不能赎矣！</p>
+<p>这信在毛思诚《民国十五年以前之蒋介石先生》一书中被“钦定”窜改，上面这些原文，全不见了。对照起《国父年谱》（增订本）中他“主张讨伐陈炯明”、“消灭陈部”的勇于内斗作风，这封信的写出，倒是极耐人寻味的。蒋介石在信中后段说：“无论其结果如何，必致两败俱伤，否则败者自丧元气，徒坠令名，即胜者亦不免同室操戈，授人以残杀同志之口实，吾知其精神之痛苦，较诸败者更烈也。吾公如欲灭痕迹，免除内讧，其舍再出之外，尚有何妙法乎？”蒋介石怪陈炯明辞职不对，应该“再出”，但是陈炯明怎么“再出”呢？实际上，他是被孙中山免职了啊！</p>
+<p>陈炯明实际上被免职，表面上却是准他辞职的。孙中山复叶举等述准陈炯明辞职电文中(23)，还有这些漂亮的话：</p>
+<p>国家多事，非贤者高蹈之时；况竞存遄征，实关大局安危，故自上月漾日以来，每亟欲俛之复出，电报秘叠，信使不绝于道。顾竞存虽云继任陆军，犹未取消退志。最近桂寇披猖，粵防告警，竞存切念时艰，亦再借箸为筹，或当幡然而退，不卸仔肩，巧日已托精卫商以联军总司令之重任，此皆入春以来，与竞存之预约，可使内外兼维。同日文更有电往商。盖文于竞存，始终动以至诚，而不肯稍参客气。以竞存生平大义，炳著中外，君子爱人以德，若操之过蹙，不任有回旋余地，殊非待士之道。烈山寻介，薰穴求玉，长此相迫，文所不忍，亦君等所当知者。知君等袍泽谊深，爱乡爱国，故言之切切。专此布复。</p>
+<p>中国人真会作文章，看了这篇漂亮的通电，谁知道内幕重重，全不是那么一回事啊！</p>
+<p>可是，太迟了</p>
+<p>但是，文章再漂亮，也是文章，到了5月8日，问题来了。陈炯明的手下叶举等看不过去，干脆要求孙中山把陈炯明官复原职。他们给留守广州的财政部长廖仲恺压力，廖仲恺吃不消，只好请孙中山自韶关回广州，以安前后方军心。6月1日，孙中山回广州了，可是，太迟了，6月15日的深夜，终于发生了“围攻总统府”的“叛变”。</p>
+<p>事件发生后，北方的胡适在《努力周报》上写《这一周》（6月19至25日）(24)评议，颇见公论。胡适说：</p>
+<p>本周最大的政治变化是广东的革命与浙江的独立。孙文与陈炯明的冲突是一种主张上的冲突。陈氏主张广东自治，造成一个模范的新广东；孙氏主张用广东做根据，做到统一的中华民国。这两个主张都是可以成立的。但孙氏使他的主张，迷了他的眼光，不惜倒行逆施以求达他的目的，于是有八年联安福部的政策，于是有十一年联张作霖的政策。远处失了全国的人心，近处失了广东的人心，孙氏还要依靠海军，用炮击广州城的话来威吓广州的人民，遂不能免这一次的失败。孙氏曾著书提倡“行之非艰，知之维艰”的学说，我们当时曾赞成他的“知之则必能行之，知之则更易行之”的话（每周评论三十一号）。现在看来，孙氏的失败还在这一个“知”字上。一方面是他不能使多数人了解他的主张，一方面是他自己不幸釆用了一种短见的速成手段。但我们平心而论，孙氏的失败不应该使我们埋没他的成功。蔡元培等前次劝孙氏下野的通电，虽然颇受了一部分人的批评，但蔡氏电文里赞美孙氏的话，确能写出孙氏的成功。蔡电说：</p>
+<p>公等坚持不渝，以种种手段求达护法目的。……固以为苟能达此目的，无论何种手段，不妨一试。且正维公等用此种种手段，使全国同胞永永有一正式民意机关之印象，故至今日而克有实行恢复之机会。公等护法之功，永久不朽。……</p>
+<p>这些话并非溢美之词。当日陆荣廷岑春煊等取下护法的招牌，分赃而散之后，若没有孙陈的继起，恐怕第三次财神国会早已实现，军阀势力更要横行，政治的转机还不知远在何时呢？</p>
+<p>胡适这里对孙中山的指摘，是很平允的。胡适认为孙中山与陈炯明的冲突“是一种主张上的冲突”。但孙中山使他的主张，“迷了他的眼光，不惜倒行逆施以求达他的目的”，弄得远近人心尽失，则是一种错误。</p>
+<p>“旧道德的死尸的复活”</p>
+<p>在南方的国民党，似乎知道了这种错误，至少如道谈政见不同是对他们不利的，所以他们宣传的重点，规避开孙中山与陈炯明之间“主张上的冲突”，而把主力，放在陈炯明的“悖主”“犯上”“叛逆”上面，以便打得陈炯明不好抬头。这时候，胡适在北方又做了评议，他在《这一周》（7月17至23日）(25)写道：</p>
+<p>近来最可以注意的是旧道德的死尸的复活。旧道德不适宜于新环境，自然是意料之中的事。但是有时候旧道德偏要在新环境里弄他的旧威风，很像一个红顶花翎黄马褂的官儿，忽然在北京饭店的屋顶花园里呼幺喝六，岂不是过渡时代的一个怪现象吗？就拿“丁忧”的事做个例罢。两千年来做官的人死了父母，便不能不开缺奔丧。只有极少数的大胆的奸雄，如明朝的张居正，不愿意这样做；然而他们也不能不假借“夺情”的名目；到了后来，还不能免后世腐儒的批评。然而做商人的却不因为死了父母就三年不做生意，做蒙馆教师的也不因为死了父母就三年不教书：可见职业主义所到的地方，封建时代的贵族的旧道德，久已站不住了。近来的官场对于父母的丧，也只有请假治丧，而不必开缺终制。然而旧道德的鬼，却也时时出现，即如此次齐燮元的父亲的死，居然有一班很开通的人打电报请他开缺守制，并且打电报要求北京政府准他开缺守制。我们并不反对齐燮元开缺，也不反对江苏人要赶走他，但我们反对江苏人抬出旧道德的死尸来做废督的武器。这是一个例。我们再举一个例。陈炯明一派这一次推翻孙文在广东的势力，这本是一种革命；然而有许多孙派的人，极力攻击陈炯明，说他“悖主”、说他“叛逆”，说他“犯上”。我们试问，有一个共和的国家里，什么叫做悖主？什么叫做犯上？至于叛逆，究竟怎样的行为是革命？怎样的行为是叛逆？蔡锷推倒袁世凯，是不是叛逆？吴佩孚推倒段祺瑞，是不是叛逆？吴佩孚赶走徐世昌，是不是叛逆？若依孙派的人的伦理见解，不但陈炯明不应该推翻孙文，吴佩孚也不应该推翻段棋瑞与徐世昌了；不但如此，依同样的论理，陈炯明该永远做孙文的忠臣，吴佩孚也应该永远做曹锟的忠臣了。我们并不是替陈炯明辩护；陈派的军人这一次赶走孙文的行为，也许有可以攻击的地方；但我们反对那些人抬出“悖主”“犯上”“叛逆”等等旧道德的死尸来做攻击陈炯明的武器。</p>
+<p>“秘密结社的法子来组政党”</p>
+<p>胡适的文章一出，立刻招来国民党的大力攻击。胡适乃再写《这一周》（8月14至20日）(26)，做进一步的说明：</p>
+<p>本报这一期（努力第十六期）登出“涤襟”的一篇《述孙陈之争》的长文。“顿涤”是没有党派成见的人，此次自广州避乱来上海，做了这篇文章，说明孙陈分家的历史。他自己也有时加上一点评判。我们觉得他的态度很平允，所以在这一期里把他全行登出，供讨论粤事的人的参考。至于我们对于孙陈之争，因为不容易得确实消息，所以不曾发表什么偏袒的意见；然而第十二期上攻击“旧道德的死尸”的一段短评，已惹起了民国日报一个月的攻击了。我们研究他们的驳论，参考“涤襟”的文章，觉得我们的主张所以招怨的缘故，全在我们不曾完全了解孙派用秘密结社来办政党的历史。同盟会是一种秘密结社，国民党是一种公开的政党，中华革命党和新国民党都是政党而带着秘密结社的办法的。在一个公开的政党里，党员为政见上的结合，合则留，不合则散，本是常事；在变态的社会里，政治不曾上轨道，政见上的冲突也许酿成武装的革命，这也是意中的事。但此次孙陈的冲突却不如此简单。孙文鉴于国民党的失败，仍旧想恢复秘密结社的法子来组政党。因为陈炯明是新国民党的党员，不曾脱党，而攻击党魁，故用秘密结社的道德标准看起来，陈炯明自然是叛党的罪人了。陈氏至今不敢发一个负责任的宣言，大概也是为了这个缘故。我们旁观的人只看见一个实力派与一个实力派决裂了，故认作一种革命的行动，而在孙氏一派人的眼里，只见得一个宣过誓的党员攻击他应该服从的党魁，故抬出“叛逆”“叛弒”等等旧名词来打他。这是我们现在的观察。但我们再进一步，提出一个疑问：秘密结社的仪式究竟是否适宜于大规模的政党？秘密结社用来维系党员的法子在现代的社会里是否可以持久？这一个“制度”的问题似乎也有讨论的价值吧。</p>
+<p>谁“栽培”谁，正未易言呢！</p>
+<p>胡适这里提到国民党以“秘密结社的法子来组政党”，“故用秘密结社的道德标准看起来，陈炯明自然是叛党的罪人了”。这一分析固有见地，但是陈炯明在事实上，他所受“秘密结社的法子”的约束，其实还是最少的。</p>
+<p>原来陈炯明本就是讲人格、有个性的人，当年孙中山在日本组织中华革命党，要入党的同志在誓约上打指模发誓“附从孙先生”，陈炯明就和黄兴等同志拒绝这样做，他们认为这种行为、条文太不平等了，也太侮辱人了。所以陈炯明虽然与孙中山南下护法，却始终不是“打指模”的党员，而只是同盟会的会员。他对孙中山的态度，也始终服理不服人（孙中山致蒋介石信，自言对陈炯明“岂若专制之君主，以言莫予违为得意耶”，即反证陈炯明并不唯命是听），但因他有大功于国民党，孙中山拉拢他，就特准他可以不打指模，于是在相持“二十余日”(27)后，陈炯明做了党员。但是细查孙中山、陈炯明之间的关系、在革命史上的关系，却显然是平行的、各自发展的，而不是“卵翼”的、提携的。黄惠龙《中山先生亲征录》(28)说：“陈逆炯明，自满清光绪末叶，以至民国时代，皆总理之所栽培，以常情而论，虽友朋酬酢，犹且称谢，何况总理于彼，甚于父师，倘非枭獍性成，断未有倒戈相向者。有之，则亦必不容其存在于人间世，厥理甚浅，妇孺皆能了然，此陈炯明之所以罪不容诛也。”所谓陈炯明“自满清光绪末叶，以至民国时代，皆总理所栽培”的话，是与史实不符的。南下护法后虽然有属从关系，但所谓“栽培”，又从何说起？——陈炯明为孙中山建立了最早的革命武力，谁“栽培”谁，正未易言呢！但是，自从国民党以秘密结社的心态挂帅以后，在“陈炯明叛变”的认定上，就始终放不开、始终死守封建教条，自寻烦恼不绝。徒子徒孙固无论矣，就在孙中山自己的言论上，也屡见不鲜。1922年8月，孙中山就说：“成功之毁，固深足惜，纲纪之坏，尤所痛心。”(29)9月，孙中山就说：“陈逆叛乱，乃伦常之变，痛曷可言。”(30)10月，孙中山就说：“此番粤变，功败垂成，深可太息。其尤痛者，则陈炯明以誓共生死之人，而竟出于枭獍之为，使人类伦理灭绝耳。”(31)可见他对“纲纪之坏”、“伦常之变”、“人类伦理灭绝”的痛苦，尤甚于北伐的失败。但是，为什么要这么痛苦？症结乃在孙中山不肯带国民党走上现代化的路，而要走上秘密结社的路。因为走上后一条路，自然就一切都要用“秘密结社的道德标准”来看人、来自处，于是天下大乱，痛苦随之矣！</p>
+<p>是“陈逆”吗？</p>
+<p>胡适以外，章炳麟在《定威将军陈君墓志铭》中，也为陈炯明说了公道话。章炳麟说：</p>
+<p>其夏，孙公出军攻江西，身赴韶关督师，或言陈氏终为患。孙公返，免君职，宣言以绿气（放毒瓦斯也）攻异军。君时在惠阳，旧部叶举袭孙公于会城，孙公走，君复称督军。其冬，滇桂军在广东者，复攻君去，迎孙公归，自是交兵三年。及孙公薨，君亦旋败。时议者谓临时总统非法，宜一意拒之，业已屈从，又举兵称雌雄，于德为二三。按自黎公（总统黎元洪）蒙难，法统中记，孙公尸大名以笞之，固不得已，其后黎公已复位，而孙公犹称号自若，名义不可说已！且是时君已免职，与孙公义绝，与曩复军政府同过，可也；必以后者为逆，毋乃昧名分，违此类耶？</p>
+<p>可见章炳麟就不同意陈炯明是“陈逆”，反倒认为孙中山在南方继续做非法总统是不顺的。在《太炎先生自计年谱》1922年条下，章炳麟又有这么一段：</p>
+<p>方徐世昌未走时，溥泉（张继）来问计。余曰：“竞存阴鸷，恨孙公罢其职，必报仇。徐世昌在，彼不欲居逐主名；世昌退，孙公亦黜矣！”亟电孙公，劝以去名号，勿负气忿争，念武侯（诸葛亮）贺仲谋（孙权）称尊之事，故不与争。孙公来电亦自言不得已。余答曰：“广东地治，一以付陈（炯明）；他省逋逃，屏绝勿近。得一夫而失一国，非谋也！”终以联省自治不可反对为献，言甚切至。</p>
+<p>但是，孙中山是不肯去总统名号的，所以给他自己惹来大麻烦，闹得不成体统。最后，孙中山的总统也做不成了，乃在1923年3月2日正式成立大本营，改用大元帅名义，发号施令。中华民国的名分混乱，就更别有新猷了。</p>
+<p>老美的观察</p>
+<p>关于这一阵子的混乱情形，一个冷眼人写了一份报告，使我们更对孙中山的性格有了了解。这个冷眼人就是美国驻华公使雪曼（JacobGouldSchurman），他写了《对华机密报告》（ConfidentialReportonChina）（1924年4月8日写于北京，现存康奈尔大学大学档案处）。报告文长二十五页，是专门写给柯立芝总统的。报告里面有雪曼亲笔签证：“应柯立芝总统之命而写，对将来或有参考价值。”（“WrittenForPresidentCoolidgeandatHisRequest.”ThisMayBeofValueinFutureYear，J.G.S.）报告中提到：</p>
+<p>在广东的敌对领袖中，陈炯明有军队四万五千人，孙中山有三万人。</p>
+<p>当两年前我初次访问该省时，孙、陈合作无间。时陈炯明担任省长，给人民带来一个廉能的政府（AnHonestandCapableAdministration）。陈倡导“联省自治”，他告诉我，将建设广东为中国的模范省。</p>
+<p>当孙中山高唱挥师北伐时，已几乎动摇陈炯明的忠心，再加上孙中山在广东建立一个无法无天、压榨人民的政权，使陈早已对孙的信仰幻灭了。</p>
+<p>报告中又提到他在1924年1月对孙中山的谈话。他说：“你像你所批评的军阀一样，在打内战！”孙中山答道：“不！我不是军阀，我是医生，我打仗是以毒攻毒！”报告中又说孙中山：</p>
+<p>事实上，他认为他做的任何事全是对的，而且为达成目的，不计一切牺牲。</p>
+<p>从来没有一个人像他那样“神经过敏”（Self-Conscious）、那样“自我中心”（Ego-Centric）。他做事不理智，也不可能接受批评。他的任何念头，他都能自圆其说！</p>
+<p>报告中说孙中山花了一刻钟的时间，阐扬“压迫”和“被压迫”世界间的斗争。但雪曼事后写道：</p>
+<p>可是他自己却建立一个最残酷剥削的政府，就在他控制下的广东。</p>
+<p>尤其广州市，没收私产、封闭寺庙、开放赌博、横征暴敛，逼使人民组织了一万人的民间武力来保护人民（指“商团事件”）。</p>
+<p>孙之能占有广东，靠着一部分极差的粤军，一部分湖南雇佣兵及一部分云南的盗匪（FreeBooters）（据闻，最近已有叛变迹象）。</p>
+<p>报告中又说：</p>
+<p>云南的唐继尧告诉我，“当孙中山上台时，他是个独裁者（Autocrat），从不听任何人的意见；当他下野时，他又变成激进分子布尔什维克（Bolshevik）。”</p>
+<p>雪曼提到广州市内开放赌博等事，陈炯明是绝对干不出来的。孙中山自从广州脱险后，为了打击陈炯明，不惜联络国民党的敌人——滇军的杨希闵、桂军的刘震寰、沈鸿英等，合击陈炯明。前方吃紧，部下向陈炯明要求“开赌筹饷”，陈炯明复电说：“粤军可倒，赌不可开！”此公讲原则、守初志的作风，由此可见。这一作风，导致了他的部队因粮饷不继而失败，但他宁愿不遗祸桑梓而失败。相对的，孙中山引来了滇军、桂军，却又自吃其果，这些部队在广东恶名昭彰，正是雪曼所描写的景象，《吴铁城回忆录》说孙中山有一次气得要“以首碰壁”，孙中山不能控制情绪如此，和他得肝病而死不无关系。</p>
+<p>陈炯明说话了</p>
+<p>1923年2月21日，孙中山回到了广州。开始以勾结苏联为手段，引外力以打中国人。那时陈炯明的武力还在惠州，吴敬恒力事调停，希望孙陈复合。1914年他写了万言书劝陈炯明，托黄居素去汕头交给陈炯明。5月13日，陈炯明亲笔回信，备述委曲。这信是重要的史料，极堪细读：</p>
+<p>稚晖先生：</p>
+<p>久未奉教，至深景慕。……得奉教言，回环庄诵，感愧交并！……但求办法于双方事实上均行得通，自无不唯命是听。粤局破裂，极所痛心，引咎自责，只问己之不是，不必论人之亦非。唯桂林回师逐我，论者谓中山先生责我苟安佗城，不图北伐，实可大笑！即谓……不急于问中原，亦非当时事实。不过，炯之用兵，过于踏实，不能如孙先生之枪法，旋空大演而已。唯有一事，至今我所不解者，南宁劳军之日，即欲演烹狗之剧，事后闻之，毛发倶悚，我诚无状，然至今想不出获罪至此？解职以后，避居惠州，远征部曲，被绝于外，间道驰归，祸变立作，几费劝诫，始归平静。高野（指孙中山）左右，既乏玄德（刘备）取蜀之能，又寡宋艺（宋太祖）释兵之量，不求安顿，专谋剪除，忽而韶关回驾，勒令限日离省，忽而海珠会议，密谋海陆军之夹击。温（温树德）、魏（魏邦平）告密，某氏（指蒋介石）日辇巨金，运动各部杀其长官，某氏最后计划，一并齐发，相迫而来。以武器在手之军人，欲其天皇圣明，永为鱼肉，不为刀俎，其可得乎？酿变以后，又以谋主相归，又捧出纲常名教，肇锡予以嘉名，一若射马擒王，非归罪于我不可者。我本造反出身，再造一回反，亦不算事，归斯受之而已。此种痛心不详之债，殆有与生倶来，不可避免。唯纠缠至今，孙、陈亦何足惜！所痛恨者，糜烂广东而已、阻遏民党为国家努力而已。今先生发大慈悲心，作垂涕泣之言，我即无似，宁无悔心！先生所期许者，炯非其选，实伤知人之明，其所教示者，当一一铭之肺腑，资以补过。兹择先生手示之要点，先行简单裁答，其详细之申论，则托居素兄来申面罄：一、中山首领问题：前者之分裂，今后之复合，均非首领问题从中作祟。孙先生之配为首领，无论瞠乎其后之陈炯明不敢争长，即起黄兴当代而问之，信亦无此妄心。……故孙先生之为首领，绝无问题。唯可惜者，从前闹到黄克强之分裂、陈炯明之见忌，都为盲从式结合，其党徒变本加厉，加以师徒式之崇奉，实所不解（原注：一般老同志对朋友说话，亦称孙先生为先生，一若孔子门徒以夫子为其师之专名者，无怪讨陈文中，舍不了师事父事等语）。今闻盲从一层，稍有修改，足见孙先生晚年进德，可嘉可贺。然麻烦问题仍在，我的毛病，虽可跟人走路，但不能闭起眼睛而冥索以行，若灼知所行之非路，必明以相告：告而不听，让其试验，不加反对可也。勉从其强拉，同入迷途，每每不肯迁就。……二、澄清中原问题：吾人半生奋斗，所为何事？以此名词为可笑！或以为今日必非其时者，我虽懦夫，绝不落此，实告者之过。然开创国家，无一定之工程，必就环境上详加体察，如目前之乱如何戡定？将来之治如何产生？得其条理，循序以进，时时皆其时也。不得其条理，盲进突击，时时亦非其时也。譬如现在国中摧残共和、扰害百姓者，实一私人的武力主义横行。申言之，则大军阀扰乱于中枢，小军阀扰乱于各省，而官僚、政客、民党依附其中，口福利而行盗跖，日在老百姓头上肆其践踏，合之为民国四凶，今欲扫平此乱，确非空口赤拳所能从事。不得已而以毒攻毒，暂用小军阀之集合，以摧倒大军阀之酿乱，能一次摧陷而廓清之，根本解决也。不能，而先打破大军阀，创建联省制，钳制大军阀之不能产生，安排小军阀之鬼有所归，以此收束，暂作统一，名曰假联治，此亦不得已而思其次之办法也。唯假联治之下，得一和平机会，自可从事裁兵，清理内外债；一面以党之进行，带领老百姓组织团体，储养自治、自卫之能力，再起而与小军阀算账，收回民治之权，使小军阀不能不归于国防地位，真联治乃可实现、真共和始告成功。此其为道虽迂，然共和建国，主权在民，民主能力，直接间接不能为组织国家之分子，则主权不能行使，由少数黠者久假不归，虽百年以往，无真正共和之可言。故民国真正共和，最快需十年以后，始可会面。虽以孙先生之明日能做大总统，五年以内，亦不能真正成功，此可断言也。依上见解，故我之规划，就事论事，第一期则为武装革命，以毒攻毒；第二期则为文装革命，放下屠刀，从事宣传。老百姓不出，如民治何！假手武力，愈革愈糟，前车可鉴，故不取武力。此两期，一在戡乱，一在制治，后者当期之和平恢复以后，前者以现势论之，本来具有敌对抗立局势及其能力（原注：即反直派大联合，最小限度亦以西南奉浙为主干），惜孙先生不取，必以广东局势当之，不仅徒劳无功，行且同归于尽。孙先生及其谋者如果觉悟，及今图之，尚未为晚。过此以往，闽南大定，袁（袁祖铭）军入黔，则事益棘手。我年来悲广东之相屠、国事之日去，无力回天，仰天而泣，唯有沉机待变，再谋赤手以搏龙蛇、以雪此耻，如斯而已。言不尽意，悉托居素兄代申，手此，即请</p>
+<p>道安！</p>
+<p>陈炯明再拜启十三年5月13日</p>
+<p>细读这封信，陈炯明的心事，都跃然纸上，他提到他并非“不图北伐”，只是用兵“过于踏实，不能如孙先生之枪法”。他对被免死狗烹，至感不满，并且“毛发俱悚”。他不承认炮击总统府是他指使的，他说那是部下干的，他还费了不少劝诫，才归平静。他抱怨孙中山左右有人在谋害他，惹出事端，又归罪给他，并且“捧出纲常名教”给他戴帽子。他说奉孙中山是首领，绝无问题，但他反对盲目崇拜领袖、反对“盲从式之结合”、反对“师徒式之崇奉”。他说主张联省自治可“暂用小军阀之结合，以推倒大军阀之酿乱”，“再起而与小军阀算账，收回民治之权。”他希望“孙先生及其谋者”能够“觉悟”，否则日后就更难了。</p>
+<p>悔过问题</p>
+<p>但是，事实上，“孙先生及其谋者”“觉悟”了么？没有，一点也没有，不但没有，还要陈炯明写悔过书呢！原来吴敬恒调停时候，孙中山一听即大怒，说：“陈炯明谋叛，要杀我，什么人都可宽恕，独有陈炯明不可恕。”吴敬恒听了，立刻下跪，说：“这事关系北伐前途很大，先生不答应，我就不起来。”孙中山无法，只好说为了吴敬恒答应宽恕陈炯明，“但要他写一张悔过书，则百事可了。”吴敬恒欣然而起，要求孙中山“电陈为宽恕之词”，孙中山不肯。吴敬恒又跪下去，孙中山还是不肯。理由是：“一悔罪书不能书，难以见其悔祸也！”吴敬恒无法，乃去汕尾找陈炯明。陈炯明哪里肯写。吴敬恒赶回来，去见孙中山。孙中山索取悔过书，话才出口，吴敬恒就双膝下跪说：“我吴敬恒代陈炯明悔过！”就这样的，双方无法达成协议，终至决裂至死。1933年陈炯明死后，吴敬恒“有一联抄录”(32)，全文是：</p>
+<p>一身外竟能无长物，青史流传，足见英雄有价；</p>
+<p>十年前所索悔过书，黄泉送达，定邀师弟如初。</p>
+<p>吴敬恒梦想陈炯明在黄泉悔过，“师弟”之间，言归于好。他真是小看陈炯明了。</p>
+<p>胡适在1922年写《这一周》（8月28至9月3日）(33)，就孙中山对陈炯明的态度，又有所评论。胡适说“对于孙氏，我们还有一个忠告”：</p>
+<p>他对于陈炯明的复仇念头，未免太小器了。孙氏是爱国爱广东的人，不应该为了旧怨而再图广东的糜烂。此次广州之变，曲直不全归于一方，而是非应俟之公论。此后孙氏只应该以在野的地位督促广东的善后，监督陈炯明的设施，许他整顿广东，以为自赎的条件，那才是大政治家的行为。若悻悻怒骂，不惜牺牲一省的人民以图报复，那就不是我们期望于他的了。</p>
+<p>1922年过去了、1923年过去了，1924年了，孙中山其实还是“未免太小器了”——他想用“纲常名教”式的“悔过书”来羞辱陈炯明，但是，“曲直不全归于一方”，陈炯明又如何肯写呢？</p>
+<p>悔过者，表示后悔自己犯了过失也。《孟子-万章》说：“三年，太甲悔过，自怨自艾，于桐处仁迁义。”王充《论衡-无形》说：“传称高宗有桑榖之异，悔过反正，享福百年。”可见悔过字眼，在中国是很早就流行了的。不过流行流行，采取悔过哲学的人，却是在最上头的人，“太甲”也、“高宗”也，都是帝王级的统治者，这种人带头认错，不但不丢人，反足以见其大，但是，“世风日下”，到了国民党做了统治者，它的悔过哲学则反其道行之，它总是叫别人悔过，自己却好像无过可悔似的，这在我们这种正义之士兼历史行家眼中，可就有点看不惯。看不惯之下，就要写它一写了。</p>
+<p>“斩草需要除根”</p>
+<p>孙中山索悔过书不得后，决定诉诸武力，但是他对讨平陈炯明，实无信心。他在1924年10月11日写信给蒋介石，提到：“北伐必可成功，无款亦出〔兵〕，绝不回广州。……陈贼来攻我，可放去由争食之军自相残杀可也！乱无可平，只有速避耳！”这封信写后一个多月（11月13日），孙中山就离开广州，启程北上了。有趣的是，孙中山北上的目的是主张“和平统一”，实质上，这和陈炯明倡议的不以“武力统一”是一样的，陈氏理想，孙氏实行，孙中山之善变，真令陈炯明“瞻之在前，忽焉在后”也！</p>
+<p>孙中山北上后，1925年3月12日死在北京。陈炯明很大度，还是写了挽联送去，但是小器的国民党不给他挂出来。挽联内容是：</p>
+<p>唯英雄能活人杀人，功首罪魁，自有千秋青史在；</p>
+<p>与故交曾一战再战，私情公谊，全凭一寸赤心知！</p>
+<p>陈炯明的磊落光明，由此可见。</p>
+<p>孙中山死后，蒋介石《撰感言一首》，内容是：</p>
+<p>斩草需要除根，擒贼必须擒王。不诛叛逆陈炯明，不算革命真男儿。剜其心肝，祭我总理神灵。肃清东江余孽，实行三民主义，继续先烈生命，完成本党责任(34)。</p>
+<p>就这样的，他大举讨伐起他当年的上司陈炯明来了。这年9月28日，蒋介石第二次东征，10月13日下午2点起，开始总攻惠州，14日下午四点半结束，整个攻城作业是俄国顾问加俄国大炮，象征陈炯明一生大业的最后据点——惠州、古老的惠州，就在外国现代大炮下击毁了。国民党打中国人，不勾结军阀了，他们改勾结外国人，借洋人之力，消灭自己同胞，这样才斩草除根呀！</p>
+<p>“人莫敢近，卒落魄以死”</p>
+<p>陈炯明在广东已无力足之地，他失败下野，住到香港，这时他四十九岁。美洲中国致公党成立，请他做总理，他接受了。吴敬恒说他这时候，“行踪诡秘，已无当年叱咤状态。后因密谋反抗举动，曾经国民政府通缉在案。”(35)1931年九一八事变后，他发表《敬告国人书》，并去上海，与章炳麟一同北上到天津，与段祺瑞等北方军人共商救国方略。第二年再去天津。在天津时，日本人拉他合作，他说你们先还我东三省，否则没话说。这是他最后一次在奔走国事，无所成就，后以母亲生病，返回香港。1933年9月22日，他死在香港，时年五十七岁。遗嘱以五色旗（是中华民国真的国旗，不是国民党窃国以后的青天白日旗）覆尸，以示不忘中华民国。这时候，他已经穷得交不出房租了，赖在弟弟陈炯光家，张一帆布床而卧，当然更没钱买棺材，只好借用他给母亲预置的寿材。一年以后，才归葬惠州。陈炯明一生不贪财不好色，死时一身以外无长物，全家老弱孤苦无依，黄脸婆太太眼睛也瞎了，情殊可悯。一代革命枭雄，就这样凄凉以去了。</p>
+<p>章炳麟《定威将军陈君墓志铭》说：“君自覆两假政府（岑春煊一个、孙中山一个），有骁名，人莫敢近，卒落魄以死。余独伤其不幸，以恶名见蔑，故平其议而为之铭。”(36)章炳麟也是革命元勋、也是最后被国民党“以恶名见蔑”的“不幸”人物，他在国民党迫害之中、在国民党众口铄金里，仍挺身为陈炯明说公道话，伟大的知识分子，不当如是乎？</p>
+<p>1985年10月6日夜1时</p>
+<p>①当然，国民党的一面之词，是不承认“挖墙脚”的。李睡仙等《陈炯明叛国史》就有这样的话：“陈炯明一书生耳，率军讨贼，是何大事？左右辅弼，又焉可无人？孙公乃命邓故师长铿、许军长崇智、蒋参谋长中正等偕其出发。……”真妙文也！至于“左右辅弼”的这些人的品格，据廖仲恺1920年某月20日给孙中山密件，原来“至于汝为（许崇智），则日夕酣嬉，不事准备，促之出发，则谓天气酷热，行军太苦，否则托词集中需时，欲速不达。仲元（邓铿）、汝为之锐气如此，其他可知。竞存以既有宿诺，不便食言，故甚着急。”——所谓“辅弼”，原来如此！至于说陈炯明“一书生耳”，陈炯明却自称“炯明武夫”（1918年3月9日《为联合会议与军政府职权问题电》），他不承认是书生的。1918年12月22日，《郑愾辰等上国父报告援闽粤军之处境及对和会之意见函》（《革命文献》第五十辑）中有这样一段：“再闽战经年，尚未解决，陈公竞存百折不挠，当道弗谅，阻力横生，子弹不以接济前敌，反拟加派他军，以施牵制权位，非以奖励有功，徒为排斥异己，以厚私援。即如此次任林公督闽，陈公长闽，而复拟任方声涛为军务会办，经辰等上书力言，竞公督师九十营，占地数十县，万不可不予以军权，而方某以少数滇军，万不能会办福建全省军务等语。徐公季龙据以力争，乃始任竞公以省长兼军务会办，而方某亦同任为军务会办。军府如此用人，虽违吾辈最初主张，然闽局尚未解决，将来总看实力为转移。”这些意见，也是“挖墙脚”的旁证。</p>
+<p>②《国父全集》第三册《致陈炯明望向福州进取函》。</p>
+<p>③《国父全集》第三册《致漳州许崇智蒋中正属固守观变勿遽怀退志书》。</p>
+<p>④《国父全集》第三册《致漳州邓铿嘱勉任艰巨以贯彻主张函》。</p>
+<p>⑤《国父全集》第三册《致陈炯明暨各将领嘉慰作战胜利电》。对照起注①来，可知陈炯明在孙中山眼中，并非“一书生耳”，乃是“指挥素定，谋略兼备”的！</p>
+<p>⑥毛思诚《民国十五年以前之蒋介石先生》1920年8月16日条下：“薄暮，公在飞雪亭畔，倚崖侧乔松，鸟瞰千丈岩瀑布。会大雨，树杪重泉，溅珠喷玉，光色甚奇。登妙高台。南向突出，三百凌空。唯见众山之小、诸流之细，亭下（村名）屋舍俨然。”</p>
+<p>⑦毛思诚《民国十五年以前之蒋介石先生》1920年8月18日条下：“公探隐潭。第一潭黝暗，在峡谷，圆径不过丈余，而深度莫测。潭前涓流一脉，经第二三潭而入大溪。第三潭为一大岩穴，宽约二丈。上有覆盖。峭壁回合，并面騞开，高可百米突，右有激湍冲泻。叹为观止。”</p>
+<p>⑧毛思诚《民国十五年以前之蒋介石先生》1920年10月20日条下。</p>
+<p>⑨孙中山下台去上海前，曾见陈炯明，请他好好把握住这一枪杆子。据程启槃《总理护法实录初稿》：“自军政府改组，总理辞职赴沪，道经汕头，至三河壩，晤陈氏，却以准备回粤戡乱事相助勉。”即是指此。</p>
+<p>⑩《广东文史资料》第二十五辑。</p>
+<p>(11)毛思诚《民国十五年以前之蒋介石先生》1921年3月5日条下。</p>
+<p>(12)早在1920年11月，湖南的谭延闿就通电主张呢！通电中说：“此后各省以武力戡祸乱，不如以民治奠国基，宜仍互结精神，主张联合自治，贯彻救国之初衷，保全南服之人格。湘省军民，一致不改厥初。……”（1920年11月15日上海出版《新湖北》第一卷第三期）</p>
+<p>(13)愚历：《省宪辑览》（1921年12月上海发行）。</p>
+<p>(14)同注(13)。</p>
+<p>(15)非常国会先非法通过《中华民国组织大纲》，再依第二条选举大总统，孙中山以二百一十三票当选。吴宗慈《护法计程》（1947年南昌出版）说：“至5月，由国会议员动议，选举孙先生为大总统，以策军事上迅速之进行，有少数议员不赞成，其所持理由，谓：‘护法事业，其根本在合法。兹以不足大总统选举法法定人数之国会议员，而选举大总统，恐人将议其后。若不用大总统名义，出革命方式，任何名义，均可采用。’此议虽根于法律，然在事实上，则大相背驰，故不为多数赞同，而大总统终于选出。”</p>
+<p>(16)吴相湘《孙逸仙先生传》：“至于陈反对孙任总统，张醁村记述以为并不是一般人所说的陈与吴佩孚有勾结。固然陈炯明曾派邓伯伟赴湘与赵恒惕联络。赵知孙、陈之间不一致，曾拉拢陈与吴合作，并结为金兰。但自负自大的陈炯明答复却有‘竖子不足与谋’的电文。后来陈突派湘人谭某往吴佩孚处，但谭竟被吴说服在炯明内部拆台，如劝洪兆麟与吴合作。故陈反对孙任大总统的实际理由，是陈曾草拟联省自治，与邻省和平相处，废除大总统名义改执政的方案，曾送请段祺瑞征求意见，得到同意。”</p>
+<p>(17)《国父全集》第三册《复廖仲恺汪精卫嘱与徐树铮洽商军事电》。</p>
+<p>(18)《国父全集》第三册《为辟许崇智徐树铮交恶谣传复杨大宝函》。</p>
+<p>(19)《建国月刊》第三卷第六期（1930年10月上海出版）。</p>
+<p>(20)《革命文献》第五十二辑。</p>
+<p>(21)《国父全集》第三册《致陈炯明嘱接济赖世璜饷械函》。</p>
+<p>(22)《国父全集》第三册《促赖世璜努力讨桂函》。</p>
+<p>(23)《国父全集》第三册《复叶举等述准陈炯明辞职经过电》。</p>
+<p>(24)收入亚东版《胡适文存二集》卷三。</p>
+<p>(25)同注(24)。</p>
+<p>(26)同注(24)。</p>
+<p>(27)李睡仙等《陈炯明叛国史》中说：“溯正式政府初成之时，孙总统欲以党义感化竞存，力劝其加入中华革命党，陈氏不允，相持至二十余日（陈氏虽为同盟会会员，但未加入中华革命党），后虽宣誓入党，但若即若离，其态度之表现，似无真诚之感应，是总统欲以党义感竞存之策失败矣！”指的就是这件事。</p>
+<p>(28)1930年8月上海商务版。</p>
+<p>(29)《国父全集》第三册《陈炯明叛变后勖赵恒惕为国奋斗函》。</p>
+<p>(30)《国父全集》第三册《复孙敬尧勉辅导奉军归义函》。</p>
+<p>(31)《国父全集》第三册《复石青阳勖奠定川局并向外发展函》。</p>
+<p>(32)《吴稚晖先生全集》（杂著）《述陈炯明生平》。</p>
+<p>(33)同注(24)。</p>
+<p>(34)毛思诚《民国十五年以前之蒋介石先生》1925年3月25日条下。</p>
+<p>(35)同注(32)。</p>
+<p>(36)铭文是：“定威桀材，宽猛有章。涧然授兵，莫我犯行。主从相失，维国之殃。一朝弗忍，终以两伤。彼索垢者，成其痏疮。党伐之论，君子弗将。乌虖！包胥伍员，亦各视其所向也欤！”</p>
+<p>孙中山蒋介石为什么不殉国？</p>
+<p>1922年蒋介石著《孙大总统广州蒙难记》，记1922年陈炯明的粤军炮轰孙中山的“总统府”前：</p>
+<p>粤军将领得陈炯明惠州来电，乃开秘密会议于白云山总指挥处。叶举又接其若密长电，指授各将领围攻总统府，占领行政各机关，及派兵进驻韶关等各方略。是夜10时，有某军官以电话报告总统，言今夜粵军恐有不轨行动，务请总统离府。总统以为谣传，不信之。及至午夜12时后，林秘书直勉与林参军树巍前后来府报告，言今夜消息险恶，请速离府，暂避凶锋。总统言：竞存恶劣，当不至此，即使其本人果有此不轨之心，而其所部皆与我久共患难，素有感情，且不乏明理之人，未必助桀为虐，受其欺弄。请诸君不必猜疑，以免惊扰。林秘书等言：粤军蛮横，不可以常情度之，如其果有不利于总统时，当奈何？总统言：我在广州之警卫军既已全部撤赴韶关，此即示其坦白无疑，毫无对敌之意。倘彼果有不利于我，亦不必出此用兵之拙计。如果明目张胆，作乱谋叛，以兵加我，则其罪等于逆伦反常，叛徒贼子，人人可得而诛之。况吾身当其冲，岂可不重职守，临时退缩，屈服于暴力之下，贻笑中外，污辱民国，轻弃我人民付托之重任乎？吾当为国除暴，讨平叛乱，以正国典，生死成败，非所计也。林秘书等以总统决心坚忍，不敢强劝，乃即辞出。总统即入私室就寝。少顷，各处连来电话报告，皆言：今夜粵军必乱，务请总统远离。总统不信。迨至2时许，有某军官自粵军营中潜出，特来报告。言粵军各营炊事已毕，约定2时出发，并声言备足现款二十万，以为谋害总统之赏金。且言事成，准各营兵士大放假三天（按：大放假即粤军抢劫之暗号）等语。总统犹未深信。及闻各方号音自远而近，乃知粵军已经发动，即命卫队准备防御。此时，约已3时，林秘书等复来劝总统出府。总统言竞存果敢作乱，则戡乱平逆，是吾责任，岂可轻离公府，放弃职守。万一力不如志，唯有以一死殉国，以谢国民而已。当时各员见总统坚定如此，非可言动，乃以数人臂力，强挽总统出府。是时，各路皆有步哨，已不能自由通行。林秘书等为叛军步哨接连盘问数次，幸得通过。而总统单身行至财政厅前，已遇叛军大队由东而来，诸人已不能通行。总统遂参在叛军队中，从容不迫，履险如夷。叛军以为其同事也，亦不查问。及至永汉马路出口，总统方得脱险。</p>
+<p>这是1922年6月15日的纪录。蒋介石说孙中山一开始是准备“一死殉国，以谢国民”的，可是紧要关头，他的同志“乃以数人臂力，强挽总统出府”，要他逃亡，不要他殉国。结果呢，孙中山虽然“以文天祥自待”、认为“总统死民国，分所应尔”（均见《孙大总统广州蒙难记》），但是他毕竟没做文天祥，而让“君王死社稷”专美于前了！</p>
+<p>很巧的是，在蒋介石写《孙大总统广州蒙难记》后二十六年，他自己也是总统了，他也面临了一个殉国的机会。据他在《军人魂》讲词中回忆，经过是这样的：</p>
+<p>讲到这里，我要告诉你们一个事实。我自从前年徐蚌会战军事挫败之时，我就抱定了以身殉国的决心，来报答我们总理和全国人民付托的重任，尽了我的职责。我这个存心，从来就没有对任何人说过，本来也就没有对你们说的必要。但是我们今天已经到了生死存亡的关头，我们每个人心里，都应该有一个最后的打算，所以我今天要把我年来的决心告诉你们。</p>
+<p>当徐蚌战役失败之后，我就决定与共匪在京沪线上实行决战。我当时认为这一次战争，是国家、民族生死存亡最大的搏斗，如果决战获胜，使军事形势转危为安，当然是国家之福；如果不幸而失败，南京为首都所在地，我是国家元首，就决定以身殉职，死在南京，以尽我个人的责任。因此我在未下野以前，就严令在京沪各地加强工事构筑，就是为了要和共匪背城借一，也可以说是求得我的死所。当时有一班亲友、同志，窥见了我这尽职殉国的决心，而且知道我平日的性格，不愿临难苟免，因此时时怕我自杀，所以他们时时在暗中提防着。我当时明告他们，现在最希望我自杀的，第一是共匪，其次是一般投机分子；如果我自杀了，他们就可以达到他们投降卖国的目的。徒使他们逞快一时，于国、于民、于我革命主义，皆无有补益，所以我说此时尚未到应死的时候，亦未到最后的关头。我绝不自杀，我一定要忍辱负重，与共匪周旋到最后关头，为死难官兵复仇，为国家、民族除害；只要我们国家、民族还有一寸土地、还有一部军队，我一定要在这块土地上，高举青天白日的旗帜，再接再厉，百折不回的奋斗。我这一段话，今天到会的同志中，亦曾经有几位同志亲自听到的。实在我观察那时候革命失败的情形，体念总理“我死则国生”的遗训，如果不幸南京陷落的时候，我唯有死在南京，才可以上报总理，下对国民。但当时有一部分意志不坚定的动摇分子，听信共匪挑拨离间的谣言，一定要我去职下野。我在当时不得不离开这我亲自建立的首都，和总理陵墓所在之地的时候，你们以为我必悲伤不堪，感想千万么？其实我毫无其他遗憾，唯其中内心所不堪忍受的，就是自感“今后我无死所了”！只有这句话，才可以形容我当时心境悲哀的情绪。我离京以后，国家的形势当然更加危急，但当时一般将领如果在京沪一带，仍能体念我的意志，不忘革命责任，人人抱定其杀身成仁的决心，拼命作战，保卫缔造艰难的首都，那我们即使失败，还可以对得起国家和人民。万不料一般文武干部，没有看到敌人的影子，就只身逃亡，无形瓦解，使敌人不放一枪，不损一弹，就占领了首都，且因之不到一年，而丧亡了整个大陆。历史上军事的失败，从来没有这种可耻可痛的情形！亡国先例虽多，但从来没有见过这种悲惨的现象！</p>
+<p>这是1950年4月16日的讲话。蒋介石说他自己一开始是准备“以身殉国”、“上报总理，下对国民”的，可是紧要关头，他的同志“一定要我去职下野”。结果呢，蒋介石虽然“决定以身殉职，死在南京，以尽我个人的责任”，但是他毕竟没死在南京，“自感‘今后我无死所了’！”</p>
+<p>上面这两个故事，今天我们对照读起来，真未免感到无独有偶，并且觉得好生奇怪。奇怪国民党中为什么总是有这种不争气同志，他们在紧要关头，总是剥夺了他们伟大领袖万古流芳的机会、总是不让他们伟大领袖去做文天祥。结果呢，他们伟大领袖一个个都“寿终正寝”而死，而不是“一死殉国”、“以身殉国”而死。落得只能“言教”而不能“身教”，思想起来，岂不太美中不足了么？</p>
+<p>1985年6月18夜</p>
+<p>孙中山不准再打炮</p>
+<p>在国民党钦定历史里，1922年有一次“犯上”的“叛变”，就是所谓“陈炯明叛变”。这年6月16日夜里，“叛变”开始，弟兄们，包围总统府去！对总统府打炮，孙中山狼狈逃亡。17日，孙中山逃上兵舰。据这年9月18日孙中山写的《致本党同志述陈变始末及今后方针书》，经过如下：</p>
+<p>6月16日之变，文于事前两小时，得林直勉、林拯民奔告，于叛军逻弋之中，由间道出总统府，至海珠，甫登军舰，而叛军已围攻总统府，步枪与机枪交作，继以煤油焚天桥，以大炮毁粤秀楼，卫士死伤枕藉，总统府遂成灰烬。首事者洪兆麟所统之第二师，指挥者叶举，主谋者陈炯明也。总统府既毁，所属各机关咸被抢劫，财政部次长廖仲恺，事前一日被诱往拘禁于石龙，财政部所存币项及案卷部据，掳掠都尽，国会议员悉数被逐，并掠其行李。总统所属各职员或劫或杀，南洋华侨及联义社员亦被惨杀。复纵兵淫掠，商廛民居，横罹蹂躏。军士掠得物品，于街市公然发卖。繁盛之广州市一旦萧条。广州自明末以来，二百七十余年无此劫也。五年逐龙济光之役、九年逐莫荣新之役，皆未闻有此，而陈炯明悍然为之，倒行逆施，乃至于此。文既登兵舰，集合舰队将士，勉以讨贼。目击省垣罹兵燹，且闻叛军已由粵汉铁路图袭韶关。乃命舰队先发炮，攻击在省叛军，以示正义之不屈、政府威信之犹存。发炮后，始还驻黄埔，俟北伐诸军之旋师来援，水陆并进，以歼叛军，此为当日决定之计划，而文久驻兵舰之所由也。</p>
+<p>这一事件中最有趣的，是孙中山“乃命舰队先发炮”的举动。孙中山事后对人说，这一朝岸上发炮，是一种“炮教”（用炮打你的一种教训），为了“以示正义之不屈、政府威信之犹存”，所以不得不打你几下子。据蒋中正《孙大总统广州蒙难记》，“炮教”是“指定目标炮击，故人民之于是役，损伤甚微，而叛军死于炮火者，约数百人。当时因陆上部队不能如期发动，故炮击后，叛军乃得溃而复聚，其乱卒不克平。”可见“炮教”“炮教”，于大局无补，只是“炮教”而已。到了7月，孙中山在永丰舰上与洋记者谈话，记者问：“先生允不再炮击羊城乎？”孙中山答称：“是也。但须附以粤军不击予之条件。”可是你“炮教”我也“炮教”，最后海上的终告不支，孙中山于8月9日去香港；陈炯明于8月15日回广州，号称粤军总司令。</p>
+<p>第二年1月，陈炯明被赶走了，2月21日，孙中山重回广州。3月21日，孙中山手令傅秉常，要他与英领事交涉，放逐逃到香港的陈炯明等。手令是：“着广东交涉员傅秉常即与驻广州英总领事交涉，请香港政府放逐陈炯明、叶举、翁式亮、金章、黄强、钟景棠、钟秀南、陈永善、黄福之等逆首，退出香港，免致扰我治安。此令。”</p>
+<p>当然，国民党是奈何不了陈炯明的，陈炯明还是陈炯明。他后来做了中国致公党的总理，1928年还北上与北方军人订立共和大同盟，直到1933年才死去。陈炯明一生不爱钱不爱色，死时在香港虽然未免穷困，但他临死不失英雄好汉的气概。国民党对他，能夺帅而不能夺志，一点也没有法子。</p>
+<p>国民党虽然对陈炯明个人没有法子，但却恨屋及乌，干了一件鲜事，就是把陈炯明当年炮轰孙中山的炮，给查封起来了。国民党在今年2月出版《国父图像墨迹集珍》，公布了这一查封图片，并加说明曰：</p>
+<p>此为陈炯明叛变时，轰击观音山用炮，事变平息后，被判处封口，以为叛逆者戒。</p>
+<p>原来一座大炮也可以被判刑的，真令我们开个千古之眼界！想当年明朝崇祯皇帝吊死在万岁山（今名景山），上吊的那棵树，后来被清朝顺治皇帝看到了，认为一朝英主，树神乃不之佑，致缢于此，此树罪不可逭！乃令刑部加铁链一条，把树锁住，以为吊死皇帝之戒！今天看到了国民党以青天白日党徽封住炮口的壮举，真忍不住要联想到古代帝王的大脑——国民党的封建主义，可真万古常新的呢！</p>
+<p>1984年12月25日午</p>
+<p>孙中山与林肯名言</p>
+<p>——我对葛底斯堡演说的疑义</p>
+<p>美国宾州南边的葛底斯堡（Gettysburg）小城，在1863年7月1至3日，曾有一场战事，战事下来，美国内战的北军胜了南军。在南北战争中，所争者非一城、所战者非一地，葛底斯堡之役，论争城不是大城、论战地不是胜地，但它却在历史上逐渐脱颖而出，变成了出了名的古战场。这个奇迹无他，乃因林肯战后在该城的一次演说而起，这一演说，就是著名的1863年11月19日葛底斯堡演说（GettysburgAddress）。</p>
+<p>“老百姓失望透了”</p>
+<p>布兰德豪斯（BrantHouse）在《林肯的机智》（Lincoln'Wit）里，提到林肯在葛底斯堡演说前，已经在71号街的摄影师那儿，先看到了大演说家爱德华埃弗里特（EdwardEverett）准备同时演说的讲稿，那讲稿是埃弗里特先送给林肯过目的，林肯称赞埃弗里特的周到，埃弗里特因为先讲，显然怕林肯的讲稿内容跟他重复，给林肯带来不便。林肯看过后，表示不会有重复的危险，因为他的讲稿“极短、极短、极短”，并且还没写完，还没写完的讲稿他正带在身上，他要在摄影师准备照相那段空档里，看看自己的讲稿。</p>
+<p>詹姆士鲍尔温（JamesBaldwin）在《林肯传》（AbrahamLincoln）里，提到在那天的演说中，埃弗里特的演说被认为是成功的，而林肯的演说却是失败的，林肯的国务卿修华德（WilliamHenrySeward）公然表示：“林肯的演说是大大令人失望的。”（Lincoln'saddresswasagreatdisappointment.）林肯自己也后悔他没有用更多的时间去准备，他向一个朋友说：“我告诉你：它洗不掉了，它是彻底的失败，老百姓失望透了。”（Mr.Lincolnhimselfregrettedthathehadnotgivenmoretimetoit,“Itellyouitwon'tscour，”hesaidtoafriend.“Itisaflatfailure.Thepeoplearedisappointed.”）</p>
+<p>那天埃弗里特的演说长达两小时，演说后林肯的演说只有两分钟。本杰明托马斯（BenjaminThomas）《林肯传》（AbrahamLincoln）里说：“听众刚刚注意听讲的时候，林肯已经讲完了，掌声零零落落的。照相的人还没摆好三脚架，林肯已经转身入座了”。</p>
+<p>真正肯定林肯这次演说的，说来奇怪，反倒是抢尽他的风头的埃弗里特。埃弗里特后来写信给林肯，认为自己两小时的演说实在已尽在林肯的两分钟之中（“IshouldbegladifIcouldflattermyselfthatIcameasneartothecentralideaoftheoccasionintwohoursasyoudidintwominutes.”）。可见林肯自己都自认失败的演说，并不是没有知音的。这篇演说在当时虽然不乏知音，但它真正被全美和举世视为第一流政治文献的幸运，显然还是以后的事。</p>
+<p>“以三介词阐发无剩义”</p>
+<p>葛底斯堡演说场合是国葬典礼，所以演说的主调是凭吊国殇，林肯说：</p>
+<p>在八十七年以前，我们的祖先在这大陆上创设了一个新的国家，它主张自由，并且信仰一种理论，就是所有人类生下来都是平等。</p>
+<p>现在，我们从事于一个伟大的内战，我们在试验，究竟这一个国家——或任何一个有这样主张和这样信仰的国家——是否能长久生存。我们在那个战争的一个伟大的战场上集会。我们现在需要供奉那个战场上的一部分土地，作为那些在此地为那个国家的生存而牺牲了自己的生命的人的永久眠息之所。我们这样的做，是十分地适切和正当。</p>
+<p>可是，从广泛的一方面说，我们不能奉献这片土地——我们不能使之神圣——我们不能使之尊严。这些勇敢的人们，活着的和死去的，他们在这里奋斗，已经使这块土地神圣，远非我们的能力所能予以增减。世界上的人们不大会注意，更不会长久记得我们在此地所说的话，然而他们将永远不能忘记这些人在这里所做的事。这该是活着的我们来献身于这未完成的工作，而那工作固已经由于在作战的人们如此高贵地推动着。因此，这该由我们在此献身于我们眼前所存留的伟大工作——从先烈身上，我们将取得对那事业的更多的忠诚，而他们已为之输出忠诚到最后的完整阶段——我们在此坚决的拿定主意，要使他们不致白白的死去——要使这个国家在上帝庇佑之下，必得到自由的新生——要使那民有、民治、民享的政府必不致在地球上消灭。（徐道邻译：《美国政治思想文献选集》，1959年香港今日世界社出版）</p>
+<p>这篇演说中，最精彩的在它的结尾，在“我们在此坚决的拿定主意……要使那民有、民治、民享的政府必不致在地球上消灭”那一段，林肯的讲稿本有五种，他演说时用的是第二种，原文是：</p>
+<p>……Thatweherehighlyresolvethatthesedeadshallnothavediedinvain;thatthisnationshallhaveanewbirthoffreedom;andthatthisgovernmentofthepeople,bythepeople,forthepeople,shallnotperishfromtheearth.</p>
+<p>到了1864年，他有了一个亲自签名的订正本（第五种），原文是：</p>
+<p>……Thatweherehighlyresolvethatthesedeadshallnothavediedinvain——thatthisnation，underGod，shallhaveanewbirthoffreedom——andthatgovernmentofthepeople,bythepeople,forthepeople，shallnotperishfromtheearth.</p>
+<p>版本虽有不同，但在ofthepeople,bythepeople,forthepeople原文上，并没改动，所以这段以三个前置词带出来的名言，的确是他努力肯定的。徐道邻在中译这篇演说后，加以题解，说：“其论民主政治之真谛，以三介词阐发无剩义，尤为神来之笔。他人千言万语徒为词费矣。”可算确评。</p>
+<p>中译的变化</p>
+<p>徐道邻把ofthepeople,bythepeople,forthepeople译为“民有、民治、民享”，显然是根据孙文的中译而来的。孙文的中译，根据我的细查，来龙去脉是很复杂的。最早是1919年，孙文在《文言本三民主义》中，有着这样的中译：</p>
+<p>有美国共和，尔后始有政府为民而设之真理出现于世。林肯氏曰：“为民而有，为民而治，为民而享”者，斯乃人民之政府也。有如此之政府，而民者始真为一国之主也。</p>
+<p>又过了两年（1921年6月），孙文演说《三民主义之具体办法》，他的中译开始修正：</p>
+<p>兄弟所主张底三民主义，实在是集合古今中外底学说，顺应世界底潮流，在政治上所得的一个结晶品。这个结晶的意思，和美国大总统林肯所说的：ofthepeople，bythepeople，andforthepeople的话是相通的。这句话的中文意思，没有适当的译文，兄弟就把它译作：民有、民治、民享。ofthepeople就是民有，bythepeople就是民治，forthepeople就是民享。林肯所主张的这民有、民治和民享主义，就是兄弟所主张的民族、民权和民生主义！由此，可知兄弟的三民主义，在新大陆的伟人是已经先得我心的。回想兄弟从前在海外的时候，外国人不知道什么是叫三民主义，总拿这个意思来问我。兄弟在当时苦无适当的译语回答，只可援引林肯的主义告诉他们，他们才完全了解我的主义。由此更可知兄弟的三民主义，不但是专为迎合现代的潮流，并且是很有来历的。</p>
+<p>一个月后（1921年7月），孙文演说《五权宪法》，进一步说明这一中译：</p>
+<p>三民主义就是民族主义、民权主义和民生主义，这三民主义和美国林肯总统所说的ofthepeople,bythepeople,andforthepeople是相通的。兄弟从前把他这个主张，译作“民有”“民治”“民享”，他这个民有民治民享主义，相当于兄弟的民族民权民生主义，人民必要能够治，才能够享；不能够治，便不能够享。如果不能够享，就是空说民有，也都是假的。</p>
+<p>四个月后（1921年11月），孙文演说《党员须宣传革命主义》，他再说：</p>
+<p>吾党之三民主义，即民族、民权、民生三种。此三主义之内容，亦可谓之民有、民治、民享，与自由、平等、博爱无异，故所向有功。以名言之，可称民有、民治、民享。今欲将此三主义详细解释，非一二点钟可能尽，质而言之，民族即民有也。天下者，天下人之天下，非一二人所可独占。民权即民治也。从前之天下，在专制时代，则以官僚武人治之，本总理则谓人人皆应有治之之责，亦应负治之之责，故余极主张以民治天下。民生即民享也。天下既为人人所共有，则天下之利权，自当为天下人人所共享。自此三主义推行以来，无坚不入、无人不从。</p>
+<p>同一个月，孙文演说《实行三民主义及开发阳朔富源方法》，他再说：</p>
+<p>今日受诸君之欢迎，乘此机会，得与诸君谈民国之政治，不胜慰快！改造真正之民国，乃全体国民之责任，尤为中华国民党员应负之责任。责任为何？即实行民族、民权、民生三民主义，即近代所谓之国为民有、国为民治、国为民享之真精神也。</p>
+<p>再一个月后（1921年12月7日），孙文演说《三民主义为造成新世界之工具》，他再说：</p>
+<p>三民主义，就是民族主义、民权主义、民生主义。这三个主义，和美国大总统林肯所说的“民有”“民治”“民享”三层意思，完全是相通的。民有的意思，就是民族主义。我们革命党为什么要提倡民族主义呢？因为满清专制二百多年，我们汉族受过亡国的痛苦，后来又受世界潮流的压迫，恐怕还要灭种，所以有少数人出来提倡鼓吹，要除去专制的异族。到后来全国觉悟，便把征服中国的满清根本推翻，把中国的统治权收回到汉人手里，中国领土完全为汉族所有。十年前革命的成功，就是民族主义成功。所以“民族主义”就是和“民有”的意思一样。革命成功以后，中国的土地和主权，已经由满清皇帝的手里，夺回到中国人民的手里来了。但是我们人民，徒有政治上主权之名，没有政治上主权之实，还是不能治国。必须把政治上的主权，实在拿到人民手里来，才可以治国，才叫做民治。这个达到民治的道理，就叫做民权主义。至于民生主义，是由人类思想觉悟出来的。因为我们既有了土地和主权，自然要想一个完全方法来享受，才能够达到生活上圆满的幸福。怎么样享受生活上幸福的道理，便叫做民生主义。所以说“民有”“民治”“民享”就是本大总统生平所提倡的三民主义。</p>
+<p>再过两年（1923年10月20日），孙文演说《国民要以人格救国》，他再说：</p>
+<p>我们要想是真正以人民为主，造成一个驾乎万国之上的国家，必须要国家的政治做成一个“全民政治”。世界上把“全民政治”说到最完全最简单的，莫过于美国大总统林肯所说的“ofthepeople，bythepeople，andforthepeople”。这个意思译成中文，便是“民有”“民治”“民享”。就我们现在国情和这三层意思解释起来，自推翻满清政府，成立民国以来，可以说是民有一层已经做到了。十二年以来，政府之内，都是武人官僚把持，人民不但是不能管国事，并且日日受兵灾之祸，流离失所，何能够说到民治民享呢？真正的“全民政治”，必须先要有“民治”，然后才能够说真是“民有”、真是“民享”。</p>
+<p>再过两个月（1923年12月30日），孙文演说《国民党奋斗之法宜兼注重宣传不宜专注重军事》，他又说：</p>
+<p>何谓三民主义？简单的说，便是“民有”“民治”“民享”。详细的说，便是民族主义、民权主义和民生主义。这三项主义的意思，是要把全国的主权都放在本族人民手内；一国的政令都是由人民所出；所得的国家利益由人民共享。这三项意思，便可用“民有”“民治”“民享”六个字包括起来。</p>
+<p>孙文经过试译阶段</p>
+<p>从上面这些排比看来，ofthepeople,bythepeople,forthepeople的中译，即使孙文自己，也是经过试译阶段的。我见过孙文早年为居正（觉生）的题字，原文是：</p>
+<p>美语曰民国者民之国也为民而设由民而治者也</p>
+<p>觉生先生正</p>
+<p>孙文</p>
+<p>这一译法，不但和他1919年“为民而有，为民而治，为民而享”的译法不同，也和1921年“民有、民治、民享”的译法不同，也和1921年“国为民有、国为民治、国为民享”的译法不同。照上面这些排比，我们知道孙文的定译是“民有、民治、民享”，这也就是今天国民党口口声声的标准翻译。</p>
+<p>但是，细查孙文历来的中译，我总觉得“民有、民治、民享”的中译，只是为宣传之便的中译，比起他自己其他的中译来，简明有余，明确不足。在他自己其他的中译中，他译ofthepeople做“民之国也”，他译bythepeople做“由民而治者也”，他译thepeople做“为民而设”，在意义的明确上面，反倒更接近林肯的原义。</p>
+<p>为什么呢？</p>
+<p>这可说来话长了！</p>
+<p>这段长话是不能短说的，因为它牵涉到诚实的林肯的一件涉嫌文抄公的事，这件事要靠另一种排比来发现真相，让我由最早的开始。</p>
+<p>为名言寻根</p>
+<p>远在林肯出世前十四年（1795），美国科学家、教育家、政治思想家托马斯库珀（ThomasCooper），就有过在“政府”字眼后连用前置词of,for的造句：</p>
+<p>Governmentofthepeopleandforthepeople.（SomeInformationRespectingAmerica，1795）①</p>
+<p>远在林肯出世前十一年（1798年），美国第二任总统约翰亚当斯（JohnAdams），就有过在“政府”字眼后连用前置词by，for的造句：</p>
+<p>……Agovernmentmadebythemselves,forthemselves,andconductedbythemselves……（Address,“tothecitizensofWestmorelandCo.”，Virginia,1798.）</p>
+<p>二十一年（1819年）后，美国大法官约翰马歇尔（JohnMarshall）首先在“政府”字眼后，以ofthepeople造句：</p>
+<p>ThegovernmentoftheUnion，thenisemphaticallyandtrulyagovernmentofthepeople……（CaseofMcCullochvs.Maryland,1819.Wheaton,iv,316.）</p>
+<p>十一年（1830年）后，美国演说家韦伯斯特（DanielWebster）首先在“政府”字眼后，以forthepeople，bythepeople造句：</p>
+<p>Thepeople'sgovernmentmadeforthepeople，madebythepeople，andanswerabletothepeople.（SecondSpeechonFoote'sResolution，26Jan.,1830.）</p>
+<p>二十年后（1850年），美国神学家、社会改革家帕克（TheodoreParker)，首先在“政府”字眼后，以ofallthepeople,byallthepeople,forallthepeople造句：</p>
+<p>TheAmericanidea……demands……ademocracy——thatis,agovernmentofallthepeople,byallthepeople,forallthepeople.（Speech,attheAnti-SlaveryConvention,Boston,29May,1850.）</p>
+<p>帕克这段话是1850年5月说的，到了11月，他又简化如下：</p>
+<p>Ademocracy,agovernmentofall,forall,byall.（TheStateoftheNation.Sermonpreached28Nov.,1850.）</p>
+<p>四年以后（1854年），他又这样说出：</p>
+<p>Thereisthedemocraticidea：that……governmentistobeofallthepeople,byallthepeople，andforallthepeople.（Address,“beforetheAnti-SlaverySociety”，Boston,13May,1854.）</p>
+<p>再过了四年（1858年），他又有了这样的句子：</p>
+<p>Democracyisdirectself——government,overallthepeople，forallthepeople,byallthepeople.（SermonsdeliveredatMusicHall,Boston,4July,1858.）</p>
+<p>在排比之下，我们一眼就可以看到，帕克远在林肯葛底斯堡演说前十三年，就有了林肯演说中的句子！林肯演说中的名言，原来是其来有自的！</p>
+<p>据《林肯的一生》（LifeofLincoln）的作者赫恩登（Herndon）考证：帕克当年把他的名言印在一本小册子里（这小册子叫OntheEffectofSlaveryontheAmericanPeople），他送过一本给林肯，林肯在第五页这句名言下做了记号，所以林肯的名言在寻根之下，已经昭然若揭。</p>
+<p>我认为林肯涉嫌文抄公，原因有二：第一，他并不认为这句名言是帕克的一家之言，以前人对一种言论的所有权，并不像后来那样认真，中国的古圣先贤如此；美国的古圣先贤亦复如此。例如杰斐逊（ThomasJefferson）的“life,libertyandthepursuitofhappiness.”论，是公然来自洛克（JohnLocke）的；他的独立宣言论，是公然来自潘恩（ThomasPaine）的，这都是无伤大雅的。第二，帕克死在1860，林肯演说在1863，帕克虽然并非无名之辈，但是人死了，总归啰嗦少了，所以也就放胆引用了（帕克的定本全集是他死后近百年才陆续出版的，自1907出到1913，有十五卷之多）。</p>
+<p>其实，以上的一连串寻根，只是在美国本地上的寻根而已，若要真的寻上瘾来，则名言的根中之根，本在英国。远在1384年，英国宗教改革家兼《圣经》译者威克利夫（JohnWycliffe），就在导言里有了这类的名言，虽然这类的名言，林肯极可能并不知道。</p>
+<p>应该怎么翻译？</p>
+<p>照前面提到豪斯的说法，林肯的葛底斯堡演说稿，是打算在摄影师准备照相那段空档里完工的。据我所知，关于林肯起草这篇演说的经过，说法有异：林肯的长子罗伯特林肯（RobertToddLincoln）1885年说这演说稿是林肯坐火车去葛底斯堡途中，写在一张旧信封背面的。但是专家研究结果，却是林肯早在两星期前（11月8日）就起草了，并且写在他在白宫经常使用的一种纸上。可能的情况是：林肯在火车上又一改再改他的演说稿，或者默写他的演说稿，因而有了不同的却又都合理的情况。</p>
+<p>但是，不论是那种情况，两百六十八个字的演说稿，是“很短、很短、很短”的，短的好处是简明，但坏处也就在此。因为林肯的原义，显然因过分简明而被弄拧了，这种弄拧，国民党的宣传要负绝大责任。</p>
+<p>对林肯演说中ofthepeople,bythepeople,forthepeople的中译，因为中文英文结构的不同，早就发生困难了。最早试译它们的，是1916年的留美学生。据这年4月18日的《胡适留学日记》，有这样的记录：</p>
+<p>赵宣仲（元任）寄书问林肯“葛底斯堡（Gettysburg）演说”中之“Thegovernmentofthepeople，bythepeople，forthepeople”一语当如何译法。此语梁任公尝以为不可迻译。今姑试为之：</p>
+<p>此吾民所自有、所自操、所自为之政府。</p>
+<p>然殊未能得原语之神情也。又译：</p>
+<p>此主于民、出于民，而又为民之政府。</p>
+<p>则三段不同文法矣。不如用反身动词（Reflexiveverb）之为佳也。</p>
+<p>胡适感觉出应用“三段不同文法”来翻译这段名言，是接近正确翻译的一个起点。</p>
+<p>那么，又如何判断呢？</p>
+<p>这就要追踪美国人的原始观念了。这要循着林肯的“思”路之旅，才能判断出他的真正意义。</p>
+<p>前面说过，林肯的思路来自帕克，帕克思路中最令人注意的句子是他最后一次（1858年）那一段。帕克说：</p>
+<p>Democracyisdirectself——government,overallthepeople,forallthepeople,byallthepeople.</p>
+<p>这里用上了over这个字，非常明显的，thepeople是“被”统治了的（受格）意思了，相对的，政府就是统治了的（主格）意思了。可见在帕克原始观念中ofthepeople中的thepeople不是主格，而是受格，这是非常明显的。林肯既是帕克的细心读者，林肯的原始观念是主格还是受格，还不明显吗？</p>
+<p>帕克以外，从早于帕克二十年前韦伯斯特的思路里，我们也可有触类旁通的领悟。韦伯斯特说：</p>
+<p>Thepeople'sgovernmentmadeforthepeople，madebythepeople，andanswerabletothepeople.</p>
+<p>这里用上了answerable这个字，非常明显的，thepeople是“被”负责的对象了，相对的，政府——人民的政府（thepeople'sgovernment）——就是统治者的意思了。可见再往前追踪思路，也愈追愈分明了。</p>
+<p>向前追踪过了，我们再向后“思”路之旅一下。</p>
+<p>1861年7月1日，林肯就对他的秘书表示过：</p>
+<p>在我看来，战争的中心意旨，是要证明民治的政府不是荒谬的理论。我们现在必须解决这项问题，在自由的政府内，少数人是不是有权任意和政府脱离。如果我们失败，就可证明人民还没有能力管理自己。</p>
+<p>三天以后，他对国会致词时又说：</p>
+<p>我们的民治政府，时常被人称为试验的政府。其中两个问题我们已经解决了，那就是政府很顺利的建立、很顺利的治理。其余一个问题还没有解决，那就是政府是不是可以很顺利的维持，而不会被强有力的人推翻。现在要美国的人民对世界证明，能够获选的人亦能够平靖叛乱。</p>
+<p>林肯在这种人民是否“有能力管理自己”的挑战里，在这种“试验的政府”的“维持”里，有这样一段话：</p>
+<p>AndthisissueembracesmorethanthefateoftheseUnitedStates.Itpresentstothewholefamilyofmanthequestionwhetheraconstitutionalrepublicordemocracy——aGovernmentofthepeoplebythesamepeople——canorcannotmaintainitsterritorialintegrityagainstitsowndomesticfoe.</p>
+<p>在这段话里，林肯明确的用了aGovernmentofthepeoplebythesamepeople的表达法，主宾意味业已明显：of后的thepeople是宾的thepeople；相对的，by后的thepeople却是主的thepeople，同一（same）人民，是主，也是宾；该主时主，该宾时宾。在林肯ofthepeople的政治用意中，of后面的thepeople是宾，既为宾，自与后面的bythepeople,forthepeople并无强烈平行的意思，既无强烈平行的意思，把它译为平行的形态——如“民有”“民治”“民享”之类，就未免不妥的了。</p>
+<p>天马行空的宣传</p>
+<p>正确的翻译该是把governmentofthepeople,bythepeople,forthepeople中ofthepeople的意思，与紧接而来的bythepeople，forthepeople做主宾用意的分开，林肯的原始观念显然是为人民服务的（forthepeople）、被人民选出的（bythepeople）、治理人民的（ofthepeople）政府，其中ofthepeople固无“民有”的意味，forthepeople也无“民享”的意味，只是bythepeople有一点“民治”的意味，但此一“民治”，却又是狭义的特指民选而言。林语堂《当代汉英词典》民治条下说governmentbythepeople,nowusu.called民主②，林肯的原意却明明是民主的运作——民选的结果。林肯在1861年7月1日到4日之间的言论，在在都显示了林肯相信民主政治，但却是经人民选出的反过来治理人民的。林肯这种原始观念，只是杰斐逊以来的美国人的老观念，林肯的伟大显然日后被神化了、美化了，其实他有着很可怕的自我矛盾与分裂：理查霍夫施塔特（RichardHofstadter）在《美国政治传统》（TheAmericanPoliticalTradition）中，已举证证明林肯有“一个职业政客在拉票时的行为”。他在内战时所做的违宪行为，也不在少③。林肯的民主气质，比起真正的伟大民主运动者来，显然还有距离。罗素（BertrandRussell）说杰斐逊是“为人民，但本身并非人民一分子的民主主义者”（ademocratforthepeople,notofthepeople），林肯的出身，虽然比杰斐逊乡土得多，但他的政治哲学是否高明光大，却很可疑。</p>
+<p>中译林肯葛底斯堡演说的不妥，是把并非对等的意思，给译成了对等的“民有”“民治”“民享”，并且译得也与英文原意不相称④。纵使“民有”相当于ofthepeople，也不过是“本然之事实”；即使“民享”相当于forthepeople，也不过是“最终之目的”，重点还是“民治”⑤。这一并不对等的情况，孙文自己并非不知道，他说林肯的话：</p>
+<p>译成中文，便是“民有”“民治”“民享”。就我们现在国情和这三层意思解释起来，自推翻满清政府，成立民国以来，可以说是民有一层已经做到了。十二年以来，政府之内，都是武人官僚把持，人民不但是不能管国事，并且日日受兵灾之祸，流离失所，何能够说到民治民享呢？真正的“全民政治”，必须先要有“民治”，然后才能够说真是“民有”、真是“民享”。</p>
+<p>虽然如此，孙文为了宣传之便，最后，抛弃了他自己其他的中译，做了简明有余、明确不足的翻译。“民有”“民治”“民享”固不与林肯原义相当，“民族”“民权”“民生”也与“民有”“民治”“民享”并不贴切，至于后来说“自由”“平等”“博爱”又与“民有”“民治”“民享”无异了，乃至国民党进一步宣传说“情”“法”“理”就是“民族”“民权”“民生”了，“伦理”“民主”“科学”也是“民族”“民权”“民生”了。……层出不穷，其实全是附会、全是层层“文字障”而已，全部缺乏精确的含义。正因为如此，所以任何戏法都可凭国民党代而换之，任何词汇都可与其他词汇比而出之，任何情况都可拈出三个名词同而化之、统而战之，例如说“民生”即“民享”，此向美国人统战也；说“民生”即“博爱”，此向法国人统战也；说“民生”即“共产”，此向共产党统战也；说“民生”即“科学”，此向五四人士统战也。这样子统战结果，什么都是，也什么都不是。中文定义的一片混乱、国民党宣传的一片天马行空，也就全套在此了。</p>
+<p>1939年，英国小说家阿伦（MichaelArlen），在他的名著《凌云记》（TheFlyingDuthman）里说：</p>
+<p>Thedemocraticsystemwhichwecallthegovernmentofthepeople，forthepeople,bythepeople,andtohellwiththepeople.</p>
+<p>我年纪愈大，受国民党统治愈久，我愈发现这段话中tohellwiththepeople的真义所在了。原来它不是为人民下地狱的政府，而是把人民下地狱的政府。“民有”“民治”“民享”、“民有”“民治”“民享”、“民有”“民治”“民享”，几十年来，“吊民伐罪”的国民党，最后的革命结局却是“吊民而罚民之罪”！这种德政，可真教我们不敢领教了！——我们对挟林肯之言而来的一片混乱、一片天马行空，可真要弄个清楚了⑥！</p>
+<p>1984年7月3日晨</p>
+<p>①戴维斯（A.PowellDavies）说：“托马斯库拍（ThomasCooper）在1795年所提出的民主的定义是最扼要最简洁的一个：‘民有、民享的政府’。但根据这一定义，一个专制暴君也能宣称他的政府是民主的，这种事实也屡见不鲜。”（何欣译：《民主真诠》，《自由中国》第十一卷第十期）</p>
+<p>②英文democracy（民主）这个字，美国即使在独立时也不常用。独立宣言上、各州宪法上、美国宪法上都没有这个字的出现。</p>
+<p>③查理毕尔德（CharlesA.Beard）在他的《共和国》（TheRepublic）一书，以对话的手法，写林肯的违宪行为如下：</p>
+<p>斯医生：那么林肯的批评家所指斥关于林肯的所谓违宪及高压手段，是怎么回事呢？</p>
+<p>毕尔德：我绝没有意思说这些批评不太重要，事实上，我手头现在就有一个很长的单子，可以写满好几页。斯太太，在靠近你的那个书架子那儿，有一本很厚的羊皮精装书是马歇尔（JohnA.Marshall）写的美国巴士底狱——内战后期有关美国公民不法拘禁史（AHistoryoftheIllegalArrestsandImprisonmentofAmericanCitizensduringtheLateCivilWar），你和罗拔（即斯太太的丈夫斯医生的名字）如果愿意把它带回去看看，你一定会从书里找到一大堆批评林肯的资料。反对林肯的人认为在林肯主政之下，有许多措施都是以违宪和高压的手段做出来的。譬方说，在马里兰州州议会会期中，林肯就施压力要州议会压制脱离联邦的提案活动。在北方很多距离战火相当远的地区，就有很多人民被政府肆加逮捕，许多批评林肯政府的报纸编辑和演说的人都被政府拘禁入狱，不少报纸都被当局封闭停刊。当然究竟有多少人被捕，确数很难决定，但被关起来的人则以千计。</p>
+<p>如果把林肯的所谓的违宪和高压措施统统加在一起乘上十；即便是为了辩论，说我们把对一切反对林肯的批评统统都接受了；尽管在许多违法措施是林肯自己事先一无所知，而是由许多政府文武官员以林肯政府的名义不法进行的，我们姑且把这笔总账都算在林肯一个人身上；尽管我们忘掉林肯曾经下令赦免了许多政治犯——例如普赖尔（RogerPryor）曾因任职南方联邦被捕，而林肯迭次拒绝将普赖尔正法——和一再颁发大赦令；我们就算把一切所能想到的罪名都加在林肯头上，可是，这些所谓违宪和高压的手段的宪法问题还是值得辩论的。这个问题本身是相当复杂的。</p>
+<p>④沈刚伯在《高中历史》中说美国：</p>
+<p>到1828年大选的时候，各州的总统选举人，除两州外，已经是由人民直接选出而非由州议会推定，许多州并将选举权的财产限制也大加放宽，让平民都能参加选举。平民选举的结果产生了第一个“人民的总统”（ThePeople'sPresident），把那六十一岁的杰克逊（Jackson）拥进白宫。他连任一次，开始了好些大刀阔斧的改革，把杰斐逊式的各州民主（JeffersonianStateDemocracies）变成了杰克逊式的全国民主（JacksonianNationalDemocracy），使政府于民有、民享之外，更进为民治。</p>
+<p>他又在注里说：</p>
+<p>《人权宣言》本由杰斐逊起草，他承认政治终极的主权在民，并主张政府应以谋人民的福利为其唯一职责；但他不承认未受过教育的人有参与政治的能力，更不愿那些无恒产的人有过问政治的资格。他心目中的国家只是民有、民享，而绝非民治，美国独立后五十年的政治便是如此。</p>
+<p>杰克逊认为政治是大众的事，任何人，无论贫富智愚，都应该有直接参加联邦政府之权；从他被选起，美国才算真走入民治之途。</p>
+<p>沈刚伯这些话，显然不明白美国“民治”的真正情况与真正来龙去脉。他又把“民有”和“民享”扯进，混成鼎立而三的对等意思，殊不知是不能这样硬分而三的。这种硬分而三，凡是国民党和吃国民党奶水长大的，都会犯同一错误。我举费希平《民主主义与民本主义》一段话为例：</p>
+<p>民主政治是今日最理想的政治制度，也是世界各国普遍实行的政治制度。什么是民主政治呢？美国林肯总统所下的定义最为正确，他说：Democracymeansgovernmentofthepeople,bythepeople,forthepeople，译成中文就是：民主政治是民有、民治、民享的政治。所以，民主政治所涵盖的意义，可分三个层次加以说明：首先，我们应该知道，民主国家主权的归属。谈到这个问题，使我想起历史上两件不朽之文献，一件是美国的独立宣言，一件是法国的人权宣言，在这两个文献中，都认为国家的主权应该属于人民，具体地说，人民是国家的主人，政府为人民所有，这就是林肯所说的ofthepeople。人民虽然有了主权，如果不能运用其主权来治理国家，主权就变成了空中楼阁，因此，由主权所引申出来的选举权和罢免权，就是林肯所说的bythepeople。人民有了选举权，当然要选为人民忠诚服务的、为人民谋福利的官吏与民意代表；人民若是发现他们所选出的官吏或民意代表，没有实践他们的诺言，人民可运用罢免权罢免之；所以，在一个实行民主政治的国家中，官吏与民意代表都在兢兢业业地为人民服务，人民才能享受幸福的生活，这就是林肯所说的forthepeople。总之，民主政治应该包括民有、民治、民享三种意义，缺少其中任何一个，就不能称为民主政治。（《深耕》杂志，1982年5月25日）</p>
+<p>费希平错引林肯原文于先，又乱做解人于后，林肯有知，当暗笑九泉！中国俗话说：“无心雕做木居士，便有无穷求福人”，林肯的一句顺手拈来、“无心”说出的一段应景演说，竟可被国民党和吃国民党奶水长大的，年复一年，以长篇大论“阐发无剩义”，借以“求福”、借以欺尽苍生，真不能不说是今古奇观了！</p>
+<p>⑤顾敦鍒《中国议会史》说：“美国总统林肯之言曰：‘德谟克拉西之政府，一民有、民治、民享之政府也。’民有为本然之事实，民享为最终之目的，在今日政治开明、学术进步、人权发展之时代，已为天下所公认，可以毋费讨论。唯民治一端，则重在方法。而方法本无一定，辄随情境而异，则大有研究之价值。”荆知仁《对宪法宪政的基本观念和认识》说：“林肯曾解释民主为民有、民治及民享。就此一解释的内容来分析，民有为前提，民治为方法，民享为目的。这三者之中，民有之前提，乃理论上的假设；民享的目的，乃古往今来，无分专制或民主，所共同追求的目标；民治之方法，却是贯彻民有前提，达成民享目标正当而有效的手段。极权和民主的真正分野，不在于民有的前提和民享的目的，而在于民治的方法。”（《成长的民主》）李声庭《没有自由如何民主》说广民主的定义，最简单的莫过于美国林肯总统所说的：‘政府为民所有，政府为民所治，政府为民所享。’其中最重要的却是政府为民所治。”（《名人杂志》，1982年6月15日）</p>
+<p>⑥对林肯演说提出疑义的，最早见于钱歌川先生的《英文疑难详解》，我写这篇疑义，是就钱先生的疑义，加以论证发挥的，基本的解释，是钱先生的，不是我的，特此声明。从文法学家的解释观点，自可对疑义加以疑义。例如写overallthepeople的over，也可不做“在……上头”的解释而做“通由所有人民”或“在所有人民中”的另一种解释，而agovernmentofthepeople中，government和thepeople自可视为从属关系等等。总之，我这篇疑义的主旨，在抛开文法上、修辞上的字面拘泥，而从林肯的政治思路上溯本探源，从而证明原义不是如文法解释观点那样简略的、平行的、望文生义的。我们这些饱受林肯演说移植中国以为宣传、以为政治广告下的受害人，实在不该轻信才好！</p>
+<p>孙中山把三民主义作为“统战工具”</p>
+<p>——扭曲了的“纪念”</p>
+<p>殷海光死后，许多人都打着他的旗号，来“纪念”他，其实只是扭曲他而已。为什么？因为“纪念”一个人，你必须就这个人成熟时期、健康时期、神志清明时期的长时期均衡表现为准则，换句话说，你必须就这个人生命中最光彩的登峰造极来论定，一个人一生的变化，往往是很多的，不把握住这一登峰造极，反倒乱加“纪念”，那样就是扭曲。以闻一多为例，闻一多一生中最登峰造极的，是他抛弃了旧式文人的习性，转而从事对抗国民党暴政的战斗，以致被国民党暗杀，殉道而死。但他的“朋友”梁实秋写《谈闻一多》（1967年1月1日“传记文学社”出版），却酸酸的写了这些话：</p>
+<p>闻一多短短的一生，除了一死轰动中外，大抵是平静安定的，他过的是诗人与学者的生活，但是对日抗战的爆发对于他是一个转折点，他到了昆明之后似乎是变了一个人，于诗人学者之外，又成了当时一般时髦人士所谓的“斗士”。抗战军兴之后，一多一直在昆明，我一直在四川，不但未能有一次晤面，即往返书信也只有一次，那是他写信给我要我为他的弟弟家驷谋一教法文的职位。所以，闻一多如何成为“斗士”，如何斗，和谁斗，斗到何种程度，斗出什么名堂，我一概不知。</p>
+<p>这就是扭曲的一个显例。梁实秋名为“纪念”，其实是把闻一多小化、窄化了。把闻一多小化、窄化得活像懦夫梁实秋自己。把闻一多小化、窄化成一个整天诗酒螃蟹的诗人学者，这是对闻一多最可耻的扭曲，这是我们不得不予以拆穿的！</p>
+<p>最近有所谓“纪念”殷海光“学术座谈会”，就是全套梁实秋扭曲闻一多的翻版。这种“纪念”的特色，是小化、窄化殷海光批国民党的伟大成就面，而突出殷海光的学者面、中国文化面……这是很可耻的。</p>
+<p>殷海光早年投身在救国的急湍里，他的狂热和动辄“立正示敬”，十足是一个“法西斯分子”。他被国民党争取到，为国民党做文化打手，被共产党列为“十大文化战犯”之一。到台湾后，他勇于觉悟，把国民党的祸国殃民，批了个痛痛快快，这是殷海光一生中最登峰造极的，没有这些登峰造极，自然无所谓思想家殷海光、无所谓逻辑学者殷海光。所以，论定殷海光，必须就这一生命中最光彩的登峰造极来论定，否则就是别有用心了。</p>
+<p>可耻的是，所谓“纪念”殷海光“学术座谈会”里，我们完全看不到这种识其大者的“纪念”，对这种乡愿式的集会，我们真不能不说他们在扭曲死人、愧对生者了。</p>
+<p>为了反证这种“纪念”殷海光“学术座谈会”的扭曲，我现在以殷海光一篇旧作——《我对于三民主义的看法和建议》——为例，看看殷海光怎样在面对国民党，做一个入世的思想家。</p>
+<p>我对于三民主义的看法和建议</p>
+<p>我在《自由中国》第二十二卷第十期发表的《给雷震先生的一封公开信》，在一个文明的民主国家，实在是平常得很。想不到这封信竟引起许许多多误解。误解的基本原因之一，是若干人士拒绝对我在信里所说的种种论点做理智的思考，而只把各人心中画好了的影像投射（project）到我身上去。这是一个值得研究的群众心理学的问题。关于这个问题，我认为应须让心理学专家去研究。我们现愿意在这里解释一下的，是我对于三民主义的看法，并且提出建议。</p>
+<p>第一，我在那封信里说“我的确也没有说半句恭维三民主义的话”。有些人士把这句话解释作“殷海光瞧不起三民主义”。这不知是什么推理方式！一般思想方式未经训练的人之思想常常被一些习惯性的格子所囿。例如，“不左即右”、“不白即黑”、“不是唯心就是唯物”、“不是穷人就是富人”……。……（编者略）其实，世界的范畴和事物哪有这么简单！在白与黑之间有灰，在白与黑之外有红、橙、青、蓝、紫。在唯心与唯物之外的思想更多得很。在富人与穷人之间有许许多多级次。依此，我们怎么能够从“没有恭维”而推断是“瞧不起”？</p>
+<p>如果三民主义的确是一种思想学说，那么我们对它既不应该持“恭维”又不应该持“瞧不起”的态度。这是“对人”的态度，而不是对思想学说的态度。对思想学说只可研究，以定其对错或是否行得通。</p>
+<p>第二，我为什么在《胡适与国运》这个讲演里没有提到三民主义？这是有一番苦楚的。任何稍有常识的人都不难明了，在我们这里的空气，对于三民主义，像中世纪的教皇僧侣们对于宗教教义是一类的。在这些统治之下的人们，对于这类教义或主义，只有“信服的自由”，没有“反对及批评的自由”。如其不然，便视同异教事件办理。从表面看来，这种动作是为了维护他们坚持的真理。但是，这种狂热的情形即令并非没有，也只在这类运动的初期；到了政权到手，这类教义或主义就变成从思想上维持统治的工具。这类工具最重要的一面是权威性；至于内容的真假对错根本是次要的事。因此，如果有人反对或批评教义或主义，那么就表示你敢于冒犯权威。冒犯权威就是从基本上动摇统治的象征。……（编者略）我因既不愿被目为异端，又不愿说“违心之论”。所以在那次讲演中保持了缄默，没有提到三民主义。可是，当时有一位学生问到头上来了，我因为不愿对青年说敷衍话，所以说三民主义的内容“十分糅杂”。</p>
+<p>如果任何一种思想学说是真理，那么用不着借枪杆保护。如果任何一种思想学说要借枪杆保护，那么就证明它不是真理。我们从来没有听说罗素思想需要枪杆保护的。</p>
+<p>说到这里，我愿意提醒国民党的朋友一声。据已故崔书琴先生告诉我：“他在天津南开读书时，天津还在北洋军人统治之下。当时三民主义是禁书。读三民主义如被查出，是一件非常危险的事。可是他们总是秘密地放在桌子底下读，或者半夜起来读。”如果当时三民主义像现在一样得靠政治力量来掩护其权威并强使大家信从，那么怎能在北洋军人统治之下“深入人心”？</p>
+<p>第三，三民主义是否“统战工具”？我的答复：“是的。”我说它是一种政治思想，系从它的思想性质方面着眼的；我说它是统战工具，系从它的政治功能着眼的。二者毫不相妨。这一看三民主义产生的背景便知。民国初年，承孔制大一统崩溃之后，新学说、新思潮涌入。当时的中国知识分子，在一方面由于好奇好新鲜，在另一方面由于迫切想抓住一个什么主义来救国，于是有人讲无政府主义、有人讲社会主义、有入讲民治主义、有人讲共产主义……“思想庞杂”极了。由于“思想庞杂”，表现在政治上的就是行动纷乱，力量分散。孙中山先生看到这种光景，于是创建三民主义。三民主义中的民族、民权、民生可以看作政治问题的三大基本范畴（threeprimarycategories）。试问上述各种思想学的，有哪一种能逃出这三大基本范畴以外？这真是各路孙悟空跳不出佛爷的手掌心也！就四十年前孙先生所处的时代而论，这真是一个伟大的天才创建。因为三民主义确乎比当时一般政治思想高出一筹，而且富于广含性（comprehensiveness），所以把当时那些思想都吸收了，都兼消了。因为思想上的吸收和兼消作用，于是许许多多政治醒觉分子渐渐皈依到三民主义的怀抱而滋长出一种一致的政治意识。这种政治意识之滋长，日后成为北伐运动的推动巨力。我想，凡属中国现代史的公正研究者，都应该对于这一段历史发展做一番客观的解析。</p>
+<p>从这个观标来看，三民主义不是“统战工具”又是什么？当然，那个时候，似乎没有这个名词，而且孙先生本人未必“意识到”这一点。不过，这不是实质，所以无关紧要。我们并且还可推广一步来想：不仅三民主义是一统战工具，而且就国民党的发展史看，凡是它“革命”顺利的时候，也就是它的统战做得好的时候。只因后来“革命成功”，自以为政权在握，武力可恃，骄念横生，以为天下莫我若也，不肯虚心把统战认真做好，所以后来弄得处处荆棘横生，以至于一败涂地。孙先生本人就是统战的大发明家。同盟会是统战的初尝，“联俄容共政策”是大规模的统战，并且是“国际统战”，抗日战争初期搞的是很可欣赏的统战。到了抗战末期，战争及人事因素把国民党的政治机能腐蚀了，弄得它逐渐在统战中失去主动力，政协失败就是显明的实例。于是它对于统战滋生出畏惧、戒慎，甚至厌憎的心情。今日台湾国民党的政治心理就是这种心理的延续。所以它很难打开一条大的出路，而僵守在这里，日以捉蚊虫跳蚤、吹毛求疵为务。</p>
+<p>第四，国民党应须将三民主义来一番改造。三民主义底大间架还是可用的。然而，它的内容和铺陈，几十年来，毫无修正、翻新和充实。我极不赞成国民党借着政治权势把三民主义变成国教；但是我极其赞成国民党享有不借政治权势来宏扬其三民主义的自由。近十几年来，对于三民主义研究得最努力的，我所知道的只有任卓宣先生。可是，他所走的路是钻到三民主义里面加以诠释。这种工作，类似中世纪的繁琐哲学家之注解亚里士多德哲学。这种路线愈走愈窄。所以三民主义的繁琐哲学，到了任卓宣先生便是登峰造极，不能再有起境了。三民主义的阅读呢？从崔书琴先生之冒险秘密阅读而演变到今日必须以高压手段喂填鸭、必须拿考绩和利禄来做鼓励，相去何远！世变何极！这是三民主义的悲剧。这一悲剧之形成，丝毫不能怪任先生。自从国民党得势以来，就把三民主义捧若圣经，自党员以至人众，只许信奉，不许批评。这一种心理状态表现得最强烈的代表人物可推胡汉民先生。在这种传统气氛高压之下，即令任先生有柏拉图的才华也施展不出来的。国民党的这种“意识形态”之作用，不仅禁锢了自己的思想，而且也禁锢了三民主义。真是令人惋惜！</p>
+<p>我们看孙先生所作三民主义序文，可知他自己并没有像他的信徒那样，把三民主义当作天经地义的意思。而且，就我们从前一辈人所述孙先生的行谊中，得知他很喜欢和青年诘难辩论。如果当初孙先生对于三民主义采取像现在一部分国民党人士这种专横武断的态度，那么三民主义何能在无武装保护之下爬起来？何能畅行天下？杜威说：“民主必须每代更新。”大家奉行的政治思想，哪里是动都不能动的列祖列宗相传的《朱子家训》？三民主义是四十年前的产品。这四十年来，世界进步得太快了，中国人的知识也有些进步。如果要它跟上时代，永远常新，并且使青年们读起来真正从内心发生兴趣，那么必须来一次改造。改造的工作，必须从吸收现代心理学、拉斯威尔政治学、波柏的社会思想评导、文化人类学等等着手。这种工作是一件比石门水库还要巨大的工程。这样巨大的工程，绝非一个人所能进行，而必须成立一个机构，网罗这些方面的人才以从事。国民党内至今还是有些聪明才智饱学之士。像陶希圣先生这样的人就可主持其事，期以三年有成。那时三民主义可以一崭新的面目与大家相见，在中国政治思想上重放异彩。</p>
+<p>殷海光这篇《我对于三民主义的看法和建议》，原登在1960年6月16日《自由中国》里。这篇文章是因殷海光一个月前写《给雷震先生的一封公开信》（《自由中国》，1960年5月16日）引起。在这封公开信中，殷海光有这样一段话：</p>
+<p>我在台湾大学任教，算来有十一个年头了。我教的科目，不是政治，也不是历史，而是逻辑、罗素哲学、解析哲学、理论语意学这类东西。我在这十一年里，偶尔为学生办的刊物写点文章，也有时被学生请去讲演。这些工作，是任何教师分内的工作。只要有学生请，教师们是没有正当理由拒绝的。我的写作和讲演在从前也没有出过什么“问题”。可是，自从1958年12月15日我讲演《胡适与国运》以后，“问题”就来了。这一天下午7点钟，我在校本部开讲，由于题目很有吸引力——我不认为我自己有什么吸引力，当时连走廊上和窗户上都挤满了青年。我讲演的内容大致与在《自由中国》第二卷第九期所发表的相同。在这篇讲演中，我提到对于中国现代思想最有影响的人物时，只列举了康有为、梁启超、陈独秀和胡适之四位先生，而没有列举别的人物。我这样做系基于我自己所做的种种考虑。我的这些考虑对不对，有而且只有就学术思想的观点去衡量才可。讲演完毕以后，照例由学生提出问题。有一位学生问：“殷教授认为三民主义怎样？”我当时答复说：“三民主义系四十年前的政治统战工具。它是为了迎合当时复杂的政治思想而设计的，所以也就十分糅杂。”我的确没有在这篇讲演中恭维某党人士硬要天下人恭维的偶像；我的确也没有说半句恭维三民主义的话。除了当作压制思想的权威以外，我想不出任何理由必须把任何人的话捧若圣经，更何况那些几十年前的方便说法！大概这招致了某党人士极度的不满。自此以后呢？每逢有学生请我讲演，不是因训导处同仁说“教室不够”，便是说“题目不行”，而给打消掉了。对我而言，反正这类事件平常得很，懒得去记忆。世道衰微如此，有什么可说的呢？</p>
+<p>看了这段来龙去脉，我们不难发现，殷海光在写过千千万万批国民党的杰作以后、在《自由中国》封门的前夜，最后奋其一击，以他思想家的透视力，在国民党所倚恃的圣经头上，尝试去点破真相、尝试去动土。显然的，殷海光为了这—点破真相与动土，很快的失掉了演说的自由、失掉了《自由中国》。如今我们追念这段往事，应该注意到当时自由民主人士的那股双轨作业——一轨是用新党对抗国民党、一轨是用新解说剥开国民党的圣经。也许当时他们这样做，不全是自觉的，但他们在“文字收功”多年以后，最后升级到这种双轨作业，却是一种不得不然的发展。虽然他们立论的纯度，不无可疑；组党的品类，容有可议，但是他们毕竟百尺竿头，没有停止的向前走了。他们在竿头翻落，求仁得仁，这种勇于殉道的精神，比起扭曲他们以为“纪念”的伪君子们来，真是伟大得无与伦比了！</p>
+<p>1984年8月6日以两小时作</p>
+<p>〔附记〕殷海光的历史训练和资料训练很差，所以他无法从孙文的著作中举证，这是他立论的大缺点。孙文在1919年写《文言本三民主义》，在民生主义部分，尚没提到“民生主义就是社会主义，又名共产主义，即是大同主义”的话，这些话是1924年《演讲本三民主义》增加的，而那时正是国民党共产党哥俩好的时代！三民主义的统战性质，在此可得佐证！（1984年8月9日）</p>
+<p>孙中山的第二兴趣是“女人”</p>
+<p>——革命以后干什么？</p>
+<p>国民党党营书店正中书局出版了一册《宫崎滔天论孙中山与黄兴》，第三十页中明载孙中山答复犬养毅的话，说他生平的第一兴趣是“革命”，第二兴趣是“女人”，第三兴趣是“书”。可见国民党党营书店对孙中山喜欢女人的事，尚予以梓行问世，当然，这极可能是国民党的一项疏忽。</p>
+<p>孙中山不掩饰他对“女人”的兴趣，显示了他至性的一面。他一直把第一兴趣“革命”和第二兴趣“女人”兼顾，在他早年革命中的陈夫人（陈粹芬），是革命党兼女人；在他晚年革命中的宋夫人（宋庆龄），是女人兼革命党。虽然，这种一贯作业，有时并不为人所赞同。陆丹林《革命史谭》中有这样的故事：</p>
+<p>民国十年，总理亲率大军，出发广西，实行北伐。此役孙夫人宋庆龄女士没有偕行。其原因传为廖仲恺谏阻。盖廖以中国古来出征，多不携带家眷，女子在军，视为不祥，且恐惹起其他误会。总理本大无畏之精神，打破一切封建陋习思想，即答廖说，此为不可为训的恶习，革命党人不该存此思想。并引梁红玉辅佐韩世忠大破金兀术故事来说明女子在军中的贡献。但因部属既存有此种思想，故亦勉从众意，孙夫人乃暂留广州，未即随同入桂。</p>
+<p>由此可见，孙中山的“韩夫人”革命法，有时会给他惹来观点上的歧见。</p>
+<p>我生平看了不少以“革命”为第一兴趣的故事，他们在“革命”以后，有的转入第二兴趣，像富兰克林（BenjaminFranklin），他晚年派赴法国，折冲尊俎之余，与洋婆子寻欢以为乐，在温柔乡以终老；但有的却转不过来，像富兰克林的朋友潘恩（ThomasPaine），他却仍旧为第一兴趣中风狂走，在美国革完命，又跑到法国去革命。我想这种“革命狂”未免兴趣太窄了一点。又如格瓦拉（Ernesto‘Che’Guevara）也是一样。他在古巴革完命，放着“中央银行总裁”和“工业部长”不做，又跑到玻利维亚去革命，最后被“美帝”派人来，予以围捕枪决，其一生第一兴趣过显，第二兴趣欠明，最后“大头对不起小头”而去，亦可哀矣！</p>
+<p>也许，潘恩和格瓦拉的毛病，都出在第一兴趣的“不知止”，这种人应该知道，第一兴趣在成功以后，应该立刻收敛他们的“革命狂”，真正从事革命以外的大业，而不要以为除非他继续革命，革命就尚未成功。以为天下非他不可、必须靠他一革再革的人，其实是一种悲剧角色。有“革命狂”的人，如能从第一兴趣转为第二兴趣，功成身退，退而老去寻春而不悲秋，才是喜剧的扮演者。革命并非不好，但是做了职业革命家可就不太好。一旦做了职业革命家，革命就会变为“国民革命”第一期、第二期、第三期……而被革命的国民就吃不消矣，最后这种人令人厌烦，也就不在话下了。</p>
+<p>1984年8月25日晨</p>
+<p>孙中山与陈粹芬</p>
+<p>——毋忘孙夫人</p>
+<p>孙文在《革命缘起》中回忆他和日本宫崎兄弟的来往经过，认为是革命党人与日本人士相交之始。宫崎兄弟有八人，跟孙文友好者有宫崎民藏、宫崎弥藏、宫崎寅藏（白浪滔天）。宫崎寅藏在《孙逸仙其仁如天》（陈鹏仁译著《宫崎滔天论孙中山与黄兴》）里曾记录一个故事：“有一天犬养毅问孙先生说：‘您最喜欢的是什么？’孙先生毫无犹豫地答说“revolution”（革命）。‘您喜欢革命，这是谁都知道的，除此而外，您最喜欢什么？’孙先生边看犬养毅夫人，边笑而不答。犬养毅再催问说：‘答答看吧。’孙先生答说：‘woman’（女人）。犬养拍着手说：‘很好’，并问：‘再其次呢？’‘book’（书）。‘这是很老实的说法，我以为您最喜欢的是看书，结果您却把女人排在看书前面。这是很有意思的。不过喜欢女人的并不只是您！’犬养毅哈哈大笑，并佩服孙先生说道：‘您这样忍耐对于女人的爱好而拼命看书，实在了不起。’”刘成禺《先总理旧德录》中说孙文对伊藤博文自吟“醉枕妇人膝，手握天下权”，“甚以其风度为然。”足见孙文对女人，有他坦白的看法。</p>
+<p>孙文一生和女人的关系，国民党钦定的传记中，只承认两位，一位是卢夫人（卢慕贞）、一位是宋夫人（宋庆龄），其他一概给一手遮天了。这种“为尊者讳”“为亲者讳”，其实是很封建的思想，自为反封建的革命党所不取。</p>
+<p>孙文与卢慕贞结婚时是二十岁（1885），卢夫人生于1867，比他小一岁；与宋庆龄结婚时是五十岁（1915），宋夫人生于1893，比他小二十七岁，在这卢前宋后的三十年间，细查起来，却不无其他夫人可寻。</p>
+<p>“能飘白发说微时”</p>
+<p>其他夫人中最令我们注意的，是陈夫人（陈粹芬）。</p>
+<p>1936年3月20日，《逸经》第二期登冯自由《革命逸史》四则，在第四则《孙中山之嗜好》中，有这样一段：</p>
+<p>中山毕生不嗜烟酒，读书之佘，间与人下象棋，然习之不精，好取攻势而懈于防守，故易为敌所乘，余与胡汉民何香凝等皆尝胜之。外国纸牌尤非其所好，然颇精于三十年前盛行之广东天九牌，乙巳以前居横滨时，每与陈四姑（名香菱）、张能之夫妇玩之。</p>
+<p>这里提到的“陈四姑”，就是陈夫人。九年以后（1945），冯自由出版《革命逸史》第三集，书前请刘成禺题词，刘成禺写《奉题冯自由兄革命逸史三集并自题七十自传暨先总理旧德录》十首，在第八首中有这样的诗：“望门投宿宅能之，亡命何曾见细儿。只有香菱贤国妪，能飘白发说微时。”冯自由在后面加按语，说：“禺生诗中所述掌故。皆民国前八九年革命轶事。舍余二人外。无人知其详。”“横滨日本邮船会社华经理张果字能之。与总理有通家之好。陈夫人瑞芬原名香菱。曾寄居张宅一年。总理居日本及越南南洋时。陈夫人恒为往来同志洗衣供食。辛勤备至。同志咸称其贤。”老革命党冯自由在此明说“陈夫人”，可见孙文在卢夫人后，又结婚了①。</p>
+<p>“孙陈粹芬”</p>
+<p>刘成禺写陈夫人“能飘白发说微时”的诗，是1943年。四年以后（1947），他真的印证这一“能飘白发说微时”的图画了。他写《翠亨村获得珍贵史料》（《世载堂杂忆》），有这样几段：</p>
+<p>孙中山先生生于中山县（原名香山）翠亨乡。予此次巡察到此，所得事件，有足供史料著录者，亦弥足珍贵也。</p>
+<p>中山县长孙乾，为先生之胞侄孙，予五十年来之通家子。其人精明强干，笃守礼节，治中山县颇有政事才。</p>
+<p>予四年前在重庆，题冯自由革命逸史三集，述及陈粹芬老太太，冯自由且为之注。抗战以来，粹芬老太太先居澳门，后由孙乾供养，今年高龄七十五矣。闻予至中山石岐，喜曰：刘某予四十余年未见面，今尚在人间耶？予抵石岐，即往晋谒，述当年亡命情形。粹芬老太太慨然曰：我未做饭与汝等吃，已四十八年矣。今日重逢，下午请吃饭。于是大备盛筵，亲送孙陈粹芬红帖曰：不似在横滨街头买菜，而今请吃饭也有格式了。</p>
+<p>午后前往，粹芬老太太已在门首欢迎曰：我辈五十年来，各人都在，回忆当年亡命受苦，直一大梦耳，不可不留一纪念。于是宾主共摄一影入座。老太太畅谈经过身世，甚多珍贵史料，足供搜釆也。</p>
+<p>陈老太太为言革命时期惠州之役。香港李纪堂、梁慕光等商议在惠州起事，军械皆由海员公会海员秘密输运，经日本邮船与美国、高丽等邮船运来者最多，以横滨为居中策应，视情势如何，在横滨定行止。陈老太太任来往船只起落密件之责，故横滨邮船一到，老太太即往接船，以港方确实消息，转告密运枪械之海员。日本因妇女上下，毫未注意。及事败，梁慕光来横滨，盛称陈老太太英勇不已。老太太曰：我当时传递书简，并不害怕，大家拼命做去，总有办法。</p>
+<p>予此行，在孙家获睹先生所留金表一枚及金链一条，链头小印一颗。金表大如小蟹，有金盖可开合，金盖面刻英文“Y.S.Sun”。盖先生伦敦蒙难归国，康德黎博士临行所赠物也。先生在横滨时，屡出以示人，今再见之，真革命史上传世之宝也。</p>
+<p>陈粹芬在近半个世纪后，故友重逢，为老同志再开饭局，且用“孙陈粹芬”名义下帖子，其为孙文的夫人，一清二楚矣！</p>
+<p>“一位被遗忘的革命女性”</p>
+<p>刘成禺回忆这一久别重逢，真是场面感人。李又宁在《一位被遗忘的革命女性——陈粹芬》（1981年10月《传记文学》第三十九卷第四期）里说：</p>
+<p>粹芬原名香菱，又名瑞芬，人称之为陈四姑。广东人，生于1873年左右。</p>
+<p>19世纪末，20世纪初，她是中山先生的革命伴侣。日本横滨是他们居住和活动的一个据点。她经常为往来的同志洗衣、做饭。革命党人在香港和横滨之间，密运枪械，她上下船只，传递消息。同志们都很称赞她的英勇和勤劳。</p>
+<p>中山先生到南洋革命，粹芬也在左右。她亲自印刷宣传品。池亨吉，中山先生的日本友人，说她工作“非常忙碌”，性格“刚毅”②。</p>
+<p>宫崎寅藏的夫人宫崎槌子在《我对辛亥革命的回忆》（陈鹏仁译著《宫崎滔天论孙中山与黄兴》）里，有一段描写陈夫人，她说宫崎民藏：</p>
+<p>睁大眼睛回叙昨天晚上的事，边称赞那位中国革命妇人，边鼓励我说：“在照顾孙先生日常生活的那位中国妇女同志，真是个女杰。她那用长筷子，张着很大的眼睛，像男人在吃饭的样子，革命家的女性只有这样才能担当大事。你看她声音之大。你应该向她看齐才对。”</p>
+<p>这样一位有助于中国革命的“女杰”，在革命成功以后，开始被“出局”了，她由孙文的侄子孙乾奉养，住在中山县的石岐；一如卢夫人由女婿戴恩赛奉养，住在澳门③。孙文又有了新夫人——宋夫人。吴相湘《孙逸仙先生传》说：</p>
+<p>民国三年春，卢夫人曾赴日本。据她答香山县商会函有云：“先伯（德彰大哥）离世后，电召氏（卢自称）往日本，商配宋氏之婚。后氏回澳住居，得常往教堂聆主之救世大道。”这就是卢夫人明大义，同意分居。自居澳门。但孙科及二女仍奉养一切；孙先生就不致重婚。</p>
+<p>吴相湘说“同意分居”，又说“不致重婚”的话，显然是含糊其辞的。事实上，孙文与宋庆龄在1915年在日本结婚的时候，卢夫人还是卢夫人，而在孙宋婚约上第一条，也只是尽速办理符合中国法律的正式婚姻手续而已。</p>
+<p>还有一位樱花夫人</p>
+<p>这月17日，美联社东京电讯说：</p>
+<p>日本共同社今天报道说，一位日本教授在横滨发现孙逸仙博士七十八岁的女儿。</p>
+<p>日本通讯社说，这位学者名叫久保田，是日本女子大学的教授，他负责研究这件事，他指出这位女人名叫宫川富美子，住在东京南方的横滨市。</p>
+<p>根据久保田的研究，孙中山于1898年在横滨的中国城，首次遇到宫川富美子的母亲。</p>
+<p>以下是共同社所发表的有关的研究报告。</p>
+<p>1901年孙中山要求宫川富美子的祖父，答应把她的母亲嫁给他，她的母亲当时才十四岁。其祖父予拒绝，因为这个女孩太年轻，而当时孙中山的年龄是三十六岁。后来孙中山直接向该女求婚，于是两人就在横滨以简单的仪式进行婚礼。</p>
+<p>后来孙中山独自前往东南亚及美国旅行，于1905年回到日本看妻子，是年（1906年），他的女儿出生，但孙中山于女儿出生之前就因事离开日本，再也不回来。</p>
+<p>宫川富美子的母亲后来改嫁两次，但仍保持与孙中山书信往来。于1970年去世，享年八十二岁。宫川富美子于出生后不久，由另一个家庭收养抚育。</p>
+<p>孙中山在美国的亲友们也曾说，孙中山在日本有一个女儿，但不知其姓名，这是一个日本籍太太所生的。以上是日本共同社所发表的研究报告。</p>
+<p>这位东洋夫人的名字叫大月熏，她在1970年12月死去。她死以前，曾留下录音带和口述记录，据18日的《读卖新闻》，大月熏的父亲原是和中国有贸易往来的商人，孙文因藏匿在大月熏家里而与大月熏相识相爱；四年后孙文向大月熏求婚，并举行婚礼，当时大月熏还只是横滨高中女中的学生，年仅十五岁。宫川富美子生于明治三十九年五月，富美子的名字中“富美”的另一个汉字写法是“文”字，这是仿效孙文的“文”所取同音字。宫川富美子生下后，立刻被送去做养女，她自己则是在昭和三十年从当时住栃木县的生母大月熏那儿知道真正的身世。这段秘密之所以被久保田教授证实，是他于神户华侨历史博物馆等地继续研究时发现，录音带出现的一个人名“温炳臣”，温炳臣这个名字，只有研究中国近代史的专家才知道，温炳臣是孙文的同志，而且是少数清楚孙文在横滨所有行止的人。录音带既出现这样一个鲜为人知的名字，足见大月熏与孙文有关连是可以追查的。</p>
+<p>《读卖新闻》提到的“温炳臣”，据我所知，炳臣是字，此人名温芬，广东南海人，在横滨一家洋行做事。孙文住在横滨时，他常在寓所担任招待。辛亥革命后，改做煤炭生意。他是老兴中会会员，他的叔叔温遇贵，做洋行买办，也是会员，后来脱离了。温芬直到抗战发生时，还在横滨，当时已是仅存的两位会员（另一位是黄焯文）之一了，后来黄焯文回国了，他却老死他乡。大月熏录音带中出现这一“鲜为人知的名字”，足见此一樱花夫人，不是空穴来风的。</p>
+<p>《读卖新闻》又说，现年七十六岁满头银发的宫川富美子，目前和儿子媳妇一同住在横滨市西区南浅间町32之10号，闲居在家。她在17日晚间，接受《读卖新闻》记者访问说：“我从母亲那儿知道自己是孙文先生的女儿，但因为顾虑到孙文家族的立场，因此没有公开。”</p>
+<p>在整个的历史追踪中，我们逐渐发现，为了“顾虑到孙文家族的立场”，在孙文一生和女人的关系中，不论是中国的陈夫人，还是日本的樱花夫人，她们都自我牺牲，一个个功成不居，把自己隐藏在年复一年的沉默里。虽然如此，我们主持正义的历史家们，却不能随同沉默，我们要发潜德之幽光，在血泪交织的革命史中，“国父入土，国母出土。”加入她们伟大的名字！</p>
+<p>1984年8月23晨2至6时</p>
+<p>①据刘成禺《世载堂诗待删稿》，冯自由原注为“横滨华侨邮船会社经理香山张能之，亦名仁之，与先总理有通家之好，亡命食宿，均主张宅。总理眷属陈夫人瑞芬，原名香菱，亦曾寄寓张家。陈夫人居日本、越南、新加坡，恒为来往同志洗衣供食，异常辛勤，总理大得其助。”</p>
+<p>②原注：1906年前后，池亨吉曾追随孙中山先生到南洋参加中国革命工作，担任英文秘书任务，并曾参加镇南关之役，著有《支那革命实见记》一文，当时在日本报纸发表，文内提到的孙夫人，就是陈粹芬。“肃然的参谋本部，忽然就变为繁忙的事务室了……各事各人，不遗余力地进行。就中孙氏的夫人，就自己担当印刷檄文，非常忙碌。”（上海三民书局出版的中译本，第13页）又说：“12月3日，午前4时，大家会集于食堂，共斟离别酒。孙氏的夫人虽是很刚毅的广东妇人，但也不堪别凤离凰之悲。后来，我们一启程，她的眼边人情也表露出来了。”（第36-37页）此中译本，有乐炳嗣写的序。乐将陈粹芬误为卢夫人。其实，卢夫人当时在檀香山。</p>
+<p>③刘成禺回忆住在中山石岐的陈夫人后，又有一段回忆住在澳门的卢夫人如下：“既抵澳门，晋谒卢太夫人，太夫人年八十三矣，和蔼康健，步履与少年人无异。其次女戴夫人亦出见，时戴君恩赛适去香港，晤谈数语，即辞出。按先生家世，长兄眉公，经营农商业于檀香山；眉公子曰孙昌，在旧金山医科大学毕业，先生在广州大元帅府，奉命收海军，为流弹所中阵亡。昌有二子，长曰孙满，现任士敏土厂总理；次孙乾，即今之中山县长。乾卒业日本士官学校，再赴意大利习陆空军，抗战时任闽军副总司令，今治中山，颇著政绩，此眉公世系也。先生生孙哲生科；长女媛，年未及笄，早卒；次女婉，适戴君恩赛。戴君曾留学美国，得博士学位，后任梧州关监督、巴西公使，今与夫人同居澳门，并侍卢太夫人。卢太夫人云，在澳门居处甚适，可常与平民亲友晤言，颇足娱晚景也。”卢夫人死在1952年，活了八十六岁。</p>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/12.人物研究类/孙中山研究.md">Edit this file on GitHub.</a></footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../12.人物研究类/大江大海骗了你.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../12.人物研究类/孙逸仙和中国西化医学.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../12.人物研究类/大江大海骗了你.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../12.人物研究类/孙逸仙和中国西化医学.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

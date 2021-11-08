@@ -1,0 +1,774 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>我们没有明天 - 大李敖全集</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">项目简介</a></li><li class="chapter-item expanded affix "><a href="../wjm_tcy.html">wjm_tcy 简介</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/index.html"><strong aria-hidden="true">1.</strong> 自传回忆类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01.自传回忆类/我最难忘的事和人.html"><strong aria-hidden="true">1.1.</strong> 我最难忘的事和人</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖回忆录.html"><strong aria-hidden="true">1.2.</strong> 李敖回忆录</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖快意恩仇录.html"><strong aria-hidden="true">1.3.</strong> 李敖快意恩仇录</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖自传与回忆.html"><strong aria-hidden="true">1.4.</strong> 李敖自传与回忆</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖议坛哀思录.html"><strong aria-hidden="true">1.5.</strong> 李敖议坛哀思录</a></li></ol></li><li class="chapter-item expanded "><a href="../02.精品散文类/index.html"><strong aria-hidden="true">2.</strong> 精品散文类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02.精品散文类/传统下的独白.html"><strong aria-hidden="true">2.1.</strong> 传统下的独白</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/李敖文存.html"><strong aria-hidden="true">2.2.</strong> 李敖文存</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/李敖文存二集.html"><strong aria-hidden="true">2.3.</strong> 李敖文存二集</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/波波颂.html"><strong aria-hidden="true">2.4.</strong> 波波颂</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/独白下的传统.html"><strong aria-hidden="true">2.5.</strong> 独白下的传统</a></li></ol></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/index.html"><strong aria-hidden="true">3.</strong> 惊世杂文类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03.惊世杂文类/上下古今谈.html"><strong aria-hidden="true">3.1.</strong> 上下古今谈</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/世论新语.html"><strong aria-hidden="true">3.2.</strong> 世论新语</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/为中国思想趋向求答案.html"><strong aria-hidden="true">3.3.</strong> 为中国思想趋向求答案</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/为自由招魂.html"><strong aria-hidden="true">3.4.</strong> 为自由招魂</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/你是景福门.html"><strong aria-hidden="true">3.5.</strong> 你是景福门</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/你笨蛋，你笨蛋.html"><strong aria-hidden="true">3.6.</strong> 你笨蛋，你笨蛋</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/历史与人像.html"><strong aria-hidden="true">3.7.</strong> 历史与人像</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/我是天安门.html"><strong aria-hidden="true">3.8.</strong> 我是天安门</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/我梦碎所以我梦醒.html"><strong aria-hidden="true">3.9.</strong> 我梦碎所以我梦醒</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/教育与脸谱.html"><strong aria-hidden="true">3.10.</strong> 教育与脸谱</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/文化论战丹火录.html"><strong aria-hidden="true">3.11.</strong> 文化论战丹火录</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/李敖杂文集.html"><strong aria-hidden="true">3.12.</strong> 李敖杂文集</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/求是新语.html"><strong aria-hidden="true">3.13.</strong> 求是新语</a></li></ol></li><li class="chapter-item expanded "><a href="../04.小说剧本类/index.html"><strong aria-hidden="true">4.</strong> 小说剧本类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04.小说剧本类/上山上山爱.html"><strong aria-hidden="true">4.1.</strong> 上山上山爱</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/北京法源寺.html"><strong aria-hidden="true">4.2.</strong> 北京法源寺</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/第73烈士.html"><strong aria-hidden="true">4.3.</strong> 第 73 烈士</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/红色11.html"><strong aria-hidden="true">4.4.</strong> 红色 11</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/虚拟的十七岁.html"><strong aria-hidden="true">4.5.</strong> 虚拟的十七岁</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/阳痿美国.html"><strong aria-hidden="true">4.6.</strong> 阳痿美国</a></li></ol></li><li class="chapter-item expanded "><a href="../05.诗集语录类/index.html"><strong aria-hidden="true">5.</strong> 诗集语录类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../05.诗集语录类/李敖语萃.html"><strong aria-hidden="true">5.1.</strong> 李敖语萃</a></li><li class="chapter-item expanded "><a href="../05.诗集语录类/李语录.html"><strong aria-hidden="true">5.2.</strong> 李语录</a></li><li class="chapter-item expanded "><a href="../05.诗集语录类/爱情的秘密.html"><strong aria-hidden="true">5.3.</strong> 爱情的秘密</a></li></ol></li><li class="chapter-item expanded "><a href="../06.沉思日记类/index.html"><strong aria-hidden="true">6.</strong> 沉思日记类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../06.沉思日记类/一个预备军官的日记.html"><strong aria-hidden="true">6.1.</strong> 一个预备军官的日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/大学日记后期乙集.html"><strong aria-hidden="true">6.2.</strong> 大学日记后期乙集</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/大学日记后期甲集.html"><strong aria-hidden="true">6.3.</strong> 大学日记后期甲集</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/大学札记.html"><strong aria-hidden="true">6.4.</strong> 大学札记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/早年日记.html"><strong aria-hidden="true">6.5.</strong> 早年日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖五五日记.html"><strong aria-hidden="true">6.6.</strong> 李敖五五日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖札记.html"><strong aria-hidden="true">6.7.</strong> 李敖札记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖秘藏日记.html"><strong aria-hidden="true">6.8.</strong> 李敖秘藏日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖随写录前集.html"><strong aria-hidden="true">6.9.</strong> 李敖随写录前集</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖随写录后集.html"><strong aria-hidden="true">6.10.</strong> 李敖随写录后集</a></li></ol></li><li class="chapter-item expanded "><a href="../07.采访序跋类/index.html"><strong aria-hidden="true">7.</strong> 采访序跋类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖书序集.html"><strong aria-hidden="true">7.1.</strong> 李敖书序集</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖书序集续集.html"><strong aria-hidden="true">7.2.</strong> 李敖书序集续集</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖对话录.html"><strong aria-hidden="true">7.3.</strong> 李敖对话录</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖报刊集.html"><strong aria-hidden="true">7.4.</strong> 李敖报刊集</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖访谈录1996-2014.html"><strong aria-hidden="true">7.5.</strong> 李敖访谈录 1996-2014</a></li></ol></li><li class="chapter-item expanded "><a href="../08.书信函件类/index.html"><strong aria-hidden="true">8.</strong> 书信函件类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.书信函件类/坐牢家爸爸给女儿的八十封信.html"><strong aria-hidden="true">8.1.</strong> 坐牢家爸爸给女儿的八十封信</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书信集.html"><strong aria-hidden="true">8.2.</strong> 李敖书信集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书函集.html"><strong aria-hidden="true">8.3.</strong> 李敖书函集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书启集.html"><strong aria-hidden="true">8.4.</strong> 李敖书启集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书札集.html"><strong aria-hidden="true">8.5.</strong> 李敖书札集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书牍集.html"><strong aria-hidden="true">8.6.</strong> 李敖书牍集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书笺集.html"><strong aria-hidden="true">8.7.</strong> 李敖书笺集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书简集.html"><strong aria-hidden="true">8.8.</strong> 李敖书简集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书翰集.html"><strong aria-hidden="true">8.9.</strong> 李敖书翰集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖情书集.html"><strong aria-hidden="true">8.10.</strong> 李敖情书集</a></li></ol></li><li class="chapter-item expanded "><a href="../09.历史文化类/index.html"><strong aria-hidden="true">9.</strong> 历史文化类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../09.历史文化类/中国命研究.html"><strong aria-hidden="true">9.1.</strong> 中国命研究</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国性研究.html"><strong aria-hidden="true">9.2.</strong> 中国性研究</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国现代史定论.html"><strong aria-hidden="true">9.3.</strong> 中国现代史定论</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国现代史正论.html"><strong aria-hidden="true">9.4.</strong> 中国现代史正论</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国艺术新研.html"><strong aria-hidden="true">9.5.</strong> 中国艺术新研</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国近代史新论.html"><strong aria-hidden="true">9.6.</strong> 中国近代史新论</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国迷信新研.html"><strong aria-hidden="true">9.7.</strong> 中国迷信新研</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/为历史拨云.html"><strong aria-hidden="true">9.8.</strong> 为历史拨云</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/要把金针度与人.html"><strong aria-hidden="true">9.9.</strong> 要把金针度与人</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/读史指南.html"><strong aria-hidden="true">9.10.</strong> 读史指南</a></li></ol></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/index.html"><strong aria-hidden="true">10.</strong> 李敖节目演讲合集</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖大哥大.html"><strong aria-hidden="true">10.1.</strong> 李敖大哥大</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖有话说1-735全集.html"><strong aria-hidden="true">10.2.</strong> 李敖有话说 1-735 全集</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖演讲集.html"><strong aria-hidden="true">10.3.</strong> 李敖演讲集</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖秘密书房.html"><strong aria-hidden="true">10.4.</strong> 李敖秘密书房</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖笑傲江湖.html"><strong aria-hidden="true">10.5.</strong> 李敖笑傲江湖</a></li></ol></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/index.html"><strong aria-hidden="true">11.</strong> 李敖电子报合集</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖发电集.html"><strong aria-hidden="true">11.1.</strong> 李敖发电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖放电集.html"><strong aria-hidden="true">11.2.</strong> 李敖放电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖来电集.html"><strong aria-hidden="true">11.3.</strong> 李敖来电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖送电集.html"><strong aria-hidden="true">11.4.</strong> 李敖送电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖通电集.html"><strong aria-hidden="true">11.5.</strong> 李敖通电集</a></li></ol></li><li class="chapter-item expanded "><a href="../12.人物研究类/index.html"><strong aria-hidden="true">12.</strong> 人物研究类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../12.人物研究类/丑陋的中国人研究.html"><strong aria-hidden="true">12.1.</strong> 丑陋的中国人研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/你不知道的彭明敏.html"><strong aria-hidden="true">12.2.</strong> 丑陋的中国人研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/大江大海骗了你.html"><strong aria-hidden="true">12.3.</strong> 大江大海骗了你</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/孙中山研究.html"><strong aria-hidden="true">12.4.</strong> 孙中山研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/孙逸仙和中国西化医学.html"><strong aria-hidden="true">12.5.</strong> 孙逸仙和中国西化医学</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/李敖论人物.html"><strong aria-hidden="true">12.6.</strong> 李敖论人物</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/李登辉的假面具.html"><strong aria-hidden="true">12.7.</strong> 李登辉的假面具</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/李登辉的真面目.html"><strong aria-hidden="true">12.8.</strong> 李登辉的真面目</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/胡适与我.html"><strong aria-hidden="true">12.9.</strong> 胡适与我</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/胡适研究.html"><strong aria-hidden="true">12.10.</strong> 胡适研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/胡适评传.html"><strong aria-hidden="true">12.11.</strong> 胡适评传</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石的真面目.html"><strong aria-hidden="true">12.12.</strong> 蒋介石的真面目</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究一集.html"><strong aria-hidden="true">12.13.</strong> 蒋介石研究一集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究三集.html"><strong aria-hidden="true">12.14.</strong> 蒋介石研究三集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究五集.html"><strong aria-hidden="true">12.15.</strong> 蒋介石研究五集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究六集.html"><strong aria-hidden="true">12.16.</strong> 蒋介石研究六集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究四集.html"><strong aria-hidden="true">12.17.</strong> 蒋介石研究四集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究续集.html"><strong aria-hidden="true">12.18.</strong> 蒋介石研究续集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石评传.html"><strong aria-hidden="true">12.19.</strong> 蒋介石评传</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋家臭史.html"><strong aria-hidden="true">12.20.</strong> 蒋家臭史</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋经国研究.html"><strong aria-hidden="true">12.21.</strong> 蒋经国研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/论定蒋经国.html"><strong aria-hidden="true">12.22.</strong> 论定蒋经国</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/郑南榕研究.html"><strong aria-hidden="true">12.23.</strong> 郑南榕研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/陈水扁的真面目.html"><strong aria-hidden="true">12.24.</strong> 陈水扁的真面目</a></li></ol></li><li class="chapter-item expanded "><a href="../13.国民党史政类/index.html"><strong aria-hidden="true">13.</strong> 国民党史政类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../13.国民党史政类/国民党研究.html"><strong aria-hidden="true">13.1.</strong> 国民党研究</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/国民党研究续集.html"><strong aria-hidden="true">13.2.</strong> 国民党研究续集</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/国民党臭史.html"><strong aria-hidden="true">13.3.</strong> 国民党臭史</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/给国民党难看.html"><strong aria-hidden="true">13.4.</strong> 给国民党难看</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/给外省人难看.html"><strong aria-hidden="true">13.5.</strong> 给外省人难看</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/老贼臭史.html"><strong aria-hidden="true">13.6.</strong> 老贼臭史</a></li></ol></li><li class="chapter-item expanded "><a href="../14.台湾史政类/index.html"><strong aria-hidden="true">14.</strong> 台湾史政类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../14.台湾史政类/你不知道的二二八.html"><strong aria-hidden="true">14.1.</strong> 你不知道的二二八</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/法眼看台湾.html"><strong aria-hidden="true">14.2.</strong> 法眼看台湾</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/另一面的二二八.html"><strong aria-hidden="true">14.3.</strong> 另一面的二二八</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/民进党研究.html"><strong aria-hidden="true">14.4.</strong> 民进党研究</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/冷眼看台湾.html"><strong aria-hidden="true">14.5.</strong> 冷眼看台湾</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/白眼看台湾.html"><strong aria-hidden="true">14.6.</strong> 白眼看台湾</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/白色恐怖述奇.html"><strong aria-hidden="true">14.7.</strong> 白色恐怖述奇</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/给台湾人难看.html"><strong aria-hidden="true">14.8.</strong> 给台湾人难看</a></li></ol></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/index.html"><strong aria-hidden="true">15.</strong> 雷霆法律类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖刀笔集.html"><strong aria-hidden="true">15.1.</strong> 李敖刀笔集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖好讼集.html"><strong aria-hidden="true">15.2.</strong> 李敖好讼集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖弄法集.html"><strong aria-hidden="true">15.3.</strong> 李敖弄法集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖放刁集.html"><strong aria-hidden="true">15.4.</strong> 李敖放刁集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖闹衙集.html"><strong aria-hidden="true">15.5.</strong> 李敖闹衙集</a></li></ol></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/index.html"><strong aria-hidden="true">16.</strong> 李敖祸台十书</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../16.李敖祸台十书/从万宝囊到臭屎堆.html"><strong aria-hidden="true">16.1.</strong> 从万宝囊到臭屎堆</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/只爱一点点.html"><strong aria-hidden="true">16.2.</strong> 只爱一点点</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/君子爱人以色.html"><strong aria-hidden="true">16.3.</strong> 君子爱人以色</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/启发你的小故事.html"><strong aria-hidden="true">16.4.</strong> 启发你的小故事</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/恰似我的温柔.html"><strong aria-hidden="true">16.5.</strong> 恰似我的温柔</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/我们没有明天.html" class="active"><strong aria-hidden="true">16.6.</strong> 我们没有明天</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/李敖智慧书.html"><strong aria-hidden="true">16.7.</strong> 李敖智慧书</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/李敖生死书.html"><strong aria-hidden="true">16.8.</strong> 李敖生死书</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/笑傲五十年.html"><strong aria-hidden="true">16.9.</strong> 笑傲五十年</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/第一流人的境界.html"><strong aria-hidden="true">16.10.</strong> 第一流人的境界</a></li></ol></li><li class="chapter-item expanded "><a href="../17.百家论李敖合集/index.html"><strong aria-hidden="true">17.</strong> 百家论李敖合集</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../17.百家论李敖合集/李敖研究fashion文集.html"><strong aria-hidden="true">17.1.</strong> 李敖研究 fashion 文集</a></li><li class="chapter-item expanded "><a href="../17.百家论李敖合集/百家论李敖.html"><strong aria-hidden="true">17.2.</strong> 百家论李敖</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">大李敖全集</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>#《我们没有明天》目录</p>
+<ul>
+<li>《我们没有明天》题辞</li>
+<li>一、大江东流，中国西化</li>
+<li>二、从文化附庸到附庸文化</li>
+<li>三、台湾没有水准</li>
+<li>四、台湾何来文化？</li>
+<li>五、明华园丢人丢到大陆去了</li>
+<li>六、台湾的流氓传统</li>
+<li>七、台湾十种骗子</li>
+<li>八、德泽广被，台人无情</li>
+<li>九、关公死不瞑目</li>
+<li>十、为何不向高山族公开道歉？</li>
+<li>十一、雾社事件抗日遗族大集合，声讨日本鬼子</li>
+<li>十二、从“出埃及记”到“出台湾记”</li>
+<li>十三、与其做好梦，不如做大梦</li>
+<li>十四、没有国是孤岛</li>
+<li>十五、从麦格隆满尼王到夜郎王南越王</li>
+<li>十六、草螟的尊严</li>
+<li>十七、台湾的“一厢情愿”症候群</li>
+<li>十八、读石齐平书</li>
+<li>十九、到底承认多少现实？</li>
+<li>二十、从“高丽棒子”到“台湾浪人”</li>
+<li>二一、台湾人的媚骨</li>
+<li>二二、台湾式下跪</li>
+<li>二三、台独活动帮了国民党</li>
+<li>二四、有感于长老会的呼吁</li>
+<li>二五、杨黄美幸真义发微</li>
+<li>二六、从暴君到暴民</li>
+<li>二七、国军何妨保卫台独</li>
+<li>二八、我看“民进党执政”</li>
+<li>二九、台湾人的政治规格</li>
+<li>三十、我们没有明天</li>
+<li>三一、是你自己瞎了眼晴</li>
+<li>三二、何须走一趟才知道？</li>
+<li>三三、陈文茜四十岁寿诗</li>
+<li>三四、“国际奸人”的新花样</li>
+<li>三五、美国的伪善</li>
+<li>三六、美国的枪杀学生纪录</li>
+<li>三七、美国自处之道</li>
+<li>三八、美国派兵攻击老兵妇孺</li>
+<li>三九、美国人权臭虫</li>
+<li>四十、海盗万岁</li>
+<li>四一、他们并不颟顸！</li>
+<li>四二、美商侵犯智慧财产权</li>
+<li>四三、战争在打与和平在望</li>
+</ul>
+<p>《我们没有明天》题辞</p>
+<p>电影中雌雄大盗浪迹江湖，他们有昨日今日，却“我们没有明天”。明天是一种美好的憧憬，但也常常是愚者自欺欺人的遁辞。台湾的愚者每以明天的好梦一厢情愿，从独立到进联合国，听起来爽，但是“草螟弄鸡公”，再爽也爽不过雌雄大盗，而下场也不出自己找死。不甘与他们同归于尽的人们，要把握今天，拆穿这些愚者，今天对了，明天才不会错，今天就是我们的明天。</p>
+<p>大江东去，中国西化</p>
+<p>清朝末年，提倡“中学为体，西学为用”的封疆大吏张之洞，有一次看公文，发现其中有日本语意的汉字，乃批之曰，这是日本名词。不料他手下写这公文的人员不服气，回了他一句，你阁下用“名词”两个字，也是日本货！弄得张之洞十分尴尬。</p>
+<p>这个故事告诉我们，以“中学为体，西学为用”号召的中国人，他们虽然在“体”“用”之间，洋洋自得的予以划分，但却不料鬼子和东洋鬼子的“体”，早已在不知不觉中，附上中国之“体”，结果已是“西学为体，西学为用”。苟有一些中餐西吃式的残余，也只不过是妆点中国门面而已。</p>
+<p>举个例说：翻翻一千二百二十五条的《民法》，除了“子女应孝敬父母”和“典权”等极少数的中国门面外，已经全盘西化得一清二楚；再翻翻三百五十七条的《刑法》，除了“意图侮辱创立中华民国之孙先生，而公然损坏、除去或污辱其遗像”等极少数的中国门面外，也已经全盘西化得一清二楚。准此以观，在法律的范畴内，不论“体”“用”，已经没有中国文化了。</p>
+<p>再以军事为例，所有军事教育中，除了《孙子兵法》等极少数的中国门面外，已经全盘西化得一清二楚；军事武器方面，中国的刀、枪、剑、戟，早已是博物馆的陈列品，所有现代武器，由大到小，一点也看不到中国文化了。</p>
+<p>依此类推，逐项查验，从逻辑到经济、从心理到印刷、从化学到地质、从农业到工业、从电脑到交通。……所有人间学科与万象之中，中国文化残存的，不过是一些古董、古迹、饰品、与点缀而已，如果我们真的肯平心静气的面对现实、真的不自我膨胀的逐一比对，我们必然惭愧的觉悟：中国文化已经完全无法争胜于现代世界，它对现代世界的人儿说来，可以说全无用处。</p>
+<p>英国的女首相不通中文、美国的男总统不懂华语，他们没看过四书五经，但是他们“治大国若烹小鲜”，其举重若轻，在任何中国政治家之上；不但女首相、男总统如此，即使他们不男不女的明星、歌手、与浪人，也照样自绝于中国文化之外，痛痛快快的过他富强康乐的日子，谁要自找麻烦，受方块字的洋罪呢？</p>
+<p>由此看来，中国文化对现代中国人说来，除了满足自卑感的反射和夸大狂的慰藉外，用处实在不多。当然在凝聚我族我群方面，在提供“中国杂碎”式的零星智慧方面，以及在口腹之欲等生活习惯方面，……对中国人还有它某种程度的作用。但是“挟泥沙俱下”流弊，也实在够瞧的，使人得不偿失之感，亦所在多有也。</p>
+<p>从张之洞的“中学为体，西学为用”，到萨孟武、何炳松等十教授的《中国本位的文化建设宣言》，到今天中国人的保留中国文化的精华、选择西方文化的优点，这种一厢情愿，多少年来，一直是一种动人心弦的美妙理论。这种美妙理论，听来固然令人快慰，但在实践上，却并无可行性。因为文化移植的，从来不是随你高兴的，你无法“存其所当有，去其所当去”；也无法“取长舍短，择善而从”。哥伦布航海，使欧洲人得到了美洲，但是美洲的梅毒，却也传染到欧洲，就好像非洲的艾滋病传染到世界各洲一样。西方语云：“文明即梅毒。”（Civilizationissyphilization），文化移植真相就是如此。不明学理，只知一厢情愿者，无知之徒而已！</p>
+<p>1989年1月5日</p>
+<p>从文化附庸到附庸文化</p>
+<p>清朝乾隆皇帝时候的名家纪昀（晓岚），不但学问满腹，并且满腹幽默。有一次，一个大富翁造了巨宅，请他命名，他打听出这大富翁本是铁匠出身，后来发了财，十足一个暴发户，暴发户附庸风雅，他认为是可笑的。于是，他为这幢房子起了一个名儿——“酉斋”。大富翁很高兴，可是弄不清“酉斋”是什么意思，只好向他请教。纪昀哈哈大笑，说：“这个‘酉’字，有两个意义，都是字典里查不出来的；第一个意义要直着看——酉——这好像是打‘铁’用的铁跕；第二个意义要横着看——酉——这好像是打‘铁’用的风箱。这两个意义都符合你是铁匠出身，所以这个‘酉’字，正好用来叫你这幢房子！”</p>
+<p>上面这个老故事，移之于国民党身上，其实正好套牢。国民党以革命取天下，革命的结果，善类多成先烈先进以去，恶棍却成新贵新宠而来，这些新贵新宠是十足暴发户，他们在窃取政权期间，军事挂帅、政治挂帅、经济挂帅，至于文化嘛，非当务之急，是不重视的，只是附庸而已。可是天下粗定以后、或者喘息方定以后、或者小朝廷宝座坐定以后，他们也会抬出文化来美容一番，比照附庸风雅的说法，这可叫做附庸文化。当然，由于水平所限，附庸来附庸去，他们的文化，只是“酉斋”文化而已。</p>
+<p>正因为当政者是“酉斋”文化，所以它所弄出来的文化水平，也就一塌糊涂。以国民党在台湾搞文化而论，它的抽象口号是“中国文化复兴”；它的具体衙门是“文化局”和“文化建设委员会”。前者成也萧何、败也萧何，都由小官僚王洪钧有始有终，从成立到撤销，如同儿戏。不料儿戏之后，故态复萌，在六年前又成立了“文化建设委员会”，由小官迷陈奇禄主其事。王洪钧与陈奇禄不同的是，他附庸文化，只叫别人献丑，自己尚知藏拙，例如旧历年一到，“文化局”即邀名家写春联，大量印制，分送民间，一若“中国文化复兴”了，春联上的毛笔字，不成龙蛇者姑不论，但每幅春联都落上下款，这倒是千古奇闻，这是哪国的中国文化啊？至于陈奇禄，则连藏拙都不会，不知从哪年开始，这位考古学者忽然一跃而成书法家了，他以文建会主任委员之尊，到处题字，但他的毛笔字写得奇怪，貌似魏碑，却像是广告画刷子刷出来的，以这样的书法水平，居然主持文化建设，文化何辜啊！不过，陈奇禄虽然不足以语文化，比起其他台南帮来，他还是为祸较少的。国民党中的台南帮，是最有名的文化杀手。当年叶廷珪做市长时，把台南孔庙内古碑刻文，一一磨掉，重新刻上自己署名的新文，其焚琴煮鹤手法，令人哭笑不得。后来苏南成继起，祸延高雄，竟用推土机对付起左营旧城墙来，一拆古迹，就是十九公尺之多。事后还向电视记者表示：“古迹不是碰不得！”事后国民党文人高阳还在联合国投书，予以迴护，连国民党中自命读书人的，都唐突文化如此，国民党的杀风景，尚何说乎？苏南成之后，台南帮又来了，市长林文雄又打起古迹“亿载金城”的主意，不但计划要拆除正门的护城河上古桥，并且要沿全城四周耸建十三公尺的“万里长城”和“迪斯尼式”的游乐设施以“保护”之！走笔至此，真是越写越不胜写矣！文化何辜，竟遭国民党附庸至此，倒霉千古矣！</p>
+<p>1988年11月15日</p>
+<p>台湾没有水准</p>
+<p>人们常常注意许多人不会写文章，却常常忽略许多人不会看文章；人们常常笑作者带不动读者，却常常忘了笑读者跟不上作者。这种写文章与看文章间的悬殊、作者与读者的距离，在两者相差有限时，都会发生，若文章写得出神入化，作者程度高人一等，两者相差，就更大了。</p>
+<p>在以前，教育不普及，能受教育的，本身已经出类拔萃，这些人看文章，做读者，水平跟写文章的作者比较近，至少可以上追作者。所以，那时候的作者，文章一出，洛阳纸贵，纵使遭到批评，因为批评的人有水准，大家也没得话说。例如汪容甫恃才傲物，把同时代的人的文章，骂得一文不值，但是他的骈文为清朝第一人，大家推服无间；又如章太炎眼空四海，把同时代林琴南的文章，直斥为从唐人传奇剽窃衍演而来，但是他的古文为最后押阵大将，大家也心服口服。以前的人容或不尽懂汪容甫、章太炎的文章，但是他们至少见过世面，知道什么是好文章、知道作者有大学问、有来头。换句话说，那时候的读者，即使没吃过猪肉，也见过猪走路，他们识货，他们对文章，是不敢信口雌黄的。</p>
+<p>可是现在呢，就不同了，现在教育普及了，按说教育普及应该有点集思广益的好处与进步，其实不然。普及变成了党化的、制式的、派系的工具或催化剂，文章只有量的普及，却很少质的提高。文章的作者，在党化、制式、派系的压力与铸造下，文章已是千篇一律了，作者已是大同小异了，而和他们相差有限的读者呢，因为同样是党化的、制式的、派系的产品，所以与作者相激相荡之下，他们的欣赏能力、品评能力，无从高起。</p>
+<p>三十年前台湾就被讥为“文化沙漠”，三十年沙漠上的贫乏与干枯，自然导致出许许多多水准上的笑话。我常说：台湾最大的特色是它的水准不够却还不知其不够、还鼓掌、还得意、还不以为羞。例如，任卓宣可理论成家，足证台湾没反共水准；胡秋原可超越前进，足证台湾没思想水准；秦孝仪可代写遗嘱，足证台湾没国学水准；郭良惠可鉴定古玩，足证台湾没古董水准；柏杨可著书译书，足证台湾没文化水准；张杰可荷花遍地，足证台湾没国画水准；董阳孜可临池挥毫，足证台湾没书法水准；朱高正可横冲直撞，足证台湾没政治水准；杨丽花可得人欢迎，足证台湾没戏剧水准；吴乐天可大写专栏，足证台湾没知识水准；胡翡翠可当选中国小姐，足证台湾没有审美水准。……即台湾这个岛上，出了那么多没水准的各路人马，居然他们自己脸不红，别人心不跳，这岂非天下滑稽之事哉？</p>
+<p>台湾的整个水准如此，反射在写文章看文章上面、反射在作者读者上面，自然也就可想而知。至于我自己，却十足是一个怪杰，我总觉得我根本不属于这个岛，只是阴错阳差，成为恶客；雪泥鸿爪，留下遗痕。虽然我的文章，也在这岛上被欣赏、被品评，可是不论褒贬，我似乎都双目直视、不以为意。台湾是个没水准的岛，岛上对我的褒贬，都是皮毛。我真正的血肉之躯，知者又有几人呢？</p>
+<p>1988年10月21日</p>
+<p>台湾何来文化？</p>
+<p>近来常常看到有所谓“台湾文化”之说。倡此说者，论调不外是：一、“台湾文化”不同于中国文化。二、台湾有独立的文化。三、台湾有四百年历史，已经有了自己的否莫沙的文化。四、台湾要建立一个新而独立的国家，必须先要建立“台湾文化”。五、建立台湾人意识的“台湾文化”。六、建立有人性的“台湾新文化”。七、四十年“台湾文化”与中国文化有极不愉快的融合经验，它们之间，在本质上有不能调和的价值差异。八、要建立台湾人的新文化、建立属于台湾人为主体的新文化，对原住民、客家、福佬人文化应格外重视。……</p>
+<p>我是思想家、也是历史家，从双料专家眼光看，我认为上述这些论调，只不过是自我陶醉而已、是抹杀事实的自欺欺人而已。事实上，所谓“台湾文化”、所谓“台湾新文化”，并没有这样的东西、也没有像样的东西。提倡这种论调的人，宛如洋人讥讽哲学家的笑话：——在黑房里摸黑寻找一条根本不存在的黑猫，却大呼“找到了！找到了！”</p>
+<p>为什么这种论调站不住？原因在，提倡这种论调的人，他们是无知的，完全昧于这个岛上文化形成的过程与真相。</p>
+<p>这个岛上文化形成的过程与真相，撇开原住民的原始型文化不足论以外，可分三大阶段：</p>
+<p>第一阶段是“流民文化”——对原住民而言，当年来台湾的中国人，都是假台湾人。假台湾人初到台湾，不是很自愿的，基本上，是在大陆混不好或混不下去，才离开福建、广东一带家乡的。这里面有没有土地的农民、有没有职业的流氓、有没有恒产的海盗、有甘心卖身给外国人以求渡海的流亡者。当年中华帝国的基本政策是不准老百姓往外乱跑，它不准老百姓去东北、也不准去东南，换句话说，它不喜欢移民。但是，只要有必要，民会自移，是很难拦得住的，尤其在荷兰人占领台湾时期，他们要大量农业人口来建设台湾，帮他们追求重商利润、巩固殖民统治，这种帮凶，以渔猎人口为本位的原住民是不适合的。于是，在荷兰人的招募下，大量的汉人猪仔，被当做奴隶般的，被挤装在大划船的船底，运到台湾。这种大量流民，移到十七世纪中叶，已经高达十万人，数目已经跟原住民相等。这些人欺负原住民，力道有余；建立新文化，却水平不足。所以，台湾当时虽然被中国文化广被，但那种中国文化，却是最下等的，纵然后来由中华帝国派出政府，予以教化，但是，对中原文化说来，它仍然是一种边陲文化，是不入流的。</p>
+<p>第二阶段是“流氓文化”——在不入流的文化中，罗汉脚的“流民文化”，又受了日本浪人的“流氓文化”影响，使这个岛上的文化型态更形难堪。日本文化的特色是武士道与町人道的混合体。武士的信仰来自封建制度下的一姓打手信仰，武士道的先天只是一种“走狗道”、“保镖道”。至于町人，和中国古代商人一样，原来没有社会地位，町人要靠谄媚武士来做生意，所以他的地位，就正像石秀所骂的，是给奴才做奴才的奴才，这种人好计算而短视，性格最下三烂，所以被称为“町人根性”。武士道加上町人道，本就使日本文化变得畸形。但这种畸形，施之于殖民地的亡国奴身上，自然更流氓之至。“流氓文化”，也是不入流的。</p>
+<p>第三阶段是“流亡文化”——“流氓文化”以后，台湾又沦入国民党流亡政权的教化中。国民党带来的中国文化，其实只是“流亡文化”。它裹胁来故宫博物院的大量古董文物，以此为饵，定位为中国文化。于是，这个岛上的人不知怜香，却学会惜玉，可惜惜的都是市场上的假玉，以一群群有几个臭钱的暴发户，附庸风雅，还以为非常文化呢！</p>
+<p>从外来的地方戏新到了台湾的歌仔戏、布袋戏；从外来的奖券新到了六合彩、大家乐；从外来的哭丧新到了五子哭墓外加脱衣舞；从外来的南管新到了酒色财气的卡拉OK，……这就是所谓“台湾文化”、“台湾新文化”！呜呼！台湾何来文化？</p>
+<p>1989年5月4日</p>
+<p>明华园丢人丢到大陆去了</p>
+<p>9月8日中国时报上说：“满载着大陆观众给予的喝彩与赞扬之声，赴北京参加第十一届亚运艺术节演出的明华园歌仔戏团，昨晚返抵国门。身为四十年来首度获官方正式许可跨海表演的团体，明华园这次‘纯艺术’的演出，仍掺杂着两岸微妙的政治纠葛。”“在亚运组委会举行的联欢会中，由于许多大陆官员均参与盛会，明华园原本要唱的《中华民国颂》及《梅花》均被‘禁唱’，连一首‘何日君再来’也被认为‘不妥’，差点让明华园在团体演唱时‘无歌可唱’。”“明华园9月2日到4日在亚运艺术节的演出中，以结合传统野台戏及现代剧场的精华，及跳脱镜框式表演方式的特技，吸引了连续三天爆满的观众。一百一十五名团员表现的严整纪律和团队精神，也博得了亚运各个会员国的好评。中华奥会副秘书长曾永权表示：‘亚运竞赛虽还没开锣，但明华园这个先锋部队，却先在北京将中华奥委会的名声打响了。’”</p>
+<p>看了这则消息，我又好气又好笑的说：“他妈的，丢人丢到大陆去了！”</p>
+<p>首先，歌仔戏算什么“纯艺术”！更谈不上什么“结合传统野台戏及现代剧场的精华”。歌仔戏起源清朝末年，在九十年前，它本是宜兰地区的“歌仔阵”，逐渐演变成“老歌仔戏”、再演变成“野台歌仔戏”、再演变成“内台歌仔戏”，随后进入广播、进入电视，以至于今。它的滥觞，本是大陆的文化，歌仔戏中有太多太多的京戏、南管、北管的痕迹，就说明了一切。只是由于京戏、南管、北管等的戏剧语言，不易为水准更差的土蛋们理解，所以，以闽南方言为唱腔和对白的歌仔戏，便因土而生。换句话说，歌仔戏只不过是更低级更没水准更糟更土的大陆戏的闽南语发音版而已，又何来“纯艺术”？又何来“结合传统野台戏及现代剧场的精华”？歌仔戏戏班子至今还供奉“田都元帅”为祖师爷，“田都元帅”本是大陆文化笼罩下南管戏、高甲戏、傀儡戏、皮影戏、布袋戏、四平戏、宋江阵共同的祖师爷，来自福建与广东，传说是唐朝被螃蟹养大的弃婴，年方十八即官拜大将。这位嘴边有螃蟹吐沫的大将自知是弃婴，有自卑感，从来不笑，有一鸡一犬相伴，是他宠物。如今鸡犬相闻、口沫横飞，也正象征了歌仔戏的一切。演歌仔戏的人，因为螃蟹有救祖师爷之功，相约不食螃蟹，我不知道杨丽花偷不偷吃，但她的青叶食品企业却大卖横行之物以为发财，“田都元帅”复生，恐将号啕以去也！</p>
+<p>至于报上说大陆不准台湾歌仔戏团唱《中华民国颂》及《梅花》，理所当然。“中华民国”早已亡国，此为蒋介石所自承，何劳千里渡海来京，大唱亡国之音？至于禁唱“何日君再来”，亦理所当然，“何日君再来”乃日本侵略中国时期的皇军文化，唱歌仔戏的台湾土蛋无知乱来，捡到篮子里就是菜，真是可笑极了。</p>
+<p>明华园去大陆的整个笑剧是自献其丑。古来土蛋有献曝者，“负日之暄，人莫知者，以献吾君，当有重赏。”不过那种土蛋只是“自曝于日，不知天下之有广厦隩室”而已，固然无知，还有个范围。但是，台湾土蛋却“野人献曝”都够不上，居然孔庙前面卖文章，还要以变相皇军军歌伴奏，“台湾文化”沦落至此，还自以为爽，真不爽极矣！</p>
+<p>1990年9月11日</p>
+<p>台湾的流氓传统</p>
+<p>杨亮功、何汉文在《二二八事件调查报告及处理经过》里，曾有一节专论《参加事变分子之分析》，其中首先指出的，就是流氓。它说：“台省流氓之含义与形成较之国内其他各地所包括者为广，几上自豪绅钜贾，下至贩夫走卒均有其分子之存在。当日人统治时对台省流氓故意任其存在或任其为地方之爪牙，或纵入中国沿海各地以为浪人间谍，战时更将其编练入伍，全台无正当职业为流氓生活者据估计不下十万人。……”从历史来观察和从社会现象来观察，除了“不下十万人”的数字尚待斟酌外，这段分析，大体上所言不差。日本人是有它的流氓政策的，这一政策，形成了两项传统，被国民党接收。第一项传统是任台湾流氓存在以为地方爪牙，这种作法，本为了统治上的方便，但是青出于蓝后，蓝却吃不消了，这从江南案后，国民党大声疾呼禁止情治人员与流氓挂钩一事，可以得到反证，可是积弊已深，奈何奈何了。另一项传统是把流氓送到外岛管训，这种作法，日本人最拿手，国民党师承之，精益求精后，精得也疲于奔命了。从《台湾省戒严时期取缔流氓办法》到《动员戡乱时期检肃流氓条例》，已经费尽心机遏阻流氓，可是抓不胜抓，至今犹在头痛中。</p>
+<p>流氓为害社会，古今中外皆然，台湾也不例外。不过台湾流氓，有它特殊的传统，却为不读书者所不知。在清朝乾隆皇帝的档案中，我们可以看到来台官吏的查访报告，指出许多跑到台湾的大陆人，“皆穷极无聊及犯罪逋逃之辈”，“性情凶悍狡诈，不能安分，遂致城市村庄，游行飘荡，酗酒打斗，无恶不作，并结伙联群，借为声援，混名称为‘罗汉脚’，此辈鼠窃狗偷，到官罪止枷责，既释之后，愈加凶横，实为闾阎之害。”比较起两百年前的罗汉脚和今天新时代的罗汉脚，试看有什么不同呢？“到官罪止枷责”也好，到官移送管训也罢，“既释之后，愈加凶横”的现象，岂不正是古今同调吗？</p>
+<p>在清朝雍正皇帝的档案中，我们还可看到来台官吏的查访报告，指出许多跑到台湾的大陆人，“非系迫于饥寒，即属犯罪脱逃。……呼朋引类，啸聚为奸。而考台地变乱数次，皆系此等乌合之徒为之倡首。”比较起二二八事变中新时代的罗汉脚，试看又有什么不同呢？二二八事变中，固然有义民起义，但是义民可以抗暴，却不对无辜者施暴，施暴者非他，新时代的罗汉脚也！</p>
+<p>清朝《噶玛兰厅志》说：“台湾一种无田宅无妻子、不士不农、不工不贾、不负载道路，俗指谓‘罗汉脚’，嫖赌摸窃、械斗树旗，靡所不为。”今天台湾暴发户多了，新时代的罗汉脚也没那么穷了，但它的流氓习性，却恪遵传统、相沿不替，这是台湾政治的大悲哀！</p>
+<p>从两百六十年前的朱一贵案、到两百年前的林爽文案，乃至四十年前的二二八事变，乃至今天的许多许多大小暴乱，我们尊重其中的抗暴成分，但在抗暴中渗进或联合起流氓来，却是台湾政治的大耻辱！</p>
+<p>台湾流氓是两种传统的产物，一种是清朝的罗汉脚，一种是日本浪人，这两种传统的结合，造就了它的地区特色，它的乡土气质是清朝式的，它的造型打扮却是日本式的，这从他们迷信的动作和头扎布条的丑陋可以得知。我始终怀疑，在人类抗暴追求自由民主的历程中，是否需要这号人物？自由民主是一种有气质的运动，在这种运动中，混进了这么多的没气质货色，绝非任何政党之福也！</p>
+<p>1988年7月13日</p>
+<p>台湾十种骗子</p>
+<p>古往今来世界各地都有骗子，骗财骗色骗感情，并不稀奇。尤其有些骗子，你一望而知是骗子，像教堂淫祠的神棍、像国民党民进党的党棍、像街头呐喊的小政客、像公园里算命的飞龙山人、像夜市里卖仙丹草药的走访郎中、像沿门兜售“健脑丸”“人体增高器”的推销员。……你稍有常识，就知道他们统统都是骗子，你可以心中自有尺寸防身，以“姑妄听之”的明察，顾而乐之，并不轻信。不过，有些骗子却不那么一望而知了，而要由高人指点，你才能渡迷津。下面我就指点十种，聊供参考。</p>
+<p>一、台湾的诗人——台湾的文人本就是欺世盗名者流，不过文人写文章，起码要通、要言之有物，即使是大便，也是物的一种。但文人中的诗人却更糟糕，他们可以用完全不通的言之无物的所谓诗来骗人。而那种所谓诗，除了把一大堆抽象名词乱加排列组合外，全无意义，连他们自己也不懂。这些诗中，偶有落实一点的却又全是马屁。从孙中山拍起，一直拍到蒋介石蒋经国，肉麻已极。这些没真感情、真性情的台湾缪思呀，多王八蛋呀！</p>
+<p>二、台湾的画家——台湾的画家不擅画画，却擅作秀。写文章也、搞座谈也、做评判也，制造荷花十朵式的，其不成东西可想！但人人还自以为得意，还要著书立说呢！台湾的作家不量力的去画画，台湾的画家不量力的去写作，都不务正业，也不敢务正业，原因无他，程度不够耳！</p>
+<p>三、台湾的书法家——中国两千年才出了屈指可数的书法家，可是台湾四十年就出了一抓一大把的书法家。其实，台湾的书法家实在够不上书法家，至多只是“毛笔字家”。这些男女，嘴上无毛，手上有毛，中文被他们“开张天岸马”，方块字苦矣！不但方块字苦了，批评他们的人还更苦呢，他们居然在法院告人妨害名誉，为了人们说他们毛笔字实在写得不好。这种行为，真令人毛骨悚然也！</p>
+<p>四、台湾的古物鉴赏家——台湾是暴发户的乐园，乐中作乐，想到了附庸风雅，但是程度太差，虽然好古，却不能敏求，只能上当。不但阿猫阿狗上当，连所谓专家也上当。玉饰也、陶瓷也、古画也、珍玩也，都由专家带头，大上其当。台湾的古物多假，古物鉴赏家也失真。自己做凯子却又骗人，此骗子之苦中作乐也。</p>
+<p>五、台湾的影评家——台湾不出入流的电影，却专出不入流的影评家。从报上排名点黑点，到电视上名片映毕狗尾续貂，废话连篇，俨然“影评终结者”，其实全是狗屁，是尼姑大谈如何生儿子耳！</p>
+<p>六、台湾的党义专家——台湾的党义专家即三民主义专家。他们以教“国父思想”自雄，其实“国父”实在不足以言“思想”，因此他们的千言万语，只是行骗而已。不过他们有一功绩，即他们愈著书立说，人民愈讨厌三民主义，骗子有功如此，亦不可没也！</p>
+<p>七、台湾的匪情专家——台湾的匪情专家什么都懂，就是不懂匪情，故谈言不中，制造纠纷，为匪酋笑。在他们口中，老毛死了一千次、老邓死了一百次，其他可想而知。幸亏老蒋老李并不真的信他们，不然台湾真的青天白日满地“红”矣！</p>
+<p>八、台湾的国关专家——国关专家者，国际关系研究中心的专家也。这中心有知日派、知俄派、知英派、知刚果派。……但一旦世界有变化，他们的专家就骗局拆穿了。英国与阿根廷剑拔弩张之际，他们的专家铁口直断两国打不起来，结果福克兰一役，专家脸都绿了。</p>
+<p>九、台湾的插花家——拈花可以微笑、采花可以见红、葬花可以流泪、种花可以怡情，都还有个道理。唯独插花最不成格局。把不能搭调之花草，聚而“主月流”之，还为赋新名，强说哲理，此非自欺欺人而何？跟日本鬼子什么不好学，却学这种欧巴桑的下三烂，真是三八之至！</p>
+<p>十、台湾的林云大师——以上所有骗子我都不点名批判，可是林云非点名不可。因为所有骗子，都是人间烟火式的，唯独林云这种却是仙风道骨式的，其为骗也，堪称可恶之尤！不过，林云再“大手印”，满脸却是一副妖僧淫僧相，难掩其奸。善男信女只要仔细端详，自当知所趋避矣。林云的无耻是他混迹学术以施迷信，使人误以为那是学术，不是骗局，其实是典型巨骗，只是台湾的混蛋们不知道罢了。</p>
+<p>1989年10月23日</p>
+<p>德泽广被，台人无情</p>
+<p>德国统一了！9月12日签了条约，德国统一了！</p>
+<p>西德总理说：“德国的统一在现代史上首开（分裂）国家统一的先例，统一的过程没有经过战火洗礼，既不痛苦，亦无纷争。”德国统一了！</p>
+<p>为什么“统一的过程没有经过战火洗礼，既不痛苦，亦无纷争”？原因很简单，德国人民——尤其是富裕的西德人民，有他们伟大的情怀与热望，他们不甘祖国分裂、同胞蒙尘，他们要用他们四十年辛苦赚得的资本与财富，把东边的国土与手足买回来。</p>
+<p>首先，西德得付一百二十亿马克即七十五亿美金的“搬家费”，以供恶邻兼强盗苏联迁走三十七万驻军之需。苏联这个恶邻兼强盗内部发生财政困难，重赏之下，必有懦夫，终于同意撤了军，心腹大患先除，接着是德国内部的事。</p>
+<p>在东德四十年共产主义天堂的统治下，民生凋敝、工厂破落，所谓工厂，百分之七十都得重新来过，其他可想而知。据西德财政部长估计，东德经济需一年投入九百亿美金才能周转，并且要五到十年之久，才能赶上西德。统一的代价，不可谓不大，可是，西德人民为了统一，你好一点，我穷一点，也没有话说。</p>
+<p>德国的例子，给了我们鲜明的对比。</p>
+<p>就在同一个9月12日，民进党主席黄信介表示，民进党将不参加“国家统一委员会”，并说：“全世界的人都知道东西德、南北韩的人都很希望‘统一’，而且两边生活条件差距不大，但台湾人却不一样，不但不希望统一，而且害怕被大陆‘统一’。如果民进党却赞成‘国家统一委员会’这个名称，很容易让外国人误会台湾人喜欢与大陆统一，因此如国民党不改‘国统会’名称，民进党绝对不会参加。虽然台湾的资源没有大陆丰富，人口、土地及军事力量都输给中共，但政治比大陆民主，经济也比它自由。大陆同胞无法享有自由、民主，又不是‘主权在民’，有的人更懒惰得要命，只会向台湾亲人伸手要电视、冰箱，这样的情况，台湾人哪会希望与大陆‘统一’？”</p>
+<p>黄信介这番话，有对的地方，也有不对的地方。民进党可以不追随国民党的节拍，参与做“统一秀”的什么“国统会”，这是对的。但是说台湾人“不希望统一”，并讨厌大陆“向台湾亲人伸手”要东西等话，就错了。</p>
+<p>大陆今天一穷二白的原因之一是，当年蒋介石劫掠了中国的国库黄金九十二万两。蒋介石穷一国之力，以建一岛，台湾才有今天之阔，大陆才有今天之穷。所以，今天台湾人阔了，阔得不认穷亲戚，是忘恩负义的行为。比起西德并未劫掠东德、白手起家后，反过头来义助东德的行为，相去远矣！今天黄信介这种台湾人眼光狭窄、感情冰冷，说这种没出息、“自守虏”、“守财奴”的无情话，是没有见识的、也是很可耻的。比起德国人来，更可看出这种台湾人的全无气派、贻笑万方。其实，不面对同一问题，一厢情愿的以为可以隔海拥金自卧，而能长久，也就罢了。事实上，你不面对，对面的穷亲戚却要面对，他们是不罢休的。美国老罗斯福（TheodoreRoosevelt）总统说得好：“这国家如不能使个个过得好，单独那个也过不好。”（Thiscountrywillnotbeareallygoodplaceforanyofustoliveinifitisnotareallygoodplaceforallofustolivein.）一旦义师东向，小朝廷又何能自保？无情的台湾人啊，真该想一想！</p>
+<p>1990年9月13日</p>
+<p>关公死不瞑目</p>
+<p>11月21日民众日报登：“高举台湾独立、争取言论自由的北市南区立委候选人叶菊兰，昨日在忠孝公园的私办政见会上，针对国民党秘书长宋楚瑜日前发表的‘关公、妈祖也是中国人’的论调，以比喻台湾不应独立于中国统一之外这种说法，加以强烈批驳。”“据悉，宋楚瑜曾说台湾人膜拜大陆人的关公、妈祖，为什么要背祖忘宗，高喊独立，不过，叶菊兰觉得这种说法不足以观，这只是惯于说花俏不通的国民党官员之通病，禁不起进一步检验，叶菊兰指出，如果膜拜关公、妈祖的台湾人，应该主张中国统一，那么观世音菩萨、释迦牟尼都是起源于印度的‘印度人’，为什么中国不与印度统一，而信奉基督教、天主教、回教的民族，是否也该彼此‘统一’？”“叶菊兰又进一步批判，宋楚瑜这种说法的背后，实际上更隐藏着大中国的帝国主义心态，以及政教不分的思想，这才是值得台湾善男信女注意之处；‘政治归政治，宗教归宗教’，叶菊兰希望身为国民党秘书长的宋楚瑜，不要再提出一些似是而非的愚民论调，事实上，这种论调已无法取得台湾人的信任。”</p>
+<p>上面叶菊兰这些论点，除了什么“大中国帝国主义心态”的错误外，其他都是站得住的。什么叫“大中国帝国主义”？这种抄袭左派套语的烂套，是一种欠思考的宣传论调。在原本世外桃源的高山族眼中，所有外来的，无一不是“帝国主义心态”下的产物，台湾人的祖先和今日的台湾人都不例外。骂国民党，指出他们的错误，是好的；但是不要骂人适足骂己，这样就不好了。所以，我在肯定叶菊兰的同时，也劝告她要小心，要取得大陆人和高山族的信任。</p>
+<p>同一天的民众日报上，又有一篇李乔的《台独分子、关公与马祖娘》。文中说：“最近国民党的高级党官在‘滥弹腔’中说：关公与马祖娘来自中国大陆，到今天还是被台湾人普遍信仰，‘足证’中台统一有理云云。该党官原来还算‘有学问’的人，不幸一入官场忙于阳术阴谋无暇读书，居然把两个‘台独分子’列为‘统一证人’，真是阴错阳差，尴尬得很。”</p>
+<p>在谈过妈祖以后，李乔写道：“至于关公就更妙了，不错，清朝想要一招‘以夷制夷’，而且以关云长深谙依据环境不同而权益行事的性格，借彼忠义招牌教台湾人也对清廷好好忠义一番。实而关公教给台湾人的是重视环境变化的观念——他终于成为台湾人的‘财神’。一位忠义武将到了台湾因台湾是海洋国家，自古就商业兴盛国际贸易发达，于是关公指示台湾人，以忠义伦理建立台湾人的商业风格与道德。”“说起来很玄，但就文化的角度看却是简单明白，妈祖与关公的‘转变’就是‘文化变迁’理论的注脚，文化必须也必然会随生态特质而变迁，一外来文化进入一文化生态内，惟适切变迁才能保存，不然就被淘汰。上述二种神圣‘变迁’了，所以成了‘台湾化’存在。从文化意义说，他们二位都是‘台独分子’。”</p>
+<p>上面李乔这些论点，除了批评“国民党的高级党官”与我们有志一同，和论列清朝捧关公政策外，其他都是站不住的。照《三国演义》的传统说法，关公绝对是“忠义武将”，绝非贪财者流。他“挂印封金”，“所有原赐之物，尽皆留下”，分文不取，可见他绝不是“财神”的材料。把关公当成“财神”来供，是对关公的最大侮辱。说“关公教给台湾人的是重视环境变化的观念”，此说纵使成立，不论任何“环境变化”，关公也是“新恩虽厚，旧义难忘”（《答曹操书》）的，关公绝不会为了“商业风格”与发财，就忘了“皇天后土”“誓同生死”的“旧义”。说关公是“台独分子”？关公岂是这样忘本嫌贫之徒！这样子对他的侮辱，更在说他是“财神”之上。关公何辜，竟于一千七百年后在台湾被糟蹋至此，关公有灵，真要死不瞑目了！</p>
+<p>1989年11月21日</p>
+<p>为何不向高山族公开道歉？</p>
+<p>台湾日来朝野上下，大做二二八悲情秀，但为四十四年前的一段悲剧，举岛若狂、声泪俱下，其纯情部分能有多少真感，不无疑义。因为人之常性，叫他为四十四年前的悲情重新奇哀大恸，于理欠通、于情欠浓、于实多不可能。真相如此，却如火如荼以号咷之，虚情假意，不可掩也。</p>
+<p>或有人说，今天大家炒二二八，其意在追寻人间公道，此意甚正，我们赞成。从人间公道看来，二二八不是叛乱、不是起义、不是革命，只不过是一次民变，一次清朝天理教式的“变起一时，祸往有日”的民变。它以台湾暴民滥杀开始，以国民党部队滥杀结束，中间奉陪了善良外省人和善良台湾人一家一路的哀呼与血泪。如今炒二二八，大家众口一生，只谈国民党部队滥杀，而不谈台湾暴民滥杀，于人间公道上，则就未免偏颇。偏颇之下，自距公道远矣！相信真正追寻人间公道的人，绝不这样只谈自己，不管别人。</p>
+<p>或有人说，台湾是台湾人的，外省人来了，被杀活该。但是台湾人对高山族又怎么说呢？</p>
+<p>台湾的土地，本来既不属于来台四十年的外省人的、也不属于来台四百年的台湾人的，而是属于原住民的。原住民本来住在平地上，后来被当时的外省人（就是今天的台湾人）给赶到山上去了，就成了今天的高山族。以台北地区为例，以前叫“大加蚋堡”，原是平埔番Ke-tagal-an族所住地方Takala的译音，包括现在台北市大部分和内湖的一部分，如今早已没高山族的影儿；再以万华地区为例，以前叫“艋舺”，就是高山族独木舟manka的译音，1920年，日本人以“艋舺”深奥难解，才改名同音的“万华”，如今也早已没高山族的影儿。</p>
+<p>为什么原属于高山族的土地，被当时的外省人给花样翻新、巧取豪夺了呢？因为当时的外省人阴狠狡诈，比今天的外省人还内行。在豪夺方面，他们根本来个硬抢，以今天宜兰地区为例，1796年到1799年间，被当时的外省人抢下；再以今天埔里地区为例，1815年被当时的外省人抢下，抢的过程也极尽“大肆焚杀”之能事，抢得高山族逃入深山，“聚族而嚎者半月”，其凄惨可想！在巧取方面，当时的外省人利用高山族不识字，总是在契约上大做手脚，结果高山族一画押，土地就无异久假不归了。典型手脚是把永垦（永佃）土地化为永卖（杜绝契）土地；或干脆用高利贷逼得对方无法偿还，取得土地，等等等等，其欺负人也，比荷兰人用不到二十四元美金的念珠和布，即从印第安人手里换得纽约曼哈顿（Manhatan），还卑鄙得多。这种事态的普遍与严重，连远在北京的中华帝国皇帝都听说了。1746年6月19日，乾隆皇帝下谕给军机大臣，就指出：“……台湾孤悬海外，民番难处，现在汉民俱非土著，刁黠成风，专以侵夺番利为能事，番民生计，日就艰难，而汉民犹欺骗不已！”可见当时的外省人欺负高山族，已经“刁黠成风”了，连天高皇帝远的皇帝，都忍不住要求不可“侵扰穷番”了。高山族下场的可悲，可以想见！</p>
+<p>高山族不服，想在司法上寻求保护吗？休想！光在当时噶玛兰通判柯培元（易堂）的《熟番歌》里，我们就可以看到高山族的悲惨：“熟番归化勤躬耕，山田一甲唐人争。唐人争去饿且死，翻悔不如从前生。窃闻城中有父母（父母官），走向城中崩厥首，啁啾鸟语无人通，言不分明画以手。诉未终，官若聋，窃视堂上有怒容。堂上怒，呼杖具，杖毕垂头听官谕：‘嗟尔番，汝何言？尔与唐人吾子孙，让耕让畔胡弗遵？’吁嗟乎！生番杀人汉人诱，熟番翻被唐人丑！”官司打到头来，反被法官大人打了板子，要他让出土地，这种告官，其实是告自己啊！</p>
+<p>至于当时的外省人对高山族二二八式干法，也青史斑斑。以台南附近为例，台南附近在1650年，有原住民三一五社、六万八千人；可是到了1656年，就只剩一六二社、三万一千人了。短短的六年间，一半多人口不见了，这种种族灭绝或逼上玉山搞法，纵希特勒杀犹，犹望尘莫及也；纵二二八杀人，人望尘莫及也。而这些暴行，都是当时的外省人联合洋主子荷兰人干的！若来点比较历史学，我们可以说：荷兰人相当于到美洲的白人，当时的外省人相当于卖到美洲的黑人（黑奴）、原住民（高山族）相当于原在美洲的印第安人；不同的是，黑人对参与杀印第安人，至为罕见；而当时的外省人参与杀高山族，却凌驾其洋主子而上之！</p>
+<p>那些当时的外省人，就是今天台湾人的祖先。</p>
+<p>今天台湾人炒二二八，追寻人间公道，是好的。但是真正有人间公道怀抱的人，他必然会挺身而出，要求为高山族“公正地公布真相”、“向受难者公开道歉”、“赔偿”、“建立和平塔”、“设立基金会”，并要那假基督徒李登辉先生接见接见高山族受害家属代表，以示大有为凯子政府雨露均沾！——台湾的人间公道寻求者，就分点慈悲，大家一起努力吧！</p>
+<p>1991年3月6日</p>
+<p>雾社事件抗日遗族大集合，声讨日本鬼子</p>
+<p>埔里消息：雾社事件抗日遗族，5月5日，在南投县仁爱乡互助村清流派出所前广场，举行了“雾社山胞抗日事件后裔迫迁清流部落六十周年”纪念会。</p>
+<p>参加纪念会的是雾社事件后裔，他们为缅怀祖先们的壮烈精神和建村精神，举行了这一纪念会。</p>
+<p>雾社事件是1930年10月27日，在今南投雾社，由马赫坡（Mahebo）社酋长莫那鲁道（Monaludao）领导的六个社共同抗日事件。</p>
+<p>马赫坡社本来被日本人推许为最进步的模范山地部落。但是，由于日本警察作威作福，乱搞男女关系，使山地女性减少，男性难以择配，自多不满，生出所谓“番妇关系”。日本人又侵夺山地部落土地，又因缴械后，打猎不便，生活受到威胁等种种原因，引发高山族不满。</p>
+<p>1930年10月27日，当雾社小学运动会仪式开始，日旗高升之际，忽然一名高山族闯进，砍杀台中州理番课嘱托管野政卫。高山族以此为信号，即时抽走自族幼童，场内日本人全被杀死。旋即取得雾社，将电信电话切断。莫那鲁道并率族人杀了雾社分室所属警察驻在所的日本警察和家属。</p>
+<p>日本人得讯，从各地调集大批军警，进攻雾社。10月27日至29日间，高山族获胜。30日后，日本人以军队加入警队，利用现代化武器发动攻势，并采以高山族制高山族的策略，悬赏捕杀；各社头目一百五十圆、壮丁一百圆、妇女儿童五十圆。11月6日起，日军完成包围形势，为减少牺牲，以山炮、飞机，与投降的高山族出面诱降；并且擅自违反国际禁约，施放毒气。高山族因此伤亡重大，濒于绝境，莫那鲁道等均自杀。抗日活动，于是告终。前后历时两月，日军出数千人。</p>
+<p>结束事件后，日本人先集体屠杀一阵，然后将残余俘虏二百九十八人，押解至川中岛，听其自生自灭。川中岛在雾社北港溪右岸，被押解的高山族每人分得水田不到一分地，生活艰苦，加上他们不谙耕种，且劫后余生，悲愤自杀，时有所闻。到了1935年仅剩七十三户、二百三十人。</p>
+<p>雾社事件，高山族敌友分明，他们专杀日本人，“台湾人”被杀的，只有两个（一为一个小孩穿日服被误杀，一为中流弹）。</p>
+<p>雾社事件，日本人被杀一百三十四人，受伤二百一十五人。高山族死了五百一十八人。但在日后集体屠杀中，又死了二百一十六人。</p>
+<p>二百九十八名残存的高山族，在1931年5月5日被迫迁居川中岛后，日本人废除了抗日六个社的社名。到了台湾光复后才易名清流。</p>
+<p>本月5日，他们的后裔在仁爱乡互助村清流派出所前的纪念会，就是因此而来。</p>
+<p>高山族是真台湾人，他们比“台湾人”上路得多。他们在日本人统治下，挺身抗日，其壮烈，远非“台湾人”所及。他们有本领，去对付日本人，并不对中国人二二八。雾社事件，是他们给所有外省人、“台湾人”的最令人脸红的教育。</p>
+<p>1991年5月4日</p>
+<p>从“出埃及记”到“出台湾记”</p>
+<p>8月4日，参加民进党云林县立委党内初选的黄尔璇，在说明会上，指他的对手朱高正是一只“政治怪兽”。他说他年底大选，除了要面对国民党的“金牛”，还要打倒民进党这只“政治怪兽”。他说这只“政治怪兽”在蒋经国去世时，曾使北港服务处悬挂的民进党旗，降半旗志哀。他当时担任民进党中央党部秘书长，有人问他：“民进党要不要降半旗志哀？”他回答说：“民进党不必为外来的政权降半旗，这就是我的政治立场。”</p>
+<p>看了这一报导，我感到很纳闷。黄尔璇说朱高正是“政治怪兽”、责备朱高正不该使北港服务处降半旗，都是对的，因为我们无须向蒋经国谄媚。不过，黄尔璇说“不必为外来的政权降半旗”中“外来的政权”云云，却有了大语病。台湾历来的政权，对高山族而言，西班牙也、荷兰也、郑成功也、清朝也、日本也、国民党也，试问哪一个不是“外来的”？就便是一朝贵民进党当了政，满朝文武清一色由“台湾人”当了家，在高山族眼中，这种政权，也不幸还是“外来的”，在高山族没被你们杀光前，你们的政权，也不是本地的啊！</p>
+<p>台湾的真正本地人、真正的“MIT”（MadeinTaiwan），是高山族。他们是真正的原住民（Aborigines）。用高山族称呼他们，只是从俗，这种称呼，是光复以后沿用日本高砂族而来，日本在明朝时候，称台湾为高山国或高砂国。高砂族在清朝人眼中，不外为“番”。生“番”也、熟“番”也、土“番”也、野“番”也，都是为“番”之属。当时的理番制度，用字遣词，也都以“番”冠之。“番”政也、“番”界也、“番”社也、“番”租也、“番”割也、“番”布也、“番”刀也。……不过，这些高山族没有自己的文字，如果有，他们更有理由称呼外来人是“番”。——你们这些王八蛋，不得我们同意，闯到我们家来，翻云覆雨、翻江倒海、翻东翻西、翻脸不认人，还称我们是“番”，他妈的你们才“番”（翻）呢！</p>
+<p>这些原住民，在种族上，属于清朝文献中所称的马来种，也就是现代学者认定的印度尼西安民族，不属汉族；在语系上，属于印度尼西安语系，不属汉语；在文化上，属于东南亚文化中的印度尼西安文化群，不属中国文化。前台大考古人类学系卫惠林教授在《台湾的土著族》文中说：“台湾土著文化是东南亚文化中最原始的典型，它抱持着甚多古老的特质，几乎独立于中国、印度与阿拉伯等东方高级文化之外。”正是如此。</p>
+<p>这些原住民的文化，对内聊以自足，对外却无以自保。在外来的“番”的进逼下，他们毫无还手之力。史明在《台湾人四百年史》书中也不得不承认：“当台湾初次被外来者荷兰人侵占的时候，居住于台南附近荷兰人统治圈内的原住民的人口还算不少。其后，由于受到荷兰人统治者和其附庸汉人开拓者的压迫和屠杀，很快就减少其人口。后来虽然增至1650年（清-顺治七年）的三一五社、六万八千人，但是，再到1656年（清-顺治十三年），仅仅七年之间，又减为一六二社、三万一千人。”“汉人开拓者主要是在强占土地、捕鹿、袭击、及通婚、交易等场面上和原住民相接触。尤其在强占土地上和捕鹿上，互相对立最尖锐，由此，未经开发的原住民，受到压迫而逐步退避山岳地带去。原来，掠夺土地的策动者和最终受益人不外乎是殖民统治者的荷兰人，由于实际上汉人耕种原属原住民的土地，所以直接受到原住民所仇恨的自为是汉人。”“台湾原住民从四百年前就遭到外来统治者及其附庸的侵占、屠杀、压迫、驱使、虐待的结果，无法避免的走上衰亡的悲惨境地。”</p>
+<p>由此可见，纵以台湾独立为鼓吹的学者，也无法否认台湾原住民四百年来所受“外来统治者及其附庸的侵占、屠杀、压迫、驱使、虐待”，而原住民“仇恨”的对象，不是别的，乃是今天自称为台湾人的“汉人”！</p>
+<p>所以，从是非标准上看、从正义标准上看、从人道标准上看、从自赎标准上看，……今天口口声声谈台湾独立、谈台湾是属于台湾人的人儿，他们如果真的从内心讲是非、张正义、合人道、想自赎，最应该做的一件事，似乎不是台湾独立，而是把台湾还给真正的台湾人——台湾原住民。这在事实上，绝无可能，但在逻辑上与道理上，却完全成立。</p>
+<p>今天自称为台湾人的这些人儿，在高山族眼中，十足是假台湾人、十足是喧宾夺主还冒主之名的恶客，他们“侵占、屠杀、压迫、驱使、虐待”高山族四百年，四百年后，还在大言不惭呢！</p>
+<p>《旧约》中有“出埃及记”（Exodus），写以色列人住在埃及四百年后，他们离开埃及，重回故土。我们的假台湾人如果真有种、有志气，就摩西一番，来个“出台湾记”，或福建老家、或广东旧地，认祖归宗，放高山族一马，这样才够得上英雄好汉。否则的话，以四百年的血手，拭四十年之清泪，冒充台湾人，为高山族窃笑，脸皮之厚，也不次于外省人矣！</p>
+<p>1989年8月9日</p>
+<p>与其做好梦，不如做大梦</p>
+<p>3月22日，立法院又为台独不台独闹翻了天，民进党立委一个接一个，向国民党行政院长郝伯村发动“洗脑”；郝伯村也一次又一次，向民进党立委展开“逆袭”，双方各说各话，煞是有趣。当然，结果打的是一场糊涂仗。说到打仗，民进党立委是没上过战场的，上过战场的只有郝大将。不过郝大将虽然在大陆久历沙场，所打都是败仗，他对战场的见识，背部多于眼部，所以论作战，也一样是“幼齿”，只是比民进党立委高明一点而已。他声称从世界观、国际观及政治现实而言，台湾绝对不能独立，没有台湾主权，只有中国主权。他同时声称就是李登辉总统也坚决反对台独。这种战略与战术，虽然正确，却是不够的，因为他无法说动那些为台独两字做好梦的人。</p>
+<p>记得当年雷震他们在《自由中国》主张反攻无望，智者胡适就劝他们说：反攻大陆是千万人共同的一个希望，你们打破别人共同的一个希望，这是很伤感情的。——智者胡适明知反攻大陆只是一个好梦，并无成真的可能，但他不拆穿它，这是他的滑头处。胡适年纪越大，越比以前人情练达。人情练达固然可喜，但是该说的真话笑嘻嘻的不说，那就未免可悲了。</p>
+<p>我认识胡适时才十六岁，四十年下来，我也老得应该人情练达了，但我可练达得不一样，我是要说真话的，不过说的技巧，在我不太任性的时候，会有异军突起的奇效。</p>
+<p>谈到台独，我最有资格了。因为今天立法院内到立法院外，所有以台独为号召的人，其实都是“幼齿”，究竟有几人为台独打过拼、坐过牢，一点名之下，就穿帮了。而我自己，却是当年国民党政府眼中的台独大将，我第一次政治犯坐大牢，罪名就是台独。虽然罪名是真的、事实是假的，但在台独宣传上，谁也不敢否定李敖曾为台独被初判十年，今天口口声声台独台独者，在李敖面前，一一都得红着脸靠边站。现在我以老前辈资格讲评讲评立法院的糊涂仗，也许会使靠边站的红脸朋友快乐一点。</p>
+<p>我认为，如果没有中国大陆的“宗主国”似的泰山压顶、隔海磨刀，在现实利益上，台独是一个好梦；但是，有这一压顶与磨刀现象而不予重视，只是关起门来一厢情愿以为台独可行，就太不识世界大势、不明敌我关系了，也太天真了。而这种只凭自己一厢情愿就大做好梦的天真思考模式，其实正是国民党四十年教育打造出来的标准产品，惜台湾人不能自我察觉也！被人骗了，去做了不可能的事，还洋洋得意以为得计，不亦悲乎？</p>
+<p>不过，既然做上这么一个好梦，怎么办呢？</p>
+<p>我要先说说拿破仑的故事。拿破仑（NapoleoneBuonaparte）做法国皇帝，横扫欧洲，固一世之雄也，但奇怪的是，拿破仑的父母都不是法国人，乃是法国的“台湾人”——科西嘉（Corsica）人。科西嘉是地中海第四大岛，因为战略地位重要，自古希腊以来，先后为强权所争，而该岛人民，也亟思独立。拿破仑父母，就是当时的“科独”（科西嘉独立）激进分子，他的父亲是“科独”英雄包力（PasqualePaoli）将军的左右手，他的母亲十几岁就献身独立。当时科西嘉是被“外省人”——意大利的热那亚人（Genoese）统治，在风起云涌的“科独”压力下，“外省人”政权不堪其扰，也不甘心让它独立，于是就干脆把科西嘉偷偷卖给“大陆”——法国。在“大陆”的强大压力下，科西嘉人的独立运动，终于好梦一场，他们努力跟“大陆”来的军队打了三个月，最后弹尽粮绝，一个少女在战场上退下来，在通往教会的小路上，生下了小孩，这小孩，就是拿破仑。</p>
+<p>十年过去了，十岁的拿破仑到“大陆”去读书，他对“外省人”敌视，“科独”的愿望，时在心中。他念了幼年士官学校，也念了士官学校，他熬夜秘密写信给流亡英国的包力将军，表示对“科独”的向往。在“大陆”本土发生大革命时候，“科独”有了机会，拿破仑身为“大陆”政权的中尉，却跑回科西嘉，当了独立军的中校，最后，独立运动还是失败了，但这一失败，却带给拿破仑一次觉悟。他慢慢觉悟到：“科独”并不能带给科西嘉真正的独立，当包力将军提议勾结英国以反抗法国的时候，拿破仑拒绝了，他说：“这样做，等于把科西嘉由法国转卖给英国。”这不是科西嘉的前途。</p>
+<p>拿破仑的远见，不见谅于包力将军和不识大体的“科独”同志，他举家逃到丛林，遥见他家被同志烧掉。他跟母亲说：“我们不要在这块小地方上为生活忙碌了，现在的拿破仑已不再是科西嘉的拿破仑了，而是世界的拿破仑了。”他母亲答道：“离开科西嘉，对我像被针扎一样痛苦，可是，妈妈愿意跟你到天涯海角。”于是，他们回到了“大陆”。</p>
+<p>十多年后，拿破仑不但做了“大陆”的统治者，并且当了皇帝，他统治了大半的欧洲，当然包括科西嘉在内。两百年来，科西嘉一直属于“大陆”，从一个省变为两个省，跟法国一同变为强国，“科独”的梦幻，早已云散烟消了。</p>
+<p>拿破仑献身“科独”运动，他可以举出一千个科西嘉应该独立的理由，但是，一朝他有了世界性的眼光和“大陆”的胸襟，他觉悟到他不该再以一个小岛偏狭之见来夜郎自大，当然也毫不自卑，你看，他以一个又矮又小的科西嘉人，最后统治了“大陆”。——只有有自卑感的守财奴，才斤斤保护小枱面，声声要躲开“大陆”；真正有大志的人，他不怕“大陆”统治小岛，而要用小岛统治“大陆”。</p>
+<p>三万六千平方公里的台湾，只不过比八千七百平方公里的科西嘉大一点点儿，有眼光和胸襟的台独豪杰们，不妨想一想。——与其做好梦，不如做大梦。既然同样是梦，做个大一点的，也气派呀！</p>
+<p>1991年3月24日</p>
+<p>没有国是孤岛</p>
+<p>一个医学院教授教学生实验，他把大便放在杯中，伸手用指头沾了一下，就朝舌头上一放，并加以品味，然后说：“学科学的要有实验精神，我现在尝大便，就在证明这种精神。现在你们每一位都照我这样做一次。”学生们无奈，都照做了，可是做完后，教授讲评说：“事实上，我用的是食指沾大便，可是朝舌头上放的，却是中指。我根本没尝到大便。——你们实验精神是好的，可是观察力太弱了！”</p>
+<p>每次我看到支持台湾独立的实验，我便想到这个小故事。</p>
+<p>台湾人可以找出一千个理由支持台湾独立；外省人可以找出一千零一个理由反对台湾独立，——还可增加一个地质学上的理由（亿万年前，根本没有台湾海峡，台湾在土地上根本是大陆的一部分）来证明。事实上，这样在理论上各执一词，都很好笑，因為双方都不愁没有理论来支持自己，问题的症结不在理论而在事实。事实上，有一个强大大陆政权的存在，台湾独立就没有可能，以为负隅顽抗可以维系小朝廷的人、以为这种强大不足以拿下台湾的人，他们实验精神是好的，可是观察力太弱了！</p>
+<p>这种观察力太弱的基本关键，在于他们眼光的狭小。台湾人有很多美好的优点，但是，“岛国的偏狭之见”(insularprejudice)却是很不幸的一种宿疾。“岛国的偏狭之见”并不是所有岛国都有，英国就没有，英国不是一个自卑感的国家，它的世界观比另一个岛国日本健康得多，可是日本却很严重，日本有严重的“岛国的偏狭之见”，这种小气，在半个世纪的统治以后，严重的感染了台湾人，使台湾人在很多美好的优点上，外洩出一股小气。眼光失之狭小，这是台湾人的不幸。并且由于眼光的狭小，他们非但不自知这是不幸，反倒引为自得呢！</p>
+<p>当然，眼光远大的台湾人不是没有，例如死去的省议员、立法委员郭国基先生就是其中之一，郭国基先生一连被国民党迫害二十多年，他被下狱的时候，要戴六斤半的脚镣，但是，他并不因对国民党的厌恶而影响到他基本方向的清明、影响到他对台湾前途的观察力。郭国基说：“有一天我去拜访陈故副总统，我说大陆有一千一百余万平方公里大，台湾是三万五千平方公里大，大陆是台湾的三百二十倍，大陆这么大的财产，是我们祖先和你们祖先五千年来开垦的，财产未分，大家有份，我郭国基不会那么傻，为让台湾独立，拿这三万五千平方公里，而抛弃三百二十倍的大陆，不会那么傻瓜。”郭国基先生这种眼光，是今天眼光狭小的台湾人(包含乐不思蜀的外省人)所不能理解的。这些人只知道摆脱“三百二十倍”的穷地方与穷亲戚，却不知道，穷地方与穷亲戚，其实是建立现代强国的一种必然的邪恶(anecessaryevil)。英国诗人说没有人是孤岛，其实在现代世界，也没有国是孤岛。台湾抛弃了大陆，它的格局，不是别的，只是孤岛。有世界性眼光的人、真正爱台湾的人，必然会有这种观察力，而不把台湾带入孤岛。</p>
+<p>1988年6月24日</p>
+<p>从麦格隆满尼王到夜郎王南越王</p>
+<p>求是报在4月15日求是社论里，曾举证以明一件事实，就是：当年张俊雄在竞选演说《台湾客栈？美丽乡土！》中，公然说“台湾的面积占世界第三十二位，比以色列大好几倍”！苟有一点世界常识，都知道纵使台湾独立成国，它的面积排名，也在一百零八名以外，又何来第三十二位？至于说“比以色列大好几倍”，也是笑话。台湾面积三万六千平方公里；以色列面积两万零七百平方公里，连半倍都没有，又何来好几倍？张俊雄这些话，都证明他没有世界性的知识，以这种无知之人，进入国会，纵“台湾绅士”亦未能免于出“台湾鲜事”、出台湾洋相。他在大家争相武打中，忍无可忍，干出比任何人都惊心动魄的一巴掌来。究其原因，基本上还是无知之害。</p>
+<p>由于张俊雄的无知，使我们愿意进一步讨论讨论这一无知形成的心理背景。</p>
+<p>国民党党营的正中书局出版国民党教授李定一译《世界史纲》，不识原文中“MegalomanialedthematlasttotheprossessionofEgypt.”中Megalomania（自大狂）一字，竟翻译成“最后麦格隆满尼（Megalomania）王竟征服埃及。”（应该译为“最后自大狂使他们占有埃及”）闹出了大笑话。不过话说回来，国民党未尝不有“麦格隆满尼王”的气派，这个党在失国以后，犹能在台湾表演“台湾自大”，岂不正是王者之风么？1961年11月15日的党营刊物《中国一周》上，图文并茂的宣传“以台湾为中心之全球形势”，可见在国民党眼中，“万国衣冠拜台湾”不是盖的。国民党本是以大陆为着眼点的，退守台湾后，竟堕落到以只占大陆面积二百六十六分之一的小岛为着眼点了。在这种着眼点上，国民党除了放大台湾，也就别无妙法。1987年3月28日国民党党报中华日报上，就登出这样的妙文如下：“日月潭是全世界最大的湖泊，它的海拔有七百五十公尺，潭周围三百五十公里，九百余公顷，平时水深三十公尺。……”苟有一点世界常识，就知道整个台湾的面积，也不过相当于贝加尔湖（Baikal）！而贝加尔湖，也只不过只是世界第七大湖！明明世界第一大湖里海（CaspianSea），可以装下四万八千二百八十六个日月潭，而台湾的新闻媒体上，却硬说“日月潭是全世界最大的湖泊”！这种狂妄无知，无以名之，只能说它是“麦格隆满尼王”也！</p>
+<p>不过，纯粹的“麦格隆满尼王”只是自大而已，不跟人比，尚无大碍。若自大以外，还不自量力，跟人比比，要把人比小，那就不止于“麦格隆满尼王”了，而是夜郎王了。</p>
+<p>《史记》有西南夷列传，一开头就说：“西南君长以什数，夜郎最大。”后面说：“滇王与汉使者言曰：‘汉孰与我大？’及夜郎侯亦然。以道不通故，各自以为一州王，不知汉广大。”正因为地处边陲，不知汉朝有多广多大，所以要问汉朝的国土跟我的国土比起来哪个大，这种井蛙之见，至今成为笑料。</p>
+<p>这种地处边陲因而有的夜郎自大，其实不以大陆为然，也不以古代为然，今天在台湾，也照来不误。张俊雄故意拿台湾与以色列相比，就是如此。不过，古代夜郎的自大，在于交通不便，因而不知别人之大和自己之小；现代夜郎的自大，却是狂妄无知，抹杀别人之大和膨胀自己之小。世之比夜郎还夜郎者，可在台湾见之。</p>
+<p>读古书可读出这么大学问，不妨再读一篇《史记》陆贾传。</p>
+<p>陆贾是跟汉高帝刘邦打天下的知识分子。打到天下后，刘邦叫他去说服南越王，越就是粤，就是今天广东、广西和越南一部分。秦朝末年，那边的封疆大吏是赵佗（赵他），他是南海郡尉，因为东海郡守缺，乃由郡尉行郡守事，南海就是广东广州。赵佗是赵国真定（河北正定）人，他是北方人，派到南方做官，做到郡尉，故叫“尉他”，他到南方做官，不是一个人去的，是和大量的中国移民一起去的，与当地土人杂居。但他趁中原大乱，要搞两广独立了。刘邦因此派陆贾去。陆贾到了南越，赵佗做着原住民的打扮，伸出两腿，很无力的予以接见。陆贾劝他说：“足下中国人，亲戚昆弟坟墓在真定。今足下反天性、弃冠带，欲以区区之越与天子抗衡为敌国，祸且及身矣！”进而晓以大义与利害。赵佗听了，乃承认自己“居蛮夷中久，殊失礼义”。但却自大的问：“我孰与皇帝贤？”（我跟你们的刘邦哪个行？）陆贾乃又数说他一顿，说汉天子那边，“中国之人以亿计，地方万里，居天下之膏腴，人众车轝，万物殷富，政由一家，自天地剖泮未始有也。今王众不过数十万，皆蛮夷，崎岖山海闲，譬若汉一郡，王何乃比于汉！”赵佗听了，乃大笑说：“吾不起中国，故王此。使我居中国，何渠不若汉？”（我不能在中国发展，所以在此地称王。假如我能在中国发展，我怎么会不如刘邦？）</p>
+<p>这篇古书最引人注意的，是外省人赵佗到了广东广西，居然要搞两广独立了，他一切都原住民化，认同得惟妙惟肖，预备大过其小朝廷的瘾。不料好梦不常，中原派来了令他眼界大开“日闻所不闻”的陆贾，告诉他你有的部队“不过数十万，皆蛮夷”，又局促穷山恶水之间，面积不过是中国的一个“省”，你怎么跟中国比呢？赵佗是聪明人，他权衡利害，不敢闹了。</p>
+<p>赵佗知道他抵抗不了中国，但他活得久，又能纠缠，死拖活拖，共拖了刘家四代，从汉高帝、惠帝、文帝，一直拖到武帝时代，他才死去，死前对汉朝仍称臣，但骨子里还打着青天白日的老招牌，“南越其居国窃如故号名。”在他死后二十六年，汉武帝还是统一了中国，把两广独立的可能性，彻底消灭了。那一年是公元前111年，距今两千年。</p>
+<p>“夜郎自大”以外，“南越自大”的故事，更使我们觉悟到赵佗“麦格隆满尼王”上的进步。两千年了，台湾岛上的国民党徒知复兴文化而运动之，却不能读点启发智慧的古书，连带使它的学生民进党也跟着无知妄作，只笑于夜郎南越之家。我们捲卷而叹，真不知他们哪天才不混蛋也！</p>
+<p>1991年4月16日</p>
+<p>草螟的尊严</p>
+<p>台湾有一句俗话叫“草螟弄鸡公”，意思是蚱蜢在公鸡面前张牙舞爪、故意挑衅、不知死活、明明找死而不自知也。</p>
+<p>今天台湾对大陆的态度，恰恰就是“草螟弄鸡公”。</p>
+<p>“草螟弄鸡公”是自己找死，旁观者知道、鸡公知道，草螟自己知道不知道呢？答案是自己不知道。</p>
+<p>自己不知道，以为自己可以弄得了鸡公，这种草螟是可怜的。以人为喻，最典型的例子是九十六七年年前的义和团，这些爱国爱乡的愚民们，以为自己可以“降神附体，刀枪不入”（事实上是群众的歇斯底里、集体的催眠术），因而勇往直前，去杀洋人敌人，以保“尊严”，结果呢，中国人肉挡不住洋枪洋炮，名为救国，实为祸国，惹来鸡公上门，日、俄、英、美、法、奥、德、意八国联军打进门来，被敌人烧杀淫掠以后，还赔上万万银两等条件。草螟自己不知道鸡公厉害，已是一愚；更愚的是，它还给提醒它们不能这样蛮干的有识之士扣帽子，骂有识之士是汉奸、是投降主义、是卖国集团、是洋鬼子代言人。在暴君当道又暴民挡路的情况下，有识之士即时被害了，像曾出使俄国德国的先知许景澄，便是草螟愚昧的牺牲者。</p>
+<p>九十六七年过去了，洋枪洋炮进步了，草螟也进步了。现代的草螟全身发绿，又全身发蓝。他们爱国爱乡一如义和团，可是他们不再是愚民们，而是有头有脸的博士级教授级人们。从绿色民进党总统候选人到蓝色国民党总统候选人都是一样，他们手下的追随者也都有志一同。在洋枪洋炮进步到M族飞弹的性能以后，他们一点也不怕，像九十六七年前义和团一样的“台湾第一勇”。他们说：“安啦！”说：“弹头是空空的！”说：“他们怎么来，我们就怎么去！”说：“台湾人不是被吓大的！”说：“台湾人民可以用选票表达独立自主的决心和意愿，向中共大声说‘不’！”说：“中共打了三枚飞弹，表示选三号的彭（明敏）谢（长廷）配一定大发！”说：“中共放飞弹时天下雨了，飞弹会熄火，因为人神共愤！”……这些现代衣冠楚楚的草螟们，他们在全世界都怕飞弹、怕中共的时候丝毫不胆怯，一如九十六七年前的义和团不怕洋枪洋炮、不怕八国联军。更绿蓝同色的是：彭明敏和李登辉都用“尊严”做主题诉求，他们更用共同语言骂有识之士是台奸、是投降主义、是卖台集团、是中共代言人。唯一宽大的是，现代暴君和暴民尚无杀害许景澄的动作。——许景澄不再是草螟愚昧的牺牲者了，他改作草螟愚昧的陪葬者了。</p>
+<p>没有人不佩服草螟的“尊严”，但“尊严”要靠清楚的知道自己是老几。自己再弄也是草螟却不自知，这种“控固力”，又比义和团高明多少？但义和团是愚民，不是有头有脸的博士、教授，义和团死后九十六七年，发现他们有这么体面的“团的传人”来克绍其愚，他们真乐歪了。</p>
+<p>1996年3月11日在中国台湾</p>
+<p>台湾的“一厢情愿”症候群</p>
+<p>“一厢情愿”是单方面的如意算盘，这个词汇出在中国古小说《儿女英雄传》；在西方，也有类似的表达法，就是wishfulthinking。犯这种毛病的代表，就是癞蛤蟆，癞蛤蟆想吃天鹅肉，是“一厢情愿”，天鹅知道这浑身长癞的丑八怪吃不到，可是癞蛤蟆自己不知道，自以为可以吃到，于是惹来大家看笑话，虽然癞蛤蟆自己仍然一本正经，丝毫不以为那是“一厢情愿”。</p>
+<p>别以为癞蛤蟆是无知的低等动物，许多高等动物，其实比癞蛤蟆还癞蛤蟆。以高等动物中“人类的救星”蒋介石为例（“人类的救星”是台湾《蒋公纪念歌》中语），蒋介石在台湾叫嚣“反攻大陆”“杀朱拔毛”，前后喊了二十六年，朱犹在也、毛犹在也、大陆犹在也，结果蒋介石不在了，“一厢情愿”了二十六年，最后癞蛤蟆一场，谁说想吃天鹅肉的只有老癞？“人类的救星”也照吃不误啊！</p>
+<p>“人类的救星”死在台湾后，人死了，他的“思想模式”（“思想蟆式”）不死，交给了笨台湾人、交给了蠢台湾人。台湾人中又笨又蠢的高等台人出现，俨然“台湾的救星”。他们口口声声骂老蒋，其实“思想模式”（“思想蟆式”）上都师承老蒋而不自知，也就是师承老癞而不自知。从“台湾独立”到“进联合国”、从“一中一台”到“政府对政府谈判”，在全世界有识之士看起来，无一不是毫无可行性的笑话，但是台湾的高等台人们却一本正经的奔走呼号，连番演出，最新的戏码是由彭明敏挂帅组织的“建国会”。在“建国会”成立后第一次研讨会里，其中大将——头脑不清的长老会牧师罗荣光大声说：</p>
+<p>在总统大选过后，国民党所控制的媒体即报导未来最重要的议题将是两岸问题，这可说是国民党一厢情愿的想法，所谓的两岸问题还不就是和中国勾结，我坚持台湾的问题必须由台湾人自行解决，不需要去和中国谈，所以我们认为，选后最重要的议题应该是如何走出国际及独立建国。</p>
+<p>这段谈话最有趣的一点是这位牧师指斥“国民党一厢情愿的想法”，但他忘了，国民党夜郎自大，固有“一厢情愿”的癞蛤蟆行为，不过“建国会”诸公，又何尝不“一厢情愿”？所谓“由台湾人自行解决”、所谓“不需要去和中国谈”、所谓“走出国际及独立建国”，试问哪一件不是“一厢情愿”？哪一件比“反攻大陆”“杀朱拔毛”的老蒋更实际？哪一件比想吃天鹅肉的癞蛤蟆更有可行性？</p>
+<p>癞蛤蟆想吃天鹅肉，我们可以理解，因为它是低等动物；蒋介石想“反攻大陆”“杀朱拔毛”，我们也可以理解，因为他是头脑顽固的老军阀。我们难以理解的是：“建国会”的高等台人，自彭明敏以下，都是受过现代教育的知识分子，为什么他们这样不量力、不懂事、不晓得自己是老几、又不晓得台湾在世界上是老几？我们可以理解一般台人——那些嚼槟榔的贩夫走卒们成群结队，叫嚣“台湾独立”“进联合国”……因为他们无知；我们难以理解的是：这些高等台人成群结队，却做出这种最低等的“一厢情愿”，其笨其蠢，可真到了大家看笑话的程度。——这些混人怎么了？怎么会混到这种程度？混到对完全没有可行性的主题走火入魔的程度？</p>
+<p>唯一的解释是这些混人生了病，病症就是“一厢情愿”症候群，从癞蛤蟆到蒋介石、从蒋介石到彭明敏以下的每个人，他们都是“一厢情愿”症候群的着魔者。正因为一切都是“一厢情愿”，所以归纳来说，要吃天鹅肉，白日梦而已、意淫而已。过去我奚落国民党八个大字——“意淫大陆，手淫台湾”，如今可改为“意淫联合国、意淫台独”。——台湾连手淫的本钱都快耗光了，这些混人还不觉悟呢！</p>
+<p>1996年5月6日</p>
+<p>读石齐平书</p>
+<p>中国人说俗语“知己知彼，百战百胜”，是从《孙子》书中错引而来。《孙子》原文是：</p>
+<p>知彼、知己，百战不殆；</p>
+<p>不知彼而知己，一胜一负；</p>
+<p>不知彼、不知己，每战必殆。</p>
+<p>原文很清楚的告诉人们：知己、知彼，只能在百战之中，免于危险而已，并不一定能胜利，可能是不胜不败的和局；不知彼而知己，是胜是负不可知；不知彼、不知己，则每战必定完蛋。整个《孙子》的战争论，都是在这种戒慎戒惧小心翼翼的语气下立论的，正看出了《孙子》的高人一等。知兵的人绝不好战，而是希望不战，或不战而屈人之兵、或不战而保存自己实力。不此之图，一战下来，就是凶事。所以，《孙子》绝不那样狂悖，说“百战百胜”的话，不说“百战百胜”而说“百战不殆”，才是真正稳健的知兵者。</p>
+<p>四十七年来，台湾当局地处中国边陲，负隅顽抗，也抗出一大堆顽固的意识形态，由“消灭共匪”做主轴，衍生出一波又一波的“反共抗俄式教育”、“反共抗俄式宣传”，这种教育与宣传的特色是“夜行畏鬼，强作狂歌”，用狂歌来壮胆，久而久之，养成两个习惯，一是轻敌、一是自大。轻敌久了，则不知彼；自大久了，则不知己，不知彼又不知己，一遇敌对局面，就会“每战必殆”了。</p>
+<p>四十七年来，台湾对大陆的所谓敌对方法，只有一个字——“拖”而已矣。不过当年蒋民父子之拖，尚有知敌之情、尚有自知之明，虽然所知有限，却也精通偏安之道，故父子二人，皆能免遭天诛、善保首领以殁。但蒋氏父子死后，苟安之局，不过三代，如今在隐性台独者接班下，心劳日拙，益发轻敌、益发自大，且是“草螟弄鸡公”式轻敌、“夜郎自大”式自大，于是偏安小朝廷为之动摇。当然，在歇斯底里加义和团的手法下，这种人不愁没有愚夫愚妇跟他一起叫嚣、一起“赞”、一起“爽”。但是，它的江河日下、来日无多，则是历史家的定评。</p>
+<p>历史家论定四十七年来这段偏安史，除了对扑面而来的大量丑脸和厌物要做斧钺之诛外，也会关心到“勿谓秦无人也”那一面。历史家相信在这孤岛之上，一定还有稀有品种的智者仁者勇者，他们走过从前、跨越现在、迈向未来。他们的智仁勇行径，在孤岛上虽然因被打压以致晦而不显、或显而不彰、或彰而不足——因百分比不足而不得行其道，但是，幸亏有这种人曾经在孤岛上存在，孤岛才幸免于百年孤寂或万古长夜，历史家千秋笔下，也不致一片索然。</p>
+<p>在历史家眼里，石齐平必然是稀有品种中的一位，在这孤岛由“消灭共匪”到“通匪”的转型里，他站在“通匪”的最前线，勇于用世、勇于任事、勇于在轻敌与自大的环境里独行其是：他一方面苦心孤谐，调济其中；一方面苦口婆心，意在言外，他一册又一册写出书来，以独到的见解，讨论两岸关系、大陆情况与台湾现况，为中国前途做出稳健的指标。</p>
+<p>在举岛滔滔的盲流里、在轻敌与自大的盲动里，石齐平的努力能有多少独挽狂澜的作用，人们不知道，历史家却知道。历史家知道英雄或可以成败论，但是思想的影响却不可以成败论。石齐平知彼知己的著作或不成功于一时，但却“东方不败”于千载。千载之下，历史家写中国史中的台湾史，必将有“江流石不转”的浩叹：——在孤岛台湾毕竟有第一流的人闪过，但他毕竟是孤星。对孤星说来，孤岛毕竟太小了。</p>
+<p>1996年3月9日在中国台湾</p>
+<p>到底承认多少现实？</p>
+<p>7月12日，台湾的小朝廷举行国民大会会议，国民党国大代表吴国重忽发“国是建言”，建议承认已独立多年并且是联合国会员国的外蒙古。吴国重指出，全世界都承认外蒙古是一个独立的国家，我们却仍坚持外蒙古是中华民国的一部分，这种不承认现实的作法，使得他根本无法答复子女提出的疑问。发言完毕后，吴国重走到李登辉面前，“向李总统致意”，李登辉立刻授意他，叫他将这一发言以提案方式正式提出。吴国重受宠若惊，旋即遵命展开作业。消息传出，全岛鼎沸云。</p>
+<p>外蒙古自古以来就是中国领土，到了1945年，被国民党卖国头子蒋介石和他手下的卖国贼——外交部长王世杰，在《中苏友好同盟条约》中给卖掉了，卖国者们以当时曾经公民投票做为脱罪借口，事实上，却全是谎言。据当时蒋介石派去的中央“参观”大员——内政部常务次长雷法章三十六年后的回忆，他说：“奉派之后，迭次晋谒先总统蒋公，即当时国府主席。奉谕，代表政府参观投票情形，兼可考察外蒙政治社会情况，而不与外蒙当局进行任何交涉。关于投票一事，只宜细心观察，但不得干涉或发表任何声明。”“投票之筹备与执行，均由外蒙当局自行主持，政府不予过问。仅在举行投票之际，遣派代表前往参观。”——请看这成什么话！因为在“公民投票”结果没公布前，外蒙古是中国领土，外蒙古人民是中国人民，在“完成法律手续”之前，自然当受中国政府管辖。中国政府派中央大员去，理该是“监票”，怎么可以是“参观”？“参观”结果，发现所谓“公民投票”，竟是在外蒙古“政府人员监督之下，以公开之签字方式表示赞成与否”！连秘密投票的法定形式都不可得，其结果当然可想而知。雷法章又回忆：这一实情，“除书面报告政府，并口头备供咨询外，对外未发表任何谈话，或书面声明，藉保机密。……而奉最高当局面谕，预定在中央纪念周之报告，亦未果行。”为什么如此？原因无他，卖国者蒋介石要卸责，要骗中国人民，说外蒙古不是我要它独立的，乃是“公民投票”结果独立的。如今“公民投票”既是假的，则外蒙古独立即失其依据。所以只好一切遮盖。雷法章当然也不敢吭气了。他在三十六年后，蒋介石尸骨已寒后才口吐真言，可算是垂老的一种忏悔。</p>
+<p>在卖国者蒋介石方面，在卖国七年大上其当后，也有了一丝忏绪，他在国民党第七次全国代表大会上，终于承认签订《中苏友好同盟条约》是“我个人的决策”、“是我的责任，亦是我的罪愆”、要“负其全责”。他承认当年签约放弃外蒙古，“实在是一个幼稚的幻想，绝非谋国之道。”他“对总理、对革命、对国家和人民应该引咎自责”。虽然在上当上，蒋介石承认了现实，但在料理后事上，他却仍旧采自欺欺人的手法，以为蒙混。——在卖国八年后，他叫立法院决议废止了《中苏友好同盟条约》，以为这样一来，外蒙古又可重回祖国的怀抱了。其实，这真是异想天开！外蒙古事实上已经一去不回头了，不但已变成一个独立国家，并且加入了联合国，如今且有一百二十多个国家承认它了。</p>
+<p>相对的，国民党的“中华民国”不但被赶出了联合国，并且全世界只剩三十多个小国家承认它了。沦落至此，居然还老脸皮厚的声称比台湾大四十四倍的外蒙古是“中华民国”的一部分，如此怪说，真可腾笑中外了。</p>
+<p>如今，在李登辉的授意下，国民党愿以务实的方法去承认外蒙古，其实，你“中华民国”已沦落至此，谁稀罕你的承认或不承认？谁又在乎你的承认或不承认？你算老几啊？不晓得自己是老几、不能正确评估自己在世界上的地位，这哪里是务实、哪里是正视现实呀？</p>
+<p>其实，纵使承认了外蒙古，也不过把大于台湾三百一十倍的中国大陆，变为大于台湾二百六十六倍而已，“中华民国”固然罩不住包含外蒙古在内的三百一十倍，同样罩不住不含外蒙古在内的二百六十六倍。放弃了三百一十倍，自吹是承认现实；但抓住二百六十六倍的“空中领土”，又何现实之有？</p>
+<p>真正承认现实的正途只有一个，就是承认蒋介石在1950年3月13日的秘密谈话——中华民国已经亡国。然后死心塌地的承认台湾是中华人民共和国的一部分，亦即二百六十六对一的比例下，占二百六十七分之一的地位。“一国两制”、“五十年不变”等等，任何有利于台湾的，都可以谈判争取，唯独不能再在地位上妄自夜郎自大了。在地位上，台湾根本没资格去承认三百一十倍的现实或二百六十六倍的现实，台湾只承认自己是二百六十七分之一的那个一，就现实成功了。</p>
+<p>1996年7月13日</p>
+<p>从“高丽棒子”到“台湾浪人”</p>
+<p>日本人在中国横行期间，中国人恨日本鬼子，同时也恨两种日本狗腿，一种是朝鲜人（韩国人），被称做“高丽棒子”；一种是台湾人，被称做“台湾浪人”。</p>
+<p>“高丽棒子”与“台湾浪人”都是亡国奴，亡国奴中固不乏义士，也有心理变态甘为鹰犬的，这种鹰犬到中国来，跟着日本人欺负中国人，其阴狠，有时连日本人都赶不上。原因是“高丽棒子”与“台湾浪人”在地缘上、血缘上都跟中国亲，他们比日本人更了解中国人，整起中国人来，比日本鬼子更实在，所以中国人最恨他们。</p>
+<p>“高丽棒子”亡国于日本，凡三十五年；“台湾浪人”亡国于日本，凡五十一年，“同是天涯沦落人”，难兄难弟，举手投足，应该心同理同方是。不过，事实上却大异其趣。</p>
+<p>“高丽棒子”虽做了亡国奴，但是人比较凶悍有志气，他们在日本统治下，叛日本的乱、争自己的独立，前仆后继，不遗余力。以1919年——亡国后九年——的“三一运动”为例。当时“高丽棒子”手无寸铁，奋起抗暴，吁请国际间道义支持，日本人呢，一杀就是七千多人！反观在台湾的亡国奴，绝对没有类似的场面，“雾社事件”一死七百多人，不过是“三一运动”的零头，并且还是英勇的高山族发难的。而所谓“勇敢的台湾人”，在日本人统治期间，并没有壮烈的、大规模的争取独立的牺牲出现，“台湾浪人”之爱好和平也，由此可证！</p>
+<p>本月8日，中央社汉城法新电：“今天又有一名南韩异议分子为抗议卢泰愚政府，在自焚后跳楼。这是十一天内发生的第四件自焚事件。目击者说，该名自杀男子金基少（译名），将油漆稀释液倾倒在自己身上，点火后从西江大学七楼顶跳下。金基少二十五岁，是南韩反对团体全民联的成员，他高喊推翻卢泰愚的反政府口号后跳楼，当场死亡。他留下遗书，内容尚未得知。在最近的反政府抗议活动中，已有三名学生自焚。自从一名学生在示威中被警察殴打致死后，汉城及其他各地便不断有抗议事件发生。”</p>
+<p>同一天，联合报汉城特派员又来电说：“姜庆大死于镇暴警察之手所引发的政治动乱仍在持续，南韩全国各地9日将掀起更大的抗议示威反政府风暴。5月9日是执政党民自党创党一周年纪念日。南韩全国劳工最大组织‘全劳协’，学生团体最大联合组织‘全大协’以及宗教、社会人士代表的五十一个单位，预定明天发起大规模的群众集会和游行示威活动；主要诉求为：解散镇暴警察部队和执政民自党。除了‘全劳协’和‘全大协’组织的‘工厂——校园’联盟发动的二十一万大罢工和大罢课活动外，全国二十二个城市和六十三个县的平民、农民也将有数万人投入。”</p>
+<p>像上面这类骚动，对“高丽棒子”说来已是家常便饭。相对的，“台湾浪人”的骚动，就显得是家家酒和娘娘腔了。叫嚣的教授们，固然粉拳秀腿；绝食的学生们，比起“自焚后跳楼”青年的狠劲来，也脸蛋无光了。</p>
+<p>两种亡国奴的动作，一比之下，显然就高下有别。总该有个结论吧？结论是：我们敬佩“玩真的”的人，如果一切都是作假、作势、作态、作秀，用来作弄别人、锋头自己，去年来了一场了，今年又来一场，此后还是少来吧！</p>
+<p>1991年5月9日</p>
+<p>台湾人的媚骨</p>
+<p>四百年来，台湾人从亡命到逃命、从流民到移民，在这岛上生长着，因为早期的水平不高，所以台湾人的做人规格，很难见到真场面。在荷兰的裹胁下、在清朝的君临下、在日本的奴役下、在国民党的高压下，台湾人所受的政治教育，都不是硬骨头的教育，甚至也不能想象做人硬骨头是一副什么模样。反倒学会了谄媚拍马，尤其向当道谄媚拍马，蔚为能事。清朝西太后“六旬万寿”时候，全国大拍马，可是全国拍马的冠军，却不在大陆，而在台湾。——板桥林家的林维源，就是国民党财阀林柏寿的爸爸，独自“报效”经费三万两！可见台湾人会拍马屁，功夫早在大陆人之上。</p>
+<p>日本人统治台湾之后，照黄遵宪《台湾行》的描写，台湾人是“夹跪道旁俯折腰”式的，当然，在异族的武士刀下，这尚情有可原。可是在国民党统治台湾后，若再媚骨不绝，就未免太“惯性”了。不幸的是，台湾人的表现，却正如此。</p>
+<p>台湾人的媚骨表现，从一个焦点上，最使我们清楚的看出来，那就是他们不知分寸的向当道乱拍马屁，拍得失度失态，构成千古笑谈。</p>
+<p>以台湾人中的政治异己为例，做为政治异己，反对当政者而流亡海外，如不能艾奎诺式赴难，也要朱舜水式“老死他乡”，这是起码的玩政治的规格。可是台湾人中的政治异己呢？却是一个个回来磕头的廖文毅、郑万福、邱永汉、辜宽敏。……廖文毅头一天还在海外把蒋介石骂得狗血喷头呢！第二天一下飞机就向蒋介石照片打躬作揖，这种高速的前倨后恭，不是千古笑谈吗？至于在岛上的政治异己，高玉树、苏南成在竞选市长时代，言论是一何威武！可是变节以后，行径却何等卑下！明明是党外群众投他们的票当选的，高玉树却发表文字，“感总统培植之隆”，要“竭志尽忠”、“上报宏恩”！在蒙“总统召见”时，“感动得热泪盈眶”。蒋介石死后，高玉树要“和泪濡墨述恩德”，接着马屁向下拍，大喊“伟哉！我们伟大的蒋总统经国先生”了。至于苏南成，台湾第一不要脸，谄媚拍马之言更多，举不胜举矣。</p>
+<p>高玉树、苏南成的媚骨表现，到头来有官好做，倒也令人不意外，最邪门的是杨金虎。他在高雄市长任内发生了“鬻官案”，经过最高法院七次发回更审，判他有期徒刑五年，可是国民党真妙，它看中了杨金虎怕坐牢，因此用官司把他吊住，一吊就是十六年！既不结案抓他坐牢，也不了事还他清白。杨金虎官司缠身，从七十六岁缠到了九十二岁，一直害怕，于是他背弃了他竞选时的党外立场，虽然丢官，却一再向国民党谄媚拍马不绝，一会儿来篇《一个老兵的忠告》、一会儿来篇《竞选，应是君子之争！》给党外出丑，人这样老了还这样媚，其骨可想也！</p>
+<p>台湾人中政治异己的媚骨都如此，政治同志自然就更不消说。国民党自己的同志，对当道乱拍马屁，拍得失度失态，更精彩多多。蒋介石死后，停灵国父纪念馆期间，省主席谢东闵，率同台湾人全体县市长去下跪！外省人大员自严家淦以下，虽然媚骨有之，但都不好意思下跪，可见膝功之软，自愧弗如。在国民党的调教下，台湾人媚骨，可真青出于蓝呢！</p>
+<p>1988年9月7日</p>
+<p>台湾式下跪</p>
+<p>8月14日监察委员陈哲芳到桃园县政府巡察，省议员黄木添向他下跪陈情，要求重振监察权，接受陈情的陈哲芳，隔着桌子无法扶起这位省议员，只急忙摇手说：“是不是我也要跪着接受？”</p>
+<p>事后大家多从一般角度评论此事，我却别有妙法，以晓众生。妙法无他，点破台湾式下跪，给大家上一课而已。</p>
+<p>所谓台湾式下跪，先看一些纪录吧：</p>
+<p>1966年12月27日，台北市议员陈连禄，为要发言，向议长张祥傅下跪：“我要向你下跪求求你给我讲话。”</p>
+<p>1979年9月，监察委员巡察新竹县、南投县、云林县、台南县时，分别被大量民众拦路陈情，跪地喊冤。</p>
+<p>1980年9月，监察委员巡察苗栗时；苗栗镇民谢潘桂兰母女，下跪喊冤；巡察新竹时，竹南镇民施得旺跪地喊冤。</p>
+<p>1981年5月26日，高雄市长王玉云指摘市议员苏玉柱，苏玉柱气了，乃向王玉云下跪要求还他清白。其实王玉云自己也是此道高手。四年前他竞选市长时，就向选民下跪痛哭以显示其清白过。高雄真是多跪之秋，请求原谅。同年十一月九日，新竹县的公办政见会上，省议员候选人陈振富也因迟到，被宣布弃权，乃下跪抗议“选监人员执法不公”，不肯起来。</p>
+<p>1982年1月6日，台北县议员候选人刘文章，在自办政见会上，下跪请求选民赐票。同年4月12日，经济部长赵耀东亲送核能废料时，基隆市立法委员蔡讃雄下跪请求不要“陆运”。同月23日，高雄市“中大摊贩大楼”有照摊贩四十多人，齐集市警局大门口下跪，请求取缔无照摊贩。同年5月7日，南方澳渔民王幸夫、王丽华、王邱阿甘，在龙德工业区大门口向省主席李登辉下跪喊冤。同年10月9日，监察委员巡察高雄县时，仁武乡民许门下跪喊冤。</p>
+<p>1984年1月24日，台中市昌平路拆迁户一百五十多人，齐集省政府建设厅前下跪，嚎啕大哭，要求免予拆迁。同年2月28日，台中县太平乡乡民吴定义等十一人，专程北上，为了河川地的权益，在总统府大门口下跪。同年9月4日，监察委员巡察桃园县时，八德乡民简金木和他八十岁的丈母娘邱陈阿春下跪喊冤。同月五日，龙潭乡民两百多人，齐跪山路两旁，大声喊冤，要求主持正义，取消店子湖垃圾场。</p>
+<p>1986年3月19日，第一家产制塑胶钢车体的日亿工业公司发生财务危机，积欠员工四个月薪水，员工之一彭介邦乃在大门口披麻戴孝下跪抗议。同年8月13日，因弑母案被判无期徒刑的华定国，到监察院大门口前下跪陈情。同月15日，台北县新庄市民黄随，以附近工厂吵得她连续失眠三天，乃派幼子在派出所大门口下跪陈情，她自己则在旁嚎啕助威。</p>
+<p>1987年10月24日，监察委员巡察桃园县时，龙潭乡民阎小芸以三林村水患频仍，陈情县政府数十次均未置理，乃下跪陈情。同年12月20日，全省五六百名爱国奖券业者和残障人士，齐集行政院大门口下跪，请求不要中止发行奖券。</p>
+<p>1988年3月15日，捷运系统北投机厂业主，在台北市议会，以下跪方式围堵台北市长许水德，要求主持协调会，许水德尿遁不遂，在厕所前尴尬不已。同年7月10日，全国总工会理事长谢深山威胁说，他将不惜以下跪方式，要求大同公司的林挺生解决工人问题。</p>
+<p>1989年3月21日，高雄市议员吴石楠，为了养虾户纠纷，走向前台，高举右手对天发誓，说如有向养虾户敲诈，他愿全家死光光、绝子绝孙、五雷轰顶。接着朝“国父遗像”下跪。坐在台上的议长陈田锚说，他觉得“真爽”，真想叫吴议员跪久一点，因为“国父遗像”正好挂在议长座位的后面，向“国父遗像”下跪，在感觉上，就好像吴议员是向他陈田锚下跪。事后因为有的记者没拍到下跪的照片，特别情商吴议员再跪一次，吴议员应声便倒，满足了大家的要求。</p>
+<p>上面拉杂抽样列举的台湾式下跪，使我们得以从多种角度观察台湾人为何而跪、因何而跪？或为议会发言、或为有冤要喊、或为显示清白、或为演讲迟到、或为请求赐票、或为海运废料、或为取缔摊贩、或为免予拆迁、或为工厂噪音、或为水患频仍、或为发行奖券、或为捷运系统、或为工人问题。……事件不论大小、主题无分轻重，只要增加效果，大家就乐得一跪了之。流风所及，连台湾最聪明的人——我的好友施性忠，也都以跪为戏谑、为恶作剧。今年1月16日下午，在省议会监委座谈会上，省议员庄姬美发言，说她的“男朋友”施性忠被检察官起诉四项结不成立，结果被“诉外裁判”，判决有罪，希望监委们能发挥道德勇气，不分党派、仗义执言。这时施性忠在旁听席上，以“痛苦歌王”姿态、攘臂哀呼：“大人，冤枉啊！”顿时全场陷入高潮。会后，施性忠突然跑到监察院长黄尊秋面前，下跪喊冤，黄尊秋连忙扶起来，口中连说：“这样不好看嘛！”在旁的省议员们也拉他起来。施性忠起来后，与监委们边走边聊，兴高采烈的回家了。</p>
+<p>除了这些公开的台湾式下跪外，也有一些私下的跪姿，床上床下，情况难明。其中我的好友“南北双娇”就闹过一场。1983年6月30日，省议会上北娇黄玉娇与南娇苏洪月娇发生冲突。黄玉娇说：“唐荣有人到我房里，是‘通奸’吗？这是大问题。……大会放录音带，损我名誉的人，我绝对不放过她，我黄玉娇两届以来没有歪哥。”随即昂首阔步，绕场一周。这时苏洪月娇马上反击说：“黄玉娇议员，我劝你冷静一点，你有否在台北市承德路三德饭店向我夫妻下跪，求一件事，如果你敢说没有，我就把支票影印出来。”黄玉娇说：“你又不是我妈，我跪你干什么？”……最后一场闹剧，草草收场，至于北娇有否跪南娇，也就没人深究了。</p>
+<p>我这篇文章写台湾式下跪，重点是：固然跪之一道，古今中外通行，但台湾因史地背景的怪异，其为跪也，也就别有奇趣与歧义。试以李登辉下跪一例，综合收尾：李登辉世居台北县三芝乡，小学五年级时，上体育课，因为一个动作不合要求，被老师体罚，叫他跪在操场上。李登辉虽然双膝跪地，却将膝盖以上挺直，成L状，被老师指出跪相不对。但是，李登辉却据跪力争。他说L状跪法是中国式跪法；屁股坐在脚跟上是日本式跪法，纵使下跪，也要跪从其志。这个故事，使我为之恍然：台湾人可真会下跪！从李登辉起，就能跪出民族大义，难怪膝功处处，屡跪不鲜也！</p>
+<p>1989年1月18日</p>
+<p>台独活动帮了国民党</p>
+<p>本月6日出版的中共《瞭望》周刊发表文章说，最近台湾岛内外的台独势力蠢蠢欲动、台独声浪不断升级，这与国民党当局的纵容有很大关系。文章指出，台湾岛内台独组织正在加紧整合，筹备于5月底召开第三次独派沟通会议。同时，岛内外的台独势力也加快了合流步伐；台湾的一些学者也公开成立台独组织。“台湾主权独立运动委员会”不仅在今年3月19日召开了首次工作会议，反对两岸统一，同时决定四、五月间发动群众制宪运动，为台独制造声势。文章又说，台湾当局对台独势力的猖狂活动，未见坚决的制止措施，对公然以台独主张来竞选公职的团体放任自流。</p>
+<p>由此可见，连共产党都看出来国民党在打台独牌来做制衡的筹码！因此它要拆穿国民党的纵容态度。</p>
+<p>搞台独的豪杰们，如果知道自己忙了半天，原来竟是帮了国民党的忙，又做何感想？</p>
+<p>1787年美国第三任总统杰弗逊（ThomasJefferson）写信给第四任总统麦迪逊（JamesMadison）说：“偶尔叛个小乱，亦佳事也。”（Alittlerebellionnowandthenisagoodthing.）杰弗逊此言，既婉且谑。但他万万没有想到，两百年后，居然有人认为“偶尔来个台独，亦佳事也”。为什么？在适度的、可控制范围下的台独，其实是可以纵容的。这种纵容，可以造成制衡的筹码，而使国民党在中间取利。</p>
+<p>这种技巧，是政治纵横捭阖的常识，只是奇笨如牛的台独分子不知道罢了。他们整天奔上街头，其实“为谁辛苦为谁忙”哟！</p>
+<p>1991年5月6日</p>
+<p>有感于长老会的呼吁</p>
+<p>台湾基督长老教会总会11月14日开会，提出《台湾基督长老教会总会收函——对1989年公职选举的呼吁》，全文如下：“使台湾成为新而独立的国家，系1977年台湾面临危机，本会为保全台湾人民的安全、独立与自由，于人权宣言中所表达的主张。而今本会在信仰里体察台湾前途依然面临内外各种危机，因此，建立新而独立的国家确是台湾全民共同的希望。”“又鉴于国会尚未全面改进，在野党尚无制衡实力，所以本会呼吁所有基督徒与同胞，应尽公民的责任，积极参与政治运动，以促进民主、自由，保障人民权益。”“兹值本年底全国公职人员选举之紧要时刻，本会恳切提出下列呼吁：（一）为建立台湾的独立主权，请支持不分省籍、真心爱台湾的候选人。（二）为促进正常的民主政治，加强制衡实力，请尽量支持在野党及弱势团体的候选人。（三）为维护选举的公正，请勇于拒斥与检举买票、作票之不法作为。（四）为维护选举的和平，请全力保护候选人及助选人员之安全，并阻止各种公私暴力之介入。”“《圣经》说：‘义人增多，民就喜乐；恶人掌权，民就叹息。’（箴言二十九章二节）为此，本会期盼全体牧长及信徒，同心恳求上帝施恩及保守吾土吾民。”</p>
+<p>看了这篇呼吁，我有感想如下：</p>
+<p>关于“使台湾成为新而独立的国家”部分，已不是一个道德的、理想的问题，而是一个形势的问题。即以他们基督教的归宗历史而论，基督教起于以色列，以色列自公元前十六世纪起就在埃及控制下三四百年，公元前十世纪虽有所罗门王之独立，但公元前八世纪却又亡于亚述一百年，公元前再亡于巴比伦，此后难得伸展，公元前二世纪稍得独立，公元前一世纪又亡于罗马，亡国两千年后始有今日的独立。这一连串历史告诉了我们，前后三千六百年的折腾，才有所谓以色列的独立。为什么独立这么难？形势使然耳！耶稣基督在世时候，他“在信仰里体察”以色列前途，深知独立之形势不够，只倡天国而非人国，他的境界，高出独立问题之上。这种境界，岂不值得基督的信徒们的深思？何况，台湾本就是中国的一部分，若说台湾独立，只有原住民高山族有资格这样说，因为在高山族眼中，所有的汉族都是以色列眼中的埃及人、亚述人……罗马人。……这些人霸占以色列后四百年又高唱以色列独立，会被以色列原住民笑死。又何况中国庞然大物，雄踞西岸与联合国，如何由你独立？岂非痴人说梦！所以，“使台湾成为新而独立的国家”，只是痴人的一厢情愿，根本毫无国内的和国际的常识。</p>
+<p>至于长老会呼吁中的四点，第一点支持不分省籍、真心爱台湾的候选人，第三点维护选举公正反对买票作票，第四点反对暴力介入，都是义正词严、立论正大的，我们愿意支持，并表示赞佩。</p>
+<p>至于长老会呼吁的第二点“为促进正常的民主政治，加强制衡实力，请尽量支持在野党及弱势团体的候选人”，理论上也正确。只是我们要当心，当“在野党及弱势团体”太不像样子的时候、当他们根本就不是什么“义人”，而是跟国民党一丘之貉的时候，我们就不得不在“叹息”之余，有所警惕。我们为了“加强制衡实力”，是否该另外倡议真正“义人”的党？基督教长老会中就有许多“义人”的比例，由他们出来另组“在野党及弱势团体”，可能就是一个好的示范，“义人增多，民就喜乐。”老百姓与其“叹息”而不得不投“恶人”，何如选个好一点的？这一构想，不知基督的信徒们以为如何？</p>
+<p>1989年11月22日</p>
+<p>杨黄美幸真义发微</p>
+<p>4月14日，以宣扬台独为意图的报纸上，登出杨黄美幸的《盼国人了解“打架”背后的真义》。杨黄美幸写道：“由于国民党所控制的大众传播媒体一直把焦点放在‘打架’上面，进而误导许多国人对抗争主题的忽略。许多人知道打架不好，却不了解为什么要打架。”但因议会“违背‘行政向立法负责’的民主程序，这也是为什么这些清清白白当选的民进党国大代表及立法委员在真正民意的托付之下，愿意放下绅士的身段儿与之杯葛的原因，和谐带来的是人权的糟蹋。”</p>
+<p>杨黄美幸最后说：“执政党对于台湾现在这种政治社会的乱象，应当负起全部的责任。”</p>
+<p>杨黄美幸在海外努力多年，去年又来参加了国民党李登辉主导的国是会议，她的看法，颇值得我们讨论讨论。</p>
+<p>首先，杨黄美幸谈到问题的核心，她说“焦点放在‘打架’上是国民党所控制的大众传播媒体”所为。不过，这话殊不尽然。盖男人打架一如女人脱衣，在任何场合，只要有人一打一脱，立刻就是焦点所聚，此乃俗人好看热闹的习性，无关什么国民党不国民党。试看一打架，以宣扬台独为意图的报纸，也不都是头条来报导吗？正因为打架可以引起人们的注意，所以，国民党都下令电视台不播这种镜头了，可见“焦点”之尤，不在国民党，而在民进党。换句话说，打架在吸引注意上，是对民进党有好处的。</p>
+<p>其次，杨黄美幸说因打架而使人“忽略”了“抗争主题”，是对的。但是，问题在于，一个人如何又能一方面打架，一方面又同时宣扬“抗争主题”？你打架，人们看的就是打架，拳头里、巴掌里又何能有什么政治哲学或别的？一如女人脱衣，自来以脱衣表达抗争者多矣，但脱也白脱，人们所见，不是抗争，而是肉与毛而已！由此看来，以打架为招数者，其实“抗争主题”不劳国民党“误导”，你自己就先“误导”了。</p>
+<p>复次，杨黄美幸说“许多人知道打架不好，却不了解为什么要打架”，接着话锋一转，她认为“若民意不宣泄，民进党议员则会出现‘放下绅士的身段而与之杯葛’，他们不会要和谐了。”显然的，杨黄美幸把民进党议员“放下绅士的身段”而从事打架，全部归咎到国民党的头上，她最后说“执政党应当负起全部的责任”，就是做这种责任的判定。</p>
+<p>我们认为，从过去的角度看，杨黄美幸指出的国民党应负全责是正确的，因为今天的民进党议员无一不是国民党教化教育下的产儿，国民党当然有责任；不过，不从过去角度而从未来的角度看，责任的归属，就不能这样判定了。</p>
+<p>为什么？</p>
+<p>为了国民党早晚必然灰飞烟灭，国民党对我们说来，它既是拦路虎、又是过街鼠，我们真正的目的是走我们自己的大路，驱拦路虎、打过街鼠以后，我们还要有我们自己的前程，我们不该因为别人是流氓，我们自己就放弃做绅士，——如果做绅士是绝对正确的话。</p>
+<p>我们的目标是实行现代文明国家的民主政治、议会政治。国民党自孙中山作孽起，设计出非驴非马的政治制度，在非驴非马下，真正向往民主政治、议会政治的人，仍当不为国民党所浼，而有以不为畜生、力争上游，取法英美的民主风度与议会风度。但是，民进党却智不及此。它一开始，就落入“畜生道”，也跟着非驴非马。民进党党章第一条开宗明义说：“本党定名为民主进步党（英译DemocraticProgressiveParty），以实现本党之纲领为宗旨。”可见它是以“民主”、“进步”为职志，但是，奇怪的，它在组党之初，就首先采用了脱胎苏联式的国民党政党结构、组织的，完全不是英美式政党。这样，跟国民党学，党章也、党旗也、党徽也、中央党部也、县市党部也、乡镇市区党部也、特种党部也、中央执委会也、党主席也、中央执行委员也、中央常务评议委员也、中央评议会也、中央评议委员也、中央常务评议委员也、入党介绍人也、填表也、宣誓也、缴纳党费也、颁发党证也、全国党员代表大会也、县市党员大会也、乡镇市区党员大会也、中央党部秘书长副秘书也、本党内规也、纪律及仲裁也、警告也、公开谴责也、留党察看也、开除党籍（除名）也。……种种种种，无一不是国民党的模子，并且青出于蓝之。试看英美式民主政党政治中，参加政党，乃人民参政权的一种，任何政党无权限制人民加入它，但民进党入党条件限制之严、门槛之高、不便之甚，实在令人惊异。入党要党中大亨介绍、工作委员引进，久而久之，其结果可想而知，一方面陷入封闭性而不能成其大，一方面助长山头性而适足见其小。美国人想要成为民主党员或共和党员或其他党党员，只消有同一政治理想，就可以自认是那党党员，除了登记一下，并无其他条件，正所谓“我欲党，斯党至矣！”这种英美式政党的良法美意，岂不正值得民进党去学？但民进党却缺乏开党气象，一开始就小鼻子小眼，露了相。台湾三十多年没有一个反对党，如今好不容易有了一个，就这样误入歧途，真是可悲！民进党不但不能在建党本身学到英美式政党，进入议会后，举手投足间，也不肯学英美式政党，反倒极尽没民主风度、没议会风度之能事，并且越演越烈，把议会政治起码的规格，破坏无余，当然也把“绅士的身段”，破坏无余。殊不知英美式民主政治的最大特色，在于他们把民主当成一种生活方式、一种教养、一种格调，这种种优良品质，形成了所谓民主风度。英美式民主政治下，不论议会问政也好、抗议游行也罢，都不时兴粗暴，都要讲求风度。政治立场，尽管坚定；但表达这种立场，却“其争也君子”。</p>
+<p>如今，民进党已经公然不以“绅士的身段”立身行事了，“台湾绅士”张俊雄早上打了梁肃戎耳光，晚上在龙山寺接受群众欢呼，志得意满，一派革命老将气概。这种堕落，太可悲了。他不知道“子帅以正”，反倒“屈己以安百姓”了。——其实，台湾民主是不会死于国民党之手的，国民党有此心也无此力；真正乃死于台湾人自己之手。台湾人哪里在民主呢？一切的动作，都是羞辱民主而不以为羞啊！</p>
+<p>当年汪精卫曾悍然对青年党说：国民党的天下是自己打来的，你们不满意，去革命好了。民进党如性好粗暴，不如去革命，不必假民主之名养成许多非民主的坏习惯，这样荒腔走板，没把国民党搞垮，却先把民主搞垮了。张鸿学批评民进党时代的朱高正，说：“讲民主，你没有风度；搞革命，你不敢。”若不以人废言，这话说得真不错。</p>
+<p>有风度去讲民主吧，或有胆量去搞革命吧，都好，只是别再这样干法了，这样干，看似热闹，实非民主；看似英武，实乃懦夫，是令全世界有识之士看不起的。</p>
+<p>杨黄美幸是受过良好英美民主教育的人，我们盼望她勇敢的站出来，对走火入魔的同胞说真话。敢在举岛若狂时说不肯媚世的真话，才是知识分子最伟大的信仰。</p>
+<p>1991年4月14日</p>
+<p>从暴君到暴民</p>
+<p>我读小学时候，在北京北方书店买书，北方书店是左派的书店，买它的书，它还送一点书签之类的宣传品。书签是成套的，每张有一幅名家画像，下附名言。记得鲁迅那张的名言是：“暴君的专制使人们变成冷嘲，愚民的专制使人们变成死相。”这句话，使做小学生的我，印象深刻，铭记终生。</p>
+<p>后来我读书渐多，知道这话出自鲁迅的《华盖集》，并且在读书更多的时候，发现这话不无袭取英儒约翰穆勒（JohnStuartMill）名言之嫌，虽然已被鲁迅改写得天衣少缝了。</p>
+<p>不过，这段名言有所不知的是，“愚民的专制”结果，其实立刻会升级为“暴民”层次，“暴民”与“暴君”相得益彰，在修辞上、在意理上，拿“暴民”与“暴君”相对，比用“愚民”恰当多了。</p>
+<p>鲁迅在《热风》里，还有这样的话：“暴君治下的臣民，大抵比暴君更暴，暴君的暴政，时常还不能餍足暴君治下的臣民的欲望。”又说：“暴君的臣民，只愿暴政在他人的头上，他却高高兴兴，拿‘残酷’做娱乐，拿他人的苦做赏玩做慰安。”</p>
+<p>不过，鲁迅有所不知的是，“暴君治下的臣民”，一旦转为暴民，他们的凶暴，比暴君还严重得多。两百年前法国大革命的史例，就是绝好的证据，几万人头落地，那种场面，岂是暴君所能比拟；二十年前文化大革命的史例，也是绝好的证据，千万人头落地，那种场面，也岂是暴君所能望其项背？一旦暴民的局面形成以后，他们的欲望，“穷人乍富”，更没有章法，他们自己动手施行暴政，“暴政在他人的头上，他却高高兴兴，拿‘残酷’做娱乐，拿他人的苦做赏玩做慰安”，那种凶暴的水平，还在暴君以下呢！波普（AlexanderPope）译笔下荷马（Homer）有道是：暴君之尤者乃蜂篡而起之暴民。（Thatworstoftyrants,anusurpingcrowd.）先知之言，早见于此矣。</p>
+<p>在我编著的《二二八研究》第31页中，有这样一段暴民的德政：“仅就台北市，外省公教人员被殴打死伤失踪者即有一千余人，他如在轮船火车汽车途中被殴死伤人数，更不计其数。闽台监察使杨亮功于由基隆到台北途中，车经汐止时，亦被暴徒拦击，伤随从卫士各一人，幸宪兵护卫得力方得脱险，在各县市服务之外省公教人员，除被殴死伤外，尚有遭受强迫集中者，据各方报告，如台中外省军公教人员及家属均一律被拘，分羁于民众旅社、第八部队仓库、师范学校、市参议会及法院监狱等处，视同俘虏，嘉义市外省公教人员被系者一千四百余人，高雄市亦有七百余人；屏东制糖厂全体外省员工，及屏东之中山旅社外省人数十人均遭拘押，衣服财物悉被洗劫一空；新竹县警局官舍有一公务员眷属，受暴徒胁迫，自缢身死；忠烈祠后山，缢死外省公务员女眷四人；大溪镇国民学校女教员被暴徒轮奸，经高山族女参议员李月娇救护始脱险，后亦羞愤自杀；台北市南门市场，亦有一外省女性，被强奸惨杀，类此惨痛情形，不一而足。”</p>
+<p>从这类暴民的大特写中，我们看到，一旦暴民的局面形成以后，古今中外，殊无不同，只是台湾更逼真而已。</p>
+<p>民进党搞政治，动辄的煽动群众为得计，殊不知这种棋不宜乱下。全世界没有长治久安的暴民，暴民痛快之后，结果总是被暴君清场。清场之日，好人也跟着完蛋。纵几十年后或千百年后，立碑以志哀思，又有何补哉？以暴易暴的成功者，还轮不到你啊！</p>
+<p>1989年10月19日</p>
+<p>国军何妨保卫台独</p>
+<p>国民党国防部长郝伯村12月20日在立法院说，国军内部精神战力不是为了保护台独而保卫台湾，“我们不保卫台独，只保卫中华民国！”</p>
+<p>郝伯村强调，台独将成为中共武力犯台的最好借口，不要误解中华民国国军在台湾宣布独立时，会保卫台独，国军会为了保卫中华民国、保卫宪法而战，国军不保卫台独，也绝不是为了保卫台独而保卫台湾。他又说，部分人士存有即使台湾宣布独立，中共也不一定攻打台湾的心态相当危险，“台独哪来军队？哪来武力抵抗中共侵略？台独哪有一架飞机？一艘军舰？”</p>
+<p>国民党洪昭男委员质询，是否不管将来国家改变国号、国旗，国家仍继续效忠国家？郝伯村表示，“如果换国号、换旗子，不值得我们效忠。”</p>
+<p>郝大将上面的意思是很明显的，别人无从断章取义，也无必要断章取义。但是，不断章而因之发挥一点疑义、引申一点真义，却是可行的、有必要的。</p>
+<p>首先，在我看来，郝大将口口声声不保卫换国号、换旗子的台独，固然属实；但在骨子里，保卫的，其实早是以“中华民国”为国号、以“青天白日满地红”为旗子的事实上的台独，只是大家心照不宣而已。我早已有过名言：“国民党意淫大陆，手淫台湾。”国民党对大陆的向往，从“反攻大陆”到“三民主义统一中国”，都不出意淫的范围，完全没有实际的意义，真正有实际意义的，乃是在台湾称孤道寡，从手淫得来实惠。所以，一言以蔽之，国民党的“中华民国”，才是货真价实的真台独，而今天那些大吵小叫台独台独的所谓台独分子，其实倒是假台独。</p>
+<p>今天的所谓台独分子，其实只是台独的意淫派，他们统治不到台湾，就只好“意淫台湾”，一如国民党统治不到大陆而要“意淫大陆”一样。所以，再一言以蔽之，国民党“意淫大陆，手淫台湾”；所谓台独分子只是“意淫台湾，手淫自己”，他们是可怜的。</p>
+<p>为什么可怜？因为他们的思路是国民党教育出来的而不自知，他们以为我们要来一块独立的新国家的肥肉，其实这块肥肉早就叼在国民党的口里、咽在肚里。他们是可怜的小可怜、小朋友，对他们在思路上的混蛋，国民党其实该负责任，因为这正是你教化下的产品。</p>
+<p>传说伏尔泰有句名言是：“你说的话，我一句也不赞成，可是我要拼命为你争取你有说这话的权利。”——今天台独分子，正是国民党种豆得豆出来的小豆豆，郝大将“撒豆成兵”，太示人以不广了，郝大将要有胸襟去对待他“一句也不赞成”的异己才好。</p>
+<p>国军何妨保卫台独。</p>
+<p>1989年12月23日</p>
+<p>我看《民进党执政》</p>
+<p>杨宪村先生详征博引，完成《民进党执政》一书，嘱我写序。序不敢当，聊以读后之感，以应雅命。</p>
+<p>国民党是一个非常可恶又非常令人厌恶的恶党，我一生同它恶斗，并以一生未加入过任何政党为荣，尤以没加入过这个恶党为荣。我写过《国民党研究》、《国民党研究续集》等书斗倒它，如今它已摇摇欲坠、垮台在即，这个恶党不复成为执政党，自为有识之士所乐见。任何取代它而执政的党，都值得我们大力支持。——这是我们认清的第一步。</p>
+<p>不过，第二步也要紧接着认清，就是我们大力支持的新执政党，它必须不是国民党的借尸还魂、必须不是“国民党第二”或“小国民党”。否则的话，跳出油锅又堕入火坑（outofthefryingpanintothefire），每下愈况之讥，又岂能免？</p>
+<p>正如杨宪村先生的论定，民进党显然是取代国民党的执政党。这个党是否执政后一定比国民党好，自为我们所关切。我写过《民进党研究》一书，对两党的同一性，早加论列。如果这个党执政后能够清除它被国民党的污染、选择正确的方向，才是岛上生灵之幸。</p>
+<p>三十年前，国民党的副总裁陈诚（伪君子陈履安之父）邀我做一席谈，他感慨的说：共产党的失败并不就是国民党的胜利。不久他死了，我不无“人之将死，其言也善”之想。如今，我们心同此理，也要同样认清：国民党的失败并不就是民进党的胜利。——民进党要胜利、要长保胜利，还得涤除旧染、洗心革面才成。但是，民进党能吗？盼杨宪村先生继续观察、给我们最后的答案。</p>
+<p>1995年8月21日晨</p>
+<p>台湾人的政治规格</p>
+<p>国民党统治下的怪现象可真多，其中表现在反对派的台湾人身上，尤其可怪，怪得完全不合反对派的规格：反对派写文章，会“自动献媚”；反对派在议会，会“自动护航”；反对派表决时，会“自动上厕所”；反对派在孙运璿生病时，会“自动慰问”；反对派在劝进蒋经国连任时，会“自动签名”；反对派在投蒋经国票时，会“自动亮票”；反对派在被放出来时，会“自动感谢政府德政”、会“自动拜访李副总统”！古往今来，我看过太多的反对派人士，可是从没像今天这样规格混乱的、这样自动减低纯度的。结果呢？纯度一百的反对派，反倒被目为怪人、目为激进分子、目为破坏团结、不识大体、目为不合作者、没有团队精神者。这真是怪现象！这好像说，白的不能反对黑的，要灰的才可反对黑的。连反对派都如此乡愿、如此国民党化，这还得了吗？</p>
+<p>为什么反对派这样不争气、这样低水平呢？最主要的，是国民党密封感染下的大成果。《大戴礼》中说：“蓬生麻中，不扶自直；白沙在泥，与之皆黑。”《史记》中解释这段话，说所以如此，乃是“土地教化使之然也”。台湾地区的“土地教化”，是很可怜的，它先后被日本人、被国民党轮着干，干了八十年下来，这个地区的人民，走狗派也好、反对派也罢，都沦为怪胎了。这种怪胎，纵使离开了这块“土地”，也照旧改不过来、照旧规格不对。例如做反对派的，反对当政者而流亡在外，如不能艾奎诺式赴难，也要朱舜水式“老死他乡”，这是起码的玩政治的规格。可是我们看到的一些台湾人，却是一个个回来叩头的廖文毅、郑万福、邱永汉、辜宽敏。……廖文毅一下飞机就向飞机场中的蒋中正照片打躬作揖，这种高速的前倨后恭，真是古今所无。（唯一堪舆伦比的，大概只有谢东闵。谢东闵在蒋中正死后，停灵国父纪念馆期间，率同台湾人全体县市长去下跪。——外省人大员自严家淦以下，虽然也个个无耻，但都不好意思下跪，谢东闵却优为之，其膝功之软，有如此跪！一些台湾人的马屁，在国民党的调教下，可真青出于蓝呢！）至于像苏南成那样“台湾第一不要脸”，其无耻的程度，也是古今所无的。苏南成如此无耻而能高票当选，正也反证了这种选民的没有是非之心，他们是“土地教化”的产品，他们一样跟着莫名其妙，自然毫不令人奇怪。</p>
+<p>我这里口口声声台湾人，当然包括生长在台湾的外省人在内，他们莫名其妙起来，其实比台湾人还要台湾人、比台湾人还要菜，他们同样是“土地教化使之然也”的产品，再加上身负外省人的原罪，自然就更怪胎了。</p>
+<p>台湾人自救的法子，首先是要承认自己的规格不对、承认自己是国民党“土地教化使之然也”的产品，而决心改头换面，寻找正确的建议与指导。这种建议与指导，来自大陆而又深知国民党习性的李敖，自是最佳人选。我无法给台湾人提出每一细节，但我提供一个最基本的，如果能够照行，就足以无大过矣。这一最基本的，就是——“百分之百跟国民党不合作，任何有跟国民党合作成分的事，就绝对不做。”这种不合作，不论大事小事，都是一样的。要记得甘地的一段话：</p>
+<p>这是可笑可耻的事，一万个白种人，竟能统治三亿五千万的印度人。他们能这样做，无疑是凭借暴力，但也因其能使用千百种办法，取得我们的合作，使我们日复一日感到无能为力，依赖他人。千万别弄错，将那革新的议会、更多的法院，乃至发表几名印度省督，当作是真自由、真权力。这不过是阉割的另一妙法。英人不能全凭暴力统治我们。所以他们不惜采取各种手段，光荣的、卑鄙的，只要能控制印度。他们需要印度的资源与人力，满足帝国主义的贪婪。如果我们拒绝给他们金钱与人力，我们就达到了目的。……</p>
+<p>台湾人必须学到拒绝给国民党任何金钱与人力，用同仇敌忾的决绝，与国民党断绝往来，不跟国民党打任何交道。台湾人要练习在品格上做一名狷者，做狷者虽难免“过正”，但是在一片是非颠倒、敌我不分的混沌里，“矫枉”的激烈态度，就自有必要。台湾人要努力去做反对派——够规格的反对派，不要再怪现象百出，成为人类历史中的笑话！</p>
+<p>1984年10月7日</p>
+<p>我们没有明天</p>
+<p>1984年10月15日，我在《千秋评论》第三十七期写了《台湾人的政治规格》，邓维桢先生读过后，有信给我，连同我的回信，一并以《政治规格的讨论》为题，发表在10月31日《万岁评论》第十期里。我在回信中提到了林义雄先生，我说当然台湾人有他的特立独行之辈，一如宁波人、上海人、黄陂人也可能有好人，但是一般说来，台湾人玩政治，总是在“大同”之外又有“小异”，而此种“小异”，又为古往今来所罕见。方素敏在竞选之时，公然说台湾民主前途比林义雄重要，但是当选以后、林义雄出狱以后，她公然感谢政府宽大了、公然在立法院口头质询放水了。或说方素敏是家庭主妇，荣获无知，不足深责，但林义雄呢？林义雄应该有知啊！林义雄出狱后，“自动拜访李副总统”，算是一种什么规格呢？自己被国民党下狱、被国民党刑求、被国民党灭门、被国民党羞辱、被国民党这个、被国民党那个，但是，在出狱以后，却对演双簧的“二珰头”跑去感谢，这又算是什么呢？林义雄出狱后，一反他过去的特立独行形象，这种规格，是很令人失望的。现在说他为他妈妈墓地奔走，但是，我真不明白，当林宅血案发生时，他在妈妈棺材上写字的决绝又意在何处？（母死不葬的抗议，又岂容忘之？）至少到目前为止，林义雄的一切表现都不再是他过去的自己，而是一个令国民党“龙心大悦”的自己，国民党这票生意，可真做得恩威并济名利全收呢！它抓你、关你、修理你、杀你妈、杀你女儿、杀你又一个女儿，最后关你多年还可得到宽大的形象、还可得到你的感谢、还可得到你出狱后的洗手不干、老老实实，凡此种种发展，岂不正是国民党的原案吗？岂不正是国民党的大获全胜吗？岂不正是鼓励了国民党、使国民党庆幸抓人关人杀人的得计吗？试问若没有林义雄、方素敏这样全力配合，国民党能这样又占便宜又卖乖吗？但是，林义雄、方素敏为何这样配合？他们的血仇何在？是非何在？大义何在？这些不可思议，求诸古往今来，都不可得，而只在这一台湾岛上赫然出现，维桢你说说看，这不是“台湾人的政治规格”又是什么？你说政治中为了“上台”难免有恭顺之处，但是林义雄尚复何“台”可“上”，他又恭顺个什么？家里都付出了三条人命了，还在恭顺、恭顺、恭顺，对他眼中的“叛乱团体”一再恭顺，古往今来，苟有志气、有血性、有见识、有骨头的志士仁人，又岂可这样吗？但是，林义雄这样，又岂是林义雄个人的责任？他这样规格混乱，居然台湾人会原谅他、会不劝告他、会不督促他、会不责备他、不忍责备他，这种无知、这种不知爱人以德而只知爱人以姑息，却又正正是整个地区特色使然，这十足证明了这个地区政治规格的普遍混乱。正因为规格普遍混乱，所以林义雄、方素敏行之，不以为辱；众人和之，不以为异，以致嫦娥含泪于天上、老K含笑于地上、林家妈妈女儿含冤于九泉！对这些现象，我看了又看，实在看不过去，因此决定要揭发“台湾人的政治规格”，以为大家的炯戒！</p>
+<p>在我这些文字发表后，11月27日，陈庭茂老先生来看我，一同吃饭，在座有林义雄的同乡对我说：“李先生，你对林义雄的批评，正是我们不能说出、不忍说出、也不敢说出的话，你李先生说这些话，是真正爱护林义雄。”</p>
+<p>1984年过去了，1985来了。今年1月将尽，我在《亚洲人》周刊第二期（1月25日-31日）上，看到一则《林义雄的话》，全文如下：</p>
+<p>（本刊讯）前省议员林义雄最近在被询及他出狱后的一些举止，以及李敖对他的责难时，只以一句话回答：“请你们看我的一生，不要只看我的一时。”</p>
+<p>林义雄最近与妻方素敏同赴各地，答谢各地方人士在其母安葬时所给予的关怀与协助，林义雄夫妇每到一地，总会有人询起李敖骂他的事情。</p>
+<p>这条报导，使我有一点感想。我知道人间确实有不少例子，在一个人身上发生“一生”与“一时”的迥异，一个人“一时”的反常，最后在“一生”中得以证明仍属正常。但这些例子，在此时此地，却难以适用。邓维桢先生在给我的信中指出：</p>
+<p>你解释这些现象，说这事“台湾人的政治规格”。我不同意。我认为这是“中国人的政治规格”。翻遍整个中国历史，能够“威武不屈”的，可以用手指头算出来。面对“富”与“贵”，中国人是没有原则的。一个中国人取得不义之财，他会自我安慰：财富是行善的基础；没有财富的善心只不过白日做梦。同样，为了夺取或保卫权力和地位，中国人是善于委曲求“全”的——“上台”之前，他可以做尽任何奴才的样子；他认为有了权力，才能施展抱负；没有权力的抱负就是空想。</p>
+<p>邓维桢先生的意思是很明显的在说，一个政治人物“上台”以前，难免“做尽任何奴才的样子”，但是一朝权在手，自可“施展抱负”。邓维桢先生补充说：</p>
+<p>由此，你不难想象，高玉树和吴三连如果掌握权力的话，不少的国民党高干要被送到断头台和绿岛。现在，他们被你骂，除了苦笑，还能做什么呢？</p>
+<p>照这一模式，我想高玉树和吴三连在被谴责时，似乎同样可以说：“请你们看我的一生，不要只看我的一时。”但是，我们真能这样宽恕他们吗？高玉树和吴三连，在林义雄那种年纪时候或在那种年纪以前，都不乏有可圈可点的事迹存在，但是，一旦他们走“不再干了”的放水路线，他们就背叛了自己，尽管他们找借口要以“一生”证明“一时”，但是行吗？如今他们七八十岁了，他们没有什么“一生”“一时”了，“一生”就是他们的“一时”，“一时”就使他们的“一生”。他们以自欺始，以欺人终，我们岂敢相信他们吗？</p>
+<p>《孟子》中引齐人谚语，说：“虽有智慧，不如乘势；虽有镃基（锄头），不如待时。”一个人走乘势待时的路线，必须考虑他的身份与处境，邓维桢先生所说的政治人物为“上台”而委曲求全的例子，是完全不适合林义雄先生的，所以我才反驳说：“你说政治中为了‘上台’难免有恭顺之处，但是林义雄尚复何‘台’可‘上’，他又恭顺个什么？家里都付出了三条人命了，还在恭顺、恭顺、恭顺，对他眼中的‘叛乱团体’一再恭顺，古往今来，苟有志气、有血性、有见识、有骨头的志士仁人，又岂可这样吗？”我说这话，意思无他，就是林义雄先生今天的按兵不动，是完全跟他的身份与处境不合的。我当然承认林义雄先生所做出的任何一件有抗议性的举动，例如他选在“中华民国七十四年元旦”这天办丧事，就是一例。但是，这种程度的行为，对一般人而言，就很不错；对林义雄先生而言，就很不够。何况林宅血案发生时，他的意思表示似乎是以母死不葬做为抗议的，如今却把三具棺材，一一入土为安，这对他的身份与处境而言，就未免做得不够了。该做而做得不够、能做而做得不够，其实也是“不再干了”的一种；所作所为与自己的身份与处境不相称，其实也是一种逃避。林义雄先生直到今天为止，似乎都令我们失望。他说：“请你们看我的一生，不要只看我的一时。”这一抱负之言是很动人的，但是，动人的抱负必须要有行为来证明它，林义雄先生的行为呢？</p>
+<p>写到这里，我想到克尔（SophieKerr）那篇《今天是我的未来》（TodayIsMyFuture）。克尔在文章一开头就说了一个故事：</p>
+<p>多年以前，我参加一个宴会，席上一位客人，他说时间和空间是一个东西，并且加以证明。他拿一只长的银汤匙，放在桌子上。“看，”他说，“我把这汤匙向右移动。当我这样做的时候，时间也在进行着。当我移动的时候，我在它后面留下一片空间，这片空间在时间上说就是过去。所以，汤匙向其中移动的前面那片空间就是未来。因此你们可以知道，时间和空间乃是一个东西。”</p>
+<p>停了一会儿，主人温和的说：“但是，如果你不移动这汤匙，时间仍然在进行着。而且，虽然你在空间上可将汤匙移回，却不能在时间上将它移回。时间——恰恰现在——在时间度过的时候的每一刻——乃是未来。”</p>
+<p>克尔说，主客之间当时展开了一场大辩论，但他却不再注意了，因为他已经得到一个令自己着迷的思想——“现在就是未来”（NowistheFuture.）。克尔说：</p>
+<p>认为未来就是现在，这想法逼我尽力之所及去向前看、向前想、向前工作。它逼我在一天天的安排中加以选择，有所抉择，也有所舍弃。（TobelievethattheFutureisNowforcesmetolookforwardandthinkforwardandworkforwardtothelimitofmyabilities.Itforcesmetochoosefromtheday-to-daymakeupofmylife,toselectandsotodiscard.）</p>
+<p>克尔又说：</p>
+<p>一旦我接受未来就是现在的挂念之后，我发现我可以订下一些实际的规则，借以形成未来，那些规则可以演化成为原则、成为指南。（ButonceIhadacceptedtheideathattheFutureisNow.Ifoundthatpracticalrulescouldbemadetoshapeit,ruleswhichcouldevolveintoprinciples,intoguides.）</p>
+<p>克尔这些话，微言大义起来，我觉得真是我们今天最好的指南。我们这些在国民党暴政下长年受难的人民，最容易犯的错误，是常常把希望寄托在未来、把反抗延期到未来、把行动保留在未来，以为有朝一日，我们会有“出头天”；以为我们的今天只是“一时”，我们的“一生”还在后面。……其实，这些观点只是自欺与自慰、只是自己开给自己的空头支票。事实上，没人能保证自己的“一生”不是“一时”、“一时”不是“一生”。“周公恐惧流言日，王莽谦恭下士时，设使当时身便死，一生真伪有谁知？”我们断定别人的真伪和自己的真伪，除了明白而立即的战斗，别无其他法子。此何时矣？此何地矣？我们还有什么未来可以等待？可以拖延？可以澄清？可以证明？在国民党的暴政下，我们没有明天，今天就是我们的明天，我们没有“一生”了，我们只有“一时”的残生。在残余的生命里，我们能做多少便算多少，我们是真是伪，今天就是最后的见证了，推三阻四的直到今天还不做的人，我们要以他为憾，我们不要相信他！</p>
+<p>1985年2月7日晨</p>
+<p>是你自己瞎了眼睛</p>
+<p>12月30日的首都日报上，有李筱峯的一篇《慎防希特勒再世！》对民进党立委朱高正，有以批评。文前引用了朱高正“你再讲，我就把你抓起来！”“待会要好好教训他，包给他死！”等句子，再批评说：“看过以上这些句型，我们大概会以为这些话是西门町的小太保或小流氓骂人的话，但是，其实不然；这些话是留学德国的博士立委朱高正，前（28）日在立法院辱骂他的同党立委王聪松的话语。”“前天，朱高正为了制止他的同党立委王聪松，有关证交税问题的发言，引发朱王的激烈冲突。议会中有冲突，并不是什么稀罕之事，但是议会中有大冲突，通常是出现在不同的两党之间。如果是同党相争、同室操戈，就有些反常！尤其是弱势的在野党议员，竟然在国会上互相扯后腿，似乎就令人更加难过了！”“朱高正的聪明才智，大家是有目共睹的；朱高正的优越学历及丰富学识，也是众所羡慕的。但是，如果凭着自己聪明过人、学历优越，就恃才傲物、目中无人，甚至表现出一副英雄霸主的姿态，别人不依他的意思行事，就要‘抓起来’、‘包他死’，这种心态，是完全反民主的！”“朱高正过去在对国民党的抗争上，有其不可磨灭的功劳，但是，他近年来，表现出的英雄主义，却使我不得不联想起，这位留学德国的青年英雄，是否学了一些希特勒的性格回来？大家不要忘了，希特勒当年是一位能言善道、颇有群众魅力的英雄。多少德国子民曾经拜倒在希特勒的英雄魅力之下，而把自由权利让渡出来。朱高正也是一位能让群众如醉如痴的政治人物！但是，我们必须提醒朱高正和民众，民主政治并不需要这种自以为是的英雄霸王，套句朱高正骂王聪松的话——这种人来当立委，令我对民主前途深感忧虑！”</p>
+<p>看了李筱峯的批评，我有一点感想。</p>
+<p>如果只是口头上的气话，则“抓起来”也、“包他死”也，倒也不值得认真；如果这些话有心态上的“反民主”实质，当然就不能不认真。对朱高正这个人，从他到我家来“拜码头”开始，我就不相信他，并请邓维桢不要再带这种人来了。所以，我可说是最早就一眼看出这种人不是东西的“先知”。</p>
+<p>我早就写文章指出：“朱高正应该有长处被人肯定，但滑稽的是，他被人肯定的，恰恰却是他的短处。——他在议会中所表现的种种粗暴动作，虽然热闹非凡、戏中有戏，但对民主政治与民主风度而言，却构成很大的伤害，并且留下极坏的榜样。”“表面看来，朱高正横冲直撞，所向披靡，摧毁了国民党的议会伦理与秩序，惹得大家鼓掌叫好，朱高正也以此‘暴得大名’、以此起家；但不从表面看，从更深远的角度看，却知道真正被摧毁的，不是国民党，而是更高层面的伦理与秩序；被摧毁的，乃是一种对敌人的政治道德。”正因为希特勒这种法西斯没有这种政治道德，所以，他的“英雄魅力”，虽然有公民投票中百分之九十的支持，最后还是祸国殃民、害了自己。</p>
+<p>李筱峯说“朱高正过去在对国民党的抗争上，有其不可磨灭的功劳”，其实朱高正的“抗争”方式，正是不足为训的方式。而那种方式，从摧毁敌人始、却又必然以摧毁自己人终。奇怪的是，朱高正“完全反民主的”对付国民党时，李筱峯等就沉默不做一言，任其“英雄霸主”，且至今誉其“抗争”之功；一旦必然的顺流而下，发展成“完全反民主的”对付民进党时，李筱峯等就看不过去了。我不认为这是一种公正的批评态度。</p>
+<p>我曾教训郑南榕说：“从旁听席上喊朱高正万岁，到开大会上打朱高正一个耳光，都是你郑南榕干的事。朱高正一直是朱高正，变的是你郑南榕，是你自己瞎了眼睛。”如今，看到李筱峯对“一直是朱高正”的观点，竟因党而殊、标准各异，我又忍不住要施以教训。李筱峯曾来李敖家“拜码头”，并奉李敖为“先知”，盼他记取“先知”之言，先洗尽文人之酸气，放开胸襟，持平以论天下事，方是正途。</p>
+<p>1989年12月30日</p>
+<p>何须走一趟才知道？</p>
+<p>中国最优秀的女性之一吕秀莲在完成大陆行后，召开记者会。9月3日联合报报导：“吕秀莲说，她本人也是倾向独派，但到大陆才发现，中共已经慢慢对在野人士、台独主张者有不同态度，或许他们已经了解国民党在台湾不再独大，国内政党政治已经跨大步走，民进党及反对人士的重要性因此也在提升中。”“吕秀莲说，她在大陆许多地方和当地民众谈话，发现一般人对台湾的印象十分模糊，却对‘台湾是我们的’观念极深，在中共高阶层，这种情绪更强烈，她几度提议两岸问题可多经由国际团体协助处理，中共却是断然拒绝，也不愿意国内独派声浪高涨。”“吕秀莲说，大陆十一亿人口的想法，加上目前高居国际第三位的中共军事力量，对台湾是相当大的威胁，而独派人士若不能摆脱闭门造车的作法，非常可能刺激中共，若因此造成对我方人民利益的伤害，是非常不负责任的行为。”关于“中共武力犯台”，她说：“我也问过中共高阶官员同样的问题，他们没有否认，但很努力淡化此事。有位高阶官员曾经打比方说，大陆是只大象，台湾像是蛇，如果象一定要把蛇吃掉，可能会患‘胃溃疡’，十分痛苦，问题是蛇却更早死，我认为这个说法蛮符合两岸关系现状。”</p>
+<p>吕秀莲这些谈话，大体上都属正确。联合报标题说他“走一趟大陆，态度明显转变”，她的转变，自然令人高兴，并对她的尊重事实，反应明快，予以肯定。</p>
+<p>不过，我总觉得，做为第一流的知识分子，了解一个地区，若一定得靠“走一趟”为必要条件，才知道什么、才觉悟什么、才猛省什么，似乎又未免太直接了、太浪费了、太迟钝了。第一流的知识分子，应该有本领像中国大哲学家老子那样“不出户，知天下”，才算功夫。</p>
+<p>这种功夫，也不止于中国大哲学家。外国的大哲学家也是一样。德国的康德（ImmanuelKant），在格尼斯堡（Konigsberg）生于斯、住于斯、死于斯，活了八十年，终身没有离开过格尼斯堡方圆五十英里以外的地方，但是他“不出户，知天下”的本领，甚至越老子而上之，这一生不离开家乡的“土包子”，在大学教课众多，甚至还教地理呢！此公一生，备历七年战争、法国大革命、拿破仑征伐等大事，但他自己的外在生活，却是白纸一张，全无大事可记。这种范例，岂不太耐人寻味了吗？</p>
+<p>对中共对台湾的态度、对台独绝不可行的认知，还需要靠“走一趟”才清醒吗？这样子的求知方式，太笨了一点吧？</p>
+<p>1990年9月3日</p>
+<p>陈文茜四十岁寿诗</p>
+<p>南港中央研究屁，占着毛坑屎不拉，</p>
+<p>李昂小说光搅臭，北港香炉谁敢插？</p>
+<p>建国妖姬新女性，不避孕也不结扎，</p>
+<p>我是Sisy陈文茜，女人四十一枝花。</p>
+<p>花下只见道友死，民进党哟皆傻瓜，</p>
+<p>所有男人不够看，所有女人多三八，</p>
+<p>所有党纲徒说梦，所有政见都抓瞎，</p>
+<p>我是Sisy陈文茜，女人四十一枝花。</p>
+<p>浊水溪中淌浊水，蜗牛群中做女娲，</p>
+<p>补天不成补破网，烂泥巴中吹喇叭，</p>
+<p>十目所视十手指，文宣大权一把抓，</p>
+<p>我是Sisy陈文茜，女人四十一枝花。</p>
+<p>颠覆新闻人人赞，颠倒黑白人人夸，</p>
+<p>打开电视说亮话，别无分号此一家，</p>
+<p>尖嘴利舌又波霸，懒洋洋的把娇撒，</p>
+<p>我是Sisy陈文茜，女人四十一枝花。</p>
+<p>今天天气哈哈哈，寿星是我哇哇哇，</p>
+<p>没有什么陈莎莉，只有蒙娜陈丽莎，</p>
+<p>走上街头黑压压，买件时装把卡刷，</p>
+<p>我是Sisy陈文茜，女人四十一枝花。</p>
+<p>玩世不恭全靠我，取之不尽全靠妈，</p>
+<p>爱之弥深全靠狗，仰之弥高全靠他（李敖也），</p>
+<p>新兴民族鬼打架，姑娘妖庙一路发，</p>
+<p>我是Sisy陈文茜，女人四十一枝花。</p>
+<p>李敖1998年3月16日在中国台湾写</p>
+<p>“国际奸人”的新花样</p>
+<p>“国际奸人”一词，是国民党当年称呼对它不友好的老外的通用词汇，从美国费正清（Fairbank）以下，这些老外，都戴过“国际奸人”的帽子。费正清到台湾来，请我吃饭，国民党给我的罪名，就是“勾结国际奸人”；后来奥森伯格（Osenburg）到台湾来，也请我吃饭，国民党给我的罪名，也是“勾结国际奸人”。……可见一戴上“国际奸人”的帽子，不单戴帽人自己受用其奸，并且还会祸延客人，使李敖之流，同蒙其奸。</p>
+<p>费正清在抗战时担任重庆的美国新闻处头子，同情中共，使国民党吃了不少苦头，其奸所及，平心而论，犹小焉者也，比起奥森伯格来，实乃小奸见大奸。奥森伯格在“花生总统”任内主持承认中共作业，导致与国民党政府断交，其为奸也，至大无外矣！</p>
+<p>国民党在连受“国际奸人”之害后，痛定思痛，好像有感于老是以奸人相呼，开罪老外，也不是办法，所以暗中淡化这一词汇，久而久之，就罕见其用了。</p>
+<p>不过，像费正清、奥森伯格等“国际奸人”，其为奸也，虽对国民党政权不友好，但对整个中国而言，却是友好的。所以，这种奸人，洞烛之下，并非奸人。</p>
+<p>但在美国这种国家中，的确有一种人，是道地的“国际奸人”。这种“国际奸人”，他们或勾结国民党以害中国；或勾结国民党以外台独分子以害中国（实质上，国民党也是台独分子之一）；或两者全勾结以害中国，居心叵测，可恶极了。这种道地的“国际奸人”，国民党反不知或故意不知其奸，这就太堪玩味了。</p>
+<p>现任美国众议院外交委员会亚太小组召集人——索拉兹（Solarz）者，就是这种“国际奸人”之一。乍看起来，他是勾结台独分子以害中国的一个政客；其实，他国民党与台独分子两者全勾结，这种双面性格，多为一般人所不察。例如一九八三年冬天，他到台湾来，就演说称：“有些人会说，因为台湾对人民的压制还比不上其他许多国家，如果拿少数国家的人权标准来批评台湾，则有欠公平。我完全同意，如果从人权的观点来看，台湾确实胜过若干社会如苏俄、南非、波兰和中国大陆。这些政治体系因为人权关系而受到批评，是罪有应得的。但，台湾只要比发明古拉格群岛的苏俄还好就够了吗？台湾只要比禁止工人组织自由工联的工人国家如波兰还好就够了吗？”索拉兹这些话，就是为国民党护航的证据。</p>
+<p>以苏联而论。当时的苏联，早在十多年前就有作家们“自版文艺”的地下刊物，但是台湾呢？台湾能允许有这种刊物吗？又如十多年前，八十八名苏联作家联名抗议苏联入侵捷克，但是台湾呢？台湾能允许作家这样有种吗？又如十多年前，前苏联外交部长李维诺夫的孙子，可以手执抗议牌，走上大街，走到莫斯科红场去向政府抗议，但是台湾呢？台湾能允许有人手执抗议牌，从仁爱路走到“介寿馆”吗？</p>
+<p>以波兰而论。当时的波兰，早在三年来，就有八十万以上的波兰人退出共产党，并且数目仍在增加之中。就在索拉兹来台湾前一年年底为止，波兰三千六百万人口中，共产党员占了二百三十万。同时，团结工联公布，在它的极盛时期，工联的会员就多达一千万！试看这种公然允许每月六千人脱党的现象发生，这种公然允许团结工联有一千万异己的结合，拿台湾比起来，又何来“胜过”之有呢？</p>
+<p>以南非而论。南非固然“非我族类，其心必异”的排挤黑人，但是我们别忘了，至少南非对自己同一肤色的同胞，是完完全全按文明国家的规矩来的，但是台湾对自己同一肤色的同胞呢？</p>
+<p>由此可见，索拉兹说台湾“胜过”苏联、波兰、南非云云，都是比拟不伦、歪曲事实的。</p>
+<p>前几天，同一个索拉兹，又发表所谓“台湾调查”的统计结果了，他说将近百分之九十的旅美台湾人，都赞成台湾独立；另有百分之八十一点三六的人，都主张即使中共攻打台湾，也要宣布独立。事实上，索拉兹的民意调查是根据“台湾人组织”所提供的特定名单问卷的，其可靠性（reliability）和推论性（inference），比起盖洛普（Gallup）的“美国公共意见调查所”（AmericanInstituteofPublicOpinion）的客观与细密，相差十万八千里。这种选样，如何可信？即使可信了，又怎么样？试问一旦宣布独立、中共打过来了、那些百分之八十一点三六的英雄好汉，是否愿意放弃在美的安全舒适生活，而毁家纾难、兼程返台，为他们的祖国台湾，向台湾的祖国拼命呢？我看这些海外懦夫们，只是“别人的孩子死不完”而已，他们才不敢回来哪！</p>
+<p>1987年7月24日</p>
+<p>美国的伪善</p>
+<p>老友许以祺从北京照来一张相，相片中方励之端坐在那儿，捧着李敖的著作看。以祺说：“敖之啊，大陆上很多朋友盼你回去看一看。”我说：“以后再说吧。”</p>
+<p>我不认识方励之，但很关心他的处境。近来一连两起纠纷，都牵涉到美国和他的事，我颇有所感。</p>
+<p>第一件事是美国总统布什访问北京，邀请方励之国宴的纠纷。我的老师王作荣先生写《从方励之赴宴风波谈到马赫俊的遣送出境》加以论列，他说：“布什邀请主客所不愿见到的反政府人士来做陪客，即使你我请客也不会如此做，何况是国宴。这当然是对中共政府的轻视。而中共的反应，却不向洋人抗争，反将威力施之于自己国人，阻止方励之出席。对自己国人威风凛凛，一遇到外国人自卑感就来了。至于方励之，反应则更绝。从自方宅起身赴宴始，到绕了一大圈，招待了外国记者，回到自宅止，背后始终站着几个洋人。这是什么意思？应该宁可不吃这顿饭，甚至不要民主，也不要背后站着几个洋人撑腰，失去了国格。”对王老师的国格至上论，我敢说，我个人是身体力行的。我虽然力持国格，但我未尝不有一个两难式。就是：统治中国的政府，它们统治力量的来源，很少不是靠洋人起家的，中共亦然。中国政府如此，中国人民不“以夷制夷”一下，似乎也别无他途，否则就永远受里通外国的政府的窝囊气。</p>
+<p>至于“中共的反应，却不向洋人抗争，反将威力施之于自己国人，阻止方励之出席”一事，内情别有伏笔，经老友潘毓刚寄来理察潘德尔顿(RichardPendleton)的《对决的邀请：“你不能进去”》(DUELINGINVITES:“YOUCAN'TCOMEIN”)以后，我才恍然大悟。理察潘德尔顿说：“整个事件显得反常。任何熟悉外交情况者都知道：客人名单必须得有关方面相互同意。例如1979年2月，邓小平在华盛顿的一次大宴会中，中国邀请了一个叫罗勃特威廉斯(RobertWilliams)的倡言黑人民权的活跃分子，他在1962年，因持械反对三k党，而在中国亡命四年。当他手持请帖赴宴时，美国特务工作局(SecretService)却拒其进入。美国安全人员显然对‘邀请一位不为美国方面接受的客人’（aninvitationtoanindividualunacceptabletotheAmericanside.)，表示激愤。但经过中国大使馆的高阶层调停后，罗勃特威廉斯获准入席。这次方励之并未获得同样处遇，只是他的四位异议朋友得以入席而已。”</p>
+<p>由此可见，美国当时不准罗勃特威廉斯入席，也未尝不是“反将威力施之于自己国人”。而在布什国宴时邀请方励之，也未尝不是“以其人之道，还其人之身”。无奈中共这样回手，也未尝不是“以其人之道，还其人之身”，只是它做得更过火而已。</p>
+<p>另一件事是这次天安门事件时，美国大使馆庇护了方励之，引起中共的不满。中共说：“你们喜欢标榜什么美国的‘民主、自由、人权’，难道你们容许践踏你们美国的宪法和法律、推翻美国政府吗？难道你们在五零年代、六零年代和七零年代，不是多次发生过学潮和骚乱，并且每次都出动警察和军队，甚至出动空降部队去镇压学生和人民吗？”</p>
+<p>在这里，中共的宣传部门，显然由于无知，无法做更细腻的举证。事实上，美国当年也出动军队，朝学生开了枪的。以1970年5月4日被枪杀的肯特州立大学(KentStateUniversity)四名学生为例，其中一人，且被该校新闻系学生约翰费娄（JohnFilo）拍到了照片：学生横尸在地上，一个十四岁的女孩子在旁边一膝跪地，攘臂大哭。这张照片，且得到1971年普立兹摄影奖。由此可见，美国也是朝学生开枪的，只是中共做得更过火而已。</p>
+<p>美国大使馆庇护了方励之，可是，却拒绝了其他人。可见人道云云，只是做秀而已。</p>
+<p>上面这些实例，都告诉了我们，美国是伪善的。</p>
+<p>当伊朗法西斯政权倒台的时候，柯梅尼扣留美国大使馆人质，种种行为，令美国不解，美国说他们对伊朗流亡在外国王的关切是基于人道，但他们忘了，当柯梅尼流亡在外的时候，美国的人道又在哪儿？柯梅尼是美国一路支持伊朗法西斯政权的长年受害者，一朝他得以翻身，他会谅解美国这种伪善的理由吗？</p>
+<p>如今，美国又对中共不解了，中共是美国一路支持国民党法西斯政权的长年受害者，中共会服气吗？</p>
+<p>1989年6月19日</p>
+<p>美国的枪杀学生纪录</p>
+<p>这次北京天安门事件，官兵左右横行，学生血肉横飞；中国人鬼哭神号，外国人鸡飞狗跳。外国人中，尤以美国人的激于义愤、煞有介事，最令我们动容。不过，如果“大哥莫话小弟”一番，翻翻美国人自己的纪录，却也出人意表。四任纽约州长的“快乐战士”（HappyWarrior）史密斯（AlfredEmmanuelSmith）有名言曰：“让我们看看纪录吧。”（Let’slookattherecord.）下面就是一些纪录。这些纪录，都是登在1970年美国《新闻周刊》（Newsweek）等报刊上的，我根据香港版《这就是美国》予以叙述。</p>
+<p>1970年，美国学生运动汹涌澎湃的程度，是美国历史上前所未见的。从大西洋海岸到太平洋海岸，一个又一个大学的学生，都举行了罢课和示威。他们之中，许多占领了大学行政大楼，抗拒警察、赶走校长。全国各地被捕的学生，数以万计；被警棍、催泪瓦斯和毒气伤害的学生，也数以万计。</p>
+<p>学生运动的主题是对现状不满、对政府的越战政策不满。在不满情绪的泛滥下，哥伦比亚大学约一千名毕业生和同情者，在校长致词时，集体退出毕业典礼，另举行自己的反战的“反毕业典礼”。在其他学府，包括加州大学、波士顿大学，正式毕业典礼完全取消，还有几十家其他大学的毕业典礼，也由一项学校庆典，变成了一种社会抗议。很多大学毕业生们只穿着普通衣服领文凭，而把租学士袍的钱，省下来捐给反战事业。……</p>
+<p>这种学生运动还算是和平的。1970年5月4日在肯特州立大学就不同了。</p>
+<p>当尼克松总统在那年4月30日下令进军柬埔寨之后，激起了肯特大学学生们的满腔怒火，从5月1日到3日，连续举行了多次抗议示威的集会。他们首先喊出了“打倒尼克松！”的响亮口号。他们在街头点起火来，把一部美国宪法丢进火中烧了，表示再也不受美国的所谓“民主”、“自由”的欺骗和愚弄了。他们还放了一把大火，烧掉了为美国扩张政策服务的“预备军官训练队”的办公大楼，大楼里面的军用物品被烧得只剩下一片瓦砾。</p>
+<p>美国政府派了大批全副武装的军警前去镇压，甚至动用直升飞机向学生投掷催泪弹。激怒的学生们同军警进行了长达三小时的战斗，结果把军警赶出校园。</p>
+<p>美国政府当然不肯罢休。在五月四日上午，当学生不顾禁止集会的命令、敲响校钟、数千名学生立即从四面八方奔向操场、参加抗议集会的时候，美国政府出动了坦克、出动第一零七装甲骑兵团、第一四五步兵团、出动了大批国民警卫队和警察，前去镇压。面对头戴钢盔、手拿枪刀的军警，学生们毫不畏惧，没有人相信政府会开枪，他们指着军警高声叫骂。</p>
+<p>突然间，军警动手了。他们首先扔出大量的催泪弹，趁着弥漫的硝烟，列成横队冲向学生。学生用石头、土块还击，有的还把尚未爆炸的催泪弹捡起来，扔回去。在学生们的反抗下，指挥者指使军警列成队形，端起步枪，排枪齐放，当场打死男女学生四名、打伤十名，然后又用刺刀戳伤学生多人。死难者的鲜血染红了肯特大学的校园。接着，又进行了大逮捕。九百名军警占领了学校。一个目击者愤慨的说：这是“有组织的屠杀”。</p>
+<p>在“有组织的屠杀”当时，一名学生怀着对死难同学的无限悲痛，和对政府当局的满腔仇恨，奋不顾身，爬上校园里一座高大雕像的顶上，他用手指做出“V”字形的象征胜利的手势，号召学生们继续坚持斗争。一千多名教职员义愤填膺的到学校附近的一个教堂举行集会，强烈抗议美国政府的暴行。一位被打伤的学生的母亲闻讯赶到肯特市，谴责美国政府“像在越南战场上一样”，派出大批军队和坦克屠杀学生。一位死难女学生的父亲愤怒控诉说：“一个年轻的女孩子，仅仅因为她不同意政府的行动，就应该被枪杀吗？”</p>
+<p>一个世纪前，美国的哲人爱默生（RalphWaldoEmerson）写《康科德颂歌》（ConcordHymn），以“枪声震寰宇”（Theshotheard,roundtheworld.）来骄全世界。可是，百年孤寂之后，同样的枪声，带给美国的，却不是光荣而是丑闻。如今自己枪声专美于前，却滑稽苛责中国人于后，美国人的厚脸皮，可真够瞧的呢！</p>
+<p>1989年6月20日</p>
+<p>美国自处之道</p>
+<p>近来因为要在每天上午做别的写作，所以把世界论坛报的专栏改在下午写。下午写好，第二天前电传过去，第三天清早登出。这样改动，对把握新闻性事件，要迟一天。好在我的专栏特色，在就新闻事件来做“机会教育”，迟一天也无妨。不过有时候，我的“先知”，会因一天之隔，与别人撞档。例如我昨天写好美国镇压学生运动也开过枪的事，并把部分细节，讲给晚上来看我的老友邓维桢听，他颇感兴趣。今天午前把稿子电传后，下午邓维桢来电，问我有没有看到今天报上刊载的邓小平长篇谈话，其中有我昨天谈到的事，我说我太忙，报看得很潦草，没有看到，他建议我不妨一看。我找来细看，是香港英文南华早报首先刊出、而由中国时报今天译成中文的。内容如下：“我们在实行改革所遭遇的问题，远较开放面临的问题来得大。在政治改革方面，可肯定的一点是：我们必须坚持全国人民代表大会此一体制，而不是美国三权鼎立那一套。美国已开始批评我们镇压学生一事，在一九五零年代，美国也占领暴动中的校园，而在六零年代及七零年代，在美国各地也发生许多学生运动及骚乱，他们除了动员警察及军队外，还有其他救命丹吗？还不是逮捕了人民，也流了血。他们（指美国）是镇压学生及人民，而我们是镇压反革命暴乱分子。他们有什么资格批评我们！不管怎样，从现在起，我们要特别重视这类问题，绝不能让这类行为，继续散布。”</p>
+<p>邓小平这一谈话，点破了即使美国自己，碰到“学生运动及骚乱”，“除了动员警察及军队外”，也别无其他“救命丹”。美国自己既然也抓人、也流血，“他们有什么资格批评我们！”唯一不同的是，美国是五十步，中国是百步，五十步笑百步，除了在程度上有差距外，实在没什么模式上的不同。</p>
+<p>当然，对挨枪的人说来，五十步和百步，由于程度上的差距，受害的深浅与广狭，自然也不一样。比较之下，美国在“基本人权”（fundamentalhumanrights）的保障上，正常情况下，要比中国高明得太多太多。在法律方面，美国独立两百多年来，在“基本人权”上的立法保障，可谓精益求精，宪法以外，宪法修正案中，有一半以上都是进一步保障“基本人权”的，这是粗糙的中国立法保障所望尘莫及的；在事实方面，美国自南北战争结束一百二十多年来，本土上已没有外患和内乱，使它有足够的时间和安定，去树立保障人权的传统与习惯，这是外患和内乱频仍的中国所望尘莫及的。中国人摆脱了皇帝，不到八十年；八十年中，大陆外患和内乱不绝。直到中共统治后，外患抑止住了，可是内乱却止不住，虽然没有严重到内战程度，但是内部的动乱，却始终难以摆平。再加上共产主义制度上的极权性，对“基本人权”的保障，也就大有问题，一旦天安门式的情况摆不平，由正常情况转入非常情况，原形就更会毕露。这种原形毕露发作的时候，中国美国其实都是一样的。所以美国在非常情况下，也开出坦克、也枪杀学生，其罪犹在中国人之上。以集会自由而论，1971年美国宪法修正案第一条就规定人民和平集会的权利，但在1876年克鲁山克案件（UnitedStatesV.Cruikshank）中，联邦最高法院对集会自由的解释，却是狭义的指为达到请愿目的的一种方法，直到1937年琼治案件（DeJongeV.Oregon）中，才广义的解释为一种独立的人权。可见美国的自由民主，也是在演进中，并非没经过反动分子的阻挠。</p>
+<p>一百年前，美国的记者瑞伊斯（JacobAugustRiis）写《其他民众怎么活》（HowtheOtherHalfLives），影响到美国老罗斯福总统（TheodoreRoosevelt），而有以救世。今日美国对中国的问题，关键不在表演庇护秀和谴责秀，而在真正理解十一亿人口大包袱下，中国民众怎么活，而有以人溺己溺。不此之途，徒以空头的人道谴责人而不责己，一定会引起中国人的反弹，那不但太笨，也太伪君子了。</p>
+<p>1989年6月21日</p>
+<p>美国派兵攻击老兵妇孺</p>
+<p>今天中午，世界论坛报转来“知名不具”朋友给我的电传信，内容是：“敖之兄：看到专栏中所写美国政府枪杀学生一事，但不知有否看过前年出版的《马歇尔传》。此书由美国名传记作家LeonardMosley所著，其第六章中曾叙有美政府以坦克部队镇压民众之事，所述如下：‘胡佛总统任期将了时，第一次世界大战退伍军人曾到华府示威游行，要求救济失业、给予补助津贴。当时陆军参谋长为麦克阿瑟，他派兵镇压，下令对曾经是袍泽的饥饿行列开火，示威请愿者被击溃，其妻子们声援，亦遭催泪瓦斯攻击。巴顿少校（按即后来第二次大战欧洲战场赫赫有名的巴顿将军）遇上最尴尬场面，他奉命指挥坦克车、步兵、骑兵，对示威游行队伍冲锋，马歇尔亦曾寻思，自己若担任巴顿职务，接到这种命令，不知如何办？巴顿后来忏悔说，也曾经历疑虑开头。’撰安。知名不具。”</p>
+<p>我很感谢“知名不具”朋友对我的提醒。</p>
+<p>“知名不具”朋友提到的英国（不是美国）名传记家伦纳德莫斯利的《马歇尔传》（MARSHALLHEROFOROURTIMES），1982年出版（不是前年），我见过的，是1987年解放军出版社蒋恺、施家鼐的译本，译本与“知名不具”朋友所述大同小异，特别述及了“他们的妻子被殴打，孩子们遭到催泪弹的袭击”的事。译文中还有这样一段：“马歇尔因为执行别的任务，没有被派到街上去执行包围老兵和他们家属的肮脏勾当，他为此暗自庆幸。他的一些老同事却深深被捲了进去，例如，第一次世界大战期间的同事乔治S巴顿奉命指挥坦克、步兵和骑兵，保护华盛顿纪念碑，‘和打垮退伍军人远征军’。无论从哪方面来说，巴顿都没有必要命令他的步兵开枪，和命令他的坦克和骑兵发起冲击。不过，马歇尔一定暗自思忖过，要是他处在巴顿的地位，而且接到同样的命令，他又该怎么办。做为一个现役军官，难道他会平生第一次违抗命令，拒绝向他的同胞开枪？就连巴顿后来也承认，他当时也曾犯过犹豫。当时，另外一个同麦克阿瑟在一起服役的正规军官也迟疑过。参谋长办公室的一位助理德怀特D艾森豪威尔少校（李敖按：即后来的艾森豪总统，他当时只是少校、巴顿是准将、麦克阿瑟是四星上将）认为，与要求补发资助金的游行队伍发生冲突，肯定有损于陆军的形象，请求参谋长不要出去同示威群众照面。麦克阿瑟不听他的忠告，身穿挂满奖章的军服走了出去，观看向游行队伍施放催泪毒气弹。”</p>
+<p>解放军出版社译文中，由译者加了一条注，说：“1932年5月，美国第一次世界大战的退伍军人一万余人，由全国各地向首都华盛顿进军，举行游行请愿，要求政府立即全部发还拖欠他们的退伍资助金，遭到政府的血腥镇压。”这条注，有几个错误。第一、事件发生在1932年7月28日，并非“5月”。第二、人数照胡佛总统说法，是一万五千人；照麦克阿瑟说法，是一万七千人，不是“一万余人”。第三、根据小布雷尔（ClayBlair,Jr.）的《麦克阿瑟传》（MacARTHUR），美国国会在1924年通过给退伍军人额外酬恤金，但在二十年后即1945年发放。由于美国不景气，退伍军人乃要求立即付现，并非“拖欠”不“发还”也。——美国人真笨，他应该学国民党，发个“战士授田证”多好，永远没有下限日期和金额，这样子骗老兵，才是正途哟！</p>
+<p>根据麦克阿瑟的回忆录，他否认有骑兵冲锋，并宣称在现场上一枪未发。被打死的两名退伍军人，是警察开枪干掉的。他说请愿者到华盛顿来，活动两个月毫无结果，还是他为他们搭了帐篷，提供活动厨房车的。</p>
+<p>根据我查到的外电，1932年7月28日路透社电，明说“大队步兵，殿以坦克，搜查房舍，尽行驱走。”又驱逐五英里外的一处营地，该处驻有退伍军人七千人、妇女四百八十八人、小孩三百八十人，妇孺先已退出，军队在参谋长麦克阿瑟统率下，放瓦斯、烧帐篷，受伤者五十余人。</p>
+<p>美国官方认为退伍军人能这样一闹两个月，乃是共产党煽风点火使然。事后联邦调查局说，根据四千七百二十三名退伍军人的指纹比对，其中一千零六十九人有犯罪前科、八百二十九人且被判罪云。</p>
+<p>这就是美国历史上有名的“酬恤金进军事件”（BonusMarch）。</p>
+<p>比起这次天安门事件来，美国开枪也、坦克也、催泪瓦斯也，都是小焉者也，但是施暴于人民，又有何不同呢？不同的是，美国人迫害的，是第一次世界大战曾经保护过他们的老兵，这种忘恩负义，尤为中共所不及。威尔逊总统曾说“美国第一”（Americafirst），如此无情，不是第一，还是什么嘛？</p>
+<p>1989年6月23日</p>
+<p>美国人权臭虫</p>
+<p>11月5日香港《文汇报》登：“贝克也许要讨论人权问题。中国最近已经发表了《中国人权状况白皮书》，介绍了中国的人权状况，表达了中国对人权问题的原则和政策。中国认为人权问题本质上是属于一国内部管辖的问题，反对任何国家借口人权问题干涉别国的内政。但中国亦积极参与国际人权活动，主张在相互理解、求同存异的基础上加强人权领域内的国际合作。以美国而言，不见得就不存在人权问题。中国人口为美国五倍，在押犯一百二十八万，而美国就有一百万，也就是说，每十万美国人，就有四百二十六个在押犯，这个在世界上名列前茅的数字，不是很清楚地说明了问题吗？因此，各国都须根据自己的历史、文化、经济发展情况，处理好本国的人权问题，而不是一味要求别人怎样怎样。”</p>
+<p>同月九日美国《侨报》登：“一些国家无视于中国相对贫穷的国情，以人权为借口干涉中国，不仅难免‘胡不食肉糜’之讥，有时更是‘言不顾行’，假装看不到自己无意实践一些人权的实际。对于两年前在中国发生的‘天安门风波’，美国政客至今仍指控中国的镇压和审判是‘侵犯人权’。他们似乎一点都不记得美国自己干了多少同类的事，而他们都不觉得‘侵犯人权’。举例说，仅在1968年前四个月，美国出动军队镇压‘暴乱’一百零七次之多，杀死杀伤两千六百人，逮捕了两万一千多人。再例如，六五年，美军第四十装甲师和四十九步兵师暴力镇压洛杉矶暴乱，平民死伤一千多人，逮捕四千人。1967年7月美军镇压纽瓦克暴动，平民死伤两千多人。同月，美军伞兵、坦克车开入底特律镇压‘暴乱’，平民死伤数千，捕七千人。别的美军‘镇暴’事件都不计算，仅就上述这五万名被杀、被射伤或被捕坐牢者，他们都是为了争取人权和自由而遭到镇压的。‘天安门风波’事件跟它们相比，实是小巫见大巫。更讽刺的是美国国会对上述镇暴事件的态度。六七年在众院听证会上，议员不仅不谈人权，反而责怪美军镇压不力。”</p>
+<p>同月22日美国《侨报》登：“在1951年和平解放西藏之前，西方几乎没有人关心在残酷的农奴制下，农奴和奴隶的人身自由权利、参政权、财产权、经济权、社会权惨遭剥夺的非人状况。但西藏一解放，西方却突然打出‘人权’旗号攻击中国政府。到了59年，在百万农奴强烈要求下废除农奴制，实行民主改革之后，这种攻击更为激烈。人们不应忘记，当59年西藏农奴翻身，享受自由和参政权时，美国国内的少数民族却还要再等候六年，才获得平等的投票权。更不应忘记当藏胞五一年获得民族间的平等权利时，美国的少数民族要等到1968年通过民权法案，才能获得免于住屋歧视等的人权。就算在今天，藏族平均寿命已达到65岁，美国少数民族，例如印第安族有百分之三十三在45岁以前即告死亡，死亡率是全美平均比率的百分之三百。”</p>
+<p>上面我留存的三则剪报，都可以看出中国人在美国以人权问题施压时的挺身抗争。</p>
+<p>过去每谈到外国长处，就有中国人挺身抗争，大谈“外国也有臭虫”之事，这三则剪报，也算是此类文献。</p>
+<p>我们当然要挺身抗争，但也别忘了，比较之下，美国人在基本人权（fundamentalhumanrights）的保障上，正常情况下，要比中国人高明得太多太多。他们虽然在个案上也有丢人现眼之处；但在平均水平上，却是中国人学习的榜样。毕竟他们有两百多年在“基本人权”上的精益求精经验，而中国人呢？两千多年的“基本人权”，还在血肉模糊中。恶而知其美者，不可不知也。</p>
+<p>做为一个追求真理的爱国者，我也大谈“外国也有臭虫”过。但我大谈之余，也绝不护自己之短，这才是觇国者应有的态度。</p>
+<p>1991年12月14日</p>
+<p>海盗万岁</p>
+<p>10月8号的台北报上，登出两位律师为一公司的启事，宣告这家公司：</p>
+<p>受美国大英百科全书公司（ENCYCLOPEIDIABRITANNICAINC.）委托在台独家销售其所出版之大英百科全书（ENCYCLOPEDIABRITANNICA）。近查国内部分不法商人为图谋暴利，竞罔顾法令，擅自盗印此一蜚声国际、业经向吾国注册之著作。本公司及美国大英百科全书除已委请国泰法律事务所采取各项法律行动，分函通知各书局勿为代销，并另追诉盗印者一切民刑责任外，唯恐各界不明内情误代行销售该书，特此敬告各界，切勿销售此盗印之大英百科全书，以免违反著作权法之规定，否则本公司当依法追诉民刑责任。</p>
+<p>在这条启事上报前六天（10月2号），报上登出这样的消息——“大英百科全部被翻印，美商向我内政部陈情，政院通知主管机关从严处理”，全文是：</p>
+<p>大英百科全书被国内少数不法书商翻印，引起政府注意，要求主管机关从严处理，以免损及国际睦谊。</p>
+<p>美商大英百科全书公司，不久前向内政部陈情，该公司拥有著作权的大英百科全书被我国书商翻印，请求我国政府迅速采取有效措施，戢止盗印事件，没收擅自翻版书籍，内政部据以向行政院请求。行政院已于日前函知司法行政部及台北市政府、高雄市政府等单位，重申对擅自翻印外国人业经注册的著作物者，应依著作权法第三十一及三十三条规定，从严处理，以免损及国际睦谊。</p>
+<p>看了上面这两段文字，我忍不住要说几句。</p>
+<p>人类开始写书的时候，只是写书就开心了，压根儿没想到什么“版权”什么“著作权”，这种念头，是近代财产权观念精益求精以后的事，也就是说，这是近代“正其谊又谋其利”的先进繁荣社会的产物。以英国论，英国形成先进繁荣社会，为时很早，当她形成这种社会以后，她的一切都要有板有眼的来，一切都要制度化、习惯化。英国祖先虽是北欧海盗出身，可是一旦沐猴而冠起来，也不得不装成人样——至少自己人对自己人，要装成人样。换句话说，自己人对自己人可不能再海盗了，要海盗，要朝外海盗，不能在家里海盗，“家里光棍”是不行的。</p>
+<p>就这样的，英国慢慢形成了保护财产权的法律，著作权就是其中之一。著作权的定义就是：老子编印的书，是老子的，你小子除了乖乖去买以外，休生歹念，不可盗引！书价也是老子定的，老子高兴定多少，就多少，你买不起，活该！穷人还想读书吗？屁！不幸的是，正在英国趾高气扬的时候，有一些不信邪的先锋性人物出来，脱离了老子，自己去当老子了，这就是美国的独立革命。美国在独立革命前后，在北美洲东海岸，已经云集了大量的牛鬼蛇神，他们是自由热爱者、是上帝代言人、是走私专家、是革命党、是心怀不平的平民、是亡命徒、是新生代。……他们在海外创建了新天地，成立了新国家。他们的手法是笨拙的，可是很有冲力、很有叛逆性，他们的基础很单薄，要建国、要称霸，必须有赖于先进繁荣的母国——英国——的技术指导，可是英国当时气都气死了，哪里还帮拒绝听话的小子。于是老美们只好来个拳击的“技术击倒”（T.K.O），开始智胜了。方法之一是：在十三州的文化沙漠中，盗印英国书，以袭取英国的速成方法，迎头赶上。</p>
+<p>写到这里，美国的支那通一定抗议，说你李敖显配你的“中国功夫”，我们服你，因为你的中国书读得的确多，但你现在显配“美国功夫”，你未免捞过了界，你说我们老美盗印，乱盖是不行的，你拿出证据来。</p>
+<p>好！拿就拿！去翻翻你们海盗书店（TheVikingPress,Inc.）出版的《袖珍爱默生集》（ThePortableEmerson）吧，翻翻1837年9月13号爱默生写给英国文豪卡莱尔（ThomasCarlyle）的信，信里说他告诉盗印商：卡莱尔的《法国革命史》暂时不能盗印，“总该先给人家一点输入英国原版的时间”。他又向卡莱尔抱歉说：“我觉得很难为情，你教育我们的青年人，而我们却盗印你的书。有朝一日，我们会有比较完善的法律，也许你们会采用我们的法律。”</p>
+<p>但是，“有比较完善的法律”来保护著作权，老美可没那么痛快。老美清楚知道：她的母国英国，为了迎头赶上，曾大量盗印过欧洲大陆的书，大哥有前科如此，岂不“大哥莫话小弟”？岂止前科，并且正是现行犯、现行惯犯，在爱默生写信的当时，便是如此。据我所知，英国盗印欧洲大陆的书，一直拖到1886年才停止；美国盗印英国和德国、法国、俄国的书，直到1891年才停止。最妙的是，今天警告中国人不要盗印《大英百科全书》的大阔佬老美，当年穷小子的时候，就公然盗印过《大英百科全书》——那时候《大英百科全书》在英国出版，英国人警告老美，老美的“内政部”可不媚外，睬也不睬英国，照由小民盗印不误。直到最后，自己慢慢站起来了，要加入国际版权同盟了，参众两院的议员们，保护小民不遗余力，死不肯立下“比较完善的法律”，而大打太极拳。前后拖了五十年，才兑现了“有朝一日”，那时候，美国已饱受盗印之利，已经变为世界一等强国了。</p>
+<p>这种坚持学术与出版为天下公器，为了一己国家，而要保护自己有盗印权利的看法，不但早年的英国知道、美国知道，甚至中国也知道。1913年（民国二年），当“改邪归正”的美国出面，要求中国加入版权同盟的时候，上海书业商会就大呼不可，他们分函教育、外交、工商各部，表示：“必一国之文化及其著作物之流布于国外，与世界各国相等，方以加入同盟为有利，否则既足阻碍教育之进步，并侵害工商业之发达，其害有不可胜言者。”他们又说：“国际间所订条约，必以交换权利为原则，今我国既少著作物销流外国，未必得外国保护版权之益，倘加入同盟，是但有义务，毫无权利，外既违反国际间平均之原理，内又阻碍教育及工商业之生机。从此各国援利益均沾之例，将至凡为外国人之著作，概不得翻印翻译，损权利、阻教育，莫此为甚。”当时中国政府的大官人们很能权衡轻重，所以对老美的要求一直拒绝上钩。这种正确的决定，一直延续到1960年（民国四十九年）才开始动摇。</p>
+<p>1960年时候，美国的国会议员，忘了他们有过盗印《大英百科全书》的老祖宗了，居然施展压力，以政治方法，干涉起中国人盗印《大英百科全书》来。当时的内政部大官人居然也“俯允所请”，大加查扣——非法的查扣，闹得天翻地覆。事情过后，大官人为了保护老美，居然同意了把《大英百科全书》予以注册，变成了今天“政院通知主管机关从严处理”的张本，和他们可以公然登报警告的根源。这真太可悲了！</p>
+<p>我是学历史的人，我常从历史上追寻人们愚昧的痕迹。据我追寻的结果，我查出即使清朝政府，都不曾做出同意注册的决定！据1903年（光绪二十九年）的《中美续议通商行船条约》第十一款，明订只“允许凡专备为中国人民所用之书籍地图印件镌件者，或译成华文之书籍，系经美国人民所著作，或为美国人民之物业者，由中国政府援照所允保护商标之办法及章程，极力保护十年，以注册之日为始。……其余均不得享此版权之利益。”《大英百科全书》的编印，显然不是“专备为中国人民所用”的，自然不能予以注册，这不是太明白太明白的爱国常识吗？</p>
+<p>根据1967年3月11日的中央社专电，我们知道：当《毛语录》出现的时候，美国“班坦书店”就有盗印本！老美在威胁你不准盗印的时候，他们居然积习未改，还在干老行！我们的大官人又该怎么说？老美有没有“从严处理，以免损及国际睦谊”呢？</p>
+<p>1960年代，当中国最伟大的出版家——文星的萧孟能，从事力争国权的盗印活动时，清高的知识分子们在大买特买之余，居然也学得胡儿语，大骂萧孟能是海盗！如今，二十年过去了！萧孟能因义受难，至尽未已；某些人保护老美，一至于斯；清高知识分子们说风凉话，于今为烈。我真不服气，我非写这篇文章不可！</p>
+<p>1979年10月16日</p>
+<p>《中国时报》1979年10月19日</p>
+<p>他们并不颟顸！</p>
+<p>我在《海盗万岁》一文里，曾提到本世纪早期的中国人，努力维护中国有盗印权利的往事。这些往事，资料已经湮没不彰了。为了慎终追远，我特别把这些珍贵的资料，收集在一起，做为《海盗万岁》的一些文证与纪念。</p>
+<p>1913年（民国二年）6月，美国要求中国加入中美版权同盟，上海书业商会反对，分呈教育、外交、农商三部，请求维护国权，原文如下：</p>
+<p>查版权同盟，本为保护著作权，国际间人民互享利益之举，然必一国之文化及其著作物之流布于国外，与世界各国相等，方以加入同盟为有利；否则既足阻碍教育之进步，并侵害工商业之发达，其害有不可胜言者。</p>
+<p>盖我国中学以上各学校教科用书，尚须取材于外国著作物，近年以来，毕业中学以上各校者日多，能直接读外国著作物者亦益众，需用外国之著作物亦日见增加。而外国著作物如图书一项，定价甚昂。近年我国业印刷者，多翻译或翻印外国图书，廉价出售，以利学界。若加入版权同盟，嗣后即不得翻印，必至学界因外来图书价昂，不能多所购读，文化进步大受影响。</p>
+<p>且既入版权同盟，则翻译他国之著作物，亦须俟其著作物行世十年以后，方得自由。方今学问之竞争日剧，若外国新出著作，十年内不能翻译，则除少数人能读其原著作，此外皆无从得新知识输入之益，教育进步必因之停滞。方今洋货输入日多，利权外溢，仿造乏术，漏卮弥大。唯印刷一业，近始稍有进步，译印外国图书，实为仿造洋货、少塞漏卮最有把握之一事。若加入版权同盟，即并此而遏绝，所关于工商业及一国之经济者甚大。</p>
+<p>夫国际间所订条约，必以交换权利为原则，今我国既少著作物销流外国，未必得外国保护版权之益；倘加入同盟，是但有义务，毫无权利，外既违反国际间平均之原理，内又阻碍教育及工商业之生机。从此各国援利益均沾之例，将至凡为外国人之著作，概不得翻印翻译，损权利、阻教育，莫此为甚。</p>
+<p>日本学术进步，久称发达，然至明治三十二年始加入万国版权同盟；三十九年始与美国结保护著作权条约，而当时实以收回领事裁判权为交易之品。然日美条约，犹但禁翻印而不禁翻译。今我国与东西各国交涉，凡国际间应享对等之权利，往往不能均沾，独此著作权，犹得于消极方面稍得利益，若亦被禁阻，则国民于精神上物质上受害均深。况美国至今并未加入瑞典万国版权同盟，亦因其国著作之多，不及欧洲之故。则此项同盟之加入与否，全出各国之自由，其理甚明。今反要求我国，其为无理，尤属显然。</p>
+<p>1919年（民国八年）4月22日，上海总商会致函上海商务印书馆，全文说：</p>
+<p>迳启者：顷准美国商会函开：华商所办印刷所，有翻印美国刻本，销售于上海及中国各埠者，侵夺版权，违反法律，事实昭然，无可掩饰。兹由美国课本领袖印刷局，将华商印刷所翻印之书，编成表式，特照录一份，送请台察，其翻印之多，殊足骇异；而以性质高尚之印刷局，竟有此种行为，更为可讶。今此事已呈明美国驻京公使，与北京政府磋商办法，望警告各印刷局，倘再不停止翻印，其违犯法律，遭受困难，必有更甚于今日者。请将此意通告各印刷所，并祈见复等因。应抄录表式，函请察照其所开各种课本，于版权有无侵夺关系，务祈见复，以便转答。除分函外，此致商务印书馆。</p>
+<p>第二天，4月23日，商务印书馆分呈教育、外交、农商三部；5月再呈三部，呈文全文义正词严，值得细看：</p>
+<p>呈为洋商会朦请版权，有违条约，恳祈驳拒事：窃本月22日敝馆接上海总商会函开：准美国商会函开：（引文略）查阅所开翻印各书，确系美国出版书籍，尤以教科书为多。</p>
+<p>但查前清光绪二十九年中美续议通商行船条约第十一款：“无论何国，若以所给本国人民版权之利益，一律施诸美国人民者，美国政府亦允将美国版权律例之利益，给予该国之人民。中国政府今欲中国人民在美国境内得获版权之利益，是以允许凡专备为中国人民所用之书籍、地图、印件、镌件者，或译成华文之书籍，系经美国人民所著作，或为美国人民之物业者，由中国政府援照所允保护商标之办法及章程，极力保护十年；以注册之日为始，俾其在中国境内有印售此等书籍、地图镌件或译本之专利。除以上所指明各书籍地图等件，不准照样翻印外，其余均不得享有此版权之利益”等语。今该美商表列各书，无一为专备中国人民之用，按照条约，自不能在中国得有版权，何得指翻印出售为违反法律？</p>
+<p>复查前清宣统三年2月，美国经恩公司向上海会审公廨控告敝馆翻印该公司书籍，经上海书业商会呈请外务部、学部、工农商部，并奉农工商部批示：“据呈称商务印书馆翻印美国经恩公司出版之《欧洲通史》，美总领事误认版权，函请江海关道禁勿再售，恳本部设法维持等语。查此案关系国际版权，既经呈明外务部、学部，仰即静候办理可也。同时复由上海道照录是年7月17日外务部函开：本月初6月美微署使到署面称：上海商务印书馆将美国人所著之书，翻印一百余部，在中国售卖，著作人暨原印各书局，不能分利，颇觉吃亏，似应设法保全权利。当经答以按照条约，凡为中国特著之书，方能禁止翻印，其非为中国特著者，约章并无禁止翻印之条，该馆所翻印之书，是否特为中国著作？伊云：各书虽非为中国著作，然均系中国可用之书，如任听华商翻印，致伤作者权利，未免稍欠公允，可否请贵部饬令沪道，转饬该书馆与原印各书局，订一妥善办法，俾彼此可得翻印之益？答以此系商业，本部碍难电饬沪道设法办理。贵国著书人等，若自以为理直，尽可赴公堂诉讼。伊云：前因《史记》一书，曾与该书馆涉讼，未能得直，最好由贵部转饬沪道，饬令印书馆斟酌一公允办法。答以贵大臣既谆谆来说，可令本部丞参作一私函，将贵大臣之意告知沪道，唯不能作为公事，各等语。查此案本部于本年三月间，接准英使来照，称驻沪美领不以会审公堂所判断为然，已将案详请驻京美使核办等因，当经本部驳复在案。兹美署使面请各节，本部亦已据约辩驳；唯该使既以彼此妥订办法为言，应由导处转嘱原告及原印各书局，并商务印书馆自行妥商，以期和平了结。相应抄录英使往返照会，函请查照办理。”</p>
+<p>并附抄外务部十年5月21日覆英国驻京公使照会，内开：“宣统三年5月12日，接准照称近有英商伊文思书馆赴会审衙门，控告上海商务印书馆窃印美国之有名史书一册，与原版丝毫不爽，售价较原书之半。会审委员竟谓并非光绪二十九年美国商约第十一款所载，专备中国人民所用之书籍，不肯判断。该书馆不但窃印美国书籍，至将英国书籍一律窃印，减价售卖，请转饬沪道详查，出示禁止等因。查光绪二十九年中美商约第十一款载：凡专备为中国人民所用之书籍、地图、印件、镌件者，或译成华文之书籍，系经美国人民所著或为美国之物业者，由中国政府极力保护，俾在中国境内印售，此种书籍等之专利，除以上所指各书籍不准翻印外，其余均不得享此版权之利益云云。上海商务印书馆所印之美国史书，并各种教科书，其原书本非专备中国人民之用，即不在条约不准翻印之列。该馆此举，确为普及教育起见，诚如来照所谓善举者，意非专在攘利。且中国未入版权同盟，商家翻印书籍，既非有违条约，自属无凭禁止，相因照覆贵大臣查照等因。”</p>
+<p>综观前后各案，是美国人之著作出版，非专备中国人民所用者，不能在中国得有版权，暨中国人民翻印外国书籍之不能得有中国版权者，并无违犯法律之处，甚为明白。</p>
+<p>且查欧美各国加入万国版权同盟，皆几经讨论，经历多年，始行加入。即如美国其初翻印英国书籍，毫无限制，后因著作日多，工业发达，两面所受损失渐觉相等，始提议加入；然犹屡被议院否决，相持至五十余年，始得通过；而条文之中，犹多限制，如非在美国出版，及外国人在美国出版非与其在本国出版之日相同者，皆不能在美国受版权之保护。可见著作之多，工商业之发达，不能与外国相提并论时，即不肯轻易加入版权同盟。是在各国，为顾全本国人民利益起见，无不如此，而美国尤为显著之先例。</p>
+<p>今吾国教育及工商业之程度，安敢与美国比肩，如此时加入万国版权同盟，窒碍甚多；况纵欲加入，亦应由本国教育工商各界自行提议，几经审慎讨论，乃可决议，岂得徇外国人之要求，冒昧加入。今美国商人既不检查条约，仅顾一面之利益，遂以侵夺版权，朦稟该国驻京公使。该公使难免不为所动，竟向大部、外交部交涉。除先行电呈外，谨再具呈恳祈大部俯赐主持，据情转咨外交部据约驳拒，学界幸甚、商业幸甚。谨呈。</p>
+<p>商务印书馆这件呈文送上以后，5月15日，教育部批说：“呈悉，已据情转咨外交部查核办理，此批。”5月24日，农商部第646号批说：“呈悉，业经本部据情咨行内务部、外交部核办，合行批示遵照，此批。”6月9日，农商部第705号批说：“前据呈称洋商朦请版权恳转咨据约驳拒一案，当经本部据情咨请外交部核办，并批示在案。兹准覆称：此事现尚未准美使来部提及，除俟美使提议，再行核办外，请查照等因。合行批示遵照，此批。”</p>
+<p>在商务印书馆上呈文的4月里，上海书业商会也分呈三部，原文如下：</p>
+<p>呈为洋商朦请版权，恳祈转咨外交部据约驳拒事；窃据中华书局、商务印书馆报称，本月22日接上海总商会函开：（引文略）等情，并附送美国商会所交翻印洋文书表一纸到会。当即召集全体会员开会评议，查阅所开翻印各书，确系美国出版书籍，尤以教科书为多。</p>
+<p>但查前清光绪二十九年中美续议通商行船条约第十一款：（引文略）该美商会表列各书，均非专备中国人民之用，按照条约，美国不能在中国得有版权。华商翻印出售，何得指为违犯法律？</p>
+<p>敝会复查前清宣统三年2月美国经恩公司在上海会审公廨控告商务印书馆翻印该公司书籍，经敝会呈请外务部、学部、农工商部据约保护，并奉农工商部批示：据呈称商务印书馆翻印美国经恩公司出版之《欧洲通史》，美总领事误认版权，函请江海关道禁勿再售。吁恳本部设法维持等语。查此案关系国际版权，既经呈明外务、学部，仰即静候办理可以。</p>
+<p>同时由商务印书馆抄送上海道照录是年7月17日外务部函开（引文略）等因照会。</p>
+<p>又查民国二年6月，因美国驻京公使要求我国加入万国版权同盟，经敝会以阻碍教育及工商事业，恳请驳拒，具呈大部暨农商、外交部。十年7月2日，奉大部批：据呈已悉，查中美续订商约第十一款曾允许美国人享有版权，此在前清订约经于允许，也已无可更改；至美国要求吾国加入版权同盟一节，如果实有其事，诚如来呈所云：吾国现今教育及工商事业大有影响，仰候函询外交部查核可也。同月3日，又奉大部、农商部批：据呈美国要求加入版权同盟，请咨移驳拒等情，已抄录原呈函请外交部查核办理矣，等因。</p>
+<p>综观前后各案，是美国非专备中国人民所用出版之书籍，不能得有版权之保护；暨中国人民翻印外国不能得有中国版权之书籍，并无违犯法律，不应禁止。且外国出版书籍，设于中国得有版权，于现今教育及工商事业均有障碍，久在大部洞鉴之中。今美商复以侵夺版权朦稟该国驻京公使，该公使难免不为所动，遂向大部、外交部交涉，为此具呈恳祈大部俯赐主持，据情咨外交部据约驳拒，学界幸甚、商界幸甚。谨呈。</p>
+<p>上海书业商会这件呈文送上以后，5月15日，教育部批说：“呈悉，已据情转咨外交部核办矣，此批。”6月24日，农商部第647号批说：“呈悉，业经本部据情咨行内务部、外交部核办，合行批示遵照，此批。”6月6日，农商部第606号批说：“前据呈称洋商朦请版权，恳转咨据约驳拒一案，当经本部据情咨请外交部核办，并批示在案；兹准覆称，此事现尚未准美使来部提及，除俟美使提议再行核办外，请查照等因，合行批示遵照，此批。”</p>
+<p>同年12月7日，上海书业商会又为英、法等国要求中国参加万国版权同盟的事，分呈三部，全文如下：</p>
+<p>查去年5月间，上海总商会接美商会函称：华商所办印刷所翻印美国课本销售，侵夺版权，违犯法律，已呈明美国驻京公使，与北京政府磋商办法等因。当由本会具呈农商、外交、教育部，恳请据约严驳；复分别奉到批示：以此事现尚未准美使来部提及，俟美使提议，再行核办等因，各在案。</p>
+<p>兹据沪报载上海英商会等有再提前议之说。传闻法国驻京公使又向外交部提议。伏以当今文化日进，而吾国尚在幼稚时代，全恃欧美书籍以为灌输研究之资。而原本西书价值綦昂，购求不易，求学之士不免望洋兴叹。故敝业中多将原版西书翻印，廉价发售，于灌输文化实为便利。</p>
+<p>且查光绪二十九年中美商约第十一款，凡专备中国人民所用之书籍、地图、印件、镌件者，或译成华文书籍，系经美国人所著，或为美国之物业者，由中国政府竭力保护，俾在中国印售此种书籍等之专利；除以上所指各书籍不准翻印外，其余均不得享此版权之利益云云。</p>
+<p>又查欧美各国加入万国版权同盟，皆几经讨论，经历多年始行加入。如美国加入同盟，相持至五十余年，始得通过；而条文之中，犹多限制，如非在美国出版，及外国人在美国出版，非与其在本国出版之日相同者，皆不能在美国受版权之保护云云。吾国既未加入版权同盟，而所翻译各书并非专备中国人民所用者，自不在条约不准翻印之列。今该洋商等又拟再提前议，朦请版权，如果实有其事，不独违背条约，且与吾国教育及实业前途均有障碍。况一经加入同盟之后，不但不能翻印，并且不得自由译印，其于学术发达、文化进步，阻碍尤大。敝会为未雨绸缪起见，理合据呈，仰祈大部：如遇该洋商有要求驻使提议及此者，无情俯赐据约严驳，实为公便。</p>
+<p>以上收集的一些珍贵资料，证明了满清政府和北洋政府，他们在维护中国有盗印权利上，所作所为，一点也不丧权辱国！一点也不颟顸！我们要把公道还给他们，我们不可抹杀他们那一代人的爱国成绩！</p>
+<p>1980年4月27日夜两小时完工</p>
+<p>美商侵犯智慧财产权</p>
+<p>首宗外国资讯厂商涉嫌侵犯中国人智慧财产权案，目前正由台北地检署侦办中。告诉人叫李柏墩，是留美电脑硕士。他于1985年间将自著的《中文文字处理系统软体程式》，向内政部申请著作权登记在案。1989年初，他因接受台湾厂商的委托，从事系统规划作业，发现世界排名前十名的电脑资讯厂商——美国布尔（BULL）公司出产的电脑中，竟含有他所著作的软体。他遂照会美国布尔公司台湾分公司。但是，该公司非但置之不理，同时还大量复制、销售。李柏墩遂于今年2月初向台北地方法院提出告诉，并于3月8日由检察官会同管区警员，在松山区一证券商处取得充分证据，证实该程式所有操作方法与著作人的操作手手册完全相同。</p>
+<p>美国布尔公司台湾分公司24日表示：本公司目前拥有的《中文文字处理系统软体程式》，是在1988年3月间，向台湾某公司购得，买卖双方订有合约书在案。依该合约书规定，卖方担保该程式是其自行开发完成并无侵害他人权利情事，且布尔公司享有复制该程式的权利。这显然是可疑的。</p>
+<p>我们高兴看到美帝自己也干这行事。并且被我们中国人抓到。他们再口口声声说别人侵犯智慧财产权，可要脸红了。</p>
+<p>其实，从历史记录检查，美帝自己侵犯智慧财产权，早就有前科可寻。翻翻海盗书店（TheVikingPress,Inc.）出版的《袖珍爱默生集》（ThePortableEmerson）吧，翻翻1837年9月13号爱默生写给英国文豪卡莱尔（ThomasCarlyle）的信，信里说他告诉盗印商：卡莱尔的《法国革命史》暂时不能盗印，“总该先给人家一点输入英国原版的时间”。他又向卡莱尔抱歉说：“我觉得很难为情，你教育我们的青年人，而我们却盗印你的书。有朝一日，我们会有比较完善的法律，也许你们会采用我们的法律。”这就是证据！</p>
+<p>但是，“有比较完善的法律”来保护智慧财产权，美帝可没那么痛快。美帝清楚知道：她的母国英国，为了迎头赶上，曾大量盗印过欧洲大陆的书，大哥有前科如此，岂不“大哥莫话小弟”？岂止前科，并且正是现行犯、现行惯犯，在爱默生写信的当时，便是如此。据我所知，英国盗印欧洲大陆的书，一直拖到1886年才停止；美国盗印英国和德国、法国、俄国的书，直到1891年才停止。最妙的是，今天警告中国人不要盗印《大英百科全书》的大阔佬老美，当年穷小子的时候，就公然盗印过英国出版的《大英百科全书》呢！</p>
+<p>总之，美帝自己又犯老毛病，侵犯别人智慧财产权，如今被我们中国人逮住，真是大快人心的事！</p>
+<p>1991年4月25日</p>
+<p>战争在打与和平在望</p>
+<p>——世界第一部《诺贝尔和平奖全集》序</p>
+<p>从公元前一千五百年到今天，三千五百年中，人类有战争的年代和没有战争的年代比起来，是十五比一。换句话说，三千五百年中，人类和平的年代，只不过两百三十年而已。不论打的是长达一百九十五年的十字军东征；还是打的是短到三十八分钟的英国、苏丹之战，人类反正是在打打打，打个没完。人类之好打与能打，早就不是新鲜事了。</p>
+<p>“胜利者一无所获”</p>
+<p>人类这种好战性与多战性，自古于斯，但是形式与结果却在改变。古时候人类打仗，你丢一块石头过来，我抛一块石头过去，结果是“你死我活”；后来慢慢“进步”，武器发达，你开一辆坦克冲过来，我冲一辆坦克过去，结果是“你们死我们活”。可是更“进步”的时候，武器更发达的时候，这种情形就完全不同了，当你丢一颗原子弹过来，我再丢一颗原子弹过去的时候，结果就是“大家死大家不活”了。那时候，全世界一切东西都毁灭了，剩下的，只该是海明威一部小说的名字，那是——《胜利者一无所获》（WinnerTakeNothing）！</p>
+<p>古代的征服者，他们最神气，他们可以占据被征服者的土地、女人和资源，一切“损失”，都可在胜利以后得到补偿和恢复。但是这种胜利者的优势，随着时代的前进，愈来愈缩减了。第一次缩减的大信号是一八一五年的维也纳会议。这个会议是收拾拿破仑垮台的烂摊子，换句话说，是欧洲各国集体替拿破仑擦屁股。这次会议告诉了人类，胜利者并没有占到什么便宜，失败者也没吃什么大亏。战败的法国照样保持领土和主权的大致完整，而胜利者的元气与创伤，很久很久都不能恢复。</p>
+<p>第二次缩减的大信号是第一次世界大战。第一次世界大战后，英国法国等虽然是战胜的国家，可是他们却欠了美国佬一屁股臭债。所以他们订了一个“君子协定”，就是战败的德国如果不赔偿他们的损失，他们就不还美国佬的钱。所以这个“君子协定”，骨子里根本是一个“无赖协定”。但是英国法国没办法，他们虽然做了胜利者，可是还是一筹莫展，再榨德国也榨不出油来，只好大家一起做无赖！</p>
+<p>第二次世界大战以来，战争的形式与结果更发生剧变。英国的损失比第一次世界大战多了五倍，美国多了九倍，物质上总损失超过历史上所有战争损失的总和。</p>
+<p>愈死愈多，愈花愈多</p>
+<p>物质以外，在死伤上，也是前所未有的。十二世纪时候，丧生于欧洲战场上是八万人；十五世纪时候，是五十万人；但在二十世纪的第二次世界大战，却是五千五百万人，其中苏联死了两千五百万人，中国死了八百万人，波兰死了六百万人，占波兰人口的百分之二十二，这种惨烈，都不是史有前例的。</p>
+<p>例如，中国历史上最惨烈的围城战，是1864年清朝军队攻打太平天国的南京，一场大战下来，死了十万人；但是1941年到1944年德国军队攻打苏联的列宁格勒，一场大战下来，就死了一百五十万！</p>
+<p>古代战争的死伤纪录并不可靠，《史记-秦本纪》中，左一个“斩首八万”，又一个“斩首八万”、“斩首八万二千”；左一个“斩首六万”，又一个“斩首二十四万”、“斩首十五万”，……都是可疑的，因为当时不可能有这样大的战场与补给能力。至于《史记-项羽本纪》说“楚军夜击，阬（活埋）秦卒二十余万人”，那就更不可信了。这种情形是不分东方西方的，从公元前479年希腊的一战二十五万人伤亡，到公元451年法国的一天二十万人伤亡，都不可信。但是，纵使可信，比起后来的第二次世界大战来，又算得什么呢？</p>
+<p>以美国为例，美国在1812年战争中，死了不过两千两百六十人；美西战争中，死了不过两千四百四十六人。但在第一次世界大战中，就死了十一万六千多；第二次世界大战中，又死了四十万零五千多。</p>
+<p>死伤以外，从战费上，也可看到战争的昔非今比。美国在1812年战争中，每天战费是十一万美金，但在第二次世界大战中，每天就要两亿五千万！日本在日俄战争中，每天战费是三百六十万日币，但在第二次中日战争中，每天前线开支就是五百万日币，第一个月的开支就超过日俄之战十九个月的总和！第二次世界大战，苏联花了两万五千亿卢布（两千八百亿美金），美国花了三千八百亿美金，而苏联、美国都还是胜利者，“胜利者一无所获”，由此可见！</p>
+<p>世界性——牵一发动全身</p>
+<p>形式与结果的改变，使人类终于觉醒到“胜利者一无所获”的原因何在。技术的发展，使世界变得与以前完全不同了。波斯的大流士的世界，是他能走的一条大路的世界，这条大路上，行军三个月就到头了，他的“我武惟扬”，也就告一段落；马其顿的亚历山大的世界，也是如此。当他打到了印度河畔，知道前面已是世界末端的时候，他大哭一场，为了已经没有世界可征服了，他的“我武惟扬”，也就告一段落。这些故事告诉了我们，尽管大流士、亚历山大喜欢战争，但是道路和马匹“技术击倒”（T.K.O.）了他们。</p>
+<p>当技术改变了世界的时候，当人类造出比马匹更快的，并且可以不在道路上奔跑的时候，世界开始具体而微了。这个具体而微的世界，愈来愈息息相关了；巴黎皮货业的萧条，可以引起美国印第安人的灾难；埃及沙达特的被刺，可以引起日本股票的波动，世界已经牵一发动全身。老罗斯福一天读到辛克莱（UptonSinclair）的小说，决心收拾“财阀”。他推动反托拉斯的政策，对付任何组合式的垄断，和你死我活的关系企业，既得势力群起反对他，他一概不理。他的信仰是——“这国家如不能使个个过得好，单独那个也过不好。”（Thiscountrywillnotbeareallygoodplaceforanyofustoliveinifitisnotareallygoodplaceforallofustolivein.）其实这段话，把“国家”改成“世界”，也是一样。技术改变使世界变成了整体性，战争风貌也就随之改变。</p>
+<p>在过去的战争风貌里，我们看得到庾公之斯不射生了病的敌人，看得到羊叔子送药到敌人的阵地，看得到七年战争中，德法两国交战，两国国王却互相称赞。为什么有这些罗曼蒂克的现象呢？原因无他，那时候的战争不是整体性的，是英雄、贵族、统治者个人的竞争，不是民族间的、国家全面权益的竞争，所以英、法两国交战，两国人民居然可以照样在对方国境里云游！</p>
+<p>在“光荣”的美名下</p>
+<p>英雄、贵族、统治者个人的竞争，是史诗般故事的流风余韵。从荷马的《伊利亚特》（Iliad）、《奥德赛》（Odyssey）、维吉尔的《埃涅伊德》（Aeneid），直到丁尼生的《尤利西斯》（Ulysses），英雄、美人与战争，一直交汇在人类的浪漫情怀里，这种情怀的最近代化表现，就是拿破仑和拿破仑震撼。拿破仑是一个可鄙的人，但是，他的魔力，造成了荷兰作家房龙笔下的精彩效果：</p>
+<p>现在我坐在一个堆满书的舒服的书桌前面，一只眼睛看着打字机，另一只眼睛看着我那名叫“甘草”的小猫，这猫非常喜欢复写纸，我正在对你讲述拿破仑大帝是一个极其可鄙的人。但是，如果我偶然从窗口外望第七号路，如果那无尽的车马行列突然停止，如果我听见一阵鼓声，看见那身材短小的人骑着白马，穿着他那身破旧的绿军服，我便不知道要怎么了，恐怕我会丢下我的书、我的猫、我的家和其他的一切，追随他去任何地方。我自己的祖父就做了这样的事，天晓得他并不是生来就要做英雄的。无数的别人的祖父也做了这样的事。他们没有得到任何报酬，也不希望得到任何报酬。他们高高兴兴的贡献出他们的腿、胳臂和生命，去为这个外国人效劳。他把他们带到家乡的千里之外，叫他们冒着俄国、英国、西班牙、意大利或奥地利的炮火前进。当他们在死亡的痛苦里辗转呻吟的时候，他却很安详的凝视天空，完全无动于衷。</p>
+<p>这种情况与对比，在美国律师、演说家、不可知论者英格索（RobertGreenIngersoll）的口里，使我们有了更深刻的领悟：</p>
+<p>不久以前，我站在拿破仑的坟前——是一个金碧辉煌的坟，几乎合于神仙之葬了，我呆看着那名贵的和说不出名字的大理石墩，其中安息着不喜安息的人的遗体。我依着栏杆，细想那现代大军人的前程。</p>
+<p>我曾见过他徘徊在塞纳河边打算自杀。我曾见过他在土龙（Toulon）地方：解决巴黎街上的乱党。我曾见过他在意大利军队前方。我曾见过他手拿国旗过罗迪桥（theBridgeofLodi）。我曾见过他休息在埃及金字塔的影下。我曾见过他奏凯阿尔卑斯把国旗和山峰混成一片。我曾见到过他在买兰哥（Marengo）、在乌尔姆（Ulm）、在奥斯德立兹（Austerlitz）。我曾见过他在俄罗斯，雪中的步兵和旋风的马队，把他的军队像冬天树叶一般的扫落了。我曾见过他在莱比锡打败了、烦闷了，被一百万刺刀赶回巴黎去——好像野兽般的被抓住了——被放逐到厄尔巴岛。我曾见过他的败逃和取回王位。我曾见过他在惨烈的滑铁卢战场上，时运两伤。我也曾见过他在圣赫勒拿岛上，把手反握在背后，呆望着悲惨的大海。</p>
+<p>我想见那他所造成的孤儿和寡妇，那为着他的光荣，快乐得落下来的泪珠儿，那被野心的冷手推开了的心爱他的女人。所以我说：“我宁可做法国的农夫，穿着木制的鞋子，我宁可居住在草屋之中，门上长满了葡萄藤，紫葡萄在秋阳中沉醉。我宁可做那穷苦的农夫，有爱妻在我旁边，纺织着直到天晚，有孩子在我膝上，臂膀把我环抱。我宁可做这样的人，死于无声无臭的清净世界之中，远胜于做予取予夺的拿破仑大帝。”</p>
+<p>英格索这种更高层次的见解，也正是中国古代诗人所说的“凭君莫话封侯事，一将功成万骨枯”。这种见解，抛弃了追随英雄作战以寻找“光荣”的肤浅，在战争风貌的转变中，这是最该有的一种转变。</p>
+<p>在“爱国”的美名下</p>
+<p>另一种战争风貌的转变是主义出场。民族主义被当做武器，鼓励出来，以做圣战。最早的成功样品降落在圣女贞德身上，后来重现到拿破仑头上，拿破仑又反射给德国俄国，拿破仑倒了，梅特涅又祭起于意大利，以至于逐渐风行于全世界。</p>
+<p>民族主义的兴起，给了人类“不要和平要战争”的更好借口，甚至在“爱国”的美名下，谁也不敢冒民族之大不韪。在民族主义的高潮中，帝国主义、军国主义、沙文主义、集体主义、集体兴奋（collectiveexcitment）、举国若狂、群众歇斯底里等等，也都倾巢而出。在这种情绪下，“爱国”变成了一切行动的护符，于是战争开始。</p>
+<p>战争开始的时候，以“八紘一宇”、“大东亚共荣圈”号召的民族，竟做出下面这些事：日本攻下中国的南京，东京八十万群众大游行时候，《日日新闻》随军记者在《紫金山下》专文里，有这样的报导：</p>
+<p>准尉宫冈和野田曾约定做一个砍杀一百敌人的比赛。12月10日，两人在紫金山下相见，彼此手中都拿着砍缺了口的军刀。野田道：“我杀了一百零五人，你的成绩呢？”宫冈答：“我杀了一百零六人！”于是，两人同作狂笑：哈哈，宫冈先生多杀了一个！可是很不幸：就确定不了是谁先杀达到一百之数的？因此，他们两人决定这次是不分胜负，重新再赌谁先杀满一百五十名中国人；12月11日起，比赛又在进行中。</p>
+<p>这就是“爱国”！再看红十字会副会长的描述：</p>
+<p>对于女人，日本兵的行动更坏，是文明世界所梦想不到的。日本兵对女人的嗜好，到了令人难以置信的程度。</p>
+<p>一次，日本兵以三辆卡车，运妇女到兵营去，逐一强奸。我阻止他们，无效。这些妇人，由十二、三岁到四、五十岁。我曾目击日兵的强奸。有时候，日兵在沐浴处强奸中国的妇人。后来，我们走进去，我看见沐浴处的裸体女人在哭。</p>
+<p>又一次，我同马基氏到南门东新开路第七号，发现该家十一人被杀，三人被强奸。妇人之中，两人十四岁，一人十七岁，日军于强奸后，把东西塞入阴户中。另一年轻的女子，在桌上被强奸，桌上有血。又有一家人，乘船过河，至河中，被日兵发现。日后检查船内，发现青年女子，就在老父与丈夫面前强奸。丈夫非常愤怒，被日兵所杀，老父和女儿也同投河溺死。</p>
+<p>这就是“爱国”！再看外国教授的回忆：</p>
+<p>就是在安全地带，中国妇女被日本兵强奸的，每天最少有八千件之多。我的一个德国同事，任职“国际安全地带委员会”，他亲眼看见日军奸杀暴行达两万次之多。特别是在南京大学校园里的日本兵，竟在光天化日之下，奸杀九岁的女童及七十六岁的老祖母。而且这些奸杀事件，大约有三分之一是在白天进行。尤其有不少奸杀事件，竟发生在大马路上，其情其景真是衣冠禽兽。</p>
+<p>日本人咒骂原子弹不人道，说一下子使广岛伤亡十三万、灾民十七万。但日本人有没有想到：上述这种南京大屠杀，他们杀中国人，一杀就是三十万，这又怎么人道呢？日本人吵着向美国人要人道，中国人向谁要呢？</p>
+<p>在“生存空间”的美名下</p>
+<p>在“光荣”、“爱国”等美名之外，“生存空间”的理由，又成为战争的借口。“生存空间”固然是原始的、不失为合理的理由，但是，检定它的成立要件，却颇费唇舌。检定结果，十九全都是殖民战争，侵略的意义远超过“生存空间”之上！</p>
+<p>殖民战争的一种特色是“我来你滚”，古代战争大都是这一类型的。翻开《旧约》约书亚书，我们清楚的看到这种画面。另一种特色是“买空卖空”，例如拿破仑第三夺回了路易斯安那，三年后却卖给美国。这种事例，更证明了攻城略地实在与“生存空间”的基本需要没关系。</p>
+<p>殖民战争登峰造极时候，英国掌握了世界四分之一的土地，俄国掌握了七分之一，法国在非洲、亚洲捞，德国也在非洲、亚洲捞，意大利、葡萄牙、比利时、西班牙，都在非洲捞，荷兰也捞到东印度群岛。甚至黄种人日本，也捞到朝鲜和台湾。</p>
+<p>美国一方面以“门罗主义”把拉丁美洲看了门，一方面从墨西哥手里取得加州、内华达州、犹他州、亚利桑那州、新墨西哥州，从俄国手里取得阿拉斯加，从西班牙手里取得菲律宾、波多黎各与古巴，后来又在夏威夷、萨摩亚、巴拿马运河带、尼加拉瓜、海地、多米尼加等地，完成了势力范围。</p>
+<p>殖民战争的推动者，他们也未尝不寻求理论上的自圆，他们甚至以一种舍我其谁的心怀，像章鱼一般的势力远张，传教士走在军人前面，或跟军人并肩前进。这种现象，正说明了他们之中的确有理想主义的层面。英国诗人吉普林（RudyardKipling）写道：</p>
+<p>背起白种人的负担——</p>
+<p>接受过去的落底；</p>
+<p>被你改良的责骂，</p>
+<p>被你照顾的恨你。</p>
+<p>当美国在越南“落底”，最后说明了“被你改良的”、“被你照顾的”，对你也绝不领情，他们宁愿背起自己的负担，——老美，回家吧！</p>
+<p>有主张、没办法</p>
+<p>当过去所有的战争理由不再成其为理由的时候，当越战时期美国打死一名越共平均要花三十万美金的时候，当智者和愚者都深深了解“胜利者一无所获”的时候，当老路走下去必将整个人类同归于尽的时候，“非战”或“和平”的方法，就自然不能不被重视。</p>
+<p>“非战”的方法，不一定为了和平，常常是以非战为手段，“不战而胜”（Victorywithoutwar），使敌人知道吃不下你，再研究你怎么吃下他。这就是中国军事思想家所说的“先为不可胜，以待敌之可胜”，目的是“不战而屈人之兵”。</p>
+<p>“和平”的方法，是为了和平，既是目的也是手段。和平的最早构想，远在两千五百年前就有了。在孔夫子还是六岁小朋友的时候，在中国河南商丘便有了弭兵会议。当时提出的，是小国宋国的向戌，会是开成了，因为没有国家敢说弭兵不好，十四个国家不得不答应，所谓：“兵，民之残也！……将或弭之，虽曰不可？必将许之！”但是，终于因为大家只是“有主张、没办法”，永远的和平还是没法实现。</p>
+<p>欧洲在近七百年前，有着以教皇为召集人的和平构想，也有着成为联合国家一个皇帝的和平构想。五百年后，拿破仑想做到后一种，可是失败了。亚里士多德主张战争发起须为了和平；瑞斯顿（HenryM.Wriston）主张战争的目的是和平（theobjectofwarispeace），拿破仑兴兵之初，也未尝不心存此想，但是事与愿违。原因何在？其实还是“有主张、没办法”，或办法实在不叫办法，最后他只能名垂战史，却不能名垂和平经典之中。</p>
+<p>1898年的冬天，俄国有了中国古代弭兵式的会议，会也开成了，因为没有国家敢说和平不好，三十八个国家不得不答应，海牙公约就这样签定了。但是“有主张、没办法”，南非战争而日俄战争、而意土战争、而第一次世界大战。这些刀光剑影，证明了“和比战难”。</p>
+<p>国际联盟</p>
+<p>当九百万死者、两千万伤者送走了第一次世界大战，人类又回到和平的枱面。“国际联盟”——人类历史上第一次世界性的组织——终于实现了。</p>
+<p>早在1916年，美国威尔逊接受第二届总统提名的时候，就宣告：“世界各国应该集合在一个共同的保证之中，使任何扰乱世界生活的企图，在实施之先，必须置于世界公意的法庭前。”1917年，在他提议参战反德时候，又宣告：“我们必须为我们心中最珍视的事物而战——为民主政治……为弱小民族的自由与权利而战，为举世所公认的正义而战。因为唯有世界各自由民族共同确切的把握公理与正义，世界方有和平安全的可能。”1918年，他在国会演说的时候，又宣告他那有名的“十四项原则”之一。他说：“各国必须在特别的盟约之下，缔结普遍的联合。这个普遍联合的目的，在使大小各国都能互相保证政治独立与土地完整。”</p>
+<p>终于，在第一次世界大战以后，“普遍联合”的构想，以国际联盟的形式出现。</p>
+<p>国际联盟在强调世界和平方面，曾在国联盟约第十条中载明：会员各国须互相尊重领土完整与政治独立，以反对外力的侵略。会员国应允诺将争执事件提付仲裁或询问，非判决三个月后，不得诉诸战争。任何会员国，如有不顾诺言迳行战争者，立即失去会员国的资格，其余会员国也应与之断绝商业关系，理事会当向联盟建议适当方法以应付之。如有非会员国挑起战争或做战争之威胁，理事会亦应同样建议联盟采用适当方法应付之。</p>
+<p>由此看来，国际联盟虽然不全然是“有主张、没办法”，但是办法的可行性，却也禁不得最后考验。国联最后在十周年纪念时，共有会员国五十四个，但美国始终没有加入。这是国联的失败、美国的失败，也是威尔逊的失败。</p>
+<p>威尔逊</p>
+<p>早在1917年，威尔逊就指出“没有胜利的和平”（Itmustbeapeacewithoutvictory）的真相，他对人类和平远景的理解，远超出同时代的其他政治家之上。但威尔逊失败了，他的失败是理想主义者的失败，也是人类追求和平史中最重大的失败。彭赛尔（S.Bonaal）在《未竟之业》（UnfinishedBusiness）里，有动人的描述：</p>
+<p>威尔逊总统虽然已经把战争打胜，他必须了解他已经在他所梦想的理想的和平上失败。他该怎么办呢？撇开一切回国去吗？这样就没有和约产生了。不仅欧洲，全世界都要限于混乱状态。侵略成性的国家要肆行无忌，予取予夺，美国想援助并且答应要援助的国家将无噍类。还是该同意缔结一个在原则上略事妥协，但必须把国联盟约包括在内的和约，使成为人类未来希望的所寄呢？</p>
+<p>“我想威尔逊总统是不会灰心失望的，”赫斯上校今天说，“他不会逃走。第一仗他打败了，但是等国联盟约通过而且实行以后，他将获得全部战役的胜利，但我认为必须经过许多年，困扰世界的战争心理才能肃清。”于是我请赫斯上校看英国著名首相格兰斯顿一篇伟大讲演中的一句话。他承认这句话极适合目前和会的局势与情绪。“我将拿给总统看，”他又说，“现在他听到的鼓励的话太少了。”于是他把这句话高声读了几遍：“人们不应当为理想未能实现而失望，他们应该晓得，政治上的理想是永远不能实现的。”</p>
+<p>到了1933年，国联通过了谴责日本侵略中国的议案；1939年，又以苏联侵略芬兰，把苏联开除会籍。国联虽没有什么制裁力，但仍完成了不少历史性的成绩，不论在经济方面、在医药方面、在推进科学方面、在扑灭鸦片方面，它都奠立了不少里程碑。——政治上的理想，还是可实现一部分的。</p>
+<p>战争中的和平</p>
+<p>威尔逊以后的和平努力中，1925年的洛迦诺公约（LocarnoPact）是重要的，公约由德国、法国、比利时三国互相保证“在任何情形之下，绝不互相攻击或侵略，或以战争互相敌对”。这公约等于要求德国宣布永远不打法国，也不索还亚尔萨斯、洛林，虽然难谓持平，但它公然表示了战争在西欧的非法性，对世界和平来说，却是一个好征兆。</p>
+<p>1927年的4月里，法国外交部长白里安曾向美国记者做了使战争成为非法的谈话。后来由蒲勒特等人的提倡鼓吹，白里安和美国国务卿凯洛格等，最后推出了《非战公约》（Anti-warPact），就是《巴黎公约》（ParisPact），也就是《白里安凯洛格公约》（Briand-KelloggPact）。公约由六十二国签字，都保证“在相互关系中，放弃战争”，保证不在和平手段之外，另找解决争端的法子。可是，这公约批准生效后十三个月，日本就发动了九一八事变，后来第二次世界大战乒乒乓乓打起来了，什么和平公约都打成废纸了！</p>
+<p>1945年，联合国宪章在第二次世界大战的尾声里签了字。人类重新在战场的灰烬里捡起和平。联合国显然是比国联更细密的、进步的组织，例如：</p>
+<p>（一）联合国大会与安全理事会有明显不同的职权，国联的大会与理事会却没有。</p>
+<p>（二）在维持和平与安全方面，联合国的执行能力高于国联。</p>
+<p>（三）在表决制方面，也比国联深切著明。</p>
+<p>联合国是人类从事和平努力的新国际法人，它外表堂皇，内在却有困境。这种困境，最早做深入讨论的，是杜勒斯。杜勒斯在《战争与和平》（WarorPeace）里说：</p>
+<p>联合国的“软弱无能”，主因并不在旧金山会议以雅尔达协定的否决权写于宪章上，也不在宪章不能行使充分的授予权。联合国的严重缺点在它对许多重要问题缺乏一致的道义裁判，或是道义裁判不能有力的发挥。在这种情形下，任何方式的政府都不能发挥它的效能，除非它是一个独裁的“警察国家”。</p>
+<p>最近我看到关于底特律城的暗杀与暴动新闻。标题是《底特律的严重错误》，新闻中说：“底特律的警察力量虽无懈可击，但在任何城市中，警察只占人口极少数，都不能按照理想维持秩序，除非他们能获得社会上压倒优势的道义支持。然而在底特律，这种道义支持却衰微不振。”</p>
+<p>在这一点上，“世界警察”的力量也无异于底特律的警察。除非能获得世界的优势道义支持，“世界警察”将不足以维持世界秩序。</p>
+<p>杜勒斯这话是1950年说的，我认为这段话，颇能道出联合国的内在困境。这种困境，是人类和平的根本障碍，值得我们进一步讨论。</p>
+<p>正义与和平</p>
+<p>联合国宪章第一条第一项说：</p>
+<p>维持国际和平及安全：并为此目的，采取有效集体办法，以防止且消除对于和平之威胁，制止侵略行为或其他和平之破坏，并以和平方法，且依正义及国际法之原则，调整或解决足以破坏和平之国际争端或情势。</p>
+<p>第二条第三项说：</p>
+<p>各会员国应以和平方法解决国际争端，俾免危及国际和平、安全及正义。</p>
+<p>上面两项，前面一项，是中国提议的，是从积极面——依照正义——维护世界和平；后面一项，是玻利维亚提议的，是从消极面——俾免危及正义——维护世界和平。</p>
+<p>中国和玻利维亚在制定联合国宪章的时候，特别提出正义条款，显然对联合国的不顾原则以求和平的行动，加以限制。这种不顾原则以求和平，最鲜明的表现就是“绥靖办法”（appeasement）。1938年9月，英国首相张伯伦在慕尼黑绥靖以后，曾充满信心的说出“我们这一代的和平”（Peaceinourtime）。但是，很快的，张伯伦牺牲了正义，也丢掉了和平。张伯伦并不知道“和比战难”，他在1939年1月里，就有过两方才能谋和、一方就可宣战（Ittakesatleasttwotomakeapeace,butonecanmakeawar.）的了解，但是，他还是犯了拉马丁（Lamartine）所说的，爱好和平到不恤任何代价的程度（Paixatoutprix./Peaceatanyprice.），最后，他只有羞愤而死。</p>
+<p>杜勒斯说“联合国的严重缺点在它对许多重要问题缺乏一致的道义裁判”，这种原因，显然在大家对正义的解释不够一致，结果是公说公有理，婆说婆有理，儿子说公婆都有理，媳妇说公婆都没理。</p>
+<p>试举一个例：纽西兰人平均每人有十四只羊，澳洲人平均每人有十只羊，但中国人平均十个人分不到一只羊。照纽西兰与澳洲人的“正义”，羊是我们的，大家要和平；但照中国人的“正义”——尤其饥饿中寒冷中中国人的“正义”，可能和平就需要相对条件，认为按照你们的基督教标准、或是人道的标准、或是平等的标准、或是博爱的标准、或是爱你邻居的标准，你们总不该一个人“吃独食”，总该对我们意思意思。就这样的，“正义”发生了争夺战，这时候，我们就迫切需要寻找“一致的道义裁判”。</p>
+<p>羊的问题如此，世界上其它问题——如南非种族问题、以色列领土问题、波兰自由问题、福克兰岛归属问题等等等等——也无不如此。</p>
+<p>寻找“一致的道义裁判”，先在内在的心理上奠定和平的标准，该是人类首先该学会的事。人类在1500年学会了手枪，1860年学会了机关枪，1944年学会了火箭，1945年学会了原子弹，人类在战争的学习方面，成绩优异，但在和平的学习方面，却是一个坏学生。显然的，人类应该改变学习的方向。</p>
+<p>在改变学习的方向里，诺贝尔和平奖的确带给了人类新的指标，出版全世界第一套《诺贝尔和平奖全集》，也就有了非比寻常的意义。</p>
+<p>1982年4月25日初稿，5月4日改定</p>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/16.李敖祸台十书/我们没有明天.md">Edit this file on GitHub.</a></footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../16.李敖祸台十书/恰似我的温柔.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../16.李敖祸台十书/李敖智慧书.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../16.李敖祸台十书/恰似我的温柔.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../16.李敖祸台十书/李敖智慧书.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

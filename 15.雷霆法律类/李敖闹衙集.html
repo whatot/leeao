@@ -1,0 +1,888 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>李敖闹衙集 - 大李敖全集</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">项目简介</a></li><li class="chapter-item expanded affix "><a href="../wjm_tcy.html">wjm_tcy 简介</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/index.html"><strong aria-hidden="true">1.</strong> 自传回忆类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01.自传回忆类/我最难忘的事和人.html"><strong aria-hidden="true">1.1.</strong> 我最难忘的事和人</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖回忆录.html"><strong aria-hidden="true">1.2.</strong> 李敖回忆录</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖快意恩仇录.html"><strong aria-hidden="true">1.3.</strong> 李敖快意恩仇录</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖自传与回忆.html"><strong aria-hidden="true">1.4.</strong> 李敖自传与回忆</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖议坛哀思录.html"><strong aria-hidden="true">1.5.</strong> 李敖议坛哀思录</a></li></ol></li><li class="chapter-item expanded "><a href="../02.精品散文类/index.html"><strong aria-hidden="true">2.</strong> 精品散文类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02.精品散文类/传统下的独白.html"><strong aria-hidden="true">2.1.</strong> 传统下的独白</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/李敖文存.html"><strong aria-hidden="true">2.2.</strong> 李敖文存</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/李敖文存二集.html"><strong aria-hidden="true">2.3.</strong> 李敖文存二集</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/波波颂.html"><strong aria-hidden="true">2.4.</strong> 波波颂</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/独白下的传统.html"><strong aria-hidden="true">2.5.</strong> 独白下的传统</a></li></ol></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/index.html"><strong aria-hidden="true">3.</strong> 惊世杂文类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03.惊世杂文类/上下古今谈.html"><strong aria-hidden="true">3.1.</strong> 上下古今谈</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/世论新语.html"><strong aria-hidden="true">3.2.</strong> 世论新语</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/为中国思想趋向求答案.html"><strong aria-hidden="true">3.3.</strong> 为中国思想趋向求答案</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/为自由招魂.html"><strong aria-hidden="true">3.4.</strong> 为自由招魂</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/你是景福门.html"><strong aria-hidden="true">3.5.</strong> 你是景福门</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/你笨蛋，你笨蛋.html"><strong aria-hidden="true">3.6.</strong> 你笨蛋，你笨蛋</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/历史与人像.html"><strong aria-hidden="true">3.7.</strong> 历史与人像</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/我是天安门.html"><strong aria-hidden="true">3.8.</strong> 我是天安门</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/我梦碎所以我梦醒.html"><strong aria-hidden="true">3.9.</strong> 我梦碎所以我梦醒</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/教育与脸谱.html"><strong aria-hidden="true">3.10.</strong> 教育与脸谱</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/文化论战丹火录.html"><strong aria-hidden="true">3.11.</strong> 文化论战丹火录</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/李敖杂文集.html"><strong aria-hidden="true">3.12.</strong> 李敖杂文集</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/求是新语.html"><strong aria-hidden="true">3.13.</strong> 求是新语</a></li></ol></li><li class="chapter-item expanded "><a href="../04.小说剧本类/index.html"><strong aria-hidden="true">4.</strong> 小说剧本类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04.小说剧本类/上山上山爱.html"><strong aria-hidden="true">4.1.</strong> 上山上山爱</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/北京法源寺.html"><strong aria-hidden="true">4.2.</strong> 北京法源寺</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/第73烈士.html"><strong aria-hidden="true">4.3.</strong> 第 73 烈士</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/红色11.html"><strong aria-hidden="true">4.4.</strong> 红色 11</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/虚拟的十七岁.html"><strong aria-hidden="true">4.5.</strong> 虚拟的十七岁</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/阳痿美国.html"><strong aria-hidden="true">4.6.</strong> 阳痿美国</a></li></ol></li><li class="chapter-item expanded "><a href="../05.诗集语录类/index.html"><strong aria-hidden="true">5.</strong> 诗集语录类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../05.诗集语录类/李敖语萃.html"><strong aria-hidden="true">5.1.</strong> 李敖语萃</a></li><li class="chapter-item expanded "><a href="../05.诗集语录类/李语录.html"><strong aria-hidden="true">5.2.</strong> 李语录</a></li><li class="chapter-item expanded "><a href="../05.诗集语录类/爱情的秘密.html"><strong aria-hidden="true">5.3.</strong> 爱情的秘密</a></li></ol></li><li class="chapter-item expanded "><a href="../06.沉思日记类/index.html"><strong aria-hidden="true">6.</strong> 沉思日记类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../06.沉思日记类/一个预备军官的日记.html"><strong aria-hidden="true">6.1.</strong> 一个预备军官的日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/大学日记后期乙集.html"><strong aria-hidden="true">6.2.</strong> 大学日记后期乙集</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/大学日记后期甲集.html"><strong aria-hidden="true">6.3.</strong> 大学日记后期甲集</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/大学札记.html"><strong aria-hidden="true">6.4.</strong> 大学札记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/早年日记.html"><strong aria-hidden="true">6.5.</strong> 早年日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖五五日记.html"><strong aria-hidden="true">6.6.</strong> 李敖五五日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖札记.html"><strong aria-hidden="true">6.7.</strong> 李敖札记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖秘藏日记.html"><strong aria-hidden="true">6.8.</strong> 李敖秘藏日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖随写录前集.html"><strong aria-hidden="true">6.9.</strong> 李敖随写录前集</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖随写录后集.html"><strong aria-hidden="true">6.10.</strong> 李敖随写录后集</a></li></ol></li><li class="chapter-item expanded "><a href="../07.采访序跋类/index.html"><strong aria-hidden="true">7.</strong> 采访序跋类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖书序集.html"><strong aria-hidden="true">7.1.</strong> 李敖书序集</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖书序集续集.html"><strong aria-hidden="true">7.2.</strong> 李敖书序集续集</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖对话录.html"><strong aria-hidden="true">7.3.</strong> 李敖对话录</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖报刊集.html"><strong aria-hidden="true">7.4.</strong> 李敖报刊集</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖访谈录1996-2014.html"><strong aria-hidden="true">7.5.</strong> 李敖访谈录 1996-2014</a></li></ol></li><li class="chapter-item expanded "><a href="../08.书信函件类/index.html"><strong aria-hidden="true">8.</strong> 书信函件类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.书信函件类/坐牢家爸爸给女儿的八十封信.html"><strong aria-hidden="true">8.1.</strong> 坐牢家爸爸给女儿的八十封信</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书信集.html"><strong aria-hidden="true">8.2.</strong> 李敖书信集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书函集.html"><strong aria-hidden="true">8.3.</strong> 李敖书函集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书启集.html"><strong aria-hidden="true">8.4.</strong> 李敖书启集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书札集.html"><strong aria-hidden="true">8.5.</strong> 李敖书札集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书牍集.html"><strong aria-hidden="true">8.6.</strong> 李敖书牍集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书笺集.html"><strong aria-hidden="true">8.7.</strong> 李敖书笺集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书简集.html"><strong aria-hidden="true">8.8.</strong> 李敖书简集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书翰集.html"><strong aria-hidden="true">8.9.</strong> 李敖书翰集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖情书集.html"><strong aria-hidden="true">8.10.</strong> 李敖情书集</a></li></ol></li><li class="chapter-item expanded "><a href="../09.历史文化类/index.html"><strong aria-hidden="true">9.</strong> 历史文化类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../09.历史文化类/中国命研究.html"><strong aria-hidden="true">9.1.</strong> 中国命研究</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国性研究.html"><strong aria-hidden="true">9.2.</strong> 中国性研究</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国现代史定论.html"><strong aria-hidden="true">9.3.</strong> 中国现代史定论</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国现代史正论.html"><strong aria-hidden="true">9.4.</strong> 中国现代史正论</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国艺术新研.html"><strong aria-hidden="true">9.5.</strong> 中国艺术新研</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国近代史新论.html"><strong aria-hidden="true">9.6.</strong> 中国近代史新论</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国迷信新研.html"><strong aria-hidden="true">9.7.</strong> 中国迷信新研</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/为历史拨云.html"><strong aria-hidden="true">9.8.</strong> 为历史拨云</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/要把金针度与人.html"><strong aria-hidden="true">9.9.</strong> 要把金针度与人</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/读史指南.html"><strong aria-hidden="true">9.10.</strong> 读史指南</a></li></ol></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/index.html"><strong aria-hidden="true">10.</strong> 李敖节目演讲合集</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖大哥大.html"><strong aria-hidden="true">10.1.</strong> 李敖大哥大</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖有话说1-735全集.html"><strong aria-hidden="true">10.2.</strong> 李敖有话说 1-735 全集</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖演讲集.html"><strong aria-hidden="true">10.3.</strong> 李敖演讲集</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖秘密书房.html"><strong aria-hidden="true">10.4.</strong> 李敖秘密书房</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖笑傲江湖.html"><strong aria-hidden="true">10.5.</strong> 李敖笑傲江湖</a></li></ol></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/index.html"><strong aria-hidden="true">11.</strong> 李敖电子报合集</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖发电集.html"><strong aria-hidden="true">11.1.</strong> 李敖发电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖放电集.html"><strong aria-hidden="true">11.2.</strong> 李敖放电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖来电集.html"><strong aria-hidden="true">11.3.</strong> 李敖来电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖送电集.html"><strong aria-hidden="true">11.4.</strong> 李敖送电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖通电集.html"><strong aria-hidden="true">11.5.</strong> 李敖通电集</a></li></ol></li><li class="chapter-item expanded "><a href="../12.人物研究类/index.html"><strong aria-hidden="true">12.</strong> 人物研究类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../12.人物研究类/丑陋的中国人研究.html"><strong aria-hidden="true">12.1.</strong> 丑陋的中国人研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/你不知道的彭明敏.html"><strong aria-hidden="true">12.2.</strong> 丑陋的中国人研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/大江大海骗了你.html"><strong aria-hidden="true">12.3.</strong> 大江大海骗了你</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/孙中山研究.html"><strong aria-hidden="true">12.4.</strong> 孙中山研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/孙逸仙和中国西化医学.html"><strong aria-hidden="true">12.5.</strong> 孙逸仙和中国西化医学</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/李敖论人物.html"><strong aria-hidden="true">12.6.</strong> 李敖论人物</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/李登辉的假面具.html"><strong aria-hidden="true">12.7.</strong> 李登辉的假面具</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/李登辉的真面目.html"><strong aria-hidden="true">12.8.</strong> 李登辉的真面目</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/胡适与我.html"><strong aria-hidden="true">12.9.</strong> 胡适与我</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/胡适研究.html"><strong aria-hidden="true">12.10.</strong> 胡适研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/胡适评传.html"><strong aria-hidden="true">12.11.</strong> 胡适评传</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石的真面目.html"><strong aria-hidden="true">12.12.</strong> 蒋介石的真面目</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究一集.html"><strong aria-hidden="true">12.13.</strong> 蒋介石研究一集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究三集.html"><strong aria-hidden="true">12.14.</strong> 蒋介石研究三集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究五集.html"><strong aria-hidden="true">12.15.</strong> 蒋介石研究五集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究六集.html"><strong aria-hidden="true">12.16.</strong> 蒋介石研究六集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究四集.html"><strong aria-hidden="true">12.17.</strong> 蒋介石研究四集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究续集.html"><strong aria-hidden="true">12.18.</strong> 蒋介石研究续集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石评传.html"><strong aria-hidden="true">12.19.</strong> 蒋介石评传</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋家臭史.html"><strong aria-hidden="true">12.20.</strong> 蒋家臭史</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋经国研究.html"><strong aria-hidden="true">12.21.</strong> 蒋经国研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/论定蒋经国.html"><strong aria-hidden="true">12.22.</strong> 论定蒋经国</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/郑南榕研究.html"><strong aria-hidden="true">12.23.</strong> 郑南榕研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/陈水扁的真面目.html"><strong aria-hidden="true">12.24.</strong> 陈水扁的真面目</a></li></ol></li><li class="chapter-item expanded "><a href="../13.国民党史政类/index.html"><strong aria-hidden="true">13.</strong> 国民党史政类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../13.国民党史政类/国民党研究.html"><strong aria-hidden="true">13.1.</strong> 国民党研究</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/国民党研究续集.html"><strong aria-hidden="true">13.2.</strong> 国民党研究续集</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/国民党臭史.html"><strong aria-hidden="true">13.3.</strong> 国民党臭史</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/给国民党难看.html"><strong aria-hidden="true">13.4.</strong> 给国民党难看</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/给外省人难看.html"><strong aria-hidden="true">13.5.</strong> 给外省人难看</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/老贼臭史.html"><strong aria-hidden="true">13.6.</strong> 老贼臭史</a></li></ol></li><li class="chapter-item expanded "><a href="../14.台湾史政类/index.html"><strong aria-hidden="true">14.</strong> 台湾史政类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../14.台湾史政类/你不知道的二二八.html"><strong aria-hidden="true">14.1.</strong> 你不知道的二二八</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/法眼看台湾.html"><strong aria-hidden="true">14.2.</strong> 法眼看台湾</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/另一面的二二八.html"><strong aria-hidden="true">14.3.</strong> 另一面的二二八</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/民进党研究.html"><strong aria-hidden="true">14.4.</strong> 民进党研究</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/冷眼看台湾.html"><strong aria-hidden="true">14.5.</strong> 冷眼看台湾</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/白眼看台湾.html"><strong aria-hidden="true">14.6.</strong> 白眼看台湾</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/白色恐怖述奇.html"><strong aria-hidden="true">14.7.</strong> 白色恐怖述奇</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/给台湾人难看.html"><strong aria-hidden="true">14.8.</strong> 给台湾人难看</a></li></ol></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/index.html"><strong aria-hidden="true">15.</strong> 雷霆法律类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖刀笔集.html"><strong aria-hidden="true">15.1.</strong> 李敖刀笔集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖好讼集.html"><strong aria-hidden="true">15.2.</strong> 李敖好讼集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖弄法集.html"><strong aria-hidden="true">15.3.</strong> 李敖弄法集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖放刁集.html"><strong aria-hidden="true">15.4.</strong> 李敖放刁集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖闹衙集.html" class="active"><strong aria-hidden="true">15.5.</strong> 李敖闹衙集</a></li></ol></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/index.html"><strong aria-hidden="true">16.</strong> 李敖祸台十书</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../16.李敖祸台十书/从万宝囊到臭屎堆.html"><strong aria-hidden="true">16.1.</strong> 从万宝囊到臭屎堆</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/只爱一点点.html"><strong aria-hidden="true">16.2.</strong> 只爱一点点</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/君子爱人以色.html"><strong aria-hidden="true">16.3.</strong> 君子爱人以色</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/启发你的小故事.html"><strong aria-hidden="true">16.4.</strong> 启发你的小故事</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/恰似我的温柔.html"><strong aria-hidden="true">16.5.</strong> 恰似我的温柔</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/我们没有明天.html"><strong aria-hidden="true">16.6.</strong> 我们没有明天</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/李敖智慧书.html"><strong aria-hidden="true">16.7.</strong> 李敖智慧书</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/李敖生死书.html"><strong aria-hidden="true">16.8.</strong> 李敖生死书</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/笑傲五十年.html"><strong aria-hidden="true">16.9.</strong> 笑傲五十年</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/第一流人的境界.html"><strong aria-hidden="true">16.10.</strong> 第一流人的境界</a></li></ol></li><li class="chapter-item expanded "><a href="../17.百家论李敖合集/index.html"><strong aria-hidden="true">17.</strong> 百家论李敖合集</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../17.百家论李敖合集/李敖研究fashion文集.html"><strong aria-hidden="true">17.1.</strong> 李敖研究 fashion 文集</a></li><li class="chapter-item expanded "><a href="../17.百家论李敖合集/百家论李敖.html"><strong aria-hidden="true">17.2.</strong> 百家论李敖</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">大李敖全集</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>#《李敖闹衙集》目录</p>
+<ul>
+<li>《李敖闹衙集》小引</li>
+<li>一、鸟政府，赔钱来</li>
+<li>二、一元官司</li>
+<li>三、又一元官司</li>
+<li>四、控告台北市政府四文件</li>
+<li>五、查禁无法，出个警察</li>
+<li>六、邵玉铭不守出版法规！</li>
+<li>七、李敖答外交部</li>
+<li>八、谁不执行《保险法》？</li>
+<li>九、跟国防部打笔仗</li>
+<li>十、代萧孟能闹金衙</li>
+<li>十一、代萧孟能再闹金衙</li>
+<li>十二、代萧孟能三闹金衙</li>
+<li>十三、代萧孟能闹银衙</li>
+<li>十四、代萧孟能闹税衙</li>
+<li>十五、代萧孟能闹财衙</li>
+<li>十六、吴祺芳怎样作弄江鹏坚？</li>
+</ul>
+<p>《李敖闹衙集》小引</p>
+<p>我自1962年进出公堂，三十七年来，打官司无数。但有一批官司，最有施教作用，那就是我跟中华民国伪政府的官司，也就是以老百姓身份跟官衙的官司。自来衙门欺负老百姓，本是常态。但这一常态得以形成，老百姓的消极配合，也有以致之。换句话说，一方面衙门欺负你，作威作福；一方面你忍耐它的欺负，逆来顺受，这样子搭配，才完整构成这一欺负的作业。如果被欺负的一方，挺身而斗、据理力争，不甘被欺负，而要跟衙门斤斤计较、纠缠不休，则衙门未必胜算，最后衙门之头可灰、大官人之脸可土，而吾侪“刁民”之一口鸟气，亦可稍吐于万一矣！这本《李敖闹衙集》，就是我这种“刁民”作风的一些实录。从闹台北市政府、闹高雄市政府、闹行政院新闻局、闹外交部、闹财政部、闹国防部等等等等，所有有理取闹，尽收眼底，可谓热闹极矣，不亦快哉！</p>
+<p>1999年4月20日</p>
+<p>鸟政府，赔钱来</p>
+<p>——1985年6月24日“损害赔偿请求书”</p>
+<p>请求权人：李敖，吉林省扶余人，身份证A10B50837号</p>
+<p>指定文件送达代收人：龙云翔律师</p>
+<p>代理人：龙云翔律师，台北市松江路206号8楼6室</p>
+<p>请求之事项</p>
+<p>一、请求登报公告“李敖千秋评论丛书”43《五十-五十-易》（上册）前因贵衙门悍然违法，予以扣押，应即撤销。该丛书已扣押部分四十六本，应予发还，连同未扣押部分，予以回复原状，发行出售。</p>
+<p>二、前项因贵衙门悍然违法，予以扣押致生损害前之原状，如难于回复，应赔偿请求权人新台币6901元，并自本年4月27日起至淸偿日止，按中央银行核定放款利率1/2计算利息。</p>
+<p>事实及理由</p>
+<p>一、按请求权人李敖于本年4月25日，依出版法第19条规定，发行“李敖千秋评论丛书”43《五十-五十-易》上、下两册，每本售价新台币150元。该丛书下册，虽经台湾警备总司令部根据既违宪（《中华民国宪法》第11条）又违法（《中央法规标准法》第6条）之所谓《台湾地区戒严时期出版物管制办法》规定，于本年4月27日，以（74）剑佳字第2096号函（附件一），认定其中《从杀人灭口到抓人脱罪》一文，因有“淆乱视听，挑拨政府与人民情感”云云为由，予以扣押，并通令各级学校、警察机关等有关单位，淸査报缴；但该丛书上册，纵依你们之法，也不能予以一并扣押。</p>
+<p>二、讵贵衙门所属有关单位人员，竟不分青红皂白，不但将该丛书上、下两册，悉予扣押，而且公然出具大量“台北市政府取缔违禁出版品收据”（附件二），以资证明。由此可见，贵衙门有关人员于执行职务、行使公权力时，无法无天，悍然极矣！正因为贵衙门有关人员利用职务上之机会，以强迫手段，违法扣押未经査禁之书籍，致使请求权人所发行该丛书上册除被违法扣押四十六本外，其余未扣押部分，也因而不能陈列出售，妨害请求权人发行、出售之权利，损害请求权人可得预期之利益6901元（内含已扣押四十六本书价6900元及未扣押部分优待为1元）。</p>
+<p>三、经核贵衙门有关人员上开违法扣押行为，显已触犯刑法第134条及第304条之强制罪嫌。请求权人对其犯行除暂予保留告诉权外，依国家赔偿法第2条第2项上段、第7条第1项及第9条规定，请求权人所受之损害，自应由贵衙门负赔偿之义务。唯依国家赔偿法第5条准用民法第213条第1项规定，损害赔偿既以回复原状为原则，应请责衙门登报公告该丛书上册，前因悍然违法，予以扣押，应即撤销，已扣押部分应予发还，连同未扣押部分，准予回复原状，发行出售，以便各地书商敢于陈列出售、社会大众敢于公然购阅。倘若贵衙门难于回复原状，依民法第216条第2项规定，以请求权人可得预期之利益，视为所失之利益，应请贵衙门赔偿请求权人6001元，并依民法第213条第2项规定，加给利息。</p>
+<p>附件：（一）台湾警备总司令部4月27日（74）剑佳宇第2096号函影本一件。</p>
+<p>（二）台北市政府取缔违禁出版品收据影本二十四件。</p>
+<p>此致</p>
+<p>台北市政府公鉴</p>
+<p>请求权人：李敖</p>
+<p>代理人：龙云翔律师</p>
+<p>1985年6月24日</p>
+<p>一元官司</p>
+<p>——台北市政府被罚一元记</p>
+<p>自来衙门欺负老百姓，本是常态。但这一常态得以形成，老百姓的消极配合，也有以致之。换句话说，一方面衙门欺负你，作威作福；一方面你忍耐它的欺负，逆来顺受，这样子搭配，才完整构成这一欺负的作业，而令大官人私心窃喜，获得快感。如果被欺负的一方，挺身而斗、据理力争，不甘被欺负，而要跟衙门斤斤计较、纠缠不休，则衙门未必胜算，而大宫人未必得可偿失。斗争到最后，衙门之头可灰、大官人之脸可土，而吾侪“刁民”之一口鸟气，亦可稍吐于万一矣！</p>
+<p>我生平是深信这种斗争哲学的，我以做“刁民”为荣。每遇到衙门找麻烦，只要是于法有亏、于手续欠妥的，我一定把麻烦找回去。或者说，一定“欺负回去”。——有一次黄玉娇到我家，她说：“国民党欺负我们，我们一定要欺负回去！”阿娇姐之言，深获我心。问题是一定得找到机会才好动手，好在国民党坏事做得多，机会是不愁没有的。</p>
+<p>我生平著作上百册，可是国民党査禁了九十六册，查禁法令，种类滋彰，或根据《台湾省戒严期间新闻纸杂志图书管制办法》、或根据《出版法》、或根据《戒严法》、或根据《台湾地区戒严时期出版物管制办法》……不但弄得我们眼花缭乱，连他们自己也眼花缭乱，尤其在下级执行人员执行时，更是眼花缭乱。就在这种眼花缭乱中，在几乎李敖作品每出必禁的“惯性”下，一个机会来了。</p>
+<p>1985年4月25日，我出版了“李敖千秋评论丛书”中《五十-五十-易》上下两册，其中下册经警备总部以“淆乱视听，挑拨政府与人民情感”云云为由，予以扣押，并通令各级学校、警察机关等有关单位，淸査报缴；但该丛书上册，却漏未査禁。不料令下之日，部分下级执行人员却弄不淸楚，索性见书就查，以致该丛书上册，也难以幸免，一并由台北市政府出具大量査扣收据，满载而归。</p>
+<p>1985年6月24日，我由龙云翔律师代理，向台北市政府提出“损害赔偿请求书”，吿诉他们：“正因为责衙门有关人员利用职务上之机会，以强迫手段，违法扣押未经查禁之书籍，致使请求权人所发行该丛书上册除被违法扣押四十六本外，其余未扣押部分，也因而不能陈列出售，妨害请求权人发行、出售之权利，损害请求权人可得预期之利益6901元（内含已扣押四十六本书价6900元及未扣押部分优待为1元）。”“经核贵衙门有关人员上开违法扣押行为，显已触犯刑法第134条及第304条之强制罪嫌。请求权人对其犯行除暂予保留告诉权外，依国家赔偿法第2条第2项上段、第7条第1项及第9条规定，请求权人所受之损害，自应由贵衙门负赔偿之义务。”</p>
+<p>台北市政府收到我的“损害赔偿请求书”后，自知理亏，且知我来者不善，决定屈服。乃在1985年8月29日上午，在法规委员会召开协议，主席林秋水，由洪以逊代，另有新闻处赵鹏科长等，一共五位，与我达成“台北市政府国家赔偿事件协议记录”，确定“本府部分执行人员误扣上述丛书上册属实，本案本府有赔偿责任”。8月29日，开出损害赔偿国库支票“6901元”，其中6900元是已扣押部分的折现；一元部分就是优待的罚金，于是我领走了有史以来第一宗的此类“国家赔偿”，大获全胜矣！</p>
+<p>1988年10月7日</p>
+<p>又一元官司</p>
+<p>——高雄市政府被罚一元记</p>
+<p>在台北市政府被我罚过一元后，高雄市政府又被我逮到，也罚它一元。全部经过，比罚台北市政府还精彩。</p>
+<p>1985年4月15日，我出版了《我给我画帽子》一书，上市后，高雄方面，由盐埕区大仁路141号孙慧珍代为销售。不料到了6月27日，有警员王聪琰者，跑来查扣，并出具编号第039334号“高雄市政府取缔违法出版品录影节目带三联单”一纸，以资证明。因为这本书并没查禁，这下子被我抓到机会，遂在8月10日，去函国民党高雄市长苏南成，指出：“因台端台南市长任上，本人曾写文章揭发台端为‘台湾第一不要脸’，全市哗然，议员且纷纷以台端无耻为询。今日台端走马高雄，自然有假借职务上之权力、教唆下属王聪琰、非法扣押上开书籍、妨害本人依法发行权利之嫌，显已触犯《刑法》第134条、第29条及第304条之罪嫌。又台端身为公务员，于执行职务行使公权力时，故意不法侵害本人发行之权利，依《国家赔偿法》第2条及第7条规定，应由台端之衙门负损害赔偿责任。”苏南成收信后，龟缩不复，1987年3月13日，我由龙云翔律师代理，向髙雄市政府提出“损害赔偿请求书”，苦苦相逼。高雄市政府收到后，自知无法再赖，乃于1987年5月9日上午，在高雄市警察局简报室召开协议，赔偿义务机关代理人廖兆祥、参加协议机关代理人李文锦、法制室代表黄章一、新闻处代表王砚青等，一共多位，与我达成“国家赔偿事件协议记录”，确定四项：“一、警员王聪谈因于1985年6月27日过失査扣李敖先生所著《我给我画帽子》一书，所开具三联单039334号应予撤销。二、查扣之书二本，已于1985年7月12日返还书摊，免予赔偿。三、本府同意象征性赔偿请求人新台币一元。四、本局已主动将警员王聪琰调职处分，另由本局作成案例教育。”</p>
+<p>所谓“案例教育”，是警察界的术语，指具体发生的个案，该案因有施教作用，值得每一位警察注意，因而编成案例，在各级警察流传，以为教育之谓。这一条协议的达成，是高雄市警察局被我纠缠不过，被迫答应的，当然使他们面上无光，但是迫于“刁民”的压力，也只好照办。事实上，我这“刁民”，也有宽大的一面。因为协议当天，高雄市警察局曾找来“肇事”警员王聪琰，当场命他向我报告经过并问我对他的处分是否满意。王聪琰是个大块头，满面羞惭，查起书刊来生龙活虎，对簿公堂来就语无伦次。我得知他已被调职处分，从盐埕区肥缺改调到市警局看门后，就宣布：“我写的书，九十多本都给查禁了，警察执行查扣时，难免弄不淸楚，因而见书就查扣，王警员的错误是可以原谅的，我想不必进一步处罚他了。”几线几星的在场警官，认为我通情达理，王聪琰也向我鞠了一躬，于是在哈哈一笑中，结束了协议。</p>
+<p>不过，在如何交付一元的技术上，出了问题。据1987年7月2日《民众日报》登，高雄市政府对于赔偿李敖事件，“对于这块钱是以现金给付或是开具市库支票给付，市府投鼠忌器，大伤脑筋。”据我的朋友黄章一透露，高雄市政府内部为赔偿李敖曾起争议，但因李敖坚持按照《公库法》第15条“应以支票为之”的规定，拒收现金，所以最后才硬着头皮开出了一元面额的国库支票。这张支票，我后来送给邓维桢了，高雄市政府至今还要每年登报召兑中。当然它永远不会去领取，它永远是一张战利品，长存在民间了。</p>
+<p>1988年10月8日</p>
+<p>控告台北市政府四文件</p>
+<p>国民党的文字警察们，查禁图书的法宝之一是“违反出版法第33条依出版法第39条第1项第4款之规定予以处分”，所谓《出版法》第33条，是“出版品对于尚在侦查或审判中之诉讼事件，或承办该事件司法人员或与该事件有关之诉讼关系人不得评论”。下面四文件，因为是原始法律文书，自然不是“评论”，自然得以刊出也！</p>
+<p>这四文件的上诉人都是原告——李敖，被上诉人都是被告——台北市政府法定代理人许水德。</p>
+<p>民事上诉状</p>
+<p>为请求“国家赔偿”事件，不服台湾台北地方法院于本年8月22日所为1987年度国字第4号第一审民事判决，提起上诉事：</p>
+<p>上诉之声明：</p>
+<p>一、原判决废弃。</p>
+<p>二、被上诉人应返还上诉人“万岁评论丛书”35《祝寿-祝寿-祝倒寿》书籍二十七本，如不能返还，应赔偿上诉人新台币4050元，并自1986年10月28日起至淸偿日止，按周年利率5%计算之利息。</p>
+<p>三、第一、二审诉讼费用均由被上诉人负担。</p>
+<p>上诉之理由：</p>
+<p>一、按行政处分虽是行政机关一方面之意思表示，不必经相对人同意，以发生公法上效果的单独行为，但人民与行政机关间发生争执，则常因行政处分而起。为使相对人对行政处分得以表示不服，乃规定应将行政处分以书面送达于相对人。因此，行政处分除以具备一般要件及特别要件为其“成立要件”外，并须以业经相对人受领为其“生效要件”（参见管欧著《行政法概要》第七版第179-192页）。所以，历年来判例无不明白指出：</p>
+<p>（一）“命令效力之发生，以到达为前提要件，到达云者，即已送达于受令者之谓，若该管机关在命令尚未送达以前，而就其职掌范围内所为之行为，自毋庸受其约束。”（参见行政法院二十四年判字第13号判例）</p>
+<p>（二）“诉愿法规定，诉愿自官署之处分书送到之次日起三十日内提起之。所谓达到，系指将文件交付于应行收受人而言。若根本上并未制成处分书依法送达，则诉愿期间即无从起算，不发生诉愿逾期问题。”（参见行政法院二十四年判字第77号判例）</p>
+<p>（三）“人民不服官署之处分而提起诉愿，依诉愿法第四条第一项规定，固应于官署之处分书达到之次日起三十日之期限内为之，但如官署为处分而未送达处分书，则人民可随时提起诉愿，不发生逾期与否之问题。”（参见行政法院四十六年判字第96号判例）</p>
+<p>（四）“诉愿期限应自官署处分书达到之次日起算，官署抄没人民之财产而拍卖之，如未送达处分书，人民提起诉愿，自不生逾限问题。”（参见司法院三十六年院解字第3645号解释）</p>
+<p>（五）“送达以交付应送达之文书于应受送达人为之，应受送达人有数人时，如仅以应送达之文书一通交付于其中之一人，而该一人又非其他应受送达人之代理人者，对于其他应受送达人，即不得谓已有合法之送达。”（参见最高法院二十九年抗字第397号判例）</p>
+<p>由此可见，除非对于不特定人所为之行政处分，依司法院二十七年院宇第1824号解释，不适用送达程序，一经张贴布告即生效力外，对于特定人之行政处分，依前大理院十三年统字第1882号解释，则必须将处分书交付于受处分之人，始生效力。</p>
+<p>二、原审法院判决“原告之诉驳回”，所持理由无非略以：</p>
+<p>（一）上诉人所发行之“万岁评论丛书”35《祝寿-祝寿-祝倒寿》一书，因违反《台湾地区戒严时期出版物管制办法》第3条第3款、第6款、第7款之规定，经台湾警备总司令部以：①七十五年10月28日（75）剑佳字第5116号函。②七十五年10月28日（75）剑佳字第5117号令。在七十五年10月28日上午9时20分予以查禁。</p>
+<p>（二）台北市政府警察局古亭分局罗斯福路派出所警员胡鹏祥系于七十五年10月28日下午3时，在台北市罗斯福路一段22号前，发现上开书籍可能是查禁书刊，经以电话向台湾警备总司令部查询，该部即派专员到场，确认为查禁书刊后，乃出具临时收据，予以查扣。</p>
+<p>（三）至于上开查禁书刊之函或令，是否合法送达以及是否须经合法送达于上诉人始生效力，而得予查扣，并非仅属负责执行查扣任务之警员胡鹏祥之职责，显无不法侵害上诉人权利之故意。</p>
+<p>云云，为其论据。</p>
+<p>三、査上诉人所发行之“万岁评论丛书”35《祝寿-祝寿-祝倒寿》一书，台湾警备总司令部纵令已于1986年10月28日上午9时20分发文，予以査禁之处分，但其查禁处分书系于1986年11月1日，交付邮局送达于上诉上，挨诸首揭说明，上开查禁之处分书，在1986年10月28日虽已具备“成立要件”，但须至1986年11月1日始已具备“生效要件”。简言之，应自1986年11月1日起，上诉人始受其拘束。至于上开查禁处分书，究于何时送达于被上诉人，因其属于行政机关之内部作业，核与上诉人无干，何况，依《出版法施行细则》第30条规定：“出版法所规定之行政处分，应以书面为之。”在上开查禁处分书未经依法送达于上诉人之前，对上诉人既不生效力，如遽予査扣，即属未以书面为之的行为，显然违背“应以书面为之”的强制规定，依《民法》第71条前段规定，自属无效，此乃被上诉人及其所属公务人员应有之常识。讵被上诉人所属警员胡鹏祥，于执行职务、行使公权力、查扣上开书籍时，竟疏于查明上开查禁处分书有无依法送达于上诉人，对上诉人是否已发生效力，其有过失之事实，已甚明显。被上诉人所属警员胡鹏祥系公务员，于执行职务、行使公权力时，因过失以致疏于查明上开查禁处分书对上诉人尚未发生效力，竟遽予査扣上开书籍，不法侵害上诉人之权利，依《国家赔偿法》第2条第2项上段及第9条第1项规定，被上诉人自有赔偿之义务。原审判决未加细心钩稽，徒以被上诉人所属警员胡鹏祥仅是负责执行査扣任务，并不过问上开査禁处分书是否合法送达为由，谕知被上诉人不负赔偿之责云云，无非将其不法侵害上诉人权利之责任，推给台湾瞀备总司令部，殊不知“执行职务，行使公权力”査扣上开书籍之行为人系被上诉人所属警员胡鹏祥，而非台湾警备总司令部，其认事用法，殊有欠洽。为此状请钧院鉴核，判决如上诉之声明，以符法制。</p>
+<p>1987年9月10日</p>
+<p>民事言词辩论状</p>
+<p>为就1987年度上易国字第496号依《国家赔偿法》请求赔偿损害事件，对被上诉人于本年10月（未列日）所具答辩状，上诉人为补充上诉理由，提出言词辩论状事：</p>
+<p>一、按被上诉人具状答辩，不愿赔偿上诉人之损害，所持理由，无非以：</p>
+<p>（一）台湾警备总司令部（以下简称警备总部）对上诉人所有“万岁评论丛书”35《祝寿-祝寿-祝倒寿》一书，系于七十五年10月28日上午9时20分，以（75）剑佳字第5116号令，饬知被上诉人已予以查禁，并命转知所属协调有关单位予以扣押。被上诉人所属台北市警察局古亭分局罗斯福路派出所警员胡鹏翔，于七十五年10月28日下午3时，予以扣押，系执行公务之合法行为。</p>
+<p>（二）出版法所规定之行政处分，依出版法施行细则第30条规定，虽应以书面为之，但查上开书籍，警备总部系依《台湾地区戒严时期出版物管制办法》予以查禁扣押，而非依出版法为之，所以出版法施行细则第30条自无适用之余地，即毋庸以书面为之。</p>
+<p>云云，为其论据。</p>
+<p>二、唯查：</p>
+<p>（一）法院之裁判书类，不论是判决书或是裁定书，均须依法送达与受裁判之人，始生“拘束力”。又不论是民事执行或是刑事执行，执行人员必须审查判决书是否业已确定；裁定书是否业已送达，否则不生“执行力”，这是最基本的法律常识，司法机关规定如此。警备总部的“行政处分书”犹如法院的裁判书，是否可以例外的不必依法送达，对人民即生“拘束力”？对犹如执行处之警察机关即生“执行力”？査行政处分虽是行政机关一方面之意思表示，不必经相对人之同意，以发生公法上效果之单独行为，但人民与行政机关间发生争执，则常因行政处分而起。为使相对人对行政处分得以表示不服，乃规定应将行政处分以书面送达与相对人。因此，行政处分除了具备一般要件及特别要件为其“成立要件”外，并须以业经相对人之受领为其“生效要件”（参见管欧著《行政法概要》第七版第179-192页）。所以，行政法院二十四年判字第13号判例（证一号）已明白指出：“命令效力之发生，以到达为前提要件。到达云者，即已送达于受令者之谓。若该管机关在命令尚未送达以前，而就其职掌范围内所为之行为，自毋庸受其约束。”准此以论，警备总部査禁上开书籍之“行政处分书”虽于1986年10月28日发文，具备“成立要件”，但迟至1986年11月1日始送达与上诉人受领，足见其于1986年11月1日，始具备“生效要件”。然而，被上诉人所属警员，竟于1986年10月28日下午3时，在上开“行政处分书”对上诉人未生“拘束力”、对警察机关尚无“执行力”之前，遽予扣押上开书籍，其为不法侵害上诉人权利之事实，彰彰明甚。</p>
+<p>（二）警备总部虽系依据《台湾地区戒严时期出版物管制办法》查禁上开书籍，而非依《出版法》为之，不适用《出版法施行细则》第30条之规定，但如上所述，人民与行政机关间发生争执，则常因行政处分而起。为使相对人对行政处分得以表示不服，乃规定应将行政处分以书面送达与相对人，始具备“成立要件”与“生效要件”。因此，警备总部虽非依《出版法》查禁上开书籍，亦应以书面为之，被上诉人主张毋庸以书面为之，其见解不无误会。何况，警备总部于台湾地区戒严时期发布查禁出版物之命令，于解除戒严以后，据1987年11月12日《联合报》刊载，内政部认定应属失效（证二号），上开书籍即应发还与上诉人，如不能返还，自应赔偿上诉人之损害。</p>
+<p>三、综上所述，原审判决，认事用法，均有违误，被上诉人之抗辩，显无理由，为此状请钧院鉴核，撤销原判决，另为适当之判决，以符法制，用保权利。</p>
+<p>1987年11月20日</p>
+<p>民事言词辩论（二）状</p>
+<p>关于台北市政府警察局古亭分局罗斯福路派出所警员胡鹏祥非法査扣李敖著作案，台北市政府在5月30日“民事答辩状”中，陈述理由与经过如下：</p>
+<p>按《台湾地区戒严时期出版物管制办法》系依戒严法第11条第1款规定所订定，台湾警备总司令部自得对违反该管制办法之出版物为查禁之处分。本案查扣之出版物“万岁评论丛书”35《祝寿-祝寿-祝倒寿》一书，系经该总司令部七十五年10月28日（75）剑佳字第5117号令，以内容不妥依法查禁。该令载明：“说明：一、该书部分文字，核已违反《台湾地区戒严时期出版物管制办法》第3条第3款‘为共匪宣传’，及第6款‘淆乱视听足以影响民心士气’，及第7款‘挑拨政府人民情感’之规定，依同办法第8条扣押其出版物。二、依《戒严法》第11条第1款、第8款及前开之规定，为扣押该出版物，对于建筑物、船舶及认为情形可疑之住宅，得施行检查。三、请转知所属协调有关单位，依法检扣报缴。”本府警察局古亭分局罗斯福路派出所警员胡鹏翔于七十五年10月28日下午3时执行巡逻勤务中，至罗斯福路1段22号前，发现用机车载送违禁书刊之李姓男子即向之查询，施行检查其所载书刊，为恐查扣发生错误，随即以电话向上级（有关机关）请示，经确定后予依法检扣，嗣以胡员未携带査扣收据，即着李姓男子一齐至派出所取据，但其却请求：“我很忙，你先写一张便条纸‘收据’，晚上我会去拿（按即換取正式收据）”，胡员系顾及其很忙，为便民起见，乃应其请求照办（附录二）。唯该李姓男子未“信守履行”于晚上至派出所换取正式收据之言诺。胡员之所为（开具临时收据）应无损该书已被查禁扣押之效力。</p>
+<p>台北地方法院推事洪政雄在8月26日判决书中，判决台北市政府无须“国家赔偿”，是属违反经验法则的枉法栽判，因为这位推事对非常明显的事实判定，都出了笑话：</p>
+<p>（一）根据公文，李敖的书既然“经台湾警备总司令部于七十五年10月28日上午9时20分予以查禁”，则查禁令从打字、油印、用印、发文、送达，到台北市政府签收的过程，至少也需两小时以上的时间（光在送达路途上，从博爱路警备总司令部到长安西路台北市政府，就非四十分钟莫办）。台北市政府收文后，即在10月28日上午11时20分，立刻停止其他的公不办，专门赶办“转知所属协调有关单位”的公文，从拟稿、画行、打字、油印、用印，到中午下班前，前后只有四十分钟，时间当然不够，纵大家一起忙，不下班也不吃午饭，弄好公文，再送达到台北市政府警察局，至少也要到下午2时以后。台北市警察局收文后，立刻也停止其他的公不办，专门赶办“转知所属协调有关单位”的公文，从拟稿、画行、打字、油印、用印、发文、送达各分局（纵古亭分局第一优先送达），至少也需两小时以上的时间。古亭分局再同样折腾一番，命令送达到罗斯福路派出所，至少也在10月28日下午6时以后。可见罗斯福路派出所警员胡鹏祥得知李敖的书被禁命令，再快也在下午6时以后，但该警员违法査扣时间明明是“10月28日下午3时”！足证该警员査扣之时，绝对不知哪本书是禁书！</p>
+<p>（二）说该警员于“执行巡逻勤务中”，“发现用机车载送违禁书刊之李姓男子即向之査询”，这根本是笑话，台北市骑机车者几万辆几十万辆，该警员竟有此法眼与慧根，一眼就看出机车箱后有禁书而将“李姓男子”留置（事实上并无“李姓男子”其人），并且是先留置再找法令根据，这不是公然违法是什么？找了半天，也不过是“以电话向上级（有关机关）请示”而已，还是拿不出《出版法施行细则》第30条中“以书面为之”的书面文件，也拿不出取缔违法出版品的三联单，这不是公然违法是什么？这样子公然违法，还说是“便民”，这种“便民”，真要被全世界警察奉之为师矣！</p>
+<p>1987年12月11日</p>
+<p>附录</p>
+<p>三联单的地位</p>
+<p>《出版法施行细则》第30条明定：“出版法所规定之行政处分，应以书面为之。”这种书面，相当于法院的“裁定书”或“判决书”，就是“查禁命令”。</p>
+<p>一般取缔违法出版品的三联单——就是“查禁收据”——则相当于法院出纳室的收款收据。</p>
+<p>法院绝不单给收据的，一定要提出“裁定书”或“判决书”，才肯收款给据。相对的，没有“查禁命令”就禁书，只给“查禁收据”了事，是根本违法的。</p>
+<p>民事言词辩论（三）状</p>
+<p>为被上诉人所属台北市政府警察局古亭分局罗斯福路派出所警员胡鹏翔，于执行职务行使公权力时，以私人资格假借行政处分之手段，不法査扣上诉人所有书籍依法得以发行及出售之权利，再具状提出言词辩论事：</p>
+<p>一、缘被上诉人于本年12月（未列日）又具状补充答辩略称：司法机关之民刑诉讼与行政机关之行政处分，性质、作用均有不同，司法机关之裁判书，应送达与受裁判之人，系根据《民刑诉讼法》之规定；至于行政机关之处分书，除《出版法施行细则》第30条“出版法所规定之行政处分，应以书面为之”外，并无明文规定应制作处分书并送达与受处分之人，所以管欧著作仅称“有时”而未称“必要”制作处分书并送达与受处分人即明。本件既非依据《出版法》之规定查扣上诉人之书籍，而是依据《台湾地区戒严时期出版物管制办法》予以查扣，则其处分书之制作及送达，自非属“必要”。</p>
+<p>二、按行政处分之成立，依管欧所著《行政法概要》（参见1973年9月第七版第190-192页）指出：</p>
+<p>行政机关所为之行政处分，必须具备其若干要件，始得有效成立，是为行政处分之成立要件，此种处分虽依行政处分之类别，而不完全相同，唯有为各种处分所应共同具备者，是为行政处分成立之一般要件；其有于一般要件之外，尚需具有特别要件者，是为行政处分成立之特别要件，故欲认定行政处分之成立与否，须视其于一般要件之外，是否尚需具备特别要件以为断。</p>
+<p>（一）行政处分成立之一般要件：关于行政处分成立之一般要件，大抵指主观的要件，客观的要件及内容的要件而言：（1）主观的要件：此指行政处分之成立，须为此种行政处分者为法定之机关，及有法定之职权，为法定之机关是有为其处分之能力；有法定之职权，是为有为其处分之权限，故如非依照法令所设置之机关，固不得为有效之行政处分，即属法定之机关，若无为其行政处分之法定职权，亦不得为有效之行政处分，例如非警察机关不得为警察上之处分，非税收机关不得为征税之处分是；此种主观要件，亦得谓为主体之适法。（2）客观的要件：此指行政处分之成立，必须客体之适格及标的之适宜，对于不得为行政客体而为行政处分，例如对于享有治外法权之外国元首及外交使节，而为课税或违警处分，是为行政客体之不适格；对于公有土地而为土地之征收，是为行政标的之不适宜，其行政处分，均不能有效成立。（3）内容的要件：此指构成行政处分之内容，必须为可能、明确、适法，并合于公益，且其为处分之意思表示，须其本意与表示互相一致者始可。所谓可能，乃包括法律上之可能及事实上之可能；所谓明确，乃指有确定之标的及一定之范围；所谓适法，乃指须适合法规之规定，不得与之抵触，或违反禁止之规定；所谓合于公益，乃指符合国家所采行之主义、政策，及社会上利益或行政上之目的；所谓本意与表示之一致，乃谓行政机关为行政处分时，其蕴藏于内部之意思，与表示于外部之行动，出于一贯，其所表示者，即为符合其本意之动机，故若为处分之时，因错误或被诈欺胁迫，致为处分之意思与所表示之行为相龃龉者，其处分之内容，即不免为有瑕疵，此时应按其情节，就其处分或认为无效，或得予以撤销，而不得认为其处分已完成有效成立。</p>
+<p>（二）行政处分成立之特别要件：关于行政处分成立之特别要件，大抵指程序上之要件、形式上之要件，及处分有附敖等情形而言：（1）程序之要件：行政处分在未正式成立前，如有一定之先行程序者，须经其先行程序，例如须先由受处分人之申请，或有关机关之协商，或有关机关之核准备案，或事先之公布或预告，在此等程序未完成前，其行政处分自不能有效成立。（2）形式之要件：行政机关为行政处分时，如依法令之规定，尚须具备一定之方式者，则必须合于法定方式，通常行政机关如以书面而为处分者，即依公文程式条例之规定办理。（3）处分有附款者：例如行政处分如附有条件或期限，则须俟其条件完成期限到来，方可有效成立。所应注意者：行政处分具备上述一般要件及特别要件，固已有效成立，唯成立要件与生效要件，仍不得混为一谈；行政处分若已成立，而欲使其其正发生效力，有时尚须将该项行政处分口头告知或以书面通知送达于相对人，即被处分人，并须经相对人之受领，始生效果。唯对于无特定相对人之处分，或对多数不特定人或一般公众之处分，仅以公告之方式即可，毋庸送达及经其受领，例如对于道路通行之禁止，及公物之设定、变更或废止等处分是。</p>
+<p>由此可见，行政处分虽已具备一般要件及特别要件，而有效成立，但欲使其真正发生效力，“有时”尚须将行政处分以口头通知或书面送达于受处分之人，并经受处分人受领，始生效力。</p>
+<p>三、准此以论，本件被上诉人所属警员胡鹏翔查扣上诉人所有书籍之行政处分，究竟是否属于“有时”的范围，应以书面送达与上诉人，始生效力，自有深究之必要。依《诉愿法》第1条上段规定：</p>
+<p>人民对于中央或地方机关之行政处分，认为违法或不当，致损害其权利或利益者，得依本法提起诉愿、再诉愿。</p>
+<p>又依《诉愿法》第9条规定：</p>
+<p>诉愿自机关之行政处分书或决定书达到之次日起，应于三十日内提起之。</p>
+<p>根据上开法条规定，上诉人对于被上诉人所属警员胡鹏翔查扣书籍之行政处分，既认为违法，自得于处分书送达后三十日内提起诉愿。上诉人既得提起诉愿，被上诉人自应制作处分书，并应将之送达与上诉人，否则，其诉愿之法定期限，即无从起算。所以行政法院二十四年判字第77号判例：</p>
+<p>诉愿法规定，诉愿自官署之处分书达到之次日起三十日内提起之。所谓达到，系指将文件交付于应行收受人而言，若根本上并未制成处分书依法达到，则诉愿期间即无从起算，不发生诉愿逾期问题。</p>
+<p>亦明白指出，对人民之行政处分，不但要制作处分书，而且要送达与受处分之人，管欧著作所谓“有时”要送达，“有时”不要送达，系指受处分人之对象不同而言，如果受处分人是特定人，即应依法送达；反之，如属不特定人，即不要送达，观乎司法院二十七年院字第1824号解释：</p>
+<p>行政官署对于不特定人所为之处分，不适用送达程序，一经张贴布告即应生效，如对于该处分有所不服，其诉愿期间，应自布告之次日起算。</p>
+<p>即可一目了然。</p>
+<p>四、综上所述，本件被上诉人以其所属警员胡鹏翔查扣上诉人所有书籍，并非依据《出版法施行细则》第30条规定办理，而是依《台湾地区戒严时期出版物管制办法》查扣，因无明文规定应制作处分书并送达与上诉人，所以其所属警员胡鹏翔径行查扣上诉人所有书籍，并非不法行为，依法不负损害赔偿责任云云，显有误解法律，殊无理由。为此状请钧院鉴核，废弃原判决，并判决如上诉之声明，以符法制，用保权利为感。</p>
+<p>1988年3月9日</p>
+<p>查禁无法，出个警察</p>
+<p>——李敖告新闻局长和八个警察分局长自诉状</p>
+<p>国民党政府压迫言论出版自由、查禁图书，方式一明一暗。明是“明枪法”、暗是“暗箭法”。“明枪法”表面上有法令根据，按照官方发布的《查禁图书目录》说明（证一号），“査禁图书法令依据”是：“（一）出版法，（二）出版法施行细则，（三）社会教育法，（四）戒严法，（五）台湾地区戒严时期出版物管制办法，（六）内政部台（47）内警字第22479号函，（七）刑法235条。”上面七种法令，内容是否违背《宪法》中“言论出版自由”，姑且不论，至少形式上，表示他们査禁图书，依照法令不为无据。但是，国民党政府并不以此为足，他们还要杠上开花，另以“暗箭法”查禁图书。“暗箭法”是完全不照上面七种法令来压迫言论出版自由的，方式是出动情治人员（以警察为主），硬要把书带走。对以“明枪法”査禁李敖写的书，从1966年《孙逸仙和中国西化医学》一书被査禁起，直到今天，二十一年来，李敖的书，前后被査禁的，共有九十四本（证二号）。古今中外的作者中，李敖是被禁书最多的冠军，这样子的作者是古之所无、今之没有的，当然，这样子的政府也是古之所无、今之没有的。前前后后连禁九十四本书的大纪录，正是“吉尼斯世界纪录”的好题材，而为李敖与国民党政府所共享焉！这九十四本被查禁的书，李敖因为本本都收到査禁命令，所以另行据理而争；对以“暗箭法”带走李敖的书，李敖则以“国家赔偿”和法院控告的方法，就此挺身而斗：在“国家赔偿”方面，李敖斗到台北市政府，台北市政府业以七四府赔三字第45185号“国家赔偿协议书”，赔偿李敖新台币6901元（1元部分为罚金）（证三号）；李敖又斗到高雄市政府，高雄市政府也以七十六年赔议字第82号“国家赔偿事件协议书”，赔偿李敖新台币1元（纯罚金）（证四号），其他台中市政府等等，也都被告到法院，现正审理中。不过这些诉讼，都涉及民事，不涉及刑事，扩大涉及刑事的，则从这件妨害自由案告起。</p>
+<p>这件妨害自由案，是国民党行政院新闻局局长邵玉铭秘密教唆全台湾警察首长非法査扣李敖著作案。它发生的基本原因是由于解严后，査禁图书所依据的七种法令中，《戒严法》和《台湾地区戒严时期出版物管制办法》不能用了，查禁的罪名减少了，发生了“要禁书，缺罪名”的不方便。按照《台湾地区戒严时期出版物管制办法》第3条，凡是“三、为共匪宣传者。四、诋毁国家元首者。五、违背反共国策者。六、淆乱视听，足以影响民心士气或危害社会治安者。七、挑拨政府与人民情感者”，都在查禁之列，所以过去査禁李敖九十多本书，用的大都是这些罪名，试看“淆乱视听”四个字，它的解释，可以多么宽、多么得心应手、多么予取予求，有这四个字，禁起书来，可以多么方便！可是，在解严后，国民党“文字警察”头子邵玉铭手中所能掌握的撒手锏，只不过是《出版法》、《出版法施行细则》而已，用这些残余的法律来禁书，范围就大打了折扣。按照《出版法》第32条、第33条，只有触犯或煽动他人触犯内乱罪外患罪者、妨害公务罪、妨害投票罪、或妨害秩序罪者、亵渎祀典罪、或妨害风化罪者、或评论尚在侦查或审判中之诉讼事件者，才能査禁，但是，李敖写《蒋介石研究》、《蒋介石研究续集》、《蒋介石研究三集》、《蒋介石研究四集》及《蒋经国研究》等书，不论怎么用《出版法》扣帽子，都扣不上，但是邵玉铭为了希旨承风、为了做官，却又不得不消灭这些书，于是，主意打到傻傻的警察首长头上，遂在11月4日，以（76）铭版四字第13645号函（证五号），秘密通知警察单位如下：</p>
+<p>李敖所著《蒋介石研究》、《蒋介石研究续集》、《蒋介石研究三集》、《蒋介石研究四集》及《蒋经国研究》等五书，对于先总统蒋公及蒋总统经国先生之生平事迹多有不实或无中生有之陈述，乃属谣官，足以影响公共安宁，似有背违警罚法第54条第1项第1款之规定，请转知该管警察机关依法处理。</p>
+<p>中国俗话说“做戏无法，出个菩萨”，邵玉铭显然“查禁无法，出个警察”了——他竟走投无路，要用被大法官栽决违宪的《违警罚法》来帮忙查禁书了，这种手法之邪门儿，戒严时期警备总部的武人都干不出来，而他们文人却优为之——解严云乎哉？</p>
+<p>警察单位本来就是爱拿鸡毛当令箭的，何况来的根本是令箭？所以一收到上一密件，立刻组成“正言专案”，对付李敖。根据有“密”字标示的“正言专案实施要点”（证六号），共有八项。其中第二项明说“目的”是“取缔违禁（警）出版品，防止散布陈售”。第三项明说“基本原则”是“（一）全力取缔，防止散布陈售。（二）重点检扣落实执行效果。（三）疏导沟通，化解误会谣传”。第四项明说“执行范围”是“没入业经警政署核定有关新闻主管机关所认定属于谣言，而有敢布，足以影响公共安宁之出版品”。第六项明说“执行日期”是“本（11）月27日实施劝导，28日开始取缔，为期一周”。第七项明说“注意事项”是“须系警政署核定有关新闻主管机关所认定属于谣言而有散布，足以影响公共安宁之出版品”。“本案以没入违警出版品为着眼，对于带案之出版品，依《违警罚法》第22条之规定，并予宣告没入。”并在密件中表列“违警出版品”纯是《蒋介石研究》、《蒋介石研究续集》、《蒋介石研究三集》、《蒋介石研究四集》、《蒋经国研究》五书，并无其他人的出版品，可见来势汹汹，都针对李敖也。</p>
+<p>李敖取得的“正言专案实施要点”还只是台北市警察局的秘密文件，其他县市尚不详。但光就这一文件第五项“任务编组”和第八项看，就可略知它规模的庞大了：</p>
+<p>（一）本局成立取缔工作执〔行〕小组，由曾副局长（李敖按：此人名曾奇水）担任召集人，行政科长为小组长，有关行政、保防、督察、第三科等业务主、承办人员参加，负责协调、督导支援各分局，全面执行。</p>
+<p>（二）各分局成立取缔工作执行分组，由分局长担任分组长，有关行政、督察、刑事、保防业务主、承办人员暨各派出所主管参加负责全盘工作策划执行。</p>
+<p>本案自执行日起每次日上午9时前将执行成果以电话报本局一科，本案执行结束后，再以书面（格式如附件）报一科。</p>
+<p>根据第四项、第七项中“警政署核定有关新闻主管机关所认定属于谣言……之出版品”等字样，足证是原由邵玉铭行文给警政署后交办下来的，所以这个案子邵玉铭构成妨害自由教唆罪，更形明确。</p>
+<p>因为警察执行勤务，轻重有出入；书店书摊做生意，屈伸有不同，所以李敖在搜证方面，实不容易。而没有证据在手，纵有此事实，也难控告。目前李敖掌握到的证据，能证明警察首长涉嫌妨害自由的，计开：</p>
+<p>一、叶良辉——台北市警察局城中分局分局长（证七号）。</p>
+<p>二、刘孝直——台北市警察局桂林分局分局长（证八号）。</p>
+<p>三、孟宜荪——台北市警察局松北分局分局长（证九号）。</p>
+<p>四、蒋延远——台北市警察局中山分局分局长（证十号）。</p>
+<p>五、陈秉三——台北市警察局大安分局分局长（证十一号）。</p>
+<p>六、吴昇源——台北县警察局新庄分局分局长（证十二号）。</p>
+<p>七、汪修烈——高雄市警察局苓雅分局分局长（证十三号）。</p>
+<p>八、萧大雄——台南市警察局笫二分局分局长（证十四号）。</p>
+<p>以上诸人，明知《蒋介石研究》、《蒋介石研究续集》、《蒋介石研究三集》、《蒋介石研究四集》、《蒋经国研究》五书为李敖著作，依《出版法》第19条规定发行，为李敖所有，委托书店书摊代为销售，竟转饬所属警员，认定上述五书既属谣言，陈列或出售，其经销人即有散布谣言之行为，应依《违警罚法》第54条第1项第1款规定裁决处罚，上述五书并应依同法第22条规定宣告没入。进而大肆发出“违警事件传唤通知单”，胁迫书店书摊不得陈列或出售，乃至没入上述五书，显然涉嫌以胁迫使人行无义务之事及妨害人行使权利之罪行，自然要被李敖控告了。</p>
+<p>细看这个案子的形成，共有重大荒谬之处四点：</p>
+<p>第一、纵令上述五书，对蒋介石及蒋经国“之生平事迹多有不实或无中生有之陈述”，当事人蒋经国自可效法菲律宾总统科拉松，依《刑法》第310条、第312条提出告诉，也轮不到别人献媚，越俎代庖。</p>
+<p>第二、査禁图书，纵依国民党政府所制定的法令，也有它固定的依据可寻。如今邵玉铭穷斯滥矣的竟用起《违警罚法》来禁书，是完完全全荒腔走板的行径。</p>
+<p>第三、上述五书，全是按照《出版法》第19条规定发行，对出版品的主管机关，依《出版法》第7条规定，在中央为行政院新闻局、在地方为台北市政府，这两个衙门，既然未依《出版法施行细则》第30条规定，以书面通知李敖，施以行政处分，禁止出售散布或扣押没入，足见并非禁书，依法李敖显然有委托书摊或书店陈列、出售的权利，经销人亦有代为陈列、出售的义务。既然如此，新闻局又何能暗中行文，擅以“乃属谣言”四个字妄加罪名？李敖的书是学术研究、历史研究，五书全部，有一百万字，举证历历，处处有根据，岂容不学无知之徒擅以“乃属谣言”四字抹杀？</p>
+<p>第四、按《违警罚法》第18条，纵有所谓散布谣言的违警行为，应予裁决拘役、罚锾、罚役或申诫，而视上述五书为违警所用之物，应予宣告没入，但依同法第22条第3项规定，没入之物以属于违警人所有者为限，上述五书，即非经销人所有，而属李敖所有、所寄售，依法自然不得没入。</p>
+<p>细查警察单位的所谓“违警事件裁决书”，基本罪名不出“陈列贩售行政院新闻局査处之《蒋介石研究》等书刊为警当场查获”的格局，可见对行政院新闻局（76）铭版四宇第13645号函的印证，呼之欲出。邵玉铭和八个警察分局长，都是依据法令从事公务之人员，竟假借职务上之权力、机会及方法，朋比犯罪，以《违警罚法》为手段，胁迫经销人不得为李敖陈列及出售上述五书，显有以胁迫使经销人行无义务之事及妨害李敖行使发行书籍权利之犯意与犯行，触犯《刑法》第304条，已极明显；又因为都是公务员，依《刑法》第134条规定，且应加重其刑二分之一。</p>
+<p>显然的，这个案子具有重划时代的重大意义，因为它证明了国民党政府所谓解严，根本是一场骗局；同时证明了这个政府对言论出版自由的压迫，花样之多、手段之卑鄙、无法无天之严重，根本比戒严时期尤有过之！现在李敖把这个案子带进法院，让法官来做结论，是秉公审案，还是枉法判决，全靠法官自己的一择。</p>
+<p>1987年12月11日</p>
+<p>证一号——1977年10月台湾省政府台北市政府台湾警备总司令部联合出版《查禁图书目录》。</p>
+<p>证二号——“国民党政府查禁李敖著作表。”</p>
+<p>证三号——1974年9月4日台北市政府74府赔三字第45185号“国家赔偿协议书”。</p>
+<p>证四号——1987年8月8日高雄市政府七十六年赔议字第82号“国家赔偿事件协议书”。</p>
+<p>证五号——行政院新闻局（76）铭版四字第13645号函。原件请依《刑事诉讼法》第133条及第138条规定，命保管人提出或交付，必要时，予以扣押。</p>
+<p>证六号——台北市警察局“正言专案实施要点”密件。原件请依《刑事诉讼法》第133条及第138条规定，命保管人提出或交付，必要时，予以扣押。</p>
+<p>证七号——台北市警察局域中分局“违警事件裁决书”第4556号、4559号、4565号；“违警印纸粘贴单”第8177号、8178号；“违警事件传唤通知单”第1721号、1722号、1744号、1746号。</p>
+<p>证八号——台北市警察局桂林分局“台北市政府取缔违法出版品、录影节目带三联单”第2356号。</p>
+<p>证九号——台北市警察局松北分局11月27日“劝导书”；敬恒出版有限公司证明书。</p>
+<p>证十号——台北市警察局中山分局“违警事件传唤通知单”第661号、622号；达永书店证明书。</p>
+<p>证十一号——台北市警察局大安分局“违警事件传唤通知单”第2701号、3701号、4010号；杨传旺证明书。</p>
+<p>证十二号——台北县警察局新庄分局“违警事件裁决书”新警刑字第1181号；“违警印纸粘贴单”第143225号。</p>
+<p>证十三号——高雄市警察局“违警事件裁决书”高市警苓分刑违字第7927号。</p>
+<p>证十四号——台南市警察局第二分局“违警事件传唤通知单”第151号。</p>
+<p>邵玉铭不守出版法规！</p>
+<p>国民党同路人吴三连去年12月29日死后，他旗下的《自立晚报》和《自立早报》，在报头下“发行人吴三连”的字样，立刻改为“发行人（新任发行人申请登记中）”的字样，一连几天了，至今犹在照改不误中。</p>
+<p>不过，按照台北市政府新闻处编印的《出版事业业务手册》第二篇《出版登记》，其中明说“变更名称、发行人、发行所管辖地，均视同重行登记”。节中并详加说明如下内政部台四十五年11月15日内警字第101146号代电：査新闻纸、杂志之变更名称、发行人或发行所所在地管辖者，应附缴原领登记证按照出版法第9条之规定重行登记。”再按《出版法》第9条：“新闻纸或杂志之发行，应由发行人于首次发行前，填具登记申请书呈经该管直辖市政府或该管县（市）政府转呈省政府，核与规定相符者，准予发行，并转请行政院新闻局发给登记证。前项登记手续各级机关均应于十日内为之，并不收费用。”第10条：“前条所定应申请登记之事项有变更者，其发行人应于变更后七日内，按照登记时之程序，申请变更登记。前项变更登记之申请，如系变更新闻纸或杂志之名称、发行人、或发行所所在地管辖者，应于变更前，附缴原领登记证，按照前条之规定重行登记。”</p>
+<p>再按该手册第三篇《出版品管理》，其中明说“杂志印有‘正办理申请登记中’字样者应予取缔”。节中并详加说明如下：“甲、内政部台四十一年7月23日内警字第17300号函：查‘正办理申请登记中’一语显系尚未完成合法登记之程序，除电台湾省政府通令嗣后凡经核准登记者应记载经核准登记之年月日及公文字号外，凡刊有‘正办理申请登记中’字样者应一律予以取缔。乙、内政部台四十二年5月12日内警字第30086号致台湾省保安司令部函：査杂志之印有‘正办理申请登记中’字样者，应依出版法第39条第1项第1款予以取缔。”因杂志与新闻纸在《出版法》第2条中同属“新闻纸类”，所以新闻纸不能以“申请登记中”出刊，一如杂志。现在《自立晚报》和《自立早报》每天公然以“申请登记中”出刊，邵玉铭以新闻局局长的职责，居然坐视，真不知所司何事！</p>
+<p>也许邵玉铭说，《自立晚报》和《自立早报》的情形特殊，因为情形是发行人死亡。死亡人人难免，难道发行人一死，新闻纸或杂志在没办好变更登记前，就得暂停发行不成？我的答复是：按照该手册第二篇《出版登记》，其中明说“杂志发行人死亡在变更登记未核定前不得继续发行”，节中并详加说明如下：“行政院新闻局六十七年6月23日（67）德为字第06952号函：査杂志发行人为主办出版品并有发行权之人，出版法第3条第1项有明文规定，杂志发行人死亡时，其继承人应申请变更发行人登记，在变更登记未核定前，该杂志已属于无法定负责人之状态，自不得继续发行。”可见吴三连的死，使《自立晚报》和《自立早报》陷于“已属于无法定负责人之状态，自不得继续发行”。</p>
+<p>按照前引《出版法》“各级机关均应于十日内为之”的程序与作业时间惯例，从变更登记申请到台北市新闻处转上级机关行政院新闻局，公文往返至少一个月。换句话说，《自立晚报》、《自立早报》至少一个月内，不得发行。可是邵玉铭却不守出版法规，图利依法为营利事业的报纸、图利他人，这样子的小官僚，我们应该声讨他！</p>
+<p>1989年1月3日</p>
+<p>李敖答外交部</p>
+<p>外交部发言人陈毓驹涉及美国联邦调查局华裔职员泄密案，弄得外交部灰头土脸，因不敢面对现实，很是难看。同一时间，外交部大概感于被动太窝囊了，决定主动一下，争回些面子。但这一主动，不是对外国人行使的，而是施之于本国人的，这是大不同的地方。不过也有相同之处，那就是纰漏也出在发言人身上。</p>
+<p>李敖出版社出版《真相丛书》，揭发国民党当政以来的种种丑闻，本本重拳，打得国民党鼻青眼肿。这些重拳中，有一本《新官场现形记》，是大风写的。大风出身台大外文系，在文学院比我高两届。他特别从美国授权来，把《新官场现形记》在台成书出版。由于这书形式上是小说，骨子里却实在是“蒋党外交圈内幕”，此中内幕，除由大风本人在外交部亲见新闻以外，又陆续得到在职或离职的“蒋党外交部共事的朋友们的协助”，使他在处理小说中“不甚淸楚的情节时，有了更踏实、更细致的陈述”。正因为这部小说是以招朋引类、集思广益的认真求真态度处理的，所以，它的真实性，也就非比寻常。这一真实性，在出版后，引起外交部的恐慌，而思有以表面上的动作。</p>
+<p>外交部的表面动作，做在书的封面上。他们先打电话到李敖出版社，指出封面不当。出版社请他们以书面表示，俾便答复。8月24日，他们用“外交部公文封”，以新三（78）字第1822号公文，挂号寄来，主旨中说：“贵出版社本（七十八）年6月出版大风所著《新官场现形记》一书封面副标题‘前外交部发言人的揭秘醒世之作’，经查与事实不符，请惠予更正。”说明中说：“一、经査该书作者大风本名为潘君密，民国四十九年10月进部任情报司荐任科员，五十三年5月外放驻贝宁大使馆三等秘书，五十四年元月改调驻菲律宾大使馆三等秘书，五十五年调部在中南美司、亚太司服务，五十六年10月兼代欧洲司科长，五十八年8月外放驻墨西哥大使馆二等秘书，六十年8月以二秘回部名义分情报司工作，六十二年12月外放驻巴拿马大使馆一等秘书，后改调驻哥伦比亚及驻巴拉圭大使馆，六十八年6月调部不归免职。渠在外交部服务期间从未担任过‘发言人’之职务。二、检附该书封面影本一纸，请参办。”</p>
+<p>看了这件公文，我的答复如下：根据1988年5月9日《瞭望周刊》海外版，明说潘君密“回台后即升为台湾外交部发言人。老上司问他是想出国还是想在国内升级，他说想出国，哪怕是降级也愿意。”由此可见，李敖出版社封面如此处理，是有所本的。既然外交部愿意详为解说，对该部的求真态度，我也十分欣赏。只是我觉得，是不是发言人，外交部所争者小矣，潘君密既然做到驻巴拿马大使一等秘书并实际代理过馆务，则其官位，也不在小，又有什么好争执的？当年某军阀说：“我只有十六个姨太太，可是人家却诽谤我，说我有十七个！”世间无谓之争，大率类此。</p>
+<p>外交部不对书中内容，有任何争辩，只就封面做文章，相对的，无异默认书中所说官场现形，都是真的，这是很了不起的，令人欣赏。比起前年新闻局的邵玉铭，为了我写的《孙中山研究》封面犯禁，而把我移送法办来，该部的民主自由风范，尤非该局所能望其项背。外交部不但比新闻局好，还会认错。九年前为了该部非法扣发我的护照，我写信向朱抚松部长抗议，朱部长有服善之勇，下令照发。如今外交部在外邦交，如老鼠过街，远不能交，却近攻到李敖出版社头上，真是鼠目寸光。深盼外交部知过能改，把注意力集中在海外捕鼠器及该部连战部长的台独前科上，赶他下台，则皆大欢喜矣！</p>
+<p>1989年8月30日</p>
+<p>谁不执行《保险法》？</p>
+<p>——李敖警告财政部长林振国、保险司长陈冲、国泰人寿蔡万霖、蔡宏图、范光煌</p>
+<p>速别：最速件</p>
+<p>受文者：财政部部长林振国、财政部保险司司长陈冲</p>
+<p>副本收受者：国泰人寿保险公司名誉董事长蔡万霖、董事长蔡宏图、总经理范光煌</p>
+<p>主旨：国泰人寿蔡万霖等公然违反《保险法》母法及诚信原则，财政部涉嫌纵容，请査明于七日内答复。</p>
+<p>说明：</p>
+<p>一、苏荣泉先生生前在国泰人寿保险公司投保寿险、意外险及定期险，并指定受益人为其家属等，不料于1994年9月29日在泰国发生意外，遇害身故。其受益人悉依《保险法》向该公司申请理赔，但至今已四个月，该公司悍然不理，甚至礼貌上连信都不回一封。该公司拉保险时甜言蜜语、赔保险时态度恶劣，种种前恭后据行径，足证不讲诚信、商誉扫地。死者家属等以苏荣泉先生生前为李敖出版社创办人负责人、且为李敖创办之文星书店有限公司董事长负责人，与李敖情谊兄弟，特书面授权，委请李敖代为催讨、主持正义。</p>
+<p>二、査依《保险法》第34条，赔偿金额“保险人应于约定期限内给付之；无约定者，应于接到通知后十五日内给付之”。《保险法》为所有保险业务之母法，给付期限之规定为母法明确规定，自无保险公司施展惯技以“调査中”为托词、以“逾期我们会给利息”为借口，达到其化赔偿金为“保险公司无异收到定期存款”之余地。——盖受益人对应得之赔偿款项，自有其处理方式，保险公司何能违法拖延，变相达到该公司以低利运用他人资金从事炒作之目的？此其一。</p>
+<p>三、苏荣泉先生去年9月29日被害实情，早经泰国警方、外交部，以及我方外交部驻泰官员、高雄市政府警察局外事室出具之权威文件证实无误，被害人街头横尸，被害人尸骨已寒，被害人老父、寡妻、幼子等号咷声哑，而保险公司所重金礼聘之有良心律师却悠然向法官说：“死的是不是同一个苏荣泉？”——保险公司认定死亡事实之方法，意如此背离事实与经验法则，是何居心？此其二。</p>
+<p>四、即使保险公司所谓“调査中”之说法成立，但一调査即四个月，请问这是世界上哪一国保险公司的作业速度？哪一国保险公司的办事效率？中外官方对本案之调查：泰国方面于五日内即完成，转到我方后，于七日内即完成，纵中外官署不一、所职各异，然“调查中”所费时日，一共不过十二天；反看保险公司，却一百二十天犹在悠然中。若说调查费时，为何中外官署只需十二天？若说公司没效率，又其谁能信？——保险公司财源滚滚、业务鼎盛，岂是没效率之机构？可见“调查中”之说法，全属搪塞之词。此其三。</p>
+<p>五、以上保险公司种种行径，纵容之者，财政部也、财政部保险司也。特此专函警告贵部长、贵司长，如不于函到七日内解决，李敖将请立法院财委会立委出面，依《保险法》第12条提出质询，追查主管机关为何纵容保险公司公然蔑视《保险法》母法“十五日内给付”之规定？为何听任保险公司逾越母法规定肆行无忌？为何对中外官署出具之权威文件不予尊重？以及为何坐视保险公司横行、不法与无情？除经由立委质询外，李敖并将循登报公开质问、行文监院调查、召开公听会，以及以公开演讲及电视谈话等方式声讨你们。——别以为你们这些官僚纵容财团可以高枕无忧，李敖站出来了，你们休想！</p>
+<p>李敖1995年2月21日</p>
+<p>〔附吿〕国泰为人寿保险业之带头公司，恶劣如此，其他公司自亦跟进。至今除寿险定期险外，意外险部分仍旧拖延。但美国安泰人寿公司以商誉及信用为重，业就寿险及意外险理赔、南山人寿亦就意外险理赔，对比之下，可见国泰人寿之恶劣。与其一鼻孔出气尚未理赔意外险之公司为中国人寿、全美人寿、三商人寿、国华人寿、兴农人寿，兹同时检附资料，请一并于七日内解决。</p>
+<p>跟国防部打笔仗</p>
+<p>国防部福利总处是一个1964年开办的大衙门，当时以军人生活困难为名，乃半吊子取法美军PX福利制度，成立了这一衙门。十一年后，又以公教人员生活困难为名，把福利范围扩大到军公教三方面。于是这一衙门就益形坐大，如今在百业萧条之时，竟每年朝200亿营业额迈进，以20%的比率成长，逼得其他正常营运的中小型杂货店、平价商店、超级市场等等，纷纷叫苦不迭，这个庞然大物，也就不得不使我们注意了。</p>
+<p>福利与特权</p>
+<p>最近，继《环球经济》、《民主人》检讨这个庞然大物以后，上官雨写了一篇《国防部是最大零售商》（《生根》，1983年8月25日），对它有综合的论断，上官雨说：</p>
+<p>许多人常常要问：福利中心卖这么便宜，为什么还说它不好呢？殊不知福利中心低价的糖衣，完全是凭借享受种种特权而来的。例如，福利中心使用的地点，由市政府或各地方政府变相免费提供，那么大、那么宽敞的室内空间，一个月最少省了好几万房租；卖的货品免缴营业税；水电又不订在内，这样的优待，东西卖得愈多，成本愈低。此外，薪水只算几个服务小姐就好了，主管及其他负责的人员，支领的完全是国民纳税的血汗钱，福利总处之所以有今天，生意愈做愈大，完全是课他人的税来“照顾”军公教人员的政策使然。福利中心能够把东西卖得那么便宜，完全是一般工商界及劳动界朋友“补贴”他们的。</p>
+<p>若说军公教人员该特别照顾，那么，其他的“社会公平”怎么办呢？上官雨说：</p>
+<p>这几年政府为了照顾既得利益者，宁愿牺牲许多社会公平，来满足这些大而无当的特权利益者，使得特权意识充塞整个社会。辛勤工作的劳工有时也会想：“我交了税干吗去了？哦！原来政府拿去投资赔本的中船去了，或是拿去照顾境况比我还好的公务人员。”自然而然，大家缴税的意愿低落，影响所及，变成“纳税不是义务，逃税才是光荣的心理”。大家对国家社会隔离之余，社会的凝聚力低，人民的向心力差，商人在国内大捞一笔后，即随机飞到新大陆成为新寓公。若以生活艰困无依为照顾对象，为何农民福利中心开办阻力那么大？为何一部为照顾劳工草拟的《劳动基准法》，今天迟迟通不过？政府何以独厚公教人员？这一连串令人疑惑的问題，今后势必如波澜愈扩愈大。</p>
+<p>国防部福利总处的存在，乍看起来，是它使军公教人员买到便宜货，但是，细查起来，问题却绝非这么简单。事实上，它是真正破坏市场正常交易的能手，只要一细算，就知道国防部福利总处这样成长下去，二十年内，全台湾的零售业，就会被它给“一处独大”的拖垮，那时候，基本的经济结构就完蛋了。大家都完蛋了的时候，特权的军公教人员又何能独存呢？</p>
+<p>走火入魔</p>
+<p>论断国防部福利总处的特权，不在它关门做生意、卖点便宜货，而在它竟走后门扩大业务，达到“转售”的搅局目的。三年以前（1980），研究生调査一百二十家中间商，其中有四十二家说，零售商或批发商倒闭，首屈一指的原因是“受军公教福利中心影响，无法嫌取利润”。据一位零售商说：“现在生意愈来愈难做了。消费者认为我们价钱卖得太高，其实他们哪知道我们的营业成本！现在政府课税频频，还规定我们要设立账册，以前这个店可以雇用三个人，现在一个也请不起了，只好叫自己太太看店，也赚不到什么钱，自己刚好够用。消费者全到福利中心去了，不管有卡无卡，买回来就是一大包，有时我也把它拿出来卖，反而还有利润可嫌。”这种与民争利的坏现象，最后走火入魔到零售商不得不“把它拿出来卖”，这又算什么呢？</p>
+<p>这位零售商所谓的转售现象，我们可以找到不少官方的文证。例如1981年8月10日司法院秘书长（70）秘台人字第01577号函，就明说“国防部福利总处函称：最近厂商与商民反映，经常发现贴（印）有‘军公教福利品，禁止转售’标示之福利品在市面商店展售”，因而命令“不得将所购福利品转售图利”，由此可见，这种非法图利现象，连司法单位都侵蚀进去了，其他方面，更可想而知了。</p>
+<p>三年以前，就有立委问国防部，说：“国防部的职责应是保家卫国，在未来反共圣战中一举歼灭敌人，曾几何时却成为全国最大百货品经销商的老板，汲汲营营，与民争利。”认为太不像话，但是国防部是拿枪的人掌权，他们又如何知过能改呢？</p>
+<p>为了给这种知过不改的蛮横做一举证，我现在公布我在五年前（1978年6月16日）代出租福利总处场地的业主写的一封信，受文者是国防部部长。从这封信里，我们可以看到国防部福利总处侵害人民权益的多副嘴脸，使我们对这种仗势生财的霸道，得到深刻的认识与体验。从这封信里，我们不难发现：这个衙门不但用公费和不缴税来“巧取”利益，甚至在押租方面，还“豪夺”利益。下面就是这封信。</p>
+<p>在押租作价方面，欺压百姓</p>
+<p>1976年8月21日，国防部福利总处与信义路4段1号水晶大厦二楼及地下室业主签订《房地产押租契约书》，以新台币1450万元，押租五年，作为国军公教福利品台北市供应中心，一年十个月以还，该处侵害人民权益，项目繁多，谨举要如下：</p>
+<p>1976年7月间，该处与业主双方所了解之水晶大度情形，略如下表：</p>
+<p>（一）大安区信义路复兴南路临近一带大置售价一般行情：地下室（供商场、超级市场用途）每坪售价约30000以上。二楼（供商场用途）每坪售价约45000以上。</p>
+<p>（二）一般房地产押租，惯以售价七折计算。</p>
+<p>（三）水晶大厦地下室、二楼依据上项标准计算押租价款计18000000。</p>
+<p>地下室30000x350坪x70%=7350000</p>
+<p>二楼45000X350坪x70%=11025000</p>
+<p>合计$18375000</p>
+<p>査该处与业主之法律行为，名为押租，但因兼有设定及使用，故依法实为典权性质。据郑玉波《民法物权》第141页“典为‘卖’之变相”，“虽不能超过卖价，但亦常接近卖价。”上表所列信义路复兴南路临近一带大厦，其地点均不及水晶大厦，故水晶大厦比照此类大厦作价，自始即已偏低；且又形成典权性质，以七折算，距卖价亦已偏低。故据上表报价，实已低而又低，一低再低。但该处押租之初，竟违一般押租通例，坚持应“敬军”——以五五折议价，以1450万押租。业主方面，敬军不敢后人，自允优待减收。但据上述将水晶大厦比照偏低与典应“接近卖价”等尺度核计，业主方面，自始即损失或压低在700万以上。足见该处所为，已构成《民法》第74条“依当时情形，显失公平”之条件。——在押租作价方面，欺压百姓，此其一。</p>
+<p>在修缮方面，欺压百姓</p>
+<p>不期议价甫定，该处又违反一般押租通例，坚持室内装修费用应由业主承担。此一装修包括新增运货升降机、冷气、隔间、隔顶、厕所、浴室、水电、铁卷门、铁丝网、照明等等工程，费用高达350万以上，且其工程，乃专为该处方便与需要而设计（如坚持“原周所废除”、“新建厕所、浴室及厨房”等），一旦押租结束，对业主重新租售，多不适用，反须拆除。业主方面，虽迭遭损失，亦无不从命。但粗算因敬军而来之金钱损失，押租伊始即为1050万以上，以中央银行利息折算迄今，已极惊人。</p>
+<p>查依《民法》第921条法意，“修缮”之权责本在典权人方面。纵“典权人因支付有益费用，使典物价值增加”，亦只能“于典物回赎时，得于现存利益之限度内，请求偿还”（《民法》第927条）。是法律上明订即使请求偿还，亦在“典物回赎时”，反证明订不在出典之时。该处目无法纪，强使出典人代为“支付有益费用，使典物价值增加”，显与《民法》不合。况所要求如“原厕所废除”等，是否为“支付有益费用”，是否为回赎时“现存利益之限度内”，亦大成问题。该处违议价内容，另强使出典人负责违法之装修，是显然违反《民法》第921条927条。——在修缮方面，欺压百姓，此其二。</p>
+<p>在典权人义务方面，欺压百姓</p>
+<p>典权制度在我国社会上行之已久，至大淸律例后，有具体之规定，民国成立后《民法》上更有明确之解说，于双方在权利义务方面，都不容曲解。据郑玉波《民法物权》，明示依法</p>
+<p>出典人之义务有二：（一）费用返还；（二）瑕疵担保</p>
+<p>典押人之义务有四：（一）保管典物；（二）分担危险；（三）缴纳税捐；（四）返还典物</p>
+<p>以上在典权人方面四义务，除第四项返还典物须于到期回赎时行使外，其他一二三三项均须于典权成立及过程中间由典权人行使，且为典权人之义务，依法毫无卸责于出典人之必要、理由与可能。但该处却显然违法欺人，一再将应属该处之典权人义务规避，甚至推卸于对方，且一推再推，欺人不已，即以原约第四条为例，原订为</p>
+<p>装修设备：</p>
+<p>乙方应甲方之需要，依照甲方提示装修明细图表（如附件）施工，其一切设施费用由乙方负担，但押租期间甲方应尽善良保管修缮之责，其修缮费用由甲方负担。</p>
+<p>上一约文，本已于1976年8月21日双方签盖在卷，前段推令乙方负担显失公平之负担，本已占尽便宜，不料未几该处以拒付款为手段，强令改约，于上一约文后，加填</p>
+<p>“但因不可抗力如天灾等所生之损害其修缮费由乙方负担”（附证一——《房地产押租契约书》影本）</p>
+<p>前后两约，修改之痕迹极为明确。查“诚实及信用”为法律所明定，该处此种作风，显然违反《民法》第219条。——在典权义务方面，欺压百姓，此其三。</p>
+<p>在保管典物方面，欺压百姓</p>
+<p>查“保管典物”法有明文，为典权人重要四义务之一，据郑玉波《民法物权》第148至149页：</p>
+<p>典权人之义务</p>
+<p>（一）保管典物：典权人对于典物应负责保管，以便将来出典人回赎时予以返还，唯其负责之程度究应如何？其情形有如下列：</p>
+<p>（1）典权人因过失致典物灭失时，依我民法第922条本文规定：“典权存续中，因典权人之过失，致典物全部或一部灭失者，典权人于典价限度内负其责任。”此之所谓“过失”指通常过失而官，所谓典价限度内负责者，则无论损害之多寡，均以赔尽典价为限也。</p>
+<p>（2）典权人因故意或重大过失致典物灭失时，依我民法同条但书规定：“因故意或重大过失致灭失者，除将典价抵偿损害外，如有不足，仍应赔偿。”盖故意或重大过失，情无可恕，故法律课以较重之赔偿义务。例如典权人甲典受乙之房屋五间，典价5000元，嗣因甲之重大过失烧毁三间，时价为6000元，此时甲除将已付之典价全部抵偿损害外，尚须补偿1000元是。至于典物虽尚有余存部分（二间），但甲之典权，亦不能存续于其上，因典价既失，典权亦自消灭也。</p>
+<p>足见依法有“保管典物”一项义务，规定甚严，但该处却规避此一义务，在签约时只列如下文字：</p>
+<p>装修设备：</p>
+<p>乙方应甲方之需要，依照甲方提示装修明细图表（如附件）施工，其一切设施费用由乙方负担，但押租期间甲方应尽善良保管修缮之责，其修缮费用由甲方负担。但因不可抗力如天灾等所生之损害，其修缮费用由乙方负担。</p>
+<p>上一条文显然违背《民法》第922条为“典物”灭失之“抵偿”与“赔偿”责任，而只将范围极宽之“典物”，曲解为装修“修缮”一小范围，且又巧以“但因……”字样，委责于对方。是乃该处只明订抽象且有条件之“善良保管修缮之责”于“装修”一方面，对其他重要之典权人责任如典物灭失应予具体“抵偿”“赔偿”方面，则全部拒签！是该处显然违反《民法》第922条。——在保管典物方面，欺压百姓，此其四。</p>
+<p>在分担危险方面，欺压百姓</p>
+<p>查“分担危险”法有明文，为典权人重要四义务之一，据郑玉波《民法物权》第149页：</p>
+<p>分担危险：依我民法第920条第1项规定：“典权存续中，典物因不可抗力致全部或一部灭失者，就其灭失部分，典权回赎权均归消灭。”可知典权人对于典物之危险，负有分担义务（俗有“房倒价烂”之说，即指此种情形而言）。唯典物如仅灭失一部分，则其余存部分应如何？依同条第2项本文规定：“前项情形，出典人就典物之余存部分为回赎时，得由原典价中扣减典物灭失部分灭失时之价值之半数，但以扣尽原典价为限。”可知典物之余存部分，其典之关系仍属存在，不过于期满回赎时，无须以原典价为之耳，申言之灭失部分灭失时之价值之半数，可由原典价中扣灭，盖亦使双方分担其危险也。</p>
+<p>上一法理，该处竟全部抹杀，于典物之危险，虽有分担之义务，然全部拒予承认，是该处公然目无法纪，违反《民法》第920条。——在分担危险方面，欺压百姓，此其五。</p>
+<p>在缴纳税捐方面，欺压百姓</p>
+<p>查“缴纳税捐”，法有明文，为典权人重要四义务之一。依《土地法》第172条规定：“地价税向所有权人征收之。其设有典权之土地，由典权人缴纳。”是法律明订地价税应由典权人负担。又依《土地法》第183条：“前项土地设有典权者，其增值税得向典权人征收之。”是法律明订土地增值税追及由典权人负担。再依《土地法》第186条：“建筑改良物税之征收，于征收地价税时为之，并适用第172条之规定。”是法律明订改良物税应由典权人负担。综上所陈，法律上对于典权人之地位，辄与所有权人同视，典权人依法有缴纳税捐之义务。据以反观该处与出典人之原约第六条：</p>
+<p>纳税：押租期间，房屋税及地价税由甲方依法申请豁免，如依法不能免税，仍由乙方负纳税义务。</p>
+<p>一望而知悉属违法欺人。所谓“不能免税，仍由乙方负纳税义务”，是该处显然违反《土地法》第172条、第183条、第186条。——在缴纳税捐方面，欺压百姓，此其六。</p>
+<p>在保险受益方面，欺压百姓</p>
+<p>前述郑玉波《民法物权》中分明指出：“典权人对典物之危险，负有分担义务。”其中保险一项，本应悉由该典押人付出保险费。但该处签约时，坚持以不平等条款：</p>
+<p>保险：</p>
+<p>（1）房屋及装修设备部分，由乙方投保火险，自付保费，并以乙方为受益人。</p>
+<p>（2）甲方所有之生财货品部分之保险，保费由甲方负担，受益亦归甲方。</p>
+<p>此一约定，使该处推卸典权人之义务，本已占尽便宜。不料未几该处以拒付款为手段，又强令修约，于1976年12月6日在该处召开协调会议记录，改为</p>
+<p>“原契约第七条一款：‘房屋及装修设备部分，由乙方投保火险，自付保费，并以乙方为受益人。’应修正为：‘……并以甲方为受益人，所领保险费超过甲方付与乙方新台币1450万元部分，则归乙方所有。’”（附证二——《国防部福利总处押租水晶大度房舍抵押权设定转移协调会议记录》影本）</p>
+<p>上述一修改后，即连形式上之不平等条约亦不可得，而全然变成无条件投降书。据新光产物保险股份有限公司T-021760保险单（附证三——深险单影本），总保险金额正与1450万元相等，则如遇赔偿时，依加附批单债权条款所谓“应尽先给付国防部福利总处”1450万元之后，出保险费者所得恰好为新台币零元！是则所谓吐鸡骨头以分对方之“公道”亦根本全不存在！该处之欺人，实乃太甚！上次于第四条装修方面欺人，尚强改契约后，依约行事。此次则根本连约都懒得改了，居然竟凭契约本身没有之文字，强作已有，例如今年1月11日以（67）驷成宇第20040号来函，竟公然无中生有，谓：</p>
+<p>“根据押租契约书第七条保险第（1）项约定：房屋及装修设备部分，由贵方投保火险，自付保费，并以本总处为受益人。”（附证四——该函影本）</p>
+<p>是乃十足之强将契约本身没有之文字，强作已有，其横行霸道，真令人惊叹！该处所坚持乙方付保险费全部给甲方益之怪说，不但撕毁原约“以乙方为受益人”之约定，更反证所谓协商会议记录，正为一纸强迫修约之明证。该处视原约于无物，公然违约，将约文无中生有，反于本年2月21日以原约甲方证明律师来函，要求“履行承诺”，全无公道观念与“诚实及信用”之法意，显然违反《民法》第219条。——在保险受益方面，欺压百姓，此其七。</p>
+<p>在付款方式方面，欺压百姓</p>
+<p>依《房地产押租契约书》，关于付款方式，本明订如下：</p>
+<p>付款方式：</p>
+<p>（1）本契约签订成立之日，由甲方预付押租金新台币300万元。乙方同时应交出房屋及土地所有权状，并由乙方办理抵押权设定登记（抵押权设定涂销等一切费用由乙方负担）。</p>
+<p>（2）于乙方将抵押权设定登记等手续办竣，并将有关证件交由甲方存卷保管，且甲方已进住房屋之同时，再由甲方交付乙方押租金1150万元。</p>
+<p>（3）以上押租金之授受，概以乙方收据为凭。</p>
+<p>査上述约定款项，于第（1）款中，“300万元”该处并未于“契约签订成立之日（即1976年8月21日）交付，反拖至1976年8月27日始行交付，此为该处一开始即违约之明证。至于第（2）款中余款“1150万元”，乙方业于1977年2月23日“将抵押权设定登记等手续办竣”（附证五——六十六北地古字第001298号他项权利证明书影本），且早于是日前甲方已“将有关证件”“存卷保管”并“进住房屋”，是该余款早该于1977年2月23日交付业主，但该处竟违约，迟不交付。反以抵押权顺位问题为借口，坚持将1150万元以径付台北市银行方式解决，且延至1977年3月2日，方将上款交付台北市银行，与《房地产押租契约书》约定付款方式完全不符。——在付款方式方面，欺压百姓，此其八。</p>
+<p>在设定顺位方面，欺压百姓</p>
+<p>依《房地产押租契约书》，关于其中有涉及抵押权设定字样出现，共有三处：</p>
+<p>第一次出现——“付款方式”中之“（1）……由乙方办理抵押权设定登记”；</p>
+<p>第二次出现——“付款方式”中之“（2）于乙方将抵押权设定登记手续办竣……”；</p>
+<p>第三次出现——“装修设备”中之“（2）……同时乙方交出抵押权设定及权利书状等有关证件”。</p>
+<p>足证约文中所谓“设定”，是明指有“设定”行为已足、以“办理抵押权设定”行为已足、以“抵押权设定登记”已足、以“交出抵押权设定及权利书状等有关证件”已足，并未明指第几顺位，亦未限指第一顺位而言，亦未限指第二顺位不得称之为“设定”。不料1976年8月21日签约后、不料9月15日业主方面主动腾出三楼部分免费提供临时办公处所以示敬军后、不料9月27日业主方面日夜加班赶工俾使该处及早使用房屋后、不料10月21日该处万事俱备正式对外营业供应后，该处突发生所谓设定第一顺位问题，而作为拒拨余款之借口。查双方约文中并未明订设定第几顺位，该处事后既坚持第一顺位，业主方面，亦愿达成此一结果。唯此一结果之早迟快慢，不得视为业主方面违约。因于约既未明订，即不发生法律问题，充其量不过“敬军”问题或道义问题。既非法律问题，该处何能以违约相绳？又何能以违约而拒拨余款？但该处竟悍然违约，坚持原设定之台北市银行须先抛弃第一顺位，而不肯将余款依约径付业主。业主方面，以进退维谷，“民不与官斗”，只好忍气吞声，同意由该处直拨余款给台北市银行。——在设定顺位方面，欺压百姓，此其九。</p>
+<p>在扣留权状方面，欺压百姓</p>
+<p>业主于1976年12月9日照该处指定行文该处将余款径付台北市银行后，该行同月10日行文该处，“如贵处将押租金余款新台币1150万经交付本行”，“本行同意注销台北市信义路4段水晶大厦第二楼建物及其持分基地之抵押权”。该处收件后拖延近三个月之久，始行复函该行，3月5日始交付支票，且“派本总处陈介摩上校、土地代书黄盛泉先生前来，请将□□□先生等五人所有水晶大厦二楼全部建物及土地等涂销，并将有关一切文件交来人带回”。足见该处与台北市银行已直接行文、交涉与授受，且自请代书，一切手续皆由二机构自行料理，业主方面已无参与余地。不料涂销一事，二机构与自请代书疏于详查，致发生技术困难。台北市银行表示：</p>
+<p>依银行办理抵押权涂销手续之惯例，系于借款人清偿贷款后，由银行出具债务清偿证明书（或抵押权抛弃证明书）及委托书交付借款人，由其自行或委托土地代书向地政机关办理有关抵押权涂销登记手续。</p>
+<p>该行认为该行并无错误，但该处坚谓该行“同意注销”应包含完成手续在内，而于1977年5月25日、8月6日、8月30日，一再移书勒通。查此事如有错误，亦在二机构与自请代书，与业主无涉，但该处却不分皂白，“迁怒”（?）业主，强将所有权状扣留。查不动产设定抵押登记后，在法律上已发生效力，权状不得由权利人扣留一事，不但于法有据，且经内政部1971年10月15日函释及财政部1976年2月19日通令确认，报章新闻亦迭经明揭（附证六——有关剪报影本）。业主方面，虽多次表示该处于法有违，且扣留范围扩大及于其他与该处绝无关系之产权上，尤属不当，但均不得要领。——在扣留权状方面，欺压百姓，此其十。</p>
+<p>在借回权状方面，欺压百姓</p>
+<p>因权状被该处非法扣留，业主其他产权之处理，皆陷入瘫疾，举其大者，原应向三楼西半国税局收付台北市银行之220万；三楼东半税捐稽征处收付台北市银行之550万，因权状被扣，皆无法办理。台北市银行以上述770万款项未拨还，势将走拍卖之途，一切皆将鱼烂河决，不堪设想。经与台北市银行商妥，只好退而求其次，向该处试“借”权状。业主因于1977年7月20日亲访该处新任处长，经过如8月2日致该处“最速件”之追忆：</p>
+<p>一、台北市银行同意贵处取得水晶大厦二楼建物及其持分基地第一顺位抵押权，前已于（66）北字银营放字第626号函达，因格于地政机关规定，必须转移原所有权名义（□□□，已故）于新所有权人（□□□）名义，方能办理，而此一转移，必须土地权状完整为要件。本人因于7月20日亲谒贵处处长，面陈症结所在，承蒙垂听，答以可行，另嘱与陈上校洽商细节。时值陈上校公出，于21日复来面请指示，蒙陈上校告以须市银来函方可。当日本人即赶赴市银，请求行文，蒙市银合作，于不到三日内即完成作业（其间7月24日且为星期天），25日即以“最速件”（66）北市银营放字第2075号函达责处，“敬请惠予协助并复知本行为祷”。</p>
+<p>二、事隔七日后（8月1日），本人得悉市银尚未收到复信，因再冒昧亲谒陈上校，承蒙告已早于29日即签报可行，现正由其他单位会签中，一俟会签完毕，即可函复市银。本人至感德便。</p>
+<p>但上一试“借”权状案，该处最后仍以欺骗业主与台北市银行，胎死腹中。不应扣留者违法扣留于先；业主与台北市银行委曲求全，想“借”用皆不可得！该处之横行不法，全无情理，且一再欺骗，殊堪令人浩叹！——在借回权状方面，欺压百姓，此其十一。</p>
+<p>在不得再抵押方面，欺压百姓</p>
+<p>拖至8月6日，复在台北市银行一再交涉后，该处行文该行（根本不以业主为对象，未给业主副本），悍然表示：</p>
+<p>主旨：责行函借本市信义路4段水晶大厦基地所有权状案，敬复如说明，请查照。</p>
+<p>说明：</p>
+<p>一、本总处租押台北市信义路4段水晶大厦地下室部分及二楼全部房屋基地存卷权状多张，函借五纸，请书明所有权人、建号，并请出具正式借据，俾凭办理。</p>
+<p>二、请尽速办理赍行抵押权涂销，并保证在权状借出时间内，如生再抵押情事，由贵行负完全责任（附证七——该函影本）。</p>
+<p>是明白表示不得再设定给国税局与税捐稽征处等机构，如此“函借”，于台北市银行毫无裨益，自陷该行于哭笑不得。该行因于8月15日函业主表示：“台端委请本行代向国防部福利总处借用水晶大厦基地所有权状五纸一案，据该处函复各点，本行无法办理。”（附证八——该函影本）</p>
+<p>查该处所谓不得再抵押之说法，于法根本不合。据郑玉波《民法物权》第151页：</p>
+<p>典权设定后，出典人仍系所有权人，故仍得于其所有物（典物）上，设定担保物权。唯不得设定与典权不能并存之权利，例如再设定典权，是为重典，典权人不得为之，否则无效，重典在清律尚须处罚。此外凡与典权人之占有使用收益相抵触之权利，如地上权、永佃权等，亦概不许设定。结果只有不移转占有而供担保之抵押权可以设定。</p>
+<p>是依法可再设定抵押权之明证。再据大法官会议第139号解释：</p>
+<p>不动产所有人于同一不动产设定典权后，在不妨害典权之范围内，仍得为他人设定抵押权。本院院字第192号解释毋庸变更。（解释理由书）按典权乃支付典价，占有他人之不动产，而为使用收益之权，与抵押权之系不移转占有，为担保债务之履行而设之担保物权，其性质并非不能相容。不动产所有人于同一不动产设定典权后，其所有权尚未丧失，在不妨害典权之范围内，再与他人设定抵押权，民法物权编既无禁止规定，自难认为不应准许。本院院字第192号解释毋庸变更。</p>
+<p>足见该处以交还或“借”出权状，认系与该处权利有碍之理由，全是不明法律或有意曲解法律之行为；台北市银行受无知之传染，相惊伯有，致二机构以损害人民财产为公文旅行，殊令受害人痛苦不堪。——在不得再抵押方面，欺压百姓，此其十二。</p>
+<p>在协调会记录方面，欺压百姓</p>
+<p>再拖至1977年9月20日，在该处李副处长办公室，该处召集业主、台北市银行代表等，召开所谓协调会议，并无结论。事后该处突交下片面拟定并油印好之《水晶大厦租赁房屋有关抵押权设定登记协调会记录》，要业主及台北市银行签字，内容如下：</p>
+<p>为确保福利总处权益，并按原协议将水晶大厦地下室及二楼抵押权第一烦位涂销，使原设定予福利总处之第二顺位提升为第一顺位如何办理案，经协议如下：</p>
+<p>一、由水晶大厦负责人朱婉坚出具承诺书，承诺将其现有房屋抵押与税捐处及国税局两单位，租押金拨至市银行之日起六个月内办妥福利总处抵押权第一顺位之设定登记。</p>
+<p>二、如届时未能办妥，水晶大度负责人朱婉坚情愿将已交付之押租金新台币1450万元正无息退还与福利总处，福利总处收到押租金之同时，将房屋交还与朱婉坚，业主不得提出其他任何要求。其中押租金1150万元由朱婉坚出具委托书，请市银行将原由福利总处拨付市银行之新台币1150万元整无息退还与福利总处，上项朱婉坚出具之委托书应于提出承诺书之同时提出，市银接到福利总处通知应即负责拨还，否则将出租之房屋任由福利总处自由处分绝无异议，并放弃先诉抗辩权。</p>
+<p>三、办理国税局税捐处市银抵押及第一顺位涂销案，同意由国防部福利总处认定之代书办理，办理上项登记所需文件及盖章由业主负责提供，至原朱婉坚提供之土地所有权状则交认定代书，不直接交朱婉坚女士。</p>
+<p>四、本项协议由市银代表暨国防部福利总处分报其上级核准后生效，并互函知照。</p>
+<p>五、本协议书有关福利总处与业主双方之事项，作为水晶大厦押租契约之一部分。</p>
+<p>上一逼业主及台北市银行签署之所谓“协调会记录”，开端所谓“经协议如下”，全是谎言，而是该处要业主与台北市银行“追认”未曾协议之协议。其余五条，令人惊异，分驳如下：</p>
+<p>一、所谓“朱婉坚出具承诺书”，试问向谁承诺？承诺对象显然不符，岂可承诺？办妥顺位是市银与地政机关之事，岂能胡来？</p>
+<p>二、所谓“朱婉坚情愿”云云，试问是何等暹人文字？所谓“业主不得提出任何其他要求”，试问岂可逼人放弃依法应有之权利与应受之保障？此非公然抹杀人民权利为何？所谓“朱婉坚出具委托书”“应于提出承诺书之同时提出”，试问岂可逼百姓提出事实未发生前假设性具结？所谓“市银接到福利总处通知应即负责拨还，否则将出租之房屋任由福利总处自由处分绝无异议，并放弃先诉抗辩权”，岂非剥夺市银依法处分之权利？以上各项，无一而非趁人于危之非法“流质契约”，查解约或赔偿，依法自有其固定程序，岂可如此私约，又与降书何异？</p>
+<p>三、所谓“办理国税局税捐处市银抵押及第一顺位涂销案，同意由国防部福利总处认定之代书办理”，试问该处有何权利代办与该处毫不相干之与国税局税捐处手续？又有何权利代为“认定代书”？代书业为政府明令所不承认，该处又何以代为承揽业务？又所谓“办理上项登记所需文件及盖章由业主负责提供，至原朱婉坚提供之土地所有权状则交认定代书，不直接交朱婉坚女士”，试问天下可有如此侮辱人之行径？权状本为业主所有，本为该处所无权扣留，该处强扣不说，反不许业主“借”、不许银行“借’’，甚至变本加厉，强要业主再交出一切“承诺书”“具结书”“所需文件及盖章”后，尚不许业主碰一下，是业主连代书地位亦不如！此种侮辱人文句，试问使人气何以忍？情何以堪？</p>
+<p>四、所谓“分报上级核准后生效”，试问百姓若先签署又有何保障？</p>
+<p>五、所谓“本协议书有关福利总处与业主双方之事项，作为水晶大厦押租契约之一部分”，试问岂非又约上加约，使百姓将原约残余之保障，亦复割裂？</p>
+<p>综上所驳，虽台北市银行不讲原则，屈从该处而签约，业主方面，实无法接受。该处陈介摩上校虽一再劝诱，业主方面，亦无法如此丧权辱己。——在协调会记录方面，欺压百姓，此其十三。</p>
+<p>在完成注销手续后，欺压百姓</p>
+<p>台北市银行与该处的注销手续，前于1977年3月7日送至地政机关收件，案经地政机关初审认为“经核与法令规定相符准予登记”在卷；讵料地政机关突于4月8日，以“本案土地请依规定另办抵押权内容变更登记”之理由，予以驳回。经台北市银行复行接洽，于7月初将权利内容变更登记申请书送至地政机关办理，地政机关又以1977年7月20日台北市古地一（1）宇第307号驳回理由书，以“（1）担保物之持分不符（2）提供担保物之义务人亦不符”等理由，再予驳回，但延至12月21日，台北市银行竟又办妥此事，乃以（66）北市银营放字第3768号最速件行文该处，告以：</p>
+<p>贵总处向□□□君等押租之本市信义路4段水晶大厦二楼及其持分基地，本行原设定之抵押权业经古亭地政事务所办妥涂销登记，古亭地政事务所受理涂销登记之收件号码为六十六年12月16日大安字第40582号，请査照。</p>
+<p>至此所谓坚持第一设定，该处业已完全取得，一切困扰他人与悍然不法行为，于该处业已达成效果，自应退还业主权状，勿复滋扰。不料该处仍意犹未尽，更为已甚，竟于1978年元月11日，以（67）驷成字第20045号函，再事拖延：</p>
+<p>主旨：请查奇本市信义路水晶大厦二楼房屋及持分基地责行原设定之抵押权办理涂销情形，请查照惠复。</p>
+<p>说明：贵行（66）北银营放字3768号函：“有关水晶大厦二楼房屋及其持分基地原设定之抵押权案，经古亭地政事务所办妥涂销登记”等语，请将办理经过情形详予见告，并将责行原持有□□□等抵押有关书类及古亭地政事务所核准各项涂销文件之誊本，一并移送本总处列管，以履责行之前函各项承诺。</p>
+<p>事已办成，尚要“将办理经过情形，详予见告”！显然在做无必要之一拖再拖。经查上述台北市银行12月21日最速件告知该处后,该处选定之代书黄盛泉，亦于1978年1月6日以书面函达该处告以“已经办完，贵处所得之抵押权已升为第一顺位”（附证九——该函稿本影本）。足见该处此时仍饰词借口，扣留业主权状不还，坐视业主与国税局、税捐稽征处乃至台北市银行关系陷入绝境，实属不可思议！——在完成注销手续后，欺压百姓，此其十四。</p>
+<p>在0.227坪土地方面，欺压百姓</p>
+<p>该处与业主约定土地持分之抵押登记，前于1977年2月23日完成在案。唯事后发现基地中大安区12甲段72地号一笔，因原地主五人之一以债务纠纷，被查封拍卖，致水晶大厦全体住户该得之该笔五分之一土地持分，均保留在拍卖人名下而暂形不足。此一意外，因非业主之故意或过失，故得该处鉴及，同意本人提供押票一纸，以候补足持分时退回。业主方面只好照办。唯该处坚持押票应开面额50万，显与0.227坪之时值远不相当，但以该处坚持，只好开出。不料自此该处即屡次以提示威胁，延至7月12日，且居然将并非实欠该处50万之50万支票提示！使业主退票，在银行三十年信用，毁于一旦。经与该处交涉，至7月16日，以另开给支票一张，方将退票红单领回。此后该处又以再提示威胁。业主方面，实感全无保障，乃于1977年9月7日，以“最速件”函告如下：</p>
+<p>现查知该笔土地在法院及地政等单位作业，旷日弥久，为恐延误，特同时完成补救方式二种，敬请惠择其一：</p>
+<p>（甲）该笔土地不足之持分仅为0.227坪（持分111/6655），原在本人提供者，属萧广仁名下，今改由属萧近仁名下之另笔土地以赠与方式予以补足。兹检附国税局9月1日赠与税免税证明书第2591号影本一纸及该笔土地赠与登记申请书4158号收件申报影本一纸，敬请查核，以证本人解决问题之诚意；</p>
+<p>（乙）该笔土地不足之持分仅为0.227坪（持分111/6655），今本人既因他人之债务纠纷而一时难以补足，兹汇寄该笔土地之价款给责处，用以相抵，正可两洧。兹举六十六年9月6日台北市古亭地政事务所都市地价证明书（北市古地（一）证字第1304号）证明，该大安区12甲段72地号每坪公告现值为38.290元，0.227坪折合为8.691元。兹随函汇上，敬请查收。</p>
+<p>请退还本人50万押票，并请就上项（甲）（乙）方式惠择其一，俾委代书进一步配合责处处理。</p>
+<p>函到后迄今已九个月又十天，该处于保证支票50万元如何处理，既不复函，也不退回，为8600多元不到四分之一坪之土地，竟困扰百姓如此既深且久，尚不知拖至何年何月。至于不足持分由萧近仁赠与手续，以该处不肯将萧广仁之所有权状借出登录，亦属责在该处，此有1978年1月10日黄盛泉代书致该处信可证（附证十——该函稿本影本），该处有意推托，已至为明确。——在0.227坪土地方面，欺压百姓，此其十五。</p>
+<p>在管理大厦方面，欺压百姓</p>
+<p>据《房地产押租契约书》，水电及管理该处坚持以下条文：</p>
+<p>水电及其管理：押租期间甲方所使用之水电费用，概由甲方负担。但乙方在甲方未进住使用前应先行完成分表设施，至有关大厦管理，甲方不受任何约束及任何摊派。</p>
+<p>査台北市大厦林立，有关大厦之管理费用，均由各层用户所平均分摊，有营业性之用户，因引入外来人士众多，更于基本分摊以外，加付费用，此为常理与通例，不容佯作不知或自居例外。该处台北市供应中心迁入水晶大厦后，水晶大厦管理委员会于1976年11月1日致函如下：</p>
+<p>受文者：国防部公教福利中心</p>
+<p>主旨：根据本大厦管理处暂行组织规程一、二、三楼每层每月应收管理费2000元，地下室一层以1500元收费。</p>
+<p>说明：为维持本大厦支应费用，凡迁入本大厦者，管理费应由使用者负担，贵中心于本年9月间即着手修缮业于10月21日正式开幕营业，按照本大厦组织规程应于本年10月份起按月收费：二楼一层为2000元，地下室一层为1500元，共计3500元。</p>
+<p>但该处悍然不理，不肯如实照付。查供应中心每日熙来攘往，人群众多，光卫生设备用水与化类池之负荷，即已惊人。卫生设备用水是水晶住户出资由马达抽人屋顶水塔为其来源，自供应中心迁入，马达修理与化粪池修理等次数即形突起，水晶住户无不抗议，但该处仍我行我素，令人侧目。据5月21日“水晶大厦委员会会议记录”，最近损失为发电机之发动机已损坏，经估价约需46000元，原有四部抽水马达，全部损坏无法修理，已经设法购置一部，现正使用中，但是还需再购置一部备用，约需20000元，以上是大楼之主要设备，必须购置。但该处却仍霸道如故，分文不出。</p>
+<p>又在公共设施使用权方面,该处坚持以下条文：</p>
+<p>公共设施使用权：</p>
+<p>（1）停车场甲方有全部使用权，并由乙方提供上下货区，交由甲方控制。</p>
+<p>（2）上开房屋二楼大厦外墙全部及三楼二分之一楼顶，甲方有专用权，并对一楼骑楼走道有通行权。</p>
+<p>供应中心迁入后，该处派宪兵二名，实行“甲方控制”。水晶大厦原有停车场虽货车猬集，拥挤不堪，然尚出有出口、入有入口，尚有秩序。但该处未几突背约不予“控制”，撤走宪兵，不复管理，任凭货车自出口开入或从入口开出，挤成一团，秩序大乱。送货司机工人水准参差，但图一己之便，乱停乱放，将水晶大厦原有停车场搅成一团乱局，将水晶住户自用汽车做临时货台者有之，撞坏不理者亦有之……至于货车超载，压坏地面与管道，不予置理等事件，更层出不穷，使水晶大厦之内外声誉与过去声誉，悉行毁灭，水晶住户对业主交相指摘，至今困扰未已。——在管理大厦方面，欺压百姓，此其十六。</p>
+<p>在住“霸王屋”方面，欺压百姓</p>
+<p>据该处1977年5月25日（66）驷成字第20536号函，该处已要求台北市银行“归还代付款1150万元，并依贵行存款利息一并核计”。又据该处8月6日（66）驷成字第20838号函，该处复要求台北市银行“该款项自以本总处在贵行之存款为当”，“归还本总处所支付贵行之1150万元，并依存款利息一并核计。”复据8月30日（66）驷成字第20934号函，该处更要求台北市银行“退还水晶大厦押租金尾款1150万元，并以存款利率一并计算”。……足证该处早视此款为“存款”属实。既为“存款”，即自非押租；即非押租，则使用民房即未付钱；既未付钱，即属住“霸王屋”。此为该处住“霸王屋”者一。</p>
+<p>上述住“霸王屋”，犹可强援产权纠葛理由，曲为解释；但于另一住“霸王屋”情形，则更属离奇。缘业主与该处押租范围，仅是水晶大度二楼及地下室，该处供应中心筹备之初，表示拟暂借水晶三楼一用，业主方面，为敬军起见，自予同意。1967年9月15日，得台北市供应中心（65）践孝字第2061号谢函如下：</p>
+<p>正本：水晶大厦业主代表周其新先生</p>
+<p>副本：抄呈国防部福利总处</p>
+<p>主旨：本中心承租贵大厦地下室及二楼，因装修内部工程，无法迁进，在装修未完工前经业主代表周其新先生主动允借三楼部分暂用（免付任何费用），俟完工后，立即迁出，进入承租之地下室及二楼，足证业主敬军热忱，特函致谢。</p>
+<p>主任、陆军正职上校：林宝山（附证十一—该函影本）</p>
+<p>孰知地下室及二楼早已完工，供应中心早已“进入承租之地下室及二楼”以后，竟不“立即迁出”三楼，反予久占，作为变卖大量货箱贪污朋分之场所。业主方面静候该处退还，始终不得要领。时逾一年以后，业主于1977年10月1日函达该处，副本且送供应中心，明示“该三楼出处决定在即”，该处如承租，即请赐示，否则“立即迁出”之诺言，本已在卷，想能得该处自悟。不料函达后八个半月，该处始终悍不置复，亦不退还三楼。本年5月13日，业主亲访供应中心主任，但该主任推托不肯交屋，反表示三楼为彼等所必须使用之场所。此为该处住“霸王屋”者二，较上述住“霸王屋”者一尤为严重。査该三楼原与税捐稽征处签约典押550万，550万一般利息抵租约为每月115000元，该处白白使用已逾一年八个月，所占便宜至少已逾230万元！意犹未足，是何居心？是何作风？真令“敬军”者伤心泪尽了。5月13日交涉不得要领后，业主续与该处交涉，并于5月16日以长函质问，延到5月21日，经供应中心主任通知翌日前往，该主任又失信，要求再延。至5月23日，方将满目疮痍狼藉遍地之劫后房屋交还。兹附上当场证人张亚声拍摄之照片六张，以证业主“敬军”之下场为何（附证十二——照片六张）。上一交屋事件后，业主将房屋转交承租人，承租人将房屋上锁，尚未迁入。不料该福利中心又恋恋不舍，竟将锁敲破，将门撬开，卷土重来，复行强占，至今仍在继续中。其行径除百分之百“霸王”外，复兼有盗贼气质，今敬军者实不能不痛心疾首，浩叹今日中华竟有此类军人！——在住“霸王屋”方面，欺压百姓，此其十七。</p>
+<p>造成百姓庞大损失</p>
+<p>综上所陈该处欺压百姓十七点，造成业主损失最重者为：</p>
+<p>一、与国税局方面——水晶大厦三楼之一半押与国税局，尾款220万元只要该处不非法扣留权状，即可直接拨交台北市银行。但该处坐视不肯交出，致造成业主第一损失为220万不能还市银，每月多欠220万之利息；第二损失又为国税局借口产权不淸拒拨220万之尾款，每月又少收220万之利息，一进一出之间，是为440万损失之明账。另外市银反责以本金还不进去，执意加罚延滞利息与违约金等；国税局方面，又责以产权不淸而提示原有之200万担保支票（附证十三——国税局（65）财北税伍字第12327号函影本），并以会计年度结束，未能拨出之尾款220万元须缴回国库（附证十四——“国税局”（66）财北国税伍字第38159号函影本）！是则440万明账损失外又加440万风险，前后已达880万，一进一出利息与精神信誉等损失与票据刑事责任尚不计算在内！</p>
+<p>二、与税捐稽征处方面——业主与该处原立约典押三楼另一半，于1977年6月27日同意将550万元径付台北市银行，该行6月30日行文台北市税捐稽征处，“如贵处将租金新台币550万元径交本行”，“本行同意即抛弃台北市信义路4段1-33、34、35、36、37、38、40号等建物及其持分基地之抵押权。”但以该处非法扣留权状，无法办淸手续。税捐稽征处久候不得要领，乃于1977年11月7日来函表示“所订典约无条件作废”，且要“本案所发生之法律行为应由□君等三人负一切责任”（附证十五——台北市税捐稽征处66北市稽总（乙）字第46952号函影本）！是则业主除损失550万典金收入外，并损失印花税22000元及一年空房以待之押金利息138万元损失！精神信誉损失尚不计算在内！</p>
+<p>三、与台北市银行方面——水晶大厦之兴建，乃是先严□□□先生为配合政府加速都市现代化政策，特将其坐落台北市信义路4段之住宅拆除，以供拓展市容。时台北市市长高玉树，鉴于先严如此配合政府政策，特将加强都市现代化计划提前延伸至信义路4段，而令台北市银行“遵照办理”贷款（六十年2月8日府财三字第5600市府令），兴建水晶大廈。故此一贷款，自始即非□□□私人之财务行为，而为典型之“政策性贷款”。不料先严逝世，台北市银行故意不以坏账摊销，用以困扰水晶住户。业主方面，为全先严盛德与解决水晶住户困扰，故接受该行不合理之做账方式，将据中华征信所勘估之3700万财产，只按四成作价，以担保1500万贷款。市银完成圈套后，更进一步勒逼还债，故以押售三楼与国税局尾款220万元及税捐稽征处全额550万元径付市银方式，一次先偿还3700万元，以缓和拍卖局面。不期该处非法扣留权状，又占“霸王屋”不放……致功亏一篑。台北市银行终于诉请拍卖（1978年拍字第135号），则3700万时值之业主财产，至少有三至四成之损失，自然破产。</p>
+<p>所犯何条？</p>
+<p>综前所举业主方面因该处非法行为所引起之庞大损失，不论是该处直接造成或间接造成，均属惨不忍言而不得不言。查法律中有所谓“因果关系”，若无先行之事实，则后行之事实即不致发生，其先行事实为结果发生有重要而直接影响之条件（见《云五社会科学大辞典》第六册《法律学》第109页“因果关系”条）。综前所述该处与业主之间源远流长之痛史，正符合法律上“被害人之伤害正为被告非法行为之自然相当之结果”，正所谓情理中之“此水本自淸，是谁揽令浊”，致令业主精神信用损害外，复遭财产及利益之损害。此一损害，依法“无论积极的减少既存财产或利益，抑消极的妨害财产或利益之增加或享受，均包括之”（见孙德耕著《增订刑法实用分则编》第三十二章）。业主于受害至忍无可忍程度，只好与该处澄淸一切，追究全部责任。因于5月16日以长函向该处质问，该处拖至6月9日，始由律师墨文藻草草来函，除大量无法答辩者自同默认外，小部分答辩悉属强词饰非，业经业主于6月15日——驳复在案（附证十六——□□□函国防部福利总处函副本），该处欺压百姓，事证俱在，自属不容掩饰。</p>
+<p>査依《宪法》第24条：“凡公务员违法侵害人民之自由或权利者。除依法律受惩戒外，应负刑事及民事责任，被害人民就其所受损害，并得依法律向国家请求赔偿。”足证已违宪；又依《刑法》第131条：“公务员对于主管或监督之事务，直接或间接图利者，处一年以上七年以下有期徒刑，得并科七千元以下罚金。”且“无论图利国库或图利私人，均应成立该条罪名”（三十一年上字第831号），又证已构成渎职罪；复依《民法》偾编侵权行为中第184条至186条；《公务员服务法》第6条、第22条；公务员惩戒委员会议决书鉴字第1739号、第1829号、第1833号、第2340号……均证明侵害人民权利至巨。又贵处执事诸公为现役军人，依《陆海空军刑法》第二章擅权罪第31条“强占民房”条文，第三章辱职罪第43条“与商民通同作弊（变卖大量货箱贪污朋分）”条文，及第一章总则适用其他法律条文，均行适用。特备陈始末，奉致此函，请速为各种公道措施。</p>
+<p>“勿谓言之不预也！”</p>
+<p>上面这封信发出后，国防部以（67）部交办字第8021号函由总政治作战部查办。不料该部于8月11日，以（67）劲功字第11653复文，答以</p>
+<p>台端（67）7.12致部长函：“有关与福利总处水晶大厦押租案”请循法律途径办理；复请查照。</p>
+<p>这显然就太那个了。依据1978年7月17日公布的《国防部参谋本部组织法》第8条规定：“总政治作战部：掌理国军政治作战政策、军事新闻、心理作战、组织训练、政治教育、文化宣传、康乐、监察、保密防谍、民众运动、官兵福利、军眷管理及战地政务等业务。”可见“福利”一事，是归总政治作战部掌管的。在人民以这样详细的举证给国防部以后，总政治作战部竟以这样草率的态度处理问題，当然是不对的。于是在8月24日，我再代业主写给国防部部长，提出质疑：</p>
+<p>总政治作战部为福利总处主管机关，依法受理人民诉愿检举，必须据其内容查核以明其相，必就“是非”“对错”答复，未可不就“是非”“对错”答复，而命人民径循打官司（“循法律途径”）方式办理。《宪法》第16条明订：“人民有请愿、诉愿及诉讼之权。”可证此三种权利各有其独立性。今该部复文，显于人民诉愿之权误未审酌，复于该部主管立场误予轻去……</p>
+<p>因此我要求国防部：“盼能就上述误会，予以更正救济，严惩福利总处中欺压百姓之沾辱军誉军人，以彰国法及贵部盛名是幸。”这封信发出后，国防部和总政治作战部一概不理，于是，问题就转向了。</p>
+<p>在总政治作战部上项复文未来以前，国防部福利总处于7月22日，以墨文藻律师来函，竟说：</p>
+<p>本总处前向□□□、萧广仁、萧近仁、叶肇模等押租其所有台北市信义路4段1号水晶大厦地下室及萧广仁个人所有二楼全部建物连同基地持分等，并订立契约办妥押租等手续各在案，唯查该业主等尚欠本总处基地持分111/6655（约0.227坪），乃由□□□签发票额50万元之华银支票一纸作为保证，俟该基地持分补足后即行退还，按其真意即系在于该义务人如不履行其义务，即应负起违约责任，本总处得以该支票之提示作为违约赔偿之保证瞭若观火，但业主拖延已久，屡经催告，置之不理，前经委请责律师代为最后专函催告去后，均未获答复，本总处并曾委请代书黄盛泉前往办理，亦无结果。复以上项押租房屋，依据合约及协议应由业主续办保险，而第一年保险期约已过，业主迄未办理续保。兹以本案未便继续拖延，本总处本应采取法律途径以谋解决，唯仍拟本患事宁人之旨，再请贵律师代为专函催告，务限函到五日内，径与本总处洽办上开基地持分补足及房屋续保手续，否则径将该项支票向银行依法提示，勿谓言之不预也。</p>
+<p>大特写</p>
+<p>对这种可恶的威胁语气，我在7月27日再代写一信，给国防部部长，我指出：</p>
+<p>此函所曲解之支票保证，实情如下：该处与业主约定土地持分之抵押登记，前于1977年2月23日完成在案。唯事后发现基地中大安区12甲段72地号一笔，因原地主五人之一以债务纠纷，被查封柏卖，致水晶大厦全体住户该得之该笔1/5土地持分，均保留在拍卖人名下而暂形不足。此一意外，因非业主之故意或过失，故得该处鉴及，同意本人提供押票一纸，以候补足持分时退回。业主方面，只好照办。唯该处坚持押票应开面额50万，显与0.227坪之时值远不相当，但以该处坚持，只好开出。不料自此该处即屡次以提示威胁，延至7月12日，且居然将并非实欠该处50万之50万支票提示，使业主退票，在银行三十年信用，毁于一旦。经与该处交涉，至7月16日，以另开给支票一张，方将退票红单领回。此后该处又以再提示威胁。业主方面，实感全无保障，乃于1977年9月7日，以“最速件”函告如下：</p>
+<p>现查知该笔土地在法院及地政等单位作业，旷日弥久，为恐延误，特同时完成补救方式二种，敬请惠择其一：</p>
+<p>（甲）该笔土地不足之持分仅为0.227坪（持分111/6655），原在本人提供者，属萧广仁名下，今改由属萧近仁名下之另笔土地以赠与方式予以补足。兹检附国税局9月1日赠与税免税证明书第2591号影本一纸及该笔土地賄与登记申请书4158号收件申报影本一纸，敬请查核，以证本人解决问题之诚意；</p>
+<p>（乙）该笔土地不足之持分仅为0.227坪（持分111/6655），今本人既因他人之债务纠纷而一时难以补足，兹汇寄该笔土地之价敖给责处，用以相抵，正可两清。兹据1977年9月6日台北市古亭地政事务所都市地价证明书（北市古地（一）证字第1304号）证明，该大安区12甲段72地号每坪公告现值为38290元，0.227坪折合为8691元。兹随函汇上，敬请查收。</p>
+<p>请退还本人50万押票，并请就上项（甲）（乙）方式惠择其一，俾委代书进一步配合贵处处理。</p>
+<p>该处于收到本人上函后，复为欺压百姓之举如下：</p>
+<p>第一、不肯交出萧广仁等权状结黄盛泉代书，自然无法完成登记作业程序</p>
+<p>不足持分由萧近仁赠与手续，以该处不肯将萧广仁等之所有权状借出登录，全属责在该处，此有1978年1月10日黄盛泉代书致该处信可证（见本人前信附证十——该函稿本影本），该处有意推托，已至为明确。是延误责任，显在该处。此其一。</p>
+<p>第二、十个月零二十天不予答复，故意拖延</p>
+<p>本人1977年9月7日函到后迄今已十个月又二十天，该处于此次来函之前，于保证支票50万元如何处理，既不复函，也不退回，为8600多元不到1/4坪之土地，竟困扰百姓如此既深且久，其用心何在，有待调査。今来函反谓“业主拖延已久，屡经催告，置之不理”，正为该处之自画像，业主方面，绝无此种事实。是延误责任，显在该处。此其二。</p>
+<p>第三、所谓“墨文藻律师最后专函催吿”，纯属曲解</p>
+<p>该处来函谓：“前经委请贵律师代为最后专函去后，均未获答复。”与事实完全不符。査该律师“最后专函”为1978年6月发出之五页来件，其中只字未提0.227坪土地之事，何催告之有？况该函本人已即时答复在卷（6月15日函），又何得诬指“置之不理”？本人复函驳斥后，该处至今未能申复，“最后专函去后，均未获答复”乃在该处而不在本人，足证该处已默认理屈。是延误责任，显在该处。此其三。</p>
+<p>第四、捏造黄盛泉代书“前往办理，亦无结果”事实</p>
+<p>该处来函续谓“本总处并曾委请代书黄盛泉前往办理，亦无结果”等语，全是谎言。黄代书方面，历由本人前往走访办理。1978年1月10日黄代书致该处函，犹谓“现萧广仁已办理补足持分之手续，亟需上项权状”而向该处索借不得，明证“亦无结果”在彼。黄代书7月16日存证信中，亦只宇未提本人“亦无结果”之行为，更证此乃该处本身使然。是延误责任，显在该处。此其四。</p>
+<p>第五、蒙混支票保证范围，及于保险</p>
+<p>该处来函关于保险费问题，査该处于今年1月11日，以（67）驷成字第20040号来函，曾公然无中生有，谓：“根据押租契约书第7条保险第（1）项约定：房屋及装修设备部分，由贵方投保火险，自付保费，并以本总处为受益人。”是乃十足之强将契约本身没有之文字，强作已有，其横行霸道，真令人惊叹！该处所坚持乙方付保除费全部给甲方受益之怪说，不但撕毁原约“以乙方为受益人”之约定，更反证所谓协商会议记录，正为一纸强迫修约之明证。该处视原约于无物，公然违约，将约文无中生有，反于本年2月21日以原约甲方证明律师来函，要求“履行承诺”，全无公道观念与“诚实及信用”之法意，显然违反《民法》第219条。今又以此老套来函，査纵业主违约，依法自有诉讼救济之道，与50万对0.227坪之保证又有何干？该处明知该保证支票所保证对象仅为业主完成0.227坪之产权淸楚而已，不涉其他；今竟故意来函将保险费与支票纠缠一处以行成胁，显然肆行欺压百姓，令人不齿。此其五。</p>
+<p>第六、自身延误十个月零二十天后，竟片面限期五日要求对方</p>
+<p>前述0.227坪纠纷，该处于收到本人双套解决办法后，竞自身颟顸拖延十个月零二十天，不自检点，反于此次来函，“限函到五日内，径与本处洽办。”否则即提示支票以施威胁，其作风之恶劣，于斯可见一斑。査朱婉坚、萧广仁现均旅居美国，与国外侨民办事，岂片面期限五日可得完成？该处办事于自己则从容大睡十个月零二十天；于他人则急如催命限期五日，试问尚有何章法可循？兹检附本人经法院寄信认证之文件二份，以证本人一直循合情合理合法方式处理。此其六。</p>
+<p>综前所陈该处欺压百姓，违法弄权等事证，敬请贵部参阅本人6月16日前函，并同査案，统为议处。使该处玷辱军誉之行为，得以惩治。</p>
+<p>结局</p>
+<p>国防部在收到上面信后，一概不理，仍旧听任下属单位欺压百姓，最后的结局是：官厅永远胜利，百姓永远失败，一切的辩驳、一切的唇舌、一切的证据、一切的文字，都化为狗屁，不值拿枪杆者的一笑。</p>
+<p>十一天前看到报上消息，说水晶大厦国防部福利总处运货电梯因管理不善，钢缆突断，摔死了人，使我想起我五年前与这个部的这笔账。我检出旧卷，特别把它们写出来，献给身上没枪的读者。我要告诉读者：在公道与正义上面，只有不厌其烦的大小全争，才是我们的活路。当我们决心不受国民党欺负，我们就可展示我们的力量，不论是一份抗议、不论是一张图片、不论是一篇文章或一声呐喊，我们都可证明我们不是受人宰割的羔羊。这篇《跟国防部打笔仗》，正好为读者做了不做羔羊的示范。我盼读者能从这种细腻的求证中，学到一点揭发黑暗的手法，怕事怕麻烦是不能揭发黑暗的，粗心大意马马虎虎也是不能揭发黑暗的，揭发黑暗要靠勇气、细心和勤勉。此文之作，微意正是在此。</p>
+<p>1983年9月22日</p>
+<p>代萧孟能闹金衙</p>
+<p>函：1978年3月31日</p>
+<p>受文者：财政部部长、中央银行总裁、省政府财政厅厅长</p>
+<p>副本收受者：台湾省合作金库董事长、总经理、大稻埕支库经理</p>
+<p>主旨：台湾省合作金库违法侵害人民权利，请予赔偿并惩处该行董亊长、总经理、大稻埕支库经理等失职人员。</p>
+<p>说明：</p>
+<p>一、先严萧同兹先生，前以扶植青年创业，应三井工程股份有限公司负责人张荫如之请，为该公司向台湾省合作金库信用贷款之第二保证人（第一保证人为杨冠洲先生）。不料该公司适遭经济危机波及，先严又生病以致谢世。依法未取得继承权以前，无须父债子还，本人与本案自无丝毫干系。但以本人与银行关系良好，经该库情商代该库解决困难，因此勉由朱婉坚女士出面作保。不料该库适时利用朱女士之无知，竟将信用贷款之保证人偷天换日为抵押贷款之房屋提供人，而使朱女士国泰信义公寓之房屋卷入。依法契约必以诚信公道为原则，今该库不着力于主债务人与原始第一保证人（如杨先生），反蓄意套住无辜之第三者——经该库情商而来代该库解决困难之第三者，殊属欺人太甚，此其一。</p>
+<p>二、后朱女士因必须出售其国泰信义公寓房产偿还其他债务，乃转而向该库情商涂销设定，该库坚不通融。朱女士以作保经年，进退维谷，又必须涂销在即，乃商请赵庆云女士代为提供吴兴街之房产，以应强索。该库自是除套住朱女士外，又套住另一无辜之第三者赵女士，殊属欺人太甚，此其二。</p>
+<p>三、主债务人张荫如至1975年12月30日，已陆续还淸该库20万元，不料翌年春三井公司遭能源危机影响，终告难支，张荫如出国躲债，自此一去无归。该库不着力于向主债务人追索，亦不向其他保证人（如周先生）追索，唯以胁困朱女士赵女士为务，专一于祸延无辜，殊属欺人太甚，此其三。</p>
+<p>四、1976年夏，几经商谈，朱女士为免祸延赵女士，乃屈从该库无理要求——由朱女士提供萧孟能30万元（日期开1977年8月30日）保证支票一纸，作为增列之保证；另由朱女士按月摊还3000元给该库。是乃祸延无辜第一名朱婉坚第二名赵庆云之外，又延及第三名萧孟能。且祸延范围除人身与房产外，又卷入支票责任，殊属欺人太甚，此其四。</p>
+<p>五、自1976年8月15日起至1977年1月15日止，朱女士共摊还前后五个月，最后因经济困窘，难乎为继，该库非但不念无辜者之苦衷，反而由行员陈政修荒谬算出总欠648000元之巨债，责令无辜者赔偿，是无异保证人愈还愈多（本金278000元，利息竟要37万元）！朱女士自然深感不平。复经多次交涉，至8月5日，该库始同意由朱女士具函承担本息32万元，8月23日，该库正式来函同意。是则如32万元为“是”为“合理”，则7月7日该库责赔648000元即为“非”为“不合理”，此种大小由之而全部无客观标准可循之“弹性债务”，任意为之，殊属欺人太甚，此其五。</p>
+<p>六。1977年8月30日，萧孟能保证支票到期，该库竟欲提示，萧孟能以既不欠该库钱，又非保证人，受此牵累，实不公平。经商洽延至12月20日，但须由萧孟能设法提供房产抵押，萧孟能以自身债务困难，表示如将友人叶肇模水晶大厦八之二房产押借50万，则可勉为一次代还朱女士所欠32万，以结悬案，该库同意。不料及办手续时，该库竟背信，将该市价80万之房产，只同意押40万，房产提供人自无法接受。该库殃及无辜杀鸡取卵时仍背信如此，殊属欺人太甚，此其六。</p>
+<p>七、1977年10月24日，该库陈政修限时挂号直函萧孟能，威胁“即行提示支票”，显已直以萧孟能为对象，不以主债务人及各保证人为对象，全无章法与体统！但萧孟能本人因受该库背信之累，周转不灵，11月终告退票三次而成拒绝往来户，该库明知此一记录，而竟于12月27日提示，明知无钱而害人，损人而不利己，殊属欺人太甚，此其七。</p>
+<p>八、1977年12月28日——提示之第二天，在究竟能否兑现及代赔尚未磋商及证实下，该库竟火速赶出所谓“刑事自诉状”，以大稻埕支库法定代理人颜志达出面“谨状台湾台北地方法院刑亊庭”，恶意用“罪行昭彰”“以昭烱戒”等宇句，欲使萧孟能加受刑亊处分，且捏称萧孟能“前因承担萧同兹债务”，签发该支票等因，与事实完全不符，殊属欺人太甚，此其八。</p>
+<p>九、1977年12月30日，萧孟能见该库陈政修，陈出示以“台湾省合作金库”用纸之底稿一张，嘱萧孟能具结，要萧孟能具结“前因承担家父负欠该库债务”，“所负票款债务，当于一月内妥加解决，逾期未能理楚，则听凭处置”，陈政修并谓“这是上面交办的，你非得这样具结不可，这是给你的最后的机会，否则就送你坐牢！”萧孟能以该库作风有悖情理法，未肯照办。该库此种恶劣作风，殊属欺人太甚，此其九。</p>
+<p>十、査《民法》第745条，明订：“保证人于债权人未就主债务人之财产强制执行而无效果前，对于债权人得拒绝淸偿”，本案主债务人为三井公司为张荫如，该库自始即避重就轻，未就《民法》第745条条文及法意公道处理，反专以欺凌无辜之保证人为务，而于保证人之责任，亦未就法意上“共同保证”公道着眼，故意放弃其他保证人不问，专以部分保证人为困扰对象，于情于理于法于银行惯例，均属不合。尤有甚者，该库继困扰部分保证人之外，竟进而困扰既未向该库借钱，又未做保证人之萧孟能而欲绳之以法且为刑事之法，殊堪腾笑中外。查《民法》第741条，明订“保证人之负担，较主债务人为重者，应缩减至主债务之限度。”足征法意之保护保证人不逾主债务人之损失。今该库明知主债务人所欠不过30万，却于7月7日要萧孟能赔648000元，违法欺人，认错对象，岂不太甚！且自主债务人以至任何保人，彼等所负担之极限，不过民事方面之诉追，而既非主债务人又非保证人之萧孟能，却于民事诉追之外，复遭刑事之累，反而“罪行昭彰”，“负担”远较上述人等为重为苛，是乃该库公然违反《民法》第741条而专与萧孟能在身份上、时间上、金钱上、法律上、程序上不断作对，已至为明显。该库就有追索来源之债务不追索，反火速追索萧孟能，连累萧孟能遭受重大损失，殊属欺人太甚，此其十。</p>
+<p>十一、1977年12月30日，本人忍无可忍，乃以最速件函该库董事长、总经理、大稻埕支库经理，将前列十点，均予如上详述。该行无法置辩，悉行默认，自属自知理屈。既知理屈，竟仍知过不改，一派官僚作风，尤属错中之错。本人候至50日后，犹未得该库复函，乃委请陈良榘律师于2月21日催告该库董事长、总经理，告以“一、本人前以台湾省合作金库违法侵害人民权利事件，于去年12月30日以最速件致函该董事长、总经理，迄今逾50日，未得复信。二、本人前以其他金融机关此类事件，曾于去年5月29日致函台北市银行董事长，即得其0513限时挂号函复，告以‘大函敬悉……业经嘱咐营业部从速处理’；本人又于去年9月1日致函华南银行总经理，亦得其审一字第3706号函复并‘派员奉洽’。……瞿永全、陈晓鳌此类公务人员，显已符合蒋院长1972年11月12日‘对行政同仁的中心要求’第三项‘以公仆观念，来加强为民服务’，革除了‘令人生厌的衙门风气’。及1974年2月26日‘对基层公务人员十项指示’第五项‘要不怕麻烦向民众解释问题，要不怕困难替民众解决问题’。第八项‘不可有傲慢的态度’。……三、查公务人员执行职务之态度及不得稽延，于《公务人员服务法》第1条第7条著有明文，此在西方行政学中称之为‘服务道德’，在东方行政学中称之为‘公务员的伦理义务’，‘如果违反了这种义务，就是失职’（美浓部达吉《日本行政法》，田中二郎《行政法总论》，林纪东《行政法上的公务员》等均载于专著），今台湾省合作金库负责人于公然侵害人民权利以后，复公然违背公务员起码之服务态度与规范，悍不置复，一派‘衙门风气’与‘傲慢的态度’，显然怙恶不悛，令人忍无可忍。四、兹以本人采取控诉、检举及登报质问等必要措施，特委贵律师代为处理”。但此函经律师催告后，该库仍采取衙门风气与傲慢态度，不知公务员公仆观念与责任为何物，殊属欺人太甚，此其十一。</p>
+<p>十二、但该库为推卸责任，由大稻埕支库经理颜志达向本人表示，彼完全不知有所谓“刑事自诉状”之事，更无指本人“恶行昭彰”，应“以昭炯戒”等可能。本人因出示该库致本人“刑事自诉状”原本，上且盖有该经理印鉴可证。该经理当场接过，即交行员陈政修“抢走”，坚持不退还本人，该行行员且当众向本人咆哮。……诸般行径，与抢劫、恐吓、公然侮辱等罪行无异，殊属欺人太甚，此其十二。</p>
+<p>综上所陈，该合作金库作风之恶积弊之深，实令百姓寒心。查台湾省合作金库，原为日治时期台湾产业组合联合会，1944年经日本政府改组为公私合营，官僚习性，渊源甚深，故在近年行库弊案层出之时，该库无役不与，丢人现眼，为全省之冠。即以总经理而论，前总经理马君助方以冒贷案入狱，其后任严伯瑾即以大过二次跟进，该总经理被记大过二次见报之日，财政部长即“坦陈疏于督导”，“各级主管人员疏于督导与各级干部缺乏敬业精神”（见3月29日《联合报》），足见如今对该库严予督导，已刻不容缓。兹依《宪法》第24条公务员违法侵害人民权利除依法律受惩戒并负民刑责任条文；及《民法》债编侵权行为中第184条至186条；及前引《民法》各条；及《公务员服务法》第6条；公务员惩戒委员会议决书鉴字第1739号、第1829号、第1833号、第2340号……持致此函，请台端等査明示复。否则本人除登报公开质问，请求答复外，并分函监察院、立法院、省议会，依法诉追。</p>
+<p>萧孟能</p>
+<p>代萧孟能再闹金衙</p>
+<p>函：1978年5月26日</p>
+<p>速别：最速件</p>
+<p>受文者：财政部部长、中央银行总裁、台北市政府财政局局长</p>
+<p>副本收受者：立法院、监察院、台北市议会、台北市银行</p>
+<p>主旨：据《宪法》第24条“凡公务员违法侵害人民之自由或权利者，除依法律受惩戒外，应负刑事及民事责任。被害人民就其所受损害，并得依法律向国家请求赔偿”。请求彻査台北市银行违法侵害等事件。</p>
+<p>说明：</p>
+<p>一、先严萧同兹，有功国家，逝世得明令褒扬（附证一——六十三台统一义0640“总统令”影本），并指出晚年“不忘献替”等。其中献替之一，为配合政府加速都市现代化政策，特将其坐落台北市信义路4段的住宅拆除，以供拓展市容。当时台北市市长高玉树，鉴于先严如此配合政府政策，特将加强都市现代化计划提前延伸至信义路4段，令台北市银行“遵照办理”贷款（附证二——1971年2月8日府财三字第5600市府令影本），兴建水晶大厦。故这一贷款，一开始就非单纯的萧同兹私人的财务行为，而是典型的“政策性贷款”。先严兴建水晶大厦，信用良好，利息分文不欠，不料于1973年11月11日突然去世。先严一去世，台北市银行理应鉴于贷款乃政策性“遵照办理”而来，且当事人死亡，自宜尽快比照“政策性贷款”报请上级核以坏账摊销，即时结束该案，不但“以示政府笃念忠荩之至意”，且符合处理通例。不料该行别有居心，竟视同萧同兹未死，此于各界千余人公祭萧同兹重大新闻后（附证三——萧同兹之丧部分剪报），该行仍佯作当事人仍在人世，于十个月后，仍来信“此致萧同兹”催告，可证居心何在（附证四——台北市银行业务部1974年9月26日催告书影本）。——综上所陈，该行以视同当事人未死方式，拒绝以“政策性贷款”摊销结案，施展诈术，此为罪状之一。</p>
+<p>二、前监察院查核财政机关业务，财政主管答以呆账程度有“逾期放款”、“催收款项”与“呆联损失”三类，先严贷款因当事人死亡且以属政策性，本应列为第三类处理，但该行不但不做第三类处理，甚至不肯做第一类或第二类处理，因通例如此处理，必得停息追本，但求多少追本，难计利息有无。台北市银行在银行业中本以“一误再误，毫不认错，主持人低能无知”著称（附证五——吴相湘教授撰《“市银”一误再误》影本），以此一作风办事，自但求完成本位主义，全不顾及实情。该行既明知死人不能还本还息，却仍暗中计息，谋以诈术取得来源。其方式为明明萧家担保品已足，却违约紧扣水晶其他住户产权不放，以造成萧同兹之子萧孟能于情不忍，只好继承债务，俾得父债子还，使死债变活。于是在萧同兹去世快到一年时候（1974年9月26日），该行“此致萧同兹”以行催告（同附证四）。催告书中明说“敬请于10月5日前来清理，否则即依法诉追”。但目的显然仅在催告，不在诉追，因向死人岂能诉追？所以“10月5日”以后并未诉追，只是先做好伏笔。——综上所陈，该行明文欲诉追而不诉追，反拖至三年三个月后——今年1月——才行诉追，即反证内情的离奇怪异，施展诈术，此为罪状之二。</p>
+<p>三、因先严所遗者为消极财产，为债务，故遗产税免税证明书明示“依法免纳遗产税”（附证六——国税局304号遗产税免税证明书影本），足征孟能所继承的非但无利可图，反而自取麻烦。孟能所以不抛弃继承权而甘心如此任该行套牢，目的在全先人盛德与免祸延水晶其他住户，所以在该行口头保证欺骗下，同意为继承人。该行口头保证为如孟能写申请书前来，同意继承，并表示“在继承办竣后，对责行债务当可清偿为时约在三个月内”，该行同意孟能只还本金，并以个别按户注销抵押权方式给予售房以还本金的方便。孟能信以为真，故照该行授意行文。该行即时复文（附证七——台北市银行业务部1974年12月4日北市银行业放字第2713号函影本），在孟能尚未依法取得继承权之前，就提早承认“萧同兹先生继承人萧孟能君”为“受文者”，并表示“该贷款逾期已久，请依申请书所述赶办嫌承手续，并于三个月内清偿，以资淸结”。这信重点在肯定并套牢萧孟能为债务人，目的已达，故只谈“贷款逾期”，绝口不提利息的事，以与口头保证相呼应，孟能也不疑有他。不料国税局方面，对遗产税谓査审核公文旅行，竟拖至1975年3月31日——先严去世一年四个月后！——方才发下证件（同附证六），于大局的延误，极为严重。因继承权未取得前，孟能无法处理先严及亲属名下财产，无法出售或典押，自无还债的可能。不料这时该行推翻口诺，不但不同意个别按户注销抵押权方式给予售房以还本金的方便，反于应还本金之外，加计利息和逾期违约金！全不顾念纵有延误，乃由于政府机构（国税局）的办事效率，更由于政府机构（市银）未及时于萧同兹去世之时依通例结案，而不能怪百姓。孟能是代已死之人还债，何能反认定孟能欠息和欠逾期违约金！该行在孟能并未取得继承等法律地位之时就套牢孟能，施展诈术，此为罪状之三。</p>
+<p>四、该行推翻口诺后，又重新口头保证，说“不妨先来函承认利息和逾期违约金，本行另行议定，不使萧先生为难。如萧先生来函，本行当同意先将已出售房屋所持分之土地准予办理分割过户”。孟能鉴于有利于水晶客户权益，所以不疑有他，照授意去信，去信后即得该行复文，内容却增列“俟收入尾款还本行利息后办理分户注销抵押权”（附证八——台北市银行营业部1975年6月24日函影本），不知又来伏笔。1975年8月26日，该行来信要“具体偿债办法”；9月11日，孟能函复以逾期违约金之说实在不能成立，利息部分，如该行“本着原先贷款之允诺，同意对本大厦各住户贷款之申请，借以各住户所贷得之款项转为交付房屋尾款”，孟能“拟以此所得尾款”交付。这一让步，目的在请该行雇行对水晶各住户贷款的夙诺，但该行仍食言不办。孟能这一拟议，虽自因该行不能履行相对责任而作废，但该行仍描深应付利息之说，只是将“逾期违约金”以“应俟台端来行淸付利息后再议”方式以为缓冲（附证九——台北市银行营业部1975年10月6日北市银营放字第2591号函影本），诱使孟能先将利息之说承认。同时该行董事长亦侧面致函水晶住户陈子和先生，表示“所欠延滞金拟俟萧君来行提出清付利息计划后，本行当酌情从优考虑”（附证十——金克和致陈子和函影本），用意亦同。是为继套牢孟能为继承人以后，进一步套使孟能承认未取得继承权前的利息。施展诈术，此为罪状之四。</p>
+<p>五、为对该行董事长所谓“提出淸付利息计划”有以辩明，孟能于1976年1月15日寄出一信，其中于该行要求“清付利息计划”中，除仍坚持利息来源应以该行履行对“住户之应收贷款”予以贷放外，并让步同意将住户欠萧家的尾款并付该行。2月18日，该行同意“所拟具之淸偿债务办法尚属可行”，“据函住户中未淸尾款颇多，请台端莅行开立专户，并转告各该户速进行办理缴款”（附证十一——台北市银行营业部（65）北市银营放字第510号函影本）。同时又口头答应一俟开立专户，该行即同意将先严贷款转移至萧家名下，不再使水晶其他住户受累。这一口诺，于大使酒店召开的水晶大厦1976年全体住户大会中，该行且派员当众宣布。孟能又信以为真，因于2月23日分函水晶住户：“为及早完成全体住户房地产权书状之获得，恳请台端按附上存款单数目径存市银营业部通存#232萧孟能专户”。不料一切悉照该行条件办理后，该行继推翻口诺后，又推翻2月18日的函诺！该函诺明承“台端所拟具之清偿债务办法尚属可行”，而“办法”中之（乙）明列“现住户之应收贷款及尾款”两项在内，今该行只收“尾款”而拒予“贷款”，则所谓“尚属可行”，即全属无根的虚诺。该行以践“贷款”之诺为饵，目的实在收取“尾款”，然后推翻全部口诺函诺。施展诈术，此为罪状之五。</p>
+<p>六、1976年2月18日该行函中，又有食言而肥一声明，即“本件贷款系以土地及建物为担保，依规定在债务未淸偿前，恕难同意办理抵押权涂销及债权移转等事”，是又明文表示前曾口诺之个别按户注销抵押权为“恕难同意办理”。经孟能于1977年5月4日再函该行“请准予对已缴淸房款住户，个别抛弃抵押权，以使缴淸房款住户不受不公平之牵累”。该行复函仍背诺，坚持“所请涂销部分水晶大厦房地产之抵押权一节，应俟故萧同兹先生在本行之借款理清后始能办理”（附证十二——台北市银行营业部（66）北市银营字第1296号函影本）。该行这一背诺，直接影响为水晶大厦出售的瘫痪与典押的瘫痪，因为该行不肯按户注销抵押权，就无异使水晶大厦每户都变成产权有问题，自使任何买卖与典押均难以进行。例如1976年7月6日，孟能典押水晶大厦三楼一半与国税局，尾款220万元只要该行同意注销，就可直接拨交该行，就可相对减去1800万总债务的1/9。且220万元，于比例注销担保品上面，远超乎三楼一半之担保值，该行毫无风险。但该行坐视不肯践诺，以致造成孟能第一损失为220万不能还该行，每月多欠220万的利息；第二损失又为国税局借口产权不淸拒拨220万尾款，每月又少收220万的利息，一进一出之间，是为440万损失明账。另外该行反责以本金还不进去，执意加罚延滞利息与违约金等；国税局方面，又责以产权不淸而提示原有的200万担保支票（附证十三——国税局（65）财北国税伍字第12327号函影本），并以会计年度结束，未能拨出之尾款220万须缴回国库（附证十四——国税局（66）财北国税伍字第38159号函影本），是则440万明账损失外又加440万风险，前后已达880万，一进一出利息与精神信誉等损失尚不计算在内！以上国税局一例，所占不过水晶大厦十三层中第三层的一半而已，已损失如此惨重，其他各层的损失，乃至房屋以外土地的损失，可以类推，可以概见，自有待赔偿。究其祸源，不过该行一念之私，想多收利息而已。为多收利息，纵有220万还款，该行竟拒之门外！该行恶性之重，杀鸡取卵之阴，足见一斑。施展诈术，此为罪状之六。</p>
+<p>七、上述所谓“恕难同意办理”所谓“借款理淸后始能办理”按户注销抵押权，若谓于理有本于法有据，该行择善固执守正不阿，则犹可自成一说。不料1976年12月6日，国防部福利总处拟押水晶大厦二楼全部及地下室，谓可一次拨付该行1150万，该行居然见钱眼开，为之心动，将过去“恕难同意办理”、“借款理淸后始能办理”的堂皇立场全部注销！命孟能照该行意旨提出申请书，佯作“依据萧同兹先生遗产继承人萧盂能君之申请办理”立场，于1976年12月10日，就向国防部福利总处行文同意（附证十五——台北市银行营业部（65）北市银营字第3694号函影本）。这一戏剧性突破，是该行自1971年4月起至1976年12月止，前后五年八个月拒绝的自失立场。这一立场改变，并无主观法理与客观变化可为借口。因此之故，如这次同意为“是”为“合理”，即反证过去五年八个月不同意为“非”为不“合理”。而过去五年八个月因不同意致使水晶房产陷于胶着状态而引出的庞大损失，自有待赔偿。该行于注销立场上前后矛盾，施展诈术，此为罪状之七。</p>
+<p>八、继国防部福利总处得以“径交本行”方式终得该行“网开一面”以后，孟能遂请对其他押售亦援例办理，以达成分期偿还欠款。因于4月25日致函该行：</p>
+<p>“今后如此推动，則欠债必可顺利分期还清。还债之款项唯一来源为或押或售水晶房产，或押或售必有赖于物色买主，水晶房产过多，买主情况各异，若俟同时一次解决后统一注销，则必发生买主间互相观望或等待或因不耐而拒买等延误现象，则偿还责行之欠款，势将无望。此次承责行德便，首开国防部来款‘径交本行’后可注销之前例，今后由买主随时‘径交本行’，随时注销相关部分，則每次必可还清若干百分比（国防部前例，即一次还清17%），进而全部问题，当可解决。昨日面陈以上援例办法，承蒙指示可行，命书面奉请批示，特上此函，并提供即可续还之百分比。”</p>
+<p>可续还之百分比第一户即为孟能毁家纾债出售自己之居所——水晶大厦11楼IJ户，售与债主徐进业先生。4月23日，该行通知该户如比例摊还117万“径交本行”，即可抛弃该户的抵押权。孟能又信以为真，于4月25日即约买主同去该行缴淸。不料该行收到117万后，却不肯援例，也不肯退钱。使孟能对买主信用全失，同时严重影响孟能售屋还款计划。因为买主乃千辛万苦物色而来，必须以该行同意个别注销抵押权为成交要件，今首开一例即先被该行食言而肥，孟能将何能售屋还债？所以该行这一背信，续使孟能坐失售屋还债机会，而损失惨重，自有待赔偿。该行前后矛盾，施展诈术，此为罪状之八。</p>
+<p>九、至于该行于国防部福利总处个别抛弃网开一面后又紧收银网原因，据告乃由于该行又旧案重提，坚持须先还延滞违约金才准续个别抛弃，所以一切面诺，均吿失信。国防部福利总处直拨的1150万元中，该行只允摊还本金300万，其他850万全部移做利息！该行认定利息大体还淸，故追究逾期违约金时刻已经到来，最高可索赔达300万云云。孟能遂于1977年5月29日去信，表示就算利息应如该行算法，亦不应再发生违约金之说——</p>
+<p>“（一）贵行（65）北市银营放字第510号函指示本人：‘台端所拟具之清偿债务办法尚属可行，唯须俟全部积欠利息付清后，本行始可配合办理。’</p>
+<p>（二）‘全部积欠利息’原自3月5日将国防部来款1150万元中扣除（一次缴清积欠850万元整），后经贵行计算结果尚有零数482777元，本人复将此零数存入贵行，并取得5月11日收据六纸，自此‘全部积欠利息’，已遵贵行指示全部付清。</p>
+<p>（三）贵行收到全部利息后，原应依诺‘配合办理’本人‘尚属可行’之‘清偿债务办法’。该‘清偿债务办法’为挂号寄奉贵行者，共有三项：</p>
+<p>甲、‘请责行先将全部贷款转移至本人家属朱婉坚与萧广仁两人名下，以结清先父生前此一悬案。’请贵行依诺‘配合办理’。</p>
+<p>乙、‘积欠利息之具体清理办法’。按此项业因积欠利息全部付清，已告解决。</p>
+<p>丙、‘延滞息之免除’请贵行依诺‘配合办理’。”</p>
+<p>发信后复经水晶住户吴越潮先生等多次交涉，该行始于6月18日来函同意“延滞违约金准予免计”（附证十六——台北市银行营业部1977年6月18日函影本）。是则如这次300万的罚金可一笔勾销为“是”为“合理”，即足证多年来执此为理由刁难债务人为“非”为“不合理”。而该行任意以弹性欠额困扰债务人而引出的庞大损失，自应赔偿。该行前后矛盾，施展诈术，此为罪状之九。</p>
+<p>十、前述该行于国防部福利总处押租可注销一事，于延滞违约金可免除一事……均证明该行昨非今是全无标准可循。但一念之转，弃非从是，常耗时长达三四年至五年八个月之久，如此拖延，实令债务人困扰万分！前述该行为国防部福利总处办理注销，抛弃书于收银当天完成；但同例为徐进业先生办理注销，却于收银（1977年4月23日）后拖延不办。拖至1977年8月17日，孟能写长信质问，始于9月2日得该行注销。前后拖延一百三十三天！若说收银当天即予抛弃为“是”为“合理”，则拖延一百三十三天即为“非”为“不合理”。足见该行弃非从是以后，立即又长掩方便之门，不肯援例注销徐进业案，纯系故意刁难，因而造成之恶果与损失，自应赔偿。此类因拖延不予注销的恶果与损失，不止这一件，于对国防部福利总处，亦别开生面。缘该行谋利心切，于注销手续上，疏于详査，以致发生技术困难，国防部福利总处认为该行饰词背信，分于1977年5月25日、8月6日、8月30日，一再移书责问，要求“请退还水晶大厦押租金尾款1150万元”（附证十七——国防部福利总处（66）驷成字第20934号函影本）。并以该行未能履行保证为借口，该处竟至违背内政部财政部多次不得扣留权状的指示，强将水晶大厦权状（尤其迫切需用的属于萧孟能名下五权状）全部扣留，造成对国税局、税捐稽征处等机关的设定手续全部瘫痪。以致国税局方面，又引为借口，除扣留典金尾款220万元不付外，并替告将孟能之保证支票200万元“提出交换”（附证十八——国税局（67）财北国税伍字第35799号函影本）；税捐稽征处方面，也以久候不得解决，“所订典约无条件作废”，且要“本案所发生之法律行为应由萧君等三人负一切责任”（附证十九——台北市税捐稽征处66北市稽总（乙）字第46952号函影本）。是则孟能除损失550万典金收入外，并损失印花税22000元及一年空房以待的损失！一两年来的精神损耗尚不在内！这类庞大损失，自应赔偿。该行拖延，施展诈术，此为罪状之十。</p>
+<p>十一、国防部福利总处借口该行未能履行保证，而非法扣留上述权状后，无权状更无法理淸产权，形成鹬蚌互钳局面。该行一面推卸责任，一面又知道推卸不易，所以举棋不定，虚耗时日。但多耗一日，即多增一日孟能利息与精神损失。该行初则先事拖延，为时达四个月之久，不予答复；后经福利总处一再抗议，始于7月5日通知同意补印；又于7月25日（66）北市银营放字第2075号函该处同意权状“由本行借出”；不久又不说理由，推翻前议，拒绝福利总处8月6日函，于8月15日致函孟能表示“无法办理，请径向该总处洽办”（附证二十——台北市银行营业部（66）北市银营放字第2270号函影本），以推卸责任；旋于十一天后，以1977年8月27日（66）北市银营放字第2383号长函，又以“格于地政法令”为理由，表示办不到，要孟能“另设法洽商国防部福利总处取回留置之土地所有权状”；12月2日、3日，又连来内容相同的两函，又以“依地政机关规定，须由该大厦基地之全体所有权人共同出名办理”为理由，饰词推托（附证二十一——台北市银行营业部（66）北市银营放字第3568号函影本）；十八天后（12月21日），忽又来函，既不“格于地政法令”，又不推属孟能责任，而纯由该行已完成福利总处注销手续了（附证二十二——台北市银行营业部（66）北市银营放字第3768号函影本）！综前所陈，该行于7月25日至12月21日之间，前后四个多月，就同一问题，口头反复无论，纯计来函，先后即达六次，立场前后不同，最后一次又移后为前，恢复最初立场！若说前函所说的为“是”为“合理”，则后函所说的即为“非”为“不合理”，若说后函修正的为“是”为“合理”，则更后之函所印证的更前之函为“是”为“合理”当系最后的“是”与最后的“合理”！足见该行全无是非，全系反复无常，信口是非。该行最后一函发文后，本年1月11日，国防部福利总处犹执意不交出权状，且以（67）驷成字第20045号函，做无谓的拖延。所以权状被扣所引起的重大损失，至今犹待理赔。该行拖延，施展诈术，此为罪状之十一。</p>
+<p>十二、自该行于国防部福利总处押租一案首开可个别注销之例以后，该行旋又于徐进业案将网开一面又形关闭，孟能先后为解决死结，分于1976年7月6日、8月14日、11月19日、12月12日、1977年3月8日、3月14日、3月19日、4月25日、5月11日、5月16日，前后十次致函该行，但该行负责人甚至无公务员起码的服务道德与责任——竟一律不复函！仍事拖延。孟能忍无可忍，因于1977年5月29日，以长函直寄该行董事长，备述始末，请其履行（65）北市银营放字第510号函的夙诺，表示“如公务人员可如此背信拖延，罔顾人民权益”，本人将采取法律行动。该行董事长得函后，于6月1日复信告以“业经嘱咐营业部从速处理，期能早结悬案”（附证二十三——瞿永全1977年6月1日信影本），已无法不承认拖延属实。十八天后，该行来函终于放弃纠缠孟能多年的所谓“延滞违约金”，同时另函寄来“台北市银行放款核定通知书”。表面上，终于同意该行自11971年4月以来坚持不肯的个别注销办法，而表示“为便利分户出售房地权，以便逐渐偿还本行贷款，同意按分批还款比例注销担保品抵押权”（附证二十四——台北市银行放款核定通知书影本，1977年6月18日）。这一改变，适足反证该行自1971年4月起，六年两个月以来，不肯“同意按分批还款比例注销担保品抵押权”的错误。这一错误，尤以最后半年为严重。因为最后半年明明已有国防部福利总处一案的同意个别注销，既有此一例，复行关闭，直拖到半年后方始复开，闭开之间，开而复闭，闭而复开，显然全无规迹可循。从而在六年两个月中，因胶着状态引出债务人的庞大损失，自有待赔偿。公务员侵害人民权利，法有处罚明文，施展诈术，此为罪状之十二。</p>
+<p>十三、水晶大厦原始贷款人为萧同兹而非萧孟能，萧孟能代死者还债，代该行解决呆账，于该行极为有利。不料该行竟有意“错认”孟能为原始债务人，一再勒逼，殊属认错对象。即以上述6月18日放款核定通知书为例，该行第一次所发通知书，保证人仅为“朱婉坚、叶肇模、萧近仁、张熹、何蓓芳”五人（同附证二十四）；但该行旋即收回，重发一次，竟增列保证人三人——“辜伟甫、张任飞、姚王椀”（附证二十五——台北市银行放款核定通知书影本，1977年6月18日另调换一份）！査此三位，都是萧同兹原始贷款保证人，且都是萧同兹旧谊，如今萧同兹谢世近四年后，仍请他们各位为两代作保，实逾情理之外。但该行坚持不肯，似此强人所难，造成事伟甫先生主持下企业中孟能股份不复存在，此类有形无形损失，自有待赔偿。所以乍看之下，该行虽于6月18日同意债务转移与个别注销，但细察该行作风，就不难看出阴刻刁难，意在层层阻止债务人脱离苦海。上述在保证人方面的刁难，即为显例之一。但孟能为委曲求全，使该行不生借口，仍接受收回第一次通知的无理要求，同意接受第二次增列保人之要求。该行除口诺函诺经常不予履行外，似此将已成定案已经发出的文件，任意索回调换，亦属天下罕闻之举。幸赖先严旧友碍于情面，勉为其难，再允担保，孟能得以将各位签盖的文件于1977年7月1日完成手续，使该行第一层刁难，未曾得售。该行随意反汗调换文件，施展诈术，此为罪状之十三。</p>
+<p>十四、该行另一刁难债务人方式为自己的征信部门无所事事，于抵押品的估价，反硬性规定由中华征信所估值。这一官商勾结，因以口头行之，故债务人无法检举。直到1977年4月18日，方有台北市议员向该行总经理提出，该行总经理则佯做不知（附证二十六——1977年4月19日《联合报》《市银贷款作业不合理》影本）。孟能为此一硬性规定的受害人之一，在1976年10月，即不得不应该行授意，委请中华征信所勘估，花费达13532元！该所且直接行文台北市银行营业部，付勘估费者反成副本收受者（附证二十七——中华征信所（65）中征企字第1504号函影本），更属离奇。据该所估值，萧家所提供的抵押品，总值超过3700余万元，而贷款转移总额不过1500万元，只不过，占担保品的四成。一般银行贷放行规，例为土地九成房屋八成，足证该行于萧家房地估值，显然偏低过分。光萧家抵押品，即显然超过该行所指定的征信所勘估甚多，而该行居然仍紧扣其他水晶住户产权不放，徒使其他水晶住户对萧家发生误解，显然用心险恶。四年以来，孟能一再请求：为求自保，于萧家押品不但已足，而且有余甚多，不可押及无辜；且于1977年5月4日，最后行文该行，“请准予对已缴清房款住户，个别抛弃抵押权，以使缴淸房款住户不受不公平之牵累敬请贵行依情依理依法速为抛弃，以期平允。”可是5月23日该行复函，仍予拒绝。延至年底，水晶住户汪慧云女士等三十四户，且委任律师质问（附证二十八——1977年12月30日函影本），使孟能代该行受过，有口难辩，信用名誉，备受损失，自应予以赔偿。该行祸延无事，施展诈术，此为罪状之十四。</p>
+<p>十五、该行除显然压低萧家担保品外，1977年6月18日放款核定通知书明列“担保方式：本市信义路4段水晶大厦建物813坪及土地268坪设定第一顺位”中，竟将土地部分，分文不予作价，显然不可思议。该行既明定“为便利分户出售房地产，以便逐渐偿还本行贷款，同意按分批还款比例注销担保品抵押权”办法，却未将土地部分按比例分摊作价，显然不通。因隔邻喜临门大厦亟欲以600万元购买土地中之一部，鉴于该行既不肯将土地作价，自然也无比例还款之可言。乃在6月23日，请代表赴该行面询。该行表示将不放弃售地分摊。代表表示该行此一态度，显失公正。若不放弃土地，则应明示土地分摊比例，相对减少房屋每坪一万九分榨比例。当时该行刘副理语塞，虽态度不符该行《客户通讯》一再刊载《行员服务守则》中要求的礼貌标准，但仍无法不同意一增一减。但一拖二月，犹不置复。拖到8月27日，错过喜临门大厦购地时机以后，方才答复，竟说“如台端将空地出售以所得价款悉数偿还本行”，方始“抛弃该土地之抵押权”！无信无理蛮横恶劣，竟一至于此！使孟能坐失600万的售地机会，自应予以赔偿。施展诈术，此为罪状之十五。</p>
+<p>十六、该行坚持以中华征信所报告书房屋范围提供担保，自己却在土地方面不受约束；又坚持偿债以孟能6月27日信为依据，但于陈子和先生贷款案，于8月12日致函同行储蓄部，竟说“如贵部将其贷款新台币65万径行拨交本部（营业部），以偿还萧孟能君所继承萧同兹先生在本部之部分贷款利息，本部同意抛弃上开房地产设定之抵押权”（附证二十九——台北市银行营业部（66）北市银营放字第2289号函影本）！查该行6月18日放款核定通知书中，早已明定抵押品范围，在该范围内抵押品，该行同意“为便利分户出售房地产，以便逐渐偿还本行贷款，同意按分批还款比例注销担保品抵押权”。但陈子和先生所有水晶大厦房产，全然不属该行所明定抵押品范围以内，该行与萧家债务，自无以此种方式代偿的依据；况偿还来源，该行既认定以孟能6月27日信为依据，则显然已有其出处，何能在陈子和先生贷款（且向该行储蓄部贷款）单纯事件中，使陈子和先生陷于错误而以为不代萧家还利息即有被扫地出门的可能？此一使陈子和先生陷于错误而交付，是自6月27日信中取得偿还来源外，又自陈子和先生贷款中另谋来源，黄鱼两吃，一债两还，取得双份！这种拦腰式取得法，严重影响水晶大厦7月19日会议决议及集资运用方式，且对解决水晶产权，生出直接严重的干扰。同时该行无异将6月18日放款核定通知书推翻，也将孟能6月27日信推翻，这种行径，正为该行阴刻刁难，竟在层层阻止债务转移的又一显例！孟能除概不承认外，并追究责任与赔偿。该行施展诈术，此为罪状之十六。</p>
+<p>十七、除上举之十三、十四、十五、十六项数例外，该行在手续上，又层层阻止。例如该核定通知书限定孟能于二个月内办妥有关手续，“自本通知书发文日起算”！孟能于6月20日收到挂号信后，即提出整体偿还计划，函达该行，该行口头表示可行。孟能即积极赶办手续，于6月29日提交1500万借据及关系人辜伟甫先生等九人约定书，7月1日即完成对保手续在案。不料有关与国防部福利总处手续，该行于7月5日通知补印后，该行指定的刘代书却拖延不办，拖到第九天，仍无下文。孟能即于第九天（7月14日）下午，亲电该行陈经理，又亲电刘代书。7月15日，该行抛弃书类方送抵地政事务所。前后延误，已达二周。不料刘代书又说案情繁复，请黄武弘先生约原承办人陈先生在18日下午4时面谈，届时刘代书又爽约，黄陈二先生苦候近一小时，始行见到。刘代书所做书类，又告错误，须经该行再行盖印，始能再办。如此重大事件，被刘代书一拖再拖，一误再误，实因该行官商勾结，硬性指定代书的结果。孟能为恐延误之责又被推卸，特于7月19日以“急件”寄达该行，申明：</p>
+<p>谨按贵行董事长先生于6月1日复本入函中，指示“关于令尊生前水晶大厦贷款案，业经嘱咐营业部从速处理，期能早结悬案至希，径向该部洽办”。贵行本“从速处理”之“嘱咐”，限时二月内完成，本人日付利息上万元，多拖一日即多蒙一日心神与财力损失，实感心力交瘁，设或因刘代书等此类延误，最后导致放款案生意外波折额外开支，本人实难尸其咎。特此谨先奉函报备，请贵行谅解。</p>
+<p>该行收上信后，并未表示异议，自属默认无误。以程序上技术上使孟能无法完成债务转移，这是又一显例。施展诈术，此为罪状之十七。</p>
+<p>综前所陈十七项，得证结论如下：</p>
+<p>第一，据以上一、二等项，证明债务早应作为坏账损失而根本已不存在。盖先严与该行债务关系，因系该行受上级命令“遵照办理”而来，并非单纯的萧同兹私人的财务行为，应以政策性贷款当事人死亡而坏账摊销；至少亦应及时处理，照该行催告书中1974年10月5日所自订的明确限期，按时诉追。而不应拖到三年三个月后（本年1月），在套取1332万（国防部福利总处尾款1150万，徐进业先生尾款117万，陈子和先生尾款65万）之后，反回头以诉请拍卖抵押品方式，追索债务。因萧同兹旧欠该行总额不过1800万，萧同兹谢世，该行苟依自定的约定、催告期限等追索，亦不过还1800万而已（因萧同兹信用良好，利息分文不欠，一死所还，只为本金）。但该行却不此之图，而层层以诈术使萧同兹后人逐渐陷入困境，于被套取1332万——约当本金7/10以后，反回过头来，诉请拍卖其原始1800万抵押品，显于情于理于法均属不合而且过分！况依银行通例：“债权中有逾期二年，经催收后未经收取本金或利息者”，“视为实际发生坏账损失”（见文大熙著《商业银行之经营及实务》第178页）。该行套取1332万尾款既在萧同兹死亡三年以后，即远在“逾期二年”以后，则显然已早该“视为实际发生坏账损失”。不论从政策性着眼或从银行通例着眼，这一债务，早已不复存在，自无今日诉追的必要与依据。</p>
+<p>第二，据三至十六项，证明纵有债务，也已还清。因该行既同意并判定萧孟能无代萧同兹还继承未取得前延滞违约金的义务，则同理可证，萧孟能亦无代还利息的义务。因萧同兹死后，依法债务无须“父债子还”，但孟能为便利善后，故代为承担。萧孟能既非贷款的直接当事人，自不能以死者萧同兹的欠息，视同生者萧孟能的责任。死者已矣，死者自不能还钱，今有生者愿代还钱，若收钱而外，却罚生者以利息，自属错认。所以孟能所还者，均应以本金论。既为本金，则已还1332万以后，所余不过468万，光1800万中抵押品土地部分中一部分土地（大安区12甲段73之11、73之12），隔邻喜临门大厦就要出资600万合并，该行只消将此一小部分以拍卖以外之方法（《民法》878）或其他转移方法，就可在利人而不损己状态下收回全部债权。故这一债务，纵言之成理而存在，也早已偿清，自无今日诉追的必要与依据。</p>
+<p>第三，据三至十七项，证明纵有债务，纵有延误，本亦可早还，其未能早还，责任全在该行的拖延。远不必论，即以1977年6月18日核定放款起算，孟能于同月27日迅速提出还债办法，提出已出典水晶三楼另一半与税捐稽征处，可采径付该行前例，一次偿还550万，经该行同意，且行文台北市税捐稽征处（附征三十——台北市银行营业部（66）北市银营放字第1811号函影本）。不料9月17日，税捐稽征处派人携550万支票交付时，该行竟以不能保证注销手续而拒收！——还款到门口竟然不要，反要用损人而不利己的拍卖方法追索债务，该行是何居心，只此一事，可见一斑！同一形式又有国税局的尾款220万，本也径付该行，俾得一次偿还770万，该行亦行文国税局同意（附证三十一——台北市银行营业部（66）北市银营放字第1812号函影本）。但该行不能自国防部福利总处取回权状的拖延，终于使此770万还款未能拨入。同一形式又有水晶住户的贷款与尾款，该行食言不予贷款，亦统扣权状连累无辜，致使贷款无来源，而尾款亦难收入。尾款数额达580万（附证三十二——住户欠屋款及利息负担明细表），连息已逾600万，这些款项若加上上述的770万及徐进业案117万等，则与该行债务，也早已还淸，自无今日诉追的必要与依据。</p>
+<p>第四，复据《民法》第225条、第230条、第234条、第238条，按诸上述事实，可证纵有债务，其总额计算方法，亦大有疑义，因一再延误与拒收等情事，均发生在该行方面，则债务人方面，自不负责；况计算结果，连同庞大损失的赔偿，是该行欠孟能而非孟能欠该行；且孟能已付该行的款项，亦应退回并付利息，盖“债务人忘却已经淸偿，误向债权人再度淸偿，债权人利用机会，蒙骗债务人而再度受其清偿之类，均不能免除诈欺罪之责任”（見赵琛著《刑法分则实用》下册第907页），该行除欠孟能者外，尚有诈欺罪刑责；又据《刑法》第131条，公务员于主管或监督之事物图利，构成渎职罪，“无论图利国库或图利私人，均应成立该条罪名”（三十一年上字第831号），是又有渎职罪刑责；又査身为公务员，依法有“执行职务的规律”及“应为一定行为的规律”（见左潞生《行政学》第三编），且“不得利用职务上之机会，加损害于人”（《公务人员服务法》第6条）。其触犯法令者，除“依各该法令处罚”外，另按情节轻重，按《公务人员服务法》“分别予以惩处”（《公务人员服务法》第22条），综上所陈，是又违反公务员服务规律，而应受行政处分。查公务人员执行职务的态度，于《公务人员服务法》第1条至第7条著有明文，这在西方行政学中叫做“服务道德”，在东方行政学中叫做“公务员的伦理义务”，“如果违反了这种义务，就是失职”（美浓部达吉《日本行政法》，田中二郎《行政法总论》，林纪东《行政法上的公务员》等均载于专著），是应受行政处分之外，又应受“服务道德”可议的公评。……该行负责人罪状的“无微不至”，真令人浩叹！</p>
+<p>第五，复査法律中有所谓“因果关系”，若无先行的事实，则后行的事实即不致发生，其先行事实为对结果发生有重要而直接影响的条件（见《云五社会科学大辞典》第六册《法律学》第109页“因果关系”条）。综前所述该行与孟能之间源远流长的痛史，正符合法律上“被害人之伤害正为被告非法行为之自然相当之结果”，正所谓情理中之“此水本自清，是谁搅令浊”！致令孟能精神信用损害外，复遭财产和利益的损害，这一损害，依法“无论积极的减少既存财产或利益，抑消极的妨害财产或利益之增加或享受，均包括之”（见孙德耕著《增订刑法实用分则编》第三十二章）。孟能如今受害至忍无可忍，只好澄清一切，追究全部责任。回顾上述始末，总结一句，特点端在该行一念之私，徒知占小便宜，不知公道。这一作风，据3月25日《中国时报》刊载，已引起台北市议员注意，“台北市银行拿市民免息的市库存款作建设基金，却在征收受益费中要市民缴付利息，市议员认为不合理”，“市库存款来自市民的血汗钱，经年无息让市银行运用，市府向市银借钱还要缴付利息已属不合理，这项利息又让市民负担更不合理。”……可见该行之公道观念，与行外之人，完全不同——确属外行。</p>
+<p>4月17日，孟能在得知该行决定以杀鸡取卵方式诉请拍卖以后，乃就上述各项，写成十五页长信，请该行反省。二十一天后，得到反省结果如下：</p>
+<p>令尊前为兴建水晶大厦向本行所贷款项，已逾期甚久，由于台端未能依照历次双方协议之继承债务清偿办理清理，本行逼不得已为收回债权，始申请法院裁定拍卖抵押物取偿，除台端能于拍卖前清理所积欠之债务，本行尚可申请撤回拍卖抵押物之申请外，只有依照法律程序进行拍卖，请查照。</p>
+<p>以一百二十字的短简草草答复孟能一万五千字的长信；以寥寥四行的搪塞答复孟能四百七十行的理由；将全部始末与附证，都不敢置辩，都全部一推了事，该行作风的怙恶不悛，最后此信，全收画龙点眼之妙！査该行口口声声所谓萧孟能“继承债务”，所谓萧孟能为继承人，本早在国税局遗产税免税证明书发下前，就率先肯定；孟能为便利善后，亦在弟妹们纷纷对先严所遗消极财产抛弃继承时，独自承担，也以继承人自居。不料台北地方法院1977年诉字第13089号一案，民庭第二庭推事李富美，竟查出孟能“并非萧同兹唯一之继承人”，而根本将台北市银行与国税局等四五年来的肯定与认定全部推翻！将孟能自己四五年来的“唯我独当”局面也全部推翻！这一判决书理由如下：</p>
+<p>査抛弃继承应于知悉其得为继承之时起二个月内，以书面向其他继承人为之，民法第1174条第2项定有明文。萧同兹系于六十二年11月11日死亡，原告提出之抛弃继承书虽记载作成日期为六十二年12月15日，但中华民国驻纽约总领事馆之签证系于六十四年2月14日始为之，原告收到该抛弃继承书势必在该日之后，则与上开抛弃继承须于得为继承之日起二个月内为之之规定有违，其抛弃继承自不生效力（三十七年院字第3845号），从而原告并非萧同兹唯一之继承人……自属当事人不适格。（附证三十三——台北地方法院六十六年诉字第13089号判决书影本）</p>
+<p>如此一来，四五年来整个的债权债务基础，根本上发生大变化！孟能有二弟一妹，现都在美国，他们依法都不能抛弃继承，先严萧同兹债务，每人自应分摊1/4。纵以1800万计，1/4不过450万元，孟能早以小儿萧广仁等名下水晶大厦二楼及地下室产权典押给国防部福利总处所得偿还该行而有余，而今日该行非但不得拍卖孟能直系一系房地产，反须退还孟能误缴多缴的款项，自于理至明。</p>
+<p>3月29日《联合报》登财政部长对银行腐败“坦陈疏于督导”，“各级主管人员疏于督导与各级干部缺乏敬业精神”，足见银行负责人作业情形，已令人忧虑。综前所述台北市银行种种腐败，主管机关应速为调査惩处，已极有必要。依《刑法》第131条，对监督责任，早有规定，主管机关若再纵容台北市银行无法无天，即难卸《刑法》第131条罪责。务请财政部部长、中央银行总裁、台北市财政局局长注意。</p>
+<p>兹依《宪法》第24条公务员违法侵害人民权利除依法律受惩戒并负民刑责任条文；及《民法》债编侵权行为中第184条至186条；及前引《民法》各条；及前引《刑法》各条；及《公务员服务法》第6条、第22条；公务员惩戒委员会议决书鉴字第1739号、第1829号、第1833号、第2340号……特致此函，请速为各种公道措施。孟能自《文星》杂志文星书店结束以还，十一年来，因义受难，层出不穷，格于环境，无法置辩，总期终有一日大白于天下。今以台北市银行欺人太甚，不得不就这一范围先行婉转陈述如上，敬请注意，就本函主旨示复。</p>
+<p>萧孟能</p>
+<p>代萧孟能三闹金衙</p>
+<p>函：1978年6月9日</p>
+<p>受文者：行政院院长</p>
+<p>副本收受者：财政部部长、中国银行总裁、省政府财政厅厅长、台湾省合作金库总经理、大稻埕文库经理、立法院、监察院、省议会</p>
+<p>主旨：台湾省合作金库违法侵害人民权利，请予赔偿并惩处该行总经理、大稻埕支库经理等失职人员，并请査明财政部、中央银行、财政厅对该库调査不实涉嫌包庇事件，有以处理。</p>
+<p>说明：</p>
+<p>财政部等的第一错误</p>
+<p>——不认真检查弊案，官官相护，敷衍塞责</p>
+<p>一、为台湾省合作金库违法侵害人民权利事件，本人依法多次与该库交涉，不得要领，乃于本年3月31日，分函财政部部长、中央银行总裁、省政府财政厅厅长。4月10日，财政厅（67）财二字第03568号复函如下：（正本受文者：台湾省合作金库）</p>
+<p>主旨：萧孟能君函称其父萧同兹先生生前为应三井工业股份有限公司负责人张荫如之请，为该公司向贵库信用贷款之第二保证人，因债务清偿问题，认为贵库违法侵害人民权利，请予赔偿并惩处失职人员一案，请查处径复并副知。</p>
+<p>说明：依据萧孟能先生六十七年3月31日函办理（附原函影本一份）。</p>
+<p>厅长：钟时益</p>
+<p>上信证明财政厅的处理方式为何，所谓“请查处径复并副知”的方式，显然只想遥听合作金库的一面之词就算交差，显然不是深入了解问题的负责态度。5月6日，本人又收到中央银行的（67）台央检字第56号复信：</p>
+<p>受文者：萧孟能君</p>
+<p>副本收受者：财政部钱币司</p>
+<p>主旨：台端六十七年3月31日致本行俞总裁函，所称台湾省合作金库涉嫌违法侵害人民权利各点，经本处派员办理专案检查，已将检查结果函送财政部，请径洽。</p>
+<p>中央银行金融业务检查处</p>
+<p>上信证明中央银行的处理方式为何，是“派员办理专案检査”，这一方式如果认真执行，自然远比财政厅负责。不料等到财政部5月25日（67）台财钱第15565号来函（受文者：萧孟能君；副本收受者：中央银行台湾省合作金库。以部长费骅发文，钱申司司长季可渝决行），本人一看之后，才恍然大悟所谓“已将检査结果函送财政部”到底是怎么一回事！原来竟是全套的官官相护！全套的敷衍塞责！财政部复函依据是“本案业经中央银行派员检查中央银行”也当权不让，检查结果共（一）至（六）六点，每点都站不住，兹分别驳斥如下：</p>
+<p>财政部等的第二错误</p>
+<p>——不明法律，认为信用诉讼可以继承</p>
+<p>财政部等的第三错误</p>
+<p>——对合作金库不着力于向主债务人与原始第一保证人追索债务，不予检查</p>
+<p>二、财政部复函（一）说：</p>
+<p>（一）萧同兹先生于五十九年-六十年间，同意为三井工业股份有限公司向台湾省合作金库大稻埕支库借款本票之共同发票人之一，因本票届期未能偿付，台湾省合作金库依法向台北地方法院申请裁定各共同发票人清偿本票票面金额。六十二年11月11日萧同兹先生因病死亡，其子萧孟能依法办理继承，依据萧同兹向该库贷款时所签之约定书第33条：“本契约所载立约人包括其继承人、受让人、法定代理或破产管理人、遗产管理人”之记载，该支库对本案债权凭证亦即本票共同发票人萧同兹之继承人及放款副担保支票（六十六年12月20日到期）发票人萧孟能依法诉追，似无不合。</p>
+<p>以上是答复本人去函中第一段，两相对照，财政部等的检査结果为何，自然托出，本人去函原文是：</p>
+<p>先严萧同兹先生，前以扶植青年创业，应三井工程股份有限公司负责人张荫如之请，为该公司向台湾省合作金库信用贷款之第二保证人（第一保证人为杨冠洲先生）。不料该公司适遭经济危机波及，先严又生病以至谢世。依法未取得继承权以前，无须父债子还，本人与本案自无丝毫干系。但以本人与银行关系良好，经该库情商代该库解决困难，因此勉由朱婉坚女士出面作保。不料该库适时利用朱女士之无知，竟将信用贷款之保证人偷天换日为抵押贷款之房产提供人，而使朱女士国泰信义公寓之房产卷入。依法契约必以诚信公道为原则，今该库不着力于主债务人与原始第一保证人（如杨先生），反蓄意套住无辜之第三者——经该库情商而来代该库解决困难之第三者，殊属欺人太甚。</p>
+<p>拿出本人原信一对照，就可知财政部等的检査，根本在有意瞒天过海，本人原信有二重点：</p>
+<p>第一、先严萧同兹为信用贷款之第二保证人，死亡后与本案关系自行中止。</p>
+<p>第二、合作金库“不着力于主债务人与原始第一保证人”之追索，反蓄意套住无辜之第三者。</p>
+<p>但财政部等官官相护，竟不针对本人这二重点检查，反而引申本人为萧同兹继承人，“依据萧同兹向该库贷款时所签之约定书第三十三条”包括继承人之记载，认为追索萧孟能“似无不合”，这不但是大大的错误，也是大大的笑话！因为萧同兹的保证是信用担保，“信用”是不能继承的，《民法》第1148条明确规定：“继承人自继承开始时，除本法另有规定外，承受被继承人财产上之一切权利义务。但权利义务专属于被继承人本身者，不在此限。”“权利义务专属于被继承人本身者”，据李宜琛《现行亲属法论》第46页，解说如下：“专属一身之权利，既有二种意义，则是否得为继承之标的，自应以其权利有无移转性为其区别之标准。是以凡以被继承人之身份或特别的信任关系为基础之权利（例如因雇佣、委任而生之权利）以及专对于被继承人履行之债权，皆专属于被继承人之一身，因被继承人之死亡而消灭。”可见信用是不能继承的，此其一；又据陈棋炎《民法继承》第98页：“至于诉讼标的如系专属于被继承人者，该诉讼则因被继承人死亡而终了，但因诉讼费用上之权利义务，仍可为继承标的，故法院就诉讼费用，仍应裁判，而令继承人承受此种诉讼。”可见诉讼标的之性质不符也是不能继承的，此其二；再据1962年台上字第2789号判例：“职务保证原有专属性，除有特约或特殊情形外，保证人之责任因其死亡而消灭。盖此种保证于保证契约成立时，被保人尚未有具体的赔偿之债务，必待被保人发生亏损情事后，其赔偿之责任始能具体确定，而遗产继承应以继承开始时被继承人之权利义务状态为准，倘继承开始时被保人尚未发生具体而确定之赔偿义务，则此种保证契约自不在其继承人继承范围之内。”此其三。财政部等不明白上述法理，竟然创出信用诉讼可以继承的错误和笑话。综上所陈，财政部复函第（一）点，显然发生两大错误：第一错误：不明法律，认为信用诉讼可继承；第二错误：对合作金库不着力于向主债务人与原始第一保证人追索，不予检查。</p>
+<p>财政部等的第四错误</p>
+<p>——明知合作金库对朱婉坚已丧失追索权，仍纵容该库，欺压百姓</p>
+<p>三、财政部复函（二）又说：</p>
+<p>（二）又査六十二年2月-六十四年8月间，三井工业股份有限公司对本案债务先后提供备偿之支票，均未经该支库提示，依据票据法笫130条及第131条之规定，该支库对背书人朱婉坚已丧失追索权。</p>
+<p>财政部等这一检査结果，是本案最重要的一项透露，反证本人一再指出的合作金库违背法例不向主债务人追索的完全属实，“三井工业股份有限公司对本案债务先后提供备偿之支票，均未经该支库提示”，这是何等严重的事！因为《民法》第752条明定：“约定保证人仅于一定期间内为保证者，如债权人于其期间内，对于保证人不为审判上之请求，保证人免其责任。”第755条也明定：“就定有期限之债务为保证者，如债权人允许主债务人延期淸偿时，保证人除对于其延期已为同意外，不负保证责任。”再据1959年台上字第922号判例：“民法所称保证契约之保证人，于主债务人不履行债务时由其代负履行之责，与票据法所称支票之背书人应照支票文义担保付款之情形不同。故签名于支票而为背书者，应依票据法之规定负背书人之责任，执票人即不得仅凭支票上之背书，而主张背书人应负民法上之保证责任。”可见依法条依判例，合作金库早已丧失对朱婉坚任何身份之追索权。既然财政部来函明白承认合作金库已丧失这一权利，反而坐视该库对朱婉坚续行追索之行为，不予惩处，显然检査不公。本人原函，曾陈述如下：</p>
+<p>……以本人与银行关系良好，经该库情商代该库解决困难，因此勉由朱婉坚女士出面作保。不料该库适时利用朱女士之无知，竟将信用贷款之保证人偷天换日为抵押贷款之房产提供人，而使朱女士国泰信义公寓之房产卷入。依法契约必以诚信公道为原则，今该库不着力于主债务人与原始第一保证人（如杨先生），反蓄意套住无辜之第三者——经该库情商而来代该库解决困难之第三者，殊属欺人太甚，此其一。</p>
+<p>后朱女士因必须出售其国泰信义公寓房产偿还其他债务，乃转而向该库情商涂销设定，该库坚不通融。朱女士以作保经年，进退维谷，又必须涂销在即，乃商请赵庆云女士代为提供吴兴街之房产，以应强索。该库自是除套住朱女士，又套住另一无辜之第三者赵女士，殊属欺人太甚，此其二。</p>
+<p>主债务人张荫如至六十四年12月30日，已陆续还清该库20万元，不料翌年春三井公司遭能源危机影响，终告难支，张荫如出国躲债，自此一去无归。该库不着力子向主债务人追索，亦不向其他保证人（如周先生）追索，唯以胁困朱女士赵女士为务，专一于祸延无辜，殊属欺人太甚，此其三。</p>
+<p>与财政部复函两相比对，合作金库如何利用朱婉坚之无知，不知该库已无追索权，反而任由该库巧设连环套套牢等内情，财政部等理应追查，但显然一笔带过，未予追査。故财政部复函第（二）点，显然发生明知合作金库对朱婉坚已丧失追索权，仍纵容该库欺压百姓的错误。</p>
+<p>财政部等的第五错误</p>
+<p>——不但纵容合作金库做无追索权的追索，并且进行五项护航</p>
+<p>四、财政部复函（三）（四）又说：</p>
+<p>（三）同案经萧孟能签发之支票，并缴由该支库作为备偿其债务者，除由赵庆云女士同意背书外，并另提供其私人房屋设定30万元作为支票背书保证，该支库于前项票据到期后第七天内提示，以取得票据法第130条及第131条规定之背书人追索权，尚无不合。</p>
+<p>（四）三井工业股份有限公司延滞放款，截至六十六年8月12日止，共结欠本金278000元，利息约310000元，合计588000元，六十六年8月5日萧孟能之妻朱婉坚申请准予减免利息，由其承担32万元债务，该支库据此，于六十六年8月12日签请总库准予一次清偾32万元后，予以结案，亦符合该库有关规定。</p>
+<p>按财政部既在复函（二）中透露合作金库对朱婉坚根本已无追索权，则（三）、（四）即相对根本不能成立，因为（三）、（四）之成立，都基于该库对朱婉坚追索权才能发生，既无追索权，则本人原函所述，即为一笔典型的诈欺账：</p>
+<p>六十五年夏，几经商谈，朱女士为免祸延赵女士，乃屈从该库无理要求——由朱女士提供萧孟能30万元（日期开六十六年8月30日）保证支票一纸，作为增列之保证；另由朱女士按月摊还3000元给该库。是乃祸延无辜第一名朱婉坚第二名赵庆云之外，又延及第三名萧孟能。且祸延范围除人身与房产外，又卷入支票责任，殊属欺人太甚，此其四。</p>
+<p>自六十五年8月15日起至六十六年1月15日止，朱女士共摊还前后五个月，最后因经济困窘，难乎为继，该库非但不念无辜者之苦衷，反而由行员陈政修荒谬算出总欠648000元之巨债，责令无辜者赔偿，是无异保证人愈还愈多！（本金278000元，利息竟要37万元。）朱女士自然深感不平。复经多次交涉，至8月5日，该库始同意由朱女士具函承担本息32万元，8月23日，该库正式来函同意。是则如32万元为“是”为“合理”，则7月7日该库责赔648000元即为“非”为“不合理”，此种小大由之而全部无客观标准可循之“弹性债务”，任意为之，殊属欺人太甚，此其五。</p>
+<p>与财政部复函两相比对，即不难看出财政部等对合作金库进行官官相护的五项护航：</p>
+<p>第一、追认合作金库诈欺朱婉坚，使朱婉坚自己陷入抵押保证（原只为信用保证。）。</p>
+<p>第二、追认合作金库诈欺朱婉坚，使朱婉坚没有必要的将赵庆云、萧孟能卷入。</p>
+<p>第三、追认合作金库的一债三保方式，使赵庆云、萧孟能卷入，但已免于追索权的朱婉坚竟仍按月摊还！</p>
+<p>第四、弹性债务部分，财政部等未能说明何以由该行自承之648000元债务（附证一——该行行员陈政修亲迹影本），弹性减为32万，若本金只为“278000元”，则索还32万即不得谓有何客观标准可循，财政部竟说“符合该库有关规定”，显然是护短夺理。依《民法》第238条明定：“在债权人迟延中，债务人无须支付利息。”则278000元债务索还32万，显有违反此条《民法》规定之利息支付在内，财政部等将何以解释此所谓“该库有关规定”？难道一个银行的有关规定竟高于《民法》吗？</p>
+<p>第五、既追认朱婉坚应还款，复追认赵庆云、萧孟能的30万保证，即无异同意一债两还。但依法朱婉坚一债一还都无追索权，既为财政部等所承认，又何能依法另要赵庆云、萧孟能复予两还？由此可见，萧孟能支票显属该库恶意取得，已至为明确。《票据法》第14条：“以恶意或有重大过失取得票据者，不得享有票据上之权利。”本案自属适用，该库自属无票据上之权利无疑。财政部等却为该库护航，反说提示票据“尚无不合”，如果不当取得的票据可以提示，那么盗贼取得支票后提示，也可以“尚无不合”了。</p>
+<p>财政部等的第六错误</p>
+<p>——包庇合作金库抹杀老百姓寄达的物证</p>
+<p>财政部等的第七错误</p>
+<p>——支持违法的“借新还旧”勒索，并且对合作金库做三项开脱</p>
+<p>五、财政部复函（五）又说：</p>
+<p>（五）萧君所称六十六年12月30日及六十七年2月21日二次投书，未获台湾省合作金库函复一节，经查除第一次投书，该库总经理及大稻埕支库分别收到一份外，其余投书是否寄达，无案可稽。</p>
+<p>这又是公然的包庇合作金库。查2月21日信，本人是委请陈良榘律师催告的，经过如本人原函所述：</p>
+<p>六十六年12月30日，本人忍无可忍，乃以最速件函该库董事长、总经理、大稻埕支库经理，将前列十点，均予如上详述。该行无法置辩，悉行默认，自属自知理屈。既知理屈，竟仍知过不改，一派官僚作风，尤属错中之错。本人候至五十日后，犹未得该库复函，乃委请陈良榘律师于2月21日催告该库董事长、总经理，告以一、本人前以台湾省合作金库违法侵害人民权利事件，于去年12月30日以最速件致函该库董事长、总经理，迄今逾五十日，未得复信。二、本人前以其他金融机关此类事件，曾于去年5月29日致函台北市银行董事长，即得其0513限时挂号函复，告以“大函敬悉……业经嘱咐营业部从速处理”；本人又于去年9月1日致函华南银行总经理，亦得其审一字第3706号函复并“派员奉洽”。……三、查公务人员执行职务之态度及不得稽延，于《公务人员服务法》第1条第7条著有明文，此在西方行政学中称之为“服务道德”。经商洽延至12月20日，但须由萧孟能设法提供房产抵押，萧孟能以自身债务困难，表示如将友人叶肇模水晶大厦八之二房屋押借50万，则可勉为一次代还朱女士所欠32万，以结悬案，该库同意。不料及办手续时，该库竟背信，将该市价80万之房产，只同意押40万，房产提供人自无法接受。该库殃及无辜杀鸡取卵时仍背信如此，殊属欺人太甚，此其六。</p>
+<p>对上一陈述，财政部等全未检查，故意装作不见，对由萧孟能“借新还旧”是否适当，也全视为当然该还，显然对合作金库违法行为有意开脱，故意不予调查。</p>
+<p>六十六年10月24日，该库陈政修限时挂号直函萧孟能，威胁“即行提示支票”，显已直以萧孟能为对象，不以主债务人及各保证人为对象，全无章法与体统！但萧孟能本人因受该库背信之累，周转不灵，11月终告退票三次而成拒绝往来户，该库明知此一记录，而竟于12月27日提示，明知无钱而害人，损人而不利己，殊属欺人太甚，此其七。</p>
+<p>对上一陈述，财政部等全未检查，故意装作不见，对该库全无章法与体统，也全视为当然，显然对该库违法行为有意开脱，故意不予调査（附证三——该行行员陈政修来函影本）。</p>
+<p>六十六年12月30日，萧孟能见该库陈政修，陈出示以“台湾省合作金库”用纸之底稿一张，嘱萧孟能具结，要萧孟能具结“前因承担家父负欠该库债务”，“所负票款债务，当于一月内妥加解决，逾期未能理楚，则听凭处置”，陈政修并谓“这是上面交办的，你非得这样具结不可，这是给你的最后机会，否则就送你坐牢”！萧孟能以该库作风有悖情理法，未肯照办。该库此种恶劣作风，殊属欺人太甚，此其九。</p>
+<p>对上一陈述，财政部等全未检查，又故意装作不见，对该库有悖情理法作风，也全视为当然，显然对该库违法行为有意开脱，故意不予调查（附录四——该行行员所写具结书底稿影本）。财政部对以上三点全行开脱，支持该库违法的“借新还旧”勒索，并且又听该库一面之词，据该库片面真伪难辨的记录，就草率认定老百姓所说“似有出入”，显然又是官官相护外一章。</p>
+<p>财政部等的第八错误</p>
+<p>——以敷衍的调查，与合作金库合作湮灭胁迫老百姓的铁证</p>
+<p>七、财政部复函（六）又说：</p>
+<p>（六）投书人所称该支库已提“刑事自诉状”一节，经调阅该支库关防职章登记薄，因无用印记录，亦无其他文件可稽，真相如何，无法查核。</p>
+<p>这又是公然的包庇，公然的听信合作金库一面之词和抹杀物证。先对照本人原函，便见该库情伪：</p>
+<p>六十六年12月28日——提示之第二天，在究竟能否兑现及代赔尚未磋商及证实下，该库竟火速赶出所谓“刑事自诉状”，以大稻埕支库法定代理人颜志达出面“谨状台湾台北地方法院刑事庭”，恶意用“罪行昭彰”、“以昭炯戒”等字句，欲使萧孟能加受刑事处分，且捏称萧孟能“前因承担萧同兹债务”，签发该支票等因，与事实完全不符，殊属欺人太甚，此其八。</p>
+<p>伹该库为推卸责任，由大稻埕支库经理颜志达向本人表示，彼完全不知有所谓“刑事自诉状”之事，更无指本人“恶行昭彰”，应“以昭炯戒”等可能。本人因出示该库致本人“刑事自诉状”原本，上且盖有该经理印鉴可证。该经理当场接过，即交行员陈政修“抢走”，坚持不退还本人，该行行员且当众向本人咆哮。……诸般行径，与抢劫、恐吓、公然侮辱等罪行无异，殊属欺人太甚，此其十二。</p>
+<p>该合作金库以为原件既被他们伙同抢走，自然就可窜改所有登记簿册记录，以达到“真相如何无法査核”的地步。殊不知本人在原件被他们伙同抢走以前，幸有影本留存，附件于后，以为铁证（附证五），一看之下，不但该行行员亲迹赫然纸上，并且自诉状前后都赫然用印如下</p>
+<p>台湾省合作金库大稻埕支库法定代理人：颜志达</p>
+<p>可见财政部所谓“经调阅该支库关防职章登记簿，因无用印记录，亦无其他文件可稽，真相如何，无法査核”这些话，就变成了完全站不住的敷衍话，并且无异以敷衍的调査，与合作金库合作湮灭胁迫老百姓的铁证。</p>
+<p>财政部等的第九错误</p>
+<p>——对本案关键全然不予调查答复，无异视《民法》第741条、745条为具文并错认对象</p>
+<p>八、本案关键为萧孟能根本依法是局外人，而合作金库却非法缠住萧孟能不放。查合作金库对朱婉坚已丧失追索权已为财政部复函所明白透露，则依法朱婉坚已付该库的款项，亦应退回并付利息，因“债务人忘却已经淸偿，误向债权人再度淸偿，债权人利用机会，蒙骗债务人而再度受其淸偿之类，均不能免除诈欺罪之责任”（见赵琛著《刑法分则实用》下册第907页），是该库除欠朱婉坚者外，尚有诈欺罪刑责。该合作金库对朱婉坚尚且丧失追素权且犯诈欺如此，何况对更不相干之萧孟能？这一不相干，本人早于原函中陈述至详：</p>
+<p>查民法第745条，明订“保证人于债权人未就主债务人之财产强制执行而无效果前，对于债权人得拒绝清偿”，本案主债务人为三井公司为张荫如，该库自始即避重就轻，未就民法第745条条文及法意公道处理，反专以欺凌无辜之保证人为务，而于保证人之责任，亦未就法意上“共同保证”公道着眼，故意放弃其他保证人不问，专以部分保证人为困扰对象，于情于理于法于银行惯例，均属不合。尤有甚者，该库继困扰部分保证人之外，竟进而困扰既未向该库借钱，又未做保证人之萧孟能而欲绳之以法且为刑事之法，殊堪腾笑中外。查民法第741条，明订“保证人之负担，较主债务人为重者，应缩减至主债务之限度”。足征法意之保护保证人不逾主债务人之损失。今该库明知主债务人所欠不过30万，却于7月7日要萧孟能赔648000元，违法欺人，认错对象，岂不太甚！且自主债务人以至任何保人，彼等所负担之极限，不过民事方面之诉追，而既非主债务人又非保证人之萧孟能，却于民事诉追之外，复遭刑事之累，反而“罪行昭彰”，“负担”远较上述人等为重为苛，是乃该库公然违反民法第741条而专与箫孟能在身份上、时间上、金钱上、法律上、程序上不断作对，已至为明显。该库就有追索来源之债务不追索，反火速追索萧孟能，连累萧孟能遭受重大损失，殊属欺人太甚，此其十。</p>
+<p>可见财政部等明知上述事实，却公然予以忽略，在复函中只宇不答，无异视《民法》第741条、第745条为具文，而始终错认对象，将本人“错认颜标是鲁公”，知错不改，实属荒谬。</p>
+<p>综上所陈，该合作金库作风之恶、积弊之深，实令百姓寒心。查台湾省合作金库，原为日治时期台湾产业组合联合会，1944年经日本政府改组为公私合营，官僚习性，渊源甚深，故在近年行库弊案层出之时，该库无役不与，丢人现眼，为全省之冠。即以总经理而论，前总经理马君助方以冒贷案入狱，其后任严伯瑾即以大过二次跟进，该总经理被记大过二次见报之日，财政部长即“坦陈疏于督导”，“各级主管人员疏于督导与各级干部缺乏敬业精神（见3月29日《联合报》），足见如今对该库严予督导，已刻不容缓。何况该库除诈欺外，又据《刑法》第131条，公务员于主管或监督之事物图利，构成渎职罪，“无论图利国库或图利私人，均应成立该条罪名”（三十一年上字第831号），是又有渎职罪刑责。财政部部长、中央银行总栽、省政府财政厅厅长都身列“主管或监督”地位，如此纵容该库无法无天且调査不实涉嫌包庇，如有国法，实所难容。</p>
+<p>兹据《宪法》第24条：“凡公务员违法侵害人民之自由或权利者。除依法律受惩戒外。应负刑事及民事责任。被害人民就其所受损害，并得依法律向国家请求赔偿。”请求彻查本案，复依前引《民法》各条、《刑法》各条，及《公务员服务法》第6条、第22条；公务员惩戒委员会议决书鉴字第1739号、第1829号、第1833号、第2340号……特致此函，请速为各种公道措施。本人自《文星》杂志文星书店结束以还，十一年来，因义受难，层出不穷，格于环境，无法置辩，总期终有一日大白于天下。今以合作金库欺人太甚，不得不就这一范围先行婉转陈述如上，敬请注意，就本函主旨示复。</p>
+<p>萧孟能</p>
+<p>代萧孟能闹银衙</p>
+<p>函：1978年4月17日</p>
+<p>速别：最速件</p>
+<p>受文者：台北市银行</p>
+<p>副本收受者：财政部台北市国税局</p>
+<p>主旨：澄淸责任问题并彻底解决悬案，请先从贵行与财政部台北市国税局始</p>
+<p>说明：</p>
+<p>一、先严萧同兹，有功国家，逝世得总统明令褒扬（附证一——六十三台统一义0640“总统令”影本），并指出晚年“不忘献替”等。其中献替之一，为配合政府加速都市现代化政策，特将其坐落台北市信义路4段之住宅拆除，以供拓展市容。当时台北市市长高玉树，鉴于先严如此配合政府政策，特将加强都市现代化计划提前延伸至信义路4段，而台北市银行“遵照办理”贷款（附证二——1971年2月8日府财三字第5600市府令影本），兴建水晶大厦。故此一贷款，自始即非萧同兹私人之财务行为，而是典型之“政策性贷款”。先严兴建水晶大厦，信用良好，利息分文不欠，不料于1973年11月11日突然逝世，当此之时，贵行理应鉴于贷款乃政策性“遵照办理”而来，且当事人死亡，自应速行比照“政策性贷款”报请上级核以坏账摊销，即时结束该案，不但“以示政府笃念忠荩之至意”，旦符合处理通例。不料贵行别有居心，竟视同萧同兹未死，此于蒋经国院长等千余人公祭萧同兹重大新闻后（附证三——萧同兹之丧部分剪报），该行仍佯作当事人仍在人世，于十个月后，仍“此致萧同兹”催告，可证居心何在（附证四——台北市银行业务部1974年9月26日催告书影本）。——综上所陈，贵行以视同当事人未死方式，拒以“政策性贷款”摊销结案，施展诈术，此为罪状之一。</p>
+<p>二、前监察院查核财政机关业务，财政主管答以呆账程度有“逾期放款”、“催收款项”与“呆账损失”三类，先严贷款因当事人死亡本因政策性而应列为第三类处理，但贵行以别有居心，甚至不肯做第一类第二类处理，因通例如此处理，必得停息追本，但求多少追本，难计利息有无。贵行在银行业中本以“一误再误，毫不认错，主持人低能无知”著称（附证五——吴相湘教授撰《“市银”一误再误》影本），以此一作风办事，自但求完成本位主义，全不顾及实情。贵行既佯作萧同兹未死，不采行任何行为，明知死人不能还本还息，却仍暗中计息，谋以诈术取得来源。其方式为明明萧家担保品已足，却违约紧扣水晶其他住户产权不放，以造成萧同兹之子萧孟能于情不忍，只好继承债务，俾得父债子还使死债变活。于是在萧同兹去世几达一年之时（1974年9月26日），贵行仍“此致萧同兹”以行催告（同附证四）。催告书中明谓“敬请于10月5日前来清理，否则即依法诉追。”但目的显然不在诉追，因向死人岂能诉追？故“10月5日”后并未诉追。——综上所陈，该行明文欲诉追而不诉追，反拖至三年三个月后——今年1月——始行诉追，即反证内情之奇异，意在施展诈术，此为罪状之二。</p>
+<p>三、因先严所遗者为债务，故遗产税免税证明书明示“依法免纳遗产税”（附证六——国税局304号遗产税免税证明书影本），足征孟能所继承者非但无利可图，反而自取麻烦。孟能所以不抛弃继承权而甘心如此任贵行套牢，目的在全先人盛德与免祸延水晶其他住户，故在贵行口头保证欺骗下同意为继承人。贵行口头保证为如孟能写申请书前来，同意继承，并表示“在继承办竣后，对贵行债务当可淸偿为时约在三个月内”，贵行同意孟能只还本金，并以个别按户注销抵押权方式给予售房以还本金的方便。孟能信以为真，故依贵行授意行文，贵行即时复文（附证七——台北市银行业务部1974年12月4日北市银业放字第2713号函影本），在孟能尚未依法取得继承权之前，即肯定承认“萧同兹先生继承人萧孟能君”为“受文者”，并表示“该贷款逾期已久，请依申请书所述赶办继承手续，并于三个月内淸偿，以资淸结”。此函重点在套牢萧孟能为债务人，目的已达，故只谈“贷款逾期”，绝口不提利息之事，自与口头保证相呼应，孟能亦不疑有他。不料国税局方面，对遗产税调査审核任意拖延，竟拖至1975年3月31日——先严去世一年四个月后！——方才发下证件（同附证六），于大局之延误，至为严重。因继承权未取得前，孟能无法处理先严及亲属名下财产，无法出售或典押，自无还债之可能。不料此时贵行推翻口诺，不但不同意个别按户注销抵押权方式给予售房以还本金之方便，反于应还本金之外，加计利息及逾期违约金！全不顾念纵有延误，乃因政府机构（国税局）之办事效率，更因政府机构（市银）未及时于萧同兹去世之时依通例结案。孟能是代已死之人还债，何能反认定孟能欠息及欠逾期违约金！贵行在孟能并未取得继承等法律地位之时即套牢孟能，施展诈术，此为罪状之三。</p>
+<p>四、贵行推翻口诺后，又重新口头保证，谓不妨先来函承认利息及逾期违约金，本行另行议定，不使萧先生为难。如萧先生来函，本行当同意先将已出售房屋所持分之土地准予办理分割过户。孟能鉴于有利于水晶客户权益，故不疑有他，去函后即得贵行复文，内容却增列“俟收入尾款还本行利息后办理分户注销抵押权”（附证八——台北市银行营业部1975年6月24日函影本）！1975年8月26日，贵行复来函索“具体偿债办法”；9月11日，孟能函复以逾期违约金之说实不能成立，利息部分，如贵行“本着原先贷款之允诺，同意对本大厦各住户贷款之申请，借以各住户所贷得之款项转为交付房屋尾款”，孟能“拟以此所得尾款”交付。此一让步，意在请责行履行对水晶各住户贷款之夙诺，但贵行仍食言不办。孟能此一拟议，虽自因贵行不能履行相对责任而作废，但贵行仍推深应付利息之说，唯将“逾期违约金”以“应俟台端来行淸付利息后再议”以为缓冲（附证九——台北市银行营业部1975年10月6日北市银营放字第2591号函影本），诱使孟能先将利息之说承认。同时贵行董事长亦侧面致函陈子和先生，表示“所欠延滞金拟俟萧君来行提出清付利息计划后，本行当酌情从优考虑”（附证十——金克和致陈子和函影本），用意亦同。是为继套牢孟能为继承人之后，进一步套使孟能承认未取得继承权前之利息。施展诈术，此为罪状之四。</p>
+<p>五、为对贵行董事长所谓“提出清付利息计划”有以辩明，孟能于1976年1月15日寄出一函，其中于责行要求“清付利息计划”中，除仍坚持利息来源应以贵行履行对“住户之应收贷款”予以贷放外，并让步同意将住户欠萧家的尾款并付贵行。2月18日，贵行同意“所拟具之清偿债务办法尚属可行”，“据函住户未清尾款颇多，请台端莅行开立专户，并转告各该户速进行办理缴款”（附证十一——台北市银行营1部（65）北市银营放字第510号函影本）。并口诺一俟开立专户，贵行即同意将先严贷款转移至萧家名下，不再使水晶其他住户受累。此一口诺，于大使酒店召开之水晶大厦1976年全体住户大会中，贵行且派员当众宣布。孟能又信以为真，因于2月23日分函水晶住户：“为及早完成全体住户房地产权书状之获得，恳请台端按附上存款单数目径存市银营业部通存#232萧孟能专户”。不料一切悉照贵行条件办理后，贵行继推翻口诺后，又推翻2月18日之函诺！该函诺明承“台端所拟具之清偿债务办法尚属可行”，而“办法”中之（乙）明列“现住户之应收贷款及尾款”两项在内，今贵行只收“尾款”而拒予“贷款”，则所谓“尚属可行”，即全属无根之虚诺。贵行以践“贷款”之诺为饵，目的实在收取“尾款”，然后推翻全部口诺函诺。施展诈术，此为罪状之五。</p>
+<p>六、1976年2月18日贵行函中又有食言而肥一声明，“本件贷款系以土地及建物为担保，依规定在债务未清偿前，恕难同意办理抵押权涂销及债权移转等事”，是又明文表示前曾口诺之个别按户注销抵押权为“恕难同意办理”。经孟能于1977年5月4日再函贵行“请准予对已缴淸房款住户，个别抛弃抵押权，以使缴淸房款住户不受不公平之牵累”。贵行复函仍背诺，坚持“所请涂销部分水晶大厦房地产之抵押权一节，应俟故萧同兹先生在本行之借款理淸后始能办理”（附证十二——台北市银行营业部（66）北市银营放字第1296号函影本）。贵行此一背诺，直接影响为水晶大厦出售之瘫痪与典押之瘫痪，因责行此一作风，即表明贵行不肯按户注销抵押权，故每户均变成产权有问题，自使任何买卖与典押均无法进行。例如1976年7月6日，孟能典押水晶大厦三楼之一半与国税局，尾款220万元只要贵行同意注销，即可直接拨交贵行，即可相对减去1800万总债务之1/9。且220万元，于比例注销担保品上面，远超乎三楼一半之担保值，贵行奄无风险。但贵行坐视不肯践诺，致造成孟能第一损失为220万不能还贵行，每月多欠220万之利息；第二损失又为国税局借口产权不清拒拨220万尾款，每月又少收220万之利息，一进一出之间，是为440万损失之明账。另外贵行反责以本金还不进去，执意加罚延滞利息与违约金等；国税局方面，又责以产权不淸而提示原有之200万担保支票（附证十三——国税局（65）财北国税伍字第12327号函影本），并以会计年度结束，未能拨出之尾款220万元须缴回国库（附证十四——国税局（66）财北国税伍字第38159号函影本）！是则440万明账损失外又加440万风险，前后已达880万，一进一出利息与精神信誉等损失尚不计算在内！以上国税局一例，所占不过水晶大厦十三层中第三层之一半而已，已损失如此惨重，其他各层之损失，乃至房屋以外土地之损失，可以类推，可以概见，自有待赔偿。究其祸源，不过贵行一念之私，想多收利息而已。为多收利息，纵有220万还款，贵行竟拒之门外！贵行恶性之重，杀鸡取卵之阴，足见一斑。施展诈术，此为罪状之六。</p>
+<p>七、上述所谓“恕难同意办理”所谓“借款理清后始能办理”按户注销抵押权，若谓于理有本于法有据，贵行择善固执守正不阿，则犹可自成一说。不料1976年12月6日，国防部福利总处拟押水晶大厦二楼全部及地下室，谓可一次拨付贵行1150万，贵行居然见钱眼开，为之心动，将过去“恕难同意办理”、“借款理清后始能办理”之立场全部注销！命孟能照贵行意旨提出申请书，佯作“依据萧同兹先生遗产继承人萧孟能君之申请办理”立场，于1976年12月10日，即向国防部福利总处行文同意（附证十五——台北市银行营业部（65）北市银营放字第3694号函影本）。此一戏剧性突破，是贵行自1971年4月起至1976年12月止，前后五年八个月之拒绝之自失立场。此一立场改变并无主观法理与客观变化可为借口。因此之故，如此次同意为“是”为“合理”，即反证过去五年八个月不同意为“非”为“不合理”。而过去五年八个月因不同意而使水晶房产陷于胶着状态而引出之庞大损失，自有待赔偿。贵行于注销立场上前后矛盾，施展诈术，此为罪状之七。</p>
+<p>八、继国防部福利总处得以“径交本行”方式终得贵行“网开一面”之后，孟能遂请对其他押售亦援例办理，以达成分期偿还欠款。因于4月25日致函贵行：</p>
+<p>今后如此推动，则欠债必可顺利分期还清。还债之款项唯一来源为或押或售水晶房产，或押或售必有赖于物色买主，水晶房产过多，买主情况各异，若俟同时一次解决后统一注销，则必发生买主间互相观望或等待或因不耐而拒买等延误现象，则偿还责行之欠敖，势将无望。此次承责行德便，首开国防部来款“径交本行”后可注销之前例，今后由买主随时“径交本行”，随时注销相关部分，则每次必可还清若干百分比（国防部前例，即一次还清17%），进而全部问题，当可解决。昨日面陈以上援例办法，承蒙指示可行，命书面奉请批示，特上此函，并提供即可续还之百分比。</p>
+<p>可续还之百分比第一户即为孟能毁家纾债出售自己之居所——水晶大厦11楼IJ户，售与债主徐进业先生。4月23日，贵行通知该户如比例摊还117万“径交本行”，即可抛弃该户之抵押权。孟能信以为真，于4月25日即约买主同去贵行缴淸。不料贵行收到117万后，却不肯援例，也不肯退钱。使孟能对买主信用全失，同时严重影响孟能售屋还款计划。因买主乃千辛万苦物色而来，必以贵行同意个别注销抵押权为成交要件，今首开一例即先被贵行食言而肥，孟能将何能售屋还债？故贵行此一背信，续使孟能坐失售屋还债机会，自有待赔偿。贵行前后矛盾，施展诈术，此为罪状之八。</p>
+<p>九、至于贵行于国防部福利总处个别抛弃网开一面后又紧收银网原因，据告乃因贵行又旧案重提，坚持须先还延滞违约金才准续予个别抛弃，故一切面诺，均告失信。国防部福利总处直拨之1150万元中，贵行只允摊还本金300万，其他850万悉移做利息！贵行认定利息大体还淸，故追究逾期违约金时刻已到来，最高可索赔达300万云云。孟能遂于1977年5月29日致函贵行，表示就算利息该如贵行算法，亦不应再发生违约金之说——</p>
+<p>（一）责行（65）北市银营放字第510号函指示本人“台端所拟具之清偿债务办法尚属可行，唯须俟全部积欠利息付请后，本行始可配合办理”。</p>
+<p>（二）“全部积欠利息”原自3月5日将国防部来款1150万元中扣除（一次缴清积欠850万元整）。后经贵行计算结果尚有零数482777元，本人复将此零数存入贵行，并取得5月11日收据六纸，自此“全部积欠利息”，已遵贵行指示全部什清。</p>
+<p>（三）贵行收到全部利息后，原应依诺“配合办理”本人“尚属可行”之“清偿债务办法”。该“清偿债务办法”为挂号寄奉责行者，共有三项：</p>
+<p>甲、“请贵行先将全部贷款转移至本人家属朱婉坚与萧广仁两人名下，以结清先父生前此一悬案。”请贵行依诺“配合办理”。</p>
+<p>乙、“积欠利息之具体清理办法”。按此项业因积欠利患全部付清，已告解决。</p>
+<p>丙、“延滞息之免除”请贵行依诺“配合办理”。</p>
+<p>发信后复经吴越潮先生等多次交涉，贵行始于6月18日来函同意“延滞违约金准予免计”（附证十六——台北市银行营业部1977年6月18日函影本）。是则如此次300万之罚金可一笔勾销为“是”为“合理”，即足证多年来执此为理由刁难债务人为“非”为“不合理”。而贵行任意以弹性欠额困扰债务人而引出之庞大损失，自应赔偿。贵行前后矛盾，施展诈术，此为罪状之九。</p>
+<p>十、前述贵行于国防部福利总处押租可注销一事，于延滞违约金可免除一事……均证明贵行昨非今是全无标准可循。但一念之转，弃非从是，常耗时长达三四年至五年八个月之久，如此拖延，实令债务人困扰万分！前述责行为国防部福利总处办理注销，抛弃书于收银当天完成；但同例为徐进业先生办理注销，却于收银（1977年4月23日）后拖延不办。拖至1977年8月17日，孟能长函质问，始于9月2日得贵行注销。前后拖延一百三十三天！如谓收银当天即予抛弃为“是”为“合理”，则拖延一百三十三天即为“非”为“不合理”。足见贵行弃非从是以后，立即又长掩方便之门，不肯援例注销徐进业案，纯系故意刁难，因而造成之恶果与损失，自应赔偿。此类因拖延不予注销之恶果与损失，不止此一端，于对国防部福利总处，亦别开生面。缘贵行谋利心切，于注销手续上，疏于详查，以致发生技术困难，国防部福利总处认为贵行饰词背信，分于1977年5月25日、8月6日、8月30日，一再移书责问，要求“请退还水晶大厦押租金尾款1150万元”（附证十七——国防部福利总处（66）驷成字第20934号函影本）。并以贵行未能履行保证为借口，该处竟至违背财政部内政部迭次不得扣留权状之指示，强将水晶大厦权状（尤其迫切需用之属于萧孟能名下五权状）全部扣留，以致影响国税局、税捐处等机关之设定手续之瘫痪。以致国税局方面，又引为借口，除扣留典金尾款220万元不付外，并警告将孟能之保证支票200万元“提出交换”（附证十八——国税局（67）财北国税伍字第35799号函影本）；税捐处方面，亦以久候不得解决，“所订典约无条件作废”，且要“本案所发生之法律行为应由萧君等三人负一切责任”（附证十九——台北市税捐稽征处（66）北市稽总（乙）字第46952号函影本）。是则孟能除损失550万典金收入外，并损失印花税22000元及一年空房以待之损失！一两年来之精神损耗尚不在内！此类庞大损失，自应赔偿。贵行拖延，施展诈术，此为罪状之十。</p>
+<p>十一、国防部福利总处借口贵行未能履行保证，而非法扣留上述权状后，无权状更无法理淸产权，形成鹬蚌互钳局面。贵行一面推卸责任，一面又知推卸不易，所以举棋不定，虚耗时日。但多耗一日，即多增一日孟能利息与精神损失。责行初则先事拖延，为时达四个月之久，不予答复；经福利总处一再抗议，始于7月5日通知同意补印；又于7月25日（66）北市银营放字第2075号函该处同意权状“由本行借出”；不久又不说理由，推翻前议，拒绝福利总处8月6日函，于8月15日致函盂能表示“无法办理，请径向该总处洽办”（附证二十——台北市银行营业部（66）北市银营放字第2270号函影本），以推卸责任；旋于十一天后，以1977年8月27日（66）北市银营放字第2383号长函，又以“格于地政法令”为理由，表示办不到，要孟能“另设法洽商国防部福利总处取回留置之土地所有权状”；12月2日、3日，又连来内容相同之二函，又以“依地政机关规定，须由该大厦基地之全体所有权人共同出名办理”为理由，饰词推托（附证二十一——台北市银行营北部（66）北市银营放字第3568号函影本）；十八日后（12月21日），忽又来函，既不“格于地政法令”，又不推属孟能责任，而纯由贵行已完成对福利总处注销手续了（附证二十二——台北市银行营业部（66）北市银营放字第3768号函彩本）！综前所陈，贵行于7月25日至12月21日之间，前后四个多月，就同一问题，口头反复无论，纯计来函，先后即达六次，立场前后不同，最后一次又移后为前，恢复最初立场！如谓前函所陈者为“是”为“合理”，则后函所陈者即为“非”为“不合理”，如谓后函修正为“是”为“合理”，则更后之函所印证之更前之函为“是”为“合理”当系最后之“是”与最后之“合理”！足见贵行全无是非，全系反复无常，信口是非。贵行最后一函发文后，本年1月11日，国防部福利总处犹执意不交出权状，且以（67）驷成字第20045号函，做无谓之拖延。故权状被扣所引起之重大损失，至今犹待理赔。贵行拖延，施展诈术，此为罪状之十一。</p>
+<p>十二、自贵行于国防部福利总处押租一案首开可个别注销之例以后，贵行旋又于徐进业案将网开一面又形关闭，孟能先后为解决死结，分于1976年7月6日、8月14日、11月19日、12月12日、1977年3月8日、3月14日、3月19日、4月25日、5月11日、5月16日，前后十次致函贵行，但责行甚至无公务员起码之服务道德与责任——竟一律不复函！仍事拖延。孟能忍无可忍，因于1977年5月29日，以长函致贵行董事长，备述始末，请其履行（65）北市银营放字第510号函之夙诺，表示：“如公务人员可如此背信拖延，罔顾人民权益，本人将向蒋院长陈情，向监察院、立法院财委会、市议会、林市长、财政部费部长分别检举台端，另正式登各大报向台端请教，请台端公开答复，并请贵行赔偿损失。”贵行董事长得函后，于6月1日复信告以“业经嘱咐营业部从速处理，期能早结悬案”（附证二十三——瞿永全1977年6月1日信影本），已无法不承认拖延属实。十八日后，贵行来函终于放弃纠缠孟能多年之所谓“延滞违约金”，同时另函寄来“台北市银行放款核定通知书”。表面上，终于同意贵行自1971年4月以来坚持不肯之个别注销办法，而表示“为便利分户出售房地产，以便逐渐偿还本行贷款，同意按分批还款比例注销担保品抵押权”（附证二十四——台北市银行放款核定通知书影本，1977年6月18日）。适足反证贵行自1971年4月起，六年两个月以来，不肯“同意按分批还款比例注销担保品抵押权”之错误。此一错误，尤以最后半年为严重。因最后半年明明已有国防部福利总处一案之同意个别注销，既有此—例，复行关闭，直拖至半年以后方始复开，闭开之间，开而复闭，闭而复开，显然全无规迹可循。从而在六年两个月中，因胶着状态引出债务人的庞大损失，自有待赔偿。公务员侵害人民权利，法有处罚明文，施展诈术，此为罪状之十二。</p>
+<p>十三、水晶大厦原始贷款人为萧同兹而非萧孟能，萧孟能代死者还债，代贵行解决呆账，于贵行极为有利。不料贵行竟有意“错认”孟能为原始债务人，一再勒逼，殊属认错对象。即以上述6月18日放款核定通知书为例，该行第一次所发通知书，保证人仅为“朱婉坚、叶肇模、萧近仁、张熹、何蓓芳”五人（同附证二十四）；但贵行旋即收回，重发一次，竟增列保证人三人——“辜伟甫、张任飞、姚王椀”（附证二十五——台北市银行放款核定通知书影本，1977年6月18日另调换一份）！査此三位，均为萧同兹原始贷款保证人，且均为萧同兹旧谊，如今萧同兹谢世近四年后，仍请彼等为两代作保，实逾情理之外。但贵行坚持不肯，似此强人所难，造成辜伟甫先生主持下企业中孟能股份不复存在，此类有形无形损失，自有待赔偿。故贵行虽于6月18日乍看同意债务转移与个别注销，但细察贵行作风，即可看出阴刻刁难，意在层层阻止债务人脱离苦海。上述在保证人方面刁难，即为显例之一。但孟能为委曲求全，使贵行不生借口，仍接受贵行收回第一次通知之无理要求，同意接受第二次增列保人之要求。贵行除口诺函诺经常不予履行外，似此将已成定案已经发出之文件，任意索回调换，亦属天下罕闻之举。幸赖先严旧友碍于情面，勉为其难，再允担保，孟能得以将各位签盖之文件于1977年7月1日完成手续，使贵行第一层刁难，未曾得售。贵行随意反汗调换文件，施展诈术，此为罪状之十三。</p>
+<p>十四、贵行另一刁难债务人之方式为自己之征信部门无所事事，于抵押品之估价，反硬性规定由中华征信所估值。此一方式，因以口头行之，故债务人无法检举。直到1977年4月18日，方有台北市议员向贵行总经理提出，贵行总经理则佯作不知（附证二十六——1977年4月19日《联合报》《市银贷款作业不合理》影本）。孟能为此一硬性规定之受害人之一，在1976年10月，即不得不请中华征信所勘估，以应贵行之索，花费达13532元！该所且直接行文台北市银行营业部，支付勘估费者反成为副本收受者（附证二十七——中华征信所（65）中征企字第1504号函影本），更属离奇。据该所估值，萧家所提供之抵押品，总值超过3700万元，而贷款转移总额不过1500万元，只不过占担保品之四成。一般贷放行规，例为土地九成房屋八成，足证贵行于萧家房地估值，显然偏低过分。光萧家抵押品，即显然超过贵行所指定之征信所勘估甚多，而贵行居然仍紧扣其他水晶住户产权不放，徒使其他水晶住户对萧家发生误解。四年以来，孟能一再请求：为求自保，于萧家押品不但已足，而且有余甚多，不可押及无辜；且于1977年5月4日，最后行文贵行，“请准予对已缴淸房款住户，个别抛弃抵押权，以使缴淸房款住户不受不公平之牵累。”“敬请贵行依情依理依法速为抛弃，以期平允。”可是5月23日贵行复函，仍予拒绝。延至年底，水晶住户汪慧云女士等三十四户，且委任律师质问（附证二十八——1977年12月24日函影本），使孟能代贵行受过，有口难辩，信用名誉，备受损失，自应予赔偿。贵行祸延无辜，施展诈术，此为罪状之十四。</p>
+<p>十五、贵行除显然压低萧家担保品外，1977年6月18日放款核定通知书明列“担保方式：本市信义路4段水晶大厦建物813坪及土地268坪设定第一顺位”中，竟将土地部分，分文不予作价，显然不可思议。因贵行既明定“为便利分户出售房地产，以便逐渐偿还本行贷款，同意按分批还款比例注销担保品抵押权”办法，却未将土地部分按比例分摊作价，显然不通。因隔邻喜临门大厦亟欲以600万元购买土地中之一部，念及贵行既不肯将土地作价，自亦无比例还款之可言。经于6月23日，请代表赴责行面询，贵行表示将不放弃售地分摊。代表表示贵行此一态度，显失公正。贵行若不放弃，则请明示土地分摊比例，相对减少房屋每坪一万九分摊比例。当时贵行刘副理语塞，虽态度不符贵行《客户通讯》一再刊载“行员服务守则”中要求之礼貌标准，但仍无法不同意一增一减。但一拖二月，犹不置复。延至8月27日，错过喜临门大厦购地时机以后，方始答复，竟谓“如台端将该空地出售以所得价款悉数偿还本行”，方始“抛弃该土地之抵押权”！无信无理蛮横恶劣，竟一至于此！使孟能坐失600万之售地机会，自应予以赔偿。施展诈术，此为罪状之十五。</p>
+<p>十六、贵行坚持以中华征信所报告书房屋范围提供担保，自己却在土地方面不受约束；又坚持偿债以孟能6月27日函为依据，然于陈子和贷款案，却于8月12日致函同行储蓄部，竟谓“如贵部将其贷款新台币65万元径行拨交本部（营业部），以偿还萧孟能君所继承萧同兹先生在本部之部分贷款利息，本部同意抛弃上开房地产设定之抵押权”（附证二十九——台北市银行营业部（66）北市银营放字第2289号函影本）！查贵行6月18日之放款核定通知书，明定抵押品范围，在该范围内之抵押品，贵行同意“为便利分户出售房地产，以便逐渐偿还本行贷款，同意按分批还款比例注销担保品抵押权”。但陈子和先生所有之水晶大厦房产，全然不属贵行所明定抵押品范围以内，贵行与萧家债务，自无以此种方式代偿之依据；况偿还来源，贵行既认定以孟能6月27日函为依据，则显然已有其出处，何能在陈子和先生贷款（且向责行储蓄部贷款）单纯事件中，使陈子和先生陷于错误而以不代萧家还利息即有被扫地出门之虞？此一使陈子和先生陷于错误而交付，是自6月27日信中取得偿还来源外，又自陈子和先生贷款中取得双份！此种拦腰式取得法，严重影响水晶大厦7月19日之会议决议及集资运用方式，且对解决水晶产权，生出直接严重之干扰。同时贵行无异将贵行6月18日放款核定通知书推翻，亦将孟能6月27日函推翻，此为贵行阴刻刁难，意在层层阻止债务转移之又一显例！孟能除概不承认外，并追究责任与赔偿。贵行施展诈术，此为罪状之十六。</p>
+<p>十七、贵行乍看同意债务转移与个别注销，却阴刻刁难，使贵行6月18日放款核定通知书无法实现。除上举之十三、十四、十五、十六项数例外，在手续上又层层阻止。例如该核定通知书限定孟能于两个月内办妥有关手续，“自本通知书发文日起算”。孟能于20日收到挂号信后，即提出整体偿还计划，函达贵行，贵行口头表示可行。孟能即积极赶办手续，于6月29日提交责行1500万借据及关系人辜伟甫先生等九人约定书，7月1日即完成对保手续在案。不料有关与国防部福利总处手续，责行于7月5日通知补印后，贵行指定之刘代书却拖延不办，拖至第九日，仍无下文。孟能即于第九日（7月14日）下午，亲电贵行陈经理，又亲电刘代书。7月15日，贵行抛弃书类方送抵地政事务所。前后延误，已达二周。不料刘代书又说案情繁复，请黄武弘先生约原承办人陈先生在18日下午4时面谈，届时刘代书又爽约，黄陈二先生苦候近一小时，始行见到。刘代书所做书类，又告错误，须经贵行再行盖印，始能再办。如此重大事件，被刘代书一拖再拖，一误再误，实因贵行硬性指定代书之结果。孟能为恐延误之责又被推卸，特于7月19日以“急件”函贵行，申明：</p>
+<p>谨按贵行董事长先生于6月1日复本人函中，指示：“关于令尊生前水晶大厦贷款案，业经嘱咐营业部从速处理，期能早结悬案，至希径向该部洽办。”责行本“从速处理”之“嘱咐”，限时二月内完成，本人日付利息上万，多拖一日即多蒙一日心神与财力损失，实感心力交瘁，设或因刘代书等此类延误，最后导致放款案生意外波折额外开支，本人实难尸其咎。特此谨先奉函报备，请贵行谅解。</p>
+<p>贵行收上信后，并未表示异议，向属默认无误。以程序上技术上使孟能无法完成债务转移，此为又一显例。施展诈术，此为罪状之十七。</p>
+<p>综前所陈十七项，得证结论如下：</p>
+<p>第一，据以上一、二等项，证明债务已应作为坏账损失而不存在。盖先严与贵行之债务关系，因系贵行受上级命令“遵照办理”而来，并非萧同兹私人之财务行为，应以政策性贷款当事人死亡而坏账摊销；至少亦应及时处理，照贵行催告书中1974年10月5日所自订之明确限期，按时诉追。而不应拖至三年三个月后（本年1月），在套取1332万（国防部福利总处尾款1150万，徐进业先生尾款117万，陈子和先生尾款65万）之后，反回头以诉请拍卖抵押品方式，追索债务。因萧同兹旧欠贵行总额不过1800万，萧同兹谢世，贵行苟依自定之约定、催告期限等追索，亦不过还1800万而已，因萧同兹信用良好，利息分文不欠，一死所还，只为本金。但贵行却不此之图，而层层以诈术使萧同兹后人逐渐陷入困境，于被套取1332万——约当本金十分之七以后，反欲拍卖其原始1800万抵押品，显于情于理于法均属不合而且过分。况依银行通例：“债权中有逾期二年，经催收后未经收取本金或利息者”，“视为实际发生坏账损失”（见文大熙著《商业银行之经营及实务》第178页）。贵行套取1332万尾款既在萧同兹死亡三年以后，即远在“逾期二年”之后，则显然已早该“视为实际发生坏账损失”。不论从政策性着眼或从银行通例着眼，此一债务，早已不复存在，自无今日诉追之必要与依据。</p>
+<p>第二，据三至十六项，证明纵有债务，亦已还清。因贵行既同意并判定萧孟能无代萧同兹还继承未取得前延滞违约金之义务，则同理可证，萧孟能亦无代还利息之义务。因萧同兹死后，依法债务无须“父债子还”，但孟能为免滋纠纷，便利善后，故代为承担。萧孟能既非贷款之直接当事人，自不能以死者萧同兹之欠息，视同生者萧孟能之责任。死者已矣，死者自不能还钱，今有生者愿代还钱，若收钱而外，却罚生者以利息，自属错认。故孟能所还者，均应以本金论。既为本金，则已还之1332万以后，所余不过468万，光1800万中抵押品中土地部分中一部分土地（大安区12甲段73之11、73之12），隔邻之喜临门大厦即欲出资600万合并，贵行只消将此一小部分以拍卖以外之方法（《民法》878）或其他转移方法，即可在利人而不损己状态下收回全部债权。故此一债务，已早偿清，自无今日诉追之必要与依据。</p>
+<p>第三，据三至十七项，证明纵有债务，纵有延误，本亦可早还，其未能早还，责任全在贵行之拖延。远不必论，即以1977年6月18日核定放款起算，孟能于同月27日迅速提出还债办法，提出已出典水晶三楼另一半与税捐稽征处，可采径付贵行前例，一次偿550万，经贵行同意，且行文台北市税捐稽征处（附证三十——台北市银行营业部（66）北市银营放字第1811号函影本）。不料9月17日，税捐稽征处携550万支票交付时，贵行竟以不能保证注销手续而拒收！——还款至门竟不要，反欲以损人而不利己之拍卖方法追索债务，贵行是何居心，只此一事，可见一斑！同一形式又有国税局之尾款220万，本亦径付贵行，俾得一次偿还770万，贵行亦行文国税局同意（附证三十一——台北市银行营业部（66）北市银营放字第1812号函影本）。但贵行不能自国防部福利总处取回权状之拖延，使此770万还款未能拨入。同一形式又有水晶住户之贷款与尾款，贵行食言不予贷款，亦统扣权状连累无辜，致使贷款无来源，而尾款亦难收入。尾款数额达580万（附证三十二——住户欠屋款及利息负担明细表），连息已逾600万，此款若加上述之770万及徐进业案117万等，则与贵行债务，亦早已还淸，自无今日诉追之必要与依据。</p>
+<p>第四，复据《民法》第225条、第230条、第234条、第238条，按诸上述事实，可证纵有债务，其总额计算方法，亦大有疑义，因一再拖延与拒收等情事，均发生在贵行方面，债务人方面，自不负责；况计算结果，连同庞大损失之赔偿，是贵行欠孟能而非孟能欠贵行；且孟能已付贵行之款项，亦应退回并付利息，盖“债务人忘却已经清偿，误向债权人再度淸偿，债权人利用机会，蒙骗债务人而再度受其淸偿之类，均不能免除诈欺罪之责任”（见赵琛著《刑法分则实用》下册第907页），是贵行除欠孟能者外，尚有诈欺罪刑责；又据《刑法》第131条，公务员于主管或监督之事物图利，构成渎职罪，“无论图利国库或图利私人，均应成立该条罪名”（三十一年上字第831号），是又有渎职罪刑责；又查身为公务员，依法有“执行职务的规律”及“应为一定行为的规律”（见左潞生《行政学》第三编），且“不得利用职务上之机会，加损害于人”（《公务人员服务法》第6条）。其触犯法令者，除“依各该法令处罚”外，另按情节轻重，分别按《公务人员服务法》“分别予以惩处”（《公务人资服务法》第22条），综上所陈，是又违反公务员服务规律，而应受行政处分。査公务人员执行职务之态度，于《公务人员服务法》第1条至第7条著有明文，此在西方行政学中称之为“服务道德”，在东方行政学中称之为“公务员的伦理义务”，“如果违反了这种义务，就是失职”（美浓部达吉《日本行政法》，田中二郎《行政法总论》，林纪东《行政法上的公务员》等均载于专著），是应受行政处分之外，又应受“服务道德”可议之公评。……贵行负责人罪状之“无微不至”，真令人浩叹！</p>
+<p>第五、复査法律中有所谓“因果关系”，若无先行之事实，则后行之事实即不致发生，其先行事实为对结果发生有重要而直接影响之条件（见《云五社会科学大辞典》第六册《法律学》第109页“因果关系”条）。综前所述贵行与孟能之间源远流长之痛史，正符合法律上“被害人之伤害正为被告非法行为之自然相当之结果”，正所谓情理中之“此水本自淸，是谁搅令浊”。致令孟能精神信用损害外，复遭财产及利益之损害，此一损害，依法“无论积极的减少既存财产或利益，抑消极的妨害财产或利益之增加或享受，均包括之”（见孙德耕著《增订刑法实用分则编》第三十二章）。孟能于受害至忍无可忍程度，自必与贵行澄淸一切，追究全部责任。回顾上述始末，特点端在贵行一念之私，徒知占小便宜，不知公道。此一作风，据3月25日《中国时报》刊载，已引起台北市议员注意，“台北市银行拿市民免息的市库存款作建设基金，却在征收受益费中要市民缴付利息，市议员认为不合理”，“市库存款来自市民的血汗钱，经年无息让市银行运用，市府向市银借钱还要缴付利息已属不合理，这项利息又让市民负担更不合理。”……可见贵行之公道观念，与行外之人，完全不同——确属外行。</p>
+<p>兹依《宪法》第24条公务员违法侵害人民权利除依法律受惩戒并负民刑责任条文；及《民法》债编侵权行为中第184条至186条；及前引《民法》各条；及前引《刑法》各条；及《公务员服务法》第6条、第22条；公务员惩戒委员会议决书鉴字第1739号、第1829号、第1833号、第2340号……特致此函，请贵行迷途知返，速为各种公道措施，以赎前愆。请先从解决与财政部台北市国税局为起点，以示诚意示复，否则本人除登报公开质问，请求答复外，并分函监察院、立法院、市议会、财政部、中央银行，依法诉追。</p>
+<p>萧孟能</p>
+<p>代萧孟能闹税衙</p>
+<p>函：1978年4月22日</p>
+<p>速别：最速件</p>
+<p>受文者：财政部</p>
+<p>副本收受者：财政部台北市国税局</p>
+<p>主旨：财政部台北市国税局于1976年7月6日承典台北市信义路4段1-30、31、32、39房屋，侵害人民权利，请查明惩处，并予赔偿。</p>
+<p>说明：</p>
+<p>一、依1976年7月6日财政部台北市国税局与出典人双方《典权契约书》第三条明订：</p>
+<p>乙方出典之土地房屋确属自己合法所有，自签约日起乙方不得再设定任何负担。</p>
+<p>是该局（甲方）明知并承认“签约日起”以前曾有设定，该局所要求者只为“签约日起”“不得‘再’设定”而已。第九条更有“本约签定时，乙方即将房地产权状交与甲方……至办妥典权设定登记”等宇样，尤证“签”约时，与该局尚无设定之发生，更印证第三条不得“再”设定之前曾有设定。此一设定为台北市银行，早为该局所明知。故约文第九条约定：</p>
+<p>甲方取得他项权利书状之同时，即应付清典金尾款新台币220万元整给予乙方，并无息退还提供担保之支票。</p>
+<p>足见约文中所指“设定”，是明指有“设定”行为已足，以“取得他项权利书状”已足，并未明指第几顺位，况就第三条不得“再设定”字样，该局明知并非第一顺位。</p>
+<p>二、1977年4月29日，台北市古亭地政事务所发下他项权利证明书（66北地古字002849号）；9月7日，复发下另一纸（66北地古字007437号），是建物土地之他项权利书状，该局均已依约取得，早应于1977年9月7日稍后，“即应付清典金尾款新台币220万元整给予乙方，并无息退还提供担保之支票”以昭信守，但该局竟拒绝履约。</p>
+<p>三、不料有二项约文以外之出入：</p>
+<p>第一为约文解释问题——依约虽明认在与该局设定前已有设定，且未规定必须设定与该局为第几顺位，签约后该局坚称当为第一顺位，出典人方面亦愿达成此一结果。唯此一结果达成之早迟快慢，不得视为出典人违约，因依约该局早已“取得他项权利书状”。</p>
+<p>第二为基地标示问题——依约为“台北市大安区12甲段72、72之8、之9、之10、之27、73、73之1、之2、之3、之4、之5、之9、之10等13笔地号”，复经查明此为原始记录错误，因据出典人正式建筑改良物所有权状，地号均在73以内及73项下，并无72以内及72项下任何地号。但1977年9月7日该局取得之他项权利证明书（六十六北地古字007437号）却明列72等地号完成设定，足证出典人已将建筑改良物所有权状标示以外之土地，均设定给该局，故此一问题，是“多还”越过“少补”问题，是原始记录责任追究问题，不得视为出典人违约。</p>
+<p>四、上述二项约文以外之出入，出典人方面为示诚意，曾推动进度如下：第一问题方面——经与该局及台北市银行协商，三方面均同意比照二楼国防部福利总处付款方式处理，但该局表示宜先由市银向该局行文，市银照办，即于（66）北市银营放字第1812号函达该局，保证“如贵局将押租金新台币220万元径交本行”后，“本行同意即抛弃台北市信义路4段1-30、31、32、39等建物及其持分基地之抵押权。”该局得函后表示再须出典人方面书面同意径拨，出典人自亦照办，于1977年8月3日以最速件函达在案。自是市银与出典人两方面均静候该局径付市银，不料结果竟食言而肥。据闻该局或以比照二楼国防部福利总处付款方式容不安全，但该处明明于径付市银后得其涂销并经地政机关完成手续在案（案号古亭地政事务所1977年12月16日大安字第40582号受理涂销），且得市银（66）北市银营放字第3718号函通知：“业经古亭地政事务所办妥涂销登记”在案，足征此一先将押租金径付市银方式，确属安全无误，但该局始终未照协商结论援例拨款。降至本年1月下旬，该局表示应由市银重新确认其（66）北市银营放字第1812号函保证，俾便径付，出典人因于最速件（1月30日）内，奉答如下：</p>
+<p>经查台北市银行上一保证，自发文以来迄今，从未以新函否定，收回或修正，亦从未限定时日，依法自视为继续，该局自可据该行之承诺，相应处理。按该行致责局函行文之前，本早经达成责局、该行与业主三方面协商……两方面均静候责局方面处理。该行于行文责局后，迄未收到拨款，其经手职员已殊感不解，今如再重申前请而不依法视为继续，恐该行反滋困惑，贵我双方抑或自失立场。</p>
+<p>2月20日，出典人又以最速件促请该局依协商拨款，“否则市银将认贵我双方自失立场，与该行（66）北市银营放字第1812号发文前协商经过与旨趣皆不符合。”惜该局仍未重视，速采有效行动于事患未萌之前，实感遗憾。</p>
+<p>第二问题方面——基地标示问题，自签约以还，或误认为设定内容不足，应予“少补”，现经査明原始记录错误，竟发生“多还”问题，地政机关及原始代书等之责任，自有待追究；双方之立场与多还少补问题，亦有待重新细核。要之重点在建筑改良所有权状标示以外之土地，皆多设定给该局，是该局已得到不应多得之部分，自可“安全”有余，从容解决及退还。至于依旧有方向所谓尚有五笔土地未办登记一事，前因台北市银行与国防部福利总处之间责任纠纷，福利总处公然违反1976年2月19日财政部指示不得扣留抵押权设定产权权状之通令，及内政部1976年11月25日就上一通令之确认，而强将五笔土地权状非法扣留，致有延误，后经市银方面完成抛弃，此一问题，显已过去，经于2月17日委请国防部福利总处遴选之代书黄盛泉先生办理，驾轻就熟，自得两便。此一委请黄代书经过，早于2月20日函达该局并检附影本在案，黄代书旋亦与该局频行接合，送上书类，静候该局签盖发下中。</p>
+<p>五、综前一、二两项所述，出典人方面并未违约；综前三项所述，约文以外之出入，纵有责任，亦在各方面，不得视出典人违约；综前四项所述，出典人方面，已勉尽委曲求全之能事，尽量本诸“民不与官斗”古训，期以自反自勉方式，一切和平解决，此于迭次“上书”该局之内容中，斑斑可据。今该局于依约“应付淸尾款新台币220万元整给予乙方，并无息退还提供担保之支票”尚未履行；比照国防部福利总处方式径付市银之协商结果尚未履行；黄盛泉代书送请签盖之书类尚未发下，突于本月8日以（67）财北国税伍字第41769号最速件要求“4月20日以前归还定金，否则原提供担保之支票即提出交换”。出典人方面不胜迷惑。理由如下：</p>
+<p>（一）查本人名下担保支票200万一纸，其本质为出典人方面为示诚意，便利该局呈准方便而提供者，复按1976年4月9日“房屋洽典记录”可为证明，并非本人实欠该局200万。若谓有此200万之实欠，则该局使用民房，即形成无钱强住。事实上，该局早已取得房屋之管理与使用全权，亦取得依约设定等保障，该局取得上述权利，系因支付头款200万而来，本人之200万支票，自此可证并非实欠。该局若又要房子又要提示票子，即无异“黄鱼两吃”，因此两者本互相排斥，有房子即无票子提示之余地；要提示就归还房子（并赔偿违约损失等）。今该局4月8日来函，限于“4月20日以前归还定金”，片面于限时十二日内令对方照办，纵双方必须解约，亦应循法律途径与程序。揆诸去年签约谈判，前后在一百二十日以上，今以十二日限期，片面宣称“否则原提供担保之支票即提出交换”，非但限期过促，且与解约之途径与手续不合。因该局欲退定金解约，非诉诸法院不可，未可自定限制与自定提示支票以为自保方法。若行此种方法，则该局违法，自不待言。</p>
+<p>（二）复按双方《典权契约书》第九条，本人提供200万元支票之作用，显系针对该局200万拨付后尚未使用该房前之风险而言，再者1976年4月9日与该局房屋洽典记录，亦复此一作用，都旨在保障该局200万拨付不掷诸虚牝。查该200万拨下后，用途在（1）交屋（2）整修（3）桌椅（4）水电（5）卫生设备（6）税金（7）保险（8）设定费用等等，在在都专为该局支出，除交屋与该局，长年使用不收租金外，例如理想牌#1000型10'x8'自动铝门一组，例如同规格铁卷门一组，例如（3'x25'x26'）126尺办公柜台四十个，例如山叶椅子四十个，例如办公室隔间及特为主任室、会议室、资料室施工，例如新亚日光灯六十套及插座、配线、开关等工程……无一不专因该局之特殊用法而开支。若谓该局有权提示本人200万之保证支票，试问该局住民房，租金何在？上述大量修缮及装修费用何在？设本人有200万在银行供该局提走，则双方“债务”岂非正好两淸？既两淸，则该局何以赔偿近二年来使用民房及大量修缮及装修费用？可见该局之200万，其开支固有一定之范围，未有以其系典金，即可任意索回之理，提示本人支票，即是十足之索回；苟欲索回，除应依法律手续如前（一）所述外，亦应澄清上述使用民房及大量修缮及装修开支之所出，理待赔偿，自不待言。</p>
+<p>（三）复查2月3日该局（67）财北国税伍字第35799号来函，第四项明谓：</p>
+<p>台端同意本局将典金尾款径付市银行，并由市银行抛弃本局所典房地之抵押权一案，须俟土地办妥典权设定登记之后，始可办理，请于文到一周内提出五笔土地所有权状办理登记，否则原提供担保之支票提出交换。</p>
+<p>出典人方面，于收上函后，委曲求全，并未澄清该局是否有上述权限，即约请黄盛泉代书“遵命”办理。黄代书旋与该局频行接洽，送上书类，静候该局签盖中。如今时近两月，该局犹未交下，延误责任在该局，该局自知之，何能忽于本月8日以（67）财北国税伍字第41769号函前来责问，责以“迄未依典权契约完成手续”？试问该局不交下书类，如何完成手续？况依典权契约手续是否未完成，亦有待检视（理由已如前述）；且在该局方面，是否全行履约，守协商结论……亦有待检视（理由亦已如前述）。人非圣贤，孰能无过？该局方面，试问敢谓事事无误绝对不发生错误么？1978年1月6日《中国时报》大字标题——</p>
+<p>国税局明知错误还任它搞几年混沌</p>
+<p>即为该局有判断或行政错误之显例。试问所谓200万保证支票问题，万一该局判断错误，行政错误，而予以提示，造成本人无法挽回之民刑责任，财务与信用损失，届时木已成舟，何以善后？本人势必依《宪法》第24条控告贵局执事诸公，要求追究责任，予以赔偿及惩处失职，双方本待理淸之纠纷，自更形扩大，自不待言。</p>
+<p>综前所陈是非曲直，出典人深感历史上官衙与百姓间之不平，延于今日。出典人之活路，端在以使用典金代替无租金收入之损失，假使典金收不到，又无租金，则与上当无异。今该局欠出典人220万不付，反欲提示200万保证支票，天下公道，宁有是理？况如何解决，早经协商及市银奉函保证，且有例可援，该局议而不决，决而不行，坐失合情合理合法机会，使大局鱼烂，出典人破产边缘，复来落井下石之信，试问于该局究有何益？查历来官衙与百姓间事，百姓方面，苟能忍气呑声，未有不忍气吞声者，而官衙方面，欺凌百姓，习以为常。即以双方《典权契约书》而论，第九条所谓“乙方应以甲方为受益人向保险公司投保火险”，即为十足之欺凌百姓。查“保管典物”、“分担危险”为典押人方面义务而非出典人方面义务，于法甚明（见郑玉波《民法物权》），该局竟卸责于百姓，即属于法有违，但百姓方面，无不忍气吞声。今日之事，出典人已面临忍无可忍之局面，再忍气吞声，亦无补实际，该局仍执迷不悟。该局造成出典人方面严重损害，要点有三：</p>
+<p>甲、扣留近两年之典金尾款（所占超过总典价半数以上)220万元不拨，使出典人方面遭受民间利息损失及利润损失至少已逾130万元；</p>
+<p>乙、亦不将上述尾款拨付市银，致使市银方面取消1977年6月18日之放款核定，诉请拍卖出典人财产，财产经中华征信所估值3700万，一沦入拍卖，损失当在四至六成以上；</p>
+<p>丙、非法诱扣本人200万支票一纸，且一再以提示相胁，令人精神困扰，信用受损。（依法出典，绝无出典人反付典权人保证支票之理。一如房东岂有反付房客押金之理。况该局使用房屋，另扣留220万尾款不拨，岂非“安全”已极？试问若典权人方面要保证，出典人方面又有何保证，又向谁要？）</p>
+<p>依《宪法》第24条：“凡公务员违法侵害人民之自由或权利者，除依法律受惩戒外，应负刑事及民事责任。被害人民就其所受损害，并得依法律向国家请求赔偿。”足证已违宪；又依《刑法》第131条：“公务员对于主管或监督之事务，直接或间接图利者，处一年以上七年以下有期徒刑。得并科七千元以下罚金。”且“无论图利国库或图利私人，均应成立该条罪名”（三十一年上字第831号）。又证已构成渎职罪，复依《民法》债编侵权行为中第184条至186条；《公务员服务法》第6条、第22条；公务员惩戒委员会议决书鉴字第1739号、第1829号、第1833号、第2340号……特致此函，请查明就主旨等示复。否则本人除登报公开质问，请求答复外，并分函监察院、立法院等，依法诉追。</p>
+<p>萧孟能</p>
+<p>代萧盂能闹财衙</p>
+<p>函：1978年12月8日</p>
+<p>受文者：行政院院长</p>
+<p>副本收受者：立法院财政委员会吴越潮委员、财政部部长、台湾省合作金库总经理、大稻埕支库经理</p>
+<p>主旨：财政部对钧座蒙混舞弊，对百姓敷衍欺凌，对台湾省合作金库明目包庇，敬请查办。</p>
+<p>说明：</p>
+<p>一、本人前因台湾省合作金库违法侵害人民权利事件，于本年3月31日致函财政部部长请求査办（附证一——该函副本），该部长拖延五十五天之后，于5月25日以（67）台财钱第15565号复函（附证二——该函影本）敷衍塞责。本人乃逐条驳正，举出该部九点错误：</p>
+<p>（一）不认真检查弊案，官官相护，敷衍塞责。</p>
+<p>（二）不明法律，认为信用诉讼可以继承。</p>
+<p>（三）对合作金库不着力于向主债务人与原始第一保证人追索债务，不予检查。</p>
+<p>（四）明知合作金库对朱婉坚已丧失追索权，仍纵容该库，欺压百姓。</p>
+<p>（五）不但纵容合作金库做无追索权的追索，并且进行五项护航。</p>
+<p>（六）包庇合作金库抹杀老百姓寄达的物证。</p>
+<p>（七）支持违法的“借新还旧”勒索，并且对合作金库做三项开脱。</p>
+<p>（八）以敷衍的调査，与合作金库合作湮灭胁迫老百姓的铁证。</p>
+<p>（九）对本案关键全然不予调查答复，无异视《民法》第741条、745条为具文并错认对象。</p>
+<p>上述九点驳正及详细理由，本人整理成十三页，于6月9日奉函钧座（附证三——该函副本），请求査办，四周后得该部来函如下：</p>
+<p>受文者：萧孟能先生</p>
+<p>主旨：台端六十七年6月9日致行政院院长函为台湾省合作金库违法侵害人民权利一案，本部已于六十七年5月25日以台财钱第15565号函复台端有案。请査照。</p>
+<p>说明：依据行政院秘书处六十七年6月22日台（67）财字第1371号交办议案件通知单位办理。</p>
+<p>二、本人收到该函后，不胜惊异。查该部所谓“本部已于六十七年5月25日以台财钱第15565号函复台端有案”，显然指函复本人3月31日指摘台湾省合作金库函（即附证一之函）而言，而对本人6月9日奉函钧座指摘该部之函（即附证三之函），并未答复，于理亦根本不可能答复。因本人发信在6月9日，该部所谓答复之函在5月25日，天下岂有未得来信却先发复信之理？该部岂有在5月25日得知半个月后来函而能“未卜先知”之理？于此可见该部之颟顸荒谬，意图瞒天过海，实可腾笑中外。</p>
+<p>三、为此专请钧座查明究办，以期澄淸吏治，不容秘书处及该部公务人员对钧座蒙混舞弊，对百姓敷衍欺凌，对台湾省合作金库明目包庇。为恐下情不得上达，必要时，本人当登报以达尊听，以免钧座被官官相护者蒙蔽。</p>
+<p>四、此信副本致立法院财政委员会吴越潮委员，以为为民喉舌之行使。</p>
+<p>萧孟能</p>
+<p>吴祺芳怎样作弄江鹏坚？</p>
+<p>这月4日，国民党《中央日报》登出《闻人逸事》一个专栏，标题是“吴祺芳受倚重”，全文如下：</p>
+<p>深受长官倚重及部属敬重的行政院副秘书长吴褀芳，在俞院长挽留下，决定不去担任证券交易所董事长了，将继续在工作岗位上，承院长之命，襄助秘书长处理行政院事务。</p>
+<p>吴副秘书长是在民国七十年1月担任现职的，当时的行政院长是孙运璿，由于行政经验极为丰富，而且写得一手好文章，因此他不但要负责公文的处理审核，还要研拟文稿，同时也经常主持业务跨部会的一些协调性会议，由于他认其负责，见识卓著，因而深得孙院长赏识。</p>
+<p>俞国华担任行政院长后，吴褀芳由于工作上的表现，而继续留任。俞院长亦同样的倚重他的才华，也因而使他的仔肩更为沉重，也愈发忙碌了，譬如每逢立法院开议进行总质询期间，他为了准备答询，经常和秘书处主任侯家国加班到深夜，连中秋节都是在行政院里过的。</p>
+<p>民国八年10月出生的吴褀芳是湖北宜昌人，早年曾经跑过新闻，对于记者的工作，也相当了解，因此对于行政院新闻的发布，掌握极有分寸，尤其重要的院会新闻，总是能令新闻界满意。由于他曾经担任过行政院研考会副主任委员，所以对于行政院全盘业务有相当深入的了解，因此他的表现极获长官器重而获得挽留，一般认为极其允当，对于行政院各项工作的推动，自有肯定的贡献。</p>
+<p>看了这段马屁经，我想起吴祺芳与党外立委江鹏坚的“房事”问题，不禁为江鹏坚悲。此事虽小，可以喻大，待我由头说起。</p>
+<p>台北市民刘会云的信</p>
+<p>1984年7月20日，台北市民刘会云写了一封“检举书”，给我的学弟江鹏坚，全文如下：</p>
+<p>受文者：立法院江委员鹏坚</p>
+<p>副本收受者：行政院</p>
+<p>主旨：为行政院（一）以公款借与私人，押租房屋，以押金孽生之利患，作为租金之支付，非但违反预算法之规定，并有图利国库之罪嫌。（二）此一押租，原因早亦消失，自应结束。</p>
+<p>说明：</p>
+<p>一、查行政院于六十八年1月13日，以新台币（下同）150万元，又于七十年7月11日，以100万元，先后两次借与陈苾仙，押租其所有坐落台北市信义路4段1-108、1-109号第十层房屋，并经设定抵押权在案，此有建物登记薄誊本可稽。虽无租金及利息之约定，但依所得税法第14条第1项第5类第3款规定：“财产出租，收有押金或任何款项类似押金者，或以财产出典而取得典价者，均应就各该款项按当地银行业通行之一年期存款利率，计算租赁收入……”足见其以押金孳生之利患，作为租金之支付，应无可疑。按：“政府岁入及岁出，均应编入其预算。”“政府不得于预算所定外，动用公款，处分公有财物或为投资之行为。”预算法第11条及23条定有明文。查“行政院先后多次动用公款，押租房屋，显然不在预算之内，核其所为，显已违反预算法之强制规定。次查刑法第131条第1项之图利罪，系注重处罚渎职，故无论图利国库或图利私人，均应成立该条项罪名……”早经最高法院著成判例。行政院违反预算法之规定，动用公款，借与私人，押租房屋，而以押金孳生之利息，支付房租，其有图利国库之犯行，已至为明确。</p>
+<p>二、又查此一押租行为，原是行政院为政务委员叶公超行使者。叶公超早于六十七年5月转任总统府资政，转任后仍由行政院代为押租，于手续自不相合。且叶公超已于七十年11月20日逝世，至今巳近三年，试问以巨额公款，续为死人押租豪华大厦，更有何据？</p>
+<p>三、谨检送建物登记薄誊本一份，请代为查明为感。</p>
+<p>党外立委江鹏坚的信</p>
+<p>江鹏坚收到“检举书”后，不负选民所托，在8月10日，写了一封信给行政院，全文如下：</p>
+<p>受文者：行政院</p>
+<p>抄送副本机关：刘会云女士</p>
+<p>主旨：为台北市民刘会云女士检举贵院以公款借与私人，押租房屋，以押金孳生之利息，作为租金之支付，违反预算法之规定，特函贵院请查明实情并复知调查结果，俾凭处理。</p>
+<p>说明：</p>
+<p>一、据台北市民刘会云女士检举略称：“行政院分别于六十八年1月13日及七十年7月11日，以新台币150万元及100万元借与陈苾仙，押租其所有坐落于台北市信义路4段1-108、1-109号第十层房屋，并经设定抵押权，依所得税法第14条第1项第5类第3款规定：财产出租，收有押金或任何款项类似押金者，或以财产出典而取得典价者，均应就各该款项按当地银行业通行之一年期存敖利率，计算租赁收入……”足见行政院以押金之利息，作为租金之支付，按预算法第11条及第23条规定：“政府岁入及岁出，均应编入其预算。”“政府不得于预算所定外，动用公款，处分公有财物或为投资行为。”“行政院先后多次挪用公款押租房屋，显然不在预算之内，核其所为，实已违反预算法之规定。又此一押租行为，系由前总统府资政叶公超先生任行政院政务委员时所行使，叶公超先生早于六十七年5月转任总统府资政后，仍由行政院代为押租，且叶公超已于七十年11月20日逝世，至今已三年，以巨额公款，续为死人押租豪华大厦，显系于法无据”等语。</p>
+<p>二、刘女士所指内容究竟是否实在？敬请贵院查明实情，复知调查结果，俾凭处理。</p>
+<p>三、检附刘女士检举书副本。</p>
+<p>行政院的太极拳</p>
+<p>9月5日，行政院以“行政院秘书处”名义，以“台七十三总1475号”函，回信给江鹏坚，全文如下：</p>
+<p>受文者：江委员鹏坚</p>
+<p>主旨：为本院押租本市信义路4段1-108、1-109号第十层房屋案经将办理经过查明如附件，敬复请查照。</p>
+<p>说明：复贵委员七十三年8月10日致本院函。</p>
+<p>一、关于本院以新台币250万元借与陈宓仙女士。押租其坐落于台北市信义路4段1-108、1-109号第十层房屋案。经查六十四年11月间，当时叶故资政公超先生任本院政务委员时，因本院无适当宿舍，因而押租该房屋供叶故政委住用（该房屋系一般公寓），最初押租金为新台币80万元，嗣因房地产价高涨，押租金亦陆续至七十年1月增为250万元，租期亦经续约，至七十四年（1985）1月届满。</p>
+<p>二、叶故资政于七十年11月因病逝世，原住房屋于七十年12月交还本院，本院当即积极与房屋业主交涉提前退租，唯房主陈宓仙女士已侨居南美洲智利，其在台代理人唐家宜先生虽一再允诺，尽速办理，然以国内年来房地产不景气，另觅新押租人不易为由，一再拖延，无法提前解约退还押金。</p>
+<p>三、由于该房屋之押租金250万元既无法一时提前收回，而本院又须派人看管，每月尚须另缴付该房屋之管理费及基本水电费等3500元，当时乃指由本院吴副秘书长祺芳于七十一年4月，住入并看管。</p>
+<p>四、现该房屋押租至明（七十四）年1月即将届满，本院亦正积极与业主在台代理人唐家宜先生接洽退租中。</p>
+<p>李敖的信</p>
+<p>江鹏坚收到行政院回信后，到我家来看我和刘会云，面交了这封信，以为不负所托了。他告辞后，我把信一看，不禁失笑，我笑江鹏坚实在是被吴棋芳作弄了！——信既是以行政院秘书处名义发出的，而秘书处当家的正是副秘书长吴祺芳，当然幕后搞鬼的不是别人！9月27日，我给江鹏坚一信，用书面点破了这一点：</p>
+<p>老兄走后，我细看行政院的回信，发现有一个大问题，就是他们在瞒天过海。上次老兄选区公民刘会云写给老兄的信，重点是揭发一桩黑暗，黑暗者，行政院以几百万年复一年为死人押租豪华大夏也（原为行政院政务委员叶公超所押，叶公超已死近三年，犹押个不停，此种浪费公帑，自为老兄所不肯坐视也）。但是行政院的回信，内容竟是——</p>
+<p>一、关于本院以新台币250万元借与陈宓仙女士。押租其坐落于台北市信义路4段1-108、1-109号第十层房屋案。经查六十四年11月间，当时叶故资政公超先生任本院政务委员时，因本院无适当宿舍，因而押租该房屋供叶故政委住用（该房屋系一般公寓），最初押租金为新台币80万元，嗣因房地产价高涨，押租金亦陆续至七十年1月增为250万元，租期亦经续约，至七十四年（1985）1月届满。</p>
+<p>二、叶故资政于七十年11月因病逝世，原住房屋于七十年12月交还本院，本院当即积极与房屋业主交涉提前退租，唯房主陈宓仙女士已侨居南美洲智利，其在台代理人唐家宜先生虽一再允诺，尽速办理，然以国内年来房地产不景气，另觅新押租人不易为由，一再拖延，无法提前解约退还押金。</p>
+<p>三、由于该房屋之押租金250万元既无法一时提前收回，而本院又须派人看管，每月尚须另缴付该房屋之管理费及基本水电费等3500元，当时乃指由本院吴副秘书长祺芳于七十一年4月，住入并看管。</p>
+<p>这封回信乍看起来，理直气壮，细看起来，就破绽百出：查行政院第七组原于1979年1月13日以新台币150万元向陈苾仙（不是“陈宓仙”）押租这一房子（不是“一般公寓”），并设定抵押权，为期二年，应于1981年1月12日到期。但因叶公超仍在住用，乃于1981年7月30日办理续租，除将权利人行政院第七组变更登记为行政院外，并增加押金100万元，设定第二顺位抵押权，租期仍为二年，应于1983年1月12日到期。后来叶公超在1981年11月间病死了，虽距租期届满日尚有一年多，陈苾仙不愿提前解约，退还押祖，行政院“不得不”另派吴褀芳“住入并看管”。（我奇怪行政院这一“住入并看管”的离奇作业。因为水晶大厦是管理上轨道的大厦，有何“住入并看管”的必要？纵使有必要，按照机关常例，也是派个小职员“住入并看管”，绝没有“副秘书长”出马之理，可见该房子绝非行政院所说的“系一般公寓”，而是豪华大厦也！）纵使派副秘书长级的大员去“住入并看管”一“一般公寓”于理可通，但租期届满后，自无复“住入并看管”的必要，自应依约迁让房屋，收回押金。不料我们的国民党行政院竟反其道而行，却在1982年6月3日，即叶公超病故（1981年11月间）后、房屋租期届满（1983年1月12日）前，又与陈苾仙续约了！并且是主动提前续约的，而非陈苾仙不肯提前解约！除再租二年外，并同意抵押权清偿日期延后二年，至1985年1月12日为止。足见行政院所谓“无法提前解约退还押金”一节，不但与事实不符，并且在租期尚未届至（尚有半年）前，竟提前与陈苾仙续约了、延长抵押权清偿日期了，这非但有图利他人之嫌；且有花百姓之钱、一再代私人“看管”成性之癖好，此种行径，实在令人好笑！</p>
+<p>根据以上的分析，国民党行政院实在是以瞒天过海的手法，巧使他们行政院副秘书长“吴代叶僵”，住入豪华大厦，一方面图利他人，一方面施肥自己，最后以官样文书，欺蒙老兄、搪塞老兄。随信附上老兄选区公民刘会云再致老兄的信，请老兄便中再向行政院追查，以儆刁顽为感。此颂</p>
+<p>战斗胜利</p>
+<p>刘会云再致江鹏坚</p>
+<p>我随信附上的“老兄选区公民刘会云再致老兄的信”，全文如下：</p>
+<p>受文者：立法院江委员鹏坚</p>
+<p>副本收受者：行政院秘书处</p>
+<p>主旨：为行政院秘书处函复责委员关于该院押租陈苾仙所有坐落台北市信义路4段1-108、1-109号房屋，陈宓仙以国内年来房地产不景气另觅新押租人不易为由，一再拖延，无法提前解约退还押金等语，核与事实不符，且有图利陈苾仙之嫌，请查照。</p>
+<p>说明：</p>
+<p>一、顷奉转来行政院秘书处七十三年9月5日台（73）总字第14757号致贵委员函影本敬悉。</p>
+<p>二、查行政院第七组原于六十八年1月13日以新台币150万元向陈苾仙押租上揭房屋，并设定抵押权，为期二年，应于七十年1月12日到期，但因叶公超仍在住用，乃于七十年7月30日办理续租，除将权利人行政院第七组变更登记为行政院外，并增加押金100万元，设定第二顺位抵押权，租期仍为二年，应于七十二年1月12日到期。旋因叶公超于七十年11月间病故，虽距租期届满日尚有年余，陈苾仙不愿提前解约，退还押租，不得不另派吴褀芳“住人并看管”，但租期届满后，自无复“看管”之必要，自应依约迁让房屋，收回押金。不料，行政院竟反其道而行，却在七十一年6月3日，即叶公超病故（七十年11月间）后、房屋祖期届满（七十二年1月12日）前，又与陈苾仙续约，（是主动提前续约，而非不肯提前解约！）除再租二年外，并同意抵押权清偿日期延后二年，至七十四年1月12日。足见行政院秘书处所谓“无法提前解约退还押金”一节，不但核与事实不符，而且在租期尚未届至（尚有半年）前，竟提前与陈苾仙续约，延长抵押权清偿日期，非但有图利他人之嫌；且有花政府之钱，一再代私人“看管”成性之癖好，此种行径，令人不解，务请查明惠复。</p>
+<p>三、次查陈苾仙对箫孟能负有债务，以上揭房屋设定第三顺位抵押权并经登记在案。陈情人对萧孟能车有债权已由他债权人朱婉坚就萧孟能所有上开抵押权实施查封亟待实行抵押权，拍卖抵押物。唯因行政院对之有租赁关系存在，如租期届满而不迁出，势必妨害陈情人拍卖抵押物，为此检具建物登记薄誊本一件，敬请贵委员促请行政院于租期届满后勿再续租为感。</p>
+<p>江鹏坚发起质询</p>
+<p>11月14日，江鹏坚不负所托，有信给刘会云如下：</p>
+<p>刘女士钧鉴：</p>
+<p>关于台端检举行政院以巨额公款续为死人押租豪华大夏，本人虽曾函请行政院查明，但行政院答复内容破绽百出，完全不合情理，特再向行政院提出质询，兹随函附寄质询文书三份，敬请查收。</p>
+<p>耑此专颂</p>
+<p>时褀</p>
+<p>江鹏坚1984年11月14日</p>
+<p>“随函附寄质询文书”是这样的：</p>
+<p>立法院议案关系文书：中华民国七十三年11月7日印发</p>
+<p>案由：本院江委员鹏坚，为行政院以巨额公款借与私人，押租房屋作为前总统府资政叶公超先生的宿舍，已有不合，而叶公超先生病故已经三年，行政院非但不终止押租契约，交还房屋，积极收回押金。竟反其道而行，主动再续约，此举不仅有悖情理，且显系假公济私有图利他人之嫌，行政院应追究责任，以儆效尤，特向行政院提出质询。</p>
+<p>台北市民刘会云女士于今（七十三）年7月20日具函检举，略以：“行政院第七组于民国六十八年11月间以新台币150万元向台北市民陈苾仙女士押租其所有坐落台北市信义路4段1-108、1-109号第十层房屋，供原任行政院政务委员之总统府资政叶公超先生住用，为期二年，租期于七十年1月间到期。但因叶公超先生仍在住用，乃于七十年7月办理续租，权利人由行政院第七组变更登记为行政院，并增加押金100万元，租期仍为二年。叶公超先生于七十年11月间病故，行政院不仅未积极终止契约，收回押金，竟还于租期届满前（七十二年1月12日），即七十一年6月3日又与陈苾仙续约，将租期与抵押权清偿日期各再延后二年。叶公超先生去世，迄今已近三年，行政院以巨额公款续为死人押租豪华大厦，显系于法无据。”</p>
+<p>本席为明了事实，曾于今年8月10日函请行政院查明，并复知调查结果，行政院于9月5日以台七十三总14757号函复表示：“当时叶故资政公超先生任本院政务委员时，因本院无适当宿舍，因而押租该房屋供叶故政委住用（该房屋系一般公寓），叶故资政于七十年11月因病逝世，原住房屋于七十年12月交还本院，本院当即积极与房屋业主交涉提前退租，唯业主方面以国内年来房地产不景气，另觅新押租人不易为由，一再拖延，致无法提前解约退还押金。由于一时无法提前收回250万元押金，乃派本院吴副秘书长祺芳住入并看管。”</p>
+<p>本席以为行政院答复之内容，破绽百出，予人欺瞒搪塞之感觉。行政院当时租用陈苾仙女士之房屋，系用作总统府资政之宿舍，已有不合，而叶故资政既已病故，行政院更无再租用房屋之必要，自应终止契约，交还房屋，积极收回押金，但行政院不仅不终止契约，竟还主动续约二年，本席无法了解行政院再续约，究竟是为谁租用房屋。行政院虽表示，业主方面以国内房地产不景气，另觅押租人不易为由，无法提前解约退还押金，故在收回押金250万元有困难。本席以为，行政院既在该不动产上设定抵押权，若业主终止契约，不返还押租金，行政院可以依法实行抵押权，收回押金应无困难。又行政院以该屋须派人看管，指派其副秘书长住入并看管，据了解，该屋系管理上轨道之大厦，是否有必要派人看管？纵使有此必要，是否有派副秘书长级的大员去“住入并看管”之理由？凡此种种，不仅有悖常理，且显有假公济私，图利他人之嫌，行政院应严究责任，以儆效尤，特向行政院提出质询。</p>
+<p>附：台北市民刘会云七十三年9月26日致本席函副本一件（所附附件径送行政院）。</p>
+<p>江鹏坚的三个问题</p>
+<p>8月10日，江鹏坚在第一次与行政院大对决时，措词还是很客气的，他用的句子是“刘女士所指内容究竟是否实在？敬请贵院查明实情复知调査结果”。可是，11月7日这第二次大对决，他就很不客气的指摘行政院了，他提出问题有三点：</p>
+<p>第一是究竟是为谁租用房屋的问题——行政院当时租用陈苾仙女士之房屋，系用作总统府资政之宿舍，已有不合，而叶故资政既已病故，行政院更无再租用房屋之必要，自应终止契约，交还房屋，积极收回押金，但行政院不仅不终止契约，竟还主动续约二年，本席无法了解行政院再续约，究竟是为谁租用房屋。</p>
+<p>第二是业主不还钱为什么不依法实行抵押权予以拍卖房屋的问题——行政院虽表示，业主方面以国内房地产不景气，另觅押租人不易为由，无法提前解约退还押金，故在收回押金250万元有困难。本席以为，行政院既在该不动产上设定抵押权，若业主终止契约，不返还押租金，行政院可以依法实行抵押权，收回押金应无困难。</p>
+<p>第三是为什么派副秘书长“住人看管”的问题——“又行政院以该屋须派人看管，指派其副秘书长住入并看管，据了解，该屋系管理上轨道之大厦，是否有必要派人看管？纵使有此必要，是否有派副秘书长级的大员去‘住入并看管’之理由？凡此种种，不仅有悖常理，且显有假公济私，图利他人之嫌，行政院应严究责任，以傲效尤。”</p>
+<p>对这三个问题，在答复时，行政院的气派就露出来了！9月5日行政院第一次答复江鹏坚的时候，还耐住性子以十四行文字加以解释；可是这一次，行政院却四两拨千斤，在11月23日，以“台七十三专字第19282号”函，只用四行字，就算做答复矣！</p>
+<p>对江委员鹏坚质询之书面答复</p>
+<p>江委员就本院押租台北市信义路4段1-108及1-109号房屋所提质询，敬答复如下：</p>
+<p>本院押租信义路4段1-108、1-109号房屋一案，本院秘书处早已通知该房屋之业主，租约期满不再租用；并将押金于到期日退还，本院即将房屋交回。</p>
+<p>看到了吧！不论你江鹏坚怎么据理质询、不论你问了多少问题，我行政院就是给你来个相应不理、就是不理你提出的任何问题！我行政院只是告诉你：“本院秘书处早已通知该房屋之业主，租约期满不再租用；并将押金于到期日退还，本院即将房屋交回。”其他你问的问题，本行政院一律不屑回答，看你江鹏坚能奈我何！</p>
+<p>行政院说话算话吗？</p>
+<p>江鹏坚是11月30日把行政院的这四行宇转寄给刘会云的，显然的，江鹏坚似乎“退缩”了，因为他不再追问行政院为什么悍然不答复他的三个问题。在刘会云寄给他的建物登记誊本中，行政院同意抵押权淸偿日期延后二年的下限日是“1985年1月12日”，江鹏坚似乎要接受行政院的“租约期满不再租用”的解释了，他似乎要等到“1985年1月20日”的到来，等到行政院兑现诺言了！</p>
+<p>可是，“1985年1月12日”很快的就到了，行政院副秘书长吴祺芳还照旧住在这豪华大厦里，行政院的诺言还是没有兑现。1月过去了，2月过去了，3月过去了，4月5月过去了，6、7、8、9月都过去了，吴祺芳还住在那座豪华大厦里！行政院前后所说的“本院亦正积极与业主……接洽退租中”、所说的“早已通知该房屋之业主，租约期满不再租用”等等等等，原来全是“欺瞒搪塞”的官样文章！全都是作弄江鹏坚的噱头文字！全都是统统统统的狗屁！</p>
+<p>可怜的江鹏坚！他可真的被行政院作弄得灰头土脸呢！行政院行文给他，口口声声说早已通知业主“将押金于到期日退还，本院即将房屋交回”。这话说起来漂亮，行起来却不得不以自己到期得先搬出为要件。本件房屋本是按《民法》第420条第2项订的约，自然应照第455条返还租赁物的规定，到期自己得先还房子。可是，行政院根本就不要还房子，因为它要继续给大官人副秘书长吴祺芳住住住。正因为骨子里的真意原来在此，所以他们要在叶公超死后不解约、要把吴祺芳送进去住、要假托由吴棋芳来“看管”、要主动与业主提前续约、要再租二年、要体贴业主不予催收、要在业主违约时仍不肯依法实行抵押权而予以拍卖……这一切一切，一切推托、一切搪塞、一切鬼话、一切有悖常理，其实目的只有一个，就是大官人副秘书长吴祺芳一动不如一静，要住这房子！只有从这个真相看，才明白由行政院秘书处给江鹏坚的太极拳，其实都是副秘书长吴祺芳的佛法无边、老神在在耳！</p>
+<p>“房事”问题又岂能解决哉？</p>
+<p>在这月4日《中央日报》登出《吴祺芳受倚重》专栏的同一天，国民党中常委的《中国时报》上，也在《新闻索隐》专栏中，登出《吴棋芳深受俞揆倚重，延任政院副秘书长一年》的马屁经，全文说：</p>
+<p>行政院副秘书长吴褀芳，应行政院长俞国华及秘书长王章清之请，已决定再延长服务一年。</p>
+<p>如果说秘书长王章清是襄助俞院长综理院内事务及与各部会协调联系的总管，那么，吴祺芳这位副总管，亦已证明为俞揆相当倚重的角色。事实上，吴褀芳不但为俞揆撰拟所有的文稿，亦经常代表王章清，主持与各部会协调联系居功厥伟的副首长会议。</p>
+<p>政院副秘书长通常由阁揆的亲信出任，且与阁揆同进退，但吴褀芳则系前行政院长孙运璿亲向俞揆所推荐。吴氏民国八年10月生，于七十年元月任孙揆之副秘书长，原应于去年10月间退休，伹因受到接任之俞揆的器重，遂延长服务一年，如今延长届满，俞揆一时之间仍未能物色得适当人选，遂于二三月前即征得吴氏同意，再延长公职跨刀一年。</p>
+<p>幕僚工作须能耐寂寞，且任劳任怨。吴氏之受到两任阁揆之推重，固为其个人才具品质之受到肯定，及其个人之光荣，但值得省思的还是，在此功利主义抬头的今天，如何加速及鼓励后起的能耐寂寞的幕僚人才的培养。</p>
+<p>因为政院本身对于所属各单位所申请之已届限龄退休之延长服务案件，限制极严，于此情况下，政院仍再借重吴氏，可知良好幕僚之难求，并非个案。</p>
+<p>看到了吧！只要吴祺芳仍然当退休而不退休之日、仍然“延长服务”一年又一年之日，豪华大厦中的住住住，恐怕还是要继续下去，“房事”问题又岂能解决哉？</p>
+<p>江鹏坚竞选立委时，标语是“誓作人权马前卒，不信公义唤不回”，气概不凡。可是，光在此一小事上，他就要被“延长服务”的吴祺芳“延长住房”“延长作弄”如此，真太没面子。图难于易、为大于细，气概不凡也不必了、党外大话也不必说了，如何先在小事上给我们一番淸楚交代、给吴棋芳一点颜色看，这才是我们寄望他的。</p>
+<p>1985年9月7日午</p>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/15.雷霆法律类/李敖闹衙集.md">Edit this file on GitHub.</a></footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../15.雷霆法律类/李敖放刁集.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../16.李敖祸台十书/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../15.雷霆法律类/李敖放刁集.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../16.李敖祸台十书/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

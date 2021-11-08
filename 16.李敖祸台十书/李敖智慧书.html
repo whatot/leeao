@@ -1,0 +1,809 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>李敖智慧书 - 大李敖全集</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">项目简介</a></li><li class="chapter-item expanded affix "><a href="../wjm_tcy.html">wjm_tcy 简介</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/index.html"><strong aria-hidden="true">1.</strong> 自传回忆类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01.自传回忆类/我最难忘的事和人.html"><strong aria-hidden="true">1.1.</strong> 我最难忘的事和人</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖回忆录.html"><strong aria-hidden="true">1.2.</strong> 李敖回忆录</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖快意恩仇录.html"><strong aria-hidden="true">1.3.</strong> 李敖快意恩仇录</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖自传与回忆.html"><strong aria-hidden="true">1.4.</strong> 李敖自传与回忆</a></li><li class="chapter-item expanded "><a href="../01.自传回忆类/李敖议坛哀思录.html"><strong aria-hidden="true">1.5.</strong> 李敖议坛哀思录</a></li></ol></li><li class="chapter-item expanded "><a href="../02.精品散文类/index.html"><strong aria-hidden="true">2.</strong> 精品散文类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02.精品散文类/传统下的独白.html"><strong aria-hidden="true">2.1.</strong> 传统下的独白</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/李敖文存.html"><strong aria-hidden="true">2.2.</strong> 李敖文存</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/李敖文存二集.html"><strong aria-hidden="true">2.3.</strong> 李敖文存二集</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/波波颂.html"><strong aria-hidden="true">2.4.</strong> 波波颂</a></li><li class="chapter-item expanded "><a href="../02.精品散文类/独白下的传统.html"><strong aria-hidden="true">2.5.</strong> 独白下的传统</a></li></ol></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/index.html"><strong aria-hidden="true">3.</strong> 惊世杂文类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03.惊世杂文类/上下古今谈.html"><strong aria-hidden="true">3.1.</strong> 上下古今谈</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/世论新语.html"><strong aria-hidden="true">3.2.</strong> 世论新语</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/为中国思想趋向求答案.html"><strong aria-hidden="true">3.3.</strong> 为中国思想趋向求答案</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/为自由招魂.html"><strong aria-hidden="true">3.4.</strong> 为自由招魂</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/你是景福门.html"><strong aria-hidden="true">3.5.</strong> 你是景福门</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/你笨蛋，你笨蛋.html"><strong aria-hidden="true">3.6.</strong> 你笨蛋，你笨蛋</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/历史与人像.html"><strong aria-hidden="true">3.7.</strong> 历史与人像</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/我是天安门.html"><strong aria-hidden="true">3.8.</strong> 我是天安门</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/我梦碎所以我梦醒.html"><strong aria-hidden="true">3.9.</strong> 我梦碎所以我梦醒</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/教育与脸谱.html"><strong aria-hidden="true">3.10.</strong> 教育与脸谱</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/文化论战丹火录.html"><strong aria-hidden="true">3.11.</strong> 文化论战丹火录</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/李敖杂文集.html"><strong aria-hidden="true">3.12.</strong> 李敖杂文集</a></li><li class="chapter-item expanded "><a href="../03.惊世杂文类/求是新语.html"><strong aria-hidden="true">3.13.</strong> 求是新语</a></li></ol></li><li class="chapter-item expanded "><a href="../04.小说剧本类/index.html"><strong aria-hidden="true">4.</strong> 小说剧本类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04.小说剧本类/上山上山爱.html"><strong aria-hidden="true">4.1.</strong> 上山上山爱</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/北京法源寺.html"><strong aria-hidden="true">4.2.</strong> 北京法源寺</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/第73烈士.html"><strong aria-hidden="true">4.3.</strong> 第 73 烈士</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/红色11.html"><strong aria-hidden="true">4.4.</strong> 红色 11</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/虚拟的十七岁.html"><strong aria-hidden="true">4.5.</strong> 虚拟的十七岁</a></li><li class="chapter-item expanded "><a href="../04.小说剧本类/阳痿美国.html"><strong aria-hidden="true">4.6.</strong> 阳痿美国</a></li></ol></li><li class="chapter-item expanded "><a href="../05.诗集语录类/index.html"><strong aria-hidden="true">5.</strong> 诗集语录类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../05.诗集语录类/李敖语萃.html"><strong aria-hidden="true">5.1.</strong> 李敖语萃</a></li><li class="chapter-item expanded "><a href="../05.诗集语录类/李语录.html"><strong aria-hidden="true">5.2.</strong> 李语录</a></li><li class="chapter-item expanded "><a href="../05.诗集语录类/爱情的秘密.html"><strong aria-hidden="true">5.3.</strong> 爱情的秘密</a></li></ol></li><li class="chapter-item expanded "><a href="../06.沉思日记类/index.html"><strong aria-hidden="true">6.</strong> 沉思日记类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../06.沉思日记类/一个预备军官的日记.html"><strong aria-hidden="true">6.1.</strong> 一个预备军官的日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/大学日记后期乙集.html"><strong aria-hidden="true">6.2.</strong> 大学日记后期乙集</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/大学日记后期甲集.html"><strong aria-hidden="true">6.3.</strong> 大学日记后期甲集</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/大学札记.html"><strong aria-hidden="true">6.4.</strong> 大学札记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/早年日记.html"><strong aria-hidden="true">6.5.</strong> 早年日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖五五日记.html"><strong aria-hidden="true">6.6.</strong> 李敖五五日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖札记.html"><strong aria-hidden="true">6.7.</strong> 李敖札记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖秘藏日记.html"><strong aria-hidden="true">6.8.</strong> 李敖秘藏日记</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖随写录前集.html"><strong aria-hidden="true">6.9.</strong> 李敖随写录前集</a></li><li class="chapter-item expanded "><a href="../06.沉思日记类/李敖随写录后集.html"><strong aria-hidden="true">6.10.</strong> 李敖随写录后集</a></li></ol></li><li class="chapter-item expanded "><a href="../07.采访序跋类/index.html"><strong aria-hidden="true">7.</strong> 采访序跋类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖书序集.html"><strong aria-hidden="true">7.1.</strong> 李敖书序集</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖书序集续集.html"><strong aria-hidden="true">7.2.</strong> 李敖书序集续集</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖对话录.html"><strong aria-hidden="true">7.3.</strong> 李敖对话录</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖报刊集.html"><strong aria-hidden="true">7.4.</strong> 李敖报刊集</a></li><li class="chapter-item expanded "><a href="../07.采访序跋类/李敖访谈录1996-2014.html"><strong aria-hidden="true">7.5.</strong> 李敖访谈录 1996-2014</a></li></ol></li><li class="chapter-item expanded "><a href="../08.书信函件类/index.html"><strong aria-hidden="true">8.</strong> 书信函件类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08.书信函件类/坐牢家爸爸给女儿的八十封信.html"><strong aria-hidden="true">8.1.</strong> 坐牢家爸爸给女儿的八十封信</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书信集.html"><strong aria-hidden="true">8.2.</strong> 李敖书信集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书函集.html"><strong aria-hidden="true">8.3.</strong> 李敖书函集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书启集.html"><strong aria-hidden="true">8.4.</strong> 李敖书启集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书札集.html"><strong aria-hidden="true">8.5.</strong> 李敖书札集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书牍集.html"><strong aria-hidden="true">8.6.</strong> 李敖书牍集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书笺集.html"><strong aria-hidden="true">8.7.</strong> 李敖书笺集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书简集.html"><strong aria-hidden="true">8.8.</strong> 李敖书简集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖书翰集.html"><strong aria-hidden="true">8.9.</strong> 李敖书翰集</a></li><li class="chapter-item expanded "><a href="../08.书信函件类/李敖情书集.html"><strong aria-hidden="true">8.10.</strong> 李敖情书集</a></li></ol></li><li class="chapter-item expanded "><a href="../09.历史文化类/index.html"><strong aria-hidden="true">9.</strong> 历史文化类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../09.历史文化类/中国命研究.html"><strong aria-hidden="true">9.1.</strong> 中国命研究</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国性研究.html"><strong aria-hidden="true">9.2.</strong> 中国性研究</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国现代史定论.html"><strong aria-hidden="true">9.3.</strong> 中国现代史定论</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国现代史正论.html"><strong aria-hidden="true">9.4.</strong> 中国现代史正论</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国艺术新研.html"><strong aria-hidden="true">9.5.</strong> 中国艺术新研</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国近代史新论.html"><strong aria-hidden="true">9.6.</strong> 中国近代史新论</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/中国迷信新研.html"><strong aria-hidden="true">9.7.</strong> 中国迷信新研</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/为历史拨云.html"><strong aria-hidden="true">9.8.</strong> 为历史拨云</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/要把金针度与人.html"><strong aria-hidden="true">9.9.</strong> 要把金针度与人</a></li><li class="chapter-item expanded "><a href="../09.历史文化类/读史指南.html"><strong aria-hidden="true">9.10.</strong> 读史指南</a></li></ol></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/index.html"><strong aria-hidden="true">10.</strong> 李敖节目演讲合集</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖大哥大.html"><strong aria-hidden="true">10.1.</strong> 李敖大哥大</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖有话说1-735全集.html"><strong aria-hidden="true">10.2.</strong> 李敖有话说 1-735 全集</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖演讲集.html"><strong aria-hidden="true">10.3.</strong> 李敖演讲集</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖秘密书房.html"><strong aria-hidden="true">10.4.</strong> 李敖秘密书房</a></li><li class="chapter-item expanded "><a href="../10.李敖节目演讲合集/李敖笑傲江湖.html"><strong aria-hidden="true">10.5.</strong> 李敖笑傲江湖</a></li></ol></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/index.html"><strong aria-hidden="true">11.</strong> 李敖电子报合集</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖发电集.html"><strong aria-hidden="true">11.1.</strong> 李敖发电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖放电集.html"><strong aria-hidden="true">11.2.</strong> 李敖放电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖来电集.html"><strong aria-hidden="true">11.3.</strong> 李敖来电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖送电集.html"><strong aria-hidden="true">11.4.</strong> 李敖送电集</a></li><li class="chapter-item expanded "><a href="../11.李敖电子报合集/李敖通电集.html"><strong aria-hidden="true">11.5.</strong> 李敖通电集</a></li></ol></li><li class="chapter-item expanded "><a href="../12.人物研究类/index.html"><strong aria-hidden="true">12.</strong> 人物研究类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../12.人物研究类/丑陋的中国人研究.html"><strong aria-hidden="true">12.1.</strong> 丑陋的中国人研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/你不知道的彭明敏.html"><strong aria-hidden="true">12.2.</strong> 丑陋的中国人研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/大江大海骗了你.html"><strong aria-hidden="true">12.3.</strong> 大江大海骗了你</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/孙中山研究.html"><strong aria-hidden="true">12.4.</strong> 孙中山研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/孙逸仙和中国西化医学.html"><strong aria-hidden="true">12.5.</strong> 孙逸仙和中国西化医学</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/李敖论人物.html"><strong aria-hidden="true">12.6.</strong> 李敖论人物</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/李登辉的假面具.html"><strong aria-hidden="true">12.7.</strong> 李登辉的假面具</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/李登辉的真面目.html"><strong aria-hidden="true">12.8.</strong> 李登辉的真面目</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/胡适与我.html"><strong aria-hidden="true">12.9.</strong> 胡适与我</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/胡适研究.html"><strong aria-hidden="true">12.10.</strong> 胡适研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/胡适评传.html"><strong aria-hidden="true">12.11.</strong> 胡适评传</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石的真面目.html"><strong aria-hidden="true">12.12.</strong> 蒋介石的真面目</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究一集.html"><strong aria-hidden="true">12.13.</strong> 蒋介石研究一集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究三集.html"><strong aria-hidden="true">12.14.</strong> 蒋介石研究三集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究五集.html"><strong aria-hidden="true">12.15.</strong> 蒋介石研究五集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究六集.html"><strong aria-hidden="true">12.16.</strong> 蒋介石研究六集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究四集.html"><strong aria-hidden="true">12.17.</strong> 蒋介石研究四集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石研究续集.html"><strong aria-hidden="true">12.18.</strong> 蒋介石研究续集</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋介石评传.html"><strong aria-hidden="true">12.19.</strong> 蒋介石评传</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋家臭史.html"><strong aria-hidden="true">12.20.</strong> 蒋家臭史</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/蒋经国研究.html"><strong aria-hidden="true">12.21.</strong> 蒋经国研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/论定蒋经国.html"><strong aria-hidden="true">12.22.</strong> 论定蒋经国</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/郑南榕研究.html"><strong aria-hidden="true">12.23.</strong> 郑南榕研究</a></li><li class="chapter-item expanded "><a href="../12.人物研究类/陈水扁的真面目.html"><strong aria-hidden="true">12.24.</strong> 陈水扁的真面目</a></li></ol></li><li class="chapter-item expanded "><a href="../13.国民党史政类/index.html"><strong aria-hidden="true">13.</strong> 国民党史政类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../13.国民党史政类/国民党研究.html"><strong aria-hidden="true">13.1.</strong> 国民党研究</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/国民党研究续集.html"><strong aria-hidden="true">13.2.</strong> 国民党研究续集</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/国民党臭史.html"><strong aria-hidden="true">13.3.</strong> 国民党臭史</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/给国民党难看.html"><strong aria-hidden="true">13.4.</strong> 给国民党难看</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/给外省人难看.html"><strong aria-hidden="true">13.5.</strong> 给外省人难看</a></li><li class="chapter-item expanded "><a href="../13.国民党史政类/老贼臭史.html"><strong aria-hidden="true">13.6.</strong> 老贼臭史</a></li></ol></li><li class="chapter-item expanded "><a href="../14.台湾史政类/index.html"><strong aria-hidden="true">14.</strong> 台湾史政类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../14.台湾史政类/你不知道的二二八.html"><strong aria-hidden="true">14.1.</strong> 你不知道的二二八</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/法眼看台湾.html"><strong aria-hidden="true">14.2.</strong> 法眼看台湾</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/另一面的二二八.html"><strong aria-hidden="true">14.3.</strong> 另一面的二二八</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/民进党研究.html"><strong aria-hidden="true">14.4.</strong> 民进党研究</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/冷眼看台湾.html"><strong aria-hidden="true">14.5.</strong> 冷眼看台湾</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/白眼看台湾.html"><strong aria-hidden="true">14.6.</strong> 白眼看台湾</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/白色恐怖述奇.html"><strong aria-hidden="true">14.7.</strong> 白色恐怖述奇</a></li><li class="chapter-item expanded "><a href="../14.台湾史政类/给台湾人难看.html"><strong aria-hidden="true">14.8.</strong> 给台湾人难看</a></li></ol></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/index.html"><strong aria-hidden="true">15.</strong> 雷霆法律类</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖刀笔集.html"><strong aria-hidden="true">15.1.</strong> 李敖刀笔集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖好讼集.html"><strong aria-hidden="true">15.2.</strong> 李敖好讼集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖弄法集.html"><strong aria-hidden="true">15.3.</strong> 李敖弄法集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖放刁集.html"><strong aria-hidden="true">15.4.</strong> 李敖放刁集</a></li><li class="chapter-item expanded "><a href="../15.雷霆法律类/李敖闹衙集.html"><strong aria-hidden="true">15.5.</strong> 李敖闹衙集</a></li></ol></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/index.html"><strong aria-hidden="true">16.</strong> 李敖祸台十书</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../16.李敖祸台十书/从万宝囊到臭屎堆.html"><strong aria-hidden="true">16.1.</strong> 从万宝囊到臭屎堆</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/只爱一点点.html"><strong aria-hidden="true">16.2.</strong> 只爱一点点</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/君子爱人以色.html"><strong aria-hidden="true">16.3.</strong> 君子爱人以色</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/启发你的小故事.html"><strong aria-hidden="true">16.4.</strong> 启发你的小故事</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/恰似我的温柔.html"><strong aria-hidden="true">16.5.</strong> 恰似我的温柔</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/我们没有明天.html"><strong aria-hidden="true">16.6.</strong> 我们没有明天</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/李敖智慧书.html" class="active"><strong aria-hidden="true">16.7.</strong> 李敖智慧书</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/李敖生死书.html"><strong aria-hidden="true">16.8.</strong> 李敖生死书</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/笑傲五十年.html"><strong aria-hidden="true">16.9.</strong> 笑傲五十年</a></li><li class="chapter-item expanded "><a href="../16.李敖祸台十书/第一流人的境界.html"><strong aria-hidden="true">16.10.</strong> 第一流人的境界</a></li></ol></li><li class="chapter-item expanded "><a href="../17.百家论李敖合集/index.html"><strong aria-hidden="true">17.</strong> 百家论李敖合集</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../17.百家论李敖合集/李敖研究fashion文集.html"><strong aria-hidden="true">17.1.</strong> 李敖研究 fashion 文集</a></li><li class="chapter-item expanded "><a href="../17.百家论李敖合集/百家论李敖.html"><strong aria-hidden="true">17.2.</strong> 百家论李敖</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">大李敖全集</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>#《李敖智慧书》目录</p>
+<ul>
+<li>《李敖智慧书》题辞</li>
+<li>一、为打倒而打倒</li>
+<li>二、要民主，先丑化</li>
+<li>三、从假民主到假宪政</li>
+<li>四、具体骗人与抽象骗人</li>
+<li>五、政治动物学</li>
+<li>六、政治数学</li>
+<li>七、政治撒尿学</li>
+<li>八、令人讨厌的“政治挂帅”</li>
+<li>九、三个臭皮党，诸葛怎样想</li>
+<li>十、算不算拖拖拉拉</li>
+<li>十一、尊夷王，攘自己</li>
+<li>十二、迷信反共与反共迷信</li>
+<li>十三、武力犯台违反国际法？</li>
+<li>十四、郝大将睡前自祷词</li>
+<li>十五、宣传台独的三个层次</li>
+<li>十六、青天白日的贬值</li>
+<li>十七、从中央到中山</li>
+<li>十八、我说你是你就是</li>
+<li>十九、说你叛乱你就叛乱，说你不叛乱你就不叛乱</li>
+<li>二十、“马上代”与“马屁代”</li>
+<li>二一、老贼小贼皆贼也！</li>
+<li>二二、我们是带黄金来的！</li>
+<li>二三、黄金也有省籍吗？</li>
+<li>二四、金从哪里来？</li>
+<li>二五、我去做李王爷啦！</li>
+<li>二六、为国民党的无知抽样</li>
+<li>二七、《首都早报》的无知</li>
+<li>二八、《自立早报》的无知</li>
+<li>二九、《中时晚报》有所不知</li>
+<li>三十、当上帝掏出打火机</li>
+<li>三一、马克吐温与马克台湾</li>
+<li>三二、恶心到教育去了</li>
+<li>三三、你缴的税，原来孝敬了洋大人！</li>
+<li>三四、不能耙粪，报章之耻</li>
+<li>三五、多揭发黑暗，少追踪黑屁</li>
+<li>三六、雷震回忆录被焚志感</li>
+<li>三七、发还了，又怎样？</li>
+<li>三八、是谁藐视了监察权？</li>
+<li>三九、弹劾了，又怎样？</li>
+<li>四十、周荃哭，劭玉铭应该和她对哭</li>
+<li>四一、施启扬、马英九岂能主持大陆政策！</li>
+<li>四二、自取其辱，才遭开除</li>
+<li>四三、迟来的母亲、迟来的光荣、迟来的儿子</li>
+<li>四四、关于李远哲忘恩负义的讨论</li>
+</ul>
+<p>《李敖智慧书》题辞</p>
+<p>佛门人物谈智慧，谈来谈去，全弄玄虚，堕入魔道而不自知；李敖先生谈智慧，全讲实证，“生公说法鬼神听”，生工再世，也要带着鬼神一齐顶礼。今生今世，人类、新人类、新新人类都被思想污染了，王阳明当年说“满街皆圣人”，他错了，其实满街皆混蛋（包括笨蛋、蠢蛋和坏蛋），如何别做混蛋，有赖鸡飞蛋打，李敖智慧书，就教你怎么飞怎么打。</p>
+<p>为打倒而打倒</p>
+<p>十多年前看过一场电影，叫《寂寞小阳春》（SweetNovember），写一个女孩子，身罹绝症，自知不久人世，乃在生命最后的几个月里，每月换一个男朋友，每在月底月初，就把同居的男朋友迎新送旧，虽然上月份的余情袅袅，也要慧剑两断，把本月份的接进门来。这个电影的主题，跟我二十年前“三月换一把，爱情如牙刷”的主题，不谋而合，我一直欣赏它的洒脱、它的深意。</p>
+<p>其实爱情如此，政治又何尝不如此？</p>
+<p>1887年4月3日，英国阿克顿勋爵（LordActon,SirJohnEmerichEdwardDalberg.1stBaronActon.1834-1902）写信给他的朋友——《英国史学评论》（TheEnglishHistoricalReview）的编者克瑞顿（MandellCreighton），留下了一句千古名言：</p>
+<p>权力使人腐化，绝对的权力使人绝对腐化。（Powertednstocorrupt,andabsolutepowercorruptsabsolutely.）</p>
+<p>这段名言，一语道破了政治人物的不可靠性。人一旦成为政治人物，哪怕当初是圣贤豪杰、仁人志士，一旦大权在手，就会有权必滥、就会把原来的理想与抱负，丢到权力的脚下。</p>
+<p>挽救这一腐化的法子，不在靠修身，而在靠制度：修身只是个人的自我约束，这是不可靠的，因为它是内在的约束，不是外在的约束，内在的约束成功，我们固然看到像诸葛亮那样的统治者，但是内在的约束失败，我们也看到像金主亮（金朝的暴君）那样的统治者。金主亮一旦出现，我们就吃不消了。所以，根本之计，我们要认定政治人物是不可靠的：我们可以相信他们的日常人格，但是我们绝不相信他们的政治人格。我们必须用外在的约束来约束他们，这种约束，就是制度。</p>
+<p>我们要靠制度来约束政治人物，不能靠政治人物的修身来约束政治人物。</p>
+<p>所谓制度，是五花八门的。古往今来，在各种政治性的书中，我们可以看到不少。但在这些制度中，我总觉得堵塞性的细节多，断流性的痛快少。因此，我想从根本上，谈谈新陈代谢的法子。</p>
+<p>在五花八门的制度约束中，《寂寞小阳春》中的主题，被我想起，我觉得，我们实在该建立一种“定时打倒”的制度，要规定好，在某年某月某一天，我们要把政治人物“定时打倒”。我们要把他出局，出局的目的不是不爱他，而是更爱真理；不是不要他，而是要他全寿全归。爱默生说每个英雄到头来都是讨厌鬼（Everyherobecomesaboreatlast.），政治人物也是如此。</p>
+<p>古代希腊有一种“贝壳放逐制度”（ostricism），由公民投票，把被逐者的名字，写在贝壳上，然后逐出国外，通常是五到十年。大英雄兼政治家，被尊为“正直者”（Thejust）的阿里斯太提斯（Aristides），就被这样出局过。在投票前夜，他碰到一个老百姓，这老百姓是文盲，又有眼不识泰山，不知道眼前这位就是“正直者阿里斯太提斯”，他拿出一枚贝壳，请阿里斯太提斯代写名字，阿里斯太提斯问你要写谁，他说我要写“阿里斯太提斯”。阿里斯太提斯不动声色，为他写了，然后问那家伙是不是得罪了你，老百姓说没有，只是我整天听到正直者阿里斯太提斯、正直者阿里斯太提斯，听得我烦了，所以我要把他赶走，以求耳根清净。</p>
+<p>“贝壳放逐制度”的原意是防止暴政，虽然演变结果，有着不少直接民主的流弊，但它在解决英雄讨人厌一点上，那个文盲老百姓的可爱，到真使我们叹赏。我们中国老百姓不幸，年复一年、月复一月、日复一日、夜以继日，日之所见、耳之所闻，总是一些政治人物的名字在使我们不清净、使我们无限厌烦，对他们这些肉麻当有趣，我们老百姓实在该“打倒”他们，这种“打倒”，不为什么，光是“为打倒而打倒”，就够了。他们把持一切，干了那么久，我们就是换换庄、换换胃口，也好啊！就是耳根清净一下，也好啊！我们必须努力建立一种制度，一种专门“为打倒而打倒”的制度，在诸多“打倒”的理由之外，再加上这一本身自足的理由，也是大快人心的。——“每个政治人物到头来都是讨厌鬼”，我们在摇旗呐喊之余，不妨想想这句真理。</p>
+<p>1983年9月15日</p>
+<p>要民主，先丑化</p>
+<p>《孟子》里有一句话，叫：“说大人，则藐之。勿视其巍巍然。……吾何畏彼哉!”意思是说：见那些大人物呀，可要轻视他们，别给他们唬住了。……为什么要怕他们呢?</p>
+<p>这是一个很有气概的提示。可是，事实上，小百姓见到大倌人，心里还是嘀咕、还是畏形于色。荆轲刺秦王，找到助手是燕国勇士秦舞阳。秦舞阳的不良少年记录是：“年十三，杀人，人不敢忤视。”凶来兮到谁也不敢正眼看他。但当行刺时候，他在秦王面前吓得“色变振恐”。“不敢忤视”的，是他小子自己了。这个故事说明了：在万华做小瘪三可以，但临了大场面，一见大倌人，声势就要被夺走、上风就要给占去、裤裆里就要屁滚尿流。小百姓呀总是小百姓！</p>
+<p>小百姓与大倌人这种级差，若在专制时代，就没什么了不得；但在民主时代，就有点不得了。因为人与人间的过分级差，是民主的致命伤。民主的特色就是大家接近，谁也不比谁神气活现、谁也不比谁“跩”。——在民主社会里有太多大大倌人，对小百姓说来，是一种不祥。</p>
+<p>那么要怎么样呢？</p>
+<p>要怎样，要用民主的戏路，才能演好民主活剧。民主的剧路很多，两党多党、直接选举、巴力门至上、法院与军队不受政党控制等等等等，这些制度上的民主，已为大家所熟知。但在制度上民主还不够，必须在习惯上民主，才算到家。要在习惯上减少上下之分、贵贱之别、官民之差、大人物与小人物之悬殊，才算真民主。而这种习惯的养成，就要靠另一面的戏路。</p>
+<p>另一面的戏路很多，其中最精彩的，该算“以小击大法”。以小击大是鼓励小百姓轻视大倌人，“说大人，则藐之。”使小百姓一再看到大倌人出洋相，来增加小百姓的信心，显示大倌人的人味和乏味，拉近双方，同演民主大戏。</p>
+<p>所谓“以小击大法”，就是小百姓要可以丑化大倌人，你大倌人仁义道德，我小百姓就要你男盗女娼；你大倌人威风八面，我小百姓就要你弃甲曳兵；你大倌人不苟言笑，我小百姓就要你忍俊不禁；你大倌人目不斜视，我小百姓就要你贼眼溜溜。……总之，以小击大的结果，就是把大倌人打成跟小百姓同一水平。只有大倌人不高高在上，跟小百姓同一水平，才有民主之可言。否则官在民上，又民从何来？主从何来？</p>
+<p>1807年，美国总统杰弗逊在被丑话声中，安详的写道：</p>
+<p>我自愿以我本身当作一项伟大试验的题目，为了要证明，一个政府，如果站得正、得民心，甚至舆论丑化它，也打不倒它。</p>
+<p>相反的，丑化正反映出言论自由，在杰弗逊的容忍下，他被骂做小偷、懦夫、诈欺犯、邪教徒、铸假钱者、伪造文书者、离经叛道者、不信正教者、导人不义者、霸占孤儿寡妇者。……虽然这样，杰弗逊仍旧一声不响，仍旧开放心胸和言路，让人丑化他。他知道丑话声中，民主会变得美化。——大倌人为什么要怕丑化呢？如果你是猪八戒，没人丑化得了你；如果你不是，真金不怕火炼，又怕什么呢？</p>
+<p>看民主，不在堂皇的宪法；找民主，不在庄严的议会；测量民主，不在磨拳擦掌的斗争。民主的真髓，表现得不该这么复杂。民主本身，不仅是一种制度，而是一种信仰、一种生活的态度、一种普遍的方向与目标。达到这种方向与目标的起点，不是教条、不是训政、不是规范、不是“作之君、作之师”，而是开放言论，摊出箭靶，让小百姓一阵臭骂、一阵臭骂、又一阵臭骂。只有任由小百姓丑化的大倌人，才配行民主；只有敢于丑化大倌人的小百姓，才配谈民主。否则的话，一切都是民主假戏而已，我们别信它！</p>
+<p>1983年3月12日</p>
+<p>从假民主到假宪政</p>
+<p>“民主宪政”四个字，本是国民党的口头禅，以1968年蒋介石《民主和伦理的结合》讲词为例，一篇讲词中，反复“民主宪政”四个字，达十三次之多，重点所在是：“人人不仅成为在民主宪政体制中受益的客体，而更是推动民主宪政、恪守民主宪政、发展民主宪政的主体。这样才是健全的民主，足以防止和挽救一般民主制度所可能造成的偏差与流弊。”</p>
+<p>蒋介石这段话最令人惊异的，是他掌权几十年中，从无民主之实，却还大言不惭地侈言为“防止和挽救一般民主制度所可能造成的偏差与流弊”，这种无耻，已到了滑稽的地步。别以为蒋介石这种大言不惭只是偶一为之的，事实上，他这种民主流弊论，早就慨乎言之。一九六二年，他在《复国建国方向和实践》里讲道：“固然我们应该‘以更多的民主，去革除民主的流弊’（总理语），但是也必不可能以一味讲民主来取胜，更不能为一般利用民主之名行反民主之实的人所胡闹，而驯致迷惘无主。”这段民主流弊论，就是蒋介石对民主的基本态度。</p>
+<p>有趣的是，蒋介石这里引“以更多的民主，去革除民主的流弊”并说是“总理语”，其实这绝非孙中山的话，乃是美国前纽约州长史密斯（AlfredEmmanuelSmith）1933年6月27日演说中的话。原文是：Alltheillsofdemocracycanbecuredbymoredemocracy.蒋介石全弄错了。</p>
+<p>在蒋介石弄错以后三十四年，蒋介石的徒子徒孙又在台湾大喊“民主宪政”的口头禅了。这回不但徒子徒孙们自己喊，连“美帝”的媒体也跟着喊了。纪念5月20日的《新闻周刊》甚至以李登辉为封面，甚至以“民主先生”（MR.DEMOCRACY）一字印在他脑门顶上，流风所及，好像蒋介石的徒子徒孙真的搞起民主来了。</p>
+<p>事实上，真正认清蒋介石徒子徒孙的人，绝不相信这种“民主先生”带出来的民主是真民主。因为就是这位“民主先生”，他带头坐拥上千亿的国民党独占资源与资产、坐拥千百种小朝廷的名位与名器，坐拥千千万万的选举桩脚、坐拥千千万万金牛和黑道的威胁与利诱，在垄断三家电视台、干扰司法独立与治安中立的运作下，最后巧取豪夺了百分之五十四的选票。这种“民主先生”的作为，十足给“民主的流弊”做了响当当又血淋淋的活证。这种民主，绝非真民主，而是令人哭笑皆非的假民主。</p>
+<p>不过，如果蒋介石的徒子徒孙有所觉悟，知道一点“逆取顺守”的道理，从而在假民主中寻找真宪政，也算争权夺利后的高杆。但是，像“民主先生”这种“控固力”头脑的人，他们做得到吗？甚至中国式“逆取顺守”的真义，他们的日本式头脑也未必觉悟得到吧？</p>
+<p>“逆取顺守”是汉朝大臣陆贾的理论，意思是说，你得天下不以正，但治天下应以正，这样子对你好，这样才是“长久之术也”。若得天下后还是老毛病不改，则继假民主之后，必然快速进入假宪政状态。而李登辉这个人呢，他在选举以前，搞的正是假民主；而在就职以后，搞的正是假宪政。</p>
+<p>照《中华民国宪法》前言所定，宪法之基础，乃是“依据孙中山先生创立中华民国之遗教”，但孙中山的遗教驳杂混乱，因此在制宪时，被张君劢等民社党人大动手脚，使遗教羊头狗肉化，羊头狗肉化是挂孙遗教的羊头，却卖现代宪政的狗肉，这一手脚，给了中国宪政生机，却也留下不少解释上的乱源。例如照孙遗教所说，立法机关明明是“治权”机关，但狗肉一番后，立法院变成了国会，早已没有“治权”机关的影儿了。至于总统的权力，根据张君劢等制宪的原意，它的权力是收缩式的，而不是扩张式的，且严格受“公布法律、发布命令，须经行政院院长之副署”等限制，这是很内阁制的规定。不幸的是，自蒋介石到李登辉，当上总统，就拼命扩张式的夺权揽权，不但侵行政院长之官，且侵立法委员之权，今天李登辉一新任就闹出“著毋庸议”的侵权事件，显然是对宪政最无耻的亵渎与冒犯，充分证明了他毫无“逆取顺守”的智慧，台湾的宪政又一次由假宪政开始，已经毫无可疑了。</p>
+<p>从假民主到假宪政，整个的过程，原来就如此这般。看到了这样子的假民主与假宪政，我们还敢相信“以更多的民主，去革除民主的流弊”吗？我们真该好好想想了。</p>
+<p>1996年6月14日</p>
+<p>具体骗人与抽象骗人</p>
+<p>骗人的法子有两种，一种是具体骗人，一种是抽象骗人。</p>
+<p>具体骗人是比较原始的一种骗人，骗子要出示具体的东西给凯子看，凯子不见不信，所以具体骗人必须出示看得到、摸得到、碰得到、舐得到的，凯子才信。具体东西可能是棒棒糖，可能是砍鸡头，也可能是尊佛像。“无心雕作木居士，便有无穷求福人。”骗子雕块木头，盖座小庙，就可打着菩萨或土地公旗号，大收香火钱，凯子们就去信，这些原因无他，具体故也。</p>
+<p>具体骗人得手后，骗子就会花样翻新，会从具体中寻抽象，《庄子》中记狙公向猴子说：我早上喂你们三颗栗子、晚上四颗，猴子们大怒，要革命；狙公说：那么早上四颗、晚上三颗吧，猴子们就大喜，喊万岁了。朝三暮四或暮三朝四，实质未变，但是戏法不同，这些原因无他，具体抽象化故也。</p>
+<p>所以骗子段数愈高，就愈会用抽象骗人代替具体骗人。在学理上，如你请教李敖的老友刘福增，他会告诉你这叫“抽离性”（abstractivity）。能搞“抽离性”的，才是高人、才是大奸巨恶。但在此中运用之妙的，不是数学家、不是逻辑学家，而是统治者。</p>
+<p>原始的统治者，统治的方式是爱斯基摩雪橇犬（包括theEskimo,theAlaskanmalamute,theSiberianhusky）式的，这种狐群狗党极有制度，老大吃住老二，老二吃住老三。老大统治的方法纯靠我咬你，咬得你服而后已。咬呀咬的，直咬到有朝一日咬不动了，被新生代咬下台为止。原始的统治者，一开始比狗好一点，是动手不动口的，动手就是比谁拳头大，但是比拳头毕竟太累了，总得弄出点抽象的“粉拳”出来，才轻松愉快，于是，就逐渐出现了所谓“政治符号”（politicalsymbol）。“政治符号”可就五花八门了：从服色、符节、玺印、卤簿，到党旗、党徽、勋章、奖状，无一不是权力的象征。这些象征虽然都有：“抽离性”，但它们的“抽离性”，还有图腾式的“残基”（residuum），在抽象骗人的纯度上，还是不算本领的。</p>
+<p>真正的本领是：现代统治者已愈来愈会用纯抽象的字眼，来施展他们的统治，他们会用“抽象名词”（abstractnoun）、用“集合名词”（collectivenoun），或用“专有名词”（propernoun）等等，一下子就把人民罩住。比如说，“政府”一个名词吧，只要把“政府”抬出来，人民就会浑然忘我的感谢它的“德政”。心理学家巴普洛夫（IvanPavlov）可以一按灯光就使狗流口水，造成“条件反射”（conditionedresponse）；政治上的巴普洛夫却可以一抬出“政府”就使人民出媚态、马屁之声不绝。——统治人统治到这一地步，对“政府”不五体投地、肝脑涂地，又岂可得乎？</p>
+<p>其实，只要想一想，“政府”是什么?“政府”只有在变成抽象化以后，才有花招，若追根究底，一要求落实，所谓“政府”也者，原来只不过是“一小撮人”的代号而已。“政府”两个字，是虚的、是空洞的；“一小撮人”、一小撮永不下台的当权派，才是真的、是实在的。所以，愚昧的小百姓以为他们拥护“政府”、热爱“政府”，常常不小心就拥护到“一小撮人”、热爱到一小撮永不下台的当权派而已！</p>
+<p>真正抱有自由民主信念的小百姓，必须努力觉悟：觉悟到“政府”不是你爸爸，也不是你恩人；对“政府”，主人是你，你不可自甘作践，感谢它的“德政”，歌颂它的“大有为”。在“政府”中做事的，其实只是公仆，对公仆，我们应该责备他们、指使他们、命令他们、对他们七嘴八舌，而不是被他们呼么喝六。只有在这种清楚的认识下，中国的自由民主才有活路。否则的话，中国人民只是抽象骗人下的凯子而已，什么自由民主，都是他妈的狗屁！——向“政府”摇尾巴的动物，是不配自由民主的！</p>
+<p>1983年3月10日</p>
+<p>政治动物学</p>
+<p>“政治动物学”是政治学者或动物学者都不懂的一门学问，因为它是我创立的，是一门新的“科际整合”。“政治动物学”中有一个旁支，就是“国民党动物学”。</p>
+<p>国民党是一个庞然大物，至少在台湾如此。这个庞然大物有它许多特有的大学问，比如说“国民党哲学”、“国民党数学”、“国民党伦理学”、“国民党戒严学”等等。“国民党动物学”就是这些大学问中的一门学问。</p>
+<p>在国民党的一党独大下，首先出来一种人，就是蝙蝠。蝙蝠是唯一能飞的哺乳动物，它在动物学上属于“哺乳纲”的翼手类，但它能飞的特性又酷似“鸟纲”中的飞禽，这种“两头都像”的模样，使它进了西方的寓言。《伊索寓言》里有一则《蝙蝠和黄鼠狼》，记一只蝙蝠掉到地上，被黄鼠狼逮到，蝙蝠大叫饶命，黄鼠狼说本狐仙可饶你，但是本狐仙恨鸟，你是鸟，故不饶。蝙蝠力辩自己不是鸟，而是老鼠，最后被放掉了；不久它又掉到地上，被另一只恨老鼠的黄鼠狼逮到，历史又重演，不过它这次力辩自己是鸟，不是老鼠，最后又被放掉了。另一则寓言是《鸟兽和蝙蝠》，记鸟兽双方大战，互有胜负，蝙蝠依违其间，老是投靠在胜利者的一方，向鸟说它是鸟，向兽说它是兽，最后鸟兽双方议和，真相穿帮了，不但“不容毛群，斥逐羽族”，而且“不容兽群，斥逐哺乳类之族”了，从此不敢在光天化日之下活动，只好昼伏夜出了。</p>
+<p>在国民党的一党独大下，一种政治蝙蝠就应运而生。什么是政治蝙蝠呢？我认为，任何人，只要在这岛上被国民党和党外两边都肯定的，就必然是政治蝙蝠无疑！这是一个最立竿见影的检定标准。陶百川、徐复观之流，这样一检定，显然都一连多年这样在党内党外线上通吃着，这不是政治蝙蝠又是什么？</p>
+<p>陶百川一方面辞了监委给党外看，一方面接受了国策顾问给国民党看，这不是政治蝙蝠是什么？徐复观一方面在1960年9月1日同党外相见欢，一方面在9月2日到“中央党部”大告密，这不是政治蝙蝠是什么？结果蝙而蝠之久了，陶百川一离台，“中央党部”秘书长和党外巨公级就争相邀宴了；徐复观一咽气，“中央党部”秘书长和党外巨公级就争相吊丧了。除了两面做人成功以外，谁又能如此两面讨好呢？</p>
+<p>在这种外省人的示范下，土头土脑的台湾人也就自然跟进了。于是，从吴三连身上、从高玉树身上，我们一一看到了五“蝠”临门，——台湾人也青出于蓝了。</p>
+<p>青出于蓝还不够呢！青出于蓝就必然胜于蓝。于是，台湾人后来居上，不做蝙蝠了，干脆做变色龙（chameleon）了。</p>
+<p>变色龙在动物学上属于“爬虫纲”的有鳞目蜥蜴亚目，它的学名叫Chamaeleontidae。它生长在撒哈拉沙漠以南的非洲、马达加斯加岛上、南亚洲和地中海沿岸。变色龙的身体本色是黄、绿、褐色，但能根据环境，由中枢神经传到皮肤下的色素细胞，而迅速变化身体的颜色，变得跟环境的颜色一致。就因为这种随时“勃然变色”的本领，它就被叫做变色蜥蜴、五色守宫。中国古代叫它做十二时虫，也叫避役。</p>
+<p>变色龙的眼睛可以各转各的，要左就左，要右就右，可用两只眼睛，分别注意不同的目标，选中目标后，用几分之一秒的高速，伸出长舌头，捕捉它要吃的任何东西。”</p>
+<p>变色龙的体形一般虽不过二十公分大，但却是个大头仔，丑得令人讨厌。政治上的大头仔，发现做政治变色龙的好处，其实比做政治蝙蝠大得多，于是，说时迟，那时快，政客们摇身一变，苏南成出场了。</p>
+<p>为什么政治蝙蝠不如政治变色龙好处多呢？因为蝙蝠两头飞来飞去，飞得再辛苦，也是变身段，不能变颜色；变色龙却技高一筹，可以以逸待劳，随时“以色待人”，从共识而同志，这样在颜色上认同，而不在身段上认同，乃是政治技术上的一种升级，当然也是道德无耻上的一种升级。但是，对政客说来，要的只是升级而已，谁管其他呢？”</p>
+<p>对变色龙，远在四百年前，东西著作家就同时表达了意见，东方的像李时珍（见本草纲目），西方的像乔治.派替（GeorgePetite）（见PetitePallace:TereusandProgne），都是显例。对这种动物的评价，也颇为好玩。李时珍一方面引证《岭南异物志》说见到变色龙的人，“见者主有喜庆”（看到它是吉利的事）；但也提出警告，说它“啮人不可疗”（被它咬到，休想治好）。如今国民党饥不择食，弄出蝙蝠之不足，又祭起变色龙来。只知道大喜大庆，不知道“啮人不可疗”，政治上和道德上的江河日下，显然又翻开新页，真是呜呼哀哉了！</p>
+<p>1983年1月12日</p>
+<p>政治数学</p>
+<p>“政治数学”是政治学者或数学家都不懂的一门学问，因为它是我创立的，是一门新的“科际整合”。“政治数学”中有一个旁支，就是“国民党数学”。</p>
+<p>古希腊哲人对皇帝说几何学没有捷径，但是国民党的圣上却不信邪。国民党相信数学对政权是有益的，数学是一种宣传上的捷径。随手举个例，数学上的百分之百，在国民党的宣传上，就可以变为二十四之二十四。例如《总统蒋公思想言论总集》中就有这样的话：“今天是民国二十四年元旦，从今天开始，我们大家必须以二十四分的努力以求二十四分的成功，而满足国家和民众二十四分的期望！”这种捷径，就是国民党数学的法力！印度的甘地演讲时，常提到他要活到一百二十五岁。他说：“吠陀经里告诉我们，人只要能采取超然态度服务，便可活到一百岁。有人注解这一百岁实际是指一百二十五岁。即使在今天，马达拉斯人说一百，意思是指一百一十六。九十九加一，在印度并不一定等于一百。”我想，甘地在演讲时孤陋寡闻，不知道中国的国民党早已把一百的单位变成二十四，照中国算法，他不但愈活不会愈老，反倒愈活愈年轻呢！</p>
+<p>再读《总统蒋公思想言论总集》，国民党数学的法力又随处可见。例如三十八年6月26日的数学，是“一年反攻”；但在三十九年3月13日，就变成了“二年反攻”；到了同年5月16日，又变成了“三个月以后”反攻；到了四十八年5月19日，又变成了十年内反攻。如今足足四十年了，大家还在台湾不反也不攻，可见国民党数学只是一种宣传上的捷径，有益健康，却无裨实际。</p>
+<p>当然，随着宣传经验的老到，在《总统蒋公思想言论总集》中，我们也看到国民党数学的细腻化，例如在五十二年2月25日的一篇《党员总登记的意义和党革新的要务》中，我们可以看到这样的一段：“现在总计起来，中央从政党员登记率，到了99.9%，只有0.1%没有登记。一般党员登记率，也到了99.36%，只有0.64%没有登记。这一统计数字，就显示了同志对党一贯的忠诚，也证明了我们党是打不破、冲不散的铁的革命队伍。虽然这一次有极少数党员没有参加登记，但亦正由于他们的退出，乃从而有力的说明了我们的党员总登记，绝未带有丝毫勉强的意思。”由此可见，国民党数学也有它精密的趣味，99.9%也、99.36%也，这样的天方夜谭摊出来，还由得你不相信吗？</p>
+<p>国民党数学在上者既然如此，在下者自然跟进，搬弄国民党数学以为宣传，令人发笑。例如在七十三年中央政府预算案司法院部分审查时，司法院秘书长范魁书对立委说，他愿以人格保证，保证司法判决“有百分之九十九正确”！比起他的总裁来，我们不得不说范秘书长很谦虚；不过碰到大老粗曹极出来，数学便改色了。林宅血案发生后，刑事警察局长曹极说，他有“万分之九千九百九十九”的破案信心，不过，在省议员问他剩下的“万分之一”是什么的时候，他就瞠目不知所答了。可见此公的火候未免荒腔走板，国民党数学到他手里，可真穿帮大吉矣！</p>
+<p>1989年3月9日</p>
+<p>政治撒尿学</p>
+<p>撒尿本是正常的生理现象，但因身份与程度的不同，撒尿与否，竟成为疑问与话题。幼稚园一位女老师告诉小朋友她要上厕所，一个小朋友天真地问：“老师也要撒尿吗？”原来在小朋友眼中，老师是女超人，是不会嘘嘘的。同样的思路其实也不止小朋友，西方中世纪的神职人员，就曾为天堂中有否水肥问题，大加辩论。照马丁路德（MartinLuther）的断言，上帝是不撒尿的。这种说法，就没有中国文化科学。宋郊《元宪集》有《默记淮南王事》的诗，中有“可怜南面称孤贵，才作仙家守厕人”的话，既然要替仙家打扫厕所，可见神仙是要撒尿的。</p>
+<p>不过，女老师撒尿也好、神仙撒尿也罢，尿来尿去，都不出生理现象，别无其他玄机。但是，生理现象以外，一旦政治现象介入，膀胱就不免为之彷徨了。对这一情况，我特别命以学名，叫做“政治撒尿学”。</p>
+<p>“政治撒尿学”有两大流派。一派是撒尿者本人只是撒尿而已，但该尿却被政治人物利用来搞政治。《吴越春秋》中记越王勾践拍吴王马屁，要喝他尿，“拜请尝大王之溲以决吉凶”，最后取悦于吴王；《大唐新语》中记侍御史郭霸拍御史大夫魏元忠马屁，要喝他尿，“固请尝之”，最后马屁拍错，反被魏元忠抖出来。另一派是政治人物即是撒尿者本人，但该尿却被一尿两撒，利用来搞政治。《汉书》记汉高帝在沛公时代，讨厌知识分子，“诸客冠儒冠来者，沛公辄解其冠，溺其中。”——在知识分子帽子中小便，以羞辱人，该尿之来搞政治，明矣！</p>
+<p>这种撒尿来搞政治的玄机，可谓史不绝书。《韩非子》记“刑余之人”制造假小便以杀齐中夫夷射；《后汉书》记大司徒戴涉被诛后，张湛不想继任，故意在朝堂上撒尿以证明自己小便失禁、病重不堪大任，都是用撒尿来嫁祸或避祸的政治把戏。这些“政治撒尿学”的门道，可真五花八门呢！</p>
+<p>以上这些古人的“政治撒尿学”，有一个基本共识，就是用该尿来搞政治，其特点都在撒，而不在不撒。换句话说，是用撒尿来搞，而不是用忍尿来搞。古人以为，只要撒到好处，此学便可大进。古人很笨，是不知道另外有不撒的学问的。</p>
+<p>有尿不撒的学问，是现代人发扬光大的，此中元勋，就是我的朋友苏秋镇。苏秋镇做立法委员的时候，炮声之多、火力之猛，令国民党头痛万分，也令所谓党外人士康宁祥为之汗颜。以立法院七十一会期为例，质询期间立法院立委共三七八名，其中老贼二七八名、海外贼三十名、台湾增补选七十名、党外立委有十一名，书面质询次数，国民党五二六次、党外六二一次，其中苏秋镇一个人就占了四二六次！占全部立委质询次数百分之三十七强，超过三分之一！而康宁祥呢，却只有三次！还赶不上苏秋镇零头的八分之一！另外在发言方面，发言总次数是四、四三五次，党外受发言限制，只占一、三零六次，其中苏秋镇虽受发言限制，但也发言四七七次，占全部立委发言次数百分之十强，换句话说，不到十次，就听到一次苏秋镇的“为民喉舌”！康宁祥也差得远了呢！正因为苏秋镇如此不肯放水、严格把关，所以，国民党只好趁他撒尿期间动手脚，每当苏秋镇一上厕所，国民党便派员在厕所门口“把风”、同时在院会中加快脚步，通过议案和条文。结果，害得苏秋镇只好忍尿，连厕所都不敢上。后来，他甚至以想当国会议员必须膀胱有力为竞选诉求。可见几十年来，一尿之微，却攸关国民党天下者，唯苏秋得以镇之！</p>
+<p>相对的，苏秋镇以外的所谓政治人物，在紧要关头，却每溜到厕所放水，康宁祥也、朱高正也、都是“尿遁”之尤者。这次郭婉容在北京向中华人民共和国领导人及国歌起立致敬，朱高正反对，主张当时郭婉容应该如厕以避之。可见“政治撒尿学”中的“尿遁”派，固泽及女部长之下部也，妙哉！</p>
+<p>1989年5月7日</p>
+<p>令人讨厌的“政治挂帅”</p>
+<p>共产主义被共产党这样一霸王、一泰山，展示出来的最大特色与口号，就是“政治挂帅”。</p>
+<p>别以为“政治挂帅”只和共产党有关，其实国民党学共产党，也照样“政治挂帅”不误。只是挂得红中带黄而已。例如：1979年台湾的“国建会”上，国民党学人提议说，现在“国难当头”，应该选举中国小姐，因为“大家谈到中共目前的统战伎俩，与会人士大多认为，我们应该争取每一个在国际上自我表现的机会。因此中国小姐选拔虽然是个轻松地活动，却有严肃的意义。”这就是说，选举中国小姐，是有政治目的的，表面上是扯女人，实际上却是“政治挂帅”。</p>
+<p>其实，国民党学人这种头脑，一点也不稀奇。早在他们二十年前，国民党“大茶壶”就先其着鞭了。在国民党营妓——“军中乐园”中，就有标语告诉阿兵哥，嫖妓女的时候，要“娱乐时不忘反共抗俄”！要“怜惜枕边红粉，记取故国佳人”！要“娱乐春花秋月，莫忘国耻家仇”！要“假日高歌须纵乐，胜利结伴好还乡”！……由此可见，表面上是肏女人，实际上却是“政治挂帅”。</p>
+<p>当然，“政治挂帅”、“政治挂帅”，挂得太久了，也得自己调济调济。于是，在自以为不失“政治挂帅”的前提下，共产党也搞“经济挂帅”。——搞“经济挂帅”的共产党，是开始爱钱的共产党。共产党一爱钱，“政治挂帅”的浓度就打了折扣。这未尝不是一种“进步”。在“经济挂帅”下，先增加国民所得，再议其他，这种政策倒也务实。（这次“天安门事件”只是必然中的偶发事件，比例不当的过分成为焦点，是新闻记者干的事，真正理解中国的人，会比例适当的加以处理。这次“天安门事件”所带来的“政治挂帅”，还是会被“经济挂帅”越过。）</p>
+<p>相对的，在海峡这边，“政治挂帅“的毛病却显得越来越烧包化。这个岛的”经济挂帅“，使它有了不少钱，因而开始烧包。没水准的是，台湾财富的烧包，方向不是文化品质上的，而是政治追逐上的。这种追逐，在解严开始、蒋家式微以后，更形加速。耳目所及，整天都是政治活动，党争也、选举也、游行也、静坐也、抗议也、闹衙也、演讲也、座谈也、签名也、义卖也、评审也、谈话也、去飞机场也、写公开信也、办说明会也、跳上立法院桌子上扯麦克风也。……整天媒体所及，好像除了”政治挂帅“外，其他一切都不重要似的。过去是演艺人员出锋头，如今则是政治人物出锋头。演艺人员出锋头，还要靠脸蛋、靠生殖器官、靠喜怒哀乐的演技；如今政治人物则一切从简、一切速成，只靠头扎日本浪人布条、靠巧言令色、靠一脸杀气、靠朱相、林诈、吴丑、康黑，……就可以一夜成名、成天上报矣！难怪连水准奇差的演艺人员，也张而不帝、田而不文，伯仲其间，是亦为政矣，哀哉！</p>
+<p>日本人统治台湾，所有当官的，都以日本人为主。在五十年间，台湾人只有一名简任官。荐任以上，几乎清一色是日本人；委任以下，才分出一些给台湾人。根据昭和十九年台湾总督府的调查资料，就人口比例来看，台湾人任荐任官者，每二五六、五三九人中才有一人，占二十万分之一；任委任官者，每九三七人中才有一人，占千分之一。由此可见，在日本人统治下，这个岛上的人，官瘾实在不能满足。如今在国民党的名器假人的乱局下，以“政治挂帅”为小岛倡，难怪不论朝野，都丑态百出，只知政治，不知其他了。李远哲以台湾现状、大家过于重视政治为虑，是很正确的学者之见。可是连台湾的学者们都一一为政治服务矣，连学者们都不务正业好出锋头如此，台湾还不完蛋吗？</p>
+<p>1989年7月16日</p>
+<p>三个臭皮党，诸葛怎样想</p>
+<p>——李敖妙计谈选举；劝君一票定乾坤</p>
+<p>自1949年我十四岁来台湾起，直到今天，我从没离开过台湾一步，但我却以自己坐牢的代价，帮助别人偷渡离开台湾。那个人，就是彭明敏。彭明敏与我患难之交，返台后请我吃饭，对我说：“我二十二年没回来了！”我答道：“这有什么希奇，我四十四年还没走呢！”——四十四年还没走，先是拜国民党政府不让我出境之赐；后是怪我爱台湾爱得着了魔、大有“去此一步，即无死所”之故。这样跟台湾纠缠几十年，难怪“外来政权”要以台独罪名刑求我、陷我于狱，乃至查禁我九十六种著作。因为在“外来政权”眼中，你李敖是大陆人，居然多年义助台湾人，并且居心叵测，一路跟政府捣蛋，把你以台独罪名一关多年，还冤枉吗？</p>
+<p>多年来，我在台湾四面树敌、八面威风、只认真理、不认六亲，固然罪该万死，但也有功足录。那个功，就是我最了解台湾，并且讲了真话。正如民进党文宣部主任陈芳明所赞美的：“没有李敖，台湾的言论版图绝对没有今天这样的辽阔纵深。”“对台湾现实政治的了解，在岛上似乎也没有多少人能望其项背。”这就是说，李敖老是以背影示人，——因为他早就走在别人前面。</p>
+<p>正因如此，所以我在领导以党外杂志围攻国民党的同时（那时我“手下”的“小弟”之一是陈水扁，他是我领导众多杂志中的一家社长），我发表了一篇半开玩笑为题目的文章——《我为什么支持王八蛋》。主旨是说国民党是龟儿子，为了民主政治的权力制衡，只好支持王八蛋来打倒他。王八蛋是搞政治的人，这种人追求的是权力、败坏的是道德，最后多以败德收场。英国历史家阿克顿(LordActon)早就指出“权力使人腐化，绝对的权力绝对使人腐化”(Powertendstocorrupt,andabsolutepowercorruptsabsolutely.)。我李敖一生慧眼求真、冷眼论政、白眼看人，搞政治的人是什么货色，早就在我愤世之言中了。</p>
+<p>党外杂志围攻国民党功成，民进党因而诞生。我就在写《国民党研究》、《国民党研究续集》二书之后，写了一本《民进党研究》，先知式的警告人们：国民党固然腐化，跟国民党学的民进党也必然腐化，并且因为几十年来受国民党教育与宣传的污染，可悲的连腐化都不自知了、受了不肖外省人之害都不自知了。例如国民党政权的法宝之一是，它专门训练人民做幼稚而天真的“一厢情愿”的思考模式，其中“反攻大陆”就是最典型的。“反攻大陆”根本没有可行性，叫嚣“反攻大陆”只是自欺欺人。我在领导党外杂志时代，曾以“意淫大陆，手淫台湾”八字名言拆穿国民党，“意淫大陆”就是“一厢情愿”的思考模式。但是，国民党反攻梦碎之后，照样模式不改，汤药都不换，变成“三民主义统一中国”了，其与“意淫大陆”，并无二致，只是老蒋换老孙而已。民进党口口声声反国民党，其实是国民党的好学生而不自知、是不肖外省人的好学生而不自知。试看民进党的台湾独立也、进联合国也、送李登辉去广岛也。……从根本没有可行性上看，无异“意淫台独”、“意淫联合国”、“意淫广岛”，全属“一厢情愿”的思考模式，而与国民党毫无不同，真可谓有其师必有其徒。而这种“一厢情愿”的幼稚而天真，流风所及，不但无知的市井小民嚼着槟榔大喊爽，就便是朝野上下的高级知识分子也众口一声齐说赞了。我实在看不过去了。前一阵子，我秘密写信给彭明敏，我说根本进不了联合国，别人可以不知道，你这位国际法专家怎会不知道？搞总统直选会引起独裁与混乱、根本违反现代政治学学理，别人可以不知道，你这位前台大政治系主任怎会不知道？高级知识分子不能为真理挺身而出，纠正群众的错误，我为我的老朋友可惜！——连台湾人中最优秀、最有教养、最伟大的高级知识分子彭先生，都被“一厢情愿”的思考模式给淹没了，谁还敢否定国民党和不肖外省人不是台湾人的好老师呢？国民党以身作则，台湾人有样学样，学坏了学笨了学混了以后，还洋洋自得以为在反老蒋小蒋，蒋氏父子有知，早窃笑于地下矣！</p>
+<p>自1949年以来，蒋介石有二十六年的机会搞民主，他不搞；他死后，蒋经国有十三年的机会搞民主，他不搞；他死后，又有六年的机会搞民主，但国民党民进党却给搞得中台二分、拳头四向、金权纵贯、血肉横飞。天天政治挂帅，人无宁日；日日宦海生波，举世称奇。我们多少年来一路追求真民主的人，看到这种古之所无、今之罕有的假民主，能不痛心吗？我们眼巴巴等死了老蒋、等死了小蒋，如今等到了所谓出头天，难道民主的头，竟是这样出法吗？</p>
+<p>如今在全岛为政治天翻地覆之际，我愿以民进党文宣部主任陈芳明所肯定的李敖最了解台湾现实政治的身分，对目前台湾政治提出两点该清楚想通的重点：</p>
+<p>第一、我们该清楚想通：除非你不屑于去投票，要去投票，必然就得挑一个选。英国文学家莎士比亚说，一篮烂苹果，没有什么好挑的。这话用来描写选举，颇有它的一针见血之处。我们挑候选人，重点不该放在他们个人的承诺、政见、施政计画、乃至什么交通、环保、垃圾等等问题上，因为这些可能都是空头支票，当选后兑不了现。尤清过去到我家来拜访我，我看他是满好的人，不是烂苹果。但他当选台北县长后，所开支票许多都不能兑现，政绩平庸，可见他根本没有把台北县包医百病的能耐，竞选时的漂亮话只是漂亮话而已。台北市也一样，以台北市交通为例，不但黄大洲搞不好，我看神仙也搞不好，陈水扁、赵少康又能好到哪里去。竞选时大家都可开支票比赛，当选后，其实都是尤清第二。</p>
+<p>第二、我们该清楚想通：台湾今天的乱局，省政、市政等问题其实都是枝节问题、不是顶重要的，要先解决根本问题，根本问题先解决了才能解决枝节问题。根本问题只有一个，就是如何把目前的假民主改成真民主。由于目前乱局已到了鱼烂河决的地步，我认为立竿见影的速成方法，只有一个，就是快走“多党制”的路。——在龟儿子和王八蛋之外，大家推出兔儿子、兔崽子来，制造他们党与党之间的矛盾，取得互相制衡，这样不利于他们，却有利于我们广大人民。推出兔儿子、兔崽子的党，就是支持第三党、乃至第四党、第五党。……只要不是“泡沫政党”，都可以一个个投他们的票。我相信只有“多党制”，才能在腐化的一大党两大党中，注入防腐剂。“多党制”虽然有它的流弊，但对我们还早得很哩，不必先操心。前法国总统、救国英雄戴高乐说得有趣，他说一个有两百种乳酪做法的法国，怎么可能只有一个党？其实台湾也是如此。台湾比起法国的“文化水平”来，台湾是土蛋，台湾没有两百种乳酪，但有两百种牛鬼蛇神。把各路牛鬼蛇神各从其所好，化泡沫为小党、化小党为联合阵线、化联合阵线为联合政府，为议会中制衡龟儿子和王八蛋的大力量，则在“龟兔赛跑”之下，王八即使赢了，也得规规矩矩辛辛苦苦去赢，再腐化，是赢不了的。</p>
+<p>顺便声明的是：我李敖一生独来独往，从不加入任何政党。我对国民党深恶痛绝，并以一生没做过这个党的党员为荣（不像陈水扁、赵少康他们都是喝国民党奶水长大的）；对民进党，虽然我是它前身的“革命先烈”、是它前身的大宗师、大法师、反对理论建筑师，乃至精神领袖，并且高高在上，接受自许信良、江鹏坚、张俊宏、谢长廷、颜锦福、叶菊兰、许国泰、周伯伦乃至陈水扁等等等等的登门拜访而绝不回拜，与民进党硕彦关系匪浅，但是自从该党以国民党为师、不幸走火入魔以后，我就“大义灭党”了。至于新党，其中除了我的被告郁慕明、朱高正外，我全不认识，并且，由于他们的主事者多出身国民党大员高干，我且以敌人视之，（像许历农做总政治部主任时代，即继王升之后，整天打击李敖之流，此非敌人而何？）虽然如此，虽然这票人迷途知返脱离国民党后还有没断奶的杂碎行径出现（如他们拥护“中华民国”，但据蒋介石1950年3月13日极机密谈话，蒋介石早已自承“中华民国”已经亡国；如他们自承国民党正统，但正统早在蒋介石时代即已被篡夺；如他们到“中正庙”致敬，也是愚忠与奴性行为），虽然新党也有很多缺点，但是为了追求台湾省的真民主、为了“以党制党”、为了支持兔儿子、兔崽子打龟儿子王八蛋、为了大体与大局，我认为我们广大人民应在现阶段支持新党。</p>
+<p>彭明敏说：“李敖是华人史上罕有的奇才。惟因如此，当权者视之如背刺，非把他连根拔掉不休。”不过，国民党当权者失败了，反被我拔了他们的根。我不但拔国民党当权者的根，任何党的当权者不好好干，我就拔他们，民进党当权不例外，新党当权更不例外。我已行年六十，垂垂老去，但我生了两岁的儿子、昨天还生了一个女儿，我死了他们会继承我拔，路还长得很，反正我们李家是拔个没完的。</p>
+<p>1994年11月24日在中国台湾</p>
+<p>〔附注〕此文是感于亓丰瑜先生之邀而作，我把原稿送给亓先生留念，并授权他一字不改以他所希望的形式发表，如有稿费，捐给新党。</p>
+<p>算不算拖拖拉拉？</p>
+<p>国民党党营书店正中书局发行的十一巨册《李登辉先生言论集》第九册第177至178页，在《六年之内完成预定目标》大标题下，有这样的问题：“间接的消息曾经说过：总统先生讲，六年后不竞选连任，这个消息是真是假？假使将来，社会大众、全国同胞希望总统先生再连任，不知道总统先生怎么决定？”李登辉先生的公开答复是：“刚才提出来的问题，本人是在访问国大代表的时候提出来的。为什么要提出来呢？如果是本人当选第八任总统的话，希望六年中把中华民国现在所遭遇的问题，在六年中把它完成，主要的目的是在这里。当然，对本人来说，宪法的规定，还有一任可以做，共十二年。如果是本人以这种看法来做总统，做十二年，拖拖拉拉地来做总统，我们的民众现在所需要我们做的事情，变得要十二年才可以完成。所以，本人强调一定要六年中来完成这些事情。同时，六年后本人和李元簇先生就要退休了，为什么呢？年岁已经大了，没有体力来做这些事情了，所以集中所有的精力、能力，在这个六年中来完成国家重要的工作。”</p>
+<p>以上是五年前1990年5月22日李登辉先生“就任中华民国第八任总统中外记者会答问”的正式纪录，对照起今年5月20日的谈话，我们就看不懂了。今年的谈话说：“未来还有司法改革、行政改革、教育改革三项改造工程要做，工程虽艰巨，责任却不容推卸。”“希望全国同胞，能付予支持，大家有信心、有决心来共同完成。”</p>
+<p>我们不懂的是：这三项改造工程，当然早就属于五年前李登辉先生昭示天下的“国家重要的工作”范围，也是“我们的民众”“所需要我们做的事情”，做为民众的我们，眼看他们做了五年了，明年就满六年了，六年正好是李登辉先生“本人强调一定要六年中来完成这些事情”的下限，我们实在不懂，为什么六年后又冒出了“未来还有”三项工程没做完？把明明宣示“六年中来完成国家重要的工作”没做完，又要“全国同胞，能付予支持，……来共同完成”？做为民众实在不懂，我们六年前岂不早就“付予支持”了么？李登辉先生答应我们他要“六年中来完成这些事情”的、答应我们他不“做十二年，拖拖拉拉地来做总统”的，怎么今年又来了，又要我们“支持”了？这算不算拖拖拉拉？</p>
+<p>1995年5月22日</p>
+<p>尊夷王，攘自己</p>
+<p>中国人讲春秋大义，大义之一是“尊王攘夷”，在《论语》的集注中，对“尊王攘夷”的解释是“尊周室攘夷狄”，随着疆域与朝代的演变，所尊所攘的内容，荣有不同，但是所尊之王、所攘之夷，再荒唐也不会本末倒置，尊到外国人脚下，攘到本国人头上。可是，在国民党统治下，什么邪门儿的事都会发生，国民党对日本“天皇”的一尊到底，便是一个显例。我们看不起国民党，原因繁多，其中之一，便是在此。</p>
+<p>天皇本是中国的词汇，在神中有天皇，是为三皇之首；在人中也有天皇，唐高宗就居之不疑。日本鬼子人小鬼大，窃天皇之名，世袭罔替，于是日本就有了所谓“天皇”。中国的天皇，在唐德宗时朱泚用做年号后，就寿终歪寝了，可是日本却不自量力，一直用到今天。</p>
+<p>1935年5月4日，上海《新生周刊》登载了署名“易水”的一篇文章——《闲话皇帝》，大意说：日本天皇为一生物学者，因世袭之关系须做天皇。他虽名为天皇，在理应主持一切，但事实上一事也不能作主。只有接见外国大公使与阅兵时，天皇有其用处，其他几毫无作用。日本军阀与资产阶级，却为真正之日本统治者，天皇只是研究生物之学者而已。据闻他在生物学上颇多发现，但因他是天皇，反在学术上无名。但目前之日本，却不能舍弃天皇这一骨董，盖他在现阶段统治上，有大帮助，用天皇之名可以缓和内部一切冲突，粉饰世间一部分罪恶也。日本天皇虽被认为神圣不可侵犯，但在事实上却是真正统治者之傀儡而已。</p>
+<p>这篇《闲话皇帝》的文章，只是就事论事，任何人看了，都不会大惊小怪，可是小心眼的日本鬼子却看不过去。首先，他们在天津开刀，强迫国民党天津市长商震处罚转载此文的天津《大报》，商震乃接受了日本鬼子三条件：一、《大报》永久停刊。二、《大报》社长与编辑处罚。三、中国保证将来不再发生此类事件。不料天津一波方平，上海一波又起。日本鬼子驻上海领事又向上海市政府提出同样条件，国民党上海市长吴铁成正生病，于是由秘书长俞鸿钧照办如仪。</p>
+<p>在处罚《新生周刊》方面，由于社长杜重远不肯交出作者“易水”是谁，在7月9日被当庭收押，旋即判处徒刑一年两个月。杜重远在法庭上，满腔怒火，高喊：“我不相信这还是中国的法律！”因此他不承认这一判决。旁听的人也即时全部站起来，高喊“打倒帝国主义！”“反对投降主义！”“反对不当裁判！”可是，国民党哪管这些，他们把杜重远关进上海漕河泾监狱，把这轰动中日的大案子，快刀斩乱麻的予以解决。</p>
+<p>日本鬼子以“侮辱天皇，妨害邦交”的罪状，要求国民党法办杜重远，原因之一是他们认定杜重远是张学良的朋友，也是东北人，东北人抗日色彩最浓，因而触发日本鬼子的心病也。</p>
+<p>如今，五十三年过去了，侵略中国的罪魁祸首日本“天皇”死了，按说国民党痛定思痛、抚今追昔，应该有以弥补过去的软骨媚外，说点狠话了。殊不知事后表现，却仍旧没出息之至。国民党中央日报带头“向日本皇室及其全国人民致悼唁之意”，这种失态，是什么意思啊？在与日本有邦交时，你们尊夷王，攘自己；如今连邦交也没了，还如此发贱，真是贱种啊！</p>
+<p>1989年1月8日</p>
+<p>迷信反共与反共迷信</p>
+<p>国民党口口声声反共反共，以反共为宣传、以反共为口号、以反共为国策、以反共为家规，国民党文人胡秋原甚至说：“今后除反共外，无他事矣，有生之日即反攻之年矣！”可见国民党反共意志之强、决心之烈，真是古今罕有。不过，只要我们“观其言而察其行”一下，发现问题却也不少。最近的一场是胡秋原亲去大陆晋京了，他四十年前所谓的“今后除反共外，无他事矣，有生之日即反攻之年矣”，原来还有如此这般的续集演出，国民党再口口声声反共反共，我们还敢信吗？</p>
+<p>国民党文人胡秋原如此，国民党主人其实也着先鞭。孙中山《三民主义》中明说“民生主义就是共产主义”。明说“我们不能说共产主义与民生主义不同”。明说“我们对于共产主义，不但不能说是和民生主义相冲突，并且是一个好朋友。主张民生主义的人，应该要细心去研究的。共产主义既是民生主义的好朋友，为什么国民党员要去反对共产党呢？”明说“国民党员既是赞成了三民主义，便不应该反对共产主义。”……而蒋介石在《陆军军官学校第三期同学录序》中，也明说共产党是总理“一脉相传”在“国民党内”的“命脉”与“血统”。我蒋介石愿为“国民革命”、“三民主义”、“共产主义”而死。明说“三民主义之成功与共产主义之发展，实相为用而不相悖。”明说信仰三民主义者对共产主义，“应以诚意相孚”。明说对“共产主义之同志”，“自信”我蒋介石“为最诚实同志之一人”。……由此可见，国民党口口声声反共反共，但从它总理遗教开始，我们就可看到大相径庭的理论与事实。所以，国民党在以反共为号召的时候，我们不可认真，因为他们自己就不认真。正因为他们自己在理论上与事实上都无以自圆其说，所以，当他们以反共为号召的时候，他们并不愿意你去深究，他们只是要你去信就好了，这种情形，吾无以名之，只好说是“迷信反共”。</p>
+<p>在“迷信反共”的教化下，国民党的反共，自然也就无所谓格调可言，一切“捡到篮子里就是菜”，认为只要有利于反共，任何牛鬼蛇神的“武器”，都可援而用之。于是，有反共哲学、反共理论、反共教育、反共戏剧，……凡是沾得上一点边儿的，都可汇而出之，其中有一项，是国民党没有成词却确有其事的，就是“反共迷信”。</p>
+<p>“反共迷信”是用推背图与烧饼歌式的迷信方法来反共，反共反倒以迷信出之，则不成体统，自不待言。但是国民党在党中央的指挥下、在国民党文工会的作业下，由无知无耻之徒曹胜芬带队，倡导反共迷信，却公然行之。曹胜芬是一九六一年六月十一日接任中央日报发行人的，接任后两个月，就在八月十三日的中央日报上刊出《星期专论》，由国民党教授黄大受署名，以《为何共匪必崩溃于民国五十三年》为题，大肆宣扬共匪将于三年后崩溃。</p>
+<p>这篇妙文中说：“笔者既不是中国的星相家、占卜家，也不是外国的预言家、水晶球家；何以笔者有如此的自信？断定共匪必崩溃于民国五十三年！这完全是基于下列三点理由。”第一，“在中国历史上，有一循环现象”，“天下大势，治久必乱”，而共匪适逢必乱之局；第二，中国历史上出现过四次暴政和两次狂杀，可是共匪十二年来在大陆所作所为，比四次暴政和两次狂杀的总和犹过之无不及，“过去的暴政已亡，共匪又岂能久存？”第三，四次暴政和两次狂杀，“其崩溃期大致为十五年”，“根据‘述事而理以昭焉！言理而事以范焉！’‘虽百世可知也’的道理，共匪政权的寿命，岂能逃出历史公例所指出的十五年命运！共匪政权自三十八年十月成立，十五年算下来，不就是民国五十三年吗？”</p>
+<p>这篇妙文后三年，共匪不帮忙，竟没有崩溃。不但五十三年没崩溃，至今六十三年、七十三年都过去了，依然暴政不亡中，国民党的“反共迷信”，竟支票一退，长达二十八年之久，他妈的共匪真不够意思！</p>
+<p>1989年5月16日</p>
+<p>武力犯台违反国际法？</p>
+<p>9月1日国民党党报《中华日报》登国民党中央社特稿，说：</p>
+<p>来自十二个国家的国际法学会会长和国内政治学者，今天在台北举行的一项研讨会中一致认为，中华民国具有完整的国际法人地位，是主权独立的国家。</p>
+<p>国立政治大学国际关系研究中心副主任周煦，在报告中华民国的国际法人地位论文时指出，依据国际法观点及国际生活状况，主权国家必须拥有永久性的居民，确定的领土，合法的政府及政府与其他国家交往的能力。</p>
+<p>周煦强调，以上述四项要件，中华民国有完整的国际法地位。……</p>
+<p>政大法律研究所教授马英九在评论时说，中华民国的国际法人地位问题是因国际政治的实际运作而产生，否定中华民国存在的事实，是一种不公平的行为。……</p>
+<p>看了这则消息，我不禁大呼怪哉！因为自从中共成立中华人民共和国以来，国民党从来没承认中共是中国、从来没放过说中共不是叛乱团体、从来没以为自己不是遥领大陆、君临大陆的统治者、从来没同意海峡两岸是国与国的关系。对大陆，国民党一直吵着要反攻它、要光复它、要三民主义统一它的，既然中共那边一直在国民党眼中不是东西，中共武力犯台，又何来违反国际法啊？</p>
+<p>国民党一直不承认中共的中国，但一旦怕被中共揍，就哀哀大鸣你打我你就违反了国际法，这不是不要脸吗？也不是变相承认中共的中国吗？这样承认了，回头看看自己在海峡这边，又是什么呢？除了自己是真的台独、变相的台独，还有别的解释吗？</p>
+<p>1986年9月9日傍晚</p>
+<p>郝大将睡前自祷词</p>
+<p>本人姓郝名柏村，外号郝大将。台湾外号大将者有二，一为王大将王昇、一为本人。王昇一天仗都没打过，居然以大将称，本人深为不服。反观本人，在大陆时即官拜营长，虽然被共匪打败，但是总算在战场上见识过。且战败原因，乃天之亡蒋，非战之罪也！</p>
+<p>台湾虽好，然非久居之地；虽非久居之地，然一住四十年，已被“台胞”目之矣！老骥伏枥，殊感自惭，百无聊赖，只好赖在参谋总长、国防部长位子上，聊窃尊号，以为自娱。不料富贵逼人，李登辉那小子又以行政院长相提名，百尺竿头，更上一步，竟干起宰相来。国运日蹙，官运日升，想来亦殊好笑！</p>
+<p>更好笑的，是出师不利，说我军人干政。真奇怪、真奇怪！蒋公一代军人、干政一干四十七年，从来没听说这些人放过一个屁、游过一次行；也从来未见蒋公去过什么立法院。而我今天，屈己以事人，一年都没干完，居然还被戴上军人干政的大帽子，这公平吗？这公平吗？我是否干政，尚未可证明；但他们的懦夫行径，却昭然揭了。——他们若非懦夫，为何当年不敢骂蒋公？由此可见，这些人是懦夫而已。</p>
+<p>我是郝大将，大将只怕共匪，不怕懦夫。何况我是“台胞”，就更安若泰山；我若是“韩胞”，就麻烦些。韩国人反军人干政，一动员十几城、一游行几十万、一自焚一二三四五六七个，教授真刀真枪、学生如狼似虎。但是台湾这群懦夫呢？他们做秀而已，根本不敢来真的、来硬的、来狠的。他们占了中正纪念堂，我派人一阵乱揍，立刻鸟兽散，逃回校园，教授哭哭啼啼，学生气急败坏。然后潜赴台北车站做秀，在大庭中、在冷气中、在电视中、在市场中，享受“反对政治迫害”之乐，然后窜出跟懦夫教授们游行一下午，自谓得胜而归，其实那叫什么胜利。粉拳秀腿一阵，就以为可得胜利，天下哪有那么廉价的胜利？</p>
+<p>事实真相是，今天大有为政府有点改变，还是我郝大将之功。正因为有我郝坐镇，政府有了信心，才敢放得掉一点恶法、才敢给得出一点自由、才敢让大小懦夫们做作“反对政治迫害”的政治秀！其实，他们都是假货，他们谁也没被“迫害”过。“迫害”是对英雄说的；对懦夫而言，根本不会有被“迫害”的感觉。并且，学生们小得根本不知“白色恐怖”为何物；而教授者，今天带头闹事的，那个不是靠我们白色国民党才变成白色学阀的？他们靠国民党一党专政控制学术才有今日，他们本身就是国民党多年不义的共犯，如今摇身一变，自己清高起来了，哇，真恶心人呀！他们的懦种行为，处处皆是，他们巡视学生绝食，他们自己为什么不去绝？至于学生绝食，也笑死人了。爱尔兰人搞独立，一绝食，一个接一个死，但是台湾学生呢？连绝食一两天，还他妈的轮流呢！真恶心人呀！</p>
+<p>这些懦夫们会什么？会叫嚣、会在车站又跳又唱、会学无知愚民撒冥纸、会打记者、会围殴女司机、会偷袭立法委员，但是，他们敢玩真的吗？为什么不朝郝大将丢个汽油弹看！</p>
+<p>我郝大将早就看扁了这些货色，我要悠然做我的行政院长，行政院长是我一生能干到的最高职位。我聪明的清楚知道我这辈子干不上总统。所以，我和已经干上总统的李登辉那小子合作无间又合作有奸——狼狈为奸的奸。外面没有见识的人怀疑“李郝体制”有矛盾，他们太笨了，我和小李子其实一点矛盾都没有，他位极人君、我位极人臣，双方各得其所、各蒙其利，安有不合作之理？说我想篡位吗？哈，真是幼稚的政治判断啊！</p>
+<p>我是郝大将，我是郝大将，我是郝大将。今天五二零又过了，我伸了伸懒腰，要提早睡觉了。做个好梦吧，梦蒋公则吾岂敢，只梦一个人就好了，那人不是别人，就是——郝大将。</p>
+<p>1991年5月21日</p>
+<p>宣传台独的三个层次</p>
+<p>宣传台独是不是只是“言论自由”的范围？其实在朝在野都糊里糊涂的，我愿用最简单的一些话，指示迷津。</p>
+<p>这问题其实有三个层次。第一是“言论自由”层次；第二是“明白而立即危险”（ClearandPresentDanger）层次；第三是“明白而可能危险”（ClearandProbableDanger）层次。</p>
+<p>照美国大法官霍姆兹（OliverWendellHolmes，Jr.）的解释，任何行为的性质都依照它的环境而定。言论自由不论如何保障，总不能保障在戏院里造谣大叫着火了。所以某种言论应否处罚应以环境而定。在1919年“亚伯拉罕对联邦政府案”（AbramsV.UnitedStates）中，霍姆兹反对做有罪判决。他在“反对意见”（dissentingopinion）中表明：什么是至善（ultimategood）、什么是真理，要经过思想自由的讨论与竞争才能发现，因此，除非言论有直接侵害法律、而为了解救国家危难必须立即限制外，对意见发表，不应限制。</p>
+<p>“明白而立即危险”的原则，其实并不是美国法院的主流意见。从1919年到1937年，在政治性言论上，这个原则被法院采为“法庭意见”（opinionoftheCourt）的，只有1919年的一个案例而已。虽然如此，这个原则仍是保障言论自由的精神指标。</p>
+<p>1937年以后，这个原则渐被采行，并成为审查法律有无违反宪法的一个标准。不过，在1950年以后，美国法院的看法却有修正。最高法院院长文生（FredM.Vinson）公然指出，把“明白而立即危险”当做一种数学公式来运用，是一种错误。因为美国当时所面对的问题，已与霍姆兹的时代并不相同。</p>
+<p>文生这种看法的基本背景是，他认为这种三十年前的原则，只能适用到弊害较小的各州的鸡毛蒜皮事上，但在国家大局上，面临根本性的、颠覆性的情况上，自不能以该企图有无成功的可能做为限制的标准。这就无异是说，在共产党这类有规模有计划有步骤的泰山压顶下，以那种维护一般个人的言论自由原则，来一体适用在这种泰山型的集团上，是此路不通的。泰山型的集团说他们只是“言论自由”而不是别的，可是一旦太阿倒持，就来不及了。这一看法，就是美国联邦上诉法院院长韩德（LearnedHand0所提出的“明白而可能危险”原则。在这一原则下，危险只要是明白的，就无须是立即的，只要有集团意在言外、行在法先，就该限制它。</p>
+<p>韩德的原则，不但在美国发生作用，在六年后的德国，也发生回响。西德宣告共产党违宪，并判令解散。当共产党以“言论自由”层次来抗争时，法院却认为他们言不由衷。因为他们明明在目标上，是以政治理念为纲领，是对宪法基本原则的扬弃，虽然他们也参加选举。</p>
+<p>只有平心静气认清宣传台独是哪一种层次，我们才能恍然大悟这个问题该怎么解决。朝野上下的说词与遁词，都是糊涂大对决，是国民党混蛋和民进党混蛋的纠缠不清，像我李敖这样头脑清楚的人是看不起的。</p>
+<p>1989年11月16日</p>
+<p>青天白日的贬值</p>
+<p>国民党总统李登辉日前大施《中华民国宪法》第四十二条所授与的荣典权，颁发了青天白日勋章给国防部长郑为元和参谋总长郝伯村。消息传出，我为之发笑了好一阵。</p>
+<p>按《中华民国宪法》第四十二条，“总统依法授与荣典。”可见荣典之授与，权在总统，但必须依法行之。按1941年2月12日国民政府公布、1947年12月10日修正公布的《勋章条例》第一条，明定“中华民国人民有勋劳于社会者，得由国民政府授予勋章。国民政府为敦睦邦交，得授予勋章于外国人。”第二条又明定：“勋章除已授予之采玉勋章外，分左列四种：采玉大勋章。中山勋章。卿云勋章。景星勋章。”这些勋章，都不是以军人为对象的，所以在第十四条又明定：“海陆空军军人之授勋，另以法律定之。”</p>
+<p>再按1935年6月15日国民政府公布、1952年5月24日修正公布的《陆海空军勋赏条例》第一条，明定：“陆海空军军人，著有战功或勋绩者，其叙勋行赏，除法律别有规定外，依本条例行之。”第二条又明定：“勋赏之种类如左：一、国光勋章。二、青天白日勋章。三、宝鼎勋章。四、忠勇勋章。五、雲麾勋章。六、忠勤勋章。七、勋刀。八、荣誉棋。”</p>
+<p>其中青天白日勋章的颁给，根据第四条是：“青天白日勋章不分等级，凡陆海空军军人，捍御外侮、保卫国家，战功卓著者颁给之。”可见这一条“立法原意”，明明是指得到该勋章的军人，必须在“战功”有“卓著”的表现，才配得到它。</p>
+<p>这一“立法原意”，在《陆海空军勋赏条例施行细则》第二章《叙勋标准》中，曾加细部列举，以臻明确。该细则第三条明定如下：“凡具有左列各款战功之一者，得依本条例第四条之规定，颁给青天白日勋章：一、运筹适宜致获全功者。二、战斗间处置妥善，系全军或一部得重要之胜利者。三、冒险前进侦得重要敌情致获全胜者。四、最困苦时毅然奋起战斗挽回颓势者。五、冒险办理战场后方勤务成绩显著者。六、冒险破坏敌人伏置水雷或障碍物以开导战舰之进路者。七、我军舰护送多数船舶骤遇敌优势舰队剧战之后，俾护送船舶得安全航到其目的地者。八、于一次任务中击落敌机四架以上地面击毁敌机六架以上者。九、空中轰炸命中敌之重要根据地、高级司令部、兵工厂、巡洋舰、驱逐舰等，使之全毁或沉没，有确实证明者。”由此可见，从一到九，无不以“战功”为拿青天白日勋章的唯一检验标准。但反观这回李登辉颁发该勋章给郑为元与郝伯村，所据的理由，竟是表彰两人对研发IDF战机的贡献。试问纵使IDF之研发，并非说着玩的，但区区这一闭门造机，岂能与效命疆场之任何“战功”相提并论？研发飞机有利国家是一回事，但在战场上卖命是另一回事，岂能鱼目混珠，乱发青天白日也哉？</p>
+<p>可悲的是，国民党日暮途穷之时，已经饥不择食，乱来一气了。他们一窝子贪生怕死的败军之将，毫无“战功”可言，青天有恨、白日无光，于是乃以伪乱真，巧立名目以袭国家名器，国民党之勋章贬值，还用说吗？</p>
+<p>其实，这种勋章贬值的名器大乱，早从烈士贬值，就已发其端。按照国民革命忠烈祠入祀条件，严格限于“作战阵亡”与“被俘不屈殉难”二者。凡合乎此要件，虽军阶再低，如二等兵，亦得入祀；不合此要件，虽贵为一级上将，亦不得入祀。有了这样严格的标准，我们再看看国民党大特务戴笠入祀，合标准吗？据一九四六年六月十一日的“国民政府令”，戴笠之死，是“航机失事，竟以身殉”的。飞机之飞也，既未“作战”，自不属“作战阵亡”；人既未“被俘”，自亦不属“不屈殉难”，自然不能入祀，可是戴笠却公然进了忠烈祠！连堂堂烈士，蒋介石都可弄假成真，派赝品凑数；李登辉发个把勋章，又算得了什么呢！</p>
+<p>1989年5月12日</p>
+<p>从中央到中山</p>
+<p>9月15日联合报上说，一位苗栗市民日前向县卫生局申请“中山药房”执业执照，承办人因对“中山”两字有顾忌，迟未发照，直到申请人改以“忠山药房”申请，才拿到执照。卫生局长林可迅知情后，在局务会报中，要求各主管摒除迂腐观念，多给民众方便。原来这位市民在以“中山药房”提出申请时，因被耽误，曾向林局长抗议，林局长认为并无不合，乃指示应予发照，但承办人员还是不肯，并向县建设局求救，县建设局答复说：“不宜，应劝导更正名称。”承办人员挟建设局以自壮，坚持不能用“中山”之名，这位苗栗市民只好屈从。林局长事后闻之，不胜感慨云。</p>
+<p>看了这条新闻，我心里想，国民党真越来越霸道了，本来“中山”还勉强准老百姓用的，怎么越来越退步，连“中山”都不准了？</p>
+<p>我这样想，是有根据的，因为台北仁爱路的“中山纪念医院”，原来申请的名字是“中央开放医院”，承办人因对“中央”两字有顾忌，迟未发照，直到申请人改以“中山纪念医院”申请，才拿到执照。如今越来越退步，连“中山”都不准了，岂非霸道日甚乎？</p>
+<p>想当年1946年9月24日，国民党政府制造出一种《标准法》一共九条，第一条说：“本法所称标准，系依标准制定程序，所制定全国共同遵守之国际标准。”第三条说：“经济部设中央标准局，掌理全国各种标准事宜。”第五条说：“凡适合标准之产品及方法，呈经中央标准局审查合格后，加○正字标记，以资识别。”这是积极方面的法律；国民党政府又制造出一种《商标法》，第三十七条说：“相同或近似于正字标记”的“商标图样”，“不得申请注册”。这是消极方面的法律。于是，就在这两极法律的“围标”下，中华民国有了中央标准局的官定○正字标记。</p>
+<p>○正字标记的主人是中央标准局，可见中央级比正字级高级，一变成中央标准，自然就大显赫特显赫，“中央党部”也、“中央党部”也、“中央日报”也、“中央通讯社”也、“中央银行”也、“中央信托局”也、“中央文物供应社”也。……中央先就抢先一步，神气活现起来。神气活现之余，首先就推出“只许我中央，不许你中央”的霸道作风：台北中山北路的一家“中央妇产医院”，被勒令改名，该医院无法，只好改名叫“中泱妇产医院”。由此可见，“中央”已经变成了商标，不，不对，已经变成“政标”，变成了“政”字标记。</p>
+<p>有了“政”字标记的大权在握者，他们自然要发号施令，“制定全国共同遵守之国家标准”，当然这也是“制定全国共同遵守之‘一’家标准”的冠冕表达法。想想看，要由政府衙门来盖○正字戳子的、要由中央标准局来验明正身的，这样子的产品，又怎样能和中央不配合呢？</p>
+<p>其实，所谓○正字标记，又岂限于“产品及方法”吗？又岂限于“经济部中央标准局”的作业吗？非也。整个中央的作业，其实都是处心积虑的在“加○正字标记，以资识别”同志或同路人。而被中央加○正的，自然是同志，是同路人了。</p>
+<p>宋朝的苏东坡，说他“读书万卷不知律”，由于知识分子只会死读书、不懂法律，所以写的东西太虚，不能落实。我是读书万卷颇知律的，所以要研究研究《标准法》、《商标法》，再从《标准法》《商标法》里，蓦然回首来看问题。看的结果，发现国民党的立法精神竟与它的政治独占这样一脉相承，相承得纵使别人要以“中央”“中山”向它认同，它都严加设限不已。国民党心态之奇异，真是匪夷所思矣！</p>
+<p>1988年9月30日</p>
+<p>我说你是你就是</p>
+<p>联合报特派记者昨天来电说：“国学大师钱穆的亲侄，中共政协副主席钱伟长今天告诉记者，过去他不曾是共产党员，现在也不是共产党员，希望台湾方面不要认定他是共产党员。”“叔叔钱穆过世，钱伟长当然是希望能赴台奔丧，受困于国安法的规定事小，冤枉的是他不是共产党员，却被误认‘当然是共产党员’，以致来台的希望渺茫。”“让钱伟长觉得不平的是，他还是大路上反对组织‘民盟’的副主席，他说‘民盟成员，怎么可能是共产党员。’”</p>
+<p>我看了这则报导，为之失笑。笑钱伟长身陷大陆，毕竟孤陋寡闻，完全不知道台湾国民党的厉害。</p>
+<p>钱伟长之为共匪也，早在国民党登录之中，虽然国民党承认他被“整肃”，但人弃我取，国民党依然没“整肃”他。所以，照样名登匪榜，不得脱身。试看中国国民党中央委员会第二组、第六组编印的《历年被匪整肃之匪干人事资料汇编》中，就赫然有两页是写钱伟长的。该书说钱伟长“清华大学教授”出身，“主要经历”是：</p>
+<p>清华大学教授四十年10月任匪印度访问文化代表团团员。四十一年任匪中缅友好协会副会长。四十二年5月至四十四年3月任清华大学教务长。四十二年6月任中华全国民主青年联合会常务委员。9月任中华全国自然科学专门学会联合会常务委员。四十三年5月任匪中国人民对外文化协会理事。8月任伪第一届全国人民代表大会江苏省代表。民国四十四年5月任伪中国科学院物理学数学化学学部委员。十二月任清华大学副校长。</p>
+<p>“整肃情况”是：</p>
+<p>四十六年5月22日匪《光明日报》透露：匪指其曾说：“学生闹事的主要原因是没有出路，……人没有出路，命运是掌握在党员的手里。有发展前途的课程都得由党员来担任，不论他懂得多少，而将一些真正的专家放在一边。党是运用这样一套机构和制度来为他工作的。这就是一切通过党员，或所谓无耻的积极分子，随时随地记录别人不正确的言行，向上级汇报，由支部集中到总支部，大的问题又集中到党委，然后层层布置，批判这个、批判那个，有时党委公开做报告，虽不指名，但被批判的对象心里有数，党是这样偏听偏信。运用这样一套官僚制度，来进行工作是不行的。”列其为右派集团“章罗联盟”之主要分子。</p>
+<p>“处理情况”是：</p>
+<p>民国四十七年1月26日伪民盟二届中央常务委员会第十七次扩大会议，决定撤销其伪民盟二届中委会委员职务。四十七年2月1日伪第一届人民代表大会第四次会议，决定停止执行代表职务。四十七年3月5日伪国务院科学规划委员会第五次会议，该会秘书长范匪长江宣布伪国务院撤销其科学规划委员会委员职务。</p>
+<p>以上不良纪录，是国民党“中华民国五十五年”掌握的黑资料，如今虽已过了近四分之一世纪，但是钱伟长迷途不返，居然今天还当“民盟”的副主席和“政协”的副主席，其怙恶不悛，可谓老当益壮。在国民党官方文书中，连“第三势力”都“与朱毛匪帮无异”，又何况“民盟”与“政协”？所以说钱伟长是匪类，我伟大的国民党一点都没冤枉他！</p>
+<p>当年美国春田城的《共和党报》（TheSpringfieldRepublican），曾误报某公死讯。某公大怒，兴问罪之师于该报编辑鲍尔斯（SamuelBowles）面前。不料鲍尔斯说：我很抱歉。不过我们的报说你死了，那你就死了。（I’msorry,butiftheRepublicansaysyou’redead,thenyouaredead.）几经交涉，鲍尔斯才同意在第二天的“出生栏”中，刊出某公降世焉。又有一事，一病人向某医师抱怨说，你开了肺炎药给我，你确定我得的是肺炎吗？据我所知，很多病人是死于其他症的。某医生信心十足，答曰：当我开的是肺炎药，包你死于肺炎。（WhenIprescribeforpneumonia,youdieofpneumonia.）这两则故事，正好说明了国民党的“共产党员观”。只要我国民党认定你小子是共产党，你就是共产党，你死没死、得没得肺炎，全凭老子铁口直断。我说你是你就是，钱伟长，你这共匪的长尾巴，他妈的还想赖吗？</p>
+<p>1990年9月4日</p>
+<p>说你叛乱你就叛乱，说你不叛乱你就不叛乱</p>
+<p>过去的国民党，对顾维钧一边通缉、一边打哈哈，请他不要介意；现在的国民党，对彭明敏一边通缉、一边打哈哈，请他参加国是会议。国民党的嘴脸，永远是不变的。</p>
+<p>说现在撤销通缉依法有据吗？未必、未必。一脸讨厌相的高检署陈涵以《惩治叛乱条例》废止，依《刑法》第一百条追诉叛乱时效十二年六个月已过，撤销通缉，就法律而言虽貌似合法，但根据《刑法》第八十条，犯罪行为时效起算须从行为终止时起算，而高检署把时间定在“六十七年初以前”，又所据为何？所据者，原来是“被告彭明敏七十七年11月底接受中国时报记者访问”时等的答话，试看所谓不起诉处分书原文：</p>
+<p>查被告彭明敏于七十七年11月底接受中国时报记者访问时，询其曾是台独联盟的主席，后来为何脱离该联盟，据被告答称：“主要是我认为那条路走不通，不管是以美国的社会环境、地理环境（离台湾很远）来看，或是就盟员的背景与性格来分析，都是走不通的，大众只是嘴上说说而已，不是从事革命的材料，美国的台湾人根本不适合走那个路线……”，足证其已脱离台湾独立联盟组织。又据被告于其所成立台美协会拟定工作计划草案记载：“去年初，在困难环境下，由少数同乡热心赞助在华府成立‘台美协会’……”“至今，面对美中建交后新局势，深感在整个台湾人自救运动中，上述工作更成紧要……”，参以美国与中共建交是在民国六十七年12月间等事实以观，被告脱离“台湾独立联盟”，另组“台美协会”，当在民国六十七年初以前，应可认定。</p>
+<p>从历来国民党办案的证据法则上看，访问谈话也、计划草案也，都不足以证明彭明敏有“脱离”的证据。按御用大法官《释字第六十八号解释》：“凡曾参加叛乱组织者，在未经自首或有其他事实证明其确已脱离组织以前，自应认为系继续参加。”而凭那么单薄的证据，就可“开脱”彭明敏，认为他不再“继续参加”，其荒谬，与当年把彭明敏定位为“参加叛乱组织者”，正如出一辙。由此可见，国民党老套是：说你叛乱你就叛乱，说你不叛乱你就不叛乱，一切有罪无罪之间，全凭他们嘴上两片皮而已！</p>
+<p>1991年6月6日午</p>
+<p>“马上代”与“马屁代”</p>
+<p>《史记》陆贾传：“陆生时时前说称诗书。高帝骂之曰：‘迺公居马上而得之，安事诗书！’陆生曰：‘居马上得之，宁可以马上治之乎？’”这真是中国政治结构上的精彩对话。陆贾是知识分子，跟着流氓刘邦打天下，得到天下后，常常在刘邦面前说以诗书。刘邦火了，大骂说你老子的天下是骑在马上打来的，他妈的谁要搞什么诗什么书！可是陆贾却告诉流氓皇帝，你马上得天下，却不能马上治天下。意思是说，打天下和治天下是两回事，要治天下，还得下马尊重知识才成，这样才“逆取而顺守之，文武并用，长久之术也”！</p>
+<p>在政治上，马上得天下的一代都是搞革命的第一代，这批人抛头颅、洒热血，九死一生之中，得到天下，是属于强悍的一代。得到天下后，立刻面临“以马上治之”的困难。在许多困难中，第二代的问题，就是一个。</p>
+<p>搞政治的人，有两类，一类是有鸡巴的人搞的，一类是没鸡巴的人搞的。后者又分两类，一类是宦官、一类是女人。宦官由于无知和变态，搞政治，向来是一塌糊涂。——不能搞女人而能搞政治者，亦难矣哉！至于女人，由于身无长物而又空穴来风，搞政治，虽不一塌糊涂，但会一榻横陈，故其结果，与宦官搞政治者半斤八两，还是上不了枱面。由此看来，搞政治的人，还是以有鸡可趁者为宜。</p>
+<p>不过，有鸡也有有鸡的坏处，就是它会制造出第二代——“小衙内”式的第二代。第一代是革命的，其为人也，纵乾没忮戾、狗屁倒灶之事亦多，但总算是在马上的、是亲自参加过打天下的；但是他们的第二代就不同了，这批人不是马上的而是床上的、不是打天下的参与者而是打天下的坐享其成者。这批政治小开，高层而直系者为太子、太孙、小衙内；旁系者为皇亲国戚驸马爷，低层杂牌者为各路希旨承风、攀龙附凤之徒，或师生、或同乡、或远亲、或侪辈，跟在一起、合在一起，成为“党”字号的集团，大体上说，他们不是“马上代”而是“马屁代”，是靠生殖器关系和马屁起家的。在政治上，国民党的一部党史，就是一部从“马上代”到“马屁代”的兴亡史。国民党从血淋淋开始，到湿淋淋结束，它的历史轨迹，在我这种第一流的思想家历史家眼里，早已看到一清二楚。今天的国民党，“马上代”早已死光、斗光，剩下的这些满朝文武，其实文不文武不武，乃是一批靠生殖器关系和马屁取得权利与金钱的狗男女而已，其他皆不足论也！</p>
+<p>至于共产党，则以其创党较迟，它的“马上代”，还在台上。邓小平也、杨尚昆也，等等等等，无一不是“二万五千里”一步一步走过的英雄好汉。他们的悲剧在于打天下时甚至艰苦得无马可上；而得天下后又不能好好下马，不是被拉下马就是被弄得人仰马翻。结果呢，人家国民党都抱住马英九了，共产党还遗弃不掉马克思，双方同样马首是瞻，但是因“马屁代”与“马上代”代沟关系，清浊分清，此马非彼马，一望便知。共产党尚余“马革裹尸”气派，而国民党只是日本话中的“马路野郎”（八格牙路）而已！</p>
+<p>国民党以粉拳秀腿的第二代，跟共产党强悍的革命的第一代斗，其非敌手也无疑。共产党的敌人不再是国民党，而是它自己的第二代，如何使自己的第二代不腐化、不错误，是整个中国前途的大课题。在解决这一课题中，放它一马、所放何马，是极为重要的。马克思的阳刚、马英九的阴柔，都非立国之正者，立国之正者不要“马上派“、也不要”马屁派“，马到成功的观念太落伍了，马不到才会成功呀！</p>
+<p>1989年9月7日</p>
+<p>老贼小贼皆贼也！</p>
+<p>今天收到7月8日出版的《立法院公报》第七十八卷第五十四期，刊有7月7日院会的会议纪录。其中最引人注意的，是关于老贼退职的争执。</p>
+<p>民进党的张俊雄说：“记得当初我们在审查退职条例时，国民党曾表示要分批劝退，然而该条例实施至今，有几个老委员退职？本席认为退职条例的订定，只是在欺骗人民，执政党要从政治改革，它所扮演的是金光党的角色，根本是民主政治改革中最大的骗局。”国民党的梁肃戎说：“由于国家遭逢历史上空前的，且是世界各国绝无仅有的变局，致把大陆广大国土与众多民众丢掉，撤退至台湾。……不错，按照宪法规定，中央民意代表每隔三年应选举一次，但在当时环境不许可的情况下，执政党特别请求大法官解释后，基于维护民主宪政体制的需要，第一届由大陆选出的中央民意代表只好继续，行使职权直到现在。”</p>
+<p>民进党的吴勇雄说：“不久前，中华民国总统、国民党主席李登辉先生在国民党十三届二中全会正式昭告世人：中华民国的统治权不能及于大陆，是历史、也是事实。既然政府对大陆不具事实上的统治效力，为何资深民代能代表大陆人民在自由地区行使职权长达四十二年而不退职？……在退职条例制定之前，国民党信誓旦旦称，一俟退职条例通过，国会便可全面改革，国家才有前途。但截至目前为止，一百九十位资深立法委员只有四位退职；七百五十三位资深国大代表只有十位退职；三十位资深监察委员只有两位退职。换言之，将近一千一百位资深中央民代中，只有十六位退职。”国民党的汪渔洋说：“资深委员是历史所造成的特殊现象。南、北韩，东、西德，甚至过去的南、北越，都有一些历史所造成的特殊现象，包括宪法条文在内，而老一辈的人无法解决，以致造成一些平常时期看来奇怪的现象。……现阶段是过渡时期，因此产生了各种问题，而这些问题不能从平常时期的眼光视之；至于此一过渡期将于何时结束？则须视国际局势的变化而定。”</p>
+<p>看了他们这些你来我往的各说各话，我的总括感想是，老贼们所说的法理，固然都站不住；但是小贼们所据的法理，在绊倒老贼之余，其实在根本方面，也未尝不绊倒自己。</p>
+<p>为什么？因为老贼们成为立法委员，都得力于当年的非法当选。非法当选后，再以御用大法官解释及临时条款等恶法，非法行使职权至今。所以，把话说破，老贼们从当选到一干四十年，统统都是非法的，最后所谓退职，也无所谓合法性。老贼们口口声声自欺欺人的理由是“国家遭逢历史上空前的，且是世界各国绝无仅有的变局”、遭逢“历史所造成的特殊现象”，所以从权达变，无法遵守宪法中每隔三年应选举一次的规定。对国民党这种时值非常、就要延长的公然违宪干法，其实小贼们自己，也未尝不“小弟向大哥看齐”。</p>
+<p>试看1978年12月16日美国承认中共，蒋经国立即根据违宪的临时条款，发布紧急处分事项，将选举延期举行。一个月后，1979年1月18日，又发布命令，说“兹以国家面临之非常情况仍在继续状态”，所以，在“选举延期举行期间，暂仍由原增额选出之中央民意代表继续行使职权”。在这一命令下，小贼们的任期，一下子就不是三年了，而自行延长了，延长到两年以后，也就是1980年12月，才恢复选举。</p>
+<p>所以，1975年当选立法委员的那批小贼（包括康宁祥等人），他们干的立委任期，不是宪法规定的三年，而是蒋经国赐予的五年！</p>
+<p>老贼们在大法官释字第三一号解释下，可以“仍由第一届立法委员继续行使职权”，试问和小贼们在总统六十八年1月18日命令下，可以“暂仍由原增额选出之中央民意代表继续行使职权”，又有何不同？在法理上，其违宪一也；在情理上，其恋栈、其不要脸、其不肯遵守宪法，反倒听从临身条款一也。</p>
+<p>老贼张鸿学有一段话甚为戏谑，他说：“须知，若没有资深委员立的法，没有临时条款，你们怎么会产生？你们否定资深委员立的法，就是否定自己。”在言词上，他的贼话是荒谬的；但在逻辑上，他的贼话一点也没错。</p>
+<p>清朝的思想家唐甄说：“自秦以来，凡为帝王者，皆贼也！”三百年过去了，我们要为他补一句：“自民国以来，凡为国民党统治下立委者，皆老贼小贼也！”</p>
+<p>1989年7月17日</p>
+<p>我们是带黄金来的！</p>
+<p>立法院法制、内政联席会议首度审议《中央民代退职条例》，最后发言的万年立委王学超，慷慨激昂的说了一番话。她说，政府制定退职条例送立法院审议，是要老委员们自己挖坑埋葬自己，这是毛泽东式的斗争方法，老委员们丢不起这个脸。她说老委员们为国家什么苦都吃过。“我们那时候的艰苦有谁晓得？”“你们干脆拿机关枪来扫射好了，反正我们是老贼！”她的一番话，愤怒中带有悲凉，使会场气氛顿时凝重不少。老委员们热烈的为她鼓掌，王长慧拍着他说：“总算出了一口气啦！”</p>
+<p>王学超今年七十二岁，她原是河南巩县人，寄籍新疆迪化，就变成教育会西北区的立委。此婆武汉大学毕业，做过三民主义青年团河南支团女青年工作队总干事、新疆省党部妇运会秘书、校长、议员等职务。这次在立法院的一番话，倒是言人所不及言，令人注目。其中最精彩的，是这一段：她说当时政府撤退，带着四亿人口的国库到台湾，为使社会安定，又提八十万两黄金，台湾银行才能印钞票。有人说老委员在台湾白吃白喝，她不能同意。她说要不是老委员帮政府带了大量黄金来台，台湾并无法达到今日的繁荣。她强调，从她的选区新疆就带出了十二万两黄金，足足装满三十辆卡车！</p>
+<p>王学超这一段话，我看了感触颇多。首先，若不以人废言，必须承认她所说大陆四亿人口的国库黄金运来台湾、台湾银行才能印钞票的事，是真的。因为台湾在日本统治时期，台湾银行发行的纸币，是与日圆联系的台币。在1937年6月中日战争以前，台币的发行额为七千五百四十九万元，一场仗打下来，到1945五年底，已增加到二十三亿一千一百七十五万元，共计膨胀了三十倍。在民穷财尽之下，台湾银行的库存黄金已不足道，换句话说，日本人并未为台湾留下什么黄金，台湾之有黄金，是国民党政府从大陆罗掘抢运来的。1949年6月发行新台币的基金黄金八十万两，以及进口贸易运用资金美金一千万元，也都取之于此。说国民党政府政治腐败、信用扫地、导致金融崩溃、不能维护在大陆的币值，是绝对对的；但说新台币发行，有赖于黄金重建信用，却否定黄金是从大陆来的，否定是大陆同胞的血汗财产，就绝对错了。</p>
+<p>王学超说这批黄金是大陆四亿人口的国库，一点也没错。这批黄金，主要来源是国民党政府用金圆券做圈套，向大陆四亿老百姓骗来的。骗到以后，正值蒋介石下野，李宗仁成为“代总统”，在政治体制下，蒋介石已是一介平民，无权下令从上海中央银行把黄金运走，但是形势比人强，一介平民，还是可以指派军舰前去。全部黄金，照詹特芳亲见，是九十二万两，“另外还有黄金四千二百余两，据说这是蒋介石私人存的”。</p>
+<p>九十二万两黄金是大陆同胞被骗后，再被巧取豪夺留给台湾同胞的“繁荣基金”，台湾的实利，有赖于大陆国库的空虚，才有今日。台湾人尽可以恨国民党，但是必须感念大陆同胞，由于他们的一穷二白，你们才能腰缠万贯！</p>
+<p>国民党庆幸这批黄金安定了台湾人心，但它忘了，同样一批黄金，却失掉了大陆人心。如今王学超悲愤陈词，意谓我们是带黄金来的！这就好像强盗头子卸下黄金，在窝主家耍横。殊不知黄金既不是强盗的，也不是窝主的，黄金是被害人的啊！</p>
+<p>1988年12月24日</p>
+<p>黄金也有省籍吗？</p>
+<p>去年12月24日，我写了一篇《我们是带黄金来的！》提到日本人并未为台湾留下什么黄金，台湾之有黄金，是国民党政府从大陆罗掘抢运来的。1949年6月发行新台币的基金黄金八十万两，以及进口贸易运用资金美金一千万元，也都取之于此。说国民党政府政治腐败、信用扫地、导致金融崩溃、不能维护在大陆的币值，是绝对对的；但说新台币发行，有赖于黄金重建信用，却否定黄金是从大陆来的、否定是大陆同胞的血汗财产，就绝对错了。这批黄金，主要来源是国民党政府用金圆券做圈套，向大陆四亿老百姓骗来的。骗到以后，再被巧取豪夺留给台湾同胞的“繁荣基金”，台湾的实利，有赖于大陆国库的空虚，才有今日。台湾人尽可以恨国民党，但是必须感念大陆同胞，由于他们的一穷二白，你们才能腰缠万贯！</p>
+<p>我的文章是有感于国民党立委王学超之言而发的，我指出：王学超说这批黄金是大陆四亿人口的国库，一点也没错。不过，国民党庆幸这批黄金安定了台湾人心，但它忘了，同样一批黄金，却失掉了大陆人心。如今王学超悲愤陈词，意谓我们是带黄金来的！这就好像强盗头子卸下黄金，在窝主家耍横。殊不知黄金既不是强盗的，也不是窝主的，黄金是被害人的啊！</p>
+<p>我上面这种肯定大陆同胞黄金、却否定国民党的立论，是很清楚明显的，除非看不懂文章的人，或别有用心的人，全无曲解的余地。可是妙就妙在台湾竟有这种兼而有之的人，既看不懂我的文章、又乱加曲解，起承转合之间，还洋溢着一股地区性的无情和小家子气，这就未免失态了。</p>
+<p>这种失态的文章，登在今年1月7日和9日的自由时报上，标题《请教李大师》和《“债务”何时了》。其中说：“某资深立委首开‘黄’腔提出此论，迅即引起‘怪老子’热烈叫好，而知识分子则被唬得傻愣愣；有若李敖者，甚至大表赞同说那是台湾的‘繁荣基金’。哀哉李敖，如此自外于台湾住民，难怪要‘跌停板’！”又说：“除了感慨这些‘省籍情结’真真不容易消除，并恍然大悟执政的国民党四十年来竟是以这么一副‘索债团’的心态‘经营’台湾的，而现在加上李大师这么一位把‘债权’记得特别清楚的‘军师’，当然更有理由摆出‘债权人’的高姿态了。”看了这些话，再对照一下我的原文，就立刻看出怎样在动李敖手脚了。</p>
+<p>从我的原文中，清楚明显的可以看到，我不但没被国民党立委唬住，反倒直斥他们是强盗头子，而强盗头子自不会是什么债权人。我原文指出的是：台湾在日本统治时期，台湾银行发行的纸币，是与日圆联系的台币。在1937年6月中日战争以前，台币的发行额为七千五百四十九万元，一场仗打下来，到1945年底，已增加到二十三亿一千一百七十五万元，共计膨胀了三十倍。在民穷财尽之下，台湾银行的库存黄金已不足道，1949年新台币得以发行，的确靠的是大陆同胞的黄金。如今这种失态的文章，竟不承认这一历史事实、不承认它们是台湾的“繁荣基金”，这样子的偏执，真未免离谱得可笑！试问若没有这笔黄金，台湾的币制，早在四十年前就崩溃了，又何来“繁荣”？黄金本身，并没有省籍，但它的确有所有权，台湾凭空来了九十二万两黄金，不论怎么颠倒，也不是台湾人的。如今为了“省籍情结”，居然可以这样抹杀一切，其强盗头子心态，又与国民党何异乎？</p>
+<p>1989年2月15日</p>
+<p>金从哪里来？</p>
+<p>六天前我写《黄金也有省籍吗？》提到1949年新台币得以发行，靠的是大陆同胞的黄金。《自由时报》的专栏作家为了“省籍情结”，居然抹杀事实，其强盗头子心态，又与国民党何异？文章写好六天来，我偶尔想起，为什么这种专栏作家可以这样信口雌黄？原因无他，他自己的无知和他读者的无知而已，正因为无知，所以可以这样蛮干也！</p>
+<p>照邵毓麟写给宋子文的秘密英文报告，台湾在接收之初，已发行的通货总额，是二十九亿日圆。它的准备金，除极少部分的日本古金币外，约90%为日本国债，所以那时台湾银行的股份，大半操诸日本财阀之手，其余则为台籍阔佬及日侨所持有。在这种情况下，陈仪就向财政部要求由大陆方面拨付公债与黄金，以做为台湾银行的准备金。正因为有这种靠山，台币在1946年底，得以到五十三亿的发行额；到1947年年中，得以到八十六亿的发行额。到了改制为新台币的时候，所有准备金，更是全部来自大陆的九十二万两黄金。</p>
+<p>这九十二万两黄金，它的基本来路是国民党搞金圆券巧取豪夺来的。1948年8月20日，国民党政府突然公布《财政经济紧急处分令》，宣布“限期收兑人民所有黄金、白银、银币及外国币券，逾期任何人不得持有”。这种人民不得持有黄金的严厉规定，执行的范围虽在全国，但因上海是金融中心，所以焦点与重点，就全在上海。当时在上海的主持人是“打虎”闻名的蒋经国。蒋经国本人，是不爱黄金的，因为，照秦孝仪《大痛无文》的回忆：“经国先生对于金钱一向淡泊。他曾经说，他在苏联做开金矿的工作之时，就睡在金子上，可见再多的金子，还是没有一顿饭的重要！”但是，为了国民党政权，蒋经国不得不对黄金勉为其难。潘振球《永怀师恩教泽难忘》中说：“上海区经济管制所以能获得初期的成功，完全是老百姓对于蒋经国先生的信赖。上海的老百姓大排长龙以黄金兑换金圆券，我想以后运到台湾来的黄金中，必有一部分是属于当时兑换得来的，而成为新台币币信的有力保证。经国先生曾多次说，他对上海的老百姓有一份很深的愧疚，将来反攻大陆后一定要好好补偿。”王昇在《经国先生无私无畏的人格》中也说：“有一件事必须要大家了解的，就是一直到今天，我们的台币为什么这么值钱？因为中央银行里面有大批的黄金，在那里做准备，那些黄金从哪里来的？是蒋经国先生，用他的人格，取得上海的老百姓的信任，愿意把黄金、美钞，自动送到中央银行换取金圆券，所以经国先生永远不忘记上海的老百姓。”可见这批黄金的来龙去脉，一直与蒋经国关系密切。甚至最后运来台湾时，也由蒋经国主其事。这在蒋经国《我的父亲》一书中，已交代得清清楚楚，所谓“父亲就派我们几个人到上海去，对中央银行把库存的黄金全部搬运到台湾来”，就指此事。</p>
+<p>据黄元彬《金圆券的发行和它的崩溃》中回忆，说上海银行董事长陈先甫告诉他：“明知金圆券就要崩溃，上海银行所存黄金也要送往中央银行。”“吴铁成也说黄金送到中央银行就等于没收，可是不送恐怕要受徒刑。”可见大陆同胞的黄金，纵使在金圆券崩溃之日，也要被国民党政府硬吃到底，国民党是一不做二不休的！</p>
+<p>上面的故事，说明了台湾黄金来自何处。抹杀这一事实的台湾人，是该多读点历史的。</p>
+<p>1989年2月18日</p>
+<p>我要去做李王爷啦！</p>
+<p>今年1月，难友李世杰先生告诉我，《自由日报》副刊登出《请教李大师》的文章，向我“请教”。承蒙他的提示，我看到该报1月7日和9日的两篇，原来是攻击我去年12月24日写的《我们是带黄金来的！》我觉得这种文人既看不懂我的文章、又乱加曲解，还洋溢着一股地区性的无情和小家子气。因此在2月15日、18日写了《黄金也有省籍吗？》和《金从哪里来？》用证据给这种文人上一课。这种文人如今再写文章，已不敢否认九十二万两黄金是大陆同胞的了，只是嘴硬，“不承认那是台湾的‘繁荣基金’”而已。</p>
+<p>但是，若说此基金与台湾繁荣无关，那么必须台湾有家当才成。一查之下，原来台湾的家当，早已一穷二白。台湾在日本统治时期，台湾银行发行的纸币，是与日圆联系的台币。在1937年6月中日战争以前，台币的发行额为七千五百四十九万元，一场仗打下来，到1945年底，已增加到二十三亿一千一百七十五万元，共计膨胀了三十倍。在民穷财尽之下，台湾银行的库存黄金已不足道。它的准备金，除极少部分的日本古金币外，约90%为日本国债，所以那时台湾银行的股份，大半操诸日本财阀之手，其余则为台籍阔佬及日侨所持有。在这种情况下，陈仪就向财政部要求由大陆方面拨付公债与黄金，以做为台湾银行的准备金。正因为有这种靠山，台币在1946年底，得以到五十三亿的发行额；到1947年年中，得以到八十六亿的发行额。到了改制为新台币的时候，所有准备金，更是全部来自大陆的九十二万两黄金。所以我说，1949年新台币得以发行，的确靠的是大陆同胞的黄金。如今不承认它们是台湾的“繁荣基金”，这样子的偏执，真未免离谱得可笑！试问若没有这笔黄金，台湾的币制，早在四十年前就崩溃了，又何来“繁荣”？黄金本身，并没有省籍，但它的确有所有权，台湾凭空来了九十二万两黄金，不论怎么颠倒，也不是台湾人的。如今为了“省籍情结”，居然可以这样抹杀一切，其强盗头子心态，又与国民党何异乎？</p>
+<p>所以，事实既证明了那笔黄金，的确跟台湾的繁荣有关，嘴巴上“不承认那是台湾的‘繁荣基金’”，只是地区性的无情和小家子气的狡辩而已！</p>
+<p>这种文人不但有这种无情和狡辩，还节外生枝，转而栽诬起李敖的“魔性”成分，他说他“委实不愿意在李敖身上也隐约看出了这种‘魔性反扑’”，“因为在情感上”，李敖是他“心目中的‘大师’”，“是一个公理与正义的代言人，‘魔性’倘若不能及身而撤退，这公理与正义未免太孤独无依了吧”！我可以正告这种文人，我文章的主题是：台湾的实利，有赖于大陆国库的空虚，才有今日，台湾人尽可以恨国民党，但是必须感念大陆同胞，由于他们的一穷二白，你们才能腰缠万贯！我的主题一清二楚，不容把国民党的“魔性”，朝我身上摆。正因为我“是一个公理与正义的代言人”，所以我从来不会为违反真理去讨好国民党或共产党、外省人或台湾人，在真理面前，我不会“撤退”，纵使“未免太孤独无依”，我也不在乎。我曾为台湾人坐过牢，在台湾人对我不知感恩之时，谢聪敏仗义执言，指出“就李敖和台湾人的关系来说，我认为台湾人欠他的比他欠台湾人的更多”。如今台湾人又来了，愈欠愈多，我真要到日月潭，去做李王爷啦！</p>
+<p>1949年2月26日</p>
+<p>为国民党的无知抽样</p>
+<p>今早看到中央日报副刊，陈翰珍以《何谓东西？》为题，大谈张之洞七岁进京应童子试，刚进考场，遇乾隆皇帝前来巡视。乾隆皇帝得知他是河北南皮人，乃以“南皮县考童七岁”瞩对。张之洞对曰：“北京城天子万年。”乾隆称为“天才绝对”，神童之誉，传遍天下。后为“逊清”显赫一时之人物者，确非偶然云。我看了这种文章，不禁失笑。乾隆皇帝死在十八世纪，张之洞生在十九世纪，乾隆死后三十八年，张之洞才出生，两人又何从对对子玩？这不是活见鬼吗？中央副刊既说张之洞为“逊清”人物，难道连乾隆并非“逊清”皇帝还不知道吗？</p>
+<p>其实，像这类无知的笑话，国民党可闹得多着呢！我随手可举上一大堆。例如1985年5月11日青年日报上，政大教授郎裕宪发表《偏激言论将会伤害我们国家的安全》，竟说“法国大革命后……罗曼罗兰谓：‘自由、自由，多少罪恶假汝之名以行！’”1987年11月10日立法院会上，立法委员赵少康竟说“法国大革命时，罗曼罗兰曾说过一句名言：‘自由、自由，多少罪恶假汝之名而行之！’”1984年7月27日中央日报短评上，竟说“法国罗曼罗兰夫人有言：‘自由、自由，多少罪恶假汝之名以行之！’”事实上，全是笑话。因为这话本是拉马丁（AlphonsedeLamartine）误引十八世纪“罗兰夫人”（MadameRoland）之言，怎会轮到十九、二十世纪的罗曼罗兰（RomainRolland）和他老婆来代说呢？</p>
+<p>又如干校教授李芳晨，在《九国革命史》中一边说“英王把苏格兰女王玛丽处死”，一边又说“西班牙王腓力二世遂策动其妻苏格兰女王玛丽”云云，事实上，是把两个玛丽弄错成一个人了。这种菜教授，竟不知苏格兰女王玛丽（Mary,QueenofScots）并非腓力之妻！此婆一生三嫁，但从没嫁给西班牙腓力二世（PhilipⅡofSpain），嫁给腓力二世的乃是英国女王玛丽一世（QueenMaryIofEngland），就是外号“血腥玛丽”（BloodyMary）的那位。国民党教授如此无知，真是“乱点鸳鸯谱”了！</p>
+<p>又如《刘汝明回忆录》中说：“诚如麦帅所云：‘老兵不死，只是慢慢衰退。’”《国军退除役官兵辅导制度史》中说：“美国麦克阿瑟元帅，曾有‘老兵不死’之名言。”1987年11月10日联合报黑白集中说：“诚如麦克阿瑟元帅的状语：‘老兵不死。’”事实上，这不是麦克阿瑟（DouglasMacArthur）的话，而是他1951年4月19日在美国国会演说时的引证。原文是“ButIstillremembertherefrainofoneofthemostpopularbarrackballadsofthatdaywhichproclaimedmostproudlythat:‘Oldsoldiersneverdie;theyjustfadeaway.’”可见“老兵不死，他们只是凋谢”之言，是当年军中最流行的歌谣，并非麦克阿瑟所创，国民党不查原文，信笔归户，真是无知妄作也！</p>
+<p>又如1988年7月11日新新闻周刊中说：“对蒋经国一直以学生自居的王昇，有一句名言，‘如果民主政治出了毛病，要以更民主来医治。’”事实上，这是1933年6月27日美国前纽约州长史密斯（AlfredEmmanuelSmith）演说中的话。原文是“Alltheillsofdemocracycanbecuredbymoredemocracy.”新新闻周刊同此无知，真是物以类聚了。</p>
+<p>1988年10月22日</p>
+<p>《首都早报》的无知</p>
+<p>5月9日联合报上有《首都早报》广告，自吹说：“由康宁祥先生和一群热爱乡土的有志之士所共同创办的《首都早报》，是一份真正属于台湾社会的报纸，也是一份永远走在历史前面的报纸，透过精心规划的三大张版面，将为您重拾失落了四十年的知之权利和新闻自由。”</p>
+<p>四十年来，像我李敖这种革命先烈先进型的人物，在争取“知之权利和新闻自由”时，康宁祥和它的有志之士还不知道人在哪儿、志在哪儿，如今他们竟以“重拾失落了四十年”的口气说话，真是没心肝的数典忘祖、也真是厚脸皮的抹杀前人。介之推讽刺晋文公的左右，说“窃人之财，犹谓之盗。况贪天之功，以为己力乎？”康宁祥和他的有志之士尚不足以语天道，他们所贪的，乃是人之功而已。贪了以后全不认账，把自己推在“历史前面”，如此自我膨胀，我们都要替他们脸红了。</p>
+<p>不过，贪人之功以后，“永远走在历史前面”，我看还得逆取顺守才成，否则洋相一出，在历史与新闻之间，势将背腹受敌，反倒大势不妙矣！</p>
+<p>康宁祥和他的有志之士出来办报，我除了替他们脸红外，还要替他们捏一把汗。原因是这些人知识水平实在不敢恭维，易闹笑话，虽然“精心规划”，无奈无知所在，再精心也遮不住也。试翻翻《首都早报》，光凭其“稿约”，就令人大喊吃不消。我试引一段如下：“稿约——您与我们一起走出台湾历史”“英国的海德堡公园是言论自由的象征。我们的‘首都公园’是言论自由的表现。您有什么意见、什么看法、什么牢骚，不论是家事、国事、天下事，都可以发为言论，写成文章，大家一起来‘首都公园’开讲。”以上“稿约”，从该报创刊以来，一再刊出，该报虽有其他更正文字，惟此“稿约”一字不改，可见已被确定文字内容无误。现在，就在康宁祥和他的有志之士无法再行狡赖之余，我就点破点破。</p>
+<p>“稿约”中所谓“英国的海德堡公园”，就是康宁祥和他的有志之士的大笑话。事实上，英国只有“海德公园”（HydePark），从来没有什么“海德‘堡’公园”。“海德公园”是伦敦公园中最大的，在伦敦之西，占地三百六十四英亩，一英亩约当中国六亩，可见其大。这公园本是西敏寺（WestminsterAbbey）的财产，为英王亨利第八（HenryⅧ）所端，直到十七世纪的一六六零年才得对外开放。这公园最扬名于世的，在于它有一处叫做“演说者角地”（Speaker’sCorner）的地方，任何人，都可在那儿站在凳子上、肥皂箱上，大演其说，大家立场不同，派别互异，但是只要不诉诸行动，警察不但不干涉，反妥为保护。因此之故，“海德公园”变为言论自由的一个具体而微的象征所在。不过，照门嫩（AubreyMenen）等所著《伦敦》（LONDON）一书的观察，“海德公园”的“演说者角地”，事实上，已沦为狂怪者做戏谑演说之所了，近年来已无一本正经的政海人物去演说了。（……Ifyouareonyourown,yougotoSpeaker’sCornerinHydePark;butthatspot,sobelovedofforeignreporters,ismerelyajokeforcranks.Inrecentyearsnoseriouspoliticianhaseverspokenthere.）</p>
+<p>至于康宁祥和他的有志之士所谓的“海德堡”，事实上，乃是德国法兰克福南边八十公里地方的海德堡（Heidelberg）大学城和旅游中心，以1386年建校的海德堡大学名世，专为台湾训练党棍政客如施启扬、尤清、朱高正者也。康宁祥和他的有志之士，均以无知，故混同英国的“海德”与德国的“海德堡”为一而公园之，以致闹了不英不德的大笑话，腾笑中外，为台湾出丑。如此“知之权利和新闻自由”，在台湾“首都”而“早报”之，真令我们不胜代他们难为情之至！</p>
+<p>1989年5月10日</p>
+<p>《自立早报》的无知</p>
+<p>由于美国国防部在一件《东亚军事情报报告》中，重弹四十年前“台湾地位未定论”的老调，引起台湾传播媒体及国民党当局的一阵反驭。4月21日，号称台湾三大报系之一的自立早报，也为此费了相当的篇幅谈论此事。但是，令人感到非常遗憾的，是自立早报不但犯了时间颠倒的严重错误，还出现很多该报捏造的假历史。</p>
+<p>在一篇题为《台湾属于“哪一个”中国？》的“分析报导”里，自立早报这样登著：</p>
+<p>二次世界大战结束，我对日抗战胜利后，中、英、美、苏、日等五国共同发表《波茨坦宣言》，宣言中明白昭示，日本放弃台湾殖民地的统治权。</p>
+<p>短短五十几字，就出了许多大笑话！波茨坦会议举行于1945年7月17日；8月3日由中、英、美发表宣言。那时希特勒德国已经宣告投降快满三个月了；日本则广岛尚未吃第一颗原子弹（吃原子弹是八月六日的事），日本还在做困兽的死斗，还是中、美、英的敌国（苏联尚未对日宣战），日本哪有资格与这四个同盟国共坐一堂开会，或发表什么“共同宣言”？再说，中国并未被邀出席波茨坦会议，是到7月26日才参加“宣言”的签署。而且，波茨坦宣言并未“明白昭示，日本放弃台湾殖民地的统治权”。会议只是讨论对日作战问题，宣言则提出：日本应放弃过去所侵略占领的土地，永远解除武装，无条件投降。宣言发表后三天，即8月6日，第一枚原子弹投下广岛；8日，苏联对日宣战；9日，第二枚原子弹轰炸长崎，苏联进兵我国东北；10日，日本声明接受波茨坦宣言条款，请求准它无条件投降。</p>
+<p>自立早报错将敌国当盟国，还自行“充实”宣言的内容，说什么“日本放弃台湾殖民地的统治权”，真是“想当然耳”的谬误！</p>
+<p>在“……统治权”之下，该报又登著：</p>
+<p>继之在中、美、英三强所召开的“开罗会议”中，蒋中正要求将台澎二地划归中华民国所有。</p>
+<p>开罗会议是举行于波茨坦会议之前两年（1943年12月），参与者是中、美、英三国首长，并非由三强“召开”而邀请其他国家参与；更绝非在波茨坦会议后“继之”而举行的。把二次大战后期这么重要的两次国际性会议时间如次颠倒次序，在常人已经大不应该；在导引读者大众认识了解现代史真相的一家大报而言，这种错误更是不可原谅的。而且，开罗会议宣言固曾提出：日本投降后，台湾、澎湖应“归还”，但并没有“划归……所有”词句。很明显的，“归还”与“划归……所有”，两者之间具有很大的差别，谈史实，援引历史性文件，不应为了当前政治因素，而任意予以窜改或混淆。做为一个大众媒体的大报，更不应该这样做。</p>
+<p>只因看到自立早报经过四天，尚未主动提出更正；未免于年轻一代的读者被误导，所以指点出来，以正视听。</p>
+<p>1990年4月25日</p>
+<p>《中时晚报》有所不知</p>
+<p>中时晚报《时论》栏刊出《张群的故事》，提到1966年3月改选第四任正副总统时，“坊间对蒋介石先生究竟要挑谁竞选副总统，颇多揣测，当时几位政界大佬如张群、何应钦、古正纲、孙科等人，都被认为极有可能雀屏中选，尤以张群追随蒋先生最久，又担任总统府秘书长，公忠体国，最被看好，而蒋先生也确实曾向张群征询其出任副总统的意愿，张群初则极感讶异，沉思片刻，随即答称：‘我年纪大了，请另择年轻俊彦之士把！’于是蒋先生最后选择小他近二十岁的严家淦为竞选伙伴。当时的总统府副秘书长黄伯度知悉此事，不解的问：‘岳公，这是您报效党国的大好机会，何以竟拂逆老先生好意？’张群笑着说：‘伯老，这你就不知道了，我跟蒋先生五、六十年，难道还不知道他内心想些什么？从前他要我担任什么职务，我都照办，他几时征求过我的意见？这次不过是礼貌上打个招呼，其实蒋先生老早胸有成竹了！’张群接着又说：‘不过，这次蒋先生事先征求我的意见，我还是很高兴。’黄伯度闻言，直叹不如张群的政治判断，也佩服张岳公的知所进退。这是上一辈党国大老的政治风范。从这里，吾等后辈似可得到两点启示：一是人贵在相知，政治人物尤其要有自知与知人之明，不能昧于名利而不知进退；二是人应相互尊重，即使以蒋先生九五之尊，权倾一世，竟也对老部署以礼相待，不以势相逼，自然让人心悦诚服。政治是一种艺术，无一定规则可循，运用之妙，存乎一心，上述张群的故事，或可提供当朝人物参考。”</p>
+<p>中时晚报这一时论，是根据不完整的事实乱加发挥的，事实上，在当年蒋介石挑选副总统做“竞选伙伴”时，张群并无“拂逆老先生好意”的事。不但不拂逆，反倒任凭安排，陪演到底。并且张群自己“跟蒋先生五、六十年”，其实还是蒋介石不以诚相待的俘虏。就在副总统是谁即将揭晓的前夜，张群还以为他可以被选上，因而连夜把自己最新的“玉照”大量送到中央社，请中央社统一发给各报，用来取代他上一次照得不满意的那张呢。这就是蒋介石的政治“艺术”。——他叫你怎么也摸不透他，“五、六十年”也一样耍你！中时晚报肉麻吹捧的“以礼相待”，真相原来如此！</p>
+<p>蒋介石不但这样对待他的老同学，并且，在总统府突击性安全检查时，连秘书长张群的办公桌抽屉都照查不误！这种“尊重”人的手法，更是中时晚报不知道的。这种作风，如果也叫“以礼相待，不以势相逼”的话，天下还有什么礼势之分呢？</p>
+<p>1990年1月4日</p>
+<p>当上帝掏出打火机</p>
+<p>小兄弟魏廷昱转话过来，说台南市长苏南成在议会被围攻。议员问他李敖骂你不要脸，你做何反应，他支吾以对。廷昱要我写一点感想。</p>
+<p>当话是别人说的，你该吭气而不吭气，反应可做两种解释：一种是有度量，一种是不要脸。</p>
+<p>当话是你自己说的，你用大厚嘴唇说了那么多不要脸的话，你就无气可吭，反应只能做一种解释：就是不要脸。</p>
+<p>不要脸就是不要脸，举证责任既然出于你，你就别说这是什么度量。这不是政治上容忍别人批评的事，这乃是道德上无耻和生理上皮厚的事，根本不能混为一谈。明明是不要脸，却诡称有度量，这是一种更新的不要脸、一种更大的不要脸。</p>
+<p>我真奇怪台南选民的审美眼光，不要管他妈的什么政见吧！光凭苏南成那张这么丑的脸，台南选民就该唾弃他、就该不要他。你们怎么选出长得那么丑又这么讨厌的家伙来！那副嘴脸，你们怎么受得了他？</p>
+<p>我建议台南选民该严格限制苏南成，只许他在室内活动，垂帘听政算了，千万别再抛头露面。否则的话，一旦上帝明察，给看到了，上帝不用天火来烧台南才怪。上帝既烧过索多玛城（Sodom）、烧过蛾摩拉城（Gomorrah），又何在乎再烧个台南城？</p>
+<p>台南投错了票的选民啊，愿你们快躲进消防队！愿上帝遗失了打火机！愿苏南成在台北阳明山受训别回来！玫瑰三愿，如此而已。</p>
+<p>1983年5月10日</p>
+<p>（更正）苏南成重新归国民党之队后，国民党派他到台北阳明山革命实践研究院受训，台南市的公文，由飞机运到给他批。他在阳明山固好，可是上帝可能向北纵火了！看这样子，隐居阳明山腰的李敖，也得去消防队了！为自保计，玫瑰三愿中最后一愿，应予作废。</p>
+<p>马克吐温与马克台湾</p>
+<p>4月19日美联社报导：马克吐温（MarkTwain）失踪了的半部《顽童流浪记》（TheAdventuresofHuckleberryFinn）手稿，已在好莱坞一个屋顶间里找到，百年手蹟，重现人间，令人听来高兴。</p>
+<p>台湾过去被称为“文化沙漠”，这些年来，朝野无知而有臭钱，结果出来漫山遍野的“文化垃圾”，比沙漠还讨人厌。报纸打开一看，全是“政治挂帅”，不知真正思想文化为何物。求是报特以实事求是精神，每有思想文化新闻线索，即予特加论述，矫正时弊，并益读者。这次马克吐温手稿出土，我们触类旁申，即以社论发挥之。</p>
+<p>马克吐温生于哈雷彗星（Halley’sComet）光临那一年（1835），死于同一彗星再来之年（1910），活了七十五岁。他死在4月21日，距今正好八十一年。</p>
+<p>马克吐温是笔名，他的真名叫克利门斯（SamuelLanghorneClemens）。马克吐温这笔名中，“马克”英文Mark有“指明”的意思；“吐温”英文Twain则酷似“台湾”的英文Taiwan。此公一生，颇多隽语，放之四海既可，指明台湾专用尤佳。求是报特选数则，并加尾语，以供读者深省。</p>
+<p>①“人类第一个大施主——亚当有深恩于吾人：他将死亡带到世界上。”（WeoweadeepdebtofgratitudetoAdam,thefirstgreatbenefactorofthehumanrace:hebroughtdeathintotheworld.）</p>
+<p>看到蒋家三代都已死亡，我们更感恩于亚当了。</p>
+<p>②“把你所有的蛋放进一个篮子里，然后——盯着这个篮子。”（Putallyoureggsinonebasketand-watchthebasket.）</p>
+<p>看到蒋介石丢了大陆，全部家当，只剩台湾，我们才知道台湾所受的盯，是何等严重！</p>
+<p>③“人是唯一知道——或需要——害臊的动物。”（Manistheonlyanimalthatblushes-orneedsto.）</p>
+<p>但在国民党统治下，每个党的政客都不需要，因为政客已经不知什么叫害臊。</p>
+<p>④“我们的‘天父’造人，因为他对猴子已经失望。”（OurHeavenlyFatherinventedmanbecausehewasdisappointedinthemonkey.）</p>
+<p>“天父”后来又对人失望，所以他造了在台湾的大陆人和台湾人。</p>
+<p>⑤“多谢愚蠢之徒；若非拜他们之赐，吾人岂有成功之日！”（Letusbethankfulforthefools;butforthemtherestofuscouldnotsucceed.）</p>
+<p>此国民党内心之言也！国民党能够统治台湾这么久，拜台湾人愚蠢之赐；国民党能够在强人死后还日日逞强，拜民进党愚蠢之赐。</p>
+<p>⑥“到了听说别人模仿他时，人才知道自己有多笨。”（Amanneverknowswhatafoolheisuntilhehearshimselfimitatedbyone.）</p>
+<p>此又国民党内心之言也！国民党发现民进党惟妙惟肖的模仿成国民党第二，固然喜极而泣，却又未免笨从中来也。</p>
+<p>⑦“猫与谎话的显明差别之一，就是：猫只有九条命。”（Oneofhestrikingdifferencesbetweenacatandalieisthatacathasonlyninelives.）</p>
+<p>谎话则有一千条命。国民党则有一万条命。</p>
+<p>⑧“4月1日是提醒我们其余三百六十四天我们在干什么的日子。”（April1isthedayuponwhichweareremindedofwhatweareontheother364.）</p>
+<p>其余三百六十四天在被国民党和民进党愚。</p>
+<p>⑨“四十八岁以前就悲观主义者，其人所知太多；四十八岁以后还是乐观主义者，又所知过少。”（Themanwhoisapessimistbeforeforty-eightknowstoomuch;themanwhoisanoptimistafterforty-eightknowstoolittle.）</p>
+<p>对台独乐观的蠢人，最好永远四十八岁。</p>
+<p>⑩“先把事实弄清楚；然后，愿意怎样扭曲，你就怎样扭曲。”（Getyourfactsfirst,andthenyoucandistortthemasmuchasyouplease.）</p>
+<p>国民党与台独分子不同的是：国民党先扭曲，再弄清事实；台独分子先扭曲，事实却连弄都不弄了。</p>
+<p>(11)“银行家就是这样的家伙：晴天时把伞借给你；下雨时又要回去。”（Abankerisafellowwholendsyouhisumbrellawhenthesunisshiningandwantsitbacktheminuteitbeginstorain.）</p>
+<p>台湾人银行家却是“也无风雨也无晴”。</p>
+<p>(12)“生气时数四；非常生气时发誓。”（Whenangry,countrout;whenveryangry,swear.）</p>
+<p>马克吐温这回可错了。非常生气时应发假誓。民进党国大代表在中山楼的行动，可资参考。</p>
+<p>1991年4月22日</p>
+<p>恶心到教育去了</p>
+<p>国民党自夸光荣史，开口闭口他们推翻满清，打倒军阀，其实在许多方面，国民党不如满清、也不如军阀。试以教育为例，便见端详。</p>
+<p>满清虽然是王朝，但对教育是近乎无为而治的，从皇帝以下、无不尊师，尊师即所以尊重教育。虽然皇帝中跋扈者也颁《圣谕广训》等小册子泽被群黎，但那是对一般人的，不敢对老师们来的。大体上，满清不怎么碰教育。至于军阀，更是循规蹈矩。军阀们在知识上是谦虚的，自己承认是老粗，对教育，总是敬而远之。东北军阀张作霖平时戎装，可是一到孔子生日，就长袍马褂、整顿仪容，跑到各学校打躬作揖，向老师们致敬，感谢他们辛苦教育下一代。——军阀们对老师们，只是致敬而已，其他是不敢造次的。张作霖绝对不敢像蒋介石那样，在教师节集合大学教授来训话、来赐宴，也不敢发行“执政训词”之类，要老师们写读后心得，更不敢在自己生日时要老师们群向祝寿。……军阀们再坏，这种罪过他们是不敢犯的！军阀脑筋简单，但知道“不敬先生，天诛地灭”，天诛地灭的事，他们是不敢胡来的！</p>
+<p>但是，国民党就不同了，国民党一抢到政权就一把抓，其中教育自在被抓之列。在有计划、有组织的渗透与污染之下，中国的教育，就被国民党给搅得面目全非了。</p>
+<p>国民党对教育，具体而微者，为“党校”；抽象而广者，为“党化”。党校教育是线的、专的、全体的；党化教育是面的、博的、部分的。就“党校”说，从黄埔军校到中央政治学校，允文允武，一律以兜收“天子门生”的气派，大施魔爪。结果呢，领袖与党、党与政治、政治与教育，都干脆合而为一，甚至在名称上，从“中山大学”到“中正大学”、从“中正大学”到“政治大学”，都公然行世而不以为异，这种怪现象，真是古今罕见！</p>
+<p>国民党对于自家的学校，可以公然“党校”，但对其他的学校，却格于事实，只好“党化”。“党化”是越化越党的。一开始只是要教育界研读党义、缴出心得而已，最后干脆把“国父遗教”等列为必修科目了、列为考试项目之一了。教育被这样子一恶心，大家的苦恼，真是难以言宣。虽然有的学校，在力事抵御，如南开大学每在入学考试时，明考三民主义，但暗中把试卷偷偷烧了，全不计分等，但在国民党排山倒海的压力下，这种抵御，其可怜也就可想而知。尤其一九四九年后，国民党在台湾海隅独霸、大小通吃，什么抵御，也就甭谈了。一九七四年八月，连台湾大学都成立了所谓“三民主义研究所”；一九八六年三月，连花和尚星云法师都提议要成立所谓“三民主义大学”，教育成仁如彼、老K取“义”如此，哀哉！</p>
+<p>事实上，恶心人的，还不止党义拦校门、党义进校园，因为这些死东西还要靠活人以传，才发生作用。而这些活人，不是别的，就是国民党中那些“学术与政治之间”的文化党棍。</p>
+<p>当年在大陆，教育界是有大儒不甘沉默的，安徽大学的刘文典就当面斥责过蒋介石。蒋介石虽然非法下令关他，但却无法杀大儒之威。一九四九年后在台湾则不然，国民党在台湾，公然以文化党棍办教育，结果天下定于一，连小儒都难以苟活矣！例如一九四九年中央训练团出身的刘真出来做师范学院（今天的师范大学）校长，一到任就来个“学风整顿委员会”，杀气腾腾，最后首开先河，每天升旗唱国歌都来了。据刘真回忆：“当时无论大陆各省及台湾的大专学校，均对学生从无升旗早操的规定”，而他却悍然行之。由此可见，文化党棍恶心教育之功，已经到了何等火候。降至今日，连警察师表梅可望、谢瑞智之流都可做大学校长、训导长了，天下焚琴煮鹤之事，有逾此乎？</p>
+<p>1989年5月19日</p>
+<p>你缴的税，原来孝敬了洋大人！</p>
+<p>中央社台北25日电：“外交部长钱复今天在美国代表我政府及人民捐赠两百万美元，赞助在加州即将落成启用的‘里根纪念图书馆暨公共事务中心’，象征我政府及人民对里根总统长期友好支持中华民国的感谢。钱复于19日至22日间应邀赴美国科罗拉多州参加由美国企业研究院主办的‘世界论坛’会议，议程结束后，转赴洛杉矶，并于今天拜会前美国总统里根，重叙往日情意，并代表我政府捐出这笔款项。”“里根纪念图书馆坐落于洛杉矶近郊，目前已接近完工阶段，与建所需的七千万美元经费，都由里根本人及其纪念基金会向全美各界及世界各主要国家政府、民间企业及个人筹募。”“里根图书馆预定今年十一月正式启用，外交部表示，此馆预料将成为南加州学术研究及公共活动的重要场所，我中华民国政府名号也将镌刻于该图书馆壁碑上。”</p>
+<p>国民党巧宦钱复，是以私人名义到美国的。以私人名义，却花了人民税捐近六千万元台币，去拍洋大人马屁、去孝敬洋大人，这是无耻的政府中无心肝的官僚干的好事！</p>
+<p>六千万台币，我们自己都可盖个纪念图书馆了，古圣今贤有多少，国民党不知去纪念，却老远跑去纪念洋大人，这是什么下三烂的政权啊！</p>
+<p>1991年6月26日午后</p>
+<p>不能耙粪，报章之耻</p>
+<p>美国第三任总统杰佛逊（ThomasJefferson），早在1878年就指出：在有政府而无报纸或有报纸而无政府之间，他毫不犹豫的选择后者（Wereitlefttometodecidewhetherweshouldhaveagovernmentwithoutnewspapers，ornewspaperswithoutagovernment，Ishouldnothesitateamomenttopreferthelatter.）。这位先知，显然是说，报纸对开启民智、保障自由，比政府重要。不过，杰佛逊毕竟是两百年前的老先生了，他对报纸在时代压力下的变化，无法想像。他不知道有了报纸又怎样？苏联有报纸八千家，发行量一亿两千万份，世界第一，但是开启的民智、保障的自由，又在哪里？报纸愈多，适足以为政府的护航、政府的帮凶、政府的猫脚爪，这样的报纸，又有个屁用？</p>
+<p>当然，杰佛逊毕竟还是先知，他虽然无法想像两百年后“报纸官化”的变化，但他却早看出“报纸俗化”的可虑，因此他提醒人们，先看报纸是不行的，什么也不看的人，其实比只看报纸的人更有教养（Themanwhoreadsnothingatallisbettereducatedthanthemanwhoreadsnothingbutnewspapers.）。这种“尽信报不如无报”的警告，看法是何等敏锐！</p>
+<p>在国民党统治下的台湾，报纸发行量不过四百万份，比起七千万份的日本、六千万份的美国，都是小焉者也。不过，它在“报纸官化”和“报纸俗化”的两栖性格上，却天下第一。一般说来，极权国家的报纸特色是“报纸官化”；民主国家的报纸特色是“报纸俗化”，台湾的报纸却是又官化又俗化，结果混合出来的是又官又俗。我当年在“军中乐园”看到一条标语，内容赫然是：“娱乐时勿忘反攻大陆。”——人在性交时还要被期勉如此，其又官化又俗化可想！别以为这只是军队中妓院的把戏吧，推而广之、扩而大之，在酒食徵逐歌舞升平的空气里勿忘“三民主义统一中国”，比起“娱乐时勿忘反攻大陆”又何以殊？如此官俗两栖，反映在报纸上，相激相荡，岂不一一都是笑料吗？</p>
+<p>在官化俗化的世风下，台湾的新闻工作者，絶大多数都变成了毛遂所谓“因人成事”的好事之徒，他们一方面替报老板好事，一方面自己也好事，无识无品，却又“无事忙”（贾宝玉语）个不停。他们的行径，实在可耻；而跟著他们时时刻刻“追新闻屁”的读者们，也实在可悲。</p>
+<p>一个本世纪初期的美国新闻工作者的前例，也许可以施教於台湾的新闻工作者。施德芬斯(LincolnSteffens)是美国当年最勇敢又最细腻的新闻记者，他不以做为一个随波逐流的好事之徒为已足，他在《麦克鲁尔杂志》(McClure’sMagazine)上，个案详追，把美国政治的贪污内幕，一一掲发得鸡飞狗跳，对企业家为谋取特权而收买政客的证据，所得尤多。这些有影响力的文章，他在一九零六年，编成《城市的耻辱》(TheShameoftheCities)一书。他这些掲发各种形式的贪污运动，就是史称的“粑粪运动”。美国第二十六任总统老罗斯福(TheodoreRoosevelt)给他起了一个外号，叫“粑粪者”(muckracker)，可见何等轰动。</p>
+<p>不能粑粪，报章之耻，从粑粪运动做一个起点，也许正是今天台湾新闻工作者应有的自赎吧？</p>
+<p>1989年2月14日</p>
+<p>多揭发黑暗，少追踪黑屁</p>
+<p>美国以前的国务卿杜勒斯（JohnFosterDulles），说他不喜欢看报纸，因为世界上一件新闻的形成，常常要经多日的酝酿，把酝酿过程，一批批报导在报纸上，反倒弄得多事而复杂。这就是说，很多新闻事件，其实看它的结果是什么就好了，演变中的许多细节，实在没有太花功夫按日追逐的必要。杜勒斯这一不对新闻报章多花时间的态度，实在是一种好习惯。</p>
+<p>我个人的一个经验，也可印证这一态度。我过去做政治犯时候，在景美军法看守所，由于案子悬在那儿，没有确定，所以关在押房，不准看报，前后有四年之久。直到案子确定了，移监土城仁爱教育实验所，才准许看报。于是补购了过去四年的报纸合订本，大看一场，花了一段时间，把重点新闻（事实上已是历史），草草看过，觉得也很够了。心想若天天看报，跟着新闻走，要浪费多少时间！这样子四年一看，每件新闻首尾俱在，一览无余，倒也省事痛快也。</p>
+<p>为什么杜勒斯不喜欢看报纸呢？为什么我在监狱只草草看过报纸合订本就可以了呢？最大的原因，是报纸上有太多太多“追踪黑屁”的毛病。所谓“追踪黑屁”，就是“追新闻屁”，就是当政者制造新闻，让大家去追、去挖、去猜、去透视权力核心、去探讨接班动向。……结果把那么多的时力与贯注，都放在当政者那些宫廷内斗上、家族政治上、你来我往上，这多不值得！其实当政者是一丘之貉，谁得宠上台、谁失宠下台，还不他妈的一样？从这方面看，根本早就有了结论，那个结论就是屁。对结论明知是屁，大家又跟着费什么神？做什么跟屁虫？至于当政者以外的社会新闻、花边新闻，更是庸俗得无聊之至，更不值得浪费时间了。</p>
+<p>所以，每见到那些整天守住报纸、电视、新闻式杂志，紧迫的想得知每一新闻变化细节的观众或读者，我就为他们的无根、为他们被人牵着鼻子走的坏习惯，感到可悲。</p>
+<p>李普曼（WalterLippmann）在《舆论》（PublicOpinion）一书里提到一个故事，说1914年的一个远洋小岛，住有英、法、德等国的人，由于岛上没有新闻媒体，只有六十天才来一次的定期游轮，所以往往新闻来时，对他们已是明日黄花。其实，依我看来，这种迟来的新闻，未尝不是一件令人清心的好事。追求太多的新闻，其实是一种坏习惯，一种施者与受者之间永无止境的精力浪费，实在可说是“柏金森定律”（Parkinson’sLaw）在新闻学上的应验，这是很糟糕的。</p>
+<p>新闻并非不可报导，重要的是，一定要在报导的同时，评论随之，以给群众“机会教育”，用新闻事件，启发他们，使他们“因新闻就导”。在这种悬格下，绝大部分的新闻，其实只是对黑暗的揭发而已。揭发黑暗的时事、揭发黑暗的观念、揭发黑暗的传统与背景、揭发黑暗的党团与个人，都是真正新闻报导的方向。相反的，不此之图，整天追踪达官贵人明星戏子的动态浮沉，今天李焕，明天王昇，又有什么意义？只是给他们整天写起居注而已、只是因他们整天做猜谜游戏而已、只是席不暇暖、整天追他们的黑屁而已。这样子的新闻工作者，岂不太可耻了吗？</p>
+<p>“多揭发黑暗，少追踪黑屁。”才是我们应该具有的信仰，不甘为新闻黑屁所役的人们，应该猛醒、觉悟，多在揭发黑暗上努力。</p>
+<p>1988年9月14日</p>
+<p>雷震回忆录被焚志感</p>
+<p>1960年9月4日，雷震被捕；1970年9月4日，雷震出狱。雷震出狱那天早上，我和魏廷朝约了美联社记者、纽约时报记者，一起到安坑新店军人监狱接他，当时军警便衣云集，讲话不便，雷震私下要他女儿雷美琳偷偷告诉我，另订时间详谈。后来我们在他家会面，谈了很多。雷震提到他在狱中写的四百万字回忆录，在他出狱前一个月的某一天，在接见家属返室时，“全部给偷走了。”。当时他大发脾气，还打了政工官一拳。后经狱方婉言相告，说他们做不了主，要拿给上面看看，看看要花点时间，所以在他出狱前一个月取去，等上面看过了，自然还他，一个月后他出狱时，也可以一起带回家了。不料一个月过去了，雷震出狱时，狱方又大打太极拳，回忆录也一直没还给他，看来是凶多吉少了。雷震提到这些事时，言下不胜气愤。</p>
+<p>雷震的遭遇，提醒了我，后来我在军监坐牢，就力行“阅而不作”，为的就是怕写了半天，最后遭到查扣的下场，那时候，既心痛又窝囊，可真划不来。</p>
+<p>雷震回忆录被没收后十八年来，稿件一直在“‘衙’门一入深如海”状态，倒也风平浪静，不料今年4月21日监察院司法委员会决定派委员调查并追回雷震回忆录的第二天，警备总部突将稿件移交国防部军法局，四天后（4月26日），军法局又将稿件再移交新店军人监狱，再过四天（4月30日），稿件突以被焚闻，理由是内容不当，应予没入并销毁。</p>
+<p>新店军人监狱的一把火，说是根据《监狱行刑法》第七十一条第二项施行的。原条文是：“经检查发现私自持有之财物，由监务委员会没入或废弃之。”问题在立法原意所指“私自持有之财物”，实在是指危险性的违禁品而言，否则任何私有财物，在这样解释下将全无保障，那还得了吗？何况，雷震回忆录乃是稿件，也不宜做财物的狭义解释。纵做狭义解释，焉有在官方持有十八年后再予当“私自持有之财物”处理的道理吗？当时既未“没入或废弃之”，可见稿件被拿走，实系一种“保管”。既是“保管”，按照《监狱行刑法》第七十二条，就必须“于释放时交还之”。以上所引第七十一条、第七十二条，都列在《监狱行刑法》第十章“保管”之内，其中第六十九条开宗明义，先说“受刑人携带或由监外人送入之财物经检查后，由主管人员代为保管之。”可见所谓“财物”，是经过“携带”或“送入”的手续的。雷震回忆录是在狱写的著作，既未经“携带”或“送入”于先，又未经“私自持有”于后，做为这样解释，岂不太牵强了？何况，从柏杨到王拓到姚嘉文，他们在狱写的稿件，都可带出来，为什么就不构成“私自持有之财物”而烧掉呢？可见关键所在，是雷震回忆录中泄露了太多为官方所不喜的秘密，因而横遭烧杀也。</p>
+<p>不过，按照《监狱行刑法》，监狱并没有审查言论的权力，不但今天没有，古今中外都没有。正因为历来有此仁政，所以马可波罗（MarcoPolo）可带出游记、摩尔（Thomasmore）可传出乌托邦、卡萨诺瓦（JacquesCasanova）可携出情史、希特勒（AdolfHitler）可印出他的奋斗。如今雷震回忆录下场竟破古今中外之格有如是者，历史家写“台湾第一”，真不愁没题材矣！</p>
+<p>1988年7月26日</p>
+<p>发还了，又怎样？</p>
+<p>这几天，为了军方焚毁雷震回忆录稿本，雷震遗孀之一宋英发表谈话，指摘军方“太胡来了！”并说雷震当年在狱中写回忆录，狱方天天趁他“放风”时，偷偷把写成的拍照存证，雷震甚至干脆定时到外散步，以利狱方仔细拍照。因此断言纵使原稿被烧，也应有照片留存。宋英认为，至少要发回照片，以不负雷震十年心血云云。</p>
+<p>听宋英口气，好像雷震生前心血写作的不能问世，其责全在他人似的，其实可不那么简单。军方焚毁雷震回忆录，的确不当，我们应声讨。但是，反过来说，假使军方没焚毁，发还给宋英了；或虽没原稿却发还照片了，身为雷震遗孀之一的宋英，又会把丈夫的心血写作问世吗？我看可大有问题！因为，据我所知，宋英一直都是雷震著作问世的拦路虎，我试举二例，以为证明。</p>
+<p>1960年9月4日雷震被捕，《自由中国》杂志也伴随阵亡。杂志最后正连载雷震写的《我的母亲》，也因而腰斩。当时青年党办的《民主潮》杂志有所不平，特把《我的母亲》加以连载，以向官方抗议，不料宋英竟出面，配合官方，要《民主潮》下档。《民主潮》无法，遂在1961年2月16日登出《本刊启事》，说“雷震先生所撰《我的母亲》一文，因官方认为尚须审查，雷夫人宋英女士不得已将原稿取去，本刊一时不能继续刊载，特此向读者致歉。”于是，《我的母亲》自此胎死腹中。按照宪法也好。违宪的出版法也罢，都没有“预审”的规定，但官方竟要预审《我的母亲》，而宋英职任监察委员，不思公开纠弹官方，竟还私下屈从官方，把自己丈夫的著作，配合予以封杀，这叫什么作风？况且那时雷震正在牢里，人在牢里，有别的刊物代鸣不平，自己的文章得以发表，是正求之不得的事，又何能忍心这样干？而宋英却优为之，雷震有妻如此，真牢里难安也！</p>
+<p>雷震1970零年出狱后，年事渐高，对个人稿本整理，已力不从心。他的家人，从宋英以下，多是麻将高手，既不悦学，也对文件不感兴趣。那时正值《自由中国》老作者胡虚一（学古）出狱，雷震乃约他整理文件、校阅文稿。据胡虚一说，雷震有“珍贵日记十余册”，“他以其老伴年高，对之无甚兴趣，而其子女，又皆散居海外，致他恐其百年之后，其家人无法妥为保存而失落，乃亦嘱我将其日记，影印一份保存，将来有机会为之流传后世。只是本人当时在世新教书，收入微薄，经济上无此财力，将其十余册日记，全部影印保存，故只将认其颇有民国史料价值之珍贵大陆日记，择要影印了百余日者保存之。”1983年我办《万岁评论》，胡虚一把整理好的稿本拿来发表，据他回忆：“今夏起，得李敖先生热心支援，提供甚多参考资料，助我写此一残余的雷震大陆日记的校注稿，十月间完稿后，先请李先生为我校阅拙校稿之错误，同时亦专程去报闻宋英女士。”但不报闻倒好，一报闻，宋英不但不感谢，反而“透过有关人士向李敖提出警告”，不准发表。哪知李敖是何等剽悍之人，他岂怕人警告！照旧发表不误，雷震生前心血，因此得以流传。雷震有妻如此，真死不瞑目也！</p>
+<p>如今宋英手中的雷震“珍贵日记十余册”，已在麻将声中，不知去向；军方纵如宋英所请，发还雷震回忆录，发还了，又怎样？她敢为丈夫流传文稿吗？我看她不敢！最后被谁烧掉，还颇耐人寻味呢！</p>
+<p>1988年7月29日</p>
+<p>是谁藐视了监察权？</p>
+<p>雷震在牢里写了一部四百万字的回忆录，1970年出狱时，被新店军人监狱给送呈“上级”了。“上级”又“留中不发”，一转眼就十八年了。今年4月21日，监察院司法委员会决定派委员调查并追回这部回忆录，可是太“巧合”了，就在监察院做此一决定后第二天，“上级”突然快马加鞭，层层高速交下回忆录，最后由新店军人监狱焚毁，前后作业，九天完成。办事干净利落，明快果敢，真可我武维扬也！</p>
+<p>7月22日，中央日报登出：监委“谢昆山对于监狱长王禄生上校在监院决定调查该案后，未经呈报长官核准，等待监院调查，即擅将《雷震回忆录》销毁，使该案调查造成困扰，深表不满。”另外，一般的反应是：早不烧，晚不烧，正好选在监委调查期间烧，至少在时机上，来得蹊跷，显然是对监察权的一种严重藐视，开启了监察权调查期间重要档案被销毁的恶例。台大政治系教授吕亚力，在7月22日自立晚报发表谈话说：“我觉得这是对监察权很严重的藐视，监察院的立场不应该轻易被忽视，否则监察院就无法建立起权威来了。……如果监察院对这件事不处理的话，恐怕会开一个很不好的恶例。”国民党学人这番话，看似言之成理，不过只说对了一半，因为他只指出该被处理的机关在藐视监察权，却忘了另一个藐视监察院的机关——就是监察院自己。我这一点破，乍看未免滑稽，实际追究起来，却正是如此。</p>
+<p>即以监察院中宋英委员为例。宋英当年竞选监察委员前，自言“根本不知道监察委员做什么的”，只因为她的丈夫雷震是国民党大员，所以她借了光，自然当选。但是，实际上，她做监察委员，却一直怕事偷懒。从1960年雷震被捕后，她更变本加厉，一连二十四年，不讲一句话，整年整月领干薪、整天整夜打麻将，这叫什么监察委员？最妙的，她在沉默二十四年后，1983年12月19日的监院年终检讨会上，忽然讲了话，而讲的内容，却是指摘别的监察委员！气得另一个监察委员张一中反驳说：“她自己当了三十几年监察委员不好好做事，还要责备别人，自己不做事还说监察权无法发挥，大家都这样的话，国家还要不要救啊！”如不以人废言，张一中的反驳，全属事实。虽然张一中自己，也是一丘之貉，他们全是三十年来一失职再失职的监察委员，他们背离了《宪法》《监察法》所揭橥的精神，三十年来所表现的，正是集体以监察委员的尸位素餐，来藐视监察权！一个伪君子——监察院的逃兵陶百川，批评军方焚毁雷震回忆录的行为是“一个大笑话”，固然属实，但他们做监察委员却不尽责，难道不更是“一个大笑话”吗？陶百川建议宋英可向国防部要求国家赔偿，但他们做领干薪三四十年，拿了多少黑心钱？他们不该赔偿国家吗？</p>
+<p>同样货色的监察委员金越光，今天已承认当年陶百川与他调查雷案“认真说来，并未完成”了，为什么未完成？因为他们身为监委，却不敢打老虎；如今同样货色的监察委员谢昆山更明白表示，宋英的要求他不一定要照办，因为宋英也是监委，言外之意你宋英不敢打老虎，又何能逼我去打？可见今天老虎伤人的局面，又何尝不是他们有虎不敢打的结果？他们如尽职，何至于十八年后才放马后炮？十八年间，他们干的是什么啊？</p>
+<p>1988年7月27日</p>
+<p>弹劾了，又怎样？</p>
+<p>8月8日，监察院针对新店军人监狱典狱长王禄生滥用职权，将待查之雷震回忆录文稿销毁，严重妨碍该院调查权行使，并损害当事人权益；国防部军法局长吴松长，未能明确指示回忆录处理原则，难辞疏失之咎，依法将两人弹劾。弹劾通过后，雷震案同案人傅正表示，很遗憾监察院只找出几个替死鬼而已，他认为责任应该在国防部长以上，因为“小小军法局长哪有那个胆决定？”</p>
+<p>看了这些消息，我笑着想：傅正之流真是头脑像浆糊一样的人，这种人斤斤计较弹劾对象层次不升高，其实升高了，又怎样？监察院又能奈“国防部长以上”的人何？弹劾、弹劾，弹劾到头来，还不是空忙一场！</p>
+<p>空忙一场的原因很多，从皮相看，是监察委员们老惫畏葸，打苍蝇不打老虎，这是监察委员个人或群体的失职问题；从深处看，却是监察院制度设计错误，苍蝇老虎都打不成，这就是监察院的存废问题了。一般浅学近视的人，总是从监察委员打苍蝇不打老虎来着眼，来枉抛心力，殊不知纵使打了老虎，纵使监察委员很勤勉、很胆大，结果也是枉然。</p>
+<p>为什么？因为监察院的绝活是弹劾，而弹劾权，不论中国外国，事实上已经沦为一种落伍的、不切实际的权力。在中国，弹劾权的主要执行人是御史，御史为“天子耳目风纪”、“风闻奏事”，本质上，无异是“单干户”“个体户”的高级特务。从御史身份演变成监察委员身份后，它的作用，仍不出告发举发的范围，但实际运作起来，还不如御史，因为御史可以“单独言事”，监察委员却要多人审议。审议结果，也不过移送行政院及其有关部会、或移送法院而已，监察院本身是不能处分人的。不能处分人，自己就是纸老虎，谁怕你啊？在外国，以英国为例，本来议员可行使弹劾权，但是此权的行使，乃为了对付皇帝卵翼下的权臣和法院，并且行使的次数也不算多。从1621年弹劾毛普森（SirGilesMompesson）起，到1805年弹劾麦威尔（LordMelville）止，前后一百八十四年间，也不过弹劾了五十四人，平均三年半还弹劾不到一个人！戴雪（A.V.Dicey）在《英宪精义》（TheLawoftheConstitution）中说弹劾权在英国几成一种废物，原因是情节重大的罪案，过去必须以弹劾方能达到者，今天只要用普通司法程序，就可达到，并且手续简单。由此可见，只要责任内阁形成、司法制度健全、舆论权威树立，监察委员身份的人，在弹劾作用上，根本是多余的。不论中国外国，弹劾权的发生，都是帝制的、封建的遗痕，在现代民主政治中，根本不需要这种身份的人。这种身份的人既不需要，这种单位的存废，也就不言可喻矣！</p>
+<p>按照《中华民国宪法》规定的监察权，虽有多种，但主要的是对人的弹劾权和对事的纠正权。在对人的弹劾权方面，弹劾案提出后，任务即告终止，司法方面怎么处分，监察院并无复议之权，所以弹劾权无异检举权、弹劾书无异检举书、监察委员无异太上检察官兼地下调查员，除此之外，殊乏积极意义；在对事的纠正权方面，纠正案并无约束力，所以名为纠正，实际只是建议权，要不要改善，全凭别人高兴。这样子的监察院，进不能形成西方国会制度，退不能上追中国御史制度，孙中山和他徒子徒孙还要说兼有两者之长，真是笑话也！</p>
+<p>1988年8月9日</p>
+<p>周荃哭，劭玉铭应该和她对哭</p>
+<p>我常说女人不宜搞政治，原因之一就是她们不懂事，遇事先哭了再说。当然男人搞政治也有以善哭为诉求的，以前民进党的林正杰即为此中之尤。林正杰出道时，最拿手的绝活之一，就是站在台上哭。哭呀哭的，哭得满伤心似的。不过哭也白哭，大家对他的花招心里有数。但女人就看不过去了，于是就有跑上来陪他哭的笑话出现。陪哭者，周清玉是也。曾几何时，林正杰讨好黄信介，在民进党里搞内斗，斗到周清玉的老公姚嘉文。于是，周清玉恍然大悟，知道陪哭非计，林正杰原来是这种心术的小政客！气得周清玉拿起茶杯泼水了。——虽然仍是液体发出，毕竟进步到不是眼泪了。</p>
+<p>虽然周清玉这种女人搞政治善哭，但只是陪哭状态，故可以原谅，何况还是民进党呢！但若不是陪哭而是主哭，并且是国民党的时候，我们就不想原谅了。六月二十日周荃之哭，即属此类。</p>
+<p>周荃的哭，是这样的：</p>
+<p>立法院第三度对《中央通讯社设置条例草案》召开法制、教育联席会议审查。周荃上台就表示，尽管传播界怀疑到底是否有成立国家通讯社的必要，但是从政治角度来看，她主张有必要设立一个比中共新华社更超然、独立、公正、客观的国家通讯社；但是行政院的草案明显是《财团法人广播电视事业发展基金会组织准则》的翻板，将来必步上其后尘，混乱体制，“官自己派、条文自己定、董事长自己当”，造成“邵局长管邵局长”的现象。</p>
+<p>周荃随后话题一转，开始对传播界发表观感。她说，现在社会的乱源在于“媒体资源没有公平分配”、“三家电视台全部都由执政党控制”。</p>
+<p>她举例说，如果是执政党举办“青年之爱”晚会，三家电视台争相转播或联播；但是任何反对党举办“青年之爱”活动，哪怕是付钱也不给播。</p>
+<p>周荃说，执政党当局应在此刻全面检讨文宣政策，执政党有刀有枪，也应让反对党装备武器；如今全部资源都由执政党拿到，十分不公平；她并且预测，如果反对党仍是今天这种格局，开放媒体资源“了不起也不过是首都早报的下场”，执政党不必害怕。</p>
+<p>周荃愈说愈激动，在说出“我们过去都是搞媒体的……”时，忍不住哭了起来，一边拭泪一边说：“我可以不当选、不搞特权，但不能违背良心，对于邵局长，我实在……”（泣不成声。）</p>
+<p>过了一会儿，周荃对劭玉铭说，“因为你有权，在其位，希望你能够更超然，站在政府的立场……。”</p>
+<p>这几天因抨击新闻局长劭玉铭而承担相当大选民压力的周荃一边哭一边重申，“现在社会的乱源在传播媒体资源分配不公，我愿为传播界牺牲、我能不当选，我绝对不是为自己，为了自己我应该去审国营事业预算，不必在这里让报纸骂我！……我不选都可以——，但愿我们……”，最后她哭得说不出话来了，在“谢谢”后下了台。</p>
+<p>我看了电视新闻，边看边笑。尤其看到劭玉铭那副老羞成怒、不知所措的尊容，大喊“谁没理想？谁没热情？谁不爱国？但社会正义不是只有热情、理想，仍要理性任事”的丑态，更笑得开心之至。</p>
+<p>我笑周荃什么呢？我笑她反对了半天，其实她自己提出的《中央通讯社设置条例草案》，本质上，跟劭玉铭提出的，殊少实质的不同。试看她的草案：</p>
+<p>第一条为加强对国内外大众传播媒体新闻服务，扩大国际新闻报导，促进国际新闻交流，办理国际新闻通讯业务，特设中央通讯社（以下简称本社），并制定本条例。</p>
+<p>首先这一条，设立“办理国家新闻通讯业务”的机构，就是跟独裁国家学来的馊主意，根本已无必要。试看世界通讯社开山人——一八三五年法国“哈瓦斯通讯社”（L’AgenceHavas），私人创办企业也；一八四九年德国“华尔夫通讯社”（WolffTelegraphenBureau）,私人创办企业也；一八五一年英国路透社（Reuters），私人创办企业也；一八九二年美国美联社（AssociatedPress），私人创办企业也。相对的，凡是极权国家的通讯社，才是官办的。试看一九二五年苏联“塔斯社”（TASS）,承沙皇时代“圣彼得堡电报通讯社”（PetersburgerTelegraphenAgentur）余绪，直属部长会议，对最高苏维埃负责，社即衙门、社长即党官，这种通讯社，就是国民党通讯社的师承所在。如今周荃的大脑还停留在办国家通讯社层次，她跟劭玉铭又有多少差别呢？</p>
+<p>第三条本社由中央政府捐助一千万元，为创立基金。</p>
+<p>第六条本社之经费来源如左：</p>
+<p>一、中央政府编列预算补助。</p>
+<p>二、国内外公私机关、团体及个人之捐赠。</p>
+<p>三、提供服务之收入。</p>
+<p>四、其他收入。</p>
+<p>这两条，是拿公家的钱办通讯社，政府的钱是那么好拿的，管你的魔手一伸过来，怎么办得好通讯社？</p>
+<p>第四条本社之主管机关为行政院。</p>
+<p>第十二条本社组织编制由董事会通过后，报请主管机关备查。</p>
+<p>第十三条本社之会计年度，应与政府会计年度一致。</p>
+<p>第十四条每会计年度开始前，本社应拟定工作计划，编拟收支预算，提经董事会通过后，呈报主管机关。年度终了，应编具工作执行成果报告及收支决算，提经监事会通过后，呈报主管机关。</p>
+<p>前项所列计划、预算、决算及报告，每年应由主管机关转送立法院。</p>
+<p>这四条，明说归政府管。</p>
+<p>第七条本社置董事九人至十五人，以其中一人为董事长，均由行政院院长就左列人员遴聘之：</p>
+<p>一、对大众传播富有研究之专家、学者。</p>
+<p>二、大众传播事业人员。</p>
+<p>三、社会公正人士。</p>
+<p>第八条本社置监事三人，其中一人为常务监事，均由行政院院长遴聘之。</p>
+<p>第九条董事、监事之任期为三年，期满后得续聘一次，但续聘人数不得超过总人数二分之一。</p>
+<p>董事、监事因辞职、死亡、或因故无法执行业务时应予解聘，其所遗缺额，由主管机关补聘之。</p>
+<p>补聘之董事、监事，其任期以补足原任者之任期为止。</p>
+<p>第十一条本社置社长一人，由行政院院长遴聘之，任期三年，期满得续聘之，其续任以一次为限。社长受董事会之指挥、监督、综理社务。</p>
+<p>这四条，明说政府有用人权。</p>
+<p>周荃的草案全文才不过十七条，其中十一条都权归政府，这样子办出来的通讯社，怎么可能有新闻自由呢？又怎么办得好呢？</p>
+<p>笨蛋劭玉铭跟周荃面红耳赤了半天，其实又有什么好争的？周荃的草案和劭玉铭的原案，其实大同小异。劭玉铭只要照周荃的草案通过，技术上，照样可以十足掌握中央社、控制中央社，这还用说吗？给周荃面子，自己要里子，岂不两全其美，何必一头栽进自己的原案里，胡扯八扯呢？</p>
+<p>所以，劭玉铭如果IQ及格，就该心里对自己说：“他妈的你这细皮嫩肉的漂亮小马子！你谈什么执政党垄断媒体！你又是怎么起家的？你不正是那个在党营电视台中施展垄断多年的传声筒吗？如今你靠此当上立委，清高了，居然教训起我这超级传声筒了，并且又哭又闹，你好意思吗？老子就依你的草案照单全收，又怎样，中央社还不照样归老子控制！”</p>
+<p>当然，劭玉铭只能心里这样想，不能表现出来。他唯一能表现的，就是学周清玉，大叫一声、奔上前去，陪周荃哭将起来。上台以后，还要抱住周荃一起哭。说：“谁没理想？谁没热情？谁不爱国？但社会正义不是只有热情、理想，仍要理性任事。在理性评估下，其实我的原案与你的草案并无本质上的不同，只要你喜欢，有什么不可以呢？我就顺从了你。荃委员呀！原谅小邵吧，小劭错了，就全照你的草案通过吧！”</p>
+<p>这样一来，才是为政之道、才会皆大欢喜。他妈的劭玉铭太笨了，有机会抱白里透红漂亮女人，他都不会呀！</p>
+<p>1991年6月21日晨</p>
+<p>施启扬、马英九岂能主持大陆政策！</p>
+<p>国民党是最有低级幽默的政权，它屡作惊人之举、乱出奇招。例如它把自己从没参加过考试、并将自己两个儿子免考入学的孔德成掌管考试院；把从没去过大陆一步的施启扬、马英九掌管大陆事务，就是这种低级幽默的展示。</p>
+<p>如果施启扬、马英九两个是聪明人，也许在“意淫大陆、手淫台湾”之余，对大陆有以了解、不全陌生。但是两个是笨蛋，虽然看起来两人全是斯斯文文的博士。</p>
+<p>施启扬在德国念书，但是头脑生硬；马英九在美国念书，但是读书不化，结果判断起事情来，总是宝一对，荒腔走板。</p>
+<p>我们举例以明。</p>
+<p>波斯湾战争前，施启扬、马英九都以专家姿态发言。今年1月12日《自立晚报》上，赫然有《施启扬马英九谈波湾风云认美伊应可避免战争》标题，报导说：“行政院副院长施启扬与研考会主委马英九，昨日在一项公开场合中私底下亦谈及波湾危机，然而两人均认为美伊两国应该可以避免战争。施启扬比喻，当外在环境不断出现危机征兆时，真正的危机就不应发生。昨日下午施启扬与马英九同时出席一项座谈会，当时会场上的电视正播放有关波斯湾危机的新闻，两人即针对美伊的和战问题开启了话匣子。施启扬首先认为波斯湾应该不会打起来，‘因为美伊双方一旦开战，那这场战争将没有真正的赢家。’所以施启扬评估伊拉克总统沙丹胡森可能会答应撤军，不过是采拖字诀，亦即在一定的期限内分批撤军。此时马英九也接腔表示，波斯湾的危机可能可以和平解决，但他认为沙丹胡森会把Credit卖给法国总统密特朗，‘吊走了全世界人的胃口’。不过马英九似乎也很感慨地说，人类还是太愚蠢了。这时施启扬也举了一个例子，他告诉记者当外在的环境不断出现危机的征兆时，真正的危机就不会发生。他说高速公路上的两辆车子，若发生车祸，一定是没有任何的戒心，而当旁人说，车子一定会撞上，通常都不会撞上。”</p>
+<p>以上是两个笨蛋的谈话，言犹在耳，波斯湾战争，已经胜败分明了。</p>
+<p>当然，两个笨蛋继续做他们的官，健忘的台湾同胞照样若无其事的等待他们进一步的乱盖。</p>
+<p>以这样两个没常识的笨蛋，主持大陆事务，真不知是大陆同胞倒霉，还是台湾同胞倒霉，还是两者全倒霉。</p>
+<p>1991年3月31日</p>
+<p>自取其辱，才遭开除</p>
+<p>最近报上一再有郭良惠《心锁》一书争取解禁的事。二十五年前，台湾省政府新闻处以（52）公新一字第0319号函，查禁了这本书。禁书事小，中国文艺协会拦腰做上一票，趁机把郭良惠开除了会籍，这倒是杠上开花的趣事。中国文艺协会在事后，声明如下：“前因本会会员郭良惠女士，其所著《心锁》一书，意识极尽诲淫，内容尤多乱伦与性行为之描写，对于社会道德、善良风气及青年心身健康，均有不良影响。该书出版后，本会会员曾向本会迭次表示意见，咸认应对该书作者予以适切之警惩，以维会誉，而正文风；爰经本会第十三届第七次理监事联席会议决议，根据本会会章第八条之规定，依例注销郭良惠女士之会籍。”</p>
+<p>郭良惠是一个中文程度很低的所谓女作家，低到连基本唐诗都会弄错；中国文艺协会是一个不懂文艺的所谓人民团体，文艺出来的，不是文艺，而是烂套与马屁。基本上，这个团体是国民党学共产党，用来统战并管制文艺界人士的工具。这件事发生后，郭良惠跑到梁实秋家去抱怨，梁实秋是这样答复的，他说：“郭良惠啊！这件事有两个错误：第一个错误是他们不该开除你；第二个错误是你不该加入。”事后梁实秋在聊天之中，把这个故事告诉了我，我觉得很可以警世，所以至今没有忘记。梁实秋说这故事的时候，他自己也是中国文艺协会会员，按说以他的清望，本不该加入这个团体的，但他是圆滑的人，深知在国民党统治下，要随和一点，所以也就捧场参加了。</p>
+<p>郭良惠被开除会籍的故事，我所以觉得可以警世，因为推而广之，颇能喻大。以最近胡秋原被国民党开除党籍为例，便是其一。</p>
+<p>国民党中常会在9月22日开除胡秋原党籍，决议指出：胡秋原不依党规定，不听中央劝阻，到大陆探亲，与中共讨论“统一”问题，严重违反党章第四十四条第三款，及常务革新纲领第十八条规定，给予开除党籍处分。按党章第四十四条第三款是：党员必须“贯彻党的政策及决议”；现阶段党务革新纲领第十八条是：“本党各类干部如有跨党变节、毁纪反党、信仰动摇、违反法纪、作风偏差者，应依党纪严予制裁。”把这些规定，套在胡秋原在大陆的言行上，国民党党中央开除他，自属有其根据。</p>
+<p>当然，站在一个自由人的立场、站在“君子不党”的超然立场、站在根本看不起国民党的立场，我们可以视这些党纪为断烂朝报、为政治垃圾、为废纸，但是，站在国民党党员立场，就不这么简单。因为他在入党之初，是经过宣誓程序的。国民党重视宣誓程序，该党总裁曾在一九五二年四月二十一日讲《党员宣誓的意义》，三令五申。宣誓虽然是一种落伍的行为，但它所象征的个人信用，却是一种道德规范。换句话说，你可以不做国民党，但是既然做了，就得在未退出前，对你所承诺的条款守誓，这不是什么党不党的问题，而是个人道德行为的表现，是大丈夫对自己的承诺负责认账，不是别的。</p>
+<p>胡秋原和他同路人誓言胡秋原去大陆，不代表国民党，只代表个人，但是，只要你是国民党员，你就在道德行为上无法自脱。你既然错误的参加了国民党，你就要面对被开除的待遇。错误的是你自取其辱，又怪谁呀！</p>
+<p>1988年11月9日</p>
+<p>迟来的母亲、迟来的光荣、迟来的儿子</p>
+<p>二十多年前，我被国民党情治机关全年跟监，形同软禁。由于跟监我的特务们与我“朝夕相处”，大家也熟了。有一次我的小学弟王晓波来看我，事后特务们告诉我：“那个王晓波啊，他从小我们就见过他，他妈妈还是被我们捉去枪毙的。他妈妈呀，年轻漂亮，却为共产党牺牲了，真可惜！”</p>
+<p>二十多年来，我只知道王晓波的母亲是共产党的烈士，其他一概不知，因为王晓波没有多所透露。这几年，我在许多大学演讲（包括王晓波执教的世界新专），几乎每次都提到这位女士，用来证明共产党中的真实信仰者的可敬可叹，相对的，这位女士以外的台湾左派，却是“假共产党”、是“左倾幼稚病“患者、也是懦夫。他们比起这位勇敢的女士来，可差得太远了！</p>
+<p>今早看到中国时报王晓波的文章——《我的母亲叫章丽曼——一个“匪谍”儿子的自白》，终于使我们得知了这位女士的名字和她又悲壮又悲惨的故事。</p>
+<p>王晓波写道：</p>
+<p>妈遇难时二十九岁，我才只有九岁多，大妹七岁，二妹六岁，小妹未满周岁。爸也因“知匪不报”判处七年徒刑。我们至今没有见过妈的判决书，只有户口名簿上的一栏记事——“因叛乱案经宪兵司令部判处死刑于民国四十二年8月18日执行死亡。”</p>
+<p>王晓波写道：</p>
+<p>我们从来没见到过母亲的判决书，也不知道母亲是怎么遇害的。知道台大研究所毕业后，那年料理母亲后事的表兄也来家过年，而拉着我到户外去，跟我说：“你已经学成毕业了，应该知道你妈是怎么死的。”他才把将近二十年前，他在宪兵部队里四处打听母亲逝世的经过告诉了我。</p>
+<p>妈被捕后，曾自杀二次，一次是吞金项链，一次是吞下一盒大头针，但都没有成功。我们已无法知道，妈是处在何种境遇，而必须以自杀来保卫自己。临刑前，要她喝高粱酒，她拒绝了；她说，她是一个清清楚楚的人，死做一个清清楚楚的鬼。要她下跪受刑，她也拒绝了；她说，她对得起国家，对得起民族，上对得起天、下对得起地，她是无罪的。最后，她是坐着受刑的，临刑前还一直高呼口号，口号声是被枪声打断的。</p>
+<p>表兄告诉我，他这番话从来没跟任何人讲过，也要我不要告诉任何人。为了怕婆婆和爸爸听了难受，我也从来没有说过，直到1980年，我到美国第一次给大陆的大舅通信，才不能不告诉大舅母亲逝世的经过。</p>
+<p>王晓波最后写道：</p>
+<p>在“白色恐怖”的阴影下，从小，我不敢跟别人说母亲的名字，甚至也曾在心里抱怨过妈，害我们从小背负“匪谍儿子”的罪名，受尽羞辱和迫害。今天，我必须大声的告诉大家，我的母亲叫“章丽曼”，我就是章丽曼的儿子，我以母亲的誓死不屈而感到光荣！</p>
+<p>从这一追述中，我们总算知道了一点真相。</p>
+<p>令我们感到遗憾的，是王晓波既然早在研究生毕业时就知道了真相，为何二十多年来，却一直不敢公开表扬这么伟大的一位母亲？反倒忍气吞声讳莫如深直到今日？直到今日才敢“大声的告诉大家，我的母亲叫‘章丽曼’，我就是章丽曼的儿子，我以母亲的誓死不屈而感到光荣！”我们奇怪王晓波的光荣，为什么不赶早一点？</p>
+<p>我想，王晓波这样做，和他不够勇敢的性格有一定的关系。</p>
+<p>八年前，王晓波写信给《纵横》杂志的“小金”，公开说：</p>
+<p>在他（李敖）第一次入狱时，我没能为他仗义执言，也没能去看他，和写信给他，这是我应感到惭愧的。至于他被捕后，我以一个研究生的力量做了些什么，有些他已间接知道，至于他不知道的，我也绝不会说。</p>
+<p>又说：</p>
+<p>但是，如果李敖再度因言论而受政治迫害，你们《纵横》还继续办、还能给我讲话的机会，届时我一定为李敖公开讲话。不过，我希望随着时代的进步，永远别让我有这样的机会，并且，李敖的身体恐怕也经不起再度的折磨了。我愿为李敖讲话，除了“道义之交”外，还因为这个社会如果缺乏李敖未免显得太寂静，无论如何，他是一个“宁鸣而死，不默而生”的斗士，并且，言论自由的原则是需要大家共同来维护的。</p>
+<p>我读了后，不以为然，也写信给“小金”说：</p>
+<p>看了过去王晓波所作所为，唉，小金，你说我还敢消受他的好意吗？为什么男子汉王晓波要再等我第三次坐牢，才表现他的“公开讲话”？为什么男子汉王晓波要直到那时候，才为我“公开仗义执言”？为什么男子汉王晓波自己不入狱？为什么男子汉王晓波自己不办杂志？为什么男子汉王晓波老是向别人请求：“给我讲话的机会”？王晓波如自己不能站到第一线去冒枪林弹雨，他实在该对第一线的师友，有所像样的支援，而不该“惭愧”了事，更不该同那些迫害师友的人们打得火热，迷失自己真正的方向。</p>
+<p>如今，王晓波总算在我们许多年前就为“匪谍”讲话之后，写出文章认他妈妈了，我们当然为“章丽曼”女士庆幸。文章写得是那么好，读了令人感动，只是感动之余，仍无法挥去一种感觉，那就是：男子汉王晓波早干什么了？</p>
+<p>1991年6月3日午后</p>
+<p>关于李远哲忘恩负义的讨论</p>
+<p>关于李远哲对他的恩师王企祥博士忘恩负义的事，我在《求是报》中，迭有讨论，王企祥博士也亲笔举证，在美国的李远哲的老同学潘毓刚教授也来信关切。真相曝光后，李远哲的朋友、在日本的林明璋教授来信质疑。我还没来得及答他，《求是报》就结束了。现在我连同林明璋的来信、我的答书，以及全部有关李远哲忘恩负义的文字，按照时序，一并收在下面。</p>
+<p>一老徒弟李远哲今日负义又忘恩（李敖）</p>
+<p>求是报3月22日刊出独家照片四张。黑白两张为当年王企祥、李远哲师徒二人在清华大学研究所实验室合照，彩色照片为王企祥本月19日近照。另一黑白照片为李远哲学士照。</p>
+<p>王企祥，江苏青浦人，1929年生于天津，1949年以清华大学一年级身份留美，得加州理工学院博士。在美成绩优异，但热爱祖国。1958年，立意返回中国服务。美国政府人士以美国国籍相诱，想使他留在美国，但他不肯，乃离美赴北京。不期到北京后，大失所望，乃写信给周恩来，要求离境，周恩来准了他。他一抵香港，即与美国方面联络回美，但美方透露给国民党政府，于是，国民党教育部次长李熙谋匆匆自台湾赶到香港，请他吃饭，邀他到台湾“看一看”。他答应了。不料一抵松山机场，即被国民党政府扩大宣传，封以“反共义士”，并不准他出境。王企祥无法，只好长居台湾。先在中央研究院、继在交通大学、最后在清华大学落脚。他在清华大学教化学，与名伶徐露结婚。</p>
+<p>1960年春天，王企祥一度在台大兼课，李远哲即跟他做学生。后来王企祥气喘病离职，李远哲找到青年会王企祥住处，不断请教，王门立雨，备加恭敬。王企祥见李远哲“孺子可教”，乃予大力指导。1961年1月，就在清华大学研究所收容李远哲做徒弟，直到1962年夏天，前后一年半之久。当时财务困难，王企祥从梅贻琦那边请得庚款基金，帮助李远哲。此中情义，学府罕见。</p>
+<p>李远哲在台大为四十七学年度毕业生，本应当第八期预备军官，念清华研究所虽可暂时不入伍，但不能不服兵役。经王企祥商之于国防部长俞大维，建议以原子能研究有助国防名义，免李远哲服正式兵役，俞大维同意了。所以李远哲没服一般正式预官役，即赴美国深造。</p>
+<p>由于王企祥个性耿直，当仁不让，并且声色俱厉，得罪各方神圣太多，到了1979年，终于被迫离开清华。迫害他的主角是毛高文、沈君山、徐贤修、刘兆玄等人。</p>
+<p>离清华后，王企祥一路潦倒，十多年来，失业、转业、离婚、奔波，学术研究，被挤在外；人际关系，已近于零。但是，他那得了诺贝尔化学奖的高足李远哲，在公开场合竟也不认他了。当然也不肯以自己今日的地位，像样的为老师报报不平或援之以手。——高级知识分子为人凉薄到如此低级，真令人浩叹！</p>
+<p>李远哲当然不是抹杀他老师成就的人，但他怕公开肯定王企祥就会得罪别的人，这种心态，未免失之乡愿、失之见义无勇。真正伟大的科学家，是不该如此的。何况王企祥不是一般人，是他的恩师，他有今日的成就，得力于王企祥者尤多，忘恩负义是不应该的。我们盼望李远哲知过能改，公开向恩师认错。</p>
+<p>1991年3月20日</p>
+<p>二加拿大人吴大猷见贤不用所司何事！（李敖）</p>
+<p>求是报顷从秘密管道，取得1985年4月23日现任中央研究院院长——加拿大人吴大猷写给郝伯村的一封信，全文如下：</p>
+<p>伯春总长吾兄勋鉴：</p>
+<p>周前王企祥教授夫人过访，请代为王教授推介，恐有渎清神矣，尚乞谅之。</p>
+<p>王教授早年获博士学位于美国著名之加州理工学院，基础训练及能力皆优。返国后，任教清华大学。十余年来，努力于X光晶体结构的研究工作，数年前，以新法获得蛋白质结晶的结构，为国际上生物化学学者所称誉（见附件）。惜其为申请添置研究设备事，与当事者失和，后以人事纠纷，被逼去职，不克继续其优异的研究工作，此事不仅是伊个人的不幸，亦我国科学的一损失。十余年来，大猷知之甚深，在国科会时，曾极力鼓励支持其研究工作。五年来处境，大猷在私实有同情不平之感；在公则以国家在科学薄弱之际而不能容一有成就之人为可叹。</p>
+<p>王在沙特阿拉伯大学任教三载，甚望能举家返国，能有一继续研究的机会，如有可能，大猷愿为推举也。</p>
+<p>耑此敬颂</p>
+<p>勋祺</p>
+<p>弟吴大猷敬启</p>
+<p>七十四年4月23日</p>
+<p>求是报按：此信所指的“王企祥教授夫人”，即是唱京戏名家徐露女士。徐露女士与王企祥教授自从被学界败类逼出清华大学后，为了生活，移居沙特阿拉伯，由王企祥屈身教一化学以为糊口，后来计划返台，请之于吴大猷。吴大猷身居学术界龙头地位，明知王企祥“基础训练及能力皆优”，且为“国际上生化学者所称誉”；明知王企祥被学界败类所迫害“而不能容一有成就之人”，但吴大猷自己，为何不荐王企祥于中央研究院化学研究所呢？你是身居学术高位的人，不是学术圈外写八行书荐人的人，为什么却见贤而不用，任人才流落到非研究机构的地方呢？</p>
+<p>吴大猷自从做了中央研究院院长以来，年复一年都张牙舞爪的写文章感慨于科学研究的不彰。但是，按照《中央研究院组织法》第一条明定，该院“为中华民国学术研究最高机关”，按第二条明定，“中央研究院之任务”在“从事科学研究”。可见科学研究不彰，罪在该院，不在别人。但吴大猷主持台湾科学研究三十年，不知自省，却老怪别人。如今此信曝光，证明见贤而不能用、妨碍科学研究者，正是他自己、正是他这个有加拿大国籍的人！我们一定要拆穿这一真相，以儆学阀。</p>
+<p>三刘兆玄、沈君山、蒋彦士等涉嫌学术迫害（李敖）</p>
+<p>中国最优秀的化学教授王企祥博士（指导李远哲做研究的老师），十二年前，突被清华大学神秘解聘。当时众口铄金、人言籍籍，除了我公开写文章报不平外，没人敢说公道话。十二年来，真相逐渐明朗，六十二岁的王企祥，在妻（徐露）离家散之后，也打破沉默，写下文字，交我发表。</p>
+<p>王企祥全文如下：</p>
+<p>十二年前，清大王企祥解聘案之后，大批丧尽天良的人在台湾领导科学与教育的发展，若再不把此事提出来，台湾的前途，就会在这些品德败坏的人手中搞得像当年菲律宾、巴拿马一样，台湾不得不慎重，乃用编年的方法叙述之。</p>
+<p>1964年12月，我去澳洲雪梨大学化学系、弗里曼（Dr.H.CFreeman）的实验室做客座科学家（visitingscientist），由清大出钱。数月后却因应否把一位叫西曼斯基（JanSzymanski）的包括在内否而不欢而散。当时因为太坚持原则了，于是双方皆写信给加州理工化学系控告（这些控告函的副本落入西曼斯基之手）。因为我是那里毕业的，弗里曼从雪梨大学派去加州理工解读两年，因此也有关系。1965年秋我在日本东京大学把此问题解出来了，但后来我离开东京大学，东大受压力不再做下去，而弗里曼在1966年把我与西曼斯基皆包括在内而发表，当时加州理工也来信给我，说此事就这样解决，我与弗里曼以后永远不可再提。</p>
+<p>1972年，沈君山始由美国来清大，他是美国公民，任理学院长。大约同一年，刘兆玄（现任清大校长）也由多伦多大学毕业回清大任教，刘兆玄与西曼斯基在多伦多同事并发表数篇论文。</p>
+<p>1979年，一封无头无尾的诽谤王企祥的文件，在清大发给各教授。我在放大镜下，看出此信为李卓皓所为，再由吴延环相助，得到此函副本。我于是去美国控告李诽谤。1979年8月为清大解聘，理由为同李卓皓打官司，中国人为美籍人所诽谤，却不准到美国告，这是什么道理？不过官司继续打，到1980年，李卓吾出庭交出所有相关文件，由我的律师转给我，乃见到弗里曼给沈君山的信，而李卓皓的诽谤文件主要是依照弗里曼的信。这封信没有日期，没有档案号码，并且分段的间格大小不一。当时想到澳洲去告弗里曼，不过这种信他可说是伪造的，拿他无法，在台湾也拿沈君山无法，只好放弃。</p>
+<p>1986年，在加州理工学院我把这些信件给我老师修梅克尔（V.Schomaker）看，他立即指出这封弗里曼给沈君山的信有问题，而且是关键，他说1987年去澳洲，1986年冬，李远哲得诺贝尔奖，八六与八七与李见过数次，他说他欢迎我回台湾住，事情慢慢找。</p>
+<p>1988年4月，再在加州理工见修梅克尔，问他关于弗里曼的信的事，他只说这是西曼斯基干的，他当时失业（ItwasSzymanski,hedidn’thaveajob.）。他之后就不再提了，最后又说，台湾应当让我能退休。是年七月来台湾自由之家，无人理。八月一美国人住自由之家，自承是CIA。我给他看弗里曼的信，他说，一看即知是伪造的，应该找一位在学术界与我关系密切且有地位者写一信给弗里曼，问问他有没有做。此人说西方有地位的科学家不会做这种事，这时我才明了此信为有人付钱给西曼斯基伪造的。在我查看西曼斯基资料时，才知西曼斯基与刘兆玄曾共同发表文章数篇，刘兆玄是西曼斯基与沈君山之间的唯一联系。我当时即告知李远哲在台湾的朋友，原分所所长张昭鼎知此事，并附上所有文件，要李远哲为此事说话。并且也直接寄给李一份。当时是9月，可是一直到来年2月，李才写信给弗里曼，而在这之前沈君山已去过澳洲。</p>
+<p>1989年年初，清华已有人向我说，弗里曼已回信说信是他写的，一直到四月时，李远哲到台湾，当面同我说，弗里曼承认是他写的。并且李说在看完此信后就烧掉了。当时因1989年1月开始，张昭鼎从蒋彦士方面每月给我三万五千元，也无名分，由张昭鼎处取。我却觉得，李远哲与沈君山有了交易，年底蒋彦士找我，要我说两位蒋总统是世界级的伟人，我对他说这是你的意见，我不如此想。年底李为我向刘兆玄、张昭鼎写一信件，希望给我事做。</p>
+<p>1990年1月此钱停止，清大无回音。3月初去香港，又去大陆游长江，3月底回台，乃携李之信的副本见于豪章，请他帮忙，于说愿同郝伯村讲，4月郝伯村同于讲，我的事他会解决。7月郝派人来看我，并送我五万元，可是我的中正理工学院的聘书到12月才拿到，由8月算起，在这时于向我说，郝伯村为我的事，在做一生中最困难的问题。</p>
+<p>1991年我向张昭鼎要一个办公室，没有回音，问清大要也无人理。3月去美国，希望加州理工能让我工作，修梅克尔和我谈了一些我要做的研究问题，都已安排好，最后说，台湾应该给我一个实验室，可是到现在为止，台湾没有人管。</p>
+<p>李敖有点看不过去，把我和李远哲的关系在求是报登了一下，让台湾的知识分子与学生对李应有一新的看法。</p>
+<p>我现在已把一些资料给我在澳洲做澳洲移民部长顾问的弟弟，找律师与澳洲联邦警察（澳洲的FBI），对弗里曼进行调查；也请加拿大的骑警对西曼斯基进行调查，这问题是一个人在自己国内做坏事，外国大概无法管，可是一个人有了政府的高位，用国库的钱到美国（李卓皓）、加拿大（西曼斯基）、澳洲（弗里曼）大送贿赂，引他们做假文件、做伪证等犯罪行为，是国际上所不容的，台湾司调单位应把清大王企祥案的文件调出来，对沈君山、刘兆玄、徐贤修等人进行调查，毛高文与这些人的关系，假若不是共谋，将是意外。假若让外国先查清楚，我们的国家与人民如何可以得人尊敬。这是一个国家尊严的问题，这也是美国一直对此事很关切的原因，因为这是国际犯罪！希望在目前台湾已开放的社会与已有进步的司调单位，能把此案弄清楚，还我在清大的教职与实验室。</p>
+<p>从以上王企祥的文字中，我们恍然于国民党统治下学界的黑暗，竟已如此严重！据我调查，王企祥拒绝蒋彦士要他说“两位蒋总统是世界级的伟人”，是本案的重要关键。而王企祥的学术成就与正直性格遭到不学有术的刘兆玄、沈君山等人的嫉忌，以至希旨承风，去之而后快，也是本案发生的根本原因。</p>
+<p>1991年5月28日</p>
+<p>四反证刘兆玄、张昭鼎忌才拦路（李敖）</p>
+<p>在清华大学校园发生“色情文化”——A片风波之际，本报取得李远哲就清华阴谋解聘王企祥教授事件致清华现任校长刘兆玄等的一封信。全文如下：</p>
+<p>清华大学校长刘兆玄博士</p>
+<p>中央研究院原子分子科学研究所张昭鼎主任</p>
+<p>兆玄、昭鼎两兄：</p>
+<p>关于王企祥博士在中研院原子分子科学研究所所谋一事，原分所海外资讯委员，因他的专业与原分所目前与将来的研究方向不合，经投票结果，不能同意聘他为研究员。</p>
+<p>弟向资讯委员提议，讨论聘王博士为研究员一事，乃因王博士申请加入原分所，虽知他的专业并不是原分所的研究方向，因他情形特殊，请资讯委员们从不同的角度审查他的申请。</p>
+<p>弟一直同情王博士的处境，许多跟他做过研究的学生们、同事们，也常觉得当年清华大学解聘王博士，也许做得有些过分，弟于1962年出国留学后很少跟王博士联系，也不清楚后来他被解聘的原因。从很多方面看来，也许他不是一位最理想的教授，但在清华原子科学研究所设立的早期，他确是有些贡献的。我于1961年到1962年整整一年的时间与几位同学跟他做结晶构造的研究工作，也就是我们念完硕士学位，服役预备军官的一年。那时在台湾，很少在美国一流大学得博士学位的人，我们常常经过王博士对他在加州理工学院的见闻，看到学术上更高的一层，也了解到科学上“天外有天”的一回事。他是台湾第一个从事X光绕射结晶构造的人，算是这方面工作的先驱者，也训练了不少这方面的人才。</p>
+<p>无论他当时不知患了什么错误而被解聘，我觉得他这许多年来，已受够了足够的苦头，实不忍再看他生活无着，不能像别人一样，享受退休时的优遇。据说他再服务两年，便到了能满服务二十年退休之条件。基于人道的立场，弟觉得清华大学也许能够让他再回清华大学服务两年，以满足他退休时，领取退休金的条件。弟相信清华大学以前与王博士从事结晶构造的同事们，将会乐意看到王博士再同他们从事两年的工作。</p>
+<p>即使弟非常同情王博士的处境，中研院的原子分子科学研究所，并不是他适当的去处，也不是弟能够设法安置王博士在原分所。让他静静地回去从事X光结晶构造有关的工作，才是正确的作法，望你们两位能够设法帮助王博士，使他能够过较为正常的生活，弟将不胜感谢！祝</p>
+<p>学安</p>
+<p>弟李远哲敬上</p>
+<p>1989年12月19日</p>
+<p>此信到达刘兆玄等手中后，至今已近一年半，刘兆玄等并未再请王企祥博士回校服务。可见刘兆玄等忌才拦路，完全不配做为国立大学校长。</p>
+<p>国民党中央日报上月24日专文大捧刘兆玄，说他“要让清大名扬四海”，对照起刘兆玄等对中国最有成就的化学家王企祥博士的忌才拦路，可见国民党中央日报在做虚伪宣传。“名扬四海”者，臭名也！</p>
+<p>据悉，刘兆玄本人，当年就是阴谋解聘王企祥博士的黑干将。刘兆玄本是以“上官鼎”为笔名，写下流武侠小说的人，以这种货色尸太学祭酒之位，国民党高等教育不完蛋，其可得乎？</p>
+<p>1991年6月14日</p>
+<p>五李远哲忘恩负义经查属实（李敖）</p>
+<p>诺贝尔奖得主、美国西岸柏克莱加州大学华裔教授李远哲，上月20日，在中国辽宁省大连市被聘为中国科学院分子反应动力学国家重点实验室名誉主任后，复于本月27日来台讲学研究半年，月薪十五万元。</p>
+<p>出面请他的是中央研究院原子分子科学研究所。这个所是1988年他在中央研究院会议中争取成立的。三年来，他对该所的设立与指导有甚多贡献，但是，却传出他推荐的著名化学奖王企祥教授，被该所打了回票的怪事。理由是：“其他人否决了他的提议。”按诸事实，这是令人难以置信的。</p>
+<p>经求是报“扒粪”结果，认为真正的原因在李远哲为人不肯饮水思源，而对恩师王企祥教授忘恩负义的缘故。</p>
+<p>求是报3月24日独家揭发此一内幕后，引起海内外各界重视，继杨振宁后担任过全美华人协会总会主席的旅美化学奖潘毓刚教授且来函查证。全部内情，复经李敖与王企祥对证无误，李远哲忘恩负义，已得进一步证实。</p>
+<p>请参看今日本报《李敖天地》版。</p>
+<p>六李远哲忘恩负义，王企祥细说从头（李敖）</p>
+<p>小潘：</p>
+<p>我虽是学史学的，但比你们科学家还科学。我承认自己有时在感情上有好恶，但好恶之起，乃根据事实而来，在事实方面，尊重证据、雅好求证。我这种态度，由我对蒋介石就可以看出。在感情上，我痛恨蒋介石；但这种痛恨，发为白纸黑字，却是尊重证据、雅好求证的。虽然在感情上，我是要鞭尸的伍子胥；但在行文上，我却有历史家的谨严，全凭证据来“诛奸谀于既死，发潜德之幽光”，——我是沙尔非米尼（GaetanoSalvemini）。沙尔非米尼是意大利历史家，他因反对大独裁者墨索里尼（BenitoMussolini）的法西斯政权入狱，但他日后下笔写墨索里尼，却凭证据来说话，叫人心服口服。我写《蒋介石研究》一至六集、编著《清算蒋介石》、编印《拆穿蒋介石》、《蒋介石张学良秘闻》、《侍卫官谈蒋介石》，……都是凭证据来说话的，叫人心服口服，有书为证。</p>
+<p>你们化学家同行王企祥这两三年来，常到我处聊天、谈问题。其中谈到他的学生李远哲对他忘恩负义的事。其中重点是：</p>
+<p>李远哲找到青年会王企祥住处，不断请教，王门立雨，备加恭敬。王企祥见李远哲“孺子可教”，乃予大力指导。1961年1月，就在清华大学研究所收容李远哲做徒弟，直到1962年夏天，前后一年半之久。当时财务困难，王企祥从梅贻琦那边请得庚款基金，帮助李远哲。此中情义，学府罕见。</p>
+<p>李远哲在台大为四十七学年度毕业生，本应当和你我一样要去受军训、做第八期预备军官，念清华研究所虽可暂时不入伍，但不能不服兵役。经王企祥商之于国防部长俞大维，建议以原子能研究有助国防名义，免李远哲服正式兵役，俞大维同意了。所以李远哲没服一般正式预官役，即赴美国深造。</p>
+<p>由于王企祥个性耿直，当仁不让，并且声色俱厉，得罪各方神圣太多，到了1979年，终于被迫离开清华。迫害他的主角是毛高文、沈君山、徐贤修、刘兆玄等人。</p>
+<p>离清华后，王企祥一路潦倒，十多年来，失业、转业、离婚、奔波。学术研究，被挤在外；人际关系，已近于零。更惨的是，他那得了诺贝尔化学奖的高足李远哲，在公开场合竟也不认他了。当然也不肯以自己今日的地位，像样的为老师报报不平或援之以手。——高级知识分子为人凉薄到如此低级，真令人浩叹！</p>
+<p>我得知王企祥的遭遇后，愤愤不平，但王企祥却宽宏大量，不愿深究，但是面露索寞之色，却很明显。因此我在未知会他的情况下，于3月24日求是报上公开揭出此事，我写道：</p>
+<p>李远哲当然不是抹杀他老师成就的人，但他怕公开肯定王企祥就会得罪别的人，这种心态，未免失之乡愿、失之见义无勇。真正伟大的科学家，是不该如此的。何况王企祥不是一般人，是他的恩师，他有今日的成就，得力于王企祥者尤多，忘恩负义是不应该的。我们盼望李远哲知过能改，公开向恩师认错。</p>
+<p>我写这种下笔行文，语含期勉，是尚不失忠厚的，你可以看出来。</p>
+<p>3月24日见报后，我为了进一步追查王企祥被恶势力迫害的内幕，又陆续取得并公布以下文件：4月22日公布吴大猷给郝伯村的信、5月28日公布王企祥亲笔秘件、6月16日公布李远哲致清华大学校长刘兆玄、中央研究院原子分子科学研究所主任张昭鼎的信，一切实事求是，并无预设成见。</p>
+<p>6月20日收到你的信，说：“最近有人跟我说你指责李远哲忘恩负义是不公平的！他说李远哲曾提议中央研究院原子分子研究所雇用王企祥，只是被其他人否决了他的提议。不知王企祥知不知道这件事？”其实王企祥当然知道这件事，并且我公布的李远哲这封“提议”的信，还是从他那儿挖出来的。——绝不隐瞒任何关键史料，是干我这一行的信条，就如同你们不隐瞒化学元素一样。所以，“有人”说我的“指责”“不公平”，这是“有人”胡说的。正相反的，我不但“公平”，并且连李远哲的一手好字，都给制版公布了呢！</p>
+<p>收到你的信后，为了就“有人”所谓的“只是被其他人否决了他的提议”这一漂亮说法有以查证，我特别给王企祥写了信，他也回了信。现把两信附在下面：</p>
+<p>一李敖致王企祥</p>
+<p>企祥兄：</p>
+<p>顷接化学教授李远哲台大同学潘毓刚来信，提到他在美国看到求是报登李远哲忘恩负义的事，他说：</p>
+<p>最近有人跟我说你指责李远哲忘恩负义是不公平的！他说李远哲曾提议中央研究院原子分子研究所雇用王企祥，只是被其他人否决了他的提议。不知王企祥知不知道这件事？可惜我也不很清楚李远哲在中央研究院，出多大的力推荐王企祥，如果只像吴大猷一样写封言不由衷的推荐信，那王企祥当然不必领他的情。也许你知道内幕更多，才有那么重的指责，如能告之一、二，我才可为你那篇文章（报导）辩护。</p>
+<p>按李远哲对你忘恩负义的事，本得自你，你是肤尝身受的当事人。当然，这事得以被揭发，乃由于我办求是报“扒粪”扒出来的，由于我劝你不可姑息不义之人，才蒙你提供资料，写出始末与内情。现在李远哲那边暗中有异议，我想你我都该进一步求证一下。</p>
+<p>因为你是当事人，所以事实与看法方面，都由你写较妥；而我这方面，只写一点意见。</p>
+<p>我的意见是，李远哲应你之请写那封信，敷衍你的成分，似乎多于帮助你。</p>
+<p>第一、信是1989年底写的，距离你被迫离开清华（1979）已十年，距离李远哲得诺贝尔奖（1986）已三年，在这些时间里，他干什么了？为什么不帮帮他的恩师——因义受难的恩师？而拖到1989年才被你“逼不过”写这封八行书？</p>
+<p>第二、一般写八行书的规矩，受信人或答应信中要求，或婉为拒绝，都要有回音与回信。但此事却“石沉大海”，这是很可疑的，令人怀疑他们根本是“套招”。——刘兆玄以清华大学校长身份、张昭鼎以中央研究院原子分子科学研究所主任身份，岂会对李远哲如此不礼貌，连信都不回？而李远哲看到“石沉大海”，如真心为恩师谋职，又岂能若无其事，照样事后与他们“言笑晏晏”？这通吗？何况1989年八行书告吹后，他为什么不再另外替恩师想想办法、另谋出路？而任你流落至今？</p>
+<p>第三、吴稚晖死后，曾流传出这样一个故事：一天，蒋经国收到吴稚晖的一封信，说：我的一个朋友有事要我写信向你关说，如我不写，他就没完没了，故只好写了那封信。但那封信是“假”的，你不要信，请你还是公事公办好了。看到李远哲、刘兆玄、张昭鼎他们的作风，我竟忍不住老是想到这个故事。</p>
+<p>我生平所见忘恩负义之人已多，毫不稀奇。稀奇的是忘恩负义后还想巧辩，结果遭到别人进一步的揭发，这种人岂止忘恩负义，还兼蠢蛋也！</p>
+<p>敖之</p>
+<p>1991年6月22日夜</p>
+<p>二王企祥答李敖信</p>
+<p>李敖兄：</p>
+<p>来信收到，事情是愈辩愈明，有两件事我要说明一下，因为李远哲所表现的，是不肯为长者折枝而已！</p>
+<p>（一）我很久之后才知道，他竟在大庭广众之下说他没有从我学到任何东西，我开始不太相信，因为一个人说谎也要有点分寸，后来看到他的自传（在1989年）才知道他的确如此说了。这也是他同美国人这样说的，当然他推荐我进中研院原分所时也是如此声明，无异说：“这个人我同他做过一年，可是没有学到任何东西，他要用这个关系进原分所，大家意见如何？”答案是可想像的了。可惜求是报在1991年3月24日上的两张李在我实验室由我带他做实验的照片，刺破他的谎言，我在1991年3月26日在美国加州理工见我老师修梅克尔（V.Schomaker）时，他说他已见到我带李远哲做实验的照片。（IhaveseenthepicturethatshowedLeeworkingwithyouinyourlab.）（当时我还未看到报纸。）</p>
+<p>（二）像李远哲这样已有国际地位的科学家，就是写信给苏联总统、英国首相，都应收到亲笔签名的回函，他同刘兆玄与张昭鼎玩的把戏是世界奇闻，一年半没有回信，也是对国际科学界给他的诺贝尔奖的侮辱。我想你李敖写了这样一封信人家不理，你一定会剥了他的皮，除非你是像吴稚晖一样没有人格，自己写自己的假信，也就是像梁肃戎一样“敷衍两句”。</p>
+<p>我很高兴，你的报纸把这些见不得人的名人坏事放在阳光下，我知道像李远哲、李卓皓之流都是双面人，他们在美国人那里，规规矩矩、老老实实。到了像台湾这种中国社会，又可坏事干了还要站出来说我来领导你们。李敖，这样做可使台湾产生如马可仕（Marcos）、诺瑞加（Noriega）之流政客的可能性大为降低。这些还没有当权已可说谎做坏事，一旦大权在握，百姓焉有活路。</p>
+<p>企祥</p>
+<p>1991年6月23日</p>
+<p>看了上面王企祥的回信，我想一切真相，都已大白了。</p>
+<p>我识王企祥在三十年前的文星时代，那时他还在清华做教授，他是我的老朋友，但不算好朋友。原因是他是百分之百不通人情的书呆，人情世故，极不圆融，做他的朋友，很吃力。但他有一大长处，就是坦白待人、为人诚实、绝不说谎话。一切有话直说、有脾气就发，绝不客气。他教书认真，虽然热心帮助学生，但是脾气甚坏，可以想象做他的学生，比做朋友恐怕更吃力，我想李远哲吃了不少他的苦头。但在严师之下吃苦头，并不就是对恩师忘恩负义的借口，李远哲若有此一自解心理，就未免太小气、太无情了。</p>
+<p>我推测李远哲对王企祥，有一股内疚，因此他老是公开宣扬他在清华是纯自修的、没从老师那边学到东西（最近他在国民党中央日报上还这样宣扬了一次），以维系内心的平衡。但是，阴错阳差被我弄到他在清华跟王企祥做实验的照片，这下子全赖不掉了。</p>
+<p>结论是，李远哲对恩师忘恩负义，应属事实。他可以不忘恩负义，尤其在他大到成为历史人物之后，有太多太多能力与机会去补救这一点，但他却不肯补救，反而使错误加深，这是他的不智、不仁、不勇。</p>
+<p>在化学上，他是巨人；但在春风化雨之学上，他是侏儒，我真为他的美中不足可惜。希望你劝劝他，去做个大丈夫，不要这样藏头缩尾的。</p>
+<p>即祝</p>
+<p>欧游痛快</p>
+<p>敖之</p>
+<p>1991年6月27日午</p>
+<p>七欧游道中寄李敖（潘毓刚）</p>
+<p>我们正在芬兰的Helsinki’芬兰女多男少且多金发女郎，本想寻一张美女图给你，可惜找不到，只好以景物代人物。你为王企祥打抱不平是很好的，本来沈君山、吴大猷之流都该骂，但你说王企祥是“中国最优秀的化学家，是李远哲的老师”，并不是得诺贝尔奖的人的老师就最优秀，老师不如徒弟的比比皆是，否则人类何来进步？措辞过分夸张反而失去说服力，其实王在台湾可能还算一流化学家，但在大陆就只能算二、三流了。说得严谨一点以免给人“外行人说内行话”，信口开河的不良印象，不知以为然否？</p>
+<p>老潘寄自芬兰</p>
+<p>1991年6月28日</p>
+<p>八日本“读者投书”——致李敖信（林明璋）</p>
+<p>李敖先生：</p>
+<p>我从美国来日本的前一天，有一位同乡打电话给我说，他在《求是报》上读过一篇你谰骂李远哲教授的文章，并在第一版刊载，有损他的高尚人格，我连忙请他把报纸送给我看。</p>
+<p>到了日本后一直为着讲学、工作而忙，再加上时差，无法找出时间细读你的大作，这个周末终于得到一、两小时的闲空，打开你6月29日的《求是报》，一口气从第一版念到第四版。</p>
+<p>我读了当然大吃一惊，因为你指责“李远哲忘恩负义”的根据是不合常规的，我不知道在台湾（这个习俗败坏的社会）写推荐信准则如何，在美国和其他国家，学生是不能替老师写推荐信的，理由很简单，如果一个学生替某老师写推荐信，有一天这个学生要晋升或迁职，需要该老师的推荐，不是马上会有狼狈为奸的可能？</p>
+<p>再者，李先生您的整篇论调完全出自一面之说，感情用事。王企祥教授于1979年“被迫”离开清华，背景如何？他为什么“被迫”离职呢？是教书或研究差？还是人格、行为坏？你为什么不去找清华刘校长或沈院长查明是非？大多的读者，不是笨蛋的。你也有责任向读者交代清楚。</p>
+<p>事实上，任何人要查明王博士在科学上的建树，是很简单的，他/她不用半天的时间便能在化学摘要上找出下落，王企祥是否有资格去原子分子研究所工作。据我所知原分所目前的研究水准已达国际水平，王博士十余年来不做研究，我很怀疑他有资格当研究员的，台湾的科学水准已不像三、四十年的落后惨状。</p>
+<p>李先生自称“比科学家还科学”，此上的简单道理你应该懂的，也不必去巧辩、强词夺理。二十几年来，我常听到朋友赞美李敖的胆识和义气，但是我这次初次读到你的文章，我失望至极。你这次“扒粪”实在搞得自己满脸是屎。</p>
+<p>读者林明璋敬上</p>
+<p>1991年7月22日于东京大学</p>
+<p>副本送：潘毓刚教授、李远哲教授</p>
+<p>笔者林明璋现任美国Georgia州Emory大学物理化学Woodruft讲座教授，曾任美国国家海东研究所化学动力学组主任、资深研究员，并于1982年升任美国政府“特级”公务员。</p>
+<p>九德国读者投书（打小人）</p>
+<p>在《求是报》读了几篇关于李远哲忘恩负义的报导，使我想起在台湾时听到的一则传闻：</p>
+<p>李远哲见蒋经国时每次提到大陆的官员都加一个“匪”的称号，但后来他到大陆见方毅（那时中共的副总理）每次提到台湾的官员都加一个“伪”字，例如“伪教育部长”……。到了德国又听到一位从大陆福州来的留学生说，五、六年前王企祥通过中共一个人才引进的机关，再次被做为人才引进大陆，当时福州物质结构研究所的所长卢嘉锡也答应接受王企祥，但李远哲知道后叫卢嘉锡不要用王企祥，结果卢嘉锡改变主意，把王企祥拒于大陆门外。这位福州来的留学生，还说他听北京的同学提到过李远哲有一次在北京大学演讲，说他本来学晶体结构的，因导师不好，后来到美国才改行学化学动力学，看来李远哲在北大骂的导师可能就是王企祥，我本着发掘“伪君子”、打击忘恩负义的“道德侏儒”立场，特别把这几则传闻写出来。求证于《求是报》的读者。（打小人寄自德国）</p>
+<p>91年8月1日</p>
+<p>十爱李远哲乎？害李远哲乎？（李敖）</p>
+<p>我在《求是报》陆续发表有关李远哲忘恩负义的文字后，外界颇有反应，其中有日本东京大学的林明璋教授来的“读者投书”，我现在答复如下：</p>
+<p>林明璋以自己“升任美国政府‘特级’公务员”身份，指责台湾“这个习俗败坏到社会”，说：</p>
+<p>你指责“李远哲忘恩负义”的根据是不合常规的，我不知道在台湾（这个习俗败坏的社会）写推荐信准则如何，在美国和其他国家，学生是不能替老师写推荐信的，理由很简单，如果一个学生替某老师写推荐信，有一天这个学生要晋升或迁职，需要该老师的推荐，不是马上会有狼狈为奸的可能？</p>
+<p>林明璋这些话，都显示了他虽然变成了美国人，脱身了他看不起的“习俗败坏的社会”，但他自己，却无知得并不了解美国社会。在美国社会中，学生替老师写推荐信的，大有人在，不但没败坏习俗，并且更显出做学生的内举不避的伟大怀抱与雪中送炭的感恩深情。例不必远求，李远哲的太老师，得过两次诺贝尔奖的鲍林（LinusCarlPauling）就典型在焉。鲍林1954年得诺贝尔化学奖，后来致力禁止核子试爆运动，于1962年再得诺贝尔和平奖，但加州理工学院当局怪他外务太多，逼他走路，不过“此地不留爷，自有留爷处”，他的学生“推荐”他，进加州圣巴巴拉民主学院研究中心、进圣地亚哥分校、进斯坦福大学，都不乏学生大力援之以手。照林明璋“在美国和其他国家，学生是不能替老师写推荐信”的说法，鲍林及其学生，显属败坏习俗者流了，这通吗？林明璋把“读者投书”副本送潘毓刚教授，殊不知这位潘毓刚教授，就是怀抱伟大、深情感恩者，他在美国，就一而再、再而三的为老师写过推荐信，并且推荐以后，都有了好效果好结果，照林明璋的说法，潘毓刚及其老师，也显属败坏习俗者流了，这通吗？由以上诸例，可知在美国社会，学生还没“大义灭师”到林明璋所白纸黑字的程度。关键不在是否谊属师生不师生，而在是否用心如日月、是否公正。只要用心如日月、只要公正，老师又为何不能“推荐”？说什么“如果一个学生替某老师写推荐信，有一天这个学生要晋升或迁职，需要该老师的推荐，不是马上会有狼狈为奸的可能？”这种话根本是小人心理！教育之事在知识传承，又不是玩政治，老师没那份学问，“推荐”了也白推；老师有那份学问，又何能因为谊属师生而野有遗贤？即以李远哲写给清华校长刘兆玄、中研院原分所所长张昭鼎而论，形式上，那就是典型的推荐老师的信，试问那是不是“狼狈为奸”？是不是有损李远哲“高尚人格”？林明璋口口声声卫护有“高尚人格”的李远哲，说我指责李远哲是“不合常规”的，但李远哲写的，是什么信？偏偏是替老师写的推荐信！照林明璋的逻辑，此非“狼狈为奸”而何？——我指责李远哲，还没明斥他“狼狈为奸”呢！与李远哲同为美国人、同为化学教授的林明璋，自己却先爱之适足以害之了。——李远哲碰到这么笨的卫护者，真要哭笑不得了！</p>
+<p>林明璋不知道：整个问题的关键不在写推荐信、也不在学生替老师写推荐信，而在李远哲以他的“高尚人格”，写了一封“低级行径”的信，一封没有诚意、只是敷衍他恩师的信。正如我分析的：一般人写八行书的规矩，受信人或答应信中要求，或婉为拒绝，都要有回音与回信。但此事却“石沉大海”，这是很可疑的，令人怀疑他们根本是“套招”。——刘兆玄以清华校长身份、张昭鼎以中研院原分所主任身份，岂会对李远哲如此不礼貌，连信都不回？而李远哲看到“石沉大海”，如真心为恩师谋职，又岂能若无其事，照样事后与他们“言笑晏晏”？这通吗？何况1989年八行书告吹后，他为什么不再另外替恩师想想办法，另谋出路？而任恩师流落至今？我又分析：吴稚晖死后，曾流传出这样一个故事：一天，蒋经国收到吴稚晖的一封信，说：我的一个朋友有事要我写信向你关说，如我不写，他就没完没了，故只好写了那封信。但那封信是“假”的，你不要信，请你还是公事公办好了。看到李远哲、刘兆玄、张昭鼎他们的作风，我竟忍不住老是想到这个故事。</p>
+<p>而恩师王企祥自己，虽然在人际关系上笨拙得不知人心难测，最后也大彻大悟。他指责他的学生李远哲：“我很久之后才知道，他竟在大庭广众之下说他没有从我学到任何东西，我开始不太相信，因为一个人说谎也要有点分寸，后来看到他的自传（在一九八九年）才知道他的确如此说了。这也是他同美国人这样说的，当然他推荐我进中研院原分所时也是如此声明，无异说：‘这个人我同他做过一年，可是没有学到任何东西，他要用这个关系进原分所，大家意见如何？’答案是可想像的了。”王企祥这些话，也告诉了我们；李远哲写推荐信，诚意是可疑的。</p>
+<p>林明璋又说：</p>
+<p>事实上，任何人要查明王博士在科学上的建树，是很简单的，他/她不用半天的时间便能在化学摘要上找出下落，王企祥是否有资格去原子分子研究所工作。据我所知原分所目前的研究水准已达国际水平，王博士十余年来不做研究，我很怀疑他有资格当研究员的，台湾的科学水准已不像三、四十年的落后惨状。</p>
+<p>林明璋说“任何人要查明王博士在科学上的建树，是很简单的，他/她不用半天的时间便能在化学摘要上找出下落”，这话不错，连我这化学外行人都可在1969年ActaCrystallogra-phica学报上，查到TheCrystalStructureofTris(cyclopentadienyl)samarium(Ⅲ)byChi-hsiangWong（王企祥）、Tseng-yuLee（李曾遹）andYuen-tsehLee（李远哲）。那是自言没从恩师那边学到任何东西的李远哲，附骥尾于王企祥论文下的“处女作”，这样子“查明”，的确如林明璋所指示，“是很简单的。”后生晚辈的林明璋，大概无法否认王企祥当年的学术成就，王企祥出身加州理工，是台湾中国人最早亲承鲍林受教的高足，他有一定的水平，才会教出李远哲那样学生。我是历史家，对化学完全不懂。我在《求是报》从历史角度，说王企祥是“中国最优秀的化学教授”，就引起潘毓刚教授的来信抗议。潘毓刚说王企祥“其实在台湾可能还算一流化学家，在大陆就只能算二、三流了”。我收信后问王企祥，王企祥说潘毓刚说得全对，只是“实为二三十年前台湾研究环境所限”而已。我后来在长途电话里转告了潘毓刚，潘毓刚笑着说：中研院原分所以王企祥的资格理由拒绝了他，但该所没被拒绝的，又有几个有国际水平呢？从潘毓刚的笑谈中，我们依稀看到李远哲创办的中研院原分所拒王企祥于千里之外，似乎并不公平、也不公道。</p>
+<p>至于王企祥以当年雄姿英发的清华化学系名牌教授，何以沦落一至于此，原因林明璋亦愿追究。他说：</p>
+<p>再者，李先生您的整篇论调完全出自一面之说，感情用事。王企祥教授于1979年“被迫”离开清华，背景如何？他为什么“被迫”离职呢？是教书或研究差？还是人格、行为坏？你为什么不去找清华刘校长或沈院长查明是非？大多的读者，不是笨蛋的。你也有责任向读者交代清楚。</p>
+<p>林明璋这些话，全是血口喷人。第一，《求是报》园地开放，从不“完全出自一面之说”，只是他一面的人自恃大牌或做贼心虚，不敢前来展示他的另一面之说而已。第二，王企祥被迫离职，既非教学或研究差，也非人格或行为坏，远因乃是政治迫害，和学阀们的勾结迫害。</p>
+<p>林明璋问：“你为什么不去找清华刘校长或沈院长查明是非？大多的读者，不是笨蛋的。你也有责任向读者交代清楚。”其实，当年我是唯一一个在报上揭发这一迫害的人，我在1979年8月25日的《中国时报》上发表《王企祥该打！》一文，就指出“王企祥案的真正关键，大家都没看出来。真正关键是‘学术自由的被侵犯’”。一针见血，早就“向读者交代清楚”。十二年后我办《求是报》，亦进一步查明，这由《求是报》5月28日登出《刘兆玄、沈君山、蒋彦士等涉嫌学术迫害》一文可证。文中发表王企祥亲写的，明白揭发：</p>
+<p>1989年年初，清华已有人向我说，弗里曼已回信说信是他写的，一直到四月时，李远哲到台湾，当面同我说，弗里曼承认是他写的。并且李说在看完此信后就烧掉了。当时因1989年1月开始，张昭鼎从蒋彦士方面每月给我三万五千元，也无名分，由张昭鼎处取。我却觉得，李远哲与沈君山有了交易，年底蒋彦士找我，要我说两位蒋总统是世界级的伟人，我对他说这是你的意见，我不如此想。年底李为我向刘兆玄、张昭鼎写一信件，希望给我事做。</p>
+<p>1990年1月此钱停止，清大无回音。……</p>
+<p>把甚至李远哲与迫害者卑鄙的“有了交易”的暗盘，都“向读者交代清楚”了，林明璋为何视而不见？我还补充道：</p>
+<p>从以上王企祥的文字中，我们恍然于国民党统治下学界的黑暗，竟已如此严重！据我调查，王企祥拒绝蒋彦士要他说“两位蒋总统是世界级的伟人”，是本案的重要关键。而王企祥的学术成就与正直性格遭到不学有术的刘兆玄、沈君山等人的嫉忌，以至希旨承风，去之而后快，也是本案发生的根本原因。</p>
+<p>我“交代”的，还不“清楚”吗？林明璋为何视而不见？</p>
+<p>奇怪的是，林明璋问：“你为什么不去找清华刘校长或沈院长查明是非？”我要反问：“这一是非，我十二年间，已经查明得知如此清楚并且公诸舆论了，刘兆玄、沈君山等学阀，如有委屈，为何不找李敖要求更正？为什么他们不来找我，而要我去找他们？他们一面这样不吭气，又怪谁啊？”</p>
+<p>更奇怪的是，林明璋口口声声要“交代清楚”，他为什么不要求李远哲以下的诸公呢？他们被李敖举证拆穿，无一不是忘恩负义的伪君子，他们为什么不向社会“交代清楚”呢？反倒有劳林明璋这位不明真相的“美国政府‘特级’公务员”来仗“不义”执言呢？</p>
+<p>林明璋最后说：</p>
+<p>李先生自称“比科学家还科学”，此上的简单道理你应该懂的，也不必去巧辩、强词夺理。二十几年来，我常听到朋友赞美李敖的胆识和义气，但是我这次初次读到你的文章，我失望至极。你这次“扒粪”实在搞得自己满脸是屎。</p>
+<p>我最后也正告林明璋先生：“扒粪”扒到自己满脸是屎，足证所扒为粪属实，不但是粪，并且还是稀屎，臭不可闻。关于台湾学术界黑暗，我早在近三十年前即予揭发，我骂老一代学阀“占着茅坑不拉屎”，文献俱在。如今新一代学阀屎落茅坑，却水肥不落外人田，其为屎也，无益农作，只生白蛆已。志士仁人看不过去，扒而出之，虽无益世道，但端正人心，使人人皆知谁是大便、原是大便，也算功德之一。何况“君子之爱人也，以德；细人之爱人也，以姑息”，揭发李远哲以下诸公的真面目，也算是一种逐臭之爱。而林明璋先生貌似“查明是非”，事实上只是姑息护短，爱之适足以害之，非君子之大道。特此奉答期勉，愿林明璋先生反省焉。</p>
+<p>1991年10月23日</p>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/16.李敖祸台十书/李敖智慧书.md">Edit this file on GitHub.</a></footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../16.李敖祸台十书/我们没有明天.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../16.李敖祸台十书/李敖生死书.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../16.李敖祸台十书/我们没有明天.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../16.李敖祸台十书/李敖生死书.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
