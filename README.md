@@ -25,11 +25,14 @@ gitbook 已经转向付费，于是迁移到 mdbook 实现。
 - <https://rust-lang.github.io/mdBook/>
 - <https://github.com/Michael-F-Bryan/mdbook-epub>
 - <https://github.com/badboy/mdbook-toc>
+- <https://github.com/badboy/mdbook-open-on-gh>
+- <https://github.com/marketplace/actions/mdbook-action>
 
 ```shell
 cargo install mdbook
 cargo install mdbook-toc
 cargo install mdbook-epub
+cargo install mdbook-open-on-gh
 
 ## 在book目录生成html版本，book/index.html。在浏览器中打开后，在index页使用右上角的print可以获得pdf版本。
 mdbook build
