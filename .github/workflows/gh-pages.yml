@@ -16,7 +16,7 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-      - run: cargo install mdbook --no-default-features --features output
+      - run: cargo install mdbook
       - run: cargo install mdbook-toc
       - run: cargo install mdbook-epub
       - run: cargo install mdbook-open-on-gh
