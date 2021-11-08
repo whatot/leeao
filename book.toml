@@ -15,3 +15,7 @@ renderer = ["html"]
 
 [output.html]
 git-repository-url = "https://github.com/whatot/leeao"
+# print超过github上限50MB，于是默认关闭
+print = false
+# search超过github上限100MB，于是默认关闭
+search = false
