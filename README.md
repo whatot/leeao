@@ -17,11 +17,12 @@ gitbook 已经转向付费，于是迁移到 mdbook 实现。
 
 我对作者的文章内容持保留态度，仅通过此项目减少编著的合集埋没的可能。
 
-## 生成 pdf、epub 或者 mobi
+## 生成 html,epub,pdf
 
-参考
+构建参考
 
 - <https://github.com/rust-lang/mdBook>
+- <https://rust-lang.github.io/mdBook/>
 - <https://github.com/Michael-F-Bryan/mdbook-epub>
 - <https://github.com/badboy/mdbook-toc>
 
@@ -29,6 +30,12 @@ gitbook 已经转向付费，于是迁移到 mdbook 实现。
 cargo install mdbook
 cargo install mdbook-toc
 cargo install mdbook-epub
+
+## 在book目录生成html版本，book/index.html。在浏览器中打开后，在index页使用右上角的print可以获得pdf版本。
+mdbook build
+
+## 生成epub，但是文件过于巨大，浏览困难，不推荐使用。
+mdbook-epub --standalone .
 ```
 
 ## 文件处理流程
