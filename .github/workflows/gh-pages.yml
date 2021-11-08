@@ -3,24 +3,27 @@ name: github pages
 on:
   push:
     branches:
-      - main
       - master
-  pull_request:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: rust:latest
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
+      - run: cargo install mdbook --no-default-features --features output
+      - run: cargo install mdbook-toc
+      - run: cargo install mdbook-epub
+      - run: cargo install mdbook-open-on-gh
+
       - uses: actions/checkout@v2
 
-      - name: build
-        run: ./.github/actions/build
+      - name: Build
+        run: mdbook build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
+        if: ${{ github.ref == 'refs/heads/master' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./book
