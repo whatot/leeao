@@ -15,6 +15,7 @@ renderer = ["html"]
 
 [output.html]
 git-repository-url = "https://github.com/whatot/leeao"
+git-branch = "master"
 
 [output.html.print]
 # print超过github上限50MB，于是默认关闭
