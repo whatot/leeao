@@ -1,0 +1,10 @@
+[book]
+authors = ["李敖", "wjm_tcy"]
+language = "zh"
+multilingual = false
+src = "./"
+title = "大李敖全集"
+
+[preprocessor.toc]
+command = "mdbook-toc"
+renderer = ["html"]
