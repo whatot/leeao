@@ -32,7 +32,7 @@ gitbook 已经转向付费，于是迁移到 mdbook 实现。
 - <https://github.com/Michael-F-Bryan/mdbook-epub>
 - <https://github.com/badboy/mdbook-toc>
 - <https://github.com/badboy/mdbook-open-on-gh>
-- <https://github.com/marketplace/actions/mdbook-action>
+- <https://github.com/jontze/action-mdbook>
 
 ```shell
 cargo install mdbook
