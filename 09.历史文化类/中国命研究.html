@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,81 +81,102 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="中国命研究"><a class="header" href="#中国命研究">中国命研究</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#目录">目录</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -619,9 +652,9 @@
 <p>儒者论曰：天地故生人，此言妄也！夫天地合气，人偶自生也。犹夫妇合气，子则自生也。夫妇合气，非当时欲得生子，情欲动而合，合而生子矣！且夫妇不故生子，以知天地不故生人也。</p>
 <p>就正因为王充相信夫妇不是有意生子女，而只是“情欲动而合”（性欲冲动性交）的产物，所以他这种开明观念．也最能引动其他开明人士的看法。果然到了孔融的时候，这位孔夫子的二十代孙子，居然提出了青出于蓝的惊人议论，他说：“父之于子，当有何亲？论其本意，实为情欲发耳！子之于母，亦夏奚为？譬如物寄缻中，出则离矣！”的话，是更进一步，把母子关系，看成了把东西寄放在瓶子里的关系，说得更露骨了。</p>
 <p>在王充、孔融以后，文献中这类议论，钱钟书《管锥编》的举例如下：</p>
-<p>《朱子语类》卷一二六：“释氏以生为寄，故要见得父母未生时面目。黄蘗一僧有偈与其母云：‘先时寄宿此婆家’；止以父母之身为寄宿处，其无情义、灭绝天性可知！”盖不知孔丘家儿早有“寄物”、“寄盛”之喻，较“寄宿”更簿情也。古希腊诗人亦谓：“汝曷不思汝父何以得汝乎！汝身不过来自情欲一饷、不净一滴耳”（Ifthourememberest,Omanhowthyfathersowedthee……Thouartsprungfromincontinentlustandafilthydrop.）①。后世诗文中，习见不鲜，举数例以概。17世纪英国名作：“汝子被诃，倘不服而反唇曰：‘何故生我？我初未乞求诞生也！’汝将奚如？”（whatifthyson／provedisobedient,and,reproved,retort,/“Whereforedidstthoubegetme？Isoughtitnot！”）②；又一剧二角色相语，甲云：“若翁生汝，汝则杀之，足以报施，”（Cuttinghisthroatwasaverygundreturnforhisbegettingyou.）乙答：“老革初未尝计及生我，渠只自述快意耳。”（Twasforhisownsake,hene'erthoughtofmeinthebusiness.）③《海外轩渠录》言小人国法令谓父母生子女出于情欲（bythemotivesofconcupiscence），故子女于亲不必有恩义（obligation）④。当世波兰小说中母诫未嫁女毋外遇致有孕，曰：“吾不欲家中忽添婴儿。”（ButIdon'twantakidhere.），女怫然答：“汝之生我，几曾先事询我愿不乎！”（Youdidn'taskmeifIwantedtobeborn.）⑤；一意大利小说中母责女曰：“汝对阿父语，不得如此。”（Guardachenondovrestiriponderecosiatuopadre.）女藐之（alzavalespalle.）曰：“我初未求出世，汝二人专擅，遽使我生。”（Iononavevochiestodivenirealmondo.Miciavetefattavenire）⑥吾国旧号“孝治”，故率言如孔融者不多耳⑦。</p>
+<p>《朱子语类》卷一二六：“释氏以生为寄，故要见得父母未生时面目。黄蘗一僧有偈与其母云：‘先时寄宿此婆家’；止以父母之身为寄宿处，其无情义、灭绝天性可知！”盖不知孔丘家儿早有“寄物”、“寄盛”之喻，较“寄宿”更簿情也。古希腊诗人亦谓：“汝曷不思汝父何以得汝乎！汝身不过来自情欲一饷、不净一滴耳”（Ifthourememberest,Omanhowthyfathersowedthee……Thouartsprungfromincontinentlustandafilthydrop.）①。后世诗文中，习见不鲜，举数例以概。17世纪英国名作：“汝子被诃，倘不服而反唇曰：‘何故生我？我初未乞求诞生也！’汝将奚如？”（whatifthyson／provedisobedient,and,reproved,retort,/“Whereforedidstthoubegetme？Isoughtitnot！”）②；又一剧二角色相语，甲云：“若翁生汝，汝则杀之，足以报施，”（Cuttinghisthroatwasaverygundreturnforhisbegettingyou.）乙答：“老革初未尝计及生我，渠只自述快意耳。”（Twasforhisownsake,hene’erthoughtofmeinthebusiness.）③《海外轩渠录》言小人国法令谓父母生子女出于情欲（bythemotivesofconcupiscence），故子女于亲不必有恩义（obligation）④。当世波兰小说中母诫未嫁女毋外遇致有孕，曰：“吾不欲家中忽添婴儿。”（ButIdon’twantakidhere.），女怫然答：“汝之生我，几曾先事询我愿不乎！”（Youdidn’taskmeifIwantedtobeborn.）⑤；一意大利小说中母责女曰：“汝对阿父语，不得如此。”（Guardachenondovrestiriponderecosiatuopadre.）女藐之（alzavalespalle.）曰：“我初未求出世，汝二人专擅，遽使我生。”（Iononavevochiestodivenirealmondo.Miciavetefattavenire）⑥吾国旧号“孝治”，故率言如孔融者不多耳⑦。</p>
 <p>另一方面，以父母立场发言的，钱钟书也别有举例：</p>
-<p>18世纪英国才妇（LadyMaryWortleyMontagu）致其女（theCountessofBute）书曰：“汝不必感我诞育为人，正如我不谢汝惠临出世。俗见多妄，每以孝思绳子女，吾生平绝口未尝道之。”（Youarenomoreobligedtomeforbringingyouintotheworld,thanIamtoyouforcomingintoit,andInever,nevermadeuseofthatcommonplace（andlikemostcommonplace,false）argument,asexactinganyreturnofaffection-Letters.“Everyman'sLibrary”,400）母久劬劳，而持此论，尤罕事也。</p>
+<p>18世纪英国才妇（Lady Mary Wortley Montagu）致其女（the Countess of Bute）书曰：“汝不必感我诞育为人，正如我不谢汝惠临出世。俗见多妄，每以孝思绳子女，吾生平绝口未尝道之。”（You are no more obliged to me for bringing you into the world, than I am to you for coming into it, and I never, never made use of that commonplace（and like most commonplace, false）argument, as exacting any return of affection-Letters.“Everyman’s Library”, 400）母久劬劳，而持此论，尤罕事也。</p>
 <p>这种以父母立场发言，在20世纪的中国，曾有过一番讨论，这是由汪长禄引起的，汪长禄写信给胡适，说：</p>
 <p>大作（《我的儿子》）说，“树本无心结子，我也无恩于你。”这和孔融所说的“父之于子当有何亲！……”“子之于母亦复奚为！……”差不多同一样的口气。我且不去管他。下文说的，“但是你既来了，我不能不养你教你，那是我对人道的义务，并不是待你的恩谊。”这就是做父母一方面的说法。换一方面说，做儿子的也可模仿同样的口气说道：“但是我既然来了，你不能不养我教我，那是你对人道的义务，并不是待我的恩谊。”那么两方面凑泊起来，简直是亲子的关系，一方面变成了跛行的义务者，他一方面变成了跛行的权利者，实在未免太不平等了。平心而论、旧时代的见解，好端端生在社会一个人，前途何等遥远，责任何等重大，为父母的单希望他俩的儿子，固然不对。但是照先生的主张，竟把一般做儿子的抬举起来，看做一个“白吃不还帐”的主顾，那又未免太“矫枉过正”吧。</p>
 <p>现在我且丢却亲子的关系不谈，先设一个譬喻来说。假如有位朋友留我在他家里住上若干年，并且供给我的本食，后来又帮助我的学费，一直到我能够独立生活，他才放手。虽然这位朋友发了一个大愿，立心做个大施主，并不希望我些须报答，难道我自问良心能够就是这么拱拱手同他离开便算了吗？我以为亲子的关系，无论怎样改革，总比朋友较深一层。就是同朋友一样平等看待，果然有个鲍叔再世，把我看做管仲一般，也不能够说“不是待我的恩谊”罢。</p>
@@ -641,12 +674,12 @@
 <p>总之，我只说了我自己承认对儿子无恩，至于儿子将来对我作何感想，那是他自已的事，我不管了。</p>
 <p>上面这些文献，都是“父母于子无恩论”引发出来的或不谋而合出来的，我把它们集合在一起，以见古今中外智者的几个断片。</p>
 <p>1984年12月4日</p>
-<p>①原注Palladas,GreekAnthology,X.44,“Loeb”,Ⅳ,25。</p>
-<p>②原注ParadiseLost,X.760-762。</p>
-<p>③原注ThomasShadwell,TheLibertine,CompleteWorks,ed.M.Summers.Ⅲ,27（JacomoandDonJohn）。</p>
-<p>④原注Gulliver'sTravels,PtI,ch.6,Oxford,67。</p>
-<p>⑤原注MarekHlasco,TheEighthDayoftheWeek,tr.N.Guteman,13（Agnieszka）。</p>
-<p>⑥原注A.Moravia,NooviRaccontiRomani：“Lasciamiperdere,”Operecomplete,Bompiani,Ⅺ251-2（Marcella）。</p>
+<p>①原注Palladas, Greek Anthology, X. 44,“Loeb”,Ⅳ, 25。</p>
+<p>②原注Paradise Lost, X. 760-762。</p>
+<p>③原注Thomas Shadwell, The Libertine, Complete Works, ed. M. Summers.Ⅲ, 27（Jacomo and Don John）。</p>
+<p>④原注Gulliver’s Travels, Pt I, ch. 6, Oxford, 67。</p>
+<p>⑤原注Marek Hlasco, The Eighth Day of the Week, tr. N. Guteman, 13（Agnieszka）。</p>
+<p>⑥原注A. Moravia, Noovi Racconti Romani：“Lasciami perdere,”Opere complete, Bompiani,Ⅺ251-2（Marcella）。</p>
 <p>⑦钱钟书没有看过琼瑶的《窗外》，我为他补一条。《窗外》页44：“妈，你别这样不满意我，我并没有向你要求这一条生命，你该对创造我负责任，在我，生命中全是痛苦，假如你不满意我，你最好把我这条生命收回去！”</p>
 <p>上吊吊出来的问题</p>
 <p>1962年母亲节那天，一个父亲吊死了。</p>
@@ -744,7 +777,7 @@
 <p>除了这些“德政”外，陈后主最有气派的，是他居然把失掉故土的人质（今犹老兵也），“遣送回大陆”。他下诏说：</p>
 <p>中岁克定淮、泗，爱涉青、徐，彼土酋豪，并输罄诚款，分遣亲戚，以为质任。今旧土沦陷，复成异域，南北阻远，未得会同，念其分乖，殊有爱恋。夷狄吾民，斯事一也，何独讥禁，使彼离析？外可即检任子馆及东馆并带保任在外者，并赐衣粮，颁之酒食，遂其乡路。所之阻远，便发遣船仗卫送，必令安达。若已预仕宦及别有事义不欲去者，亦随其意。</p>
 <p>这意思是说：我既没有能力光复河山，但我不为难你们，你们要回去，要跟骨肉团圆，我送你们回去，送你们到对岸敌人那里去，并且保证送到家，决不陈文成。至于想留下来的，“亦随其意”。这种气派，岂不太令人欣赏了吗？</p>
-<p>陈后主做昏君，其实也有令人欣赏的一面，《陈书》本纪中说他“肆舻舰阅武，宴群臣赋诗”。后妃传中说他“怠于政事”，办公时“置张贵妃（张丽华）于膝上共决之”。我本人就欣赏得一塌糊涂。能阅兵时做诗②、能听政时把美女抱在腿上，这是何等潇洒！（娇娇张俐敏去美国，坐在我的朋友她的男朋友LeslieHo的大腿上，由他点唱，他们的潇洒，可真今古辉映呢！）</p>
+<p>陈后主做昏君，其实也有令人欣赏的一面，《陈书》本纪中说他“肆舻舰阅武，宴群臣赋诗”。后妃传中说他“怠于政事”，办公时“置张贵妃（张丽华）于膝上共决之”。我本人就欣赏得一塌糊涂。能阅兵时做诗②、能听政时把美女抱在腿上，这是何等潇洒！（娇娇张俐敏去美国，坐在我的朋友她的男朋友Leslie Ho的大腿上，由他点唱，他们的潇洒，可真今古辉映呢！）</p>
 <p>最后，在亡国之日，这位浙江人守不住南京，却也临危不逃。《陈书》本记载：</p>
 <p>后主闻兵至，从宫人十余出后堂景阳殿，将自投于井。袁宪侍侧，苦谏不从；后阁舍人夏候公韵又以身蔽井，后主与争久之，方得入焉。</p>
 <p>这段话语意欠明，似乎是他的“同志”要泄他的气，甚至拦住井，不让他跳，经过争执，他跳下去。但他跟美女一起跳，大家卡在井中，没有淹死。魏征说陈后主“危亡弗恤，上下相蒙，众叛亲离，临机不寤，自投于井，冀以苟生，视其以此求全，抑亦民斯下矣！”我看跳并是真的③，人要“求全”，投降可也、被俘可也，跳井干嘛？陈后主昏君而能殉国，是可信的。</p>
@@ -768,7 +801,7 @@
 <p>市朝往往耕桑。</p>
 <p>此地居然形胜，</p>
 <p>似曾小小兴亡。</p>
-<p>这词的妙处是，辛弃疾能从一块山河片段，看到人世兴亡的缩影。布莱克（WilliamBlake）从一粒沙里看世界、从一朵花里看天国（ToseeaWorldinagrainofsand.AndaHeaveninawildflower.），未免失之太玄了一点，但从一块山河片段看人世兴亡、看“似曾小小兴亡”，却来得具体多了。</p>
+<p>这词的妙处是，辛弃疾能从一块山河片段，看到人世兴亡的缩影。布莱克（William Blake）从一粒沙里看世界、从一朵花里看天国（To see a World in a grain of sand. And a Heaven in a wild flower.），未免失之太玄了一点，但从一块山河片段看人世兴亡、看“似曾小小兴亡”，却来得具体多了。</p>
 <p>辛弃疾是中国北方的英雄好汉，但他南渡以后，整天看到的，却是那些不争气的小朝廷的众生相，他感到他竟和这些人陷在一起，真没意思。因此他在独来独往时候，感于人世兴亡，作了这首小词。</p>
 <p>在这首小词之后七百年，清溪仍然奔快，陵谷依旧茫茫，一片神鸦社鼓之中，连“似曾小小兴亡”的所在，竟也另换地点了！</p>
 <p>1983年3月21日</p>
@@ -853,9 +886,9 @@
 <p>又亮：</p>
 <p>昨晚你长途电话中所谈，令我笑个不停，你把我的“黄色”笑话，讲给“红色”高干听，他们的反应，我一想就要笑。——共产党是严肃的，使严肃的人忍俊不禁，是有趣的一种恶作剧。</p>
 <p>合肥人的口音，有邪门者在。他们习惯用舌尖发之字带“子”“死”的声音。他们叫老母鸡做老母“子”、又把“洗”字发音为“死”字。有一个合肥老妈子，早上打好洗脸水，对全家老小说：老爷先去“死”，老爷“死”了太太“死”，太太“死”了，少爷、小姐“死”，你们全家“死”完了，我再“死”。对蒋家老小，我的心情正如这个老妈子。他们全家死完了，我再死，可以含笑矣！</p>
-<p>蒋经国这回七窍流血而死，按中国传统说法，此凶死相也，实在与他的“仁慈”不相称。我不知道我怎么死、是什么死相，但最向往的。其唯阿提拉（AttilatheHun）式乎？阿提拉是5世纪时的匈奴王，武功所及，包含了大部分中欧和东欧。此公外号“上帝之鞭”（ScourgeofGod），其凶悍可想。但其死也，不死于沙场，却死于与德国少女伊尔娣蔻（Ildico）花烛之夜，性交高潮中，女方欲仙欲死，男方却真仙真死矣！真王三姑娘老爸所说“死得好！”也！</p>
+<p>蒋经国这回七窍流血而死，按中国传统说法，此凶死相也，实在与他的“仁慈”不相称。我不知道我怎么死、是什么死相，但最向往的。其唯阿提拉（Attila the Hun）式乎？阿提拉是5世纪时的匈奴王，武功所及，包含了大部分中欧和东欧。此公外号“上帝之鞭”（Scourge of God），其凶悍可想。但其死也，不死于沙场，却死于与德国少女伊尔娣蔻（Ildico）花烛之夜，性交高潮中，女方欲仙欲死，男方却真仙真死矣！真王三姑娘老爸所说“死得好！”也！</p>
 <p>这是我最向往的一种死法。</p>
-<p>别说这种福气只阿提拉一个独享吧！10世纪的教皇李敖八世（LeoⅧ），就是与情妇私通时死于高潮的；19世纪法国总统福尔（FélixFaure），也是与情妇私通时死于高潮的，可见“阿”道不孤，有后望焉！</p>
+<p>别说这种福气只阿提拉一个独享吧！10世纪的教皇李敖八世（LeoⅧ），就是与情妇私通时死于高潮的；19世纪法国总统福尔（Félix Faure），也是与情妇私通时死于高潮的，可见“阿”道不孤，有后望焉！</p>
 <p>结论是：与其形而上七窍流血而死，不如形而下一窍流精而亡。云雨巫山，断肠有道，吾与子共勉之！</p>
 <p>敖之1988年3月5日晨</p>
 <p>“诅咒别人死”？</p>
@@ -876,12 +909,12 @@
 <p>7月21日国民党《中央日报》上登出文章，说《文星》再度停刊的消息传至文化界后，文化界人土几乎同表惋惜之意。又说《文星》发行人提到了《文星》停刊的一些因素，他特别强调“知识青年的品味已普遍变质，整个社会的走向，与我们一向所怀抱的理想，好像距离愈来愈远，这些才是像《文星》这样一份杂志，难以继续的真正原因”。《中央日报》肯定了这一原因，因而备致惋惜之意，我看了，却不禁好笑。</p>
 <p>《文星》发行人所说的“社会的走向”、“知识青年的品味”等现象，固然有之，但这不是《文星》办不下去的真正原因，因为这些现象毫不稀奇，并且早就存在，当年《文星》在李敖主持下的奋战目标之一，岂不就是矫正这些走向和品味吗？如今杂志办不下去，反倒回过头来，倒果为因，这是一种瞒天过海的自解而已。</p>
 <p>这次《文星》停刊的真正原因，根本上，不是别人的“变质”，也不是别人同它“一向所怀抱的理想，好像距离愈来愈远”，而是它自己的“变质”、自己背弃了它原来所怀抱的理想，“距离愈来愈远”了。</p>
-<p>《文星》当年在李敖主持下，造成在杂志界龙蟠虎踞四年的奇迹，这四年的奇迹，对群众的影响是深远的，梭罗（HenryD.Thoreau）说“有多少人是因为读了一本书才开始他的新生命”，《文星》当年带给群众的，果真做到了这一点。正因为当年《文星》有这样大的魔力，正因为它有魔力推动中国走现代化的道路，并勇于表达它的自由、民主、开明、进步、战斗等鲜明色彩，以致为官方所忌恨。最后，在《文星》一条龙和了牌，还由李敖大写《我们对“国法党限”的严正表示》一文，杠上开花，直指国民党党中央的当口，国民党查封了它。时维1965年12月，《文星》死矣！</p>
+<p>《文星》当年在李敖主持下，造成在杂志界龙蟠虎踞四年的奇迹，这四年的奇迹，对群众的影响是深远的，梭罗（Henry D. Thoreau）说“有多少人是因为读了一本书才开始他的新生命”，《文星》当年带给群众的，果真做到了这一点。正因为当年《文星》有这样大的魔力，正因为它有魔力推动中国走现代化的道路，并勇于表达它的自由、民主、开明、进步、战斗等鲜明色彩，以致为官方所忌恨。最后，在《文星》一条龙和了牌，还由李敖大写《我们对“国法党限”的严正表示》一文，杠上开花，直指国民党党中央的当口，国民党查封了它。时维1965年12月，《文星》死矣！</p>
 <p>《文星》死后二十一年，萧孟能突然以蓦然回首的心态，把它复刊，我当时表示：记得1905年11月，革命党们在东京办《民报》，出到二十四期后，被日本政府查封。1910年，又出版了表面上在巴黎发行的第二十五期、第二十六期，引起原来《民报》的大功臣章太炎的不满，公开指斥复刊后的《民报》为“伪民报”。如今《文星》杂志复刊，我不忍视它为“伪文星”，但它若背弃李敖树立的精神，纵使要真，恐怕也很费手脚吧？</p>
 <p>我的话言犹在耳，不过两年，复刊后的《文星》却高速“变质”，把它当年“一向所怀抱的理想”，置诸脑后，当年是前进的，如今后退；当年是勇迈的，如今畏缩；当年是清新的，如今迂腐；当年是“老妪能解”的，如今是“博士买驴”；当年是向统治者挑战的，如今却向统治者大拍马屁，还写颂诗！</p>
 <p>《文星》背弃了它自己，犹不自悟，还在垂死之日，大叹读者背弃了它，这是何等好笑！</p>
 <p>1965年12月24日，国民党《中央日报》开始拒登《文星》广告；但是，二十一年后，1986年9月3日，同一个《中央日报》上，赫然重现了《文星》的广告！——国民党是不会变的，那么真正变得能够配合它的，又是谁呢？当年《文星》之死也，《中央日报》乐祸惟恐不及；今天《文星》之亡也，《中央日报》却惋借如丧宠物，杂志是进是退，从党报反应，思过半矣！</p>
-<p>因弗莱明（IanFleming）写书，书名《你只能活两次》（YouOnlyLiveTwice），看了《文星》的多此一复与自砸招牌，我恍然大悟：你只能死一次！</p>
+<p>因弗莱明（Ian Fleming）写书，书名《你只能活两次》（You Only Live Twice），看了《文星》的多此一复与自砸招牌，我恍然大悟：你只能死一次！</p>
 <p>1988年7月21日</p>
 <p>不老-不死-尸</p>
 <p>一、从长寿到难老</p>
@@ -926,7 +959,7 @@
 <p>林琴南这里说“‘万岁’二字，特古人庆贺之词”，是对的。②“万岁”本来是中国老百姓喊自己的。老百姓说应酬话，有一些用“万”开头的字，像“万福”、“万幸”等，“万岁”也是其中之一，多在喝酒庆祝时候用。后来这两个字太好了，被统治者皇上看中了，于是，麻烦来了。顾炎武《日知录》中“人臣称万岁”条下，有这样的考证：</p>
 <p>《后汉书》韩棱传，窦宪有功还，尚书以下议欲拜之，伏称“万岁”，棱正色曰，夫上交不謟，下交不黩，礼无人臣称“万岁”之制，议者皆惭而止。然考之《战国策》书，冯谖为孟尝君以责赐诸民，因烧其券，民称：“万岁！”（《史记》但云坐者皆起再拜。）马援传言，援击牛酿酒，劳飨军士，吏士皆伏称：“万岁！”冯鲂传言，责让贼延褒等，令各反农桑，皆称：“万岁！”吴良传注，引《东观记》，岁旦郡门下掾王望，举觞上寿，掾史皆称：“万岁！”则亦当时人庆幸之通称。而李固出狱，京师市里皆称“万岁”，遂为梁冀所忌，而卒以杀之，亦可见其为非常之辞矣。</p>
 <p>顾亭林的考证，告诉了我们，在后汉的时候，就有人出面把“万岁皇家化”了，他们的理由是“礼无人臣称‘万岁’之制”，进而成为“非常之辞”。到了7世纪的696年，武则天甚至用“万岁登封”、“万岁通天”做年号了。到了唐朝末年，根本没人再敢自己用了。演变的结果，万岁就是皇帝，皇帝就是万岁③，也就是万岁爷，皇后也借光，称万岁娘娘或万岁爷娘娘④。</p>
-<p>喊万岁，在祈使用法（theimperativemood）时习惯上不能喊一声，要一呼二呼三呼，要万岁万岁万岁万万岁⑤，马屁要这样一拍二拍三拍……才算及格。王三聘《古今事物考》中“万岁”条下说：</p>
+<p>喊万岁，在祈使用法（the imperativemood）时习惯上不能喊一声，要一呼二呼三呼，要万岁万岁万岁万万岁⑤，马屁要这样一拍二拍三拍……才算及格。王三聘《古今事物考》中“万岁”条下说：</p>
 <p>《诗》曰：“虎拜稽首，天子万年。”固有此礼矣。战国时，众所喜庆于君者，皆呼“万岁”。秦汉以来，臣下对见于君，拜恩庆贺，率以为常。</p>
 <p>又在“山呼”条下说：</p>
 <p>《汉武帝本纪》曰：“元封元年（公元前110）正月，登嵩高。御史、乘属、在庙旁吏卒，咸闻呼‘万岁’者三。”迄今三呼以为式，而号山呼也。《草木子》曰：“山呼，汉制也。自武帝祀嵩岳开始。舞蹈，唐制也，自武后赐宋之问始。”</p>
@@ -956,7 +989,7 @@
 <p>石秀在厅前千奴才万奴才价驾。厅上众人都吓呆了。梁中书听了，沉吟半晌，叫：“取大枷来，且把二人枷了，监放死囚牢里。”分付蔡福在意看管，休教有失。蔡福要结识梁山泊好汉，把两个做一处牢里关着，每日好酒好肉与他两个吃，因此不曾吃苦。</p>
 <p>《水济传》相沿是施耐庵作的，事实上，它是以宋江三十六人的真人真事为基础，长时间累积起来的。早在南宋时候，就有了《花和尚》、《武行者》、《青面兽》等话本。到了宋末元初，水浒故事就逐渐扩大，施耐庵把这些扩大的材料，做了总整理（又说罗贯中也整理过），最后成为一大名著。不论《水浒传》是谁作的，它在书中，包罗了许多宋朝的口语，却是事实。像石秀这句活泼泼的用奴才骂人的话，就是显明的例子。</p>
 <p>骂奴才，其来有自</p>
-<p>不过，宋朝许多骂人的话，其实也不始于宋朝，而是其来有自的。陶宗仪《辍耕录》有“奴材”（奴才）条说：“世之鄙人之不肖者为奴材。郭子仪曰：‘子仪诸子，皆奴材也！’”郭子仪是唐朝人，当时已有用“奴材”骂人的习惯。不过陶宗仪搞考据，最早把骂奴才溯源到出自郭子仪之口，这是错的。事实上，郭子仪当时口出此言，用的乃是S.O.B.式的“外国话”，不但是“外国话”，并且还是早在魏晋时代就传来的“外国话”。这在《晋书》中，我们可以看到不少。如《刘元海载记》（刘元海就是刘渊，为了避唐高祖李渊的讳，“故称其字焉”）：</p>
+<p>不过，宋朝许多骂人的话，其实也不始于宋朝，而是其来有自的。陶宗仪《辍耕录》有“奴材”（奴才）条说：“世之鄙人之不肖者为奴材。郭子仪曰：‘子仪诸子，皆奴材也！’”郭子仪是唐朝人，当时已有用“奴材”骂人的习惯。不过陶宗仪搞考据，最早把骂奴才溯源到出自郭子仪之口，这是错的。事实上，郭子仪当时口出此言，用的乃是S. O. B.式的“外国话”，不但是“外国话”，并且还是早在魏晋时代就传来的“外国话”。这在《晋书》中，我们可以看到不少。如《刘元海载记》（刘元海就是刘渊，为了避唐高祖李渊的讳，“故称其字焉”）：</p>
 <p>王浚使将军祁弘率鲜卑攻邺，颖败，挟天子南奔洛阳。元海曰：“颖不用吾言，逆自奔溃，真奴才也！然吾与其有言矣，不可不救。”</p>
 <p>这就是胡人用奴才骂人的证据。再看《刘曜载记》：</p>
 <p>杨难敌自汉中还袭化池，克之，执田崧，立之于前。难改左右叱崧令拜，崧嗔目叱之曰：“氐狗！安有天子牧伯而向贼拜乎！”难敌曰：“子岱，吾当与子终定大事。子谓刘氏可为尽忠，吾独不可手！”崧厉色大言曰：“若贼氐奴才，安敢欲希觊非分！吾宁为国家鬼，岂可为汝贼臣？何不速杀我！”顾排一人，取其剑，前刺难敌，不中，为难敌所杀。</p>
@@ -1003,7 +1036,7 @@
 <p>奴才高晋跪奏：再奴才于前折缮就，复思奴才此次获戾重大，罪干隐瞒，虽蒙圣恩曲赐矜全，不即革职治罪，但奴才问心惭愧，寝食靡宁，既辜负我皇上平日倚信深恩，何敢再忝纶扉重寄，惟有仰请皇上将奴才解退大学士，暂留两江总督任，容奴才自奋自效，再图上报天恩，庶奴才寸心稍安。谨再叩首沥陈，伏乞圣鉴。奴才不胜惶悚待命之至。谨奏。</p>
 <p>一个堂堂“大学士”、“两江总督”，短短几行字中，就自称奴才八起之多，人格沦落到这一地步，人还是人么？</p>
 <p>奴才奴才满天下</p>
-<p>正因为奴才奴才满天下、正因为奴才在中国，已经由骂人而沦落为自称，所以在奴才阶层中，也就分出了谁上谁下。石秀大骂“与奴才做奴才的奴才”，就是这种写照。美国制宪大会时，南卡罗林纳州的一个团体骂州长和其他贵族说：“这些人是州里的土皇帝；逢迎他们左右的马屁精，是他们的尾巴；拍土皇帝与马屁精的马屁又做他们下贱而又下贱工具的，则是尾巴的尾巴。”（“Thenabobsofthisstate,theirserviletoadeatersthebobs,andtheservilelyserviletoolsandlickspittlesofboth，thebobbetts。”）正是修辞学上的对比，而石秀之骂，尤为简明传神。⑩如今，所谓中华帝国时代过去了，但是中华民国的封建结构，却一仍其旧，虽然名已不存，但是实却未亡。照样父子相传、照样奴才交替、照样“与奴才做奴才的奴才”衙门行走、满街行走。中国的问题不在名号形式改变，而在封建实质未除，国民党的祸国殃民，正是换汤不换药，结果新汤旧药，一切都“亡国帝王”气象。胡适在五十多年前写文章给少年朋友，就指出：“现在有人对你们说：‘牺牲你们个人的自由，去求国家的自由！’我对你们说：‘争你们个人的自由，便是为国家争自由！争你们自己的人格，便是为国家争人格！自由平等的国家不是一群奴才建造得起来的！’”不幸的是，国民党多少年来，正妄想用一群奴才建造自由平等的国家！——幸亏他们失败了，他们若成功了，那又算是什么国家呢？</p>
+<p>正因为奴才奴才满天下、正因为奴才在中国，已经由骂人而沦落为自称，所以在奴才阶层中，也就分出了谁上谁下。石秀大骂“与奴才做奴才的奴才”，就是这种写照。美国制宪大会时，南卡罗林纳州的一个团体骂州长和其他贵族说：“这些人是州里的土皇帝；逢迎他们左右的马屁精，是他们的尾巴；拍土皇帝与马屁精的马屁又做他们下贱而又下贱工具的，则是尾巴的尾巴。”（“The nabobs of this state, their servile toadeaters the bobs, and the servilely servile tools and lickspittles of both，the bobbetts。”）正是修辞学上的对比，而石秀之骂，尤为简明传神。⑩如今，所谓中华帝国时代过去了，但是中华民国的封建结构，却一仍其旧，虽然名已不存，但是实却未亡。照样父子相传、照样奴才交替、照样“与奴才做奴才的奴才”衙门行走、满街行走。中国的问题不在名号形式改变，而在封建实质未除，国民党的祸国殃民，正是换汤不换药，结果新汤旧药，一切都“亡国帝王”气象。胡适在五十多年前写文章给少年朋友，就指出：“现在有人对你们说：‘牺牲你们个人的自由，去求国家的自由！’我对你们说：‘争你们个人的自由，便是为国家争自由！争你们自己的人格，便是为国家争人格！自由平等的国家不是一群奴才建造得起来的！’”不幸的是，国民党多少年来，正妄想用一群奴才建造自由平等的国家！——幸亏他们失败了，他们若成功了，那又算是什么国家呢？</p>
 <p>1985年5月23日晨</p>
 <p>①《颜氏家训》中、《五代史》中，也不乏用奴才骂人的记录。</p>
 <p>②1758年是戊寅年。徐珂记为戊子年，戊子年是1768。</p>
@@ -1014,7 +1047,7 @@
 <p>⑦三和是“内大臣工部左侍郎兼总管内务府大臣革职留任又革职留任”头衔、英廉是“经筵讲官户部左侍郎管理三库事务总管内务府大臣降一级留任又降二级留任又降三级留任”头衔、四格是“厢白旗汉军都统总管内务府大臣革职留任”头衔。</p>
 <p>⑧但与陕西巡抚联名上奏时，却是“陕甘总督臣勒尔谨陕西巡抚臣毕沅跪奏”字样。</p>
 <p>⑨杨魁是江苏巡抚。</p>
-<p>⑩石秀这段话，赛珍珠（PearlS.Buck）英译《水浒传》（AllMenAreBrothers）中译为：“Youareaslaye,andyouareslaveofaslave!”不过奴才在官式文书中不能这样译。胡适给柳无忌的信中说：“满清一朝，凡旗籍的官吏，无论官多么大，皆自称‘奴才’，若译英文，也必须用YourMajesty'sObedientSlave,似无法简化的。”（《传记丈学》第三十四卷第六期，柳无忌：《我所认识的胡适》）</p>
+<p>⑩石秀这段话，赛珍珠（PearlS.Buck）英译《水浒传》（AllMenAreBrothers）中译为：“Youareaslaye,andyouareslaveofaslave!”不过奴才在官式文书中不能这样译。胡适给柳无忌的信中说：“满清一朝，凡旗籍的官吏，无论官多么大，皆自称‘奴才’，若译英文，也必须用YourMajesty’sObedientSlave,似无法简化的。”（《传记丈学》第三十四卷第六期，柳无忌：《我所认识的胡适》）</p>
 <p>李斯传新读</p>
 <p>《史记》卷八十七有《李斯列传》，写秦朝丞相李斯被宦官赵高整，关进牢里。</p>
 <p>于是（秦）二世乃使（赵）高案丞相狱，治罪，责（李）斯与子（李）由谋反状，皆收捕宗族宾客。赵高治斯，榜掠千余，不胜痛，自诬服。斯所以不死者，自负其辩，有功，实无反心，幸得上书自陈，幸二世之寤而赦之。李斯乃从狱中上书。…书上，赵高使吏弃去不奏，曰：“囚安得上书！”</p>
@@ -1028,7 +1061,7 @@
 <p>在这些判决里，最令我们注意的，是自白的认定，“并非专以审判笔录所记载者为限”，而“于法院外之机关所为之自白”，只要非以不“不正之方法”取得者，也一体视用。换句话说，被告的自白，不限于审判上的自白；即审判外的自白，也包括在内。审判外的自白，并不以向审判机关为之为必要；即向检察官、司法警察官、司法警察等为之，也不失其为审判外的自白。</p>
 <p>现在，祸事了，因为这样一来，“什么叫“不正之方法”，认定起来，可就大大的麻烦了。根据现代文明国家的法理，自自首重任意性（voluntary），被告的自白，非出于任意者，不得采为证据，这一金律，英国早在18世纪后半期就采用了。到了19世纪上半期，受了法国大革命保障人权思想的影响，对于自白的证据价值，有识之士，极表怀疑，任意性的要求，也就更加迫切。最后的定论是，自白必须以出于任意为取得证据能力的要件，这在英美法及大陆法中，都无间言。一般法理有三：</p>
 <p>一、虚伪排除说——自白若出于某种诱导行为，陈述就多虚伪、就缺乏真实性。既缺乏真实性，自然不许作为证据。自白所以以出于任意性为条件，乃在排除虚伪。</p>
-<p>二、人权拥护说——自白不得自证其罪，英国早在16世纪后半期就有了，当时是为了抵制教会的异端审判而采行的。到了美《国联邦宪法第五修正案》中，规定“……不得被强迫在任何刑事案件中自证其罪”（norshallbecompelledinanycriminalcasebeawitnessagainsthimself.）这一条款，更是“人不告发自己本身”（Nomanisboundtoaccusehimself.）原则的一项确认。</p>
+<p>二、人权拥护说——自白不得自证其罪，英国早在16世纪后半期就有了，当时是为了抵制教会的异端审判而采行的。到了美《国联邦宪法第五修正案》中，规定“……不得被强迫在任何刑事案件中自证其罪”（nor shall be compelled in any criminal case be a witness against himself.）这一条款，更是“人不告发自己本身”（No man is bound to accuse himself.）原则的一项确认。</p>
 <p>三、违背诚实说——非任意性的自白，如许作为证据，根本违背诚实的观念，自然不合法理。</p>
 <p>从这些法理上反看国民党的《刑事诉讼法》，我们就不得不大叹其气了。国民党《刑事诉讼法》中规定被告的自白，非出于强暴、胁迫、利诱、诈欺或其他不正之方法，且与事实相符者，得为证据，这乃是以取得白白的方法为准，这是绝对不够的。因为这是一切祸源。因为被告一旦被刑求取供，到了审判时翻供，国民党法官总是官样文章，行文给“不正之方法”取供的单位，问有没有刑求呀，回信当然是没有呀没有呀，然后法官就据这回信，驳斥被告是谎言刑求了。这种一来一往的公式，我以我自己的案子为例，便一看即知。</p>
 <p>我第一次做政治犯时候，同案除了我的老同学谢聪敏（彰化人）、魏廷朝（桃园人）外，还有李政一（台南人）、刘辰旦（台南人）、吴忠信（台南人）、郭荣文（台南人）、詹重雄（台北市人），他们都是我不认识的，在起诉书上，都是所谓爆炸案的凶手。他们被警总保安处吴彰炯少将主持的刑求，都比我重，他们都受到各种苦刑，包括灌汽油、坐老虎凳、背宝剑、三上吊、摇电话等等在内，这样子长年逼供与迫害，最后取得自白，其真实性，也就可想而知了！</p>
@@ -1117,7 +1150,7 @@
 <p>要清白，请长寿！</p>
 <p>中国正史中，从宋朝欧阳修主编的《新唐书》开始，有所谓“奸臣”传，后来的正史，像《宋史》、《辽史》、《元史》、《明史》，纷纷援例，于是忠奸之分，在历史上和观念上，也就愈发显明。正史以外，中国的小说戏剧，对忠奸的判决，影响极大。尤其在戏剧里，为了帮助观众有“忠奸立判”的效果，“红脸”和“粉白脸”，也就应运而生。忠肝义胆的自然是勾红脸，如关公。权奸误国的自然是勾粉白脸，如曹操，这种“二公法”的利落，实在给了观众不少方便，于施展爱憎之间，少掉了不少麻烦。</p>
 <p>不过，在一个人阅历较多一点以后，他有时难免会发现，人间许多对立的问题（如是非、正邪、善良、好坏等等），并不都是很草率就能断定的。同时对立的情况，往往并不如想像中那样明显；对立的双方，可能有混同的成分、相似的成分，甚至还有完全相反的尴尬场面发生。就以上面举的正史为例，一个阅历较多的人，翻开了《宋史》一读，就不难发现，“奸臣”传中被戴上奸臣帽子的，有的根本不算奸臣（像赵嗣）！而该戴奸臣帽子的（像史弥远），却又逍遥于“奸臣”传之外！这种错误，岂不叫人很苦恼吗？这种苦恼，在正史以外，同样可从小说中找到例子，看过克林（AlexanderKlein）名作《伪叛国者》（TheCounterfeitTraitor）的人，我想都会油然而生“忠未易明，奸未易察”的感觉。这些例子，都说明一项事实，就是阅历可以使我们练习对忠奸等真相，慢慢采取审慎一点的检证。换句话说，我们不能因为怕麻烦就擅用“二分法”来定人功罪，我们也不能随便采用“这是好人”、“那是坏人”的小学生式思想方法。</p>
-<p>在忠奸问题底下，古往今来，不知有多少人盗得大名，也不知有多少人横被恶名了。如法国的“德雷夫斯事件”（TheDreyfusAffair），德雷夫斯于1894年被诬卖国，被判无期徒刑，幸赖文豪左拉写《我的控诉》（J'accuse）等文，为他洗刷，于1906年才得免罪，然而直到1930年“斯威兹可本文件”（Schwartzkoppen'spapers）公布，德雷夫斯的清白才完全澄清，可是时间已在沉冤三十六年之后；又如中国宋朝的“岳飞事件”，男主角却没有这位法国将军的好运气，岳飞生前不但冤死狱中，死后拖了七十年，才算“还我清白”完毕。岳飞的孙子岳珂，在《吁天辩诬通叙》里，曾有一段话说：</p>
+<p>在忠奸问题底下，古往今来，不知有多少人盗得大名，也不知有多少人横被恶名了。如法国的“德雷夫斯事件”（The Dreyfus Affair），德雷夫斯于1894年被诬卖国，被判无期徒刑，幸赖文豪左拉写《我的控诉》（J’accuse）等文，为他洗刷，于1906年才得免罪，然而直到1930年“斯威兹可本文件”（Schwartzkoppen’s papers）公布，德雷夫斯的清白才完全澄清，可是时间已在沉冤三十六年之后；又如中国宋朝的“岳飞事件”，男主角却没有这位法国将军的好运气，岳飞生前不但冤死狱中，死后拖了七十年，才算“还我清白”完毕。岳飞的孙子岳珂，在《吁天辩诬通叙》里，曾有一段话说：</p>
 <p>独以先臣受暖昧不根之谤，于今几七十载，虽忠义之心，昭昭乎天下，而山林之史，疑以传疑。或者犹有以议先臣之未尽，臣窃痛焉！</p>
 <p>岳珂本人虽然并非善类，但他在为他祖父辩诬一点上，却做得很卖力，同时他也没装作一个假左拉，学“我控诉”姿态，为洗刷岳家人物而攀诬别人。岳珂另一段话说得很动人：</p>
 <p>臣闻天下之不可泯没者，惟其理之正也！藏于人心，散于事情，虽或晦而未彰，抑而未扬，然是理之在人心，自有隐然而不可诬者。是故伸屈有时而不同，荣辱既久而自判。昔日之辱，未必不为今日之荣；今日之屈，未必不基后日之伸也。</p>
@@ -1202,7 +1235,7 @@
 <p>圣魔大战中最有趣的一场是《西域记》中描写的一段：</p>
 <p>菩萨树垣东门侧、有窣堵波②，魔王怖菩萨之处。初魔王知菩萨将成正觉也，诱乱不遂，忧惶无赖。集诸神众，齐备魔军，治兵振旅，将胁菩萨。于是风雨飘注，雷电晦冥；纵火飞烟，扬沙激石。备矛盾之具、极弦矢之用。菩萨于是入大慈定，凡厥兵仗，变为莲华③。魔军怖骇，奔驰退散。</p>
 <p>台湾一地之于我，正是“魔王怖菩萨之处”，国民党魔王虽然在“窣堵坡”一再“怖”我，但是，结果是全然无效，我总是“入大慈定”，把一切化掉，“变为莲华”。</p>
-<p>我中学时候，看到林肯的一段话：“你可以欺骗多数人于暂时，你可以欺骗少数人于永久，但你不能欺骗多数人于永久。”（Youcanfoolsomeofthepeopleallthetimeandallthepeoplesomeofthetime；butyoucan'tfoolallthepeopleallthetimes.）看了林肯这段话后十多年，我在《花花公子》（Playboy）上看到一幅漫画，画中有红男绿女酒食征逐于户外，一对神父走过，其中一人说：“你可以救多数人于暂时，你可以救少数人于永久，但你不能救多数人于永久。”（“well,youcansavesomeofthepeopleallofthetime,andallofthepeoplesomeofthetime,butyoucan'tsaveallofthepeopleallofthetime……”）我觉得漫画家改写林肯名言，颇见巧思。</p>
+<p>我中学时候，看到林肯的一段话：“你可以欺骗多数人于暂时，你可以欺骗少数人于永久，但你不能欺骗多数人于永久。”（You can fool some of the people all the time and all the people some of the time；but you can’t fool all the people all the times.）看了林肯这段话后十多年，我在《花花公子》（Playboy）上看到一幅漫画，画中有红男绿女酒食征逐于户外，一对神父走过，其中一人说：“你可以救多数人于暂时，你可以救少数人于永久，但你不能救多数人于永久。”（“well, you can save some of the people all of the time, and all of the people some of the time, but you can’t save all of the people all of the time……”）我觉得漫画家改写林肯名言，颇见巧思。</p>
 <p>我总觉得，对国民党说来，他们的确“不能欺骗多数人于永久”，但是对我们说来，我们却要“救多数人于永久”，我们志士仁人的目标，不是小目标，我们“入大慈定”的人，并不以“救多数人于暂时”、“救少数人于永久”为已足，我们要多做些。</p>
 <p>国民党并不是我们的主要敌人，因为他们不配。国民党的罪过是他们怕“菩萨将成正觉也”，因而“诱乱不遂，忧惶无赖”；因而出面阻止我们、阻止中国的现代化。他们什么都不是，只是中国现代化过程中的拦路无赖而已。</p>
 <p>我们预见的国民党，是早晚“魔军怖骸，奔驰退散”的乌合之众，他们的下场终将化为春泥，作为“莲华”下的肥料。菩萨的遗憾也许只是不得不浪费许多时间去圣魔大战，但这种浪费是在所难免的，没有这种浪费，就没有“救多数人于永久”的开路条件。国民党既不允许菩萨“成正觉”，菩萨就只好打倒他，菩萨没有法子。</p>
@@ -1370,17 +1403,17 @@
 <p>比下有余，跟白雪公主同岁；</p>
 <p>比上不足，少文化太保两年．</p>
 <p>1987年10月29日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/09.历史文化类/中国命研究.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/09.历史文化类/中国命研究.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../09.历史文化类/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../09.历史文化类/中国性研究.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1390,16 +1423,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../09.历史文化类/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../09.历史文化类/中国性研究.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1408,12 +1446,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

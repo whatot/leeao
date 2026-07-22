@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,81 +81,102 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="中国现代史正论"><a class="header" href="#中国现代史正论">中国现代史正论</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#目录">目录</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -321,9 +354,9 @@
 <p>民国元年以来，何尝有“入于宪政”的时期？自从二年以来，哪一年不是在军政的时期？临时约法何尝行过？《天坛宪法草案》以至曹锟时代的宪法，又何尝实行过？十几年当中，人民选举国会与省议会，共总行过几次？故民国十几年的政治失败，不是骤行宪政之过，乃是始终不曾实行宪政之过；不是不经军政训政两时期而遽行宪政之过，乃是始终不曾脱离扰乱时期之过也。</p>
 <p>当日袁世凯之流，固不足论；我们现在又到了全国统一的时期了，我们看看历史的教训，是不敢信任人民而不肯实行宪政呢，还是认定人民与政府都应该早早“入塾读书”，早早制定宪法或约法，用宪政来训练人民和政府自己呢？</p>
 <p>明白人</p>
-<p>这种反复的呼吁，说破了，不过只是黄梨洲“有治法而后治人”⑦一个观念的重现而已，不过只是最起码的法治论、人权论而已。今天我们回头研究这段历史，一句话，我们不得不感到惊讶和浩叹丨惊讶浩叹的是：为什么当时中国的“明白人”竟那么少？我这里用“明白人”三个字，是指对基本人权、基本法理有点基本了解的人。所谓基本了解，乃是英、法、美等民主国家一般人们对基本人权、基本法理的了解，这种了解竟在我们堂堂“中华民国”的衮衮诸公的脑袋瓜子里挖掘不到。试以前面所引诸青来提出的问题而论，诸青来根本不了解“党纲”与“法律”的界限，更不了解未经“确定”前，人民的“集会结社言论出版居住信仰之完全自由权”是一个什么样子。他不知道，这些基本人权是必须明明白白一条条地列举出来载于国家大法前面才算数！这是一张清清楚楚详详细细的“人权单子”（BillofRights），这张单子是一码是一码，绝不能含含糊糊，不能泛泛而论，不能凭“想当然耳”（inference）来马虎过去的！杰斐逊（ThomasJefferson）在1787年给麦迪逊（JamesMadison）的信中⑧，早已把这个意思说得一清二楚，所以这种列举法，是极端必要的，而且是当然的。诸青来的问题，根本是不明法理的。</p>
+<p>这种反复的呼吁，说破了，不过只是黄梨洲“有治法而后治人”⑦一个观念的重现而已，不过只是最起码的法治论、人权论而已。今天我们回头研究这段历史，一句话，我们不得不感到惊讶和浩叹丨惊讶浩叹的是：为什么当时中国的“明白人”竟那么少？我这里用“明白人”三个字，是指对基本人权、基本法理有点基本了解的人。所谓基本了解，乃是英、法、美等民主国家一般人们对基本人权、基本法理的了解，这种了解竟在我们堂堂“中华民国”的衮衮诸公的脑袋瓜子里挖掘不到。试以前面所引诸青来提出的问题而论，诸青来根本不了解“党纲”与“法律”的界限，更不了解未经“确定”前，人民的“集会结社言论出版居住信仰之完全自由权”是一个什么样子。他不知道，这些基本人权是必须明明白白一条条地列举出来载于国家大法前面才算数！这是一张清清楚楚详详细细的“人权单子”（Bill of Rights），这张单子是一码是一码，绝不能含含糊糊，不能泛泛而论，不能凭“想当然耳”（inference）来马虎过去的！杰斐逊（Thomas Jefferson）在1787年给麦迪逊（James Madison）的信中⑧，早已把这个意思说得一清二楚，所以这种列举法，是极端必要的，而且是当然的。诸青来的问题，根本是不明法理的。</p>
 <p>胡适的错误</p>
-<p>在另一方面，我惊讶胡适本人，在受过完整的欧美教育及熏陶之后，对基本人权问题，竟不从基本人权乃是“先在的”一点上立论，这是很大的疏忽与失策。因为基本人权是“先于”国家和政府的。国家和政府存在和成立的起码的目的，就恰恰是在保障基本人权，此外一切犹其余事。并且，严格的说，国家和政府对基本人权，只有保障的份儿，是没有颁布的资格的。人权本身是不可侵犯的（inviolable）、不可剥夺的（indefeasible），当然更不能出让的（inalienable），甚至是被划除在政府一般权力以外的（isexceptedoutofthegeneralpowerofthegovernment）。胡适在他的文章中，不从这个高一层次的论点立论，只是退而从第二层次的论点来要求政府颁布人权保障的法令，这未免把人权看得太“小”的！</p>
+<p>在另一方面，我惊讶胡适本人，在受过完整的欧美教育及熏陶之后，对基本人权问题，竟不从基本人权乃是“先在的”一点上立论，这是很大的疏忽与失策。因为基本人权是“先于”国家和政府的。国家和政府存在和成立的起码的目的，就恰恰是在保障基本人权，此外一切犹其余事。并且，严格的说，国家和政府对基本人权，只有保障的份儿，是没有颁布的资格的。人权本身是不可侵犯的（inviolable）、不可剥夺的（indefeasible），当然更不能出让的（inalienable），甚至是被划除在政府一般权力以外的（is excepted out of the general power of the government）。胡适在他的文章中，不从这个高一层次的论点立论，只是退而从第二层次的论点来要求政府颁布人权保障的法令，这未免把人权看得太“小”的！</p>
 <p>所以，综观民国十八年胡适掀起的热烘烘的人权论，我们不能不遗憾那一世代的知识分子，对人权的理论修养实在不够充分——他们虽在20世纪的中国，走18世纪西方争取人权保障的老路，但他们所用的方法与武器，却实在单薄得可怜！</p>
 <p>注释</p>
 <p>①《中国国民党现行党务法规辑要》（十九年7月）第一类。</p>
@@ -333,7 +366,7 @@
 <p>⑤胡适：《〈人权与约法〉的讨论》。</p>
 <p>⑥胡适：《我们什么时候才可有宪法？》。</p>
 <p>⑦黄宗羲《明夷待访录-原法》篇：“……其人是也，则可以无不行之意；其人非也，亦不至深刻罗网，反害天下。故曰：‘有治法而后有治人。’”</p>
-<p>⑧这封信是1787年12月20日写的，最精彩的句子是：“……Letmeadd,thatabillofrightsiswhatthepeopleentitledtoagainsteverygovementonearh,generalorparticular;andwhatnojustgovementshouldrefuse,orrestoninference.”见CompleteJefferson（1943）,p.121.</p>
+<p>⑧这封信是1787年12月20日写的，最精彩的句子是：“……Let me add, that a bill of rights is what the people entitled to against every govement on earh, general or particular; and what no just govement should refuse, or rest on inference.”见Complete Jefferson（1943）, p.121.</p>
 <p>《党与法》的重要附记</p>
 <p>《党与法》是我1964年写的，一直没有发表。十八年过去了，我发表出来，再写一点重要的附记。</p>
 <p>在《党与法》里，我不断写出胡适对有一部“最高根本法案”的热烈希望。他热烈希望有一部约法来代替国民党党纲，甚至一部宪法，这就是他所说的：</p>
@@ -419,8 +452,8 @@
 <p>对张学良、王家桢他们个人的荣华富贵而言、对跟蒋介石与虎谋皮绝无好下场这一判断而言，日本人的劝告并没说错，但是，为了中国统一，爱国者张学良却“心之所善，九死无悔”的不做“开国元勋”而做“地方官”，虽然最后落魄终老，被囚被骗得连“地方官”都不可得，但是，夙愿得偿，中国毕竟统一起来了——大丈夫乐夫天命，复奚疑哉？</p>
 <p>1988年3月31日晨</p>
 <p>《张学良研究》前言</p>
-<p>张学良生在1898年，今年1988年，九十岁了。九十年间，他从三十八岁起就失掉自由，被关五十二年至今，论使爱国者失掉自由之久，蒋介石及其党羽可谓心狠手辣、空前绝后。德国爱国者赫斯（RudolfHess）被判无期徒刑，也不过失掉自由四十六年，但赫斯九十三岁时自杀于狱，被判十年早已过期却仍在关个不停的张学良年登九十，正皈依上帝以求永生，如今在失掉自由五十二年之后，发表公开信说他“怡然自得，深足自慰”“日常生活行动，一向自由”云云，事实上，他“日常生活行动”的“一向自由”，只是他和他夫人老两口的游山玩水逛街吃小馆而已，他和人的交往绝对没有自由，据我所知，只有张群、张大千、王新衡、何世礼四人，可以和他交往，如今张群已老，张大千、王新衡已死，他唯一的交往者，只是他以前的随从参谋何世礼将军而已。何世礼将军住我楼下，人又多在香港，前一阵张学良一周内一连两次到何家，其索寞可想！</p>
-<p>张学良公开信中说他“怡然自得，深足自慰”“日常生活行动，一向自由”是“出自肺腑”之言，其实这是看破红尘后的“相对论”说法，并不奇怪。狄更斯笔下《双城记》（ATakeofTwoCities）中的老囚犯“北塔105号”（“OneHundredandFive,NorthTower”），岂不在出狱以后，还要靠人在房门外上锁，才能“怡然自得，深足自慰”么？为什么？因为他被锁了那么久，如果门开着，反而会祸起不测也！（“Why！Becausehehaslivedsolong,lockedup,thathewouldbefrightened-rave-tearhimselftopiecese-die-cometoIknownotwhatharm-ifhisdoorwasleftopen.”）</p>
+<p>张学良生在1898年，今年1988年，九十岁了。九十年间，他从三十八岁起就失掉自由，被关五十二年至今，论使爱国者失掉自由之久，蒋介石及其党羽可谓心狠手辣、空前绝后。德国爱国者赫斯（Rudolf Hess）被判无期徒刑，也不过失掉自由四十六年，但赫斯九十三岁时自杀于狱，被判十年早已过期却仍在关个不停的张学良年登九十，正皈依上帝以求永生，如今在失掉自由五十二年之后，发表公开信说他“怡然自得，深足自慰”“日常生活行动，一向自由”云云，事实上，他“日常生活行动”的“一向自由”，只是他和他夫人老两口的游山玩水逛街吃小馆而已，他和人的交往绝对没有自由，据我所知，只有张群、张大千、王新衡、何世礼四人，可以和他交往，如今张群已老，张大千、王新衡已死，他唯一的交往者，只是他以前的随从参谋何世礼将军而已。何世礼将军住我楼下，人又多在香港，前一阵张学良一周内一连两次到何家，其索寞可想！</p>
+<p>张学良公开信中说他“怡然自得，深足自慰”“日常生活行动，一向自由”是“出自肺腑”之言，其实这是看破红尘后的“相对论”说法，并不奇怪。狄更斯笔下《双城记》（A Take of Two Cities）中的老囚犯“北塔105号”（“One Hundred and Five, North Tower”），岂不在出狱以后，还要靠人在房门外上锁，才能“怡然自得，深足自慰”么？为什么？因为他被锁了那么久，如果门开着，反而会祸起不测也！（“Why！Because he has lived so long, locked up, that he would be frightened-rave-tear him self to piecese-die-come to I know not what harm-if his door was left open.”）</p>
 <p>张学良公开信中说：</p>
 <p>多年前信奉耶稣基督，勤于灵修，颇有领悟不问外事。……目下心情，如保罗在《腓立比书》三章八节所说的：“我为他已丢弃万事看作粪土。”十四节又说忘记背后，努力面前的，向着标杆直跑，要得上帝在耶稣基督里从上面召我来得的奖赏。”</p>
 <p>张学良从早年勤于军政，颇有领悟，专问国事，到垂老“勤于灵修，颇有领悟，不问外事”，这种心境的变化与苍茫，是我们可以理解也无限同情的。但对我们说来、对我们这些不会为逃世信仰“丢弃万事看作粪土”的人说来，挖掘出历史真相，显示出张学良是多么伟大的爱国者，却是我们不甘缄默的责任。</p>
@@ -487,7 +520,7 @@
 <p>但是，还有一个问题：当张学良仍在蒋介石的牢笼中时，为什么在西安的张学良部属要顺从地接受了他的命令？固然少帅与他的东北军有一种特殊的关系，可是在那种情况下要他们接受他的命令，他们还是难以理解。事实上，以孙铭九、应德田和苗剑秋为首的许多军官都主张：在他们的少帅返回西安以前，强烈反对释放蒋介石的部属和飞机。然而东北军中像王以哲和何柱国等更有力量的人物等，以同样强烈的态度赞成接受张学良的命令。他们相信他们更能理解少帅的心意，因为少帅一再誓言，一旦蒋介石停止内战而去抵抗日本侵略，他愿意支持蒋介石和中央政府，因此他们不愿违抗能领导各方面部队抗日的中央政府。他们也许还害怕他们的抗命会将少帅之得释变得复杂困难，所以他们决定立刻释放蒋介石的部属。释放之前，他们还像家庭饯别宴一样，以过分丰盛的筵席为那些人送别。几天之后，又让所有的军机离去。应德田在他写的《张学良与西安事变》一书中回忆，除了那些反对的部属，原来就非常过分听从蒋介石意思而不听从张学良意思的王以哲和何柱国二将军，自愿自动地放弃了重要的讨价还价筹码，因而大大削减了少帅返回西安的机会。应德田相信，蒋介石为了交换他的几十个高级部属和五十架飞机，是不会扣留张学良的。应德田又说，等到那些官员和飞机一回到蒋介石手中，蒋介石立刻把张学良送交军法审判。当王以哲和何柱国进一步顺从张学良的指示，和进一步屈从蒋介石的军事压力，而同意不以张学良的自由为先决条件的情况下，撤走东北军时，反对的人们不能不怀疑王以哲和何柱国的动机了。例如，应德田就怀疑王以哲和何柱国已经被蒋介石收买了。这种被出卖的感觉不断增长，它乃是1937年2月2日兵变的真正起因。“二二事件”本来是要杀掉王以哲和何柱国，但只有王以哲被杀。不过这次事件很短命，也很失败。毫无疑问，东北军内部的斗争便宜了蒋介石，让他的部队很快就把西安接管到掌握中。</p>
 <p>领导“二二事件”的孙铭九、应德田和苗剑秋，并不是想要与蒋介石开火打仗的顽童。由于他们和他们的“抗日同志会”一同主张把枪口转向日本侵略者，他们也不会挑起内战。他们只是坚持把释放张学良回来，作为任何谈判协议的先决条件，这不仅是为了满足他们个人的忠心，也是为了统一战线和东北军前途。他们不相信这一态度会引起战争，也把蒋介石的军事威胁看做是恫吓而不加考虑。应德田说在：“这种情况下，蒋介石不敢发动另一次内战。”在应德田和他的朋友看来，东北军团结一致的强硬态度，乃是使少帅恢复自由的最后机会。在某种意义上来说，他们是釆取现实主义态度的人，不是激进派分子。对付蒋介石，他们只相信现实政治。王以哲和何柱国，像少帅自己一样，是理想主义者，不是保守派分子，他们相信用好意和牺牲可以获得蒋介石的信任。当时，理想主义者力量大、占优势，现实主义者却看得对。把东北军从西安撤走以后，六个东北军将领飞到奉化县去探望被监禁的少帅，每人被准许与他谈二十分钟。最后都挥泪而别。蒋介石并没有因东北军的良好行为而放张学良。</p>
 <p>对少帅所遭遇到的不公平扣留，“二二事件”可以说是最后一次的武力抗议。此后，出现的只是请愿了，大多数是张学良的同乡们所做的。他们是在乞求“不能得到的”宽恕。为什么蒋介石宽恕是那么难以得到？蒋介石不会没有注意到，他扣留张学良之举，即使不是完全非法的，也是完全不道德的。一定有一些强有力的原因，使他宁愿问心有愧也要囚禁张学良。当然有报仇的成分。吴天威教授曾经指出蒋介石信奉自大和报仇，也信奉个人交往中的相互关系。”换句话说，为了他以前和以后从未经历过的几乎被杀的危险折磨，他要张学良受到惩罚的报应。但我不认为“因为少帅破坏了他消灭共产党人的计划”，蒋介石就那么不能原谅人。蒋介石和他的史学家们，的确有时候为“失去大陆”而归罪张学良。不过他们也知道这样指控是无法辩护的谎言。第一，1936年蒋介石还没有明确的消灭共产党之计划，可以让张学良加以破坏。西安的“剿匪总司令部”并没有打赢仗，更不用说消灭敌人了。第二，蒋介石根本不认为他的消灭共产党之计划，因西安事变而中断；蒋介石的消灭共产党之计划，真正被破坏的时间是1949年。那时候，张学良巳经被蒋介石监禁了十二年矣。</p>
-<p>也许蒋介石不肯宽恕的主要原因，须在蒋介石想要把西安事变弄得看起来像个什么这件事里去找。他显然想要把西安事变弄得像是一种失败——一次没有意义的挟持，没有达到任何正面积极的结果。“外界看来这一政变显得是一次失败”乃正是蒋介石所想要的情况。当时有欧美各国的观察家在西安，不过没有几个能像贝特兰（JamesBetram）那样能够看出“事实上它成功了”，因为“中国已经得到了一种新的统一”。很显然，对蒋介石来说，放张学良就是使西安事变在外界看起来显得是一次成功：张学良自由，因为他造成了中国新的统一。</p>
+<p>也许蒋介石不肯宽恕的主要原因，须在蒋介石想要把西安事变弄得看起来像个什么这件事里去找。他显然想要把西安事变弄得像是一种失败——一次没有意义的挟持，没有达到任何正面积极的结果。“外界看来这一政变显得是一次失败”乃正是蒋介石所想要的情况。当时有欧美各国的观察家在西安，不过没有几个能像贝特兰（James Betram）那样能够看出“事实上它成功了”，因为“中国已经得到了一种新的统一”。很显然，对蒋介石来说，放张学良就是使西安事变在外界看起来显得是一次成功：张学良自由，因为他造成了中国新的统一。</p>
 <p>1937年7月7日卢沟桥事变所揭起的全面战争以后，为了抗日救国，蒋介石是应该放张学良的。张学良和东北军很久以来就一直痛恨日本，他们去打日本侵略者，一定会是最狂热的战士。但就蒋介石个人的利益来说，他现在已经成为全国统一抗日战争中活的象征，他怎么能愿意让他以前的副总司令和扣留他的少帅成为全国的英雄，分享他的抗日光荣？更糟的是，承认张学良长期的抗日态度，再加上他一定会在抗日战场上所做的英勇表现，会很容易暴露出蒋介石原来竟然是个迟到的抗日战士；又会暴露出现在被国人拥护为爱国政策的统一战线政策，事实上也是张学良强迫蒋介石接受的！因此，蒋介石为了他个人的声望，不得不“不让张学良在抗日战争中担任任何角色”。对张学良来说，他期待抗日战争已经那么久了，为之而做的牺牲是那么大，把他排除于抗日战争之列乃是最重的惩罚。据说，当战争伸延到上海南京一带时，囚禁张学良的房子突然失火了，警卫人员怀疑是张学良放的火。这很可能是真的。正如一位传记作家说，张学良放火是要表示他的失意和愤怒。当全国都在为抗日战争而忙碌时，他被蒋介石悄悄地在华南各地搬来搬去，像个普通罪犯一样。张学良在西安事变期间的伙伴杨虎城，遭遇到另一种命运。在西安事变完全尘埃落定以后，他出国去。当中日战争爆发后，他自愿回国，要去参加对日作战。可是一回到中国，就被蒋介石的特务头子戴笠扣押起来。整个八年抗战期间和战争结束以后，他一直是被蒋介石囚禁着。然后，在共产党胜利的前夕，他神秘地死在监狱里。张学良和杨虎城为了促成抗日统一战线，是那么尽心尽力，是那么不顾一切，然而他们二人却都被排拒在对日作战行列之外，这看起来固然讽刺，但却并不完全令人感到惊奇，因为这乃是蒋介石故意要把事情弄成这样的。</p>
 <p>蒋介石应该让张学良在全国抵抗日本侵略者的战争中贡献心力，他却没有这样做。即使张学良参加了抗日工作，不管怎样，他的贡献对战争的结果都不会造成重大的改变，因为日本侵略者，虽然仍然侵占着中国一大片土地，但在日本本土遭到两个原子弹的轰炸后就投降了。蒋介石可能没有认识到在国民党与共产党的战争中，张学良可能会造成的不同情况。假如当时张学良被放回西安，他必定会在西北领导一支强大的军力，东北军也会在抗日战争中成长得更为强大。当时机来临，张学良和他的东北军部队会在战争结束时成功地进入东北。这个方案，至少对国民党来说，比被共产党打下东北，会好得太多太多了。蒋介石用“先调查后解散”的方法解决了东北军，固然会享受到消灭了一支地方性军队之后的满足，然而他却无意中在中国的一个地区造成了权力真空，让共产党的红军在中日战争开始后填补进去了。碰巧，战争结束后，在废墟中出现的红军比以往更为强大，林彪率领他成千上万农人军队进入东北时，实际上没有遇到阻挡。</p>
 <p>1945年日本投降时，张学良仍然能够为国民党做出有益的贡献。国民党的领袖人物中，蒋介石想要派人到东北去担任复原工作，还有谁比张学良更适当？担任过张学良副官的李金洲相信，如果张学良被派去接收东北，东北的民众一定会热情欢迎他，也一定会成功地支持他与共产党竞争。战争结束时过分自信的蒋介石可能相信，不必要有张学良的帮助，他就能够得到东北。共产党人就聪明多了，他们任命张学良那位声望远比不上他的弟弟张学思，为东北的一个省主席。蒋介石可能担心，让张学良回到故乡东北，会触发起太多不愉快的往事，尤其是失掉东北的事和有关抗日战争的整个问题。为了失掉东北，张学良一直是在一个人担当全部责任。1945年，蒋介石“民族救星”的威望和荣誉达到最高峰。这时际，他更不愿打开烦恼的囚笼，放出“妖怪”张学良，来减损他伟大胜利的光彩。因此，战争结束后，在1946年11月2日，蒋介石把张学良以囚犯的身份移囚到台北，而没有任命他为官员去接收东北。很不幸，蒋介石所享受的胜利之陶醉，是短命的。国民党在东北垮台之后不久，整个中国大陆就从国民党手上到了共产党的手上。命运的嘲弄是，逃亡的蒋介石与被囚禁的张学良在台湾聚会了。</p>
@@ -523,9 +556,11 @@
 <p>26.《蒋委员长对张杨训词》（南京《中央日报》，1936年12月27日）。</p>
 <p>27.《解放日报》（1936年12月26日）。</p>
 <p>28.陈布雷：《陈布雷回忆录》（台北：传记文学出版社，1967年）。</p>
-<p>29.LymanP.VanSlyke:EnemiesandFriends-TheUnitedFrontinChineseCommunistHistory（StanfordUniversityPress,1967）。</p>
+<p>29.Lyman P. Van Slyke: Enemies and Friends-The United Front in Chinese Communist History（Stanford University Press, 1967）。</p>
 <p>30.《中共中央关于和平解决西安事变给周恩来同志的电报》（《西安事变资料》）。</p>
-<p>31.ImmanuelC.Y.Hsu:TheRiseofModernChina（OxfordUniversityPress，1983）。</p>
+<ol start="31">
+<li>Immanuel C.Y.Hsu: The Rise of Modern China（Oxford University Press，1983）。</li>
+</ol>
 <p>32.赵希鼎：《西安事变的片断回忆》。</p>
 <p>33.吴天威：《西安事变》。</p>
 <p>34.李金洲：《西安事变亲历记》。</p>
@@ -646,7 +681,7 @@
 <p>民族英雄张学良先生终于3月10日搭机赴美探亲，距离他上次在外国，中间已隔了五十六年。他登机时，并无任何国民党政府官员前往送行——这个政府把他一关关了五十五年，最后放他走了，没有声息、没有歉意、没有平反、没有别情，这个政府对他什么都没有，只在机关报上，重新谎言蒋介石如何如何“关怀”他、如何如何“保护其安全”——“关怀”一个人、为了“保护”一个人的“安全”，竟长达半世纪之久，逼他与世隔绝，这种“保护”与“关怀”，也未免太恐怖了。</p>
 <p>1936年西安事变后，张学良为了给蒋介石面子，主动亲自送蒋介石回南京，可是蒋介石反而把他判了有期徒刑十年，然后予以特赦，理由是国家需材，张学良“年富力强，久经行阵”，“未可遽令废弃”，“责令戴罪图功，努力自赎。”可是，事实上，如不特赦，张学良判十年，坐十年，早在1947年就该恢复自由了，又何至于一关半个世纪？好可怕的特赦啊！蒋介石不但拿定主意不放张学良，还一而再、再而三作弄张学良，给他有一天会被释放的错觉。最大的错觉有六次：第一次是抗战开始，全面对外时候；第二次是抗战期中，骗他写《西安事变反省录》时候；第三次是抗战胜利，举国大赦时候；第四次是张学良十年期满时候；第五次是败退台湾，高唱团结时候；第六次是西安事变十七年后蒋介石首次约张学良见面时候。这年是1954年，蒋介石还骗他，说汉卿，请再忍耐些时，国家会有需要你的时候。”好个国家需要你忍耐！这一忍耐，又是三十多年，到了今天，蒋介石死矣，蒋经国也死矣，张学良也年登九十矣。张学良一直不自由，已经不自由到习惯不知自由的程度。本来如宋美龄所说我们对不起汉卿。”可是五十多年下来，汉卿竟变得未免对不起自己了——他有机会说他不自由，反倒公开说他“一向自由”了。他在登机前还对记者抱怨：“你们为什么老要说我行动受限制，就是你们记者给我限制住的。”一他在临放他前，还为这关他半个世纪的政府美言几句，他真对不起他自己了。</p>
 <p>不过，张学良先生对记者还说了一句：“现在老朋友都过世了，不是他们死得早，是我活得太久了。”这话倒别有玄机。事实上，张学良之有今日，得以远托异国、今人所喜，原因只有一个，就是由于他“活得太久了”。他的长寿，使他垂老得以“扬眉”，至于是否“吐气”，还有待他的觉悟。</p>
-<p>以法国的“德赖弗斯事件”（TheDreyfusAffair）为例。德赖弗斯于1894年被诬卖国，被判无期徒刑，幸赖文豪左拉写《我控诉》等文，为他洗刷，于1906年才得免罪，然而直到1930年《斯威兹可本文件》（Schwartzkoppen'spapers）公布，德赖弗斯的清白才完全澄清，可是时间已在沉冤三十六年之后，如果他本人活不到七十六岁的高龄，他就无法在死前五年获得完全昭雪的机会。再以日本的“吉田石松事件”为例，吉田石松从1913年起，就坐冤狱，一坐坐了七千八百八十天，二十一年半，出狱时候已五十七岁，那时候已是1935年，西安事变前一年，正好是德赖弗斯死的那一年。吉田石松出狱后一直要求平反，直拖到1964年，政府才正式宣布他是无辜的，当时他双手上举，两眼全是泪水，他已经八十四岁了！他含冤难复，前后长达五十一年，最后他终于胜利了，在他有生之年胜利了。</p>
+<p>以法国的“德赖弗斯事件”（The Dreyfus Affair）为例。德赖弗斯于1894年被诬卖国，被判无期徒刑，幸赖文豪左拉写《我控诉》等文，为他洗刷，于1906年才得免罪，然而直到1930年《斯威兹可本文件》（Schwartzkoppen’s papers）公布，德赖弗斯的清白才完全澄清，可是时间已在沉冤三十六年之后，如果他本人活不到七十六岁的高龄，他就无法在死前五年获得完全昭雪的机会。再以日本的“吉田石松事件”为例，吉田石松从1913年起，就坐冤狱，一坐坐了七千八百八十天，二十一年半，出狱时候已五十七岁，那时候已是1935年，西安事变前一年，正好是德赖弗斯死的那一年。吉田石松出狱后一直要求平反，直拖到1964年，政府才正式宣布他是无辜的，当时他双手上举，两眼全是泪水，他已经八十四岁了！他含冤难复，前后长达五十一年，最后他终于胜利了，在他有生之年胜利了。</p>
 <p>论地位，张学良先生比他们都重要；论事功，张学良先生比他们都伟大；论爱国之殷、论心事之苦、论遭际之惨、论沉冤之深，张学良先生也都超过前人。……但是，有一点张学良先生应该惭愧不如的，就是德赖弗斯、吉田石松这些人，虽是小人物，但他们为争取真相的水落石出、为揪出坏人的作恶不义，绝对拼命力争到底。他们扬善，但绝不隐恶，最后终以长寿换回自己的清白。</p>
 <p>张学良先生一代豪杰，我们盼他“此度见花枝，白头誓不归”，最后用行动、用真言，为他自己吐一口气，为自己吐气就是为人间正义吐气。当年韩昌黎写《送孟东野序》，首言“物不得其平则鸣……人之于言也亦然”，未言“有若不释然者，故吾道其命于天者以解之”——上帝的道理也是要伸张天讨的，张学良先生笃信上帝，只肯“扬眉”而不“吐气”，此非上帝之道也，愿张学良先生勉之！</p>
 <p>1991年3月11日</p>
@@ -671,7 +706,7 @@
 <p>我想，只有从大丈夫观点，我们才能理解张学良。</p>
 <p>想想大丈夫楚霸王的故事，也许我们有点线索。——在虞美人殉情以后，楚霸王带了八百名追随者突围南下。走到长江西岸的乌江，只剩下二十六骑。乌江亭长准备了小船，劝他到江东称王。楚霸王笑着说我当年带江东子弟八千人西征，如今谁也没生还，‘纵江东父兄怜我而王我’，我也没脸见他们了；他们即使不说什么，我难道不问心有愧吗？”因此，楚霸王不肯“回到自己的家”，他在外一殉了之。</p>
 <p>张学良当年带东北子弟千万南下，参加内战，如今能生还的，也已无多。“纵东北父兄怜我而王我”，张学良也没脸见他们了。——这一比喻，也许是张学良这回没回大陆的主要原因。</p>
-<p>不过，有人说，张学良既然出了门，在美国这一路吃喝唱戏玩，似乎连大陆都不回去看一下，未免做得太绝。从形式上看，的确如此。张学良只认台北的家，不认大陆的家，对他那么伟大的人物说来，显然不只是小市民的个人行为，而是明示他鲜明的政治立场的行为。这种行为可分两方面看：从反常心理看，他已罹患“斯德哥尔摩症候群”（Stockholmsyndrome），半世纪之久的拘禁反应，使他转而认同拘禁他的集团，因而至今还在电视上回护蒋介石、称道李登辉；从正常心理上看，他在美国一路吃喝唱戏玩，却不肯回到东北看看自己的旧家、看看父母的坟地、看看父老的旌旗……如此矫情，却显然有他个人政治上的判断。不过这回却是错误的。——当年的张学良，为了中国统一可以南下、可以西安事变；今天的张学良，为了中国统一却拒绝北上、拒绝京华烟云。对比起来，就太不相称了。</p>
+<p>不过，有人说，张学良既然出了门，在美国这一路吃喝唱戏玩，似乎连大陆都不回去看一下，未免做得太绝。从形式上看，的确如此。张学良只认台北的家，不认大陆的家，对他那么伟大的人物说来，显然不只是小市民的个人行为，而是明示他鲜明的政治立场的行为。这种行为可分两方面看：从反常心理看，他已罹患“斯德哥尔摩症候群”（Stockholm syndrome），半世纪之久的拘禁反应，使他转而认同拘禁他的集团，因而至今还在电视上回护蒋介石、称道李登辉；从正常心理上看，他在美国一路吃喝唱戏玩，却不肯回到东北看看自己的旧家、看看父母的坟地、看看父老的旌旗……如此矫情，却显然有他个人政治上的判断。不过这回却是错误的。——当年的张学良，为了中国统一可以南下、可以西安事变；今天的张学良，为了中国统一却拒绝北上、拒绝京华烟云。对比起来，就太不相称了。</p>
 <p>张学良如果认为他这回回大陆，会伤害了这边；但他也该想到，在美国吃喝唱戏玩而拒绝还乡，又伤害了那边。</p>
 <p>这样子的出一趟门，我看还不如不出好。</p>
 <p>爱家的人，不一定还乡。大陆也不一定要回去。但是，张学良不同，张学良不回去，他应该有一点楚霸王的决绝、严肃与抗议，但他全没有。他有的，不论反常与正常，都是一面倒的、都是令敬仰他的人失望的。</p>
@@ -769,7 +804,7 @@
 <p>四、甲方对于由乙方寄发之邮件，倘已纳足邮资，则虽误贴普通邮票，得免征欠资，但以极少数为限。</p>
 <p>五、乙方在现用欧文邮戳之局，则使用欧文邮戳；在现用中文邮戳之小局，得用中文邮戳。</p>
 <p>六、关于邮政之文书（单据在内），乙方以诚意努力不表示“满洲国”及“满洲”字样。</p>
-<p>七、所有两邮政业务主管机关往来之文书，由乙方所发者，以邮务司长（DirectorGeneralofPosts）为发信者，以邮政总局局长或邮政储金汇业总局局长为收信者，而由天津邮局转交。由甲方所发者，以邮政总局局长或邮政储金汇业总局局长为发信者，其由代理人签名者，则附书代理者之职衔，并于本文末尾为奉命（ByOrder）之表示，以邮务司长为收信者。</p>
+<p>七、所有两邮政业务主管机关往来之文书，由乙方所发者，以邮务司长（Director General of Posts）为发信者，以邮政总局局长或邮政储金汇业总局局长为收信者，而由天津邮局转交。由甲方所发者，以邮政总局局长或邮政储金汇业总局局长为发信者，其由代理人签名者，则附书代理者之职衔，并于本文末尾为奉命（By Order）之表示，以邮务司长为收信者。</p>
 <p>这一卖国的“密约”，是1934年12月14日的杰作，国民党方面代表是高宗武④、余翔麟，参加员是殷同、李择一，日本方面关东军代表是藤原保明，参加员是仪我诚也、柴山兼四郎。由这一文件里，我们得知了：国民党信誓旦旦的不肯“通邮”，最后干的，到底是些什么！</p>
 <p>“通邮”谈判完成后，12月30日，由邮政总局公告如下：</p>
 <p>为通告事，查东三省境内邮务，前为情势所迫，暂行停办，业于二十一年7月23日通告在案。兹为便利民众起见，将邮件包裹及汇兑三项业务，由山海关古北口两转递机关，负责承转。所有寄往辽宁、吉林、黑龙江、热河四省之邮件，如封面书明省名及地名，而无伪组织字样者，自1月10日起，均予收寄转发。其包裹及汇兑，则自2月1日起照章办理。特此通告。</p>
@@ -778,9 +813,9 @@
 <p>既然“三通”中第一通第二通都通了，第三通“通商”，根本也就更不成问题了。</p>
 <p>我只举一个例子，来看“通商”的必然性与普遍性。根据1935年《申报年鉴》工业类中“榨油厂”条下，有这样的表格与说明：</p>
 <p>地别总厂数百分数总资本额百分数总产值百分数</p>
-<p>本部各省112263133000元1247202000元42</p>
-<p>东三省3227422501605元（各种通货合计）8864450100元58</p>
-<p>总计43410025634606元100111652100元100</p>
+<p>本部各省112 26 3133000元12 47202000元42</p>
+<p>东三省322 74 22501605元（各种通货合计）88 64450100元58</p>
+<p>总计434 100 25634606元100 111652100元100</p>
 <p>就上表而观，吾国本部各省（除湘滇川黔赣）榨油工厂厂数，仅及东三省厂数26%，资本额仅及12%，总产值仅及42%，从而可知吾国油脂工业，其精华均在东三省，且以东省产豆之富，久著闻于海内外，故经营是种工业者，尚有日商所设之厂十八家，总资本额日金5448752元，其所用机械，均系水压式及螺旋式两种，无木榨者。华商油厂，则以螺旋式为多，唯大连安东长春哈尔滨等处，亦有水压式榨油机。吾国向以产大豆及大豆油自豪于东亚，而今不能无沧桑之感矣。</p>
 <p>从这段记录中，我们清楚的看到：中国“本部各省”，在榨油工业上，是如何仰赖“东三省”的输人！若不“通商”，又油水何来？</p>
 <p>何况油水方面，又反映在税收方面。据1935年《申报年鉴》财政类中“一年来中央财政大事记”条下，在“长城各口设卡征税”中，原来有这些“暂行办法”:</p>
@@ -864,17 +899,17 @@
 <p>注释</p>
 <p>①时候记不清,只记得那是穿夹衫的季节。</p>
 <p>②这段事可以表现胡适之先生之为人，是那样的谦和。同时亦可见二十九军的一班朋友和同志是那样的虚心。又警察局长是陈希文先生，本文前面已提到他了。</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/09.历史文化类/中国现代史正论.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/09.历史文化类/中国现代史正论.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../09.历史文化类/中国现代史定论.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../09.历史文化类/中国艺术新研.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -884,16 +919,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../09.历史文化类/中国现代史定论.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../09.历史文化类/中国艺术新研.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -902,12 +942,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

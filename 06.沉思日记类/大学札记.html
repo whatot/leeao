@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,81 +81,102 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="大学札记"><a class="header" href="#大学札记">大学札记</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#目录">目录</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -330,9 +363,9 @@
 <p>去南港</p>
 <p>昨日下午与姚从吾先生约好今日赴南港，7点50分在温州街口见姚先生及庄申，同坐车去中央研究院，读书竟日，中午与庄申谈，并赴徐芸书寓，又同到历史语言研究所书库中大谈。（1957年4月28日）</p>
 <p>牛津运动的气象</p>
-<p>19世纪的英国曾起了一种宗教革新运动——牛津运动（TheOxfordMovement），初起时其未来之领袖纽曼（Newman）、弗劳德（Froude）、基布尔（Keble）等，痛恨英国国教的腐败，很想大大的改良一番，他们做了一些宗教性的诗歌，汇成一集，由纽曼题荷马的诗句于卷首：</p>
+<p>19世纪的英国曾起了一种宗教革新运动——牛津运动（The Oxford Movement），初起时其未来之领袖纽曼（Newman）、弗劳德（Froude）、基布尔（Keble）等，痛恨英国国教的腐败，很想大大的改良一番，他们做了一些宗教性的诗歌，汇成一集，由纽曼题荷马的诗句于卷首：</p>
 <p>如今我们回来了，你们看便不同了。</p>
-<p>（Youshallknowthedifferencenowthatwearebackagain-Iliad,xviii，1.125．）</p>
+<p>（You shall know the difference now that we are back again-Iliad, xviii，1.125．）</p>
 <p>我很喜欢这个小故事。（1957年5月15日）</p>
 <p>消极只是暂时的</p>
 <p>自我训练的成绩到底不是悲观的，消极突击我一两小时，终于又被我消灭掉，万念俱灰的情绪毕竟是浮光掠影，它们在我心头的盘据愈来愈不能长久了，我清楚的知道我已逐渐变得坚强、变得有志气，当我漫步在街头，到处看到的是软弱的男人们，我无法容忍我自己竟和他们一样，我若不能使我与他们比起来有大大的不同，我将感到极端的可耻。（1957年5月16日）</p>
@@ -352,21 +385,21 @@
 <p>有条件的回想</p>
 <p>事情过去了就总算是过去了，我虽不愿遗忘，但也的确不愿再回想，一切欢乐、眼泪与名分都已逐渐成为往事，既然都成为往事。“我们该不要回头望，除非是要从过去错误中提取有用的教训，和为了从经验中获得益处（华盛顿）”，否则对既往的缅怀与回想都将是我目前的戕贼与毒素，我为自己订了一个严格的标准：凡是对“现在”有害的回想与想像，我都要一律不去想它。（1957年5月18日）</p>
 <p>壮烈的反动</p>
-<p>我对它必定要有一种壮烈的反动（aheroicreaction），我不是软弱的人，我是绝不再有暂时的消极情绪的，痛苦的折磨已使我变成一个千锤百炼的硬汉，我耻于做一个平平庸庸的男人，坚强的意志完全支配了我，我已变成了一个“无从腐败的斯诺登（Snowden）”，我不能容忍自己有任何腐败的行为——像那些男人一样（在腐败上面，即使只有一鳞片爪的相同，我也是不能忍受的）。（1957年5月18日）</p>
+<p>我对它必定要有一种壮烈的反动（a heroic reaction），我不是软弱的人，我是绝不再有暂时的消极情绪的，痛苦的折磨已使我变成一个千锤百炼的硬汉，我耻于做一个平平庸庸的男人，坚强的意志完全支配了我，我已变成了一个“无从腐败的斯诺登（Snowden）”，我不能容忍自己有任何腐败的行为——像那些男人一样（在腐败上面，即使只有一鳞片爪的相同，我也是不能忍受的）。（1957年5月18日）</p>
 <p>邱吉尔的坚强</p>
 <p>威格拉姆说道：“我是失败了。……我想我是不够坚强。我未能使他们了解。温斯顿邱吉尔是常常了解的，并且他是坚强的人，一定会继续奋斗到底。”我默默凝视着邱吉尔的造像，深觉他是一股力量的化身，如他所说：“在战争中，坚决；在失败中，不屈。”从他的眉宇神情之中，我们到处可以看到坚定刚强的一面，悲观与消沉的情绪丝毫侵蚀不了他（甚至是暂时的突击），在每二十四小时的生活里，他未曾让出一分钟来给消极盘据，他永远是一个精神抖擞意气纵横的人！（1957年5月19日）</p>
 <p>“要活在深刻地影响别人！”</p>
-<p>下午与张世民谈天的结果，使我更加认识艾德勒（Adler）的那句话：“要生活在深刻地影响别人！”（Liveinvitallyaffectingothers！）林毓生、马宏祥、孙英善都说我有我的一套，是的，我就要凭我这一套去深刻地影响别人。我该经常设想我在人们（尤其是朋友们）眼中的观感，我要使人觉得我是伟大的、庄严的、可佩服的。假如有虚荣心的话，这该是我最大的虚荣了，但我自信它是无害于我，也无害于人的。（1957年5月19日）</p>
+<p>下午与张世民谈天的结果，使我更加认识艾德勒（Adler）的那句话：“要生活在深刻地影响别人！”（Live in vitally affecting others！）林毓生、马宏祥、孙英善都说我有我的一套，是的，我就要凭我这一套去深刻地影响别人。我该经常设想我在人们（尤其是朋友们）眼中的观感，我要使人觉得我是伟大的、庄严的、可佩服的。假如有虚荣心的话，这该是我最大的虚荣了，但我自信它是无害于我，也无害于人的。（1957年5月19日）</p>
 <p>道德勇气</p>
-<p>我正展开一个律己极严的严肃生活，“放弃故我，重修学立身。”在各方面我都严格的要求我自己，非逼迫我“止于至善”不罢休，照我最近的突飞猛进看来，“止于至善”对于我似乎已不是难事，因为“道德的勇气”（moralcourage）已在极短的时间内占据了我的心。“Arise；forthismatterbelongethuntothre；wealsowillbewiththee：beofgoodcourage，anddoit.”－Ezra10:4（起来！这是你自己应该办的事，我们也赞助你，鼓起勇气去干！）这是道德的勇气的最好颂词了。（1957年5月19日）</p>
+<p>我正展开一个律己极严的严肃生活，“放弃故我，重修学立身。”在各方面我都严格的要求我自己，非逼迫我“止于至善”不罢休，照我最近的突飞猛进看来，“止于至善”对于我似乎已不是难事，因为“道德的勇气”（moral courage）已在极短的时间内占据了我的心。“Arise；for this matter belongeth unto thre；we also will be with thee：be of good courage，and do it.”－Ezra 10:4（起来！这是你自己应该办的事，我们也赞助你，鼓起勇气去干！）这是道德的勇气的最好颂词了。（1957年5月19日）</p>
 <p>感觉的生活与意志的生活</p>
-<p>“普通的生活是感觉的生活（lifeofsenses），是属于声色香味的生活，而不是意志的生活（lifeofWill）。意志的生活是另一种境界，只有特立独行的人才能过得了的。”过意志的生活虽然辛劳坚苦，但是一天下来，它的果实是最能慰藉人的，最能使人心安梦宁的。“过意志的生活”一句话，鼓励我无穷的道德的勇气，我没有丝毫向后退的犹豫了。（1957年5月19日）</p>
+<p>“普通的生活是感觉的生活（life of senses），是属于声色香味的生活，而不是意志的生活（life of Will）。意志的生活是另一种境界，只有特立独行的人才能过得了的。”过意志的生活虽然辛劳坚苦，但是一天下来，它的果实是最能慰藉人的，最能使人心安梦宁的。“过意志的生活”一句话，鼓励我无穷的道德的勇气，我没有丝毫向后退的犹豫了。（1957年5月19日）</p>
 <p>独醒与快乐</p>
-<p>午后，陈彦增开玩笑地向我说：“众人皆睡而敖独醒。”假如这话还大体不错，那我愿意进一步地解释说：过去的我是在痛苦中“独醒”着，而今天的我却逐渐在恬静的快乐中“独醒”着。受了罗素的影响，我抛弃了“拜伦式的不快乐”（Byronicunhappiness），我不再相信“少智多福”的不成熟见解了，不再相信Forinmuchwisdomismuchgrief：andhethatincreasethknowledgeincreasethsorrow的滥调了。我深切的自觉到：一个智慧的人的每日生活得不到快乐，而无知的动物与昏庸的人们反能得到的话，这对智慧的本身将是一种很大的讽刺了。（1957年5月20日）</p>
+<p>午后，陈彦增开玩笑地向我说：“众人皆睡而敖独醒。”假如这话还大体不错，那我愿意进一步地解释说：过去的我是在痛苦中“独醒”着，而今天的我却逐渐在恬静的快乐中“独醒”着。受了罗素的影响，我抛弃了“拜伦式的不快乐”（Byronic unhappiness），我不再相信“少智多福”的不成熟见解了，不再相信For in much wisdom is much grief：and he that increaseth knowledge increaseth sorrow的滥调了。我深切的自觉到：一个智慧的人的每日生活得不到快乐，而无知的动物与昏庸的人们反能得到的话，这对智慧的本身将是一种很大的讽刺了。（1957年5月20日）</p>
 <p>抖擞与旧习</p>
 <p>广诚来约看电影，票都买好了，其意甚殷。但我还是拒绝了。我绝不愿丝毫破坏我的严肃生活而做感觉的奴役，事实上我目前所做的只还不过是行远自迩的开始，王龙谿说：“须从本原上彻底理会，种种嗜好、种种贪着、种种奇特技能、种种凡心习态，全体斩断，令干干净净，此志既真，功夫方有商量处。”因为不这样极端的硬干，就是“立志不真”而“用力未免间断”，一曝十寒的结果至多只能说是“有志”，而不能说是“持志”了。所以我要时时持志不衰把它变成有恒的习惯。徐鲁源有一段话说得很好：“为人之志，抖擞于昨日，今日可受用否？即抖擞于上时，今时可受用否？”罗念菴也说：“只为平日有惯习处，软熟滑浏，易于因仍。今当一切斩然，只是不容放过，时时刻刻须此物出头作主，更无纤微旧习在身，方是功夫。”（1957年5月20日）</p>
 <p>圣埃德蒙名言</p>
-<p>圣埃德蒙说：“应当作永远活下去那样地工作；但要当作可能在今天死去那样地生活。”胡适在丁文江的传记中写道：“傅孟真曾引在君的两句名言：‘准备着明天就会死，工作着仿佛像永远活着的。’”这两句话，我只听在君用英文说：Bereadytodietomorrow；butworkasifyouliveforever．好像是他从什么书里记下来的。他虽问我这两句话应该怎样翻译，我试了几次，最后译成白话的韵文，他好像颇满意。我的译文是这样的：</p>
+<p>圣埃德蒙说：“应当作永远活下去那样地工作；但要当作可能在今天死去那样地生活。”胡适在丁文江的传记中写道：“傅孟真曾引在君的两句名言：‘准备着明天就会死，工作着仿佛像永远活着的。’”这两句话，我只听在君用英文说：Be ready to die tomorrow；but work as if you live forever．好像是他从什么书里记下来的。他虽问我这两句话应该怎样翻译，我试了几次，最后译成白话的韵文，他好像颇满意。我的译文是这样的：</p>
 <p>明天就死又何妨！</p>
 <p>只拚命做工，</p>
 <p>就像你永远不会死一样！”</p>
@@ -380,7 +413,7 @@
 <p>布鲁达克论多言</p>
 <p>让我把布鲁达克的话记在下面：“多言的人，要是他希望被爱，反被憎恨；当他们想取悦他人，他们倒令人厌烦；当他们以为自己受人尊敬，他们正受取笑；他们伤害了朋友、稗益了敌人、毁灭了自己。”（1957年5月23日）</p>
 <p>看作画</p>
-<p>赴师大，看一些艺术系的学生作画，颇有感触，Seneca说：Allartisbutimitationofnature．爱艺术就可说是变相的爱自然，Landor说：NatureIlovedand，nexttoNature，Art．我始终未曾深入过艺术的领域，我相信在它里面一定有一大片兴趣的宝藏。（1957年5月23日）</p>
+<p>赴师大，看一些艺术系的学生作画，颇有感触，Seneca说：All art is but imitation of nature．爱艺术就可说是变相的爱自然，Landor说：Nature I loved and，next to Nature，Art．我始终未曾深入过艺术的领域，我相信在它里面一定有一大片兴趣的宝藏。（1957年5月23日）</p>
 <p>见殷海光</p>
 <p>赴殷海光家，与他商谈的结果促进我几个大决定，诸如转哲学系，学成德文，多念一年，与夫我将来职业之选择，我都有了很迅速的决定。殷先生又送我《怎样研究苏俄》一本、《祖国》二二七期一册。（1957年5月23日）</p>
 <p>孟大中</p>
@@ -389,18 +422,18 @@
 <p>翁松燃</p>
 <p>翁松燃，一个不甘随波逐流的青年人，过去走了许多错路，但是他终于找到了“黑猫”，走向智慧的思想解放的开明之路，在比比皆是沉沦的青年人中，他的确是个幸运儿，但是幸运的得来是由于他的洁身自爱有所不为，所以他可以骄傲一阵的。（1957年5月24日）</p>
 <p>手淫与动机派</p>
-<p>大概早晨2点左右就醒了，翻来覆去总是睡不着，躺在床上想了许多，最主要的一点是对masturbation的决定，我同意每周末（入睡前）一次，平时则彻底禁止，只能做轻松、戏谑而优雅的（lighter，playful，andgraceful）fancy。我这种决定是有理论根据的，我觉得我这样做，似能符合道德行为三特征之一的“效应性”，当然就动机派（motivism）的标准说来，我心中可能有所不安，但我相信这种历史的观念是可以被我抛掉的。这个问题以后我专治哲学时当做深入的研究，但我颇信单在masturbation一点上，施以“李敖的方法”，似乎不再构成使我不安的理由了。（1957年5月25日）</p>
+<p>大概早晨2点左右就醒了，翻来覆去总是睡不着，躺在床上想了许多，最主要的一点是对masturbation的决定，我同意每周末（入睡前）一次，平时则彻底禁止，只能做轻松、戏谑而优雅的（lighter，playful，and graceful）fancy。我这种决定是有理论根据的，我觉得我这样做，似能符合道德行为三特征之一的“效应性”，当然就动机派（motivism）的标准说来，我心中可能有所不安，但我相信这种历史的观念是可以被我抛掉的。这个问题以后我专治哲学时当做深入的研究，但我颇信单在masturbation一点上，施以“李敖的方法”，似乎不再构成使我不安的理由了。（1957年5月25日）</p>
 <p>为朋友做打算</p>
 <p>躺在床上想到另外一件事，就是我该花些时间替我几位好朋友仔细考虑考虑他们的前途，帮助我的朋友们热心做点事。亚当斯密：“为人没想多，为己着想少；压制自私，实施慈爱之念，便构成人性的完美。”我要一一为我的朋友们做些打算。（1957年5月25日）</p>
 <p>当心“自我耽溺”</p>
 <p>永远不要忘记我要过一个什么样的生活——我要过一个伟大的生活，虽然朋友们觉得我的表现还蛮可佩服（昨天即有张灏、孙英善两位这样对我说），但是我还是有许多不满意，最不满意的是因循与自律的时间花得太多，耐心读书的时间花得太少。因循是不必多说的，自律的功夫（包括读修养书与写日记）我做得太费时了，今天王建人就两度笑我整天写日记，靠写日记维持自己，闻之真是惭愧，写到这里，我才真正觉醒到我已陷在“自我耽溺”（Self－absorption）之中好久好久了！这是何等的不智！我的“自我耽溺”是由来已久了的，可是直到今天下午4点前我才觉醒到！这真是一个矫枉过正、得不偿失、费力不讨好的愚蠢行为！我万万没想到自律功夫做得过度了反倒会有害的，这是一个多么可贵的值得庆幸的大觉醒，我不得不感谢罗素先生。现在我立即决定如下：自律的功夫只能在每天临睡前一小时内做一做，除了这段时间外，修养书与日记本翻都不要翻它一下，每天做一小时的自律功夫足够了。（1957年5月26日）</p>
 <p>用伟大做标准</p>
-<p>肚子痛，四肢冷，头与身上发烧，足足病了一整天。今天想到的最具体的一个念头是，我要做一个伟大的人，有一种伟大的自处生活和一种伟大的对人态度，我要使人以我而骄傲，不使人以我而羞耻，我在别人的心目里要成为一个永不能忘的有光彩的人。我曾写“成第一等人做法”的理论道：“世俗的态度固然格卑而不必说，一般有着真情的男孩子的态度也是不足法的，因为他们的做法总不成为第一等人的标准，所以他们做出来的总不能可记可歌，使人感动。能否‘可记可歌，使人感动’是一个做法的最好标准，任何想出的主意都要在这个标准下称称看，而决定其取舍，要知道大凡不合这标准的做法，都是普通人惯用的方法，Thenaturalthingandthelmpulsivething，那些常是错误的（至少是不够伟大的）。”“他们至多够得上‘好’，可是却够不上‘超卓’与‘伟大’。我不自安于平庸的‘好’，我要使人佩服，使人受感动。我‘要生活在深深的影响人’！”我所做的每一个动作、所说的每一句话、所做的每一件事，都要问问是否可合这个标准。（1957年5月27日）</p>
+<p>肚子痛，四肢冷，头与身上发烧，足足病了一整天。今天想到的最具体的一个念头是，我要做一个伟大的人，有一种伟大的自处生活和一种伟大的对人态度，我要使人以我而骄傲，不使人以我而羞耻，我在别人的心目里要成为一个永不能忘的有光彩的人。我曾写“成第一等人做法”的理论道：“世俗的态度固然格卑而不必说，一般有着真情的男孩子的态度也是不足法的，因为他们的做法总不成为第一等人的标准，所以他们做出来的总不能可记可歌，使人感动。能否‘可记可歌，使人感动’是一个做法的最好标准，任何想出的主意都要在这个标准下称称看，而决定其取舍，要知道大凡不合这标准的做法，都是普通人惯用的方法，The natural thing and the lmpulsive thing，那些常是错误的（至少是不够伟大的）。”“他们至多够得上‘好’，可是却够不上‘超卓’与‘伟大’。我不自安于平庸的‘好’，我要使人佩服，使人受感动。我‘要生活在深深的影响人’！”我所做的每一个动作、所说的每一句话、所做的每一件事，都要问问是否可合这个标准。（1957年5月27日）</p>
 <p>胸襟</p>
-<p>躺在床上一整天，读TheConquestofHappiness，极广胸襟，今天得到的另外一个具体的念头是，“对世界的胸襟开旷的态度（expansiveattitudetowardstheworld），建设这种态度的方法很多，举二点如下：</p>
-<p>一、时常记住爱情给你的该是欢乐之源（asourseofdelight）而不是痛苦。</p>
-<p>二、“Ourdoingsarenotsoimportantaswenaturallysuppose；oursuccessesandfailuresdonotafterallmatterverymuch.”“well,afterall,thatwouldnotmattersoverymuch．”</p>
-<p>MichaelDrayton的Sincethere'snohelp,comeletuskissandpart．这是何等慷慨的作风！W.S.Landor的Iwarm'dbothhandsbeforethefireoflife；Itsinks，andIamreadytodepart．这是何等辽阔的心怀！（life一字改成love则更适合。）（1957年5月27日）</p>
+<p>躺在床上一整天，读The Conquest of Happiness，极广胸襟，今天得到的另外一个具体的念头是，“对世界的胸襟开旷的态度（expansive attitude towards the world），建设这种态度的方法很多，举二点如下：</p>
+<p>一、时常记住爱情给你的该是欢乐之源（a sourse of delight）而不是痛苦。</p>
+<p>二、“Our doings are not so important as we naturally suppose；our successes and failures do not after all matter very much.”“well, after all, that would not matter so very much．”</p>
+<p>Michael Drayton的Since there’s no help, come let us kiss and part．这是何等慷慨的作风！W. S. Landor的I warm’d both hands before the fire of life；It sinks，and I am ready to depart．这是何等辽阔的心怀！（life一字改成love则更适合。）（1957年5月27日）</p>
 <p>顺民观</p>
 <p>张世民中午来拿东西，真是太麻烦他了，他今天气色甚不好，我真是关心他的前途。不够坚强，可说是张世民的一个大毛病，因为不够坚强，使他总是在环境的压力下做一个得过且过的顺民，这太可怕了，他的确需要狠狠的锻炼一番，我希望由于我的助力，能够使他坚强起来。（1957年5月28日）</p>
 <p>给人间一点温暖</p>
@@ -413,7 +446,7 @@
 <p>毒蛇喻</p>
 <p>在你意想不到地突然被一条毒蛇咬了一口的时候，你该立刻用各种办法去解毒，而不该继续震撼于这种意外，以致扩大你中毒的程度。你要告诉你自己说：不要研究你为什么会被咬了，也不要研究你怎样被咬了，也不要感慨你被咬得如何重……这些都是无益之举，它们除了拖延你中毒的时间，使你中毒更深以外，对你是一点好处都没有，甚至有时候它们简直是变形的毒汁，对你是一种毒上加毒落井下石的伤害。（1957年5月29日）</p>
 <p>“已往”是个贼</p>
-<p>多用《情断奈何天》（LoveFromThepompey'shead）中那句话来提醒自己吧：“‘已往’是个贼，它不能给我们任何东西，反会偷去‘未来’。”（1957年5月29日）</p>
+<p>多用《情断奈何天》（Love From The pompey’s head）中那句话来提醒自己吧：“‘已往’是个贼，它不能给我们任何东西，反会偷去‘未来’。”（1957年5月29日）</p>
 <p>胡适论反省</p>
 <p>“反省就是要闭门思过，要诚心诚意的想……要认清了罪孽所在，然后我们可以用全副精力去消灾灭罪。”“历史的反省自然使我们明了今日的失败都是因为过去的不努力，同时也可以使我们格外明了‘种瓜得瓜，种豆得豆’的因果铁律。铲除过去的罪孽只是割断已往种下的果。我们要收新果，必须努力造新因。”“正因为我们今日的种种苦痛都是从前努力不够的结果。所以我们将来的恢复与兴盛绝没有捷径，只有努力工作一条窄路，一点一滴的努力、一寸一尺的改善。”“……不是要人消极，是要人反省，不是要人灰心，是要人起信心，发下大宏誓来仟悔，……要发愿造新因来替代旧日种下的恶因。”“真诚的反省自然发生真诚的愧耻。孟子说得好：‘不耻不若人，何若人有？’真诚的愧耻自然引起向上的努力，要发宏愿努力学人家的好处，铲除自家的罪恶。经过这种反省与忏悔之后，然后可以起新的信心，要信仰我们自己是拨乱反正的人。”“今日所受的苦痛和耻辱，都只是过去种种恶因种下的恶果。我们要收将来的善果，必须努力种现在的新因，一粒一粒的种，必有满仓满屋的收。”（1957年5月29日）</p>
 <p>陈彦增</p>
@@ -464,7 +497,7 @@
 <p>志士仁人的比例数</p>
 <p>今晚我目击人们（尤其是青年男女们）腐败的一面，起码都是受过中等教育的人们，有几个还能每天肯花些时间读点正经书，或是思考一下人世的问题呢？不过话又说回来，我也没有理由深责他们，他们并没有什么大志向、大理想、大魄力，他们的才具不过就是做个但求自谋的“自了汉”。在“社会习气”的桎梏下大同小异地顺从一辈子，我不能以志士仁人的标准来厚非他们，试想：志士仁人们在整个人类中所占的比例数，我实在无法不对他们有着无限的怜悯，我不忍心痛斥他们的腐败了，我只静静地观察着他们，私下勉励着我自己：努力去做一个无从腐败的人！（1957年6月2日）</p>
 <p>第一个一百镑</p>
-<p>富兰克林说；“弄到第一个一百镑以后，就比较容易弄到第二个一百镑了。”阿斯特（JohnTacobAstor）也认为，后来挣得的十万块比以前初得的一千元容易得多了。（1957年6月2日）</p>
+<p>富兰克林说；“弄到第一个一百镑以后，就比较容易弄到第二个一百镑了。”阿斯特（John Tacob Astor）也认为，后来挣得的十万块比以前初得的一千元容易得多了。（1957年6月2日）</p>
 <p>梁启超论加富尔</p>
 <p>梁任公论加富尔：“古之欲就大业者，必有所养”，“加富尔以农以游以隐者凡十有六年，十六年之星霜，不可谓不久，此十六年内意大利之事变，不可谓不多，虽然，彼遂不厌，彼遂不动，盖其胸中早有所自主，而定时定力，非外界所能夺也，加富尔最富于忍耐力之伟人也。”“其所以十六年不飞又不鸣者，正所以为今日一飞冲天一鸣惊人之地也。”任公又比较加富尔与诸葛亮：“噫嘻，桓灵失纲，四海鼎沸，群雄拊髀攘臂之际，而绝代伟人诸葛亮，乃躬耕于南阳；当法国革命，全欧如麻，豪杰蜂起水涌之时，而绝代伟人加富尔，乃学圃于黎里，古之欲就大业者，必有所养，呜呼，其亦可以师矣。”</p>
 <p>午后两点赶车站接世民，吃饭后赴朝风谈至四时一刻，世民能有新气象，着实可喜。（1957年6月3日）</p>
@@ -475,7 +508,7 @@
 <p>第一等人</p>
 <p>又是3点多钟就醒了，一直未能睡着，躺在床上冥想“第一等人”的境界。（如富兰克林见到伏尔泰、胡适见到罗素），的确使我胸怀宏伟，多想想“第一等人”自处与对人的态度，会使我心中长存着第一等念，而把第二等以下的思想、言论与行为全抹去了。凡是属于“第一等人”的人，他们应付欢乐与不幸的态度几乎都是一样的。老罗斯福总统曾说他每逢遇着困难的问题时，就抬起头来望着挂在墙上的林肯的相片，并且问自己道：“倘若林肯遇到这个问题时，他将怎样做呢？”这是给自己去从取舍的一个好标准，遇事能学得用“第一等人”的观点去看事情，不但是一种伟大的作风，并且还会给自己带来许多自慰与安静。亚里土多德说：“气度宽宏的人无论遭遇命运为善为恶，皆能适度以应之。成功不以为喜，失败不以为悲，外界的毁誉褒贬，一不介怀，只是为所当为、为所可为而已。”这是何等恢宏的胸襟与素养！（1957年6月4日）</p>
 <p>控制自己思想的能力</p>
-<p>我只能允许我做“建设性”的想像，任何没有建设价值的想像，我都要彻底的击毁它于未萌之前，我要以极迅速的取代手段来冻结或者转移我的想像。我的想像要永远听命于“较高明的人生哲学和较多的精神纪律。（abetterphilosophyoflifeandalittlemorementaldiscipline），我一生要学到“控制自己思想的能力”（controlovermythought）。（1957年6月4日）</p>
+<p>我只能允许我做“建设性”的想像，任何没有建设价值的想像，我都要彻底的击毁它于未萌之前，我要以极迅速的取代手段来冻结或者转移我的想像。我的想像要永远听命于“较高明的人生哲学和较多的精神纪律。（a better philosophy of life and a little more mental discipline），我一生要学到“控制自己思想的能力”（control over my thought）。（1957年6月4日）</p>
 <p>爱情的移动性</p>
 <p>中午与沈鸿骏在“成都”吃午饭，论及爱情的移动不定的问题，我过去似乎不太重视这个问题的严重性，今天我才特别开始留意研究它。托尔斯泰说：“若说你能终身爱一个人，就如同说一支蜡烛可以燃点到和你生命一样的长久。”萧伯纳说：“男女的爱情不是可以用戒指、誓约和祝福等做种子，去保持到二十年或二十分钟的东西。”爱伦凯也说：“恋爱的感情本是可以变化的，不论何人都不能保它永久不变。换言之，某人在二十岁的时候倾其全副爱情所结合的关系，不论何人都不能保证他到了三四十岁也可以一定不发生变化。”如何应付这个问题真是众说纷纷，现在我只是把问题提出，留待日后仔细思考。（1957年6月4日）</p>
 <p>吕坤论摆脱</p>
@@ -487,7 +520,7 @@
 <p>罗素论忍受单调生活的能力</p>
 <p>罗素论“忍受单调生活的能力”（Thecapacitytoendureamoreorlessmonotonouslife）：“忍受烦闷的能耐，对于幸福生活是必要的，是应该教给青年人的许多事情之一。”（Acertainpowerofenduringboredomisthereforeessentialtoahappylife，andisoneofthethingsthatmighttobetaughttotheyoung．）“太多的旅行、太多复杂的印象，不适宜于青年人，徒然使他们长大起来不耐寂寞，殊不知唯寂寞才能生产果实。”（Toomuchtravel，toomuchvarietyofimpressions，arenotgoodfortheyoung,andcausethemastheygrowuptobecomeincaPableofenduringfruitfulmonotony．）“安静的生活是大人物的特征，他们的喜乐也不是外人心目中认为兴奋的那一种。一切伟大的成就必须历久不懈的工作，其精神贯注与艰难的程度，使人再没有余力去应付狂热的娱乐。”（Altogetheritwillbefoundthataquietlifeischaracteristicofgreatmen，andthattheirpleasureshavenotbeenofthesortthatwouldlookexcitingtotheoutwardeye．Nogreatachievementispossiblewithoutpersistentwork，soabsorbingandnodifficultthatlittleenergyisleftoverforthemorestrenuouskindsofamusement．）“一切伟大的生活含有沉闷的努力。”（Allgreatliveshavecontaineduninterestingstretches．）“一个男孩子或青年人，若抱着严肃而有建设性的目标，一定甘心情愿的忍受大量的烦闷，要是必须的话。但若过着一种心思散漫、纵情逸乐的生活，一个青年人的头脑里就难于孕育有建设性的目标；因为在此情形中，他的念头所贯注的将是未来的欢娱，而非遥远的成就。为了这些缘故，不能忍受烦闷的一代，定是人物渺小的一代。”（AboyoryoungmanwhohassomeseriousconstructivePurposewillendurevoluntarilyagreatdealofboredomifhefindsthatitisnecessarybytheway．Butconstructivepurposedonoteasilyformthemselvesinaboy’smindifheislivingalifeofdistractionsanddissipations,forinthatcasehisthoughtswillalwaysbedirectedforwardsthenextpleasureratherthantowardsthedistantachievetment．Forallthesereasonsagenerationthatcannotendureboredomwillbeagenerationoflittlemen．）“为了逃避那富有建设性的烦闷，他们反而堕入另一种更可怕的烦闷。幸福的生活，大半有赖于恬静，因为唯有在恬静的空气中，真正的欢乐才能常住。”（Inflyingfromthefructifyingkindofboredom,theyfallapreytotheotherfarworsekind.Ahappylifemustbeagreatextentaquietlife,foritisonlyinanatmosphereofquietthatturejoycanlive.）（1957年6月5日）</p>
 <p>爱情比例不可太高</p>
-<p>又与世民提到豪厄尔斯的话：“爱及求爱这类事情，给小说家们渲染得与生活其他各方面的比例太不相称了。”世民极然之。罗素也曾说：“典型的不快乐者，是少年时给剥夺了某些正常的满足的人，以致后来把这一种满足看得比一切其余的满足更重要，而使他的人生望着单一的方向走去，并且过于重视这一种满足的实现，认为和一切与之有关的活动相反。”（Thetypicalunhappymanismewho，havingbeendeprivedinyouthofsomenormalsatisfaction，hascometovaluethisonekindofsatisfactionmorethananyanother，andhasthereforegiventohislifeaone－sideddirection，togetherwithaquiteundueemphasisupontheachievementasopposedtotheactivitiesconnectedwithit．）过去受了“多元宇宙”论的影响，我一直把爱情在人生中的比例看得太高了，所幸我今天极能看穿此理，补牢尚未嫌迟。（1957年6月5日）</p>
+<p>又与世民提到豪厄尔斯的话：“爱及求爱这类事情，给小说家们渲染得与生活其他各方面的比例太不相称了。”世民极然之。罗素也曾说：“典型的不快乐者，是少年时给剥夺了某些正常的满足的人，以致后来把这一种满足看得比一切其余的满足更重要，而使他的人生望着单一的方向走去，并且过于重视这一种满足的实现，认为和一切与之有关的活动相反。”（The typical unhappy man is me who，having been deprived in youth of some normal satisfaction，has come to value this one kind of satisfaction more than any another，and has therefore given to his life a one－sided direction，together with a quite undue emphasis upon the achievement as opposed to the activities connected with it．）过去受了“多元宇宙”论的影响，我一直把爱情在人生中的比例看得太高了，所幸我今天极能看穿此理，补牢尚未嫌迟。（1957年6月5日）</p>
 <p>人未己知怎么办？</p>
 <p>“人未己知，不可急求其知”，这句老话今晚得翁松燃的帮助，使我对它有了一番新认识，袁了凡说得好：“虽巧心力辩，如春蚕作茧，自取缠绵，故曰‘止谤莫如无辩’。”塔西塔斯也说：“不加理会的澜言很快就平息；如果显示你受它伤害，你便是赋给它真实的外貌。”往坏处说，无言是最好的抗议；往好处说，无言是最好的解释，这是我今天晚上所得到的一个最可贵的经验。（1957年6月5日）</p>
 <p>曾国藩论“打脱牙，和血吞”</p>
@@ -495,7 +528,7 @@
 <p>古人论立志</p>
 <p>今日刚强沉毅之气极足，正如夏东岩所言：“卓然竖起此心，便有天旋地转气象。”乃深觉立志一事，非一鼓作气彻底而为不为功，魏庄渠说得好：“须发大勇猛心，方做得成就，若不曾发愤，只欲平做将去，可知是做不成也。”陆九渊也说：“彘鸡终日萦萦，无超然之意，须是一刀两断，何故萦萦如此，萦萦的讨个什么！”曹月川也说：“须是猛起，如眼瞑眩之药，以点深痼之疾，真是不可悠悠。”所以立志之事，最忌体懈、气沮、昏了头、情恹恹地，一定要盛气无时或衰方做得出成绩。（1957年6月9日）</p>
 <p>沉默</p>
-<p>下午洗衣服时感到我沉默的功夫做得还是太差，大体说来，沉默就是进步的表示，沉默的时候是我最进步的时候，我不太以为这样说是武断或矫枉过正的，因为沉默带给我缜密的思考、清醒的意识、安定的内心与沉重的情绪，多说可不必说的话只是证明我为人的没有定力、言辞的没有分量。这些都不是成熟的表示，一个成熟的公式该是爱因斯坦所说的A（成功）=X（工作）＋Y（游戏）＋Z（少说话），因为目前的我还停留在浅薄与自救的阶段，对任何问题都还没有真知灼见，Ifyoucan'tsayitoutloud,keepyourmouthshut．不“妄言无当”，“大言不惭”，对我这好说好道的人说来，该是一种很重要的戒条，薛敬轩说：“句句着实不脱空，方是谨言。”“信口乱谈者，无操存省察之功也。”在我忘记了静默寡言的当儿，我该想想古人这几句老话，我相信它会使我悚然变得深沉，老成而稳重。（1957年6月9日）</p>
+<p>下午洗衣服时感到我沉默的功夫做得还是太差，大体说来，沉默就是进步的表示，沉默的时候是我最进步的时候，我不太以为这样说是武断或矫枉过正的，因为沉默带给我缜密的思考、清醒的意识、安定的内心与沉重的情绪，多说可不必说的话只是证明我为人的没有定力、言辞的没有分量。这些都不是成熟的表示，一个成熟的公式该是爱因斯坦所说的A（成功）= X（工作）＋Y（游戏）＋Z（少说话），因为目前的我还停留在浅薄与自救的阶段，对任何问题都还没有真知灼见，If you can’t say it out loud, keep your mouth shut．不“妄言无当”，“大言不惭”，对我这好说好道的人说来，该是一种很重要的戒条，薛敬轩说：“句句着实不脱空，方是谨言。”“信口乱谈者，无操存省察之功也。”在我忘记了静默寡言的当儿，我该想想古人这几句老话，我相信它会使我悚然变得深沉，老成而稳重。（1957年6月9日）</p>
 <p>述志诗</p>
 <p>晨上辽金元史时做述志诗一首，求其达意，不求工也：</p>
 <p>二十二年悲欢事，</p>
@@ -505,10 +538,10 @@
 <p>胡适在爱情上有遗憾</p>
 <p>胡适二十二岁时的一则日记：“吾之去妇人社会也，为日久矣。……甲辰去家，至今年甲寅，十年之中，未尝与贤妇人交际。即在此邦，所识亦多中年以上之妇人，吾但以长者目之耳，于青年女子之社会，乃几裹足不敢入焉。……吾十年之进境，盖全偏于知识（intellet）一方面，而于感情（emotions）一方面几全行忘却。……吾自顾但有机警之才，而无温和之气，更无论温柔儿女之情矣。”他这时虽然深怪自己“几成一冷血之世故中人”，而“拟今后当注重吾感情一方面之发达……减吾孤冷之性”，但是他毕竟还是被理智深锁住，一锁又是四年。温源宁形容他这过人的理智道：“在他呵呵笑的声中，及他坦白的眼光中，我们看不见他的魂灵深处。他不像志摩，不会有沉痛的悲哀与热狂的情绪。在那眼光中，我们看出理智的光辉，那兀突不定的噶唇，也老是闪过机智者会心的微笑。”胡适结婚后，一天题张慰慈的扇子，写道：“爱情的代价是痛苦，爱情的方法是要忍得住痛苦。”此公在爱情上，似有余憾也。（1957年6月10日）</p>
 <p>忘情</p>
-<p>Isaid，“Ihaveshutmyheart，</p>
-<p>Asoneshutsanopendoor．</p>
-<p>ThatLovemaystarvetherein．</p>
-<p>Andtroublemenomore．”</p>
+<p>I said，“I have shut my heart，</p>
+<p>As one shuts an open door．</p>
+<p>That Love may starve therein．</p>
+<p>And trouble me no more．”</p>
 <p>在爱情方面，我将是个多年冷冻的忘情者，浓厚的理智与早年的创痕已足以使我心如止水——永远不会再为可爱的少女而狂跳！曼殊的七绝该是我最喜欢的句子：</p>
 <p>禅心一任娥眉妒，</p>
 <p>佛说原来怨是亲，</p>
@@ -520,10 +553,10 @@
 <p>有奇气的人从来不会没精打采嗒然若丧的，他永远是坚强而高兴的。这种坚强而高兴的神情被他养成了习惯。（1957年6月12日）</p>
 <p>危险的造形</p>
 <p>莎士比亚笔下的凯撒向安东尼说开西斯道：</p>
-<p>Letmehavemenaboutmethatarefat；</p>
-<p>Sleek-headedmen，andsuchassleepo'nights．</p>
-<p>YondCassiushasaleanandhungrylook；</p>
-<p>Hethinkstoomuch：suchmenaredangerous．（1957年6月12日）</p>
+<p>Let me have men about me that are fat；</p>
+<p>Sleek-headed men，and such as sleep o’nights．</p>
+<p>Yond Cassius has a lean and hungry look；</p>
+<p>He thinks too much：such men are dangerous．（1957年6月12日）</p>
 <p>威廉詹姆斯的理论</p>
 <p>威廉詹姆斯说：“行动似乎是随着感情，但事实上，行动与感情是同时并作的；直接用意志改正行动，间接也可以影响感情。因此，当你不快乐时想达到愉快之境的唯一妙法，就是快活地坐直了，说话动作都令它像是已经很高兴一样。”这种理论我近来一再证实它的正确，我欲强，斯强至矣；我欲乐，斯乐至矣。这种经验与收获的确带给我不少的愉快与自信。（1957年6月12日）</p>
 <p>道与得</p>
@@ -538,7 +571,7 @@
 <p>尽承殷海光衣钵</p>
 <p>既决定转哲学系，复有尽承海光衣钵之意，盖我深信他走这条路对世道人心有深远的影响，并且我深信在这方面的贡献是“舍我其谁”的，我非常希望以我之才，能对世道人心有许多伟大的贡献。（1957年6月12日）</p>
 <p>胃口倒尽</p>
-<p>我只愿淡忘，只愿不再爱，只愿丧失掉兴趣、口味与热烈。事实上，似乎我也愈来愈能做到这种地步了，傍晚小读《飘》的尾段，更使我看穿了这些“Mineworeout”，这是何等凄凉的下场！“I'vehadahellofagoodtime——suchahellofagoodtimethatitsbeguntopallandnowIwantsomethingdifferent．”“一丘之貉”，是我今天所得到的一个最大的反动心理与认识，我用这四个字，丝毫没有蔑视的意思。亚历山大蒲柏说得很妙：“女人，在不能了解这点上，好像是个谜；但是在一经了解之后，引不起我们兴趣这一点上，更好像是个谜。”我当然希望能有“例外”来打破我这种“一丘之貉”的成见，但我却不愿冒这个险了！（1957年6月12日）</p>
+<p>我只愿淡忘，只愿不再爱，只愿丧失掉兴趣、口味与热烈。事实上，似乎我也愈来愈能做到这种地步了，傍晚小读《飘》的尾段，更使我看穿了这些“Mineworeout”，这是何等凄凉的下场！“I’vehadahellofagoodtime——suchahellofagoodtimethatitsbeguntopallandnowIwantsomethingdifferent．”“一丘之貉”，是我今天所得到的一个最大的反动心理与认识，我用这四个字，丝毫没有蔑视的意思。亚历山大蒲柏说得很妙：“女人，在不能了解这点上，好像是个谜；但是在一经了解之后，引不起我们兴趣这一点上，更好像是个谜。”我当然希望能有“例外”来打破我这种“一丘之貉”的成见，但我却不愿冒这个险了！（1957年6月12日）</p>
 <p>月下散步</p>
 <p>今夜月圆，晚10时出外约大中散步，值其不在，独立月下半个多小时，今夜心胸极为广阔，不时吟诗低唱，极孤独之乐。归来又与沈鸿骏出外散步半小时，为其述对爱情的心胸开旷的态度。回来不久，大中来，同赴校园内散步坐谈，看云、看月、看塘水、看楼影，近2时始归。大中有许多看法虽然偏激，然颇富至理，尤其对女人、爱情等的看法，他虽无经验，但颇有见解，真不愧是名副其实的“董事长”了。（1957年6月12日）</p>
 <p>严肃</p>
@@ -554,7 +587,7 @@
 <p>沉默寡言</p>
 <p>奥格登（Robert．C．Ogden）说：“青年人的不能上进，最重要的原因是由于他们有多说话的习惯。一个不很开口的人，一个多思想少说话的人，以及比较深沉的人，往往能够成功。”我总是怪我爱乘兴多说话，沉默的素养太差劲，以致对我“沉闷的努力”颇生不良的影响——旷功，疲神，破坏心绪，破坏成熟——这是不行的，我非改变这个爱说话的习惯不可！我要学学丰子恺：</p>
 <p>后来有一次，子恺到开明书店来玩，使我很诧异的，竟完全变过一个子恺了，他坐在藤椅上，腰身笔一样的直，不像以前那样的用手指拍椅子去拍音乐的节奏；眼睛则俯下眼皮，仿佛入定的老僧，不像以前那样用含情的眸子望看来客；说起话来，也有问必答，不问不答，答时声音极低……（赵景深）</p>
-<p>普法战争后，甘必达曾有句话说：“尔其常思之，但不必言之于口。”这是两句很好的格言，我该在要说话以前多多想到它。还有孟德斯鸠的：“那些无事可做的人都是说话者。人想得愈少，便说得愈多。”Prior的Theynevertastewhoalwaysdrink；Theyalwaystalkwhoneverthink．也都是些有效的格言。（1957年6月16日）</p>
+<p>普法战争后，甘必达曾有句话说：“尔其常思之，但不必言之于口。”这是两句很好的格言，我该在要说话以前多多想到它。还有孟德斯鸠的：“那些无事可做的人都是说话者。人想得愈少，便说得愈多。”Prior的They never taste who always drink；They always talk who never think．也都是些有效的格言。（1957年6月16日）</p>
 <p>翁松燃毕业的感想</p>
 <p>翁松燃今日毕业，中午请他吃饭于“成都”店时想起：最平静，最有规律，最少变化的每日生活，才是对我最合适，痛苦最少的生活，这是我由经验体会到的“定律”，我要尽量依照这个定律过日子。（1957年6月16日）</p>
 <p>歌德论了解自己的愿望</p>
@@ -574,13 +607,13 @@
 <p>我曾经遍历了辛劳忧患的深渊，有人问我怎样熬过来的，我总是如此回答：“我在昨天站得住，我当然仍能屹立于今天。”</p>
 <p>我体尝过贫困、挣扎、焦虑、失望的况味。我经常在超出了体力的限度下工作。当我回首前尘，恍似一个散满了死灭的梦、破裂的希望和粉碎了的幻想之残骸的战场。我打的是经常与压倒优势相对抗的仗，战争的结果是给我留下了惊怖、损伤、戕害与衰老。</p>
 <p>然而我不自怨自艾，对于这些已成陈迹的苦痛，我也不会暗中坠泪。我也不妒羡那些没有遭逢过与我相同的坎坷的命运的女人。因我是生活过来了，而她们只是活着而已。我把人生之杯饮至渣滓无余；而她们只是浅尝即止，喝去了浮面的泡沫而已。我看到她们盲然无睹的事物。这是只有用泪水洗亮眼睛的女人，才能具有宽广的视界而能悲天悯人的。</p>
-<p>我曾经在严酷的人生大学里学到一种哲学，这在生活顺遂的女人，是难能获致的。我学习到生活在今天，而不借支明日的烦恼。烦恼乃是一帧黑暗恐怖的画图，进入其中，能使人变成怯懦。我总把恐惧抛置一旁，因为经验告诉我，每当我所担忧害惧的时候，我便会获致力量与智慧来与之周旋。些微的苦恼不再能有侵扰我的力量。当你目击了幸福的大厦在你面前倾覆之后，对于诸如厨司不慎把你的菜汤泼翻之类的小事，自不会再介意。我学习到对人不存过分的希望，因此我仍能从那些对我缺乏真诚的朋友和饶舌的熟人身上得到宽恕之乐。尤其是我学到幽默感，因为在痛哭与欢笑之上，人生还有无数的事物存在着呢！当一个女人能面对那些切肤之痛而不歇斯底里，却临之以戏谑嘲笑的态度，那就无物可以伤害她了。我对那些我所经验的种种折磨毫不遗憾，由于它们，我才真正接触了人生。我对它们付出的偌大代价，再怎么说，无论如何都是值得的。（原载卡耐基《如何止愁营生》附录，DorothyDix作，友诗译）</p>
+<p>我曾经在严酷的人生大学里学到一种哲学，这在生活顺遂的女人，是难能获致的。我学习到生活在今天，而不借支明日的烦恼。烦恼乃是一帧黑暗恐怖的画图，进入其中，能使人变成怯懦。我总把恐惧抛置一旁，因为经验告诉我，每当我所担忧害惧的时候，我便会获致力量与智慧来与之周旋。些微的苦恼不再能有侵扰我的力量。当你目击了幸福的大厦在你面前倾覆之后，对于诸如厨司不慎把你的菜汤泼翻之类的小事，自不会再介意。我学习到对人不存过分的希望，因此我仍能从那些对我缺乏真诚的朋友和饶舌的熟人身上得到宽恕之乐。尤其是我学到幽默感，因为在痛哭与欢笑之上，人生还有无数的事物存在着呢！当一个女人能面对那些切肤之痛而不歇斯底里，却临之以戏谑嘲笑的态度，那就无物可以伤害她了。我对那些我所经验的种种折磨毫不遗憾，由于它们，我才真正接触了人生。我对它们付出的偌大代价，再怎么说，无论如何都是值得的。（原载卡耐基《如何止愁营生》附录，Dorothy Dix作，友诗译）</p>
 <p>心胸</p>
-<p>“外面的世界都沐浴在晨光里，落在蜘蛛网上的露珠在朝霞中闪烁着光辉。他不再回头看了，只急急地奔向前程，平静的田庄渐渐消失在他的背后，在他眼前，展开了一片伟大浩瀚的世界。”（Outsidetheworldlaybathedinmorninglight，thedropsofpearlydewcaughtonthespiders'websglistenedinthefirstraysoftherisingsun．Heneverlookedback；hewalkedrapidlyonward;behindhimthepeacefulfarmsteadgraduallydisappearedfromviewasoutinfrontofhimrosethegreatwideworld．）</p>
+<p>“外面的世界都沐浴在晨光里，落在蜘蛛网上的露珠在朝霞中闪烁着光辉。他不再回头看了，只急急地奔向前程，平静的田庄渐渐消失在他的背后，在他眼前，展开了一片伟大浩瀚的世界。”（Outside the world lay bathed in morning light，the drops of pearly dew caught on the spiders’webs glistened in the first rays of the rising sun．He never looked back；he walked rapidly onward; behind him the peaceful farmstead gradually disappeared from view as out in front of him rose the great wide world．）</p>
 <p>我翻译了《茵梦湖》中的这一小段来表示一下我今日的心怀，上午赴图书馆借书时，我走在小路上，我的心胸广阔而开朗，具有一个一般男人很难达到的大胸襟，是我今天发下的一个具体的心愿，我今天特别感到胸襟大度会带给自己恬静、愉快与安详，它的功效是相当深厚的。</p>
 <p>胸襟广大度量宽宏的人最尊重别人与自己的人格，不肯丝毫勉强去做一件事或求（强求）一件事，他异常重视别人的自由意志与感情，也非常自爱于一己的不卑与尊严，当他发现事情的发展侵害到任何一方面的人格的时候，他就立刻用一种温和有礼的态度去做有所不为的牺牲了，为了尊贵与美德，他因此遭遇到任何痛苦与遗憾，他都在所不计甘愿忍受，“合则留，不合则去”，这是他为人的爽朗；“不降其志，不辱其身”，这是他为人的决绝。他认为人生最神圣的事，在于堂堂地做一个自尊心极强的“人”，而不是做一个勉强别人或乞求别人“怜”的“贱丈夫”。“不义而富且贵，于我若浮云”，这是何等有所不为的胸襟！（1957年6月21日）</p>
 <p>因忘而笑</p>
-<p>译ChristinaGoerginaRossetti在ABirthday中的：“你因忘掉而微笑远比因记忆而痛苦来得好。”（Betterbyfaryoushouldforgetandsmile，thanthatyoushouldrememberandbesad．）我决定努力实现这两句智慧的词句。（1957年6月22日）</p>
+<p>译Christina Goergina Rossetti在A Birthday中的：“你因忘掉而微笑远比因记忆而痛苦来得好。”（Better by far you should forget and smile，than that you should remember and be sad．）我决定努力实现这两句智慧的词句。（1957年6月22日）</p>
 <p>捉迷藏</p>
 <p>与室中诸君返老还童，晚上大捉了一阵迷藏，真好玩，肚子都笑痛了。事后甚悔，以其质近“狂欢的娱乐”也，任何“狂欢的娱乐”都在我严禁之列的。（1957年6月22日）</p>
 <p>空想与想像</p>
@@ -600,7 +633,7 @@
 <p>下午赴台静农先生家商谈转系事。</p>
 <p>夜风翰与德毅来约去方豪处，畅谈近10时始辞出，先生对我说：“你是聪明人。”他又说：“转系简直是胡闹。”他言及鲁实先在图书馆读书十八年事甚可念。（1957年6月27日）</p>
 <p>吴汉的精神</p>
-<p>我真是愈来愈坚强了，“些微的苦恼不再能有侵扰的力量”，它们反倒使我愈挫愈奋愈得意，在这一点上，我发现我颇有“吴汉的精神”。虽然遭遇了失败，但他却不把事变后的时间花在感慨与叹息里，而立刻专心一意聚精会神地从事新的奋斗。埃格来斯吞（Eygleston）形容得好：“坚持不屈的人从别人失败的地方开始他们的成功。”（Persistentpeoplebegintheirsuccesswhereothersendinfailure．）这是何等震撼人的坚强！我庆幸我自己已经大体锻炼完成这种坚强了，我的意志的训练成绩目前已使我颇为满意了。（1957年6月28日）</p>
+<p>我真是愈来愈坚强了，“些微的苦恼不再能有侵扰的力量”，它们反倒使我愈挫愈奋愈得意，在这一点上，我发现我颇有“吴汉的精神”。虽然遭遇了失败，但他却不把事变后的时间花在感慨与叹息里，而立刻专心一意聚精会神地从事新的奋斗。埃格来斯吞（Eygleston）形容得好：“坚持不屈的人从别人失败的地方开始他们的成功。”（Persistent people begin their success where others end in failure．）这是何等震撼人的坚强！我庆幸我自己已经大体锻炼完成这种坚强了，我的意志的训练成绩目前已使我颇为满意了。（1957年6月28日）</p>
 <p>养小动物</p>
 <p>在王家看到的那四只小鹦鹉，心里很是喜欢，将来很想养两对。同时我还想养些小动物如兔子等，这是一种非常好玩的嗜好。（1957年6月29日）</p>
 <p>自负</p>
@@ -632,7 +665,7 @@
 <p>胡适论“有所不为”</p>
 <p>“‘有所不为’一句话含有两层意义，两层都是积极的。第一，‘有所不为’是尊重自己的人格，‘不降志，不辱身’……这种狂狷的精神是一切人格修养的基础。第二，‘有所不为’是一种牺牲的精神……为要做人而兽性的欲望有所不得不制裁。”（1957年7月7日）</p>
 <p>罗素论有所避</p>
-<p>“明哲之士虽不愿对着可免的灾难坐以待毙，但也不愿为着不可免的患难虚耗精力与时间，而且即使对某些可免的患难，他也宁愿屈服，假如去避免这等不幸所做的努力会妨害他更重要的追求的话。”（Thewiseman，thoughhewillnotsitdownunderpreventablemisfortunes，willnotwastetimeandemotionuponsuchasareunavoidable，andevensuchasareinthemselvesavoidablehewillsubmittoitthetimeandlaborrequiredtoavoidthemwouldinterferewiththepursuitofsomemoreimportantobject．）（1957年7月7日）</p>
+<p>“明哲之士虽不愿对着可免的灾难坐以待毙，但也不愿为着不可免的患难虚耗精力与时间，而且即使对某些可免的患难，他也宁愿屈服，假如去避免这等不幸所做的努力会妨害他更重要的追求的话。”（The wise man，though he will not sit down under preventable misfortunes，will not waste time and emotion upon such as are unavoidable，and even such as are in themselves avoidable he will submit to it the time and labor required to avoid them would interfere with the pursuit of some more important object．）（1957年7月7日）</p>
 <p>诗赠马宏祥</p>
 <p>小诗一首自述兼赠宏祥：</p>
 <p>一笑相绝故人去，</p>
@@ -692,7 +725,7 @@
 <p>晚饭后独自散步，心胸极为远大毫无俗情，王阳明的诗说：“渐觉形骸逃物外，末妨游乐在天涯”，我颇感到这种脱俗的感觉，潘安仁的：</p>
 <p>逍遥乎山川之阿，</p>
 <p>放旷乎人间之世。</p>
-<p>这是多么豁达的心胸！我真是愈来愈不为俗情所扰了，凡是为俗情所扰的人都是小胸襟的人，而胸襟狭窄的人绝对得不到具有伟大感的快乐，绝对没有Istrovewithnone，fornonewasworthmystrife的高傲境界，“摆脱了为环境奴役的人所怀有的恐惧之后，他将体验到一种深邃的欢乐，尽管他外表的生活变化无定，他心灵深处永远不失为一个幸福的人。”（Inemancipationfromthefearsthatthebesettheslaveofcircumstancehewillexperienceaprofoundjoy,andthroughallthevicissitudesofhisoutwardlifehewillremaininthedepthsofhisbeingahappyman．）（1957年7月16日）</p>
+<p>这是多么豁达的心胸！我真是愈来愈不为俗情所扰了，凡是为俗情所扰的人都是小胸襟的人，而胸襟狭窄的人绝对得不到具有伟大感的快乐，绝对没有I strove with none，for none was worth my strife的高傲境界，“摆脱了为环境奴役的人所怀有的恐惧之后，他将体验到一种深邃的欢乐，尽管他外表的生活变化无定，他心灵深处永远不失为一个幸福的人。”（In emancipation from the fears that the beset the slave of circumstance he will experience a profound joy, and through all the vicissitudes of his outward life he will remain in the depths of his being a happy man．）（1957年7月16日）</p>
 <p>见吴相湘</p>
 <p>晨见吴相湘，先生对我转系表示遗憾，又说党史会我不肯去，他可介绍我去国史馆，他已跟罗家伦说过。（1957年7月18日）</p>
 <p>见殷海光</p>
@@ -700,7 +733,7 @@
 <p>在文星书店的一个感想</p>
 <p>与史静波逛书店，购《逻辑新引》等三书。在文星书店起了一个很大的感想——要有勇敢远大的憧憬与眼光，别被目前的小诱惑所绊倒而妨碍了瑰丽理想的追求，要不停地（“吾见其进也，未见其止也”）努力进取，天下没有不劳而获的事，不劳即使有获，也是不会持久的。（1957年7月20日）</p>
 <p>日记与祈祷</p>
-<p>假若有宗教意味的话，读日记可说就是我的祈祷了，起床入睡或在某些需要的时刻读几行日记，就好像在气本很足的车胎里又打进一些气，它们使我心胸开朗，更会使我发愤努力，“再多一点生命，再充实一点”（Morelife，andfuller），丁尼生的句子是我最好的“阿门”了。（1957年7月21日）</p>
+<p>假若有宗教意味的话，读日记可说就是我的祈祷了，起床入睡或在某些需要的时刻读几行日记，就好像在气本很足的车胎里又打进一些气，它们使我心胸开朗，更会使我发愤努力，“再多一点生命，再充实一点”（More life，and fuller），丁尼生的句子是我最好的“阿门”了。（1957年7月21日）</p>
 <p>有长者风</p>
 <p>拜伦说：“凄惨是达到真理的第一条路。曾经经历过战争、风暴或者妇人的激情的人，不管他的暮年是十八岁或八十岁，都可算已赢得可贵的经验。”这段话给我一种暗示，就是人的“成熟、不浅薄、有长者风”是不能以他的年龄来衡量、计算或限制的。根据我观察所及，够得上“成熟、不浅薄、有长者风”的人，在中年或老年人中简直难以找到几位，更不要说是青年人了。“成熟、不浅薄、有长者风”是我向往已久的一种最高的做人境界，达到这种境界真不是容易的事，因为它需要对许多不能说不对或不好的事大量的有所不为，譬如单就这许多事中的言语与举止二事为例，我过去曾写道：“要使人尊重你，至少你不能是一个以嘻嘻哈哈的做法去做人的人，你要有些显然突出的个性做法，有些与众不同的人格与风范。”“严肃的纪律是必要的，严肃的制裁自己那一部分‘且贪欢笑’的放松，是一种最可歌颂的人格表现。”“以嘻嘻哈哈的做法去做人的人不是真正的成事者，他不会使人敬意、认真、重视、有些怕，更不足以使人带着安全保障的心去信任，他至多是一个平庸的好人而已。”“经常的嘻嘻哈哈将使人生狎而不重视你，觉得你与眼前这些嘻嘻哈哈的男孩子没甚两样。”这些话都在反复述说一件事，就是对“嘻嘻哈哈”态度的有所不为，是达成“成熟、不浅薄、有长者风”的必要条件之一。又如和言语与举止同一性质的风度与气度，也是必要的，风度与气度是言语与举止的进一步的表现，言语与举止是一种对“动”的纪律；风度与气度是一种对“静”的培养。翩翩、温文、恬静、有礼、笑容。大度、智慧、无为，这是何等风度！雍容、正派、严肃、刚毅、奇气、慷慨、风骨、果决，这是何等气度！除了这些以外，他如在学问上面的充实、见解上面的缜密，也都是达到“成熟、不浅薄、有长者风”的必要条件。（1957年7月22日）</p>
 <p>拒绝不爱光阴的朋友</p>
@@ -736,7 +769,7 @@
 <p>硬把现实当作理想</p>
 <p>理想是美的，但现实却是美丑兼而有之的，我过去的大病在于硬把现实当作理想，硬不愿正视现实中那丑的一面，思量起来，这真是我的大错处！（1957年7月28日）</p>
 <p>“余独好修以为常”</p>
-<p>晚上吴新地与沈鸿骏说我道：“李敖现在不苟言笑，这家伙真是神秘。”真的，我真是愿意单独的神秘生活着，用“尝试、失败、再尝”（trialanderror）的方法，使我大体上在各方面都选择了适合我的生活方式，我依照我所选择的每一个生活方式去生活，不再有任何矛盾与不安，失败的教训与经验的指引，使我深信只有处处依照、时时依照我所选择的生活方式去过活，才能使我获得真正的成绩与愉快，世俗的生活方式我是绝对过不了的、我是无法忍受的、我是羞于去做的。</p>
+<p>晚上吴新地与沈鸿骏说我道：“李敖现在不苟言笑，这家伙真是神秘。”真的，我真是愿意单独的神秘生活着，用“尝试、失败、再尝”（trial and error）的方法，使我大体上在各方面都选择了适合我的生活方式，我依照我所选择的每一个生活方式去生活，不再有任何矛盾与不安，失败的教训与经验的指引，使我深信只有处处依照、时时依照我所选择的生活方式去过活，才能使我获得真正的成绩与愉快，世俗的生活方式我是绝对过不了的、我是无法忍受的、我是羞于去做的。</p>
 <p>民生各有所乐兮，</p>
 <p>余独好修以为常，</p>
 <p>虽体解吾犹未变兮，</p>
@@ -808,11 +841,11 @@
 <p>许多事情做起来：</p>
 <p>一、比你想像的困难容易得多；</p>
 <p>二、比你想像的乏味有趣得多（觉得无趣的，做去反会有味而舍不得放下）。（1957年8月17日）</p>
-<p>（附记）MAYBETHEROCKISN’TSOBIG</p>
-<p>Thereisnothinggainedbypostponingthesolutionofunpleasantproblems．Suchpostponedsolutionsonlydelayprogressandcausementalandphysicalwear．</p>
-<p>Manyofuswhoneglecttogetsuchannoyancesoutofthewayarelikeafarmerwhosaidheplowedaroundarockinhisfieldforfiveyears．Hehadlosttheuseofthegroundwhereitlayandhadevenbrokenamowingknifeagainstit.Heassumed,withoutinvestigation，thatitwasabigrock．Then，afterallthatdelayandtrouble，hetookhiscrowbarandwassurprisedtofindthattherockwasonlytwofeetlongandwassolightthatitcouldbeliftedontoawagonwithouthelp．</p>
-<p>Thattroubleyouarefacingmaynotbetroubleatall．Ithasexistenceonlyinyourownmind</p>
-<p>From“YourLife”June1953（byThomasDreier）</p>
+<p>（附记）MAYBE THE ROCK ISN’T SO BIG</p>
+<p>There is nothing gained by postponing the solution of unpleasant problems．Such postponed solutions only delay progress and cause mental and physical wear．</p>
+<p>Many of us who neglect to get such annoyances out of the way are like a farmer who said he plowed around a rock in his field for five years．He had lost the use of the ground where it lay and had even broken a mowing knife against it. He assumed, without investigation，that it was a big rock．Then，after all that delay and trouble，he took his crowbar and was surprised to find that the rock was only two feet long and was so light that it could be lifted onto a wagon without help．</p>
+<p>That trouble you are facing may not be trouble at all．It has existence only in your own mind</p>
+<p>From“Your Life”June 1953（by Thomas Dreier）</p>
 <p>可能石块并不大</p>
 <p>对不顺利的事，拖延是没有好处的。这种拖延解决法，只能影响进度，并使精神上肉体上受到无谓的消耗。</p>
 <p>我们多半都没想到清除这种苦恼，正像一个在石块附近耕种了五年的农夫一样。对这块占去地皮还碰坏刈刀的石头，他一直以为是块巨石。经过多次的拖延和麻烦以后，他拿棒子撬了一下，竟惊奇的发现不过是一块二尺长的轻石块，可以不靠帮忙搬上牛车。</p>
@@ -932,17 +965,17 @@
 <p>喝酒三杯，此为平生第一次大饮。（1957年10月22日）</p>
 <p>结束日记</p>
 <p>日记是一种无害的解脱方法之一，每当我“有点茫然”的时候，它时常帮助我渡过难关，超越不满意。我半年来小有“担当的力量”，不能不说是它的果实与功绩。近来我自觉我终能把这心灵的负担放下了，因此我决定结束这本日记。（1957年11月17日晨，李敖后记于台北温州街73号台大第一宿舍第四室）</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/06.沉思日记类/大学札记.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/06.沉思日记类/大学札记.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../06.沉思日记类/大学日记后期甲集.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../06.沉思日记类/早年日记.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -952,16 +985,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../06.沉思日记类/大学日记后期甲集.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../06.沉思日记类/早年日记.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -970,12 +1008,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

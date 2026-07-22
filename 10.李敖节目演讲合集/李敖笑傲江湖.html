@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,185 +81,206 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="李敖笑傲江湖"><a class="header" href="#李敖笑傲江湖">李敖笑傲江湖</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E7%AC%91%E5%82%B2%E6%B1%9F%E6%B9%96%E7%AC%AC%E4%B8%80%E9%9B%86">李敖笑傲江湖第一集</a></li>
-<li><a href="#%E8%80%81%E8%92%8B%E4%B8%8D%E6%AD%BB%E8%BF%98%E6%9C%89%E7%B2%BE%E7%A5%9E">老蒋不死，还有精神</a></li>
-<li><a href="#%E6%AD%BB%E9%AC%BC-%E5%9B%9E%E5%BD%92-%E6%88%8F">死鬼-回归-戏</a></li>
-<li><a href="#%E4%BD%A0%E8%B7%9F%E6%88%91-%E6%88%91%E6%95%B4%E4%BD%A0">你跟我-我整你</a></li>
-<li><a href="#%E8%80%81%E8%B4%BC%E8%84%B8%E7%9A%AE%E5%8E%9A%E5%81%9A%E8%B4%BC%E5%96%8A%E6%8A%93%E8%B4%BC">老贼脸皮厚，做贼喊抓贼</a></li>
-<li><a href="#%E4%BB%96%E5%BF%99-%E6%88%91%E5%BF%99-%E4%BD%A0%E7%9E%8E%E5%BF%99">他忙-我忙-你瞎忙</a></li>
-<li><a href="#%E5%8E%9A%E9%81%93%E4%B8%8E%E7%9C%9F%E7%90%86">厚道与真理</a></li>
-<li><a href="#%E7%9C%9F%E8%AF%9D%E5%81%87%E8%AF%9D%E8%82%89%E9%BA%BB%E8%AF%9D">真话假话肉麻话</a></li>
-<li><a href="#%E8%B0%81%E8%A6%81%E8%87%AA%E5%B7%B1%E6%B4%97">谁要自己洗</a></li>
-<li><a href="#%E6%82%B2%E6%83%85%E6%BB%A1%E6%9C%9D%E6%9C%AA%E5%AE%8C">悲情满朝（未完）</a></li>
-<li><a href="#%E4%BD%9C%E6%A1%88">作案</a></li>
-<li><a href="#%E5%8A%AB%E8%B4%AB%E6%B5%8E%E5%AF%8C">劫贫济富</a></li>
-<li><a href="#%E7%A7%81%E7%94%9F%E5%AD%90">私生子</a></li>
-<li><a href="#%E4%B8%89%E6%AF%9B%E6%B5%81%E6%B5%AA%E8%AE%B0">三毛流浪记</a></li>
-<li><a href="#%E8%B0%88%E8%BF%87%E5%B9%B4">谈过年</a></li>
-<li><a href="#%E5%92%8C%E5%B0%9A%E4%B8%8E%E5%A5%B3%E4%BA%BA">和尚与女人</a></li>
-<li><a href="#%E9%87%8D%E8%B0%88%E5%90%95%E5%AE%89%E5%A6%AE%E4%BA%8B%E4%BB%B6">重谈吕安妮事件</a></li>
-<li><a href="#%E6%A3%80%E9%AA%8C%E4%BA%BA%E6%A0%BC%E7%9A%84%E7%AC%AC%E4%B8%80%E6%A0%87%E5%87%86">检验人格的第一标准</a></li>
-<li><a href="#%E5%A4%A7%E9%98%B4%E4%BA%BA">大阴人</a></li>
-<li><a href="#%E6%89%93%E7%9D%80%E7%BA%A2%E6%97%97%E5%8F%8D%E7%BA%A2%E6%97%97">打着红旗反红旗</a></li>
-<li><a href="#%E4%BD%86%E4%BD%BF%E6%84%BF%E6%97%A0%E8%BF%9D">但使愿无违</a></li>
-<li><a href="#%E5%8F%B0%E6%B9%BE%E5%9B%9B%E5%A4%A7%E4%B8%8D%E8%A6%81%E8%84%B8">台湾四大不要脸</a></li>
-<li><a href="#%E6%8F%AD%E7%A9%BF%E5%81%87%E6%94%BF%E6%B2%BB%E7%8A%AF%E6%9F%8F%E6%9D%A8">揭穿假政治犯“柏杨”</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E7%9A%84%E4%B8%89%E4%B8%AA%E4%B8%BB%E4%B9%89">李敖的三个主义</a></li>
-<li><a href="#%E4%BB%A3%E5%8F%8B%E7%97%9B%E5%AE%B0%E4%BF%9D%E9%99%A9%E5%85%AC%E5%8F%B8">代友痛宰保险公司</a></li>
-<li><a href="#%E6%9C%80%E4%B8%91%E9%99%8B%E7%9A%84%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%9F%8F%E6%9D%A8">最丑陋的中国人“柏杨”</a></li>
-<li><a href="#%E4%BD%95%E5%85%B6%E5%A4%AA%E9%9B%85">何其太雅</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E8%AF%9D%E4%B8%89%E5%9B%BD%E4%B8%80">李敖话三国（一）</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E8%AF%9D%E4%B8%89%E5%9B%BD%E4%BA%8C">李敖话三国（二）</a></li>
-<li><a href="#%E9%B8%A1%E5%B7%B4-%E6%94%BF%E6%B2%BB-%E5%B0%8F">鸡巴-政治-小</a></li>
-<li><a href="#%E4%B8%BA%E9%99%88%E7%82%AF%E6%98%8E%E7%BF%BB%E6%A1%88%E4%B8%8A">为陈炯明翻案（上）</a></li>
-<li><a href="#%E4%B8%BA%E9%99%88%E7%82%AF%E6%98%8E%E7%BF%BB%E6%A1%88%E4%B8%8B">为陈炯明翻案（下）</a></li>
-<li><a href="#%E7%AE%80%E5%8D%95%E7%9A%84%E4%B9%A6">简单的书</a></li>
-<li><a href="#%E4%BB%A5%E5%BE%B7%E6%8A%A5%E6%80%A8">以德报怨</a></li>
-<li><a href="#%E4%B8%AD%E5%9B%BD%E9%A3%9E%E5%BC%B9%E4%B9%8B%E7%88%B6%E9%92%B1%E5%AD%A6%E6%A3%AE">中国飞弹之父——钱学森</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E4%B8%8E%E9%83%81%E6%85%95%E6%98%8E">李敖与郁慕明</a></li>
-<li><a href="#%E4%B8%8D%E4%BC%90%E8%B4%BC%E7%8E%8B%E4%B8%9A%E4%BA%A6%E4%BA%A1">不伐贼，王业亦亡</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%9B%9E%E5%BF%86%E5%BD%95%E4%B8%8A">李敖回忆录（上）</a></li>
-<li><a href="#%E8%A5%BF%E5%AE%89%E4%BA%8B%E5%8F%98%E5%85%AD%E5%8D%81%E5%91%A8%E5%B9%B4%E4%B8%80">西安事变六十周年（一）</a></li>
-<li><a href="#%E8%A5%BF%E5%AE%89%E4%BA%8B%E5%8F%98%E5%85%AD%E5%8D%81%E5%91%A8%E5%B9%B4%E4%BA%8C">西安事变六十周年（二）</a></li>
-<li><a href="#%E8%A5%BF%E5%AE%89%E4%BA%8B%E5%8F%98%E5%85%AD%E5%8D%81%E5%91%A8%E5%B9%B4%E4%B8%89">西安事变六十周年（三）</a></li>
-<li><a href="#%E8%A5%BF%E5%AE%89%E4%BA%8B%E5%8F%98%E5%85%AD%E5%8D%81%E5%91%A8%E5%B9%B4%E5%9B%9B">西安事变六十周年（四）</a></li>
-<li><a href="#%E5%BF%98%E4%BA%86%E6%88%91%E6%98%AF%E8%B0%81">忘了我是谁</a></li>
-<li><a href="#%E4%BD%A0%E6%B2%A1%E6%9C%89%E5%BA%A6%E9%87%8F%E6%88%91%E8%BF%98%E6%9C%89%E4%BA%BA%E6%A0%BC">你没有度量，我还有人格</a></li>
-<li><a href="#%E9%AC%BC%E8%AF%9D-%E9%AA%97%E5%B1%80-%E6%88%91%E6%8B%86%E7%A9%BF">鬼话-骗局-我拆穿</a></li>
-<li><a href="#%E8%B0%81%E6%98%AF%E7%AC%AC%E4%B8%80%E6%B5%81%E7%9A%84%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90">谁是第一流的知识分子</a></li>
-<li><a href="#%E5%A6%84%E6%83%B3%E4%BD%A0%E6%88%91%E5%A5%B9">妄想你我她</a></li>
-<li><a href="#%E9%A9%AC%E5%B1%81-%E6%96%87%E9%A3%8E-%E8%87%AD">马屁-文风-臭</a></li>
-<li><a href="#%E9%9E%AD%E5%B0%B8%E8%92%8B%E6%B0%8F%E7%88%B6%E5%AD%90">鞭尸蒋氏父子</a></li>
-<li><a href="#%E7%A4%BC%E8%B4%A4%E4%B8%8B%E5%A3%AB">礼贤下士</a></li>
-<li><a href="#%E5%9B%9E%E4%BF%A1">回信</a></li>
-<li><a href="#%E6%B3%95%E5%AE%98%E9%99%88%E5%9B%BD%E6%A2%81%E5%88%98%E6%99%AF%E6%98%9F%E5%BC%A0%E8%BF%9E%E8%B4%A2%E4%B9%9F%E8%BF%AB%E5%AE%B3%E6%AE%B7%E6%B5%B7%E5%85%89">法官陈国梁，刘景星，张连财也“迫害殷海光”？</a></li>
-<li><a href="#%E7%AD%94%E5%A4%8D%E8%AF%BB%E8%80%85%E5%88%98%E5%85%86%E5%AE%8F%E5%85%88%E7%94%9F%E6%9D%A5%E4%BF%A1">答复读者刘兆宏先生来信</a></li>
-<li><a href="#%E8%B4%BC%E5%8D%9A%E5%A3%AB">贼博士</a></li>
-<li><a href="#%E7%BB%99%E7%A7%A6%E5%AD%9D%E4%BB%AA%E7%9A%84%E8%BE%A9%E6%8A%A4%E5%BE%8B%E5%B8%88%E6%9D%8E%E5%A4%8D%E7%94%B8%E5%85%88%E7%94%9F%E4%B8%8A%E4%B8%80%E8%AF%BE">给秦孝仪的辩护律师李复甸先生上一课</a></li>
-<li><a href="#%E4%B8%8D%E4%BC%9A%E8%AE%B2%E5%8F%B0%E8%AF%AD">不会讲台语</a></li>
-<li><a href="#%E5%A5%B3%E4%BA%BA%E4%B9%9F%E8%82%89%E9%BA%BB">女人也肉麻</a></li>
-<li><a href="#%E9%9E%AD%E5%B0%B8">鞭尸</a></li>
-<li><a href="#%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E5%8F%B8%E6%B3%95%E9%BB%91%E6%9A%97%E4%B8%80">你不知道的司法黑暗（一）</a></li>
-<li><a href="#%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E5%8F%B8%E6%B3%95%E9%BB%91%E6%9A%97%E4%BA%8C">你不知道的司法黑暗（二）</a></li>
-<li><a href="#%E7%8E%A9%E5%81%87%E7%9A%84">玩假的</a></li>
-<li><a href="#%E6%AD%BB%E5%BE%97%E5%A5%BD">死得好</a></li>
-<li><a href="#%E5%A4%84%E5%A5%B3%E6%83%85%E7%BB%93">处女情结</a></li>
-<li><a href="#%E6%8B%B3%E5%A4%B4%E6%94%BF%E6%B2%BB">拳头政治</a></li>
-<li><a href="#%E4%B8%AD%E5%9B%BD%E6%94%BF%E6%B2%BB%E6%98%AF%E6%B5%81%E6%B0%93%E6%90%9E%E7%9A%84">中国政治是流氓搞的</a></li>
-<li><a href="#%E4%BB%8E%E4%B9%9F%E5%AD%97%E8%B0%88%E8%B5%B7">从“也”字谈起</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E6%9C%89%E4%B8%89%E7%AA%9F">李敖有三窟</a></li>
-<li><a href="#%E7%AC%91%E5%82%B2%E6%B1%9F%E6%B9%96%E4%B8%80%E5%91%A8%E5%B9%B4%E4%BA%86">笑傲江湖一周年了！</a></li>
-<li><a href="#%E8%92%8B%E7%BA%AC%E5%9B%BD%E5%83%8F%E4%B8%AA%E7%94%B7%E4%BA%BA%E5%90%A7%E4%B8%8A">蒋纬国，像个男人吧！（上）</a></li>
-<li><a href="#%E8%92%8B%E7%BA%AC%E5%9B%BD%E5%83%8F%E4%B8%AA%E7%94%B7%E4%BA%BA%E5%90%A7%E4%B8%8B">蒋纬国，像个男人吧！（下）</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E7%9A%84%E6%96%B9%E6%B3%95">李敖的方法</a></li>
-<li><a href="#%E5%AD%A6%E9%97%AE%E5%A4%A7%E6%AF%94%E8%B5%9B">学问大比赛</a></li>
-<li><a href="#%E5%91%8A%E9%AA%97%E5%AD%90">告骗子</a></li>
-<li><a href="#%E8%92%8B%E7%BA%AC%E5%9B%BD%E5%9B%9E%E5%BF%86%E5%BD%95%E4%B8%8A">蒋纬国回忆录（上）</a></li>
-<li><a href="#%E8%92%8B%E7%BA%AC%E5%9B%BD%E5%9B%9E%E5%BF%86%E5%BD%95%E4%B8%8B">蒋纬国回忆录（下）</a></li>
-<li><a href="#%E9%99%88%E5%B8%83%E9%9B%B7%E4%B9%8B%E6%AD%BB">陈布雷之死</a></li>
-<li><a href="#%E6%AD%A4%E5%BA%A6%E8%A7%81%E8%8A%B1%E6%9E%9D%E7%99%BD%E5%A4%B4%E8%AA%93%E4%B8%8D%E5%BD%92">此度见花枝，白头誓不归</a></li>
-<li><a href="#%E4%B9%A6%E5%91%86%E5%AD%90%E4%B9%9F%E8%B0%88%E4%BB%80%E4%B9%88%E6%95%99%E8%82%B2%E6%94%B9%E9%9D%A9">书呆子也谈什么教育改革</a></li>
-<li><a href="#%E7%A5%9E%E6%9D%A5%E4%B9%8B%E7%AC%94%E4%B8%8E%E8%8F%A9%E8%90%A8%E5%BF%83%E8%82%A0">神来之笔与菩萨心肠</a></li>
-<li><a href="#%E5%B9%B2%E4%BD%A0%E8%80%81%E8%92%8B%E5%BA%99%E5%90%AC%E9%82%A3%E7%81%B0%E8%89%B2%E9%A9%AC">干你老蒋庙！听那灰色马</a></li>
-<li><a href="#%E6%B3%95%E5%AE%98%E6%80%95%E4%BB%80%E4%B9%88">法官怕什么？</a></li>
-<li><a href="#%E5%8F%AA%E6%98%AF%E7%82%92%E9%99%88%E9%A5%AD%E5%90%97">只是“炒陈饭”吗？</a></li>
-<li><a href="#%E4%BD%A0%E6%89%80%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E9%99%88%E4%B9%8B%E8%97%A9%E4%B8%8A">你所不知道的陈之藩（上）</a></li>
-<li><a href="#%E4%BD%A0%E6%89%80%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E9%99%88%E4%B9%8B%E8%97%A9%E4%B8%8B">你所不知道的陈之藩（下）</a></li>
-<li><a href="#%E8%A5%BF%E8%97%8F%E7%94%9F%E6%AD%BB%E4%B9%A6">西藏生死书</a></li>
-<li><a href="#%E5%9B%9E%E5%BF%86%E6%9D%8E%E7%BF%B0%E7%A5%A5">回忆李翰祥</a></li>
-<li><a href="#%E8%92%8B%E5%AE%B6%E4%B8%89%E4%BB%A3%E6%8E%A5%E7%8F%AD%E4%BA%A1">蒋家三代接班亡</a></li>
-<li><a href="#%E5%A4%A9%E4%B8%8B%E6%B2%A1%E6%9C%89%E7%99%BD%E5%9D%90%E7%9A%84%E9%BB%91%E7%89%A2">天下没有白坐的黑牢</a></li>
-<li><a href="#%E7%AD%89%E6%AD%BB%E4%B8%8E%E6%89%BE%E6%AD%BB">等死与找死</a></li>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%88%B4%E7%AC%A0%E4%B8%8E%E6%83%85%E6%8A%A5%E5%B1%80%E4%B8%8A">关于戴笠与情报局（上）</a></li>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%88%B4%E7%AC%A0%E4%B8%8E%E6%83%85%E6%8A%A5%E5%B1%80%E4%B8%8B">关于戴笠与情报局（下）</a></li>
-<li><a href="#%E7%9C%9F%E5%81%87%E5%8C%97%E5%A4%A7">真假北大</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%BF%AB%E6%84%8F%E6%81%A9%E4%BB%87%E5%BD%95%E4%B8%80">李敖快意恩仇录（一）</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%BF%AB%E6%84%8F%E6%81%A9%E4%BB%87%E5%BD%95%E4%BA%8C">李敖快意恩仇录（二）</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%BF%AB%E6%84%8F%E6%81%A9%E4%BB%87%E5%BD%95%E4%B8%89">李敖快意恩仇录（三）</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%BF%AB%E6%84%8F%E6%81%A9%E4%BB%87%E5%BD%95%E5%9B%9B">李敖快意恩仇录（四）</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%BF%AB%E6%84%8F%E6%81%A9%E4%BB%87%E5%BD%95%E4%BA%94">李敖快意恩仇录（五）</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%BF%AB%E6%84%8F%E6%81%A9%E4%BB%87%E5%BD%95%E5%85%AD">李敖快意恩仇录（六）</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%BF%AB%E6%84%8F%E6%81%A9%E4%BB%87%E5%BD%95%E4%B8%83">李敖快意恩仇录（七）</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%BF%AB%E6%84%8F%E6%81%A9%E4%BB%87%E5%BD%95%E5%85%AB">李敖快意恩仇录（八）</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%BF%AB%E6%84%8F%E6%81%A9%E4%BB%87%E5%BD%95%E4%B9%9D">李敖快意恩仇录（九）</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%BF%AB%E6%84%8F%E6%81%A9%E4%BB%87%E5%BD%95%E5%8D%81">李敖快意恩仇录（十）</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%BF%AB%E6%84%8F%E6%81%A9%E4%BB%87%E5%BD%95%E5%8D%81%E4%B8%80">李敖快意恩仇录（十一）</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%BF%AB%E6%84%8F%E6%81%A9%E4%BB%87%E5%BD%95%E5%8D%81%E4%BA%8C">李敖快意恩仇录（十二）</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#李敖笑傲江湖第一集">李敖笑傲江湖第一集</a></li>
+<li><a href="#老蒋不死还有精神">老蒋不死，还有精神</a></li>
+<li><a href="#死鬼-回归-戏">死鬼-回归-戏</a></li>
+<li><a href="#你跟我-我整你">你跟我-我整你</a></li>
+<li><a href="#老贼脸皮厚做贼喊抓贼">老贼脸皮厚，做贼喊抓贼</a></li>
+<li><a href="#他忙-我忙-你瞎忙">他忙-我忙-你瞎忙</a></li>
+<li><a href="#厚道与真理">厚道与真理</a></li>
+<li><a href="#真话假话肉麻话">真话假话肉麻话</a></li>
+<li><a href="#谁要自己洗">谁要自己洗</a></li>
+<li><a href="#悲情满朝未完">悲情满朝（未完）</a></li>
+<li><a href="#作案">作案</a></li>
+<li><a href="#劫贫济富">劫贫济富</a></li>
+<li><a href="#私生子">私生子</a></li>
+<li><a href="#三毛流浪记">三毛流浪记</a></li>
+<li><a href="#谈过年">谈过年</a></li>
+<li><a href="#和尚与女人">和尚与女人</a></li>
+<li><a href="#重谈吕安妮事件">重谈吕安妮事件</a></li>
+<li><a href="#检验人格的第一标准">检验人格的第一标准</a></li>
+<li><a href="#大阴人">大阴人</a></li>
+<li><a href="#打着红旗反红旗">打着红旗反红旗</a></li>
+<li><a href="#但使愿无违">但使愿无违</a></li>
+<li><a href="#台湾四大不要脸">台湾四大不要脸</a></li>
+<li><a href="#揭穿假政治犯柏杨">揭穿假政治犯“柏杨”</a></li>
+<li><a href="#李敖的三个主义">李敖的三个主义</a></li>
+<li><a href="#代友痛宰保险公司">代友痛宰保险公司</a></li>
+<li><a href="#最丑陋的中国人柏杨">最丑陋的中国人“柏杨”</a></li>
+<li><a href="#何其太雅">何其太雅</a></li>
+<li><a href="#李敖话三国一">李敖话三国（一）</a></li>
+<li><a href="#李敖话三国二">李敖话三国（二）</a></li>
+<li><a href="#鸡巴-政治-小">鸡巴-政治-小</a></li>
+<li><a href="#为陈炯明翻案上">为陈炯明翻案（上）</a></li>
+<li><a href="#为陈炯明翻案下">为陈炯明翻案（下）</a></li>
+<li><a href="#简单的书">简单的书</a></li>
+<li><a href="#以德报怨">以德报怨</a></li>
+<li><a href="#中国飞弹之父钱学森">中国飞弹之父——钱学森</a></li>
+<li><a href="#李敖与郁慕明">李敖与郁慕明</a></li>
+<li><a href="#不伐贼王业亦亡">不伐贼，王业亦亡</a></li>
+<li><a href="#李敖回忆录上">李敖回忆录（上）</a></li>
+<li><a href="#西安事变六十周年一">西安事变六十周年（一）</a></li>
+<li><a href="#西安事变六十周年二">西安事变六十周年（二）</a></li>
+<li><a href="#西安事变六十周年三">西安事变六十周年（三）</a></li>
+<li><a href="#西安事变六十周年四">西安事变六十周年（四）</a></li>
+<li><a href="#忘了我是谁">忘了我是谁</a></li>
+<li><a href="#你没有度量我还有人格">你没有度量，我还有人格</a></li>
+<li><a href="#鬼话-骗局-我拆穿">鬼话-骗局-我拆穿</a></li>
+<li><a href="#谁是第一流的知识分子">谁是第一流的知识分子</a></li>
+<li><a href="#妄想你我她">妄想你我她</a></li>
+<li><a href="#马屁-文风-臭">马屁-文风-臭</a></li>
+<li><a href="#鞭尸蒋氏父子">鞭尸蒋氏父子</a></li>
+<li><a href="#礼贤下士">礼贤下士</a></li>
+<li><a href="#回信">回信</a></li>
+<li><a href="#法官陈国梁刘景星张连财也迫害殷海光">法官陈国梁，刘景星，张连财也“迫害殷海光”？</a></li>
+<li><a href="#答复读者刘兆宏先生来信">答复读者刘兆宏先生来信</a></li>
+<li><a href="#贼博士">贼博士</a></li>
+<li><a href="#给秦孝仪的辩护律师李复甸先生上一课">给秦孝仪的辩护律师李复甸先生上一课</a></li>
+<li><a href="#不会讲台语">不会讲台语</a></li>
+<li><a href="#女人也肉麻">女人也肉麻</a></li>
+<li><a href="#鞭尸">鞭尸</a></li>
+<li><a href="#你不知道的司法黑暗一">你不知道的司法黑暗（一）</a></li>
+<li><a href="#你不知道的司法黑暗二">你不知道的司法黑暗（二）</a></li>
+<li><a href="#玩假的">玩假的</a></li>
+<li><a href="#死得好">死得好</a></li>
+<li><a href="#处女情结">处女情结</a></li>
+<li><a href="#拳头政治">拳头政治</a></li>
+<li><a href="#中国政治是流氓搞的">中国政治是流氓搞的</a></li>
+<li><a href="#从也字谈起">从“也”字谈起</a></li>
+<li><a href="#李敖有三窟">李敖有三窟</a></li>
+<li><a href="#笑傲江湖一周年了">笑傲江湖一周年了！</a></li>
+<li><a href="#蒋纬国像个男人吧上">蒋纬国，像个男人吧！（上）</a></li>
+<li><a href="#蒋纬国像个男人吧下">蒋纬国，像个男人吧！（下）</a></li>
+<li><a href="#李敖的方法">李敖的方法</a></li>
+<li><a href="#学问大比赛">学问大比赛</a></li>
+<li><a href="#告骗子">告骗子</a></li>
+<li><a href="#蒋纬国回忆录上">蒋纬国回忆录（上）</a></li>
+<li><a href="#蒋纬国回忆录下">蒋纬国回忆录（下）</a></li>
+<li><a href="#陈布雷之死">陈布雷之死</a></li>
+<li><a href="#此度见花枝白头誓不归">此度见花枝，白头誓不归</a></li>
+<li><a href="#书呆子也谈什么教育改革">书呆子也谈什么教育改革</a></li>
+<li><a href="#神来之笔与菩萨心肠">神来之笔与菩萨心肠</a></li>
+<li><a href="#干你老蒋庙听那灰色马">干你老蒋庙！听那灰色马</a></li>
+<li><a href="#法官怕什么">法官怕什么？</a></li>
+<li><a href="#只是炒陈饭吗">只是“炒陈饭”吗？</a></li>
+<li><a href="#你所不知道的陈之藩上">你所不知道的陈之藩（上）</a></li>
+<li><a href="#你所不知道的陈之藩下">你所不知道的陈之藩（下）</a></li>
+<li><a href="#西藏生死书">西藏生死书</a></li>
+<li><a href="#回忆李翰祥">回忆李翰祥</a></li>
+<li><a href="#蒋家三代接班亡">蒋家三代接班亡</a></li>
+<li><a href="#天下没有白坐的黑牢">天下没有白坐的黑牢</a></li>
+<li><a href="#等死与找死">等死与找死</a></li>
+<li><a href="#关于戴笠与情报局上">关于戴笠与情报局（上）</a></li>
+<li><a href="#关于戴笠与情报局下">关于戴笠与情报局（下）</a></li>
+<li><a href="#真假北大">真假北大</a></li>
+<li><a href="#李敖快意恩仇录一">李敖快意恩仇录（一）</a></li>
+<li><a href="#李敖快意恩仇录二">李敖快意恩仇录（二）</a></li>
+<li><a href="#李敖快意恩仇录三">李敖快意恩仇录（三）</a></li>
+<li><a href="#李敖快意恩仇录四">李敖快意恩仇录（四）</a></li>
+<li><a href="#李敖快意恩仇录五">李敖快意恩仇录（五）</a></li>
+<li><a href="#李敖快意恩仇录六">李敖快意恩仇录（六）</a></li>
+<li><a href="#李敖快意恩仇录七">李敖快意恩仇录（七）</a></li>
+<li><a href="#李敖快意恩仇录八">李敖快意恩仇录（八）</a></li>
+<li><a href="#李敖快意恩仇录九">李敖快意恩仇录（九）</a></li>
+<li><a href="#李敖快意恩仇录十">李敖快意恩仇录（十）</a></li>
+<li><a href="#李敖快意恩仇录十一">李敖快意恩仇录（十一）</a></li>
+<li><a href="#李敖快意恩仇录十二">李敖快意恩仇录（十二）</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -424,7 +457,7 @@
 <p>请你看看，这个公文里面，两次谈到降伏，两次提到降伏。什么叫降伏呢？降伏就是投降。这个全文里面两次提到降伏。这个为什么这样提出来呢？表示说这里面没有终战的字眼。所以根据日本人来，不是终战字眼，而是降伏。可是日本投降了以后呢，日本人不会反省的。他不像德国，德国是反省的，德国你看，德国承认自己的错误。然后德国的总理，那时候的勃兰特，他到以色列的时候，他在以色列的殉难纪念碑上面，他亲自下跪，表示忏悔，代表德国人忏悔（感谢一剑穿过忧伤指正：勃兰特，1971年得过诺贝尔和平奖）。所以日本人是非常可恶的小气的民族，他不肯忏悔的。不但一开始承认投降了，降伏了。可是现在呢开始改写，他说我们是终战，只是战争停止了。战争停止的意思就是说无所谓有没有战争，有没有打败打胜都不谈，只是战争停止了，用这种字眼。同样的日本到中国来以后，那时候侵略中国，都这样解释的。日本人后来就改写，教科书改写，不是侵略中国是进出中国，进去以后又出来了。换句话说，全世界没有强奸罪了。男人强奸女人，没有强奸，我只是进出你，从女人身上进去又出来。这种非常王八蛋的解释，可是日本人这样子解释。</p>
 <p>现在我们也跟着这样解释，这个我想起一个清朝的故事。这个故事呢，当时清朝一个大臣叫做张之洞。他的一句名言叫做，中学为体，西学为用。中学是我们的根本，中国学问。西方学问帮助我们来发展。这个张之洞，照片我放在这里，你们看看。张之洞是当时很了不起的清朝大臣，有一次他批公文就看到了手下的人给他写了很多名词字眼。很多字眼张之洞看了都是日本的字眼。大家注意很多字眼是中国字，可是到了日本变成另外一个意思。好比说中国人说经济学，他们说经济，经济在中国的说法是经世济民，等于是政治的意思。可是到了日本以后呢，经济就变成我们现在讲经济学的意思。</p>
 <p>同样的中国字改变了意思，好比说我们做事很勉强。勉强看起来中国字，在日文里面表示努力念书，用功的意思。所以日本人用的汉文它有另外一个意思，有的跟中国字表面上的意思不一样的。所以中国字的经济到了日本变成了经济学的经济，然后再慢慢的转给中国，流传到中国来。流传到中国来以后呢，张之洞就表示抗议，就说怎么你这个话里面，你给我的公文里面，很多都是日本人的名词。结果他的秘书很有趣，就补了几句话把这个公文还给了张之洞，说什么呢？说你，张大人你说的名词两个字这也是日本过来的，名词两个字也是日本传来的。所以我们常常在不知不觉之间，受到日本的影响，可是对我们是个坏影响。终战两个字，台北市政府民进党说，终战两个字中性的意思。可是这两个字只有日本人在用。</p>
-<p>在中国文字里面，像我中文这么好，从来没见过这两个字，中文里面没有这两个字。这两个字是日本字，是汉字形成的一个词汇，被我们生含活剥抢过来。现在反过来说，我请你们看这个世界标准。美国英国，像美国。美国她提到了大战，她英文里面叫V-EDay。V就是胜利，E就是德国。战胜了德国的这一天，叫做V-E，V-E纪念日。同样的V-JDay，就是打败日本这一天。</p>
+<p>在中国文字里面，像我中文这么好，从来没见过这两个字，中文里面没有这两个字。这两个字是日本字，是汉字形成的一个词汇，被我们生含活剥抢过来。现在反过来说，我请你们看这个世界标准。美国英国，像美国。美国她提到了大战，她英文里面叫V-E Day。V就是胜利，E就是德国。战胜了德国的这一天，叫做V-E，V-E纪念日。同样的V-J Day，就是打败日本这一天。</p>
 <p>所以在人家有这种词汇，好像我们说抗战，抗战五十年，抗战胜利，抗战八年，抗日八年，有固定的说法。所以光复是根据这些字面出来的。我们光复是日本人拿去我们的领土，现在我们把它拿回来。如果现在我们不承认这种国际的标准，大家都表示我们是抗战的，我们是打倒对方的，我们是正义的，我们是光复的。如果不承认这种解释的话，我认为根本的扭曲了文字的意义，也不符合了世界的标准。我认为，当然不能说这是汉奸的行为，可是至少是糊涂的行为。因为不知不觉把我们的文字受了日本人的影响，而开始改变了。这是很糟糕的现象。</p>
 <p>我认为民进党也好，台北市政府也罢，应该反省。就是你可以做政治斗争，可是不可以拿一个地区的历史来做政治斗争。这个历史抗日抗战光复跟国民党不一定有关系，可是跟台湾本身有关系。什么原因呢？台湾曾经在日本统治之下，五十几年也死了六十五万人。我们现在看看图片，大家看，这当年日本人，这日本人印出来的，怎么样在砍杀台湾人。这种台湾人也是抗日的，他们等待的也是光复，他们希望的结果也是光复，不是别的。请大家看看，这当年的日本人怎么样在把台湾人一个一个准备杀头。这都是日本人泄露出来的文件，请大家看看日本人怎么样的杀台湾人。</p>
 <p>我们想想看，外省人没有来，国民党没有来，台湾人这五十一年来也被日本人杀这么多人，也死了六十五万人。难道这些死掉的人不相信有一天我们会光复吗？他们也希望会光复啊！所以我们想想看。现在说我们否决用光复两个字，是根本不了解中文的定义，也不了解汉字的定义，然后受了日本人错误的影响，跟着他们走。我觉得民进党也好，台北市政府也罢，都犯了非常严重的错误，这是不可原谅的。同样的我们可以看到其它的这种画片，日本人杀中国人，台湾人还不承认的，杀我李敖的同乡。在东北，准备砍头了，这是头砍下来了。头都砍下来了，人都卧倒，像这种情况。现在就好像台湾，现在很严重的情况，台湾也发现了有慰安妇。慰安妇她是好的下场，因为日本人把台湾女人绑去了，然后慰安一下，然后放回来，有的人根本就死掉了。</p>
@@ -520,7 +553,7 @@
 <p>曹操有一首诗叫做《短歌行》，他里面讲他这个“对酒当歌，人生几何，譬如朝露，去日苦多”。朝露就是早晨的露水，去日苦多。最后这个《短歌行》里面有八个字，请大家看，曹操《短歌行》：山不厌高，海不厌深，周公吐哺，天下归心。注意，“周公吐哺”什么意思呢？“吐哺”的意思，就是嘴巴里含着食物，被那个口水被这个唾液，把这食物嚼成可以下咽的时候，还没有下咽的，含在嘴里面的这个状态，就叫做“吐哺”。为什么要“山不厌高，海不厌深，周公吐哺，天下归心”呢？周公为什么要吐哺呢？我们看《史记》里面，对于周公的这个记录，请看史记里面在《鲁周公世家》。周公他的势力范围，分到山东分到鲁国去了，所以叫《鲁周公世家》。这段话，周公跟他的儿子说，跟戒伯禽，跟他的儿子说。周公戒伯禽曰：“我文王之子”，周文王是我的爸爸；“武王之弟”，周武王是我的哥哥；“成王之叔父”，现在的皇帝成王我是他的叔父，他是我的侄子。“我于天下亦不贱矣。”，我是很拉风的。然我“一沐三捉发，一饭三吐哺，起以待士，犹恐失天下之贤人。子之鲁，慎无以国骄人。”这什么意思？他说我现在我周公一沐三捉发，什么意思呢？我每一次洗澡的时候，三次捉着头发。捉着头发什么？有事情要办，好比电话来了，开玩笑。电话来了，我要接电话，有人秘书告诉我，有什么人来看我了。我洗头发还没洗完，洗澡还没洗完，就捉着头发，就出来接客，接电话，谈公事，为了国家服务。回去又洗，客人又来了，电话又来了，再出来，又洗，再出来。这我洗个澡都不得安静，都不得安宁。</p>
 <p>为什么呢？我洗个澡的时间都三次捉着头发来接客。“一饭三吐哺”，我吃一顿饭三次。“吐哺”的意思就是：我把这个状态，我要把它，东西要吃下去了，忽然事情来了，电话来了，紧急的情况来了，我来不及咽下去了，又把东西赶紧都吐出来，吐在酒里面。然后再接客讲话，然后又吃下去，然后又来了，来不及了，又吐出来。这个意思就是说，周公是不分时间，在招待接待他所敬佩的人。所以“起以待士”，我站起来，“起”，从浴盆里起来，从饭桌子起来，来对待那些有才能的人。“犹恐失天下之贤人”，我这么样的努力、这么样的小心翼翼、这么样的谦虚，还怕天下的贤人被我漏掉了。你，我的儿子你，你到了鲁国去的时候，千万小心不要以国骄人。不要以为我们是鲁国的统治者，鲁的地方的统治者就很神气，这个意思。所以现在我们懂了，曹操的意思就是说，“山不厌高，海不厌深，周公吐哺，天下归心”。“吐哺”的意思，就是这个意思。</p>
 <p>我们先讲一段，这个表示周公在忙。现在我们形容一个政治人物在忙，就不用这种话了，不用这个吐哺了。用什么呢？用叫做“日理万机”，每一天要做很多的事情。那我嘛，我在牢里面的时候，那时候也不准看报纸。不过有一个收音机在屋顶上面，这个收音机又是一个大嘴巴，又是一个大耳朵。这什么意思呢？大嘴巴的意思，他向你播音，大耳朵就是它偷听你在你房间里面讲话。像我一个人坐一个房间里面，根本就也没法讲话了，所以他听不到我什么声音。可是他会向你播音，播这个新闻消息。播音的过程里面，常常我听到一句话。说我们的蒋总统经国先生日理万机，并且很早就跑去了，跟民间的人闲话家常。有的时候，清早五点钟就跑到基隆，跟那个卖鱼的卖菜的去闲话家常。所以就说这个总统经国先生日理万机。当时我就笑，我说他妈的这小子在日理万机。我在牢里干什么呢？日理一“鸡”，“鸡”就是这个“鸡巴”的“鸡”，卵鸟。</p>
-<p>他日理万机，我日理一“鸡”，为什么日理一“鸡”呢？我坐牢的时候只有三十五岁，那时候还年轻。也是等于算是很成熟的男人，可是你一个人关在牢里面，这个问题也要解决。什么解决方法呢？就是打手枪，就是手淫。所以我后来出狱以后，有人跟我，侧面跟我谈。说不要再恨国民党了，国民党也很可怜。国民党也是为了，这个小朝廷，这个小局面，也费尽了心血。不要再恨国民党了，你原谅国民党吧！我就开玩笑用两句日本话，答复他们的这个要求。我说我的大头，大头，日本话叫“atama”（原字幕为日文字），我的大头可以原谅国民党。因为我知道国民党是个小朝廷，在台湾混混得也很辛苦，我的"atama"，大头，可以原谅国民党。可是我的“kimtama”（原字幕为日文字），“kimtama”就是小头，就是日本话里面叫睪丸，就是生殖器的一部分，我的小头不原谅国民党。大头原谅国民党，可是小头不原谅。</p>
+<p>他日理万机，我日理一“鸡”，为什么日理一“鸡”呢？我坐牢的时候只有三十五岁，那时候还年轻。也是等于算是很成熟的男人，可是你一个人关在牢里面，这个问题也要解决。什么解决方法呢？就是打手枪，就是手淫。所以我后来出狱以后，有人跟我，侧面跟我谈。说不要再恨国民党了，国民党也很可怜。国民党也是为了，这个小朝廷，这个小局面，也费尽了心血。不要再恨国民党了，你原谅国民党吧！我就开玩笑用两句日本话，答复他们的这个要求。我说我的大头，大头，日本话叫“atama”（原字幕为日文字），我的大头可以原谅国民党。因为我知道国民党是个小朝廷，在台湾混混得也很辛苦，我的“atama“，大头，可以原谅国民党。可是我的“kimtama”（原字幕为日文字），“kimtama”就是小头，就是日本话里面叫睪丸，就是生殖器的一部分，我的小头不原谅国民党。大头原谅国民党，可是小头不原谅。</p>
 <p>为什么小头不原谅呢？因为我在牢里的时候正是壮年，三十五岁。在牢里的时候，这个问题不得解决，换句话说，我就开始认为，我的大头对不起我这个小头。大头闯祸，小头遭殃。所以我还跟我自己开个玩笑，我说我两次坐牢都是大头闯祸小头遭殃。所以我跟我小头讲了一句话，我说第三次坐牢的时候，我希望你去闯祸。好比说你去搞一个风化罪，一个什么什么强奸罪。你闯祸害得我大头陪你坐牢，这样才对得起你！我也跟我自己开过这种玩笑。所以我想到了现代人，过去蒋经国是日理万机，那么我李敖是日理一“鸡，然后就大头闯祸小头遭殃。</p>
 <p>可是现在我们谈到大头的问题，有三个大头出现了。什么三个大头呢？第一个我们大家过去没有用过叫银圆，银圆它那个头是很大的那个头，袁世凯的头。当时银圆有两种，一种鹰洋，鹰洋是外国人的银圆。袁大头是袁世凯的头，还有孙小头是孙中山的头，那个银圆头比较小。所以我们讲说这个冤大头，就是跟这个袁大头变出来的。袁大头是个大头，我李敖也是大头。我这个大头是大头脑，智慧特别宽，头脑好，叫大头脑。那么还有一种也叫大头，也姓李，可是那个大头，不是大头，是个大魔头，李大魔头，那个就是李登辉！李登辉的头脑就是魔头的头脑，什么原因呢？</p>
 <p>我现在讲给大家听，8月14号，一个英国的记者想要看我，我平常不太见记者，那么我也接受了。是英国很有名的报纸——卫报。《卫报》的记者，他的名字叫做HIGGINS。大家注意，这个HIGGINS，他一见到我，这个名字，我曾经讲过，中国左传里面的话叫“名从主人”你翻成这个音，你不能翻成HIGGINS，你不能翻成希金斯不能这样翻。因为他自己翻译的正式的名字叫做贺安雷，所以我们就要跟着主人来走，我们要跟着他的名字，跟着有这个名字的人去叫。他既然把他的名字定为贺安雷，我们就不能叫他HIGGINS。这个HIGGINS我当面跟他谈，他就觉得我非常的渊博。因为这HIGGINS，这个名字这个姓的人，在英国的历史上面，其实只有一个人，就是他在我生的那年死掉了，1935年死掉了，是一个很有名的国际法的专家。小说里面倒有一个人叫HIGGINS很有名了，大家也许看过。英国很有名的作家，文学家萧伯纳写的，叫做《窈窕淑女》，就是MYFAIRLADY。这个里面的那个语音学家叫做HIGGINS，我就跟他谈。谈之后他又告诉我一点，他说李先生你知不知道，最近台湾来了五百个外国的记者。来采访你们台湾从总统大选以后，到国民大会，这个开会的情怳。这么多的外国记者来采访，他说我们来采访的目的，就是听说并且来看看，中国五千年来所没有的一个事件，一个民选总统，一个民主事件，我们来看看。我就笑，我说你们都上当了。事实上五千年来所没有的事情太多了，今天台湾，五千年所没有的这个黑金当道，这个总统这样乱来、这样的假民主、这样的无耻、这样的不要脸，也都是五千年来所没有的。他说他也跟我承认，他们很多外国记者，根本搞不清这个现象，就到台湾来了。</p>
@@ -645,7 +678,7 @@
 <p>给大家看看当时的五百圆的金圆券是什么样子，这是五百圆的金圆券。人头是蒋介石的人头，金圆券。大家把黄金交出去以后，换回来这张纸，可是这张纸开始贬值。贬值到什么程度啊？贬值到你不可思议的程度。那时候中国很穷，贬值到不可思议程度！什么程度呢？请大家看，这个女孩子拿了一捆钱，在马路上包。干什么啊，这么多钱在马路上都不会被抢吗？没人要抢，因为这只能买很少的东西。大家注意，你看这画片，看到没有？这骑着脚踏车，干什么呢？上街上去买，上百货公司买东西了。怎么买法呢？你看到没有？骑着脚踏车，提着那么多的钱。我们台湾绝对看不到的，你要提这么多钱，都被抢走了。提这么多钱，没人抢，为什么呢？这么多的钱，后来都到什么程度呢？都可能只买只吃一碗牛肉面，可以到这么惨的状态，你想象不到的。</p>
 <p>所以当时整个的物价都，整个店都大甩卖，这个穷困的不得了。那个时候我在上海念初中一年级，全国的贬值，金圆券开始贬值，我到上海去买书。买书回来以后，要路过一个牛肉面店要吃面。吃面的时候，发现涨到什么程度啊，不像过去从伍佰圆涨到壹千圆。壹千圆以后，还不够，又贬值，涨到了伍千圆。大家看，这个很有趣的这些币值的变化。伍千圆给你看看什么样子，有伍千圆以后，又涨到壹万圆。看到没有，你们看看这个国民党的德政。又贬，贬值到壹万圆。壹万圆以后还不够，涨到了拾万圆。拾万圆以后，还不够，涨到了伍拾万圆。你看到没有，你们有看过这么大的钱吗？伍拾万圆！好啦，最后涨到什么时候，涨到了壹百万圆。壹百万圆我没有，我没有收到。有壹百万圆，壹百万圆的时候，对不起有一个现象出现了。印这张壹百万圆的纸，这张钞票的成本就要壹百万圆。所以停止了，就没有了。</p>
 <p>我坐在那里吃牛肉面的时候，已经是伍拾万圆了。你吃，注意啊，还要快吃，为什么要快吃呢？因为饭店里面那个价目表，每天在调整，一会儿在调整。所以你一碗饭没吃完，你要吃得很慢，它涨价了，变成了六十万了。那个写的那个纸条上面的墨还没有干，它又贴上去了，七十万了。我今天讲的亲身经历的故事给你们听，你们不相信。事实上这个货币贬值的时候，都是这样子。全世界的国家里面，过去德国有过这么一次。她是为了抵抗第一次世界大战的时候，德国并没有整个打败。结果等于投降了以后，被英国这些国家欺负，叫她赔了很多的钱，赔很多的马克。那德国就很气，就把她马克有意的贬值，使它贬值，政府使它有意贬值来抵抗这些外国人，有过那么一次。可是在国民党的统治之下显然不是，它是贬值，贬值的程度比法币还严重。退休金领下来以后，只能吃一次烧饼油条就没有了。</p>
-<p>所以整个的人心都乱掉了。可是这在经济学上有一条定律，我给大家讲定律。这个定律叫GRESHAM'SLAW，就是翻成中文意思叫做“葛来舍定律”。什么叫“葛来舍定律”呢？“葛来舍定律”里面有一条话，就是这句话：它叫做“劣币驱逐良币”，怎么解释呢？就是如果一个国家是两种币制，一国两币，两种币制的时候。实际价格比较高的那一种将被人藏起来，好比说我这边有银元，这边有纸币。银元的一千块比纸币的一千块值钱。为什么？因为银子还值钱嘛，你这张纸不值钱。所以银子这个一千块的银元就会被藏起来，一千块的纸币在流通。好的钱、比较值钱的钱被藏起来，坏的钱在流通，叫做“劣币驱逐良币”。坏的钱把好的钱赶走了，什么原因呢？好的钱被藏起来了，所以坏的钱愈多，好的钱愈少。所以如果一国两币的话，实际价格比较高的那一种将被人藏起来，流通出来的是比较低的那一种，这张纸流通出来了。所以叫做“劣币驱逐良币”，叫“葛来舍定律”，这是经济学上很重要的一条定律。</p>
+<p>所以整个的人心都乱掉了。可是这在经济学上有一条定律，我给大家讲定律。这个定律叫GRESHAM’S LAW，就是翻成中文意思叫做“葛来舍定律”。什么叫“葛来舍定律”呢？“葛来舍定律”里面有一条话，就是这句话：它叫做“劣币驱逐良币”，怎么解释呢？就是如果一个国家是两种币制，一国两币，两种币制的时候。实际价格比较高的那一种将被人藏起来，好比说我这边有银元，这边有纸币。银元的一千块比纸币的一千块值钱。为什么？因为银子还值钱嘛，你这张纸不值钱。所以银子这个一千块的银元就会被藏起来，一千块的纸币在流通。好的钱、比较值钱的钱被藏起来，坏的钱在流通，叫做“劣币驱逐良币”。坏的钱把好的钱赶走了，什么原因呢？好的钱被藏起来了，所以坏的钱愈多，好的钱愈少。所以如果一国两币的话，实际价格比较高的那一种将被人藏起来，流通出来的是比较低的那一种，这张纸流通出来了。所以叫做“劣币驱逐良币”，叫“葛来舍定律”，这是经济学上很重要的一条定律。</p>
 <p>现在我发现还有一条定律，外国的经济学也好，财政学也罢，他们不知道，叫做“蒋介石定律”！什么叫“蒋介石定律”？“蒋介石定律”就是这个“金圆券的定律”。金圆券最后印到了壹百万的时候，印这张纸的钱超过了壹百万，停止了。所以“蒋介石定律”就是说，不是“劣币驱逐良币”，是劣币驱逐自己，自己把自己驱逐了。为什么呢？这个活不下去了，壹百万也印不出来了。</p>
 <p>所以最后国民党就带着这些钱，黄金抢走了，就全国九十二万两黄金抢走了，运到台湾来。运到台湾来干什么呢？运到台湾来又开始发明了一个新的币，叫做“新台币”。可是台湾人虽然很笨很土，可是也知道不得了了。你们在大陆刚刚摆了乌龙，搞了金圆券，放了鸽子，搞了这样的结果。那台湾同胞说：我们也不相信怎么办呢？蒋介石说：不要怕，我们有黄金做准备。大家注意啊，很多国家她发行她的币制不要靠准备的，靠我招牌。好比说美金，老美我不要靠黄金准备的，我靠我的准备就是USA三个字。我是美国，美国有钱的，所以我发行纸币不要靠准备。可是你信用不好，或者你底子不厚的这些烂政府，这些坏的政府，你就要靠东西来证明你的信用。你发行的纸币，你凭什么发这张呢？好，我告诉你，我有黄金做准备。</p>
 <p>所以到了台湾以后，老蒋就神气了，我们有黄金，我们有九十二万两的黄金从大陆运来。九十二万两当时相当于差不多十亿美金，当时的十亿美金。现在不稀奇了，现在王永庆、蔡万霖两个人都有几个多少个十亿美金。可是当时的十亿美金，不得了了，全中国的钱，国库的钱，都运到台湾来了。那蒋介石就要发行新台币，然后蒋介石说：你们不要怕，你们台湾人派一个代表，每个月到中央银行的仓库里面来看，来参观这些黄金还在不在。否则我发行了，发行以后，你们说黄金不在了，这准备金不在了，你们台湾人还怕啊。不要怕，每个月派一个代表来看，还在不在。那当时的代表就是现在那个讨厌鬼，养乐多的老板陈重光。就他每个月代表这些笨台湾人到新店的仓库里去看，黄金在，喔在。然后出来以后，就在中央日报登个启事，就是说黄金多少两还在，就告诉你们大家要安心。当时呢我们可以看到，虽然是有黄金做准备，新台币贬不贬值呢？照样的贬值，只是不像大陆，我李敖吃牛肉面的那个时候，那个贬值的速度了。用什么证明贬值呢？</p>
@@ -664,7 +697,7 @@
 <h2 id="私生子"><a class="header" href="#私生子">私生子</a></h2>
 <p>李敖笑傲江湖又来了！</p>
 <p>我讲过我欢迎观众写信给我，虽然我不一定每封信都能答复。可是我一定每封信都仔细看过，并且做为参考。我现在拿到一封信，是一位读者写给我的。他说啊，李登辉有个私生子在夏威夷，已经十多岁了，问我，为什么不揭发这个事情？我要报告各位的，我李敖所以在真相新闻网讲话一言九鼎，有公信力。就是说我们要有证据来，才讲真话。如果没有证据，不可以凭空来猜测。所以李登辉有没有私生子，我不知道。所以我不能够在这里做为一个肯定的说法。</p>
-<p>有一点我倒要说的，如果总统有私生子也不稀奇。最近法国死的这个总统，他就是有私生女。这个美国有一个总统，做过两次总统。可是注意啊，他不是连任的喔，他是做过美国第二十二届总统。然后休息了四年，又做了二十四届的总统。他的名字就叫做克利夫兰，就这位先生。克利夫兰，他是很能干的美国总统。他呢，克利夫兰总统，他有一个私生的小孩子。所以在竞选的过程里面，他的敌人就攻击他，政敌攻击他。用英文讲，就是Ma!Ma!Where'smypa?那个漫画，一个女孩子抱着个小男孩子，这个男孩子哭，这个表示被遗弃了，在哭，这小孩在哭。那这个就克利夫兰总统，感到焦头烂额，两个手就塞住耳朵不要听，搞得很狼狈的样子。所以他的政敌用这个说他有私生子来挖苦他，说他：我的爸爸在那里？结果他们，克利夫兰总统他这个搞文宣的人很厉害，他们不像李登辉、林洋港他们这些搞文宣的人，搞得很菜的这些人。他们就答复了这句话，他说，你的爸爸那里呢，爸爸去白宫去了，哈哈哈到白宫去了！所以中文翻译就“妈妈，哪儿去了我的爸？”“到白宫去了，哈哈哈”。等于打哈哈就把这个难题啊，过桥给它过过去了。等于就是说你问了问题，我答过去了，还是用小孩的口气，妈妈的口气来答过去了。这克利夫兰他后来跟一个女孩子结婚，这个女孩子是他一个老朋友的女儿，老朋友死了以后，托他照顾，后来就变成了夫妻。可是因为是老夫少妻，他先死了，死了以后，他太太后来又嫁给一位大学教授了。他是美国很能干的一个总统。</p>
+<p>有一点我倒要说的，如果总统有私生子也不稀奇。最近法国死的这个总统，他就是有私生女。这个美国有一个总统，做过两次总统。可是注意啊，他不是连任的喔，他是做过美国第二十二届总统。然后休息了四年，又做了二十四届的总统。他的名字就叫做克利夫兰，就这位先生。克利夫兰，他是很能干的美国总统。他呢，克利夫兰总统，他有一个私生的小孩子。所以在竞选的过程里面，他的敌人就攻击他，政敌攻击他。用英文讲，就是Ma!Ma!Where’smypa?那个漫画，一个女孩子抱着个小男孩子，这个男孩子哭，这个表示被遗弃了，在哭，这小孩在哭。那这个就克利夫兰总统，感到焦头烂额，两个手就塞住耳朵不要听，搞得很狼狈的样子。所以他的政敌用这个说他有私生子来挖苦他，说他：我的爸爸在那里？结果他们，克利夫兰总统他这个搞文宣的人很厉害，他们不像李登辉、林洋港他们这些搞文宣的人，搞得很菜的这些人。他们就答复了这句话，他说，你的爸爸那里呢，爸爸去白宫去了，哈哈哈到白宫去了！所以中文翻译就“妈妈，哪儿去了我的爸？”“到白宫去了，哈哈哈”。等于打哈哈就把这个难题啊，过桥给它过过去了。等于就是说你问了问题，我答过去了，还是用小孩的口气，妈妈的口气来答过去了。这克利夫兰他后来跟一个女孩子结婚，这个女孩子是他一个老朋友的女儿，老朋友死了以后，托他照顾，后来就变成了夫妻。可是因为是老夫少妻，他先死了，死了以后，他太太后来又嫁给一位大学教授了。他是美国很能干的一个总统。</p>
 <p>那么我又反过来说，这李登辉为什么有没有这个，为什么有没有这个外遇？或者扯什么私生子的问题呢！我认为我们要关心两个点，这就这两个词汇。大家注意，一个叫做“赡养费”，一个叫做“瞻仰费”，这什么意思呢？就是说离婚了以后，丈夫给太太钱，离婚，这个叫赡养费。你看这一次英国的黛安娜王妃可能要离婚的这个状况了，她可以要这么多的钱，开价开那么高，“赡养费”。我记得很清楚，当我跟胡因梦离婚的时候，当天晚上夜里三点钟，我在睡觉的时候，忽然一个电话打进来。电话口气很凶，你是李敖吗？我说：我是。他说：你这个不要脸的爱情骗子，为什么你跟胡因梦离婚，你不给她赡养费？我就笑，我说：我跟胡因梦我们俩人啊，她很清高，我们两个根本不涉及赡养费的问题，所以我没有这个问题。那他说：那我们要杀你全家。我说：我家里只有我一个人，怎么办？他说：那就杀你一个人。那我说：好吧！那你就去排队吧！要杀我的人太多了，要排队，你去排队吧。我讲这个赡养费。</p>
 <p>另外一种叫做瞻仰费，什么叫瞻仰费？本来瞻仰两个字我们还不了解有什么神秘，直到最近台湾的国民党伪政府的省长宋楚瑜的太太陈万水，在英国的撒切尔夫人来的时候。她看到了李登辉的太太曾文惠跟英国的撒切尔夫人在一起，她讲了一段马屁精的肉麻话。她说我们瞻仰了总统夫人，就是李登辉的太太以后。她说我们觉得她的风釆跟英国撒切尔夫人一样。我在上次节目里面已经痛斥她这种马屁的言论，我说这个曾文惠实在是不怎么样。可是不怎么样呢，我们这个李登辉可能看中了曾文惠，并且瞻仰了这么多年。所以他们夫妻的感情呢，至少形式上不像彭明敏这样子无情，把他的太太丢掉了，不是这样子。他们两个倒是形式上一直在一起，并且李登辉，我上次公布了这个财产状况。根据李登辉申报财产的阳光法案，申报财产的时候，他把他的钱多少笔钱都给了曾文惠。所以我觉得这个钱呢叫做瞻仰费，因为李登辉要瞻仰曾文惠呀，要付这么多的钱。他没有付这个赡养费，可是付了这个瞻仰费。</p>
 <p>我讲这个有没有这个私生子的问题，涉及了我们中国的一个基本观念。这个观念就是一个人绝不绝后，我们一般人骂人说你这个断子绝孙。这是骂人，觉得这个你很难过的，没有后代了。这个我也举过例子，蒋介石在……那时候我也举过例子，蒋介石他说如果蒋经国从苏联回来，苏联趁机勒索他，他宁可无后，宁可没有后代。我也讲过这个故事，就是人发了这个决心，自己没有后代，这是很痛苦的事情。这个孔子也骂人啊，说“始作俑者，其无后乎”。你那个开始做这个……，我们现在是人死了以后，烧纸人纸马。那古代人不烧纸人纸马，是做了那种陶器做的人、马，埋起来。最早呢是人殉葬，活人就陪你死人死了。所以孔子讲说，对这种制度，就殉葬的这种人，做这种制度的人，开始发明这种花样的人，“其无后乎”，这种人啊断子绝孙哪。</p>
@@ -1052,7 +1085,7 @@
 <p>用广东话来讲，就是这四个字，叫“过气老倌”，这个过气了，这种人已经过气啦。</p>
 <p>所以我们也知道，像我李敖有没有过气呢？也在过气中，什么原因呢？我已经慢慢老了，我的读者，我的观众，一般说起来大概还在五十几岁或是四十几岁这个阶层就比较多了，到了更年轻的一代，他们对我知道的就不多了。原因呢，不能完全怪我，怪国民党政府这么多年来把我封杀，我也讲过了，我最长的一段时间，前后台湾有十四年！注意啊，十四年之久，台湾的报纸和任何媒体没有“李敖”两个字出现，任何书店都不能卖李敖的书，任何书摊都不能卖李敖的东西。所以最长的国民党封杀我的记录，有十四年之久，年轻的读者跟我之间就发生了断层。好在我现在已经不算一个作家了，我已经进入电视界里面，变成了演艺人员。所以作为一个作家的李敖，已经逐渐的凋零了，也算是过气老倌的现象。</p>
 <p>我现在再谈一下，上一次我请来政治大学的教授——吕俊甫博士——来谈谈台湾教育改革的问题。吕俊甫教授他不但是政治大学教育研究所的教授，同时他也是做过政治大学的西语系主任，就是外文系的主任，他的英文非常的好。在他面前我还讲过一个，顺便谈了一个教育的事情，我谈到一个人名，叫赫胥黎，英文叫做Huxley。请大家看看赫胥黎——赫胥黎这个名字，赫胥黎。我们现在看到严复翻译的《天演论》，就是翻译这个老赫胥黎的，汤姆逊赫胥黎。汤姆逊赫胥黎的儿子叫隆纳德赫胥黎，是个历史家。这个隆纳德赫胥黎还有两个儿子，一个大儿子朱利安赫胥黎（右上图），是个生物学家，有名的；小儿子阿德斯赫胥黎（右下图），就是我所提到的人，是一个大有名作家。他们一窝子都是，祖孙三代都是名家。</p>
-<p>他写了一本书，叫做《美丽的新世界》，可是英文讲叫做《THEBREAVENEWWORLD》，“THEBREAVE”看起来，这么样看，它是一个勇敢的，所以很多人闹了错误。我举个例子给大家看：好比说国民党的同路人何凡，在《玻璃垫上》发表《难民世纪》里说，“我们幸生于这个多彩多姿《勇敢的新世界》（breavenewworld）”，他讲怎么怎么样，“立足于此一《勇敢的新世界》而自豪”如何如何。事实上这个“breave”不是勇敢的，所以我那一天在吕俊甫教授面前等于有点含蓄的讲了这个字，就是这个BREAVE意思是莎士比亚的一个剧本，叫《暴风雨》里的一段话，它的意思这个BREAVE不是勇敢的，而是漂亮的，美好的，“BREAVENEWWORLD”是美丽的新世界，大好新世界，所以跟勇敢一点关系都没有。可是因为何凡他们谈不到很好的英文程度，也不仔细读书，所以会闹出这种笑话来。我特别讲出这段话来给大家看，就是我们读书要仔细，是非常重要的一点。</p>
+<p>他写了一本书，叫做《美丽的新世界》，可是英文讲叫做《THE BREAVE NEW WORLD》，“THE BREAVE”看起来，这么样看，它是一个勇敢的，所以很多人闹了错误。我举个例子给大家看：好比说国民党的同路人何凡，在《玻璃垫上》发表《难民世纪》里说，“我们幸生于这个多彩多姿《勇敢的新世界》（breave new world）”，他讲怎么怎么样，“立足于此一《勇敢的新世界》而自豪”如何如何。事实上这个“breave”不是勇敢的，所以我那一天在吕俊甫教授面前等于有点含蓄的讲了这个字，就是这个BREAVE意思是莎士比亚的一个剧本，叫《暴风雨》里的一段话，它的意思这个BREAVE不是勇敢的，而是漂亮的，美好的，“BREAVE NEW WORLD”是美丽的新世界，大好新世界，所以跟勇敢一点关系都没有。可是因为何凡他们谈不到很好的英文程度，也不仔细读书，所以会闹出这种笑话来。我特别讲出这段话来给大家看，就是我们读书要仔细，是非常重要的一点。</p>
 <p>可是现在问题出在哪里呢？问题在我这个节目本身，如果是手写的，会非常的仔细。可是我这个节目面前，我可以告诉各位怎么录这个影，前面是三台摄影机，然后是工作人员三位，在我面前他们给我的任何暗示，像打大字报的板子，告诉我还有十分钟，然后告诉我还有五分钟、还有三分钟、还有两分钟、还有六十秒就要结束了，所以我的眼前没有任何东西可以作弊的，一切我的话都要信口说出来，根据我这点资料就要说出来。我刚才讲过，这不是讲演，讲演的话可以不要任何的书面数据，可是因为我在做节目，所以有时会讲出来。可是讲出来又不是写文章，写文章可以一面慢条丝理去查数据，可以很仔细，可是这种又不行，所以就要信口讲出来。我才发现，有时候我回看我这些录像带，才发现我怎么讲出来那么多的错误，明明脑袋想的是东，嘴巴讲出来就是西；明明说的是南，讲出来就是北，我才知道自己年纪大了，口误的部份比例特别高，我知道这是很糟糕的。</p>
 <p>那么有没有办法补救呢？电视公司“真相新闻网”他们能不能补救呢？他们又不能补救，为什么呢？因为在我们订的双方的条约里面，有一条互相抓住对方的卵葩，谁都不许动的，什么卵葩呢？就是说他们要我不能告他们，因为喜欢打官司，就不许我告他们，我同意了。另外一方面，我要他们我讲的任何话都不能修改。所以有这么一条，我们约里面请大家看：“甲方”，就是真相新闻网，“如不得乙方”，就是李敖，“如不得乙方同意，片面删改节目，乙方（李敖）得要求甲方（真相新闻网）每集赔偿新台币三十万元。”换句话说呢，任何的修改都要赔三十万元，任何的删改都要赔钱，所以真相新闻网吓死了，所以他们对我的节目完全不改。</p>
 <p>那我自己呢，就信口这样讲出来，也没有任何NG，没有NG，所以讲到错误就跟着错下去。所以好处就是完全真相给大家看，没有任何的做假，都是真的，原汁的牛肉汤没有掺一点点的水这种。坏处呢，就是发现里面有很多，我刚才讲过，由于我年纪大了以后，讲话颠三倒四之处，不是没有。所以有这个现象出现以后，才发现这节目有某种程度的粗糙。因为粗糙呢，所以很多人要指责我，我觉得也很合理的，我也很欢迎大家对我作某种程度的指责，而不要过分的客气。</p>
@@ -1884,7 +1917,7 @@
 <p>今天呢，讲到这里。</p>
 <h2 id="女人也肉麻"><a class="header" href="#女人也肉麻">女人也肉麻</a></h2>
 <p>李敖笑傲江湖又来了！</p>
-<p>有的时候呢，我会拿一句英文来考别人的英文程度。虽然我的英文也不怎么样，可是我讲过，自从我听到了李登辉在康乃尔大学那个用英文的讲演以后，我的英文呢比较有信心了。我觉得我的英文比他好，我拿这些英文来考考别人，就这些英文。就是啊，他说，这些去打老虎的人应该记得，记得什么呢？就是啊，Therearetigersandtigers。这里啊有老虎和老虎，没有一个生字。我有时候考别人，我说，这什么意思啊？有的人说，这里面就这个有老虎很多的老虎。不对，这句话呢不是有很多的老虎，他说，想去打老虎的人应该记得，记得什么呢？有的老虎是容易打到的，有的老虎是很难打到的。什么意思呢？就是说，这个意思不是说老虎多得很，而是打老虎要记得有各式各样的老虎。有的老虎容易打到它，有的老虎不容易打到它，这个意思是这个意思。</p>
+<p>有的时候呢，我会拿一句英文来考别人的英文程度。虽然我的英文也不怎么样，可是我讲过，自从我听到了李登辉在康乃尔大学那个用英文的讲演以后，我的英文呢比较有信心了。我觉得我的英文比他好，我拿这些英文来考考别人，就这些英文。就是啊，他说，这些去打老虎的人应该记得，记得什么呢？就是啊，There are tigers and tigers。这里啊有老虎和老虎，没有一个生字。我有时候考别人，我说，这什么意思啊？有的人说，这里面就这个有老虎很多的老虎。不对，这句话呢不是有很多的老虎，他说，想去打老虎的人应该记得，记得什么呢？有的老虎是容易打到的，有的老虎是很难打到的。什么意思呢？就是说，这个意思不是说老虎多得很，而是打老虎要记得有各式各样的老虎。有的老虎容易打到它，有的老虎不容易打到它，这个意思是这个意思。</p>
 <p>好了，现在呢我们讲到过去啊，张大帅的很多笑话，关于张大帅。张大帅三个字变成了国民党挖苦北洋军阀的一个术语。事实上呢，张大帅代表了这个张宗昌，甚至呢也代表了张作霖，就是张学良的爸爸。张大帅的一个笑话说他喜欢吹牛，他吹了牛呢，信口乱说。这很像台湾的这个李登辉一样，就想到就说，一说就错，一错就赖。想到说什么呢？张大帅说，他的开枪啊，他开了一枪打老虎，一打呢，一枪打过去打死两只，然后他不讲话了。不讲话了，记者们就问了，怎么样打死两只呢？这时候他张大帅的这个副官，就会拍马屁的，就说啊，他说，这个打死那只是母老虎，母老虎的肚子里面有只小老虎，怀孕了，所以打死一只呢，就等于打死两只。啊！大家就鼓掌。张大帅也很高兴，觉得他这个手下能够替他这个，我们讲的等于圆谎，说了谎话能够把他圆的很好。过两天，张大帅又讲个笑话，讲什么笑话呢？他说啊，他作战的时候很英勇，骑着马啊，跶跶……，很英勇。后来一个炮打过来，把他后面马的这个后半身呢，全部被炮轰掉了。他骑着马头啊再往前走，还继续打仗，能够骑着马头往前冲。就讲了这么一个，吹牛的，想到就说，一说就错，一错就赖。这时候问他副官，问他的发言人，这怎么解释呢？这个马怎么只剩下马头了，怎么还能够打仗呢？这个发言人说啊，这次我可没办法讲了，我讲不出来为什么了。结果呢，就很难为情。后来呢，张大帅就给他一个耳光说，你不都能够替我解释的吗？为什么你这一次不替我解释呢？这个副官说啊，你这个马的屁股都没有了，你叫我怎么拍呢？我拍马屁拍不上去了，都轰掉了嘛！就讲这种笑话。</p>
 <p>最近呢李登辉，国民党的伪总统啊，讲话开始乱说。他在一个现场里面对这个洪冬桂就骂了，女立委洪冬桂的一句话。洪冬桂在赞美他说，你李登辉，李总统啊，在讲话里面提到了你鸿禧山庄的房子，你这个房子，你说你给了你太太。你讲这话的时候，你的表情哪，深深地表现出总统对夫人的爱，对子女的爱。她说，这真是太伟大了，对我们女生同胞啊，是很希望听到这些话的。这时候洪冬桂讲完话以后呢，李登辉站起来笑着说，说啊：你讲的话啊，太多了，人家会笑你是马屁精。这话一讲了以后呢，当时有人开始圆场，那李登辉也做了某种程度的更正。可是呢洪冬桂呢弄得很窘，并且后来听说哭的眼睛都红了，有这么个故事。当然洪冬桂后来也自己解释，她说这个李总统没有骂我，他是说一句幽默感的话。那别人没有这个幽默感，别人听不懂，当然有这种说法。</p>
 <p>后来呢，我在节目里面就挖苦了这个洪冬桂，也挖苦了最近这个台湾省长宋楚瑜的夫人陈万水。她赞美李登辉那个土太太那个曾文惠的话，她说曾文惠的风度啊，风采啊，可以跟英国的撒切尔夫人比美，我们瞻仰。注意用这两个字，我们瞻仰这个曾文惠，感到非常的伟大。所以我在这个节目里面骂她们，我说过去啊都是男人无耻，现在女人开始无耻。</p>
@@ -2174,7 +2207,7 @@
 <p>我生平念书念得细，所以我们念陶渊明的文章说：“好读书，不求甚解”，“不求甚解”，大家以为“不求甚解”是不仔细读书是错误的。“好读书，不求甚解”是不做那种过分的和那种稀奇古怪的、妖妄的解释，不做那种过份的、不切题的解释叫“不求甚解”。事实上呢，了解他还是很重要的。</p>
 <p>我随便举个例子给大家看。我这一两年跟一个人发生了纠纷，这个人就是做过国民党中央党部副秘书长，也是蒋介石遗嘱的执笔人，也是给蒋介石身边做文胆的，现在做故宫博物院院长的秦孝仪。我在报上登了一大篇文章，就讲出来三十项秦孝仪如何变造史料的这种笑话。因为秦孝仪做过国民党党史委员会的主任委员，也做过台湾的中国历史协会的头子，也主持过好多场的国际性的所谓学术会议。既然你有这种身份，以这种身份出现，以历史家身份出现，以学者身份出现。然后呢，你在学术范围里面的东西，经过你动了手脚以后，闹了笑话，当然你是腾笑中外，世界性的笑话，所以我认为他闹了笑话。秦孝仪就光火，到法院就告我，告了我之后呢，讲啊说我毁谤他。譬如说其中一条，我说他秦孝仪写过一篇文章，什么文章呢？就是他把蒋宋美龄讲了很多话编了一本，在中央月刊里面，就是国民党里的一个刊物，中央月刊在第一卷第六期里面，这很早了，中华民国五十八年4月1号。</p>
 <p>他编了一份东西，什么东西呢？叫做，大家看啊，《蒋夫人语粹》，编者秦孝仪，看到没有。就是收了很多蒋夫人的话，并且他里面还说得很清楚，说“蒋夫人的言论，见诸辑录者”，把他放在一起呢，“约一百五十多万字。从这里面不但看到蒋夫人的智慧、慈爱、勇气、毅力、以及谋国的苦心、纯诚，特别是最易予人沉思的启示，和鼓舞的感发。”。讲到蒋夫人的这些名言，蒋夫人这些名言里面，“不朽的格言。这二百余条语粹”，蒋夫人的话，“就是节取一部份感召当代也感及后世的不朽格言。”那么换句话说呢，这些话既然二百多条应该都是蒋夫人的话啦。可是我李敖一翻，唉！奇怪呀，这个不是那个不要脸的女人蒋宋美龄的话啊，这里面很多都是英文的谚语啊！世界性大家都熟知的啊！我现在举个例子给大家看，请大家看，你看看，在第五十四页这一条看到没有，“及时的一针可省九针”，看到没有。这个怎么是蒋夫人的话呢？这是一句很普通的英文谚语嘛！怎么会是她的话呢！所以我的意思，我们随便看，大家看看，翻个字典就看到了，很普通的东西。</p>
-<p>大家看，梁实秋编的《远东英汉字典》，看到没有，2055页，请大家看最下面的一段，请大家看，在这个STITCH这一条，大家看这个字底下，看到没有？“一针”，什么样的一针呢？“及时的”intime这一针，可以省下来，nine，九针。所以梁实秋翻译成“及时的一针可以省下九针”，就是说“及时行事，事半功倍”。这个翻译得不算很好，因为事实上呢，这个翻译得太字面化了。严格讲呢，这句话应该翻成中国的谚语，叫做“小洞不补，大洞吃苦”，小的洞你不把他补起来，结果变大了，大了以后，就变成你要吃苦头了。“小洞不补，大洞吃苦”，就好像衣服破了，破了一点点，该缝一针的你不缝，久了变成一个大的裂缝，要缝九针才能缝完。所以及时的，立刻该缝的时候，你就要缝这一针，就省掉了以后缝九针，所以应该翻成“小洞不补，大洞吃苦”。当然意思直接翻译就是这一句话。</p>
+<p>大家看，梁实秋编的《远东英汉字典》，看到没有，2055页，请大家看最下面的一段，请大家看，在这个STITCH这一条，大家看这个字底下，看到没有？“一针”，什么样的一针呢？“及时的”in time这一针，可以省下来，nine，九针。所以梁实秋翻译成“及时的一针可以省下九针”，就是说“及时行事，事半功倍”。这个翻译得不算很好，因为事实上呢，这个翻译得太字面化了。严格讲呢，这句话应该翻成中国的谚语，叫做“小洞不补，大洞吃苦”，小的洞你不把他补起来，结果变大了，大了以后，就变成你要吃苦头了。“小洞不补，大洞吃苦”，就好像衣服破了，破了一点点，该缝一针的你不缝，久了变成一个大的裂缝，要缝九针才能缝完。所以及时的，立刻该缝的时候，你就要缝这一针，就省掉了以后缝九针，所以应该翻成“小洞不补，大洞吃苦”。当然意思直接翻译就是这一句话。</p>
 <p>这一句话很普通的英文谚语啊！怎么变成了那个不要脸的女人蒋宋美龄的话呢！然后变成蒋宋美龄的话以后，并且变成不朽的格言，然后对我们的青年有什么好处，然后才发现，看了蒋夫人的智慧、慈爱、勇气、毅力。这句话根本不是她的话嘛！原来蒋宋美龄讲这些话的时候，可能是引证了英文，蒋宋美龄的英文，这种英文的普通的谚语她应该懂。可是秦孝仪他不懂，不懂以后呢，翻成中文以后，他以为这都是蒋夫人的话，就开始奉承、赞美，我们觉得不好笑吗？你秦孝仪是故宫博物院的院长，是中国历史学会的负责人，是主持国际学术会议的人，是国民党党委员会的主任委员，是国民党中央党部副秘书长，请问你闹的是不是笑话？是不是国际性的笑话？把这种全世界都知道的一句英文谚语变成了不要脸女人的名言，这是不是笑话？变成你不读书嘛，你书念得不够不行嘛。</p>
 <p>我李敖揭发出来了，他去告我，你告我什么呢？告我还不稀奇，居然被马英九主持下的地检处的负责人卢仁发，看到没有，马英九监督下的检察长卢仁发所指挥下的主任检察官林天麟——把我李敖起诉，把我起诉，为什么呢？说我毁谤了秦孝仪。我请问你林天麟，我毁谤你什么？这是事实嘛，你闹了笑话嘛，这不是蒋夫人的话嘛。再来一句，大家再看。又来了，你看，还不止啊，还有还多的很，大家看。“做错事是人之常情”，看到没有，“做错事是人之常情”，这也变成蒋夫人的话。这话是蒋夫人的话吗？请大家看一看这句话的来源，这是英国以前的一个大诗人叫做POPE，大家注意这个名字叫波普。这个大写的POPE有两个意思，一个就是教皇，一个就是波普，就是这个人，他讲的话。这句话的原文就在这里，他的意思呢，我翻成中文就是“犯错是人之常情，可是原谅这个错误是神仙的本领”。换句话说，这个翻成更明确的翻译叫做“其错在人，其恕在神”，那原谅是神在原谅。这句话呢，“犯错是人之常情”这句话是英国的诗人波普的话，这句话演变下来以后，变成英文的俗语，大家都知道。所以我们现在看的波普的这种传记书，大家都知道这是很普通的一句话，怎么又变成不要脸的女人蒋宋美龄的话！是不是，又来了。换句话说呢，蒋宋美龄的那些语粹，这些了不起的话、精华的话，原来都是外国的一些谚语、英文的谚语。还是这句话，蒋宋美龄可能知道这些谚语，她用英文讲出来，翻成中文以后呢，秦孝仪不懂，就把他当宝贝了，变成蒋夫人的话。我李敖看了之后，这个你觉得天下没有读书人了！你以为我们都死掉了！可以这样子蒙混过关啊，来认为我们也不读书，我李敖就给你揭发出来，对不对。</p>
 <p>我讲英文的谚语随便举个例子来大家看，你看这是一本漫画书里面，讲外国的一个修道士，可爱的修道士的漫画。大家看这都是啊，谚语啊，他钉个牌子，打棒球的时候，他也参加，然后还来这么一句话，“犯错是人之常情”。那意思是说我这个球打得不好，你们要原谅我，因为我打在接棒球的手套，我可能棒球打得不好，出纰漏，可是犯错是人之常情，意思就是你们不要怪我。</p>
@@ -2457,9 +2490,9 @@
 <p>我个人呢，同样也有类似的遭遇。过去我主持文星杂志，那个时候等于我们在台湾叱咤风云。我们这个杂志一出啊，可以决定很多人的这种文坛上的起浮跟声誉，等于中国古话所说的“匹夫而为百世师，一言而为天下法”，我们有这个力量。所以很多写文章的人对李敖也相当的友好，说难听话是巴结，那个时候，我们朋友很多。可是后来文星杂志被蒋介石下令查封了，文星书店也被蒋介石下令查封了。这个时候啊，我就发现很多所谓高级的知识分子，他们的嘴脸我们就看到了。按说高级的知识分子应该是很豪侠的、很义气的，不为一时的利害来决定他的友谊的。可是正好相反，在那个情况发生的时候，高级的知识分子，首先露相的，就是高级的知识分子。像梁实秋先生，像余光中先生，他们都不敢跟我交朋友了，怕我了。</p>
 <p>当时也有一个人，他本来就跟我保持某种距离的，可是还是跟我很友好的。可是在我们文星事件以后，他从此都不跟我交朋友了，从此不交朋友了，直到现在。这个人是谁呢？这个人是在台湾也非常有名的一个作家，他的名字叫做陈之藩。陈之藩很有名，为什么呢？因为他们先天的就占了一个便宜，什么便宜啊？他写的文章没有政治气氛的，不得罪国民党政府的。所以他的文章被国民党的教育部属下的国立编译馆把他们选成了文章，放在中学课本里面，放在国中课本里面。这样子的话，每个中学生都看到他的文章了，所以对他有印象。另外一方面，他写的书从来没查禁，不像国民党查禁李敖的书查禁了九十六本之多。一本书都没查禁，所以他们累积的这个声誉啊，可以继续在发展。所以像陈之藩这种人，他可以高高在上，而不会被国民党打击，他的形象也很好，声望也很好。</p>
 <p>我们看行政院出版的，文建会，文化建设委员会出版的中华民国作家作品目录里面，陈之藩这一项，我们就看到了。我们请看一下，“陈之藩，1925年生，河北省霸县人，民国十四年6月19号生”。他的学历是“国立北洋大学电机系毕业、美国普林斯顿大学硕士、英国剑桥大学哲学博士”“曾任职于国立编译馆”，因为任职于国立编译馆，所以他的文章更容易收进国立编译馆所编的中学的教科书里面去，中学的国文课本都有他的文章。“任教于美国普林斯顿大学、香港中文大学、现任美国波士顿大学教授”，现任是成功大学的教授。他写的书也蛮多的，请大家看，像这个《旅美小简》，像《在春风里》，像《剑河倒影》，像《蔚蓝的天》，什么……这种书。现在我随便拿一两本看，像这个《蔚蓝的天》，这是远景出版社给他出版的，沈登恩先生给他出版的。好比说这是《旅美小简》，这是过去文星书店给他出版的。像这个《陈之藩散文集》，这都是目前还在市面上可以买到的。</p>
-<p>我对陈之藩了解的很深刻，不单他因为是我的朋友，并且因为当时我就在文星书店。所以今天我还保存着，好比说《在春风里》这个书里面，他的亲自的校稿，他为什么把他这篇文章删掉了，他写了这些字。文章改的痕迹，他自己校对的痕迹，这都他的亲笔，改正的痕迹，都可以看出来。还有呢，陈之藩也写过信给我，过去写过信给我，慢慢我会公布给大家看。重要是我这个节目里面，我会公布陈之藩的一些信。首先请看他当时写给文星杂志的主持人，就是何凡先生（夏承楹）跟他的夫人林海音女士的一封信，请大家看“海音、承楹先生”，海音，夏承楹的，何凡的太太。请大家看，他说美国办报的大家是两个人，一个是曼肯，著名的是巴铁摩尔的太阳报的社论，所谓辣手著文章的大家。他说此人的地位很像我们中国的胡适先生，曼肯的文章常常可以，都有很多人国文里面读，当国文里面读。他说曼肯这个人胡适先生很欣赏，我刚到美国的时候，胡先生就介绍了也送给我曼肯的书，文字犀利极了。可另外一种文体呢，我们请看，他说第二个办报的成功就是MaryBakerEddy她所创办的基督教科学箴言报，她也是很成功的。可是陈之藩的意思呢，他说这两个人他认为应该风格是不一样的。曼肯的风格是什么呢？曼肯的风格就是“要想办报成功，就得吹毛求疵，并且到处挑战”。可是另外这个艾迪办报的意思，她就不是这个样子，她的意思呢就是说登载好的新闻，和平性的，没有火气，可能这种口气。</p>
+<p>我对陈之藩了解的很深刻，不单他因为是我的朋友，并且因为当时我就在文星书店。所以今天我还保存着，好比说《在春风里》这个书里面，他的亲自的校稿，他为什么把他这篇文章删掉了，他写了这些字。文章改的痕迹，他自己校对的痕迹，这都他的亲笔，改正的痕迹，都可以看出来。还有呢，陈之藩也写过信给我，过去写过信给我，慢慢我会公布给大家看。重要是我这个节目里面，我会公布陈之藩的一些信。首先请看他当时写给文星杂志的主持人，就是何凡先生（夏承楹）跟他的夫人林海音女士的一封信，请大家看“海音、承楹先生”，海音，夏承楹的，何凡的太太。请大家看，他说美国办报的大家是两个人，一个是曼肯，著名的是巴铁摩尔的太阳报的社论，所谓辣手著文章的大家。他说此人的地位很像我们中国的胡适先生，曼肯的文章常常可以，都有很多人国文里面读，当国文里面读。他说曼肯这个人胡适先生很欣赏，我刚到美国的时候，胡先生就介绍了也送给我曼肯的书，文字犀利极了。可另外一种文体呢，我们请看，他说第二个办报的成功就是Mary Baker Eddy她所创办的基督教科学箴言报，她也是很成功的。可是陈之藩的意思呢，他说这两个人他认为应该风格是不一样的。曼肯的风格是什么呢？曼肯的风格就是“要想办报成功，就得吹毛求疵，并且到处挑战”。可是另外这个艾迪办报的意思，她就不是这个样子，她的意思呢就是说登载好的新闻，和平性的，没有火气，可能这种口气。</p>
 <p>所以在陈之藩的这个秘密的信里面，他就批评了殷海光，请大家看，批评殷海光。他说：“骂人骂得漂亮是不容易的，鲁迅的文章之笔差可与曼肯比拟，如不会骂而学骂的时候，好像东施捧心，所以我见不得殷海光的文章，一见即想吐”，想呕吐，“此公之目中无人，之不学无术，可谓天下第一”。他很强烈的攻击了殷海光，在这封秘密的信里面，我现在公布了。就告诉大家，陈之藩他写文章的文体，他觉得殷海光是不行的，殷海光不学无术，殷海光目中无人。殷海光据我李敖看起来，目中无人则有之，不学无术则未必，至少殷海光啊文字啊，那个犀利的文字可以说很了不起的。他在自由中国杂志时代，写文章，代表他一生里面写文章最大的一个光芒。可是很奇怪的，陈之藩他拿曼肯来跟胡适来比，我觉得胡适写文章赶不上曼肯的那样犀利。</p>
-<p>我给大家稍微介绍一下，这曼肯，大家看这照片，这个人看起来有点像郝柏村，这凶凶的，他是生在1880年到1956年。陈之藩说他在美国报纸上写文章，事实上他真正的犀利文章，是写在这个AmericanMercury这个杂志上面，这个Mercury应该翻译成水星，翻译成水银，严格讲都不对的。为什么呢？这个字大写应该是信使的意思，所以这个杂志应该叫《美国信使》。他办这个杂志办了九年，在里面厉害的不得了，批评这个，攻击那个，也讲究证据的。他是很优秀的，很了不起的一个美国的作家，并且他影响了美国人直到现在，可是非常地犀利的。另外一个人就叫，他谈到的艾迪，艾迪是个女人。注意啊，生在1821年到1910年，她办的报纸最有名的是《基督教科学箴言报》。艾迪这个女人啊，是一个宗教狂热的人，她一辈子三次嫁人。她有一辈子受一个病的苦恼，什么苦恼呢？她的脊椎一直不健康出了问题，当她出了问题的时候，她发现不用医疗器材，不用医疗去治，不找医生，也不吃药，而是用宗教的方法来治这个病，对她最有效果。</p>
+<p>我给大家稍微介绍一下，这曼肯，大家看这照片，这个人看起来有点像郝柏村，这凶凶的，他是生在1880年到1956年。陈之藩说他在美国报纸上写文章，事实上他真正的犀利文章，是写在这个American Mercury这个杂志上面，这个Mercury应该翻译成水星，翻译成水银，严格讲都不对的。为什么呢？这个字大写应该是信使的意思，所以这个杂志应该叫《美国信使》。他办这个杂志办了九年，在里面厉害的不得了，批评这个，攻击那个，也讲究证据的。他是很优秀的，很了不起的一个美国的作家，并且他影响了美国人直到现在，可是非常地犀利的。另外一个人就叫，他谈到的艾迪，艾迪是个女人。注意啊，生在1821年到1910年，她办的报纸最有名的是《基督教科学箴言报》。艾迪这个女人啊，是一个宗教狂热的人，她一辈子三次嫁人。她有一辈子受一个病的苦恼，什么苦恼呢？她的脊椎一直不健康出了问题，当她出了问题的时候，她发现不用医疗器材，不用医疗去治，不找医生，也不吃药，而是用宗教的方法来治这个病，对她最有效果。</p>
 <p>所谓宗教的方法就是我们看到圣经里面的，新约里面的，耶稣给人看病，手一摸，嘴巴一说，这个人就能够病立刻就好了，她是相信这种方法来看病的。所以她一辈子为这个脊椎这个病症所痛苦一辈子，她就一再宣传，我们不要吃药，我们不要找医生，要用宗教的力量来看病。所以胡适先生就骂她，说她害了好多人。胡适认识一些有头有脸的人，他们得了盲肠炎，得了盲肠炎不去开刀，要用这种宗教的方法，要靠耶稣基督来救盲肠炎，结果死掉了。所以这个婆娘害了不少人，当然了，如陈之藩所说，说她的文章是讲和平的，讲理性的。可是，当然啦，谈到耶稣问题，她就不和平也不理性。关于这个文体的部份，请大家注意一点，就是陈之藩所说的曼肯式的文章是不值得效法的，而是艾迪式的文章是值得效法的，我个人是不赞成的。我认为我们写文章要有一股气势，要有一种感情，这里面的基础还是理智的，还是求证的，还是凭资料的，还是凭证据的。可是表现出来呢，可以火爆一点，就好像我们吃四川菜。为什么吃四川菜呢？因为它火爆，它炒下去以后，加上佐料，有这个辣椒。这个基本的资料，基本的证据就好像那个肉，这个文章的技巧出来以后，像是辣椒。当然啦，陈之藩是反对这种风格的。我不能说它这个风格不好，可是它这个风格有一个毛病会出现，什么出现呢？就是过分的跟别人没有冲突的时候，你这个人就高高在上，你这个人是非感就变得很薄弱，你这个人就看不到这些真正的民间的疾苦，人间的痛苦，你看到的很少了。</p>
 <p>所以我认为这个现象出来以后，会发现一个逃避责任的现象。现在我们看大陆出版的《胡适遗稿及秘藏书信》，这个书一共有四十二大本，很厚的。过去胡适离开大陆以后，他所写的一些稿子，跟他收集的朋友给他的信，都保存的很好，结果丢在了中国大陆。现在中国大陆的共产党把它全部印出来了，四十二大本。我这套书是陈宏正先生特别买来送给我的。我这里面就看到当时的一个大学生写给胡适的信，这个大学生不是别人就是陈之藩。我们看那一封信可以看到，我们大家看，他有一封信大家看，他说，信里面说，他很痛苦。为什么呢？他到河南去，请大家看，陈之藩的信十三封。在172页有这么一段，他说，“在河南半个月的行程”，在河南，他去河南了。“使我认识了中国的本来面目，并不是如故都宫阙的豪华”，不像北京皇宫那样豪华。“而是大人孩子们穿着很烂的衣裳，住着窑洞，最使我惊心的是那时候正在闹豫灾”，这河南闹灾荒，“蝗虫到处皆是，我买鸡蛋吃，剥下的皮”，注意啊，鸡蛋的皮也剥下来了，鸡蛋壳。“一群难童”，逃难的小孩子，“抢着石灰质的蛋皮”，抢他鸡蛋皮、鸡蛋壳，“放入嘴里”，吃鸡蛋壳。“但没有一个人向我要，也没有一个人向我抢，只是用乞怜的、无光的眼睛看着我，这一群是十岁、八岁、五岁、六岁的难童”。请大家注意看，陈之藩在他大学时代，在河南，看到过这么……亲眼看到过这样凄惨的画面。</p>
 <p>可是我们看陈之藩后来写这些文章，有没有谈到这些民间的疾苦呢？可以说我们看不到。为什么看不到？因为他已经高高在上了，他已经不是那个时代的，不是大学生时代的陈之藩了。他，逃避现实，这些信现在陈之藩同意发表吗？他不同意，远景出版社的沈登恩先生希望他发表这些信，他不肯。为什么呢？他觉得这不对了，我们五代的时候看到韦庄，有名的人韦庄，写《秦妇吟》那个诗。当时讲到陕西的这些女孩子们怎么样经过那个战乱的艰苦。可是等他韦庄到做了大官以后，他反对发表这个《秦妇吟》了，他自己查禁了自己的文章。所以我们在韦庄的全集里面，看不到他一辈子写的这么好的一首诗，《秦妇吟》看不到了。直到敦煌的文件被发现出来，才发现有这篇文章。所以这篇文章被韦庄自己把它出局了，他不晓得这篇文章是他最好的文章，这个诗是他最好的诗。可是当他有一天高高在上以后，他把这些文章，自己的文章，查禁了，或者把它遮盖了。我认为陈之藩的文体，陈之藩的著作，清清如水，淡淡的哀愁，蔚蓝的天，如在春风里，都是这样子虚无飘渺的一个境界。真正的人间应该作战的，应该战斗的，应该攻击的，应该发生纠纷的，他全部闪躲了。</p>
@@ -2602,7 +2635,7 @@
 <p>我曾经讲过，我在节目里面也讲过，谈过一个人，这个人我补充的再谈一下。就是后晋，我们古代有梁、唐、晋、汉、周，后梁、后唐、后晋、后汉、后周，后晋的高祖就是石敬瑭。大家都知道他的外号，叫做儿皇帝。为什么叫儿皇帝呢？因为他要夺取政权的时候，他要勾结契丹人，勾结契丹的耶律德光，勾结胡人。他本身也是胡人，可是他要勾结胡人。胡人就支持他，抢夺了中原政权，然后他把燕云十六州就割给了耶律德光，然后就做儿皇帝。我虽然是皇帝，我对我的老百姓是皇帝，可是对你来说，我是你儿子，你是爸爸皇帝，我是儿子皇帝，儿皇帝。后来他死了，死了以后，他的儿子叫做石重贵出现了。石重贵出现以后，他听了一个人的话，这个人是谁？这个人是景延广。景延广什么地方人？我开玩笑讲，他是台湾人。为什么台湾人呢？嘿！勇敢的台湾人，颜锦福式的台湾人。干什么呢？我们干！为什么还要受耶律德光的气呢？我们不要！我们要干起来。怎么办呢？他干的理由很奇怪。他说过去我爸爸的政权，我石重贵的爸爸石敬瑭的政权，是你耶律德光给我的，所以我是儿皇帝。可是现在我石重贵当了皇帝以后，是我爸爸石敬瑭给我的，不是你给我的，所以这个政权不是你给我的。可是这个辈份我承认，我承认是你孙子，可是我不承认你是我的皇帝了。</p>
 <p>很有趣，古人的想法，我承认是你孙子，可是我不承认你跟我在政治上面是我的君主，我不承认。耶律德光说：不行啊，当初我们约定好的啊，你爸爸就是儿皇帝，你就是孙皇帝。他说不行。不行怎么办呢？耶律德光说：我要打你喔！这个景延广说：打啊！没关系，我们有了十万口横磨剑，磨好的这个剑。这话什么意思？很有修辞学的效果，就是说我准备好武器了，你要打我吗？我告诉你，我有十万个阿兵哥磨好了，彼此打一打，这耶律德光多厉害的人。喝！你这样子不上路，他妈的，干你娘了，我打你噢！就打了，消灭掉了！证明什么，证明什么？景延广错了吗？石重贵错了吗？没错。争求我们的尊严，没有错。可是没有那个力量！没有那个力量来争取这个尊严，轻举妄动，喊爽！我们有87.7%的民意调查，我们有勇敢的台湾人，有颜锦福带队的一万个敢死队，我们来跟你干。干的结果什么结果啊？被消灭了，亡国了。</p>
 <p>这个故事告诉我们什么？告诉我们，你可以不找死嘛，你可以不亡国嘛，耶律德光也不要打你。耶律德光有个故事很有趣，他过去为什么找石敬瑭这些人统治中国呢？他也来试，胡人试验过，到中国来以后，得到个结论“中国人难治”。注意，那时候中国的标准跟现在定义不一样，就是管中国啊，好难管，这个地区很麻烦，中国人王八蛋很难管。我不要管，我走了，我不要统治你。这也就是我一再说的，中国共产党，你以为它要统治台湾吗？它才不要统治台湾，台湾让它烦死了。它怎么办呢？它要台湾是说，你台湾放弃外交权力，外交归中央，放弃国防，国防归中央。你可以有军队，都可以，可是国防跟外交是属于我们中央政府的，你的国号就是中华人民共和国，甚至大家可以讨价或还价，可以考虑改个名字。国旗嘛，都好谈。只要，都好谈，给你五十年的和平，五十年不改。那五十年以后，谁改呢？还不知道呢。至少我保证你五十年不改。</p>
-<p>共产党为什么这样子啊？以台治台，就是以港治港。为什么董建华统治香港呢？你香港人管香港，台湾人管台湾，老子们才不管你呢，烦死了。可是基本的要求这个，耶律德光也是要求，就是你承认我是皇帝，承认我是你爷爷就好了，其它不谈了。他不肯，有没有错啊？也没有错，因为我争取尊严，台湾人的尊严。尊严半天，完蛋了，亡国了。我觉得今天我们遭遇到这个情况，也许如许世楷所说，我们是在等死。可是等死至少还可以死拖活拖。很多人等死等多久了？宋朝人等死等了三百多年才死掉啊！什么意思？宋朝人就是要等死，等谁死啊？等敌人死。他碰到个敌人，我刚刚讲过就是这个耶律德光以后的辽国。辽国欺负宋朝，宋朝打不过它，作揖，英文讲Sayuncle，叫你叔叔，就是我是你侄子，我怕你，我给你钱，请你不要打我。后来什么结果呢？把辽国给拖死了，敌人死了，他没有死。然后宋朝又来了新的敌人，就金朝，又打不过金朝，像岳飞什么的，吹牛。岳飞打得过金朝吗？搞了半天，打不过。好，然后又Sayuncle，叫叔叔，叫伯伯。我给你钱，给你布，请你不要打我，拖了半天，又把他敌人金朝又拖死了。最后碰到蒙古，第三个敌人出现的时候，宋朝才被灭亡，前后拖了三百多年。</p>
+<p>共产党为什么这样子啊？以台治台，就是以港治港。为什么董建华统治香港呢？你香港人管香港，台湾人管台湾，老子们才不管你呢，烦死了。可是基本的要求这个，耶律德光也是要求，就是你承认我是皇帝，承认我是你爷爷就好了，其它不谈了。他不肯，有没有错啊？也没有错，因为我争取尊严，台湾人的尊严。尊严半天，完蛋了，亡国了。我觉得今天我们遭遇到这个情况，也许如许世楷所说，我们是在等死。可是等死至少还可以死拖活拖。很多人等死等多久了？宋朝人等死等了三百多年才死掉啊！什么意思？宋朝人就是要等死，等谁死啊？等敌人死。他碰到个敌人，我刚刚讲过就是这个耶律德光以后的辽国。辽国欺负宋朝，宋朝打不过它，作揖，英文讲Say uncle，叫你叔叔，就是我是你侄子，我怕你，我给你钱，请你不要打我。后来什么结果呢？把辽国给拖死了，敌人死了，他没有死。然后宋朝又来了新的敌人，就金朝，又打不过金朝，像岳飞什么的，吹牛。岳飞打得过金朝吗？搞了半天，打不过。好，然后又Say uncle，叫叔叔，叫伯伯。我给你钱，给你布，请你不要打我，拖了半天，又把他敌人金朝又拖死了。最后碰到蒙古，第三个敌人出现的时候，宋朝才被灭亡，前后拖了三百多年。</p>
 <p>所以我告诉你，等死不是不可能的事情，可以等到敌人死掉。这个“拖”是很好的一个了不起的技术，可以保持我们的存在。可是打的话，不拖，而是打的话，对不起，他妈的你是找死。找死什么下场？就是石敬瑭的儿子，儿皇帝的儿子，那个孙皇帝的石重贵跟他的那些笨的参谋长景延广他们的下场。这个故事告诉我们什么？告诉我们在台湾的人，包括你和我。我们哪个不爱台湾呢？可是我们不可以，我们愿意与跟我们意见不合的人共处，共同相处，可是我们不愿意与跟这些不同意见的人的那个意见，那个混蛋的看法，相处。我们必须站出来，坐在这里，用我们第一流的头脑，最完整的证据，举出证据来给他们看：告诉他们，不要胡闹，不要轻举妄动，不要以为我们可以跟共产党打一仗，绝对没有我们的好处。不要以为等死是羞耻的，等死不是羞耻，等死可能把敌人等死，而最后占便宜的是我们。真正危险的不是等死而是找死，找死以后就没有希望了。所以古话说“天做孽犹可违，自作孽不可活（不可逭）”。我们千万不要再自作孽，来把我们自己的子孙的前途被我们这一代葬送掉。</p>
 <p>今天，讲到这里。</p>
 <h2 id="关于戴笠与情报局上"><a class="header" href="#关于戴笠与情报局上">关于戴笠与情报局（上）</a></h2>
@@ -2746,7 +2779,7 @@
 <p>我这书里面谈到一个当年联合副刊的一个主编，叫做林海音，请大家看——这是林海音当年的照片，现在八十开外了，最近又给李登辉又赞美她又颁奖，所以更不成样子了。这当年林海音，漂亮的女人，虽然太肥了一点。她办联合副刊的时候，还登过我李敖的文章，有的她也不敢登，大体她还登，她还规规矩矩的，胆子不大，可是绝对没有像瘂弦这批政工人员，这样子蛮干，这样子胡来，这样子有眼不识泰山。可是在林海音离开了以后，最后《联合报》的副刊沦陷到政工系统的人员接收的时候，毁掉了，一直搞到今天。</p>
 <p>政工并不是全都是头脑僵化的，有的人在进步呀，我这个回忆录快意恩仇录里面，有记录到政工的头子，政工干部学校的校长，也做过总政治部主任的许历农将军，许历农上将，许老爹，到我家来看我啊！来几次，来了两次，为什么呢？隐含了一个意思，就是过去我们查禁你李敖的书，过去我们所做的这些事情，有问题，做某种程度的修正。所以这些政工的头子都在改变了，这些政工的这些徒子徒孙瘂弦之流，你们还在搞这个啊，而那个糊里糊涂的王效兰，还被他们这些人控制妳的联合报这个不长进的副刊的部分，太可耻了。所以我觉得王效兰应该头脑清楚一点，知道这一批人是不能用的，应该改弦更张，这样子才代表了《联合报》基本的那种精神。否则的话，你在蔡康永的节目里面讲了半天，你们什么正派办报，正派办报用了这些邪派的人，推广了这些邪派的乌烟瘴气的这些烂的文章，这是正派吗？</p>
 <p>所以我必须讲出来，在我推动快意恩仇录出现的时候，就发现了这里面就有恩仇的成分出现，为什么呢？她居然到今天为止，我还被这些政工人员封锁，当然我要在我的节目里面给他们好看。</p>
-<p>我劝大家到书店里面买一本这个书，好好看一看，看看你的处境就跟李敖的处境同一个处境，而李敖怎么样应付这个处境。这里面的文字部分非常的有趣，有很多很好玩的故事过去没有公布的，我都公布出来。譬如说我跟女人的关系，一般人哪里敢讲，不敢讲的，可是奇怪你李敖跟女人的关系为什么讲这么多？这是世界文学史上面有这样的一种人，他会写到了他的性的关系，我举个例子给大家看。好比说，大家看这本书——《我的生活和爱情》，这个书的作者叫做Harris，赫里斯，就这个人，Harris。他是什么人啊？他是英国人可是入了美国籍的一个人，在美国做了码头工人，做了很多，各行各业的人，生活经验非常丰富。他后来学德文，德文也学得很好，后来发现，糟了，德文的结构跟英文不一样，发现德文学好以后，他的英文写得就不好了，德文会影响他英文的写作的流利。所以他开个玩笑，他说他花了五年的时间去学德文，结果要花十年的时间才把它忘光，为什么呢？他德文影响了他的英文。这个人写的书里面，传记书写得非常优秀的，写王尔德的传、萧伯纳的传，萧伯纳的传他没写完就死掉了，所以后来萧伯纳自己把它续完的。他最有名的一部书就是这个，厚厚的这个书，叫做《我的生活跟爱情》，就是FrankHarris。这是外面所说的西洋金瓶梅，就是这本书，写出来他跟所有女人的这些细节。有人怀疑他吹牛了，为什么呢？怎么可能有这么好的记忆力，或者说你怎么可能有这么多的女人，甚至到了这个程度。可是我们看看有些人，他们坦白的程度也是我们所不能了解的，刚刚我讲这个人就是Harris，中文翻译叫赫里斯。</p>
+<p>我劝大家到书店里面买一本这个书，好好看一看，看看你的处境就跟李敖的处境同一个处境，而李敖怎么样应付这个处境。这里面的文字部分非常的有趣，有很多很好玩的故事过去没有公布的，我都公布出来。譬如说我跟女人的关系，一般人哪里敢讲，不敢讲的，可是奇怪你李敖跟女人的关系为什么讲这么多？这是世界文学史上面有这样的一种人，他会写到了他的性的关系，我举个例子给大家看。好比说，大家看这本书——《我的生活和爱情》，这个书的作者叫做Harris，赫里斯，就这个人，Harris。他是什么人啊？他是英国人可是入了美国籍的一个人，在美国做了码头工人，做了很多，各行各业的人，生活经验非常丰富。他后来学德文，德文也学得很好，后来发现，糟了，德文的结构跟英文不一样，发现德文学好以后，他的英文写得就不好了，德文会影响他英文的写作的流利。所以他开个玩笑，他说他花了五年的时间去学德文，结果要花十年的时间才把它忘光，为什么呢？他德文影响了他的英文。这个人写的书里面，传记书写得非常优秀的，写王尔德的传、萧伯纳的传，萧伯纳的传他没写完就死掉了，所以后来萧伯纳自己把它续完的。他最有名的一部书就是这个，厚厚的这个书，叫做《我的生活跟爱情》，就是Frank Harris。这是外面所说的西洋金瓶梅，就是这本书，写出来他跟所有女人的这些细节。有人怀疑他吹牛了，为什么呢？怎么可能有这么好的记忆力，或者说你怎么可能有这么多的女人，甚至到了这个程度。可是我们看看有些人，他们坦白的程度也是我们所不能了解的，刚刚我讲这个人就是Harris，中文翻译叫赫里斯。</p>
 <p>我再举个例子给大家看，像鲁索，我们翻成卢梭，也叫鲁索。他有名的一部书就是写《卢梭忏悔录》，他也讲到了跟女人的关系，跟男人的关系，为什么男人的精子跑到他身上来，都是写得很清楚。所以卢骚写《忏悔录》以后，他就有一段话是说，他说上帝做最后审判的时候，我这本书拿出来给上帝看，告诉你，你审判我，这就是真的我，我没有隐瞒，我的全部都在这里。所以我们可以看出来，外国人里面的确有一种人，外国的名流里面，他们对他个人的性生活，两性关系，女人的关系，床上的关系，他并不掩饰的，这就是真正做到了，司马光说：“我生平做过的事情，没有不可以跟人说的。”司马光敢写他跟他老婆的事情吗？他不敢写。</p>
 <p>而正好司马光是宋朝人，到了清朝人哪，清朝初年有一个人叫做李恕谷，他倒很了不起，他觉得我们要诚意正心，所以他日记里面有这种话，说：“昨夜与老妻敦伦一次”，昨天晚上我跟我的老婆敦伦一次，就性交一次，敦伦两个字大家注意，就是伦敦两个字反过来，叫敦伦一次。过去闹过这个笑话呀，孙中山不是写过一本书吗？叫做《伦敦蒙难记》，里面很多谎话，结果排版的时候排错了，变成叫做《敦伦蒙难记》，《国文敦伦蒙难记》，结果就被抓起来了，你怎么说国父敦伦蒙难呢？所以李恕谷清朝的这个学者，他写了日记里面有一句话，说“昨夜与老妻敦伦一次”。中国人坦白，到此为止，自传性的坦白，到此为止。</p>
 <p>可是你们看到我的这个《李敖快意恩仇录》里面，为什么你第一次谈到的回忆录里面所说的这些女人的数字，到了快意恩仇录里面还有很多新的人出来呢？这就是我为什么写这本书的原因，因为第一本说得不够，所以大家可以看到我对两性的看法这种开明的程度。好比说第一集，我的回忆录里面，公布了我的裸照，那意思给你们大家看，你们什么他妈的新人类，什么新新人类，胡扯的！你们思想是旧的，我们这个裸照出来以后，前面没有马赛克的，你们敢吗？你们这些新人类敢吗？我们是63岁的老头子，我们思想比你们新多了。</p>
@@ -2837,7 +2870,7 @@
 <p>所以我们再把这个诗的意思重新看一遍。“没有人能自全”，自我完整，自己完整自己，不对的，你跟别人连在一起的。所以“没有人是孤岛”，你不可能是一个单独的岛，为什么呢？“每人都是大陆的一片”，台湾跟大陆也连在一起的，都是大陆的一片。“要为本土应卯”，你为你本土，等于点名一样，你要跟上去，你要追随上去。所以“哪便是一块土地”，一小块土地，“哪便是一方海角”，一个小海角，“哪便是一座庄园”，“不管是你的，还是朋友的”，一旦海水把它们冲走了，冲走了这个土地，冲走了海角，冲走了庄园，“一旦海水冲走了，欧洲就要变小”，为什么呢？土地少了。人呢一样，一堆人里面，别人的死亡跟你有关，“任何人的死亡，都是我的减少，做为人类的一员，我与生灵共老”，别人老，你也老，别人死，你也死。“丧钟在为谁敲，我本茫然不晓，不为幽明永隔，它正为你哀悼”。</p>
 <p>我这个诗，翻译这个诗，在牢里翻译的。当时一个死刑犯，叫做黄中国，这名字很怪，黄颜色的黄，中华民国的中国。他就把这个诗抄了一遍，抄了不久以后，他在念，念了不久以后，他就给抓去枪毙了。</p>
 <p>这个邓约翰是英国有名的一个传教士，他第一次坐牢的时候，是为了勾引一个女孩子，结果被人家告，结果坐牢。他后来做了传教士以后，他有很深沉的、很细腻的对人生的看法。我们看梁实秋先生在英国文学史第一卷里面，有一段谈到了，我把他这个人名字翻成约翰敦，梁先生翻成邓约翰。邓约翰里面他讲了一段话，你看——他说，“沉思第十七篇是很有名的一篇，开头一句，被海明威借用为他的一本小说的书名了”，就是有名的，我们所说《战地钟声》。</p>
-<p>事实上，梁先生这句话写错了，梁先生虽然是英国文学史的专家，在这个地方他闹错了，为什么呢？我们可以看到，在约翰敦，大家看约翰敦这个集子里面，约翰敦的集子里面——约翰敦，我翻成约翰敦，梁先生翻成邓约翰。在沉思的第十七章里面，第一句话里面，梁先生说forwhomthisBelltolls，这句话是被海明威做为一个小说题目了，是错的。为什么呢？海明威做为小说的题目不在第一句话，它不是forwhomthisBelltolls，而是后面这段，大家看到没有？它是“forwhomthe”，t-h-e，t-h-e，“thebelltolls”，这句话。我整个翻译这一段，就是“没有人是孤岛”，就整个翻译这一段。所以梁先生这段是搞错了。</p>
+<p>事实上，梁先生这句话写错了，梁先生虽然是英国文学史的专家，在这个地方他闹错了，为什么呢？我们可以看到，在约翰敦，大家看约翰敦这个集子里面，约翰敦的集子里面——约翰敦，我翻成约翰敦，梁先生翻成邓约翰。在沉思的第十七章里面，第一句话里面，梁先生说for whom this Bell tolls，这句话是被海明威做为一个小说题目了，是错的。为什么呢？海明威做为小说的题目不在第一句话，它不是for whom this Bell tolls，而是后面这段，大家看到没有？它是“for whom the”，t-h-e，t-h-e，“the bell tolls”，这句话。我整个翻译这一段，就是“没有人是孤岛”，就整个翻译这一段。所以梁先生这段是搞错了。</p>
 <p>这个邓约翰使我觉得他，他虽然是一个神职人员，可是他对人生的看法非常的细腻，是我很佩服的。这就是我所说的“细腻人生”，人生要细腻，你不是一条猪，你也不是一只鸭子，你也不是大老粗的霸王，你要对人生的了解，要细腻。</p>
 <p>为什么我今天又来了，向大家第五次推荐《李敖快意恩仇录》呢？为什么呢？就是你在这方面可以看到我对人生细腻的这一面，并且做为一个榜样，做为一个劝告。一个老头子在这里对大家的劝告，就是人生要细腻呀，不细腻没有意思。我们看到这些新人类、新新人类，大家觉得很有个性，在我看起来，你们有个屁个性！张三跟李四没有什么不同，李四跟王五没有什么两样，你们唱一样的歌，看一样的电影，过一样的生活，穿一样的衣服，你们完全跟着别人走的，没有你们自己。所以活在台湾做你自己，这种人呢，你们做不到，什么人做得到？李敖做得到。所以我劝大家看看这个书，怎么样过细腻的生活。</p>
 <p>我们说人，人类要会写东西，这也是细腻的一种。我不会写文章，我也可以活，不错，你是可以活，你不会写，不识字，你也可以活，猫狗都可以活，对不对？可是要过细腻的人生，就不一样了。所以唐朝的杜甫写过两句诗，叫做“为人性僻耽佳句，语不惊人死不休”。我这个做人有个怪毛病，什么怪毛病呢？就喜欢好的句子，所以我写诗的时候，“语不惊人”，句字写出来不吓人，不惊人的时候，我死也不甘心。换句话说，杜甫的诗为什么写得好呢？他把每一个诗经过修辞，修得非常的细腻。你们看看这个书的中文（李敖快意恩仇录），你们才知道中国人写白话文可以写到这么好的文字，这就是“语不惊人死不休”，这就是一个训练。为什么现在大家中文写那么烂呢？写那么菜呢？包括这些学者们，为什么呢？没有好好的做一个“语不惊人死不休”的细腻的功夫，不够细腻，所以才写不好。</p>
@@ -2860,10 +2893,10 @@
 <p>这里面有很多我的观念，很奇怪的观念，我举一个例子，譬如说，我觉得我不喜欢旅行，我也反对旅行，所以我常常笑这些人，整天跑来跑去，去旅行看山水的人，我认为是个坏习惯。有的人特别喜欢看青山绿水，青山绿水呀，到处都是青山绿水，不需要那么样子折腾。可是喜欢看青山绿水的人有毛病，我举个古人的例子给大家看，南北朝时候有所谓宋齐梁陈，宋，当时的宋朝有一部书，二十四史里面，二十五史里面，叫宋书，有一个叫宗炳传，也就是宗少文传。</p>
 <p>宗炳这个人“每游山水”，注意，古人是用这三点水的游字，没有错。游山水的时候，“往辄忘归”，一去了以后，常常就忘了回来了，太喜欢山水了，喜欢名山胜景。可是他老了，生病了，怎么办呢？“老疾俱至”，老了，也生病了，都到了，都来了以后，“名山恐难遍覩”，所有的山水恐怕没办法一个一个都去看过了，“唯当澄怀观道”，把自己心静下来，来看人生，然后“卧以游之”，我躺在那里来游山玩水。我们叫做“卧游”，什么叫“卧游”呀？我们对山水卧游，神游，为什么要卧游？为什么要神游？什么原因呢？就是天下的大山大水，名山胜水，或者残山剩水，没有一样你能够全部玩过的。总有一天你老了、你病了，你去不了，看不到，怎么办呢？那不是遗憾吗？累死你，你也玩不了这么多山，玩不了这么多的水。</p>
 <p>我想到英国一个有名的人，大家注意，上次我不是在我的节目里面谈到了一首诗，英国诗人约翰敦的诗，在约翰敦的诗里面，我特别谈到了他的英文，这个英文怪怪的，为什么怪怪的呢？因为当时英文并不统一，你写你的，我写我的，各有各的写法，并不统一。可是到了英国的一个有名的文豪出现，他的名字叫做约翰生。到了约翰生出现以后，英文才开始统一。约翰生他有一个有名的学生，叫包斯威尔，包斯威尔就在约翰生的身边做徒弟，记录他老师的话。我们现在看孔子的《论语》，四书里面的《论语》，《论语》不是孔子写的，是他的学生记载他的话。同样的，这个约翰生讲话妙语如珠，旁边他的学生就记录它，有的时候他不喜欢他的学生记录，不许他学生记录，学生怎么办呢？包斯威尔藏在沙发后面，藏在书桌后面，偷着记录他的东西。所以这包斯威尔从此就写了一部有名的书，叫做《约翰生传》，就这本书。好厚的一本书，《约翰生传》，就写了这部书，所以包斯威尔写了这一部《约翰生传》。</p>
-<p>这里面搜罗很多约翰生有名的有趣的这些智慧的言语，我们随便看一段，大家看这一段，看这什么东西呢？这包斯威尔就问他，说：“老师，你住在英国，要不要到爱尔兰去玩一玩？”他说他不喜欢爱尔兰，老师说不去爱尔兰。约翰生拒绝了以后，包斯威尔就问他，说：“要不要到都柏林去玩一玩？”你看到没有。他说：“你要不要到都柏林去玩一玩？”可是约翰生说：“都柏林是个菜城，烂的城，我不去。”然后包斯威尔又问他，说：“难道这个Giant's-Causeway”，大家注意这个字，Giant's-causeway，“Giant's-causeway也不值得去看吗？”这个地方不值得去看吗？</p>
-<p>Giant'sCauseway什么地方呢？大家看看我李敖，我李敖没有去过爱尔兰，请大家看看我的卧游方法，给大家看，Giant'sCauseway。这是爱尔兰的一本，最新的，帮助你到爱尔兰去玩的时候的这个书。我呀从来不去爱尔兰，哪里都不去，可是我对这种书熟得很。我们看爱尔兰，它讲到Giant'sCauseway，大家看——这就是Giant'sCauseway，大家看，什么东西呢？这什么东西呀？就是在海岸长出来很多石头，这个石头是当时地壳形成的时候，突然冒出来岩浆，等于地底下岩浆，跟冷的水碰到以后，它突然变成石头。大部份石头呀，每块石头跟一个柱子一样，一个一个柱子，像笋一样长出来，上面有六个角，像雪花一样六个角，雪花都有角嘛，它也有角，石头有角。</p>
-<p>所以我们可以看到，这里面它讲，觉得爱尔兰的，你看这Giant'sCauseway——在这个地方一大片，都是这个东西。我们再看其它图片，给大家看看这个Causeway。你看看都是，像楼房一样，一个一个都六个角的石头长出来，然后人在上面玩，所以这种叫Giant'sCauseway。</p>
-<p>然后包斯威尔就问约翰生，就说这个Giant's-causeway这个地方，难道不值得看一看吗？这约翰生答复说：“值不值得看？嗳！值得看，但是不值得goingtosee”，不值得跑去看。值不值得看？值得看，那个是个宇宙的自然奇景，可是不值得跑去看，为什么？跑去要花我多少时间呀，那么多时间我可以做好多事情。</p>
+<p>这里面搜罗很多约翰生有名的有趣的这些智慧的言语，我们随便看一段，大家看这一段，看这什么东西呢？这包斯威尔就问他，说：“老师，你住在英国，要不要到爱尔兰去玩一玩？”他说他不喜欢爱尔兰，老师说不去爱尔兰。约翰生拒绝了以后，包斯威尔就问他，说：“要不要到都柏林去玩一玩？”你看到没有。他说：“你要不要到都柏林去玩一玩？”可是约翰生说：“都柏林是个菜城，烂的城，我不去。”然后包斯威尔又问他，说：“难道这个Giant’s-Causeway”，大家注意这个字，Giant’s-causeway，“Giant’s-causeway也不值得去看吗？”这个地方不值得去看吗？</p>
+<p>Giant’sCauseway什么地方呢？大家看看我李敖，我李敖没有去过爱尔兰，请大家看看我的卧游方法，给大家看，Giant’sCauseway。这是爱尔兰的一本，最新的，帮助你到爱尔兰去玩的时候的这个书。我呀从来不去爱尔兰，哪里都不去，可是我对这种书熟得很。我们看爱尔兰，它讲到Giant’sCauseway，大家看——这就是Giant’sCauseway，大家看，什么东西呢？这什么东西呀？就是在海岸长出来很多石头，这个石头是当时地壳形成的时候，突然冒出来岩浆，等于地底下岩浆，跟冷的水碰到以后，它突然变成石头。大部份石头呀，每块石头跟一个柱子一样，一个一个柱子，像笋一样长出来，上面有六个角，像雪花一样六个角，雪花都有角嘛，它也有角，石头有角。</p>
+<p>所以我们可以看到，这里面它讲，觉得爱尔兰的，你看这Giant’s Causeway——在这个地方一大片，都是这个东西。我们再看其它图片，给大家看看这个Causeway。你看看都是，像楼房一样，一个一个都六个角的石头长出来，然后人在上面玩，所以这种叫Giant’s Causeway。</p>
+<p>然后包斯威尔就问约翰生，就说这个Giant’s-causeway这个地方，难道不值得看一看吗？这约翰生答复说：“值不值得看？嗳！值得看，但是不值得goingtosee”，不值得跑去看。值不值得看？值得看，那个是个宇宙的自然奇景，可是不值得跑去看，为什么？跑去要花我多少时间呀，那么多时间我可以做好多事情。</p>
 <p>注意到没有，这就是我李敖的理论，就是很多风景、名山胜景我不去看，为什么不去看？不是它不值得看，而是不值得跑去看，不值得坐飞机去看，都不值得。所以我们可以知道那句古话，明朝有名的艺术家叫董其昌讲的话，叫做“行万里路，读万卷书”。这句话错了，我李敖的说法是说“行零里路，读两万卷书”，为什么呢？这样才有效果。</p>
 <p>为什么你李敖这么说，那你没有身临其境，英文讲说inperson，你没有身临其境，你的感觉不对呀？不见得。我的好朋友高信疆，我所佩服的高信疆，他到了陕西，到了秦始皇的坟，看到兵马俑以后，他说到现场去看还不如在书里看更来得爽。换句话说，并不是说inperson，身临其境以后，才是一个好的观察的经验，不一定，有的时候看书、看图片也是非常好的，至少也别有那种看书和看图片的乐趣。</p>
 <p>我举个例子，德国的大哲学家康德，他一辈子没有离开家乡，叫哥尼斯堡。50哩以外的地方，没有离开过，一辈子没有离开过哥尼斯堡50哩以外的地方，一辈子没有离开他家乡50英哩以外的地方。他在大学教什么？他教地理，就教自然地理。那这个人是不是神经吗？就是神经，就他的知识面非常广，就讲到中国老子所说的，“不出户，知天下”，我不离开我的家门，不离开我的大门，我了解世界。我李敖是用这种方法来面对自然的，我绝不是到了放假的时候，大家看到，拼命郊游，坐飞机的坐飞机，跑高速公路的跑高速公路。结果我们去渡假，回来怎么样？回来累得跟孙子一样，累得要死，干什么呢？那不是享受呀，那是受罪。那个汽车在高速公路上，那样挤着过去，那是受罪，为什么这样受罪呢？因为你观念不清楚，以为一定要身临其境，我亲自到了日月潭，我才了解日月潭，我亲自到了什么地方，才了解什么地方，错的。所以我认为我这个荒谬的，你们看起来、听起来很荒谬的说法，绝对可以使旅行业休业、歇业，也可以使什么航空公司赚不到我钱，什么原因呢？就是我相信我们知识的取得，不要这么笨，那种方法太笨了，就是一定要身临其境的方法是太笨了。</p>
@@ -3026,17 +3059,17 @@
 <p>关着门做皇帝这种观念是蒋介石，这种习惯是蒋介石带到台湾来的，这种观念在蒋介石虽然走了，蒋经国也走了，可是他们精挑细选选出来的接班人，还是这样子的啊，关着门做皇帝的啊。看到没有，现在就发生了，李登辉跑到中央研究院，说：“我们今年我们的院士要本土化”，什么叫做本土化？学术有本土化吗？什么叫学术本土化啊？台湾的物理学，台湾的化学，或者杨国枢中央研究院副院长这种提出来什么可耻的，什么台湾的心理学，本土的心理学，有这种东西吗！没有这种东西！为什么这样做呢？正好是前中央研究院院长吴大猷所说的，“关着门做皇帝”！这种“关着门做皇帝”的现象，不单是蒋介石有，或者蒋介石这些手下有，一直流传到今天，交给了李登辉。</p>
 <p>所以我们要厘清这些观念，必须要看厘清观念的好书，它就是《李敖快意恩仇录》。</p>
 <p>今天，讲到这里。</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/10.李敖节目演讲合集/李敖笑傲江湖.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/10.李敖节目演讲合集/李敖笑傲江湖.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../10.李敖节目演讲合集/李敖秘密书房.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../11.李敖电子报合集/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -3046,16 +3079,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../10.李敖节目演讲合集/李敖秘密书房.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../11.李敖电子报合集/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -3064,12 +3102,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

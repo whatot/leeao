@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,77 +81,98 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <p>#《李敖通电集》目录</p>
 <ul>
@@ -412,14 +445,20 @@
 <p>2000年7月12日</p>
 <p>李远哲与司机命案（一续）</p>
 <p>三、这件不幸事件，是否有行政疏失？有无行政责任问题？谁该负行政责任？为什么中央研究院从头到尾只字未提？既然有这么多疑点，你就不能不看我李敖公布的真相：</p>
-<p>1.1997年9月5日上午9时10分，总务组司机卢丁财手持农药，进入总务组影印室，当面要求总务主任杨重信交还他的辞呈。由于杨重信表示辞呈不在手边，不能立刻给他，卢丁财以为杨重信敷衍他，于是举起椅子作势要掷向杨主任（后来是掷向另一角落），并大声威吓要杨重信和他一起喝农药同归于尽。</p>
+<ol>
+<li>1997年9月5日上午9时10分，总务组司机卢丁财手持农药，进入总务组影印室，当面要求总务主任杨重信交还他的辞呈。由于杨重信表示辞呈不在手边，不能立刻给他，卢丁财以为杨重信敷衍他，于是举起椅子作势要掷向杨主任（后来是掷向另一角落），并大声威吓要杨重信和他一起喝农药同归于尽。</li>
+</ol>
 <p>2.总务组管理司机的承办人及科长、政风室主任阎琴南先后“闻声”赶来，大家都劝卢丁财冷静。这时总办事处处长刘锡江也来了，几经劝说，“晓以大义”，卢丁财的态度才告软化。</p>
 <p>3.和历次情形一样，卢丁财开始倾诉委屈，其间两度下跪，泪流满面的请求长官原谅，并写下切结书保证绝不再犯，遂获刘锡江处长当场允诺不予追究，并说了些安慰及勉励的话。</p>
 <p>4.此事本应告一段落，卢丁财按照往例，会安静一段时间，要杀人也不会那么快。9月5日是星期五，当时尚无周休二日，9月6日星期六照常上班半天，头一天的事除了同仁间的传述及讨论之外，大致没有什么新的发展。</p>
-<p>5.6日下午，李远哲的座车奔驰于北二高往中正机场的路上，坐在后座的李远哲行动电话响了，那头传来了夫人吴锦丽的询问：“你知道院里发生了大事吗？”“发生了这么大的事为什么没人向你报告？”李远哲挂了太太的电话，随即拨给刘锡江处长，带着责备的语气问刘锡江处理事情的经过，并强调：“我全力支持你严办。”显然，刘锡江并未告诉李远哲，他已经答应卢丁财不予追究。</p>
+<ol start="5">
+<li>6日下午，李远哲的座车奔驰于北二高往中正机场的路上，坐在后座的李远哲行动电话响了，那头传来了夫人吴锦丽的询问：“你知道院里发生了大事吗？”“发生了这么大的事为什么没人向你报告？”李远哲挂了太太的电话，随即拨给刘锡江处长，带着责备的语气问刘锡江处理事情的经过，并强调：“我全力支持你严办。”显然，刘锡江并未告诉李远哲，他已经答应卢丁财不予追究。</li>
+</ol>
 <p>6.吴锦丽怎么知道这件事的？谁是院长夫人的“细胞”？岂不可怪？先看事情接下来的发展。9月7日星期天晚上，卢丁财带着太太参加一位同事婚礼，前半场心情开朗、谈笑自若，到处敬酒，显然已把星期五的事拋在脑后了。不料席间却得知院长交代“严办”的讯息，有人告诉他所谓的严办就是开除，而且还具体的说明天星期一就会有动作。</p>
 <p>7.卢丁财心绪大乱，不解刘锡江处长为何说一套作一套、不解院长为何随便听信小人谗言，迫害他这个不幸的人。一方面向当初也参与“劝架”的政风室主任及总务组的秘书、科长打听消息；一方面扬言如果他被迫害，一定“大家一起死”。</p>
-<p>8.9月8日星期一，卢丁财对于院方将如何处置他十分焦虑，上班后就一直在行政大楼走动、探听。9时许，果真眼见刘锡江处长、杨重信主任及总务组管理司机的人聚在一起开会，证实传言不虚。</p>
+<ol start="8">
+<li>9月8日星期一，卢丁财对于院方将如何处置他十分焦虑，上班后就一直在行政大楼走动、探听。9时许，果真眼见刘锡江处长、杨重信主任及总务组管理司机的人聚在一起开会，证实传言不虚。</li>
+</ol>
 <p>9.接近中午时分，卢丁财四下找杨重信主任未果，不久就发生了命案。当时总务主任和政风室主任外出吃饭，可能因此逃过一劫。</p>
 <p>上面就是我调查出来的事实真相，比七人小组调查委员会的逼真多了。我还要替两造家属问李远哲无能领导下的中央研究院几个问题：</p>
 <p>一、根据资料显示，中央研究院的总办事处处长刘锡江、总务主任杨重信，都是大黑官，这次事件，如果是专业行政人员处理，结局会不会不同？</p>
@@ -477,7 +516,7 @@
 <p>李远哲与司机命案（续完）</p>
 <p>【附录】司机命案调查委员会报告摘要（完整刊出）</p>
 <p>根据以上的基本发现，以下之分析系对卢先生心理及事件史之剖析与描述，由委员会成员中具有临床精神医学专业背景的郑研究员主稿：</p>
-<p>本部分系采用心里解剖法（psychologicalautopsy，也称做biographicalreconstruction），依据当事人生前长期相处的亲友及同事之陈述、当事人死前不久的谈话录音以及医疗记录，以临床精神医学之专业知识与经验加以分析。由于本案涉及当事人之杀人行为与同事间的诸多纷争，资料提供者之立场是否能够保持客观中立仍须存疑，本部分乃采用多数立场不同者皆一致陈述的内容作为比较可信之左证，作成以下之分析。</p>
+<p>本部分系采用心里解剖法（psychological autopsy，也称做biographical reconstruction），依据当事人生前长期相处的亲友及同事之陈述、当事人死前不久的谈话录音以及医疗记录，以临床精神医学之专业知识与经验加以分析。由于本案涉及当事人之杀人行为与同事间的诸多纷争，资料提供者之立场是否能够保持客观中立仍须存疑，本部分乃采用多数立场不同者皆一致陈述的内容作为比较可信之左证，作成以下之分析。</p>
 <p>剖析之内容如下：</p>
 <p>一、卢先生自幼父母双亡，其教育程度为国小，顺利服完兵役。青少年时期未有偏差行为之报告，二十七岁结婚，育有一子，此子后因病而于七十四年十七岁时过世。卢先生大半生以驾驶为业，民国六十七年六月之后即一直在本院任职工友（司机）。</p>
 <p>二、依据所有资料提供者之描述，卢先生之个性较冲动而容易生气，往往在遇到他认为不公平不合理的事情时立刻出现强烈的情绪反应。行事有时出人意料之外，且对后果欠缺考虑，事后又后悔。其个性亦较敏感而好面子，自尊心甚强，遂造成他容易与人起冲突而爆发脾气与攻击言行，尤其在遭受批评时更甚，其情绪起伏很大。这些特质在其丧子之后有增强的倾向，逐渐形成人际关系方面的严重障碍。卢先生了解自己的这些个性问题并深受其苦，亦努力想改进但效果不彰。依据相关文献之定义①，此种情形应属于情绪不稳型（冲动性）人格异常。</p>
@@ -487,7 +526,7 @@
 <p>六、由于卢先生与同事、主管之冲突愈加恶化，八十五年底之后院方即开始积极劝其提早退休或调职，卢先生前后至少两次正式提出辞呈，皆因院方同意之退休条件未能符合其要求而撤回，在交涉过程中亦与主管发生争吵。八十六年七月卢先生因罹患前列腺肥厚症接受手术治疗，其间其又对于其家人是否也受其牵连而遇事不顺产生怀疑，而增加他妄想与沮丧之程度，其抑郁的情绪自此加重直到事故发生。</p>
 <p>七、八十六年9月5日卢先生因要求主管退回其8月所提之辞呈正本未果，而有冲动地携带农药威胁主管要自杀之举，之后的几天内他根据观察到的院方相关主管之举动及接获之信息，可能认定院方已决定制裁他，遂决定与他认为长期在迫害他的人同归于尽。而此即疑为最后不幸事故发生之导因。</p>
 <p>八、卢先生遗留下来的文字亦显示其有被迫害的妄想。如前所述，卢先生之妄想最早很可能出现于八十五年8月副院长座车司机事件之后；资料未显示他在八十五年8月之前有呈现妄想之确切证据。虽然卢先生可能同时有抑郁与妄想二者之特征，如果在他先有抑郁状态存在之后才出现妄想状态，且在抑郁状态消失时妄想状态也同时消失，则应考虑后者为抑郁之一部分。</p>
-<p>九、综上所述，卢先生的心理及精神状态就现有资料所能推论的，在四十六岁时有一抑郁的适应障碍，其后十年当中能也有过几次抑郁的发作但资料不足。五十七岁至去世的一年左右疑系处于抑郁状态（其严重程度无法评估，但有可能至少在最后一个月达重郁程度）以及妄想状态。至于两者之间的先后关系、以及其确切状况为何、究竟为一种或两种现象共存则因资料不足而难以判断。此外，当事人亦疑有冲动性人格异常之情形。以上各种因素交互作用，再加上一连串重大的失落性生活事件（lossevents）之影响，疑为导致其最后采取杀人与自杀行为，而造成不幸惨剧之主要原因。当事人平时应无酗酒或药瘾之问题，行凶时之意识状态应为清醒，但疑系处于严重抑郁（绝望）与妄想状态。证据显示卢先生所认定的迫害者不只一人，但不知何故周先生不幸且无辜地成为其杀害之对象。</p>
+<p>九、综上所述，卢先生的心理及精神状态就现有资料所能推论的，在四十六岁时有一抑郁的适应障碍，其后十年当中能也有过几次抑郁的发作但资料不足。五十七岁至去世的一年左右疑系处于抑郁状态（其严重程度无法评估，但有可能至少在最后一个月达重郁程度）以及妄想状态。至于两者之间的先后关系、以及其确切状况为何、究竟为一种或两种现象共存则因资料不足而难以判断。此外，当事人亦疑有冲动性人格异常之情形。以上各种因素交互作用，再加上一连串重大的失落性生活事件（loss events）之影响，疑为导致其最后采取杀人与自杀行为，而造成不幸惨剧之主要原因。当事人平时应无酗酒或药瘾之问题，行凶时之意识状态应为清醒，但疑系处于严重抑郁（绝望）与妄想状态。证据显示卢先生所认定的迫害者不只一人，但不知何故周先生不幸且无辜地成为其杀害之对象。</p>
 <p>综合以上之发现与观察，委员会对本案作综合性的评析与建议如下：</p>
 <p>根据本调查委员会独立且详细之调查，发现卢丁财之冲动性人格异常造成他在人际关系上的困难，后者又导致其产生抑郁与妄想之现象，疑为造成9月8日不幸事件之主要因素；此案之情况与当前世界各地（包括台湾）的自杀研究之结果一致②。如果在此案发生前能让卢先生及早接受辅导，使其心理障碍能获得缓解，或可避免惨剧的发生。</p>
 <p>纵观卢丁财所牵涉事件之历史以及全案的来龙去脉，谨在此作以下两点建议：</p>
@@ -499,9 +538,9 @@
 <p>此外，本院作为学术研究机构，亦可加强精神医学及行为科学之研究，期望以此对于精神疾病成因之了解及其预防与控制有所贡献。</p>
 <p>二、有攻击性倾向的个案一旦发生，尤其是一而再、再而三地发生，应实时予以处理。正常的赏罚管道如考绩及奖惩均可动用，以树立良好的规范及诱导机制。在此之外，如怀疑当事人有精神或心理方面的问题，可循前第一点所述之体系处理。</p>
 <p>惨案之发生，涉及二位同仁之性命，实为重大之不幸。如果能从此案之发生获得教训，进以有效建立适当之预防及处理体系，并强化处置人事纠纷及冲突事件之效能，当可避免日后类似不幸案件之发生，或许是化遗憾为力量的最好途径。</p>
-<p>①：参见WorldHealthOrganization(1993),TheICD-10ClassificationofMentalandBehavioralDisorders:DiagnosticCriteriaforResearch.Geneva:WorldHealthOrganization.</p>
-<p>②：参见AndrewT.A.Cheng(1995),"MentalIllnessandSuicide:ACase-ControlStudyinEastTaiwan,"ArchivesofGeneralPsychiatry,vol.52,pp.594-603;与AndrewT.A.Cheng,A.H.MannandK.A.Chan(1997),"PersonalityDisorderandSuicide:ACase-ControlStudy,"BritishJournalofPsychiatry,vol.170,pp.441-46.</p>
-<p>③：参见WorldHealthOrganization(1995),PreventionofMental,NeurologicalandPsychosocialDisorders.Copenhagen,Denmark:WorldHealthOrganization.</p>
+<p>①：参见World Health Organization (1993), The ICD-10 Classification of Mental and Behavioral Disorders: Diagnostic Criteria for Research. Geneva: World Health Organization.</p>
+<p>②：参见Andrew T. A. Cheng (1995), “Mental Illness and Suicide: A Case-Control Study in East Taiwan,” Archives of General Psychiatry, vol. 52, pp.594-603;与Andrew T. A. Cheng, A. H. Mann and K. A. Chan(1997), “Personality Disorder and Suicide: A Case-Control Study,” British Journal of Psychiatry, vol. 170, pp.441-46.</p>
+<p>③：参见World Health Organization (1995), Prevention of Mental, Neurological and Psychosocial Disorders. Copenhagen, Denmark: World Health Organization.</p>
 <p>司机命案调查委员会</p>
 <p>委员（依姓氏笔划序）：朱云鹏（兼召集人）、邵广昭、叶义雄、郑泰安、刘丰哲、戴琏璋、瞿海源</p>
 <p>附记：原报告已于八十六年12月17日陈交院方：本文为原报告之摘要，于八十七年元月5日陈交院方。</p>
@@ -817,7 +856,7 @@
 <p>依据第三项任务，中央研究院负责协调、奖励及整合学术研究，这些工作，和教育部、国科会究竟有无冲突、重叠？据我所知，指导、联络及奖励一直都是中央研究院的法定职掌，但多少年来，中央研究院不但无指导、联络、奖励之实，中央研究院的研究人员，还年年接受国科会的学术研究奖励费。现在中央研究院将指导、联络及奖励改为协调、奖励及整合，会不会还是打高空，说了爽，根本无法落实的“空话”？</p>
 <p>中央研究院组织法第三条“中央研究院置院长一人，特任；副院长二至三人，特任或聘任。院长综理院务，由评议会就院士中选举候选人三人，呈请总统遴选并任命之。院长任期五年，经评议会遴选，呈请总统遴定后，得连任一次。副院长，襄助院长处理院务，院长提名，报请总统任命之。”请问李远哲，将来中央研究院院长五年任满后，会不会为了连任花招百出？请客、送礼、甚至贿选、成党结派、向当权派靠拢？会不会有院士为了当院长，对评议员请客、送礼，对总统拍马、逢迎，将来中央研究院院长如何维系超然、独立的知识分子风骨，抵不抵得过权势的诱惑？中央研究院选院士都有人请客送礼，谁敢说选院长不会搞得更夸张！至于副院长，过去中央研究院如果院长专长于数理，两位副院长一定是一位专长于生物、一位专长于人文，相辅相成，院务运作得相当顺畅，新的组织法要打破这样的均势，好吗？或谓，中央研究院设置第三位副院长，为的是主管行政事务，那就更说不通了，因为，中央研究院新的组织法中，设置了正、副秘书长各一名，这么高层级的幕僚长难道竟然不是为了负责行政事务？</p>
 <p>中央研究院新组织法中最引人注目且争议最大的，莫过于设“国际研究生学院”一事。中央研究院为什么要设“国际研究生学院”？李远哲于八十八年4月23日解释如下：“关于本院是否设立‘国际研究生院’一事，赞成与反对的声浪都有。目前国内各大学，每年约可培养一千名博士，但国内的研究机构及企业界却多半未善加运用与吸收这些人才，许多人认为中研院及国家型研究机构应该吸纳这些人才来进行博士后研究。过去本院的组织法中缺乏培养年轻人才的法源依据，新修订的组织法中，则增列了‘培养高级学术研究人才’的任务，因而培养博士后人才将于法有据。此外，由于本院组织位阶上隶属于总统府，经费与编制较一般学术机构占优势，如果招收研究生将面临两个问题，一是各大学唯恐本院与他们抢学生，而可能形成强力反弹；二是本院将因而受到教育部之管辖，组织定位将连降两级，不再是全国最高学术研究机构。目前在本院进行博士后研究的人员已有三百多位，我们希望能继续扩充。至于考虑设立‘国际研究生院’的计划，则是希望能和一般大学有所区隔，进行各大学较难以达成的相关目标与计划，有关未来的‘国际研究生院’之初步构想，可经由特定学科的挑选，采用英语授课，并延聘各大学杰出的教授担任教职，透过完善的制度与不同的特质，吸引杰出的人才来院研究生并带动研究人员之间更深入之合作，营造本院自己的特色。至于‘国际研究生院’计划，该涵盖哪些领域？往哪个方向走？则须详细规划，才能成功。我一直希望本院能开风气之先，做一些前瞻性的工作，以本院办理的年轻学者研究著作奖而言，向来广受学界瞩目，今年我们扩大甄选的范围并开放各大学参加甄选；有鉴于此，国科会有意接办，我们也乐观其成。”</p>
-<p>李远哲所言似乎有些道理，不过据报载，中央研究院招收研究生，立法委员、七成的大学教授、八成的大学校长都持反对意见，甚至教育部长曾志朗公开表示不惜辞官反对。据我获得的资料显示，中央研究院于八十七年呈报总统府的组织法条文修正版本中并未出现国际研究生学院，总统府将修法案退回中央研究院后，中央研究院于八十九年再次提出新版本时，才出现设国际研究生学院的文字。中央研究院的修法小组，个个在大学兼任，难道不知大学同事的普遍想法？事前连起码的沟通、协调工作都未做，这样的中央研究院，将来如何协调、整合学术研究，令人好奇。尤其，曾志朗是中央研究院聘任评议员，不知曾志朗在评议会讨论此案时，有没有表示过意见，或许曾志朗当时是支持的，如今身份不同，自然立场不同了，与陈水扁任立法委员时批评自制的IDF战机是IDON'TFLY，担任总统时马上改口IDOFLY事件，颇有异曲同工之妙。中央研究院到底适不适合设国际研究生学院固见仁见智，有讨论空间，不过中央研究院一堆书呆子闭门造车修出来的杰作，确实令人不敢恭维。我建议立法委员，将中央研究院设国际研究生学院的条文加上“国际研究生学院组织条例，另以法律定之”，给中央研究院一个机会，证明一下自己能不能执行组织法第二条所称“协调、整合”的任务。中央研究院如能整合、协调成功，通过国际研究生学院组织条例，则证明台湾设国际研究生学院一事已水到渠成，否则没有法源，中央研究院设不成国际研究生学院，就只好找大学合作，借牌运作了。</p>
+<p>李远哲所言似乎有些道理，不过据报载，中央研究院招收研究生，立法委员、七成的大学教授、八成的大学校长都持反对意见，甚至教育部长曾志朗公开表示不惜辞官反对。据我获得的资料显示，中央研究院于八十七年呈报总统府的组织法条文修正版本中并未出现国际研究生学院，总统府将修法案退回中央研究院后，中央研究院于八十九年再次提出新版本时，才出现设国际研究生学院的文字。中央研究院的修法小组，个个在大学兼任，难道不知大学同事的普遍想法？事前连起码的沟通、协调工作都未做，这样的中央研究院，将来如何协调、整合学术研究，令人好奇。尤其，曾志朗是中央研究院聘任评议员，不知曾志朗在评议会讨论此案时，有没有表示过意见，或许曾志朗当时是支持的，如今身份不同，自然立场不同了，与陈水扁任立法委员时批评自制的IDF战机是I DON’T FLY，担任总统时马上改口I DO FLY事件，颇有异曲同工之妙。中央研究院到底适不适合设国际研究生学院固见仁见智，有讨论空间，不过中央研究院一堆书呆子闭门造车修出来的杰作，确实令人不敢恭维。我建议立法委员，将中央研究院设国际研究生学院的条文加上“国际研究生学院组织条例，另以法律定之”，给中央研究院一个机会，证明一下自己能不能执行组织法第二条所称“协调、整合”的任务。中央研究院如能整合、协调成功，通过国际研究生学院组织条例，则证明台湾设国际研究生学院一事已水到渠成，否则没有法源，中央研究院设不成国际研究生学院，就只好找大学合作，借牌运作了。</p>
 <p>再转回谈一谈中央研究院的行政组织。依据中央研究院组织法第十七条：“本院置秘书长一人，职务列简任第十三职等至第十四职等，副秘书长一人，职务列简任第十二职等至第十三职等，承院长、副院长之命处理院务”，“秘书长、副秘书长得由研究员或相当职等人员兼任”。的规定，我认为李远哲的中央研究院在破坏国家体制，而在整个修法审核过程中，总统府、行政院及主管国家官制、官规的考试院，竟都未置一辞，都是怠忽职守。</p>
 <p>机关幕僚长，在总统府及行政、立法、司法、考试、监察五院称为“秘书长”，在其它机关称“主任秘书”。我在《揭穿白道李远哲的一些黑底》一文中提到，李远哲领的是部长级薪水再加上中央研究院特聘研究员与部长薪水的差额，已说明中央研究院是“部、会”层级，如今中央研究院增置秘书长，意图向上提升，主管机关是默许同意，或是根本没发现？其次，秘书长既然是简任十三至十四职等、副秘书长是简任十二至十三职等，依据公务人员任用法的规定，这种定有官等、职等、职称的公务员，应由具任用资格者担任，何以中央研究院可以任意规定“由研究人员兼任”？我在《李远哲与司机命案》一文中，详尽的揭露了中央研究院黑官乱搞的事实，中央研究院不但不加以反省，反而想利用修组织法的时机暗渡陈仓。中央研究院破坏体制设秘书长，又违反法律让研究员兼任，考试院为什么不敢管？考试院既然不敢管，我李敖可是管定了，我要呼吁立法委员严格把关，万万不可让李远哲得逞。</p>
 <p>同样的，依据《中央研究院组织法修正条文》第29条第2项“前项所列处长、学术执行秘书、馆长及主任，除人事室主任、会计室主任及政风室主任外，得由研究员或相当职等人员兼任”之规定，违法任用的规模更大，根据我的计算，中央研究院有超过七十个的行政主管职位，可由研究人员兼任，这种普遍性的违法，竟然只有我李敖发现并揭发，岂不怪哉！（2000/8/14）</p>
@@ -898,7 +937,7 @@
 <p>要想忘记浦大邦先生是很难的，即使时间相隔已超过十年以上。有种人的感染力之强，在你经历长远的时空阻隔后，仍能察觉到他在自己身上留下的影响。浦先生就是这种人。他灿烂的笑容、厚实的手掌，如在面前，如在握中，纵然他在去年12月已离开尘世满十年了。</p>
 <p>他在美国社会中，曾任高阶科学行政主管，调和折衷，对科学工作者臂助良多，为众所称道和感谢。他时时回到台湾，对主政者提出各种科技政策建言，并广邀世界级大师及华裔学者，或做讲学，或返乡从事长期研究。其中，多少人是受到他的无私热情所感染，从而将对研究学术的热情同样地贯注到自己的国家社会去。</p>
 <p>其中一个较不为人知，却可深刻见出他影响力的例子，是他与一位国际级学者间的故事。浦先生因常在课余返台策进科学合作、科学生根活动，在机场几次碰到这位却是每次必去中国大陆的学者。这位学者不禁好奇，问道：“我自己是本省人，都不回台湾了，你是外省人，怎么反倒老跑回去？台湾那么小，那么落后，有什么好发展的？”浦先生笑道：“那是我们生长的地方啊！而且台湾进步了不少，也需要我们的帮助，你不妨也回去看看吧！”后来果然由于浦先生多次的引导，使得这位学者回到自己的家乡服务了。这件事反映了几个层面：一是浦先生没有当时海外知识分子常有的左倾盲动和不实幻想；二是浦先生一贯“为所当为”、“虽千万人吾往矣”的精神便由此展露；三是他无时不在为国延揽良才；四是由于他的带头示范，引致了人才的回流。</p>
-<p>与浦先生接触过的人，除了深感他的为人正直，热情毅力与言词风趣外，恐怕最要佩服的就是他的行政能力了。他的行政手腕圆熟，常以巧妙的手法四两拨千斤，“两岸猿声啼不住，轻舟已过万重山”。其例之一是十余年前，他邀“氢弹之父”泰勒（E.Teller）访台，演讲题目为《基础科学与应用科学间的关系》。其目的是藉泰勒先生之威名，以及他在基础及应用科学上都卓有贡献的身份，告诉主持大计的衮衮诸公：只重近利，不顾根本的结果，会是两者俱失。另一例子是，他有一次到某校访问前，即听说某教授学问甚好，取其论文阅之果然，又耳闻他因个性内向，所做研究又无关乎应用，是以颇受冷落。于是他在到达该校前，以电话连络校方，谓某教授为他素识，希望于校长晚宴之上相晤。是日该教授果至，浦先生虽不识其人，但察言辨貌，立即趋前，引领该教授与其邻座畅谈。果然，次日该校校长立即派人前往某教授研究室，询其研究是否需要帮助、研究室是否过于狭隘？</p>
+<p>与浦先生接触过的人，除了深感他的为人正直，热情毅力与言词风趣外，恐怕最要佩服的就是他的行政能力了。他的行政手腕圆熟，常以巧妙的手法四两拨千斤，“两岸猿声啼不住，轻舟已过万重山”。其例之一是十余年前，他邀“氢弹之父”泰勒（E. Teller）访台，演讲题目为《基础科学与应用科学间的关系》。其目的是藉泰勒先生之威名，以及他在基础及应用科学上都卓有贡献的身份，告诉主持大计的衮衮诸公：只重近利，不顾根本的结果，会是两者俱失。另一例子是，他有一次到某校访问前，即听说某教授学问甚好，取其论文阅之果然，又耳闻他因个性内向，所做研究又无关乎应用，是以颇受冷落。于是他在到达该校前，以电话连络校方，谓某教授为他素识，希望于校长晚宴之上相晤。是日该教授果至，浦先生虽不识其人，但察言辨貌，立即趋前，引领该教授与其邻座畅谈。果然，次日该校校长立即派人前往某教授研究室，询其研究是否需要帮助、研究室是否过于狭隘？</p>
 <p>笔者之得缘认识浦先生，也是由于行政事务上。当时笔者为大三学生，负责系上学术事务。浦老师为泰勒先生到访事宜，曾与笔者有所接触。笔者的筹划，是在系上先连续办了几次原子核物理与核反应堆的演讲和讨论会，为同学们准备好背景知识，并在校内各处广为张贴大型海报二十余、小型演讲通知千余。浦先生于中午时分到达，出示一份泰勒先生生平事略，为他所提供，某校所打字印刷，错谬颇多，印刷不清，他颇为不满，希望笔者能复印散发，但演讲时间在即，如若不能，也就算了。笔者立刻加以校勘、重新打字，加花边印刷，演讲时两千余人人手一份。他极感惊讶并赞叹，于是特为亲近，并且邀约青年学生晚上与他晤谈。</p>
 <p>当晚我们七、八个学生与浦先生自八时多谈到早上两、三点，走出饭店大门的时候，冷风刺骨而不寒，因为心中充满了烈火。仰首却见一颗晨星，莹白闪烁，指引着归路。我们都深觉，这将是我们生命中极重要的一夜。</p>
 <p>浦先生的言辞温煦，由多方指点照顾后进，又多诙谐，每每令人忍俊不住，却又觉得饶有深意。笔者曾形容他是“语妙心长”。他在当夜，指点了我们许多重要的课题，但是却不显干涩枯燥，总在会心微笑外得到他的语意深长。</p>
@@ -945,7 +984,7 @@
 <p>老潘2000年3月6日</p>
 <p>第二封信</p>
 <p>李敖：</p>
-<p>外间传闻颇广的一则小道消息，1986年诺贝尔化学奖有关分子束实验在化学动力学的贡献方面，本来只提名李远哲在哈佛做博士后时的导师Herschbach教授为得奖人，当时纽约州立大学水牛城分校化学系的爱因斯坦讲座教授王瑞駪（祖籍中国大陆），认为分子束的实验原始构想固然是Herschbach提出，但具体建成这实验装置的人是李远哲，如无李远哲的努力和做实验的才能，可能那时也无法建成分子束实验的设备，因此王教授据理力争，应把李远哲也放在得奖人提名上，终于那年的诺贝尔化学奖由Polanyi,Herschbach和李远哲三人分享。</p>
+<p>外间传闻颇广的一则小道消息，1986年诺贝尔化学奖有关分子束实验在化学动力学的贡献方面，本来只提名李远哲在哈佛做博士后时的导师Herschbach教授为得奖人，当时纽约州立大学水牛城分校化学系的爱因斯坦讲座教授王瑞駪（祖籍中国大陆），认为分子束的实验原始构想固然是Herschbach提出，但具体建成这实验装置的人是李远哲，如无李远哲的努力和做实验的才能，可能那时也无法建成分子束实验的设备，因此王教授据理力争，应把李远哲也放在得奖人提名上，终于那年的诺贝尔化学奖由Polanyi, Herschbach和李远哲三人分享。</p>
 <p>虽然科学方面的诺贝尔奖比较有客观标准，不像诺贝尔文学奖或和平奖的政治意味那么浓，但是就是科学方面的得奖也无法做到绝对公平的地步，有许多偶然性。但我认为李远哲得诺贝尔奖是名至实归，完全应该得的。</p>
 <p>我告诉你这则传闻目的是李远哲差点遭受不幸（不公平）的待遇，幸好有位美籍的外省中国人王瑞駪出来为美籍本省中国人打抱不平。</p>
 <p>上次我信上提到在物理化学领域里得到诺贝尔化学奖的人也不可能是化学每个领域里的专家，因为化学和物理不像文学，他们领域分支很广，不同支系有不同的一套研究方法，虽然物理也好，化学也好，都有基本遵循的原理，但往上（往高深一层）发展后，分歧就愈来愈大，有时大到同是化学一科内不同领域就有“隔行如隔山”的情况。</p>
@@ -979,7 +1018,7 @@
 <p>李敖下午在书房接受记者访问，除批评李远哲外，李敖也公开《李远哲的真面目》一书的封面，他表示由于选举的影响，这本书要到选后才会出版。</p>
 <p>李敖说，大家今天可以清楚看到李远哲就是“伪君子”，空有中立、清高的形象，“作的是不清高、不中立”的事情，连两人会面的时机都不对。他将在明天的总统政见发表会中继续举发李远哲的种种错误。</p>
 <p>他认为台湾人不但被骗，还被李远哲这种人骗，他将出版《李远哲的真面目》一书，内容详述李远哲在中研院浪费人民纳税钱、非法任用副院长及忘恩负义出卖恩师的种种行径。</p>
-<p>现在，选后五个多月过去了，我兑现诺言，决定出版这本《李远哲的真面目》了，我从架上，拿起“修炼不成的神（TheGodThatFailed）”那本名著，若非比拟不伦，我倒想借喻这一英文书名，以彰显我这本拆神之作，以昭来兹。某些天真的台湾人先看看我书中的原始证据，再大梦初醒，回头欣赏你们的美国神吧！</p>
+<p>现在，选后五个多月过去了，我兑现诺言，决定出版这本《李远哲的真面目》了，我从架上，拿起“修炼不成的神（The God That Failed）”那本名著，若非比拟不伦，我倒想借喻这一英文书名，以彰显我这本拆神之作，以昭来兹。某些天真的台湾人先看看我书中的原始证据，再大梦初醒，回头欣赏你们的美国神吧！</p>
 <p>2000年8月28日（2000/8/28）</p>
 <p>2000年8月29日</p>
 <p>我家最早的一张照片</p>
@@ -1029,9 +1068,9 @@
 <p>001/中寮乡亲报/果然工作室/审查通过/744,000</p>
 <p>002/仁爱相互助村工作站/原权会/审查通过/339,000</p>
 <p>003/本街重建工作站/跨界文教基金会/审查通过/500,000</p>
-<p>004/台中县雾峰乡光复新村再造计画/绿色阵线协会/搁置/--</p>
-<p>005/九二一震区受损家园服务团/921震区受损家园服务团/搁置/--</p>
-<p>006/灾后重建计划案/社区大学全国促进会/搁置/--</p>
+<p>004/台中县雾峰乡光复新村再造计画/绿色阵线协会/搁置/–</p>
+<p>005/九二一震区受损家园服务团/921震区受损家园服务团/搁置/–</p>
+<p>006/灾后重建计划案/社区大学全国促进会/搁置/–</p>
 <p>007/南投市光华国小需求/光华国小/审查通过/100,000</p>
 <p>008/南投县鹿谷乡瑞田国小需求/瑞田国小/审查通过/100,000</p>
 <p>009/初乡国小需求/初乡国小/审查通过/105,000</p>
@@ -1041,18 +1080,18 @@
 <p>013/南投县日新国中需求/日新国中/审查通过/120,000</p>
 <p>014/嘉义县民雄乡秀林国小/秀林国小/审查通过/79,000</p>
 <p>015/新希望计划/得胜者教育协会/审查通过/1,500,00</p>
-<p>016/新灾人员支持小组/萤火虫静心工作群/并案审查/--</p>
+<p>016/新灾人员支持小组/萤火虫静心工作群/并案审查/–</p>
 <p>017/埔里社区心理复健/长庚大学、南投县耕艺艺术协会/审查通过/784,950</p>
-<p>018/921馨手相连项目、灾区青少年综合支持服务计划/励馨基金会/审查中/--</p>
-<p>019/仁爱乡原住民部落灾后重建发展网/社会发展文教基金会/搁置/--</p>
-<p>020/民间行动、国际合作/乐山基金会/审查中/--</p>
-<p>021/长老教会谢伟纪念青年营地附属台湾文物馆整理计划/台湾基督长老教会/审查中/--</p>
-<p>022/再现埔里新华采“屏埔营地”“货柜屋商店街坊”/牛耳基金会/审查中/--</p>
-<p>023/埔里之环境重建（环保）计划/看守台湾协会/搁置/--</p>
-<p>024/埔里乡村重建联络站/台湾彩虹原住民关怀协会/并案审查/--</p>
-<p>025/受灾家庭照顾与社区重建/同上/搁置/--</p>
+<p>018/921馨手相连项目、灾区青少年综合支持服务计划/励馨基金会/审查中/–</p>
+<p>019/仁爱乡原住民部落灾后重建发展网/社会发展文教基金会/搁置/–</p>
+<p>020/民间行动、国际合作/乐山基金会/审查中/–</p>
+<p>021/长老教会谢伟纪念青年营地附属台湾文物馆整理计划/台湾基督长老教会/审查中/–</p>
+<p>022/再现埔里新华采“屏埔营地”“货柜屋商店街坊”/牛耳基金会/审查中/–</p>
+<p>023/埔里之环境重建（环保）计划/看守台湾协会/搁置/–</p>
+<p>024/埔里乡村重建联络站/台湾彩虹原住民关怀协会/并案审查/–</p>
+<p>025/受灾家庭照顾与社区重建/同上/搁置/–</p>
 <p>026/埔里眉溪四庄文史重建计划/同上/审查通过/1,280,000</p>
-<p>027/埔里眉溪聚落重建整体计划/同上/审查通过/--</p>
+<p>027/埔里眉溪聚落重建整体计划/同上/审查通过/–</p>
 <p>（待续）（2000/8/31）</p>
 <p>2000年9月1日</p>
 <p>查李远哲的一笔烂帐（续完）</p>
@@ -1060,23 +1099,23 @@
 <p>027-2/社区协力计划/同上/审查通过/855,500</p>
 <p>027-3/庄头工作队筹组计划/同上/审查通过805,000</p>
 <p>028/埔里镇蜈蚣社区家园重建计划/老五老基金会/审查通过/1,801,000</p>
-<p>029/埔里家园重建工作站/新故乡文教基金会/审查通过/--</p>
+<p>029/埔里家园重建工作站/新故乡文教基金会/审查通过/–</p>
 <p>029-1/屏埔族志工中途站设置计划/新故乡文教基金会/审查通过/1,390,000</p>
 <p>029-2/屏埔一家亲/新故乡文教基金会/审查通过/7,600,000</p>
 <p>029-3/龙龙绿野游记/新故乡文教基金会/审查通过/1,266,950</p>
 <p>029-4/婆婆妈妈之家/新故乡文教基金会/审查通过/3,332,550</p>
 <p>029-5/希望，埔里社区报/新故乡文教基金会/审查通过/6,001,200</p>
 <p>029-6/新故乡重建网/新故乡文教基金会/审查通过/1,748,400</p>
-<p>030/南投县灾区部落重建计划/台湾基督长老教会/审查中/--</p>
+<p>030/南投县灾区部落重建计划/台湾基督长老教会/审查中/–</p>
 <p>031/南投县鱼池乡光明国小需求/光明国小/审查通过/110,000</p>
 <p>032/鹿谷乡清水沟溪流域灾后再生工作/竹风清水工作队、新竹文化协会/审查通过/2,580,000</p>
 <p>033/双崎部落交通服务网/双崎部落重建团队/审查通过/741,000</p>
 <p>034/台中县和平乡大安溪县连络站/双崎部落重建团队/审查通过/753,200</p>
-<p>035/东势镇口述历史计划/东势镇921震灾口述历史小组/审查中/--</p>
-<p>036/石冈仔乡亲报计划/大隘社/审查中/--</p>
-<p>037/921震灾中部灾区国中小复学校外教学计划/三信文教基金会/审查中/--</p>
-<p>038/网络运动家GerrtLovink（希尔特罗文客）访台企划书）/震动电子报工作室/审查通过/120,000</p>
-<p>039/南投县震灾荣区灾民生活健康维护计划/南投县政府/审查中/--</p>
+<p>035/东势镇口述历史计划/东势镇921震灾口述历史小组/审查中/–</p>
+<p>036/石冈仔乡亲报计划/大隘社/审查中/–</p>
+<p>037/921震灾中部灾区国中小复学校外教学计划/三信文教基金会/审查中/–</p>
+<p>038/网络运动家Gerrt Lovink（希尔特罗文客）访台企划书）/震动电子报工作室/审查通过/120,000</p>
+<p>039/南投县震灾荣区灾民生活健康维护计划/南投县政府/审查中/–</p>
 <p>040/嘉义县志航国小教学设备申请书/志航国小/审查通过/92,393</p>
 <p>041/炎峰国民小学复建计算机教室网络施工工程/炎峰国民小学/审查通过/116,450</p>
 <p>042/南投县草屯镇虎山国小921震灾修建需求表/虎山国小/审查通过/120,000</p>
@@ -1084,18 +1123,18 @@
 <p>044/南投县同富国民中学复学紧急经费需求表/同富国民中学/审查通过/100,000</p>
 <p>045/南投县立集集国民中学复课紧急经费需求表/集集国民中学/审查通过/100,000</p>
 <p>046/南投县德化国民小学921震灾修缮及补充设备经费需求概算表/德化国民小学/审查通过/84,000</p>
-<p>047/希望工程/921中区大专院校重建家园学联会/审查中/--</p>
-<p>048/创造性的教育重建计划/人本教育基金会/审查中/--</p>
-<p>049/家园同心说故事GOGO列车/信谊基金会/审查中/--</p>
-<p>050/LOGA加油宣传队设置计划、仁爱乡原住民灾后心灵重建工作坊/南投县仁爱乡公所/审查中/--</p>
-<p>051/台中石冈土牛村临时屋计划/大隘文化生活圈协进会/审查中/--</p>
-<p>052/921集集大震灾重建计划/三育基督学院发展部/审查中/--</p>
-<p>053/让我们站起来计划/国立暨南大学学生事务处心理辅导组/审查中/--</p>
-<p>054/重建区烛光音乐晚会社区巡回服务/萤火虫静心工作群/审查中/--</p>
-<p>055/921哀伤止步重“馨”出发/励馨基金会/审查中/--</p>
-<p>056/南投县社区家庭支持中心/南投县政府、社工专协/审查中/--</p>
+<p>047/希望工程/921中区大专院校重建家园学联会/审查中/–</p>
+<p>048/创造性的教育重建计划/人本教育基金会/审查中/–</p>
+<p>049/家园同心说故事GO GO列车/信谊基金会/审查中/–</p>
+<p>050/LOGA加油宣传队设置计划、仁爱乡原住民灾后心灵重建工作坊/南投县仁爱乡公所/审查中/–</p>
+<p>051/台中石冈土牛村临时屋计划/大隘文化生活圈协进会/审查中/–</p>
+<p>052/921集集大震灾重建计划/三育基督学院发展部/审查中/–</p>
+<p>053/让我们站起来计划/国立暨南大学学生事务处心理辅导组/审查中/–</p>
+<p>054/重建区烛光音乐晚会社区巡回服务/萤火虫静心工作群/审查中/–</p>
+<p>055/921哀伤止步重“馨”出发/励馨基金会/审查中/–</p>
+<p>056/南投县社区家庭支持中心/南投县政府、社工专协/审查中/–</p>
 <p>057/认真的主妇/有福的社区/彭婉如基金会/审查中</p>
-<p>058/送心灵粮食给灾区同学/中华智能人生文教协会筹备会/审查中/--</p>
+<p>058/送心灵粮食给灾区同学/中华智能人生文教协会筹备会/审查中/–</p>
 <p>合计36,357,159</p>
 <p>看了这个表，令人太奇怪了。全盟审查重建服务计划案件中，审查通过者合计36357159元，但新故乡文教基金会即占58.69%计21339100元，原因何在？李远哲曾为这个基金会撰写文字、担任职务，至今不遗余力，并把持职务不放，这岂不令人起疑？你李远哲到底跟这个“媒合”去58.69%资源的基金会是什么关系？</p>
 <p>查李远哲的一笔烂账，这只是烂账中的一笔而已。</p>
@@ -1247,7 +1286,7 @@
 <p>以无限幸福、光辉和至正的建国理想建设起来的当今日本文学，正是清算明治以降来自外国的狗屎现实主义，回归古典雄浑的时代的绝好机会。对于装出一副不识时代潮流的嘴脸，得意地吶喊着什么“台湾的反省”啦！“深刻的家庭争议”啦！抬出让人想起十年前的无产阶级文学的大题目而沾沾自喜的那伙人来说，给予当头棒喝，也不为过。</p>
 <p>他在文章中还质疑张文环和吕赫若的作品说：“什么地方，有皇民意识呢？”而当时叫嚣的“皇民文学”的精神乃是：</p>
 <p>即使文章的技巧有多好，但是如果忘了忠于天皇之道，如果把作为文人的自觉摆在作为日本人的自觉之上的话，我认为他除了是国贼或不忠者之外，什么都不是。</p>
-<p>文学批评的基准就在日本精神。在皇国体的自觉中发现文学的始源，要求贯彻皇国体思想，把作品与国体结合在一起。在终极时的精神燃烧--天皇陛下万岁，是一个文学者的描写可能达到的最高境界。</p>
+<p>文学批评的基准就在日本精神。在皇国体的自觉中发现文学的始源，要求贯彻皇国体思想，把作品与国体结合在一起。在终极时的精神燃烧–天皇陛下万岁，是一个文学者的描写可能达到的最高境界。</p>
 <p>在决战下，我们思想决战阵营的战士们，务必要扑灭“非皇民文学”，要扬弃“非决战文学”。</p>
 <p>叶石涛在光复后沉寂过一段时间，70年代又伪装台湾文学的代言人，出过一本《台湾文学史》，80年代又和钟肇政为“皇民文学”复辟活动，李登辉上台后，俨然成为台湾文学的宗师，还在不久前接受成功大学荣誉文学博士。这样子的成大文学院还有文学吗？</p>
 <p>在“皇民文学”如火如荼下，台湾也出现了不少“皇民文学”作家和作品，如周金波、陈火泉、龙瑛宗、王昶雄等。至于“皇民文学”作品的内容，以陈火泉的《道》为例，描述一位在专卖局专研改革蒸馏樟脑火炉的的台湾青年，经“皇民炼成”而成为志愿兵的过程。他自述其心路历程说：</p>
@@ -1858,33 +1897,33 @@
 <p>四、义仁啊，你是我当年党外运动的小弟弟，虽然那次郑南榕被抓，我们约定一起去我家开会时，你答应来了，届时却又吓得不敢来，这就是你这票狗雄的真面目。你这票人厕身党外阵营，纵横媒孽，占尽便宜，我早就看出你们是多么虚伪、多么可恶，十五年前，1985年5月6日我曾写《由“拿破仑同志”想起》一文拆穿你们和你们同型的人，现在录之于下，再给你瞧瞧：</p>
 <p>《由“拿破仑同志”想起》</p>
 <p>《一九八四》NineteenEighty-four的作者乔治欧威尔（GeorgeOrwell），在写这部名著前四年（1945），先写过一本《动物农庄》（AnimalFarm）。书中描写农庄上的畜生们起了革命，推翻了人类，占据了农庄。这些动物革命家包括努力作工的耕田的牛、爱好虚荣的拉车的马、玩世不恭的驴、好吃懒做的猫、又笨又乖的羊、为虎作伥的狗，和纵横捭阖的猪。在革命成功伊始，大家同心协力，建立自由平等博爱的新社会，但是曾几何时，在一头叫“拿破仑同志”（ComradeNapoleon）的公猪带头下，开始秘密培养特工和别动队，运用各种明的暗的，把异己一个个斗倒斗垮斗臭。在革命成功之初，本来大家是订有“七大公约”（TheSevenCommandments）的。“七大公约”是：</p>
-<p>一、两条腿的是敌人。（Whatevergoesupontwolegsisanenemy.）</p>
-<p>二、四条腿或有翅膀的是朋友。（Whatevergoesuponfourlegs,orhaswings,isafriend.）</p>
-<p>三、动物不得穿衣服。（Noanimalshallwearclothes.）</p>
-<p>四、动物不得睡床上。（Noanimalshallsleepinabed.）</p>
-<p>五、动物不得喝酒。（Noanimalshalldrinkalcohol.）</p>
-<p>六、动物不得杀动物。（Noanimalshallkillanyotheranimal.）</p>
-<p>七、所有动物一律平等。（Allanimalsareequal.）</p>
+<p>一、两条腿的是敌人。（Whatever goes upon two legs is an enemy.）</p>
+<p>二、四条腿或有翅膀的是朋友。（Whatever goes upon four legs, or has wings, is a friend.）</p>
+<p>三、动物不得穿衣服。（No animal shall wear clothes.）</p>
+<p>四、动物不得睡床上。（No animal shall sleep in a bed.）</p>
+<p>五、动物不得喝酒。（No animal shall drink alcohol.）</p>
+<p>六、动物不得杀动物。（No animal shall kill any other animal.）</p>
+<p>七、所有动物一律平等。（All animals are equal.）</p>
 <p>但是在“拿破仑同志”的篡夺革命下，一切公约都变了质，同志给干掉了，“动物不得杀动物”的公约变成了“动物不得无故杀动物”（Noanimalshallkillanyotheranimalwithoutcause.），而理由云云，却又“欲加之罪、何患无辞”了。最后，所有公约都给“拿破仑同志”强奸了；“所有动物一律平等”的公约，变成了“所有动物一律平等，但有些比别的更平等”（Allanimalsareequalbutsomeanimalsaremoreequalthanothers.），猪凌驾所有动物之上，牠们中央集权，独享牛奶、专卖鸡蛋，又穿衣服又上床，酒喝得开心，最后连走路都用两条腿了。有一天，“拿破仑同志”们甚至邀宴附近农庄的“人”来欢宴，在房内大吃大喝，其它动物在房外偷看。“它们从猪看到人，从人看到猪，又从猪看到人，但是已经无法辨认谁是猪谁是人了。”（Thecreaturesoutsidelookedfrompigtoman,andfrommantopig,andfrompigtomanagain;butalreadyitwasimpossibletosaywhichwaswhich.）</p>
 <p>乔治欧威尔在《动物农庄》中最伟大的成就，是他把革命成功以后，恶棍篡夺革命，暗杀同志、诛杀同志、奴役同志的情况，描写得传神入画，简明动人。我在《李语录》第三十四则中写《革命的开始与结束》，我说：“革命常常以良币代替劣币开始，以劣币驱逐良币结束。是新劣币代替了旧劣币，是良币的永被驱逐。”我这段话，验证古今中外的革命史，尤其是国民党的历史、国民党中恶棍篡夺革命的历史，都是例子斑斑的。稍知史实的人，都不难“多多体会”。</p>
-<p>在“多多体会”以外，顺便不妨也体会一下今天党外人士的“拿破仑同志”行径。与国民党不同的是，国民党还是在革命成功后才消灭同志，但党外人士中的小政客，却在打天下时就短视得露出这种恶棍嘴脸来了。这种人目前豢养只有联考以下水准的文字特工和文字别动队，已开始忘恩负义的做“拿破仑同志”纵犬伤同志的把戏。虽然他们手法太笨、程度太低，实质上尚伤不了同志，但他们的心术之坏，已经足以令我们惊醒：--党外有这种“同志”渗进，真是党外的大笑话了！</p>
+<p>在“多多体会”以外，顺便不妨也体会一下今天党外人士的“拿破仑同志”行径。与国民党不同的是，国民党还是在革命成功后才消灭同志，但党外人士中的小政客，却在打天下时就短视得露出这种恶棍嘴脸来了。这种人目前豢养只有联考以下水准的文字特工和文字别动队，已开始忘恩负义的做“拿破仑同志”纵犬伤同志的把戏。虽然他们手法太笨、程度太低，实质上尚伤不了同志，但他们的心术之坏，已经足以令我们惊醒：–党外有这种“同志”渗进，真是党外的大笑话了！</p>
 <p>在写上面这篇文章后三年，1988年10月23日，我写《民进党的派系斗争问题》，正式点出了你们新潮流系，我指出：</p>
 <p>在逐臭之下，新潮流系快速地效法国民党党工人员，进行夺权，他们这些人，没坐过一天牢、没打过一天公职人员选举的硬仗，只凭做党工的取巧，就占尽便宜。为什么是取巧？因为当选一名中央公职人员，至少要七万票；而当选一名中常委，只要掌握一百票就成了，天下猎取政党名器者，还有比他们更“爽”的吗？</p>
 <p>如果猎取到名器后表现良好，也姑成一说。可是，事实上，这个派系却像康宁祥系一样的器量狭小，他们示人以不广，是最大特色。反对成立海外党部也、对许信良等忘恩负义也、对党章政纲动手动脚也、对台湾独立走火入魔也、没原则地支持没原则的姚嘉文也。……种种乖戾离奇之举，它无不优为之。民进党其它派系固然不成格局，但比起它来，却小巫见大巫。整个民进党的派系斗争问题，都以新潮流系为主轴，其它派系固不足以回该党之生，新潮流系却自速该党之死。如此民进，真可悲矣！</p>
 <p>如今，又十二年过去了，你们这些“拿破仑同志”，终于夺权成功、小人得志，你也做起“行政院秘书长”了，你新官上任才几天，就新官僚作风涌现，发函给“李敖君”打官腔了，我特别浪费六十五分钟写这封信给你，进一步拆穿你，拆穿你这没脖子的卑鄙党工政客，使你这小人清楚回味一下惹李敖的下场也。</p>
 <p>李敖</p>
 <p>2000年10月27日（2000/10/27）</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/11.李敖电子报合集/李敖通电集.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/11.李敖电子报合集/李敖通电集.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../11.李敖电子报合集/李敖送电集.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../12.人物研究类/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1894,16 +1933,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../11.李敖电子报合集/李敖送电集.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../12.人物研究类/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1912,12 +1956,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

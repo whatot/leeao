@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,123 +81,144 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="你是景福门"><a class="header" href="#你是景福门">你是景福门</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E6%99%AF%E7%A6%8F%E9%97%A8%E4%BD%A0%E4%BB%AC%E6%9D%A5%E4%B8%AA%E5%B1%81">景福门，你们来个屁</a></li>
-<li><a href="#%E5%8F%8C%E5%9F%8E%E5%A4%96%E8%AE%B0">双城外记</a></li>
-<li><a href="#%E5%88%AB%E4%BF%A1%E5%8C%AA%E6%83%85%E4%B8%93%E5%AE%B6">别信“匪情专家”</a></li>
-<li><a href="#%E4%BB%8E%E6%A9%98%E5%AD%90%E6%B1%81%E5%88%B0%E6%B4%8B%E9%85%92">从橘子汁到洋酒</a></li>
-<li><a href="#%E5%A4%A7%E9%A3%8E%E8%B5%B7%E5%85%AE">大风起兮</a></li>
-<li><a href="#%E5%85%B1%E4%BA%A7%E5%85%9A%E9%A5%B6%E4%BD%A0%E6%88%91%E4%B8%8D%E9%A5%B6%E4%BD%A0">共产党饶你，我不饶你</a></li>
-<li><a href="#%E5%AF%84%E8%AF%AD%E5%88%98%E5%AE%BE%E9%9B%81%E8%80%81%E4%B9%A1">寄语刘宾雁老乡</a></li>
-<li><a href="#%E6%B0%91%E8%BF%90%E6%B0%91%E9%98%B5%E7%9A%84%E5%BD%92%E5%AE%BF">“民运”“民阵”的归宿</a></li>
-<li><a href="#%E7%BE%8E%E5%9B%BD%E8%BF%9D%E5%8F%8D%E4%BA%BA%E6%9D%83%E8%AE%B0%E5%BD%95%E5%A4%A7%E6%9B%9D%E5%85%89">美国违反人权记录大曝光</a></li>
-<li><a href="#%E6%94%B9%E7%83%A7%E8%87%AA%E5%B7%B1%E4%BA%BA">改烧自己人</a></li>
-<li><a href="#%E5%BA%93%E5%B0%94%E5%BE%B7%E7%9C%9F%E8%8B%A6-%E7%BE%8E%E5%9B%BD%E4%BC%AA%E5%96%84">库尔德真苦-美国伪善</a></li>
-<li><a href="#%E9%AD%8F%E5%BE%B7%E8%BF%88%E5%AE%A2%E8%A7%82%E5%90%97">魏德迈“客观”吗？</a></li>
-<li><a href="#%E7%AE%80%E4%BD%93%E5%AD%97%E4%B8%8E%E4%B8%BA%E5%8C%AA%E5%AE%A3%E4%BC%A0">简体字与“为匪宣传”</a></li>
-<li><a href="#%E9%9D%92%E5%A4%A9%E7%99%BD%E6%97%A5%E6%BB%A1%E5%9C%B0%E7%BA%A2">青天白日满地“红”</a></li>
-<li><a href="#%E6%81%B6%E5%BF%83%E5%88%B0%E5%A4%A7%E9%99%86%E5%8E%BB%E4%BA%86">恶心到大陆去了</a></li>
-<li><a href="#%E6%98%AF%E8%B0%81%E8%87%AA%E6%AC%BA%E6%AC%BA%E4%BA%BA">是谁自欺欺人？</a></li>
-<li><a href="#%E4%B8%BA%E5%8F%8D%E5%85%B1%E4%B9%89%E5%A3%AB%E8%BF%9B%E4%B8%80%E8%A7%A3">为“反共义士”进一解</a></li>
-<li><a href="#%E5%8A%9D%E5%90%9B%E8%AF%BB%E7%AF%87%E5%8F%A4%E4%B9%A6">劝君读篇古书</a></li>
-<li><a href="#%E5%8F%B0%E7%8B%AC%E5%8F%B0%E7%8B%AC%E8%BE%9B%E8%8B%A6%E4%B8%BA%E8%B0%81%E7%8B%AC">台独、台独，辛苦为谁独？</a></li>
-<li><a href="#%E4%B8%8D%E6%99%BA%E7%9A%84%E7%AB%8B%E5%A7%94%E6%8B%BF%E4%BA%8C%E5%8D%83%E4%B8%87%E4%BA%BA%E5%91%BD%E5%BD%93%E5%84%BF%E6%88%8F%E8%AF%BB%E5%90%8E%E6%84%9F">《不智的立委，拿二千万人命当儿戏》读后感</a></li>
-<li><a href="#%E8%B0%81%E6%9D%80%E9%AB%98%E5%B1%B1%E6%97%8F">谁杀高山族？</a></li>
-<li><a href="#%E5%8E%9F%E4%BD%8F%E6%B0%91%E7%9A%84%E5%91%90%E5%96%8A">原住民的呐喊</a></li>
-<li><a href="#%E8%BF%99%E5%9B%9E%E5%8F%AF%E6%98%AF%E7%9C%9F%E5%90%B4%E5%87%A4">这回可是真吴凤</a></li>
-<li><a href="#%E8%87%AA%E5%91%BD%E6%AD%A3%E4%B9%89%E4%B9%8B%E5%A3%AB%E4%BD%95%E4%B8%8D%E6%94%AF%E6%8C%81%E5%8E%9F%E7%8B%AC">自命正义之士，何不支持“原独”？</a></li>
-<li><a href="#%E5%8E%9F%E4%BD%8F%E6%B0%91%E4%B8%96%E7%95%8C%E4%B8%AD%E7%9A%84%E5%8F%B0%E6%B9%BE%E5%8E%9F%E4%BD%8F%E6%B0%91">原住民世界中的台湾原住民</a></li>
-<li><a href="#%E5%8F%B0%E6%B9%BE%E5%8E%9F%E4%BD%8F%E6%B0%91%E7%9A%84%E5%A3%B0%E6%98%8E">台湾原住民的声明</a></li>
-<li><a href="#%E4%B8%BA%E5%B8%83%E5%86%9C%E6%97%8F%E6%8A%B1%E4%B8%8D%E5%B9%B3">为布农族抱不平</a></li>
-<li><a href="#%E5%8F%B0%E6%B9%BE%E4%BA%BA%E7%9A%84%E5%8A%9F%E5%88%A9%E6%80%A7%E6%A0%BC">台湾人的“功利”性格</a></li>
-<li><a href="#%E5%8F%B0%E6%B9%BE%E4%BA%BA%E4%BD%86%E7%88%B1%E5%81%9A%E5%AE%98%E6%BC%AB%E8%B0%88">台湾人“但爱做官”漫谈</a></li>
-<li><a href="#%E5%8F%B0%E6%B9%BE%E6%94%BF%E5%AE%A2%E5%B0%8F%E6%B0%94%E5%85%AB%E6%8B%89%E7%9A%84%E6%B4%BB%E8%AF%81">台湾政客小气八拉的活证</a></li>
-<li><a href="#%E9%BB%91%E5%90%8D%E5%8D%95%E4%B8%8E%E8%B0%81%E6%87%A6%E7%A7%8D">“黑名单”与“谁懦种”</a></li>
-<li><a href="#%E7%BB%99%E5%A4%96%E7%9C%81%E4%BA%BA%E6%88%B4%E5%B8%BD%E5%AD%90">给外省人戴帽子</a></li>
-<li><a href="#%E6%B0%91%E8%BF%9B%E5%85%9A%E7%9A%84%E5%8F%B8%E6%B3%95%E5%80%92%E8%BD%A6">民进党的司法倒车</a></li>
-<li><a href="#%E6%B0%91%E8%BF%9B%E5%85%9A%E7%9A%84%E5%8A%A3%E5%B8%81%E6%88%98">民进党的劣币战</a></li>
-<li><a href="#%E6%B0%91%E8%BF%9B%E5%85%9A%E7%9A%84%E5%88%B6%E5%BA%A6%E6%88%98">民进党的制度战</a></li>
-<li><a href="#%E6%B0%91%E8%BF%9B%E5%85%9A%E7%9A%84%E6%9D%83%E6%9C%AF%E6%B0%B4%E5%B9%B3">民进党的权术水平</a></li>
-<li><a href="#%E6%B0%91%E8%BF%9B%E5%85%9A%E5%8F%88%E4%BD%95%E6%9D%A5%E4%BA%BA%E6%A0%BC%E8%80%85">民进党又何来“人格者”？</a></li>
-<li><a href="#%E4%BB%A4%E4%BA%BA%E5%BF%A7%E8%99%91%E7%9A%84%E6%96%B0%E6%BD%AE%E6%B5%81%E7%B3%BB">令人忧虑的新潮流系</a></li>
-<li><a href="#%E8%B4%B5%E5%AE%BE%E7%9A%84%E9%A9%AC%E5%90%8E%E7%82%AE">贵宾的马后炮</a></li>
-<li><a href="#%E8%AF%84%E6%B0%91%E8%BF%9B%E5%85%9A%E7%9A%84%E8%B7%AF%E7%BA%BF%E4%B9%8B%E4%BA%89">评民进党的路线之争</a></li>
-<li><a href="#%E6%B0%91%E8%BF%9B%E5%85%9A%E6%8C%A8%E6%8F%8D%E6%8C%A8%E5%BE%97%E5%A4%AA%E6%B2%A1%E6%84%8F%E4%B9%89%E4%BA%86">民进党挨揍挨得太没意义了</a></li>
-<li><a href="#%E5%87%A4%E5%87%B0%E6%A2%A6%E7%A0%B4">凤凰梦破</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#景福门你们来个屁">景福门，你们来个屁</a></li>
+<li><a href="#双城外记">双城外记</a></li>
+<li><a href="#别信匪情专家">别信“匪情专家”</a></li>
+<li><a href="#从橘子汁到洋酒">从橘子汁到洋酒</a></li>
+<li><a href="#大风起兮">大风起兮</a></li>
+<li><a href="#共产党饶你我不饶你">共产党饶你，我不饶你</a></li>
+<li><a href="#寄语刘宾雁老乡">寄语刘宾雁老乡</a></li>
+<li><a href="#民运民阵的归宿">“民运”“民阵”的归宿</a></li>
+<li><a href="#美国违反人权记录大曝光">美国违反人权记录大曝光</a></li>
+<li><a href="#改烧自己人">改烧自己人</a></li>
+<li><a href="#库尔德真苦-美国伪善">库尔德真苦-美国伪善</a></li>
+<li><a href="#魏德迈客观吗">魏德迈“客观”吗？</a></li>
+<li><a href="#简体字与为匪宣传">简体字与“为匪宣传”</a></li>
+<li><a href="#青天白日满地红">青天白日满地“红”</a></li>
+<li><a href="#恶心到大陆去了">恶心到大陆去了</a></li>
+<li><a href="#是谁自欺欺人">是谁自欺欺人？</a></li>
+<li><a href="#为反共义士进一解">为“反共义士”进一解</a></li>
+<li><a href="#劝君读篇古书">劝君读篇古书</a></li>
+<li><a href="#台独台独辛苦为谁独">台独、台独，辛苦为谁独？</a></li>
+<li><a href="#不智的立委拿二千万人命当儿戏读后感">《不智的立委，拿二千万人命当儿戏》读后感</a></li>
+<li><a href="#谁杀高山族">谁杀高山族？</a></li>
+<li><a href="#原住民的呐喊">原住民的呐喊</a></li>
+<li><a href="#这回可是真吴凤">这回可是真吴凤</a></li>
+<li><a href="#自命正义之士何不支持原独">自命正义之士，何不支持“原独”？</a></li>
+<li><a href="#原住民世界中的台湾原住民">原住民世界中的台湾原住民</a></li>
+<li><a href="#台湾原住民的声明">台湾原住民的声明</a></li>
+<li><a href="#为布农族抱不平">为布农族抱不平</a></li>
+<li><a href="#台湾人的功利性格">台湾人的“功利”性格</a></li>
+<li><a href="#台湾人但爱做官漫谈">台湾人“但爱做官”漫谈</a></li>
+<li><a href="#台湾政客小气八拉的活证">台湾政客小气八拉的活证</a></li>
+<li><a href="#黑名单与谁懦种">“黑名单”与“谁懦种”</a></li>
+<li><a href="#给外省人戴帽子">给外省人戴帽子</a></li>
+<li><a href="#民进党的司法倒车">民进党的司法倒车</a></li>
+<li><a href="#民进党的劣币战">民进党的劣币战</a></li>
+<li><a href="#民进党的制度战">民进党的制度战</a></li>
+<li><a href="#民进党的权术水平">民进党的权术水平</a></li>
+<li><a href="#民进党又何来人格者">民进党又何来“人格者”？</a></li>
+<li><a href="#令人忧虑的新潮流系">令人忧虑的新潮流系</a></li>
+<li><a href="#贵宾的马后炮">贵宾的马后炮</a></li>
+<li><a href="#评民进党的路线之争">评民进党的路线之争</a></li>
+<li><a href="#民进党挨揍挨得太没意义了">民进党挨揍挨得太没意义了</a></li>
+<li><a href="#凤凰梦破">凤凰梦破</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -235,7 +268,7 @@
 <h2 id="景福门你们来个屁"><a class="header" href="#景福门你们来个屁">景福门，你们来个屁</a></h2>
 <p>美国独立战争时候，一个法国贵族叫拉斐德（MarquisdeLafayette）的，在1777年7月抵达新大陆，参加了反抗英国的作战。他那时二十岁，被任命为少将，很有战功。1779年他回法国，劝说法国国王路易十六（LouisⅩⅥ）派出六千人的远征军支持殖民地人民。1780年他再返新大陆，协助美国独立战争，直到成功为止。1782年他回法国。1784年访问美国，成为好几个州的公民，极得美国人的景仰。此后五年中，他成为法国开明贵族的领袖。1789年法国大革命爆发，他躬与其役。但他反对国王退位、反对过激的权力转移，最后亡命在外，被奥地利幽囚五年。直到1799年拿破仑（BonaparteNapoleon）当政，他才回归祖国。路易十八（LouisⅩⅧ）在位期间，他任众议院议员。1824到1825年间，他又访问美国，受到热烈的欢迎。1830年他指挥国民自卫军，推翻査理十世（CharlesⅩ），迎接路易腓力普（Louis-Philippe）就职。不久退隐于野，1834年死去，活了七十七岁。由于拉斐德一生功在新旧大陆，他被尊为“两个世界的英雄”（theHeroofTwoWorlds）。美国人民为了崇德报功，特别在1824年，在他六十七岁时候，由国会通过，以美金二十万、土地一方为赠，这种赠礼，也算是一种义助，因为拉斐德本人的财产，已在法国大革命时被充公以去，那时候举国若狂，还骂他是卖国贼呢！</p>
 <p>拉斐德死后八十七年，也就是他去美国参加独立战争后一百四十年，第一次世界大战爆发了，美国加入战团，支持法国对抗德国。美国派出军队，派遣军司令官是潘兴将军（GeneralJohnJ.Pershing）。1917年7月4日，一幕感人的献词在巴黎拉斐德坟前发表了，主题是：“拉斐德，我们来了！”（Lafayettewearehere!）。言简意赅，表达了美国人在法国人危难之际如何援之以手，一如一百四十年前法国人援美国人以手一样。</p>
-<p>这句“拉斐德，我们来了！”的名言，一般都误以为出自潘兴将军之口，但据潘兴回忆录——《我在世界大战中的经历》（MyExperiencesintheWorldWar），却指出乃是斯坦顿上校（ColonelC.E.Stanton）的杰作。一言之微，为大将者都不没人之功，这种风度，可为典范。</p>
+<p>这句“拉斐德，我们来了！”的名言，一般都误以为出自潘兴将军之口，但据潘兴回忆录——《我在世界大战中的经历》（My Experiences in the World War），却指出乃是斯坦顿上校（Colonel C. E. Stanton）的杰作。一言之微，为大将者都不没人之功，这种风度，可为典范。</p>
 <p>最近北京天安门前风起云涌，大陆学生与人民，为争取自由民主，波澜壮阔，蔚为奇观。相形之下，台湾地区的委琐畏葸，显得不成一比。国民党老脸兜不住，乃由巧宦施启扬出面，召集行政院大陆工作会报，徒以空话，加以声援。在上者粉拳绣腿如此，在下者自然希旨成风，也就纷纷绣花枕头而出。其中最恶心人者，是今早看报，有所谓国立中山大学教职员发表的支援大陆民主运动声明。该声明由马屁诗人余光中主稿，最后说：“台湾的社会近年来颇以民主自许，自由自豪。难道我们在争取两千万人的民主与自由之余，竟然无视十亿同胞的民主与自由吗？……天安门广场的胜利，是全中国也是全世界民主自由的胜利。相反地，天安门广场的失败，也是全中国甚至全世界民主自由的挫折，在历史炯炯的注视下，让我们及时站起来，从台北到屏东，一起向对岸大叫：‘天安门，我们来了！’”</p>
 <p>显然的，马屁诗人余光中在窃取“拉斐德，我们来了！”之意，以为比附与贴金。但是，这些国民党御用文人，他们在“争取两千万人的民主与自由”上，根本就是一纸空白，而没有任何实际行动。如今又朝十一亿人口大放厥词，且以当年美法战士自况自脱，其无耻也，真可腾笑古今中外。事实上，国民党“总统府”前的景福门，早已是压迫自由民主的标志，又何足以自炫骄人？如今景福门下的御用文人，竟成群结队而要“我们来了！”别不要脸啦，你们来个屁！</p>
 <p>1989年5月24日</p>
@@ -311,7 +344,7 @@
 <p>我对刘宾雁的期勉，也就是我对所有逃离中国大陆的人们的期勉。前几年林希翎来台湾，也吃了我的闭门羹，理由也和今天一样。</p>
 <p>在林希翎、刘宾雁之后，天安门事件以后，有大量“民运”“民阵”之类的人士或大陆留学不归人士出现，他们的处境与困境，是可以概见的。大体上说，他们是共产党教育出来的一代，这些人的热情与勇气，多属上选；但在“文化水平”上——真正符合自由民主开明进步的西方思想“文化水平”上，却不无差距而不自知。他们一方面高唱自由民主开明进步，却同时又要“公审”别人（“公审”字眼，见诸他们在巴黎的宣言）、还拍蒋经国的马屁（马屁字眼，见诸他们在美国的谈话）。……如今又群集台湾，向国民党讨资助。虽然他们的处境与困境，令人同情；但是失格与混乱一至于此，却更令我们叹息。</p>
 <p>事实上，天安门事件一阵风过去以后，“民运”“民阵”等人士，大多都会发生归宿的问题。他们的根在中国大陆；他们离开大陆做浮萍，基本上是失根的。他们想在大陆以外成些势力与气候，或对大陆发生什么大作用，也几乎是不可能的。一阵风过去以后，他们必定由绚烂归于平淡。听掌声活的日子，是不会持久的。</p>
-<p>我认为“民运”“民阵”等人士应该私下里拿定主意、做个准备，清楚认清自己能力的极限，并准备在无能为力中，做一个亡命的共产党的伟大榜样。普雷斯柏格（EmericPressburger）写《看那灰色马》（BeholdAPaleHorse），写那療倒天涯的共产党，最后贾其余勇，奔回故国，以致惨死在当权派的枪下。这共产党一生战斗，虽然潦倒，但是至死神明不衰。他知道只要亡命在外，自己就必然潦倒；要想完成自己，就只有千里赴难，视死如归。</p>
+<p>我认为“民运”“民阵”等人士应该私下里拿定主意、做个准备，清楚认清自己能力的极限，并准备在无能为力中，做一个亡命的共产党的伟大榜样。普雷斯柏格（Emeric Pressburger）写《看那灰色马》（Behold A Pale Horse），写那療倒天涯的共产党，最后贾其余勇，奔回故国，以致惨死在当权派的枪下。这共产党一生战斗，虽然潦倒，但是至死神明不衰。他知道只要亡命在外，自己就必然潦倒；要想完成自己，就只有千里赴难，视死如归。</p>
 <p>我并不鼓励任何人做烈士，但我鼓励任何人要为自己的理想有潦倒的准备。人可以潦倒，但不可以失格、不可以混乱，不论做不做共产党，都要像一条汉子。</p>
 <p>1990年1月2日</p>
 <h2 id="美国违反人权记录大曝光"><a class="header" href="#美国违反人权记录大曝光">美国违反人权记录大曝光</a></h2>
@@ -321,12 +354,12 @@
 <p>新华社于3月30日发自北京的电讯说：《人民日报》今天应读者来信的要求，解答了美国至今没有参加或没有批准的六个人权方面的国际公约问题。</p>
 <p>新华社说：读者李君在信中写道：“看了3月27日钱其深外长答美国《纽约时报》记者问，使我开了窍。美国经常谈论‘人权’，但它并没有批准或没有参加重要的关于人权的国际公约，理由是人权本质是属于美国国内管辖的，认为这些国际公约有的条款和美国法律有冲突。希望贵报介绍一下哪些关于人权的国际公约美国没有批准或没有参加，请列出公约的全名。”《人民日报》国际部在“答读者”一栏中答复说：“钱其琛外长提到的六个方面的国际公约是：一、《经济、社会和文化权利国际公约》，1966年12月16日通过；二、《公民权利和政治权利国际公约》，1966年12月16日通过；三、《禁止并惩治种族隔离罪行国际公约》，1973年11月30日通过；四、《消除一切形式种族歧视国际公约》，1966年12月21日通过；五、《反对酷刑和其他残忍、不人道或有辱人格待遇或处罚公约》，1984年12月10日通过；六、《消除对妇女一切形式歧视公约》，1979年12月18日通过。”</p>
 <p>《人民日报》又说，这些公约全是联合国大会通过的。</p>
-<p>美国驻北京大使馆拒绝对上列名单发表评论。大使馆发言人（EdwardLoo）告诉美联社说，他无法就美国未签或未批准的国际人权公约提供资讯。</p>
+<p>美国驻北京大使馆拒绝对上列名单发表评论。大使馆发言人（Edward Loo）告诉美联社说，他无法就美国未签或未批准的国际人权公约提供资讯。</p>
 <p>不过，美国人士说，华盛顿确已签过许多国际人权公约，其中包括1975年的《赫尔辛基协议》。</p>
 <p>北京《人民日报》继钱其探的谴责之后又借“答读者”之方式公布清单，确属对“伪善”还以颜色的空前壮举。盖“美帝”的确伪善，北京这次“以子之矛、攻子之盾”，弄得“山姆叔叔”尴尬之至，着实令国际人心为之一快。</p>
 <p>……（编者略）争辩的背后却透出一丝讯息——它们都已默认人权是不该蹂躏的，是为此次争辩的意外收获。如果这样的争辩能更认真地持续下去，对于太平洋两岸人权状态的改善，应该都会有好处。</p>
 <p>继钱其深谴责美国“伪善”和北京《人民日报》公布“美国至今没有参加或没有批准的六个人权方面的国际公约”之外，同时也公布了美国“没有参加”而北京却“参加”了的“国际人权公约”，显示中国执政者已默许“人权”问题并非“内政”，实为中国政治史上的一大进步，值得大书特书。这三个公约是：</p>
-<p>一、《禁止并惩治种族隔离罪行的国际公约》（InternationalConventionontheSuppressionandPunishmentoftheCrimeApartheid），1983年4月18日“我交存加入书”，5月18日“对我生效”；二、《消除一切形式种族歧视国际公约》（InternationalConventionontheEliminationofAllFormsofRacialDiscrimination），1981年12月29日“我交存加入书”，1982年1月28日“对我生效”；三、《消除对妇女一切形式歧视公约》（ConventionontheEliminationofAllFormsofDiscriminationagainstWomen），1980年7月17日“我签署该公约”，1980年11月4日“交存批准书”，1980年12月4日“对我生效”。</p>
+<p>一、《禁止并惩治种族隔离罪行的国际公约》（International Convention on the Suppression and Punishment of the Crime Apartheid），1983年4月18日“我交存加入书”，5月18日“对我生效”；二、《消除一切形式种族歧视国际公约》（International Convention on the Elimination of All Forms of Racial Discrimination），1981年12月29日“我交存加入书”，1982年1月28日“对我生效”；三、《消除对妇女一切形式歧视公约》（Convention on the Elimination of All Forms of Discrimination against Women），1980年7月17日“我签署该公约”，1980年11月4日“交存批准书”，1980年12月4日“对我生效”。</p>
 <p>此外，还有两个“国际人权公约”是国民党政权签署、批准的；但在1949年中华人民共和国成立后，并于1971年取代联合国的席位后，也都转成“参加”或“批准”。这两个“国际人权公约”及北京的解说如下：</p>
 <p>四、《禁止细菌（生物）及毒素武器的发展、生产及储存以及销毁这类武器的公约》[ConventionontheProhibitionoftheDevelopment,ProductionandStockpilingofBacteriological(Biological)andToxinWeaponsandontheirDestruction]，（国民党政府于1975年批准生效）“1984年11月15日中国政府分别向英、美、苏政府交存加入书，同时声明：台湾当局盗用中国名义对公约的签字和批准是非法的、无效的。该公约于1984年11月15日对我生效”；五、《联合国免章》（CharteroftheUnitedNations），“中国系联合国创始成员国，1945年6月26日签署宪章，1945年9月28日批准。1971年10月25日联大第2758号决议正式驱除台湾当局代表，恢复我在联合国的合法席位；同年11月我派代表团出席联大”。</p>
 <p>1991年4月1日</p>
@@ -352,10 +385,10 @@
 <p>结论是：布什希望“沙漠风暴”给侯赛因一点教训，侯赛因得到了，然后转嫁此一教训给了他的俎上肉。呜呼，我虽不杀库尔德，库尔德因我而死，美国不美，颜之丑矣！</p>
 <p>1991年4月15日</p>
 <h2 id="魏德迈客观吗"><a class="header" href="#魏德迈客观吗">魏德迈“客观”吗？</a></h2>
-<p>魏德迈（AlbertC.Wedemeyer）将军死了。12月20日，《自由时报》以“中华民国之友/客观有风度的军人/美将领魏德迈逝世”为大标题出现，我这历史家，一看就不服气。</p>
+<p>魏德迈（Albert C. Wedemeyer）将军死了。12月20日，《自由时报》以“中华民国之友/客观有风度的军人/美将领魏德迈逝世”为大标题出现，我这历史家，一看就不服气。</p>
 <p>《自由时报》登有中华民国长期友人之称的魏德迈将军，17日在华盛顿辞世，享年九十二岁。盖棺论定，魏德迈在历史的评价如何？淡江大学美国研究所所长李本京认为，魏德迈是个客观有风度的职业军人，他既不为共产党，也不为国民党，而是真正为中国人民的福祉着想，对于战时的中国有不可否认的贡献。……魏德迈在二次大战期间曾经担任先总统的参谋长，在他前任的是史迪威，由于史迪威的个性和他对国民政府的成见，并不适宜和蒋合作。魏德迈继承了史的职务与蒋公合作融洽，主要原因就在他是一个客观、有风度的职业军人。由于中美关系在史迪威时代相当的不融洽，如果没有魏德迈，也许不会有改善的可能。……他对于中国问题的看法是全面性，而不是狭窄的观点。……”</p>
 <p>上面这种报道，重点是与真正的历史不合的。事实上，魏德迈绝非“既不为共产党，也不为国民党”的“客观”的人，他对“中国问题的看法”，非但不“全面性”，并且恰恰是相当“狭窄的”。远不必求，光从1958年的《魏德迈报告》（WedemeyerReports）到1987年的《魏德迈论战争与和平》（WedemeyeronWarandPeace），他的“狭窄”与不“客观”就跃然纸上。连魏德迈自己，都无法掩饰他这种毛病，吴阿民、颜文闩带头下的《自由时报》，又何必推出花瓶学人，替这美国军人曲为之讳呢？</p>
-<p>罗曼纳斯（Romanus）和孙德兰（Sunderland）合著的美国陆军战史——《时不我与》（TimeRunsOut）一开头就点破，“魏德迈与蒋介石，很快就建立了和谐愉快的私人关系（WedemeyerandChiangKai-shekquicklyestablishedaneasyandpleasantpersonalrelationship）。”这一“私人关系”，是一切不“客观”的起点。蒋介石在他狐媚媚外老婆的协助下，最精于此道，无奈史迪威是有正义感的中国通，软硬都不吃，所以蒋氏夫妇对史迪威没法子。但魏德迈比较单纯，因此一下子就被蒋氏夫妇给套牢。在这一大前提下，他竟误以为蒋介石不是独裁者。（Irealizedthatthegeneralissimo,farfrombeingadictator,wasinfactonlytheheadofaloosecoalition，andattimesexperiencedgreatdifficultyinsecuringobediencetohiscommands.）在这种“狭窄的”大前提下，又何来“客观”哟！</p>
+<p>罗曼纳斯（Romanus）和孙德兰（Sunderland）合著的美国陆军战史——《时不我与》（Time Runs Out）一开头就点破，“魏德迈与蒋介石，很快就建立了和谐愉快的私人关系（Wedemeyer and Chiang Kai-shek quickly established an easy and pleasant personal relationship）。”这一“私人关系”，是一切不“客观”的起点。蒋介石在他狐媚媚外老婆的协助下，最精于此道，无奈史迪威是有正义感的中国通，软硬都不吃，所以蒋氏夫妇对史迪威没法子。但魏德迈比较单纯，因此一下子就被蒋氏夫妇给套牢。在这一大前提下，他竟误以为蒋介石不是独裁者。（I realized that the generalissimo, far from being a dictator, was in fact only the head of a loose coalition，and at times experienced great difficulty in securing obedience to his commands.）在这种“狭窄的”大前提下，又何来“客观”哟！</p>
 <p>1989年12月21日</p>
 <h2 id="简体字与为匪宣传"><a class="header" href="#简体字与为匪宣传">简体字与“为匪宣传”</a></h2>
 <p>8月20日报上说：台北地检处将于24日上午，传讯人权论坛杂志社发行人刘千云、社长周自立等人，调査有关涉及为“匪”宣传的犯罪事实。由于《人权论坛》杂志以简体字刊载中共《政府工作报告》，而被行政院新闻局认为有为“匪”宣传嫌疑，移送台北地检处侦办。另外，据传世台会开会期间，曾有团体、个人散发简体字文稿，台北地检处亦将深入了解，有无涉及不法情事。根据《惩治叛乱条例》第7条有利叛徒宣传罪规定，以文字、图书、演说为有利于叛徒之宣传者，处七年以上有期徒刑，刑责不轻。</p>
@@ -399,16 +432,16 @@
 <p>二十一年前，胡适听说我穷得当了裤子，特别写了一封限时信给我，并送了我一千元来赎当，我很感动，就写了一封长信给他，说出很多我个人的历史。胡适对我的信很欣赏，拿给一些人看，最后他拿给徐高阮看，徐高阮扣住不还，不久胡适死了。徐高阮遂在1961年11月7日，在一连串的文字斗臭之后，在台北妇女之家举行声讨李敖大会，“邀约了国青民三党人士和若干文化界的朋友三十人”（有陈启天、胡秋原等等），开会斗倒李敖。徐高阮等当场油印公布了我给胡适的信，说我是“叛逆分子”，并把我一状告到警总。警总保安处派魏以之组长主持，把我约谈多次，每次早出晚归，并没过夜。我信中提到的严侨（华严的哥哥）却被再度捕去，关了十六天，调查他同我的关系。魏组长精明能干，同我说话的时候，甚至可以整段背得出我信中的话。最后，在魏组长研究清楚了这是徐高阮等私人的借刀杀人之计，研判若由官方出面整我，对官方不利，乃不了了之。徐高阮等的卑鄙阴谋，才没有得售。</p>
 <p>红色变节者举例</p>
 <p>徐高阮是什么人呢？他是共产党支持的一二九学生运动的大将，他变节后，共产党派蒋南翔接他，蒋南翔后来就是中共的教育部长。徐高阮不变节，他在中共的地位，可想而知。但他变节了，投降国民党，在中央研究院做副研究员，可是写不出学术论文。李济等学阀大概知道他有“国特”背景，不敢惹他，让他管图书室。他有突然性狂怒症，发病时甚至将书架推倒，根本不是正常的人。徐高阮与殷海光在西南联大同学，殷海光主持《自由中国》时代，徐高阮又巴结又嫉妒，《自由中国》停刊后，徐高阮乃施报复，挑殷海光不小心误译的一个名词，联合胡秋原，指为“学术诈欺”，其实胡秋原、徐高阮在翻译上的错误，早就是超越前进的，但他们却一点也没有不好意思的指摘殷海光、罗织殷海光，并要求国民党政府调查。殷海光在《我被迫离开台湾大学的经过》中说：</p>
-<p>徐君这篇发难的文字，载在1964年3月出版的《中华杂志》。当我一看见这篇作品的时候，立刻意识到这是一个学术思想其名而政治其实的事件，于是决心置之不理。我知徐君在一二九左派学生运动中是一个重要的领导分子。他后来脱离左派阵营；到台湾以后，十几年毫无学问上的贡献，寂寞不堪。以徐君这样背景的人物，置身今日的台湾，亟思有以自效，来医治潜意识里的恐惧并打破寂寞，这是无待弗洛伊德（S.Freud）来分析就可明白的。因此，我保持沉默。在这一期间，这儿有所谓“文化论战”。在论战中，胡秋原君知识上的短缺，思想上的混乱，被我的一群学生指破。尤其是他参加“闽变”的往事，被李敖君指出。这一下使他的名流声威扫地。他痛心疾首之余，认为系我在背后策动，于是在《中华杂志》上参加徐君对我的围攻。这二位先生的言论，充满对我的污蔑、毒骂及构陷，但却俨然为学术尊严及自由民主和反共爱国而仗义执言。标榜历史文化儒家道德的某君（李敖按：某君者，徐复观也），则从旁助威。对于这一切，我依然保持沉默。</p>
+<p>徐君这篇发难的文字，载在1964年3月出版的《中华杂志》。当我一看见这篇作品的时候，立刻意识到这是一个学术思想其名而政治其实的事件，于是决心置之不理。我知徐君在一二九左派学生运动中是一个重要的领导分子。他后来脱离左派阵营；到台湾以后，十几年毫无学问上的贡献，寂寞不堪。以徐君这样背景的人物，置身今日的台湾，亟思有以自效，来医治潜意识里的恐惧并打破寂寞，这是无待弗洛伊德（S. Freud）来分析就可明白的。因此，我保持沉默。在这一期间，这儿有所谓“文化论战”。在论战中，胡秋原君知识上的短缺，思想上的混乱，被我的一群学生指破。尤其是他参加“闽变”的往事，被李敖君指出。这一下使他的名流声威扫地。他痛心疾首之余，认为系我在背后策动，于是在《中华杂志》上参加徐君对我的围攻。这二位先生的言论，充满对我的污蔑、毒骂及构陷，但却俨然为学术尊严及自由民主和反共爱国而仗义执言。标榜历史文化儒家道德的某君（李敖按：某君者，徐复观也），则从旁助威。对于这一切，我依然保持沉默。</p>
 <p>“大哥莫话小弟”</p>
-<p>殷海光这里提到的这种人的心态，是最值得注意的。殷海光说：“这样背景的人物，置身今日的台湾，亟思有以自效，来医治潜意识里的恐惧并打破寂寞，这是无待弗洛伊德（S.Freud）来分析就可明白的。”这是画龙点睛之笔。徐高阮这种“反共义士”，由于他们过去是红色人物，“置身今日的台湾”，只有整天以自己戴过的帽子给别人戴，才能“医治他们潜意识里的恐惧”；只有整天用牺牲别人的方法来垫高他们的忠贞，才能“打破”他们空虚内心的“寂寞”。这种可怜、可恶、又可怕的心态，说破了，就是典型红色变节者的心态。“反共义士”中，如果他们原来只是普通人，当他们一旦阴错阳差，成了“反共义士”，他们不会有这种心态（像朝鲜战争后来台的“一万四千个反共义士”，就属此类）；但是如果他们原来不是普通人，而是共产党的高干或低干，一旦他们变节了，投降了国民党，这种心态，就极难摆脱。</p>
+<p>殷海光这里提到的这种人的心态，是最值得注意的。殷海光说：“这样背景的人物，置身今日的台湾，亟思有以自效，来医治潜意识里的恐惧并打破寂寞，这是无待弗洛伊德（S. Freud）来分析就可明白的。”这是画龙点睛之笔。徐高阮这种“反共义士”，由于他们过去是红色人物，“置身今日的台湾”，只有整天以自己戴过的帽子给别人戴，才能“医治他们潜意识里的恐惧”；只有整天用牺牲别人的方法来垫高他们的忠贞，才能“打破”他们空虚内心的“寂寞”。这种可怜、可恶、又可怕的心态，说破了，就是典型红色变节者的心态。“反共义士”中，如果他们原来只是普通人，当他们一旦阴错阳差，成了“反共义士”，他们不会有这种心态（像朝鲜战争后来台的“一万四千个反共义士”，就属此类）；但是如果他们原来不是普通人，而是共产党的高干或低干，一旦他们变节了，投降了国民党，这种心态，就极难摆脱。</p>
 <p>这种极难摆脱，最主要的原因是：他们在气质上、习性上与训练上，是布尔什维克式的。这种红色的色素，对他们而言，纵使“宣誓脱离共产党”，在实质上，也极难漂白。因此，这种人一旦出来“反共”，就会变得好好笑，他们口口声声“反共”“反共”，但明眼人看到的、感受到的，却明明是“大哥莫话小弟”。“共”给他们一“反”，愈“反”就愈麻烦，搞不好还有“思想走私”之嫌！共产党变节者任卓宣（叶青），在大陆上“毛语录”人手一册的时机，居然写了一本《毛泽东语录批判》，要把原文和批语两相对照，在国民党《中央日报》大做预约广告（1967年11月22日）！这下子国民党总算惊醒了，总算知道这种“反共义士”是最可怕的打手了，于是赶忙禁止这书的出版了。</p>
 <p>“李敖是共产党！”</p>
 <p>当国民党1949年逃到台湾的时候，它的中央宣传部副部长及代理部长不是别人，就是任卓宣，任卓宣是有名的代国民党军方反对自由民主的大将。中国的自由民主信仰者，历来受到左右两派的夹击，右派是守节的保守主义者，左派是变节的布尔什维克主义者。任卓宣出身共产党，曾被捕，枪毙未死，投降国民党，从写《共产主义问答》（1927年广州国光版）转到写《三民主义纲要》（1953年台北帕米尔版）。他虽然表面上“洗心革面”，但在骨子里，却十足是布尔什维克挂帅，所以，国民党中央宣传部在他的控制下，并没有“大失败之后”的“大反省和彻底改变作风”的可能。国民党中一部人，为了夺权，乃以“清除本党布尔什维克毒素”之名，发生内斗。任卓宣被斗下来，最后乃在军方的政治作战学校做教授、做政治研究所主任，办军方津贴的《政治评论》，不但在党中央方面抬不起头，并且因为《政治评论》社长马璧的投共，搞得灰头土脸，直到如今。</p>
 <p>但是，国民党被这种“反共义士”渗透进来，并不是清除一两个人的问题，而是从根上，开始发生了量变与质变。国民党在没有“联俄容共”前，它的老派党员，再坏也还保有老派的气质，但认识了苏联以后，它的坏法，就白里透红了，两种坏法就完全不一样。我在“文星”时代，国民党开内部会议研究李敖，中央党部第四组（第四组是中央宣传部后身、是文工会产身）中就有两派看法：尚有老派国民党残余气质的唐棣诸公，就认为“李敖只不过是爱出风头的反调分子”；但“反共义士”的谢然之诸公，却一口咬定“李敖是共产党！”“反共义士”的凶狠超过老派国民党，由此可见一斑。</p>
 <p>“作恶之报，果大于因。”</p>
 <p>国民党在这几十年中，他们一直和共产党相激相荡，在相激相荡过程里，国民党居然卵翼出一种怪胎——有布尔什维克毒素的“反共义士”——来自毁毁人，这是一件非常可笑的笨事。国民党必然自食其果，自然也不消说。“反共义士”谢然之等人的最后叛变，就是一个最鲜明的教训。今天国民党如还不反省，任由这种有问题的“反共义士”做打手，去表演各种“仙人偷桃”式的怪招，国民党自己早晚被偷其桃，也就指日可待。西方的谚语说得好——</p>
-<p>作恶之报，果大于因。（tosowthewindandreapthewhirlwind）</p>
+<p>作恶之报，果大于因。（to sow the wind and reap the whirlwind）</p>
 <p>如今，“谢（然之）”鉴不远，那些比谢然之还等而下之的，一闹再闹下去，一切好戏，也就更不会远了！</p>
 <p>1983年6月30日下午以三小时写成</p>
 <h2 id="劝君读篇古书"><a class="header" href="#劝君读篇古书">劝君读篇古书</a></h2>
@@ -484,16 +517,16 @@
 <p>草案中将自治议会分为上议院及下议院，上议院为族群代表制，下议院为普选制。中央政府成立台湾原住民事务部，除国防与外交外，其他如教育、文化、经济、卫生、福利、宗教信仰等建设由原住民自理；原住民所需建设经费由中央专案办理；原住民的自治区域，则应回归1895年日据时代起之标准，并与原住民订立土地条约。另外司法机构各级法院应设原住民通译员，中央并协助原住民族发展各族群之语言、文字。</p>
 <p>目前原住民族代表对“临时政府”及“自治议会”的确定名称，将于4月2日成立大会时，召集更多原住民族代表讨论定案，“台湾原住民族自治议会”草案亦一并讨论。</p>
 <p>对上面这一报道，我全文予以引录，表示愿闻其详。我认为台湾原住民的这一反讽动作，乍看起来，虽然不经；但是仔细一想，却又觉得名正言顺。台湾根本是属于原住民的，并不是属于自称台湾人的，这是历史上与事实上的定说。原住民备受迫害四百年下来，处境凄惨。男无物可盗、女被迫为娼，实在被迫害得不像话了，而台湾人也好、外省人也罢，谁也不肯以“还‘原’”对待他们，他们如今以成立“临时政府”过过独立的瘾，谁曰不宜？</p>
-<p>原住民搞“独立”，可简称“原独”。1969年4月，我看《花花公子》（PLAYBOY），有一漫画极逗：图中一酒会场面，沙发上女的对男的说：“我信‘原罪’？那看你要原到什么程度！”（DoIbelieveinOriginalSin?Itdepends-howoriginaldoyouwanttobe?）“原罪”教义源于保罗的书信，漫画里女的单刀直入，欲以现原形、归原始以巧证教义，自是婉而谑兮之言。不过看到今天自称台湾人的，俨然以台湾主人自居，真不禁令人有“原到什么程度”之叹！人家原住民四千年还没吭一声是台湾人呢，你们至多四百年就喧宾夺主自称起台湾人来了，脸皮之厚，与“台胞”相去，亦五十步与百步耳！他们之中，不乏正义之士，但正义之士，何不支持“原独”？</p>
+<p>原住民搞“独立”，可简称“原独”。1969年4月，我看《花花公子》（PLAYBOY），有一漫画极逗：图中一酒会场面，沙发上女的对男的说：“我信‘原罪’？那看你要原到什么程度！”（Do I believe in Original Sin? It depends - how original do you want to be?）“原罪”教义源于保罗的书信，漫画里女的单刀直入，欲以现原形、归原始以巧证教义，自是婉而谑兮之言。不过看到今天自称台湾人的，俨然以台湾主人自居，真不禁令人有“原到什么程度”之叹！人家原住民四千年还没吭一声是台湾人呢，你们至多四百年就喧宾夺主自称起台湾人来了，脸皮之厚，与“台胞”相去，亦五十步与百步耳！他们之中，不乏正义之士，但正义之士，何不支持“原独”？</p>
 <p>我这外省人，谨以有“原罪”心理，百分之百支持“原独”。——我向倡议“原独”以为反讽的真正台湾人致敬！</p>
 <p>1991年4月1日</p>
 <h2 id="原住民世界中的台湾原住民"><a class="header" href="#原住民世界中的台湾原住民">原住民世界中的台湾原住民</a></h2>
 <p>南美洲七个国家原住民妇女，针对所谓“哥伦布发现美洲五百周年大庆”发起抗议，并强调印第安人的权利。</p>
-<p>南美“印第安妇女”（IndianWomen）组织主席安娜劳劳（AnaLLaoLLao）在第一次会三天议程结束时说：“发现个屁？对我们而言，那根本不是喜庆；对我们而言，那代表五百年的反抗。”（Whatdiscovery?Forusitisnotacelebration,forusitrepresents500yearsofresistance.）</p>
-<p>属智利马普契族印第安（MapucheIndians）的劳劳女士说：“所有所谓‘庆祝’活动，我们打算一律参加，以推进我们索还土地、索还资源的运动，而且要在这一运动中，要求为我们的族人列入百分之二十的国家预算。”（Weplantoparticipateinalloftheeventsofthesocalledcelebrationandpushaheadwithourmovementtorecuperateourland,ourresourcesandinthiscontext,demand20percentofthenationalbudgetforourpeoples.）</p>
-<p>身穿传统的黑衣和头饰、多条彩带垂腰的劳劳在闭幕会议中说，她们聚首一堂讨论她们的共同问题，“在中、南、北美形成印第安妇女的单一声音。”（FormasinglevoiceoftheIndianwomaninSouth，CentralandNorthAmerica.）</p>
-<p>她说：“对我们而言，根本没有疆界。我们是一体。如果我们有知，则不管秘鲁还是厄瓜多尔印第安人的土地被人夺去，那表示我们都在受苦。”（Forustherearenofrontiers.Weareone.IfwelearnthatlandisbeingtakenfromIndiansinPeruorEcuadoritmeanssufferingforallofus.）</p>
-<p>代表阿根廷、秘鲁、墨西哥、危地马拉、萨尔瓦多、玻利维亚和智利的二十五名与会者同意成立一个促进安第斯女权（AndeanWomen'srights）的永久性组织，并定于1993年在危地马拉城召开下次会议。</p>
+<p>南美“印第安妇女”（Indian Women）组织主席安娜劳劳（Ana LLao LLao）在第一次会三天议程结束时说：“发现个屁？对我们而言，那根本不是喜庆；对我们而言，那代表五百年的反抗。”（What discovery? For us it is not a celebration ,for us it represents 500 years of resistance.）</p>
+<p>属智利马普契族印第安（Mapuche Indians）的劳劳女士说：“所有所谓‘庆祝’活动，我们打算一律参加，以推进我们索还土地、索还资源的运动，而且要在这一运动中，要求为我们的族人列入百分之二十的国家预算。”（We plan to participate in all of the events of the socalled celebration and push ahead with our movement to recuperate our land, our resources and in this context, demand 20 percent of the national budget for our peoples.）</p>
+<p>身穿传统的黑衣和头饰、多条彩带垂腰的劳劳在闭幕会议中说，她们聚首一堂讨论她们的共同问题，“在中、南、北美形成印第安妇女的单一声音。”（Form a single voice of the Indian woman in South，Central and North America.）</p>
+<p>她说：“对我们而言，根本没有疆界。我们是一体。如果我们有知，则不管秘鲁还是厄瓜多尔印第安人的土地被人夺去，那表示我们都在受苦。”（For us there are no frontiers. We are one. If we learn that land is being taken from Indians in Peru or Ecuador it means suffering for all of us.）</p>
+<p>代表阿根廷、秘鲁、墨西哥、危地马拉、萨尔瓦多、玻利维亚和智利的二十五名与会者同意成立一个促进安第斯女权（Andean Women’s rights）的永久性组织，并定于1993年在危地马拉城召开下次会议。</p>
 <p>以上消息，是最近的外电，令我们备感注意与同情。</p>
 <p>印第安妇女说哥伦布发现美洲五百年，对印第安人说来，不是好事，正使我们感受到另一面的声音。《伊索寓言》中青蛙向小男孩们抗议，说对你们是运动、对我们是玩命；《聊斋》中蝴蝶向县太爷抗议，说对你是赎罪工具、对我们是虐待死亡。这些对比，都说明了双方立场不同，看法的差距是多么大。我们从书本上、从媒体上、从电视电影上，看多了丑化、小化印第安人的一面之词，对这种南美洲七个国家原住民妇女的呼声，自然要特予关注，以免偏听之害。</p>
 <p>印第安人本是早期的蒙古利亚种，和我们一样。他们最早可能是从西伯利亚和阿拉斯加间的“陆桥”进入美洲。这座“陆桥”约在公元前26000到前8000年间存在，走廊宽约一千英里。印第安人进入美洲后，自北而南，大约在公元前8000年左右就南抵麦哲伦海峡，他们在整个的美洲，繁殖起来。但是，自从白种人到美洲后，他们便遭到厄运。以“最文明的”美国地区为例，在美国地区，印第安人原有人口二百五十万，到了1890年，只剩下十分之一——二十五万。目前也不过一百四十万人。自白种人去到美洲大陆五百年间，印第安人被巧取豪夺、被杀被砍，已经完全沧为少数民族，白种人不断的虐待他们。直到1964年，才象征性的“赔偿”了他们两亿零八百万美元，但是，又有什么用呢？他们家园被夺、土地被占、人口锐减、前途茫茫，整个的处遇，已经糟得毫无生气了。</p>
@@ -610,7 +643,7 @@
 <p>对民进党自行捏造“黑名单”的行为，和它托言圣火很封建的行为，无足深论，我们这里要写的，是他们烧毁“黑名单”的奇怪心态。</p>
 <p>《阿Q正传》中阿Q被赵太爷打了，他躺在地上想：“现在的世界太不成话，儿子打老子。”随即想到赵太爷的威风，“而现在是他的儿子了，便自己也渐渐的得意起来。”他又被未庄的闲人们打了，他站了一刻想：“我总算被儿子打了，现在的世界真不像样。”于是也心满意足的得胜走了。阿Q这种心态，显然使自已得到一种舒泄，他精神胜利了。</p>
 <p>到民进党的烧毁“黑名单”，我们觉得：这些人，跟可怜的阿Q究竟有何不同？阿Q虽然精神胜利，但赵太爷和未庄的闲人们毕竟还是欺负他的人，毕竟不是他的儿子；民进党虽然精神胜利，但国民党毕竟还是作弄它的政党，毕竟真的“黑名单”依旧似有若无。你民进党的一厢情愿，毕竟不是事实。</p>
-<p>在儿童行为中，有一种“扮演或假装活动”（make-believeactivity），所谓“家家酒”之类是也。在这种活动中，儿童可以不受现实的限制而自由想象，可以任意改变环境的条件而符合个人愿望。这种扮演或假装活动，是儿童心理成长的重要过程。随着年龄的增长，这种活动就递减了，原因一来是自己能力增加了，无须以扮演或假装满足了；二来是自己白日梦增加了，白日梦比这种活动精彩多了。不过，这种儿童行为，如果人到成年还止不住，就会转成“我向思想”（autisticthinking），以歪曲现实来使自己过瘾，形成“自闭”（autism）。</p>
+<p>在儿童行为中，有一种“扮演或假装活动”（make-believe activity），所谓“家家酒”之类是也。在这种活动中，儿童可以不受现实的限制而自由想象，可以任意改变环境的条件而符合个人愿望。这种扮演或假装活动，是儿童心理成长的重要过程。随着年龄的增长，这种活动就递减了，原因一来是自己能力增加了，无须以扮演或假装满足了；二来是自己白日梦增加了，白日梦比这种活动精彩多了。不过，这种儿童行为，如果人到成年还止不住，就会转成“我向思想”（autistic thinking），以歪曲现实来使自己过瘾，形成“自闭”（autism）。</p>
 <p>民进党豪杰们的精神状态，应该没有问题，但是他们带领党员，集体从事烧毁“黑名单”的举动，却无异开着大门在表演自闭。这种心态，既幼稚、又落伍、又不健康，民进党如想发展成一个现代化政党，这一套还是少来为好。</p>
 <p>1988年以后三年来，民进党在“黑名单”上有进步，虽然还不断自行捏造一份，但是止于公布而已、亮相而已，不再劳动观音、妈祖、四海龙王、十八罗汉、城隍爷、注生娘娘、山神等牛鬼蛇神黑来黑去了，他们把来自龙山寺以外的名单拿出来，逼问国民党，国民党只有招架之力，反复只是说，没有什么“黑名单”。这种说法，一如说台湾没有“政治犯”一样，是连自己都越说越心虚的，同样的老调说得太久了。在本月1日，国民党外交部长小官僚钱复，终于有了一点松口了。</p>
 <p>4月1日立法院开外交委员会，钱复在答复质询时指出，根据内政部入出境管理局提供的“列注人员名单”，分甲资、乙资，其下各分注一、注二、注三。甲资为持本国护照者，乙资是持外国护照者，如日本赤军连、中东的恐怖分子。不过，由于这份名单是境管局所提供，由外交部将其送至派驻国外各机构，所以关于列注人员问题，并不是外交部职责。</p>
@@ -638,8 +671,8 @@
 <p>如今张盛喜在误以为民进党“可以依照‘理想’来塑造”的认识下，以法官的身份加入民进党，是完全天真的一种行径，从民进党历来信誓旦旦法官不得加入政党，到今天自己也干上一票看，足见什么“理想”，其实都是谎言；另一方面，张盛喜说“进入司法界后感觉到竟然执政党的知识分子率先违背了国父遗教”，其实他张盛喜自己，岂不也是共犯？按照“国父遗教”，法院该行陪审制，可是陪审制呢？足见张盛喜不止天真，还糊涂得很呢！</p>
 <p>1989年3月28日</p>
 <h2 id="民进党的劣币战"><a class="header" href="#民进党的劣币战">民进党的劣币战</a></h2>
-<p>经济学中有所谓“格雷欣法则”（Gresham'slaw），意思是说：如两种铸币，由面值相同但价值不同的金属铸成，则价值低的货币，会使价值高的货币在市面上出局。（Iftwocoinshavethesamenominalvaluebutaremadefrommetalsofunequalvalue，thecheaperwilltendtodrivetheotheroutofcirculation.）这一法则，即所谓“劣币驱逐良币（badmoneydrivesoutgood）”。</p>
-<p>“劣币驱逐良币”法则是16世纪发现出来的。19世纪的人，误将它归功于16世纪伦敦皇家交易所（LondonRoyalExchange）的创始人格雷欣（SirThomasGresham），因此形成“格雷欣法则”，使老格暴得大名至今。</p>
+<p>经济学中有所谓“格雷欣法则”（Gresham’s law），意思是说：如两种铸币，由面值相同但价值不同的金属铸成，则价值低的货币，会使价值高的货币在市面上出局。（If two coins have the same nominal value but are made from metals of unequal value，the cheaper will tend to drive the other out of circulation.）这一法则，即所谓“劣币驱逐良币（bad money drives out good）”。</p>
+<p>“劣币驱逐良币”法则是16世纪发现出来的。19世纪的人，误将它归功于16世纪伦敦皇家交易所（London Royal Exchange）的创始人格雷欣（Sir Thomas Gresham），因此形成“格雷欣法则”，使老格暴得大名至今。</p>
 <p>6月14日，暴得大名的民进党政客朱高正，为了与另一同党政客黄尔璇抢云林县立委提名的鸡骨头，招待记者，党同伐同，丑态毕露。朱高正大骂说，黄尔璇他们的新潮流系是民进党的“败类”“恶性肿瘤”“历史的残留物”“AIDS”，这个派系在搞“列宁式的党内斗争”，“从内部刨你的根，接收你的战果”。黄尔璇出来竞选云林地区立委，可能造成“劣币驱逐良币”。</p>
 <p>朱高正又指出，云林县那些连线要拉下他的人，像苏洪月娇等人，都有违纪参选的记录，如果造成“劣币驱逐良币”，他也无所谓，可是黄尔璇要他“让贤”，他却感到“啼笑皆非”。因为，“讲句不客气的话，你黄尔璇何德何能，我朱高正再差，也不至于输给你吧？”</p>
 <p>在另一方面，新潮流系的答复却是，朱高正长期以来说话不算话，例如这几天，朱高正关于是否参选一事，就先后有“尊重初选结果决不违纪参选”“初选不过则脱党选举”“退出民进党”等数种说法，而以前三二九案是否出庭一事，朱高正因时间不同，亦有“绝对不出庭”“必须要出庭以维护司法尊严”“司法无效”“拒绝上诉”等不同说法。并指摘他“霸道”“窘态毕露”“谬论连连，实有失民主风度”“请他检讨自己，不要输不起”。</p>
@@ -689,7 +722,7 @@
 <p>今天晚报登：“一向被认为纪律严明的民进党新潮流系，昨天在召开会员大会时，做成一项出人意表的决议：现任民进党中执委的该系成员邱义仁、黄昭凯、李逸洋、张温鹰及黄昭辉等五人，因在日前民进党中执会抗争不力，分遭停止代表新潮流系参与民进党内权利及党权、系内权利之处分。”“这项处分决议，在台湾政治发展上，可谓破天荒第一遭，加上邱义仁目前身兼新潮流系召集人，他的受到处分，更令人对新潮流系内的长幼、从属关系感到好奇。”“据指出：邱义仁遭停权一年，并不影响他现任民进党中执委的权利，但在年底民进党四全改组时，将不可能被新潮流系推出来参选党中央任何职务。”</p>
 <p>晚报又登：“邱义仁等五名新潮流系重要成员，遭派系会员大会决议暂时停止党权、系权一事，再次凸显了新潮流系的组织严密、讲求纪律及人人平等的特质。也显示新潮流系以其仅四十名左右的成员，竟能迅速发展为民进党内两大派系之一，确有其过人之处。”“邱义仁等人会因提名问题受到处分，也与新潮流系内第二代成员快速蹿起有关，该系第二代成员，目前在国内社会运动推展上，普遍崭露头角，在系内也拥有愈来愈强的发言力量，这在讲究人人平等的新潮流系内，虽不特别稀奇，但对第一代成员，或多或少构成相当压力。”</p>
 <p>看了晚报这一消息，我十分惊讶。我知道民进党中新潮流系工于夺权与内斗，但却没想到，这个派系的“内部纪律”和“家法处分”，竟这么快的演变成这步田地！看着晚报这一消息，一幅画面立刻浮现在我眼前，那就是英国作家乔治奥威尔（GeorgeOrwell）的寓言小说——《动物农庄》（AnimalFarm）。</p>
-<p>《动物农庄》写于1945年，是影射苏联革命后共产党的党争嘴脸的，主要是影射斯大林（Stalin）和被他斗倒的自己人——托洛茨基（Trotsky）的。书中描写农庄上的畜牲们起了革命，推翻了人类，占据了农庄。这些动物革命家包括努力做工的耕田的牛、爱好虚荣的拉车的马、玩世不恭的驴、好吃懒做的猫、又笨又乖的羊、为虎作伥的狗，和纵横捭阖的猪。在革命成功伊始，大家同心协力，建立自由平等博爱的新社会，但是曾几何时，在一头叫“拿破仑同志”（ComradeNapoleon）的公猪带头下，开始秘密培养特工和别动队，运用各种明的暗的，把异己一个个斗倒斗垮斗臭。在革命成功之初，本来大家是订有公约的。但是在“拿破仑同志”的篡夺革命下，一切公约都变了质，同志给干掉了，“所有动物一律平等”（Allanimalsareequal）的公约，变成了“所有动物一律平等，但有些比别的更平等。”（Allanimalsareequalbutsomeanimalsaremoreequalthanothers）猪凌驾所有动物之上，它们中央集权，独享牛奶，专卖鸡蛋，又穿衣服又上床，酒喝得开心，最后连走路都用两条腿了。</p>
+<p>《动物农庄》写于1945年，是影射苏联革命后共产党的党争嘴脸的，主要是影射斯大林（Stalin）和被他斗倒的自己人——托洛茨基（Trotsky）的。书中描写农庄上的畜牲们起了革命，推翻了人类，占据了农庄。这些动物革命家包括努力做工的耕田的牛、爱好虚荣的拉车的马、玩世不恭的驴、好吃懒做的猫、又笨又乖的羊、为虎作伥的狗，和纵横捭阖的猪。在革命成功伊始，大家同心协力，建立自由平等博爱的新社会，但是曾几何时，在一头叫“拿破仑同志”（Comrade Napoleon）的公猪带头下，开始秘密培养特工和别动队，运用各种明的暗的，把异己一个个斗倒斗垮斗臭。在革命成功之初，本来大家是订有公约的。但是在“拿破仑同志”的篡夺革命下，一切公约都变了质，同志给干掉了，“所有动物一律平等”（All animals are equal）的公约，变成了“所有动物一律平等，但有些比别的更平等。”（All animals are equal but some animals are more equal than others）猪凌驾所有动物之上，它们中央集权，独享牛奶，专卖鸡蛋，又穿衣服又上床，酒喝得开心，最后连走路都用两条腿了。</p>
 <p>民进党最不可原谅的致命错误，是它居然在建党之初，不建立一个英美民主国家的政党，而建立一个苏联极权国家的政党，因为国民党也是学苏联的，所以民进党也无异就近学的是国民党。如国民党有党纪处分，民进党也有党纪处分，便是惟妙惟肖的一例。</p>
 <p>不过，党纪处分只是一般的，事实上，国民党内部大圈圈里有小圈圈、小圈圈里有黄圈圈，例如它的核心组织蓝衣社，就在党纪处分以外，另有“内部纪律”和“家法处分”，这种在自己的党内，另搞小团体；在小团体内，另订罚则的神秘作业，使国民党最后被“拿破仑同志”和它的猪系小集团通吃了一切，真的国民党，早就呜呼哀哉了！</p>
 <p>如今民进党中新潮流系的发展，就正是朝乔治奥威尔的寓言大步前进的。它在自己党中，别成一系；党权以外，别有系权。在系权处分下，竟可凌驾党权，做出党权以外的处分。这是哪门子民主政党啊？又是哪门子进步政党啊？</p>
@@ -735,19 +768,19 @@
 <p>陈定南他们当然不服气，他们的说法是：“宜兰虽反六轻，但并不反工业。”不过，这种诡论，若郝大将援同样逻辑，照样可说：“政府虽反政客，但并不反宜兰。”那又如何是好？</p>
 <p>无论如何，由于“环保秀”的人士几年来作秀作得爽，气走王永庆、激怒郝柏村，如今可要付出爽的代价了。——要想爽，就得穷；要想清洁，就得落后；要想环境保护，就得布衣破裤，这是人间利害相对的起码常识。要想不成为穷乡僻壤，就得接受工业设施，连风光明媚的德国莱茵区都不例外，何况丑陋的宜兰？</p>
 <p>宜兰民进党县太爷游锡堃说要把宜兰麻雀变成凤凰，但是不付代价，麻雀又从何变成凤凰？这样下去，只恐怕变凤凰的，只是别人，宜兰还是麻雀而已。</p>
-<p>宜兰人埋怨陈定南他们，固然看出小市民的反复无常，但陈定南他们也该面对这一责难。19世纪英国首相迪斯累里（BenjaminDisraeli），是近代保守党的开山大师，他有个一生争的死对头，就是格莱斯顿（WilliamGladstone）。格莱斯顿三任英国首相，一辈子气虎虎的瞪着迪斯累里，迪斯累里死的时候，他丧都不吊，为了迪斯累里常常开他的玩笑。有一次，迪斯累里倒阁成功，却不肯授命组阁，被人大加责备，因为这是不可以的。——你拆了别人的台，你就必须承担别人走后的后果。如今宜兰山转路不转，又要继续穷下去了，苏澳镇长林祺山激动得唉声叹气：“这几个月我们一直在庆祝，先是苏澳镇就为这条路办了五六次庆祝活动，现在真不知道要如何善后！”如何善后，容易得很，去找陈定南他们算账，罢免他们。不再选他们，以为不识大体徒知作秀的政客戒！始作俑者，其落选乎？对民进党政客，就该给他们一个教训。</p>
+<p>宜兰人埋怨陈定南他们，固然看出小市民的反复无常，但陈定南他们也该面对这一责难。19世纪英国首相迪斯累里（Benjamin Disraeli），是近代保守党的开山大师，他有个一生争的死对头，就是格莱斯顿（William Gladstone）。格莱斯顿三任英国首相，一辈子气虎虎的瞪着迪斯累里，迪斯累里死的时候，他丧都不吊，为了迪斯累里常常开他的玩笑。有一次，迪斯累里倒阁成功，却不肯授命组阁，被人大加责备，因为这是不可以的。——你拆了别人的台，你就必须承担别人走后的后果。如今宜兰山转路不转，又要继续穷下去了，苏澳镇长林祺山激动得唉声叹气：“这几个月我们一直在庆祝，先是苏澳镇就为这条路办了五六次庆祝活动，现在真不知道要如何善后！”如何善后，容易得很，去找陈定南他们算账，罢免他们。不再选他们，以为不识大体徒知作秀的政客戒！始作俑者，其落选乎？对民进党政客，就该给他们一个教训。</p>
 <p>1991年3月2日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/03.惊世杂文类/你是景福门.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/03.惊世杂文类/你是景福门.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../03.惊世杂文类/为自由招魂.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../03.惊世杂文类/你笨蛋，你笨蛋.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -757,16 +790,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../03.惊世杂文类/为自由招魂.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../03.惊世杂文类/你笨蛋，你笨蛋.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -775,12 +813,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

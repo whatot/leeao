@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,77 +81,98 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <p>#《第一流人的境界》目录</p>
 <ul>
@@ -208,13 +241,13 @@
 <p>所以，他不能过凡夫俗子的生活，不能在人生的许多事情上，做凡夫俗子的反应。为了完成第一流的事，他必须放弃或减少凡夫俗子的快乐、交游、娱乐、爱恨、争执、答辩与澄清。</p>
 <p>林肯说他没工夫答辩，生命用来扯这些，他将无暇做重要的事。</p>
 <p>第一流的人会忍辱、会含冤、会受谤、会遭非常之变，不动于色，会“猝然临之而不惊，无故加之而不怒”，因为他志趣高迈，“所挟持者甚大，而其志甚远也。”</p>
-<p>第一流的人认定Lifeistooshorttobelittle.(人生短得不够扯鸡毛蒜皮），他必须忍住不为小事所缠。他有很快分辨出什么是“无关的事项”（irrelevancy)的能力，然后立刻砍掉它。</p>
+<p>第一流的人认定Life is too short to be little .(人生短得不够扯鸡毛蒜皮），他必须忍住不为小事所缠。他有很快分辨出什么是“无关的事项”（irrelevancy)的能力，然后立刻砍掉它。</p>
 <p>第一流人过的生活，一定不是常人的生活，一定是非常人所能堪的生活，一定是常人不肯过、也不能过的生活。</p>
 <p>1981年7月20日</p>
 <p>论传奇人物</p>
 <p>传奇人物的特质就是生命力的莫测，生命力的跑野马。</p>
 <p>传奇人物生命力极强、智慧极高、勇气十足。他的充沛的生命力，无法把他安在一个固定的角色上，碌碌一生。传奇人物不拘一格，他不是书生，也不是剑客，但他是书剑飘零型的人物。他也许是一阵子书呆、一阵子军人、一阵子怪杰、一阵子作家、一阵子商人、一阵子投机者、一阵子情场浪子、一阵子赌台常客、一阵子热如火、一阵子冷如冰、一阵子老僧入定、一阵子顽若狡童。……或整年在温柔乡里，或终岁在离群索居中。</p>
-<p>传奇人物很像是阿米巴（ameba,amoeba），但他绝不是一个单细胞，他是多才多艺多方面的化合物。从捕鲸船上的梅尔维尔到做小职员的梅尔维尔、从战场上的海明威到角力场上的海明威、从女人怀里的拜伦到客死希腊的拜伦，从挥剑南非的邱吉尔到从事绘画的邱吉尔。……无一不是传奇人物的类型。</p>
+<p>传奇人物很像是阿米巴（ameba, amoeba），但他绝不是一个单细胞，他是多才多艺多方面的化合物。从捕鲸船上的梅尔维尔到做小职员的梅尔维尔、从战场上的海明威到角力场上的海明威、从女人怀里的拜伦到客死希腊的拜伦，从挥剑南非的邱吉尔到从事绘画的邱吉尔。……无一不是传奇人物的类型。</p>
 <p>传奇人物自有他的弱水三千，而不止于一瓢；自有他的取舍，而不同于世俗的得失。</p>
 <p>传奇人物最大的特色表现是不安于环境(一年三年，三年五载)，他要找新的环境去浪迹人生。传奇人物不怕任何遭际，任何遭际对他都化为教育与磨练，然后铸成他丰富生命的一部分。</p>
 <p>传奇人物亦刚亦柔亦狂亦狷，但都行之于神机莫测。女人抓不住他、男人伤不了他、朋友吃不消他、敌人又被他烦死。他的生命力有一股力量、一团火，永远折腾没完。</p>
@@ -224,22 +257,22 @@
 <p>1976年2月号的Penthouse杂志上，有一幅漫画，画一个斗牛士，斗牛斗得全身是伤，到饭店吃饭。侍者问他吃什么，他说：“牛排！”（Steak!）</p>
 <p>也许有人以为这是阿Q心理或是什么别的补偿心理之类，我却认为此公此举倒也恰如其身份。——这是十足好斗的人的作风，不是吗？</p>
 <p>好斗的人，一如好赌的，是不分赌注多少的，斗的重点在时时处处发扬斗的精神，而不在斗的目标的大小。有好斗精神的人，他总是时时处处要跟你干，要做一个战士。</p>
-<p>做一个战士，甚至到死亡边缘，也是活力十足的。诗人勃朗宁（RobertBrowning）写道：</p>
-<p>Iwaseverafighter,so-onefightmore.</p>
-<p>thebestandthelast!</p>
-<p>Iwouldhatethatdeathbundagedmyeyes,andforbore.</p>
-<p>Andbademepast.</p>
+<p>做一个战士，甚至到死亡边缘，也是活力十足的。诗人勃朗宁（Robert Browning）写道：</p>
+<p>I was ever a fighter, so-one fight more.</p>
+<p>the best and the last!</p>
+<p>I would hate that death bundaged my eyes, and forbore.</p>
+<p>And bade me past.</p>
 <p>我永远是一个战士，</p>
 <p>所以——再打这最好的最后的一仗！</p>
 <p>我厌恶死亡蒙住我的两眼，</p>
 <p>叫我领教他的死相。</p>
 <p>晋朝的王敦，在生命最后，以散打动作，说出“老骥伏枥，志在千里。烈士暮年，壮心不已”的话，这种气魄，只有诗人丁尼生（AlfredTennyson）笔下的希腊英雄尤利西斯（Ulysses）可以辉映：</p>
-<p>Thoughmuchistaken,muchabides;andthough</p>
-<p>Wearenotnowthatstrengthwhichinolddays</p>
-<p>Movedearthandheaven,thatwhichweare,weare,</p>
-<p>Oneequaltemperofheroichearts,</p>
-<p>Madeweakbytimeandfate,butstronginwill</p>
-<p>Tostrive,toseek,tofind,andnottoyield.</p>
+<p>Though much is taken, much abides; and though</p>
+<p>We are not now that strength which in old days</p>
+<p>Moved earth and heaven, that which we are, we are,</p>
+<p>One equal temper of heroic hearts,</p>
+<p>Made weak by time and fate, but strong in will</p>
+<p>To strive , to seek ,to find ,and not to yield.</p>
 <p>虽然用掉很多了，</p>
 <p>但剩下的也还不少；</p>
 <p>虽然不像从前那样掀天动地了，</p>
@@ -299,13 +332,13 @@
 <p>1974年8月25夜狱中作</p>
 <p>对敌人的道德</p>
 <p>——《耳中人》之二</p>
-<p>甲：有些古代的道德，我们看起来就像看美国加州那些“世界爷”（GiantSequoias），那些三四千年的老树，它们是来自过去的活古董，大家欣赏它们、保护它们，它们虽活到现在，其实却属于古代——它们跟我们同时而不同代。</p>
+<p>甲：有些古代的道德，我们看起来就像看美国加州那些“世界爷”（Giant Sequoias），那些三四千年的老树，它们是来自过去的活古董，大家欣赏它们、保护它们，它们虽活到现在，其实却属于古代——它们跟我们同时而不同代。</p>
 <p>乙：“同时而不同代”？这个观念倒有点新。请问在道德上，也是生物现象吗？</p>
 <p>甲：是的，道德是一种有机体，道德也会生老病死。你有没有注意到很多道德项目，尽管活在书中——像“世界爷”活在加州，其实已跟我们同时而不同代了。我从道德项目中找一个“对敌人的道德”做例子。中国古代的名射手子濯孺子，侵略到卫国，卫国派人追他。他跟副官说：“今天我病了，没法射箭，今天看样子要死了，你知道追我们的人是谁吗？”副官说：“追我们的是庾公之斯。”子濯孺子说：“是他呀，那我死不了了。他是我学生尹公之他的学生，尹公之他是正人君子，他不会乱收学生的，他的学生也一定是正人君子。”过了一会，庾公之斯果然追上来了，奇怪地问子濯孺子：“老先生，你怎么手里不拿弓呢？”子濯孺子说他病了。庾公之斯说：“你是我太老师，我不能用你教的技术来对付你，但今天也不能不公事公办。”于是他拔了四支箭，把箭头都敲掉，射了四下就走了。——这个故事，说明了一种不乘人于危的道德的延伸，即使对敌人也不例外。这种道德，现代已经死了。现代若有庾公之斯这种人，在战场上，看到敌人病了，恐怕还要乘机多射几箭呢。即使不射,回来也要被军法审判。古代的庾公之斯敢阵前放水，也明知他的后台老板跟他有同样的道德标准，就像小说中华容道放了曹阿瞒的关老爷一样，心里多少知道军法审不到他。</p>
 <p>乙：你这例子有毛病，庾公之斯碰到了师道的冲突，关公碰到了友道的冲突，他们对“敌人的道德”，都被另一种道德推动了，不像你说的那么单纯。</p>
 <p>甲：好，我举一个单纯一点的例子。羊叔子的故事总单纯了吧？他跟敌人对阵，敌方的总司令病了，他竟派人送药去。敌方的左右都说药里有毒，可不能吃呀，但总司令却哈哈大笑：“羊叔子哪里是拿毒药毒人的人！”这个故事你总服了吧？现代还会有这种人吗？现代还会有这种送药的傻子、吃药的疯子吗？所以我说，这种“对敌人的道德”，只活在书里了。</p>
 <p>乙：我承认我们中国古代有这种罗曼蒂克的道德。</p>
-<p>甲：“我们中国”吗？请你告诉我，阿贝拉会战（TheBattleofArbela）时，亚历山大不肯夜袭敌人，他说他不愿偷取胜利，他要公开又公平的打，使对方输了也心服。这种道德又是哪国的？可见并非中国国粹，也不是我们中国所能专利，当然也不只中国和希腊有：送还敌人尸首的征服者威廉是英国的；送还敌人迷途的狗的华盛顿是美国的；嫌潜水艇不够光明正大而拒绝这种战术的拿破仑是法国的……这种“对敌人的道德”存在的时候，简直是“放之四海而皆准”的，可是却不能“俟诸百世而不惑”。因为，我说过，道德是会生老病死的。</p>
+<p>甲：“我们中国”吗？请你告诉我，阿贝拉会战（The Battle of Arbela）时，亚历山大不肯夜袭敌人，他说他不愿偷取胜利，他要公开又公平的打，使对方输了也心服。这种道德又是哪国的？可见并非中国国粹，也不是我们中国所能专利，当然也不只中国和希腊有：送还敌人尸首的征服者威廉是英国的；送还敌人迷途的狗的华盛顿是美国的；嫌潜水艇不够光明正大而拒绝这种战术的拿破仑是法国的……这种“对敌人的道德”存在的时候，简直是“放之四海而皆准”的，可是却不能“俟诸百世而不惑”。因为，我说过，道德是会生老病死的。</p>
 <p>乙：从古传下，一些有情味的道德项目，难道我们不能使它长生不老吗？</p>
 <p>甲：这个问题要从反面来答，要问道德项目是怎么变了的？比如说，在西部拓荒时代，一个道德项目是不可以背后开枪，这个项目是有情味的，大家一体遵守，不在话下。但后来有人为了增加效果，居然背后开了枪，于是你开我开，大家都开，这一道德项目，就被乱枪射杀了。如果世风如此，有人还坚持古典派，还要正面开枪，那他只有背对着法医，听数子弹孔的份儿。又比如说，在盗亦有道时代，流氓打架，一比一，空手打——“空手道”。后来有人为了增加效果，变成一大堆比一，外加扁钻、武士刀齐上。如果世风如此，有人还坚持古典派,那他只有在急诊处感慨人心不古了。由此看来，人类为了增加效果，改变了道德项目。效果既然重于一切，道德就只好随效果修正。能接受修正的人，不论为善为恶，都心安理得；不能接受修正的人，就接受法医检查或急诊处医生抢救，此外别无选择。</p>
 <p>乙：这太没意思了。</p>
@@ -340,7 +373,7 @@
 <p>你必须说落选的不好。</p>
 <p>1977年</p>
 <p>文化空中飞人</p>
-<p>纽约惠特尼美国艺术馆（WhitneyMuseumofAmericanArt.NewYork）藏有美国画家卡瑞（JohnSteuartCurry,1897-1946）的《空中飞人》（TheFlyingCodonas）画，因为国民党不准我出境，我不能亲眼去看，只好弄来一张照片，算是一看。</p>
+<p>纽约惠特尼美国艺术馆（Whitney Museum of American Art. New York）藏有美国画家卡瑞（John Steuart Curry, 1897-1946）的《空中飞人》（The Flying Codonas）画，因为国民党不准我出境，我不能亲眼去看，只好弄来一张照片，算是一看。</p>
 <p>我常常想，中国人说三百六十行，其实人间何止三百六十行？细分起来，三千六百行也有。在这三千六百行中，可按职业难易分两大类，一类是吃饭太容易的行业：比如说，画荷花吧，有人只会涂抹千篇一律的荷花，就可以成名、可以发财，这种“荷花骗子”，成名发财也未免太容易了吧？又比如说，作梅花吧，有人只会编首众口一声的梅花，也就可以成名、可以发财，这种“梅花骗子”，成名发财也未免太容易了吧？</p>
 <p>另一类行业就完全不同了，那是吃饭太不容易的行业：比如说，那干抓蛇的、那干挖煤的、那在殡仪馆洗死尸的、那在马戏团表演空中飞人的。……这些行业的人，的确活得良非易事，他们比起“荷花骗子”、“梅花骗子”来，可真太辛苦了。</p>
 <p>这一对比，显示了人间是何等不平。</p>
@@ -375,7 +408,7 @@
 <p>美国给了琼斯英雄式的欢迎，并官拜他为海军少将，他的名言“我还没开始打呢！”也成为千古名言，虎虎生风，永垂不朽。</p>
 <p>战后，美国废除了海军。正好俄国要楚材晋用，请他加入黑海舰队，他遂去了俄国，也颇立战功。</p>
 <p>1790年，他退休去巴黎。两年后死在那里。</p>
-<p>1905年，他归骨美国，安葬在马里兰州安纳波里海军官校（UnitedStatesNavalAcademyatAnnapolis,Md.）。</p>
+<p>1905年，他归骨美国，安葬在马里兰州安纳波里海军官校（United States Naval Academy at Annapolis, Md.）。</p>
 <p>琼斯的故事，告诉了人们：真正的悍将，往往在人们以为他不打了的时候，“于无声处听惊雷”，把敌人打得落花流水。——悍将就是悍将，他的“出手”，若被凡夫俗子摸得透，还算本领吗？</p>
 <p>1986年1月29夜</p>
 <p>我为什么不看电视？</p>
@@ -431,9 +464,9 @@
 <p>沈约注《文选》，对这四句诗的阐释是：“若斯人者，不念己之短翮，不随燕雀为侣，而欲与黄鹄比游。黄鹄一举冲天，翱翔四海，短翮追而不逮，将安归乎？为其计者，宜与燕雀相随，不宜与黄鹄齐举。”大意是说，跟着“一举冲天，翱翔四海”的黄鹄飞扬，自己的羽毛太短，跟不上，飞了一半，飞得进退维谷，还不如跟着燕雀为侣，做小鸟可也。——阮籍是有大志的人，但他却做了这种“低调”的诗，不无可怪。</p>
 <p>上次世界奥运会时，以小老鹰为漫画图标。我逛中山北路西书店，卖到蚀有小老鹰的一件铜饰，下面五行英文是：</p>
 <p>IT’SDIFFICULTTO</p>
-<p>SOARWITHEAGLES</p>
-<p>WHENYOU</p>
-<p>WORKWITH</p>
+<p>SOAR WITH EAGLES</p>
+<p>WHEN YOU</p>
+<p>WORK WITH</p>
 <p>TURKEYS</p>
 <p>我见之而喜。这句英文字面的意思是：当你与火鸡搅在一起，你就难于老鹰一块儿高飞了。由于英文“火鸡”（turkey）含有“王八蛋”的意味，所以这句话的言外之意是：当你跟王八蛋为伍，你就难随高明人飞扬了。</p>
 <p>在陈胜做奴隶的时候，他就睥睨同道，说他们“燕雀安知鸿鹄之志”。燕雀是实在不知鸿鹄之志的，与燕雀为伍的人，当然更等而下之。能知什么是鸿鹄之志，是一种水平、一种境界，不过知道以后，你自己只能单独去做鸿鹄。——有着牧野鹰扬大志的人，毕竟是不会追随别人的。</p>
@@ -482,15 +515,15 @@
 <p>《中国时报》1978年9月17日</p>
 <p>歌手与音乐会</p>
 <p>英国首相梅杰和威梅尔斯王妃戴安娜，12日和伦敦一万两千多名摇滚乐迷，共同参加为库德族难民募款而举行的热门演唱会，主办单位希望能一下子募得一千万英镑（1700万美元），救助难民。</p>
-<p>这场定名为“简明真理”（TheSimpleTruth）的演唱会，12日母亲节当天在伦敦举行，参加演唱的歌星包括英美歌星，还有库德族歌手包窝尔（ShivanParwar）。主办单位要求每人至少捐出八点五美元。</p>
+<p>这场定名为“简明真理”（The Simple Truth）的演唱会，12日母亲节当天在伦敦举行，参加演唱的歌星包括英美歌星，还有库德族歌手包窝尔（Shivan Parwar）。主办单位要求每人至少捐出八点五美元。</p>
 <p>外国歌星出面募款，虽难免有作秀之讥，但他们的确也为穷苦大众做了一点事。反观台湾的歌手除了作秀，全无他事，这些艺术工作者是冷血的！</p>
 <p>1991年5月14日</p>
 <p>以蜘蛛为师</p>
-<p>《泰西五十轶事》（FiftyFamousStoriesRetold）有一则《布鲁斯和蜘蛛》（BruceandtheSpider）。大意说，当年苏格兰国王罗勃布鲁斯（RobertBruce）与英格兰战，六次败北，溃不成军。他藏身在幽谷中的一间陋室里，躺在地上，静听屋外雨声淅沥，备感绝望。忽然间，他看到头顶上有一只蜘蛛，正在结网，一连六次抛蛛丝过去，都失败了。</p>
-<p>“可怜虫！”布鲁斯说：“你，也知道失败是怎么一回事了吧。”（Poorthing!You,too,knowwhatitistofail.）</p>
+<p>《泰西五十轶事》（Fifty Famous Stories Retold）有一则《布鲁斯和蜘蛛》（Bruce and the Spider）。大意说，当年苏格兰国王罗勃布鲁斯（Robert Bruce）与英格兰战，六次败北，溃不成军。他藏身在幽谷中的一间陋室里，躺在地上，静听屋外雨声淅沥，备感绝望。忽然间，他看到头顶上有一只蜘蛛，正在结网，一连六次抛蛛丝过去，都失败了。</p>
+<p>“可怜虫！”布鲁斯说：“你，也知道失败是怎么一回事了吧。”（Poor thing! You , too, know what it is to fail.）</p>
 <p>可是，那蜘蛛在失败六次以后，毫不灰心。又第七次抛蛛丝过去，就在这第七次，那只小动物成功了。</p>
-<p>“我也要试着去干第七次！”（I,too,willtryaseventhtime！）布鲁斯喊起来。他冲出去，召集部队，以蜘蛛为师，终於挽回了颓局。</p>
-<p>《泰西五十轶事》的结语是：“我曾听人这样说，从此以后，没有一个人曾经用着布鲁斯的名义去伤害过一只蜘蛛。那只小动物带给国王的教训，也将永垂不朽。”（Ihavehearditsaid,that,afterthatday,noonebythenameofBrucewouldeverhurtaspider.Thelessonwhichthelittlecreaturehadtaughtthekingwasneverforgotten.）</p>
+<p>“我也要试着去干第七次！”（I, too, will try a seventh time！）布鲁斯喊起来。他冲出去，召集部队，以蜘蛛为师，终於挽回了颓局。</p>
+<p>《泰西五十轶事》的结语是：“我曾听人这样说，从此以后，没有一个人曾经用着布鲁斯的名义去伤害过一只蜘蛛。那只小动物带给国王的教训，也将永垂不朽。”（I have heard it said, that, after that day, no one by the name of Bruce would ever hurt a spider. The lesson which the little creature had taught the king was never forgotten.）</p>
 <p>按照英国史，布鲁斯战败、卧看蜘蛛时在十四世纪初叶。在布鲁斯生前近两百年，中国的王安石《省中二首》之诗，也有卧看蜘蛛之事：</p>
 <p>万事悠悠心自知，强颜於世转参差。</p>
 <p>移床独卧秋风里，静看蜘蛛结网丝。</p>
@@ -502,7 +535,7 @@
 <p>令我感到奇怪的是：孔夫子不但是一个伟大的老师，同时也是一个伟大的学生，这一事实，却没被人注意到。孔夫子是个以向别人学点什么为荣的人，他“不耻下问”，“入太庙，每事问”，都表示出他有好学生的气质。他对老师的标准，也从宽录取，“三人行，必有我师”，标准之宽，足令路人侧目。司马迁记录“孔子之所严事”的师承，“于周则老子；于卫，蘧伯玉；于齐，晏平仲；于楚，老莱子；于郑，子产；于鲁，孟公绰。”这些和他同时的人物，都是他学习的对象。孔夫子是好学生，自毫无疑问。</p>
 <p>虽然是好学生，孔夫子并不不辨是非的附和老师的意见。孔夫子公然主张“当仁不让于师”，翻成山东白话是：“在真理面前，不能因为他是俺老师，俺就乱和稀泥；就便是老师，俺也不让步，俺也要批评。”</p>
 <p>孔夫子不但这样说，真的这样做了。他的老师老子李耳，主张“以德报怨”，孔夫子就大加抨击，他质问：若不辨是非的对有怨于你的以德相报，那么对有德于你的，又该怎么办？又“何以报德”？</p>
-<p>孔夫子这种“当仁不让于师”的精神，是西方的“吾爱吾师，吾尤爱真理”的精神。一般以为“吾爱吾师，吾尤爱真理”的话，是亚里士多德的话，其实亚里士多德在“尼可马堪伦理学”（EthicaNicomachea）中，并没这样的原文。亚里士多德批评他的老师柏拉图，指出真理和师友都是亲爱的，但在两者冲突的时候，他选择真理。</p>
+<p>孔夫子这种“当仁不让于师”的精神，是西方的“吾爱吾师，吾尤爱真理”的精神。一般以为“吾爱吾师，吾尤爱真理”的话，是亚里士多德的话，其实亚里士多德在“尼可马堪伦理学”（Ethica Nicomachea）中，并没这样的原文。亚里士多德批评他的老师柏拉图，指出真理和师友都是亲爱的，但在两者冲突的时候，他选择真理。</p>
 <p>古今中外，热爱真理的人，无不在真理面前，对老师痛苦的义无反顾：孔夫子热爱真理，他“背弃”了老子；亚里士多德热爱真理，他“背弃”了柏拉图；梁启超“背弃”了康有为；卡尔容（CarlJung）“背弃”了弗洛伊德；章太炎“背弃”了俞樾；周作人又“背弃”了章太炎；周作人的学生又继续“背弃”，当真理跑得比老师快的时候，又怎能不做清楚的选择、清楚的“背弃”呢？</p>
 <p>孔夫子感叹：“莫我知也夫！”（没人了解俺呀！）“知我者，其天乎！”（只有老天爷了解俺呀！）他的许多心事，我认为一定有曲高和寡的埋没。“万世师表”的崇拜，不幸窄化了孔夫子，孔夫子其实是伟大的学生，他在真理面前“当仁不让于师”，这种固执、这种勇气，才真教我们叫好：他是师生关系的革命家，他是“万世生表”！</p>
 <p>1979年9月28日</p>
@@ -546,7 +579,7 @@
 <p>1984年5月7日</p>
 <p>（补记）18日合众国际社汉城又有电讯如下：“继韩国各地二十多所大学发生暴动示威，以纪念四年前反政府流血暴动之后，警方今天拘捕了四十八位学生。数千名学生昨天的暴动，是响应不满分子的呼吁，要求由前伞兵将领全斗焕领导之政府进行改革。当局报导，有一百一十三位警官和六位教职员受伤。据官方估计，同时也有十位学生受伤，然而报纸指出约三十位学生受伤。目击者称，警方在四所学校内，以催泪瓦斯驱散投掷石头的学生。警方称，被捕的学生将被遣送回家，而不对他们采取任何法律行动。警方发言人称，他们仅是被拘留，以防他们参加另一项示威。学生企图以游行纪念1980年5月为期十天的反政府光州暴动，当时有将近二百人死亡。暴动是在全斗焕1979年12月接掌军权之后，企图巩固政权之际发生的。”19日法新社汉城又有电讯如下：“警方今天在此间拘留五十九名参加昨天反政府示威活动的学生。这是最近几个月以来，最激烈的反政府示威活动。警方说，昨天拘捕的八百名左右的学生在经过整夜的讯问后，大部分已在今早获释。警方进一步的表示，在发生于此间数所大学校区内的冲突中，计有一百一十八名镇暴警察受伤及八辆警车受损。来自韩二十所大学的数千名学生昨天在此间庆祝发生于一九八零年全斗焕执政时的光州大暴动。他们指责全斗焕压制光州大暴动及要求全斗焕辞职。示威者以石头及砖块攻击警察，警察乃发射催泪瓦斯弹。据说，多名学生被催泪瓦斯弹所伤，并已被送往医院医治。”</p>
 <p>终于胜了一场</p>
-<p>二十七年前，我写《给谈中西文化的人看看病》，曾讲到一个小故事。我说：一个英国探险家在某次探险中碰到一个有吃人肉风俗的蛮人，等到他发现这蛮人竟是一个英国大学里出身的，他大为惊奇，他间这个蛮人道：“你难道还吃人肉吗？”这个蛮人的答话可妙了，他说：“我现在用西餐叉子来吃了。”（Ius'umforknow.）二十七年来，这个小故事，我常加引述，只喜欢它含意的深长。</p>
+<p>二十七年前，我写《给谈中西文化的人看看病》，曾讲到一个小故事。我说：一个英国探险家在某次探险中碰到一个有吃人肉风俗的蛮人，等到他发现这蛮人竟是一个英国大学里出身的，他大为惊奇，他间这个蛮人道：“你难道还吃人肉吗？”这个蛮人的答话可妙了，他说：“我现在用西餐叉子来吃了。”（Ius’umforknow.）二十七年来，这个小故事，我常加引述，只喜欢它含意的深长。</p>
 <p>所谓“西餐叉子吃人肉”，它的思想型模，是半吊子接受外来文化的一个类型。它把现代文化跟自己的文化接龙，但却做成一个非牛非马的不伦不类的配合。其结果，外似“融汇中西”，内实狗屁狗屁，变成笑剧。</p>
 <p>不幸的是，在台湾的中国文化，所表现出来的，却正好是这种笑剧。</p>
 <p>1965年8月23日《台湾日报》刊载，台北西门町闹区流行一种“电子算命机”。这种机器“远远望去，同公用电话差不多。”“投下两元辅币,按动男女性别电钮，然后拨动一下你的出生年月，拿起听筒，即刻便有一位小姐在听筒中,告诉你一些你心里所幻想的事。这样事不外功名利禄，以及婚姻大事。”1982年9月12日《联合报》刊载，新竹有周姓人家，母亲死了，子女在外，工作太忙，赶不回来奔丧，只好将自己的哭声录音，然后将录音带寄回，在母亲灵前播放，并且周而复始，哭声加上乖法，只哭一回，实放多次。这些妙事，试问哪一项不是“西餐叉子吃人肉”？</p>
@@ -565,7 +598,7 @@
 <p>“打脱牙齿和血吞”，就是牙被人打掉了，却吐都不吐出来，跟满口的血，一齐吞到肚子里去，表示遭遇了任何失败和损失，都忍住一声不响。这种态度除了不够轻松外，都叫人佩服。</p>
 <p>学会利用失败要分两种层次：第一层次是先从失败里检查残余，看看失败以后还剩下了什么？而绝不花一分钟时间去开追悼会、去唉声叹气、去借酒浇愁。如果根本就知道没有残余可剩，就干脆“堕甑不顾”。第二层次是更进一步，不但能正视失败，还能笑视失败。第一层次是做到不因失败而哭，这一层次却要做到反为失败而笑。笑视是笑着看失败。失败有什么好笑？失败就是有，就看你看不看得出来。笑不是取笑，是快乐，是真的因为不成功而快乐。</p>
 <p>一般人以得不到什么而痛苦，我却以得不到什么而开心。因为我会想到得不到什么的好处那一面，一般人却绝对不会也不愿这么想，所以他们只会因为失败而痛苦，却不会因为未得而开心。</p>
-<p>一般人只会庆祝成功，我固然也庆祝成功，但也庆祝失败。像我这样肯把失败当成功一样庆祝的人，全世界恐怕决无仅有。我能从失败中看到它的好处，并且愿意这样看。结果，我从失败中看到成功的一面，从不幸中看到幸福的一面。一般人很少能够看到失败的好处，不会欣赏失败、享受失败，不会在一败涂地的时候，躺在地上，细闻泥土和草根的清香。很少人知道，在有比赛的情形下，比赛下来，胜利者往往有两个，就是胜利者和躺在地上吹口哨的失败者。在没有比赛的情形下，一个快乐的失败者，本人就是另一个胜利者。（Acheerfulloseriswinner.）人间的许多情景，洵可如是观。</p>
+<p>一般人只会庆祝成功，我固然也庆祝成功，但也庆祝失败。像我这样肯把失败当成功一样庆祝的人，全世界恐怕决无仅有。我能从失败中看到它的好处，并且愿意这样看。结果，我从失败中看到成功的一面，从不幸中看到幸福的一面。一般人很少能够看到失败的好处，不会欣赏失败、享受失败，不会在一败涂地的时候，躺在地上，细闻泥土和草根的清香。很少人知道，在有比赛的情形下，比赛下来，胜利者往往有两个，就是胜利者和躺在地上吹口哨的失败者。在没有比赛的情形下，一个快乐的失败者，本人就是另一个胜利者。（A cheerful loser is winner.）人间的许多情景，洵可如是观。</p>
 <p>1990年5月7日</p>
 <p>五四没有这种精神！</p>
 <p>5月4日这天，八位台大学生——吴叡人、李建昇、殷人珏、张丽伽、田欣、陈枝禹、周志宏、郭永宣——到了国民党教育部，5日的《中国时报》有报导如下：</p>
@@ -585,7 +618,7 @@
 <p>训导人员反对学生列席申诉的主要理由是，将使管理权威受到损害而益增管理困难。而包括部分教授与学生的赞成理由则为，使学生惩戒程序合理化较为公平也较可收到教育效果。</p>
 <p>对于校方审查学生活动与刊物的权限大小争议，在性质上也与对惩戒制度的争议类似，行政人员的管理立场与教育立场之间扞格甚大。学生要求管制的幅度应缩小，给予学生参与及自主的机会。而校方行政人员则认为管理审查的权限是在校方，学生不宜干预。</p>
 <p>在校方不愿在管理立场上推让，而学生极欲争取参与权的情况下，在校园内就发生了许多不甚和谐的现象。</p>
-<p>以台大学生代联会来说，校方认为其性质是“社团”，而学生则认为是“一个民主校园的学生自治团体”。学生对代联会制度作了民主制衡原则的设计，除了代联会主席处理一百万元预算的行政权外，也召开代表大会，对行政权发挥议会制衡功能。一进到台大代联会的小办公室中，赫然出现的便是“学生政府”（StudentGovernment）的英文标语，显然，代表大会便是“学生议会”。最近以来，台大代联会主席的竞选相当热烈，政见、传单、演说，像模像样，代表大会的议事过程也比许多地方议会有水准。</p>
+<p>以台大学生代联会来说，校方认为其性质是“社团”，而学生则认为是“一个民主校园的学生自治团体”。学生对代联会制度作了民主制衡原则的设计，除了代联会主席处理一百万元预算的行政权外，也召开代表大会，对行政权发挥议会制衡功能。一进到台大代联会的小办公室中，赫然出现的便是“学生政府”（Student Government）的英文标语，显然，代表大会便是“学生议会”。最近以来，台大代联会主席的竞选相当热烈，政见、传单、演说，像模像样，代表大会的议事过程也比许多地方议会有水准。</p>
 <p>然而，在学生政府与议会之上，还有一个超级政府——校方，在双方关系的认知与处理上，便发生了许多问题。学生认为自身是大学组成分子中的重要部分，与教师共同主体，对涉及学生的事务，他们要求有意适度的参与权与发言权。但校方认为，学生社团就是学生社团，学生是受教育的客体，到大学来是接受教育、敦品励学，要守本分。</p>
 <p>近年来，台湾社会在多元化转型，参与意识的普遍提高，自然也影响大学校园，校园的围墙势必无法使大学教育及辅导学生的原则方法自外于社会变迁，师大教育系教授林玉体就曾说过“大学本来是一个社会机构，民主式的社会必须有民主式的大学”，台大教授李鸿禧也强调“让学生学习参与、培养民主精神，已是大学教育不可忽视的一环”。</p>
 <p>看了上面一些报导，我要写一点感想。</p>
@@ -637,7 +670,7 @@
 <p>张君劢从事反对党活动，一生饱受国民党迫害之苦，1926年，他三十九岁时候，世界书局要出一本《政治学ABC》，约他撰写，他说他太忙，恐怕无法应命，书局老板说：“何妨先登广告，书可缓写。”他答应了。不料广告一登，国民党上海市党部（就是当年迫害人权不遗余力的伪君子陶百川隶属的那个党部）立刻通知书局，要他们毁版，书局靠租界保护，未予回复。几个月后，上海特区法院院长吴经熊接党部命令：查封世界书局！由于吴经熊是张君劢朋友，特别告诉了他。张君劢说：“书尚未写，何从毁版？”后经书局疏通党部，才算没有查封。不料这事传到另一家书局——商务印书馆主持人伪君子王云五的耳里，立刻采取紧急措施，要求把张君劢翻译的拉斯基《政治典范》一书的译者名字，无论如何要改过，才敢问世。张君劢名嘉森，只好取嘉字之头与森字之脚，改名张士林，才得出版。</p>
 <p>如果厄运只是箝制言论自由，还算好的。其实祸不单行，国民党花样还多着哩！1927年，张君劢四十岁时候，国民党劫收了他办的国立政治大学；1929年，张君劢四十二岁时候，国民党派人把他绑票；1933年，张君劢四十六岁时候，国民党压迫燕京大学逼他辞职；1934年，张君劢四十七岁时候，国民党封闭了他在广州办的学海书院；1941年，张君劢五十四岁时候，国民党解散了他在大理办的民族文化书院，并使他困居重庆的汪山，“受缇骑侦视者两载之久”！</p>
 <p>张君劢的厄运，直到1946年，他五十九岁时候，才稍好转。这年国民党为了召开政治协商会议、为了立宪、为了开国民大会，在美国人的压力下，不得不一时尊重反对党的地位，于是张君劢起草的宪法，败部复活，最后成为《中华民国宪法》。不久，大陆就丢了，国民党跑到台湾来，民社党也跟着来了。张君劢眼看民社党必然被国民党瓮中捉鳖，于是决心不再来台。他从1949年六十二岁流亡海外起，到1969年八十二岁死去为止，二十年间，“三过国门而不入”（一次是自印度径去美国，一次是去韩国开会经日本晤吉田茂，一次是去新加坡应李光耀之约讲学），虽迭经国民党自陈诚以下的力邀，和他民社党同志的苦劝，他都不为所动，最后老死他乡，完成了自我。</p>
-<p>十九世纪的法国文豪雨果（VictorMarieHugo），因反对拿破仑第三（NapoleonⅢ）而流亡在外，当他被邀请回去的时候，他说下千古名言：“当‘自由’回来的时候，我会回来。”伟大的心灵有时相信“危邦不入”、相信“乱邦不居”、相信一个地方没有“自由”，回去也大可不必。这并不是说在不自由地方奋斗，没有意义；也不是说一定远走高飞，在自由地方奋斗，才有意义。而是说，各有各的意义。对政治人物说来，老死他乡其实别有一种悲壮的意义，可惜许多台湾人不懂得。</p>
+<p>十九世纪的法国文豪雨果（Victor Marie Hugo），因反对拿破仑第三（NapoleonⅢ）而流亡在外，当他被邀请回去的时候，他说下千古名言：“当‘自由’回来的时候，我会回来。”伟大的心灵有时相信“危邦不入”、相信“乱邦不居”、相信一个地方没有“自由”，回去也大可不必。这并不是说在不自由地方奋斗，没有意义；也不是说一定远走高飞，在自由地方奋斗，才有意义。而是说，各有各的意义。对政治人物说来，老死他乡其实别有一种悲壮的意义，可惜许多台湾人不懂得。</p>
 <p>1988年8月17日</p>
 <p>起飞吧，大脑！</p>
 <p>国民党总理孙中山，在1920年说过一段话：</p>
@@ -668,7 +701,7 @@
 <p>精神却在黄花岗。</p>
 <p>1983年12月30日晨</p>
 <p>女人的理由和男人的理由</p>
-<p>1594年，莎士比亚在《维洛那二绅士》里，借用女仆露瑟特（Lucetta）的语气，说了这样的名言——“我没有别的理由，我只有女人的理由；我认为他最好，因为我认为他最好。”（Ihavenootherbutawoman'sreason;Ithinkhimso,becauseIthinkhimso.）</p>
+<p>1594年，莎士比亚在《维洛那二绅士》里，借用女仆露瑟特（Lucetta）的语气，说了这样的名言——“我没有别的理由，我只有女人的理由；我认为他最好，因为我认为他最好。”（I have no other but a woman’s reason; I think him so, because I think him so.）</p>
 <p>这种“女人的理由”，在1601年，李利（JohnLyly）在他的剧本里：1602年，密得顿（ThomasMiddeton）在他的剧本里，都表示了相同的意思。八年之间，英国三位剧作家，都用它表达部分人类对“理由”的态度，这是很有趣的联合宣传。英国的剧作家们太洞察人性了，尤其洞察“第二性”（thesecondsex）的人性，他们深知，女人是不可理喻的，女人的是非观念很淡薄，听女人的理由，等于看转笼里边的松鼠，团团转了老半天，还是在原位。</p>
 <p>大学女学生在教室里，可以把逻辑考上一百分；可是一出了教室，她们就又不逻又不辑，全凭感情用事、直觉办事。她们的“是”“非”之间，所隔不过一张考卷用纸，《唐吉可德》的作者嘲笑女人是非之间间不容针，可说一针见血。</p>
 <p>所以，女人的是非只是一种变形虫（ameba），随她们的意思变来变去。当她们搬弄“是”的时候，她们可以变形出一片是理，说你多好多好；当她们搬弄“非”的时候，她们又可以变形出一片非议，说你多坏多坏，坏到罪有应得。</p>
@@ -691,7 +724,7 @@
 <p>结论是：女人的理由，实在比男人的理由好。女人不讲理，结果理在其中；男人讲理，结果讲来讲去，都是外面的歪理。教人怄气、教人恶心、教人真想吐。</p>
 <p>《中国时报》1979年11月29日</p>
 <p>甘地“不合作主义”真义</p>
-<p>圣雄甘地一生中，接橥了许多重大的目标，其中之一就是“不合作主义”（satyagraha）。“不合作主义”的真义，就是对无法信任的政府，公然表示我们对它的不信任。Satyagraha的印度文本义是一种由真理产生的精神力量，它引伸出来的态度，就是对反真理的政府的一种抵制，这种抵制不全是“消极抵抗”（passiveresistance），它有积极的成分。它不单是一种手段，而是一种人生的至大至刚的原则。把这种原则用来对付政府，绝不止于零星施政问题的计较，而是根本上道德上的制裁。“不合作主义”既是一种伟大的道德信念，英文non-cooperation在含义上，缺乏印度文这种强烈的道德信念，所以，用印度文satyagraha，最能表示出“不合作主义”的真义。</p>
+<p>圣雄甘地一生中，接橥了许多重大的目标，其中之一就是“不合作主义”（satyagraha）。“不合作主义”的真义，就是对无法信任的政府，公然表示我们对它的不信任。Satyagraha的印度文本义是一种由真理产生的精神力量，它引伸出来的态度，就是对反真理的政府的一种抵制，这种抵制不全是“消极抵抗”（passive resistance），它有积极的成分。它不单是一种手段，而是一种人生的至大至刚的原则。把这种原则用来对付政府，绝不止于零星施政问题的计较，而是根本上道德上的制裁。“不合作主义”既是一种伟大的道德信念，英文non-cooperation在含义上，缺乏印度文这种强烈的道德信念，所以，用印度文satyagraha，最能表示出“不合作主义”的真义。</p>
 <p>这样子的政府！</p>
 <p>甘地当年所面对的政府，是英国统治下的殖民地政府。英国虽然是对自己人民合乎“正义”的国家，但这种“正义”，只是关门对自己人民，是出不了门的；只是保护强者，不是保护弱者的。甘地说①：</p>
 <p>在此环境下，对像我这样一个人所能作的，只有断绝与不列颠的一切关系或者仍旧相信英国宪法的崇高传统。……我并未丧失对英国宪法的信心，我仍旧希望着如果我们显出吃苦的能力，总可以设法使正义得以伸张。自然，我所了解的英国宪法精神，是它只帮助能自助之人。我不相信它愿意保护弱者。它给强者保有并扩张力量的充分自由。弱者在它治下唯有跳井②。</p>
@@ -725,17 +758,17 @@
 <p>八、赞助“沙德希主义”（沙德希即Swadeshi’就是“独立”的意思。但甘地派仅作“经济独立”解释）。</p>
 <p>当然在“不合作主义”的基础上，不和政府合作的规约，是因时因地会有不同的。这并不重要，重要的是“不合作主义”的精神，把握住这种精神，世界上任何时间、任何地点的有心人，都可发展他们个别的心愿和抱负。</p>
 <p>“一个实际的现实主义者”</p>
-<p>甘地一生为理想奋斗，虽然自称是“一个实际的现实主义者”（Iamapracticalrealist）③，他的理想主义成分，还是很多的，其中“不合作主义”在道德信念上的永恒意义，毕竟比一时一地的成败来得更能鼓舞我们。试看甘地在法庭上从容论道，他公然说：</p>
+<p>甘地一生为理想奋斗，虽然自称是“一个实际的现实主义者”（I am a practical realist）③，他的理想主义成分，还是很多的，其中“不合作主义”在道德信念上的永恒意义，毕竟比一时一地的成败来得更能鼓舞我们。试看甘地在法庭上从容论道，他公然说：</p>
 <p>在我宣读此书面声明前，我愿指出，我完全同意博学的检察长所作有关对我的说明。我想他所作的指控，对我是很公允的，因为这是很真实的，我不愿在庭上隐瞒事实，即宣传背叛现政府的制度，几已成了我的习惯，检察长完全是对的，他说我的宣传背叛，不是从我主编《少年印度》的时候开始，而系早已开始，在我所要宣读的书面声明里，我不能不尽我痛苦的义务向庭上承认，我开始宣传背叛的时间，实比检察长所说的还要早得多。对我这是一种痛苦的义务，但我必须尽此义务，因我知道我双肩所负的责任，我愿同意博学的检察长所加予我的责难。……他是对的，他说像我这样一个具有责任感，受过高等教育，且对世事饶有经验的人，应知我每一行动的后果。这些我都知道。我知道我在玩火、我在冒险。假如我获自由，我还会照样地做，今早我感觉到如果我不说出这些话，我就是未尽义务。</p>
 <p>对这种崇高道德下的义务，甘地又说：</p>
 <p>我一直认为背叛一极权统治，造成对印度空前损害的政府，乃系一种德性。印度在英人治下所遭受的迫害，前所未有。基于此一信念，我认为如仍爱护此一制度，实乃罪恶。……</p>
 <p>事实上，我相信在我们生活的不自然情况中，我提出不合作运动，实已对印度与英国有所贡献。我的看法，不与恶势力合作，亦如与善合作，乃系义务。在过去，不合作被认为仅系使用暴力。我就想让同胞们知道暴力式的不合作，只足以增长罪恶，罪恶靠暴力支持，所以铲除罪恶便当首先摒弃暴力。我在此请求并接受依法判我以最重的罪，在我则当它是一个公民最高的义务。法官及你的同僚们，你们所能做的是，如你们认为现所做的是一种罪恶，就当辞去你们的职务，不再卷入罪恶，而实在我是无辜的；或判我以重罪，如你们认为这制度、这法律，你们所协助执行的，是为了这一个国家的人民，而我的活动是对公众有害的。</p>
 <p>伟大的甘地，他把藐视法律的道德，带进不敢藐视他的法庭里。他的精神，使整个法庭的人都自动站了起来，向他致敬，向他的“不合作主义”致敬。在人类有史以来的法庭中，“法律”从来没有这样的被“道德”不合作过，甘地的伟大，竟达成了这些：他给全世界的这一代，上了最动人的一课。</p>
-<p>爱因斯坦说：“后代子孙很难相信这世界上曾经走过这样一位血肉之躯。”（Generationstocomewillscarcebelievethatsuchaoneasthiseverinfleshandbloodwalkeduponthisearth.）虽然这样，甘地的确在我们这一代走过。我们崇拜他，在他殉道三十五年后的今天，我们多少该怀抱一点他的“不合作主义”、力行一点他的“不合作主义”。只有这样，我们才觉悟到我们在世界上走过：——我们是甘地的“血肉之躯”，我们不是政府的影子！</p>
+<p>爱因斯坦说：“后代子孙很难相信这世界上曾经走过这样一位血肉之躯。”（Generations to come will scarce believe that such a one as this ever in flesh and blood walked upon this earth.）虽然这样，甘地的确在我们这一代走过。我们崇拜他，在他殉道三十五年后的今天，我们多少该怀抱一点他的“不合作主义”、力行一点他的“不合作主义”。只有这样，我们才觉悟到我们在世界上走过：——我们是甘地的“血肉之躯”，我们不是政府的影子！</p>
 <p>1983年5月18日深夜2时</p>
 <p>①我这篇文章中引甘地的话，低两格排的整段译文，除八条不合作规约外，都引自吴俊才《甘地与现代印度》（正中版，1966年11月）。</p>
-<p>②译文中所谓《英国宪法》种种，因为英国是没有成文宪法的，所以乃指宪政法规（constitutionallaw）等而言。</p>
-<p>③这一点，费舍（LouisFischer）的《甘地世界》（Gandhi;HisLifeandMessagefortheWorld）讨论得最好。</p>
+<p>②译文中所谓《英国宪法》种种，因为英国是没有成文宪法的，所以乃指宪政法规（constitutional law）等而言。</p>
+<p>③这一点，费舍（Louis Fischer）的《甘地世界》（Gandhi; His Life and Message for the World）讨论得最好。</p>
 <p>甘地论牺牲</p>
 <p>一个笑话说：有一个人，一辈子总是计较利害、滑头滑脑占便宜，死后阎王爷罚他来生变狗，他请求说：“要变狗可以，但请阎王爷把我变成母狗。”阎王爷问他：“为什么只要做母狗？”他说：“我念过一段古书，书上说：‘临财母狗得，临难母狗免。’所以想做母狗。”</p>
 <p>这个笑话的基础是“一段古书”，古书《礼记》中说：“临财毋苟得，临难毋苟免。”白话翻译是：“碰到金钱，不要随便拿；遇到危难，不要随便躲。”这种原则，是古人勉励士大夫的子弟的，所以收在《礼记》的《曲礼》里，《曲礼》就是小的行为准则。这个笑话中，这个人读书粗心大意，把“毋”字错成“母”字、“苟”字错成“狗”字，结果就把士大夫的行为给母狗化了。</p>
@@ -785,14 +818,14 @@
 <p>说这话后十年，派垂克亨利又以“不自由，毋宁死”（……givemelibertyorgivemedeath.）一句名言，给了爱好自由者无限的鼓舞。在他“不自由，毋宁死”后一年四个月，独立宣言通过了。</p>
 <p>派垂克亨利认为，如果合理的要求还被曲解为造反、曲解为叛乱、曲解为大逆不道，那么从事这种合理要求的人，就大可痛快一点。……makethemostofit,makethemostofit,makethemostofit.两百一十七年后重温这段历史、重读这段虎虎有生气的话，真觉得有劲极了！</p>
 <p>从另一方面看，即使在独立战争的岁月里，赞成独立的，也只不过占三分之一，另外三分之一反对独立，剩下三分之一没意见。约翰?亚当斯所谓人心里的革命，其实不过占人口的三分之一而已，并不是全面的要求。只以祖国处理不当，三分之一最后也就决定大局了。设想祖国处理得当，不乱抽税、不乱藐视人权、不乱制造事件，自然人人都是爱国的，谁他妈的还要独立、还要革命呢？</p>
-<p>美国史家尼文斯（AllanNevins）和康麦格（HenrySteeleCommager）在《袖珍美国史》（ThePocketHistoryoftheUnitedStates）专论断道：</p>
-<p>一个以争取“英国人的权利”和稍微改善处境（the‘rightsofEnglishmen’andthemereredressofgrievances）而开始的斗争，经过一年多一点的时间，变成了争取独立的战争，这是非常自然的。大陆会议起初还热烈表示效忠英王，可是流血与破坏带来的痛苦，乔治第三（GeorgeⅢ）的蛮横态度激起的愤恨，加上美洲人认为他们天生有权决定自己的命运，遂一发而不可收拾。</p>
+<p>美国史家尼文斯（Allan Nevins）和康麦格（Henry Steele Commager）在《袖珍美国史》（The Pocket History of the United States）专论断道：</p>
+<p>一个以争取“英国人的权利”和稍微改善处境（the‘rights of Englishmen’and the mere redress of grievances）而开始的斗争，经过一年多一点的时间，变成了争取独立的战争，这是非常自然的。大陆会议起初还热烈表示效忠英王，可是流血与破坏带来的痛苦，乔治第三（GeorgeⅢ）的蛮横态度激起的愤恨，加上美洲人认为他们天生有权决定自己的命运，遂一发而不可收拾。</p>
 <p>历史家的知人论事，是很无情的。有情人不要做历史家，只要读读历史，就好了。</p>
 <p>1982年12月13日</p>
 <p>记欧亨利冤狱</p>
-<p>欧亨利（O.Henry）是美国短篇小说之王，他写了两百五十二篇短篇小说，驰名世界。有一位作家说：“英国有狄更斯，法国有雨果，美国有欧亨利。”他的声名，由此一语道破。</p>
-<p>欧亨利的一生，饱更冷暖，历尽沧桑。他三岁丧母，依靠祖母维生。十五岁辍学，在药房做小弟，后来得了肺病。又在牧场里工作，也做了土地局等地方的小职员。二十四岁时候，他同女朋友私奔成婚，在奥斯丁第一国民银行做出纳员，并办了一份《滚石周报》（TheRollingStone）。</p>
-<p>不料在银行做事，做出祸来。据他的朋友福尔曼（HenryJamesForman）的叙述：</p>
+<p>欧亨利（O. Henry）是美国短篇小说之王，他写了两百五十二篇短篇小说，驰名世界。有一位作家说：“英国有狄更斯，法国有雨果，美国有欧亨利。”他的声名，由此一语道破。</p>
+<p>欧亨利的一生，饱更冷暖，历尽沧桑。他三岁丧母，依靠祖母维生。十五岁辍学，在药房做小弟，后来得了肺病。又在牧场里工作，也做了土地局等地方的小职员。二十四岁时候，他同女朋友私奔成婚，在奥斯丁第一国民银行做出纳员，并办了一份《滚石周报》（The Rolling Stone）。</p>
+<p>不料在银行做事，做出祸来。据他的朋友福尔曼（Henry James Forman）的叙述：</p>
 <p>银行管理不严，不管办事人员多么洁身自爱，稽核也深感不满。欧亨利有一次追究一项短绌，查了两天，全无结果；行里有位职员说自己取了一百元，忘记填写取款单了。后来发现欧亨利的账目不清，行里的负责人因为自己有把柄落在别人手上，不愿提起控诉，反而将亏额补足。</p>
 <p>欧亨利辞掉银行职务，在休士顿邮报工作，约有一年之久。1896年7月，正值他渐露头角，成为报人的时候，联邦当局命令他回奥斯丁受审。他被控盗用三笔款项，共计一千一百五十三元六角八分。最后一笔是二百九十九元六角，起诉书提及那几笔款项是什么时候被盗用的，实际上那时欧亨利已经辞去银行职务好几个月了！
 欧亨利没有到奥斯丁投案，却逃往中美洲。他催他的太太去和他相会。但是她结核病严重，不能成行，不久就去世了。</p>
@@ -801,33 +834,33 @@
 <p>欧亨利被捕的原因，福尔曼说得语焉不详，真相是，当他在洪都拉斯听到他太太快死了，他就不顾一切，赶回到他太太的病床旁边，宁愿被捕，也要同太太死别。这是1897年年初的事。</p>
 <p>欧亨利在监狱中，写了很多信给他的小女儿，骗她说爸爸正在环游世界。他向外面的杂志投稿，赚到稿费，给小女儿买了手表和礼物。他总是把小女儿当做八岁的女孩，因为他入狱时小女儿正好八岁。时光从此为他停滞，因他已是失掉自由的人。</p>
 <p>欧亨利入狱时候不到三十六岁，由于行为良好，不到四十岁就给放了出来。从出狱的1901年，到死时的1910年，他的声誉日隆。每年收入高达美金好几万，但他疏财仗义，大都给了穷苦大众，他对金钱的洒脱，十足证明了他被判“侵占罪”是一件冤狱；他的侠骨柔情，更十足证明了他不是背负这种下等罪名的人。</p>
-<p>欧亨利四十八岁死于肺炎。他死之日，成千上万的人为他顶礼致哀。1918年，美国文艺科学协会成立“欧亨利纪念奖金”（O.HenryMemorialAward），纪念这位伟大的作家。</p>
+<p>欧亨利四十八岁死于肺炎。他死之日，成千上万的人为他顶礼致哀。1918年，美国文艺科学协会成立“欧亨利纪念奖金”（O. Henry Memorial Award），纪念这位伟大的作家。</p>
 <p>欧亨利生前说不管法院怎么判，他郑重声明，他是冤枉的、无辜的。在他生前死后，人们了解了这一点，了解了他被市侩朋友陷害、被势利法官陷害。在他生荣死哀的不朽里，那些市侩朋友和势利法官，早就与烂泥同腐了。——他们毕竟是不入流的小人物。不入流的小人物总是不断的陷害大人物，但大人物不管遭到多少陷害，大人物永远是大人物，欧亨利一生，更印证给我们这一真理。</p>
 <p>1982年6月12日</p>
 <p>“它不让强者在比赛中获胜”</p>
 <p>1902年，美国最高法院大法官出了空缺。老罗斯福总统物色到马萨诸塞州的首席法官小奥利佛温代尔霍姆斯（OliverWendellHolmes,Jr.），认为霍姆斯会支持他。不料霍姆斯到了华盛顿，干起大法官来，却对老罗斯福不买账。</p>
-<p>霍姆斯不但对老罗斯福不买账，对任何人也不买账。他在总额九名的大法官中年资最轻，但是捣起乱来，却历史最久，他总喜欢在别人全同意的时候独持异议，他认为民主和法治需要异议，有异议才能考虑周详、有异议才能集思广益、有异议才能造成进步。他这种喜欢异议的特色，给他带来了一个外号——“伟大的异议者”（GreatDissenter）</p>
+<p>霍姆斯不但对老罗斯福不买账，对任何人也不买账。他在总额九名的大法官中年资最轻，但是捣起乱来，却历史最久，他总喜欢在别人全同意的时候独持异议，他认为民主和法治需要异议，有异议才能考虑周详、有异议才能集思广益、有异议才能造成进步。他这种喜欢异议的特色，给他带来了一个外号——“伟大的异议者”（Great Dissenter）</p>
 <p>霍姆斯认为民主和法治不宜无异议通过，相反的，有异议才更漂亮。他的不肯全体一致的态度，使他全国出名。有一次，一个记者抽样问个机器工人霍姆斯是谁，工人说：“哦，当然知道，他就是最高法院那个年轻法官，总不赞成老家伙的。”</p>
 <p>老罗斯福推动制裁大阔佬的反托拉斯法案时候，霍姆斯说：“修曼法案是不公道的，因为它不让强者在比赛中获胜。”（TheShermanActisn’tfair,itwon’tletthestrongmanwintherace.）</p>
 <p>霍姆斯内心深处，未必赞同大阔佬；但当上上下下都指指点点的时候，他要独具只眼，冷静一下。</p>
 <p>1982年1月1日</p>
 <p>戴布兹的千古名言</p>
-<p>1972年4月8日，我在牢里读英国诗人拉夫瑞斯（RichardLovelace1618-1658）的《狱中寄爱泽尔》（ToAlthea,fromPrison），读到最后一段：</p>
-<p>Stonewallsdonotaprisonmake,</p>
-<p>Norironbarsacage;</p>
-<p>Mindsinnocentandquiettake</p>
-<p>Thatforanhermitage;</p>
-<p>IfIhavefreedominmy-love</p>
-<p>Andinmysoulamfree.</p>
-<p>Angelsalone,thatsoarabove,</p>
-<p>Enjoysuchliberty.</p>
+<p>1972年4月8日，我在牢里读英国诗人拉夫瑞斯（Richard Lovelace 1618-1658）的《狱中寄爱泽尔》（To Althea, from Prison），读到最后一段：</p>
+<p>Stone walls do not a prison make,</p>
+<p>Nor iron bars a cage;</p>
+<p>Minds innocent and quiet take</p>
+<p>That for an hermitage;</p>
+<p>If I have freedom in my-love</p>
+<p>And in my soul am free.</p>
+<p>Angels alone, that soar above,</p>
+<p>Enjoy such liberty.</p>
 <p>非常喜欢，就信笔把它意译如下：</p>
 <p>樊笼非笼，狱墙非墙，心得清净，隐处徜徉。</p>
 <p>斯情洒脱，英灵何防。天使盘空，自由得享。</p>
 <p>这诗给我的最大共鸣是：一个人在不自由中，如果一念之转，他就可以有“不自由的自由”感觉，因而身虽处于斗室，心却能海阔天空。这种境界，不是很值得注意吗？</p>
 <p>我在牢里又读吴俊才老师的《甘地与现代印度》，最引起我注意的，是甘地的监狱生活。据我统计，甘地共坐了两千三百三十八天的牢，他失掉身体自由的时间，从广义说，比我要短。但他是先进，先进的坐牢哲学，闲来无事，倒也不妨研究研究。</p>
 <p>不料一研究之下，使我得到了新境界。</p>
-<p>甘地有着伟大的精神力量，爱因斯坦说：“后代子孙很难相信这世界上曾经走过这样一位血肉之躯。”（Generationstocomewillscarcebelievethatsuchaoneasthiseverinfleshandbloodwalkeduponthisearth.）这是对甘地最高明的描绘。甘地思想的精华是他的“不合作主义”（satyagraha），不合作主义的形成，部分来自《湖滨散记》的作者梭罗。梭罗坐牢的时候，他说他“从不曾想到我是给关起来了，高墙实在等于浪费材料。……他们根本不知道如何对付我。……他们总以为我唯一目的是想站到墙外面。每在我沉思的时候，看守那种紧张样子，真教人好笑。他们哪里知道才一转身，我就毫无阻挡的跟着出去了。……”</p>
+<p>甘地有着伟大的精神力量，爱因斯坦说：“后代子孙很难相信这世界上曾经走过这样一位血肉之躯。”（Generations to come will scarce believe that such a one as this ever in flesh and blood walked upon this earth.）这是对甘地最高明的描绘。甘地思想的精华是他的“不合作主义”（satyagraha），不合作主义的形成，部分来自《湖滨散记》的作者梭罗。梭罗坐牢的时候，他说他“从不曾想到我是给关起来了，高墙实在等于浪费材料。……他们根本不知道如何对付我。……他们总以为我唯一目的是想站到墙外面。每在我沉思的时候，看守那种紧张样子，真教人好笑。他们哪里知道才一转身，我就毫无阻挡的跟着出去了。……”</p>
 <p>梭罗当然不会有小说中穿墙透壁的功夫，他这种来去自如，是指观念上的解脱，观念上“从不曾想到我是给关起来了”。他虽然身在两坪之内，但却心在六和之外，神游四海，志驰八方，就像拉夫瑞斯在牢里写诗给情人一样。</p>
 <p>甘地师承了梭罗的不合作主义，也师承了梭罗的坐牢哲学。甘地说志士仁人</p>
 <p>在狱中，他所受到的苦，实比平日受的苦要少得多；在狱中，他也只须听狱吏一人的命令，而不像平日要受许多人的支配；在那里，他更不必担心一日三餐，也用不著自己烧饭，政府会照顾一切，如果有病，更可免费治疗；在那里，他有足够的操作，藉以锻炼体格，许多坏的习惯也可以改过。他的灵魂是自由的。他可有充分的时间祈祷。肉体虽被拘禁，灵魂并未桎梏。反而他的日常生活也可以训练成更有规律，因为自有人来督促。这样来体验狱中生活，他会感觉自己是自由的。假如有任何不幸遭遇或被狱囚虐待，那他正可学习坚忍，让他得到一个乐于自制的机会。持这种看法的人，当然会将入狱的事看为幸运。因此问题的关键，还在一个人自己和他所持的心理状态，来决定是否入狱乃系幸运。”（《甘地与现代印度》上册，页91）</p>
@@ -837,21 +870,21 @@
 <p>哲学家斯宾塞说：“没有人能完全自由，除非所有人完全自由；没有人能完全道德，除非所有人完全道德；没有人能完全快乐，除非所有人完全快乐。”这种伟大的透视力、伟大的胸襟，我给它下了一个描绘，这叫“自由的不自由”。</p>
 <p>“自由的不自由”的特色是民胞物与，是把受苦受难的人当兄弟，又使自己有责任感。夏禹感觉天下有淹在水里的人，就好像自己把他们淹在水里一样；后稷感觉天下有没饭吃的人，就好像自己使他们挨饿一样，有这种抱负的人，后天下之乐而乐，众生不成佛的时候，他自己不要成佛。《新约》哥林多后书第十一章里，为这种心境做了动人的总结：“有谁软弱，我不软弱呢？有谁跌倒，我不焦急呢？”有这种心境的人，他自己坚强，却感受兄弟的软弱；他自己站起，却焦急兄弟的跌倒；他自己自由，却念念不忘兄弟的不自由。</p>
 <p>六十年多年前，开火车出身的美国劳工领袖戴布兹（EugeneVictorDebs），因参与政治反抗，被判十年，关在牢里。由于他极富人望，虽在牢里，却得到美国大选中，一百万选民对他戏剧性投票。1921年，哈定总统特赦了他。他在1918年6月16日，在法庭上，曾从斯宾塞的句子里，说出这样的千古名言——</p>
-<p>WhilethereisalowerclassIaminit.</p>
-<p>WhilethereisacriminalelementsIamofit.</p>
-<p>WhilethereisasoulinprisonIamnotfree.</p>
+<p>While there is a lower class I am in it.</p>
+<p>While there is a criminal elements I am of it.</p>
+<p>While there is a soul in prison I am not free.</p>
 <p>只要有下层阶级，我就同俦；</p>
 <p>只要有犯罪成分，我就同流；</p>
 <p>只要狱底有游魂，我就不自由。</p>
 <p>真的，“我就不自由”。夏禹不自由、後稷不自由、斯宾塞不自由、戴布兹不自由。——所有伟大的性灵里，念天地悠悠，都有“自由的不自由”。</p>
 <p>1981年7月20日改写</p>
 <p>特立独行的美国报人</p>
-<p>特立独行的美国报人——史东（IsidorFeinsteinStone）死了，死在6月18日。我的好友汪荣祖教授，剪下6月19日《华盛顿邮报》（TheWashingtonPost）布伦门则（SidneyBlumenthal）的纪念专文给我。我先送给好友胡虚一先生看。虚一来信说：“照文章看来，这位美国特立独行的名左派报人，在发掘公门隐事丑闻、乃至耙粪方面之兴趣和精神，似可谓与兄‘同志’矣。而他在近版美国名人录所写信条之言，或亦正是兄近数年来所表现之志趣。”</p>
+<p>特立独行的美国报人——史东（Isidor Feinstein Stone）死了，死在6月18日。我的好友汪荣祖教授，剪下6月19日《华盛顿邮报》（The Washington Post）布伦门则（Sidney Blumenthal）的纪念专文给我。我先送给好友胡虚一先生看。虚一来信说：“照文章看来，这位美国特立独行的名左派报人，在发掘公门隐事丑闻、乃至耙粪方面之兴趣和精神，似可谓与兄‘同志’矣。而他在近版美国名人录所写信条之言，或亦正是兄近数年来所表现之志趣。”</p>
 <p>史东的《信条之言》是很雄浑的英文，我以四言成句、译其大意如下：“写真如见，扶弱抑强。为正而战，为义而忙。仇恨恐惧，我所严防。有朝一日，人可安享；百花齐放，以代伤亡。”（TowritethetruthasIseeit;todefendtheweakagainstthestrong;tofightforjustice;andtoseek,asbestIcan,tobringhealingperspectivetobearontheterriblehatesandfearsofmankind,inthehopeofsomedaybringingaboutoneworld,inwhichmenwillenjoythedifferencesofthehumangardeninsteadofkillingeachotheroverthem.）</p>
 <p>史东是美国言论自由史上，表现在新闻方面的终身反对者。他生在1907年，活了八十二岁。八十二年间，他花了六十年的时间，六十年的青年、中年和老年，一直跟政府作对、跟当道作对、跟每一个他目为真理的敌人作对。就因为这种作对，他得罪了太多的人，使他不是白宫国宴席上的来宾、使他不是名流俱乐部的会员、使他不是电视排行榜上的要角。（HewasneveraguestataWhiteHousestatedinner.Hedidn’tbelongtotheGridironClub.Andhewasn’tontelevisionpanels.）但这何损于他？史东就是又臭又硬的史东，他独来独往，他不重视他妈的公共关系，连美国政府新闻衙门的免费招待，他也概不接受。他勇于得罪人，认定每个政府都是由一群骗子掌舵，什么政治人物，都是撒谎大王！</p>
-<p>史东不但不在乎得罪政要，甚至不在乎得罪读者。他本人是左派，可是1956年，他访问苏联归来，却公开批评苏联，他说“这不是一个好社会，且不是被好人领导。”（Thisisnotagoodsocietyanditisnotledbyhonestmen.）引起左翼支持者对他的不满，四百个订户退报了，可是他不在乎。</p>
+<p>史东不但不在乎得罪政要，甚至不在乎得罪读者。他本人是左派，可是1956年，他访问苏联归来，却公开批评苏联，他说“这不是一个好社会，且不是被好人领导。”（This is not a good society and it is not led by honest men.）引起左翼支持者对他的不满，四百个订户退报了，可是他不在乎。</p>
 <p>史东从十四岁就开始办报，报纸的名字叫《进步》（TheProgressive）。后在1930到1940年代，云游于左派报纸之间。他一生最精彩的表演是办他的独角戏——《史东周刊》（I.F.Stone’sWeekly’后为双周刊），用博学、机智、人道主义和尖刻的特点，深受读者的欢迎。订户中从爱因斯坦（AlbertEinstein）、罗素（BertrandRussell）、直到玛丽莲梦露（MarilynMonroe），一应俱全。他的周刊从1952年办到1967年、双周刊从1967年办到1971年，前后近二十年的时间，纵横新闻界。虽然只是薄薄的四页，可是他所搜集到的情报、内幕与秘珍，却只此一家，人所难能。除非人能做到像史东那样，可是却根本没人能做的像史东那样。（Hisnewsletterthoughonlyfourpageslong,wasthickwithinformationthatonecouldn’tfindanywhereelse,unlessonedidwhatStonedid.AndnobodyelsedidwhatStonedid.）</p>
-<p>史东尊重事实。（Hehadaninnaterespectforthefacts.）但他绝不相信事实会为本身说话，他排比事实以行其道，他绝不中立。（Butheneverbelievedthatfactsspokeforthemselves.Hemarshaledhisfactsonbehalfofhisprinciples.Stonewasneverneutral.）是非分明的人是绝不守中立的，也不相信什么“平衡报导”。“为正而战，为义而忙”的人，在真理面前，是绝不首鼠两端的！</p>
+<p>史东尊重事实。（He had an innate respect for the facts.）但他绝不相信事实会为本身说话，他排比事实以行其道，他绝不中立。（But he never believed that facts spoke for themselves. He marshaled his facts on behalf of his principles. Stone was never neutral.）是非分明的人是绝不守中立的，也不相信什么“平衡报导”。“为正而战，为义而忙”的人，在真理面前，是绝不首鼠两端的！</p>
 <p>史东一生孤立，但他不怕孤立。他那结婚六十年的太太是他最忠心的助手。他们在厨房开工，一做几小时，贴上订户名条，就付邮了。他的家，就是他的工厂。这样一位特立独行的一代报人，可真举世少有呀！</p>
 <p>1989年7月6日</p>
 <p>真教育家的评判</p>
@@ -869,7 +902,7 @@
 <p>溥儒一派天真，不拘虚礼，在日本大饭店餐厅，他忽然嫌热，脱掉长袍，光起胳膊，吓得洋婆子大叫起来。吃酒席时候，他发现有一盘特别好吃，他就端到自己面前，向其他客人说：“你们别吃了，由我一个人吃吧！”</p>
 <p>这就是溥心畬。</p>
 <p>二真音乐家</p>
-<p>墨索里尼在意大利当政时候，公开要求世界最伟大的音乐指挥家托斯卡尼尼（ArturoToscanini）支持法西斯，托斯卡尼尼拒绝了。他以罢演抗议希特勒的排犹。气得希特勒质问墨索里尼：为什么让那穷音乐家如此猖狂？</p>
+<p>墨索里尼在意大利当政时候，公开要求世界最伟大的音乐指挥家托斯卡尼尼（Arturo Toscanini）支持法西斯，托斯卡尼尼拒绝了。他以罢演抗议希特勒的排犹。气得希特勒质问墨索里尼：为什么让那穷音乐家如此猖狂？</p>
 <p>墨索里尼多次想和托斯卡尼尼见面，却碰了壁。托斯卡尼尼坚持伟大艺术家的操守，不畏强暴，不同他不同意的统治者合作。</p>
 <p>托斯卡尼尼在人生大节上、在音乐上，严肃无比，毫不通融，不合格的队员，一律辞退。每次预演，一来就是两三个钟头，甚至中间休息都给取消。指挥完毕，要别人帮忙，才能脱下浑身湿透的燕尾服。每一名队员的每一个小小不妥，都逃不过他耳朵的捉拿和嘴巴的恶骂，他骂人，是全荤的。如果女生在场，有时候也客气一点，只握拳势，加以怒斥：“你知道我要骂你什么！哼！”</p>
 <p>托斯卡尼尼常说：“任何傻瓜都能指挥，但指挥出来的是音乐，可就难了！”音乐对于他，是神圣的，有一次，一个工头戴着帽子走近指挥台，他伸出指挥棒，把帽子打在地上，大叫：“你是个无知的蠢货！有音乐的地方，就是圣地！要脱帽的，笨蛋！”</p>
@@ -879,25 +912,25 @@
 <p>美国大诗人罗伯特弗罗斯特（RobertFrost）活了八十八岁，他是唯一一位得了四次普利兹奖的诗人。</p>
 <p>弗罗斯特作品浑朴清澈，他是诗人，可是不作怪，不像许多诗人（包括崇拜他的）那样不知所云，还岸然以不知所云自欺欺人。</p>
 <p>弗罗斯特不但是诗人，还是哲人。他有许多妙言妙语，他挖苦女人瞒岁数，说：“岁月不待人。可是岁月为三十岁女人常驻。”（Timeandtidewaitfornoman.Buttimealwaysstandsstillforawomanofthirty.）他说：“外交家是这样一种人——记得女人的生日，却忘了她的年龄。”（Adiplomatisamanwhoalwaysremembersawoman’sbirthdaybutneverremembersherage.）</p>
-<p>他挖苦婚姻与爱情，说：“母亲花二十年的工夫使男孩变成男人，可是另个女人却花二十分钟使男人变成傻瓜。”（Amothertakestwentyyearstomakeamanofherboy,andanotherwomanmakesafoolofhimintwentyminutes.）</p>
-<p>他又挖苦银行，说：“银行是这样一个地方——他们在晴天借你雨伞，下雨又收了回去。”（Abankisaplacewheretheylendyouanumbrellainfairweatherandaskforitbackagainwhenitbeginstorain.）</p>
+<p>他挖苦婚姻与爱情，说：“母亲花二十年的工夫使男孩变成男人，可是另个女人却花二十分钟使男人变成傻瓜。”（A mother takes twenty years to make a man of her boy, and another woman makes a fool of him in twenty minutes.）</p>
+<p>他又挖苦银行，说：“银行是这样一个地方——他们在晴天借你雨伞，下雨又收了回去。”（A bank is a place where they lend you an umbrella in fair weather and ask for it back again when it begins to rain.）</p>
 <p>弗罗斯特为人一贯，他说他年轻时候不敢做一个急进派，因为怕他年老时变成一个保守派。古往今来，年轻时候是开路先锋，年老却变成拦路虎和老顽固的可太多了，弗罗斯特的“预防”（Precution）可真话中有话。</p>
 <p>1982年2月1日</p>
 <p>真科学家的觉悟</p>
 <p>原子弹的爸爸奥本海默（J.RobertOppenheimer），是一位科学奇才。他在哈佛读书，三年时间，就修完四年功课。二十三岁到德国哥丁根大学，三星期就得到博士。他的量子力学论文，使主考教授甘拜下风。主考教授詹姆斯法兰克在口试后说：“幸亏我趁早开溜，他已经反过来向我发问了！”</p>
 <p>1946年，美国国务卿请他草拟原子政策，他主张原子能计划，“应以人类未来的幸福与安全着眼。”（Itshould,inshort,beaPlanthatlookstothePromiseofman’sfuturewell-beingaswellastohissecurity.）他本人，曾使原子能做了最可怕的运用——他领导造出三颗原子弹，其中两颗，丢在小日本的脑袋上。在日本广岛那一颗丢下后，他深感痛苦，他说：“物理学家已经知道罪恶，这是他们摆脱不掉的知识。”（Thephysicistshaveknownsinandthisisaknowledgethattheycannotlose.）</p>
 <p>奥本海默主持普林斯顿研究院，是世界最有名的研究院，爱因斯坦、波尔、艾略特、汤恩比，都在那里从事研究。奥本海默曾因早年的一段思想问题，引起他跟美国政府之间的不快，爱因斯坦支持他这位犹太老乡，坚决表示，在奥本海默事件上，政府侵犯了学术自由。</p>
-<p>奥本海默认为人类在知识上有进无退，当有人提议科学家应该停止研究这些原子凶器时，他说：“世界是不能对知识因噎废食的。”（Theworldcannotturnitsbackonknowledge.）在知识上，固不能滥用，但也不能开倒车。</p>
+<p>奥本海默认为人类在知识上有进无退，当有人提议科学家应该停止研究这些原子凶器时，他说：“世界是不能对知识因噎废食的。”（The world cannot turn its back on knowledge.）在知识上，固不能滥用，但也不能开倒车。</p>
 <p>1982年2月1日</p>
 <p>论全要过好</p>
-<p>美国历史上最年轻的总统，有人说是肯尼迪，不对，肯尼迪是最短命的，四十六岁就死了，不是最年轻的。最年轻的，是四十二岁就当了总统的老罗斯福（TheodoreRoosevelt）。</p>
+<p>美国历史上最年轻的总统，有人说是肯尼迪，不对，肯尼迪是最短命的，四十六岁就死了，不是最年轻的。最年轻的，是四十二岁就当了总统的老罗斯福（Theodore Roosevelt）。</p>
 <p>老罗斯福是个精力过剩的家伙，他在战场，用枪同敌人作战；在擂台，用拳头同对手作战；在加勒比海，用棒子同邻居作战；在白宫，用枕头同儿子作战。</p>
-<p>还有，他在非洲，还同野兽作战。在他去非洲以前，他的敌人们满怀希望，希望“有益于狮子的健康”（healthtothelions）；结果呢，倒霉的是非洲动物——被斩获二九六头，内有狮子九只。</p>
+<p>还有，他在非洲，还同野兽作战。在他去非洲以前，他的敌人们满怀希望，希望“有益于狮子的健康”（health to the lions）；结果呢，倒霉的是非洲动物——被斩获二九六头，内有狮子九只。</p>
 <p>日俄之战，老罗斯福看到俄国东西舰队被分割的危险，他不管三七二十一，欺负哥伦比亚，支持巴拿马，为了让他开运河。最妙的，三年以后他还得了诺贝尔和平奖，他实在算不上是和平的人物，他是战士。</p>
-<p>这个战士在国内，一天读到辛克莱（UptonSinclair）的小说，决心收拾“财阀”。他推动反托拉斯的政策，对付任何组合式的垄断，和你死我活的关系企业。既得势力群起反对他，他一概不理。他的信仰是——“这国家如不能使个个过得好，单独那个也过不好。”（Thiscountrywillnotbeareallygoodplaceforanyofustoliveinifitisnotareallygoodplaceforallofustolivein.）真是先知眼光、霹雳手段、菩萨心肠。</p>
+<p>这个战士在国内，一天读到辛克莱（Upton Sinclair）的小说，决心收拾“财阀”。他推动反托拉斯的政策，对付任何组合式的垄断，和你死我活的关系企业。既得势力群起反对他，他一概不理。他的信仰是——“这国家如不能使个个过得好，单独那个也过不好。”（This country will not be a really good place for any of us to live in if it is not a really good place for all of us to live in.）真是先知眼光、霹雳手段、菩萨心肠。</p>
 <p>1981年12月1日</p>
 <p>论全都有利</p>
-<p>1942年，罗斯福总统征召党外人士威尔森（CharlesE.Wilson）做站时生产局副局长，威尔森同意，他说：“我花了四十三年才熬上通用公司董事长，如今只花四十三秒，就离开了。”</p>
+<p>1942年，罗斯福总统征召党外人士威尔森（Charles E. Wilson）做站时生产局副局长，威尔森同意，他说：“我花了四十三年才熬上通用公司董事长，如今只花四十三秒，就离开了。”</p>
 <p>威尔森是美国第一流的企业巨人，身高六尺二，体重二百一十磅，每天工作十八个小时，通用公司在他手里，大破大立，生产额一增就是四倍。他年薪十八万，却凭罗斯福的大度相邀，改行去干年薪八千的职业。</p>
 <p>1944年，他回任通用董事长，九年以后，艾森豪总统又挖他做国防部长，他同意了。不料任命案送到参议院，参议员坚持他抛售他在通用的股票。威尔森未免招瓜田李下之嫌，说可以。不料参议员追问他，如果做了国防部长，设计国防工业的时候，碰到不利于通用公司的情况，他将怎么办？威尔森火了，他说：</p>
 <p>对国家有利的，都对通用公司有利；反过来说也一样。（What’sgoodforthecountryisgoodforGeneralMotors,andviceversa.）</p>
@@ -905,8 +938,8 @@
 <p>第一流的人才，观点总是第一流的，“此心与国同休戚”，他不从“图利他人”看事情，不得“狭心症”。</p>
 <p>1979年6月12日</p>
 <p>更多民主一点</p>
-<p>罗斯福路上的那个罗斯福，他能当上总统，得力于一员大将使他上路，这员大将，就是史密斯（AlfredEmanuelSmith）。</p>
-<p>外号“快乐战士”（HappyWarrior）的史密斯，是美国民主党的掌门人，四任纽约州长。竞选美国总统，败给胡佛。四年以后，他让贤给罗斯福出马，搅垮了胡佛。他善于在政治上作战，笑着脸支持朋友，也笑着脸软化敌人。他老是战斗不懈，他每天工作十八个小时，太累了，使自己轻松的法子，就是笑口常开。</p>
+<p>罗斯福路上的那个罗斯福，他能当上总统，得力于一员大将使他上路，这员大将，就是史密斯（Alfred Emanuel Smith）。</p>
+<p>外号“快乐战士”（Happy Warrior）的史密斯，是美国民主党的掌门人，四任纽约州长。竞选美国总统，败给胡佛。四年以后，他让贤给罗斯福出马，搅垮了胡佛。他善于在政治上作战，笑着脸支持朋友，也笑着脸软化敌人。他老是战斗不懈，他每天工作十八个小时，太累了，使自己轻松的法子，就是笑口常开。</p>
 <p>史密斯是“人才至上”论者，认为政治要清明，光一个领头的好，是不成的，要下面的也好才成。他说：“我要用的，是最能胜任他的职务的人。”找到这种人，他就放胆用。他做州长时候，公路局局长出缺，大家都来抢，他却不放，反倒物色一位造路专家来担任。造路专家说我不是你们党员，史密斯回答说：“你放手去干，我找你来是造桥筑路的，不是找你来办党的。”</p>
 <p>这个快乐战士是民主制度的热情拥护者，有的人发觉民主有流弊，主张来点别的，史密斯笑起来，他说下千古名言——“治好民主的所有毛病是更多民主一点。”（Alltheillsofdemocracycanbecuredbymoredemocracy.）</p>
 <p>谁想到在人家说这种话后半世纪，居然还有党棍执迷“治好独裁的所有毛病是更多独裁一点”，这种党棍，真是民主的罪人，真是民国的耻辱！</p>
@@ -919,11 +952,11 @@
 <p>肯尼迪的礼遇政策，自然也值回票价。他礼遇成性，把前总统杜鲁门也请来白宫一游。杜鲁门弹了一手好钢琴，在白宫老调重弹了一阵。肯尼迪说：“斯大林从列宁坟旁给赶出来，杜鲁门却能重返白宫，别说这世界没公理啦。”（Don’tsaythereisnojusticeintheworld.StalinhasbeenkickedoutofLenin’stombandPresidentTrumanisbackintheWhiteHouse.）</p>
 <p>1982年2月1日</p>
 <p>如果敌人是混蛋</p>
-<p>王尔德（OscarWilde）是十九世纪英国第一大才子，思路最快、口才最好、想象力最高，惊世骇俗的花样，最层出不穷。</p>
+<p>王尔德（Oscar Wilde）是十九世纪英国第一大才子，思路最快、口才最好、想象力最高，惊世骇俗的花样，最层出不穷。</p>
 <p>王尔德唯美尚武。唯美方面，他自称“美学教授”“伟大的审美家”，外场富丽堂皇；尚武方面，当四个醉鬼看他不顺眼，登门挑战的时候，他打倒一个、踢倒一个、仍走一个，把第四个抱到房间，压在沙发底下，然后伸手一招看热闹的快进来，大家喝酒。</p>
-<p>1882年，他到美国演讲旅行。上岸时候，海关人员问他有什么要报关？他说：“除了天才，别无他物。”（Ihavenothingtodeclareexceptmygenius.）他对美国的总评不高，他认为：美式文化，一口痰耳！</p>
+<p>1882年，他到美国演讲旅行。上岸时候，海关人员问他有什么要报关？他说：“除了天才，别无他物。”（I have nothing to declare except my genius.）他对美国的总评不高，他认为：美式文化，一口痰耳！</p>
 <p>王尔德主张选朋友要选好看的，选敌人要选高明的，但也不能太处心积虑选敌人，因为总可能碰到混蛋，碰到你的敌人是混蛋，只好认倒霉。</p>
-<p>王尔德对自己，也选了又选。他成名以后，对成名生活感到厌倦，他宣布第一期的王尔德已经死了，现在进入第二期。监狱生活使他变得深沉、深远、深刻，他发现人都在“杀”他所爱的，只是“杀”法不同，有人用愁眉苦脸，有人用利嘴滑舌，“懦种用吻，勇士用剑。”（Thecowarddoesitwithakiss/Thebravemanwithasword!）他已深通“挥利剑以斩情丝”的哲学，不然的话，岂能如此大破大立？</p>
+<p>王尔德对自己，也选了又选。他成名以后，对成名生活感到厌倦，他宣布第一期的王尔德已经死了，现在进入第二期。监狱生活使他变得深沉、深远、深刻，他发现人都在“杀”他所爱的，只是“杀”法不同，有人用愁眉苦脸，有人用利嘴滑舌，“懦种用吻，勇士用剑。”（The coward does it with a kiss/The brave man with a sword!）他已深通“挥利剑以斩情丝”的哲学，不然的话，岂能如此大破大立？</p>
 <p>1981年10月1日</p>
 <p>科尔被丢鸡蛋感言</p>
 <p>5月10日，德国总理科尔（Kohl）到德东哈勒市（Halle）访问时，遭到一群年轻的示威者投掷鸡蛋、番茄、和油漆，其中几枚鸡蛋打到科尔的脸上和身上，蛋汁顺着他的外套流下，愤怒的科尔一度挥拳打向示威者。</p>
@@ -942,17 +975,17 @@
 <p>这是一个令人多思的纪录。它告诉人们，小人物总是健忘、总是最先提出抱怨的。本来是大家一起拥抱穷兄弟的，但是日子久了，发现穷兄弟实在累人，就抱怨了。</p>
 <p>真正伟大的政治家，就要像科尔这样。政治家不但要争荣，也要忍谤、忍受小人物的反复无常。——小人物做了好事，总要抱怨的。承接他们的抱怨，是做政治家的必要条件。</p>
 <p>1991年7月10日上午</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/16.李敖祸台十书/第一流人的境界.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/16.李敖祸台十书/第一流人的境界.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../16.李敖祸台十书/笑傲五十年.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../17.百家论李敖合集/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -962,16 +995,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../16.李敖祸台十书/笑傲五十年.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../17.百家论李敖合集/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -980,12 +1018,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

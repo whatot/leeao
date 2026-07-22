@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,99 +81,120 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="李敖报刊集"><a class="header" href="#李敖报刊集">李敖报刊集</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E4%B8%8E%E7%BC%96%E8%BE%91%E5%AE%A4%E6%8A%A5%E5%91%8A">李敖与“编辑室报告”</a></li>
-<li><a href="#%E6%96%87%E6%98%9F%E6%9D%82%E5%BF%97%E9%80%89%E9%9B%86%E5%AF%BC%E8%A8%80">《文星杂志选集》导言</a></li>
-<li><a href="#%E6%96%87%E6%98%9F%E6%9D%82%E5%BF%97%E9%80%89%E9%9B%86%E9%A2%98%E8%AF%8D">《文星杂志选集》题词</a></li>
-<li><a href="#%E5%8F%AA%E8%A6%81%E5%AF%BB%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%8F%97%E4%BA%BA%E6%83%91%E7%9A%84%E4%BA%BA">“只要寻一个不受人惑的人”</a></li>
-<li><a href="#%E8%A2%AB%E5%B0%81%E6%9D%80%E7%9A%84%E5%8D%83%E7%A7%8B%E8%AF%84%E8%AE%BA">被封杀的《千秋评论》</a></li>
-<li><a href="#%E4%B8%87%E5%B2%81%E8%AF%84%E8%AE%BA%E7%BC%98%E8%B5%B7">《万岁评论》缘起</a></li>
-<li><a href="#%E6%8C%82%E5%8D%83%E7%A7%8B%E7%BE%8A%E5%A4%B4%E5%8D%96%E4%B8%87%E5%B2%81%E7%8B%97%E8%82%89">挂“千秋”羊头，卖“万岁”狗肉</a></li>
-<li><a href="#%E5%8D%83%E7%A7%8B%E8%AF%84%E8%AE%BA%E4%B8%80%E7%99%BE%E6%9C%9F%E6%9C%9F%E6%9C%9F%E6%9C%9F%E6%9C%9F%E6%9C%9F">《千秋评论》一百期期期期期期</a></li>
-<li><a href="#%E5%8D%83%E7%A7%8B%E8%AF%84%E8%AE%BA%E5%81%9C%E5%88%8A%E5%91%8A%E7%99%BD">《千秋评论》停刊告白</a></li>
-<li><a href="#%E4%B9%8C%E9%B8%A6%E7%9A%84%E5%BF%83%E6%84%BF">乌鸦的心愿</a></li>
-<li><a href="#%E4%B9%8C%E9%B8%A6%E8%AF%84%E8%AE%BA%E4%BC%91%E5%88%8A%E5%91%8A%E7%99%BD">《乌鸦评论》休刊告白</a></li>
-<li><a href="#%E6%B1%82%E6%98%AF%E6%8A%A51991%E5%B9%B42%E6%9C%8827%E6%97%A5%E5%88%9B%E5%88%8A">《求是报》1991年2月27日创刊</a></li>
-<li><a href="#%E4%B8%80%E5%BC%A0%E6%8A%A5%E6%89%93%E5%80%92%E4%BD%A0">一张报，打倒你！</a></li>
-<li><a href="#%E7%94%9F%E5%85%AC%E8%AF%B4%E6%B3%95%E9%AC%BC%E7%A5%9E%E5%90%AC">生公说法鬼神听</a></li>
-<li><a href="#%E6%B1%82%E6%98%AF%E6%8A%A5%E6%98%AF%E7%9F%A5%E8%AF%86%E8%B4%B5%E6%97%8F%E6%9C%80%E4%BE%BF%E5%AE%9C%E7%9A%84%E6%8A%A5">《求是报》是知识贵族最便宜的报</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E8%B0%88%E6%9D%8E%E6%95%96%E7%9A%84%E6%8A%A5%E7%BA%B8">李敖谈《李敖的报纸》</a></li>
-<li><a href="#%E6%B1%82%E6%98%AF%E6%8A%A5%E5%81%9C%E5%88%8A%E5%91%8A%E7%99%BD">《求是报》停刊告白</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E6%B1%82%E6%98%AF%E8%AF%84%E8%AE%BA%E6%9D%82%E5%BF%97%E5%8F%91%E5%88%8A%E8%AF%8D">《李敖求是评论杂志》发刊词</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#李敖与编辑室报告">李敖与“编辑室报告”</a></li>
+<li><a href="#文星杂志选集导言">《文星杂志选集》导言</a></li>
+<li><a href="#文星杂志选集题词">《文星杂志选集》题词</a></li>
+<li><a href="#只要寻一个不受人惑的人">“只要寻一个不受人惑的人”</a></li>
+<li><a href="#被封杀的千秋评论">被封杀的《千秋评论》</a></li>
+<li><a href="#万岁评论缘起">《万岁评论》缘起</a></li>
+<li><a href="#挂千秋羊头卖万岁狗肉">挂“千秋”羊头，卖“万岁”狗肉</a></li>
+<li><a href="#千秋评论一百期期期期期期">《千秋评论》一百期期期期期期</a></li>
+<li><a href="#千秋评论停刊告白">《千秋评论》停刊告白</a></li>
+<li><a href="#乌鸦的心愿">乌鸦的心愿</a></li>
+<li><a href="#乌鸦评论休刊告白">《乌鸦评论》休刊告白</a></li>
+<li><a href="#求是报1991年2月27日创刊">《求是报》1991年2月27日创刊</a></li>
+<li><a href="#一张报打倒你">一张报，打倒你！</a></li>
+<li><a href="#生公说法鬼神听">生公说法鬼神听</a></li>
+<li><a href="#求是报是知识贵族最便宜的报">《求是报》是知识贵族最便宜的报</a></li>
+<li><a href="#李敖谈李敖的报纸">李敖谈《李敖的报纸》</a></li>
+<li><a href="#求是报停刊告白">《求是报》停刊告白</a></li>
+<li><a href="#李敖求是评论杂志发刊词">《李敖求是评论杂志》发刊词</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -188,9 +221,9 @@
 <p>李敖主编《文星》四年，掀起了一股“文星风云”，每月《文星》出刊，李敖写“编辑室报告”。在“编辑室报告”里面，李敖除了介绍该期《文星》的内容外，更将自己的议论意见利用短短的三字两语表达出来，要了解李敖，这是不可缺少的资料。从“编辑室报告”的字里行间，有心人自可掌握到李敖的精神所在。因此，我在这里把部分“编辑室报告”做了一个大概的分类，给有心人从中找寻宝贵的资料。</p>
 <p>人物：</p>
 <p>邓肯</p>
-<p>邓肯（IsadoroDuncan），这位近代西方开风气的奇女子，她的一生充满神秘和诗意。她是一位洒脱磊落、才智超人的女子；一位愤世嫉俗、满怀理想的大艺术家，一位反抗传统，敢于“顺你自己的性，做你自己的人”的革命者，一位极为热情、富有性灵，爱好文学，真正走出象牙塔外的人物。（第九十八期）</p>
+<p>邓肯（Isadoro Duncan），这位近代西方开风气的奇女子，她的一生充满神秘和诗意。她是一位洒脱磊落、才智超人的女子；一位愤世嫉俗、满怀理想的大艺术家，一位反抗传统，敢于“顺你自己的性，做你自己的人”的革命者，一位极为热情、富有性灵，爱好文学，真正走出象牙塔外的人物。（第九十八期）</p>
 <p>萨特</p>
-<p>在这种现状之下，真正的风雅者是苦恼的。他们要“冲决网罗”，要在彷徨里叫喊，在叫喊里彷徨。在这种十字路口上，走来了本期《文星》的封面人物——萨特。萨特是“存在主义”的代表人物，他的身世是灰暗的、艰苦的：他是孤儿，是战乱里的俘虏，是地下工作的领袖；他的人生时刻都面临着黑暗与死亡，因此，他的哲学与文学也充满离奇和否定。例如，在他眼里，“自由”在抵抗压迫中才能得到；“黑暗”是正常的；世界“无理”也是正常的。二十五年前，他在第一部短篇小说《墙》（LeMur）里，就表现了这种世界。世界里的每个主角都要碰到这座“墙”，要在墙与墙间面对迎面而来的荒谬和苦炼。（第七十六期）</p>
+<p>在这种现状之下，真正的风雅者是苦恼的。他们要“冲决网罗”，要在彷徨里叫喊，在叫喊里彷徨。在这种十字路口上，走来了本期《文星》的封面人物——萨特。萨特是“存在主义”的代表人物，他的身世是灰暗的、艰苦的：他是孤儿，是战乱里的俘虏，是地下工作的领袖；他的人生时刻都面临着黑暗与死亡，因此，他的哲学与文学也充满离奇和否定。例如，在他眼里，“自由”在抵抗压迫中才能得到；“黑暗”是正常的；世界“无理”也是正常的。二十五年前，他在第一部短篇小说《墙》（Le Mur）里，就表现了这种世界。世界里的每个主角都要碰到这座“墙”，要在墙与墙间面对迎面而来的荒谬和苦炼。（第七十六期）</p>
 <p>存在主义并没有死去，在文学的领域里，他们虽然觉得自己有权利迷糊，可是也终究开拓了人们的视野。萨特的作品充分反映出人类的痛苦与辛劳，并且提供了文学为人类存在的证据。本月份胡品清教授的《存在主义的接力者》，让我们明白了萨特的心理之结和他内心的地狱和天堂。（第九十一期）</p>
 <p>小赫胥黎</p>
 <p>在荒谬和苦炼的过程里，去年，一个旅客倒下了，这个旅客就是小赫胥黎（本刊第十九期封面人物）。小赫胥黎的去世，象征着另一个时代的去世。本期余光中先生和孙智燊先生有关他的两篇译文，都可以使我们追念这位可爱的智者。（第七十六期）</p>
@@ -205,7 +238,7 @@
 <p>这一个多月来各种书刊报纸，关于国父生平记述，非常纷歧错杂，甚至于发现了很多严重的错误。由此证明，社会上对于一位开国伟人的了解和认识，实在太不够了。</p>
 <p>站在学术观点来看，我们应该予以辨明。吴相湘先生的《国父生平史料考异》，就是基于这一个目的所为的一连串澄清工夫。（第九十八期）</p>
 <p>萨冈</p>
-<p>法国女作家萨冈，是一颗早熟的文星，她十八岁时，凭着奔放的天才与惊人的勇气写了《你好，忧愁》一书，出版后立即轰动世界文坛，她的作品充满了“无目的存在”（Aimlessexistence）的思想，十足地表达出近代人们空虚的心境和无目的茫然的神情。（第八十八期）</p>
+<p>法国女作家萨冈，是一颗早熟的文星，她十八岁时，凭着奔放的天才与惊人的勇气写了《你好，忧愁》一书，出版后立即轰动世界文坛，她的作品充满了“无目的存在”（Aimless existence）的思想，十足地表达出近代人们空虚的心境和无目的茫然的神情。（第八十八期）</p>
 <p>约翰根室</p>
 <p>以一个新闻记者来说，约翰根室所给世界的影响，是非常惊人的，他的笔尖，可以触到世界各地每一个人的良心，像一面镜子一样，把一个人赤裸裸地显现出来，无所遁迹，他所撰写的内幕，是每一个地区历史和地理的综合，他采访的技巧，文字的运用和资料的整理，都有他“根室型”的特色，而最重要的，他坚持了一个原则——忠实报道。陆啸钊先生的《约翰根室内幕》，正是他一生的缩影。（第八十六期）</p>
 <p>梁实秋</p>
@@ -249,7 +282,7 @@
 <p>海伦凯勒今天星期日和她的家人好友们一同吃生日蛋糕，饮香槟酒，庆度她八十五岁生辰。这位举世闻名的盲聋作家曾以她此生大部分的岁月，奉献给努力协助世界上的残缺不幸者。</p>
 <p>这一期的封面人物，我们介绍的就是这位集盲、聋、哑三种残疾于一身的海伦凯勒女士。她的成功，不仅是克服了生理上的残缺，而且以无比的勇气克服了心理上的障碍。她不仅生活在自己的光明世界里，而且以她的光辉照耀了这个世界。（第九十三期）</p>
 <p>费正清</p>
-<p>哈佛大学名教授费正清（JohnKingFairbank）最近又到台湾来了。台大毕业，现在美国哈佛大学研究历史的郝延平先生，特地写了一篇费正清介绍，给我们做封面人物。</p>
+<p>哈佛大学名教授费正清（John King Fairbank）最近又到台湾来了。台大毕业，现在美国哈佛大学研究历史的郝延平先生，特地写了一篇费正清介绍，给我们做封面人物。</p>
 <p>《文星》对于国际上研究汉学的专家学者，曾作多次的讨论与介绍；现在，对于费正清教授在中国近代史方面的研究成绩，我们可以看看郝先生是怎么说的。</p>
 <p>费正清不是故步自封的人，对于中国问题的看法，他始终能接受新证据的引导而修正他的观点，所以对这位“中国通”，我们似乎可以用“刮目”的态度来看他和批评他。（第七十八期）</p>
 <p>道格拉斯</p>
@@ -368,12 +401,12 @@
 <p>这篇文字也是李敖写的：</p>
 <p>《文星》杂志征文启事</p>
 <p>——从一个历史故事谈起</p>
-<p>两百一十三年前（1749），在法国的一本权威杂志——《法国水星》（MercuredeFrance）上，出现了一页征文启事。征文的题目是：“科学和艺术的进步究竟败坏道德还是增进道德？”</p>
-<p>当时正是大热天，在巴黎到望森（Vincennes）的路上，有一个年轻人，正朝望森的一个“别墅”走去。“别墅”中有他一个好朋友，这个朋友就是大名鼎鼎的百科全书的大宗师狄德罗（Diderot），当时因为写《瞎子的书》（Lettresurlesaveugles）冲撞了权贵，正被软禁在“别墅”里。</p>
+<p>两百一十三年前（1749），在法国的一本权威杂志——《法国水星》（Mercure de France）上，出现了一页征文启事。征文的题目是：“科学和艺术的进步究竟败坏道德还是增进道德？”</p>
+<p>当时正是大热天，在巴黎到望森（Vincennes）的路上，有一个年轻人，正朝望森的一个“别墅”走去。“别墅”中有他一个好朋友，这个朋友就是大名鼎鼎的百科全书的大宗师狄德罗（Diderot），当时因为写《瞎子的书》（Lettre sur les aveugles）冲撞了权贵，正被软禁在“别墅”里。</p>
 <p>那个没钱坐车的年轻人，走在路上有点累了，他在路边躺下来，随手翻出口袋里的《法国水星》杂志，一眼看到的就是征文启事。</p>
 <p>这条征文启事突然使他灵光一闪，也使他开始了很多构思。等他一见到那受难的朋友，就兴奋的说出他想要应征的计划。</p>
 <p>狄德罗极力怂恿他，于是他写出了一篇长文。这篇文章使他得了第一奖、使他声名大噪、使他看到另一个世界，也使他变成一个新人。</p>
-<p>多年以后，他在《忏悔录》（LesConfessions）里回忆这件事，告诉人们，这次应征对他一生的重大意义。他，就是卢梭（JeanJacquesRousseau）！</p>
+<p>多年以后，他在《忏悔录》（Les Confessions）里回忆这件事，告诉人们，这次应征对他一生的重大意义。他，就是卢梭（Jean Jacques Rousseau）！</p>
 <p>今年11月，《文星》杂志将满五周年。在五周年的前夜，用“征文”来做纪念，该是一件含义深远的事！</p>
 <p>五年前，《文星》诞生在已有四五百种刊物的台湾，它给台湾出版界带来一个新风格和一点新酵素——它没有津贴、没有倚靠、没有内幕、没有黄色、没有低级趣味、没有“软”趴趴的文章……它在购买力低弱的环境，用“不辞其志，不辱其身”的严肃精神，苦撑了五年。</p>
 <p>《文星》深信一个正派而够水准的杂志，在社会中应得到公正的重视。五年来，它在这方面已经得到极大的爱护和鼓舞，这种收获是千千万万读者心灵的反映。基于这种反映，《文星》决定用这次征文来反映读者的心灵。</p>
@@ -389,7 +422,7 @@
 <p>不论在公或在私的对造，他们无一不想从这个地区的法律上，巧取胜利或豪夺胜利。明眼人并不奇怪他们在政治护持中得到法律的胜利，明眼人奇怪的是：他们不恤一切文字上、历史上、道德上、公论上的败绩，而执迷这个地区法律上的胜利，胜利了，又怎样？两千年前，把耶稣送上十字架的那些人，哪个不是法律上的胜利者？但这证明了什么？这就证明十字架上的人错了么？这就证明他们和他们手上的法律对了么？</p>
 <p>凡不是短视的、自我陶醉的、老年自卑症的人，观察《文星》的被封杀，都会恍然它象征的意义。《文星》是一个烈士，烈士死不瞑目，在正义与公道没有盖棺前，不论如何掩埋在秋坟鬼唱之中，烈士不瞑目！</p>
 <p>萧孟能和我在文字上、历史上、道德上、公论上的一些成绩；尽管多年被掩埋在秋坟鬼唱之中，但在地下和海外却早被称许、早有定评。从美国的《纽约时报》到英国的《经济学人》，许多不受地区污染的报刊文献，都做了旁观者淸的肯定。萧孟能和我，虽然“因义受难”，遭遇了无穷的麻烦与迫害，但从人类思想自由史上看，这是争取言论出版自由过程中的必然劫数，虽然千奇，并不百怪，倒也不算什么。</p>
-<p>两个半世纪前，美国出版原野的开拓者彼得曾格（JohnPeterZenger），为争取言论出版自由，因义受难，备历折磨，但在最后，法律和历史都给了他光荣的评价。萧孟能是中国的彼得曾格，在他全盛时代，我未对他有过一字之褒；现在他南美远引、垂老投荒，我愿公开这样说：不管罪名多可笑，不管路多窄、水深波浪多阔，发愿“须对历史交代”的萧孟能，不但已光荣确定他在历史的地位，并且光荣站在历史的前面。</p>
+<p>两个半世纪前，美国出版原野的开拓者彼得曾格（John Peter Zenger），为争取言论出版自由，因义受难，备历折磨，但在最后，法律和历史都给了他光荣的评价。萧孟能是中国的彼得曾格，在他全盛时代，我未对他有过一字之褒；现在他南美远引、垂老投荒，我愿公开这样说：不管罪名多可笑，不管路多窄、水深波浪多阔，发愿“须对历史交代”的萧孟能，不但已光荣确定他在历史的地位，并且光荣站在历史的前面。</p>
 <p>《文星》杂志被封后十四年，新一代的言论出版自由争取者沈登恩，认为该有一套《文星杂志选集》流传市面，这种苦心，真叫“慎终追远”了。我很高兴我能主持这一选辑。我从文星第五年开始选，选出六本书的量。我有意不选李敖的文章。这样才更客观。要看我文章，可看我即将出版的《李敖全集》。</p>
 <p>1980年1月5日</p>
 <h2 id="文星杂志选集题词"><a class="header" href="#文星杂志选集题词">《文星杂志选集》题词</a></h2>
@@ -401,7 +434,7 @@
 <p>近代中国人办杂志的历史，已有八十年。八十年来，有名的杂志不少，但是这种杂志，大都附庸于政治和政治活动，变成了政治的工具，变成了政治活动的手段，结果杂志被“政治挂帅”，在这样的影响下，真理就常常给染了黑或漂了白，就难“还以颜色”了。</p>
 <p>因此，八十年来，中国人办杂志，不受政治影响，而以“思想挂帅”带路的，《文星》杂志就变成凤毛麟角的一种。《文星》杂志为中国思想趋向求答案，在挖根上苦心焦思、在寻根上慎终追远、在归根上四海一家，定向方面的成绩，至今空前绝后，没有任何杂志能赶过它。这种结论，只要比较一下八十年来杂志的内容，就不难做出。在举国滔滔的政治洪水里，《文星》杂志不改本色，坚持“思想挂帅”，这一坚持是很不容易的。《文星》杂志最后为这一坚持而告溺毙，也正说明了这一不容易。</p>
 <p>《文星》杂志创刊在1957年11月，但创刊后的前四年里，它只是一个正派而普通的刊物，它很像美国新闻处办的《今日世界》，以报道新知或谁跳多高谁跑多快为主，它虽标榜“思想的”、“生活的”、“艺术的”，号召“不按牌理出牌”，但事实上，它的表现却可怜得很，在“思想上”的表现尤其可怜，尤其“按牌理出牌”得很：一个杂志，不能鼓动风潮、不能造成时势、不能一言而为天下法、不能使老顽固血压高……这全是“按牌理”的结果，而不是“不按牌理”的结果。所以，创刊后前四年的《文星》杂志，特色并不明显。直到第五年开始以后，也就是从我进入这杂志以后，《文星》杂志才开始从质变到量变，成为最有特色的杂志。这种特色，从第四十九期持续到九十八期，共有四年之久。</p>
-<p>为什么我使《文星》杂志走“思想挂帅”的路线呢？因为我深信应该思想领导政治，不该政治领导思想。思想是一切的根源，思想是冷静的、细密的；政治是狂热的、粗糙的。“政治挂帅”是权力挂帅，照英国哲人的说法，权力使人腐化，绝对的权力使人绝对腐化，为了避免“政治挂帅”的腐化与绝对腐化，必须从根救起，在思想上为中国人定向，使中国人从根上脱胎换骨，不再在思想上糊涂混乱。我深信，只有在思想上得救，中国人才能摆脱“愚昧无知的盲动”（ignoranceinaction），中国才能走上自由、民主、开明、进步的正路。</p>
+<p>为什么我使《文星》杂志走“思想挂帅”的路线呢？因为我深信应该思想领导政治，不该政治领导思想。思想是一切的根源，思想是冷静的、细密的；政治是狂热的、粗糙的。“政治挂帅”是权力挂帅，照英国哲人的说法，权力使人腐化，绝对的权力使人绝对腐化，为了避免“政治挂帅”的腐化与绝对腐化，必须从根救起，在思想上为中国人定向，使中国人从根上脱胎换骨，不再在思想上糊涂混乱。我深信，只有在思想上得救，中国人才能摆脱“愚昧无知的盲动”（ignorance in action），中国才能走上自由、民主、开明、进步的正路。</p>
 <p>在我掌舵的《文星》杂志四年里，我努力在这种大方向上，给中国人带路。禅宗和尚说：“菩提达摩东来，只要寻一个不受人惑的人。”使中国人练习独立思想，不受人惑，就是《文星》杂志的真正旨趣所在。如今，《文星》杂志不再东来，而已西去，我回首前尘，忍不住写下这段哀辞。论断《文星》杂志，必须从这种大方向着眼，才“不受人惑”，不能这样着眼，妄加论断，那只是噪音而已，正是《文星》杂志所要棒喝的对象啊！</p>
 <p>1982年7月1日</p>
 <h2 id="被封杀的千秋评论"><a class="header" href="#被封杀的千秋评论">被封杀的《千秋评论》</a></h2>
@@ -426,12 +459,12 @@
 <p>然而，《李敖评论》的消息传出，我们的梦也同时惊醒了，李敖已经彻头彻尾的改变。杂志是社会舆论，不是个人舆论：杂志从事探索真理的工作，不能成为真理独断的刽子手。《李敖评论》则毫无疑问的充满着个人主义、英雄崇拜的色彩，相对的则欠缺作为社会公器的基型。《李敖评论》何异于“个人评论”或“片面评论”？</p>
 <p>我们乐于见到李敖出面办杂志，乐于见到李敖在杂志里开辟“李敖评论”专栏，用以评鉴社会之事或人，用以反映不平或揭橥理念、思想……但是，我们坚决反对李敖搞个人权威，把杂志存在的基本意义抹杀，把杂志的反应功能极端化、一己化。</p>
 <p>敢请李敖把“李敖评论”改名为“千秋评论”或“肝胆评论”或“事实评论”或其他任何客观化的名称。</p>
-<p>石敢言这篇文章，有一点是他过虑了，就是他认为《李敖评论》是“搞个人权威，把杂志存在的基本意义抹杀”，实在未免看得严重。古往今来，用一个名人名字作为杂志名字的，例不在少，从《哈泼杂志》（Harper'sMagazine）到《密勒氏评论报》，从《铭传学报》到《王榕生时装》，都是一般可见的例子，“李敖评论”这个名字，似乎不该引起这么大的误会，误会到“李敖已经彻头彻尾的改变了”、误会到“我们的梦也同时惊醒了”。</p>
+<p>石敢言这篇文章，有一点是他过虑了，就是他认为《李敖评论》是“搞个人权威，把杂志存在的基本意义抹杀”，实在未免看得严重。古往今来，用一个名人名字作为杂志名字的，例不在少，从《哈泼杂志》（Harper’s Magazine）到《密勒氏评论报》，从《铭传学报》到《王榕生时装》，都是一般可见的例子，“李敖评论”这个名字，似乎不该引起这么大的误会，误会到“李敖已经彻头彻尾的改变了”、误会到“我们的梦也同时惊醒了”。</p>
 <p>名词之争</p>
-<p>对石敢言的文字，1月20日的《自由日报》上，就有秦怀冰（陈晓林）的《为李敖说几句话》，反对“对杂志名称过分天真的推论”，石敢言的过虑，使我想起《展望》（TheOutlook）总编辑艾博特（LymanAbbott）自传中记他父亲的谈话：“自古以来，凡在哲学上和神学上之争论，十分之九都是名词之争。”艾博特接着说：“我父亲的话是对的。但我年纪愈大，愈感到他老人家的算术还有点儿小错——剩下的那十分之一，其实也还是名词之争。”</p>
+<p>对石敢言的文字，1月20日的《自由日报》上，就有秦怀冰（陈晓林）的《为李敖说几句话》，反对“对杂志名称过分天真的推论”，石敢言的过虑，使我想起《展望》（The Outlook）总编辑艾博特（Lyman Abbott）自传中记他父亲的谈话：“自古以来，凡在哲学上和神学上之争论，十分之九都是名词之争。”艾博特接着说：“我父亲的话是对的。但我年纪愈大，愈感到他老人家的算术还有点儿小错——剩下的那十分之一，其实也还是名词之争。”</p>
 <p>为什么我要同石敢言“名词之争”呢？为什么我不感谢他的好意，把“李敖评论”，就照他的提议，“改名为‘千秋评论’”呢？为什么我不来一次“民主表演”呢？</p>
 <p>就这样的，我向官方申请了以《千秋评论》为名的杂志执照。</p>
-<p>4月18日，官方按《出版法》第9条给我执照，但在一个多月以后，新速实简的又按《出版法》第11条“技术击倒”（T.K.O.technicalknock-out）了这个执照——“被处二月以上之刑，在执行中”，“不得为新闻纸或杂志之发行人或编辑人”！这种演变，微妙的演变，反映了我已判无罪的官司为什么忽然变成有罪，反映了外界“选举快到，快判李敖”的公论为什么口耳相传，反映了争取自由的长路上我所付出的苦心、代价与牺牲。</p>
+<p>4月18日，官方按《出版法》第9条给我执照，但在一个多月以后，新速实简的又按《出版法》第11条“技术击倒”（T. K. O. technical knock-out）了这个执照——“被处二月以上之刑，在执行中”，“不得为新闻纸或杂志之发行人或编辑人”！这种演变，微妙的演变，反映了我已判无罪的官司为什么忽然变成有罪，反映了外界“选举快到，快判李敖”的公论为什么口耳相传，反映了争取自由的长路上我所付出的苦心、代价与牺牲。</p>
 <p>4月5日《时报杂志》有楚深的《艺文扫描》，说“李敖积极筹备《千秋评论》”，“以李敖的才学和财力，加上他事事求精的性格，相信会在杂志界消沉的此时掀起高潮，经过这十年的思想锻炼，说不定李敖能从‘文星时代’重振成为李敖‘千秋时代’。”显然的，楚深太乐观了我的“重振”，而忽略了官方的“三振”，楚深显然忽略了：使李敖一蹶不振，是符合多方面的“国策”标准的：李敖是叛乱犯前科的资深异己，“国策”不打击他，还打击谁？谁会为他“违反国策”呢？</p>
 <p>“脱轨的老大”</p>
 <p>就这样的，作为杂志的《千秋评论》，虽然子宫外孕，也得胎死腹中。《千秋评论》杂志，局版台志字第2775号，生不逢时，死得其所，呜呼哀哉，尚飨！</p>
@@ -477,14 +510,14 @@
 <p>在舆论的一片杀伐之声里，国民党《中央日报》带头以专论攻击我，省政府《新生报》干脆漫画骂我是狗。……统计各报的新闻处理，是以三十比一的比例进行的。不但使我只有三十分之一“公平”，并且一律拒绝按照他们的《出版法》，他们的《中国新闻记者信条》给我更正。……这种种三十二年的目睹怪现状，不是也太邪门了吗？</p>
 <p>当《疾风》杂志系统，鼓噪在中泰宾馆之外的时候，眼看而来的，就是对异己法律上面的斗倒；当《疾风》杂志系统，乃至《黄河》杂志系统，鼓噪在高等法院内外的时候，眼看而来的，同样的对异己“政治问题，法律解决”。于是，在选举前夕，在李敖《千秋评论》杂志执照拿到后一个多月，高等法院就快马加鞭的从无罪判到有罪。于是，舆论与法律的双杀局面——从斗臭到斗倒，就前后完成。</p>
 <p>《千秋评论》是我在《文星》被封杀十七年后，第一次重新“介入”杂志活动，它的最初构想是一个像日本思想家河上肇那样的个人杂志。河上肇在1919年起办个人杂志，共出了一百零五期，除了六期外，都是他个人的文字，造成对思想界极大极深的影响。河上肇后来入狱，也就伏机于此。</p>
-<p>《千秋评论》的执照是1981年4月18日官方《出版法》第9条给我的，但是一个多月以后，官方新速实简的又按《出版法》第11条“技术击倒”（T.K.O.technicalknock-out）了这个执照：——“被处二月以上之刑，在执行中”，“不得为新闻纸或杂志之发行人或编辑人”，这种演变，微妙的演变，反映了我已判无罪的官司为什么忽然变成有罪，反映了外界“选举快到，快判李敖”的公论为什么口耳相传，反映了争取自由的长路上我所付出的苦心、代价与牺牲。</p>
+<p>《千秋评论》的执照是1981年4月18日官方《出版法》第9条给我的，但是一个多月以后，官方新速实简的又按《出版法》第11条“技术击倒”（T. K. O. technical knock-out）了这个执照：——“被处二月以上之刑，在执行中”，“不得为新闻纸或杂志之发行人或编辑人”，这种演变，微妙的演变，反映了我已判无罪的官司为什么忽然变成有罪，反映了外界“选举快到，快判李敖”的公论为什么口耳相传，反映了争取自由的长路上我所付出的苦心、代价与牺牲。</p>
 <p>就这样的，作为杂志的《千秋评论》，虽然子宫外孕，也得胎死腹中。《千秋评论》杂志，局版台志字第2775号，生不逢时，死得其所，呜呼哀哉，尚飨！</p>
 <p>《千秋评论》杂志出丧后，我决定出版《李敖千秋评论》系列丛书，在《出版法》第16条至22条轨迹间，做黄怡所谓的“脱轨的老大”。于是，在我第二次政治犯入狱的前夜，汝清陪我预先编好了六册的《李敖千秋评论丛书》，在1981年8月10入狱当天的清早，全部交给了林秉钦，转给叶圣康的四季出版公司出版。</p>
 <p>我第二次政治犯入狱的刑期是六个月，我编好这六册书，活像诸葛亮“预伏锦囊计”似的，只要林秉钦每月“拆开锦囊视之”，付印即可成书。于是，《李敖千秋评论丛书》，便从1981年9月1日起，在我人在牢中的时候，“越狱”而出了！</p>
 <p>《千秋评论》如今已出版了二十八期，一般都是按每月一册出版着，由于国民党不断的抢书、查禁，为了捉迷藏和出奇兵，出书日期难免有“经期不调”之处，但在大体上，这一“李敖每月一书”的宿愿，我终于能够达成了。不但达成，并且继续立于不败之地，在波谲云诡之中、在纵横捭阖之下，每月使亲快仇痛，煞是好看。美中不足的是，《千秋评论》都是每月李敖个人的独角戏，李敖的朋友们的一些优秀作品，限于篇幅，无法多所带动。这一美中不足，我决心从1984年起予以补救，补救的方法就是出版“万岁评论”。</p>
 <p>因为“千秋评论”四个字，早已是被吊销了的杂志名字，所以“李敖千秋评论丛书”八个字，才是正式的称呼。可是两年来，不论是官方的文件，还是民间的用法，多把“李敖千秋评论丛书”简称做“千秋评论丛书”或“千秋评论”，并把丛书的“册”数比照杂志的“期”数来计算它，连警备总部的查禁文件上都不例外（事实上，警总每月把它放在杂志组审查，以便能够速查速禁）。一开始我本人还是相当维持“李敖千秋评论丛书”的正式称呼的，但是后来我也“吾从众”了，我也“千秋评论”起来了。以此类推，“万岁评论”正式称呼该是“万岁评论丛书”，正名与否，悉听尊便，蛋头们自然不必拘泥也！</p>
 <p>《万岁评论》的成书方式，是每月由我和朋友们合著完成，虽然文章各自独立，内容各自负责，但是声应气求，自然也有它人同此心的“共识”，正所谓“大家一起叫”者也。我盼望朋友们把最精彩的作品投给“万岁评论”，大家“以文会友”，为苦难的时代，多留下些鸿爪遗痕。一千四百多年前的萧恭说：“……历观世人，多有不好欢乐，乃仰眠床上，看屋梁而著书，千秋万岁，谁传此者？”《万岁评论》的著作人，理该正是这种不可救药的理想主义者，大家“知其不可而为之”，以“朝闻道，夕死可矣”的怀抱，期待一时一地的风光、和千秋万岁的传世。一千三百多年前的西班牙学者兼塞维利亚（Seville）大主教伊西多尔（Isidore）说得好：</p>
-<p>Studyasifyouweretoliveforever.Liveasifyouweretodietomorrow.（像从今长生那样发愤；像明天就死那样生活。）</p>
+<p>Study as if you were to live forever. Live as if you were to die tomorrow.（像从今长生那样发愤；像明天就死那样生活。）</p>
 <p>逢今之世，处此之岛，我们这些看不起当权派的死硬派，发愤生活，生活发愤，岂不正该如此吗？</p>
 <p>1984年1月23日</p>
 <h2 id="挂千秋羊头卖万岁狗肉"><a class="header" href="#挂千秋羊头卖万岁狗肉">挂“千秋”羊头，卖“万岁”狗肉</a></h2>
@@ -494,7 +527,7 @@
 <p>一、每月月底出版“李敖每月一书”。</p>
 <p>二、每月月中出版《千秋评论》（《李敖千秋评论丛书》）。同时把《万岁评论》与《千秋评论》合并，《千秋评论》页数加倍，内容并不减少。</p>
 <p>《千秋评论》的最初构想本是一个像日本思想家河上肇那样的个人杂志，河上肇在1919年起办个人杂志，共出了一百零五期，除了六期开放外，都是他个人的文字。如今我将全是我个人文字的《千秋评论》开放，寓“万岁”于“千秋”之中，这样部署，会更有利于大家的声应气求、更有利于出拳的方便和力量。</p>
-<p>《万岁评论》并入《千秋评论》后，编号从《李敖千秋评论丛书》第六十七期开始，原来《万岁评论》书名及编号，都告一段落。乍看起来，大家在《李敖千秋评论丛书》旗下写文章，似乎和“李敖”两字有所混淆，其实不可做这种牛角尖式解释。古往今来，用一个人名字挂羊头卖羊肉也卖狗肉者，例不在少。《密勒氏评论报》（TheChinaWeeklyReview）旗下，非全密勒氏之作也；《王榕生时装》旗下，非全王榕生之作也。密勒氏虽死、王榕生虽“投匪”，此理不可易也。所以，在李敖没死、没“投匪”以前，《李敖千秋评论丛书》的招牌，实在可以大用特用你用我用。就便是将来李敖改了行，去“金银岛”做了海盗，这一名称，仍可留给大家，共襄盛举。《商业登记法》第28条不亦云乎：</p>
+<p>《万岁评论》并入《千秋评论》后，编号从《李敖千秋评论丛书》第六十七期开始，原来《万岁评论》书名及编号，都告一段落。乍看起来，大家在《李敖千秋评论丛书》旗下写文章，似乎和“李敖”两字有所混淆，其实不可做这种牛角尖式解释。古往今来，用一个人名字挂羊头卖羊肉也卖狗肉者，例不在少。《密勒氏评论报》（The China Weekly Review）旗下，非全密勒氏之作也；《王榕生时装》旗下，非全王榕生之作也。密勒氏虽死、王榕生虽“投匪”，此理不可易也。所以，在李敖没死、没“投匪”以前，《李敖千秋评论丛书》的招牌，实在可以大用特用你用我用。就便是将来李敖改了行，去“金银岛”做了海盗，这一名称，仍可留给大家，共襄盛举。《商业登记法》第28条不亦云乎：</p>
 <p>以合伙人之姓或姓名为商业之名称者，该合伙人退伙，如仍用其姓或姓名为商业名称时，须得其同意。</p>
 <p>为免日后麻烦，我特立此存照、同意在先：即一朝我退伙去做海盗，《李敖千秋评论丛书》仍可由大家继续卖狗肉——借李敖之尸，还大家之魂，千秋万岁，不亦快哉！</p>
 <p>1987年3月23日</p>
@@ -518,9 +551,9 @@
 <p>1991年9月26日，李敖56岁，在台湾。</p>
 <h2 id="乌鸦的心愿"><a class="header" href="#乌鸦的心愿">乌鸦的心愿</a></h2>
 <p>——《乌鸦评论》发刊词</p>
-<p>我生平写作虽多，却始终没办过自己的杂志。过去主持《文星》杂志，是鹊巢鸠占，不算是自己的杂志。《文星》被封后，我申请不到杂志执照，后来坐牢，一连十四年大霉运，离办杂志越来越远。十四年后复出，在1981年申请杂志执照，行政院新闻局在该年4月18日按《出版法》第9条给了我《千秋评论杂志》执照，但在一个多月以后，却又快速按《出版法》第11条“技术击倒”（T.K.O.technicalknock-out）了它，使我因冤案入狱而不得为杂志发行人。如今对方已因诬告我，被最高法院判处徒刑，在冤情大白之下，我又出了难题给行政院新闻局——李敖又要办杂志了。行政院新闻局一定想尽五堵、七堵、八堵的法子来堵塞李敖，陷我于狱，可是我不在乎。我现在又申请到《乌鸦评论》杂志执照，在没入狱前，我就是要一期一期办下去。“朝言论，夕入狱可矣！”这就是我这种“刁民”的信仰！</p>
-<p>三十年前，我读劳伦斯（D.H.Lawrence）《査泰莱夫人的情人》（LadyChatterley'sLover）我最喜欢这么一段：“苦难当前，我们正置身废墟之中。在废墟中，我们开始盖一些小建筑，寄一些小希望。这当然是一件困难的工作，但已没有更好的路通向未来了。我们要迂回前进，要爬过层层障碍，不管天翻也好、地覆也罢，我们还是要活。”（Thecataclysmhashappened,weareamongtheruins,westarttobuildupnewlittlehabitats,tohavenewlittlehopes.Itisratherhardwork，thereisnosmoothroadintothefuture；butwegoround，orscrambleovertheobstacles.We'vegottolive,nomatterhowmanyskieshavefallen.）这段文字，可说是我在这岛上处境的最好描写。我的确是在“废墟之中”一次又一次的“开始盖一些小建筑、寄一些小希望”，可是一次又一次被摧毁了。在每一层的“废墟之中”，都有我“小建筑”和“小希望”的残迹，恰像那一层盖在又一层上面的特洛伊（Troy）古城，你会发现：自己既是过去、又是现在。过去已经化为尘土，可是，就凭那些尘土，你活到现在；不但活到现在，还从现在朝向未来。</p>
-<p>四百年来，台湾在外国人、外省人、本省人的相激相荡下，已经变成了一个畸形的、肤浅的、荒谬的、走火入魔的岛，这虽然没有威尔斯（H.G.Wells）笔下《莫洛博士岛》（TheIslandofDr.Moreau）那样光怪，但它的陆离，却超乎英国先知者的先知之外。我身处这样子的岛上四十年，虽然不见容于朝、不见知于野，但是独来独往的气概，“我手写我口”的气魄，却老而弥坚。这次出来办《乌鸦评论》，就是要在众口一声的时代里，呱呱大叫一番。我要痛斥政局的黑暗、政党的腐败、群众的无知、群体的愚昧、思想的迷糊、行为的迷信、社会的疯狂、知识分子的失职与怯懦……我绝不怕得罪人，也绝不媚世，台湾所有杂志都是媚世的，可是我就不信邪，我就是要办个“谴责杂志”给大家看！英国古歌《两只乌鸦》（TheTwoCorbies）里，乌鸦对话，去吃死尸，最后吃得“白骨剥露，凄风永拂。”（O'erhiswhitebanes,whentheyarebare,Thewindsallblawforevermair.）乌鸦的功劳，不正是如此吗？</p>
+<p>我生平写作虽多，却始终没办过自己的杂志。过去主持《文星》杂志，是鹊巢鸠占，不算是自己的杂志。《文星》被封后，我申请不到杂志执照，后来坐牢，一连十四年大霉运，离办杂志越来越远。十四年后复出，在1981年申请杂志执照，行政院新闻局在该年4月18日按《出版法》第9条给了我《千秋评论杂志》执照，但在一个多月以后，却又快速按《出版法》第11条“技术击倒”（T. K. O. technical knock-out）了它，使我因冤案入狱而不得为杂志发行人。如今对方已因诬告我，被最高法院判处徒刑，在冤情大白之下，我又出了难题给行政院新闻局——李敖又要办杂志了。行政院新闻局一定想尽五堵、七堵、八堵的法子来堵塞李敖，陷我于狱，可是我不在乎。我现在又申请到《乌鸦评论》杂志执照，在没入狱前，我就是要一期一期办下去。“朝言论，夕入狱可矣！”这就是我这种“刁民”的信仰！</p>
+<p>三十年前，我读劳伦斯（D.H.Lawrence）《査泰莱夫人的情人》（LadyChatterley’sLover）我最喜欢这么一段：“苦难当前，我们正置身废墟之中。在废墟中，我们开始盖一些小建筑，寄一些小希望。这当然是一件困难的工作，但已没有更好的路通向未来了。我们要迂回前进，要爬过层层障碍，不管天翻也好、地覆也罢，我们还是要活。”（Thecataclysmhashappened,weareamongtheruins,westarttobuildupnewlittlehabitats,tohavenewlittlehopes.Itisratherhardwork，thereisnosmoothroadintothefuture；butwegoround，orscrambleovertheobstacles.We’vegottolive,nomatterhowmanyskieshavefallen.）这段文字，可说是我在这岛上处境的最好描写。我的确是在“废墟之中”一次又一次的“开始盖一些小建筑、寄一些小希望”，可是一次又一次被摧毁了。在每一层的“废墟之中”，都有我“小建筑”和“小希望”的残迹，恰像那一层盖在又一层上面的特洛伊（Troy）古城，你会发现：自己既是过去、又是现在。过去已经化为尘土，可是，就凭那些尘土，你活到现在；不但活到现在，还从现在朝向未来。</p>
+<p>四百年来，台湾在外国人、外省人、本省人的相激相荡下，已经变成了一个畸形的、肤浅的、荒谬的、走火入魔的岛，这虽然没有威尔斯（H.G.Wells）笔下《莫洛博士岛》（TheIslandofDr.Moreau）那样光怪，但它的陆离，却超乎英国先知者的先知之外。我身处这样子的岛上四十年，虽然不见容于朝、不见知于野，但是独来独往的气概，“我手写我口”的气魄，却老而弥坚。这次出来办《乌鸦评论》，就是要在众口一声的时代里，呱呱大叫一番。我要痛斥政局的黑暗、政党的腐败、群众的无知、群体的愚昧、思想的迷糊、行为的迷信、社会的疯狂、知识分子的失职与怯懦……我绝不怕得罪人，也绝不媚世，台湾所有杂志都是媚世的，可是我就不信邪，我就是要办个“谴责杂志”给大家看！英国古歌《两只乌鸦》（TheTwoCorbies）里，乌鸦对话，去吃死尸，最后吃得“白骨剥露，凄风永拂。”（O’erhiswhitebanes,whentheyarebare,Thewindsallblawforevermair.）乌鸦的功劳，不正是如此吗？</p>
 <p>1988年9月16日</p>
 <h2 id="乌鸦评论休刊告白"><a class="header" href="#乌鸦评论休刊告白">《乌鸦评论》休刊告白</a></h2>
 <p>一、刚在医院，医生嘱我必须节劳，以免健康出问题。</p>
@@ -532,8 +565,8 @@
 <p>——世界报业史上前无古人，东方版西方版同时出版</p>
 <p>【本报讯】由李敖任发行人的特立独行报纸《求是报》，于公元1991年2月27日创刊，除特立独行的许多特色外，另一大特色是，同日在中国台湾发行东方版、在美洲美国发行西方版，世界报业史上，这种气魄，洵属空前之举。</p>
 <p>中国台湾发行的东方版，中国民党政府硬着头皮发下执照，是1月16日局版台报字第0354号，由国民党文字警察总监——新闻局局长邵玉铭核发。此人为一党棍兼学棍。国民党不肯核发办报执照，凡三十七年之久，现在该党衰病侵寻，为了民主假象，遂由该党棍兼学棍核发，当然这并不表示有新闻自由，只表示允许老百姓有争取新闻自由的可能而已。</p>
-<p>美洲美国发行的西方版，由美国加州州政府予以登录，是ReservationNumberRO163745号。该西方版由最有气魄、最有经验的中文报业高手施复华先生主持业务，但《求是报》之言论、编采作业、法律责任，均由李敖负责。</p>
-<p>19至20世纪英国诗人吉卜龄（RudyardKipling）说东方是东方、西方是西方，两者永不交会（Oh，EastisEast，andWestisWest，andneverthetwainshallmeet）。但李敖和他学弟施复华先生合作下，《求是报》打破了英国帝国主义者的断言。</p>
+<p>美洲美国发行的西方版，由美国加州州政府予以登录，是Reservation Number RO163745号。该西方版由最有气魄、最有经验的中文报业高手施复华先生主持业务，但《求是报》之言论、编采作业、法律责任，均由李敖负责。</p>
+<p>19至20世纪英国诗人吉卜龄（Rudyard Kipling）说东方是东方、西方是西方，两者永不交会（Oh，East is East，and West is West，and never the twain shall meet）。但李敖和他学弟施复华先生合作下，《求是报》打破了英国帝国主义者的断言。</p>
 <h2 id="一张报打倒你"><a class="header" href="#一张报打倒你">一张报，打倒你！</a></h2>
 <p>数中国人中，论藏书之多，李敖第一；藏书之富，李敖第一；藏书之奇，李敖也第一。</p>
 <p>1949年我从大陆来台湾，还不到14岁，就随身带来五百多本藏书，我清楚记得我在上海码头登中兴轮，一包包背着书、提着书，把我累垮的情景。到台湾后，四十多年来，我搜集累积的藏书，已经上百坪的房屋都装不下了。其间虽遭到国民党特务多次抄我的家，但是春风吹又生，抄也抄不完，我又辛苦成巢，恶性膨胀起来。</p>
@@ -580,8 +613,8 @@
 <h2 id="李敖谈李敖的报纸"><a class="header" href="#李敖谈李敖的报纸">李敖谈《李敖的报纸》</a></h2>
 <p>今早在《民众日报》上，看到一篇陈嘉宗先生写的《李敖的报纸》，我不知道“陈嘉宗”是谁，但从文章的用字遣词中，颇可看出他这种人的大脑水平，我想这种水平，也许不止他一位，因此我愿意花点时间，讨论一下。</p>
 <p>一、陈先生说：</p>
-<p>“李敖创办《求是报》，《求是报》的英文名称就叫‘李敖的报纸（LiAo'sDaily）’报纸中既有李敖的资本，而又由其总其成、负其责，以个人名字命名也没什么不妥。”</p>
-<p>从语意上看，这话隐含了用“李敖的报纸”似有未妥的反讽。其实，稍知世界新闻史的人，就知道以主持人个人之名当媒体之名，是很普通的事。从《密勒氏评论报》（TheChinaWeeklyReview）、到《史东的报纸》（I.F.Stone'sWeekly）、到《哈泼杂志》（Harper'sMagazine），所在多有。陈先生大惊小怪，是由于他基本知识不足的缘故。</p>
+<p>“李敖创办《求是报》，《求是报》的英文名称就叫‘李敖的报纸（LiAo’s Daily）’报纸中既有李敖的资本，而又由其总其成、负其责，以个人名字命名也没什么不妥。”</p>
+<p>从语意上看，这话隐含了用“李敖的报纸”似有未妥的反讽。其实，稍知世界新闻史的人，就知道以主持人个人之名当媒体之名，是很普通的事。从《密勒氏评论报》（The China Weekly Review）、到《史东的报纸》（I. F. Stone’s Weekly）、到《哈泼杂志》（Harper’s Magazine），所在多有。陈先生大惊小怪，是由于他基本知识不足的缘故。</p>
 <p>二、陈先生说：</p>
 <p>“《求是报》的一个‘特点’是：旧闻比新闻多。李敖性喜揭他隐私，也以此成名；他所搜集的名人恩怨隐私资料，全国无人能出其右，而他也将这些资料尽可能用到他的报纸里。譬如最近吵翻天的华隆案，各报莫不是在谈张建邦的今日，包括他在交通部长任内的好坏表现；唯独李敖一人大谈三四十年前的张建邦，包括绘声绘影的‘逼母上吊’情节。李敖似乎不太了解，每个人都有过去，每个人的现在和过去也未必相同；假如一个人的今天已不同于往昔，何必老揭人家的过往旧事。李敖至今每论起胡佛、陶百川等人，也只能谈论彼等不太光荣的一段尘封经历，此外再无新义。”</p>
 <p>陈先生写这些话，首先就暴露了他根本没好好看《求是报》。《求是报》创刊之初，早都声明在先，这个报纸不屑于和一般报纸一样。《求是报》只有一大张，篇幅珍贵，如果一个案子出来，《求是报》谈的，都是陈先生所谓“各报莫不是在谈”的内容，和别的报纸千篇一律，那又何必多此一报？陈先生要“谈张建邦的今日”即可，但是，不温故，又何以知新？《求是报》从张建邦当年“逼母上吊”追踪起，正帮助读者了解，正因为过去有个不仁不义的张建邦，今天才有个不三不四的交通部长！今天台湾人民所以这么蠢、这么容易被国民党、民进党、及一般报纸所骗，原因之一，就是健忘、就是只看眼前、只知道眼前，完全忽略了策往以知来的作业。陈先生说：“李敖似乎不太了解，每个人都有过去，每个人的现在和过去也未必相同；假如一个人的今天已不同于往昔，何必老揭人家的过往旧事。”但是，如果一个人的现在比他过去还坏、还可恶，其坏、其可恶的程度今天尤甚于往昔，并且是从往昔延续而来，青出于蓝，试问“过往旧事”，能不揭吗？不揭又何以知“黄河之水天上来”的真相？这种揭“过往旧事”的方法，就是历史学上的述往方法、法律学上的前科方法，这是研究一个人恶性的必要步骤，陈先生却公然要抹杀这种方法，对这种方法大惊小怪，这也是由于他基本知识不足的缘故。至于他用“绘声绘影”四字来评论李敖举证明确的张建邦“逼母上吊”事实，更显出他为张建邦护航，已经护航到抹杀事实的程度，李敖是用真凭实据的，陈先生只能粉拳绣腿，乱以“绘声绘影”戴人帽子。至于他谈到李敖“只能谈论”陶百川、胡佛“彼等不太光荣的一段尘封经历，此外再无新义”，其实李敖多年功力所在，就在这里，台湾读者多年来从一般报纸上，看到的都是你吹我捧、看到的都是包装得完美无瑕的圣君贤相伟大人物，李敖却独以证据拆穿之，这就是“新义”。陈先生讥讽“再无新义”，我奇怪陈先生为何不用这四个字要求要求老生常谈的一般报纸看，看看它们是什么东西。难道整天整年都是那货色，陈先生才认为不菜吗？</p>
@@ -618,17 +651,17 @@
 <p>《李敖求是评论杂志》是我56岁时创办的，由于我余生生命贯注的主力是《北京法源寺》以外的几部重要小说以及非小说的《中国思想史》等书，花在“东打一拳、西踢一脚”式的杂志上面，时间已有限制。因此我用两百页以下的月刊形式，予以掌握和掌舵。</p>
 <p>《李敖求是评论杂志》虽是杂志，但它的使命，在“成一家之言”，一家之言并不是我一言，而是把特立独行之言、震聋醒聩之言、“虽千万人，吾往矣”之言，不论古今、不论中外、不论新旧，都有以召集，形成光束与弹花，为中国开道、为中国人导向。中国人浑蛋浑蛋满天下，上自高等知识分子、衮衮诸公；下至匹夫匹妇、贩夫走卒，滔滔皆是浑蛋、到处都是浑蛋。在这种世风下，第一流的思想家站出来，以实事求是的论证，说点明白话、主持一些公道，这是起码该有的独来独往。《李敖求是评论杂志》就是在这一抱负下创办的。这是全中国唯一一个崇尚真理、全说真话、专讲是非、没有党派的杂志。我敢说，看了它，中国任何刊物都“不够看”、都“何足数”了。——浅人看来，这种开场白有点吹牛；但真正有眼识泰山的人看来，李敖几十年孤军奋斗、呼啸丛林的纪录，岂不都印证了这一事实吗？</p>
 <p>1991年10月20日，在中国台湾</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/07.采访序跋类/李敖报刊集.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/07.采访序跋类/李敖报刊集.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../07.采访序跋类/李敖对话录.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../07.采访序跋类/李敖访谈录1996-2014.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -638,16 +671,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../07.采访序跋类/李敖对话录.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../07.采访序跋类/李敖访谈录1996-2014.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -656,12 +694,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

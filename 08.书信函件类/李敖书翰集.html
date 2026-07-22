@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,81 +81,102 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="李敖书翰集"><a class="header" href="#李敖书翰集">李敖书翰集</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#目录">目录</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -280,8 +313,8 @@
 <p>出洋照相及榜名一并寄上，用后望寄还为祷。</p>
 <p>此上敬颂</p>
 <p>撰安</p>
-<p>VerySincerelyYours,</p>
-<p>Mrs.D.Ballou</p>
+<p>Very Sincerely Yours,</p>
+<p>Mrs. D. Ballou</p>
 <p>Secretary</p>
 <p>五复张绍文论讣帖改革</p>
 <p>绍文兄：</p>
@@ -297,7 +330,7 @@
 <p>这次我摆脱《文星》编务，你老兄要分担部分“祸首”的责任。我很高兴你这篇评论医师法问题的文字写得这么好。</p>
 <p>你办的《台湾医界》，可否长期送我一份？（自你接办开始的几期也盼能补送。）</p>
 <p>你办医生杂志，我讲医学史实，咱们俩正好一对。《新约-路加福音》第四章第二十三节里，耶稣曾引一句俗话是：</p>
-<p>Physician，healthyself.（医生，你治治自己吧！）</p>
+<p>Physician，heal thyself.（医生，你治治自己吧！）</p>
 <p>但是这些笨医生从来不会治治自己，只好由咱们两人来治治他们。</p>
 <p>信手奉报几句，敬请</p>
 <p>双安</p>
@@ -389,18 +422,18 @@
 <p>十二寄陈绍鹏谈侦探小说及中国历史故事</p>
 <p>绍鹏老师：</p>
 <p>6号之谈极快。</p>
-<p>由我搜罗到的AgathaChristie的侦探小说四十册，已托文星书店直寄给您，想已收到。最近我又收到三册：</p>
-<p>1.MurderOnTheLinks</p>
-<p>2.MurderAfterHours</p>
-<p>3.OrdealByInnocence</p>
+<p>由我搜罗到的Agatha Christie的侦探小说四十册，已托文星书店直寄给您，想已收到。最近我又收到三册：</p>
+<p>1.Murder On The Links</p>
+<p>2.Murder After Hours</p>
+<p>3.Ordeal By Innocence</p>
 <p>不知有用否？如有用，即可寄去。</p>
 <p>您说：</p>
 <p>关于教育界情形，因事关本身职业，身历其境，资料甚多。颇想写一本近代的《儒林外史》（名另定，自然不用章回体），不知吾弟以为如何？</p>
 <p>此意我甚赞成，并在文章中早有“儒林内史”等语。但写这类书，实在不容易，我写《高等教育的一面怪现状》等文，都可说是这类内外史的一二章，也许可供参考。</p>
 <p>您又说：</p>
-<p>吾弟才华过人，笔锋尤为锐利。何不做TheDeclineandFallofPracticallyEverybody之作者WillCuppy写本中国历史故事？</p>
+<p>吾弟才华过人，笔锋尤为锐利。何不做The Decline and Fall of Practically Everybody之作者Will Cuppy写本中国历史故事？</p>
 <p>此意亦极佳。我曾写过几章，题名《中国历史哈哈哈》，可是因为事忙，没有再继续写。现在我已跟《文星》正式办理bye-bye手续，不久后，当有时间续写下去。我有全套的写作计划，《中国历史哈哈哈》为其中之一。此生恐将以写作终古，故写作之计划，不可不“全套”也！</p>
-<p>记得您有JeromeK.Jerome的一本IdleTalksofAnIdleMan（TheIdleThoughtsofAnIdleFellow），现在我又买到一本他的TheSecondThoughtsofAnIdleFellow，是1898年的版本，甚珍贵。</p>
+<p>记得您有Jerome K. Jerome的一本Idle Talks of An Idle Man（The Idle Thoughts of An Idle Fellow），现在我又买到一本他的The Second Thoughts of An Idle Fellow，是1898年的版本，甚珍贵。</p>
 <p>消闲时常逛台北旧书摊，颇得收书之乐。</p>
 <p>1966年4月4日夜2时10分李敖敬请</p>
 <p>绍鹏先生双安</p>
@@ -461,7 +494,7 @@
 <p>汉茂、天琪：</p>
 <p>先恭喜你们。</p>
 <p>你们寄来的喜帖，上说：“我们已经在12月19日结婚了。现在旅行回来，特地向您报告这个消息，希望您欢喜。”是很新派的作风，很美妙的白话文字。</p>
-<p>谢谢汉茂一年前寄给我的他的博士论文LILI-WENGVBERDASTHEATER。第326页提到我的爸爸和我的文字，也都看到，我很佩服汉茂的博洽。敬祝</p>
+<p>谢谢汉茂一年前寄给我的他的博士论文LI LI-WENG VBER DAS THEATER。第326页提到我的爸爸和我的文字，也都看到，我很佩服汉茂的博洽。敬祝</p>
 <p>双安</p>
 <p>李敖1970年1月5日</p>
 <p>二十寄王宇论“二巴主义”</p>
@@ -482,7 +515,7 @@
 <p>“中华古籍丛刊”全新精装，每套三十二册，定价八千元，八折优待六千四百元。可有机会？有钱大家赚，如代为推销，好处不在话下。</p>
 <p>二三寄丁颍索书并“打倒青年党”</p>
 <p>丁颍老王八：</p>
-<p>你编的《两性关系社会观》，收老子妙文二篇，居然只送老子一本书，是何道理？王晓波收到十本，已告密在旁，亲疏如此，要你这朋友何用？Hadafriendlikeyou,whoneedsenemy？着速补过，从速寄来。</p>
+<p>你编的《两性关系社会观》，收老子妙文二篇，居然只送老子一本书，是何道理？王晓波收到十本，已告密在旁，亲疏如此，要你这朋友何用？Had a friend like you, who needs enemy？着速补过，从速寄来。</p>
 <p>打倒青年党！并颂</p>
 <p>双安及千金双安</p>
 <p>敖之1970年1月15日</p>
@@ -554,7 +587,7 @@
 <p>1965年12月16日</p>
 <p>复湖北人张忠栋</p>
 <p>湖北人张忠栋：</p>
-<p>谢谢你在年初寄贺年片来，居然到阿美利加后，还没把“湖北人的克星”忘记，足见你“内惧”（不是“惧内”）深刻。不过也难怪，你有头九只，自然记性好，虽然你们湖北人常常漫无心肝，可是依RobertBrowning的诗来说，“心”“脑”本在一起，所以“无心”之过，可用“多脑”补之。所以骂来骂去，我还是要大慈大悲，再原谅你们一百次！</p>
+<p>谢谢你在年初寄贺年片来，居然到阿美利加后，还没把“湖北人的克星”忘记，足见你“内惧”（不是“惧内”）深刻。不过也难怪，你有头九只，自然记性好，虽然你们湖北人常常漫无心肝，可是依Robert Browning的诗来说，“心”“脑”本在一起，所以“无心”之过，可用“多脑”补之。所以骂来骂去，我还是要大慈大悲，再原谅你们一百次！</p>
 <p>昨天晚上忽然想到两句口号：</p>
 <p>打湖北男人</p>
 <p>搞湖北女人</p>
@@ -618,7 +651,7 @@
 <p>不论有任何和解谈判与线索，我都一概不出面，转请他们直接与“李大律师”接触，此点我可保证。</p>
 <p>本月25号我正如梁启超诗所说：“忽忽已三十”，你说要来台北，极欢迎、极欢迎！</p>
 <p>Goldsmith在Traveller里有句话说：</p>
-<p>“Lawsgrindthepoor,andrichmenrulethelaw.”</p>
+<p>“Laws grind the poor, and rich men rule the law.”</p>
 <p>这次台中地方法院的判决，一定有好戏看呢！</p>
 <p>匆匆奉上几句，敬请</p>
 <p>大安，并致谢意</p>
@@ -692,8 +725,8 @@
 <p>敖之1967年7月12日</p>
 <p>五</p>
 <p>海光老师：</p>
-<p>托松燃兄带上4月4号Look一册给你，请你特别注意pp.30-36FloraLewis的TheTragedyofBertrand,Rusell一篇，这本杂志是送给你的。</p>
-<p>此事真相如何，我们不知详情，B.Russell目前果真是个theintellectualcaptive吗？以他的睿智，真的会被蒙蔽吗？</p>
+<p>托松燃兄带上4月4号Look一册给你，请你特别注意pp. 30-36 Flora Lewis的The Tragedy of Bertrand, Rusell一篇，这本杂志是送给你的。</p>
+<p>此事真相如何，我们不知详情，B. Russell目前果真是个the intellectual captive吗？以他的睿智，真的会被蒙蔽吗？</p>
 <p>不管真相如何，这个“疑案”，多少可供我们参考，尤可供先生的参考，难道我们不会被朋友蒙蔽吗？我们的判断和朋友都可靠吗？</p>
 <p>凡是过着隐居或半隐居生活的人，凡是自诩为“不出户，知天下”的人，都不可不保持着一点警觉，警觉自己的心灵别像生活一般的被闭锁。这点警觉，不知可否得先生再多加注意一下？</p>
 <p>23号你在我家的谈话，使我多少感到你对朋友与学生的态度，起伏不定，时升时降，信疑变化稍大，我真盼望在这一方面，你最好少动感情，我总觉得你对朋友和学生的态度，很Sentimental！这种Sentimental，跟你卓越的理智训练，有一点儿不相称。</p>
@@ -706,7 +739,7 @@
 <p>授权人：殷海光</p>
 <p>年月日</p>
 <p>翁松燃及其洋婆已返美，临行以一信（内为辞行卡）嘱转给先生，特随信附上。</p>
-<p>我近来整日亦忙于谋生，旧债累人，甚苦恼。最近拟去一私人广告公司做事，代商人写广告辞，所堪阿Q式自慰者，美国SinclairLewis，SherwoodAnderson,CorneliaOtisSkinner诸文豪皆出身于此，今日之我，却正好逆其道而行之，呜呼哀哉：国民党统治下之独立文人！（我们这种人，“义不食周粟”！“渴不饮盗泉水”！）</p>
+<p>我近来整日亦忙于谋生，旧债累人，甚苦恼。最近拟去一私人广告公司做事，代商人写广告辞，所堪阿Q式自慰者，美国Sinclair Lewis，Sherwood Anderson, Cornelia Otis Skinner诸文豪皆出身于此，今日之我，却正好逆其道而行之，呜呼哀哉：国民党统治下之独立文人！（我们这种人，“义不食周粟”！“渴不饮盗泉水”！）</p>
 <p>敖之1967年8月22日</p>
 <p>写广告辞，我再有本领，也写不出思想问题来吧？</p>
 <p>寄王尚勤论禁书与禁演说</p>
@@ -720,7 +753,7 @@
 <p>这几个月来，台大学生请我演说，被校方驳回的，据我所知，至少有四次。最近的一次就是今天，文学院原定今晚请我演说五四运动，结果被驳回，理由是殷海光、李敖两人不准在台大演说。上次（3月26号），法学院用“偷关漏税”的方法，不先登记，请我演说“傅斯年与胡适”，听众挤得人山人海，结果在我未到前，突被校方勒令解散！</p>
 <p>今天上午法学院四个社团请李声庭讲“民主与自由”，他们特别请了“两个特别的客人”——殷海光和李敖，并请我们分别发言。我打趣他们一阵，并叙述蔡元培的不合作主义，主张今日知识分子可提倡不合作主义，用思想教育方法，普遍展开民主自由思想，但我不赞同以暴易暴的方式（所谓革命、暴动一类的方式）。殷海光讲话时，主张青年节当由3月29日改为5月4日（其实3月29日原是阴历，没换算过来，就硬当阳历过了，那天的阳历是4月27日，跟5月4日很近了；10月10日是换算过来的节日，那天的阴历是8月19日。殷海光当然搞不清这些）。李声庭、殷海光和我讲话后，大家纷纷发言，提问题，极踊跃。会后同学们请我们三人于渝园。</p>
 <p>我有五个字描写今日之“有为”青年——“热心而胆怯”。他们的大病在没有牺牲的精神，太为自己的前途利害着眼。（试问哪个肯牺牲大学的学籍？哪个肯不在乎留学？哪个肯放弃自己的“前途”而做一个不降志不辱身的硬汉？哪个肯放弃一切“富贵”去做一名淡泊的乱世遗民？做一名“抱关击柝”的无名英雄？）故今日之青年，太多软骨病者，空有理想、学识，仍嫌不够。</p>
-<p>但今日青年不像过去青年之盲动与乱来、乱做manofaction，实为一大进步。今天我特别指出殷海光在这方面的进步，我说他思想演变的天路历程很辛苦，由褊狭的行动者到今日思想开阔，实在得之不易。</p>
+<p>但今日青年不像过去青年之盲动与乱来、乱做man of action，实为一大进步。今天我特别指出殷海光在这方面的进步，我说他思想演变的天路历程很辛苦，由褊狭的行动者到今日思想开阔，实在得之不易。</p>
 <p>……我最近工作太忙太多，用脑过度，老是闹头疼。尤其是后脑，常常昏昏的。</p>
 <p>1965年5月4日夜</p>
 <p>我们要像清除恶人一样的清除烂好人</p>
@@ -729,7 +762,7 @@
 <p>台中地方法院的传票又来了。是5月10日下午4:30的庭，兹随信附上1965年度易字第1553张焕珪妨害名誉案传票一纸，请查收。并请代表本人“准时出庭”，看看我们的李声庭，如何跟他们对簿公庭。</p>
 <p>中央书局方面，如他们的态度良好，我们也良好；如他们摆出战斗姿态，缺乏谋和的诚意，要给他们一点颜色看，不必客气。</p>
 <p>我李敖生平以君子之道待君子，以君子式的小人之道待小人。老罗斯福曾主张说话善意而手中拿个棒子，爱因斯坦也呼吁善意与力量相结合，这些构想，我早就成竹在胸。所以我一直不主张做好好先生、做烂好人。因为好好先生和烂好人一定会被恶人欺负，结果不是“张其恶”就是“扶同为恶”。所以我们要像清除恶人一样的清除烂好人。我们要鼓吹做有能力、不怕事、不怕恶人、好批评、好打抱不平的“好人”。我希望你在东海大学校内校外，都不停的做这种类型的“好人”。</p>
-<p>这十多年来的大学教授，都变成了“空口说白话”的人，都不是manofaction，你这次“下海”执行律师业务，盼能做一个行动方面的示范。宋朝的诗人说：</p>
+<p>这十多年来的大学教授，都变成了“空口说白话”的人，都不是man of action，你这次“下海”执行律师业务，盼能做一个行动方面的示范。宋朝的诗人说：</p>
 <p>切勿轻书生，</p>
 <p>上马能击贼。</p>
 <p>如今我们可改写放翁的名句，可叫：</p>
@@ -749,7 +782,7 @@
 <p>毓煜兄：</p>
 <p>多谢你上次请我吃饮料，再多谢你寄20号的《联合报》给我。这条“外人征书”的广告，若不是承你寄下，我实在不知道。这个征求“李敖著的各种书籍”的洋鬼子“马汉茂”，是德国人，原名HelmutMartin，是德国海德堡大学汉学研究所的。他的博士论文已印出来，是论中国李笠翁的，里头还征引了我给我父亲遗著《中国文学史》写的那篇序文（那篇序文后因XXX通知文星书店要删去，文星已奉命删去，所以现在卖的《中国文学史》和《蒋廷黻选集》一样，已没有序了）。HelmutMartin本月17号曾来看我，并向我征求我的著作，大概由于我帮不上忙，所以洋人出洋主意，登报征求起来了。你问我“有何感想”，你想我可有感想么？我倒真想问问XX大人们，他们可“有何感想”？</p>
 <p>你去年11月10号信中要借的《丁文江的传记》，我当时手边的已剪毁，未能应命，现在物色到一册初版的，随信寄送给你。</p>
-<p>你近来如何？深信你必然自通有道、必然更能坚忍。坚忍是我们这类人在目前的唯一“武器”。德国的KonradAdenauer从五十七岁起一忍十二年（1933-1945），到六十九岁才扬眉吐气。我们还姑且算年轻，走着瞧吧！</p>
+<p>你近来如何？深信你必然自通有道、必然更能坚忍。坚忍是我们这类人在目前的唯一“武器”。德国的Konrad Adenauer从五十七岁起一忍十二年（1933-1945），到六十九岁才扬眉吐气。我们还姑且算年轻，走着瞧吧！</p>
 <p>敖之1968年2月22日夜三时三刻</p>
 <p>有关“李敖告别文坛十书”的一封信</p>
 <p>敬启者：</p>
@@ -821,9 +854,9 @@
 <p>台北自来水厂厂长先生：</p>
 <p>一、贵厂对本户1965年11月份之水费计算，完全发生错误，情形如下：</p>
 <p>本户同时使用下列三户的自来水，这三户在建筑上是联在一起的公寓式房屋，经贵厂编号如下——</p>
-<p>第一户朱婉坚先生——账号1025—11614971—15—2101</p>
-<p>第二户朱婉坚先生——账号1028—10714881—15—2096</p>
-<p>第三户张桂贞先生——账号1023—10614871—15—2091（即本户）</p>
+<p>第一户朱婉坚先生——账号1025—116 1497 1—15—2101</p>
+<p>第二户朱婉坚先生——账号1028—107 1488 1—15—2096</p>
+<p>第三户张桂贞先生——账号1023—106 1487 1—15—2091（即本户）</p>
 <p>贵厂1965年11月之水费通知单，关于上列三户的度数与金额如下——</p>
 <p>第一户用了三度，收费五十六元三角。</p>
 <p>第二户用了十六度，收费五十六元三角。</p>
@@ -864,7 +897,7 @@
 <p>我看了你15号给我的信以后的感觉是：“CL在文字上对‘凶婆婆’的看法，似乎比局外人如李敖之流还客观！”</p>
 <p>我真希望她是如你所说的“算得上是好婆婆”，我真希望我对她的了解——自以为很多了的了解——是错误的。</p>
 <p>如果我有错误，那不是没有理由的。因为在我眼中，所谓“婆婆”这一身份，不外三个类型：</p>
-<p>A型（“母子恋”型）——“母子恋”的倾向，早已是psycho-analysis的定说，很多中国人以为的“母慈子孝”，骨子里大都是“母子恋”的现象，并且母愈“慈”子愈“孝”的，“母子恋”的毛病愈厉害。（尤其是少寡的女人，尤其她有独子的时候，这种倾向最明显。母子相依为命久了，儿子大了，讨了媳妇，母亲总是从中插一脚。那时候，母亲干涉小两口，干涉得太多，有时不近人情；而做儿子的，却买母亲的账甚于买老婆的账，结果做媳妇的最痛苦，最难相处。这种例子太多了，太多了。你一定记得南宋诗人陆放翁《钗头凤》的故事，我认为那是十足“母子恋”的现象！当然你可以说：陆游的妈妈“算得上是好婆婆”！）这种因“母子恋”而导致的儿子婚姻上的难题，可能婆、子、媳三方面都不自觉，终生探索不出真正的症结到底何在。按说这不能怪他们，他们没读过弗洛伊德（SigmundFreud）“大逆不道”的科学学说，他们只是在“母慈子孝”“谨事舅（公公）姑（婆婆）”的旧传统下打滚，他们绝不会想到，这可能是一场三角恋；他们也绝不愿想到：这可能是婆婆在嫉妒媳妇，在吃媳妇的醋！</p>
+<p>A型（“母子恋”型）——“母子恋”的倾向，早已是psycho-analysis的定说，很多中国人以为的“母慈子孝”，骨子里大都是“母子恋”的现象，并且母愈“慈”子愈“孝”的，“母子恋”的毛病愈厉害。（尤其是少寡的女人，尤其她有独子的时候，这种倾向最明显。母子相依为命久了，儿子大了，讨了媳妇，母亲总是从中插一脚。那时候，母亲干涉小两口，干涉得太多，有时不近人情；而做儿子的，却买母亲的账甚于买老婆的账，结果做媳妇的最痛苦，最难相处。这种例子太多了，太多了。你一定记得南宋诗人陆放翁《钗头凤》的故事，我认为那是十足“母子恋”的现象！当然你可以说：陆游的妈妈“算得上是好婆婆”！）这种因“母子恋”而导致的儿子婚姻上的难题，可能婆、子、媳三方面都不自觉，终生探索不出真正的症结到底何在。按说这不能怪他们，他们没读过弗洛伊德（Sigmund Freud）“大逆不道”的科学学说，他们只是在“母慈子孝”“谨事舅（公公）姑（婆婆）”的旧传统下打滚，他们绝不会想到，这可能是一场三角恋；他们也绝不愿想到：这可能是婆婆在嫉妒媳妇，在吃媳妇的醋！</p>
 <p>B型（报复型）——你还记得汉朝乐府中那首《孔雀东南飞》的长诗吗？你还记得那个“凶婆婆”对媳妇所说的“吾意久怀忿，汝岂得自由！”的气话吗？那种气话的基础，正基于一个事实，就是：“老娘当年也做过媳妇，也受过气。如今媳妇熬成了婆，怎么能不以其人之道行行呢？难道便宜了你这把我宝贝儿子抢去的小妖精不成？”于是，在报复或补偿心理的鼓动下，做婆婆的虐待媳妇的十八般武艺，便一件件全部使出来。这些武艺，有的是因袭固有文化的、有的是取法欧美的、有的是自己发明的。表达的方法，亦自宽猛有别，并不完全是手拿扫把另一端，面露凶相。相反的，倒可能是一派慈祥之态，如教育家模样，表面上是爱之以正道，骨子里却是凶来兮，使做媳妇的，碍于“情面”，凜于“大义”，本于“亲恩”，最后达到变相被“虐待”的结果。这种婆婆的手法，真是棋高一着。看到这种高段数的婆婆和还不自觉的媳妇，使我想起那被养在笼中的美丽的金丝雀，她被“照顾”得很好很好，好到最后忘掉了自由的价值和外界的机会，反倒称道起限制她自由的“施主”来！左拉（Zola）笔下那头被养在家中的猫，也是如此，她被养得完全失掉了自己，有朝一日即使能“奔向自由”，她也不能适应了，她只好又回来！（改写陶渊明的一句诗，这叫做“久在樊笼里，不能返自然”！）</p>
 <p>C型（“望孙”型）——这该算是三类“凶婆婆”中，最“爱好和平”的一种。这种型的婆婆对媳妇，表面上优容备至，爱护媳妇，像爱护一个兵工厂。其目的与动机，说破了，无非在期待媳妇有生产，“为奶奶，生娃娃！”这种婆婆，她会很耐心的等待，等待她的“工厂”有产品出来。正字标记的产品当然是小男孩，如果不是男孩而最后“是个丫头”，做婆婆的当然很失望，但并不绝望，“生个孙女总比没有好！”有了孙女以后，她绝不满足，她要再加紧督促，翅起小脚的足跟，朝产房里头硬望。“罚令重生”的结果，一定泡到最后“弄璋之喜”才算暂告一段落。这种锲而不舍的精神，也许我李敖该感谢，因为我不是别人，正是——我奶奶（我妈妈的婆婆）第五次迫切要求的产物！</p>
 <p>像最后一型的婆婆，她对媳妇的喜怒哀乐，完全系于孙子的有无多少，换句话说，她对媳妇的态度，是以孙子为“函数”，是f（孙子）。一朝她的等待终于绝望或迹近绝望，她再“算得上是好婆婆”，也要摆下不怿的脸色，起码要为自己的儿子，争取一个“讨小老婆”或“重婚”的自由了！</p>
@@ -885,29 +918,29 @@
 <p>CL：</p>
 <p>1958年2月18号我想跟你“找个宁静的地方谈两三个小时”的构想，我绝对想不到八年以后才成为事实！今天晚上送你回去后，我回来一直被往事缠住，我已经很久很久没再被过去inpulse过，今天好像所有过去的一切都挤在一块儿，朝我压迫。它们不是十三年的日积月累，它们仿佛就是昨天，就是今天早上！</p>
 <p>我有生以来，从没有像今天这样的感到“岁月飞逝”对我的深刻意义，我开始做了一份“李敖年表”，刚才已写到十三岁（1948年，民国三十七年），我少年的日子又直奔到我眼前，我更感到生命的渺茫。</p>
-<p>从认识你，到我听到的你，到我想象到的你，直到今天晚上你口中的你，我的感触是一连串的我记忆中的一行诗句（GeorgeSantayana的），也许最能写出我的心情，那是——</p>
-<p>Withyouapartofmehathpassedaway!</p>
-<p>我所不能知道的，也是这句诗后面所点出的——是Ikeepofyou的部分多，还是yourobfromme的部分多。也许它们一样多，如果是真的，那么就很“公平”了！</p>
+<p>从认识你，到我听到的你，到我想象到的你，直到今天晚上你口中的你，我的感触是一连串的我记忆中的一行诗句（George Santayana的），也许最能写出我的心情，那是——</p>
+<p>With you a part of me hath passed away!</p>
+<p>我所不能知道的，也是这句诗后面所点出的——是I keep of you的部分多，还是you rob from me的部分多。也许它们一样多，如果是真的，那么就很“公平”了！</p>
 <p>我忘了告诉你，据“黄老三”代为寻找的结果，浦城街、金门街一带，并没有你的标准下出租的房子。</p>
 <p>搬家时如需要人帮忙，我可请□□□去，他是专家。</p>
 <p>敖之1966年4月27日</p>
 <p>你的老师死后十一年的深夜三点三刻</p>
 <p>附录</p>
-<p>桑塔耶那（GeorgeSantayana）原诗和李敖译文</p>
-<p>Withyouapartofmehathpassedaway；</p>
-<p>Forinthepeopledforestofmymind</p>
-<p>Atreemadeleaflessbythiswintrywind</p>
-<p>Shallneverdonagainitsgreenarray.</p>
-<p>Chapelandfireside,countryroadandbay,</p>
-<p>Havesomethingoftheirfriendlinessresigned；</p>
-<p>Another，ifIwould，Icouldnotfind，</p>
-<p>AndIamgrownmucholderinaday.</p>
-<p>ButyetItreasureinmymemory</p>
+<p>桑塔耶那（George Santayana）原诗和李敖译文</p>
+<p>With you a part of me hath passed away；</p>
+<p>For in the peopled forest of my mind</p>
+<p>A tree made leafless by this wintry wind</p>
+<p>Shall never don again its green array.</p>
+<p>Chapel and fireside, country road and bay,</p>
+<p>Have something of their friendliness resigned；</p>
+<p>Another，if I would，I could not find，</p>
+<p>And I am grown much older in a day.</p>
+<p>But yet I treasure in my memory</p>
 <p>Yourgiftofcharity,andyoungheart’sease,</p>
-<p>Andthedearhonorofyouramity；</p>
-<p>Fortheseoncemine，mylifeisrichwiththese</p>
-<p>AndIscarceknowwhichpartmaygreaterbe，</p>
-<p>WhatIkeepofyou,oryourobfromme.</p>
+<p>And the dear honor of your amity；</p>
+<p>For these once mine，my life is rich with these</p>
+<p>And I scarce know which part may greater be，</p>
+<p>What I keep of you, or you rob from me.</p>
 <p>冬风扫叶时节，一树萧条如洗，</p>
 <p>绿装已卸，卸在我心里。</p>
 <p>我生命的一部分，已消亡</p>
@@ -996,11 +1029,11 @@
 <p>我们目前的所作所为，我估计，只能使大人先生们“讨厌”而已。什么时候他们由“讨厌”变成“恨”，或从“横眉冷对”变成“咬牙切齿”的时候，或者说：从鼻子以上的脸部动作，摇滚到鼻子以下的时候，那时候，咱们这些“小孩子”就完蛋了。我想，大人先生们的“雅量”跟咱们“小孩子”的“懦弱”，总该配合得很好，这是孽缘艺术，也是欢喜冤家。但愿上帝祝福他们，也别降祸我们，使千百年后的历史家，永远不把“读书种子绝矣！”的感叹，来结束我们这一出小心翼翼的文星歌舞班。</p>
 <p>我上面用的文星歌舞班五个字，你不会说我又开玩笑吧？唉，光中，亲爱的，你想想看，我们不是歌舞班是什么？我们配说是“集团”么？配说是“《自由中国》班底”的复活么？配说是“干杀头生意”的好汉么？</p>
 <p>不，不，咱们都不配，咱们压根儿在心眼儿里都不敢起这些念。所以，即使古人复出，他也没法绳我们以“腹非”罪。以他们的“明智”，他们会高枕无忧地改写莎士比亚的名句——</p>
-<p>YondCassiushasaleanandhungrylook；</p>
-<p>Hethinkstoomuch：suchmenare“not”dangerous.</p>
+<p>Yond Cassius has a lean and hungry look；</p>
+<p>He thinks too much：such men are“not”dangerous.</p>
 <p>所以，我们反倒不必“胖”（fat），“胖”了反倒糟，照瘦如故，严禁膨胀。这样，我们永远是文人才子，才子文人。世之文人才子，除卢前以外，安有大膨大胀而可“善保首领以殁”者乎？</p>
 <p>所以我说，咱们是歌舞班，是歌舞班中的舞女、戏子（你还比较正派，不出卖色相，我呢，有时要跳脱衣舞，所以，如果要进，一定比你早进第X分局）。在中国传统中，文人本来就是属于“倡优”所畜的一群，倡是窑子，优是戏子。前者，林语堂早已有过“文妓说”，喻文人是妓女；我现在将后者特予阐扬，可谓之“文戏说”。约言之，文人者，戏子也！</p>
-<p>因为我们是西化派，所以此戏子并非中国梅兰芳之男变女，或凌波之女变男，咱们要演巴黎丽都（Lido）式的（当然不是Bambi，TonyApril,Manon等“人妖”），阁下穿衣不厌其少；本人挂丝不嫌其多，于是，锣鼓鸣处，笙歌起处，歌舞班每月1日，演出一场焉。</p>
+<p>因为我们是西化派，所以此戏子并非中国梅兰芳之男变女，或凌波之女变男，咱们要演巴黎丽都（Lido）式的（当然不是Bambi，Tony April,Manon等“人妖”），阁下穿衣不厌其少；本人挂丝不嫌其多，于是，锣鼓鸣处，笙歌起处，歌舞班每月1日，演出一场焉。</p>
 <p>特别座里，大人先生坐在最前排，色迷迷的，看得最清楚，后面都是些二流政客、三流学阀、四流巧宦、五流文警、六流跟班；然后普通座，坐的是大部分的知识分子、大专学生。</p>
 <p>这出戏，可真不好演，因为“特别座”和“普通座”的观众胃口不一样：前者要我们淡抹，后者要我们浓妆，结果呢？我们既惹得前者“不痛快”；又引得后者“不过瘾”。</p>
 <p>“特别座”里的观众说：“你们要识相点呀！不要得寸进尺呀！不要乱来呀！不要破坏戏院里的团结呀！不要在太岁头上动土呀！不要提老子们的丢人历史呀！不要讽刺老子们呀！”</p>
@@ -1022,7 +1055,7 @@
 <p>一、设置学术奖金：对于在学术上（已）有重大贡献者赠予之；</p>
 <p>二、设置特别讲座：商请国内外若干大学同意后由本会聘任之。</p>
 <p>这两个项目，用意都不可谓不好，可是据我在这个地区的多年了解，移橘为枳的流弊，远非良法美意的设计者始料所及！一般而言，学术奖金的给予方式不外</p>
-<p>一、雪中送炭式（提出计划预付式）——如“中国东亚学术研究计划委员会（TheChinaCouncilForEastAsianStudies）”的“东亚学术研究奖金”。</p>
+<p>一、雪中送炭式（提出计划预付式）——如“中国东亚学术研究计划委员会（The China Council For East Asian Studies）”的“东亚学术研究奖金”。</p>
 <p>二、锦上添花式（研究有成后付式）——如嘉新水泥公司的“嘉新特殊贡献奖金”。</p>
 <p>这两种给予方式，前一种已流变为“学术分赃”（“分赃”情形可看《中国东亚学术研究计划委员会年报》，乃至《国家长期发展科学委员会年报》，国家长期发展科学委员会中工作纲领“国立研究讲座教授”一项和“研究补助费”一项，可说是“雪中送炭式”的变形），效果之坏，已无以复加，其失败的最大原因：一、没资格决定把钱给谁的人，做了决定；二、没资格拿钱的人，拿到了钱；三、有资格决定的人或拿钱的人，被学阀挤出门外。至于后一种锦上添花的方式，照第一届“嘉新特殊贡献奖金”看来，得奖人吴健雄已把奖金捐了出去，锦上添了花，可是对“锦”并没有什么积极的助力。至于教育部学术审议委员会每年通过的“学术文艺奖金”，也可说都属于此类，每名二万元，像天女散花式的分送一阵，就算完毕，除了有点“中彩”“外快”的快感外，我看不出对真正的“学术研究”的“促进”有什么助力。</p>
 <p>以上两种奖金的给予方式，如果给予者（包括审议者和执行人）只是给别人，即使不能恰如其分，也还算说得过去。最令人不能忍耐的是，此地竟发生“内举不避‘己’”的现象。例如1964年的“嘉新讲座”，本由王云五总其事，可是他竟在三名讲座中（每月每名六千元），自己独占第一名，这种现象，不能不说是腾笑中外吧？</p>
@@ -1031,7 +1064,7 @@
 <p>一、在“设置学术奖金”方面，须知此种善举，只不过是聊备一格的奖金通例，究竟难脱不太有必要的“锦上添花”之嫌。所以我提议：此项支出应尽量缩减。办法中“每年举办一次”已嫌太多；又分甲乙丙三种，更易使财力分散。在这项名目下的奖金开支，实在应采“精”“缩”方式，名额减少，奖金不妨提高，甚至一名即可（如嘉新给吴健雄），如此把最多的钱，给最有成就的人，对群众的鼓励性与激发性，必然更大；对促进中国人民注目科学，也必然深具影响。（此类奖金的终极目标该是朝“中国诺贝尔奖金”方向走。“诺贝尔奖金”在性质上是属于我所说的“锦上添花式”，但是它对人的鼓舞作用，号召作用，该多么大！）</p>
 <p>二、在“设置特别讲座方面”，在办法第四条中“特聘国内外知名学者设置讲座”一点上，也该采取“重金精选”的方式。你9号跟我提到的谋聘国外诺贝尔奖金得主来讲学的办法极好，如此最有鼓舞群众的作用。而此似非“重金精选”不足为功。提到“重金精选”，你记得1891年洛氏基金会创办芝加哥大学的事吗？这个基金会拿出两千万美金给第一任校长哈伯（W.R.Harper），哈伯周游美国和欧洲，用当时全世界最髙的教授年薪（U.S.$7500.00），到处“挖”，结果芝加哥大学一开办，立刻就是全世界第一流的大学，此皆“重金精选”之效也！中华民国10至20年代的洋人讲学风（如杜威、罗素等等），鼓荡风潮，亦为效奇大。当时主其事者主要是蔡元培，他的办法是先“精选”，后筹“重金”（爱因斯坦去日本讲学那一次，蔡元培计划请这老犹太顺便到中国来一趟，可是因为“重金”不足，竟未成事实，此事曾令蔡元培极度不快，颇不满意于爱氏）。以上诸往例，很可效法，其基本施行诀窍，就是精重于多、质重于量。因此之故，徐氏学术讲座办法中倒也不必硬性规定“聘期初次为二年”等字样，只要高手肯来亮相，即使只来二个月，我们也可满足，也可不虚此计划了！</p>
 <p>上面两个重点，都是“唯精是尚”的重点。因为“唯精”，所以才能找到第一流的国际水准的学人。由于这种学人是符合国际水准的，自然也就不会发生资格够不够的疑虑，自然也就少了这层麻烦，同时也减少了“学术掮客”的错误“审议”和垄断，而可避免——一、没资格决定把钱给谁的人，做了决定的流弊；和二、没资格拿钱的人，拿到了钱的流弊。</p>
-<p>我最近把我手边的美国NationalScienceFoundation13thAnnualReport，1963翻看了一下，深叹科学研究之于一个国家，真是百年大计、真是项目多端。以私人的力量来希望有所献替，究竟不过是一种号召、一种“点缀”，所以筹划起来，更不得不审慎从事，以免力量分散，效果陵夷。徐氏文化基金的立意与构想，都极可令人敬佩，但是似乎都太偏重在对学人的方面和鼓舞的方面，且多为一时的或暂时的“热闹”。我总认为，欲求普遍打入群众——长久的、持续的、深远的打入，仍须在出版品上和办学校上着力，出版科学书、办科学杂志、办科学与技术的学校等等，效果自是不同，并且一定更来得深远、宏大。真正成功的文化基金会，绝不是止于“奖金”或“讲座”就算了事，它一定要朝“更吃力的”方向发展。这些发展，福特、卡内基、洛氏、20世纪（EdwardFilene的）等等基金会，都做了不少成功的前例和榜样。我想：由于你的热心与认真，再加上徐先生的爱国和支持，一定可以逐渐为中国奠下一个成功的基金会的基础，我相信着、我期待着。</p>
+<p>我最近把我手边的美国National Science Foundation 13th Annual Report，1963翻看了一下，深叹科学研究之于一个国家，真是百年大计、真是项目多端。以私人的力量来希望有所献替，究竟不过是一种号召、一种“点缀”，所以筹划起来，更不得不审慎从事，以免力量分散，效果陵夷。徐氏文化基金的立意与构想，都极可令人敬佩，但是似乎都太偏重在对学人的方面和鼓舞的方面，且多为一时的或暂时的“热闹”。我总认为，欲求普遍打入群众——长久的、持续的、深远的打入，仍须在出版品上和办学校上着力，出版科学书、办科学杂志、办科学与技术的学校等等，效果自是不同，并且一定更来得深远、宏大。真正成功的文化基金会，绝不是止于“奖金”或“讲座”就算了事，它一定要朝“更吃力的”方向发展。这些发展，福特、卡内基、洛氏、20世纪（Edward Filene的）等等基金会，都做了不少成功的前例和榜样。我想：由于你的热心与认真，再加上徐先生的爱国和支持，一定可以逐渐为中国奠下一个成功的基金会的基础，我相信着、我期待着。</p>
 <p>李敖敬上1966年5月27日深夜5点</p>
 <p>一、徐氏基金会章程等三文件附还。上有小意见，我用铅笔注出。</p>
 <p>二、9号以后，一连三次谈话，每次我都说我就要把这封长信写完，可是一直迟迟未能完成。今晚从府上回家后，就伏案立意续成，现在粗涂首尾，尚以未能尽意为憾，乞恕之。</p>
@@ -1196,7 +1229,7 @@
 <p>上星期五晚上李律师来电话，知你出庭，始放心。上星期四情形如何？《思想杂谈》一书，我愈想愈是他们趁搜索之便，“栽赃”的杰作。我始终不怀疑我对旧版书“过目不忘”的本领。</p>
 <p>可转告三爷，二十八年中央社曾转发孙科的文章，孙科因而在家门口也有了“那种人”跟他，三爷还记得吗？</p>
 <p>22号回信给《联合报》的校对曹先生（他寄来20号的《联合报》分类广告，内有某外国人征求李敖全部著作的广告），我谈到阿登纳，我说：</p>
-<p>德国的KonradAdenauer从五十七岁起一忍十二年（1933-1945），到六十九岁才扬眉吐气，我们还姑且算年轻，走着瞧吧！</p>
+<p>德国的Konrad Adenauer从五十七岁起一忍十二年（1933-1945），到六十九岁才扬眉吐气，我们还姑且算年轻，走着瞧吧！</p>
 <p>阿登纳当时面对的，何况还是一个如日中天的几乎可以征服全世界的强大政权，如今我们面对的，又算得了什么！又算是个什么！咳，萧大爷，别沮丧吧！套改一句他们的口号：“胜利就在明天”“明天就在眼前”，很多事都好像远在天边，其实又往往近在眼前，“祸”既常常如此，“福”又何独不然？我们没有理由悲观。</p>
 <p>今天中午碰到小钊，稍谈及近事。小钊称赞你有商业天才，趁此多朝这方面发挥一阵子或几年，亦一佳事。</p>
 <p>昨午企祥请客时，颇谈及他的新发明，我问他是不是抄外国的（就像殷之浩家里挂的那一种避蚊牌），他没否认。他似乎很有兴趣由我协助他经销，我倒想好好考虑考虑看（他的发明现正申请专利中）。</p>
@@ -1214,7 +1247,7 @@
 <p>一、蒋梦麟文补一篇——《萧恩承〈儿童心理学〉序》。</p>
 <p>二、陈源文在国民党党史会藏三十一年11月份《中央日报》中有四篇（5、6、7、11日）。</p>
 <p>我被“软禁”眼看就快一年了。上月我家发现被偷装的侦听器，我不动声色，把它转到联合国人权委员会。总警“抓”我去，逼我缴出销案，我说这个是要不回来了，等我找到第二个，一定给你们，弄得他们也没办法。当天我在“口供”中已明白表示我已无所顾惜，“政府”如想不把人丢到海外，就不要逼我。</p>
-<p>这次中国大陆问题研讨会，美国代表们由哥伦比亚大学的奥克森伯格（MichaelOksenberg）出面，请我吃饭，正是我被抓问后的第二天。当天晚上蒋经国请他们吃饭，奥克森伯格们曾以我的处境问蒋是否于人权构成迫害，蒋不否认，但说“Repressive”而已，他的英文可真不错！</p>
+<p>这次中国大陆问题研讨会，美国代表们由哥伦比亚大学的奥克森伯格（Michael Oksenberg）出面，请我吃饭，正是我被抓问后的第二天。当天晚上蒋经国请他们吃饭，奥克森伯格们曾以我的处境问蒋是否于人权构成迫害，蒋不否认，但说“Repressive”而已，他的英文可真不错！</p>
 <p>我这边你还是不要来。如有卖书的机会，请代我把握。我手边有《古今图书集成》一套，《大汉和辞典》一套，“文星丛刊”一套，“文星集刊”二套，“中华古籍丛刊”“金陵丛书”《榕村全集》等多套。</p>
 <p>敖之1971年1月2日夜</p>
 <p>致李明瑾</p>
@@ -1375,13 +1408,13 @@
 <p>我接雷震出狱事，已请雷伯母决定，她如不感到我被跟踪的不方便，我就陪她去。</p>
 <p>雷震出来，大概要像我这样做“软禁”。</p>
 <p>我一切照旧，眼看就被“看”七个月了。</p>
-<p>AmnestyInternational的SecretaryGeneral英国人MartinEnnals来看我一次，魏廷朝、谢聪敏在座，附近治安人员云集，约有十一人之多（MartinEnnals——四人一车、我——三人一车、魏——二人及摩托车、谢——二人及摩托车），楼下足可开个警察局或特工局了。</p>
+<p>Amnesty International的Secretary General英国人Martin Ennals来看我一次，魏廷朝、谢聪敏在座，附近治安人员云集，约有十一人之多（Martin Ennals——四人一车、我——三人一车、魏——二人及摩托车、谢——二人及摩托车），楼下足可开个警察局或特工局了。</p>
 <p>我的“告别文坛十书”中的劫余四书，在台中被扣——没有正式查禁命令的查扣，这是这月3号的事。看来官方手脚还颇多呢！</p>
-<p>MartinEnnals说他走遍世界，从来没看到像台湾特工这样明目张胆、并且技巧拙劣地跟人的（包括最野蛮的非洲在内）。MartinErmals旁听“于长城案”，他从不离手的手提袋也带了进去，官方要他不能带进法庭，他不肯，官方也就算了——他毕竟是洋大亨呵，应付这些场面，他倒是专家。</p>
+<p>Martin Ennals说他走遍世界，从来没看到像台湾特工这样明目张胆、并且技巧拙劣地跟人的（包括最野蛮的非洲在内）。Martin Ermals旁听“于长城案”，他从不离手的手提袋也带了进去，官方要他不能带进法庭，他不肯，官方也就算了——他毕竟是洋大亨呵，应付这些场面，他倒是专家。</p>
 <p>敖之1970年8月21夜3点</p>
 <p>致李善培</p>
 <p>善培：</p>
-<p>今天看到昨天美联社的电讯，美国犹太人协会主席莱利维尔德（RabbiArthurJ.LelyveldofCleveland,Ohio,presidentofAmericanJewishCongress）强调犹太人有权离开俄境，他说：“现在停止抗议是严重的错误。只要住在苏俄的犹太人仍像俘虏，只要他们离开苏俄的权利仍被否认，只要他们仍不能像一般犹太人一样的生活，我们都必须不停的抗议。”（Itwouldbeagraveerrortoheltourprotestsnow.WemustcontinuesolongastheJewsoftheSovietUnionremainacaptivepeople，solongastheyaredeniedtherighttoleaveandtherighttoliveasJews.）这一电讯，带给我一点感慨。</p>
+<p>今天看到昨天美联社的电讯，美国犹太人协会主席莱利维尔德（Rabbi Arthur J. Lelyveld of Cleveland, Ohio, president of American Jewish Congress）强调犹太人有权离开俄境，他说：“现在停止抗议是严重的错误。只要住在苏俄的犹太人仍像俘虏，只要他们离开苏俄的权利仍被否认，只要他们仍不能像一般犹太人一样的生活，我们都必须不停的抗议。”（It would be a grave error to helt our protests now. We must continue so long as the Jews of the Soviet Union remain a captive people，so long as they are denied the right to leave and the right to live as Jews.）这一电讯，带给我一点感慨。</p>
 <p>自从彭明敏偷渡，“祸延”我被看管以来，再过二十多天，就是一年了。看管是由警备总司令部出面，专车一辆，每组四人，二十四小时全天候侦视并跟踪。外加在我家书架顶上偷装侦听器、夜晚上阳台，以及跟踪我的朋友等花样。我忍不住想，像我这种半囚居的状态，实则是包括“无权”离境的，可是这一现象，可有中国产的“犹太人”仗义说几句话？</p>
 <p>你去年1月13、3月14、5月29的三信都收到，多谢不忘故人。不过更积极表现不忘的方法是尝试“还债”，我想我目前的处境，实在足可使朋友谅解我了！</p>
 <p>朋友太老了，交情太久了，有时倒也没话说，以后心血来潮时或你缴钱后再写吧！</p>
@@ -1400,17 +1433,17 @@
 <p>徐高阮见了胡适，胡先啐他一口说：“青年把我看做神，你为什么把我涂抹成魔鬼！”徐说：“我只想牺牲个把孩子，迎合权威，换个一官半职，想不到没人理踩，罪过罪过，现在特别提早谒见先生，请宽恕我年幼无知！”胡再啐他一口说：“五十多岁还算年幼，脸厚心黑，无可救药，滚到十八层地狱去吧！”</p>
 <p>看报有感寄敖之先生一笑。</p>
 <p>梁容若10月15日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/08.书信函件类/李敖书翰集.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/08.书信函件类/李敖书翰集.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../08.书信函件类/李敖书简集.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../08.书信函件类/李敖情书集.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1420,16 +1453,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../08.书信函件类/李敖书简集.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../08.书信函件类/李敖情书集.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1438,12 +1476,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

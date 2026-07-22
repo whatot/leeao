@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,94 +81,115 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="历史与人像"><a class="header" href="#历史与人像">历史与人像</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E5%8E%86%E5%8F%B2%E4%B8%8E%E4%BA%BA%E5%83%8F%E8%87%AA%E5%BA%8F">《历史与人像》自序</a></li>
-<li><a href="#%E8%A2%81%E4%B8%96%E5%87%AF%E7%9A%84%E7%A5%80%E5%AD%94">袁世凯的祀孔</a></li>
-<li><a href="#%E4%BD%99%E7%8E%A0%E4%BA%BA%E6%A0%BC%E5%93%81%E8%B4%A8%E7%9A%84%E5%88%86%E6%9E%90">余玠人格品质的分析</a></li>
-<li><a href="#%E6%9D%9C%E5%A8%81%E7%9A%84%E6%95%99%E8%82%B2%E6%80%9D%E6%83%B3%E5%8F%8A%E5%85%B6%E4%BB%96">杜威的教育思想及其他</a></li>
-<li><a href="#%E6%A1%91%E6%A0%BC%E5%A4%AB%E4%BA%BA%E5%92%8C%E8%8A%82%E8%82%B2%E8%BF%90%E5%8A%A8">桑格夫人和节育运动</a></li>
-<li><a href="#%E7%BA%AA%E7%BF%A0%E7%BB%AB%E8%AF%A5%E7%94%9F%E5%9C%A8%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99">纪翠绫该生在什么时候？</a></li>
-<li><a href="#%E8%A1%8C%E6%9D%8E%E8%80%83">行李考</a></li>
-<li><a href="#%E4%B8%A4%E6%98%86%E4%BB%91%E8%80%83">“两昆仑”考</a></li>
-<li><a href="#%E5%AE%8B%E5%B8%9D%E5%A7%8B%E7%94%9F%E5%BC%82%E8%B1%A1%E8%80%83">宋帝始生异象考</a></li>
-<li><a href="#%E5%AE%8B%E7%A6%81%E7%A7%91%E5%9C%BA%E4%B9%A6">宋禁科场书</a></li>
-<li><a href="#%E5%A4%AB%E5%A6%BB%E5%90%8C%E4%BD%93%E4%B8%BB%E4%B9%89%E4%B8%8B%E7%9A%84%E5%AE%8B%E4%BB%A3%E5%A9%9A%E5%A7%BB%E7%9A%84%E6%97%A0%E6%95%88%E6%92%A4%E9%94%80%E8%A7%A3%E6%B6%88%E5%8F%8A%E5%85%B6%E6%95%88%E5%8A%9B%E4%B8%8E%E6%89%8B%E7%BB%AD">夫妻同体主义下的宋代婚姻的无效撤销解消及其效力与手续</a></li>
-<li><a href="#%E6%9D%8E%E6%98%93%E5%AE%89%E5%86%8D%E5%AB%81%E4%BA%86%E5%90%97">李易安再嫁了吗？</a></li>
-<li><a href="#%E5%AF%B9%E5%BE%90%E6%A0%91%E9%93%AE%E5%85%88%E7%94%9F%E6%96%87%E9%9B%86%E5%B9%B4%E8%B0%B1%E5%90%88%E5%88%8A%E7%9A%84%E6%89%B9%E8%AF%84">对《徐树铮先生文集年谱合刊》的批评</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#历史与人像自序">《历史与人像》自序</a></li>
+<li><a href="#袁世凯的祀孔">袁世凯的祀孔</a></li>
+<li><a href="#余玠人格品质的分析">余玠人格品质的分析</a></li>
+<li><a href="#杜威的教育思想及其他">杜威的教育思想及其他</a></li>
+<li><a href="#桑格夫人和节育运动">桑格夫人和节育运动</a></li>
+<li><a href="#纪翠绫该生在什么时候">纪翠绫该生在什么时候？</a></li>
+<li><a href="#行李考">行李考</a></li>
+<li><a href="#两昆仑考">“两昆仑”考</a></li>
+<li><a href="#宋帝始生异象考">宋帝始生异象考</a></li>
+<li><a href="#宋禁科场书">宋禁科场书</a></li>
+<li><a href="#夫妻同体主义下的宋代婚姻的无效撤销解消及其效力与手续">夫妻同体主义下的宋代婚姻的无效撤销解消及其效力与手续</a></li>
+<li><a href="#李易安再嫁了吗">李易安再嫁了吗？</a></li>
+<li><a href="#对徐树铮先生文集年谱合刊的批评">对《徐树铮先生文集年谱合刊》的批评</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -220,10 +253,10 @@
 <p>④徐有朋《袁太总统书牍汇编》页50至52。括号部分据《民国经世文编-宗教》四十八《复学校祀孔命令》校改。</p>
 <p>⑤胡适《胡适留学日记》民国三年11月16日《袁氏尊孔令》。</p>
 <p>⑥黄毅《袁氏盗国记》页139。</p>
-<p>⑦ReginaldF.Johnston在ConfucianismandModernChina一书的第152至154页写道：“YuanShih-k'ai，inhisinauguraladdress,onOctober1Oth,1913,‘confessedhisdevotiontotheoldtraditionsofhiscountry’,anddeclaredthat‘heimmortaltraditionsandprecepts’ofConfucianism‘mustnotbelightlysweptintooblivion.’”</p>
-<p>“ThereisnoreasontodoubtthesincerityofYuanShih-k'ai'shomagetoConfuciusandhisteachings,butYuanhimselfwasdistrusted-withverygoodreason.bothbymonarchistsandbyrepublicans，andhispatronagedidthecauseofConfucianismmoreharmthangood,Inhishands,theConfuciansystemwasmerelyapoliticalinstrucment.HehopedbyitsaidtopavehiswaytotheThrone,andthereisnodoubtthattheusehemadeofittendedtodiscreditConfucianisminrepublicancirclesandtostrengthenthebeliefthattheConfuciansystemandtheinstitutionofmonarchyroseorfelltogether.”</p>
+<p>⑦Reginald F. Johnston在Confucianism and Modern China一书的第152至154页写道：“Yuan Shih-k’ai，in his inaugural address, on October 1Oth, 1913,‘confessed his devotion to the old traditions of his country’,and declared that‘he immortal traditions and precepts’of Confucianism‘must not be lightly swept into oblivion.’”</p>
+<p>“There is no reason to doubt the sincerity of Yuan Shih-k’ai’s homage to Confucius and his teachings, but Yuan himself was distrusted-with very good reason. both by monarchists and by republicans，and his patronage did the cause of Confucianism more harm than good, In his hands, the Confucian system was merely a political instrucment. He hoped by its aid to pave his way to the Throne, and there is no doubt that the use he made of it tended to discredit Confucianism in republican circles and to strengthen the belief that the Confucian system and the institution of monarchy rose or fell together.”</p>
 <h2 id="余玠人格品质的分析"><a class="header" href="#余玠人格品质的分析">余玠人格品质的分析</a></h2>
-<p>本文尝试用“人格心理学”的方法分析余玠的“人格品质”（Personalitytraits），故一切史料在此方法运用下只能供作“獭祭”之用。</p>
+<p>本文尝试用“人格心理学”的方法分析余玠的“人格品质”（Personality traits），故一切史料在此方法运用下只能供作“獭祭”之用。</p>
 <p>余玠是湖北蕲春人。《宋史》（四一六）余玠传：“余玠字义夫，蕲州人。”实在他应当是生在湖北蕲州的广济县，故《广济县志-人物志》有他的传，但可惜全部是节抄《宋史》本传。《湖北通志》（一二三）“人物志一-选举表一”：“余玠，广济人，宋史作蕲州人。赵葵辟如幕府，官资政学士，有传。”</p>
 <p>很穷，故在落魄时“向上意志”（strivingforsuperiority）更为明显，所以“喜功名，好大言”。《宋史-余玠传》：“家贫，落魄无行，喜功名，好大言。”</p>
 <p>幸而有机会受教育，但在气质上，他不是儒生。《宋史-余玠传》：“少为白鹿洞诸生。”《广济县志》卷十四《艺文诗》有《顾景星（黄公）过余义夫先生墓》，中有句说：“孱然一儒者，慷慨成英雄。”其实余玠绝不是“孱然一儒者”，他有躁急（hyperkinesis）和冲动（impulsion）的毛病，并且有体力，所以才会发生殴人致死的事件。</p>
@@ -263,10 +296,10 @@
 <h2 id="杜威的教育思想及其他"><a class="header" href="#杜威的教育思想及其他">杜威的教育思想及其他</a></h2>
 <p>——悼念杜威先生</p>
 <p>“中央社纽约1日合众电：世界著名哲学家及教育家，行年九十二岁的约翰杜威博士，已于今日因肺炎逝世。彼系在格林威治时间23时与世长辞。”当我们看到这个噩耗时，不能不重温一下在三十三年前，杜威先生到中国来，所给中国的影响。对他那毕生挚爱中国的热心，表示哀悼与怀念。</p>
-<p>杜威（Dewey）先生名约翰（John），生于19世纪中叶（1859年10月20日），在美国东北角的佛蒙特（Vermont）州的伯灵顿（Burlington）城。在他二十岁的时候（1879年）毕业于佛蒙特州立大学。毕业以后，在乡间开始了他的教书生涯，两年以后，复入约翰霍普金斯大学（JohnsHopkinsUniversity）研究教育和哲学，二十五岁时（1884年）得哲学博士学位。是年秋天，到密歇根大学（UniversityofMichigan)任哲学讲师，三十岁那年（1889年），任明尼苏达大学（UniversityofMinnesota）哲学科主任。不到一年，又回到密歇根大学任哲学科主任。三十五岁时（1894年），到芝加哥大学（UniversityofChicago）任哲学科和教育科的主任。他在芝加哥创办了一个试验教学的初等小学。这个小学，是一种实验室的性质，目的在于将他十几年来研究所得的学说，加以试验、批判和实施。小学校中学生的年岁，由四岁至十四岁不等，他将所有的学生分成四组，每组八人至十人，他亲身率同几个有幼稚教育及小学教育经验的人，认真地从事试验工作。他拟定了一个组织方案，其中没有严格的制度和形式化、机械化的设施，从这里，便开始了他那自然方法教育的初步试验。到了后来，遂由小学的规模发展到大学预科。1902年，这大学把附属的预备学校和教员实习学校等一起归并起来，合称为教育院，就请他做院长。到了1904年，当他四十五岁的时候，受聘为纽约哥伦比亚大学（ColombiaUniversity）的哲学正教授，1931年，年达七十二岁，专任期已满，遂退休。</p>
+<p>杜威（Dewey）先生名约翰（John），生于19世纪中叶（1859年10月20日），在美国东北角的佛蒙特（Vermont）州的伯灵顿（Burlington）城。在他二十岁的时候（1879年）毕业于佛蒙特州立大学。毕业以后，在乡间开始了他的教书生涯，两年以后，复入约翰霍普金斯大学（Johns Hopkins University）研究教育和哲学，二十五岁时（1884年）得哲学博士学位。是年秋天，到密歇根大学（University of Michigan)任哲学讲师，三十岁那年（1889年），任明尼苏达大学（University of Minnesota）哲学科主任。不到一年，又回到密歇根大学任哲学科主任。三十五岁时（1894年），到芝加哥大学（University of Chicago）任哲学科和教育科的主任。他在芝加哥创办了一个试验教学的初等小学。这个小学，是一种实验室的性质，目的在于将他十几年来研究所得的学说，加以试验、批判和实施。小学校中学生的年岁，由四岁至十四岁不等，他将所有的学生分成四组，每组八人至十人，他亲身率同几个有幼稚教育及小学教育经验的人，认真地从事试验工作。他拟定了一个组织方案，其中没有严格的制度和形式化、机械化的设施，从这里，便开始了他那自然方法教育的初步试验。到了后来，遂由小学的规模发展到大学预科。1902年，这大学把附属的预备学校和教员实习学校等一起归并起来，合称为教育院，就请他做院长。到了1904年，当他四十五岁的时候，受聘为纽约哥伦比亚大学（Colombia University）的哲学正教授，1931年，年达七十二岁，专任期已满，遂退休。</p>
 <p>根据上面一些简略的叙述，我们可由而知道，他是一个“不出其位”的老教育家，在他退休以后的二十年中，他仍旧一直和教育界相接触，在人世间上，他毫无疑义的是一位尽瘁于教育，“死生以之”的人物。</p>
-<p>但是杜威到底为何如人？为什么他会被誉为“美国最伟大的哲学家”和“进步教育（ProgressiveEducation）之父”？他为什么会被誉为“美国十大伟人之一”和“近代四大哲学家之一”？他又何以被称为是“教师的教师”（TeacherofTeachers）？若要进而了解这几点，我们便不可不溯源于他的教育思想和哲学思想：</p>
-<p>杜威教育思想的主旨，在他所著《我的教育主义》（MyPedagogicCreed）一书中，阐述得十分详尽，综其大意，约有七端：</p>
+<p>但是杜威到底为何如人？为什么他会被誉为“美国最伟大的哲学家”和“进步教育（Progressive Education）之父”？他为什么会被誉为“美国十大伟人之一”和“近代四大哲学家之一”？他又何以被称为是“教师的教师”（Teacher of Teachers）？若要进而了解这几点，我们便不可不溯源于他的教育思想和哲学思想：</p>
+<p>杜威教育思想的主旨，在他所著《我的教育主义》（My Pedagogic Creed）一书中，阐述得十分详尽，综其大意，约有七端：</p>
 <p>第一、教育就是生活，在于使受教者运用他自己的能力，在受教育的时候，就开始发展他那为大众谋福利的功能与潜力。</p>
 <p>第二、教育是增进人类固有的良知良能而使他发展与完成的一种工具。</p>
 <p>第三、学校是一种小规模的社会组织，学校生活便等于是社会生活。</p>
@@ -281,7 +314,7 @@
 <p>在这一点上，就可以看到杜威的教育与哲学二种思想的贯通了：他曾经告诉我们“教育就是生活”，又告诉我们“经验哲学也就是生活”，这两种观念本是一而二二而一的，因此他说：“哲学就是广义的教育学说。”</p>
 <p>杜威的教育思想和哲学思想大致是如此的。前文已经述及，他是一毕生尽瘁于教育的人物，始终站在教育的岗位上，工作了一生，著书在三十种以上，最重要的如《我的教育主义》、《学校与儿童》、《道德学》、《思维术》、《民本主义与教育》、《实验逻辑》、《创造的智慧》等等；其次如《心理学》、《莱布尼兹》、《人生哲学的评论》、《人生哲学的研究）、《数目的心理学》、《学校与社会》、《儿童与课程》、《逻辑学说的研究》、《德育原理》、《教育丛论》、《达尔文在哲学上的势力及其他杂论》、《兴味与用功》、《德国的哲学与政治》、《明日的学校》、《人类本性与行为》、《哲学的改造》、《自由与文化》、《经验与自然教育科学的渊源》等书。</p>
 <p>现在，我们可以追叙一下三十三年以前，杜威到我国来的情形。他于民国八年（1919年）5月1日——五四运动的前三天到了上海。民国十年7月才返国。在中国共计住了两年零两月。他到中国后第二年，就受聘为北京大学哲学教授，及北京高等师范教育研究科教育学教授。我国的地方，他到过并且演讲过的，有辽宁、河北、山西、山东、江苏、江西、湖北、湖南、浙江、福建、广东等十一省，所讲的以教育哲学、试验逻辑、哲学史三者为多，也有少数是关于杜会问题的演讲。在北平出过五种发行额达十几版的长期讲演录，其余在山西、南京、北平教育部等学术讲演会的各种小演讲录，也不计其数了。他的学生胡适先生曾经说过：“自从中国与西洋文化接触以来，没有一个外国学者在中国思想界的影响有杜威先生这样大的。”“我们还可以说，在最近的将来几十年中，也未必有别个西洋学者在中国的影响可以比杜威先生还大的。”（见《杜威先生与中国》）这个原因是由于杜威的思想与中国固有的传统思想相谋合的缘故，唯因其互相谋合，方才使东西的文化，借他的联络力量，得以发扬光大。蔡元培先生在北平学术界庆祝杜威博士六十岁诞辰时，于中央公园的来今雨轩中演说称：“照《论语》所记的，问仁的有若干，他（指孔子）的答语不一样；问政的有若干，他的答语也不是一样。这叫作是‘因材施教’。可见他的教育，是重在发展个性，适应社会，绝不是拘泥形式，专讲划一的。孔子说：‘学而不思则罔，思而不学则殆。’这就是经验与思想并重的意义。他说：‘多闻阙疑，慎言其余；多见阙殆，慎行其余。’这就是试验的意义。我觉得孔子的理想与杜威博士的学说很有相同之点。这就是东西文明要谋合的证据了。”</p>
-<p>杜威先生不但帮助了中国思想和教育事业的发展与进步，而且还向世界报导，他在旅华期间，曾向《新共和国》（TheNewRepublic）及《亚细亚》（Asia）两个杂志上发表了几十篇文章，都是用忠实的态度向世界替我们做辩护和解释的。他返国后，也自始至终是如此的。不但对于中国，其他如墨西哥、日本、土耳其以及南美等国，他也都曾经协助他们发展教育事业，把他那“诲人不倦”的精神，留给了人间。</p>
+<p>杜威先生不但帮助了中国思想和教育事业的发展与进步，而且还向世界报导，他在旅华期间，曾向《新共和国》（The New Republic）及《亚细亚》（Asia）两个杂志上发表了几十篇文章，都是用忠实的态度向世界替我们做辩护和解释的。他返国后，也自始至终是如此的。不但对于中国，其他如墨西哥、日本、土耳其以及南美等国，他也都曾经协助他们发展教育事业，把他那“诲人不倦”的精神，留给了人间。</p>
 <p>引领东望，追怀新方逝世的杜威先生，令人无限哀悼！</p>
 <p>1962年12月7日</p>
 <p>（后记）这篇文章原登在《学生》（现已停刊）四十六号（1952年6月25日），是我高中一年级时候写的。那时我十七岁。</p>
@@ -293,26 +326,26 @@
 <p>天下事十碰九不开，好在还有第十碰，所以易经说：“天行健，君子以自强不息。”如果样样事一碰就开，那么，马尔萨斯的人口论才真可怕呢①！</p>
 <p>吴老先生的幽默，给人间的男女大欲做了有趣的描写。从伊甸园的主人以来，数不尽的男女君子们“自强不息”的结果，“碰”开了数不尽的小宝宝，“碰”呀“碰”的，直“碰”到一个牧师的脑袋里，使他绞尽脑汁，研究这个古往今来男女君子们一阵乱“碰”后的大问题，最后写出了一本奇书——《人口论》。</p>
 <p>在《人口论》里，马尔萨斯对防止人口的增加指出了三条路：</p>
-<p>一、道德抑制（moralrestraint）；</p>
+<p>一、道德抑制（moral restraint）；</p>
 <p>二、罪恶（vice）；</p>
 <p>三、悲惨（misery）。</p>
 <p>对第一点，他觉得没什么希望，因为春情发动即使圣者也难免；对第二点，在他牧师的眼光里，一切“罪恶”的不要小孩方法都是不能允许的；所以，最后只好走上第三点——“悲惨”的一条路，生生不息的结果将是混乱、贫穷与争杀。</p>
 <p>不从马尔萨斯这种悲观论点出发的主要人物是孔多塞（Condorcet），他是倾向于乐观的，虽然他的乐观已近于空幻。但是不论怎么说，这个曾被罗伯斯庇尔要抓来杀头的思想家，乃是真正发现人口原理的一个先驱者。</p>
-<p>除了马尔萨斯和孔多塞，历来对这个问题发表高论的也还不少。远一点的如柏拉图、亚里士多德，近一点的如格朗特（JohnGraunt）、戈德温（WilliamCodwin），大家都多多少少重视这个问题的重要性。但是这有什么用呢？在这个问题上，20世纪以前还不是行动的世纪！</p>
+<p>除了马尔萨斯和孔多塞，历来对这个问题发表高论的也还不少。远一点的如柏拉图、亚里士多德，近一点的如格朗特（John Graunt）、戈德温（William Codwin），大家都多多少少重视这个问题的重要性。但是这有什么用呢？在这个问题上，20世纪以前还不是行动的世纪！</p>
 <p>在理论之外，这一世纪以前人们所能发挥的，仅仅是高度的出生率和高度的死亡率。在前者，他们拼命的生、生、生，“碰”出一个是一个，“碰”出两个是一双；在后者，医药卫生物产经济的限制，又拼命夺走了他们“碰”出来的成绩，或者逼得他们去做残忍的谋杀行为，如“杀耄”、“杀婴”等等，这些现象，即使在我们讲忠孝仁爱的“文明古国”，也无法避免：“尧舜禅让”根本是鬼话，这明明是“杀耄”习惯的美化说法，或是埃及“赛德”（Sed）式的“杀耄”典礼的进化；至于“杀婴”（infanticide）在“文明古国”之普遍悠久②，全世界也找不出第二个国家或蛮族。就以我们所住的台湾岛上而论，台东的卑南族、花莲的布农族，到了现代恐怕还是“尚有典型”呢！</p>
 <p>在全世界都被愚昧与残忍的观念笼罩的时候，20世纪带来了一点光明，点燃并且传布这个火种的是一个今年已经八十岁的老太太，她的名字叫“桑格夫人”（Mrs.Sanger，MargaretHigginsSanger）。</p>
 <p>上面五个、下面也五个</p>
 <p>桑格夫人的娘家名字是玛格丽特希金斯（MargaretHiggins），祖籍是爱尔兰，搬到美国后，落户在纽约的考宁（Corning）镇。这是一个工业区，但却有山有水，非常适合一个艺术家的居住。这个艺术家擅长讲笑话、擅长刻石像、擅长离经叛道，并且，相当重要的，他还擅长“碰”。他使他那生结核病的老婆滴滴答答生出十一个小宝宝，其中的第六号就是未来大力提倡节育的桑格夫人。可惜其生也晚，香则的话，她的爸爸妈妈也许适可而止呢！</p>
 <p>这位第六号的小姑娘在孩子堆里的地位是承上启下的，在别的小姑娘都在抱玩具娃娃的时候，她所抱的，却是真正的娃娃，整天要吃、要拉、要撒尿，使她很早就对这些生男育女的大问题，感到头痛。</p>
-<p>在邻居的眼中，希金斯一家子人实在是些heathen（异教徒），但是这种1880年的字眼，在四五十年以后实在该叫做liberal（自由主义者）。希金斯家的六小姐，跟她那满不在乎的老子一样，在学校里，就尽量表现她对传统的反抗，她提笔作文，就是拥护女权之类，这些举动，都可说是她后来办《女反抗者》（TheWomanRebel）③杂志的张本。</p>
-<p>六小姐离开学校后本是个教书匠，可是由于照顾母亲的病，使她对医学感到了兴趣，这种兴趣把她带进一家医院，在医院中认识了一位医生，这位医生又把她带进舞会，在舞会中认识了一位建筑师，这位建筑师又把她带进牧师的家里，把她的名字后面加上了一个字，于是希金斯家的六小姐就变成了桑格先生（WilliamSanger）的太太。这是19世纪最后一年（1900）的事。</p>
-<p>20世纪来了，20世纪带给美国更多的观念和新潮，那时候美国在外面做事妇女只占20.4%，其余的极大多数都躲在家里，不肯抛头露面。桑格夫人这时已是少数新派妇女中的一个，她是那个时代所谓的TheNewWoman④。在一段长时期的养病以后，她回到纽约，投身在“纽约生活的急流”（intotherushingstreamofN.Y.life）里，结交了当时的许多急进派，像争取劳工福利的雷德（JohnReed）等人，就是她家里的座上客。桑格夫人那时的工作，是向女工们讲演医药健康等问题，从1912年11月17号起，她的意见都登在Call（《呼声》）杂志上，后来印成两本书：</p>
-<p>1．WhatEveryGirlShouldKnow（《每个少女该知道些什么》）。</p>
-<p>2．WhatEveryMotherShouldKnow（《每个妈妈该知道些什么》）</p>
+<p>在邻居的眼中，希金斯一家子人实在是些heathen（异教徒），但是这种1880年的字眼，在四五十年以后实在该叫做liberal（自由主义者）。希金斯家的六小姐，跟她那满不在乎的老子一样，在学校里，就尽量表现她对传统的反抗，她提笔作文，就是拥护女权之类，这些举动，都可说是她后来办《女反抗者》（The Woman Rebel）③杂志的张本。</p>
+<p>六小姐离开学校后本是个教书匠，可是由于照顾母亲的病，使她对医学感到了兴趣，这种兴趣把她带进一家医院，在医院中认识了一位医生，这位医生又把她带进舞会，在舞会中认识了一位建筑师，这位建筑师又把她带进牧师的家里，把她的名字后面加上了一个字，于是希金斯家的六小姐就变成了桑格先生（William Sanger）的太太。这是19世纪最后一年（1900）的事。</p>
+<p>20世纪来了，20世纪带给美国更多的观念和新潮，那时候美国在外面做事妇女只占20.4%，其余的极大多数都躲在家里，不肯抛头露面。桑格夫人这时已是少数新派妇女中的一个，她是那个时代所谓的The New Woman④。在一段长时期的养病以后，她回到纽约，投身在“纽约生活的急流”（into the rushing stream of N. Y. life）里，结交了当时的许多急进派，像争取劳工福利的雷德（John Reed）等人，就是她家里的座上客。桑格夫人那时的工作，是向女工们讲演医药健康等问题，从1912年11月17号起，她的意见都登在Call（《呼声》）杂志上，后来印成两本书：</p>
+<p>1．What Every Girl Should Know（《每个少女该知道些什么》）。</p>
+<p>2．What Every Mother Should Know（《每个妈妈该知道些什么》）</p>
 <p>《每个少女该知道些什么》一问世就有了麻烦，因为其中公开研究女人的身体，提到了“阴道”、“白带”等术语，这是美国有史以来所没有的大事！</p>
-<p>那时候，教会中有一个所谓“扑灭罪恶”（TheSuppressionofVice）的机构，里面的顽固头子就是大名鼎鼎的康斯托克（AnthonyComstock，1844-1915）。他设法通过一个所谓“康斯托克法案”（TheComstockActof1873），使他有权在邮政局检查任何包裹、信件、印刷品。在老顽固的压迫之下，1913年2月9日的Call杂志上，桑格夫人的专栏竟是全部空白，只有这么十三个大字：</p>
-<p>WhatEveryGirlShouldKnow.NOTHING！</p>
-<p>ByorderofthePostOfficeDepartment.</p>
+<p>那时候，教会中有一个所谓“扑灭罪恶”（The Suppression of Vice）的机构，里面的顽固头子就是大名鼎鼎的康斯托克（Anthony Comstock，1844-1915）。他设法通过一个所谓“康斯托克法案”（The Comstock Act of 1873），使他有权在邮政局检查任何包裹、信件、印刷品。在老顽固的压迫之下，1913年2月9日的Call杂志上，桑格夫人的专栏竟是全部空白，只有这么十三个大字：</p>
+<p>What Every Girl Should Know. NOTHING！</p>
+<p>By order of the Post Office Department.</p>
 <p>（在邮政局的照顾下每个少女什么都甭知道！）</p>
 <p>这是多么大的讽刺！桑格夫人的专栏虽然不能再连载下去，可是她还是设法印成了小册子。</p>
 <p>由于关心女子生理状况和多年做护士的经验，桑格夫人多次目击生育问题的严重性。那时候多少母亲们都恳求医生，请他们秘密告诉阔人家太太的避孕方法，有的甚至送红包，但是格于法律，医药界的人不知道或不能透露——即使透露，天晓得那是多么笨拙而不太灵的方法！桑格夫人眼看到许多母亲冒险堕胎，甚至自杀，甚至还为刚生的婴儿夭折而庆幸——为了她们实在养不起了。</p>
@@ -321,16 +354,16 @@
 <p>海外求方</p>
 <p>避孕的法子！避孕的法子！桑格夫人遍访医生，寻找避孕的法子！可是医生交不了卷；她只好求助于图书馆，可是书堆中也没有答案。于是她在1913年的10月里西渡欧陆，去寻找海外奇方的避孕术。</p>
 <p>在巴黎，她的收获很不少。1914的新年夜，她决定回国来向老顽固康斯托克挑战。她的丈夫不赞成她，赖在巴黎去享受艺术家的新天地，可是桑格夫人意志坚决，不惜跟桑格先生拆伙了！</p>
-<p>回到纽约，她租了一间小房，一桌一椅，就展开了她的新天路历程。1914年的3月里，她发行了《女反抗者》月刊，正式抬出BirthControl（节育、生育节制、产儿制度、生育制裁）⑤的牌照，正式呼吁全国英雌联合起来，不要把任何一个“我们身体、精神或财力上所不能负荷或照料的小宝宝”带进这个世界。4月里，“康斯托克法案”立刻给她还以颜色，2号的早晨，邮政局给了她通知，告诉她拒绝邮寄《女反抗者》，她手拿着通知，一遍一遍的读着，她知道“战斗开始了”！</p>
-<p>她首先用化整为零的寄法，每个信筒丢几本下去，使邮政局查不胜查。成千成万的读者纷纷来信，要求她快快把“海外奇方”透露出来，桑格夫人这时知道在大难将至前非得把在法国学来的秘密印一本书不可了，于是她编出她的Familylimitation（《家庭制限》），费了九牛二虎的气力，总算找到一个敢死队出版家，为她秘密承印，然后大量散发。8月的一天下午，终于门铃响了，两个陌生人带来了她的罪状，说她触犯了九条联邦法律，如果定谳，要在牢中坐四十五年才成！她当然不服这种荒谬的法律，她决定出走，远到国外去搜求答辩的材料，她写信给法官，告诉他这个做法。在火车上，她写信给一个朋友，信里面说：</p>
+<p>回到纽约，她租了一间小房，一桌一椅，就展开了她的新天路历程。1914年的3月里，她发行了《女反抗者》月刊，正式抬出Birth Control（节育、生育节制、产儿制度、生育制裁）⑤的牌照，正式呼吁全国英雌联合起来，不要把任何一个“我们身体、精神或财力上所不能负荷或照料的小宝宝”带进这个世界。4月里，“康斯托克法案”立刻给她还以颜色，2号的早晨，邮政局给了她通知，告诉她拒绝邮寄《女反抗者》，她手拿着通知，一遍一遍的读着，她知道“战斗开始了”！</p>
+<p>她首先用化整为零的寄法，每个信筒丢几本下去，使邮政局查不胜查。成千成万的读者纷纷来信，要求她快快把“海外奇方”透露出来，桑格夫人这时知道在大难将至前非得把在法国学来的秘密印一本书不可了，于是她编出她的Family limitation（《家庭制限》），费了九牛二虎的气力，总算找到一个敢死队出版家，为她秘密承印，然后大量散发。8月的一天下午，终于门铃响了，两个陌生人带来了她的罪状，说她触犯了九条联邦法律，如果定谳，要在牢中坐四十五年才成！她当然不服这种荒谬的法律，她决定出走，远到国外去搜求答辩的材料，她写信给法官，告诉他这个做法。在火车上，她写信给一个朋友，信里面说：</p>
 <p>十四年来，以我在医护工作中的经验，使我深信，工人们渴望得到避孕的知识。我在女工中的工作经验，也充分证明了她们是禁止传授避孕知识的法律下的牺牲者……</p>
 <p>听了她们的哭声和眼看她们死亡的痛苦，难道我们还要对这种逼死她们的法律表示尊重吗？</p>
 <p>难道我们还能忍心看着每年有两万五千多美国妇女，因为非法堕胎而冤死吗？</p>
 <p>……监狱不是我最后的目的。还有别的工作要去做，而我将首先去做。如果监狱跟着到来，我将呼吁所有的人帮助我。我要拿出直接的行动来，促成废止这种法律，担当一切后果……</p>
-<p>从此，她丢下了她的三个小宝贝，开始过着亡命的生活。八个月来的战斗，她成果辉煌，《女反抗者》杂志使她向法律挑战，而《家庭制限》一书，又公开冲破了传统。BirthControl一词已经家喻户晓，这些收获，不是奇迹吗？</p>
-<p>桑格夫人亡命的地点是伦敦，她在大英博物院中寻求史料，并跟新马尔萨斯派人士接触⑥，向他们请教意见。她还见到“最文明的英国人”⑦埃利斯（HavelockEllis），得到极大的鼓励。同时她又到荷兰、法国、西班牙研究这一个专题，最后在1915年的9月（正好是康斯托克遽归道山那一个月），她决定回国。10月4号的清早，她到了纽约，没有一个人欢迎她，欢迎她的，只是她不经意间在杂志摊旁看到的一个字——BirthControl，那是印在一本PictorialReview封面上的，她笑了，她万万没想到，阔别经年，她的祖国竟这样进步了！</p>
+<p>从此，她丢下了她的三个小宝贝，开始过着亡命的生活。八个月来的战斗，她成果辉煌，《女反抗者》杂志使她向法律挑战，而《家庭制限》一书，又公开冲破了传统。Birth Control一词已经家喻户晓，这些收获，不是奇迹吗？</p>
+<p>桑格夫人亡命的地点是伦敦，她在大英博物院中寻求史料，并跟新马尔萨斯派人士接触⑥，向他们请教意见。她还见到“最文明的英国人”⑦埃利斯（Havelock Ellis），得到极大的鼓励。同时她又到荷兰、法国、西班牙研究这一个专题，最后在1915年的9月（正好是康斯托克遽归道山那一个月），她决定回国。10月4号的清早，她到了纽约，没有一个人欢迎她，欢迎她的，只是她不经意间在杂志摊旁看到的一个字——Birth Control，那是印在一本Pictorial Review封面上的，她笑了，她万万没想到，阔别经年，她的祖国竟这样进步了！</p>
 <p>到底坐了牢</p>
-<p>回国以后第一件事是拥抱她的三个小宝贝，第二件事就是再写信给法官，说她已经回来，准备出庭。不久审判开始了，当时真可说是舆论鼎沸，不但美国国内函电交驰，连国外的名流们也表示支持。最有名的是威尔斯（H.G.Wells）、卡彭特（EdwardCarpenter）等九个英国人，写信给美国总统威尔逊，请他特别注意这个大问题。意外的，在舆论的压力下，在第二年的2月18号，政府的一个停止上诉把这件案子大事化小又化无了。但是桑格夫人并不就此罢休，她在美国各地做了一次巡回演说后，决定再向法律挑战——办一家节育的指导所。</p>
+<p>回国以后第一件事是拥抱她的三个小宝贝，第二件事就是再写信给法官，说她已经回来，准备出庭。不久审判开始了，当时真可说是舆论鼎沸，不但美国国内函电交驰，连国外的名流们也表示支持。最有名的是威尔斯（H. G. Wells）、卡彭特（Edward Carpenter）等九个英国人，写信给美国总统威尔逊，请他特别注意这个大问题。意外的，在舆论的压力下，在第二年的2月18号，政府的一个停止上诉把这件案子大事化小又化无了。但是桑格夫人并不就此罢休，她在美国各地做了一次巡回演说后，决定再向法律挑战——办一家节育的指导所。</p>
 <p>就这样的，1916年10月16号的一个清爽早晨，全美国第一家节育指导所开幕了。这种指导所，除了荷兰以外，是全世界的第二家，荷兰的已经有了三十七年的历史，并且获得了皇家的特许状；可是还未开化的美国，竟还不准许桑格夫人效法他们。当时美国法律规定，除了医生为了预防或治疗疾病外，任何人不能以任何理由指导他人避孕，而所谓医生的预防或治疗的疾病，事实上只不过是专指梅毒和淋病而言。桑格夫人既非医生，竟敢公然倡言女子可基于健康和经济的理由而避孕，公然倡言母亲们有控制她们自己命运的权利，又公然帮助她们实现不生孩子的自由，这不是目无法纪吗？</p>
 <p>可是桑格夫人不管这些，她在贫民区里开了业。一开始，她的邻居们并不欢迎她，叫她走开，不要找麻烦。可是五千张传单改变了人们的观点，那传单是：</p>
 <p>妈妈们！</p>
@@ -351,21 +384,21 @@
 <p>群众生气了！他们纷纷开会，抗议桑格夫人被捕。开庭的日子是1917年1月29号，满庭的妈妈们支持她，所有的证人支持她，舆情与证辞千篇一律，最后法官气虎虎的说：“我受不了啦！”于是宣布退庭。</p>
 <p>再开庭的时候，法官最后把桌子一拍，大声向律师说：“我们所注重的，只是法律——在法律还是法律的时候。这女人此时此地愿意答应无条件地尊敬它服从它吗？”于是他转向被告，问道：“现在，你的回答是什么？答应还是不答应？桑格夫人？答应还是不答应？”</p>
 <p>一阵漫长的静默后，桑格夫人开口了，只是断钉截铁的一句话——</p>
-<p>我不能答应去服从一条我不尊重的法律。（IcannotpromisetoobeyalawIdonotrespect.）</p>
+<p>我不能答应去服从一条我不尊重的法律。（I cannot promise to obey a law I do not respect.）</p>
 <p>静默的法庭突然爆破了，娘子军们大叫着，拍着手。法官费了好大的劲儿才得到静默，在静默重来时，法官宣布，桑格夫人要关三十天。满庭的女人们大骂：“可耻！”可是在法律面前，谁也没办法。第二天下午，桑格夫人便跟一些女囚犯住在一起了。</p>
 <p>在娼妓、扒手堆中，桑格夫人要求看守长准许她宣传节育，看守长笑着说：“算了吧！她们知道的坏事够多了！”虽然这样，桑格夫人的请求还是被答应了。</p>
-<p>出狱以后，一连串上诉的结果，最后判决在1918年1月8号下来了，聪明的克莱恩法官（JudgeCrane）一方面维持下级法院原来的判决，一方面给了另外一条法律做了宽大解释。解释中准许医生可以为了疾病的理由指导避孕，而疾病的解释，不必像过去一样的只局限在梅毒和淋病上，它该是广义的。这是一个大转捩，从此以后，医生们指导避孕，再也不必担心坐牢了！</p>
+<p>出狱以后，一连串上诉的结果，最后判决在1918年1月8号下来了，聪明的克莱恩法官（Judge Crane）一方面维持下级法院原来的判决，一方面给了另外一条法律做了宽大解释。解释中准许医生可以为了疾病的理由指导避孕，而疾病的解释，不必像过去一样的只局限在梅毒和淋病上，它该是广义的。这是一个大转捩，从此以后，医生们指导避孕，再也不必担心坐牢了！</p>
 <p>还得朝前走</p>
-<p>桑格夫人又到了欧洲，进一步研究节育的问题和避孕的方法⑧，回国以后，美国计划生育协会（TheAmericanBirthControlLeague）成立了。为了计划生育的问题，公开演说还是被警察们捣蛋，桑格夫人和她的同志们甚至要一齐站在台上，采取使警察抓不胜抓的方式演说——一个被抓了，另一个立刻接着讲；另一个被抓了，再一个接着讲。她们的艰苦与巧计，真不是外人所能想像的。</p>
-<p>以后的麻烦还层出不穷。1929年，她们的研究机构又被警察查封过。但是桑格夫人永远是积极的苦斗、积极的开会、考察，积极的把她努力的方向引导在更广大的方向里去。例如10年代20年代的她，所志不过是争取节育或避孕的自由而已，到了30年代40年代以后，她的方向已积极的走向世界性的人口问题和家庭计划（familyplanning）问题上去了，这是何等博大的观点！</p>
+<p>桑格夫人又到了欧洲，进一步研究节育的问题和避孕的方法⑧，回国以后，美国计划生育协会（The American Birth Control League）成立了。为了计划生育的问题，公开演说还是被警察们捣蛋，桑格夫人和她的同志们甚至要一齐站在台上，采取使警察抓不胜抓的方式演说——一个被抓了，另一个立刻接着讲；另一个被抓了，再一个接着讲。她们的艰苦与巧计，真不是外人所能想像的。</p>
+<p>以后的麻烦还层出不穷。1929年，她们的研究机构又被警察查封过。但是桑格夫人永远是积极的苦斗、积极的开会、考察，积极的把她努力的方向引导在更广大的方向里去。例如10年代20年代的她，所志不过是争取节育或避孕的自由而已，到了30年代40年代以后，她的方向已积极的走向世界性的人口问题和家庭计划（family planning）问题上去了，这是何等博大的观点！</p>
 <p>在这种博大观点的透视下，桑格夫人所受的阻力还是很多的。例如美国，直到今天，他们的堕胎法律还是有缺陷的。这个法律比起挪威、瑞典、丹麦，甚至日本的法律来差劲得多。在美国有一个女孩子被她父亲强奸而有孕，可是在法律上不能堕胎——这是多么糟糕的法律！又有一个女孩子，被一个精神病医院的“逃犯”强奸而有孕，可是在法律上也不能堕胎——这又是多么糟糕的法律！一个女人不能有不生自己不愿生的小孩的自由，这是什么人道？又如美国的天主教会，它们秉承了三十年前罗马教皇的荒唐解释，认为节育是可以的，但是只能用自然的周期性、利用不安全的“安全期法”或有害而别扭的“性交中止法”，这是何等混球的谬论！其混球的程度，足可跟当年教士们禁止种牛痘和用麻醉剂哥罗仿相比，这些陈腐古怪的观念当然慢慢会改，但是实在是很恼人的。1959年11月，美国天主教会甚至反对利用公款或美援，来促使国内外发展非自然方法的节育计划，这又是多么落伍的思想！再如去年八月，为了美国女电视明星服用“沙利多美”（Thalidomide）安眠药，而又重新引起有关堕胎的剧烈争论。一些教士又大发特发了一阵怪调，这种现象，又是多么令人气恼！</p>
 <p>年达八十岁的桑格夫人，“国际计划生育协会”创办人和名誉会长，在她苦苦奋斗了半个世纪以后，还看到自己国家和世界仍是这样温吞吞的，她不知做何感想？</p>
-<p>这一位贡献了她一生精力为了节育运动的老太太，因为用心太专、用志太笃，却害得她个人的婚姻生活遭受一次挫折。她跟丈夫桑格先生因志趣不投，“非常友好地离了婚”（amicablydivorce），在1922年嫁给斯里（J.NoahH.Slee）先生（斯里先生死在1943年）。按说1922年后的桑格夫人该改名叫“斯里夫人”了，可是她却仍旧保留了原来的名字，斯里先生也不以为忤。夫妻两人的“雅量”、真可说是人类婚姻史上的佳话了。</p>
+<p>这一位贡献了她一生精力为了节育运动的老太太，因为用心太专、用志太笃，却害得她个人的婚姻生活遭受一次挫折。她跟丈夫桑格先生因志趣不投，“非常友好地离了婚”（amicably divorce），在1922年嫁给斯里（J. Noah H. Slee）先生（斯里先生死在1943年）。按说1922年后的桑格夫人该改名叫“斯里夫人”了，可是她却仍旧保留了原来的名字，斯里先生也不以为忤。夫妻两人的“雅量”、真可说是人类婚姻史上的佳话了。</p>
 <p>跟中国的缘分</p>
 <p>在上面这些简单的追述里，我宁肯忽略桑格夫人近二十多年来的故事，却要多写一点她跟中国的因缘。</p>
 <p>桑格夫人在四十年前就说“亚洲膨胀的人口是世界和平安定的最大威胁。”她在一生中，一再到东方来考察、劝导（她最得意的一回合，也许是游说甘地那一次）。</p>
 <p>1922年，国际性的生育节制大会在伦敦召开，桑格夫人去赴会，特地绕道东方，她想先到日本，可是日本政府不政迎她，不给她入境证，但她还是要去，结果日本政府不答应她上岸。最后由日本凯竹（Kaizo）公司以客人身分，在英国官方（不是她的美国官方）的协助之下，才算登了陆。可是日本政府禁止她公开指导节育，否则就绳以危险思想的法律。这时候的桑格夫人，万万没想到在三十二年以后，在1954年东京召开的国际计划生育协会的第五次大会时，她竟以这个协会会长的身份，被日本天皇嘉勉，被日本上议院请去演说！（两年后，《读者文摘》上登了她的一篇《亚洲发现了节育》（AsiaDiscoversBirthcontrol），可以想像她的高兴。）日本人的前倨后恭，正说明了他们的进步，虽然已嫌迟了一点。日本若在1922年多少听听桑格夫人的劝告，绝不至于在日后被人口暴增闹得焦头烂额，甚至在1948年公开在法律上允许堕胎！</p>
-<p>离开了日本，桑格夫人来到中国，照雷德（LawrenceLader）在《桑格故事》（TheMargaretSangerStory，纽约GardenCity的Dublenday版，1955）中所说，她做了“胡适博士的客人”。雷德又写道：</p>
+<p>离开了日本，桑格夫人来到中国，照雷德（Lawrence Lader）在《桑格故事》（The Margaret Sanger Story，纽约Garden City的Dublenday版，1955）中所说，她做了“胡适博士的客人”。雷德又写道：</p>
 <p>胡适博士请她向国立北京大学的学生讲一次演。胡适博士那时还不到三十岁，被看做中国文艺复兴之父，是出身于康奈尔和哥伦比亚的哲学家，讲得一口流利的英语。他不但做了欢迎会主席，并且还亲自担任翻译，以示隆重。</p>
 <p>大约有两千名教授和学生，挤在大学的礼堂里听演说。甚至连站的地方都没有了，人们不得不站在窗台上。正如她所期待的，“节育”两个字，像电流一样传播开来。她花了两个钟头的时间来演讲和答问题。然后就被拥到校长的家里，参加欢迎她的晚餐。宴会中有燕窝、鱼翅、鹑蛋汤等好菜，一直吃到第二天清早一点钟。她把她著的《家庭节制》一书送给一些中国学生，他们要求她准许把它译成中文，并且由他们自己花钱来印。第二天下午，就印出五千本来——这是节育运动在中国燃烧起来的第一个火花！</p>
 <p>在这个火花的照耀下，我随便举出当时的几篇吉光片羽：</p>
@@ -378,26 +411,26 @@
 <p>七、《生育制裁的什么与怎样》，《妇女》杂志八卷六号（1922年6月）</p>
 <p>八、《桑格夫人在上海家庭日新月的讲演》，《妇女》杂志八卷六号（1922年6月）</p>
 <p>桑格夫人著的书有九种，我把有中文翻译的也注出来：</p>
-<p>一、WhatEveryMotherShouldKnow，纽约Eugenics版，1916</p>
-<p>二、TheCaseofBirthControl，纽约版，1917</p>
+<p>一、What Every Mother Should Know，纽约Eugenics版，1916</p>
+<p>二、The Case of Birth Control，纽约版，1917</p>
 <p>陈海澄译《节育主义》，上海商务版（1925）</p>
 <p>徐傅林译《生育节制论》，上海中华书局版</p>
 <p>另一译本是《美乐之家》，出版协社版</p>
-<p>三、WomanandNewRace，纽约Brentano版，1917</p>
-<p>四、WhatEveryGirlShouldKnow，纽约Eugenics版，1922</p>
+<p>三、Woman and New Race，纽约Brentano版，1917</p>
+<p>四、What Every Girl Should Know，纽约Eugenics版，1922</p>
 <p>赵元任夫人（杨步伟）译《女子应有的知识》商务印书馆版（1926年上海版，1944年重庆版）</p>
 <p>赵荫棠译《性教育示儿编》，上海北新书局版</p>
-<p>五、ThePivotofCivilization，纽约Brentano版，1922</p>
-<p>六、HappinessinMarriage，纽约Brentano版1922</p>
+<p>五、The Pivot of Civilization，纽约Brentano版，1922</p>
+<p>六、Happiness in Marriage，纽约Brentano版1922</p>
 <p>蔡咏堂译《结婚的幸福》，上海开明书店版</p>
-<p>七、MotherhoodinBondage，纽约Brentano版，1928</p>
-<p>八、MyFightforBirthControl，纽约Farrar版，1931</p>
-<p>九、MargaretSanger:anAutobiography，纽约Morton版，1933；另有伦敦Gollancz版</p>
+<p>七、Motherhood in Bondage，纽约Brentano版，1928</p>
+<p>八、My Fight for Birth Control，纽约Farrar版，1931</p>
+<p>九、Margaret Sanger: an Autobiography，纽约Morton版，1933；另有伦敦Gollancz版</p>
 <p>她主持过的刊物有：</p>
-<p>一、TheCall</p>
-<p>二、TheWomanRebel</p>
-<p>三、TheBirthControlReview</p>
-<p>四、AroundtheWorldNewsofPopulationandBirthControl</p>
+<p>一、The Call</p>
+<p>二、The Woman Rebel</p>
+<p>三、The Birth Control Review</p>
+<p>四、Around the World News of Population and Birth Control</p>
 <p>她的研究机构——“玛格丽特桑格研究所”（MargaretSangerResearchBureau）现在纽约，很活跃，全天开放，周末和星期天都不休息（参看RobertMallory的ModernBirthControl，纽约PaperbackLibrary版，1961年，页138、154）。</p>
 <p>她到不了台湾</p>
 <p>1959年的4月13号，桑格夫人的老朋友蒋梦麟博士发表了震惊一时的文章——《让我们面对日益迫切的台湾人口问题》。他提出一项警告，认为台湾人口的激增将造成严重的社会问题。台湾每年生出一个高雄市的人口，而辛辛苦苦造成的石门水库所得的增产，只消一年四个月就被新增的娃娃们吃光！这太严重了！一些爱国不以其道的人士想用增加人口的方法来增加国力，殊不知第一批娃娃们刚长到三岁，台湾就没有余粮可以出口了！蒋梦麟博士这种推算，使他有了先知式的警觉⑨，他向记者说：</p>
@@ -410,13 +443,13 @@
 <p>〔后记〕一、这篇文章原登在《文星》第六十六号（1963年4月1日台北出版），是这本杂志的封面人物介绍，同期有“中国家庭计划协会”总干事舒子宽女士的《桑格夫人和布拉许夫人》，蒋梦麟先生的《让我们面对日益迫切的台湾人口问题》，李循和先生的《目前推行家庭计划的国家及其成就》，孙英善先生的《为什么要谈节育》，都是在桑格夫人和节育运动一个专题下的论述。（1963年4月8日）</p>
 <p>二、台北“圣家天主堂”的张岳塞（仁钊）先生，看了我这篇文字中批评天主教会的部分，特地送来张希贤的《自然节育》及顾保鹄的《婚配圣事》各一册（都是台中光启出版社印的）。对这些教会的宣传品，读者如能参看一下，也是很好的。（1963年5月20日）</p>
 <p>①陈伯庄《敬悼吴稚晖先生》，《今日世界》第四十三期，后收入《吴稚晖先生纪念集》。</p>
-<p>②我请郑清茂兄翻译过曾我部静雄的一篇《溺女考》（原收在曾我部静雄的《支那政治习俗论考》里，清茂的译文登在《文星》第五十五号），关于这个专题，曾我部静雄收集的材料不少，当然不很完全，例如马端临《文献通考》、吴荣先《吾学录初编》，梁恭辰《北东园笔录续编》、徐珂《清稗类钞》、林纾《闽中新乐府》，以及《大清会典事例》、民国初《暂行新刑律》、HerbertDayLamson的SocialPathologyinChina等书中皆有溺女的材料。</p>
-<p>③AbrahamStone在《桑格夫人》的序里说桑格夫人是一个radiantrebel。</p>
-<p>④关于美国这一时期的妇女们的活动，参看MarionTurnerSheehan编的TheSpiritualWoman。</p>
-<p>⑤当时背景，可看HaroldU．Faulkner的TheAmericanPoliticalandSocialHistory，第六版页620。</p>
-<p>⑥参看EmoryS．Bogardus的TheDevelopmentofSocialThough第三版页226-229NeoMalthauianism一节。</p>
-<p>⑦“ThemostcivilizedEnglishman.”这是美国批评家H.I．Mencken称呼这位性心理学专家的话。</p>
-<p>⑧几十年来，桑格夫人一直在寻求最新的避孕方法——一个安全、简单而又省钱的方法。目前使人们最满意的，当然是口服的避孕药Enovid（就是3月19号中央日报所指的“安无妊”Anovlar），我们绝对相信以后会有更进步的方法发明出来，请参看1961年10月号的Pageant杂志中JohnFrancis的Next-ABirthControlVaccine.是一篇令人有远景的报导。</p>
+<p>②我请郑清茂兄翻译过曾我部静雄的一篇《溺女考》（原收在曾我部静雄的《支那政治习俗论考》里，清茂的译文登在《文星》第五十五号），关于这个专题，曾我部静雄收集的材料不少，当然不很完全，例如马端临《文献通考》、吴荣先《吾学录初编》，梁恭辰《北东园笔录续编》、徐珂《清稗类钞》、林纾《闽中新乐府》，以及《大清会典事例》、民国初《暂行新刑律》、Herbert Day Lamson的Social Pathology in China等书中皆有溺女的材料。</p>
+<p>③Abraham Stone在《桑格夫人》的序里说桑格夫人是一个radiant rebel。</p>
+<p>④关于美国这一时期的妇女们的活动，参看Marion Turner Sheehan编的The Spiritual Woman。</p>
+<p>⑤当时背景，可看Harold U．Faulkner的The American Political and Social History，第六版页620。</p>
+<p>⑥参看Emory S．Bogardus的The Development of Social Though第三版页226-229 Neo Malthauianism一节。</p>
+<p>⑦“The most civilized Englishman.”这是美国批评家H.I．Mencken称呼这位性心理学专家的话。</p>
+<p>⑧几十年来，桑格夫人一直在寻求最新的避孕方法——一个安全、简单而又省钱的方法。目前使人们最满意的，当然是口服的避孕药Enovid（就是3月19号中央日报所指的“安无妊”Anovlar），我们绝对相信以后会有更进步的方法发明出来，请参看1961年10月号的Pageant杂志中John Francis的Next-A Birth Control Vaccine.是一篇令人有远景的报导。</p>
 <p>⑨我请读者特别注意香港《新闻天地》（第五十三号）上的一篇文章——《添丁问题困扰宝岛》（颜乐舜），那是1955年12月31日写的。</p>
 <p>⑩除了蒋梦麟博士这种意见外，农复会新闻处在1959年的6月和8月印了《台湾人口问题各报评论》的专辑和续辑，收罗很全。此外有四篇文章，可供参考：</p>
 <p>一、东方望《节育与反攻》，《文星》第二十一号（1959年7月1日）</p>
@@ -424,21 +457,21 @@
 <p>三、李夕涛《台湾人口繁殖世界第一》，《新闻天地》第十七年第十八号（1961年5月6日）</p>
 <p>四、孙英善《台湾人口激增和节育的迫切》，《文星》第六十三号（1964年1月1日）</p>
 <p>(11)进一步研究桑格夫人的材料我举几本在这里：</p>
-<p>一、DeForest,W.Robert,LawrenceVeiller：TheTenementHouseProblem，纽约Macmillan版，1903年</p>
-<p>二、HavelockEllis：ImpressionandComments，伦敦Constable版，1921年</p>
-<p>三、HeywoodBroun,MargaretLeech：AnthonyComstock，纽约Boni版，1927年</p>
-<p>四、EmmaGoldman：LivingMyLife，纽约Knopf版，1931年</p>
-<p>五、NormanE.Himes：TheTruthaboutBirthControl，纽约Day版，1931年</p>
-<p>六、J.V.Coucke，J.J.Walsh：TheSterilePeriodinFamilyLife，纽约Wagner版，1933年</p>
-<p>七、MabelDodgeLuhan：IntimateMemories第三卷，纽约Harcourt版，1933年</p>
-<p>八、ShidzueIshimoto：FacingTwoWays，纽约Farrar版，1935年</p>
-<p>九、NormenE.Himes：MedicalHistoryofContraception,巴铁摩尔Wood版，1936年</p>
-<p>十、HavelockEllis：Mylife,伦敦Heinemann版，1940年</p>
-<p>十一、MaryBeard：WomanasaForceinHistory，纽约Macmillan版，1946年</p>
-<p>十二、FrancoiseDelisle：Friendship'sOddssey，伦敦Heinemann版，1947年</p>
-<p>十三、WilliamVogt：RoadtoSurvial，纽约Sloane版，1948年</p>
-<p>十四、SidneyDitzion：Marriage,MoralsandSexinAmerica,纽约Bookman版，1953年</p>
-<p>十五、HarrisonBrown：TheChallengeofMan'sFuture，纽约Viking版，1954年</p>
+<p>一、De Forest, W. Robert, Lawrence Veiller：The Tenement House Problem，纽约Macmillan版，1903年</p>
+<p>二、Havelock Ellis：Impression and Comments，伦敦Constable版，1921年</p>
+<p>三、Heywood Broun, Margaret Leech：Anthony Comstock，纽约Boni版，1927年</p>
+<p>四、Emma Goldman：Living My Life，纽约Knopf版，1931年</p>
+<p>五、Norman E. Himes：The Truth about Birth Control，纽约Day版，1931年</p>
+<p>六、J. V. Coucke，J. J. Walsh：The Sterile Period in Family Life，纽约Wagner版，1933年</p>
+<p>七、Mabel Dodge Luhan：Intimate Memories第三卷，纽约Harcourt版，1933年</p>
+<p>八、Shidzue Ishimoto：Facing Two Ways，纽约Farrar版，1935年</p>
+<p>九、Normen E. Himes：Medical History of Contraception,巴铁摩尔Wood版，1936年</p>
+<p>十、Havelock Ellis：My life,伦敦Heinemann版，1940年</p>
+<p>十一、Mary Beard：Woman as a Force in History，纽约Macmillan版，1946年</p>
+<p>十二、Francoise Delisle：Friendship’s Oddssey，伦敦Heinemann版，1947年</p>
+<p>十三、William Vogt：Road to Survial，纽约Sloane版，1948年</p>
+<p>十四、Sidney Ditzion：Marriage, Morals and Sex in America,纽约Bookman版，1953年</p>
+<p>十五、Harrison Brown：The Challenge of Man’s Future，纽约Viking版，1954年</p>
 <p>附录</p>
 <p>节育运动倡导人桑格夫人小传（《时与潮》）</p>
 <p>声音柔和，态度和善，衣装保守，一点没有反抗的迹象，但是她双眼射出的炯炯闪光，则显出她的反抗精神和坚决的意志。在年轻的时候，她在许多方面都是叛徒，问情无政府主义，后来又是社会党人。一度她甚至主张“妇女有作未出嫁妈妈的权利”。但最后，她才集中努力于一项运动：根本不做妈妈的权利。桑格夫人称她这项运动为“节制生育”，并以毕生时间推进。</p>
@@ -451,7 +484,7 @@
 <p>桑格夫人在她的塔克森家乡，注意到教会开始重新检讨它的节育教条，美国政府也逐渐鼓励节育计划。最近，约在桑格夫人因开设布鲁克林节育诊所被判拘留后五十年，美国政府公开支持桑格夫人的主张。卫生、教育福利部宣布举行一连串地区性会议，协助各州及地方推进及发展节育计划。</p>
 <p>这项会议被宣布的第二天，桑格夫人并不晓得。因为她已经病势弥留。随即逝世于塔克森。桑格夫人晚年卜居塔克森，担任计划家庭国际协会主席。她逝世后各地唁电如涌。她的一位长时间工作同僚赞扬她说：“她使美国及全世界，相信避孕乃是一种基本人权。”（《时与朝》第二二五期，1966年10月31日，译自《新闻周刊》）</p>
 <h2 id="纪翠绫该生在什么时候"><a class="header" href="#纪翠绫该生在什么时候">纪翠绫该生在什么时候？</a></h2>
-<p>真自由非真爱不能成立，真爱非真自由不能存在。——卡彭特（EdwardCarpenter）</p>
+<p>真自由非真爱不能成立，真爱非真自由不能存在。——卡彭特（Edward Carpenter）</p>
 <p>十多天来最轰动的一件案子——“武侠作家入帷幕，滑稽影星动怒刀”，本该是一件极普通的杀人未遂罪、一件极普通的通奸罪。但是因为女主角纪翠绫在案发时的勇气与坦率；检察官、大律师、名教授们搬出“羞耻”、“五伦”、“狗男女”等名词描述一个单纯的法律案件；以及一些头脑冬烘的新闻从业人员又不自觉的犯了打落水狗的毛病……遂使这件案子愈滚愈大，也愈使人觉得，在这案子背后，实在牵扯到许多颇有问题的观念。</p>
 <p>探讨这些“颇有问题的观念”，我愿提供一点历史的线索。从这点线索里，我们可以看出性道德观念如何影响着法律的改变；同时可以发现，我们目前的法律，有几条实在不合乎新的性道德。</p>
 <p>非常明显的，我们这些“颇有问题的观念”是历代老祖宗的遗产，虽然这些遗产在我们手中已经有不少的改变。但必须承认的是，我们改变的情形还不理想。尤其在性道德观念上，我们未免太“传统派”了，用世界行情来看，我们固比不上瑞典、比不上法国，我们甚至比不上英国和日本！</p>
@@ -511,7 +544,7 @@
 <p>所以我说，纪翠绫大可不必自叹命薄，她应该庆幸她生在这么一个值得歌颂的时代。她不该以为那些瞧不起她的眼光、恶骂她的声音、奚落她的文字，是“虐待”她。她该觉得，这些眼光、声音和文字，都是对她最“文明”的表示。这种表示，只有我们几千年礼义之邦才会产生！</p>
 <p>纪翠绫最大的错误乃是她不该向往离婚容易的现代美国(23)，不该向往通奸无罪的现代英国(24)，不该向往取消了通奸罪的日本(25)。她该知道，在20世纪60年代的台湾，争取爱情自由还是要付高价的。性道德观念当然会改，可是绝不是眼前某些卫道之士所能为力；法律条文当然要变，可是绝不是眼前某些立法委员所能尽心。在目前这种气氛底下，纪翠绫除了屈服、坐牢以外，似乎别无他法。她已经做得很有勇气了、很坦率了，即使最后终以“痛改前非”的姿态出现，也无损于她的理想和真情——在全社会的大气压下，多少英雄豪杰都被压倒了，何况一个纪翠绫？</p>
 <p>1962年4月23日</p>
-<p>①参看Madden:PersonsandDomesticRelations,St.Paul,WestPublishingCo.1931，P.123;P.145；中川善之助《注释亲族法》上，页172。</p>
+<p>①参看Madden: Persons and Domestic Relations, St. Paul, West Publishing Co. 1931，P.123; P.145；中川善之助《注释亲族法》上，页172。</p>
 <p>②“七出”（七去）见于《大戴礼记》卷十二“本命”；又见于《家语》卷六“本命解”。七件事是：一、不顺父母（公公婆婆），二、无子（五十以上），三、淫佚，四、妒忌，五、有恶疾（如麻风，目盲），六、多言，七、盗窃。除淫佚及盗窃外，在近代文明的国家法律中，无一可构成离婚的原因，可是我们却三千年相沿不替，这真是礼教法律观的遗毒。这种传统的礼教后来开始蜕变，直变到跟法律合了流：《唐律》《宋律》著于文中，《明律》无文，《清律》列于附注，民国《现行律》从清之旧。七件事的次序也前后有异，多少可以看出人们观念的改变。</p>
 <p>③事实上，老祖宗们对付女人的花枪还不止此，这七件只是比较合乎“固有道德”。</p>
 <p>④“三不去”据《家语》一、有所取无所归，二、经（公公婆婆）三年之丧，三、先贫后富。旧法律中但列其名而不书内容（唐律见于《疏义》，清律见于《律注》），也算礼教与法律合流，所以《清律辑注》上说：“七出者，礼应去之（妻）也；三不去者，礼应留之也。”礼法与礼法打了架，“三不去”胜利。</p>
@@ -546,15 +579,15 @@
 <p>第二、对本夫及承办检察官，已涉嫌暗示。</p>
 <p>第三、通奸罪对社会的“危害”，远比不上“杀人罪”，此由通奸罪系告诉乃论可知。而此命令，颇容易使好动刀子的人闻而自壮，从而在疑惑有绿帽压顶的可能时，先杀而后快。</p>
 <p>第四、此命令颇令人有男性本位的感觉。我们社会中，本来就男于纳妾宿娼，靦不为怪；女人风骚淫荡，舆论不齿。而赵琛此令之“投射”（projection）倾向，不能不说很明显。</p>
-<p>(23)参看Rayden'spracticeandLawintheDivorceDivision,FourthEdition.1942．以及KeezyontheLawofMarriageandDivorce,JohnW.Morland,ThirdEdition.1946。</p>
-<p>(24)参看HandboodofCriminalLaw,JustinMil1er.1934.p.136。</p>
+<p>(23)参看Rayden’s practice and Law in the Divorce Division, Fourth Edition.1942．以及Keezy on the Law of Marriage and Divorce, John W. Morland, Third Edition. 1946。</p>
+<p>(24)参看Handbood of Criminal Law, Justin Mil1er. 1934. p. 136。</p>
 <p>(25)日本在昭和二十二年（民国三十六，公元1947）删除了“第183条（奸通罪）（见昭和三十七年版《六法全书》，有斐阁版），这真是划时代的大进步！这条法律若早废除，文学家有岛武郎和波多野夫人也许不会自杀了！</p>
 <p>（后记）</p>
-<p>一、这篇文章原登在《文星》五十五号（1962年5月1日出版）。发表前十二天，4月18日的台北《民族晚报》上，就以《唯“美”人物》为题，把纪翠绫和李敖两人等量齐观。在那种时论之下，我写出这篇《纪翠绫该生在什么时候？》当然是惹麻烦的。文章一出来，我立刻被报纸社论和读者来信叫骂，这些表现，使我想到耶稣时代的那些手拿石头的文士（thescribes）和法利赛人（thepharsiees）。</p>
+<p>一、这篇文章原登在《文星》五十五号（1962年5月1日出版）。发表前十二天，4月18日的台北《民族晚报》上，就以《唯“美”人物》为题，把纪翠绫和李敖两人等量齐观。在那种时论之下，我写出这篇《纪翠绫该生在什么时候？》当然是惹麻烦的。文章一出来，我立刻被报纸社论和读者来信叫骂，这些表现，使我想到耶稣时代的那些手拿石头的文士（the scribes）和法利赛人（the pharsiees）。</p>
 <p>二、在攻击我的文字中，最突出的一篇可算是台北《世界评论》第十年第六期（1962年6月1日出版）中，郑学稼先生的四千字长文——《论巴札洛夫》。他在这篇文章里大骂我是“狂妄的青年”，“不是纯洁的和有道德情操的人”，“只是学阀和隐匿幕后几个装造‘巴札洛夫’专家的文化打手”，并且认为是被“收买”的。他最后在文章的结尾，硬给我戴了一顶大帽子，他说：</p>
 <p>但是，台北文化街上的“巴札洛夫”，确继承俄国巴札洛夫的思想血统，即对妇女的态度。当他不得意于文坛时，却溜到社会新闻的舞台。他对一位有夫之妇未离婚前的通奸案件，埋怨中华民国，既不是“通奸无罪”的日本，又不是“取消通奸罪”的英国。为那位女人抱不平，中华民国的法律规定两性在离婚前要共同遵守性道德，是文明国家的最好法律，因为法律又规定两性离婚的自由。如果她和他真有爱情的话，何不等待离婚之后发生性行为？在外表上为男女争取通奸权是十分前进的，事实恰恰相反，因为在财产私有制下，那种通奸权只有利于男子，而不是保护妇女。</p>
 <p>由什么假巴札洛夫有那样的高论呢？第一、由于他的批发西化论，一切好的都是外国，中国一切都是“少灵性”！第二、真假巴札洛夫都把女人作为性欲的对象，所以假巴札洛夫要争取通奸权，即乱交权。这一点还值得一淡。</p>
-<p>巴札洛夫把女人做为性欲对象的理论，给俄国知识分子以很大的影响。所以到1905年革命失败后，出现阿绥巴雪夫（M.Artzybashev）小说的主人公“沙宁”式青年。沙宁有这哲学：“我干我所要干和能干的，人该和鸟儿一样的自由，他有权享受做爱，无须恐惧和忌惮——他的肉体的解放是现代的伟大任务。”当时的俄国知识青年，是沙宁狂。这一思想和行动，到十月革命后，有更进一步的发挥，那就是柯伦泰夫人的“一杯水主义”。台北的假巴札洛夫就想到处喝那样的一杯水！</p>
+<p>巴札洛夫把女人做为性欲对象的理论，给俄国知识分子以很大的影响。所以到1905年革命失败后，出现阿绥巴雪夫（M. Artzybashev）小说的主人公“沙宁”式青年。沙宁有这哲学：“我干我所要干和能干的，人该和鸟儿一样的自由，他有权享受做爱，无须恐惧和忌惮——他的肉体的解放是现代的伟大任务。”当时的俄国知识青年，是沙宁狂。这一思想和行动，到十月革命后，有更进一步的发挥，那就是柯伦泰夫人的“一杯水主义”。台北的假巴札洛夫就想到处喝那样的一杯水！</p>
 <p>因此，我有这结论：被鼓励的黄脸皮巴札洛夫，不是真巴札洛夫。就知识说来，他是假罗亭；就性道德说来，他是沙宁；就他的行业说来，是打手。假罗亭加沙宁加打手，就成为我们在台北文化街头所见的假巴札洛夫。我希望跟在他的后面的好青年充当阿加狄。（5月16日）</p>
 <p>我把这段文字抄在这里，使人看看这位被台湾大学解聘的教授的罗织策略。</p>
 <p>三、住在基隆的一位女读者写信给我，她看了我这篇文章，不知道作者是男是女，她说：“如果您不是女士，我将更加的尊敬您，因为您没有一般男人的自私观念。”“我并不是说您是在为纪翠绫说话，更不是说您有鼓励一般男女去做不正当事之嫌，而我所说的是您真正的为女人说了几句公道话。”</p>
@@ -655,7 +688,7 @@
 <p>十一、鼠一次。</p>
 <p>十二、羊一次。</p>
 <p>十三、车马一次。（十一、十二、十三此三者属动物；龙未归入此项，因在古人眼中之龙早已拟神化）</p>
-<p>诸帝始生时之一切见、梦、嗅、闻，皆荒诞不经，向壁虚造，其因或出于传说、或出于伪证、或出于“论理上之幻觉”（logicalfancy），要之皆可窥见古人思想模式之一斑。</p>
+<p>诸帝始生时之一切见、梦、嗅、闻，皆荒诞不经，向壁虚造，其因或出于传说、或出于伪证、或出于“论理上之幻觉”（logical fancy），要之皆可窥见古人思想模式之一斑。</p>
 <p>1961年3月16日穷五小时之力读宋史，做此文</p>
 <p>（后记）我相信其他各朝的帝王们的始生异象也可以这样排比研究，并且不只帝王，中国历史上许多名人始生异象都可以这样做（如岳飞字鹏举，《宋史》记他“生时有大禽若鹄，飞鸣室上，因以为名”；文天祥小名云孙，刘岳申《文丞相传》记他父亲“梦儿乘紫云下，巳复上，而(文)丞相生，故名云孙”）。这些实例太多了，实在是一个极好的论文题目。</p>
 <p>1963年4月7日</p>
@@ -695,13 +728,13 @@
 <p>宋代（960-1279）的婚姻制度是一个“男子本位”的婚姻制度，这种制度的产生，由于有一个浓厚的男权色彩的家族做它的背景。这个男性中心的制度，有三个特征：</p>
 <p>第一个特征是“父系的”（partrilinea），中国历来采用单系（unilateral）的计法来计亲属，而不用双系（bilateral）的计法。且在单系的计法中，只计父系（partrilineal）而不计母系（matrilineal）；所谓“由父之父递推之，百世皆吾祖也；由母之母而递推之，三世之外有不知谁何者矣”①。</p>
 <p>第二个特征是“父权的”（patriachal）。就是家族的统治权由男性最尊长者支配，而行一种父权制（patriarchate）②。在男权膨胀的宋代社会里，业已看不到母权制（matriarchate）的遗痕。</p>
-<p>第三个特征是“父处的”（patrilocal）。就是在结婚后，以女子进入夫家而与夫同居的父处婚（patrilocalmarriage）为主，而男子进入妻家与妻同居的母处婚（matrilocalmarriage）只不过是极少数的例外情形③。</p>
+<p>第三个特征是“父处的”（patrilocal）。就是在结婚后，以女子进入夫家而与夫同居的父处婚（patrilocal marriage）为主，而男子进入妻家与妻同居的母处婚（matrilocal marriage）只不过是极少数的例外情形③。</p>
 <p>这三个特征使男人在婚姻关系上攫夺了一个绝对优势的地位，而这个地位的理论背景，远在宋代以前便形成了：《礼记-郊特牲》第十一：“男帅女，女从男，夫妇之义，由此始也。妇人，从人者也……嫁从夫。”“共牢而食，同尊卑也，故妇人无爵，从夫之爵，坐以夫之齿。”又“内则”第十二：“女不言外。”“子妇无私货，无私蓄，不敢私假，不敢私与。”《仪礼-丧服子夏传》：“妇人有三从之义，无专用之道；故……既嫁从夫。”“夫者，妻之天也。”《大戴札记-本命解》：“妇人，伏于人也。”《尔雅-释亲》：“妇之言服也，服事于夫也。”《谷梁传-隐公二年》：“妇人不专行，必有从也。”《孟子-滕文公下》：“无违夫子。”《家语》：“女子，顺男子之教而长其理者也，是故无专制之义而去三从之道……既嫁从夫。”班固《白虎通-嫁娶》篇；“阴卑不得自专，就阳而成之。”“夫有恶行，妻不得去者，地无去天之义也。”又“三纲六纪篇”：“夫为妻纲，……妇者，伏也，以礼屈服。”班昭《女诫-专心章》：“夫者，天也；天固不可违，夫固不可逃也。”《唐律疏义》卷二十二“殴伤妻妾”因妻“义同于幼，故得减凡人二等”。</p>
 <p>根据这些理论，我们可以发现妇人在结婚以后所处的地位是异常不平等的，她们没有权力、没有意志、没有职业、没有名位、没有财产④，乃至没有知识，没有法律上的平等权利，完全居于附属的地位。换句话说，结婚后的妇人是没有“人格”（personality）的。她的人格已被丈夫的人格所吸收（absorption）、所合并（consolidation）⑤。她只能在丈夫的专权下同其荣或共其辱，因此在《仪礼-丧服子夏传》中说：</p>
 <p>夫妻，一体也……夫妻，牉合也。</p>
 <p>班固在《白虎通》中也说：</p>
 <p>妻者，齐也，与夫齐体。</p>
-<p>这些都证明了当时的婚姻现象是属于“夫妻同体主义”（coverturescheme），而非“夫妻别体主义”（seperateexistencescheme）的⑥。</p>
+<p>这些都证明了当时的婚姻现象是属于“夫妻同体主义”（coverture scheme），而非“夫妻别体主义”（seperate existence scheme）的⑥。</p>
 <p>降至第10世纪的中叶，这种主义仍风行不衰。从宋人的文集中，我们可以得到进一步的印证。蒲寿宬《心泉学诗稿》卷一《拙妇吟》：</p>
 <p>……采采南涧苹，心事涧水知；在室尽子职，为妇尽妇仪⑦。</p>
 <p>周敦颐《周子通书》二“家人睽复无忘”第三十二：</p>
@@ -778,7 +811,7 @@
 <p>妻淫佚</p>
 <p>妻子淫佚（lasciviousness）也可构成男方单意离婚的条件；《大戴礼记》卷十二“本命”：“妇人七去……淫，为其乱族也。”《宋刑统》卷十四户婚律“和娶人妻”规定：“七出者，依令……二淫佚。”《郑氏家范》：“诸妇……如其淫狎，即宜屏放。”(77)见诸事实记载的如魏泰《东轩笔录》：“有工部员外侯叔献者，荆公之门人也，娶槐氏女为妻，少悍。叔献死而帏薄不肃。荆公奏逐槐氏妇归本家。……京师有谚语曰：‘……侯工部死后休妻。’”(78)因为夫妻间的贞操没有相对性，所以法律对于犯奸的处罚便不公平，夫犯奸（除了与妻母奸而构成义绝外），妻不能请求离婚，可是妻犯奸便不同了：《庆元条法事类》卷八十“杂门（诸色犯奸）户令”：“诸妇人犯奸，非义绝，并与夫之缌麻以上亲奸未成，离与不离，听从夫意。”</p>
 <p>妻不事舅姑</p>
-<p>女子在室应尽孝于父母，结婚以后，便更进一步，“事舅姑如事父母”(79)，而不事舅姑（disregardofthehusband'sparents），即可构成男方的单意离婚(80)。《大戴礼记》卷十二“本命”：“妇人七去：不顺父母，为其逆德也。”在宋人的著作中，有很多“逮事舅姑”的材料：胡宿《文恭集》卷四十行状“李太夫人行状”：“……及待公姑，朝夕恪共，仪止淑慎，躬亲执烦辱之事，造次亡喜慢之容，旁绝间言，动得余裕。”(81)陈傅良《止斋先生文集》第四十八卷志铭“陈子商益母夫人墓志”：“母氏归为家妇，逮事曾祖姑，奉诸祖母，以同居祖行无在者，又奉吾父与世父母同居凡五十年矣。”(82)强至《祠部集》卷三十五墓志铭“安府君妻赵夫人墓志铭”；“入门尽妇道，舅姑喜，尝语之曰：‘今若善事我，他日当得贤子妇。’”(83)吕陶《净德集》卷二十七墓志铭“夫人文氏墓志铭”：“既长适萧氏，事舅姑以孝。”(84)刘挚《忠肃集》卷十四墓志铭“仁寿赵夫人墓志铭”：“既嫁，其姑路氏有贤行，而严正少可，唯夫人能得其意。”(85)刘跂《学易集》卷八志铭“夫人张氏墓志铭”：“事舅姑尽礼，膳服温清，先意承志，夙夜不怠。”(86)高文虎《蓼花洲间录》“节妇传”：“妇少年美色，事姑甚谨。”而提倡敬事舅姑的理论，在宋人的著作中也不乏见：周辉《清波杂志》卷九里引胡瑷的话：“嫁女须胜吾家者，或问其故？曰：‘嫁胜吾家，则女之事人，必钦必戒；娶妇不若吾家，则妇事舅姑，必执妇道。’”司马光在《司马氏书仪》卷第一三“婚仪”上“婚”中也说：“苟慕一时之富贵而娶之，彼挟其富贵，鲜有不轻其夫而傲其舅姑，养成娇妒之性，异日为患，庸有极乎？”提倡敬事舅姑的理论而把它见诸行事的，如应俊《琴堂瑜俗编》卷上“孝父母”：“近世陕州夏县苏庆文事继母以孝，闻常语其妇曰：‘汝事吾母小不谨，必逐汝！’”甚至徐绩“不婚，恐异姓不能尽心于母也”(87)。可见当时女子是“与人作妇亦大难”(88)的。其中幸运的，或以苦行的态度终于博得姑的好感：林亦之《网山集》卷四志铭“宜人姚氏墓志”：“初来归，不得姒氏欢，而夫人事之如事所尊，久之，姒氏知其贤，相好无间言。”(89)不幸的或谋一死：劭伯温《河南邵氏闻见前录》卷第十八：“伯温曾祖母张夫人，遇祖母李夫人严甚，李夫人不能堪，一夕谋自尽……。”而在法律上，不事舅姑已构成逐妻的条件：《宋刑统》卷十四户婚律“和娶人妻”：“七出者，依令……三不事舅姑。”故因此而被出的妇人，大有人在。程颢《二程全书》“程中郎墓志”：“始娶倪氏，事姑不谨，公以义罢遣。继以曹氏。”司马光《涑水记闻》卷三：“（张）洎女嫁杨文侨公，倨不事姑，或效其姑语以为笑，后终出之。由是两家不相能，故文侨公修国史，为洎传，极言其短。”周密《齐东野语》卷一“放翁钟情前室”：“陆务观初娶唐氏，闳之女也，于其母夫人为姑侄，伉俪相得，而弗获于姑。既出，而未忍绝之，则为之别馆，时时往焉。姑知而掩之，虽先知挈去，然事不得隐，竟绝之。亦人伦之变也！唐后改适同郡宗子（赵）士程，尝于春日出游，相遇于禹临寺南之沈氏园，唐以语赵，遣致酒肴，翁怅然久之，为赋《钗头凤》一词题壁间，云：</p>
+<p>女子在室应尽孝于父母，结婚以后，便更进一步，“事舅姑如事父母”(79)，而不事舅姑（disregardofthehusband’sparents），即可构成男方的单意离婚(80)。《大戴礼记》卷十二“本命”：“妇人七去：不顺父母，为其逆德也。”在宋人的著作中，有很多“逮事舅姑”的材料：胡宿《文恭集》卷四十行状“李太夫人行状”：“……及待公姑，朝夕恪共，仪止淑慎，躬亲执烦辱之事，造次亡喜慢之容，旁绝间言，动得余裕。”(81)陈傅良《止斋先生文集》第四十八卷志铭“陈子商益母夫人墓志”：“母氏归为家妇，逮事曾祖姑，奉诸祖母，以同居祖行无在者，又奉吾父与世父母同居凡五十年矣。”(82)强至《祠部集》卷三十五墓志铭“安府君妻赵夫人墓志铭”；“入门尽妇道，舅姑喜，尝语之曰：‘今若善事我，他日当得贤子妇。’”(83)吕陶《净德集》卷二十七墓志铭“夫人文氏墓志铭”：“既长适萧氏，事舅姑以孝。”(84)刘挚《忠肃集》卷十四墓志铭“仁寿赵夫人墓志铭”：“既嫁，其姑路氏有贤行，而严正少可，唯夫人能得其意。”(85)刘跂《学易集》卷八志铭“夫人张氏墓志铭”：“事舅姑尽礼，膳服温清，先意承志，夙夜不怠。”(86)高文虎《蓼花洲间录》“节妇传”：“妇少年美色，事姑甚谨。”而提倡敬事舅姑的理论，在宋人的著作中也不乏见：周辉《清波杂志》卷九里引胡瑷的话：“嫁女须胜吾家者，或问其故？曰：‘嫁胜吾家，则女之事人，必钦必戒；娶妇不若吾家，则妇事舅姑，必执妇道。’”司马光在《司马氏书仪》卷第一三“婚仪”上“婚”中也说：“苟慕一时之富贵而娶之，彼挟其富贵，鲜有不轻其夫而傲其舅姑，养成娇妒之性，异日为患，庸有极乎？”提倡敬事舅姑的理论而把它见诸行事的，如应俊《琴堂瑜俗编》卷上“孝父母”：“近世陕州夏县苏庆文事继母以孝，闻常语其妇曰：‘汝事吾母小不谨，必逐汝！’”甚至徐绩“不婚，恐异姓不能尽心于母也”(87)。可见当时女子是“与人作妇亦大难”(88)的。其中幸运的，或以苦行的态度终于博得姑的好感：林亦之《网山集》卷四志铭“宜人姚氏墓志”：“初来归，不得姒氏欢，而夫人事之如事所尊，久之，姒氏知其贤，相好无间言。”(89)不幸的或谋一死：劭伯温《河南邵氏闻见前录》卷第十八：“伯温曾祖母张夫人，遇祖母李夫人严甚，李夫人不能堪，一夕谋自尽……。”而在法律上，不事舅姑已构成逐妻的条件：《宋刑统》卷十四户婚律“和娶人妻”：“七出者，依令……三不事舅姑。”故因此而被出的妇人，大有人在。程颢《二程全书》“程中郎墓志”：“始娶倪氏，事姑不谨，公以义罢遣。继以曹氏。”司马光《涑水记闻》卷三：“（张）洎女嫁杨文侨公，倨不事姑，或效其姑语以为笑，后终出之。由是两家不相能，故文侨公修国史，为洎传，极言其短。”周密《齐东野语》卷一“放翁钟情前室”：“陆务观初娶唐氏，闳之女也，于其母夫人为姑侄，伉俪相得，而弗获于姑。既出，而未忍绝之，则为之别馆，时时往焉。姑知而掩之，虽先知挈去，然事不得隐，竟绝之。亦人伦之变也！唐后改适同郡宗子（赵）士程，尝于春日出游，相遇于禹临寺南之沈氏园，唐以语赵，遣致酒肴，翁怅然久之，为赋《钗头凤》一词题壁间，云：</p>
 <p>红酥手，黄滕酒。满城春色宫墙柳；东风恶，欢情薄，一怀愁绪，几年离索——错！错！错！</p>
 <p>春如旧，人空瘦。泪痕红浥鲛绡透；桃花落，闲池阁，山盟虽在，锦书难托——莫！莫！莫</p>
 <p>时（高宗）绍兴乙亥岁（即绍兴十五年，1145）也。翁居鉴湖之三山，晚岁每入城，必登寺眺望，不能胜情，尝赋二绝云：</p>
@@ -970,7 +1003,7 @@
 <p>又《名公书判清明集》户婚门婚嫁“妻以夫家贫而仳离（后村）”：</p>
 <p>……丘教授未第之前，以女弟适黄桂，既生五女矣。一旦丘教授偶中高科，门户改变；黄桂不善营运，家道凋零。丘教授遽夺女弟，令写离书。嗟乎！丘教授寿禄不永，万里客死，岂非此等事有以累其阴骘欤？……丘贡士宜鉴乃兄覆辙，做些好事，以助前程。如黄挂者，夫妇可以复合，宜以丘氏还之。……如夫妇不可复合，亦既悯念黄桂贫乏，资助钱物，使之别娶。</p>
 <p>故离书多由当事人（丈夫）自己为之。</p>
-<p>至于离书之内容如何，以史料湮没，无从管窥。幸运的是，日本京都帝国大学教授那波利贞博士曾在法国巴黎图书馆的敦煌卷里，找到半张离婚书的原页，此页在CollectionPelliotNO.3220中，依《巴黎图书馆敦煌写本书目》，此号在目录上记为：</p>
+<p>至于离书之内容如何，以史料湮没，无从管窥。幸运的是，日本京都帝国大学教授那波利贞博士曾在法国巴黎图书馆的敦煌卷里，找到半张离婚书的原页，此页在Collection Pelliot NO. 3220中，依《巴黎图书馆敦煌写本书目》，此号在目录上记为：</p>
 <p>华文，定断派佛经，背为开宝十年（丁丑，977）作佛事疏(150)。</p>
 <p>而此卷背后的前半就是这张离婚书：</p>
 <p>（前阙）</p>
@@ -979,11 +1012,11 @@
 <p>这张离婚文件虽然晦涩难明，但是度其大意，多少总可以给我们一个概括的印象，—个“劫后余尘”的影子。</p>
 <p>1959年7月1日午后6时3刻，初稿于古夷州</p>
 <p>①清崔述《东壁遗书》《五服异同考》中语（《畿辅丛书》本；上海亚东图书馆本，后者由顾颉刚标点，名《崔东壁遗书》）。</p>
-<p>②参阅R.Rivers:SocialOrganization.p.12-13;R.H.Lowie;PrimitiveSociety,p.16-17,111-112160,259,269-270,316。</p>
+<p>②参阅R. Rivers: Social Organization. p.12-13; R. H. Lowie; Primitive Society, p.16-17, 111-112 160, 259, 269-270, 316。</p>
 <p>③《宋史》卷五“太宗纪”：“淳化元年（990）……，禁川峡民父母在出为赘婿。”《宋会要稿》（民国二十六年北平图书馆影印本）“食货”六十五“免役”二孝宗乾道三年（1167）：“或以老户，本身无丁，将女招到赘婿。”李觏《直讲李先生文集》（《四部丛刊初编》影印明武宗正德乙亥即十年一五一五刊本）卷二十八《寄上孙安抚书》：“兼并者得将养女召为赘婿。”王君玉《国老谈苑》（《百川学海》本较前；《学津讨原》本附《四库提要》）卷二：“张咏镇杭州，有诉者曰：‘某家素多藏，某二岁而父母死，有甲氏赘于其家。’”洪迈《夷坚丙志》（《十万卷楼丛书》本）卷第十三“长溪民：“福州长溪民，为赘婿于海上人家，以渔为业。”入赘即招入婚，与程大昌《演繁露》（《儒学警悟》本六卷；《学津讨原》本十六卷；《演繁露续集》本六卷）中所谓的舍居婿同为一类。</p>
 <p>④在财产上，很像罗马法中的“财产归并制”和“嫁资制”。</p>
-<p>⑤“Husbandandwifeareoneperson,andthatoneisthehusband.”参看李宜琛《现行亲属法论》（1944年商务版）p.60。</p>
-<p>⑥关于婚姻的效力，古来的立法主义有此两种，前者妻的人格完全丧失其独立性，一任夫权的支配，无财产能力和行为能力（参看Madden:PersonsandDomesticRelations,St.Paul,WestPublishingCo.,1931，p.123,145.）；后者则夫妻各有其独立的人格，罗马法系采之（参看中川善之助《注释亲族法》上p.127）。</p>
+<p>⑤“Husband and wife are one person, and that one is the husband.”参看李宜琛《现行亲属法论》（1944年商务版）p.60。</p>
+<p>⑥关于婚姻的效力，古来的立法主义有此两种，前者妻的人格完全丧失其独立性，一任夫权的支配，无财产能力和行为能力（参看Madden: Persons and Domestic Relations, St. Paul, West Publishing Co., 1931，p. 123, 145.）；后者则夫妻各有其独立的人格，罗马法系采之（参看中川善之助《注释亲族法》上p. 127）。</p>
 <p>⑦六卷，文渊阁钞本，《四库全书珍本初集》据之影印。</p>
 <p>⑧朱熹注，《道藏辑要》本。</p>
 <p>⑨十四卷，附录一卷，朱熹注，《朱文端公藏书十三种）本。</p>
@@ -993,11 +1026,11 @@
 <p>(13)十卷，《学津讨原》本。</p>
 <p>(14)二卷，文渊阁钞本，《四库全书珍本初集》据之影印。此书为应俊合郑至道《谕俗编一卷》，及彭仲刚《谕俗续一卷》而又为之补论者，其末“择朋友”（敖按：“朋友”二字《四库提要》作“交游”，误)一篇又为元人左祥所增入，《四库提要》说此书“大抵采摭经史故事关于伦常日用者，旁证曲喻以示劝戒，故曰‘谕俗’，文义涉于鄙俚，然本为乡里面作，以文章工拙论之，失其本意矣”。因此书为民间宣传小册之类，故史料价值颇高。</p>
 <p>(15)胡长清《中国民法亲属论》（1939年商务版）p.181，李宜琛《现代亲属法论》p.79，罗鼎《亲属法纲要》（十五年大东版）p.153等书皆把“婚姻撤销”称为“婚姻消灭”，从效果上讲，他们这种说法未可厚非；但从原因上讲，两者不相同。</p>
-<p>(16)乃针对“法律死亡”即“死亡宣告”（declarationofdeath）而言。</p>
-<p>(17)宋代的离婚采取“离婚立法主义”中的“许可离婚主义”，包括一、“自由离婚主义”（principleoffreedivorce）中的“单意离婚”、“两愿离婚”，以及二、“限制离婚主义”中的“裁判离婚”和“强制离婚”。</p>
-<p>(18)参看J.G.Frazer;TotemismandExogamy,London,1910.PartFour.Huth.TheMarriageofNearkinconsideredwithrespecttotheLawofNations,London.1875,p.24.Westermarck:TheHistoryofHumanMarriage.vol.II．p．162．，戴炎辉“同姓不婚”，日本《法学协会杂志》五十三卷八号。</p>
-<p>(19)F．MullerLyer在他的TheFamily（E．W.StellaBrowne英译本）中最攻击此说，认为完全昧于原始人的心理，而强把后来发生的生物学上的知识归在他们身上的缘故。</p>
-<p>(20)此外，还有一种外婚的理由，是说人类对近亲的结婚有一种“天性上的憎恶”，并且天性上就有一种“外婚冲动”（exogamousimpulse），黑尔华德（Hellwald）主此说甚力，但在中国典籍中却找不出例证。</p>
+<p>(16)乃针对“法律死亡”即“死亡宣告”（declaration of death）而言。</p>
+<p>(17)宋代的离婚采取“离婚立法主义”中的“许可离婚主义”，包括一、“自由离婚主义”（principle of free divorce）中的“单意离婚”、“两愿离婚”，以及二、“限制离婚主义”中的“裁判离婚”和“强制离婚”。</p>
+<p>(18)参看J. G. Frazer; Totemism and Exogamy, London, 1910. Part Four. Huth. The Marriage of Near kin considered with respect to the Law of Nations, London.1875, p.24. Westermarck: The History of Human Marriage. vol.II．p．162．，戴炎辉“同姓不婚”，日本《法学协会杂志》五十三卷八号。</p>
+<p>(19)F．Muller Lyer在他的The Family（E．W. Stella Browne英译本）中最攻击此说，认为完全昧于原始人的心理，而强把后来发生的生物学上的知识归在他们身上的缘故。</p>
+<p>(20)此外，还有一种外婚的理由，是说人类对近亲的结婚有一种“天性上的憎恶”，并且天性上就有一种“外婚冲动”（exogamous impulse），黑尔华德（Hellwald）主此说甚力，但在中国典籍中却找不出例证。</p>
 <p>(21)即同姓而又有亲属关系者。</p>
 <p>(22)“裔”字原注“与御名下一字同，改为裔”，当从《唐律疏义》改为“胤”字。</p>
 <p>(23)据长泽规矩也言东京岩崎臣静嘉堂所藏的宋本残卷乃海内孤本，按《四库提要》卷百一子部法家类存目：“《名公书判清明集》十七卷，《永乐大典》本，不著撰人名氏，辑宋元人案牍判语，分类编次，甚署其人之别号，盖用‘文选’称字之例，然名不甚显者，其人遂不可知矣。其词率以文采俪偶为工，盖当时之礼如是云。”姚际恒《好古堂书目》史部法令：“《宋名公书判清明集》，十四卷，四本。”钱大昕《竹汀先生日记钞》”（何元锡编）卷一：“读宋刻《名公书判清明集》，止‘户婚’一门。”上海涵芬楼影印中华学艺社照借的静嘉堂藏本，于民国二十四年印行，收入商务印书馆《续古逸丛书》第三十七种，此书仅存“户婚门”，史料价值极高。参看仁井田升《清明集户婚门の研究》（《东方学报》东京第四册）。</p>
@@ -1086,11 +1119,11 @@
 <p>(106)按此种情形就法理言，已犯义绝之罪，参看三十八节“义绝”部分。</p>
 <p>(107)四十卷，《聚珍版丛书》本。</p>
 <p>(108)乃对单意离婚而言，又名“合意离婚”、“协议离婚”、“无因离婚”、“专权无用离婚”，参看昭和十二年河出书房出版之《家族制度全集》第一部《史论篇》Ⅱ“离婚”内中川善之助《离婚史概说》p.1以下及第二部《法律篇》Ⅱ“离婚”内宫崎孝治郎《协议离婚论》p.50以下。</p>
-<p>(109)参看CharlesA.Ellwood,SociologyandModernSocialProblems.</p>
+<p>(109)参看Charles A. Ellwood, Sociology and Modern Social Problems.</p>
 <p>(110)“礼”字原注“犯翼祖庙讳改为礼”，当从《唐律疏义》改为“敬”字。</p>
 <p>(111)二卷，《稗海》本。</p>
 <p>(112)六十卷，宋郎晔注，宋刊本，乌程张氏藏有上半部；南海潘氏藏有下半部，《四部丛刊初编》据之影印，缺卷部分以成化本补入。</p>
-<p>(113)乃婚姻当事人之一方据法定原因向法院（官署）诉请判决与他方离婚之谓。又名“呈诉离婚”（divorceafterpetition）、“请求离婚”、“司法离婚”、“限制离婚”。</p>
+<p>(113)乃婚姻当事人之一方据法定原因向法院（官署）诉请判决与他方离婚之谓。又名“呈诉离婚”（divorce afterpetition）、“请求离婚”、“司法离婚”、“限制离婚”。</p>
 <p>(114)五十四卷，《聚珍版丛书》本。</p>
 <p>(115)程树德《中国法制史》与李宜琛《现行亲属法论》皆主张强制离婚分为“由官强制”及“由夫强制”两种。他们把“七出”归做“由夫强制”（程书p.152-l53，李书p.84），我的意思强制离婚中所谓的强制，当专指官署而言，七出本来就没有强制性（详见注117），完全视丈夫或夫家单方面的意思而定，故我把它归入“单意离婚”里。</p>
 <p>(116)《庆元条法事类》卷八十“杂门（诸色犯奸）户令”：“诸妇人犯奸，非义绝，并与夫之缌麻以上亲奸未成，离与不离，听从夫意；被夫同居亲强奸，虽未成，而妻愿离者，亦听。”这句算是一种“准”义绝的现象，亦可仳离，唯属于单意离婚而非强制离婚。</p>
@@ -1126,7 +1159,7 @@
 <p>(146)宋本，日本东京岩崎氏静嘉堂文库所藏。</p>
 <p>(147)十四卷，附“杂文”，《四部丛刊续编》本。</p>
 <p>(148)应俊《琴堂谕俗编》卷上“重婚姻”辑郑至道的话：“……今尔百姓，婚姻之际，多不详审，闺阉之间，恩义甚薄，男夫之家视娶妻如买鸡豚；为妇人者视夫家如过传舍，偶然而合；忽尔而离，淫奔诱略之风，久而愈炽，诚可伤也。”</p>
-<p>(149)宋人甚至有把积阴德视为登科进取的必要条件（necessarycondition）的，如洪迈《夷坚甲志》卷第五“许叔徽”：“……家素贫，梦人告之曰：‘汝欲登科，须积阴德。’”</p>
+<p>(149)宋人甚至有把积阴德视为登科进取的必要条件（necessary condition）的，如洪迈《夷坚甲志》卷第五“许叔徽”：“……家素贫，梦人告之曰：‘汝欲登科，须积阴德。’”</p>
 <p>(150)见《国立北京图书馆馆刊》第八卷第一号p.69以下。按宋太祖开宝只九年（968-976），故所谓“开宝十年”实为宋太宗太平兴国二年（太平兴国元年与开宝九年同在一年之中），仁井田升在《敦煌发见唐宋时代の离婚状》（昭和十六年，《东方学报》（京都）第十一册第四分）一文中书为太平兴国三年（戊寅，978），似有未当。</p>
 <p>(151)此项文件之标点校勘皆据仁井田升《支那身分法史》p.696-697。</p>
 <p>（后记）</p>
@@ -1190,7 +1223,7 @@
 <p>可是，当我细读这本文集年谱合刊，尤其是徐道邻先生“谨述”的年谱部分，我忍不住感到一阵失望。我忍不住要说，这本合刊是不足为训的，它是一本以打开天窗的手法以求达到曲解历史、满足感情的著作，它在表面上似乎做到了“子‘不’为父隐”的开明，但在骨子里却企图引导读者做主观判断，以便转移人们对一个心狠手辣、纵横捭阖的宦海人物的印象，这是一件很不得体的事。做为一个学历史的人，我不认为民国史中关于徐树铮这一段史事，还有多少翻案文章好作，他的为人行事早已为天下人所共见，任何对他的洗刷都难免落“愈描愈黑”之讥，何况是他亲生的儿子呢？</p>
 <p>徐道邻先生这本书的第一个大毛病是史料运用的不当。从这一点上，我们不得不怀疑徐先生的程度与眼光。例如他“大量引用原文”（页130）的“重要资料之一”（页130）——陶菊隐的《北洋军阀统治时期史话》，他竟把它改名为“北洋史话”，“军阀”、“统治”等字样都被删去了，我不知道这是什么“史法”？（类似的妙事如页265见胡适，“建设理论集”等字样，也会使一般读者弄不清是怎么回事。“建设理论集”只是《中国新文学大系》的副书名，怎么引用史料，不写书名？何况引用林纾的“荆生”，当从《新申报》上直接去引，也不该转引胡适的二手货色。）陶菊隐的书是四十六年（1957）大陆生活-读书-新知三联书店出版的，他的资料来源多导源于张国淦（乾若）的回忆，张国淦虽然做过府院秘书长和六任总长，但是用他来做“人证”（testimony）是否孤证？这都是重要的问题。徐先生不对史料做严格的鉴定工作，没有“外批评”（externalcriticism），也没有“内批评”（internalcriticism），也不管张国淦、陶菊隐是处于怎样的一种“特殊情形”（specialcondition）下写的历史，就开始大量引用，有时甚至连抄九页（页178-187）之多，这是何等不妥当的做法！更可笑的是，徐先生选用“史料”，竟滥用到《民国通俗演义》（如页180、220、227、289）一类书，这真是荒唐透顶了！民国以来，广益书局式的《中华民国史演义》、《李纯历史轶事合刊》、《张作霖演义》等书在民间流传很多，影响如何不得而知，但是做为立论的根据却是一件非常不成样子的事。徐先生这种外行做法还不止此，他有时又用“有人看过”一种“小报”的方法（页223）来做为论据，这都是毫无基本史学方法训练的大错误！</p>
 <p>徐先生这本书的第二大毛病是史例法度的不严。盖谱牒之学，本不过是供做传记写作的基料，它的骨架是以事系时，故义例不可不纯。例如徐先生这本年谱，在一岁条下，沿用了旧式降生神话的书法（页139-140），这是很荒诞的；二十三岁条下忽然插入张之洞过保定假装瞌睡那一段（页146），跟着又发了一段议论，实在没有必要；三十一岁条下3月9日“长女璎环生”一段，不该放在11月之后；四十六岁条下“二十年后的申冤”一节，尤其没有放在民国十四年后的道理（页329-331），这些都是在史例上欠斟酌的地方。还有一点不妥的是，徐先生往往在年谱中间，插进个案（casehistory）处理式的标题（页169、175、179、188、190、197、199、202、204、206、208、211、214、216、220、222、224、225、236、242、247、280、283、285、292、295、297、323、329），有时显得非常琐碎，并且这样划分，也不合年谱体例。尤其不成体统的是，徐先生在三十六与四十岁条下，各插入一段长文（关德懋的《徐又铮先生创办正志中学述略》页169-171；朱佛定的《考察欧美日本各国政治日记》页297-323），显得非常不伦不类。这种做法，自然也难逃史例芜杂之讥。此外在年谱一开始，徐先生就套上“男道邻谨述”的迂腐章法（页139），在年谱收尾，又出现“冯贼”等价值染色名词（页329），这些都是不合现代的历史写法的；临到最后一段，徐先生居然写出了什么“未能手刃父仇”的话（页331），我不知道这是什么时代的观念！这种观念与句子居然出自我们德国学法律的徐先生之手，尤其使我们不能了解了！</p>
-<p>这本书的第三个大毛病是史实解释的荒谬，这是最令我们不敢领教的。但是若想到徐先生写此书时的“情感背景”（emotionalbackground），我们自然也就不必奇怪。例如徐先生“序”里说：</p>
+<p>这本书的第三个大毛病是史实解释的荒谬，这是最令我们不敢领教的。但是若想到徐先生写此书时的“情感背景”（emotional background），我们自然也就不必奇怪。例如徐先生“序”里说：</p>
 <p>就他（徐树铮）的时代背景来说，在若干方面，我父亲是一个很“新”的人物：他弃文就武，剪辫子，主张共和，反对帝制，服中纳妾，称兵造反，多半都是他那时老一辈的士大夫所不为的。但是另一方面，他反对白话文、反对女子解放，他提倡读经，他相信中国文化至上，他信仰中国的伦理观念，他喜欢作诗词古文，推崇遗老式的文人。这一切一切，现在看起来，他又像是站在“旧”的一方面。（页2）</p>
 <p>这种解释是不能教我们心服的。徐树铮“弃文就武”，并不是什么“新”观念，而是因为考不上举人；“剪辫子”是天下通俗，“老一辈的士大夫”也照剪不误；“服中纳妾”又算得什么“新”？如果“新”，根本就不要讨两个姨太太！徐树铮本人根本是一个守旧派，他从民国前一年认识林琴南开始，一直便是这些遗老眼中的大护法，所以当遗老们想利用安福部的武人的时候，便自然的选到了他的头上。林琴南的“荆生”媚眼抛过来以后，徐先生说他父亲“并没有什么反应”（页266），这也不是持平之论。徐树铮的反应当然不是林琴南所描写的“骈二指按其首”式的笨拙方法，他站在林琴南的背后，替林琴南行了不言之教，在朝气蓬勃的五四时期笼罩了可怕的阴影。我们翻开刘半农的《初期白话诗稿》（星云堂影印），还可以看到当时新派文人那种心有余悸的回忆：</p>
 <p>……黄侃先生还只空口闹闹而已，卫道的林纾先生却要于作文反对之外借助于实力——就是他的“荆生将军”，而我们称为小徐的徐树铮。这样，文字之狱的黑影，就渐渐的向我们头上压迫而来，我们就无时无日不在栗栗危惧中过活。</p>
@@ -1386,17 +1419,17 @@
 <p>关于此一问题，徐教授用了（一）西北筹边的计划，（二）陈毅的撤治交涉及其六十二条款，（三）陈毅交涉的失败，（四）撤治交涉之急转直下，四个跨越年代的标题，三十八页的篇幅来大书而特书。不错，外蒙撤治问题是徐树铮先生用他的机智，配合当时国际局势及外蒙的局面，与“兵临城下”的声威，完成这一历史任务的。但无论怎样说，不能湮灭陈毅的功劳。撤治问题是陈提出的，中间虽然经过许多波折，但最后的成功也完全是经陈毅之手，民国八年11月22日大总统撤销外蒙自治命令，更是“据都护使驻札库伦办事大员陈毅电呈”所颁发的。即使徐树铮给北京的电报也说：“然非陈（毅）使操纵巧妙，即有策亦属无隙可乘，非高团（第三混成旅第七团）军队坐镇在先，即有威亦难仓卒使成。是事功之立，全出陈使高团之力。”（258页）完全没有否定陈毅的功劳。为什么徐教授一定要说：“陈毅和王公们两三个月来的努力之全部失败。”（224页）并且还说：“然而就是这样根本注定了失败，而且事实上是已经失败了的交涉，还有人认为是天大的功劳，生怕有人抢了去。”（245页）似乎有点过分了。</p>
 <p>我综合前边的大意作一结论，只两句话：《徐谱》不是一本成功的年谱，却是一本不可多得的妙书。（1962年12月12日）</p>
 <p>（李敖按）凤翰此文登在《文星》第六十七号（1963年5月1日台北出版），他答应我收进这本书里做为“附录”，并代我做了一次校改。（1963年5月21日）</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/03.惊世杂文类/历史与人像.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/03.惊世杂文类/历史与人像.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../03.惊世杂文类/你笨蛋，你笨蛋.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../03.惊世杂文类/我是天安门.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1406,16 +1439,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../03.惊世杂文类/你笨蛋，你笨蛋.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../03.惊世杂文类/我是天安门.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1424,12 +1462,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

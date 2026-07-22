@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,77 +81,98 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <p>#《李敖放电集》目录</p>
 <ul>
@@ -216,7 +249,7 @@
 <p>女子无阴毛者</p>
 <p>大陆出版的《汉语大词典》在“白虎”条下有八个定义：1.白额虎；2.西方七宿奎、娄、胃、昴、华、觜、参的总称；3.迷信传说中的凶神；4.饰白虎图像的军旗；5.汉宫殿名；6.古代杂伎中扮演的形象；7.石灰的别名；8.豆腐的别名。但在这些解释中，漏掉了一个最重要的解释，就是“白虎”的另一个定义是“女子无阴毛者”。像《汉语大词典》这么权威的著作，竟为了道学的眼光，遗漏了活生生的汉语语言。未免令人叹息。（1999/11/2）</p>
 <p>国民党新闻局长最怕阴毛</p>
-<p>有人怕女人是白虎，甚至有嫖客碰到白虎的妓女拒绝付钱，但有人怕女人有阴毛，传说性心理学家霭理士（HavelockEllis）看到有阴毛的女人会昏倒，现在，要昏倒的不止霭理士了，还要包括国民党的新闻局长，我的老同学程建人。新闻局管制言论、出版自由，揭橥三点不露，也许从性心理学上来看，这也是一种“阴毛恐惧症”。（1999/11/2）</p>
+<p>有人怕女人是白虎，甚至有嫖客碰到白虎的妓女拒绝付钱，但有人怕女人有阴毛，传说性心理学家霭理士（Havelock Ellis）看到有阴毛的女人会昏倒，现在，要昏倒的不止霭理士了，还要包括国民党的新闻局长，我的老同学程建人。新闻局管制言论、出版自由，揭橥三点不露，也许从性心理学上来看，这也是一种“阴毛恐惧症”。（1999/11/2）</p>
 <p>台湾是白虎星</p>
 <p>白虎星是中国传统星相家认定的一种凶神，逢之不吉，谁碰到谁倒霉。《后南柯》书中有道是：“少刻有白虎星临门，蚁子（指公主）不必惊慌。”《文明小史》书中有道是：“逢之的母亲央了一位合婚的先生占了一占……但是两下合起来，冲犯了白虎星，父母不利，有点儿刑克。”茅盾《春蚕》书中有道是：“那母狗是白虎星，惹上了她就得败家。”等是也。其实，台湾也是个白虎星，在蒋介石时代，访问台湾的外国首要，回国时，不是人被绞死就是飞机撞山，前者如土耳其总理孟德勒斯，后者如泰国空军总司令差林杰，等等等等一应俱全。今天白虎星又发威，报上登“马其顿总统大选，两强出线，反对党佩特科夫斯基、执政党特拉伊柯夫斯基进入决选，亲台北的图普考夫斯基出局。”台湾白虎星，最近收买马其顿而花的钱，全泡汤了。一方财空，一方人空，真所谓人财两空。（1999/11/2）</p>
 <p>李敖的“阴毛”</p>
@@ -225,16 +258,16 @@
 <p>1999年11月3日</p>
 <p>宋美龄偷洋人养洋汉</p>
 <p>美国名女人富留尔考尔斯（FleurCowles）在1996年出了一本书《交友并据为己有》（SHEMADEFRIENDSANDKEPTTHEM）。书中并谈到他丈夫麦克考尔斯（MikeCowels），回忆1942年与美国罗斯福总统特使威尔基（WendellWillkie）到重庆的事，内容极妙，全文如下：</p>
-<p>That31,000-miletripwasmadeinforty-ninedaysinthefastestavailablebombertoensureWillkie'ssafereturn.HavingdefeatedWillkieinthePresidentialelectioncampaign,PresidentRooseveltgavehispermissionforhimtomakethe'OneWorld'tripbutobviouslyhadtoseehimsafelybacktoavoidbeingaccusedofhavingridhimselfofhispoliticalopponent.MikeCowleswasinvitedtogoalong.</p>
-<p>InChungking,China,thetwomenfinallymettheGeneralissimoandhiswife,MmeChiang,anddiscoveredthattheChinesecouplewerecomparativestrangers.Itwassaidtheyhadmarriedstrictlyforconvenience,sothathemightbecomeapartofthefabulouslyrichSoongfamilywhohadonceshapedChina'shistory.Onthishistorictrip,MmeChianghadherdangerous,short-livedaffairwithWendellWillkieafterahugewelcomingreceptionbytheGeneralissimo.Thisbriefloveaffairhadanamazingconsequence.IthadtakenplaceinMmeChiang'ssecretapartmentonthetopflooroftheWomen'sandChildren'sHospital.MmeChiangwassobesottedbyWillkiesheaskedtoseeMikeCowlesprivatelybeforetheyleftChina,pleadingwithhimtomakesurethatWillkiewouldbeatRooseveltinthenextelectionforthePresidency.Sheofferedtopayanycosts!</p>
-<p>Theconversationconcludedwithheragitatedpromise:'IfWendellcouldbeelected,heandIwouldruletheworld,ItheOrient,Wendelltherest.'</p>
+<p>That 31,000-mile trip was made in forty-nine days in the fastest available bomber to ensure Willkie’s safe return. Having defeated Willkie in the Presidential election campaign, President Roosevelt gave his permission for him to make the ‘One World’ trip but obviously had to see him safely back to avoid being accused of having rid himself of his political opponent. Mike Cowles was invited to go along.</p>
+<p>In Chungking, China, the two men finally met the Generalissimo and his wife, Mme Chiang, and discovered that the Chinese couple were comparative strangers. It was said they had married strictly for convenience, so that he might become a part of the fabulously rich Soong family who had once shaped China’s history. On this historic trip, Mme Chiang had her dangerous, short-lived affair with Wendell Willkie after a huge welcoming reception by the Generalissimo. This brief love affair had an amazing consequence. It had taken place in Mme Chiang’s secret apartment on the top floor of the Women’s and Children’s Hospital. Mme Chiang was so besotted by Willkie she asked to see Mike Cowles privately before they left China, pleading with him to make sure that Willkie would beat Roosevelt in the next election for the Presidency. She offered to pay any costs!</p>
+<p>The conversation concluded with her agitated promise: ‘If Wendell could be elected, he and I would rule the world, I the Orient, Wendell the rest.’</p>
 <p>以上大意是说：</p>
 <p>这四十九天31000英里的旅程，是搭乘最快的轰炸机去，当时罗斯福总统刚在总统竞选中打败了威尔基后，他派威尔基去做“天下一家”的旅程，但又显然要威尔基平安回家，罗斯福不想要背上铲除政治异己的罪名。麦克考尔斯被邀同行。</p>
 <p>在重庆，我先生和威尔基终于与蒋介石、宋美龄见面。他们发现蒋介石这对夫妻相当怪异。有人说蒋介石对宋美龄只是便宜行事，这婚姻使蒋介石和富有并主宰中国历史的宋氏家族挂勾。在这趟历史之行中，蒋介石隆重接待，随后威尔基不知死活的和宋美龄发生了一段短暂的奸情。这好事发生在宋美龄妇幼医院楼顶的秘密套房，宋美龄和威尔基沉溺在这段酒色的日子中。临离中国前，宋美龄私下和我先生会面，拜托他无论如何要让威尔基在下次总统选举中打败罗斯福，她承诺她愿意付出任何代价。</p>
 <p>这场会面宋美龄最后激动的许愿说：“如果威尔基选上总统，他和我就统治全世界。我统管东方，威尔基管其它的。”</p>
 <p>本月1号到3号，由国民党大员故宫博物院院长秦孝仪主办蒋夫人学术研讨会，所谓中外学者两百余人参加。以上宋美龄偷洋人养洋汉史料，自然早被出局了。真的历史，还得靠我李敖来呈现。（富留尔考尔斯的书早已绝版，我的好友陈兆基从加拿大买到一册，寄给我，我特别感谢他。）（99/11/03）</p>
 <p>宋美龄要用原子弹炸大陆</p>
-<p>富留尔考尔斯书中又有一段，也是妙文。她说，后来在台湾见到宋美龄，宋美龄表示对美国的不满，她说YouAmericansarefools.YouhavetheAtomBomb.Whydon'tyouthrowitonChina?（你们美国人真是笨蛋，你们有原子弹，为什么不丢到中国大陆？）宋美龄对自己同胞的热爱，由此可见！（99/11/03）</p>
+<p>富留尔考尔斯书中又有一段，也是妙文。她说，后来在台湾见到宋美龄，宋美龄表示对美国的不满，她说YouAmericansarefools.YouhavetheAtomBomb.Whydon’tyouthrowitonChina?（你们美国人真是笨蛋，你们有原子弹，为什么不丢到中国大陆？）宋美龄对自己同胞的热爱，由此可见！（99/11/03）</p>
 <p>余光中的假诗境</p>
 <p>北京寄来《徐林正文化专稿》其中说：“9月19日下午，继余秋雨之后，台湾著名诗人余光中在岳麓书院设坛讲学，数百名观众在雨中听了余光中先生的教诲。但有圈内认识指出，主办者故意让观众在雨中听讲，与真正的学术交流背道而驰。北京一位学者告诉记者，他从互联网看到了演讲的全过程，余光中的演讲和主办者的苦心让人佩服，但余光中在室内演讲，观众在室外穿著雨衣冒雨聆听，让人感到不是滋味，为什么不安排岳麓书院其它地方，以免让观众饱受淋漓之苦呢？也许为了追求直播的效果，但形式大于内容，并不可取。这会让人产生这样一个感觉：余光中与观众的交流不是平等的。而平等是学术交流的基础。这显然不是主办者的意思。另一位观众指出，完全可以在室内听讲，而直播效果自然不会差，而人为的制造‘冒雨听讲’，似与岳麓书院的基本精神不符。由湖南经济电视台等单位主办的‘与余光中先生相聚千年庭院’9月19日下午4时举行。约当天下午2时，就有为数不少的观众冒雨守候在岳麓书院的门口。问为什么来得那么早，一位湖南大学的学生说，按耐不住，对余先生很仰慕。下午4时，在余光中演讲开始之前，主办者组织学生朗诵是余光中的四首诗歌。也许是巧合，也许是有意安排，朗诵的诗歌有一首叫《等你，在雨中》。”……</p>
 <p>太荒谬了吧？在我李敖的眼中，“诗人”演假戏，竟演到让别人淋雨以达成“等你，在雨中”的假诗境，这种造假，多恶心人哟！幸亏这回用的是“等你，在雨中”那首，若用“天空多么希腊”那首，读者恐怕要跑到希腊天上才能奉陪呢！（99/11/03）</p>
@@ -250,7 +283,7 @@
 <p>更妙的，还有统一定价呢。在“地下组织协调买票价格”项下，报导说：“你可相信？类似民代的多席次选举，有着类似‘公平会’的地下组织，协调统一买票价格。据了解，中部某地方县市议员选举时，就有大哥级的人物出面召集同选区的候选人，要求大家买票价格最高不能超过一千元，如果有人破坏行情的话，这个人的脚筋可要小心一点！”</p>
 <p>呜呼！“民主先生”李登辉领导下的台湾民主政治！不知把李登辉当封面人物，奉为“民主先生”的美国媒体做何感想？（1999/11/4）</p>
 <p>掩目盗名</p>
-<p>自从1975年泰国跟“中华民国”断交后，台湾在泰国的代表衙门已改名五次了。今天中央社发稿说：“中华民国驻泰国代表处正式改名为中华民国‘驻泰国台北经济文化办事处TAIPEIECONOMICANDCULTURALOFFICEINTHAILAND’。”明明英文是TAIPEI（台北），却硬在台湾岛上改成“中华民国”，这不是掩耳盗铃式的掩目盗名吗？口口声声维持国格，你的“国名”却被逼二十四年中要改换五次之多，你还是两国论中的一国吗？（1999/11/4）</p>
+<p>自从1975年泰国跟“中华民国”断交后，台湾在泰国的代表衙门已改名五次了。今天中央社发稿说：“中华民国驻泰国代表处正式改名为中华民国‘驻泰国台北经济文化办事处TAIPEI ECONOMIC AND CULTURAL OFFICE IN THAILAND’。”明明英文是TAIPEI（台北），却硬在台湾岛上改成“中华民国”，这不是掩耳盗铃式的掩目盗名吗？口口声声维持国格，你的“国名”却被逼二十四年中要改换五次之多，你还是两国论中的一国吗？（1999/11/4）</p>
 <p>“心灵捕手”VS“洋屌捕手”</p>
 <p>国民党秘书长章孝严昨参加“蒋夫人宋美龄女士与近代中国国际学术讨论会”闭幕式致词时，推崇宋美龄是“跨世纪最伟大的心灵捕手”，也是“从事对美外交工作者的最高标竿，她的志节与勋业将长留人们心灵深处，代代相传，永不遗忘。”</p>
 <p>据我看来，宋美龄绝非“心灵捕手”而是“洋屌捕手”，因为她偷洋人养洋汉的“最高标竿”，原来是威尔基身体下部的“最高标竿”！证据已见昨天的《李敖电子报》。章孝严马屁拍得太离谱，离谱得“将长留人们心灵深处，代代相传，永不遗忘。”（1999/11/4）</p>
@@ -287,7 +320,7 @@
 <p>李敖电子报的留言版上，澎湖的李国谦张贴说：“1999年11月1日自立晚报刊登中研院院长李远哲应国立北科大校庆之邀，发表专题演讲。李远哲曾批评说：‘三、四十年前，台湾政治处于高压统治、白色恐怖的年代，许多国立大学毕业的学生一窝蜂跑到国外，旅居国外成为移民。现在，他们时常反过来批评、指责台湾，对于台湾社会而言，他们是逃兵，对于台湾没有贡献可言，没有资格批评台湾。’”“但是，当年李院长为了逃避兵役，请求其研究所指导教授，帮忙搞一份他们会制造原子弹的证明文件，使当年的蒋介石特准而免除兵役。之后，李远哲便前往美国深造去了，更因而入了美国籍，成为外来移民的美国人。李远哲在美国发展的这段期间，正值台湾民主运动遭受国民党强力打压之时，请问李院长此时身在何处，他好象连支持台湾民主运动的动作都没有？李远哲所谓的‘台湾逃兵’，究竟是指怎样的人？对于一个既是国防上、又是民主运动上真正的逃兵而言，其立论究竟何在？实令人心生疑窦。”“那些现正旅居国外的‘逃兵’，对于台湾或许没有什么贡献可言，但至少也没有造成什么危害。反观李远哲自回台湾‘贡献心力’以来，不断地自我膨胀，不仅垄断学术资源，更时常逾越其身份及职权，而胡搞瞎搞，致使台湾学术界乃至政界，一片乌烟瘴气，实令人痛心疾首。所以，仔细想一想，那些没有贡献的，反倒胜过那些有负面贡献的。”</p>
 <p>上面李国谦的留言，甚为精到。它使我们看出逃兵其实有两种：一种是逃了以后，又跑回来接收别人战争成果的；另一种是一逃到底，不好意思再回来的。后面那种看似消极，其实比前面那种还知耻知病，至少自知当年逃走虽无益国人，但今天不复回来也不祸害国人，比起李远哲、沈富雄诸公来，这些一逃到底的逃兵，毕竟像个美国人也！（1999/11/5）</p>
 <p>代老美抗议</p>
-<p>美国人要抗议了：当年台湾穷困时候、危险时候，你们台湾人跑到美国来，吃我们的面、喝我们的水、拿我们的博士、入我们的国籍。……今天，住台湾有利可图了，你们跑回台湾，美国人不做了，又回头做中华民国的国民了。他妈的我们美国人招谁惹谁了，凭什么做你们台湾人的跳板！Damnyou！Damnyou！Damnyou！（1999/11/5）</p>
+<p>美国人要抗议了：当年台湾穷困时候、危险时候，你们台湾人跑到美国来，吃我们的面、喝我们的水、拿我们的博士、入我们的国籍。……今天，住台湾有利可图了，你们跑回台湾，美国人不做了，又回头做中华民国的国民了。他妈的我们美国人招谁惹谁了，凭什么做你们台湾人的跳板！Damn you！Damn you！Damn you！（1999/11/5）</p>
 <p>评改余光中的“无论”</p>
 <p>1998年1月3日，余光中发表一首《无论》，我看了他的中文，实在不敢领教。乃就其原作，予以改写，改出来的，不但有韵、而且出神，夏铸九教授极喜之。现将两诗对照刊出，以见余光中的中文多烂而李敖的中文多好也。</p>
 <p>无论（余光中）</p>
@@ -327,12 +360,12 @@
 <p>四、查秦孝仪并非军人身份，竟在陆军总司令部土地上非法占用三十七年之久，陆军总部包庇图利国民党大员，不但置而不问，反以眷村福利护航之，其渎职自应查究。在谢委员追问下，国防部长蒋仲苓已承诺处理，此一承诺早见于八十七年4月7日《中国时报》。</p>
 <p>五、如今一年已过，蒋仲苓已下台，一切承诺全部放空。现在你做国防部长了，请问你要怎么办？“丑媳妇总要见公婆”，你是俏媳妇，总不好再推拖了吧？（1999/11/8）</p>
 <p>再改余光中的烂诗</p>
-<p>寄件者：Ultima<a href="mailto:cool4249@ksts.seed.net.tw">cool4249@ksts.seed.net.tw</a></p>
+<p>寄件者：Ultima <a href="mailto:cool4249@ksts.seed.net.tw">cool4249@ksts.seed.net.tw</a></p>
 <p>收件者：<a href="mailto:leeao@leeao.com.tw">leeao@leeao.com.tw</a></p>
 <p>传送日期：1999年11月5日PM10:17</p>
-<p>主旨：SoNice!</p>
+<p>主旨：So Nice!</p>
 <p>李敖先生你好，我太喜欢你了，今天我看到你的电子报，修改余光中先生的诗，真是太棒了，我一向不喜欢他的诗跟散文，尤其是诗，总让我觉得赘字太多，看到你改他的诗，我才知道，不只我一个人想改他的诗。</p>
-<p>寄件者：KarenCheng[kaiyou@ms10.hinet.net]</p>
+<p>寄件者：Karen Cheng [ kaiyou@ms10.hinet.net]</p>
 <p>寄件日期：1999年11月7日星期日PM2:40</p>
 <p>收件者：leeao@leeao.com.tw</p>
 <p>主旨：关于“无论”</p>
@@ -340,21 +373,21 @@
 <p>你的改写作品确实比余光中先生的好。</p>
 <p>学生凯榕敬上</p>
 <p>E-mail中收到上面的信，谢了。你们引起我评性大发，特附我另一首改诗，以博一笑。</p>
-<p>桑塔耶那（GeorgeSantayana）有“给W.P.”诗，余光中曾经译过，其中第二首译得很烂，我在1972年曾予改译，今附原诗及余光中和我的诗于后：</p>
-<p>Withyouapartofmehathpassedaway;</p>
-<p>Forinthepeopledforestofmymind</p>
-<p>Atreemadeleaflessbythiswintrywind</p>
-<p>Shallneverdonagainitsgreenarray.</p>
-<p>Chapelandfireside,countryroadandbay,</p>
-<p>Havesomethingoftheirfriendlinessresigned;</p>
-<p>Another,ifIwould,Icouldnotfind,</p>
-<p>AndIamgrownmucholderinaday,</p>
-<p>ButyetItreasureinmymemory</p>
-<p>Yourgiftofcharity,andyoungheart'sease,</p>
-<p>Andthedearhonourofyouramity;</p>
-<p>Fortheseoncemine,mylifeisrichwiththese.</p>
-<p>AndIscarceknowwhichpartmaygreaterbe,</p>
-<p>-WhatIkeepofyou,oryourobfromme.</p>
+<p>桑塔耶那（George Santayana）有“给W. P.”诗，余光中曾经译过，其中第二首译得很烂，我在1972年曾予改译，今附原诗及余光中和我的诗于后：</p>
+<p>With you a part of me hath passed away;</p>
+<p>For in the peopled forest of my mind</p>
+<p>A tree made leafless by this wintry wind</p>
+<p>Shall never don again its green array.</p>
+<p>Chapel and fireside, country road and bay,</p>
+<p>Have something of their friendliness resigned;</p>
+<p>Another, if I would, I could not find,</p>
+<p>And I am grown much older in a day,</p>
+<p>But yet I treasure in my memory</p>
+<p>Your gift of charity, and young heart’s ease,</p>
+<p>And the dear honour of your amity;</p>
+<p>For these once mine, my life is rich with these.</p>
+<p>And I scarce know which part may greater be,</p>
+<p>-What I keep of you, or you rob from me.</p>
 <p>余光中译</p>
 <p>我生命的一部已随你而消亡；</p>
 <p>因为在我心里那人物的林中，</p>
@@ -387,7 +420,7 @@
 <p>对比之下，优劣立判。以上对比，证实了余光中的中文实在不行。以那样烂的中文，还要做诗人，诗人何辜，中文何辜啊？（1999/11/8）</p>
 <p>1999年11月9日</p>
 <p>李敖：昔之“捣蛋鬼”，今之大师</p>
-<p>中国邮报（ChinaPost），人物专访栏（People），April19,1998byYuehFel</p>
+<p>中国邮报（China Post），人物专访栏（People），April 19, 1998 by Yueh Fel</p>
 <p>社会批评家李敖，无疑的是台湾最具争议性的人物，他同世代的人都已默默无闻的退隐了，他却依然精力充沛，不断的工作，保有他历久不衰的盛名。</p>
 <p>这位历史教授，曾因政治犯二次入狱。自认有工作狂，写了数十本书和许多文章，严厉批评台湾的政治和社会。至于被冠以“捣蛋鬼”（troublemaker）之名，他不以为忤。</p>
 <p>“一个健康的社会需要我这样的人，”李敖说。坐在藏书万册的书房沙发椅上，这一架架的书籍，据说他都一字不漏的细读过了。“当然了，一个有病的社会也需要我。”他又说。</p>
@@ -398,7 +431,7 @@
 <p>“我从来不能畅所欲言，”他说：“我的自由仍是受箝制的。”戒严法的时代已成了过去，“他们却能用其它法子来打压人，譬如说可以用经济制压嘛！”</p>
 <p>李敖两次入狱，70年代初期被捕坐了五年八个月的监牢；1981年又遭羁居半年。当局是已涉嫌台独活动把他拘捕，今日听来，以这个罪名加诸在这“外省人”身上实在可笑！只因彭明敏教授和其它台独人士草拟的台独宣言“文字还写得不错，当局想是我捉刀的！”李敖告知。彭明敏是台独领袖，也是1996年民进党总统候选人。不仅如此，那些年代台独份子和他们的刊物也常常提起李敖。</p>
 <p>“我是给他们陷害了！”李敖笑着调侃说：“他们是给‘恶狗’一个好名声吧！”</p>
-<p>台湾开始民主化运动后，当局对李敖的监视和打压才渐松弛些，然而在官方正式的“容忍”（OfficiallyTolerated）之前，他已复出文坛，1979年，他重刊了《传统下的独白》一书；在反对团体和党派合法化之前，他也发行了“一连串”的反政府杂志。</p>
+<p>台湾开始民主化运动后，当局对李敖的监视和打压才渐松弛些，然而在官方正式的“容忍”（Officially Tolerated）之前，他已复出文坛，1979年，他重刊了《传统下的独白》一书；在反对团体和党派合法化之前，他也发行了“一连串”的反政府杂志。</p>
 <p>“那时国民党常搅这种诡计，先给了你出版登记执照，让你把杂志出版，一期出了后就查封停刊一年。”他说，“我对付的法子就是先去登记拿下好几个出版执照，查封了这本杂志，我就换另一个名字，继续出版，这么就把杂志办下去。”</p>
 <p>今日官方已给他批评得“麻木”了，他的冷讽热嘲常常是针对着其它反对党。当然也没有特务跟监了，反而是爱慕他的读者或电视节目观众，他们常常围着他索取签名，可是仍不时接到威胁他的电话和黑函。</p>
 <p>“我跟前妻离婚后，一天半夜三点有人打电话来，说要杀我全家，我告诉他要杀就马上过来罢，我家也只有我一人！”他说。他还告诉那人还得排队等吧，因为要杀他的人不少咧！</p>
@@ -415,12 +448,12 @@
 <p>1961年，他在文星杂志发表了一篇文字，颇严厉的批评了一位师长，不久他就走入了这奇特的行业，成为一个职业的讽世者！</p>
 <p>“从1966年到1980年，有十四年之久，我在台湾是全面被封杀的。”他告诉：“我的名字一概不准在报纸、杂志、收音机或电视上提及。”</p>
 <p>为了生活，他跟驻台的美军买旧冰箱和冷气，再转卖给国人。这段期间，他的日记和一些书文也在海外刊行流传。1971年，外国报纸报导了他被捕下狱的新闻，也更激发了国内人对他和他文字的广泛好奇和兴趣。</p>
-<p>1980年，他跟影星胡茵梦结婚，胡的英文名字叫Terry，他戏昵地叫她“疯苔丽”（CrazyTerry）。三个月之后，这场婚姻就结束了。“我俩不合！”他说。</p>
+<p>1980年，他跟影星胡茵梦结婚，胡的英文名字叫Terry，他戏昵地叫她“疯苔丽”（Crazy Terry）。三个月之后，这场婚姻就结束了。“我俩不合！”他说。</p>
 <p>六年前他再婚了，娶了比他小三十岁的王志慧，可把那写八卦新闻的记者们看傻了眼！！</p>
 <p>今天，他回顾往日，说只有一件事令他遗憾，“我虽然老了，可是我的敌人多半都死了。”</p>
 <p>他不沾烟酒，也不喝茶、咖啡和凉水，生活饮食习惯清净，因此比他同年龄的猫王普利斯莱，或电影兼导演伍迪艾伦都长命健康。</p>
-<p>李敖常喜欢跟名记者孟肯（H.L.Mencken）相提并论，孟氏是美国廿世纪初期最有影响力的社会批评家。李敖自认是中国五百年来白话文写得最好的人；孟氏也编纂了一本划时代的词典《美语词典》，孟氏对美当时情况作全方面的批判，特别是针对中产阶级，刻薄的给他们取了“booboisie”的外号，是把bourgeoisie（中产阶级）一字前半改成音相似的“boob”加上后半“oisie”，boob是笨蛋的意思！</p>
-<p>美国工会领袖和社会主义者戴布兹（EngeneDebs）也是李敖心仪的人物。虽然两人政治意识型态不一样，但为人行事却神似。戴氏曾四次代表美国社会党参加总统大选。1920年，他身在狱中，仍参加大选，他是为反对美国参与第一次世界大战，已被判罪，关在亚特兰大监狱有两年之久了！</p>
+<p>李敖常喜欢跟名记者孟肯（H. L. Mencken）相提并论，孟氏是美国廿世纪初期最有影响力的社会批评家。李敖自认是中国五百年来白话文写得最好的人；孟氏也编纂了一本划时代的词典《美语词典》，孟氏对美当时情况作全方面的批判，特别是针对中产阶级，刻薄的给他们取了“booboisie”的外号，是把bourgeoisie（中产阶级）一字前半改成音相似的“boob”加上后半“oisie”，boob是笨蛋的意思！</p>
+<p>美国工会领袖和社会主义者戴布兹（Engene Debs）也是李敖心仪的人物。虽然两人政治意识型态不一样，但为人行事却神似。戴氏曾四次代表美国社会党参加总统大选。1920年，他身在狱中，仍参加大选，他是为反对美国参与第一次世界大战，已被判罪，关在亚特兰大监狱有两年之久了！</p>
 <p>李敖从他诸多著作中抽出一本，自豪的指出书中引述了戴氏的一段言辞，他语重心长的谈着自己的评文：“只要有下层阶级，我就同俦；只要有犯罪成份，我就同流；只要狱底有游魂，我就不自由！”（陆善仪译。1999/11/9）</p>
 <p>四岁看大</p>
 <p>我的小女儿我们叫她妹妹。妹妹吃早餐时，不好好吃，她要菲佣Rose打开电视，一边看卡通一边吃。不久，妈妈从外面回来了，妹妹发现妈妈站在她背后，她知道妈妈是不让她早上看电视的，立刻双眉紧皱，改口说：“人家根本不要看电视，Rose讨厌极了，要开电视。我把电视关上了，Rose又打开，非给我看不可，讨厌死了。”</p>
@@ -428,7 +461,7 @@
 <p>难道你要我当年爬到他们床底下目击吗？</p>
 <p>李大师：</p>
 <p>您早！见e-mail您所言蒋夫人养洋汉“最高标竿”之事，小弟实无法相信，烦请大师提出心服口服之实证，谢谢您！并祝一切顺利，身体健康！Jeffrey敬上</p>
-<p>（1999年11月9日星期二AM9:37）</p>
+<p>（1999年11月9日星期二AM 9:37）</p>
 <p>我在1989年出版《蒋宋美龄通奸》一书中，和这次根据美国名女人富留尔考尔斯（FleurCowles）1996年“交友并据为己有”（SHEMADEFRIENDSANDKEPTTHEM）新书而写的《宋美龄偷洋人养洋汉》一文中，已经举证历历，你还要“烦请大师提出心服口服之实证”，你未免有点“迂”了。难道你要我当年爬到他们床底下目击吗？（1999/11/9）</p>
 <p>1999年11月10日</p>
 <p>从“以夷制夷”到“以夷制中国”——李登辉又发贱了！</p>
@@ -445,9 +478,9 @@
 <p>立场何在？就在拆穿你李登辉以下一窝人的谎话呀！你问“为何要根据中共人士及日本学者的单方说法”，其实我们从未根据“中共人士”的单方说法，我们根据的是日本鬼子的白纸黑字！而这些白纸黑字，又是你们满口日本话的“台湾总统”放出来的，试问：1.日本鬼子是你们见的，如你们没说，你为何不更正？2.报导中有“丁远超引述平松的话”一大堆，是否也要问问你“为何要根据”“日本学者的单方说法”而视为可信？3.你的鬼“笔记本”算是什么证据？我们要的是“总统接见外宾全部录音”并且是没有窜改的录音才算。</p>
 <p>明明是李登辉借日本主子的口放空气，放了以后发现苗头不对，乃予以淡化、狡赖，谁会看不出来，又谁会相信这种拙劣的淡化与狡赖？我想到明朝末年“笑府”中的一条“第一声”，说主人陪客人聊天，主人放了一个响屁，很不好意思，他想遮盖这个响屁，就拼命拉椅子，用椅子和地的磨擦声，来瞒天过海，希望客人共识，认同他的放屁不是放屁。主人拉了一阵椅子后，客人说：“还是第一声最像。”李登辉放了臭屁还想赖吗？“还是第一声最像”！（1999/11/10）</p>
 <p>没有真情的诗人</p>
-<p>李敖先生您好：桑塔耶那那首诗实在改得美！无论情、韵、意境都像首“诗”，相较于余光中的译诗，着实大相径庭。感觉上余光中只是直接翻译，看到什么译什么，好象忘了这是首诗耶！晚辈给您鼓掌！（Patrick，1999年11月8日星期一PM5:05）</p>
-<p>李敖老师好：再评余光中的文章中，其中“诗人何辜，中文何辜啊？”请再加上“学生何辜”，不是吗？（YHC，1999年11月8日星期一PM6:17）</p>
-<p>李敖翻译得太好了！太棒了！余光中翻的什么玩意嘛！咬文嚼字看的无煞煞！欺负我们看不懂啊？太过瘾了！再来再来！我还要多看李敖先生的文笔！gogogo！！！李敖加油！我是您“挑战李敖”忠实的观众！（小张，1999年11月8日星期一PM7:45）</p>
+<p>李敖先生您好：桑塔耶那那首诗实在改得美！无论情、韵、意境都像首“诗”，相较于余光中的译诗，着实大相径庭。感觉上余光中只是直接翻译，看到什么译什么，好象忘了这是首诗耶！晚辈给您鼓掌！（Patrick，1999年11月8日星期一PM 5:05）</p>
+<p>李敖老师好：再评余光中的文章中，其中“诗人何辜，中文何辜啊？”请再加上“学生何辜”，不是吗？（YHC，1999年11月8日星期一PM 6:17）</p>
+<p>李敖翻译得太好了！太棒了！余光中翻的什么玩意嘛！咬文嚼字看的无煞煞！欺负我们看不懂啊？太过瘾了！再来再来！我还要多看李敖先生的文笔！go go go！！！李敖加油！我是您“挑战李敖”忠实的观众！（小张，1999年11月8日星期一PM 7:45）</p>
 <p>谢谢你们三位的来信。余光中做为诗人的问题是：1.他的中文能力，实在有问题。2.做为诗人的真情品质，他也有问题。以拜伦为例，他在诗中支持希腊独立，他就言行一致，奔赴独立现场，死生以之。但余光中呢，六四时他大发高论，说：“台湾的社会近年来颇以民主自许，自由自豪。难道我们在争取两千万人的民主与自由之余，竟然无视十亿同胞的民主与自由吗？……天安门广场的胜利，是全中国也是全世界民主自由的胜利。相反地，天安门广场的失败，也是全中国甚至全世界民主自由的挫折，在历史炯炯的注视下，让我们及时站起来，从台北到屏东，一起向对岸大叫：‘天安门，我们来了！’”可是，我们别忘了，余光中这些国民党御用文人，他们在“争取两千万人的民主与自由”上，根本就是一纸空白，而没有任何实际行动。对六四的反应，也没有“及时站起来”而有象样的行动。这种诗人，他们是没有真情的。没有真情的诗人，算是那门子诗人呢？（1999/11/10）</p>
 <p>充气娃娃功德无量</p>
 <p>昨天晚上我在环球电视台《挑战李敖》的节目上，重新提出过去我在东森电视台《李敖黑白讲》中提议的以硅胶女人代替真人妓女的构想，我认为用硅胶女人取代真人妓女，既安全、又卫生、又廉价、又美观、又人道、又功德无量。为了男女平等，当然也可以做硅胶男人，至少可做硅胶dildo（人工阴茎、人工鸡巴、角先生）。网站上已有讨论，有人说：“大部分会去强奸女性同胞的男人，都是因为心里不健全所致，不然，既使没有充气娃娃，男人不是照样可以用手满足自己！所以我觉得，充气娃娃并不能解决性侵犯的问题。”又有人说：“John爱慕Mary已久，忍不住去订做跟Mary一模一样的充气娃娃，后来John食髓知味，一天碰巧遇见真人Mary，心想真人之味不知如何？便抓了真人犯下强暴罪，所以说，人的欲望是无穷的，根本不可能浅尝则止！”又有人说：“触感、质感真的会像吗？那不是像尸体一样？恶！抱着死尸睡觉。”又有人说：“那大概只有在原版的格林童话中，如白马王子般有恋尸癖的人才会喜欢吧！”又有人说：“干脆去买块猪肉不是更真实吗？”……其实，这些忧虑都可用技术和高科技解决。解决以后，声光化电和温度、香味、滑润等等，都可改进得精益求精。至于适应问题，请问假牙岂不和真牙一样好用吗？在乎当事人一念之转也。</p>
@@ -485,7 +518,7 @@
 <p>高玉树字里行间，显然有把台湾关系法的订出归功于他自己之意，一如彭明敏几年前也归功于彭明敏自己一样。事实上，从彭明敏到高玉树，全是往自己脸上贴金，并且故意捏造历史。台湾关系法的订出，根本是杨西昆的功劳，如今彭明敏和高玉树都贪天之功，不可耻吗？（1999/11/12）</p>
 <p>改人者人亦改之</p>
 <p>桑塔耶那为美国自然主义哲学家与美学家，在台湾曾有《美感》一书，西洋美学史里也算是一派宗师，记得好象朱光潜《谈美》（或宗白华的《美学散步》）里曾经有篇章介绍。至于他的美学主张是些什么我从没印象，只记得有则故事说桑老有天在课室中忽然看见窗外阳光清朗，便举步外出，不再走进教室──可以想见其人吧！桑公此诗是首传统十四行（商籁，sonnet）诗体的悼逝诗，对象显然是诗人生命中很有量的一位。诗节形式为4-4-4-2，韵脚为abba-cddc-effe-gg。商籁体诗正如同中国的五七言一样，讲究的是格律形式中吟念出来的韵味与美感，因此译诗时，除非译者一点也不想赏玩和传达它的音韵形式之美，否则当然大可自由意译之；若要遵从它，限制自然无处不在，也难免“戴着枷锁跳舞”。由于语言体系的不同，译者要追随严谨的音韵事实上常有困难，甚高明者，至多猎其韵脚而遗诗行的内在音步，甚至只能勉强求部分气味，但求没有误读。余光中的译诗中显然是有意以服从英诗的格律为先，但在无法追猎每一节韵脚的情况下，配之以中国古典诗aaba的押韵。相对的，李敖的译诗全不玩这一套，先取其境而把部分长音节锯短或把短音节接肢，以至于十四行诗译成十三行，全诗念起来是顺畅得多了，但商籁体诗的游戏规则也被牺牲了。以李敖向来志在自由，当然不愿曲从枷锁，其译诗如此也无可厚非。但可以想的是，李敖虽是文人，毕竟不是文学中人，尤其并不以诗为职志，为什么会想译桑老的这首诗？诗中的平淡和苍老，原都不是执剑战斗的李敖心有所之的情境，我以为对于一个非专业的译诗人，要不是某一首诗让他有特别的感怀，通常他只要念过就可以了，必不至于特别想要把它翻译出来，换句话说，诗中没有他想要传达的意思。因此我可以想到的是，李敖舞剑，意不在桑公，而只在于对诗坛祭酒余光中的挑战，对权威的挑战。而这样的出发点距离桑公的伤逝心境其实是不着边的。再者，译诗时，误读尤其应该避免。</p>
-<p>台大彭镜禧教授最近就曾说译诗首在求没有误读，再求其境界。误读包括整个意思的误读，以及对原诗部分美感的忽视，甚或超越其原有的安排。桑公原诗用语朴素，除了将第二句将心中人影喻为森林以及挚爱的消逝如一树凋零外，全诗并不追求意象之营造，第四行的greenarray原指树上绿叶扶苏，余译却为了押韵的需要而刻意以“嫩绿的春装”扮之，显然在时序及意象上并未完全依循原诗。至于李敖叫倒装的英文立正站好，又叫绿装卸在心里，其实是完全歧出桑公的树林了。两诗一者为人着装，一者叫人脱衫，孰为诗人，孰为湿人？对比之间，大有其趣！复次，桑公原诗第二段前两行承第一段而来，说港湾与村路等也失去了友谊，原有将彼等拟人化的作用，可见怀念逝者的并不只是诗人一人，但在李译中，虽然“情味都今非昔比”语韵俱佳，但也因少了原诗的拟人作用；而第三行似指追寻另一份挚情，又似乎指港湾村路等之外的其它与逝者曾有深厚友谊但已难明确指认的具体场所，第四行一日内老去说明难寻其余的因由，也再度强调逝去的难忍。李译“虽有余情，已难追寻”，虽有其味，但把未逝的部分（余情）当成追寻的对象，似乎未尽明确把握客体。余译“在一日之内”，“在”字赘余；人因悲伤而黑发变白者有之，至于“白发加长”似乎又蹈言过其实之弊了。原诗第三段指出逝者的品质，用语极平淡，译诗也没什么好计较的，但这却也是最难译的部分了。至于《无论》诗中的破鞋是从他年轻时Blowinginthewind而作的《江湖上》之中“一双鞋能走几条街/一辈子能穿几双鞋”走过来，而那双鞋又从嵇康（？）的“平生几两屐”中走来，以今日观之，回顾之情不可谓无，但用语极淡，又强求七言之工整，算不上好诗，按余光中确有很多好诗，而李敖独钟情这破鞋以及六言形式，倒也奇怪也哉？批评别人容易，自己做起来难，也姑且在前人的肩膀上试译之：（韵脚零乱，先自承舞功尚浅）</p>
+<p>台大彭镜禧教授最近就曾说译诗首在求没有误读，再求其境界。误读包括整个意思的误读，以及对原诗部分美感的忽视，甚或超越其原有的安排。桑公原诗用语朴素，除了将第二句将心中人影喻为森林以及挚爱的消逝如一树凋零外，全诗并不追求意象之营造，第四行的green array原指树上绿叶扶苏，余译却为了押韵的需要而刻意以“嫩绿的春装”扮之，显然在时序及意象上并未完全依循原诗。至于李敖叫倒装的英文立正站好，又叫绿装卸在心里，其实是完全歧出桑公的树林了。两诗一者为人着装，一者叫人脱衫，孰为诗人，孰为湿人？对比之间，大有其趣！复次，桑公原诗第二段前两行承第一段而来，说港湾与村路等也失去了友谊，原有将彼等拟人化的作用，可见怀念逝者的并不只是诗人一人，但在李译中，虽然“情味都今非昔比”语韵俱佳，但也因少了原诗的拟人作用；而第三行似指追寻另一份挚情，又似乎指港湾村路等之外的其它与逝者曾有深厚友谊但已难明确指认的具体场所，第四行一日内老去说明难寻其余的因由，也再度强调逝去的难忍。李译“虽有余情，已难追寻”，虽有其味，但把未逝的部分（余情）当成追寻的对象，似乎未尽明确把握客体。余译“在一日之内”，“在”字赘余；人因悲伤而黑发变白者有之，至于“白发加长”似乎又蹈言过其实之弊了。原诗第三段指出逝者的品质，用语极平淡，译诗也没什么好计较的，但这却也是最难译的部分了。至于《无论》诗中的破鞋是从他年轻时Blowing in the wind而作的《江湖上》之中“一双鞋能走几条街/一辈子能穿几双鞋”走过来，而那双鞋又从嵇康（？）的“平生几两屐”中走来，以今日观之，回顾之情不可谓无，但用语极淡，又强求七言之工整，算不上好诗，按余光中确有很多好诗，而李敖独钟情这破鞋以及六言形式，倒也奇怪也哉？批评别人容易，自己做起来难，也姑且在前人的肩膀上试译之：（韵脚零乱，先自承舞功尚浅）</p>
 <p>部分之我已随你俱逝；</p>
 <p>我心中人影如林</p>
 <p>冬风吹拂，一树凋尽</p>
@@ -540,7 +573,7 @@
 <p>以上新闻稿中，最凸出的正确见解是：1.它肯定“李敖先生的义举”、肯定李敖先生“以行动支持慰安妇的精神可嘉”。2.它指出“日本无耻”，进而造成“台湾妇女被强迫为日本军人泄欲工具的悲惨事实”。但在新闻稿中，也凸出一个不正确的见解，就是它认为“要避免似此悲剧再发生，台湾应建立自己的国家”，我看不出来这有什么必然的因果关系。日本人强征慰安妇，在亚洲国家所在多有，都发生在已建立的自己的国家之中，自己的国家不能抵御日本人，虽建立又有何用？试看今日，钓鱼台本属宜兰县头城镇的领土，现为日本人所占据，勇敢的台湾人至今不能驱逐日本、光复钓鱼台，若说此中关键在台湾有没有建立自己的国家，岂非自欺欺人？难道自己的国家没建立，就可任它发生慰安妇被奸、钓鱼台被占的事实吗？台湾没建立自己的国家前，勇敢的台湾人就一无作为，任日本人欺负吗？所以我说，这种逻辑是自欺欺人的。</p>
 <p>一件奇闻该大书特书的是：建国党发新闻稿肯定外省反独大元帅李敖，真可说破天荒，新闻稿点破“李敖先生的意识与本党虽不同”，但“值得肯定与支持”，这一现象，一方面看出建国党的无奈与风度，一方面看出李敖的强势与声势，势能使人授首的，才能使人俯首，今于建国党赞美李敖新闻稿上见之！（1999/11/16）</p>
 <p>陈水扁给李大哥的信</p>
-<p>1985年4月24日，我五十岁生日的前一天，我发出《五十闭关宣言》给朋友们，这天我有日记如下：“酆大夫来聊天。南榕托小邱送花来。老孟问情况。我说老二正常就好。老孟说：‘老大也重要。老大打老K，老二慰劳老大。’发出《五十闭关宣言》给诸老友。一点李宁来送礼物，与文茜午饭，谈四小时，文茜送WeAreTheWorld唱片。午后我不在时，维贤来过，留下杂志。小魏、盖世来过，留下《生根》全体同仁贺片及‘老板娘’（许荣淑）送来蛋糕水果。峰松来过，候我良久始去，送来我生那年旧版书，尤珍贵。夜世煜夫妇、小痴来医院。夜登恩送蛋糕，棠仪送卡片。”这天日记中我提我《五十闭关宣言》，是我吃不消朋友太多、太占我工作时间，因而发出的通知，颇有息交绝游的味道。</p>
+<p>1985年4月24日，我五十岁生日的前一天，我发出《五十闭关宣言》给朋友们，这天我有日记如下：“酆大夫来聊天。南榕托小邱送花来。老孟问情况。我说老二正常就好。老孟说：‘老大也重要。老大打老K，老二慰劳老大。’发出《五十闭关宣言》给诸老友。一点李宁来送礼物，与文茜午饭，谈四小时，文茜送We Are The World唱片。午后我不在时，维贤来过，留下杂志。小魏、盖世来过，留下《生根》全体同仁贺片及‘老板娘’（许荣淑）送来蛋糕水果。峰松来过，候我良久始去，送来我生那年旧版书，尤珍贵。夜世煜夫妇、小痴来医院。夜登恩送蛋糕，棠仪送卡片。”这天日记中我提我《五十闭关宣言》，是我吃不消朋友太多、太占我工作时间，因而发出的通知，颇有息交绝游的味道。</p>
 <p>宣言发出后，我收到当时担任台北市议员的陈水扁老弟的一封信，全文如下：“李大哥勋鉴：很高兴看到您的《五十闭关宣言》，相信在您‘专心写作’下，于‘老死台湾’前，必有不朽的成就。做为朋友不一定要见面，有时只要读一读您的大作，得到启示，就终身受用无穷了。有时批评尽管严厉一点，未尝不是善意的期许。感谢您最好的方法，就是努力再努力，改进再改进，永无止境。敬祝闭关成功！弟陈水扁拜上74.4.26”</p>
 <p>从这封信中，可以看到陈水扁十四年前对李敖的恭敬与友善。随着岁月的流失，政治人物陈水扁也今非昔比了，政治人物的势利与现实，足可醒世也。日记中提到的“酆大夫来聊天”的那位名医酆特曾先生，现住在中心诊所医院里，已近乎植物人了。我前几天还去看过他，也是今非昔比的一例，不过，那是温馨的，政治人物差远了。（1999/11/16）</p>
 <p>智仁勇和钱</p>
@@ -549,7 +582,7 @@
 <p>望梅不如寻梅</p>
 <p>11月17日JamesYU在李敖个人信箱里寄我一信，标题《望梅却难止渴——话硅胶娃娃》，信中说：“李敖大师您好：拜读‘充气娃娃功德无量’一篇至表赞同，除了您文章所提的各种理由之外，在台湾尚有一群为数甚多的壮年菁英，亦渴望有一干净性爱玩偶能陪伴身旁以解生理所需！！这群人（包括我在内）都算是社会的中坚份子，有家小、有正当工作，诚实纳税，原本也该是个幸福美满的家庭，只为了不满此地日渐败坏的社会风气以及学而无用的教育环境，不得已远渡重洋，将妻儿子女送至国外而自身留在国内续做牛马。若非因为从小在此所接受的教育去到海外根本难以谋生，任谁也不愿过这种妻离子散的‘孤独’生活……每思及此，感慨万千，国家社会何时才能清明，人人得以安养晚年？是男人就有其本能的需要，而充气娃娃，不谛是还给妻子一个忠实丈夫的权宜之策，我曾跟太太认真的讨论过这个问题，她也极表赞同，惟坊间贩卖的充气娃娃粗糙得实在不堪使用，一不小心，还有刮破皮的可能且乏味至极。国外（美国）就有种拟真的硅胶娃娃，美丽至极，这是它的网址:http://www.realdoll.com/cool/index.html</p>
 <p>虽然售价不菲，但却胜过外遇代价或花钱还得病的风险。不过在这号称自由民主的国度里，这类东西咱们海关老爷是将之当成伤风败俗的淫秽物品不得入关的……所以可怜的台湾男人们只有望图兴叹，继续在肉欲横行的灯红酒绿中一解苦闷，还得自求多福以免得镖！！！生为男人，尤其是身在台湾的男人，还真是一件苦事，您说呢？？？？？”</p>
-<p>这封JamesYU呼应我的信，很能写实。我想我会进一步要求能够从立法上、或解释上，放宽这种硅胶娃娃的心结，望梅止渴太消极了，踏雪寻梅才是积极的，在我的推动下，我想一定会成功，并且为期不会太远。（1999/11/17）</p>
+<p>这封James YU呼应我的信，很能写实。我想我会进一步要求能够从立法上、或解释上，放宽这种硅胶娃娃的心结，望梅止渴太消极了，踏雪寻梅才是积极的，在我的推动下，我想一定会成功，并且为期不会太远。（1999/11/17）</p>
 <p>法官郑堤升提升了我们</p>
 <p>1998年10月28日，台北地方法院法官郑堤升，在“八十七年度北简字第946号”的一件妨害风化案的刑事判决里，做了一件划时代的宣判。判决二十八岁的被告陈信佳无罪。无罪的理由是：</p>
 <p>一、本件公诉意旨略以：陈信佳基于概括之犯意，自民国八十七年4月间起，以每具新台币（下同）一千元之价格，向不详姓名之“张先生”男子贩入供人泄淫之吹气娃娃猥亵物品，再使用0936155456号之行动电话对外联络，在台北市一带，以每具一千五百元之价格售予不特定人，嗣于同年6月24日晚上10时30分许，在台北市金山南路、济南路口等候买主吴先生取货时，为警查获，并扣得其贩售之吹气娃娃猥亵物品一具云云。</p>
@@ -564,9 +597,9 @@
 <p>我李敖骂了三十多年的法官，极少法官被我赞美过，可是，做这篇判决书的法官郑堤升，我却要特别赞美他，赞美他做了这样开明的判决，提升了我们的视界与方向。最耐人寻味的，是这位法官在判决书最后，曲终奏雅，来了一段与被告无关的议论，他写道：“至有关吹气娃娃或其它供男女使用为宣泄性欲之情趣物品，现今并无明确之主管机关予以管理，对于所制造或进口之上开物品种类、贩售对象、材质是否对人体健康有所影响等情形，应尽速由主管机关制定相关法令予以管理。”这段尾语，太有建设性了，他真是用心良苦又含意深长的法官哟！（1999/11/17）</p>
 <p>1999年11月18日</p>
 <p>章孝严“急流勇退”？</p>
-<p>《联合报》今日社论，以“章孝严应拒绝出任总统府秘书长”为题，指出：“章孝严的处境，正是许多国民党高层党政大员的处境。他们完全失去了自主性，不能响应良知的呼唤，亦不能反映民意的期望，只能作为执行当局意志的一颗棋子。正因他们不能自由地判断与选择，所以他们往往不能‘做对的事’（dotherightthings），而只能勉力‘把事情做对’（dothethingsright），并以此为能事。因而，像章孝严这类的人，连闭着眼睛打压‘连宋配’、睁一眼闭一眼玩弄‘延任案’，及玩一场假情假义的云林补选这类的事情，他们都敢作、都肯作，而且作得一副心安理得的样子；正是因为他们已经失去了人格的矜持，失去了响应民意的能力，所以在他们眼里根本看不到如此胡作非为会给党及国家带来什么危机。这种本事，正是章孝严这类人物能够维持至今日的原因，但也是国民党落到今天这种地步的原因。章孝严再也玩不下去了。绝非缘于他在技术层次的操作不佳，而只是因为，像‘延任案’及‘补选案’这类的事情，在理念上根本不能被社会所接受，且在实务上亦根本不可能出现正面的效应。今天倘若要将全部的责任怪罪到章孝严这类技术层次的操作问题，那不但是倒果为因，而且简直是想拉章孝严来顶罪了！”</p>
+<p>《联合报》今日社论，以“章孝严应拒绝出任总统府秘书长”为题，指出：“章孝严的处境，正是许多国民党高层党政大员的处境。他们完全失去了自主性，不能响应良知的呼唤，亦不能反映民意的期望，只能作为执行当局意志的一颗棋子。正因他们不能自由地判断与选择，所以他们往往不能‘做对的事’（do the right things），而只能勉力‘把事情做对’（do the things right），并以此为能事。因而，像章孝严这类的人，连闭着眼睛打压‘连宋配’、睁一眼闭一眼玩弄‘延任案’，及玩一场假情假义的云林补选这类的事情，他们都敢作、都肯作，而且作得一副心安理得的样子；正是因为他们已经失去了人格的矜持，失去了响应民意的能力，所以在他们眼里根本看不到如此胡作非为会给党及国家带来什么危机。这种本事，正是章孝严这类人物能够维持至今日的原因，但也是国民党落到今天这种地步的原因。章孝严再也玩不下去了。绝非缘于他在技术层次的操作不佳，而只是因为，像‘延任案’及‘补选案’这类的事情，在理念上根本不能被社会所接受，且在实务上亦根本不可能出现正面的效应。今天倘若要将全部的责任怪罪到章孝严这类技术层次的操作问题，那不但是倒果为因，而且简直是想拉章孝严来顶罪了！”</p>
 <p>《联合报》的结论是：“章孝严应当拒绝出任总统府秘书长。总统大选已经迫在眉睫，国民党竟在这个敏感时段将主持辅选操盘的党秘书长调职；不论国民党如何解释这个人事案，其中最主要的原因，必是认为章孝严对选情是一个负数。章孝严面对这样的政治评价，实在应当急流勇退，不宜再转任总统府秘书长。”“章孝严现在或会觉得，为了方便国民党明天处置宋楚瑜，所以当局必须先调整他的职位，以免给宋留一个箭靶。章孝严若到了这个时候还有这种自我安慰的想法，那就是一错再错了。这几年来，国民党内有太多前例，陷入政潮中者将自己的人格空间压缩到最后地步，而最后却仍不能换得政治生命的幸存；以章孝严目前的处境而言，似乎也即将步此后尘。章孝严若婉拒出任总统府秘书长，或许能为自己维持最后一点自尊；如果仍将自己作为他人手中的一颗棋子，一切就再也由不得自己了。”</p>
-<p>在我看来，《联合报》劝章孝严“急流勇退”，其实是对牛弹琴。《联合报》的最大错误是它根本误判了跟着国民党走的知识分子的基本性格。能“急流勇退”的人，首先得不“勇进”才成，而跟着国民党走的知识分子，当初都是“勇进”者，他们已像出卖灵魂给魔鬼的浮士德，又何来“急流勇退”的能力呢？三十六年前，在美国新闻处副处长司马笑（JohnAlvinBottorff）的家里，前国民党外交部长叶公超就向我说，他加入国民党，原希望他两脚踩到泥里，可以把国民党救出来，结果呢，他不但没把国民党救出来，反倒把自己陷进去，言下不胜悔恨。1977年，他约我到他家，他的悔恨，溢于眉宇外，又加上衰老了。中国知识分子想同国民党合作、想做官，下场一至于此！第一流的知识分子如叶公超者，都下场如此，又何况不入流的章孝严呢？《联合报》对章孝严的期勉，完全看错人了！（1999/11/18）</p>
+<p>在我看来，《联合报》劝章孝严“急流勇退”，其实是对牛弹琴。《联合报》的最大错误是它根本误判了跟着国民党走的知识分子的基本性格。能“急流勇退”的人，首先得不“勇进”才成，而跟着国民党走的知识分子，当初都是“勇进”者，他们已像出卖灵魂给魔鬼的浮士德，又何来“急流勇退”的能力呢？三十六年前，在美国新闻处副处长司马笑（John Alvin Bottorff）的家里，前国民党外交部长叶公超就向我说，他加入国民党，原希望他两脚踩到泥里，可以把国民党救出来，结果呢，他不但没把国民党救出来，反倒把自己陷进去，言下不胜悔恨。1977年，他约我到他家，他的悔恨，溢于眉宇外，又加上衰老了。中国知识分子想同国民党合作、想做官，下场一至于此！第一流的知识分子如叶公超者，都下场如此，又何况不入流的章孝严呢？《联合报》对章孝严的期勉，完全看错人了！（1999/11/18）</p>
 <p>检定知识分子的一个标准</p>
 <p>孟子说“赵孟之所贵，赵孟能贱之”，说明了投靠统治者来彰显自己的人，最后也进退由人、浮沉由人，自己全无自尊之可言。我始终认为：检定真正知识分子的标准是看他跟不跟丑恶的当政者合作，凡是不降其志、不辱其身的知识分子，都会有不合作性格的，反过来说，凡是同这种政府合作的人，都是烂货、都是下三滥的知识分子。以上这一标准，运用起来，立竿见影，优劣立判，大家不妨试试看。（1999/11/18）</p>
 <p>李敖告刘泰英自诉状</p>
@@ -611,8 +644,8 @@
 <p>此外，法官也认为，猥亵罪是性道德的犯罪，既然上述物品并无任何刺激性，且无任何侵害性的道德情感，如果以涵盖范围过于宽广的标准来评断其构成猥亵罪，则无异是以公权力强制宣导“禁欲主义”，将执政者的道德思想或喜好，以刑罚手段强施于未必有相同观念的一般大众，实有以教条式或压抑式言论的灌输，管制人民性思想之虞。</p>
 <p>可见法官所见略同，可喜也。（1999/11/19）</p>
 <p>硅胶娃娃太贵了</p>
-<p>寄件者：Chiron[chiron@m2.dj.net.tw]</p>
-<p>寄件日期：1999/11/17（星期三）PM05:06</p>
+<p>寄件者：Chiron [chiron@m2.dj.net.tw]</p>
+<p>寄件日期：1999/11/17（星期三）PM 05:06</p>
 <p>收件者：leeao@leeao.com.tw</p>
 <p>主旨：有点小意见，请您更正一下</p>
 <p>李大师您好！</p>
@@ -644,7 +677,7 @@
 <p>男女-经济-压</p>
 <p>英国《泰晤士报》报导：中华人民共和国不仅拥有最庞大的军队，妓女数目亦并驾齐驱，在改革开放二十年中，数目增加逾二十倍，单在1997年，公安人员拘捕妓女，就达二十五万名之多。</p>
 <p>自1949年中华人民共和国开国以来，妓女一行，就被严禁。但是随着改革开放的演变，妓女一行，愈压就愈压不住了。这件事的教训是：男女问题不是警察能够压住的。</p>
-<p>当年国民党发生经济问题，蒋经国在上海“打老虎”，调来“戡建大队”，动员六个军警单位（金管局、警察局、警备部稽查处、宪兵、江湾以及两路警察局），想要解决经济问题，正如当时美国驻华大使司徒雷登（JohnLeightonStuart）所说的，蒋经国在“以警察国家的方法来压制经济定律”（anattempttorepresseconomiclawsbypolicestatemethods），愈压愈压不住了。这件事的教训是：经济问题不是警察所能压住的。</p>
+<p>当年国民党发生经济问题，蒋经国在上海“打老虎”，调来“戡建大队”，动员六个军警单位（金管局、警察局、警备部稽查处、宪兵、江湾以及两路警察局），想要解决经济问题，正如当时美国驻华大使司徒雷登（John Leighton Stuart）所说的，蒋经国在“以警察国家的方法来压制经济定律”（an attempt to repress economic laws by police state methods），愈压愈压不住了。这件事的教训是：经济问题不是警察所能压住的。</p>
 <p>觉悟到男女问题与经济问题不是警察所能压住的，这一觉悟，需要智能。（1999/11/22）</p>
 <p>王晓波教授致敖哥</p>
 <p>敖哥：</p>
@@ -678,7 +711,7 @@
 <p>李敖总统候选人：</p>
 <p>顷由媒体上得悉，你对马英九之流会见石原慎太郎，只轻描淡写地“认为”“相当不智，有损个人政治形象”。我却认为他们相当无耻，不但有损个人人格，还有损中华民族形象！对石原这类丧尽天良、不知悔改的日本军国主义余孽，竟和他谈友谊、谈人道、谈交流，还要接待他，岂不显得我们的民族太没气节、骨气？被他侮辱之后，不但不给他点颜色，竟还要和他友好交流？更无耻的是龙应台还把她的著作送给石原，把书中批评李登辉的部分勾画出来，以为这样就可以掩盖她怕丢官（不敢不会见李登辉邀请的“贵宾”）和想借机会出锋头的伪君子无耻行为。（你不是最恨伪君子吗？）何况龙应台批评李登辉的部分可能是石原最欣赏李登辉的地方。你能说服狂傲和偏执的石原？她无非想借机宣传一下她的著作，（要不是看到媒体报导，我还不知她有那本着作呢！）并藉书中批李登辉的内容以洗脱她怕丢官和出锋头而去会见石原的无耻行为罢了，她还说与石原会谈只谈文化和人道援助台湾地震而不谈政治。作为台北市“政府”部门的“文化局长”，竟不知她掌管的文化与政治是分不开的？她不是无知得没资格当文化局长，就是无耻得故意混淆视听以掩饰她与没有人性的混蛋谈人道、谈文化交流的无耻行为！不知李总统候选人以为然否？</p>
 <p>潘毓刚1999年11月20日美国牛顿市</p>
-<p>美国波士顿学院（BOSTONCOLLEGE）化学系的资深教授潘毓刚，昨天电传了上面的信给我。施寄青曾告诉我说：龙应台是媚白种人主义者，她媚西洋人，且嫁给西洋人。但这次她对日本人的态度，证明了施寄青说得还不够，龙应台其实还是媚东洋人（日本人）主义者，大概她采取南非政府的认定标准，不以日本人是黄种人吧？日本人种中的确有一种白种人，叫虾夷人（Aino），他们住在北海道与库页岛，可惜石原慎太郎不是虾夷人，未免美中不足，不然龙应台媚起来就更起劲了。（1999/11/23）</p>
+<p>美国波士顿学院（BOSTON COLLEGE）化学系的资深教授潘毓刚，昨天电传了上面的信给我。施寄青曾告诉我说：龙应台是媚白种人主义者，她媚西洋人，且嫁给西洋人。但这次她对日本人的态度，证明了施寄青说得还不够，龙应台其实还是媚东洋人（日本人）主义者，大概她采取南非政府的认定标准，不以日本人是黄种人吧？日本人种中的确有一种白种人，叫虾夷人（Aino），他们住在北海道与库页岛，可惜石原慎太郎不是虾夷人，未免美中不足，不然龙应台媚起来就更起劲了。（1999/11/23）</p>
 <p>“明捧李登辉，暗夺钓鱼岛”</p>
 <p>11月22日《亚洲周刊》有注销香港大学媒体中心研究学者岛津洋一的特稿，其中提到：“对于正受到强大压力的台湾总统李登辉来说，来访的东京都知事石原慎太郎发表实际上支持台独的言论，的确令他自豪。石原说出听似无条件支持台湾主权的话：‘中华民国是日本周边的国家。’‘日本可以说不’的作者石原慎太郎再显强势作风。他看似支持中华民国，其实一剑双刃，暗夺钓鱼岛，损害中华民国的主权。”“石原11月13日访台，对在日本的游说集团而言，无疑是个巨大的成就。石原当了二十五年的国会议员，并领导反对日本‘一个中国’政策的右翼组织青岚会。在日本的台湾游说集团多年来都很活跃。今年4月石原赢得东京都知事选举后不久，即再次强调他跟李登辉的友谊，并表示愿访问台北。”“然而，石原这次讲话也掷给台湾总统一个难题。他说‘日本周边地方’不包括钓鱼岛（日本叫尖阁群岛），而台湾则声称拥有钓鱼台列屿的主权。日本认为拥有钓鱼岛主权，激起台海两岸三地的愤慨。香港保钓船只与日本海上保安厅驱逐舰发生冲撞，导致保钓人士陈毓祥溺毙。其后九七年5月6日，石原登上钓鱼岛，更是对死者的侮辱。”</p>
 <p>这篇岛津洋一的特稿画龙点睛之处是，它点破钓鱼岛可能有秘密交易：“台湾总统热情迎接东京都知事，暗示在钓鱼岛问题上有一种默契，也可能有一种秘密交易：石原以表达承认台独的立场，换取李登辉默许钓鱼岛和其水域永属日本。当然，这种现实的妥协是旧军阀主义的还魂，而非现代国家政府处理领土纠纷的手法，只有爱作白日梦的老糊涂和三流小说家会这样异想天开。”“石原登上钓鱼岛，显示他与曾在钓鱼岛上筑灯塔的右翼团体日本青年社关系密切。去年，这个团体被发现受银座酒吧区一名黑社会老大资助，这也正是日本第二大犯罪组织‘住吉连合’的分支所在。除了把针对中国海军的‘前线’向前推进之外，为何犯罪组织对钓鱼岛这么感兴趣？一个原因是，偷运安非他命前往日本的台湾货船在日本水域里较为安全。为什么？日本水域由海上保安厅负责巡逻，海上保安厅隶属丑闻满天飞的运输省，而石原曾任运输省大臣多年。”这是更令人怵目的分析了。</p>
@@ -706,7 +739,7 @@
 <p>至于台湾，“冥婚”的风俗，也和大陆各地一样，除流行死人与死人结婚外，还有活人跟死人结婚的风俗。最有名的前例，是丘念台的父亲跟林家小姐的冥婚（1965年11月22号《新生报》丘秀芷的《我的家族中，有关人鬼联姻的故事》）。关于这方面的研究，有林瑞芳的《台湾冥婚制与记事》最为生动，这篇文章，收在娄子匡边的《婚姻大事》一书里。</p>
 <p>这次颜国喜和吴纯瑜的“冥婚”，就是这种文化的延续，只是一般人不知道罢了。只有这样的理解，才能真的知道这一故事。（1999/11/24）</p>
 <p>1999年11月25日</p>
-<p>举时的一本小册子，题为《二十一世纪台北》，其中有一段是：“去年，北一女校庆，班联会邀我去演讲，演讲对我本是家常便饭，但是那场讲得患得患失，因为我的女儿提醒我，北一女学生对不精彩的演讲是何种反应，当天她也坐在台下。会后，虽然现场反应热烈，我也觉得讲得不错，却一直等得女儿的反应，女儿那天回家，第一句话说：‘爸I'mproudofyou!（我以你为傲）’这句话像天籁，让我快乐了好几天。记得鼓励别人，即使是你家人也不例外，你想象不到他们多么需要这些鼓励。”我看了，为之一笑，我笑的是，即使哈佛大学博士头衔的小马哥，竟也在英文中译上不小心弄出乌龙。因为I'mproudofyou不该成“我以你为傲”，这样译是错误的。正确的译法是“我以你为荣”，小马哥的英文当然好，但他一旦发生短路，也会“一定在什么地方弄错了。”（1999/11/25）</p>
+<p>举时的一本小册子，题为《二十一世纪台北》，其中有一段是：“去年，北一女校庆，班联会邀我去演讲，演讲对我本是家常便饭，但是那场讲得患得患失，因为我的女儿提醒我，北一女学生对不精彩的演讲是何种反应，当天她也坐在台下。会后，虽然现场反应热烈，我也觉得讲得不错，却一直等得女儿的反应，女儿那天回家，第一句话说：‘爸I’mproudofyou!（我以你为傲）’这句话像天籁，让我快乐了好几天。记得鼓励别人，即使是你家人也不例外，你想象不到他们多么需要这些鼓励。”我看了，为之一笑，我笑的是，即使哈佛大学博士头衔的小马哥，竟也在英文中译上不小心弄出乌龙。因为I’mproudofyou不该成“我以你为傲”，这样译是错误的。正确的译法是“我以你为荣”，小马哥的英文当然好，但他一旦发生短路，也会“一定在什么地方弄错了。”（1999/11/25）</p>
 <p>台奸岂可轻予罪名！</p>
 <p>多年前国民党大学教授内斗，国民党徐复观指斥国民党梁容若是汉奸。国民党张道藩看不过去，说“梁容若是我们的同志，绝非汉奸，岂可轻予罪名！”</p>
 <p>多年来，轻予罪名之风相沿不替，只是罪名由汉奸改为台奸而已。</p>
@@ -811,17 +844,17 @@
 <p>两三年来，我们一直批评美国的霸权主义，批评他把台湾当作他的一艘“永不沉没的航空母舰”。美国也有一部分人赞成台湾和我们统一，但不占主导地位。卡特在位的时候，承诺从台湾撤军，同时又通过了一个《与台湾关系法》，这个《与台湾关系法》就是干涉中国内政。所以，一个台湾方面的工作，一个美国方面的工作，都要花时间。</p>
 <p>用“一国两制”的方式解决台湾问题，美国应该是能够接受的，台湾也应该是能够接受的。蒋经国提出用“三民主义”统一中国，这现实吗？你那个“三民主义”在中国搞了二十二年，1927年到1949年，中国搞成了什么样子？“中国人站起来了”，是什么时候站起来的？是1949年。使中国人站起来的，不是蒋介石，而是共产党，是社会主义。“一国两制”的方式，你不吃掉我，我不吃掉你，这不很好吗？最近一个外国人问我，解决台湾问题的政策是不是同对香港的一样？我说更宽。所谓更宽，就是除了解决香港问题的这些政策可以用于台湾以外，还允许台湾保留自己的军队。我们坚持谋求用和平的方式解决台湾问题，但是始终没有放弃非和平方式的可能性，我们不能做这样的承诺。如果台湾当局永远不同我们谈判，怎么办？难道我们能够放弃国家统一？当然，绝不能轻易使用武力，因为我们精力要花在经济建设上，统一问题晚一些解决无伤大局。但是，不能排除使用武力，我们要记住这一点，我们的下一代要记住这一点。这是一种战略考虑。</p>
 <p>在上面的谈话后第二天，1984年10月23日，邓小平会见日本前首相铃木善幸和夫人、已故首相大平正芳的夫人时，特就“‘一国两制’就是谁也不吃掉谁”为主题，发表谈话，全文收在第二天的《人民日报》，他特别指出：“我们也提出用‘一国两制’的构想解决台湾问题，而且条件可以更宽一些，台湾可以拥有自己的军队。这个方案就是谁也不吃掉谁，双方都不吃亏，对台湾当局来说也没有什么可怕的。”在谈话中，他拒绝承诺放弃使用武力，他说：“我们解决台湾问题，坚持用和平方式。我在国庆典礼上着重讲了这一点。我们有耐心。但是我们从来没有承诺不用非和平的方式解决，道理很简单，要承诺，和平统一就不可能。”以上邓小平这些谈话，十五年后，一直都是中华人民共和国的“无限上纲”、是最高指导原则，我这里不厌其详的加以收集、引述，就在使人们清楚理解“一国两制”的来龙、去脉与真意，进而领悟到这一构想，实在对台湾不但没有什么不好，反倒是大利多呢。（1999/11/30）</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/11.李敖电子报合集/李敖放电集.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/11.李敖电子报合集/李敖放电集.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../11.李敖电子报合集/李敖发电集.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../11.李敖电子报合集/李敖来电集.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -831,16 +864,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../11.李敖电子报合集/李敖发电集.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../11.李敖电子报合集/李敖来电集.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -849,12 +887,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

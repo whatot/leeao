@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,77 +81,98 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="虚拟的十七岁"><a class="header" href="#虚拟的十七岁">虚拟的十七岁</a></h1>
 <p>快速写完这本书，为了刘长乐。为了显示给这位好朋友：李敖逃出“凤凰卫视”2007到2008做了些什么。</p>
@@ -148,68 +181,68 @@
 <p>内容简介：</p>
 <p>一名美丽的十七岁高中女生的脑部被植入晶片，使得她知识大增，但必须有人不断的开启她的智慧，这人是六十七岁的博学大师，他们之间发展出了最奇情的忘年之爱，有了最奇特的结局……李敖强调：“这是一本玄之又玄的奇书，十八岁以下不能看，八十岁以上也不能看（看了都要偷买威而钢）”。几年前，八卦媒体封面了李敖和高中女生的故事。高中女生十七岁，是李敖的模特儿，在她肉身上，李敖灵修出“虚拟的十七岁”。</p>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E6%A5%94%E5%AD%90">楔子</a></li>
-<li><a href="#%E4%B8%8E%E9%98%B4%E8%8C%8E%E5%AF%B9%E8%AF%9D">与阴茎对话</a></li>
-<li><a href="#%E9%81%93%E5%9C%A8%E5%B1%8E%E5%B0%BF">道在屎尿</a></li>
-<li><a href="#%E7%8E%8B%E4%B8%BB%E4%BB%BB">王主任</a></li>
-<li><a href="#%E9%AD%8F%E9%99%A2%E9%95%BF">魏院长</a></li>
-<li><a href="#%E5%B7%AB%E7%A5%9E%E5%8C%BB%E4%B9%8B%E8%9B%8A">巫神医之蛊</a></li>
-<li><a href="#%E7%A5%9E%E5%8C%BB%E8%87%AA%E6%9D%80%E4%BA%86">神医自杀了</a></li>
-<li><a href="#%E6%A2%A6%E9%87%8C%E7%8C%8E%E5%B7%AB">梦里猎巫</a></li>
-<li><a href="#%E5%87%BA%E9%99%A2%E6%97%A5">出院日</a></li>
-<li><a href="#%E6%A5%BC%E5%9C%A8%E7%A3%BA%E6%BA%AA%E4%B9%8B%E7%95%94">楼在磺溪之畔</a></li>
-<li><a href="#%E8%9C%9A%E8%A0%8A%E4%B9%8B%E5%A4%9C">蜚蠊之夜</a></li>
-<li><a href="#%E8%9C%9A%E8%A0%8A%E5%90%8E%E5%A4%9C">蜚蠊后夜</a></li>
-<li><a href="#%E6%A8%A1%E7%89%B9%E5%84%BF%E7%BA%A6%E5%AE%9A">模特儿约定</a></li>
-<li><a href="#%E6%A8%A1%E7%89%B9%E5%84%BF%E7%AC%AC%E4%B8%80%E6%AC%A1">模特儿第一次</a></li>
-<li><a href="#%E6%99%BA%E8%80%85%E7%9A%84%E8%99%9A%E6%8B%9F">智者的虚拟</a></li>
-<li><a href="#%E6%99%BA%E8%80%85%E7%9A%84%E8%99%9A%E6%8B%9F%E7%AC%AC%E4%BA%8C%E5%8F%B7">智者的虚拟第二号</a></li>
-<li><a href="#%E6%99%BA%E8%80%85%E7%9A%84%E8%99%9A%E6%8B%9F%E7%AC%AC%E4%B8%89%E5%8F%B7">智者的虚拟第三号</a></li>
-<li><a href="#%E6%A8%A1%E7%89%B9%E5%84%BF%E7%AC%AC%E4%BA%8C%E6%AC%A1">模特儿第二次</a></li>
-<li><a href="#%E8%A3%B8%E6%B3%B3">裸泳</a></li>
-<li><a href="#%E7%83%9B%E6%B5%B4">烛浴</a></li>
-<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%BC%BA%E6%9A%B4%E5%A5%B9">为什么要强暴她？</a></li>
-<li><a href="#%E6%A8%A1%E7%89%B9%E5%84%BF%E8%A7%84%E5%88%99">模特儿规则</a></li>
-<li><a href="#%E6%A8%A1%E7%89%B9%E5%84%BF%E7%9A%84%E7%AC%AC%E4%B8%89%E6%AC%A1">模特儿的第三次</a></li>
-<li><a href="#%E7%9B%B8%E5%AF%B9%E8%83%A1%E8%A8%80">相对胡言</a></li>
-<li><a href="#%E6%98%AD%E9%99%B5%E5%85%AD%E9%AA%8F">昭陵六骏</a></li>
-<li><a href="#%E7%99%BD%E9%B2%B8">白鲸</a></li>
-<li><a href="#%E4%BB%8E%E5%BF%98%E6%83%85%E5%88%B0%E5%9D%90%E5%A7%BF">从忘情到坐姿</a></li>
-<li><a href="#%E6%99%BA%E8%80%85%E7%9A%84%E8%99%9A%E6%8B%9F%E7%AC%AC%E5%9B%9B%E5%8F%B7">智者的虚拟第四号</a></li>
-<li><a href="#%E6%99%BA%E8%80%85%E7%9A%84%E8%99%9A%E6%8B%9F%E7%AC%AC%E4%BA%94%E5%8F%B7">智者的虚拟第五号</a></li>
-<li><a href="#%E6%99%BA%E8%80%85%E7%9A%84%E8%99%9A%E6%8B%9F%E7%AC%AC%E5%85%AD%E5%8F%B7">智者的虚拟第六号</a></li>
-<li><a href="#%E6%99%BA%E8%80%85%E7%9A%84%E8%99%9A%E6%8B%9F%E7%AC%AC%E4%B8%83%E5%8F%B7">智者的虚拟第七号</a></li>
-<li><a href="#%E6%99%BA%E8%80%85%E7%9A%84%E8%99%9A%E6%8B%9F%E7%AC%AC%E5%85%AB%E5%8F%B7">智者的虚拟第八号</a></li>
-<li><a href="#%E6%99%BA%E8%80%85%E7%9A%84%E8%99%9A%E6%8B%9F%E7%AC%AC%E4%B9%9D%E5%8F%B7">智者的虚拟第九号</a></li>
-<li><a href="#%E6%A8%A1%E7%89%B9%E5%84%BF%E7%AC%ACn%E6%AC%A1">模特儿第N次</a></li>
-<li><a href="#%E6%8C%89%E6%91%A9%E7%BB%8F">按摩经</a></li>
-<li><a href="#%E6%99%BA%E8%80%85%E7%9A%84%E8%99%9A%E6%8B%9F%E7%AC%AC%E5%8D%81%E5%8F%B7">智者的虚拟第十号</a></li>
-<li><a href="#%E6%99%BA%E8%80%85%E7%9A%84%E8%99%9A%E6%8B%9F%E7%AC%AC%E5%8D%81%E4%B8%80%E5%8F%B7">智者的虚拟第十一号</a></li>
-<li><a href="#%E6%99%BA%E8%80%85%E7%9A%84%E8%99%9A%E6%8B%9F%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%8F%B7">智者的虚拟第十二号</a></li>
-<li><a href="#%E9%98%BF%E5%9F%BA%E7%B1%B3%E5%BE%B7%E5%BC%8F%E6%94%AF%E7%82%B9">阿基米德式“支点”</a></li>
-<li><a href="#%E5%90%8D%E7%89%8C">名牌</a></li>
-<li><a href="#%E5%8D%81%E4%B8%83%E5%9C%A8%E5%85%B9">十七在兹</a></li>
-<li><a href="#%E7%8E%8B%E7%BE%B2%E4%B9%8B">王羲之</a></li>
-<li><a href="#%E7%A7%91%E6%8A%80%E8%A7%82">科技观</a></li>
-<li><a href="#%E6%B2%99%E6%BC%8F%E9%A2%82">沙漏颂</a></li>
-<li><a href="#%E6%B2%99%E6%BC%8F%E4%B9%8B%E5%A4%96">沙漏之外</a></li>
-<li><a href="#%E9%80%9F%E5%86%99%E6%9C%B1%E4%BB%91">速写朱仑</a></li>
-<li><a href="#%E6%A8%A1%E6%8B%9F%E9%9A%8F%E7%AC%94">模拟随笔</a></li>
-<li><a href="#%E9%81%BF%E5%85%8D%E9%98%B4%E8%8C%8E%E5%9C%A8%E7%AA%83%E5%90%AC">避免阴茎在窃听</a></li>
-<li><a href="#%E6%A8%A1%E7%89%B9%E5%84%BF%E7%AC%ACn1%E6%AC%A1">模特儿第N+1次</a></li>
-<li><a href="#%E9%97%AE%E5%BE%97%E8%8D%92%E8%B0%AC%E7%AD%94%E5%BE%97%E8%8D%92%E8%B0%AC">问得荒谬，答得荒谬</a></li>
-<li><a href="#%E5%85%8D%E4%BA%8E%E8%B5%84%E8%AE%AF%E7%9A%84%E8%87%AA%E7%94%B1">“免于资讯的自由”</a></li>
-<li><a href="#%E7%9C%9F%E7%9B%B8%E8%BE%B9%E7%BC%98">真相边缘</a></li>
-<li><a href="#%E5%88%B6%E6%9C%8D%E5%A5%B3">制服女</a></li>
-<li><a href="#%E5%8F%88%E8%A7%81%E6%98%8F%E5%80%92">又见昏倒</a></li>
-<li><a href="#%E6%9C%B1%E4%BB%91%E5%8D%81%E4%B8%83%E5%B8%96">朱仑十七帖</a></li>
-<li><a href="#%E4%BB%8E%E6%98%8F%E8%BF%B7%E4%B8%AD%E9%86%92%E6%9D%A5">从昏迷中醒来</a></li>
-<li><a href="#%E6%AD%BB%E5%9C%A8%E5%8D%81%E4%B8%83%E5%B2%81">死在十七岁</a></li>
-<li><a href="#%E8%B5%B0%E8%BF%9B%E7%A3%BA%E6%BA%AA">走进磺溪</a></li>
-<li><a href="#%E5%8F%88%E8%A7%81%E6%9C%B1%E4%BB%91">又见朱仑</a></li>
-<li><a href="#%E6%88%91%E5%86%99%E8%99%9A%E6%8B%9F%E7%9A%84%E5%8D%81%E4%B8%83%E5%B2%81">我写“虚拟的十七岁”</a></li>
-<li><a href="#%E5%B0%81%E9%9D%A2%E6%95%85%E4%BA%8B">封面故事</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#楔子">楔子</a></li>
+<li><a href="#与阴茎对话">与阴茎对话</a></li>
+<li><a href="#道在屎尿">道在屎尿</a></li>
+<li><a href="#王主任">王主任</a></li>
+<li><a href="#魏院长">魏院长</a></li>
+<li><a href="#巫神医之蛊">巫神医之蛊</a></li>
+<li><a href="#神医自杀了">神医自杀了</a></li>
+<li><a href="#梦里猎巫">梦里猎巫</a></li>
+<li><a href="#出院日">出院日</a></li>
+<li><a href="#楼在磺溪之畔">楼在磺溪之畔</a></li>
+<li><a href="#蜚蠊之夜">蜚蠊之夜</a></li>
+<li><a href="#蜚蠊后夜">蜚蠊后夜</a></li>
+<li><a href="#模特儿约定">模特儿约定</a></li>
+<li><a href="#模特儿第一次">模特儿第一次</a></li>
+<li><a href="#智者的虚拟">智者的虚拟</a></li>
+<li><a href="#智者的虚拟第二号">智者的虚拟第二号</a></li>
+<li><a href="#智者的虚拟第三号">智者的虚拟第三号</a></li>
+<li><a href="#模特儿第二次">模特儿第二次</a></li>
+<li><a href="#裸泳">裸泳</a></li>
+<li><a href="#烛浴">烛浴</a></li>
+<li><a href="#为什么要强暴她">为什么要强暴她？</a></li>
+<li><a href="#模特儿规则">模特儿规则</a></li>
+<li><a href="#模特儿的第三次">模特儿的第三次</a></li>
+<li><a href="#相对胡言">相对胡言</a></li>
+<li><a href="#昭陵六骏">昭陵六骏</a></li>
+<li><a href="#白鲸">白鲸</a></li>
+<li><a href="#从忘情到坐姿">从忘情到坐姿</a></li>
+<li><a href="#智者的虚拟第四号">智者的虚拟第四号</a></li>
+<li><a href="#智者的虚拟第五号">智者的虚拟第五号</a></li>
+<li><a href="#智者的虚拟第六号">智者的虚拟第六号</a></li>
+<li><a href="#智者的虚拟第七号">智者的虚拟第七号</a></li>
+<li><a href="#智者的虚拟第八号">智者的虚拟第八号</a></li>
+<li><a href="#智者的虚拟第九号">智者的虚拟第九号</a></li>
+<li><a href="#模特儿第n次">模特儿第N次</a></li>
+<li><a href="#按摩经">按摩经</a></li>
+<li><a href="#智者的虚拟第十号">智者的虚拟第十号</a></li>
+<li><a href="#智者的虚拟第十一号">智者的虚拟第十一号</a></li>
+<li><a href="#智者的虚拟第十二号">智者的虚拟第十二号</a></li>
+<li><a href="#阿基米德式支点">阿基米德式“支点”</a></li>
+<li><a href="#名牌">名牌</a></li>
+<li><a href="#十七在兹">十七在兹</a></li>
+<li><a href="#王羲之">王羲之</a></li>
+<li><a href="#科技观">科技观</a></li>
+<li><a href="#沙漏颂">沙漏颂</a></li>
+<li><a href="#沙漏之外">沙漏之外</a></li>
+<li><a href="#速写朱仑">速写朱仑</a></li>
+<li><a href="#模拟随笔">模拟随笔</a></li>
+<li><a href="#避免阴茎在窃听">避免阴茎在窃听</a></li>
+<li><a href="#模特儿第n1次">模特儿第N+1次</a></li>
+<li><a href="#问得荒谬答得荒谬">问得荒谬，答得荒谬</a></li>
+<li><a href="#免于资讯的自由">“免于资讯的自由”</a></li>
+<li><a href="#真相边缘">真相边缘</a></li>
+<li><a href="#制服女">制服女</a></li>
+<li><a href="#又见昏倒">又见昏倒</a></li>
+<li><a href="#朱仑十七帖">朱仑十七帖</a></li>
+<li><a href="#从昏迷中醒来">从昏迷中醒来</a></li>
+<li><a href="#死在十七岁">死在十七岁</a></li>
+<li><a href="#走进磺溪">走进磺溪</a></li>
+<li><a href="#又见朱仑">又见朱仑</a></li>
+<li><a href="#我写虚拟的十七岁">我写“虚拟的十七岁”</a></li>
+<li><a href="#封面故事">封面故事</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -299,7 +332,7 @@
 <p>弄不清是醒还是梦，是谁玩谁，也不想弄清它。答案要朦胧。</p>
 <p>不过，我好像没有他们哲学家那么好运，朦胧中，我感到我要分裂。不是与蝴蝶分裂、不是与小猫分裂，是与另一个我分裂。</p>
 <p>我太伟大了，伟大得要崩开，我必须分裂，分裂成两个我——至少先分裂成两个我。</p>
-<p>不分裂，像那连体双胞胎的“暹罗孪生”（Siamesetwins）可以吗？他们虽然从小连体婴，却在大脑上各自独立，还各自娶妻生子呢，在政治看法也不对盘，分别投不同候选人的票，这样好吗？</p>
+<p>不分裂，像那连体双胞胎的“暹罗孪生”（Siamese twins）可以吗？他们虽然从小连体婴，却在大脑上各自独立，还各自娶妻生子呢，在政治看法也不对盘，分别投不同候选人的票，这样好吗？</p>
 <p>当然不好，多别扭啊。</p>
 <p>那就双胞胎自己。</p>
 <p>双胞胎是两个我的造型，不是两个我。要两个我，一定得一分为二。</p>
@@ -327,11 +360,11 @@
 <p>过去为反抗国民党黑暗政权坐牢，即使出狱多年，还会怪梦不绝、噩梦留连。在又怪又噩的梦中，比例最多的，竟是和自己阴茎有关的。如何解析这一现象？精神分析家是不够看的。真正的基础原因乃是大脑对阴茎的愧疚，大头惹祸、小头遭殃。大头做政治犯惹祸坐牢，小头休戚与共，只好陪同遭殃，两头相见，大头总有说不完的抱歉。这次，怪梦更怪了。</p>
 <p>“你能跟你自己对话，现在轮到我了，我要跟你对话。”</p>
 <p>“你是我的‘形而下’，我很愿意下情上达。”</p>
-<p>“别这么得意吧，谁是谁的，真很难说。记得希腊神话Demeter（狄蜜特）女神吧，她要烧掉Demophon（狄默丰）身上mortalparts（会死掉的部分）以成全永生，结果却被误会，害得全体都不得永生。我和你们其他器官的关系，就是这样，本来我是可以单独永生的，你们会身名俱裂，只有我永生。但我被你们牵累了，所以陪着倒霉。”</p>
+<p>“别这么得意吧，谁是谁的，真很难说。记得希腊神话Demeter（狄蜜特）女神吧，她要烧掉Demophon（狄默丰）身上mortal parts（会死掉的部分）以成全永生，结果却被误会，害得全体都不得永生。我和你们其他器官的关系，就是这样，本来我是可以单独永生的，你们会身名俱裂，只有我永生。但我被你们牵累了，所以陪着倒霉。”</p>
 <p>“说你被我们牵累、你陪着倒霉，我们承认。但说你单独永生，就是笑话了。讲个笑话给你吧。一个老富翁，活到一百岁，过生日那天，他拿起酒杯，庆祝自己，但方式很怪，他对他身体每个器官，都举杯个别点名庆祝。他对眼睛说：‘眼睛啊、眼睛啊，生日快乐，你一百岁了。’他对鼻子说：‘鼻子啊、鼻子啊，生日快乐，你一百岁了。’他对嘴巴说：‘嘴巴啊、嘴巴啊，生日快乐，你一百岁了。’依此类推。最后，他把头一低，对‘形而下’说：‘你要活着，也一百岁了。’懂了吧，你说你单独永生，对不起，恐怕永生的不是你，先走一步的才是你。”</p>
 <p>“哈哈，很好笑，但很冷，很好冷笑。”</p>
 <p>“不管冷不冷，我们活得比你久，你活不过我们，你只是自大狂。”</p>
-<p>“国民党党营的正中书局出版国民党教授译的《世界史纲》，英文原文MegalomanialedthematlasttotheprossessionofEgypt.里Megalomania自大狂一字，国民党教授竟翻译成‘最后麦格隆满尼（Megalomania）王竟征服埃及’，应该译为‘最后自大狂使他们占有埃及’才对，闹出了大笑话。不过话说回来，如果自大狂有‘麦格隆满尼王’的王者气派，翻错了翻出笑话，倒也不错呢。说我活不过你们，别忘了我是全身最有王者气派的一条。”</p>
+<p>“国民党党营的正中书局出版国民党教授译的《世界史纲》，英文原文Megalomania led them at last to the prossession of Egypt.里Megalomania自大狂一字，国民党教授竟翻译成‘最后麦格隆满尼（Megalomania）王竟征服埃及’，应该译为‘最后自大狂使他们占有埃及’才对，闹出了大笑话。不过话说回来，如果自大狂有‘麦格隆满尼王’的王者气派，翻错了翻出笑话，倒也不错呢。说我活不过你们，别忘了我是全身最有王者气派的一条。”</p>
 <p>“你只是一条阴茎，却如此自大。”</p>
 <p>“我不是自大，我真的很伟大。”</p>
 <p>“你不是什么伟大，你只是屌大而已。三个女人没好话、三个男人比屌大。你跟男人比过屌大吗？”</p>
@@ -342,15 +375,15 @@
 <p>“这不是法律问题，‘非常上诉’有什么用？但孙中山可提出‘非常异议’。古人何休在《公羊传序》里说：传述古书《春秋》的很多种，‘其中我非常异议可怪之论。’孙中山可就这段古书，提出抗议。抗议你有不当联想，至少抗议你乱用‘非常’两个字。”</p>
 <p>“其实，乱用的是他孙中山自己，大总统就是大总统，可是他这位革命狂，一辈子老是干上杠上开花的大总统，比如说，他先干上‘临时大总统’，后来又干上‘非常大总统’，你不觉得奇怪吗？他太邪门儿了，政治使人邪门儿，邪门儿到全世界的政治系教科书都无法解读这些杠上开花。”</p>
 <p>“好了，扯远了，还是拉回来，看你自己，恭喜你有了‘非常大鸡鸡’虽然也是‘临时大鸡鸡’。不管是‘临时’还是‘非常’，你总是生有异禀，讨女人喜欢。所以，我才用‘膨胀系数’来奉承你。”</p>
-<p>“‘膨胀系数’？你当然是指expansioncoefficient那个物理学名词。标准定义是物体受热膨胀时，其膨胀体积、面积、或长度与其在摄氏温度零度时的体积、面积、或长度之比，分别称为‘体膨胀系数’、‘面膨胀系数’、和‘线膨胀系数’。其实这定义对我不是不奉承，是奉承得不够，因为除‘体’‘面’‘线’三个膨胀系数外，还严重漏掉了一个系数。”</p>
+<p>“‘膨胀系数’？你当然是指expansion coefficient那个物理学名词。标准定义是物体受热膨胀时，其膨胀体积、面积、或长度与其在摄氏温度零度时的体积、面积、或长度之比，分别称为‘体膨胀系数’、‘面膨胀系数’、和‘线膨胀系数’。其实这定义对我不是不奉承，是奉承得不够，因为除‘体’‘面’‘线’三个膨胀系数外，还严重漏掉了一个系数。”</p>
 <p>“什么系数？”</p>
 <p>“‘硬’膨胀系数。”</p>
 <p>“物理学上有这种鬼系数吗？”</p>
 <p>“见鬼的物理学上有。”</p>
 <p>“哈哈，你真逗。”</p>
 <p>“逗的是你，你是硬汉，但穿衣服才是硬汉只是一半的硬汉，脱光也硬才算两全其美。”</p>
-<p>“哈哈，怎么硬法？少吹牛，你知道有所谓‘硬度表’（hardnessscale）吗？背给你听：一度滑石、二度石膏、三度方解石、四度萤石、五度磷灰石、六度正长石、七度石英、八度黄玉、九度刚玉、十度金刚石。你硬？硬的是哪度？”</p>
-<p>“你别胡扯，你指的乃是奥地利矿物学家FriedMohs（摩斯）的分类，那是指矿物、指石头说的，你可以心如铁石，但你不能屌如铁石，真正的好屌不是死硬派，而是软中带硬硬中带软，要有点弹性，像矽胶。一部分也像宋朝造瓷器的专家，他们对瓷土有所谓‘软硬劲’，你可叫它是‘软硬功’，不是一味硬干硬来的，记住你是大情人，不是强奸犯，你搬来一大堆石头向我说什么，你太不了解我了。不是吗？”</p>
+<p>“哈哈，怎么硬法？少吹牛，你知道有所谓‘硬度表’（hardness scale）吗？背给你听：一度滑石、二度石膏、三度方解石、四度萤石、五度磷灰石、六度正长石、七度石英、八度黄玉、九度刚玉、十度金刚石。你硬？硬的是哪度？”</p>
+<p>“你别胡扯，你指的乃是奥地利矿物学家Fried Mohs（摩斯）的分类，那是指矿物、指石头说的，你可以心如铁石，但你不能屌如铁石，真正的好屌不是死硬派，而是软中带硬硬中带软，要有点弹性，像矽胶。一部分也像宋朝造瓷器的专家，他们对瓷土有所谓‘软硬劲’，你可叫它是‘软硬功’，不是一味硬干硬来的，记住你是大情人，不是强奸犯，你搬来一大堆石头向我说什么，你太不了解我了。不是吗？”</p>
 <p>“是。”</p>
 <p>“你道歉。”</p>
 <p>“我道歉。”</p>
@@ -457,9 +490,9 @@
 <p>“后来她昏倒了，急救到振兴来。振兴医院从开办以来，就破了许多记录，这回急诊了中山女中的假学生，真是破记录。后来查出来，她是台北美国学校的十一年级学生，就是我们的高二学生。”</p>
 <p>“你们振兴仁心仁术，连假的也收。”</p>
 <p>“我们还不是收你吗？大师，你的病，是真的吗？大体上说，你大师的病，是‘群医束手’，因为简直查不出你有什么病。”</p>
-<p>“我倒有自知之明，我告诉你吧。”我笑着。“我得的是factitiousdisorder，正是精神病中的‘伪病’，这种病人专骗医生来换取照顾与关怀，弄得大家团团转，不是我吗？”</p>
-<p>王主任大笑，他说：“factitiousdisorder的人，有的自己注射胰岛素冒充血糖过低、有的自己滴血在尿液标本冒充血尿，有的甚至要求开刀，做不必要的手术，你呀，前一阵子连开两次刀，大概就是这么回事！谈到factitiousdisorder，可真无独有偶，中山女中的假学生，就有一点可疑，说不定和你有关哟。”</p>
-<p>“有一种factitiousdisorder叫proxy，‘副伪病’，有计画的伪装别人有病，也许就是这回事吧？”我笑着说，“有名医做好朋友真好！朝里有人好做官、医院有人好生病──生假病。”</p>
+<p>“我倒有自知之明，我告诉你吧。”我笑着。“我得的是factitious disorder，正是精神病中的‘伪病’，这种病人专骗医生来换取照顾与关怀，弄得大家团团转，不是我吗？”</p>
+<p>王主任大笑，他说：“factitious disorder的人，有的自己注射胰岛素冒充血糖过低、有的自己滴血在尿液标本冒充血尿，有的甚至要求开刀，做不必要的手术，你呀，前一阵子连开两次刀，大概就是这么回事！谈到factitious disorder，可真无独有偶，中山女中的假学生，就有一点可疑，说不定和你有关哟。”</p>
+<p>“有一种factitious disorder叫proxy，‘副伪病’，有计画的伪装别人有病，也许就是这回事吧？”我笑着说，“有名医做好朋友真好！朝里有人好做官、医院有人好生病──生假病。”</p>
 <p>王主任说：“这位假学生事件可有点来得怪，像中了邪一样，我们西医不相信什么邪不邪，但是可真怪，这女孩子从美国学校跷课出来，女鬼闹中山，可真有够邪。又是我在STARBUCKS偷听到的：一个女孩说：‘我们中山女中风水真好，竟有了那么漂亮的同学，幸会幸会，可惜只幸会了二三十分钟，就不见了。’一个女孩说：‘中山女中真是光天化日之下活见鬼了，但却看到那么好看的女鬼。’又一个说：‘如果她是女鬼，我愿意被她勾魂摄魄，也和她一样。’你呢？在振兴医院装病的大师，你的感想呢？”</p>
 <p>“我嘛？我本来就是牛鬼蛇神，本来就是鬼类，做了鬼，如能被漂亮的女鬼勾魂摄魄，也值得呀。听你一再这么说，我倒真想有机会见到隔壁病房这位美女。可能吗？”</p>
 <p>“可能的，如果你早来三个月。”</p>
@@ -473,7 +506,7 @@
 <p>“我们振兴同仁久仰大师之名，也要来见活鬼呢。大家会来看你，你就一个一个聊吧。”</p>
 <p>“我会一个一个聊，只是那位迷信法轮功的主任来了会头痛。”</p>
 <p>“大师反对法轮功？”</p>
-<p>“当然反对。理由我早就写过了。我提到：它的教主在1998年12月25日写信明说：‘我们不是健身气功，我们是修炼，但是我们能够使修炼者达到祛病健身。’如果纯粹是‘祛病健身’，没人要反对它，问题出在它要‘修炼’，这就是祸源。中国历来的民间宗教，从汉朝的‘五斗米道’开始，邪教无不以‘修炼’起家，到头来以动乱祸国，它的走向，连邪教自己都掌握不住、都收拾不了。这还不算恐怖，更恐怖的，是它的扩散能力。由于现代科技的帮助，广播、电视、网路、录影、传真等等，已经爆发出惊人的‘运动战’能量。想想看，中国共产党成立七十七年的时候，党员才五千万，可是‘法轮功’创办了只七年，就号称弟子一亿人了，一旦弟子走火入魔了，‘白莲教’和‘义和团’又算老几呢？再加上唯恐中国不乱的洋人介入，我们不难看到这一走向。所以，我赞成声讨‘法轮功’，因为它有爆炸性的祸害，它太不稳定了。近年来，它越闹越凶，它的资金有美国中央情报局支持，所以可以掌握媒体，得到方便。我总觉得，二十一世纪的人了，还相信这样没水准的新兴宗教，是很不搭调的。你们那位主任还送过一本MutantMessageDownUnder（《旷野的声音：一个美国妇人在澳洲沙漠的心灵之旅》）给我，我奇怪他有那么高的水准，却为何信起这么低的‘法轮功’来。”</p>
+<p>“当然反对。理由我早就写过了。我提到：它的教主在1998年12月25日写信明说：‘我们不是健身气功，我们是修炼，但是我们能够使修炼者达到祛病健身。’如果纯粹是‘祛病健身’，没人要反对它，问题出在它要‘修炼’，这就是祸源。中国历来的民间宗教，从汉朝的‘五斗米道’开始，邪教无不以‘修炼’起家，到头来以动乱祸国，它的走向，连邪教自己都掌握不住、都收拾不了。这还不算恐怖，更恐怖的，是它的扩散能力。由于现代科技的帮助，广播、电视、网路、录影、传真等等，已经爆发出惊人的‘运动战’能量。想想看，中国共产党成立七十七年的时候，党员才五千万，可是‘法轮功’创办了只七年，就号称弟子一亿人了，一旦弟子走火入魔了，‘白莲教’和‘义和团’又算老几呢？再加上唯恐中国不乱的洋人介入，我们不难看到这一走向。所以，我赞成声讨‘法轮功’，因为它有爆炸性的祸害，它太不稳定了。近年来，它越闹越凶，它的资金有美国中央情报局支持，所以可以掌握媒体，得到方便。我总觉得，二十一世纪的人了，还相信这样没水准的新兴宗教，是很不搭调的。你们那位主任还送过一本Mutant Message Down Under（《旷野的声音：一个美国妇人在澳洲沙漠的心灵之旅》）给我，我奇怪他有那么高的水准，却为何信起这么低的‘法轮功’来。”</p>
 <p>“大师为了真理，常常跟朋友反目？”</p>
 <p>“我相信印度圣雄甘地（Gandhi）的那种话：人为了真理，要常常牺牲朋友。”</p>
 <p>“包括振兴医院的？”</p>
@@ -489,7 +522,7 @@
 <p>“你大师读佛经，不信教。”</p>
 <p>“当然不信一切鬼宗教。”</p>
 <p>“所以你不吃马克思（Marx）转述的鸦片。”</p>
-<p>“也不吃马克思。别忘了马克思自己也不吃。恩格斯（Engels）在1890年8月5日写了一封秘密的信给C.Schmidt（施密特），透露马克思自道我不是马克思主义者。英文译文是：AllIknowisthatIamnotaMarxist.可见马克思自己也不信马克思主义，多有趣啊。”</p>
+<p>“也不吃马克思。别忘了马克思自己也不吃。恩格斯（Engels）在1890年8月5日写了一封秘密的信给C. Schmidt（施密特），透露马克思自道我不是马克思主义者。英文译文是：All I know is that I am not a Marxist.可见马克思自己也不信马克思主义，多有趣啊。”</p>
 <p>“维摩诘也不信维摩经？”</p>
 <p>“病中例外。”</p>
 <p>“你振兴思想界的大师也不信振兴医院？”</p>
@@ -509,7 +542,7 @@
 <p>“多谢夸奖。”</p>
 <p>“心都被你给换了，下一步换换脑吧？怎么样？”</p>
 <p>“脑不需要换吧？洗脑就好了。”魏主任笑着。</p>
-<p>“BrainWashing？我想起五十年前那本厚书。洗脑吗？和书里引证布达佩斯问案的那位同志的名言：“IfGodHimselfwassittinginthatchairwewouldmakehimsaywhatwewantedhimtosay.”（即使坐在那张椅子上的，是上帝本尊，老子们也有办法叫他说出老子们要他说出的一切。）洗脑吗？魏同志，你可有共产党的嫌疑。”</p>
+<p>“Brain Washing？我想起五十年前那本厚书。洗脑吗？和书里引证布达佩斯问案的那位同志的名言：“If God Himself was sitting in that chair we would make him say what we wanted him to say.”（即使坐在那张椅子上的，是上帝本尊，老子们也有办法叫他说出老子们要他说出的一切。）洗脑吗？魏同志，你可有共产党的嫌疑。”</p>
 <p>“洗心革面，洗心就是洗脑，我可是靠唯心吃饭的，我们心脏科的医生可是最唯心的。共产党才唯物。我想起英国诗人Browning（勃朗宁）的那两句：“Wheremyheartlies,letmybrainliealso.”大师，怎么翻最好？”</p>
 <p>“吾心所在，吾脑随之。本大师翻得太文气了。”</p>
 <p>“让我也文气一下：唯心论所在，唯物论随之。”</p>
@@ -625,23 +658,23 @@
 <p>我们大笑。</p>
 <p>我说：“我明早就离开你们这狼心狗肺的医院了，多谢你和符副院长、王主任一干人等的照料。从住院后，怪事不断，连警察局长都上门了，真是精彩。当然，最精彩的是巫神医的神秘和他留给我遗书中的那张白纸，一切好像欲说还休，却又心照不宣。”</p>
 <p>“可能巫神医真正谵妄出他那个梦——什么‘脑前瞻工程’，这个梦也许成真，但不是现在，现代科技还没那么伟大。”</p>
-<p>“你先别这么悲观。说不定现代科技可以突然突破像即溶咖啡式的即溶出绝活，当然，最顶尖的艺术层面未必即溶得到。最好的例子是你们‘凯迪拉克医学’（CadillacMedicine）。”</p>
+<p>“你先别这么悲观。说不定现代科技可以突然突破像即溶咖啡式的即溶出绝活，当然，最顶尖的艺术层面未必即溶得到。最好的例子是你们‘凯迪拉克医学’（Cadillac Medicine）。”</p>
 <p>魏院长好奇了。“什么‘凯迪拉克医学’？”</p>
-<p>我笑着。“这是我乱编的英文。因为你们心脏医学是CardiacMedicine，所以我编出CadillacMedicine来。意思是说，现代科技加上永远不会被现代科技消灭的那片灵光，才出现了凯迪拉克那种出神入化。”</p>
+<p>我笑着。“这是我乱编的英文。因为你们心脏医学是Cardiac Medicine，所以我编出Cadillac Medicine来。意思是说，现代科技加上永远不会被现代科技消灭的那片灵光，才出现了凯迪拉克那种出神入化。”</p>
 <p>“现代科技消灭那片灵光？你是指科学威胁了人类？”</p>
 <p>“一点没错。现代科技弄出来的，可不是雪莱老婆、玛莉雪莱（MaryW.Shelley）那种老式的科学怪人了。新式的是排山倒海来的千奇百怪机器人。雪莱老婆是有分寸的，她毕竟是文学家，她只要写出科技下的噩梦，而不是要噩梦成真。但是今天的科学狂人们就为所欲为了。人类最后的自救是掌握住最后的那片灵光，现代科技永远偷不走抢不走的那片灵光，进而与现代科技合作、相辅相成，甚至说，狼狈为奸。意思是说：妈的现代科技，你不能少我这一份，我是活生生的人，你不能完全消灭我，我有你永远追不上的绝活。打个有点不伦的比喻，就是心脏医学。你一代名医，落翅孤鸟，却是世界级的、凯迪拉克级的。你们的人工心脏‘凤凰七号’开始了多少第一？世界第一位接受全人工心脏后又接受心脏与肾脏移植成功的病例，是你的记录；世界第一位自体心脏移植成功的病例，是你的记录……你的徒弟可以师承手术，但是师承不到你的出神入化。当年章太炎要‘谢本师’，把他老师俞樾‘谢’掉，后浪总要推倒前浪的，但是前浪也要自保呀。现代科技弄出来的可是赶尽杀绝的、不留活口的，所以呀，要留一手，留下合作的本钱。”</p>
 <p>魏院长一笑。“留得住吗？留得青山，青山会被盗林吧？我看到一张海报，是赞美日本鬼子士郎正宗的，大意说：未来世界，人的记忆是可以被盗取的。机器人倾巢而出连接网路而拥有虚拟灵魂与人类感情，人身上各种器官都可被建档控制，这些，都出现在士郎正宗的《攻壳机动队》。士郎正宗这部漫画与以前SF动画大师不同的是，他的人物半人半魔，有修罗道的轮回，他描绘出对机械人极痴迷的幻想，像TV版中出现不同性格的攻壳车，就算被汰旧后，仍去求助主角，比人类还有情有义。士郎正宗认为，人类看似进化，其实退化，灵魂随时可简化为一组程序。这日本鬼子的寓言部分，也许正在发生，谁知道呢？”</p>
 <p>“谁知道呢？我知道呀。我知道我们一定要给人类一种远景，不要相信机器人的情义，也不要相信机器人当道以后，人类会‘活着上天堂’。我们要对那片独有的灵光有信心，并且相信在现代科技的飞跃下，依附灵光，化生出新文明。”</p>
 <p>“你大师的灵光一闪一闪，太快了。你的结论呼之欲出了，具体用一种现象来描绘吧。”</p>
 <p>“具体就在你眼前，你做换心手术时，就是现代科技与一片灵光的化生啊。你依存现代科技、现代科技也依附你。”</p>
-<p>“你用‘化生’两个字，好像双方的关系，是化学变化、chemicalchange似的。不要以辞害义啊。”</p>
-<p>“‘化生’在中文里，最早出现在《易经》和《列子》。后来佛经《俱舍论》出来，说：‘云何化生？谓有情类生无所讬，是名化生。’照这种诠释，‘化生’是有感情的依讬关系，这种关系，可真是化学关系呢。比如说，假设人脑植入晶片，而晶片的作用，要靠原有人脑的化学变化生成才行，这不是‘化生’吗？当然，你会觉得我在乱用名词，我也招认不讳，其实，我真正要用的更玄呢，我要用chemicalaffinity、‘化学亲和力’，异种互吸，化合而生，此之谓也。”</p>
+<p>“你用‘化生’两个字，好像双方的关系，是化学变化、chemical change似的。不要以辞害义啊。”</p>
+<p>“‘化生’在中文里，最早出现在《易经》和《列子》。后来佛经《俱舍论》出来，说：‘云何化生？谓有情类生无所讬，是名化生。’照这种诠释，‘化生’是有感情的依讬关系，这种关系，可真是化学关系呢。比如说，假设人脑植入晶片，而晶片的作用，要靠原有人脑的化学变化生成才行，这不是‘化生’吗？当然，你会觉得我在乱用名词，我也招认不讳，其实，我真正要用的更玄呢，我要用chemical affinity、‘化学亲和力’，异种互吸，化合而生，此之谓也。”</p>
 <p>“我奇怪你从巫神医那儿来的人脑植入晶片概念，植入什么晶片？”</p>
-<p>“假设植入智慧晶片，比如说，植入《大英百科全书》，TheNewEncyclopediaBritannicain30Volumes之类。”</p>
+<p>“假设植入智慧晶片，比如说，植入《大英百科全书》，The New Encyclopedia Britannica in 30 Volumes之类。”</p>
 <p>“干什么？在电脑里就有啊！”</p>
 <p>“不一样，不一样。让《大英百科全书》与你原有的人脑亲和起来，发生化学变化，融会贯通后输出出来，多微妙啊。”</p>
 <p>“哈哈，你大师不就这样吗？你没被植晶啊。”</p>
-<p>“可是，这是多少年的辛苦、多少年的土法炼钢啊。我成长时代没有什么人工智慧的科技，现在科技后来居上，踩到我们头上来了，要好好利用它啊。古人是‘戡天’，现在我们是‘戡科技’，我们迎接科技，也要迎战它，并且利用它，把它instantcoffee化、即溶咖啡化。”</p>
+<p>“可是，这是多少年的辛苦、多少年的土法炼钢啊。我成长时代没有什么人工智慧的科技，现在科技后来居上，踩到我们头上来了，要好好利用它啊。古人是‘戡天’，现在我们是‘戡科技’，我们迎接科技，也要迎战它，并且利用它，把它instant coffee化、即溶咖啡化。”</p>
 <p>“大师啊，你越说越神了。巫神医可能对你做了一番‘死谏’，要你认真相信他的梦。”</p>
 <p>“也许不全是梦。如果真开发出这种晶片，并且由巫神医手术时动手脚，你说别人很难查出来？”</p>
 <p>“大师啊，我只是指出天方夜谭而已。巫神医天方夜谭了、你大师也天方夜谭了。不过你的夜谭很天方，不但天方，并且四面八方了，你越来越信以为真了。”</p>
@@ -702,7 +735,7 @@
 <p>说到这里，巫主任长叹一声，站起来，走到窗前，瞭望着夜色。</p>
 <p>“直到今天，也弄不清柳老师为什么被害的，可能是蒋家特务怀疑他知道太多的秘密，至少是蒋介石的生理秘密。其实啊，柳老师拥有的，是人类的大秘密，蒋介石算什么。可是，蒋家的狗不知道。一条恶狗，找到一根骨头，坐在墙脚，啃着啃着。你走过去，它忽然发出喉音，两眼圆睁，翻开嘴唇，做警告状，意思很明显：怕你抢它的骨头。你无法告诉它你不会抢它骨头，你也志不在骨头，你是两条腿的，根本也不会跟它争什么骨头。但是，没有办法，你知道，它不知道，因为它四条腿。你大师被蒋介石及其走狗关在牢里，岂不也是一样，你志在天下，可是他们认为口中骨头受威胁，所以啊，从柳老师的生命到大师的青春，都陪葬了。按说夜色将尽了，可是，大师，我个人等不到黎明了，像赛跑接力，柳老师跑了第一棒，我跑了第二棒第三棒，最后一棒我跑不动了，所以，今天晚上，我来了。”</p>
 <p>我有点不耐烦了。“巫主任、巫神医，我看你越说越玄了。连我这么聪明的人，都被你兜圈子兜昏了。”</p>
-<p>“报告大师，真有点兜圈子，因为接近这核心，要好几个同心圆，所以，只好一圈一圈紧缩。好了，现在兜到最后一圈了。大师听好，记得达尔文（Darwin）吧，由于他这种人出现，我们才相信人类不是上帝一开始造的那样，而是经由演化变为今天的这样，是不是？今天的科技又进一步告诉我们，我们只不过是生物分子高度有序组合的产物。而这种产物，过去自豪的是这种高度有序组合，可是，别忘了1997年，第一个下西洋棋的成功程式被设计出来了，它打败了世界棋王GarryKasparov（卡斯伯罗夫），那是一种划时代，当你设计出每秒两亿个棋子落点，棋王再也打不过它了。自然人输了。自然人输到脱裤子，多可怜呀，脱裤子反倒变成自然人最后的骄傲，为自己有情感、有廉耻、有是非而骄傲，别的都瞠乎其后了。西洋棋上自然人被打败只是一个切口，打败自然人的，早就不止于计算层面。从电脑的发明，到1950到1960年突飞猛进的程式设计，我们相信，拟人化超人化的电脑，会从机器人身上爆发出来，疯狂的科技会认可机器人有情感、有自由意志，那时候，自然人下场会怎样，我们当然关心，因为这涉及了严重的伦理的、利害的、及至生死的‘介面’，这太严重了。这时代再出现的机器人不是Frankenstein（法兰肯斯坦）那种笨家伙了，他们一旦造反，真可使自然人万劫不复。1950年IsaacAsimov（艾西莫夫），你大师当然知道……”</p>
+<p>“报告大师，真有点兜圈子，因为接近这核心，要好几个同心圆，所以，只好一圈一圈紧缩。好了，现在兜到最后一圈了。大师听好，记得达尔文（Darwin）吧，由于他这种人出现，我们才相信人类不是上帝一开始造的那样，而是经由演化变为今天的这样，是不是？今天的科技又进一步告诉我们，我们只不过是生物分子高度有序组合的产物。而这种产物，过去自豪的是这种高度有序组合，可是，别忘了1997年，第一个下西洋棋的成功程式被设计出来了，它打败了世界棋王Garry Kasparov（卡斯伯罗夫），那是一种划时代，当你设计出每秒两亿个棋子落点，棋王再也打不过它了。自然人输了。自然人输到脱裤子，多可怜呀，脱裤子反倒变成自然人最后的骄傲，为自己有情感、有廉耻、有是非而骄傲，别的都瞠乎其后了。西洋棋上自然人被打败只是一个切口，打败自然人的，早就不止于计算层面。从电脑的发明，到1950到1960年突飞猛进的程式设计，我们相信，拟人化超人化的电脑，会从机器人身上爆发出来，疯狂的科技会认可机器人有情感、有自由意志，那时候，自然人下场会怎样，我们当然关心，因为这涉及了严重的伦理的、利害的、及至生死的‘介面’，这太严重了。这时代再出现的机器人不是Frankenstein（法兰肯斯坦）那种笨家伙了，他们一旦造反，真可使自然人万劫不复。1950年Isaac Asimov（艾西莫夫），你大师当然知道……”</p>
 <p>“本大师当然知道，并且知道此公把人类写得飞天入地，可是他自己不敢坐飞机。”</p>
 <p>“和你一样。”</p>
 <p>“和我一样。”</p>
@@ -713,10 +746,18 @@
 <p>我们一起大笑。</p>
 <p>“所以呀，”我补充，“我在惧飞症上，胜过Asimov。”</p>
 <p>“他的书，料你看过不少。”</p>
-<p>“看过他写笑话书两种，机器人的书两种，我还背得出他那《机器人三大守则》（THETHREELAWSOFROBOTICS）呢：</p>
-<p>1.Arobotmaynotinjureahumanbeing,or,throughinaction,allowahumanbeingtocometoharm.</p>
-<p>2.ArobotmustobeytheordersgivenitbyhumanbeingexceptwheresuchorderswouldconflictwiththeFirstLaw.</p>
-<p>3.ArobotmustprotectitsownexistenceaslongassuchprotectiondoesnotconflictwiththeFirstorSecondLaw.</p>
+<p>“看过他写笑话书两种，机器人的书两种，我还背得出他那《机器人三大守则》（THE THREE LAWS OF ROBOTICS）呢：</p>
+<ol>
+<li>
+<p>A robot may not injure a human being, or ,through inaction, allow a human being to come to harm.</p>
+</li>
+<li>
+<p>A robot must obey the orders given it by human being except where such orders would conflict with the First Law.</p>
+</li>
+<li>
+<p>A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.</p>
+</li>
+</ol>
 <p>一、机器人不得伤害人类，或坐视人类受到伤害而袖手旁观。</p>
 <p>二、除非违背第一法则，机器人必须服从人类命令。</p>
 <p>三、在不违背第一法则及第二法则下，机器必须保护自己。</p>
@@ -729,7 +770,7 @@
 <p>“这样太不给机器人面子吧？”</p>
 <p>“可以修正为：四、机器人在确知人类人工智慧可以因植入人类自己而胜过机器人时，机器人应无条件自杀。”</p>
 <p>“你真心狠手辣。”</p>
-<p>“大师你错了。不但不心狠手辣，并且大慈大悲。我不希望机器人自杀，但也不要他们喧宾夺主。可是，我知道一旦他们凌驾了人类、超越了自然人，一旦争胜赢了，那局面也非自杀那么简单，恐怕要杀来杀去。避免这一悲剧发生，是人类永远能植入机器人之长再加上自然人自己之长，双双吃定机器人，像爱斯基摩主人吃定他的狗，这样才是正途。换句话说，只要人类保有机器人永远赶不上的那‘精髓’，那出神入化部分，机器人就是拟狗化的husky，或是拟人化的《野性的呼唤》（TheCalloftheWild）里那条狼。”</p>
+<p>“大师你错了。不但不心狠手辣，并且大慈大悲。我不希望机器人自杀，但也不要他们喧宾夺主。可是，我知道一旦他们凌驾了人类、超越了自然人，一旦争胜赢了，那局面也非自杀那么简单，恐怕要杀来杀去。避免这一悲剧发生，是人类永远能植入机器人之长再加上自然人自己之长，双双吃定机器人，像爱斯基摩主人吃定他的狗，这样才是正途。换句话说，只要人类保有机器人永远赶不上的那‘精髓’，那出神入化部分，机器人就是拟狗化的husky，或是拟人化的《野性的呼唤》（The Call of the Wild）里那条狼。”</p>
 <p>“机器人如果知道你待之如狼狗，会高兴吗？”</p>
 <p>“我想他们会想办法进入我们，以变成我们一部分为荣。看到没有，所有家中养的狗，都不以为自己是狗，而以人自居。我以前邻居太太常常骂她的宠物说：‘你以为你是谁啊？你以为你是人啊？’宠物还点头呢。”</p>
 <p>“你的邻居深得狗心。”</p>
@@ -754,8 +795,8 @@
 <p>“落到我头上，原因是我能活下这三十年，活到现代科技发展出晶片，一切问题，有了解决的张本。大师去过阳明山林语堂故居吗？林语堂花了一辈子心血与财力，要发明出新的中文打字机，可是他失败了，原因是他的时代电脑跟不了，所以他的中文打字机，拼来拼去还是字形组合、偏旁组合，永远走老路，直到电脑出来，中文输出一夜成真，反证林语堂空忙一场。正如孟子所说的：‘虽有智慧，不如乘势；虽有镃基，不如待时。’今天我等到了，有了晶片科技，柳老师好梦可以成真。只要有我等待，只要有你合作。”</p>
 <p>“你口口声声合伙、合作。我真不明白为什么非我不可？”</p>
 <p>“原因只是：这里面涉及了活体实验，而跟这活体接触、启发、记录、推动，都需要你的本领逐一解决之，你是接力赛中的最后一棒，并且是无人可及的那一棒。所以呀，非你莫属。”</p>
-<p>“Youhaveabeeinyourhead.”我笑着。</p>
-<p>“IhaveabeeinYOURhead.”他回嘴，并加重语气。</p>
+<p>“You have a bee in your head.”我笑着。</p>
+<p>“I have a bee in YOUR head.”他回嘴，并加重语气。</p>
 <p>“好吧，”我无奈的说，打个哈欠，“你令我想起当年被抓后疲劳审问那段噩梦。好吧，如果你让我睡觉，我愿看看你的工程报告，你总不能全部计划都在疯子的嘴皮上吧？”</p>
 <p>“真的只在嘴皮上。这一工程最奇妙的特色是，晶片植入后，被植入者不会立刻发生作用，要一段生理结合后，才发生作用，换句话说，要晶体与肉体共生长以后，才发生机器的、化学的、生理的变化，被植入者才脱胎换骨、大神附体，当然这大神是智慧的大神，我们把希腊的智慧女神现代化后植入高中女生的脑中，看她成长……”</p>
 <p>“什么？你说什么？”我惊醒似的一问。“什么高中女生？你在干什么？”</p>
@@ -809,13 +850,13 @@
 <p>这上帝可是全新的，新的不需要造人，只要造虚拟躯体，直接神经植入一切的太虚幻境。丙种科学怪人预言，到了21世纪末，人与机器人之间，已经没有什么区别了，一旦奈米技术和运算能力把自己的大脑和躯体升上三十三天，并且机器人在智能上、感官上把造出他的人超出三万六千里，人与机器人的区别，只是前者仰望后者而已。</p>
 <p>别说了，我对我自己说，别说丙种科学怪人多伟大了，我们承认他们的前瞻，只是我们的心都凉了。古人是“一片冰心在玉壶”，我们可是“一片冰心在电脑”。前瞻中有一片美景，也别忘了一旦乙种科学怪人控制不了甲种，人类就全完了。乙种越来越变得控制不了了，因为它发现，丙种已经越来越甲种了。当人变成机器之日，就是丙种科学怪人变成甲种科学怪人之时。科学家空忙了一场，最后玩完了一切。</p>
 <p>丙种科学怪人当然不服气，说我们不但机器，还有幽默感呢。我们发现了人类大脑皮层运动区的一个G点，一根电探针接触到那一点，人变会笑，这就是所谓幽默区。所以呀，要笑吗？一触即得。照丙种科学怪人这么直截了当，此之谓幽默感，人间一切喜剧都免了、笑话也免了、脱口秀也免了，把个傻瓜按住，来上一根电探针，傻瓜就咯咯笑个不停了，多省事啊。</p>
-<p>丙种科学怪人还发现，笑的G点以外，还有“上帝点”呢。他们说前脑叶上的一个微小神经细胞集中区，在宗教体验中会被刺激。MyGod！那就真是大写的G点了。</p>
+<p>丙种科学怪人还发现，笑的G点以外，还有“上帝点”呢。他们说前脑叶上的一个微小神经细胞集中区，在宗教体验中会被刺激。My God！那就真是大写的G点了。</p>
 <p>看到的是惊涛拍岸、看到的是排山倒海、看到的是中风疾走、看到的是大江东去，当不住也不回头。看来我们总要接受，只是该有条件的接受，不是吗？</p>
-<p>哦，MyGod！我上面的一大篇梦呓，我说了什么？我说了条件、开出了条件，条件竟是巫神医的，不是吗？人类接受晶片、植入资讯，不管是多少的资讯，但运用之妙，归于人类，像生猛海鲜蔬菜佐料，尽管琳琅，归于名厨，不是吗？</p>
+<p>哦，My God！我上面的一大篇梦呓，我说了什么？我说了条件、开出了条件，条件竟是巫神医的，不是吗？人类接受晶片、植入资讯，不管是多少的资讯，但运用之妙，归于人类，像生猛海鲜蔬菜佐料，尽管琳琅，归于名厨，不是吗？</p>
 <p>想来不无可怪，我怎么巫神医起来了？我说得头头是道，比巫神医还巫神医，比巫神医还说得丰富、精致。但是，我超越不了他，是他前瞻的，他还在脑部开刀呢。</p>
 <p>关键是，巫神医也超越不了他自己，因为他生不逢时，他生得太早了，他碰到了技术问题，他被“技术击倒”了。“技术击倒”，那TKO，那拳击比赛中的technicalknockout，你是高手，没错，但在技术上，你被击倒了，妙的是，像1938年爱尔兰重量级拳击手JackDoyle（杰克多伊尔）一样，把自己打出了局，讽刺性的，技术击倒了自己。巫神医技术击倒了他自己，他设定了方向正确、路途遥远的目标，时机不到，他达不到那一技术水准，他被自己击倒了。</p>
-<p>开什么玩笑，那种晶片吗？纵使制造出来、植得进去，也是二三十年后三四十年后的天方夜谭，以巫神医的技术，纵使如他所说，有电子新贵的科技公司、科技研发实验室可以仰仗，但是，还差得远哪。现在是公元2007年，他做得到公元2050、2060年的事吗？显然的，巫神医疯了。至少他得了一种精神官能症——“发明妄想”（delusionofinvention）！妈的，什么不好发明，却发明这么麻烦的，巫神医啊！</p>
-<p>问题还没完。记得巫神医说过，他们的“脑前瞻工程”并未完工，还在试验阶段，既然还在试验，就不发生技术击倒的苛责，因为技术本来就不成熟，并且已经声明在先。既然坦白从宽，老奚落他，也不够厚道。但又不能等闲视之，因为他有点以死明志的味道，还以无字天书作为遗书，做无言的道别呢。他要扯我进来干什么，还要我跑接力赛第四棒呢，要我做四百米接力赛的末棒，theanchorona4×100mrelayteam，哈，他倒想得好。他以为第四棒是anchor，其实呀，anchor的古典用法是指“隐士”（hermit），现代英文把它作废了，可是我是英文的复古派，我还是以隐士自居，总不能要隐士去赛跑吧。诸葛亮是南阳高卧的，好意思逼他赛跑吗？</p>
+<p>开什么玩笑，那种晶片吗？纵使制造出来、植得进去，也是二三十年后三四十年后的天方夜谭，以巫神医的技术，纵使如他所说，有电子新贵的科技公司、科技研发实验室可以仰仗，但是，还差得远哪。现在是公元2007年，他做得到公元2050、2060年的事吗？显然的，巫神医疯了。至少他得了一种精神官能症——“发明妄想”（delusion of invention）！妈的，什么不好发明，却发明这么麻烦的，巫神医啊！</p>
+<p>问题还没完。记得巫神医说过，他们的“脑前瞻工程”并未完工，还在试验阶段，既然还在试验，就不发生技术击倒的苛责，因为技术本来就不成熟，并且已经声明在先。既然坦白从宽，老奚落他，也不够厚道。但又不能等闲视之，因为他有点以死明志的味道，还以无字天书作为遗书，做无言的道别呢。他要扯我进来干什么，还要我跑接力赛第四棒呢，要我做四百米接力赛的末棒，the anchor on a 4×100m relay team，哈，他倒想得好。他以为第四棒是anchor，其实呀，anchor的古典用法是指“隐士”（hermit），现代英文把它作废了，可是我是英文的复古派，我还是以隐士自居，总不能要隐士去赛跑吧。诸葛亮是南阳高卧的，好意思逼他赛跑吗？</p>
 <p>还有，巫神医口口声声拉我合伙，“脑前瞻工程”又落实在什么女病人身上的脑袋里，那个女病人呀？巫神医全没交代，由此可见，他的妄想症还不止于“发明妄想”呢，他在delusionalelaboration（妄想加工）后，形成了systematiseddelusions（妄想体系），是全套的不可思议，他年纪大了，是paraphrenia（晚期妄想症）无疑。他好讨厌，死前困扰我，幸亏我客串精神科密医，把他诊断出来了。</p>
 <p>巫神医令我最不满意的是，他不得病人或病人亲人的同意，就做起活体试验来了，这家伙若是日本人，若在一九三几年，他可能还是日本鬼子七三一部队的成员呢。这不是说他残忍，而是说他这种人会找到他们的道德观后，心安理得的为所欲为。西方的基督教文明，从八九世纪查理曼（Charlemagne）以“强兵”传教以来，为所欲为，全是奉主耶稣（Jesus）之名；11到13世纪的十字军，也是奉主耶稣之名；即使20世纪希特勒（Hitler）杀犹太人六百万，也是“拯救基督文明”；美国的英雄艾森豪（Eisenhower）在打败希特勒后写回忆录，也以《欧洲十字军》（CrusadeinEurope）为书名。上面的现象，说明了如果人类只是刀光剑影，倒也罢了，毛病出在刀光剑影还奉什么什么之名，用来美化自己的道德形象，这就太恶心了。西方的基督教文明恶心如此，东方的日本鬼子跟进，以“强兵”走西方路线，奉天皇之名，为所欲为，七三一部队就是此中典范。这部队由石井四郎带队，在中国东北十年，十年的惨无人道、十年的活体试验，作为制造细菌战的张本和标本。美国人也是搞细菌战的，但做活体试验，找不到活人，所以羡慕日本鬼子。日本鬼子在中国干这行，广设分部，高达四十多处，从事这一行的专家有一万零四十五人，自然成绩斐然。光在日本金泽大学医学部，就收藏从七三一部队带回的人体试验标本五百个。美国人羡慕死了，要和日本鬼子合作。于是，坚决拒绝起诉所有的日本细菌战犯，把石井四郎等凶手一律运到美国细菌战本部，这就是西方基督教的正义！所以呀，一提到活体试验，我就光火了，我就会一路想来，由巫神医想起，最后又想到巫神医。</p>
 <p>问题又来了。有那么严重吗？巫神医所作所为，绝非美国人、日本人那种伤天害理，巫神医只不过要对抗西方的机器人文明、电脑文明而已，并且，如他所透露，是对女病人死马当作活马医，成功了，也算功德一件呢，把他与美国人、日本人相比，他会不服气呢。</p>
@@ -852,10 +893,10 @@
 <p>万万没想到您做了我们邻居，装修时这么多书架，我们才发觉这位邻居可有点来头，打听之下，原来是您本尊。千金买屋，万金买邻，您使我们有了发财的喜悦。</p>
 <p>多谢赏花，敬祝早安。</p>
 <p>一周以后，我从外面回来，一位中年女士先进了电梯，我随后进去，这位女士按了十二楼的电钮，对我点头一笑：“大师，我就是你的邻居，徐太太。”她端庄友善，有一点洋派。我是从没出过国的土共型人物，别人洋派，我一闻就知道了。</p>
-<p>十二楼到了，我顺便请徐太太进来小坐，她说她很高兴来拜访，请她参观我的新居，她欣然从命。坐在沙发上，她说了一些赞美的话，说到“守望相助”，一个“望”字，引发了我脑中的“水平思考”。想到“望”字的本义，就是中国古代对山的朝圣、对山的顶礼，我可是山呢。“我见青山多妩媚，料青山，见我应如是。”为什么？因为我也是山。碣石渡海，竟成岛居，仁者乐此，不亦山乎？培根（FrancisBacon）说：“山不朝穆罕默德，穆罕默德即朝山。”（IfthehillwillnotcometoMahomet,Mahometwillgotothehill.）其实，昆仑股上，是圣者即山，还是山即圣者，大可不分彼此了。圣者是我，山也是我呢。为什么跟人谈话时，自己就陷入自说自话，就要一若自大狂者，原因在并无自大异状，只是据实陈述而已。我把想像飘在达利（Dali）造出的大花瓶上，那是个更自大狂的家伙，他说他每天睡醒，发现自己是达利，就为之一快。我自幸还没严重到那种程度。好了，收脑回来，面对眼前的徐太太。</p>
+<p>十二楼到了，我顺便请徐太太进来小坐，她说她很高兴来拜访，请她参观我的新居，她欣然从命。坐在沙发上，她说了一些赞美的话，说到“守望相助”，一个“望”字，引发了我脑中的“水平思考”。想到“望”字的本义，就是中国古代对山的朝圣、对山的顶礼，我可是山呢。“我见青山多妩媚，料青山，见我应如是。”为什么？因为我也是山。碣石渡海，竟成岛居，仁者乐此，不亦山乎？培根（Francis Bacon）说：“山不朝穆罕默德，穆罕默德即朝山。”（If the hill will not come to Mahomet, Mahomet will go to the hill.）其实，昆仑股上，是圣者即山，还是山即圣者，大可不分彼此了。圣者是我，山也是我呢。为什么跟人谈话时，自己就陷入自说自话，就要一若自大狂者，原因在并无自大异状，只是据实陈述而已。我把想像飘在达利（Dali）造出的大花瓶上，那是个更自大狂的家伙，他说他每天睡醒，发现自己是达利，就为之一快。我自幸还没严重到那种程度。好了，收脑回来，面对眼前的徐太太。</p>
 <p>收拾了“守望相助”，我邀请徐太太起身参观新居。</p>
 <p>我的藏书是惊人的，但是，那是藏书家的层次，一般人是难窥堂奥的，所以，看到我藏书的人，反应多是一片哎呀，不能深入。倒是藏书以外的艺术品，可以直指本心，令人眼睛一亮。艺术品中有中国的、也有外国的，有真的、也有假的，用假的指艺术品，殊为失敬，仿制乃至复制，也是一种真、一种艺术，它不是原作，但也算续作，不是古董，但不失今董，何况，有以伪乱真的、有青出于蓝的，未可一并抹杀。当然，这些是指水平以上的赝品或仿制而言。有的赝品或仿制品太不入流，自然在不足论之列。</p>
-<p>徐太太站在我那法国古瓶之前，她一脸歆羡。古瓶高79公分、宽27公分，那是十八世纪末的珍品，主体画面是比庞毕度夫人（MarquisedePompadour）还庞毕度的半身像，每一根金发都出于无名氏画家的淡笔轻描，太珍奇了，两个世纪前的西洋古董，它是原作、是纯真、是无从造假的，因为世界上再也没有那种画家了，造假需要耐心与水准，现代人连假都造不出来了。</p>
+<p>徐太太站在我那法国古瓶之前，她一脸歆羡。古瓶高79公分、宽27公分，那是十八世纪末的珍品，主体画面是比庞毕度夫人（Marquise de Pompadour）还庞毕度的半身像，每一根金发都出于无名氏画家的淡笔轻描，太珍奇了，两个世纪前的西洋古董，它是原作、是纯真、是无从造假的，因为世界上再也没有那种画家了，造假需要耐心与水准，现代人连假都造不出来了。</p>
 <p>徐太太向前走，却又回头望了法国古瓶。当她转过头来，站在一幅画像前，她怔了一下，向后退了一步。</p>
 <p>“天啊，那么像！”她情不自禁。</p>
 <p>“有什么问题吗？徐太太。”我关心的问。</p>
@@ -899,11 +940,11 @@
 <p>刻安</p>
 <p>徐太太谨启9月6日午2时</p>
 <p>今天是2007年9月6日，搬到新居来第二十四天了。</p>
-<p>晚上，依照惯例，我一个人吃了称不上餐的晚餐。食物简单得只是一杯半脂的奶品、一片或两片吐司、半个或一个苹果、几粒干果、一块纯度百分之七十以上的巧克力、一枚祖国产品“贡枣”（ROYALJUJUBE），所吃种类不少，但是量极少，并且全不考究。唯一考究的，应该是苹果，“烂”苹果是不吃的，“烂”的定义，由我来定，不由水果商来定。</p>
+<p>晚上，依照惯例，我一个人吃了称不上餐的晚餐。食物简单得只是一杯半脂的奶品、一片或两片吐司、半个或一个苹果、几粒干果、一块纯度百分之七十以上的巧克力、一枚祖国产品“贡枣”（ROYAL JUJUBE），所吃种类不少，但是量极少，并且全不考究。唯一考究的，应该是苹果，“烂”苹果是不吃的，“烂”的定义，由我来定，不由水果商来定。</p>
 <p>晚餐以后是室内散步，在有限的空间内来回走，一再向后转再前进，走半小时以上到一小时，这是我坐牢带来的习惯。边走边想，有时所想的要写下来，就干脆坐在书桌旁了。</p>
 <p>时或听听音乐，听古典、听名家、也听清音在兹的小品。偶尔也听“问题音乐”。JanisJan（珍妮丝珍）的《华年十七》（ATSEVENTEEN）那首不怎么好听的，我也听，词胜于曲，点出的问题比唱破的多，结论只是一句：“十七岁是属于漂亮高中女生的，不漂亮的，十七也白十七。”珍妮丝珍说她十七岁得此真理（Atseventeen,Ilearnedthetruth），她真闻道及时。</p>
 <p>“烂”电视，我是不看的。偶尔看点“益智节目”，还是照我的定义，决定此智之益。我最喜欢看动物中的猎豹（cheetah）、印度豹，不是花豹（leopard）、金钱豹，花豹太肥了，猎豹就不会，猎豹跑起来美极了，它是速度最快的四足动物，时速一百一十公里，它怀胎三月，生小豹二、三只，小豹那两条深黑色的泪纹，起自眼睛，终至嘴角两旁，可爱极了。这身高一公尺、身长二点二五公尺、体重五十到六十五公斤的“运动战将”，它没有任何哲学，有的只是我跑得过你、撞倒你、将你撕裂。但是，凶狠之中它也友善，它是可以“雅驯”的，只看你有没有本领“雅驯”它。美国诗人惠特曼（Whitman）赞美动物，但他笨得不知道赞美猎豹，他真笨；但美国时尚杂志里偶有模特儿手牵猎豹的画面，倒颇可取。</p>
-<p>我反倒看中了光碟，因为可以挑选我要看的，不受制于电视台。对光碟，我倒非常猎豹呢。我花在这方面的时间不多，所以要选到一点不烂的。为了好奇，也会选错。看到一部EdgeofSeventeen（十七岁边缘），原来是一部同志片，我讨厌同性恋，这点和上帝一样。上帝如果不讨厌，一定造出Adam（亚当）和什么John,John,John，怎么不造男的反倒造出夏娃（Eve）？我看到十七岁的男女之恋，总觉得EdgeofSeventeen的男的成熟不足，如今看到这部都是男的在“缱绻”，讨厌死了，上帝也有同感吧？</p>
+<p>我反倒看中了光碟，因为可以挑选我要看的，不受制于电视台。对光碟，我倒非常猎豹呢。我花在这方面的时间不多，所以要选到一点不烂的。为了好奇，也会选错。看到一部Edge of Seventeen（十七岁边缘），原来是一部同志片，我讨厌同性恋，这点和上帝一样。上帝如果不讨厌，一定造出Adam（亚当）和什么John, John, John，怎么不造男的反倒造出夏娃（Eve）？我看到十七岁的男女之恋，总觉得Edge of Seventeen的男的成熟不足，如今看到这部都是男的在“缱绻”，讨厌死了，上帝也有同感吧？</p>
 <p>躺在热水浴里，每天不止一次。白色恐怖时代，我关在牢里，年复一年，不能洗澡。出狱以后，我在补偿、我在补偿。躺在浴缸里，或小睡、或寻思、或开卷、或卧洗，随我高兴。重要的是，躺下来就不是坐起来，所以，要加热水，是用脚打开龙头的。什么是舒服？用脚带来热水就是。躺下来，用脚来操盘生活，就是幸福。</p>
 <p>夜里九点钟，我正泡在浴缸里，电话响了。传来急促的：“救我！大师！我是你的邻居徐太太的外甥女，快来救我！我阿姨去香港了，快来救我！”“我两分钟内就过来，你开门。”我匆匆擦了擦身体，披上浴袍。不到两分钟，已站在邻居的门口。</p>
 <p>门开得很缓慢，门开了，却看不到开门的人。我轻轻的走进去。她在门背后。太神奇了，我看到的，竟是我家墙上油画的女人！一张动人的小脸、一张没有任何化妆的青春的小脸，清纯的、美丽的、瘦削的、苍白的、迷茫的、灵气逼人的，怎么可以这样漂亮！我心里想着。</p>
@@ -939,25 +980,25 @@
 <p>“厨房这么干净，怎么会有蟑螂？”我仿佛不得不说一些话，引开我的“淫念”。</p>
 <p>她没有看我，只专心仔细洗着，无心回了我一句：“冰河更干净，怎么会有蟑螂？”</p>
 <p>“你说得真好。”我答道。“你了解蟑螂度过冰河期。”</p>
-<p>“也许，你会奇怪我帮你洗手。你的手，打死了世界上的活化石，不是吗？你打死了三亿五千万年的过客。它曾亲眼看到恐龙出世，一亿年后，又亲眼把恐龙送走。它亲眼看到阿尔卑斯山脉从地面隆起、也曾亲眼看到连结英伦三岛的欧洲，也就是说，JohnDonne（约翰敦）笔下的欧洲变小，只是诗人的虚拟，而你打死的蟑螂啊，却是活生生的见证……所以啊，Pilate（彼拉多）要洗他的手，表示罪不在他。你帮我打死蟑螂，我帮你清洗现场，是不是？”</p>
+<p>“也许，你会奇怪我帮你洗手。你的手，打死了世界上的活化石，不是吗？你打死了三亿五千万年的过客。它曾亲眼看到恐龙出世，一亿年后，又亲眼把恐龙送走。它亲眼看到阿尔卑斯山脉从地面隆起、也曾亲眼看到连结英伦三岛的欧洲，也就是说，John Donne（约翰敦）笔下的欧洲变小，只是诗人的虚拟，而你打死的蟑螂啊，却是活生生的见证……所以啊，Pilate（彼拉多）要洗他的手，表示罪不在他。你帮我打死蟑螂，我帮你清洗现场，是不是？”</p>
 <p>她一边说，一边拿起洁白的毛巾，为我擦手。我放弃描写她的手，它超越了任何辞汇。我失神的看着她的手，我渴望它为我手淫……</p>
 <p>“你了解冰河期的蟑螂，你好像亲眼看到。为什么？”我还是得找话打乱我自己。</p>
 <p>“因为我是融化的冰河。”她静静的说。</p>
 <p>我好好奇她的答话。</p>
 <p>“我们也来自冰河期，不是吗？”她仿佛自言自语。“谁知道那时我是什么？就说我是冰河吧，所以我在很早的年代就见过这可怕的蟑螂。”</p>
 <p>“我想你见到刚才被冲走的那一种。”</p>
-<p>“是的，它叫‘美洲蜚蠊’P-e-r-i-p-l-a-n-e-t-aa-m-e-r-i-c-a-n-a，比德国的大。我用‘蜚蠊’这一古典的称呼，因为蟑螂太难听了。”</p>
+<p>“是的，它叫‘美洲蜚蠊’P-e-r-i-p-l-a-n-e-t-a a-m-e-r-i-c-a-n-a，比德国的大。我用‘蜚蠊’这一古典的称呼，因为蟑螂太难听了。”</p>
 <p>“你真了不起，你用到动物学上的称呼。你用到‘蜚蠊’这种术语。你怎么知道得这么多？”</p>
 <p>她笑了一下。“我也不太清楚。只觉得我在脑中不断串连可以挂上钩的知识。”</p>
 <p>“挂钩？用什么方法？”我好奇。</p>
-<p>“很多方法。比如说，提到‘蜚蠊’，我就用接近同音的串连方法，想到希腊名妓Phryne（斐憐），当然我也想到她的故事。Ofthemanystoriestoldabouther,themostfamousisthatofherpromisetorebuildatherownexpensethecityofThebesonconditionthatitbearaninscription:“DestroyedbyAlexander;rebuiltbyPhryne.”亚历山大毁了的城，斐憐给重建起来。”</p>
+<p>“很多方法。比如说，提到‘蜚蠊’，我就用接近同音的串连方法，想到希腊名妓Phryne（斐憐），当然我也想到她的故事。Of the many stories told about her, the most famous is that of her promise to rebuild at her own expense the city of Thebes on condition that it bear an inscription:“Destroyed by Alexander; rebuilt by Phryne.”亚历山大毁了的城，斐憐给重建起来。”</p>
 <p>“我忍不住要补充一下。”我说。“但这旧城为亚历山大所毁，新城为Phryne重建的伟大提议，并没被接受，她后来还吃了渎神官司。她的律师Hyperides发现光靠辩护赢不了官司，所以当庭解开她的袍子，露出袍子里的裸体，她立刻被判无罪，不是吗？”</p>
-<p>“是呀。她可是model、模特儿呢，ShewassaidtohavebeenthemodelforPraxiteles，CnidianstatueofAphrodite.ShewaschargedwithimpietyanddefendedbyHyperides,oneofherlovers,whosecuredheracquittalbyexhibitingherinthenude.唉，古典的法庭多么有情趣啊，模特儿一脱光，什么罪都脱掉了。”她笑起来，点点头。低头看了一下自己的袍子。“我也穿了袍子，可是我没罪。”</p>
+<p>“是呀。她可是model、模特儿呢，She was said to have been the model for Praxiteles，Cnidian statue of Aphrodite. She was charged with impiety and defended by Hyperides, one of her lovers, who secured her acquittal by exhibiting her in the nude.唉，古典的法庭多么有情趣啊，模特儿一脱光，什么罪都脱掉了。”她笑起来，点点头。低头看了一下自己的袍子。“我也穿了袍子，可是我没罪。”</p>
 <p>“真的吗？”我问，“你可能犯了教唆杀蜚蠊罪。被教唆的我也穿了袍子。”我低头看了一下。“抱歉很不礼貌，你喊救命的时候，我从浴缸跳出来，所以一披就赶过来了。”</p>
 <p>“我也是。我刚出浴室到厨房，就碰到冰河期那鬼怪。谢谢你提醒了我，教唆杀蜚蠊，我可能有罪。也许我应该比照希腊的Phryne模式谢罪，并谢谢你救我……”</p>
 <p>“你谢我的方式有一百种，当然，Phryne式是最好的，只是你太年轻了。你才seventeen吧？还没成年？”</p>
 <p>“我生在1990年的这个月，也就是说，在这个月，我开始seventeen。”</p>
-<p>“该说happybirthday！你这十七岁，最令我奇怪的，共有三点：第一、你怎么这么怕蜚蠊。第二、怎么这么漂亮。第三、你知道得怎么这么多。并且，不止于多，简直是渊博。怎么可能？怎么回事？你什么时候学到的？你才十七岁。”</p>
+<p>“该说happy birthday！你这十七岁，最令我奇怪的，共有三点：第一、你怎么这么怕蜚蠊。第二、怎么这么漂亮。第三、你知道得怎么这么多。并且，不止于多，简直是渊博。怎么可能？怎么回事？你什么时候学到的？你才十七岁。”</p>
 <p>十七岁眨眨眼，有点无辜。“我也不知道怎么回事。反正我就知道了、记住了。很多知识好像飞进我的大脑里。”</p>
 <p>“飞进来多久了？”</p>
 <p>“不知道，不知道。好像飞进来一亿年。哦，一亿年是什么？我又想到蜚蠊。它是世界上第一种会飞的，不是吗？它会飞，至少比其他会飞的早一亿年。刚才你行凶打死的是那么老资格的动物。庆祝一下吧。”</p>
@@ -968,7 +1009,7 @@
 <p>“听你讲话，像写一首诗。”</p>
 <p>“今晚的十七岁享受到被赞美的快乐。”</p>
 <p>“你真的只有快乐，没有愿望吗？”</p>
-<p>“有一个愿望，有点荒谬的，我愿我变成一种动物。或者说，一种昆虫。它的学名叫Magicicadaseptendecim，一般叫作seventeen-yearlocust，也被叫为seventeen-yearcicada，‘十七年蝉’，在美国东北部特别多，它生活在地下十七年，蜕变最后一层皮后，变为成虫，再移居到树上。同一地点，你见到它是十七年后，好像只此一次。奇怪吧，我今天满十七岁，如果有愿望，做个十七年蝉吧。”</p>
+<p>“有一个愿望，有点荒谬的，我愿我变成一种动物。或者说，一种昆虫。它的学名叫Magicicada septendecim，一般叫作seventeen-year locust，也被叫为seventeen-year cicada，‘十七年蝉’，在美国东北部特别多，它生活在地下十七年，蜕变最后一层皮后，变为成虫，再移居到树上。同一地点，你见到它是十七年后，好像只此一次。奇怪吧，我今天满十七岁，如果有愿望，做个十七年蝉吧。”</p>
 <p>“我真惊讶你有这么丰富的知识，你说得头头是道，我听得闻所未闻。”</p>
 <p>“我喜欢动物。你喜欢动物吗？最漂亮的动物，你喜欢那一种？”</p>
 <p>“我喜欢十七年时候美国学校女生那一种。”我话里玄机。</p>
@@ -977,14 +1018,14 @@
 <p>“喜欢动物吗？最丑的动物，你喜欢哪一种？”</p>
 <p>“不能说，说了你会呕。”</p>
 <p>“我忍住呕，你说说看。”</p>
-<p>“我先描写它，你猜猜答案。这种动物，你在卡通《狮子王》（TheLionKing）里见过它、见过它们，它们跟着那坏叔叔，助狮为虐，迫害Simba（辛巴）……”</p>
+<p>“我先描写它，你猜猜答案。这种动物，你在卡通《狮子王》（The Lion King）里见过它、见过它们，它们跟着那坏叔叔，助狮为虐，迫害Simba（辛巴）……”</p>
 <p>“哦，我知道了，原来是那些坏东西。它叫Hyena，是不是，中文意思是——”</p>
 <p>“鬣狗。”</p>
 <p>“有人翻成土狼，翻错了，土狼是aardwolf。Hyena有斑点鬣狗、有条纹鬣狗等等，真是丑得可以，你喜欢的是哪一种？”她又展现了她的博学。</p>
 <p>“喜欢哪种都一样，都是丑类，就没什么好挑的。你替我选吧。”</p>
-<p>“我替你选，C-r-o-c-u-t-ac-r-o-u-t-a，Crocutacrocuta。”</p>
-<p>“什么Crocutacrocuta？你好像替我选了crocodilecrocodile，选了两条鳄鱼。”我举起两指。</p>
-<p>“哈，你真有趣。我说的是Crocutacrocuta，是鬣狗的学名，可是拉丁文哪。”</p>
+<p>“我替你选，C-r-o-c-u-t-a c-r-o-u-t-a，Crocuta crocuta。”</p>
+<p>“什么Crocuta crocuta？你好像替我选了crocodile crocodile，选了两条鳄鱼。”我举起两指。</p>
+<p>“哈，你真有趣。我说的是Crocuta crocuta，是鬣狗的学名，可是拉丁文哪。”</p>
 <p>“我的天，你什么都知道。”</p>
 <p>“鬣狗有三大特色，一、吃腐肉，二、前脚长、后脚短，三、女妆男装，Thefemale’ssexualorgansexternallyresemblethoseofthemale.以致大家见了面要互相察看，看谁是女的或谁是男的，有趣吧？”</p>
 <p>“女的男性化，这倒很像有些新女性。”</p>
@@ -1013,11 +1054,11 @@
 <p>“我刚洗过澡，就看到蜚蠊，就喊救命，来不及换衣服。”</p>
 <p>“Metoo.”</p>
 <p>“多巧啊，更巧的是，我们的浴袍是用同样颜色同样ELLE牌子的。”</p>
-<p>“Youtoo,Metoo.”</p>
+<p>“You too, Me too.”</p>
 <p>“如果突然没有了浴袍，这世界会怎样？”</p>
 <p>“这世界会突然出现一个减肥成功的Phryne，和一个赞美眼前这个裸体Phryne的ELLE供应商。”</p>
 <p>“真没想到我们第一次见面，竟同时穿着这种服装。并且，身上又都单纯的只有这一件，这一件没有了，什么都没有了。”</p>
-<p>“你还有birthdaysuit（生日衣裳、裸体）。”</p>
+<p>“你还有birthday suit（生日衣裳、裸体）。”</p>
 <p>她笑起来。“你大师运用起词汇来，真是得心应手。”</p>
 <p>“应该说，只有在你面前才有这种现象。我必须说：你是迷人的，虽然你太年轻了、虽然我不了解你。我了解的你，只是：一、徐太太的外甥女；二、台北美国学校的高中女生；三、我的邻居。至多加个四、蜚蠊恐惧者。”</p>
 <p>她笑了。“应该加上五、大师的崇拜者。”</p>
@@ -1025,28 +1066,28 @@
 <p>“我叫朱仑，昆仑山的仑，我的英文名字叫Julian。你在字典找Romeo（罗密欧）的Juliet（茱丽叶）的时候，你会先找到我。”</p>
 <p>“你真会自我介绍，朱仑。我好奇，你跟Juliet的最大不同是什么？”</p>
 <p>“我不会为爱情自杀。”</p>
-<p>“你叫Julian，这字是四世纪罗马皇帝JuliantheApostate（背教者朱仑）的名字啊，它也是个形容词啊。”</p>
-<p>“你说得对，很少人知道它只是个形容词，表示JuliusCaesar（凯撒的）。”</p>
-<p>“Julius这个字，最早到中国来，被翻作‘儒略’，所以，阳历的前身，JuliusCaesar订的历法，TheJuliancalendar，中国翻成‘儒略历’。”</p>
-<p>“你说得对。它是阳历的前身。公元前46年，JuliusCaesar决定采用的。每年平均365.25天，四年一闰，闰年366天；年分12月，大月即单月31天、小月即双月30天，只有2月平年29天、闰年30天。他的接班人Augustus（奥古斯都）从2月减去一天加在8月，又把9月、11月改为小月，10月、12月改为大月。公元325年基督教会议决定以儒略历为宗教日历，并以3月21日为春分日。儒略历历年比回归年长11分14秒，积累到16世纪末，春分日由3月21日提早到3月11日。16世纪的教皇GregoriusXIII（格列高利十三世）于1582年命人修订，于1582年10月4日命令以次日即原来的10月5日为10月15日；为避免以后积累误差，改以被四除尽的年为闰年，逢百之年只有被四百整除的才是闰年，闰年的2月增加一天。这就是今天的阳历。”</p>
-<p>我鼓了掌。“你真了不起，‘儒略’小姐，你不愧是TheJuliancalendar的同一形容词的一票人，你谈起历法来清楚得像7-ELEVEn柜台小姐在算账。”</p>
+<p>“你叫Julian，这字是四世纪罗马皇帝Julian the Apostate（背教者朱仑）的名字啊，它也是个形容词啊。”</p>
+<p>“你说得对，很少人知道它只是个形容词，表示Julius Caesar（凯撒的）。”</p>
+<p>“Julius这个字，最早到中国来，被翻作‘儒略’，所以，阳历的前身，Julius Caesar订的历法，The Julian calendar，中国翻成‘儒略历’。”</p>
+<p>“你说得对。它是阳历的前身。公元前46年，Julius Caesar决定采用的。每年平均365.25天，四年一闰，闰年366天；年分12月，大月即单月31天、小月即双月30天，只有2月平年29天、闰年30天。他的接班人Augustus（奥古斯都）从2月减去一天加在8月，又把9月、11月改为小月，10月、12月改为大月。公元325年基督教会议决定以儒略历为宗教日历，并以3月21日为春分日。儒略历历年比回归年长11分14秒，积累到16世纪末，春分日由3月21日提早到3月11日。16世纪的教皇Gregorius XIII（格列高利十三世）于1582年命人修订，于1582年10月4日命令以次日即原来的10月5日为10月15日；为避免以后积累误差，改以被四除尽的年为闰年，逢百之年只有被四百整除的才是闰年，闰年的2月增加一天。这就是今天的阳历。”</p>
+<p>我鼓了掌。“你真了不起，‘儒略’小姐，你不愧是The Julian calendar的同一形容词的一票人，你谈起历法来清楚得像7-ELEVEn柜台小姐在算账。”</p>
 <p>“如果更清楚的算账，其实每年有三天的误差，被认定是可以忽略的。”</p>
 <p>“三天的时间可以抹杀吗？”</p>
 <p>“那要看对谁来说。”</p>
 <p>“比如？”</p>
 <p>“比如蜉蝣，mayfly，一般说来，它朝生暮死，只有一天的寿命，所以三天的一天，对它就不可以抹杀。也许蜉蝣自己不在乎，因为三天对它都太长了。你大概奇怪，我会背一首英文翻译出来的中国‘诗经’里的诗，就是描写蜉蝣的，我好喜欢。那是19世纪JamesLegge（理雅各）翻译的。我背给你听听：</p>
 <p>Thewingsoftheephemera,</p>
-<p>Arerobes,brightandsplendid.</p>
+<p>Are robes, bright and splendid.</p>
 <p>Myheartisgrieved;—</p>
-<p>Wouldtheybutcomeandabidewithme!</p>
+<p>Would they but come and abide with me!</p>
 <p>Thewingsoftheephemera,</p>
-<p>Arerobes,variouslyadorned.</p>
+<p>Are robes, variously adorned.</p>
 <p>Myheartisgrieved;—</p>
-<p>Wouldtheybutcomeandrestwithme!</p>
-<p>Theephemeraburstsfromitshole,</p>
+<p>Would they but come and rest with me!</p>
+<p>The ephemera bursts from its hole,</p>
 <p>Witharobesofhemplikesnow.</p>
 <p>Myheartisgrieved;—</p>
-<p>Wouldtheybutcomeandlodgewithme!</p>
+<p>Would they but come and lodge with me!</p>
 <p>多美的诗啊！我想你大师级的人物，一定看过中文那首原诗，不是吗？”</p>
 <p>“你好像在考我，我就让你考一下。这首诗题目就叫《蜉蝣》，是文言文写出来的。要我背给你听吗？我来一边默写，一边背给你听吧。”</p>
 <p>“我来拿纸笔。”</p>
@@ -1106,7 +1147,7 @@
 <p>“什么？难道还有吗？”她紧张起来。</p>
 <p>“悲观的说，没有了。有了随时叫我。不论多么晚。”</p>
 <p>她送我到门口，门开的时候，突然间，她的浴袍带子脱开了，袍子两边垂直下来，一整条赤裸的、自然的、原始的、没有闪躲也全不闪躲的，显露在我眼前。人间意外状态的发生，是可以想像的，但发生后，让状态静止在那里，静止、静止在那一意外里，是难以想像的。难以想像不是单方的，它是感应的、默化的、天启的、相对的，我显露出来的表情，是没有任何表情。静静的、静止的，我凝视着那一整条赤裸，从几秒到十几秒，目光全部集中在她上面，严肃而呆滞。最后，我看着她在看着我，静静的、静止的，任我凝视、任我可怕的凝视。她美丽的眼睛，流下泪水。</p>
-<p>静止终于在我手上。终于，我盯住她的眼神，同时伸出了右手，轻轻摸上了她的。慢慢的，摸了五下，就放开了她。“晚安。sweetseventeen。”我轻轻说。再轻轻的，伸出指背，为她拭去了泪痕。</p>
+<p>静止终于在我手上。终于，我盯住她的眼神，同时伸出了右手，轻轻摸上了她的。慢慢的，摸了五下，就放开了她。“晚安。sweet seventeen。”我轻轻说。再轻轻的，伸出指背，为她拭去了泪痕。</p>
 <p>我一直用右手写散文，今夜，就在今夜，我用她洗过的右手，改写了诗。甜蜜的十七岁！</p>
 <h2 id="蜚蠊后夜"><a class="header" href="#蜚蠊后夜">蜚蠊后夜</a></h2>
 <p>回到房里，仿佛在幻境。</p>
@@ -1121,7 +1162,7 @@
 <p>一阵沉默以后，我小声说：“如果没有第二只蜚蠊，”我顿了一下，“我想我该回去了。”</p>
 <p>“不知道有没有，”她也小声说，“没有也许就是有、有就是没有。”</p>
 <p>“你好会说出哲学家的话，更会做出哲学家做不出来的事。又是那个Alexander，他去拜访希腊哲学家Diogenes（狄阿杰尼斯），Diogenes躺在木桶里，眼里根本没有国王，国王Alexander问这哲学家可有效劳之处，哲学家说别挡住我阳光可也。Alexander感慨之下，说了那句话。你一定知道那句话。”</p>
-<p>“IfIwerenotAlexander,IwouldbeDiogenes.”</p>
+<p>“If I were not Alexander, I would be Diogenes.”</p>
 <p>“你真是神童，你什么都知道。”</p>
 <p>“但我不知道你刚才说的我会做出哲学家做不出来的事。什么事？”</p>
 <p>“还是哲学家Diogenes啊，他可以光天化日之下，当街做你刚刚为我做的，多哲学啊！我必须告诉你，被你做，我感到十分光荣。人家是那样做的哲学家，我是被你做过后，变成哲学家。”</p>
@@ -1131,9 +1172,9 @@
 <p>“包括你和我。”</p>
 <p>“包括我和你。”</p>
 <p>“那Alexander怎么办？Diogenes怎么办？Phryne怎么办？”</p>
-<p>“都GonewiththeWind。”</p>
+<p>“都Gone with the Wind。”</p>
 <p>“记得Phryne的最后吗？”</p>
-<p>“ShebecamethemistressofthesculptorPraxiteles,whosupposedlyusedherasthemodelforhisCnidianAphrodite.她变成希腊爱与美女神的造型，也就是罗马的Venus、维纳斯。”</p>
+<p>“She became the mistress of the sculptor Praxiteles, who supposedly used her as the model for his Cnidian Aphrodite.她变成希腊爱与美女神的造型，也就是罗马的Venus、维纳斯。”</p>
 <p>“穿着睡袍的？”</p>
 <p>“只有在解开时才是吧？”</p>
 <p>“你几岁？你去美国学校念十一年级，该是seveteen？”</p>
@@ -1169,7 +1210,7 @@
 <p>迷乱慢慢退去，我仿佛醒，至少是半醒了。整个的梦境像是预知、是防止、是以欲止欲、恰像那“欢喜佛原理”，用你的献身，来换取我方向上的正确。难道你比他们更聪明，你是预知的精灵，你预知我见过你后，一定那样因你而做，所以，你先做了我，在似幻似真的梦境中做了我，你享有了我的全程与毕露，用柔细的手。你献出了柔细的手。</p>
 <p>“柔细的手，它除了为男人‘性服务’，也写中国字吗？你们美国学校的。”</p>
 <p>“会偷偷写，并且用钢笔。”</p>
-<p>“中国字在英文里总是用Chinesecharacters，表示中国字有它的特色。你用钢笔，钢笔和中国毛笔一样，也写出它的特色。我好好奇，可以看到你用钢笔写的中国字吗？”</p>
+<p>“中国字在英文里总是用Chinese characters，表示中国字有它的特色。你用钢笔，钢笔和中国毛笔一样，也写出它的特色。我好好奇，可以看到你用钢笔写的中国字吗？”</p>
 <p>“真的要看吗？”她眼睛一亮。“我想我会给你看。也许，这是你看到最后的十七岁的人的钢笔字，我们不流行用钢笔了。”</p>
 <p>“我能理解，所以我才那么好奇。”</p>
 <p>“今天下午，正好写了几行，算是一首诗吧。我去拿来给你看。”</p>
@@ -1193,7 +1234,7 @@
 <p>她在笑，在有点无奈的笑。“那你要挂在你家那里？”</p>
 <p>“我吗？要问墙上的十个钉子才知道。”</p>
 <p>“真令人感动。”她低了头，再抬起来，假装自言自语：“看来写一首太少了。为什么不再写九首？”</p>
-<p>我笑起来。“你们美国人真有幽默感。你的诗是悲怆的，但你能借幽默松动一点悲怆，又多么可爱、多么高段的哲学！这叫什么？叫‘悲欣交集’，是公元前八百年希腊诗人灵感下的smilingthroughhertears，纯粹的悲哀并不完整，要欣喜随着它。”</p>
+<p>我笑起来。“你们美国人真有幽默感。你的诗是悲怆的，但你能借幽默松动一点悲怆，又多么可爱、多么高段的哲学！这叫什么？叫‘悲欣交集’，是公元前八百年希腊诗人灵感下的smiling through her tears，纯粹的悲哀并不完整，要欣喜随着它。”</p>
 <p>“包括死亡？”</p>
 <p>“包括死亡。”</p>
 <p>“包括离别？”</p>
@@ -1240,7 +1281,7 @@
 <p>静静的听了，沉默了一下，点点头，她笑起来。“你绝对不知道我笑什么。”</p>
 <p>“我知道。”</p>
 <p>“你说说看。”</p>
-<p>“你点了点头，我知道你的bodylanguage，你在说：真的我喜欢它，我承认，我是十七岁的色情狂。”</p>
+<p>“你点了点头，我知道你的body language，你在说：真的我喜欢它，我承认，我是十七岁的色情狂。”</p>
 <p>两人大笑起来。</p>
 <p>接着，一片模糊出现，我的幻境醒了。</p>
 <h2 id="模特儿约定"><a class="header" href="#模特儿约定">模特儿约定</a></h2>
@@ -1272,7 +1313,7 @@
 <p>“你问得好。”我赞美。“答案是：比起用好的记忆力去记住坏的回忆来，有忘掉本领的人，是幸福的。”</p>
 <p>“我啊，是一个法律人。”徐太太加入，“可是，刚才好像听到了两个哲学家。听起来好像你们两位谈得还不错。如果朱仑在这么有taste的书房里做文学家的模特儿，这行业，除了要不断找回自己以外，还要什么别的吗？朱仑，请先过来好吗？听听大师说的。”</p>
 <p>朱仑坐了下来。</p>
-<p>我开始说：“一般人对模特儿的看法都给看窄了，只以为画家、摄影家，或时装走秀才出现模特儿，其实是错的。权威的辞典就不这么以为。TheRandomHouseDictionaryoftheEnglishLanguage（蓝灯辞典）在model条下解说：4.apersonorthingthatservesasasubjectforanartist,sculptor,writer,etc.5.apersonwhoseprofessionisposingforartistsorphotographers.6.apersonemployedtowearclothingorposewithaproductforpurposesofdisplayandadvertising.这才是没有欠缺的解说。可见模特儿不但供应给时装界、艺术家、和摄影家，同样也供应给作家。只是我不清楚那些烂作家怎么摆布好的模特儿。刚才徐太太的问题问得好，让我稍加说明一下。这是一个奇怪的行业，你只要做你自己，但是被人看的自己。所谓看，可能是普通的看lookat，可能是注视lookatclosely，可能是凝视lookfixedly，可能是视而不见lookbutnotsee，可能是视若无睹lookatyouasnothing……总之，你只要自自然然的做你自己，不要以为被偷看。何况，我并不时时刻刻看你，我只是感觉有你，感觉这房子里不只是我一个人在呼吸。换句话说，我有时眼睛是闭着的，并不看你，当然也不偷看你。”</p>
+<p>我开始说：“一般人对模特儿的看法都给看窄了，只以为画家、摄影家，或时装走秀才出现模特儿，其实是错的。权威的辞典就不这么以为。The Random House Dictionary of the English Language（蓝灯辞典）在model条下解说：4. a person or thing that serves as a subject for an artist, sculptor, writer, etc. 5. a person whose profession is posing for artists or photographers. 6. a person employed to wear clothing or pose with a product for purposes of display and advertising.这才是没有欠缺的解说。可见模特儿不但供应给时装界、艺术家、和摄影家，同样也供应给作家。只是我不清楚那些烂作家怎么摆布好的模特儿。刚才徐太太的问题问得好，让我稍加说明一下。这是一个奇怪的行业，你只要做你自己，但是被人看的自己。所谓看，可能是普通的看look at，可能是注视look at closely，可能是凝视look fixedly，可能是视而不见look but not see，可能是视若无睹look at you as nothing……总之，你只要自自然然的做你自己，不要以为被偷看。何况，我并不时时刻刻看你，我只是感觉有你，感觉这房子里不只是我一个人在呼吸。换句话说，我有时眼睛是闭着的，并不看你，当然也不偷看你。”</p>
 <p>“这真是个怪条件，又宽大又有一点怪怪的。”徐太太说。“朱仑你呢？听听你的意见。”</p>
 <p>朱仑低头不语好一阵，抬起头来。</p>
 <p>“问题是，我可以偷看你吗？”她天真的问。</p>
@@ -1287,8 +1328,8 @@
 <p>我笑起来，徐太太也笑着，可是朱仑一脸严肃。</p>
 <p>“我很好奇，”我说，“你为什么要看我？”</p>
 <p>“我没说要看你，我说要偷看你。”</p>
-<p>“为什么要偷看？只听说PeepingTom，没听说Tom被peeping。”</p>
-<p>“现在时代变了一点。AnyTom,Dick,orHarrycanpeepasaPeepingTom.”</p>
+<p>“为什么要偷看？只听说Peeping Tom，没听说Tom被peeping。”</p>
+<p>“现在时代变了一点。Any Tom, Dick, or Harry can peep as a Peeping Tom.”</p>
 <p>“付钱吗？”</p>
 <p>朱仑摇了摇头。</p>
 <p>徐太太一直笑，朱仑一直很严肃。</p>
@@ -1298,7 +1339,7 @@
 <p>“我们家朱仑很会谈判，是不是？”徐太太笑着。“模特儿做完，她可以改行做律师了。”</p>
 <p>“太会了，”我说，“问题是她为什么要偷看一个大她三倍的人？”</p>
 <p>“大概因为她十七岁的缘故。”徐太太说。“你大师太优秀了，像朱仑这些优秀的十七岁会崇拜你。”</p>
-<p>“你说这话，忘了generationgap（代沟），gap、gap，这字要加好多S，SSS才对。十七岁会了解我吗？正好相反，我倒想了解了解十七岁，这也就是你徐太太提议朱仑过来、我表示欢迎的原因。我写了一百多本书，上天下地都写了，可是没写过十七岁，因此我想写它一写，所以呀，想到朱仑，正好是写作上的模特儿，如果她愿意。”</p>
+<p>“你说这话，忘了generation gap（代沟），gap、gap，这字要加好多S，SSS才对。十七岁会了解我吗？正好相反，我倒想了解了解十七岁，这也就是你徐太太提议朱仑过来、我表示欢迎的原因。我写了一百多本书，上天下地都写了，可是没写过十七岁，因此我想写它一写，所以呀，想到朱仑，正好是写作上的模特儿，如果她愿意。”</p>
 <p>“朱仑愿意吗？”徐太太亲切的问。</p>
 <p>“我只是还没弄清是部分愿意，还是全体愿意。因为，我不知道要做哪一部分的模特儿。”朱仑质疑。</p>
 <p>“问哪一部分的模特儿，问得真好。”我答道。“可是，答案不在我这边，而在你那边、在模特儿自己那边。作为模特儿，你能modelling多少。模特儿绝非静止、绝非被动，模特儿是优秀的演员、又能顺从导演、又能演出扮演的角色，成功得使导演顺从她。作为文学家的模特儿，更有她独有的特色，外在的以外，内在的也能modelling出来，当文学家要写出精灵的线条时，第一流的模特儿不声不响，会裸泳入池，做一条水蛇。”</p>
@@ -1395,14 +1436,14 @@
 <p>鱼戏莲叶南，</p>
 <p>鱼戏莲叶北。</p>
 <p>读了这首诗，你有什么感想？第一感想就是，它的细腻，是不是？它不止透露给你：鱼在莲叶底下自由自在的游，并且游的方位都向你报告了，东西南北，不嫌罗嗦，统统报上来了，多细腻啊！”</p>
-<p>“我想起来了。有一个字，叫Navajo（纳瓦霍），它是指住在美国新墨西哥州、亚利桑那州等地的印地安人，他们有首NightChat（夜吟诗），我背给你听：</p>
-<p>HappilymayIwalk.</p>
-<p>Mayitbebeautifulbeforeme.</p>
-<p>Mayitbebeautifulbehindme.</p>
-<p>Mayitbebeautifulbelowme.</p>
-<p>Mayitbebeautifulaboveme.</p>
-<p>Mayitbebeautifulallaroundme.</p>
-<p>Inbeautyitisfinished.”</p>
+<p>“我想起来了。有一个字，叫Navajo（纳瓦霍），它是指住在美国新墨西哥州、亚利桑那州等地的印地安人，他们有首Night Chat（夜吟诗），我背给你听：</p>
+<p>Happily may I walk.</p>
+<p>May it be beautiful before me.</p>
+<p>May it be beautiful behind me.</p>
+<p>May it be beautiful below me.</p>
+<p>May it be beautiful above me.</p>
+<p>May it be beautiful all around me.</p>
+<p>In beauty it is finished.”</p>
 <p>“多巧啊！”我们同声惊叹。</p>
 <p>“糟糕！”我冒出了一句。</p>
 <p>“怎么了？”</p>
@@ -1463,7 +1504,7 @@
 <p>智者的虚拟是多么绝妙的虚拟！</p>
 <p>可以一个真实，做多种虚拟。</p>
 <p>可以一个虚拟，做多种虚拟。</p>
-<p>夏洛瓦的画，显然与朱仑有一种link，也许是missinglink（欠缺的一环），但是missing的部分，只有虚拟。</p>
+<p>夏洛瓦的画，显然与朱仑有一种link，也许是missing link（欠缺的一环），但是missing的部分，只有虚拟。</p>
 <p>这是智者的虚拟第二号。</p>
 <p>不说一句话，一进门，她就走到了那张油画前面。</p>
 <p>“看来连框四十乘三十四英寸，她那么小吗？还是扁的。”她自言自语。</p>
@@ -1480,8 +1521,8 @@
 <p>“我会。如果她不叫警察。”</p>
 <p>朱仑笑起来了。</p>
 <p>“你对这画masturbate过吗？并且不止一次。”</p>
-<p>我用英文回答吧：“Hadatruefrescolikeyou,whoneedsflasepainting？（真身在兹，何须赝迹？）”</p>
-<p>“也许可以对我masturbate，但它不包含做模特儿的项目之内。算是afreesample（免费样品）。”</p>
+<p>我用英文回答吧：“Had a true fresco like you, who needs flase painting？（真身在兹，何须赝迹？）”</p>
+<p>“也许可以对我masturbate，但它不包含做模特儿的项目之内。算是a free sample（免费样品）。”</p>
 <p>“为什么你这么好？”</p>
 <p>“因为我比画里的，更符合你的需要。我有一种冲动，要为你做有个frame（画框）的‘性服务’，你这样有名的骄傲的男人，一定有这方面的不方便，也许你需要我。”</p>
 <p>“我想我会有点窘，面对着真的。而对画里的，自然不会。你应该知道，masturbate时候很失控、很难看，甚至看来有点下流，最后很狼狈。你不觉得吗？”</p>
@@ -1512,7 +1553,7 @@
 <p>“哦。”我也笑。“可是警察也很多呀。”</p>
 <p>“你好像有点怕警察。我们谈话没十分钟，你两次提到警察。”</p>
 <p>“平常不怕、裤腰带以上不怕。”</p>
-<p>“你很有幽默感，美国人最讲究senseofhumour，美国人一定喜欢你。”</p>
+<p>“你很有幽默感，美国人最讲究sense of humour，美国人一定喜欢你。”</p>
 <p>“美国的CIA更喜欢我，因为我反对美国帝国主义是有名的。”</p>
 <p>“美国是言论自由的国家。”</p>
 <p>“但言论后是否有自由，不无疑义。CIA会暗杀哟。”</p>
@@ -1548,10 +1589,10 @@
 <p>“我相信会自由自在，只是苦了不能照镜子。”</p>
 <p>“为什么？”</p>
 <p>“一照镜子，看到里面就是个警察！”</p>
-<p>朱仑笑起来。“你真可爱，所以，我要算是afreesample，免费的。”</p>
-<p>“可以用probono吗？”</p>
-<p>“Whatdoes“probone”mean?”（probono是什么意思？）</p>
-<p>“Itmeansfree.”（免费的意思。）</p>
+<p>朱仑笑起来。“你真可爱，所以，我要算是a free sample，免费的。”</p>
+<p>“可以用pro bono吗？”</p>
+<p>“What does“pro bone”mean?”（pro bono是什么意思？）</p>
+<p>“It means free.”（免费的意思。）</p>
 <p>“Thenwhydon’tyoujustsay“free”?”（为什么不直接说free，免费的？）</p>
 <p>“Idon’trecognizeitasaword.”（我不承认free这个字。）</p>
 <p>“你不喜欢free？”</p>
@@ -1560,14 +1601,14 @@
 <p>“你吓到了我！你怎么会知道？”</p>
 <p>“根据Webster’sNewInternationalDictionary,它是OneofsixdivisionsofthecountyofSussex,England,intermediatebetweenahundredandshire.这个辞典提到的ahundred，中文该怎么翻？”</p>
 <p>“该翻成‘百户邑’，表示百户人家，是郡、shire以下的行政单位。美国史中的一些州也有这种单位。”</p>
-<p>“辞典中说rape在ahundredandashire之间，就指在百户邑和郡之间？”</p>
+<p>“辞典中说rape在a hundred and a shire之间，就指在百户邑和郡之间？”</p>
 <p>“这是辞典解释。不是我们‘磺溪辞典’的解释。”</p>
 <p>“我们的辞典怎么解释？”</p>
-<p>“该解释成rape是ahundredandashire，一百次和神殿之间，rape一百次，可以成圣，当然是先死了，再成圣。你知道，一百次，我会死了。Ifmedies,medies.”</p>
+<p>“该解释成rape是a hundred and a shire，一百次和神殿之间，rape一百次，可以成圣，当然是先死了，再成圣。你知道，一百次，我会死了。If me dies, me dies.”</p>
 <p>我高速虚拟到这里。我笑起来。</p>
 <p>朱仑奇怪的望着我，我告诉她我上面的虚拟。</p>
 <p>朱仑笑起来。“一百次，只是你死吗？”</p>
-<p>“我有个笑话讲给你。一个六十七岁的老富翁，非常健康、有钱、有魅力。他喜欢上一个十七岁的漂亮女孩子，居然要结婚了。两人相差五十岁，那是非常‘老夫少妻’的。他的好朋友们不以为然，一齐跑来劝他，说，你六十七、女的十七，在床上，要出人命的。老富翁安静的听完了劝告，不以为然的说：的确要出人命的，可是Ifshedies,shedies!她要死，我没办法。”</p>
+<p>“我有个笑话讲给你。一个六十七岁的老富翁，非常健康、有钱、有魅力。他喜欢上一个十七岁的漂亮女孩子，居然要结婚了。两人相差五十岁，那是非常‘老夫少妻’的。他的好朋友们不以为然，一齐跑来劝他，说，你六十七、女的十七，在床上，要出人命的。老富翁安静的听完了劝告，不以为然的说：的确要出人命的，可是If she dies, she dies!她要死，我没办法。”</p>
 <p>“我好喜欢这个笑话，”朱仑笑起来，然后神秘的补了一句，“虽然我会死。”</p>
 <p>“问题是、悲剧是——”我也神秘起来。</p>
 <p>“是——？”</p>
@@ -1592,7 +1633,7 @@
 <p>情人和模特儿的最大不同是：后者的裤子，要自己脱。</p>
 <p>这种分类，正是大师级的语言。</p>
 <p>又回到朱仑和画像。朱仑也有她的西方。朱仑告诉我，她有八分之一的美国白人混血。我说：</p>
-<p>“普希金（Pushkin）、小仲马（AlexandreDumasfils）都有八分之一黑人混血，我想起octoroon那个字，黑人血统占八分之一的混血儿。现在来了新的octoroon的定义，算是octo-white-roon吧？”</p>
+<p>“普希金（Pushkin）、小仲马（Alexandre Dumas fils）都有八分之一黑人混血，我想起octoroon那个字，黑人血统占八分之一的混血儿。现在来了新的octoroon的定义，算是octo-white-roon吧？”</p>
 <p>朱仑笑起来。“我是octoroon吗？我是octoroolong吧？oolong，乌龙茶的乌龙。”</p>
 <p>“你真有趣，oolong吗？你这么白，一点也不乌龙，但你这么说，未免太‘乌龙’了。你知道俗话说‘乌龙’的意思吗？”</p>
 <p>“是指闹出大笑话，指穿梆了。”</p>
@@ -1616,7 +1657,7 @@
 <p>“我喜欢你的嫉妒。”</p>
 <p>“嫉妒也值得喜欢吗？”</p>
 <p>“你有这么漂亮的大腿，发生在大腿身上的一切，都值得喜欢。”</p>
-<p>“哦，MyGod!”</p>
+<p>“哦，My God!”</p>
 <p>“说说你要问的问题看，我不看大腿，我看你，你说说看。”</p>
 <p>“让我说说看。刚刚我站在画像前面，又从画像前走过来，你有什么感想？”</p>
 <p>“中国鬼怪故事中，漂亮的女鬼，都从墙上挂的画里走下来。今晚，我家里有了女鬼。不过，我必须说，说她从画里走下来的，并不一定准确。她可能是外来的女鬼，走进了画里。而墙上的那幅画，根本就是回来的女鬼自己。”</p>
@@ -1688,9 +1729,9 @@
 <p>“阿姨明天才回来，去了香港。”</p>
 <p>“11点50分，我想我会很高兴在游泳池边见到游出今天的模特儿。”</p>
 <p>“如果我又迟到呢？”</p>
-<p>“那我会看到明天。Tomorrowisanotherday.”</p>
+<p>“那我会看到明天。Tomorrow is another day.”</p>
 <p>“你引用了一句GoneWith女主角的话。”她神秘一笑。</p>
-<p>“如果TheWind会带走一切，让我们用猎枪把Zephyr（西风之神）打下来。”</p>
+<p>“如果The Wind会带走一切，让我们用猎枪把Zephyr（西风之神）打下来。”</p>
 <p>“这句话是谁说的？”</p>
 <p>“猎人说的。”</p>
 <p>“哪里的猎人说的？”</p>
@@ -1711,7 +1752,7 @@
 <p>月光下的池水多么安谧、多么美。月光是赤裸的、子夜是赤裸的、一切都是赤裸的，一切都赤裸迎接十七岁的赤裸，是裸泳的朱仑。这里是完整的宇宙，“四方上下曰宇、往古来今曰宙”，是十七岁的她，潜入这个宇宙。宇宙是那么洪荒，只有潜入、十七岁的潜入、十七岁漂亮女生的潜入、十七岁漂亮女生朱仑的潜入，才算迎裸而解。月光如水，是鬼斧；柔情似水，是神工，宇宙的神秘因她潜入而破解，但又披上更浓的神秘。</p>
 <p>她从水中走出来，接过浴巾，披在肩上，却没有去擦，全身湿淋着、赤裸着，走向电梯，像赤裸走进发光的大盒子。浴巾不是浴巾，只是肉体的陪衫，大小的水珠横陈着、串连着，更闪亮出她赤裸的流光，水珠从头发上凝聚、流下；从毛孔中凝聚、流下，滴落在电梯里。</p>
 <p>整个的裸泳，二十分钟以内；走回大厅搭电梯到十二楼，五分钟以内。朱仑没说一句话，我也没说一句话。十二楼到了，她直接开了她家的大门，刚才下楼，根本锁都不锁。在门口，她侧身望着我，露出奇异的表情，又凄楚又可怜，像是子夜的过客，被剥光了、也被强暴了。她没说一句话，她用沉默在说话，我目送着她，直到看她掩上了门。我看了表，是12点15分。全部二十五分钟，朱仑，出没；朱仑，游过；朱仑，徜徉；朱仑，设色，全部时间，唯一的回音，只是轻微的水声。</p>
-<p>大厦移交回管理员手里，我回到家，我一直还在亢奋状态。月光下的裸泳画面，太深刻了、也太令我沉迷了。我躺在沙发上，沉迷在忘我的境界，直到“Hegiveshisharness…ashake/Toaskifthereissomemistake.”，我才发觉我对不起我肉身里的“He”。一阵幻梦罩向了我，像在游泳池畔，我强暴着十七岁。梦醒时分，我仿佛印证了什么：“十二楼到了……在门口，她侧身望着我，露出奇异的表情，又凄楚又可怜，像是子夜的过客，被剥光了、也被强暴了。”</p>
+<p>大厦移交回管理员手里，我回到家，我一直还在亢奋状态。月光下的裸泳画面，太深刻了、也太令我沉迷了。我躺在沙发上，沉迷在忘我的境界，直到“He gives his harness…a shake/To ask if there is some mistake.”，我才发觉我对不起我肉身里的“He”。一阵幻梦罩向了我，像在游泳池畔，我强暴着十七岁。梦醒时分，我仿佛印证了什么：“十二楼到了……在门口，她侧身望着我，露出奇异的表情，又凄楚又可怜，像是子夜的过客，被剥光了、也被强暴了。”</p>
 <h2 id="烛浴"><a class="header" href="#烛浴">烛浴</a></h2>
 <p>子夜已尽。</p>
 <p>一点一刻，我写完了日记。门铃轻响了一下。</p>
@@ -1773,13 +1814,13 @@
 <p>三十分钟后，烛光释放了。</p>
 <p>我先回坐在书桌旁，静静的看着。她从浴室愉快的走出来，站到阳台窗前，闪动的烛光遍照在水珠上，水珠或留恋在她的赤裸，或沿着赤裸滑下，神秘的她，仿佛一无感觉，只享受着烛光。浴巾拎在手里，一动也不动，像一座雨后的塑像。唯一可遮掩自己的、可擦干自己的，只是塑像的道具。</p>
 <p>我一动也没动。宇宙凝在美丽的画面里，整个的书房、整个的客厅、整个的我，都凝在一起，都像浴巾做了道具、外围的道具。所有的道具中，最特出的，是满墙满架的古典中国书和古典洋文书，和交错其间古铜器、古钟、古欧洲瓷器。在那一氛围里，衫托出赤裸的高中女生，十七岁的她，赤裸呼吸在古典与现代里，多么动人的赤裸！</p>
-<p>我不要描写她，因为她在文字以外；我不要比较她，因为比较对她是亵渎。一如约翰敦在《挽歌》（ELEGIE）第八章“对比”（TheComparison）中所说的，把她比作什么是对她的亵渎——Leaveher,andIwillleavecomparingthus,/She,andcomparisonsareodious.所以，我放弃描写她，我至多用了几个形容词之类，做个光环、定位、与区隔。我会用skinny来点破她瘦不露骨、会用perky来点破她小奶上翘，其他我都不多落墨，beyondwords（难以用文字形容）的，为什么要辛苦它们？对那出色而又出世的、风华而又绝代的，文字只有匍伏。它们不再挥洒在美女身上，在美女身上的，只是神秘、烛光、与洗礼。哦，这是模特儿第二次的朱仑，她真动人，她挥洒了太多的十七岁。</p>
+<p>我不要描写她，因为她在文字以外；我不要比较她，因为比较对她是亵渎。一如约翰敦在《挽歌》（ELEGIE）第八章“对比”（The Comparison）中所说的，把她比作什么是对她的亵渎——Leave her, and I will leave comparing thus, /She, and comparisons are odious.所以，我放弃描写她，我至多用了几个形容词之类，做个光环、定位、与区隔。我会用skinny来点破她瘦不露骨、会用perky来点破她小奶上翘，其他我都不多落墨，beyond words（难以用文字形容）的，为什么要辛苦它们？对那出色而又出世的、风华而又绝代的，文字只有匍伏。它们不再挥洒在美女身上，在美女身上的，只是神秘、烛光、与洗礼。哦，这是模特儿第二次的朱仑，她真动人，她挥洒了太多的十七岁。</p>
 <p>不过，十七岁还是留了一句话。“你看不起十七岁。”</p>
 <p>“说来话长。中国的哲学家老子，一生只留下五千字真言来诠释万象。其中一段说人总受到低层次外界的吸引，那低层次是五色五音之类。他说：‘五色令人目盲、五音令人耳聋。’从现代的五色五音的吸引力来比较，老子时代的，太不够看了。科技的介入，使吸引力变生三大阶段的大跃进。第一阶段是电影、第二阶段是电视、第三阶段是电脑。它们造成致命的吸引力，疯狂了人类，由美国带头引发的追逐，远超过古人‘风驰电掣’那句成语的想像。得失之间，人类庸俗化的趋势、商业化的走向，变得不可收拾，这可真要命。人类本来就庸俗，这下子给加上翅膀了。五色五音变成五雷轰顶了。第三阶段的大跃进是最无远弗届的、无孔不入的、无敌不摧的，年轻人完了，像麦田般的倒成一片。他们的遭遇是一律的、平等的、无所逃的，谁不电脑呢？谁不上网呢？谁不手机呢？谁不e-mail呢？谁不指尖指点的近视眼呢？哲学家会责怪老子了，为了老子错怪了他们那个时代的五色五音。比较起来，那时代的五色五音，太含蓄了、太单调了、太客气了、太不登堂入室了、太不随身携带了。老子那时代的人类还可以呼吸，现代人呢，人类一边呼吸、一边窒息、一边喘息，人类受够了。人类中间有一个承上启下的年纪，叫十七岁。美国二次大战军用俚语指废纸篓叫fileseventeen，头一个字file发音很‘废’、废物的废，fileseventeen可以比照‘废物’，翻成‘废十七岁’。”</p>
 <p>“你看不起十七岁。”</p>
 <p>“有点看不起虚有其表的十七岁、废纸篓式的十七岁。中国古代小说《醒世姻缘》说‘皮囊幻相’，这四个字该是源自佛家观念，但描写得比较好。主要指‘金玉其外，败絮其中’。多少十七岁，那么金玉、那么标致，可惜是草包。人间最不相称的一个现象是：有青春美丽的造型，却没有渊博高雅的谈吐，个个都是同一个模子出来的漂亮小板鸭，听他们的讲话，内容是那样庸俗、那样浅薄、那样众口一声、那样千篇一律、那样甲像乙乙像丙丙像丁丁像甲，他们一个个都是血色鲜红的行尸走肉，为什么？因为他们的思路迷信而落后，是千年死尸的新包装。澳洲黑社会把seventeen加上er，叫seventeener，意思就是死尸，字面上又像特指十七岁的死尸，美国俚语词典也跟进这个字，美国也seventeener呢。这样顺流而下，十七岁不但是废物，还是行尸呢。”</p>
 <p>“你看不起十七岁。”</p>
-<p>“但我看得起的，有一个十七岁。我要跟她共组一个学派呢。学派名字叫‘新逍遥学派’（NewPeripateticism），跟古希腊人不同的是，他们散步讲学，我们是同浴论道呢。”</p>
+<p>“但我看得起的，有一个十七岁。我要跟她共组一个学派呢。学派名字叫‘新逍遥学派’（New Peripateticism），跟古希腊人不同的是，他们散步讲学，我们是同浴论道呢。”</p>
 <p>还是烛光，做了最美的见证。</p>
 <h2 id="为什么要强暴她"><a class="header" href="#为什么要强暴她">为什么要强暴她？</a></h2>
 <p>赤裸的十七岁。“我喜欢站在阳台窗前。我可以看到山，山也可以看到我。”</p>
@@ -1801,7 +1842,7 @@
 <p>“还敢来吗？十个男人，都是阎王，标准说法是奉广王、初江王、宋帝王、五管王、阎罗王、变成王、泰山王、平等王、都市王、转轮王，一起来洗澡，我们的豪宅变成公共大浴池了，还得了吗？”</p>
 <p>我们同时大笑起来。</p>
 <p>“难怪我们只听过‘泰山压顶’的成语，并没听过‘泰山洗澡’。”</p>
-<p>“你别忘了，那美国作家EdgarRiceBurroughs（巴洛兹）笔下的‘泰山’、Tarzan，可是洗澡的。”</p>
+<p>“你别忘了，那美国作家Edgar Rice Burroughs（巴洛兹）笔下的‘泰山’、Tarzan，可是洗澡的。”</p>
 <p>“哈，你这十七岁，可真会转型，你会串连起‘泰山’来，汉英舒泰、中西合山，你怎么会有这种本领。这种本领，电脑啦、上网啦，都串连不到的。我奇怪你怎么能这样？你看过泰山电影吗？”</p>
 <p>“看过卡通。没看过真人。大概泰山是个‘猛男’吧，在荒山里做人猿。”</p>
 <p>“他的确是‘猛男’，可是是个莽夫、是‘莽夫猛男’。泰山小说是1914年出现的，演泰山的电影明星长得又笨又壮，但还能看，几十年后的卡通泰山就太糟了，画得像个傻瓜、是‘傻瓜猛男’，你喜欢‘莽夫猛男’还是‘傻瓜猛男’？”</p>
@@ -1825,9 +1866,9 @@
 <p>“你忘了我一开始就说过，跟模特儿没有情人关系。”</p>
 <p>“你的意思是说，只有‘演出’的关系，或只有真的强暴的关系。”</p>
 <p>“我想，后面那种关系不会有，因为被虚拟了。但是，‘演出’那种，我好难回答，我希望有一张禁止‘演出’的清单，你可以开出来。”</p>
-<p>“你要我开吗？MyBOSS。”</p>
+<p>“你要我开吗？My BOSS。”</p>
 <p>我点点头。</p>
-<p>“我想我不要做禁止MyBOSS的事。我十七岁、我是可爱的十七岁、我是取悦你的十七岁，你可以对我做你喜欢的任何事，包括你强暴我。你可以抛掉虚拟，真实的十七岁毕竟胜过虚拟的，至少肉体是真实的，没有真实的肉体，虚拟只是假中的假。”</p>
+<p>“我想我不要做禁止My BOSS的事。我十七岁、我是可爱的十七岁、我是取悦你的十七岁，你可以对我做你喜欢的任何事，包括你强暴我。你可以抛掉虚拟，真实的十七岁毕竟胜过虚拟的，至少肉体是真实的，没有真实的肉体，虚拟只是假中的假。”</p>
 <p>“你说肉体是真的，我正是在这一真实上开始虚拟的，没有肉，哪有灵，我完全承认，我虚拟追求的，是根据十七岁的肉体做出演绎、开出真实所没有的。”</p>
 <p>“那我呢？请告诉我，真实的我在肉体以外，还没有什么呢？还有什么赶不上虚拟的我呢？”</p>
 <p>“你呀，你是绝对的例外，真实的你赛过虚拟的你，只是，虚拟的你可以永远十七岁，不是吗？并且，真实的十七岁的你，会离开我，我要拥有一个永远不会离开我的朱仑，所以，我有了虚拟的朱仑。”</p>
@@ -1856,7 +1897,7 @@
 <p>“在太虚幻境、大千世界里，你不但被我强暴，还要被迫取悦强暴者，在被摧残中喊出你喜欢，等等等等，你要配合做出太多太多的，我无法详细描写，因为你不到十八岁。”</p>
 <p>“这就是成年人对十七岁的公道与正义！十七岁可以做，却不可以看；可以说，却不可以听。这是扭曲的公道与正义。”</p>
 <p>“扭曲也是一种趣味、扭曲也含义深长。因为很荒谬。但荒谬常常是离我们不远的，像今天的你和我的关系，不就有点荒谬吗？”</p>
-<p>“对你来说，荒谬之感比我还多吧？我在你眼中，是两个朱仑。一个是真实的我，一个是虚拟的我，对真实的我，你是afinegentleman,atruegentleman，但对虚拟的我，你却那样一次又一次。可见你喜欢虚拟的我。”</p>
+<p>“对你来说，荒谬之感比我还多吧？我在你眼中，是两个朱仑。一个是真实的我，一个是虚拟的我，对真实的我，你是a fine gentleman, a true gentleman，但对虚拟的我，你却那样一次又一次。可见你喜欢虚拟的我。”</p>
 <p>“那个你就是你，只是在真实人生里，我能真的强暴你吗？天下大乱了。所以我说，‘演出’是一个好方式。”</p>
 <p>“比虚拟还好吗？”</p>
 <p>“真实的朱仑永远是无可代替的，只能接替她。不能replace她，只能succeed她。并且，接替她的、succeed她的，还得是虚拟中的她自己，不是别人。”</p>
@@ -1879,12 +1920,12 @@
 <p>“你说得对，也许有一天，不论是谁的死亡，都会出现最有学问的阴茎。”</p>
 <p>都笑起来了。我补了一句：“希望那时我不在牢里。”</p>
 <h2 id="模特儿规则"><a class="header" href="#模特儿规则">模特儿规则</a></h2>
-<p>“怎么了？”我说。“谈到‘演出’被强暴，谈得太遥远了。你的MyBOSS要禁止。你到底怎么称呼我呢？”</p>
-<p>“怎么称呼你呢？称你BOSS、称你‘大师’，太不专属于我了，称呼你英文GRANDMASTER吧，或简称G-MASTER。G字也可以，随我们高兴，作为G字开头的许多我们喜欢的字来用，比如说，GEE,MASTER！就是哎呀大师。又比如说GLEEMASTER，就是无伴奏男生三声合唱大师，又哎呀又没有伴奏，不正适合你的令人惊叹的孤独作风吗？”</p>
+<p>“怎么了？”我说。“谈到‘演出’被强暴，谈得太遥远了。你的My BOSS要禁止。你到底怎么称呼我呢？”</p>
+<p>“怎么称呼你呢？称你BOSS、称你‘大师’，太不专属于我了，称呼你英文GRAND MASTER吧，或简称G-MASTER。G字也可以，随我们高兴，作为G字开头的许多我们喜欢的字来用，比如说，GEE, MASTER！就是哎呀大师。又比如说GLEE MASTER，就是无伴奏男生三声合唱大师，又哎呀又没有伴奏，不正适合你的令人惊叹的孤独作风吗？”</p>
 <p>“多谢你对我的称呼，就这样G-MASTER了。”</p>
-<p>“基本上，我会加重MASTER的称呼，Likemaster,likemodel.就翻成‘有其主必有其模特儿’吧。”</p>
+<p>“基本上，我会加重MASTER的称呼，Like master, like model.就翻成‘有其主必有其模特儿’吧。”</p>
 <p>“谢谢你的描写和服从。”</p>
-<p>“不过，”朱仑又变了，“再想想看，有没有别的称呼。其实，叫‘大师’也满习惯的，为了专门只我一个人叫的，把‘大师’的称呼加倍吧，叫你‘大大师’吧，但用英文叫法，变成DadaShia，Dada是达达主义派，Shia是伊斯兰什叶派，听起来又反传统又传统，充满了象征，你可喜欢？”</p>
+<p>“不过，”朱仑又变了，“再想想看，有没有别的称呼。其实，叫‘大师’也满习惯的，为了专门只我一个人叫的，把‘大师’的称呼加倍吧，叫你‘大大师’吧，但用英文叫法，变成Dada Shia，Dada是达达主义派，Shia是伊斯兰什叶派，听起来又反传统又传统，充满了象征，你可喜欢？”</p>
 <p>“我很喜欢。坦白告诉你，我喜欢我在你眼前有大大的感觉，你感觉我大大，我也感觉我大大。我可能特别喜欢你，如果你使我越来越大大、大大大、大大大大，直到我爆炸为止。”</p>
 <p>朱仑没有笑，只严肃的低声的说：“没想到你是气球。”</p>
 <p>“是古典的那种，不是NASA（美国航空暨太空总署）那种。”</p>
@@ -1900,7 +1941,7 @@
 <p>“要想死在一起，要拥抱才可能。”</p>
 <p>“死在拥抱？”</p>
 <p>“死在拥抱。像巴黎圣母院中的钟楼怪人和他迷恋的女人。”</p>
-<p>“你提醒我，我能背出那一段：Whenthosewhofoundthisskeletonattemptedtodisengageitfromthatwhichitheldinitsgrasp,itcrumbledtodust.（骷髅相拥，触之成尘。）”</p>
+<p>“你提醒我，我能背出那一段：When those who found this skeleton attempted to disengage it from that which it held in its grasp, it crumbled to dust.（骷髅相拥，触之成尘。）”</p>
 <p>“你好伟大，你可以背出这么多。”</p>
 <p>“其实更伟大，我可以背出更多更多。多得连我自己都不知道原来我会背。只是需要像点唱机一样的点唱它，点唱需要启发，跟你谈话，因为你的渊博和灵活，得到最好的启发。所以，我就真像打开话匣子，非常万宝、非常Pandora（潘多拉），整个的现象，就是如此。”</p>
 <p>我鼓了掌。“说得真精彩，朱仑。现在，我插句话，让我告诉你，我现在多痛苦，我看到你的赤裸画面，我好喜欢看你的一丝不挂，在这房间里，在这些书和艺术品里，你属于它们一族，你是我的艺术品，有肉身的艺术品，可是，我必须说，我担心裸体太久，会着凉，我要建议你穿上一点东西，可是穿上后，我就不能看到完全的赤裸画面了，我好痛苦。结论是，你至少穿上一件我的衬衫，你赞成吗？你自己到卧室衣柜找一件吧。”</p>
@@ -1938,15 +1979,15 @@
 <p>朱仑望着水杯，一动也没动。最后，她开口了：</p>
 <p>“对不起，老板，可以由model自备水杯吗？”</p>
 <p>我笑起来。“自备不行，但老板可以换一个。”说着，我从柜里拿出另一杯蓝底银字的，上面印着：</p>
-<p>MEBOSS.YOUNOT.</p>
+<p>ME BOSS. YOU NOT.</p>
 <p>“用这杯吧，”我说，“这杯比较温和。”</p>
 <h2 id="模特儿的第三次"><a class="header" href="#模特儿的第三次">模特儿的第三次</a></h2>
 <p>2007年9月29日，星期六。</p>
 <p>模特儿第三次来，如果她来的话。</p>
 <p>两点半我从外面回来，进门就看到她的球鞋，我高兴她到了，并且早到了。</p>
 <p>她正躺在长沙发上看书。</p>
-<p>“我在看这本《生技魅影》，这本书的副书名叫《我的细胞人生》MyCellCareer，作者是台大医学院血液肿瘤科的名医陈教授。”</p>
-<p>“其实，MyCellCareer这书名，我也可以用，Cell是细胞，也是牢房、小牢房，在白色恐怖时代，好多年我的青春都埋葬在cell里了。”</p>
+<p>“我在看这本《生技魅影》，这本书的副书名叫《我的细胞人生》My Cell Career，作者是台大医学院血液肿瘤科的名医陈教授。”</p>
+<p>“其实，My Cell Career这书名，我也可以用，Cell是细胞，也是牢房、小牢房，在白色恐怖时代，好多年我的青春都埋葬在cell里了。”</p>
 <p>“你看起来比你年纪年轻得多。什么原因？”</p>
 <p>“原因是坐牢的时间，上帝不算。照美国老总统Hoover（胡佛）的说法，钓鱼的时间，上帝不算。上帝可能特别悲怜我们被美国间接压迫而坐牢的人，所以，开放了尺度，钓鱼以外，坐牢也不算了。”</p>
 <p>“为什么说间接压迫而坐牢？”</p>
@@ -1971,18 +2012,18 @@
 <p>“我看这有落差。走秀的模特儿是台上的美女，不是床上的。上了床，近距离起来，她们体积太大了，比例不对、不舒服。上床的要像某一个人一样，她比‘凯渥’的娇小秀气，尤其乳房要小得多，不是一对大笨奶。在床上，要像某一个人一样，才真正性感，看到某一个人，男人浑身除了一部分，其他全软了，这才叫女人。可以强奸Queen，但不是强奸King-size的Queen，而是Queen’sScout（女王的童子军）式的Queen。结论是一句话，女人上床可以喜欢King-size，但她自己不可以King-size，你知道吗？”</p>
 <p>“听了你的King’sspeech（国王敕语），我想我很荣幸的知道，知道了一切。”朱仑在笑，向上看到天花板。“并且，我会小心可怕的King-size，尤其当某一个人又来自KingStreet（国王街）的时候。我考不倒你，你一定知道KingStreet是什么。”</p>
 <p>我笑着，有点神气。“我知道伦敦的几条街，harleyStreet（哈莱街），名医的；GrubStreet（葛拉布街），潦倒文人的；GareyStreet（凯瑞街），破产的，好奇怪，Lincoln’sInn（林肯律师学院）就在那儿，律师跟破产这么有关系哟。还有，你的KingStreet，我们伟大的共产党街，从1920年就是英国共产党的街，共产党人不King，可是街却King起来了。”</p>
-<p>“MyGod！MyBOSS！你的学问成精了，你什么都知道串连。你没去过伦敦吧？”</p>
+<p>“My God！My BOSS！你的学问成精了，你什么都知道串连。你没去过伦敦吧？”</p>
 <p>“我没出过中国大门一步。”</p>
 <p>“你没有电脑吧？”</p>
-<p>“我比电脑还电脑。从电脑，可以查出一大堆伦敦的街，但都是DowningStreet（唐宁街）一级的，很呆板。电脑会堆出FleetStreet，说是报馆集中地，叫‘舰队街’，其实这是翻译的错误，Fleet指的是这条街对面的Fleet河。原来是流到Thames（泰晤士河）的一条支流，现在已阴沟化了。”</p>
+<p>“我比电脑还电脑。从电脑，可以查出一大堆伦敦的街，但都是Downing Street（唐宁街）一级的，很呆板。电脑会堆出Fleet Street，说是报馆集中地，叫‘舰队街’，其实这是翻译的错误，Fleet指的是这条街对面的Fleet河。原来是流到Thames（泰晤士河）的一条支流，现在已阴沟化了。”</p>
 <p>朱仑一边听，一边赞赏式的摇着头。“一定是上帝出了什么差错，造出你大师的头脑、记忆、和联想，你的头脑看来就是2045年的，就像人工智慧的登峰造极。”</p>
-<p>“如果是，那是生物性的自我人工，不是非生物性的人工打造的科技人工。可是，我尽管吹牛我是人类最后一个打败电脑的人脑，但是，我毕竟老了，并且，我的绝活会及身而绝，传承有困难。就像棋王的天纵棋艺不能传承一样。但是，棋王再天纵，也会被DeepBlue（深蓝）打败。只是DeepBlue打败不了我，但上帝打败了我，我会死亡。”</p>
+<p>“如果是，那是生物性的自我人工，不是非生物性的人工打造的科技人工。可是，我尽管吹牛我是人类最后一个打败电脑的人脑，但是，我毕竟老了，并且，我的绝活会及身而绝，传承有困难。就像棋王的天纵棋艺不能传承一样。但是，棋王再天纵，也会被Deep Blue（深蓝）打败。只是Deep Blue打败不了我，但上帝打败了我，我会死亡。”</p>
 <p>“怎么办？”朱仑忧虑。“那怎么办？2045年要来或提前来了，你有什么——”</p>
 <p>“遗言？Will？”</p>
 <p>“Wherethere’sawill,there’saway.”</p>
-<p>“Away？有的，就是盼望生物性的智慧与非生物性的智慧能够二合一，不是和平共存，除非生物性的长在一起，不然就会被非生物性的科技吃干抹净。并且，那时的人脑只是生硬的合成，人体只是被电脑啦机器啦霸占的躯壳，只剩skinalive，除了靠skin-deep混的‘凯渥’模特儿外，什么都没有了。”</p>
+<p>“A way？有的，就是盼望生物性的智慧与非生物性的智慧能够二合一，不是和平共存，除非生物性的长在一起，不然就会被非生物性的科技吃干抹净。并且，那时的人脑只是生硬的合成，人体只是被电脑啦机器啦霸占的躯壳，只剩skin alive，除了靠skin-deep混的‘凯渥’模特儿外，什么都没有了。”</p>
 <p>“怎么办？那怎么办？”</p>
-<p>“只有抢救，在科技skinalive我们人类以前，抢先开发出二合一的，抢先进入人脑，使科技不朝消灭生物性人脑发展，而朝与生物人脑‘长在一起’共生。这个‘长在一起’的‘长’字，又是生长在一起、又是长远在一起。这种结果是两得其利。生物性的人脑一方面可以得到科技的灌顶，涌进并且快速涌入date，使人脑变成datebank，变成资料库、数据库，一方面又可以活用，像大师式的活用它们，可以融会、可以贯通、可以出神、可以入化、可以巧语、可以花言、可以跟模特儿说，来吧，美人儿，你可以上妆、可以上场、可以上台、可以上演，这全是你的世界了。”</p>
+<p>“只有抢救，在科技skin alive我们人类以前，抢先开发出二合一的，抢先进入人脑，使科技不朝消灭生物性人脑发展，而朝与生物人脑‘长在一起’共生。这个‘长在一起’的‘长’字，又是生长在一起、又是长远在一起。这种结果是两得其利。生物性的人脑一方面可以得到科技的灌顶，涌进并且快速涌入date，使人脑变成datebank，变成资料库、数据库，一方面又可以活用，像大师式的活用它们，可以融会、可以贯通、可以出神、可以入化、可以巧语、可以花言、可以跟模特儿说，来吧，美人儿，你可以上妆、可以上场、可以上台、可以上演，这全是你的世界了。”</p>
 <p>“真好！”朱仑搓了双手。“那你呢，你不怎么着？”</p>
 <p>“我吗？”我神秘一笑。“如果模特儿同意，我也许上模特儿。”</p>
 <p>朱仑收不回她的笑。“你会用‘上’一个字，用我们的语言，我可以理解。但不理解的是，你为什么用‘也许’两个字？难道你会拒绝？”</p>
@@ -1995,7 +2036,7 @@
 <p>“趋势是很明显的，但关键也是很明显的，就是人工智慧的登峰造极，到底能不能逼得生物性人脑全面溃败？生物性人脑难道没有了最后的一道灵光了吗？难道没有人工智慧永远达不到的‘势力范围’吗？情况的发展是，生物性人脑在节节节败退，电脑带来的一切，排山倒海的资讯淹没过来。大家变得一筹莫展。”</p>
 <p>“请停一下。”朱仑打断我。“我在‘纽约时报’看到一篇文章，说SiliconValley（矽谷）大亨MarcAndreessen（麦克安德森），我先插一句我的意见，这Andreessen，A-n-d-r-e-e-s-s-e-n，看它名字拼法，就该是北欧瑞典的双S祖先。这位Andreessen，迷上了一位叫TimothyFerriss（提摩西费里斯）的motivationalauthor，就翻成‘启发作家’吧。这位‘启发作家’启发这些SiliconValley的工作狂们，叫他们cuttingoutuselessinformation（砍掉没用的资讯）。《纽约时报》说Andreessen这位矽谷大亨，HesayshelikehowMr.Ferrisscombines“allofthetimemanagementandpersonalproductivitytheoriesofthelast20to30year”andtakesthemtoanotherlevel.（他说他心仪费里斯集‘二、三十年来所有时间管理与个人生产力理论’之大成，并将它带到另一个层次的方式。）什么anotherlevel呢？《纽约时报》举了例子，证明迷上Ferriss的，不止矽谷大亨一个人。我背那几段给你听：AfterreadingMr.Ferriss’srecentbestseller,“The4-HourWorkweek,”JasonHoffman,afounderofJoyent,whichdesignsWeb-basedsoftwareforsmallbusinesses,urgedhisemployeestocutouttheinstant-messagingandswearoffmultitasking.Fromnowon,hetoldthem,severelyrestricte-mailuseandconductbusinesstheold-fashionedway,bytelephone.“Allofasudden,”Mr.Hoffmansaidoftheresults,“theireveningsarefree.AllofasuddenMondaydoesn’tfeelsooverwhelming.”RobertScoble,whowritestheinfluentialtechblogScobleizer,praisedMr.Ferriss’sapproach,asjustanothertechietryingtodigoutfromundertheinformationrubble.“Ourlivesarejustgettingbusier,theworldisstaringtothrowmorestuffatus,”hesaid.“FiveyearsagoitwasstillprettyraretohaverelativessendingyouIMs.NoonehadFlickrfeedsorTwitter.YouTube,FacebookandMySpacedidn’texist.”（在读费里斯的最新畅销书《一周四工时》后，专替小公司设计网路软体的乔恩特公司创办人杰森霍夫曼，鼓励员工切断即时通，发誓不再用多重任务作业系统。他告诉员工说，从今以后，要严格限制电子邮件的使用，并以打电话这种老式方法谈生意。这样一来，霍夫曼的结论是：‘突然间，晚上都有空了。突然间，礼拜一不再觉得忙翻天了。’影响广大的科技部落格Scobleizer的板主罗勃史考伯赞美费里斯的观点，认为他是想从资讯瓦砾堆中挖出通道的科技产品迷。他说：‘我们活得越来越忙，这个世界丢给我们的越来越多。五年以前，很少三亲六故跟你即时通。没有人人以Flickr或Twitter向你塞。YouTube、Facebook、MySpace影都没有呢。’）现在，‘启发作家’出现了。Subsequently,hehasbecomeafavoredguruofSiliconValley,preciselybypreachingapostasyinthelandofshinygadgets:justpulltheplug.Crawloutfrombeneaththereamsofdata.Standfirmagainstthetorrentofinformation.（接着，他变成了矽谷的抢手大师，而且在这个充满闪亮小玩意的园地，教人高唱科技的反调：只管拔掉插头。爬出资料堆。坚决对抗资讯的排山倒海。）上面背出来的，就是反资讯的资讯，有趣吧？”</p>
 <p>“真有趣，并且见怪不怪的羡慕你可以这样‘浪费’你超人的记忆力，去记这些一翻开报纸就看到的资讯。当然我承认：能够记住它们并且随机取样，也是一种效果、戏剧式的效果；也是一种特技、应声而出的特技，所以说，我羡慕你。”</p>
-<p>“随机取样的样，能够记得一清二楚，其实只是起步，真正要达到的目的，你知道，是如何根据资讯，提出解释；根据知识，浮出想像，不是吗？就如Einstein（爱因斯坦）说的：Imaginationismoreimportantthanknowledge.，想像比知识重要，也就是说，解释比资讯重要。不能对资讯做出漂亮的解释，一切资讯，只是累赘，只是礼拜一忙翻天，又所为何来？难怪《纽约时报》上那位‘启发作家’一出来，大家就像遇到救星，其实呀，‘启发作家’如果不能有效解决解释问题，只在形式上清理掉多少‘资讯瓦砾堆’，也是不够的。《纽约时报》说，这位作家要求用selectiveignorance（选择性忽略）的方法，面对排山倒海的资讯，但是，选择的标准是什么？难道要用‘革命法庭’式的办法硬砍掉多少吗？还是判定‘坏分子百分比’方法硬分摊吗？所以呀，如何真的‘启发’出电脑前面千千万万的‘电脑奴隶’，才是一切的关键。大师救命！”</p>
+<p>“随机取样的样，能够记得一清二楚，其实只是起步，真正要达到的目的，你知道，是如何根据资讯，提出解释；根据知识，浮出想像，不是吗？就如Einstein（爱因斯坦）说的：Imagination is more important than knowledge.，想像比知识重要，也就是说，解释比资讯重要。不能对资讯做出漂亮的解释，一切资讯，只是累赘，只是礼拜一忙翻天，又所为何来？难怪《纽约时报》上那位‘启发作家’一出来，大家就像遇到救星，其实呀，‘启发作家’如果不能有效解决解释问题，只在形式上清理掉多少‘资讯瓦砾堆’，也是不够的。《纽约时报》说，这位作家要求用selective ignorance（选择性忽略）的方法，面对排山倒海的资讯，但是，选择的标准是什么？难道要用‘革命法庭’式的办法硬砍掉多少吗？还是判定‘坏分子百分比’方法硬分摊吗？所以呀，如何真的‘启发’出电脑前面千千万万的‘电脑奴隶’，才是一切的关键。大师救命！”</p>
 <p>“多谢你这样抬举本大师。本大师早就有鉴于此，所以不玩电脑、也不靠电脑，当然，‘资讯瓦砾堆’也埋不到我。我呢，自己玩‘土法炼钢’，虽然资讯未必到N的程度，但是看到今天资讯不但NNN，并且N+1、N+2、N+100……N到把大脑都累坏了、或弄糊涂了，我可不要受那洋罪，我宁肯资讯清风徐来，也不要暴雨骤来。我必须准确的声明，这是指我这一行而言，我这一行只要一个孔子，不要N个孔子或N+100个孔子，其他依此类推。我只要一个朱仑，有了朱仑，就有了一切。”</p>
 <p>“真会说话呀，就是这种话，再多的资讯也弄不出来，要靠解释、靠想像、靠大头脑。像你。”</p>
 <p>“我们总要出现一些‘东方不败’的人类大脑吧？出现一些能够跟电脑争雄的大头脑吧？或者说：人类在被电脑消灭前，总要有些末代人脑吧？”</p>
@@ -2014,13 +2055,13 @@
 <p>“那只是开始，幸亏你留下手表，走了。不然的话，情况发展下去，你会使我失控，你会看到另一个我、好像不像我的我。”</p>
 <p>“可是那是真的你的一个面，我有幸看到了。”</p>
 <p>“别忘了我也看到你的，当时你是那样的‘忘我’，忘了十七岁的高中女生在做什么。”</p>
-<p>“一定是你太有吸引力了，十七岁的才会那样。我想我该努力忘记那一幕，对我来说，那是一段奇妙的time，但回想起来，我当时的确有两个我，一个我要为你‘性服务’，一个我要逃离。最后，把淹在浴缸里的手表留作见证，让time留在那里。如今，用俗气一点的描写吧，Timeflieslikeanarrow，为了我，不要再提这件事，你答应？”</p>
-<p>我点点头，笑着。“刚才你提到的这句英文谚语，中文是‘光阴如箭’、是‘岁月如矢’，一样的俗气，但它倒可用来奚落奚落现代科技的电脑。很简单，一句Timeflieslikeanarrow就足够电脑忙翻天。因为这么简单的句子，钻电脑尖的电脑未必看得懂。于是，小题大做，作出来的五花八门是：</p>
+<p>“一定是你太有吸引力了，十七岁的才会那样。我想我该努力忘记那一幕，对我来说，那是一段奇妙的time，但回想起来，我当时的确有两个我，一个我要为你‘性服务’，一个我要逃离。最后，把淹在浴缸里的手表留作见证，让time留在那里。如今，用俗气一点的描写吧，Time flies like an arrow，为了我，不要再提这件事，你答应？”</p>
+<p>我点点头，笑着。“刚才你提到的这句英文谚语，中文是‘光阴如箭’、是‘岁月如矢’，一样的俗气，但它倒可用来奚落奚落现代科技的电脑。很简单，一句Time flies like an arrow就足够电脑忙翻天。因为这么简单的句子，钻电脑尖的电脑未必看得懂。于是，小题大做，作出来的五花八门是：</p>
 <p>一、光阴如箭。</p>
-<p>二、苍蝇如箭。计算苍蝇的飞行时间，就像计算箭飞行的时间一样（“time”在这里变成动词，亦即“计时”。这句子就变成“Timeflieslikeanarrowwould.”）。</p>
-<p>三、找到像箭飞行的苍蝇，计算它的飞行时间（“time”在这里也变成动词，这句子变成“Timefliesthatarelikearrow.”）。</p>
-<p>四、“时光苍蝇”很喜欢箭（假设有种苍蝇就叫“timeflies”，“like”在这里变成动词。这句子变成“Time-flieslikeanarrow.”）。</p>
-<p>看到了吧，这就是电脑怎样在化简为繁，它就是这么龟毛、这么别扭。它有学习功能，但跟人类反其道而行。人类先从小孩听大人讲，然后自己讲，然后接触书面语言；而电脑却逆向操作，它先学书面语言，再合成鬼话，再听人类鬼话，然后误解连篇。电影中那星球大战的机器人R2D2，精通半天多种人类语言，却不能开口说话，原因不在人类语言发音困难，而在电脑的学习功能卡住了自己。用一句英文来说：ThisisthedogthatworriedthecatthatkilledtheratthatatethemaltthatlayinthehousethatJackbuilt.这句好玩的英文，用电脑分析，毫无问题，但要它翻译，就可能变成鲁迅式的硬译，翻成鲁迅体的‘斯狗也啮及彼猫彼猫杀及彼鼠彼鼠盗及彼麦芽彼麦芽置诸彼屋彼屋杰克盖之’了。正常的人类翻法该是：‘杰克盖的房子里有麦芽，麦芽给耗子吃了，耗子给猫咬死了，猫又给狗叼住了，这就是叼住猫的那条狗。’这才是人话，但要倒着翻译过来才行，可是对鲁迅和电脑说来，却是大工程。现代科技带给人类知识爆炸，资讯铺天盖地而来，一般人云亦云的人，众口一声说得到资讯多方便，殊不知垃圾来得也方便，任何好东西，铺天盖地而来，你没能力也没工夫处理它们，它们就是垃圾，你就是垃圾大王。为今之计是：如何靠优秀的自然人脑快速选择、快速融合这些资讯，得到恰如其分（包括身分与分量）的精华，这才是人类要做的自救，否则的话，听任电脑横行、资讯爆炸、网站蜂起、光碟乱飞，人类就给埋死了。”</p>
+<p>二、苍蝇如箭。计算苍蝇的飞行时间，就像计算箭飞行的时间一样（“time”在这里变成动词，亦即“计时”。这句子就变成“Time flies like an arrow would.”）。</p>
+<p>三、找到像箭飞行的苍蝇，计算它的飞行时间（“time”在这里也变成动词，这句子变成“Time flies that are like arrow.”）。</p>
+<p>四、“时光苍蝇”很喜欢箭（假设有种苍蝇就叫“time flies”，“like”在这里变成动词。这句子变成“Time-flies like an arrow.”）。</p>
+<p>看到了吧，这就是电脑怎样在化简为繁，它就是这么龟毛、这么别扭。它有学习功能，但跟人类反其道而行。人类先从小孩听大人讲，然后自己讲，然后接触书面语言；而电脑却逆向操作，它先学书面语言，再合成鬼话，再听人类鬼话，然后误解连篇。电影中那星球大战的机器人R2D2，精通半天多种人类语言，却不能开口说话，原因不在人类语言发音困难，而在电脑的学习功能卡住了自己。用一句英文来说：This is the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.这句好玩的英文，用电脑分析，毫无问题，但要它翻译，就可能变成鲁迅式的硬译，翻成鲁迅体的‘斯狗也啮及彼猫彼猫杀及彼鼠彼鼠盗及彼麦芽彼麦芽置诸彼屋彼屋杰克盖之’了。正常的人类翻法该是：‘杰克盖的房子里有麦芽，麦芽给耗子吃了，耗子给猫咬死了，猫又给狗叼住了，这就是叼住猫的那条狗。’这才是人话，但要倒着翻译过来才行，可是对鲁迅和电脑说来，却是大工程。现代科技带给人类知识爆炸，资讯铺天盖地而来，一般人云亦云的人，众口一声说得到资讯多方便，殊不知垃圾来得也方便，任何好东西，铺天盖地而来，你没能力也没工夫处理它们，它们就是垃圾，你就是垃圾大王。为今之计是：如何靠优秀的自然人脑快速选择、快速融合这些资讯，得到恰如其分（包括身分与分量）的精华，这才是人类要做的自救，否则的话，听任电脑横行、资讯爆炸、网站蜂起、光碟乱飞，人类就给埋死了。”</p>
 <p>“所以，你大师认为，人类要‘融资’（融合资讯）而不‘走资’（追随资讯），才是自救之途。”</p>
 <p>“没错，你活用了两组词汇来说明，很传神。”</p>
 <p>“问题是怎样创造出‘融资’的境界，要靠人巧夺天工，再靠科技夺人工，再靠人合而为一，异曲同工，有机器人附体，又不是机器人，我们要的，是这种境界，对吗？”</p>
@@ -2102,7 +2143,7 @@
 <p>“你令全世界的爱花人流泪。”</p>
 <p>“或者射精。”</p>
 <p>“你怎么这样说话？”</p>
-<p>“这才叫胡言乱语呀。我智慧，所以我胡言乱语；andviceversa，反过来说，也一样。”</p>
+<p>“这才叫胡言乱语呀。我智慧，所以我胡言乱语；and vice versa，反过来说，也一样。”</p>
 <p>“那我也胡言乱语，我智慧吗？”</p>
 <p>“女人一谈到爱，就离智慧远了。”</p>
 <p>“男人呢？”</p>
@@ -2111,13 +2152,13 @@
 <p>“我最好。因为我早已不爱女人了。”</p>
 <p>“你老了？”</p>
 <p>“谢谢有人提醒我。该提醒八十开外还谈恋爱的歌德（Goethe）。”</p>
-<p>“他写了少年维特（YoungWerther）的什么烦恼。”</p>
+<p>“他写了少年维特（Young Werther）的什么烦恼。”</p>
 <p>“他该写老年歌德的自寻烦恼。”</p>
 <p>“他也许老得快乐。”</p>
 <p>“歌德八十开外的情人是他当年情人的女儿，他大概有应付女儿的妈妈的经验，所以，八十以后，可以玩命。不过少年维特式的歌德，我们不敢领教。男女关系本是快乐的，却被闹得乌烟瘴气、痛苦不堪，这一定给弄错了、弄拧了。本来是一对情人，恋爱一阵下来，却变成一对笨蛋。怎么会有这种结果？一定要避免。本来是眉目传情，结果是怒目相向，为什么要这样收场？一定蠢在其中。少年维特式的，就是一种蠢。”</p>
 <p>“你在小化、美化、喜感化爱情，这是你的哲学？”</p>
 <p>“说哲学，太冰冷了。不要叫它哲学，叫它功德，使人类脱却烦恼、脱离孽海，只寻快乐、只得高情雅趣，这是功德。爱情是被古今中外炒作过度的大题目，如今弄得庸俗而滥套了。”</p>
-<p>“你不再fallinlove？”</p>
+<p>“你不再fall in love？”</p>
 <p>“我不再fallinlove，所谓坠入情网。我的fall至多justleanalittle，只是稍微倾身而已。让我胡言乱语，告诉你什么叫稍微倾身吧，我把它叫作‘清宫帝王式’。知道那是一种什么方式吗？皇上今晚要女人，皇上入睡前，他点的女人来了，是赤裸来的，赤裸包在棉被里，连人带被，一起被背到皇上那儿、放在皇上床上，其他人都退下去了，只留下皇上和赤裸在被中的女人。皇上上了这女人，正所谓‘御女’。御了女人以后，皇上是不能搂着这女人过夜的，女人被搞过以后，就要包在棉被里背走，皇上一觉醒来，是没有枕边人的，皇上永远睡时是自己、醒来也是自己。这是一种有点怪异的制度，但也不无玄理。女人对你，永远是她最好的一面展示给你、永远是你最需要她的时候展露给你，除了最好和最需要以外，任何低于这一层次的画面或情况都排除了，皇上都看不到了，在你疲倦以前、在你有点腻了以前，现场只剩下馀情、馀味、馀痕，和你皇上自己。换种描绘方法，就是你永远在最好和最需要的呈现一过，这些呈现就近乎突然的不见了。它满足了你的高潮，但高潮过后，留下你独自面对退潮的情味，一个人躺在沙滩。那不是沙漏，做爱时你可以看沙漏，从沙中细数你延伸的时间和硬度，自憙你的性能力。现在呢，没有沙漏了，你根本躺在沙上，时间为你静止，你根本躺在时间上，从躺在女人身上到躺在时间上，这就是帝王。女人对他只是赤裸的过客，交会的时间比一般的男女之情都短暂，他永远是强势的、庄严的、高高在上的。这样看来，爱情的成分太少了，性的发泄太多了。我所说的‘清宫帝王式’，是我的空中楼阁。现实不会那样，也不会女人赤裸自己，披着棉被自己来。所以呀，只是说说而已。我六十七岁了，女人的灵也好、肉也罢，都离我遥远了，我只是手淫而已。”</p>
 <p>“怎么变成这种局面了？”</p>
 <p>“我的特色是只有点滴式、点心式的奇情与深情，但绝无世俗男女那种浓浓的拖泥带水的所谓爱情。乍看起来，我是无情的，是除了微笑却不动感情的，对世俗男女那种浓浓的拖泥带水的所谓爱情，我有一种悲悯的又嘲笑的夷然神色。为什么有微笑、有嘲笑？因为，凡是把爱情弄成浓浓的拖泥带水的关系的，都值得微笑与嘲笑，微笑是我不在其中、嘲笑是我脱身在外。我多么智慧，智慧得近于无情。我发现这种方式的无情，结果，就是手淫。”</p>
@@ -2146,14 +2187,14 @@
 <p>“别提上帝了，他害死人。上帝所造的人类，在男女关系上，基本是动物性的单纯。人类的演化结果，就变复杂了。复杂中最使人痛苦的，就是爱情问题。莎士比亚早在‘仲夏夜之梦’（MidsummerNight’sDream）中，讽刺了这个问题。莎士比亚在这部喜剧中推出一种‘爱情的仙浆’（love-juice），一涂上情人的眼，情人醒来，见谁爱谁。”</p>
 <p>“你想不到我会背那一段吧，我背给你听。</p>
 <p>Yetmark’dIwheretheboltofCupidfell:</p>
-<p>Itfelluponalittlewesternflower,</p>
+<p>It fell upon a little western flower,</p>
 <p>Beforemilk-white,nowpurplewithlove’swound,</p>
-<p>Andmaidenscallit,Love-in-idleness.</p>
+<p>And maidens call it, Love-in-idleness.</p>
 <p>Fetchmethatflower;theherbIshow’dtheeonce:</p>
-<p>Thejuiceofitonsleepingeyelidslaid</p>
-<p>Willmakeormanorwomanmadlydote</p>
-<p>Uponthenextlivecreaturethatitsees.</p>
-<p>Fetchmethisherb;….</p>
+<p>The juice of it on sleeping eyelids laid</p>
+<p>Will make or man or woman madly dote</p>
+<p>Upon the next live creature that it sees.</p>
+<p>Fetch me this herb;….</p>
 <p>（我留意邱比特箭落何处，</p>
 <p>落在西方一朵小花上面，</p>
 <p>乳白的花瓣，爱的创伤红了它，</p>
@@ -2175,29 +2216,29 @@
 <p>“哈姆雷特说，他爱奥菲莉亚，四万个弟兄的爱加在一起也抵不上一个：Ilov’dOphelia:fortythousandbrothers/Couldnot,withalltheirquantityoflove,/Makeupmysum.Whatwiltthoudoforher?”</p>
 <p>“真的，你朱仑啊，你真莎士比亚！”</p>
 <p>“其实我只是输入式的莎士比亚，把莎士比亚搬到我家，我还没有贩卖他。但是，数数看，多少英美文学家贩卖了莎士比亚，OgdenNash（纳许）直接从奥菲莉亚嘴里，接过ThePrimrosePath（花街柳巷）做书名呢，多得很呢，有二十六位作家，把FullCircle作为书名，有十五位作家，把What’sinaName作为书名，Faulkner（福克纳）用了TheSoundandtheFury，JamesHenle（亨尔）还跟他抢先呢！AldousHuxley（赫胥黎）是此道之王，他用了七次，包括MortalCoils，1922，取自《哈姆雷特》、BriefCandles，1930，取自《马克白》（Macbeth）、BraveNewWorld，1932，取自《暴风雨》（Tempest）、TimeMustHaveaStop，1944，取自《亨利四世上篇》（HenryⅣ,PartsI）、ApeandEssence，1984，取自《恶有恶报》（MeasureforMeasure）、TomorrowandTomorrowandTomorrow，1985，又取自《马克白》、BraveNewWorldRevisited，1985，《暴风雨》又来了。最有趣的，bravenewworld中的brave，不是‘勇敢的’意思，而是‘大好的’、‘美丽的’意思。bravenewworld出自莎士比亚《暴风雨》第五章第一景，原文是“Howbeauteousmandindis!Obravenewworld/Thathassuchpeoplein’t!”（人类有多么美！啊美丽的新世界，有这样的人在里头！）赫胥黎把BraveNewWorld作为自己的书名来用，也是指‘美丽的新世界’的意思，并不是‘勇敢的新世界’。但台湾的国民党同路人不懂莎士比亚，望文生义，翻成《勇敢的新世界》，勇过了头，闹出笑话来了。”</p>
-<p>“哎呀，朱仑，我现在得提议，让我们CakesandAle（吃喝玩乐）一下，赶走莎士比亚。”</p>
-<p>“你用了莎士比亚《第十二夜》（TwelfthNight）第二幕第三景的话：Artanymorethanasteward?Dostthouthinkbecausethouartvirtuousthereshallbenomorecakesandale?（你不过一管家耳，有什么好神气的？你自以为道德高尚，人家就不能吃喝玩乐了吗？）并且，那Maugham的一本书名，对不起，就叫CakesandAle,orTheSkeletonintheCupboard，1930年出的。你看，大师，莎士比亚没那么好赶的。”</p>
-<p>“你提到毛姆，这个人写两个文人ThomasHardy（哈代）和HughWalpole（沃尔浦尔）的讽刺小说，不如1922年他写的那本OnaChineseScreen《在中国屏风上》。那本书里有一篇ThePhilosopher（哲学家），没提那哲学家的名字，写的是‘辜鸿铭’。你大概不知道谁是辜鸿铭？”</p>
+<p>“哎呀，朱仑，我现在得提议，让我们Cakes and Ale（吃喝玩乐）一下，赶走莎士比亚。”</p>
+<p>“你用了莎士比亚《第十二夜》（Twelfth Night）第二幕第三景的话：Art any more than a steward? Dost thou think because thou art virtuous there shall be no more cakes and ale?（你不过一管家耳，有什么好神气的？你自以为道德高尚，人家就不能吃喝玩乐了吗？）并且，那Maugham的一本书名，对不起，就叫Cakes and Ale, or The Skeleton in the Cupboard，1930年出的。你看，大师，莎士比亚没那么好赶的。”</p>
+<p>“你提到毛姆，这个人写两个文人Thomas Hardy（哈代）和Hugh Walpole（沃尔浦尔）的讽刺小说，不如1922年他写的那本On a Chinese Screen《在中国屏风上》。那本书里有一篇The Philosopher（哲学家），没提那哲学家的名字，写的是‘辜鸿铭’。你大概不知道谁是辜鸿铭？”</p>
 <p>朱仑摇摇头。</p>
 <p>“总算抬出一个你不知道的。辜鸿铭是北京大学教授，是现代中国最保守的知识分子，有一次，在一家高级咖啡店中，他出现了，自己独坐一角，在看一本卷起来的线装书。另一桌有四个英国商人，忍不住对这还留着清朝辫子的老头儿评头论足，他们用的是骄傲的英语，言谈中挖苦这位中国老人和他的文化。忽然，这位老先生侧过头来，用典雅的牛津（Oxford）腔发声了，还夹杂着拉丁文，把四个英国人和他们的文化奚落一顿。四个人相顾失色，又惊奇无比，太不可思议了。毛姆不知道这个故事。他去拜访了辜鸿铭。辜鸿铭最后留了一首他写的英文诗给毛姆：</p>
-<p>Youlovedmenot:yourvoicewassweet;</p>
-<p>Youreyeswerefulloflaughter;yourhandsweretender.</p>
-<p>Andthenyoulovedme:yourvoicewasbitter;</p>
-<p>Youreyeswerefulloftears;yourhandswerecruel.</p>
-<p>Sad,sadthatloveshouldmakeyou</p>
+<p>You loved me not: your voice was sweet;</p>
+<p>Your eyes were full of laughter; your hands were tender.</p>
+<p>And then you loved me: your voice was bitter;</p>
+<p>Your eyes were full of tears; your hands were cruel.</p>
+<p>Sad, sad that love should make you</p>
 <p>Unlovable.</p>
-<p>Icravedtheyearswouldquicklypass</p>
-<p>Thatyoumightlose</p>
+<p>I craved the years would quickly pass</p>
+<p>That you might lose</p>
 <p>Thebrightnessofyoureyes,thepeachbloomofyourskin,</p>
-<p>Andallthecruelsplendorofyouryouth.</p>
-<p>ThenIalonewouldloveyou</p>
-<p>Andyouatlastwouldcare.</p>
-<p>Theenviousyearshavepassedfullsoon</p>
-<p>Andyouhavelost</p>
+<p>And all the cruel splendor of your youth.</p>
+<p>Then I alone would love you</p>
+<p>And you at last would care.</p>
+<p>The envious years have passed full soon</p>
+<p>And you have lost</p>
 <p>Thebrightnessofyoureyes,thepeachbloomofyourskin,</p>
-<p>Andallthecharmingsplendorofyouryouth.</p>
-<p>Alas,Idonotloveyou</p>
-<p>AndIcarenotifyoucare.</p>
+<p>And all the charming splendor of your youth.</p>
+<p>Alas, I do not love you</p>
+<p>And I care not if you care.</p>
 <p>没爱我时，你声音甜蜜，</p>
 <p>你笑眼盈盈，你双手自在，</p>
 <p>爱上我后，你声音愁苦、</p>
@@ -2234,15 +2275,15 @@
 <p>“我有答案。答案是，也许有一天，你会怕我。”</p>
 <p>“怕你什么？”</p>
 <p>“我想，等到你自然知道了再知道吧。也许有一天，你才真的知道。现在只能说，你只知道你不知道的一部分。像美国的那个王八蛋国防部长所说的那一大串绕口令：</p>
-<p>Asweknow,</p>
-<p>Thereareknownknows.</p>
-<p>Therearethingsweknowweknow.</p>
-<p>Wealsoknow</p>
-<p>Thereareknowunknowns.</p>
-<p>Thatistosay</p>
-<p>Weknowtherearesomethings</p>
-<p>Wedonotknow.</p>
-<p>Buttherearealsounknownunknowns,</p>
+<p>As we know,</p>
+<p>There are known knows.</p>
+<p>There are things we know we know.</p>
+<p>We also know</p>
+<p>There are know unknowns.</p>
+<p>That is to say</p>
+<p>We know there are some things</p>
+<p>We do not know.</p>
+<p>But there are also unknown unknowns,</p>
 <p>Theoneswedon’tknow</p>
 <p>Wedon’tknow.</p>
 <p>我们都知道，</p>
@@ -2263,19 +2304,19 @@
 <p>“你说也许有一天，意思是——”</p>
 <p>“意思是也许没有那一天。”</p>
 <p>“因为——”</p>
-<p>“因为那一天的到来，要你我对‘演出’对“makebelieve”的看法一致。别忘了你是我的模特儿，有时候要‘演出’我要的角色，不是真的。比如说，也许你会‘演出’叫床。你知道什么是叫床吗？请注意，不是情人式的叫床，是‘演出’情人式的叫床，叫得好，不但逼真，并且以假胜真，那才是好的模特儿，电影明星其实是广义的模特儿、导演的模特儿。”</p>
+<p>“因为那一天的到来，要你我对‘演出’对“make believe”的看法一致。别忘了你是我的模特儿，有时候要‘演出’我要的角色，不是真的。比如说，也许你会‘演出’叫床。你知道什么是叫床吗？请注意，不是情人式的叫床，是‘演出’情人式的叫床，叫得好，不但逼真，并且以假胜真，那才是好的模特儿，电影明星其实是广义的模特儿、导演的模特儿。”</p>
 <p>“你说叫床，那么复杂吗？还要靠导演吗？我想我就会，立刻会。”她表情神秘。</p>
 <p>“你会？”我惊讶。“你怎么会？比如说，为了写作需要，我要你躺在床上，叫床给男人看，你说你会叫？”我奇了，我摇着头。</p>
 <p>“我会，我会呀，我会叫：‘床啊！床！’我不是在叫它吗？”她慧黠的答复。</p>
-<p>我大笑起来，搂住她的肩。赞美她：“你这聪明的，我想你在故意的teasingyourBOSS，也teasingyourBOSS的床，anyway，我不得不承认你真的很会叫床，并且，很会编一本简明的字典。”</p>
+<p>我大笑起来，搂住她的肩。赞美她：“你这聪明的，我想你在故意的teasing your BOSS，也teasing your BOSS的床，anyway，我不得不承认你真的很会叫床，并且，很会编一本简明的字典。”</p>
 <p>“简明字典？”</p>
-<p>“简明字典。比《简明牛津字典》（TheConciseOxfordDictionaryofCurrentEnglish）简明一万倍。因为你的字典里，一个字只有一个定义，床就是床，不是别的。”</p>
+<p>“简明字典。比《简明牛津字典》（The Concise Oxford Dictionary of Current English）简明一万倍。因为你的字典里，一个字只有一个定义，床就是床，不是别的。”</p>
 <p>“我错了吗？”</p>
-<p>“你没有错，只是实际上，可能你叫的是MyGod！由上帝代你表达要叫出的一切。只是那种情况发生时，一片混乱，上帝是指什么，也就难说了。”</p>
+<p>“你没有错，只是实际上，可能你叫的是My God！由上帝代你表达要叫出的一切。只是那种情况发生时，一片混乱，上帝是指什么，也就难说了。”</p>
 <p>“你好像预知一切。”</p>
-<p>“别忘了你是我的模特儿。我常常提醒我也别忘了。我常常想到你是模特儿式‘演出’、是make-believe，甚至是pretendtobeSEVENTEEN。”</p>
+<p>“别忘了你是我的模特儿。我常常提醒我也别忘了。我常常想到你是模特儿式‘演出’、是make-believe，甚至是pretend to be SEVENTEEN。”</p>
 <p>“SEVENTEEN？我不正是十七岁吗？”</p>
-<p>“没错，正是十七岁。但那是你的十七岁，不是我的十七岁。所以呀，十七岁的模特儿是听命行事的，在扮演我的十七岁时候，难免跟你自己的十七岁不一致，所以那时候，你要逢场作戏，engageinmerry-makingoccasionally，当然，也可能不是merry-making，而是merryhaha，或是merryhell，谁知道呢？”</p>
+<p>“没错，正是十七岁。但那是你的十七岁，不是我的十七岁。所以呀，十七岁的模特儿是听命行事的，在扮演我的十七岁时候，难免跟你自己的十七岁不一致，所以那时候，你要逢场作戏，engage in merry-making occasionally，当然，也可能不是merry-making，而是merry haha，或是merry hell，谁知道呢？”</p>
 <p>“看来做模特儿的下场很复杂，复杂得像这六匹马。”朱仑朝马指点着。“六匹马子。”她补了一句。</p>
 <p>“你十七岁的语言——‘马子’，你知道它在简明字典以外的意义吗？马子在中文里指一件用品，是什么？”</p>
 <p>“是什么？”</p>
@@ -2291,7 +2332,7 @@
 <p>“谁说我不是？尤其，你大师说我是，我一定是。我刚才看到‘昭陵六骏’下的小字说明，就立刻会记得。说看到，不够准确，说扫描到吧。”</p>
 <p>“你这种速学速记的本领，除了神童、神‘马子’的神通外，有后天的训练吗？像是速读、快速记忆之类？”</p>
 <p>“没有，也不需要。因为，因为我是神童，可是太电脑了一点，就说我是电脑神童吧！谁又知道我是不是？也许只有电脑知道我是，谁又知道呢？”</p>
-<p>“你说你‘是神童，可是太电脑了一点’，你太小看你了。其实你超电脑。你十七岁，十七岁的神童，早在没电脑时代，就有超电脑的。希腊的数学家，早就知道可用圆规和没有刻度的直尺画出正3、4、5、15边形。在这之后两千多年，没人知道怎样用直尺和圆规构造正11、13、14、17边形。但十七岁的高斯（Gauss）就给17边形提出答案。高斯是德国的十七岁。还有那法国的巴斯卡（Pascal），十七岁时就给圆锥曲线定理而出。巴斯卡是法国的十七岁。还有荷兰的惠更斯（ChristiaanHuygens），十七岁时就学术出来‘悬链线’。惠更斯是荷兰的十七岁。这些十七岁啊，都是电脑时代没出现前的超电脑。至于今年8月23日美国那十七岁破解iPhone密码的神童，才算是电脑时代的产物。而你呢，朱仑，你虽生在电脑时代，但你的水平是超电脑的，一如那十七岁的花腔女高音席尔丝（BeverlySills，艺名BelleSilverman），你在智慧上的表现，可谓‘知识上的花腔女高音’呢。来，唐太宗，送这小马子一匹马！”</p>
+<p>“你说你‘是神童，可是太电脑了一点’，你太小看你了。其实你超电脑。你十七岁，十七岁的神童，早在没电脑时代，就有超电脑的。希腊的数学家，早就知道可用圆规和没有刻度的直尺画出正3、4、5、15边形。在这之后两千多年，没人知道怎样用直尺和圆规构造正11、13、14、17边形。但十七岁的高斯（Gauss）就给17边形提出答案。高斯是德国的十七岁。还有那法国的巴斯卡（Pascal），十七岁时就给圆锥曲线定理而出。巴斯卡是法国的十七岁。还有荷兰的惠更斯（Christiaan Huygens），十七岁时就学术出来‘悬链线’。惠更斯是荷兰的十七岁。这些十七岁啊，都是电脑时代没出现前的超电脑。至于今年8月23日美国那十七岁破解iPhone密码的神童，才算是电脑时代的产物。而你呢，朱仑，你虽生在电脑时代，但你的水平是超电脑的，一如那十七岁的花腔女高音席尔丝（Beverly Sills，艺名Belle Silverman），你在智慧上的表现，可谓‘知识上的花腔女高音’呢。来，唐太宗，送这小马子一匹马！”</p>
 <h2 id="白鲸"><a class="header" href="#白鲸">白鲸</a></h2>
 <p>我告诉朱仑，“说我大名鼎鼎，其实与我同时代的人们只知道我一部分，就好像与HermanMelville（梅尔维尔）同时代的人们只知道他一部分一样。他写的MobyDick《白鲸记》小说，在他生前并没被看好；他写的BillyBudd《比利巴德》小说，死后在他书桌上发现，死后三十三年才出版。他死得很寂寞，报上的一小块讣文说他最好的小说是Taipi（泰皮），真是小看他了。”</p>
 <p>“Taipi这小说，听来好像Taipei（台北）。”</p>
@@ -2300,7 +2341,7 @@
 <p>“问题是Melville只跟食人族Typees（泰皮族）住了四个月，我却一住五十年。”</p>
 <p>“Melville死后一个多世纪，他总算得到全面的公道。你看白鲸故事都上了电影了。”</p>
 <p>“但白鲸人物也进了咖啡馆了。星巴克不是Starbucks吗？Starbucks不正是小说里面那大副吗？多么动人的人物，大副一直反对Ahab（亚哈）船长对白鲸复仇，最后看到船长在白鲸身上，死犹向他们招手，大副决定一起身殉了，多么动人的人物，他不为船长的目的而死，却为船长的精神而死。”</p>
-<p>“我觉得我背得出那一段，那大副呼吁船长不要再发疯那一段：“Oh！Ahab,”criedStarbuck,“nottoolateisit,evennow,thethirdday,todesist.See！MobyDickseekstheenot.Itisthou,thou,thatmadlyseekesthim！”（啊！亚哈，还不算太迟，就是现在，在这第三天，断了念吧。你看！MobyDick不是要找你，是你，你发疯在找它啊！）”</p>
+<p>“我觉得我背得出那一段，那大副呼吁船长不要再发疯那一段：“Oh！Ahab,”cried Starbuck,“not too late is it, even now, the third day, to desist. See！Moby Dick seeks thee not. It is thou, thou, that madly seekest him！”（啊！亚哈，还不算太迟，就是现在，在这第三天，断了念吧。你看！Moby Dick不是要找你，是你，你发疯在找它啊！）”</p>
 <p>“你背得出来，你这小神童，你什么事都干得出来！我已经见怪不怪。我谈到Starbuck，他的精神多么动人，会跟疯子做疯的事。但对疯子而言，又未必能用疯狂来概括他。Ahab船长的信念是复仇，复仇有时候是一种伟大的情操，《白鲸记》写活了这一点，只是敌人是白鲸而已。”</p>
 <p>“跟白鲸作战与跟风车作战有太大的不同吗？”</p>
 <p>“问题问得好，可是要问DonQuixote（唐吉诃德），老唐如果转移战场到海上，他不跟白鲸对干才怪呢。这都是人类的大脑问题。星巴克大副，和那老唐的忠诚追随者，也都是大脑问题，他们窃取他们领导的大脑而冲昏了自己的，用下洋泾浜英文，该是Pickingtheirleader’sbrainsturntheir’s。至于白鲸呢，它的大脑有九点二公斤，虽然和象一样，是唯二两种大脑重于人类的动物，但按体积比例，它实在愧不如人。《白鲸记》中的MobyDick，其实该佩服牠的独脚敌人，因为这个人一直为复仇来追杀牠。而那时的美国人呢，为的却是揩油来追杀牠，在牠身上寻找油源。美国内战时，捕鲸船大量毁坏了，南北战争真好！美国人只有在杀自己人时才减缓杀敌人。还没完呢，1870年出来了捕鲸砲，带来噩耗。本来受伤的鲸还有一点带伤逃命死不见尸的自由，这种科技，却夺走了这点自由，它放出长线，你受伤了，也跑不掉，即使你要死，也死在我眼前。三十五年后，1925年，分尸作业直接上了捕鲸船，船变成了浮动的水上屠场，科技终于解决了一切。六十年后，商业捕鲸才算慢慢远离了。科技并未给人类带来什么怜悯，但却带来代用品、燃用油、润滑油……所有这方面的来源，拜科技之赐，都可‘捕石油’而得，不必捕鲸了。这就是科技，你的死活都得随它，白鲸是我们的见证。但是，白鲸的大脑里一定庆幸，庆幸牠对人类的价值已大为减低，一点龙涎香之类而已。牠感谢石油救了牠，牠也回味到《白鲸记》的年代，那算是公平竞争，虽然独脚船长的科技优于爱斯基摩人、优于巴斯克人（Basques），但是毕竟也得短兵来接、真刀真枪。相对的，白鲸也可以反扑，造成戏剧性的寻仇与正义。但是，这些，如今都没有了，科技无趣了一切。最后，《白鲸记》中的大副Starbuck却卖起Starbucks咖啡来了，这就是所谓现代。现代似乎只做出了一件对事，它还给《白鲸记》作者公道。HermanMelville七十二岁死前，他的《白鲸记》一直被当成失败的小说，他陷于精神沮丧状态，有赖于那首席法官老泰山的救济，最后，无人闻问而死。没人承认他是大文学家。没想到百年而后，人们发布《白鲸记》的传奇与价值，但发现只是发现，像发现《白鲸记》中最后浮海的那口棺材，如此而已。人类只发现商业性的标价，真正的过程与前程，他们不再理解，Starbuck是星巴克，星巴克只是商标而已。相对的，《白鲸记》书中的这位大副Starbuck，这位星巴克，却在声嘶力竭提醒船长：“MobyDickseekstheenot.Itisthou,thou,thatmadlyseekesthim！”提醒不是白鲸疯你，而是你疯白鲸，再随疯而去。现代人与他的科技，永远不能理解Starbuck、星巴克，和他的白鲸了。不过，正义感的现代人也该想到，Starbucks的美帝咖啡，美国帝国主义在非洲以低价垄断咖啡原料，以三十八倍的利润卖到中国来，这种咖啡，还单纯吗？现代人还是要有仇恨的，但复仇的对象不是白鲸。为什么要做独脚船长呢？为什么要做星巴克大副呢？别做他们，他们是殉道者，不是胜利者。要做胜利者，不要做殉道者。虽然殉道者很悲壮，但悲壮也要胜利者的赞美。白鲸大得无须赞美任何人，牠只要赞美自己即可，因为殉道者因牠而死、因牠成道、因牠证道。白鲸不是敌人、风车也不是。真正的敌人在现代八脚章鱼船长的大脑里，它的名字叫‘美国’。让我们认清吧，这才是我们的宿仇。我们在Taipei（台北）看Taipi（泰皮）的人，可别给忘了。”</p>
@@ -2360,7 +2401,7 @@
 <p>“你错了，我是当真的。正因为当真，你和我之间才有馀、才保留、才有那么多憧憬与远景，不是吗？想想看，你赤裸坐姿在我的赤裸上，是多么动人的画面，我多么向往。可是，为什么我要自制，因为——”</p>
 <p>“因为——”</p>
 <p>“因为十七岁没有太多的自制力。世界会变得疯狂。然后，美好会下滑，不再那么美好了。我不喜欢下滑的感觉。除非你坐在上面，永远不下来。”</p>
-<p>“看吧，这就是‘太上忘情’式的讲话方式！betweenlaughterandtears。”</p>
+<p>“看吧，这就是‘太上忘情’式的讲话方式！between laughter and tears。”</p>
 <p>“想想看，between在坐姿之间的，也是这两样呢。太上可以忘情，但别忘了留下记录。但是，没有记录记下有没有坐姿，只有记忆记得有脱下的衣服。忘情是什么？对十七岁说来，十七岁只有笑声，没有泪痕。”</p>
 <p>“看来‘坐忘’了半天，结局除了笑声，一无所有，不是吗？”</p>
 <p>“有一个太珍贵的画面，你给忘了。”</p>
@@ -2393,7 +2434,7 @@
 <p>“表面上两个，但镜子里就不止两个了。”</p>
 <p>“所以你房间里有这么多大镜子。”</p>
 <p>“理论上，镜子对镜子，可以无限远，也无异无限多的两个人。所以呀，我才赞同复制我自己，使我变成多数，可以轮奸你，比如说，四合一，达到荒淫的效果。”</p>
-<p>“纵使荒淫无度，也会Thegameisover,thegame“s”“are”over，那时候一屋子都是你，可怎么办，我找不到‘你’了。”</p>
+<p>“纵使荒淫无度，也会The game is over, the game“s”“are”over，那时候一屋子都是你，可怎么办，我找不到‘你’了。”</p>
 <p>“这倒是个问题。”我假装发愁。“看来，只有用孙悟空的方法，孙悟空那猴子，打架时候，拔身上毛一吹，就变成多数的自己，打赢了，再回收自己，回到一个孙悟空。我要附带回收机制，在我们轮奸你以后，由我一个人来料理善后。”</p>
 <p>“清理战场吗？”</p>
 <p>“不是，是清理我们施暴后的心灵，向被轮奸的十七岁道歉，请求原谅。你会原谅吗？”</p>
@@ -2487,7 +2528,7 @@
 <p>一切都归零了，我喜欢。我喜欢“归零论”。</p>
 <h2 id="智者的虚拟第八号"><a class="header" href="#智者的虚拟第八号">智者的虚拟第八号</a></h2>
 <p>朱仑写了下面一段：</p>
-<p>NC-17——MPAAfilmratingsystem（美国电影协会分级制度）中规定的“十七岁以下不得观看”，我觉得有够荒谬的。十七岁都“演出”了，可是不能“看”。不过，对我说来，我倒真的不要看到“演出”里的我自己。MyGod！那是我吗？那会是我吗？做那种事的，竟是我吗？</p>
+<p>NC-17——MPAA film rating system（美国电影协会分级制度）中规定的“十七岁以下不得观看”，我觉得有够荒谬的。十七岁都“演出”了，可是不能“看”。不过，对我说来，我倒真的不要看到“演出”里的我自己。My God！那是我吗？那会是我吗？做那种事的，竟是我吗？</p>
 <p>朱仑又写了下面一段：</p>
 <p>也许我可以理解男人跟我做那种事，可是我无法理解要在镜子下做、要在镜头下做。镜头以后，刹那变成永恒、动作变成慢动作、一次变成N次、远近随意、重复又重复，在科技的Zoom下、Repeat下，我变得那样细腻、那样清晰、那样局部、那样无法否认或狡赖，当然，我也可爱、细细观察出来的可爱。我竟那样会服侍男人、使男人完成男人，大师对我，不但是伟大的大师，也是伟大的男人……</p>
 <p>朱仑没再写下去了，下面由我接着写。</p>
@@ -2501,10 +2542,10 @@
 <p>“镜子使你没有选择？”</p>
 <p>“应该是。你呢？”</p>
 <p>“我喜欢选择镜子，奇怪吧，我选择的镜子，它叫朱仑。”</p>
-<p>从她，看到我自己。诗人布尔狄龙（F.W.Bourdillon）说“夜有一千只眼睛”（Thenighthasathousandeyes.）、“头脑有一千只眼睛”（Themindhasathousandeyes.）。佛教文献里没说多少只，但浑身都是。原句是：“通身是眼，不见自己，欲见自己，频掣驴耳。”意思是说，自身的视野是有限度的。你纵使浑身都是眼睛，仍旧看不见你自己。解决之道，要靠掣驴的耳朵，让驴对你叫，你才能惊醒，至于为什么要驴叫，那倒要问魏晋高人了。魏晋高人有的喜欢做驴叫。人为什么要驴叫？一个答案是人就是驴，人通身是眼，可是看不见自己，要看见自己，看看驴就是阁下。当然，掣驴耳朵的目的也许不是要驴叫，而是靠掣认清一何驴也！拉丁谚语说：“Theassisknowbyhisears.（Exauribuscognosciturasinus.）”莎士比亚剧本说：“Iamanass,indeed;youmayproveitbymylongears.”观人于其驴了，多妙啊！</p>
+<p>从她，看到我自己。诗人布尔狄龙（F. W. Bourdillon）说“夜有一千只眼睛”（The night has a thousand eyes.）、“头脑有一千只眼睛”（The mind has a thousand eyes.）。佛教文献里没说多少只，但浑身都是。原句是：“通身是眼，不见自己，欲见自己，频掣驴耳。”意思是说，自身的视野是有限度的。你纵使浑身都是眼睛，仍旧看不见你自己。解决之道，要靠掣驴的耳朵，让驴对你叫，你才能惊醒，至于为什么要驴叫，那倒要问魏晋高人了。魏晋高人有的喜欢做驴叫。人为什么要驴叫？一个答案是人就是驴，人通身是眼，可是看不见自己，要看见自己，看看驴就是阁下。当然，掣驴耳朵的目的也许不是要驴叫，而是靠掣认清一何驴也！拉丁谚语说：“The ass is know by his ears.（Ex auribus cognoscitur asinus.）”莎士比亚剧本说：“I am an ass, indeed; you may prove it by my long ears.”观人于其驴了，多妙啊！</p>
 <p>我素来不喜欢大部分的佛门言语，因为佛门言语在语意上太含糊、没有界定，不知它们说什么。而一般说经家和笺注家却乱作解人，附会指出说这个说那个，其实全是胡扯。整个的《大藏经》，其实绝大部分都是玄学字汇的排列组合，完全没有真实的意义。滚入这种“玄学障”里的人，整天的活动，一如笼中踏自转轮的松鼠，辛苦得不亦乐乎，结果却在原地未动分毫。佛门的对话，大率类此。一方实在不清楚知道或真的知道对方在说些什么；而对方的回答，也是天马行空。所以读佛经，只得就勉强可敲定的片言只句予以检定，其他的莫名其妙，只好去他的了。不过，上面这段佛教名言，有片言只句还可讨论的，就是：一种视觉，可以从对自己以外的一个标的，反身求之，很像“观人于其所施”那种情况。有多次，在朱仑身上，仿佛看见我自己。她透露出我的心意、她流露出我的愿望、她泄漏出我的秘密，她是天启。多么奇妙，在一个十七岁的身上，竟看到我自己。最后，她用裸露，败露了我，她知道我在隐藏，却难以隐藏，她得出真正的我，像得出一个答案。她并没提出问题，却使我做出答案。她无须在意我看见自己，只要从她，便看见我自己。</p>
 <p>我对朱仑说：</p>
-<p>“Iuseamirrortoseemyface;Iuseyourfacetoseemysoul.（从镜子中，看我的脸；从你脸中，看我灵魂。）”</p>
+<p>“I use a mirror to see my face; I use your face to see my soul.（从镜子中，看我的脸；从你脸中，看我灵魂。）”</p>
 <p>朱仑问：</p>
 <p>“那我怎办，我看什么？”</p>
 <p>我答：</p>
@@ -2539,7 +2580,7 @@
 <p>那我有什么保障，保障你不换我。</p>
 <p>因为我正在咬你的左脚。</p>
 <p>你不喜欢我的右脚。</p>
-<p>用JamesTate（塔特）的诗来说，右脚是mysecondfavorite、是我第二喜欢。但轮到我咬你右脚的时候，左脚就是第二喜欢了。</p>
+<p>用James Tate（塔特）的诗来说，右脚是my second favorite、是我第二喜欢。但轮到我咬你右脚的时候，左脚就是第二喜欢了。</p>
 <p>你的第二喜欢，是变来变去的，但你的咬，是不变的。你为什么要用咬的方法？</p>
 <p>在明朝清朝时候，有一个词儿，叫“咬春”，在立春这天吃东西，把春天咬住，我觉得这词儿好生动。春天是多么抽象，咬春是多么具体，具体得把春天咬住，多么动人？更动人的是咬住青春女生的脚。</p>
 <p>咬，是多么可爱的动词。像小狗咬住你、又一只咬住你，像你反过来咬住小狗，咬住一只、又咬第二只。青春咬你、你咬青春。多么可爱的动词。</p>
@@ -2552,8 +2593,8 @@
 <p>朱仑说：“我也要。”我问你也要什么，她说也要学我，捐出做“大体解剖”。我说不要吧。为什么？这么漂亮的身体，我希望只有我看。她说解剖前泡在药水里，尸体已经不漂亮了。我说我不希望你死后不漂亮，虽然，我看不到了。她说尸体怎么办，我说标准处理方法是火葬啊。她说她有点怕火。我说死了还怕火吗？她说要问问圣女贞德看。</p>
 <p>我说贞德已经烧糊涂了，我介绍你问另一个吧。</p>
 <p>朱仑问是谁。我说：“他是十六世纪的宗教改革家JohnRogers（约翰罗杰斯），他因为演说反对天主教，骂了教皇，被抓起来，用火刑烧死了，那是1555年。”</p>
-<p>“这人我知道。但十七世纪还有一位同名的JohnRogers，也是牧师，也被抓起来，不过没有挨烧。”朱仑展现了博学。</p>
-<p>“所以，JohnRogers有两个，一个挨烧的、一个没有。”</p>
+<p>“这人我知道。但十七世纪还有一位同名的John Rogers，也是牧师，也被抓起来，不过没有挨烧。”朱仑展现了博学。</p>
+<p>“所以，John Rogers有两个，一个挨烧的、一个没有。”</p>
 <p>“我想起JohnHolmes,uncleofOliverWendellHolmes,wasonhisdeathbedwhenanursereachedunderthecoverstofeelhisfeet.ShewhisperedtorelativesthatHolmesstillliver:“Nobodyeverdiedwiththeirfeetwarm”.Holmesopenedhiseyesandmadehisfinalpoint:“JohnRogersdid.”（奥立佛霍姆斯的叔公约翰霍姆斯临终时，一位护士把手伸到床单下，摸了他的脚，然后对床边的家属说：‘没人死了脚还是热的。’这时霍姆斯睁开眼睛，说出他临终遗言：‘约翰罗杰斯就是热的。’）这位美国大法官的叔公可真有幽默感。一个人临死前头脑还这样清醒、还能纠正护士错误，死得多漂亮啊，我盼望我也有漂亮的死。”</p>
 <p>“你可能死得比他更漂亮。”我神秘的说。</p>
 <p>“怎么个死法？除非当时你在我身边。”</p>
@@ -2568,11 +2609,11 @@
 <p>我点着头，赞美了这番议论。“当然，近六百年过去了，这世界不再有贞德了，但是还有贞德的影子，在对抗美国人支持的以色列斗争中，我们看到前仆后继的阿拉伯女性，身怀自杀炸弹，视死如归，她们都是现代贞德，太悲壮了。不要谈贞德了吧，如果不被烧死，选贞德不如选Cinderella，至少灰姑娘的脚漂亮，她可是穿得上‘仙履’呢。”</p>
 <p>“你对灰姑娘的脚有研究？”</p>
 <p>“有研究的，应该是那个故事。法国文学家法朗士（France）四十五岁那年，1889年发表《泰绮思》（Tha?s），五年后，马斯内（Massenet）把小说改成歌剧，搬上了舞台，我常听的，就是歌剧中泰绮思从妓女生涯转向修女生涯时那一段冥想曲。而马斯内，就是写《仙履奇缘》（Cinderella）歌剧那一位。”</p>
-<p>“据我所知，马斯内1899年写《仙履奇缘》前八十二年，罗西尼（Rossini）早就写过意大利的《仙履奇缘》（LaCenerentola），可是里面没有晚娘和南瓜，也没有玻璃鞋，因为19世纪1817年的罗马，是不允许女演员在舞台上露出脚来的。”</p>
+<p>“据我所知，马斯内1899年写《仙履奇缘》前八十二年，罗西尼（Rossini）早就写过意大利的《仙履奇缘》（La Cenerentola），可是里面没有晚娘和南瓜，也没有玻璃鞋，因为19世纪1817年的罗马，是不允许女演员在舞台上露出脚来的。”</p>
 <p>“天啊，你真的什么都知道！你还知道Cinderella这灰姑娘什么？”</p>
-<p>“我还知道这故事从中国传到法国，又从法国传到英国。法国传出来的可多了，英国《鹅妈妈的故事》（TalesofMotherGoose）是从法国派劳（Perrault）编的童话集来的。”</p>
+<p>“我还知道这故事从中国传到法国，又从法国传到英国。法国传出来的可多了，英国《鹅妈妈的故事》（Tales of Mother Goose）是从法国派劳（Perrault）编的童话集来的。”</p>
 <p>“灰姑娘出自中国？”</p>
-<p>“OneoftheoldestknownliteraryrenderingsofthethemeisaChineseversionofthe9thcenturyAD.《大英百科全书》可是这么说的。”</p>
+<p>“One of the oldest known literary renderings of the theme is a Chinese version of the 9th century AD.《大英百科全书》可是这么说的。”</p>
 <p>“我可不信中国有玻璃鞋，但我相信中国女人有的有极漂亮的脚，像你的就是。不过，中国人和19世纪的意大利人一样，女人再漂亮的脚也是不能上舞台的，甚至女人根本不能上台，要男人男扮女装替她上，像梅兰芳，你知道梅兰芳吗？”</p>
 <p>“我不知道梅兰芳。”</p>
 <p>“谢谢你的不知道。你到底有了不知道的。”</p>
@@ -2658,7 +2699,7 @@
 <p>在人体中，脚心是独有的一个世界。它背向所有的器官，像是负气跷家的小孩。问题是全家永远跟着它，谁都不会遗失。</p>
 <p>强暴是变态。真的，是地狱；假的，是天堂。</p>
 <p>强暴心爱的小情人，是天堂，是一种异样的快乐。</p>
-<p>性交本是一种强凌，强暴是基本面。轻微的虐待狂本是一种兴奋，强凌着心爱的小情人，她地狱，我天堂。但这只是开始，只是过程，结局是强迫她也天堂，要她随着叫、随着赞美，她喊着MyGod，而God就在天堂。</p>
+<p>性交本是一种强凌，强暴是基本面。轻微的虐待狂本是一种兴奋，强凌着心爱的小情人，她地狱，我天堂。但这只是开始，只是过程，结局是强迫她也天堂，要她随着叫、随着赞美，她喊着My God，而God就在天堂。</p>
 <p>强暴心爱的小情人，我是伟大的、伟大的专业。强暴有那么多种，也有变种，只有伟大的才会发现。发现那美丽的脚、发现那白嫩的脚心，就在那里、就是那里。用我的脚、我的脚心，强暴上去，不是摩擦，太嫩了，没有摩擦，只有滑润与滑动。多么兴奋，用脚强暴她的脚、强暴她美丽的脚、白嫩的脚，听她去闪躲，又躲不胜躲，在求饶。而我，我是天堂的占领者，我肆虐。</p>
 <p>脚心也会被强暴，那是奇闻，还没结束。更奇闻的是，情人的两只脚，在两面脚心之间，加入滑润，会发生更令十七岁“难为情”的事。可怜的十七岁，在专业的男人面前，一身的美丽、一身的白嫩，无处可以幸免。</p>
 <p>再见她的时候，她穿了白袜子。</p>
@@ -2666,7 +2707,7 @@
 <p>说“色即是空”的人，没真正领悟佛理，因为没从反面回向，反面是“空即是色”。《般若波罗蜜多心经》所以说：“色即是空，空即是色。”上下两句相扣的，不是单独的。</p>
 <p>佛门理论有“无色界”。“俱舍论”中说得好玄：“无色界中，都无有处；以无色法，无有方所……但异熟生，差别有四：一、空无边处，二、识无边处，三、无所有处，四、非想非非想处。如是四种，名无色界。”“无色界”是佛门三界中的最高境界，到了这种境界，没有有形的物象了。色，是物象；无色，就是没有物象，只有精神世界的深妙与恍惚。</p>
 <p>但是，在“无色界”中的，会被转回来，重新给男人蹂躏。那是典型的正面，男人看到完整的正面，男人看到的，是整幅被摧残的画面，挣扎、哀求、呻吟、泪眼，在请你垂怜。结果却是，垂怜反倒成为一种助兴、成为恣虐的刺激。如果放弃请你垂怜呢？放弃所有的挣扎，采取女神式的庄严冷峻呢？也没有用，这种庄严冷峻是另一形式的刺激，看似没有任何反应，但冰冷也是一种反应，会令施暴者别生奸尸般的刺激。男人是那么坚硬坚定，强暴就是强暴。对男人说来，空无边处、识无边处、无所有处、非想非非想处，都在他要蹂躏的深处。那里“空即是色”，色即是奸淫。</p>
-<p>《大智度论》说：“虚空有相汝不知，故言无。”其实中国的“老子”早已道出“当其无，有器之用”的真理，河上公注解说“无”字就是“空”字，佛老所论，都呼之欲出了的，就是阴部。“空无”（non-being;nothingness）的高论都说得太高了。</p>
+<p>《大智度论》说：“虚空有相汝不知，故言无。”其实中国的“老子”早已道出“当其无，有器之用”的真理，河上公注解说“无”字就是“空”字，佛老所论，都呼之欲出了的，就是阴部。“空无”（non-being; nothingness）的高论都说得太高了。</p>
 <p>俄国诗人普希金留有一部秘密日记，是1836年到1837年的，他死后两百年公开了，里面透露了他对阴部的崇拜，“空乏其身”，一至于此，他的境界是对的，但只有这一境界就太浅薄了。</p>
 <p>正点的诠释应该颠倒陈述，改为“空即是色，色即是空”。前后两个空字有不同层次，第一个是具象的，第二个是抽象的，是色后的高明光大、色后的升华与礼赞、色后的应有的空灵境界，像空山灵雨般的凄美，只有被强暴后的十七岁情人才有那种凄美。啊，朱仑。</p>
 <h2 id="智者的虚拟第十二号"><a class="header" href="#智者的虚拟第十二号">智者的虚拟第十二号</a></h2>
@@ -2697,7 +2738,7 @@
 <p>她不需要很多，只是一点就好，在你生命里、在你每周的生命里，也许只是两个小时的短暂，但没有这短暂，你其他大量的独处时间都会崩盘。——你的直径空躺在那儿，像是荒废了的阴茎。</p>
 <p>我跟阿基米德有不同吗？有的。就在浴缸上。他发现了真理跳出浴缸，我却跳了进去。我的“支点”在水里。</p>
 <p>在虚拟中，我正与模特儿同浴。</p>
-<p>“我应该做阿基米德式裸奔，从浴缸跳出来，跑到街上喊Eureka!Eureka!”</p>
+<p>“我应该做阿基米德式裸奔，从浴缸跳出来，跑到街上喊Eureka! Eureka!”</p>
 <p>“你发现了什么？”</p>
 <p>“我发现这么纯洁可爱的十七岁高二女生，竟来自天启，这样敢在浴缸中取悦男人。”</p>
 <p>她假装生气。“原来男人是这样容易泄漏十七岁的秘密。”</p>
@@ -2728,7 +2769,7 @@
 <p>“天啊，现在轮到我阿基米德了！我发现了‘水先生’。我发现了。”</p>
 <p>“那你要裸奔了？”</p>
 <p>“你要我上街给人看到裸体吗？”</p>
-<p>“要你只给我看。像LadyGodiva（戈迪瓦夫人），只给一个人看。”</p>
+<p>“要你只给我看。像Lady Godiva（戈迪瓦夫人），只给一个人看。”</p>
 <p>“只给一个人偷看。”</p>
 <p>“偷看，偷看也是看。”</p>
 <p>“也许你愿意偷看我。你要偷看我什么？”</p>
@@ -2764,16 +2805,16 @@
 <p>“谢谢你，你使我感到骄傲。不过，请你注意，美国学校的女学生现在正看到了你。真正使我骄傲的，是我要问你的问题：‘我想它本来不是这样子，见到我，才是这样子。’”</p>
 <p>“你说得太客气了，不必等到看，它一想到你，就这样了。”</p>
 <p>“它最坦白，它不隐藏自己。”</p>
-<p>“它是我全身唯一的例外。我可以看来无动于衷、可以看来不形于色，只是它，当它泄漏了我，我无法掩饰。怎么掩饰？谁能掩饰勃起。所以，正如一位seventeen所说的，它坦白，它什么都不说，却什么都说了，它告诉你它要什么。像改写过的Blake（布雷克）诗里说的：Silently,invisibly:/Hetookherwithalie.”</p>
-<p>“Whata“lie”?”</p>
-<p>“Blake原诗是withasigh，勃起的它，改成withalie。”</p>
+<p>“它是我全身唯一的例外。我可以看来无动于衷、可以看来不形于色，只是它，当它泄漏了我，我无法掩饰。怎么掩饰？谁能掩饰勃起。所以，正如一位seventeen所说的，它坦白，它什么都不说，却什么都说了，它告诉你它要什么。像改写过的Blake（布雷克）诗里说的：Silently, invisibly:/He took her with a lie.”</p>
+<p>“What a“lie”?”</p>
+<p>“Blake原诗是with a sigh，勃起的它，改成with a lie。”</p>
 <p>朱仑笑起来。“我真不知道它还会改诗，诗人最会说谎，难怪它会说谎、会lie。”</p>
-<p>“但它的谎，不是弥天大谎，不是所谓eighteencarallie，不是十八开的谎话。”</p>
+<p>“但它的谎，不是弥天大谎，不是所谓eighteen caral lie，不是十八开的谎话。”</p>
 <p>“是十几开的？”</p>
 <p>“是seventeen的、十七开的，正好对准你来用。”</p>
 <p>“你说它在骗我？”</p>
-<p>“它表面在骗你，实际上，却把lie当withabetterlie（更好的位置）来用。所以呀，它真坦白，它没有骗你，相反的，它坦白说出它要的那种情况。”</p>
-<p>“这首Blake的诗，另一个版本是：Silently,invisibly:/O,wasnodeny.说得更坦白了。”</p>
+<p>“它表面在骗你，实际上，却把lie当with a better lie（更好的位置）来用。所以呀，它真坦白，它没有骗你，相反的，它坦白说出它要的那种情况。”</p>
+<p>“这首Blake的诗，另一个版本是：Silently, invisibly:/O, was no deny.说得更坦白了。”</p>
 <p>“你好伟大，你知道Blake的这首诗有两个版本。你看书就这么细腻吗？”</p>
 <p>她点点头。“因为细腻，所以可以抓到作者的真正意思。”</p>
 <p>“看来，版本很重要。不同的版本，就看到不同的Blake。不但是英国诗人，中国的也一样。宋朝的大诗人苏东坡，在牢里写给他弟弟的诗，一般版本都印成‘与君世世为兄弟，更结来生未了因’，生生世世为夫妇，是唐朝的辞汇。宋朝的苏东坡诗里用到‘世世为兄弟’，按说也通。但我就觉得不太对劲。因为下一句明明写的是‘更结来生未了因’，是‘来生’，相对的，应该是‘今生今世’才更好。我比苏东坡高明，我要给他改一改。后来我看到八百年前宋朝古版本的《注东坡先生诗》，在第四十卷里找到这首诗，才惊讶的看到原句是‘与君今世为兄弟，更结来生未了因’，果然原文用的是‘今世’，而不是‘世世’，证明了我果然是真的苏东坡。”</p>
@@ -2811,7 +2852,7 @@
 <p>“刚才你一再谈到人工智慧，好像你觉得十七岁的智慧不够，要加点人工？”</p>
 <p>“其实，人工智慧都不够，但从人工智慧做一起点，也是好的。”</p>
 <p>“好到什么境界呢？像配上了名牌？”</p>
-<p>“要看什么境界的名牌，对我而言，我只肯定一种名牌，就是钢笔，因为，笔好写还不算，你还得有文化水平。钢笔以外，我肯定实用性的名牌汽车，因为它安全。其他呀，大都是奢侈品了。不过奢侈品也有一点施教的作用，像美国钻石名牌HeartsOnFire，推出（Monogamy）100。说明是:（Monogamy）100象徵的一百次方，除了象徵一百次方坚固永恒的爱，更传承了HeartsOnFire‘全世界车工最完美的钻石’，见证这些钻石都在一百倍放大镜下精准切割琢磨五十八个切面，放出光芒。我感到美中不足的是，连一块钻石，人都动大脑精准切割琢磨出五十八个切面，使它多面放光，为什么人类大脑本身，反倒单调的一个单面？贫乏、肤浅、没有璀璨耀眼的智慧，放出光芒，为什么？这就是我所说的：奢侈品也有一点施教作用。它告诉我们：人生要五十八面发光。至于其他方面，名牌的问题可超多了，名牌、名牌，所谓名牌，它的设计，多是可疑的。固然有很好很美的设计，也有很糟很丑的设计，并且，很糟很丑的设计还占了很大的百分比，只是，震于名牌，大家不敢说出、不敢说破而已。所以呀，固然好看的名牌了全不搭调，不好看的名牌了也益增其丑，总之，都被名牌的名设计师给耍了。‘皇帝的新衣’的被害人，又岂止皇帝而已。为什么下场如此？原因一百个，其中有一个最关键，你想得到吗？出在名设计师多是男同性恋。基本上，这种人看女人不顺眼，所以呀，他们要把女人给设计丑了，这就证明了很糟很丑的设计占了很大百分比的缘故，同性恋作祟呀！有趣吧？”</p>
+<p>“要看什么境界的名牌，对我而言，我只肯定一种名牌，就是钢笔，因为，笔好写还不算，你还得有文化水平。钢笔以外，我肯定实用性的名牌汽车，因为它安全。其他呀，大都是奢侈品了。不过奢侈品也有一点施教的作用，像美国钻石名牌Hearts On Fire，推出（Monogamy）100。说明是:（Monogamy）100象徵的一百次方，除了象徵一百次方坚固永恒的爱，更传承了Hearts On Fire‘全世界车工最完美的钻石’，见证这些钻石都在一百倍放大镜下精准切割琢磨五十八个切面，放出光芒。我感到美中不足的是，连一块钻石，人都动大脑精准切割琢磨出五十八个切面，使它多面放光，为什么人类大脑本身，反倒单调的一个单面？贫乏、肤浅、没有璀璨耀眼的智慧，放出光芒，为什么？这就是我所说的：奢侈品也有一点施教作用。它告诉我们：人生要五十八面发光。至于其他方面，名牌的问题可超多了，名牌、名牌，所谓名牌，它的设计，多是可疑的。固然有很好很美的设计，也有很糟很丑的设计，并且，很糟很丑的设计还占了很大的百分比，只是，震于名牌，大家不敢说出、不敢说破而已。所以呀，固然好看的名牌了全不搭调，不好看的名牌了也益增其丑，总之，都被名牌的名设计师给耍了。‘皇帝的新衣’的被害人，又岂止皇帝而已。为什么下场如此？原因一百个，其中有一个最关键，你想得到吗？出在名设计师多是男同性恋。基本上，这种人看女人不顺眼，所以呀，他们要把女人给设计丑了，这就证明了很糟很丑的设计占了很大百分比的缘故，同性恋作祟呀！有趣吧？”</p>
 <p>“听来怪有趣的，至少是经过你设计的新解释。”</p>
 <p>“所以呀，时装表演会上，我每次看到最后一场，就特别好笑。一群人高马大两眼发直瘦得像鬼的模特儿，个个身穿怪衣，拥簇着一个矮小怪男人出来谢幕，我就说：这群傻女人！这群傻观众！19世纪末期，有一种世纪末的观念，觉得世界的末日已将到来，贫富悬殊、社会动乱、世事不安、人生朝露，因绝望而走向颓废，不过，世纪末了一百年，又轮到20世纪末了，一百年前的都走了，但世纪还在末中，可见，世纪比人禁得住折腾。教训是，不要跟着时代走了，它比你跑得快死得慢，并且，它会轮回，你以为新的，其实是多年前的旧款，它也变不出什么新花样了，你被老祖母骗了，这群傻女人！这群傻观众！”</p>
 <p>“你的话，听来好像有一点道理。”</p>
@@ -2822,7 +2863,7 @@
 <p>“情是有的，可是，大球鞋太可怕了。”</p>
 <p>“你应该接受新产品。”</p>
 <p>“你要我穿着新球鞋看表演秀？全身西装笔挺，两脚穿着大球鞋？”</p>
-<p>“大球鞋已经被模特儿抱走了，还是来点别的吧，哈哈。刚才你谈到什么Puma，那是什么时代的名牌了，可见你多落伍。要听听我的大脑输出吗：AudemarsPiguet,Boucheron,Blancpain,Breguet,Burberry,Bvlgari,Cartier,Chanel,Chaumet,Chopard,Damiani,DeBeers,DiorJewelry,FranckMuller,GeorgJensen,GirardPerregaux,Graham,Gucci,HarryWinston,HeartsOnFire,HERMèS,JaegerLecoultre,JustDiamond,LéonHatot,Longines,LouisVuitton,Mauboussin,MauriceLacroix,Mikimoto,Montblanc,Omega,Oris,Parmigiani,Piaget,Pomellato,Rado,RogerDubuis,Swarovski,Tiffany,VanCleef&amp;Arpels,Versace,YSLJewelry,Zenith……”</p>
+<p>“大球鞋已经被模特儿抱走了，还是来点别的吧，哈哈。刚才你谈到什么Puma，那是什么时代的名牌了，可见你多落伍。要听听我的大脑输出吗：Audemars Piguet, Boucheron, Blancpain, Breguet, Burberry, Bvlgari, Cartier, Chanel, Chaumet, Chopard, Damiani, De Beers, Dior Jewelry, Franck Muller, Georg Jensen, Girard Perregaux, Graham, Gucci, Harry Winston, Hearts On Fire, HERMèS, Jaeger Lecoultre, Just Diamond, Léon Hatot, Longines, Louis Vuitton, Mauboussin, Maurice Lacroix, Mikimoto, Montblanc, Omega, Oris, Parmigiani, Piaget, Pomellato, Rado, Roger Dubuis, Swarovski, Tiffany, Van Cleef&amp;Arpels, Versace, YSL Jewelry, Zenith……”</p>
 <p>“好了！好了！”我将双手半举。“戴名牌HERMES手表的朱仑啊，谢谢你给我大开了眼界。其他唯一和我有关的是Montblanc的钢笔。但在钢笔单项上，我还不止Montblanc呢，我还用Pelikan那些名牌，别忘了，在用钢笔上，我可是文化贵族。名牌钢笔的确有助于我把自己变成名牌，因为我可以写出更自己的汉字，在这个世界上，十七岁的人再也写不过我了。”</p>
 <p>“我想，十七岁超不过你的太多了、太多了，岂止写钢笔字，你赢了所有的十七岁，除了青春。”</p>
 <p>“其实，在年龄上我有好多十七了，数字上也是赢的。”</p>
@@ -2853,15 +2894,15 @@
 <p>朱仑无奈的笑起来。“我想，你说的都会是真的。那一天，会到来吗？”</p>
 <p>我笑着。“不会说不会，而说不知道。对我说来，不知道自己已不再青春，是荒谬；不知道却还享有自己以外的青春，是大荒谬。现在，听了你的所谓叛逆的姿式，我真的相信了，因为它真的荒谬。”</p>
 <p>“别以为荒谬、大荒谬都是你的，想想十七岁，十七岁才是真正荒谬的一代，因为十七岁的模特儿想要六十七岁的大师上床，并且用那种反叛的姿式。怎么办？上帝都不会原谅你，十七岁，可不可以一开始就不要那样荒谬？”</p>
-<p>“为了悲怜上帝，可以考虑改用‘传教士姿式’（missionaryposition）。”</p>
+<p>“为了悲怜上帝，可以考虑改用‘传教士姿式’（missionary position）。”</p>
 <p>“‘传教士姿式’？哦，这词有点古典，我立刻可以用一本《美国遗产辞典》（TheAmericanHeritageDictionaryoftheEnglishLanguage）来贴身输出它的定义：missionarypositionn.Apositionforsexualintercourseinwhichawomanoh,aseventeenandmanliefacingeachother,withthewomanoh,theseventeenonthebottomandthemanonthetop.[FromChristianmissionaries’supposedadvocacyofthispositionoverothercopulatorypositions.’原来是指面对面的男人在上面的那种姿式，我懂了，但我不懂为什么叫‘传教士姿式’？”</p>
-<p>“因为古典的传教士主张上床的目的限定只是一个才对，就是传宗接代生小孩，姿式也限定只有一种，就是面对面的男人在上面的那种。所以叫‘传教士姿式’，传教士不但主张这种姿式，并且排斥其他姿式，排斥othercopulatorypositions，结果，至少六十四种的其他姿式给排斥了。”</p>
+<p>“因为古典的传教士主张上床的目的限定只是一个才对，就是传宗接代生小孩，姿式也限定只有一种，就是面对面的男人在上面的那种。所以叫‘传教士姿式’，传教士不但主张这种姿式，并且排斥其他姿式，排斥other copulatory positions，结果，至少六十四种的其他姿式给排斥了。”</p>
 <p>“六十四种的其他姿式？”</p>
 <p>“六十四种的其他姿式。”</p>
 <p>“谢谢你这么热忱的告诉十七岁的女生。”</p>
-<p>“我用的是‘传教士的热忱’（missionaryzeal）。”</p>
+<p>“我用的是‘传教士的热忱’（missionary zeal）。”</p>
 <p>“这种姿式，看来男人太胖是不适合的。”</p>
-<p>“我给你找到一个，他体重一百三十六公斤，就是三百磅，身高一八三公分，就是六英尺，他做过美国总统，又做过美国最高法院的院长，他叫塔虎脱（Taft）。他有老婆，Taftwrotethathiswifewas“awomanwhoiswillingtotakemeasIam,forbetterofforworse.”，这位老婆在被压四十四年后，还做寡妇活了十三年，可见她抗压性多么强。不过，她结婚时二十五岁，不是十七岁，我不太知道二十五岁是否能抗压，但我似乎知道十七岁不太抗得了压，尤其像你这样清瘦型的。”</p>
+<p>“我给你找到一个，他体重一百三十六公斤，就是三百磅，身高一八三公分，就是六英尺，他做过美国总统，又做过美国最高法院的院长，他叫塔虎脱（Taft）。他有老婆，Taft wrote that his wife was“a woman who is willing to take me as I am, for better of for worse.”，这位老婆在被压四十四年后，还做寡妇活了十三年，可见她抗压性多么强。不过，她结婚时二十五岁，不是十七岁，我不太知道二十五岁是否能抗压，但我似乎知道十七岁不太抗得了压，尤其像你这样清瘦型的。”</p>
 <p>“多谢你体贴我、怜惜我，还多谢你提醒我，并且救我一命。”</p>
 <p>“我只是想告诉你，人死得变成一块饼，是可能的，飞机出事，会摔成一块饼；汽车出事，会撞成一块饼；但床上出事，被压成一块饼，未免太可惜了。因为，这原是可以避免的，法子很简单，别用‘传教士姿式’，不就得了。”</p>
 <p>“可是，跟像你这样标准体重的男人就例外。”</p>
@@ -2944,14 +2985,14 @@
 <p>“好了，”朱仑交卷式的递给我。“我的词汇有点贫乏，所以这五句都在跳。”</p>
 <p>“虽然都在跳，不过很哲学了。还可以更哲学一点。”</p>
 <p>“好，更哲学一点。”</p>
-<p>STimeandtideand17waitfornogirl.</p>
+<p>S Time and tide and 17 wait for no girl.</p>
 <p>T十七是指把一生中最快乐的时光，提早过完。</p>
 <p>U只有十七是虚幻的现实，十七以后是现实的虚幻。</p>
 <p>V十七岁，最容易被梦骗，最喜欢用梦骗人。十七岁这骗子是公平的，因为她也骗自己。</p>
 <p>W最美的十七是永远没有十八岁。</p>
 <p>X最美的十七岁，只在天上和床上。</p>
 <p>Y十七就是花朵，特色就是美和短暂。只注意花的美，却忽略它短暂意义的，不知道花。</p>
-<p>Z十七永不凋谢，她只是死亡（SEVENTEENneverdie,shesimplyfadeaway.）。</p>
+<p>Z十七永不凋谢，她只是死亡（SEVENTEEN never die, she simply fade away.）。</p>
 <p>写到了第二十六个英文字母，写完了。朱仑一脸悲情。</p>
 <p>我看完了，我要扭转悲情。</p>
 <p>“我啊，”我停了一下，“我啊，我以为我找来一位模特儿，却不小心找来一位哲学家，并且，是那么会运用中文英文的。看你最后写neverdie到simplyfadeaway，英文好的人会发现是美国DouglasMacArthur（麦克阿瑟元帅）引用的老军歌，但原文是neverdie…justfadeaway…但英文更好的人会发现，neverdie…shesimplyfadeaway是英国songwriterJ.Foley（弗雷）登记有案的，朱仑啊，你的英文打败了美国。”</p>
@@ -2996,7 +3037,7 @@
 <p>现代人勃起，它矗立在科技之上，炼化出仙丹。上帝隐身在天蓝色的小药丸中，上帝每粒美金十元。</p>
 <p>这是Viagra。</p>
 <p>另一个V字开头的是vibrator，振动器。</p>
-<p>电动振动器（ElectronicVibrator），它是每秒五十到六十频率（五十到六十赫兹）的科技产品，每秒振动五十到六十次，这是人类生理上远远达不到的频率。想想看，当它接触到人类的肉体上，会产生什么感觉？尤其，当它焦点集中的时候，会产生什么感觉？肉体会疯狂！科技制造出上帝制造不出来的极限。在A片中，我们可以看到。不过，我必须说，A片太粗暴了，并且，直接接触到，太不体贴了。</p>
+<p>电动振动器（Electronic Vibrator），它是每秒五十到六十频率（五十到六十赫兹）的科技产品，每秒振动五十到六十次，这是人类生理上远远达不到的频率。想想看，当它接触到人类的肉体上，会产生什么感觉？尤其，当它焦点集中的时候，会产生什么感觉？肉体会疯狂！科技制造出上帝制造不出来的极限。在A片中，我们可以看到。不过，我必须说，A片太粗暴了，并且，直接接触到，太不体贴了。</p>
 <p>我对朱仑说：“你被现代科技每秒五十到六十了，你就不是你了。”</p>
 <p>“那我是什么？”</p>
 <p>“你是现代科技的奴隶。”</p>
@@ -3011,28 +3052,28 @@
 <p>“你连说了三个谁字。”</p>
 <p>“‘谁’，是单数，‘他们’，才是复数。”</p>
 <p>朱仑会心一笑。“我会一心做你模特儿，并且只做你一个人的AV女优。”</p>
-<p>“你在A片中，‘演出’的就是模特儿。片名《SweetSeventeenandswift50-60Hz。》</p>
+<p>“你在A片中，‘演出’的就是模特儿。片名《Sweet Seventeen and swift 50-60 Hz。》</p>
 <p>“片名里怎么没有你？”</p>
-<p>“我和swift50-60Hz是一组的，因为，不能用振动器直接接触到你，只能隔着我的，间接振动到你。”</p>
+<p>“我和swift 50-60 Hz是一组的，因为，不能用振动器直接接触到你，只能隔着我的，间接振动到你。”</p>
 <p>这是vibrator，为现代人所独享。它有美容、按摩的功能，可是把它用在不可思议的功能上，它使“花容增色”。</p>
 <p>现代科技作恶多端，却也有功足录。</p>
 <p>过去的主要人生哲学元目是天人合一，认为自然与你人身是两位一体的，甚至还可以互动、可以感应。现在，进入了现代，天人合一面临了新局面，科技产品机器人出现了，它捞过了界，要与人合一，天在那里，机器人也不反对。但是，人机合一是先决了的、铁定了的。人机合一以外，天人机合一算是三位一体吧，机器人没意见，但是天呀，天该有意见。因为天人合一的天，是玄学的，机器人却是科学的，怎么办呢？</p>
 <p>最奇异也是最重要的变化是：科技已发展到把晶片植入人体内的肌肉里，这样子让神经元成长，与晶片相连。人体和机器的直接神经介面自此开始出现。人机合一下去，人与机的关系不是併合的，而是化合的、融合的。这一趋势，是不可知的、不可测的。现代科技一路在巧夺天谴与天工。祸福相依，我们不完全控制得住，但是、但是、但是，真实肉身的灵光、兰因、与慧根，我们要与科技争胜。朱仑是什么？朱仑是抵抗科技疯狂的最后肉身，朱仑最后可能会毁灭，但朱仑没有闪躲。亮丽的十七岁，从不闪躲。</p>
 <p>我对朱仑说：“有人比我更喜欢十七这个数字，你看，有人甚至把1987年的热门歌舞片《DirtyDancing》翻成《热舞十七》。”</p>
-<p>朱仑答道：“那部片子有一句话：Nobodyputsbabyinthecorner.（没人可以欺负宝贝。）我想应该改成Nobodyputsbabyinthehotcorner.宝贝要从三垒得分，得自己来。但我仿佛觉得，我已上了三垒，我必须奔回本垒。”</p>
+<p>朱仑答道：“那部片子有一句话：Nobody puts baby in the corner.（没人可以欺负宝贝。）我想应该改成Nobody puts baby in the hot corner.宝贝要从三垒得分，得自己来。但我仿佛觉得，我已上了三垒，我必须奔回本垒。”</p>
 <p>我神秘一笑。“别忘了，朱仑，模特儿的本垒，总在老板床上。”</p>
 <h2 id="沙漏颂"><a class="header" href="#沙漏颂">沙漏颂</a></h2>
 <p>我对朱仑说：“那大半生都活在轮椅里的科学天才StephenHawking（史蒂芬霍金），他瘫得只剩下一只微小手指，但他解开了宇宙。1985年，他在芝加哥演讲，他宣称，在遥远的未来某一时刻，我们的宇宙将会开始收缩，最后会回到一个奇点。在这个收缩的期间，时光将会倒流——所有在扩张期间曾经发生过的一切将会重演，但是次序却刚好相反。霍金给了我们一个梦。多美啊，但是，第二年，又在芝加哥，他又宣称，他在1985年犯了错误，现在他正式推翻去年的自己，原来相反观点才是正确的：当宇宙收缩时，时间的方向不会倒转。霍金把梦又收回了。梦的起落，全在霍金残留的一只手指。”</p>
 <p>“他用一只手指操纵电脑语音合成器来发音。”朱仑说。</p>
 <p>“没错，一只手指。”</p>
-<p>“Bible（新旧约全书）的中文译本版本很多，有一种‘二指版’，指一个人用两只手指翻译成中文。他就是施约瑟主教（SamuelIsaacJosephSchereschewsky）。他是一位美籍犹太人，信了基督。到中国传教。1881年，他在武昌患了瘫痪症，只剩两只可用的指头，但他仍旧翻译出《施约瑟浅文理译本》圣经。在1919年《官话和合译本》出版前二十多年间，风行了中国。”</p>
+<p>“Bible（新旧约全书）的中文译本版本很多，有一种‘二指版’，指一个人用两只手指翻译成中文。他就是施约瑟主教（Samuel Isaac Joseph Schereschewsky）。他是一位美籍犹太人，信了基督。到中国传教。1881年，他在武昌患了瘫痪症，只剩两只可用的指头，但他仍旧翻译出《施约瑟浅文理译本》圣经。在1919年《官话和合译本》出版前二十多年间，风行了中国。”</p>
 <p>“一指的、二指的，你朱仑都认识，真好。”</p>
 <p>“我应该再认识那八指的，那‘八指头陀’。他为了宗教信仰，烧掉了自己两只指头。他还是诗人呢。”</p>
 <p>“‘不居朝市不山林，别有飘然独往心。魔佛界中难位置，老僧入定费推寻。’这就是他的诗。”</p>
 <p>“好了，二指加八指，十指俱全了。”朱仑做了手势。</p>
 <p>“朱仑啊，这就是我为什么说你这神童是超科技的缘故。科技再行，也学不到你这样会搬弄手指，霍金也学不到。”</p>
-<p>“霍金吗？我不幸翻看了他的书，那本ABRIEFERHISTORYOFTIME（时间新简史），看得有点气闷。像发现新大陆，你只能发现一回。别人发现了，你只好气闷。关于时间，这票科学天才们简直在斩尽杀绝，不留给别人一点新大陆，我奇怪，难道我们没有在时间上发表意见的余地了吗？”</p>
-<p>“应该有一点吧，这票科学天才只能吃光科学，尚不能吃尽哲学，我们的哲学，而非传统的。传统的哲学已经玩光了，一如维根斯坦（LudwigWittgenstein）招认的，哲学工作只剩下语言分析。”</p>
+<p>“霍金吗？我不幸翻看了他的书，那本A BRIEFER HISTORY OF TIME（时间新简史），看得有点气闷。像发现新大陆，你只能发现一回。别人发现了，你只好气闷。关于时间，这票科学天才们简直在斩尽杀绝，不留给别人一点新大陆，我奇怪，难道我们没有在时间上发表意见的余地了吗？”</p>
+<p>“应该有一点吧，这票科学天才只能吃光科学，尚不能吃尽哲学，我们的哲学，而非传统的。传统的哲学已经玩光了，一如维根斯坦（Ludwig Wittgenstein）招认的，哲学工作只剩下语言分析。”</p>
 <p>“来，大师，我们就开发一下我们的哲学。”</p>
 <p>“首先要打倒电脑，它太讨厌了。”</p>
 <p>“别这么说，大师，我讲个可爱的电脑故事给你：一位大学教授向电脑挑战，问电脑：‘电脑啊电脑，本教授只有这样的两只手表可以选择：一只破旧不堪，早就不走了；另一只则每二十四小时慢一秒钟。我该买哪一只？’电脑的答案是：‘应买不走的那一只。因为每二十四小时，它便能指出正确时间两次。另一只走的，却要一百二十年才指出正确时间一次。’大师，看到了吧，电脑也很哲学呢，至少它看到时间停止的好处。”</p>
@@ -3042,20 +3083,20 @@
 <p>用每次十分钟的沙漏。用沙漏具象了我们，把我们碎化，我们化为流沙，虽然，我们一泻不已，但一倒过来，却又周而复始，一切归零。流沙暗换了我们流年，周而复始的是它，不是我们，它用小小的容器，骗了我们，我们被它切碎，清楚的告诉我们如何化为尘土——在快乐中失掉流年、化为尘土。我们无法知悉死后如何化为尘土，但沙漏使我们生前就看到，唯一快慰的是，每一粒都乐在其中。</p>
 <p>作为我的模特儿，我理解她多少？</p>
 <p>要理解部分，还是全体？</p>
-<p>她是一个全体、一个全体的她，我要理解她，但有必要理解她的全体吗？在她赤裸全身给我的时候，我可以看到她的全部肉体，甚至拥有到，一切都是完美的、神往的。但是，Thegameisover以后，她会离开，离开共同淋漓的浴缸、共同淋漓的沙发、地板、床。又回到她的世界、她随波逐流的世界。</p>
+<p>她是一个全体、一个全体的她，我要理解她，但有必要理解她的全体吗？在她赤裸全身给我的时候，我可以看到她的全部肉体，甚至拥有到，一切都是完美的、神往的。但是，The game is over以后，她会离开，离开共同淋漓的浴缸、共同淋漓的沙发、地板、床。又回到她的世界、她随波逐流的世界。</p>
 <p>约定是被遵守的，一周以后，她会再来，再来时，从她进门开始，一切就像沙漏般的倒转过来，那么陌生又那么熟悉、那么畅怀又那么默契，时光和动作，像沙漏中的细沙，没有一点声音的滑下来，时间是看不到的，但时间化为一细粒一细粒的细沙，就看到了。对了，那就是时间，颠倒的沙漏上，上下两个玻璃球形是那么透明、那么对称、那么和谧的把自己体内的从上输送下方。一如一种姿式，一如那古日本所称道的“浮游”姿式、颠倒梦想。伴同着沙漏造型的时光流转之美，当她再来的时候，一切都是全部、全部都是一切。</p>
 <p>唯一的提醒，是沙漏，沙漏停时，要倒转；倒转以三次为限，沙漏再停的时候，它复原了，我和模特儿也要停止。多么神妙的约定，为了提醒与清醒、为了不要有恋情、为了不可以真的放浪形骸来尽兴，我们要不断提醒：是在“演出”啊，哈罗，你是“演出”的。阴茎是真的，可是也在“演出”，一切交欢都随沙而停、随沙而尽，不可以玩真的。</p>
 <p>她全体进入沙漏的世界，一片赤裸与真情。我希望她的叫床是假的，又希望是真的。我陷入沙粒里，我看到太多的天国。而她呢，她似乎越来越不承认是“演出”了，“演出”，像是一种借口、一种说辞，她越来越玩真的了。</p>
 <p>诗人从一粒沙里看世界，其实，一粒流沙里更可看到情爱的世界，那不止是器官的结合与分开、不止是时间的一段、也不止是几十分钟的记录，它是延伸的、哲学的，是“所过者化、所存者神”的。它神来而后神技、神乎其技而后神往、令人神往，然后转入永恒。它不止于时间的一段，在时间上，它由一段连接永恒。它有两个阶段，一个是当时、一个是事后，一个是“一室之内”、一个是“形骸之外”，前者颠倒、后者放浪，为什么放浪？因为从形骸延伸出来的“外人生”“外宇宙”太丰富了、太瑰丽了。彩云可以易散、风流可以云散，但是，置身于巫山顶上的人，他永远抓住了聚散，他的game永远不会over。</p>
 <p>看到沙漏静止了。多么微妙的象征意味。它的静止，仿佛告诉人们，它静止了，时间也该随它静止，当它不再计算时间，时间就没有意义。沙漏太小了、沙漠又太大了。看看沙丘，海水是沙丘的风，浪高浪低、潮起潮落，沙丘就随着转型。想起女诗人SaraTeasdale（莎拉替滋代尔）那首OntheDunes（沙丘忆）：</p>
-<p>Ifthereisanylifewhendeathisover,</p>
-<p>Thesetawnybeacheswillknowmuchofme,</p>
-<p>Ishallcomeback,asconstantandaschangeful</p>
-<p>Astheunchanging,many-coloredsea.</p>
-<p>Iflifewassmall,ifithasmademescornful,</p>
-<p>Forgiveme;Ishallstraightenlikeaflame</p>
-<p>Inthegreatcalmofdeath,andifyouwantme</p>
-<p>Standonthesea-warddunesandcallmyname.</p>
+<p>If there is any life when death is over,</p>
+<p>These tawny beaches will know much of me,</p>
+<p>I shall come back, as constant and as changeful</p>
+<p>As the unchanging, many-colored sea.</p>
+<p>If life was small, if it has made me scornful,</p>
+<p>Forgive me; I shall straighten like a flame</p>
+<p>In the great calm of death, and if you want me</p>
+<p>Stand on the sea-ward dunes and call my name.</p>
 <p>（死别一复生，滨水再徘徊，</p>
 <p>斑驳深如海，常变每重来。</p>
 <p>自悲身须臾，莫怪此情哀，</p>
@@ -3064,7 +3105,7 @@
 <p>看来沙丘是如此凄凉。其实，凄凉的不是沙丘，凄凉的是海水。时间变化下的海水，写这诗的女诗人，最后自杀了。大概没有人在沙丘呼唤她名字，那时的她四十九岁，一个活得太久又死得太早的年纪，如果死在十七，似乎更好。这说明了死得太早不如死得更早，英国诗人不是死在十七岁吗？沙丘，是十七岁尾闾。名字写在水上，等待招魂。</p>
 <p>古经书上说：“复，尽爱之道也。”“复”是招魂时喊死者名字，当爱已尽、当爱已当尽，让名字漂流在海里，死者不再复生、生者不再徘徊，沙丘重返沙漏里、浓缩在沙漏里，让时间安睡长眠。</p>
 <p>时间是荒谬的三段论者，它总粗分成“过去”、“现在”与“未来”。有必要吗？有必要吗？我在怀疑。</p>
-<p>冥想完毕，我告诉朱仑：“时间空间引出的真理讨论，有一个小故事吸引了我。故事说一个宴会中，席上一位客人，他说时间和空间是一个东西，并且加以证明。他拿一只长的银汤匙，放在桌子上。‘看，’他说，‘我把这汤匙向右移动。当我这样做的时候，时间也在进行着。当我移动的时候，我在它后面留下一片空间，这片空间在时间上说就是过去。所以，汤匙向其中移动的前面那片空间就是未来。因此你们可以知道，时间和空间乃是一个东西。’这段话引发主人的反驳。主人说：‘但是，如果你不移动这汤匙，时间仍然在进行着。而且，虽然你在空间上可将汤匙移回，却不能在时间上将它移回。时间——恰恰现在——在时间度过的时候的每一刻——乃是未来。’上面这个小故事，在方法论上有诡论与玄机，但在人生观上，它倒是对自己的一种新提醒，就是：‘现在就是未来。’（NowistheFuture.）引伸起来，就是：‘今天是我的未来。’（TodayIsMyFuture.）没有明天了，今天就是明天。对蜉蝣说来，更是如此。”</p>
+<p>冥想完毕，我告诉朱仑：“时间空间引出的真理讨论，有一个小故事吸引了我。故事说一个宴会中，席上一位客人，他说时间和空间是一个东西，并且加以证明。他拿一只长的银汤匙，放在桌子上。‘看，’他说，‘我把这汤匙向右移动。当我这样做的时候，时间也在进行着。当我移动的时候，我在它后面留下一片空间，这片空间在时间上说就是过去。所以，汤匙向其中移动的前面那片空间就是未来。因此你们可以知道，时间和空间乃是一个东西。’这段话引发主人的反驳。主人说：‘但是，如果你不移动这汤匙，时间仍然在进行着。而且，虽然你在空间上可将汤匙移回，却不能在时间上将它移回。时间——恰恰现在——在时间度过的时候的每一刻——乃是未来。’上面这个小故事，在方法论上有诡论与玄机，但在人生观上，它倒是对自己的一种新提醒，就是：‘现在就是未来。’（Now is the Future.）引伸起来，就是：‘今天是我的未来。’（Today Is My Future.）没有明天了，今天就是明天。对蜉蝣说来，更是如此。”</p>
 <p>朱仑在问：“当明天，也就是未来，来了的时候，你又怎么解释‘昨天’，也就是‘今天’呢？会出现‘过去’，‘过去’放在哪儿呢？”</p>
 <p>“怎么解释？太容易了，不要把它当成‘过去’，别以为‘过去’是一种结束、一种over，放宽放宽解释，把‘过去’当成一种延续，甚至一种发酵、一种永远的‘过去进行式’，不也很奇妙。当然不必像霍桑（Howthorne）笔下那位‘饕餮主义’的海关老吏，有本领把一顿盛馔记忆留香，变成‘现在’，那也太无趣了。”</p>
 <p>“你是说把值得的‘过去’都成为‘现在’、成为‘今天’？”</p>
@@ -3085,25 +3126,25 @@
 <p>“风”已经很不可捉摸了，看不到它，它却在，在“维”之外。维是空间、是立体，风说他不要立体，但要空间。</p>
 <p>比“风”更不可捉摸的，是“时”，“维”是空间、是立体，三维好好的，却冒出第四维，它叫“时”，称做时间，时是间吗？物理学家说它是。于是，出现了四维，由三维的空间和一维的时间组成。你描写一个点、运动的点，你得说：“在某时，该点在某处。”</p>
 <p>牛顿（Newton）毕竟是老实人，他眼中的“时”，只是超越而独立的量，它默然前进，带着人类面对三维。到了爱因斯坦，四维不再是静态的意义，对静态的观察而言，高速进行的基本粒子，一点也不短暂，用诗的语言，那是“万古如长夜”。</p>
-<p>爱因斯坦的朋友波尔（Bohr）说谈到原子，只能用诗的语言，诗人关心的，不只是描写实物，而在制造意象。但是，物理学家的极限是自杀前写下S=KlogW墓碑，他们无法潜进诗境。诗人的境界就高多了。布雷克《天真的预言术》（AuguriesofInnocence）说：</p>
+<p>爱因斯坦的朋友波尔（Bohr）说谈到原子，只能用诗的语言，诗人关心的，不只是描写实物，而在制造意象。但是，物理学家的极限是自杀前写下S=KlogW墓碑，他们无法潜进诗境。诗人的境界就高多了。布雷克《天真的预言术》（Auguries of Innocence）说：</p>
 <p>一粒沙中看世界</p>
 <p>一朵花里看天国</p>
 <p>运无限于孤掌</p>
 <p>定永恒于一瞬</p>
-<p>Toseeaworldinagrainofsand</p>
-<p>Andaheaveninawildflower</p>
-<p>Holdinfinityinthepalmofyourhand</p>
-<p>Andeternityinanhour.</p>
+<p>To see a world in a grain of sand</p>
+<p>And a heaven in a wild flower</p>
+<p>Hold infinity in the palm of your hand</p>
+<p>And eternity in an hour.</p>
 <p>照魔鬼算术，anhour（一个时辰）是三十“须臾”；一个“须臾”是两分钟；“一瞬”是五分之二秒；闭起眼皮，十分之一秒；停在那里，十分之一秒；再抬起眼皮，又十分之一秒，加在一起，一瞬是五分之二秒，一科学算法，就入魔了，也就诗意全消。别那么精确好吗？“定永恒于一瞬”，正是诗的语言，“一瞬”比anhour还好。</p>
 <p>什么是“定永恒于一瞬”？是时间被我们捉住了。</p>
 <p>布雷克以后十三年，英国新一代的诗人出生了，他是戴布森（HenryAustinDobson），他发现时间被捉住了，可是我们走了，看他的“时间弔诡”（TheParadoxofTime）吧：</p>
-<p>Timegoes,yousay?Ahno!</p>
-<p>Alas,Timestays,wego.</p>
+<p>Time goes, you say? Ah no!</p>
+<p>Alas, Time stays, we go.</p>
 <p>说时间不再，你错了！</p>
 <p>常驻的是它，走的是你我。</p>
 <p>聪明人不留住自己的“永恒”，聪明人只留住“一瞬”的自己。让“一瞬”停格、让“一瞬”定影、让“一瞬”变成鸿泥、让“一瞬”与时间同在。</p>
 <p>放走时间的“永恒”，捉住时间的“一瞬”，时间说我在等你，因为我只是“一瞬”。</p>
-<p>四度空间的时间意义，由闵科夫斯基（HermannMinkowski）给了它数学的、爱因斯坦给了它物理的、霍金给了它天体的、达利给了它流体的。达利在二度空间的平面上，画出他的四度空间，化二维为四维。别人都“入维”了，我们也维它一下。不过，我们来的，应该是突“维”而出。1920年代，Kaluza（卡鲁札）和Klein（克林）提出过五维模型，把维多了一个周期性，照Superstring（超弦论）的干法，世界未尝不可以十维，至少数学家野心勃勃。达利这票艺术家也不会只让数学家疯狂。有这么“杀时间”的趋势，我们可要参与啊。记得盖摩（GeorgeGamow）吗？他三十岁从苏联移民美国，他说太阳正在冷却的理论是错的，我喜欢，太阳是我坐牢时的朋友，我不要它变冷。盖摩画过一张四维立方体三维投影图，也就是四度空间立方体三度投影图，他说人影就是三度空间的人在二度空间的投影，人类虽然没办法察知四度立方体的真面目，但至少可以想见其三度投影。总之，我总觉得这类维来维去的问题，不能由数学家、物理学家、霍金或达利说了算。四度空间也该有哲学的、文学的理论。</p>
+<p>四度空间的时间意义，由闵科夫斯基（Hermann Minkowski）给了它数学的、爱因斯坦给了它物理的、霍金给了它天体的、达利给了它流体的。达利在二度空间的平面上，画出他的四度空间，化二维为四维。别人都“入维”了，我们也维它一下。不过，我们来的，应该是突“维”而出。1920年代，Kaluza（卡鲁札）和Klein（克林）提出过五维模型，把维多了一个周期性，照Superstring（超弦论）的干法，世界未尝不可以十维，至少数学家野心勃勃。达利这票艺术家也不会只让数学家疯狂。有这么“杀时间”的趋势，我们可要参与啊。记得盖摩（George Gamow）吗？他三十岁从苏联移民美国，他说太阳正在冷却的理论是错的，我喜欢，太阳是我坐牢时的朋友，我不要它变冷。盖摩画过一张四维立方体三维投影图，也就是四度空间立方体三度投影图，他说人影就是三度空间的人在二度空间的投影，人类虽然没办法察知四度立方体的真面目，但至少可以想见其三度投影。总之，我总觉得这类维来维去的问题，不能由数学家、物理学家、霍金或达利说了算。四度空间也该有哲学的、文学的理论。</p>
 <p>把时间捉住吧。</p>
 <p>捉住时间，把它具象化。</p>
 <p>达利说，他要小睡片刻，就先把一个洋铁盘放在椅子旁的地板上，然后手中拿着一把汤匙，坐下来打盹儿。一旦汤匙掉在洋铁盘上，就小睡告一段落，时间只是从离手到跌落这么短。</p>
@@ -3115,13 +3156,13 @@
 <p>似乎只有沙漏不骗我们，它总是陪我们一起静止，或者，它看我们偷跑，而不计时。</p>
 <p>意大利CAPANNI牌巨型沙漏，高达三十公分、直径十三公分，它是我们的Greenwich（格林威治）。当然，在床头，我们用的是小型沙漏。</p>
 <p>朱仑说：“抽象的时间在具体消逝，不要看秒针，要看沙漏、白白的细沙和它的下漏，多么美丽、多么细致、又多么凄艳，它把你细碎化，在每一粒细碎颠倒梦想前，闪烁出此起彼落的银色反光。对它而言，每一次颠倒梦想只一次周而复始，对你就不是，它显示给你，告诉你已化为它，你的一分钟化为它而去、你的两分钟化为它而去，你不是周而复始，你是海水冲走的一片大陆，你可以颠倒梦想，但你是沙。”</p>
-<p>朱仑说：“Fourthdimension第四度空间，除长度、宽度、高度以外的第四度，那叫时间，不是吗？时间是空间，可是，空间又何尝不是时间呢？没有时间老化它、醇化它，空间只是nothing。时间是会老化的空间，但时间也无可骄傲，除非你十七岁。”</p>
+<p>朱仑说：“Fourth dimension第四度空间，除长度、宽度、高度以外的第四度，那叫时间，不是吗？时间是空间，可是，空间又何尝不是时间呢？没有时间老化它、醇化它，空间只是nothing。时间是会老化的空间，但时间也无可骄傲，除非你十七岁。”</p>
 <p>朱仑说：“十七岁的空间，在等你；十七岁的时间，在等我。我是你的三维、三度空间。我的肉身、我的赤裸，任你喜欢。我没有隐藏，只是等你发现，发现肉身深处、赤裸深处，有你的空间。”</p>
-<p>朱仑说：“真正消灭了时间的，是底片。底片掐住时间，有三大手段，第一，当底片静止，时间也停止了，底片中的朱颜永在。第二，当底片慢放，不是正常的每秒二十四格或十六格，那是什么世界？慢速二分之一、四分之一、八分之一、十六分之一、三十二分之一，那是什么画面？看看A片，‘液体’在飞舞、在奔赴，那是画面在做音乐式的ritardando（渐慢），discoveringthepoetryinslowmotion，慢动作播放，分节呈现出每一细部与细节，那种当时在激情中无法细察到、细细享受到的细部与细节，太奇妙了。第三，当底片在重复，一次、两次、一百次，它可以使时光倒流，一次、两次、一百次。有了底片，时间算什么。照片，是底片的一种，它更表现了静止与唯一，你可以重印一张、两张、一百张，但它在静止、展现静止之美，一样打败时间。”</p>
+<p>朱仑说：“真正消灭了时间的，是底片。底片掐住时间，有三大手段，第一，当底片静止，时间也停止了，底片中的朱颜永在。第二，当底片慢放，不是正常的每秒二十四格或十六格，那是什么世界？慢速二分之一、四分之一、八分之一、十六分之一、三十二分之一，那是什么画面？看看A片，‘液体’在飞舞、在奔赴，那是画面在做音乐式的ritardando（渐慢），discovering the poetry in slow motion，慢动作播放，分节呈现出每一细部与细节，那种当时在激情中无法细察到、细细享受到的细部与细节，太奇妙了。第三，当底片在重复，一次、两次、一百次，它可以使时光倒流，一次、两次、一百次。有了底片，时间算什么。照片，是底片的一种，它更表现了静止与唯一，你可以重印一张、两张、一百张，但它在静止、展现静止之美，一样打败时间。”</p>
 <p>这是我们的“时间简史”，我们用我们的切入点，推开物理学家。1980年霍金就说，二十世纪结束前物理学将结束，他显然忘了补上一句，解释宇宙的，不能硬靠物理学家。</p>
 <p>他们忘了朱仑。</p>
 <h2 id="速写朱仑"><a class="header" href="#速写朱仑">速写朱仑</a></h2>
-<p>她是一分资讯和九十九分灵感（Sheisonepercentinformationandninety-ninepercentinspiration.），她是朱仑。</p>
+<p>她是一分资讯和九十九分灵感（She is one percent information and ninety-nine percent inspiration.），她是朱仑。</p>
 <p>灵感因她而起、因她而灭，随起随灭，稍做追寻，就是下面这些篇章。追寻到“太虚幻境”的，无所谓真，但也无伤其假。重点是朱仑不会知道，也不会让她知道。这都是因她而生的白描和白日梦，虽然我写在黑夜里。</p>
 <p>藏躲篇</p>
 <p>要藏有谁藏，</p>
@@ -3158,7 +3199,7 @@
 <p>我是没人承认的文学家。</p>
 <p>对有形的，我轮廓；对多彩的，我素描；对具象的，我抽象；对音乐的，我无声。我用最少应付最多、用简单就会复杂，我只用我的误文，向大千世界一洒。</p>
 <p>我承认语文的限度，在生光化电的突飞猛进下，语言已经压缩，一张照片、一幅画作、一尊佛像、一幕AV，省却了千言万语，杀掉所有的形容词，所有的词，在垃圾箱中，沦为辞费。</p>
-<p>1900年，一句语文替画面讲了话——Everypicturetellsastory（每张画面都说个故事）。现在呢，该说，Everypicturetellsadifferentstory（每张画面都说另一回事）。因为，画面只能让天马行空，至于为什么要行空、为什么此行成空，还得靠语文，我的语文。</p>
+<p>1900年，一句语文替画面讲了话——Every picture tells a story（每张画面都说个故事）。现在呢，该说，Every picture tells a different story（每张画面都说另一回事）。因为，画面只能让天马行空，至于为什么要行空、为什么此行成空，还得靠语文，我的语文。</p>
 <p>讲我用我的语文画出朱仑、演奏出朱仑。有画面的朱仑、有音乐的朱仑，更有语文的朱仑，在她赤裸中、在我笔下。</p>
 <p>点睛篇</p>
 <p>一幅画，什么情况下叫停笔一幅画，可有一番惊雷。一千五百年前，金陵安乐寺的墙上，画家张僧繇画了四条白龙，四条龙都不现出瞳孔，就停笔了。大家说，你没画完，因为眼睛中没有瞳孔。画家说，不能点出瞳孔，点出，龙就飞了。大家坚持他点，他只好点，刚点出两条，就惊雷大作，两条龙冲天而去，只剩下另外没点的，留在庙里。什么叫完成一幅画？画的完成，不在画家之手了；画的完成，在画的本身。</p>
@@ -3168,18 +3209,18 @@
 <p>问题是什么是right（对的），时间对、事情对，都不够，要人对，It’snotenoughtosaytherightthingattherighttime,itmustbesaidtotherightpeople.当我想到17这个数字，我觉得我陷入对错两难。Attimes,althoughIamperfectlyright,my“head”tremble;atothertimes,althoughIamcompletelyinthewrong,birdssinginmysoul.（自反我对，龟头待罪；自反我错，魂予呢喃。）这又怎么解释呢？</p>
 <p>留给十七岁的解释呢。喂，朱仑。</p>
 <p>境界篇</p>
-<p>佛门主张“心转境界”，不受外境干扰。他们举出这种修炼目标的范例，是30年代金山活佛，说此公能“心转境界”而不为境界所转，一生一件衣服，不洗衣也不洗澡，什么都吃，包括供养来的钞票云云，非常荒谬可笑。但他如做到“心转境界”，不受外境干扰，有这种绝对唯心论的本领，则是一种修炼。即物用心，物是外境，用心来转外境，一念之转，就别有天地、别有境界，自己立刻得到大解脱、大快活。这是修炼的成功。Thoreau（梭罗）坐牢时候，他说他“从不曾想到我是给关起来了，高墙实在等于浪费材料……他们根本不知道如何对付我……他们总以为我唯一目的是想站到墙外面。每在我沉思的时候，看守那种紧张样子，真教人好笑。他们哪里知道才一转身，我就毫无阻挡的跟着出去了……”。梭罗当然不会小说中穿墙透壁的功夫，他这种来去自如，是指观念上的解脱、观念上“从不曾想到我是给关起来了”。他虽然身在两坪之内，但却心在六合之外，神游四海、志驰八方，就像RichardLovelace（拉夫瑞斯）在牢里写诗给情人一样。</p>
+<p>佛门主张“心转境界”，不受外境干扰。他们举出这种修炼目标的范例，是30年代金山活佛，说此公能“心转境界”而不为境界所转，一生一件衣服，不洗衣也不洗澡，什么都吃，包括供养来的钞票云云，非常荒谬可笑。但他如做到“心转境界”，不受外境干扰，有这种绝对唯心论的本领，则是一种修炼。即物用心，物是外境，用心来转外境，一念之转，就别有天地、别有境界，自己立刻得到大解脱、大快活。这是修炼的成功。Thoreau（梭罗）坐牢时候，他说他“从不曾想到我是给关起来了，高墙实在等于浪费材料……他们根本不知道如何对付我……他们总以为我唯一目的是想站到墙外面。每在我沉思的时候，看守那种紧张样子，真教人好笑。他们哪里知道才一转身，我就毫无阻挡的跟着出去了……”。梭罗当然不会小说中穿墙透壁的功夫，他这种来去自如，是指观念上的解脱、观念上“从不曾想到我是给关起来了”。他虽然身在两坪之内，但却心在六合之外，神游四海、志驰八方，就像Richard Lovelace（拉夫瑞斯）在牢里写诗给情人一样。</p>
 <p>写到RichardLovelace，联想起LindaLovelace（琳达拉芙瑞丝），那不是演出“深喉咙”（DeepThroat）的吗？绝对的唯心论，多么可喜，我唯心到朱仑的小嘴巴，她性感的唇。“深深深几许”，宋朝词客永远不会知道这五个字的含义，那在oral时才有的含义。</p>
 <p>“性服务”到“深喉咙”的程度，对十七岁，是有点残忍的，毕竟是庞然大物。“心转境界”演变成“口转境界”，可爱又可怜的，是十七岁，我的朱仑。</p>
 <p>三段篇</p>
 <p>太明显的三段式。</p>
 <p>从她的冷漠，到她的失控，又到她的冷漠，正是三段，三段的朱仑，不可捉摸的三段朱仑。</p>
-<p>不可捉摸不止三段，尤其在段段之间，段起段落，“推服无间”。起落的衔接是那么大的落差，像海之渊与山之巅、山之巅又海之渊，山海不足竟其际，只感到冷漠中升起的失控，和失控中失声与叫床，那样突然、那样激越、那样哭诉、那样哀求、那样赞美、那样要……在失控中，冷漠已化为一片茫然无助、化为痛苦挣扎的拥有，冷漠的朱仑已经不再冷漠，她完全变成另一个朱仑，一个享受被强暴快乐的朱仑。第三段的她，冷漠，又重行呈现，她穿上衣服，陌生的望着我，一脸迷茫的走开了自己。上帝都不会相信，就是她，就是陌生的她，就在十多分钟前，被男人强暴过、取悦男人过、甚至呼唤出那可怕的名字过、喊出喜欢过、高潮MyGod！MyGod！过，这明明全是她。可是，当她降入第三段的自己，十多分钟前的一切，都被她十七岁的纯洁给冲洗了。</p>
-<p>不可捉摸的三段朱仑。她否认了中间的一段的自己。她用一片十七岁的纯洁，用谎言般的missinglink，遮去了她曾为我献身的一切。</p>
+<p>不可捉摸不止三段，尤其在段段之间，段起段落，“推服无间”。起落的衔接是那么大的落差，像海之渊与山之巅、山之巅又海之渊，山海不足竟其际，只感到冷漠中升起的失控，和失控中失声与叫床，那样突然、那样激越、那样哭诉、那样哀求、那样赞美、那样要……在失控中，冷漠已化为一片茫然无助、化为痛苦挣扎的拥有，冷漠的朱仑已经不再冷漠，她完全变成另一个朱仑，一个享受被强暴快乐的朱仑。第三段的她，冷漠，又重行呈现，她穿上衣服，陌生的望着我，一脸迷茫的走开了自己。上帝都不会相信，就是她，就是陌生的她，就在十多分钟前，被男人强暴过、取悦男人过、甚至呼唤出那可怕的名字过、喊出喜欢过、高潮My God！My God！过，这明明全是她。可是，当她降入第三段的自己，十多分钟前的一切，都被她十七岁的纯洁给冲洗了。</p>
+<p>不可捉摸的三段朱仑。她否认了中间的一段的自己。她用一片十七岁的纯洁，用谎言般的missing link，遮去了她曾为我献身的一切。</p>
 <p>历史就这样被化为无形。</p>
-<p>不过，我以一个小白信封，装进了我在床单上的追寻，一共五根，我密封起来，夹在吉朋（EdwardGibbon）名著《罗马帝国衰亡史》（TheHistoryoftheDeclineandFalloftheRomanEmpire）最后一页的前面，最后一段是：“Ifinallydelivertocuriosityandcandourofthepublic.”唯一该改的，是我把句中“thepubic”（大众）改为“thepubic(hair)”（阴毛）了。颂彼良史，奇彼阴毛，长捐卷底，永志逍遥。要告诉朱仑吗？不要。</p>
+<p>不过，我以一个小白信封，装进了我在床单上的追寻，一共五根，我密封起来，夹在吉朋（Edward Gibbon）名著《罗马帝国衰亡史》（The History of the Decline and Fall of the Roman Empire）最后一页的前面，最后一段是：“I finally deliver to curiosity and candour of the public.”唯一该改的，是我把句中“the pubic”（大众）改为“the pubic (hair)”（阴毛）了。颂彼良史，奇彼阴毛，长捐卷底，永志逍遥。要告诉朱仑吗？不要。</p>
 <p>蒙眼篇</p>
-<p>L.J.LordJustice.英文L.J.是“法官大人”。大写的Justice是美国伊利诺州东北边的一个城，也是正义女神呢，就是手持天平和剑、蒙住眼睛的那一位，你喜欢被蒙住眼睛吗？</p>
+<p>L.J. Lord Justice.英文L.J.是“法官大人”。大写的Justice是美国伊利诺州东北边的一个城，也是正义女神呢，就是手持天平和剑、蒙住眼睛的那一位，你喜欢被蒙住眼睛吗？</p>
 <p>朱仑神秘的笑了一下。“要看为什么，如果被绑了票而蒙住，可不太喜欢。”</p>
 <p>“如果为了正义？”</p>
 <p>“为了正义为什么要蒙住眼睛？”</p>
@@ -3200,7 +3241,7 @@
 <p>真正迷人的女人，她的美妙不在只肯给你留下过去式——令人怀念的过去式，她不留下现在式，她的过去是断线的，有点像断了线的风筝，它随风而去了，到了云里，云深不知处。你不能回味，不能回收。但谁要回收？回味本身就是现在式的存在。过去篡夺了现在、过去式篡夺了现在式。回味时一种当时的重现，不是重温。旧梦重温一定是失落，你会看到情人的衰老与彳亍，在梦醒之前，你先已梦碎；在梦醒之前，你先已心碎。你想快步逃离，但你也衰老、你也彳亍，梦碎，碎在你前面。</p>
 <p>不是梦碎在我前面，让十七岁，在我背后。</p>
 <p>衣服篇</p>
-<p>亚当夏娃被驱逐出境，上帝除了奉送一大堆报复和咒诅外，唯一一件善举，就是妙手天工的“为亚当和他妻子用皮子做衣服，给他们穿。”所以，无疑的，上帝是有史以来第一个服装设计家（thetopfashiondesigner），从此以后，亚当夏娃的子孙所能施展的，只是巧夺上帝的天工而已，因为上帝忘记了申请专利。不过，上帝毕竟太老了，最后，他把服装设计交给了gay。gay没安好心，为女人设计出来的，十分之一尚可看，十分之九都很丑，但女人太笨了，不知道，还争穿丑服以自炫。自服装模特儿以下，都被男屁精耍而不自知。朱仑是谁？她是掌握了那十分之一的十七岁，她穿出自己，也脱出自己。当她属于前者，她是非常会穿衣服的十七岁；当她属于后者，她是非常会脱衣服的十七岁，那时候，她最接近上帝。</p>
+<p>亚当夏娃被驱逐出境，上帝除了奉送一大堆报复和咒诅外，唯一一件善举，就是妙手天工的“为亚当和他妻子用皮子做衣服，给他们穿。”所以，无疑的，上帝是有史以来第一个服装设计家（the top fashion designer），从此以后，亚当夏娃的子孙所能施展的，只是巧夺上帝的天工而已，因为上帝忘记了申请专利。不过，上帝毕竟太老了，最后，他把服装设计交给了gay。gay没安好心，为女人设计出来的，十分之一尚可看，十分之九都很丑，但女人太笨了，不知道，还争穿丑服以自炫。自服装模特儿以下，都被男屁精耍而不自知。朱仑是谁？她是掌握了那十分之一的十七岁，她穿出自己，也脱出自己。当她属于前者，她是非常会穿衣服的十七岁；当她属于后者，她是非常会脱衣服的十七岁，那时候，她最接近上帝。</p>
 <p>朦胧篇</p>
 <p>文艺批评家从来没说清楚有我之境和无我之境。浴缸中朱仑有我，我在其中。当我穿着衣服，跪在浴缸外缘，卷高袖子的时候，朱仑没有我，我不在其中。模特儿的赤裸不是单一的，有我之境和无我之境，决定我看到什么样的赤裸。</p>
 <p>朱仑，享受她的清晰，也享受她的朦胧。</p>
@@ -3219,23 +3260,23 @@
 <p>非我篇</p>
 <p>“好可怕，做那种事，那时候，”朱仑停了一下，“我发现我不是我自己。”</p>
 <p>“并非不是你自己，而是另一个你自己。”我说。</p>
-<p>“那会更可怕。怎么同一个我，会变得全不是我，我怎么会那样，MyGod！怎么会那样，好像我呼唤的上帝都不一样了。”</p>
+<p>“那会更可怕。怎么同一个我，会变得全不是我，我怎么会那样，My God！怎么会那样，好像我呼唤的上帝都不一样了。”</p>
 <p>“这证明了，本来就有两个你，也有两个上帝。只是在那种情况下，你被一条庞然大物给释放出来，释放出另一个你。”</p>
 <p>“是双重人格吗？”</p>
 <p>“双重的不只人格，并且，”我停了一下，“也不只双重。潜在的，是一重又一重。潜在的千奇百怪、潜在的千娇百媚……多少潜在都不知道，只知道可以导引出来，但方法不是传统的，什么服食、什么心理分析、什么催眠、什么迷幻药……都不能或不足以浮现另一个你。唯一的方法是靠一条庞然大物释放。”</p>
 <p>“我能用‘演出’方法，扮演成别人吗？”</p>
-<p>“想想那位电影明星，当他被一位女士认成自己的朋友而拍错肩膀时，女士尴尬的说：“Oh,Ithoughtyouweresomeoneelse!”‘我以为你是别人呢！’这位明星说：“ButIsooftenam.”‘我常常是别人呢。’答得多好啊，朱仑，常常‘演出’别人呢。”</p>
+<p>“想想那位电影明星，当他被一位女士认成自己的朋友而拍错肩膀时，女士尴尬的说：“Oh, I thought you were someone else!”‘我以为你是别人呢！’这位明星说：“But I so often am.”‘我常常是别人呢。’答得多好啊，朱仑，常常‘演出’别人呢。”</p>
 <p>“如果我‘演出’别人呢？”</p>
 <p>“那我就不要了。因为朱仑是我的唯一，我只喜欢强奸朱仑。”</p>
 <p>魂游篇</p>
-<p>向往强奸她。只有在那一短暂，她才会泄漏一丝神秘。在那一短暂里，男人的肆虐，使她疲于承接、难于保有完整的自己，残暴撑开了她的庄严，她也曾叫床，虽然只是一闪。一闪，已是足够，足够的满足，满足了男人，还有，她自己。她事后质疑的自己、不承认的自己。朱仑，我喜欢有两个冲突的你，我强奸了一个，另一个在“魂游象外”。像《新约》《使徒行传》第十章第十节所说的，fellintoatrance。朱仑知道得更精确。朱仑说她会背Bible呢。何况“使徒行传”。朱仑说，英文fellintoatrance，祖本希腊文却是HEKSTASIS意思是“站出来”、是“灵魂站在自己的外边”。自己又是旁观者，又是死者。</p>
+<p>向往强奸她。只有在那一短暂，她才会泄漏一丝神秘。在那一短暂里，男人的肆虐，使她疲于承接、难于保有完整的自己，残暴撑开了她的庄严，她也曾叫床，虽然只是一闪。一闪，已是足够，足够的满足，满足了男人，还有，她自己。她事后质疑的自己、不承认的自己。朱仑，我喜欢有两个冲突的你，我强奸了一个，另一个在“魂游象外”。像《新约》《使徒行传》第十章第十节所说的，fell into a trance。朱仑知道得更精确。朱仑说她会背Bible呢。何况“使徒行传”。朱仑说，英文fell into a trance，祖本希腊文却是HEKSTASIS意思是“站出来”、是“灵魂站在自己的外边”。自己又是旁观者，又是死者。</p>
 <p>朱仑看到我怎么强奸她，不是仰观，而是俯视。肉体被困住，但灵魂可以逃出。我笑了，我说，灵魂一样被我强奸了，我也有灵魂，我的肉体强奸你的肉体、我的灵魂强奸你的灵魂，我看到了全程。她问我没有“魂游象外”，怎么看得到？我笑着，我一直灵肉合一，我指给她看，我有三面大镜子。</p>
 <p>应对篇</p>
 <p>我对朱仑说：“那些国民党的余孽是奴才的奴才，一如《水浒传》中石秀的大骂，石秀骂：‘你这与奴才做奴才的奴才！’骂得多好！”</p>
-<p>朱仑对我说：“我想起美国制宪大会时，南卡罗莱那州一个团体骂州长和其他贵族的话，说：“Thenabobsofthisstate,theirserviletoadeatersthebobs,andtheservilelyserviletoolsandlickspittlesofboth,thebobbetts.”（这些人是州里的土皇帝；逢迎他们左右的马屁精，是他们的尾巴；拍土皇帝与马屁精的马屁又做他们下贱而又下贱工具的，则是尾巴的尾巴。）”</p>
+<p>朱仑对我说：“我想起美国制宪大会时，南卡罗莱那州一个团体骂州长和其他贵族的话，说：“The nabobs of this state, their servile toadeaters the bobs, and the servilely servile tools and lickspittles of both, the bobbetts.”（这些人是州里的土皇帝；逢迎他们左右的马屁精，是他们的尾巴；拍土皇帝与马屁精的马屁又做他们下贱而又下贱工具的，则是尾巴的尾巴。）”</p>
 <p>我奇怪朱仑如此应对而出，类比得这么好。朱仑敲着头说：“这全靠它，可以比赛你大师。但你不提出来，我的脑袋就一片茫然。”</p>
 <p>出浴篇</p>
-<p>埃及人是洗澡的，它的祭司每天还洗四次呢。希腊人罗马人也洗澡，罗马人尤其洗得痛快。早期基督教有苦行主义作风，认为使身体脏兮兮，可以克制享乐、可以惩罚罪恶，到了中世纪，Hamburg（汉堡）和Bremen（不来梅）大主教Adalbert（阿达尔贝特）就不洗澡，还被赞美呢。中世纪后的欧洲，洗澡也不普遍。英国女王伊莉莎白一世一个月只洗一次澡，而且是“whethersherequireditornot”（视她需要与否）。美国也没有干净到哪里去。白宫到了1851年才有浴缸，那已是第十三任总统Fillmore（费尔摩）的时代，这位总统十七岁才开始受教育，好可怜的十七岁！</p>
+<p>埃及人是洗澡的，它的祭司每天还洗四次呢。希腊人罗马人也洗澡，罗马人尤其洗得痛快。早期基督教有苦行主义作风，认为使身体脏兮兮，可以克制享乐、可以惩罚罪恶，到了中世纪，Hamburg（汉堡）和Bremen（不来梅）大主教Adalbert（阿达尔贝特）就不洗澡，还被赞美呢。中世纪后的欧洲，洗澡也不普遍。英国女王伊莉莎白一世一个月只洗一次澡，而且是“whether she required it or not”（视她需要与否）。美国也没有干净到哪里去。白宫到了1851年才有浴缸，那已是第十三任总统Fillmore（费尔摩）的时代，这位总统十七岁才开始受教育，好可怜的十七岁！</p>
 <p>正因为不洗澡，所以香水发达。以前人好奇怪，他们不洗掉身上的臭气，却拼命用香气遮盖臭气，只有一个人没这样做，就是香妃。</p>
 <p>香妃是洗澡的。</p>
 <p>写的是“出浴”，多么动态的题目。从浴缸站起来，迈出来。那一刹那，一脚在外、一脚还在水里，最好看。</p>
@@ -3243,13 +3284,13 @@
 <p>玄武篇</p>
 <p>天空的神秘。</p>
 <p>“面对它，要把天空分成区块。聪明的中国人，以动物形象，区块天空。东方‘苍龙’、西方‘白虎’、南方‘朱雀’、北方‘玄武’。只有‘玄武’是两种动物，就是龟与蛇，龟头与蛇头是很像的，至于龟蛇交配，中国文化里是多种说法的，龟与龟配、龟与蛇配、蛇与龟配、蛇与蛇配，都决写生出来的是小王八还是王八蛋、小蛇还是小蛇蛋，把卵生oviparous和胎生viviparous和卵胎生ovoviviparous混成一团，有趣极了。”</p>
-<p>“你说得头头是道。”朱仑说，“我可以补充吗？英文glanspenis中文译成‘龟头’，因为太像乌龟的头了。但英文自己的‘龟头’，却别有另一番意义。英文的turtle-head，字面上是‘龟头’，但却是植物学上的龟头花，学名Cheloneglabra，是产于北美东部及中部的玄参科草本植物，开白色或粉红色大花，形如龟头，故名turtle-head。妙的是，它也叫snake-head，又变成了蛇头，龟蛇不分，又可以回到中国来了。”</p>
+<p>“你说得头头是道。”朱仑说，“我可以补充吗？英文glans penis中文译成‘龟头’，因为太像乌龟的头了。但英文自己的‘龟头’，却别有另一番意义。英文的turtle-head，字面上是‘龟头’，但却是植物学上的龟头花，学名Chelone glabra，是产于北美东部及中部的玄参科草本植物，开白色或粉红色大花，形如龟头，故名turtle-head。妙的是，它也叫snake-head，又变成了蛇头，龟蛇不分，又可以回到中国来了。”</p>
 <p>“噢，”我一边以手盖住前额，一边摇着头，“你这高中女生，你的学贯中西，把我弄糊涂了，你一点都不留给机会主义者发挥，我要像鲨鱼一样咬你一口。鲨鱼是机会主义者，不是吗？”</p>
 <p>“鲨鱼也是卵胎生的。”她笑着，补了一句，又是学问洋溢。</p>
 <p>朱仑补充说：“上面这个龟蛇题目，看出中西文化的奇妙雷同。这种雷同，还有别的呢。试看希腊‘安蒂冈’（Antigone）悲剧，写妹妹冒死为哥哥收尸，比照起中国的聂荣故事，写姊姊冒死为弟弟收尸，前后时间相近、侠义交辉，太不可思议了。”</p>
 <p>我说：“是啊，这种中西文化的交会，只有靠朱仑的手工，电脑是做不到的。”</p>
 <p>神经篇</p>
-<p>“英国诗人自己写墓志铭，说他的名字写在水上，Hereliesonewhosenamewaswritinwater.好玄吧？好有诗意。中国也有一个类似的，不过不是名字在水上，而是画像在水上。古代的水神名字好怪，叫‘忖留神’，长得太丑了，总是藏在水里，不给人看到。一天，鲁班约水神浮上来，水神说：‘我太丑了，你鲁班先生又会速写人像，我不能浮出来。’鲁班就举起两只手作揖，表示双手在作揖，不能速写。水神放心了，就浮出水面。鲁班一边跟他聊天，一边偷偷用脚来速写，水神最后发现了，又钻到水底去，可是，太迟了，鲁班用脚完成了速写像，就把像放到水上，使人人看得到这丑八怪水神丑成什么模样。这个中国神话，多有趣啊……这神话出自中国的古书，郦道元写的《水经注》。”</p>
+<p>“英国诗人自己写墓志铭，说他的名字写在水上，Here lies one whose name was writ in water.好玄吧？好有诗意。中国也有一个类似的，不过不是名字在水上，而是画像在水上。古代的水神名字好怪，叫‘忖留神’，长得太丑了，总是藏在水里，不给人看到。一天，鲁班约水神浮上来，水神说：‘我太丑了，你鲁班先生又会速写人像，我不能浮出来。’鲁班就举起两只手作揖，表示双手在作揖，不能速写。水神放心了，就浮出水面。鲁班一边跟他聊天，一边偷偷用脚来速写，水神最后发现了，又钻到水底去，可是，太迟了，鲁班用脚完成了速写像，就把像放到水上，使人人看得到这丑八怪水神丑成什么模样。这个中国神话，多有趣啊……这神话出自中国的古书，郦道元写的《水经注》。”</p>
 <p>“我不知道这是什么书，但我知道‘指手画脚’，这个故事，算是画脚吧？”朱仑说。</p>
 <p>“你说得真好。”</p>
 <p>“这位鲁班先生，一定是超棒的速描艺术家。别人有一手，他却有一脚。”</p>
@@ -3327,11 +3368,11 @@
 <p>“态无不尽”，更可用来赞美女人的曲尽妩媚，表现在床上的哀求叫床，都一一做到好到无法再添一分好，这叫“尽美”，尽是达到了极致、尽是没有剩余。</p>
 <p>下午到傍晚，晴在雨后山光，远山蓝中带灰、白岚处处；近山绿中带墨、世界如洗，奇景入眼，前所未有。是看不到阳光的晚晴，是另一种晴。窗上雨滴未散，皆朝下移，而远方白云四起，云外有山、山外有云。</p>
 <p>十七岁是云。朱仑十七岁。</p>
-<p>“最会处理情人问题的，是伊莉莎白女王。她主动不再同情人来往，但临终时，却呼唤情人名字。她的诗说：‘让我死，就能忘掉爱的含义。’（Ordieandsoforgetwhatlovearemeant.）虽贵为女王，竟为情困如此。”</p>
+<p>“最会处理情人问题的，是伊莉莎白女王。她主动不再同情人来往，但临终时，却呼唤情人名字。她的诗说：‘让我死，就能忘掉爱的含义。’（Or die and so forget what love are meant.）虽贵为女王，竟为情困如此。”</p>
 <p>“你临终时会呼唤情人名字吗？”朱仑问。</p>
 <p>“会，不过最好她先临终、她先呼唤。”</p>
 <p>变成过客。把我变成宇宙的过客，把人们变成我的过客。</p>
-<p>对漫长的宇宙而言，我只是一闪又一闪；对一生、一年、一月、一天的我而言，人们只该是时而出现、时而不见。高人一等的生活方式，是主动操控人们的出现或不见。生活的常态，只是自己一人，孤独的愉悦。与人却“相忘于江湖”。像庄子，“独与天地精神往来”；像爱因斯坦，独自完成asolitarybeing。</p>
+<p>对漫长的宇宙而言，我只是一闪又一闪；对一生、一年、一月、一天的我而言，人们只该是时而出现、时而不见。高人一等的生活方式，是主动操控人们的出现或不见。生活的常态，只是自己一人，孤独的愉悦。与人却“相忘于江湖”。像庄子，“独与天地精神往来”；像爱因斯坦，独自完成a solitary being。</p>
 <p>但是，对灵光一闪的，却是例外，但只是该是一闪，然后含笑而别，像合上裸照的画册，把美女压回到平面。</p>
 <p>朱仑是我一生中的例外，是最后的，也是唯一的。朱仑是平面中的三维。</p>
 <p>写给朱仑，但不给她看到：</p>
@@ -3351,7 +3392,7 @@
 <p>青春对我已经太迟。</p>
 <p>我只要你最好的部分，</p>
 <p>那每周赤裸的，两个小时。</p>
-<p>朱仑生在1990，那一年，世界出现了朱仑，也出现了《沉默的羔羊》（TheSilencesoftheLambs）、出现了《忍者龟》（TeenageMutantNinjaTurtles）、也出现了《第六感生死恋》（Ghost）。我胡乱结合着这些，在特殊的时空里，“沉默的”她，用着跪姿，对着“龟”状的“忍者”。我们是“第六感”下的“生死恋”吗？如果不是悲剧，我喜欢，那是十七加六十七的八十四，报告上帝：我们的一百就是八十四。</p>
+<p>朱仑生在1990，那一年，世界出现了朱仑，也出现了《沉默的羔羊》（The Silences of the Lambs）、出现了《忍者龟》（Teenage Mutant Ninja Turtles）、也出现了《第六感生死恋》（Ghost）。我胡乱结合着这些，在特殊的时空里，“沉默的”她，用着跪姿，对着“龟”状的“忍者”。我们是“第六感”下的“生死恋”吗？如果不是悲剧，我喜欢，那是十七加六十七的八十四，报告上帝：我们的一百就是八十四。</p>
 <p>法国哲学家从来没说清楚“存在主义”。朱仑现身说了主义。仿佛真实的是：在牛仔裤和她之间，并没有任何存在。真正的存在主义，是内裤不存在。没有内裤的牛仔裤，才更原始。内裤是文明、牛仔裤是原始。牛仔裤是漂亮大腿的一部分，内裤只是视觉与嗅觉。内裤再见，对牛仔上身而言，你多此一裤。</p>
 <p>一切的微妙，都从“十八岁以下禁止……”开始。正因为禁止，却禁止不了，十七岁才有了微妙的快乐。</p>
 <p>如果下限小了一岁，就失掉了这种微妙。</p>
@@ -3398,9 +3439,9 @@
 <p>“看呀，你的对女人的成见、对美女成见，全冒出来了，你的罪名是歧视女性。”</p>
 <p>“我只是正视，不是歧视，和孔夫子一样。孔夫子说女人‘近之则不逊，远之则怨’（对她们好，她们就没分寸；对她们冷淡，她们就抱怨），这是对女人性格的正视，不是歧视。我刚才说的，也不过正视‘美女无脑论’而已，是遗憾美中不足，是希望有脑多好，不是歧视。”</p>
 <p>“怎样有脑呢？”</p>
-<p>“要看机率。可叫‘有脑率’。一般说来，相貌普通一点比较有脑；越丑越有脑，看看乔治桑（GeorgeSand）的照片吧，你会吓一跳。坊间出书书名赫然是《乔治桑寻爱录》，天啊，如果那副造型是女人寻爱，什么又是雌黑猩猩寻爱，太不搭调了。不论乔治桑是多么才女，造型还是要自我约束一下的，至少不要吓到人。那种造型，该去选高雄女市长才好。”</p>
+<p>“要看机率。可叫‘有脑率’。一般说来，相貌普通一点比较有脑；越丑越有脑，看看乔治桑（George Sand）的照片吧，你会吓一跳。坊间出书书名赫然是《乔治桑寻爱录》，天啊，如果那副造型是女人寻爱，什么又是雌黑猩猩寻爱，太不搭调了。不论乔治桑是多么才女，造型还是要自我约束一下的，至少不要吓到人。那种造型，该去选高雄女市长才好。”</p>
 <p>“高雄何辜啊？”</p>
-<p>“爱情何辜啊，要被那样寻、那样追逐？我想起北京紫禁城前那场《杜兰朵公主》，公主唱得一级棒，但是太胖了、太胖了，唱出美妙高音的，虽然不能个个美女，但也总不宜那副德性。还扮公主哪！如果那样庞然大物是公主，什么是河马？‘公主夜未眠’，救命！还是来点安眠药吧。这就是我所说的，唱那么美妙的歌，不能太不搭调。还是选高雄市女市长，大家比较习惯。很对高雄市民不起。罗丹复生，他的‘加莱市民’（TheBurghersofCalais）该塑出高雄版请命，河马都来了，真对不起。”</p>
+<p>“爱情何辜啊，要被那样寻、那样追逐？我想起北京紫禁城前那场《杜兰朵公主》，公主唱得一级棒，但是太胖了、太胖了，唱出美妙高音的，虽然不能个个美女，但也总不宜那副德性。还扮公主哪！如果那样庞然大物是公主，什么是河马？‘公主夜未眠’，救命！还是来点安眠药吧。这就是我所说的，唱那么美妙的歌，不能太不搭调。还是选高雄市女市长，大家比较习惯。很对高雄市民不起。罗丹复生，他的‘加莱市民’（The Burghers of Calais）该塑出高雄版请命，河马都来了，真对不起。”</p>
 <p>“你真缺德，你引经据典骂人。人人都知道你骂人的广度，但都未必知道深度，知道深度，得靠学问啊。学问跟不上，看热闹而已。赵翼诗中所说的，随他人所短长而已。”</p>
 <p>“多谢你看出门道。”</p>
 <p>“问题是，明明知道女人、美女都有她的性格极限，又怎能要求太多？孔夫子要求得到又逊又不怨的美女吗？孔家‘三世出妻’，离婚是孔家传统呢。离婚干嘛？女人不可求药啊！何来十全十美的？那是理想美人，要订做啊。”</p>
@@ -3411,7 +3452,7 @@
 <p>“这也没什么稀奇，早就有老美这样干过。但是，这种美女不是艺术品，是块死肉。”</p>
 <p>“看这样，你只自己创造模特儿了，你皮格马利恩（Pygmalion），那爱上自己雕出的女人塑像的塞普鲁斯（Cyprus）王。”</p>
 <p>“我看我越来越如此了。但我不会把艺术品修改得很厉害，修改女人，像修改Pygmalion艺术塑像，用现代科技的节拍看，太慢了，现代讲究insant、讲究速成，所以呀，应该放弃修改的方法，而改用置入的方法，置入以后，让生物的她和物物的她浑然一体、浑然天成、浑化出一个我要的新人。”</p>
-<p>“会不会有了‘皮格马利恩效应’（PygmalionEffect），爱上了你创造出来的艺术品？”</p>
+<p>“会不会有了‘皮格马利恩效应’（Pygmalion Effect），爱上了你创造出来的艺术品？”</p>
 <p>“别忘了，我是很酷的。”</p>
 <p>“要偕老吗？”</p>
 <p>“为什么要偕老？一起老了有什么值得称道？同步之趣有时不在同代，而在隔代又隔代，为什么祖孙之间的画面别有情趣？岂不正因为他们隔了时代？祖孙之间还不够切题，还是男女之间才正点。歌德八十开外与十八岁少女的恋情，正是一个焦点。十八岁谁要同八十岁偕老？那只同步，只是在时间上同步关系，但不是偕老关系，以老为焦点看八十开外的歌德，你显然弄错了切入点。”</p>
@@ -3424,11 +3465,11 @@
 <p>“她几岁？”</p>
 <p>“十七岁。”</p>
 <p>“如果事过境迁，你怎么定位她？”</p>
-<p>“Itdoesn'tmatterwhomy17was,itmatterswhoIremembershewas.”</p>
+<p>“It doesn’t matter who my 17 was, it matters who I remember she was.”</p>
 <p>“你不要神气，你可能爱上她。但别忘了，十七岁的魅力增加是几何级数、心眼增加是代数级数、男朋友增加是三角级数到十角（decagon）级数、道德增加是负数。她出现了，会破坏你的一切。”</p>
 <p>“我会技术上防止。我的技术是多用虚拟。”</p>
 <p>“你搞幻想症、白日梦、意淫之类，是不是？”</p>
-<p>“虚拟不能解作delusion（幻想症），因为幻想症会治好。一个笑话说：精神病医生恭喜病人，说：我终于治好了你的幻想症。但你为什么不开心？病人说：如果你头天还是美国总统，第二天就成了无名小卒，你会开心吗？这就是幻想症。并且，幻想症内容简单，虚拟可是千军万马。并且，虚拟也不能解作白日梦。虚拟晚上照干不误。并且，虚拟也不能解作意淫，意淫的花样差多了。虚拟要赋予新的解释，因为它像‘计划经济’一般的，是计划的产品、计划出来的空中楼阁，是真正逼真的空中楼阁，你可以收起房租来呢。所谓虚拟赋予新的解释，因为今天的人们都给解释错了。看看人类学博士写的《虚拟性爱》（VirtualSpaces:SexandtheCyberCitizen）那类书吧，粗糙、浅薄、贫血，还自以为学术，事实上，这些人把‘叫床’论为‘叫春’而已，他们懂得什么虚拟？”</p>
+<p>“虚拟不能解作delusion（幻想症），因为幻想症会治好。一个笑话说：精神病医生恭喜病人，说：我终于治好了你的幻想症。但你为什么不开心？病人说：如果你头天还是美国总统，第二天就成了无名小卒，你会开心吗？这就是幻想症。并且，幻想症内容简单，虚拟可是千军万马。并且，虚拟也不能解作白日梦。虚拟晚上照干不误。并且，虚拟也不能解作意淫，意淫的花样差多了。虚拟要赋予新的解释，因为它像‘计划经济’一般的，是计划的产品、计划出来的空中楼阁，是真正逼真的空中楼阁，你可以收起房租来呢。所谓虚拟赋予新的解释，因为今天的人们都给解释错了。看看人类学博士写的《虚拟性爱》（Virtual Spaces: Sex and the Cyber Citizen）那类书吧，粗糙、浅薄、贫血，还自以为学术，事实上，这些人把‘叫床’论为‘叫春’而已，他们懂得什么虚拟？”</p>
 <p>“看来好像只有你懂虚拟？”</p>
 <p>“用渊博与雅致做界线，的确，只有我懂。”</p>
 <p>“给虚拟散文一下吧。”</p>
@@ -3451,7 +3492,7 @@
 <p>“糟糕！还是被它窃听到了！”</p>
 <p>“糟糕！这大家伙阴魂不散！”</p>
 <h2 id="模特儿第n1次"><a class="header" href="#模特儿第n1次">模特儿第N+1次</a></h2>
-<p>从time'sarrow以后，模特儿约定弄乱了，朱仑的来去是飘逸的，我的笔下，也不再是年月日星期六第几次的写法了。但是，2007年10月13日这一次，仿佛是最后一次，这天正是星期六，把它列为模特儿第N+1次吧。</p>
+<p>从time’s arrow以后，模特儿约定弄乱了，朱仑的来去是飘逸的，我的笔下，也不再是年月日星期六第几次的写法了。但是，2007年10月13日这一次，仿佛是最后一次，这天正是星期六，把它列为模特儿第N+1次吧。</p>
 <p>“我理解你和我的关系，一如你声明在先的，我只是你的模特儿，不是别的。”</p>
 <p>“你好聪明，你理解得很准确。”</p>
 <p>“如果你有女朋友呢，会不会像你的模特儿一样？”</p>
@@ -3508,7 +3549,7 @@
 <p>“那多划不来？”</p>
 <p>“的确有一点，唯一的办法是你享受那一次被强奸。像爱尔兰诗人叶慈（W.Yeast）那首《丽达与天鹅》（LedaandtheSwan）所描写的天神宙斯（Zeus）强奸斯巴达王丁大留斯（Tyndareus）的妻子丽达那一幕，最后葉慈用的是herlooseningthighs的造句，loosening是主动的现在分词，而不用被动的loosened，被强奸后来，被的大腿主动的放松了。”</p>
 <p>“你是说那时有人喜欢被强奸？”</p>
-<p>“我是说，有时候，当被强奸也是一种享受的情况，强奸也不会是残忍。这是强奸犯的自解。Everysexuallyactivemanknowstherearewomenwhocan'tbringthemselvestosay‘Yes,’butwhorespondtoalittlepushing.Isitrape？</p>
+<p>“我是说，有时候，当被强奸也是一种享受的情况，强奸也不会是残忍。这是强奸犯的自解。Everysexuallyactivemanknowstherearewomenwhocan’tbringthemselvestosay‘Yes,’butwhorespondtoalittlepushing.Isitrape？</p>
 <p>“你是那种强奸犯吗？”</p>
 <p>“对别人，我不是；对可爱的你，就很难说。”</p>
 <p>“如果，我不合叶慈诗中的文法呢？”</p>
@@ -3526,12 +3567,12 @@
 <p>“我会有六十八岁吗？”</p>
 <p>“我是说，如果，十七岁这么重要，也许该冻结十七岁、永远十七岁、死在十七岁。如果，只是假设，如果我死了，你会‘伤逝’吗？”</p>
 <p>“‘伤逝’，是一个动人的词汇，可是错了，为什么要因逝去而伤呢？中国哲人有一种反伤逝论，以为活的时候是‘时也’，是自然来活的时候；去的时候是‘顺也’，是自然往生的时候，整个人生的来去是自然现象，当它来去运转时候，要‘安时而处顺’，所以‘哀乐不能入也’。其实，中国这种哲人也错了，哀可以不能入，但乐又何必挡住呢？快乐涵盖面不只是及时的、即时的、当时的，那是不完整的，快乐涵盖后继的、延伸的、召之即来的、回味的、isover以后的。一次又一次重建的、前后相连，才是完整的快乐。及时的、即时的、当时的快乐都未免匆匆、未免粗糙、未免素描，只有一次又一次的后继的快乐，才是完整的图画。那时候，创造快乐的肉身已经变了，或褪色、或渐调、或濒老、或云亡，总之，时过境迁，肉身已经fadeaway，不要追从了。但是，音容笑貌，包括叫床，都永恒存在，为什么要‘伤逝’呢，十七岁永不逝去，她还在叫床。为什么不快乐一点去笑起人生呢？你死了，我不能无感，但是，听到你叫床的可爱声音，我就不会伤感了。所以呀，可爱的朱仑，十七岁，请多叫床。床是永不白叫的，如死的是我，六十七岁，我愿在叫床声中死去，那是我的安魂曲。为什么要那样老套处理死亡，我承认，老套，有它悲调的情调，问题是，一定要这样悲调吗？”</p>
-<p>“我想起狄更斯（Dickens）那篇DeathofLittleNell（悼小纳尔之死），你不觉得悲调多么动人吗？Shewasdead.Nosleepsobeautifulandcalm,sofreefromtraceofpain,sofairtolookupon.SheseemedacreaturefreshfromthehandofGod,andwaitingforthebreathoflife;notonewhohadlived,andsuffereddeath.…”</p>
+<p>“我想起狄更斯（Dickens）那篇Death of Little Nell（悼小纳尔之死），你不觉得悲调多么动人吗？She was dead. No sleep so beautiful and calm, so free from trace of pain, so fair to look upon. She seemed a creature fresh from the hand of God, and waiting for the breath of life; not one who had lived, and suffered death.…”</p>
 <p>“朱仑呀，你背得好。当然我承认，但是，古今中外，‘伤逝’是一个太老套的反应了，不能少一点或改一改吗？就算锁定老调而论，狄更斯描写的LittleNell之死，写得太浅了。其实，唯一比生的美丽更美丽的，乃是生死线上转入方生方死的美丽，方死是血色渐褪、方死是苍白渐浮；方死是馀温渐冷、方死是生机渐消，那种美丽是那么短暂、那么凄迷、那么仅存仅有、那么欲生还休，狄更斯并没写出来。当然他写的，不是十七岁的叫床派。他选错了女主角。要是我，我会特别选出在生死线上有生死线外的死亡画面，十七岁在叫床声中死去，难道不动人吗？一定要‘伤逝’吗？”</p>
-<p>“听你这么说，也许‘伤逝’太重了，但总不要忘了那也是一种美，狄更斯笔下LittleNell另一段，我背给你听，你来翻译：Andnowthebell—thebellshehadsooftenheardbynightandday,andlistenedtowithsolemnpleasure,almostastoalivingvoice-rungitsremorselesstollforher,soyoung,sobeautiful,sogood.”</p>
+<p>“听你这么说，也许‘伤逝’太重了，但总不要忘了那也是一种美，狄更斯笔下Little Nell另一段，我背给你听，你来翻译：And now the bell—the bell she had so often heard by night and day, and listened to with solemn pleasure, almost as to a living voice-rung its remorseless toll for her, so young, so beautiful, so good.”</p>
 <p>“我来翻译。”我说。“那个钟——那个钟声，她生时常常听到、日日夜夜听到的、庄严而喜欢听到的，馀音犹在。如今，却无情的离开了她，那年华如斯的她、那出色如斯的她、那美好如斯的她。”</p>
 <p>“你可以做同步口译。”</p>
-<p>“我跟不上专家，但专家也跟不上我。像我把soyoung,sobeautiful,sogood翻成年华如斯、出色如斯、美好如斯，专家们就跟不上。如斯有中文里‘逝者如斯’的暗嵌，专家们恐怕更翻译不出来了。”</p>
+<p>“我跟不上专家，但专家也跟不上我。像我把so young, so beautiful, so good翻成年华如斯、出色如斯、美好如斯，专家们就跟不上。如斯有中文里‘逝者如斯’的暗嵌，专家们恐怕更翻译不出来了。”</p>
 <p>“如果‘伤逝’是这种规格的，为什么要反对？”</p>
 <p>“也不是反对，只觉得应该不老套而已。人生要雨后斜阳，泪眼问花是不够的，还应该跟着笑脸上床。更重要的是，笑脸上床是没有过去式的，也不止于现在式，笑脸上床是一本tense（时态）错乱的方法，它帮聪明人除去了时间因素的折磨。”</p>
 <p>“你把死亡陈述得好有彩色，看来死亡好像也值得珍惜。”</p>
@@ -3544,7 +3585,7 @@
 <p>珍惜是把春风一度，</p>
 <p>珍惜是把死亡高潮，</p>
 <p>珍惜是把珍惜凝住。</p>
-<p>死亡是什么？死亡是一种凝住。像deathmake、‘死亡面具’那样凝住。”</p>
+<p>死亡是什么？死亡是一种凝住。像death make、‘死亡面具’那样凝住。”</p>
 <p>“‘死亡面具’，一个从林肯（Lincoln）死后，就很罕见的东西。它是死人的脸翻出来的模型，比模型还真实，因为它直接来自死人的脸。它先从死尸的脸上做出模子，再用石膏、或蜡、或金属灌铸打造而成。古罗马明用蜡做好，并加上颜色，在入殓时罩在死者脸上，等于加了一层套子、面罩，防御恶魔。然后，它留在死者家中中庭，逢年过节还戴上花冠。中世纪的英国法国也流行，英国西敏寺有好多国王的面具。现在世界存有的有名面具有但丁（Dante）的、克伦威尔（Cromwell）的、牛顿的、拿破仑（Napoleon）的、贝多芬（Beethoven）的、林肯的。deathmask，我对它有特别的感觉。它是一种另类的假面具，象征的，却是真的自己。”</p>
 <p>“‘死亡面具’，它多么有反科技的意义。科技在为生者留副，复制人身；但‘死亡面具’却为死者加持，复制死相。死者的本尊必将腐朽，但面具不会，复本保存了原版，有了复本，令人想像往生。”</p>
 <p>“如果我死了，你会做我的‘死亡面具’吗？”朱仑又出了奇想。</p>
@@ -3567,8 +3608,8 @@
 <p>“我提供给学医的学生们‘大体解剖’后，并约好，解剖后剩下的skeleton、骨骼，要制成标本，永远挂在医学院的骨科，使恨我入骨的人，永远可以看到。”</p>
 <p>“如果不恨你入骨的呢？”</p>
 <p>“那他可以来看我一身傲骨。”</p>
-<p>“英文有askeletonatthefeast的典故，叫作‘宴席上的骷髅’，起源自古埃及人在重大宴席上，都要当众摆上一具骷髅，提醒人们居安思危、存不忘亡。也许，你的骷髅不该只放在台大医学院，该巡回展示，在宴会中巡回展示，学古埃及人。”</p>
-<p>“干嘛？别忘了英文中askeletonatthefeast.的另一意思就是扫兴，Hispresenceatthefeast(party)wasaskeletonatthefeast.死了还这样闹人，不恨我入骨了也要重新考虑了。”</p>
+<p>“英文有a skeleton at the feast的典故，叫作‘宴席上的骷髅’，起源自古埃及人在重大宴席上，都要当众摆上一具骷髅，提醒人们居安思危、存不忘亡。也许，你的骷髅不该只放在台大医学院，该巡回展示，在宴会中巡回展示，学古埃及人。”</p>
+<p>“干嘛？别忘了英文中a skeleton at the feast.的另一意思就是扫兴，His presence at the feast(party) was a skeleton at the feast.死了还这样闹人，不恨我入骨了也要重新考虑了。”</p>
 <p>“听起来，有点羡慕你死后还这么有骨气，可惜的是，我恐怕看不到了。”</p>
 <h2 id="问得荒谬答得荒谬"><a class="header" href="#问得荒谬答得荒谬">问得荒谬，答得荒谬</a></h2>
 <p>朱仑是神童，更神奇的，是她并非普通的神童，她恍如电脑附体、神童得如虎生翼、如天马行空。</p>
@@ -3589,14 +3630,14 @@
 <p>神童朱仑忽然自语。自语说：现在流行的说法是“知识爆炸”，资讯太多了太多了，多得使人得了“资讯焦虑症”了，或什么什么“信息焦虑症”了。全世界，每年出版新书六十万种、期刊七十万种、专利四十万种。推波助澜的是，几万个雷达站、几十万个微波通讯塔、三十多万个民用电台、九百多万个电视台、和时时刻刻在增加的行动电话、多功能手机、终端电脑、立即连线等等等等等等等等道具，天呀，人要给挤疯了！人无所逃于资讯之间。</p>
 <p>资讯无所不在，可是，人还要活下去，耳根清静一点的活下去。人还要喘口气吧？停电可是喘口气，就停电。但电也没用，资讯有的是电池！</p>
 <p>朱仑又自语：</p>
-<p>“The first is freedom of speech and expression—everywhere in the world.The second is freedom of every person to worship God in his own way—every where in the world.The third is freedom from want—which,translated into world terms,means economic understandings which will secure to every nation a healthy peace time life for its inhabitants—every where in the world.The four this freedom from fear—which,translated into world terms,means a world wide reduction of armaments to such apoint and in such a thorough fashion that nonation will be in a position to commitanact of physical aggression against any neighbor—any where in the world.”（第一，言论和表达自由——在世界各地；第二，每个人可以以自己的方式崇拜上帝的自由——在世界各地；第三，免于匮乏的自由——译成白话；即经济性协议将保证每一个国家为其国民谋求富足平安的生活——在世界各地；第四，免于恐惧的自由——译成白话，即透过全世界性的裁减军备，以使任何国家都不能以明目张胆的侵略行为反对其邻国——无论在世界任何角落。）</p>
-<p>原来她在背1941年美国总统那所谓“四大自由”（FOURFREEDOMS），朱仑看到我在一边偷听她自语，笑起来了。</p>
+<p>“The first is freedom of speech and expression—everywhere in the world. The second is freedom of every person to worship God in his own way—every where in the world. The third is freedom from want—which, translated into world terms, means economic understandings which will secure to every nation a healthy peace time life for its inhabitants—every where in the world. The four th is freedom from fear—which, translated into world terms, means a world wide reduction of armaments to such a point and in such a thorough fashion that no nation will be in a position to commit an act of physical aggression against any neighbor—any where in the world.”（第一，言论和表达自由——在世界各地；第二，每个人可以以自己的方式崇拜上帝的自由——在世界各地；第三，免于匮乏的自由——译成白话；即经济性协议将保证每一个国家为其国民谋求富足平安的生活——在世界各地；第四，免于恐惧的自由——译成白话，即透过全世界性的裁减军备，以使任何国家都不能以明目张胆的侵略行为反对其邻国——无论在世界任何角落。）</p>
+<p>原来她在背1941年美国总统那所谓“四大自由”（FOUR FREEDOMS），朱仑看到我在一边偷听她自语，笑起来了。</p>
 <p>“你知道我背什么？”</p>
-<p>“你反正什么都会背。”我开口了。“可别忘了，美国人说那是FOURFREEDOMS，其实是有语病的。语病就是后面两次出现的freedomfrom，英文freefrom是免于什么什么的意思，说‘免于匮乏’，可以，说‘免于匮乏的自由’，就不通了；同样的，说‘免于恐惧’，可以，说‘免于恐惧的自由’，就不通了。‘免于匮乏’、‘免于恐惧’，本身意思就是自足了，和‘自由’扯不到一起。”</p>
+<p>“你反正什么都会背。”我开口了。“可别忘了，美国人说那是FOUR FREEDOMS，其实是有语病的。语病就是后面两次出现的freedom from，英文free from是免于什么什么的意思，说‘免于匮乏’，可以，说‘免于匮乏的自由’，就不通了；同样的，说‘免于恐惧’，可以，说‘免于恐惧的自由’，就不通了。‘免于匮乏’、‘免于恐惧’，本身意思就是自足了，和‘自由’扯不到一起。”</p>
 <p>“你说得对。可见资讯不是终极的重要。终极的重要是融会贯通，像你这样，能把它解释出来。”朱仑说。</p>
-<p>“或者画出来。像NormanRockwell（洛克威尔）。他画得真好。不过，他画的自由图却很普通。大概美国总统口中的自由只是口号，不是真的。朱仑，我看你在浪费你的记忆力，你背那么乏味的假话干嘛？”</p>
-<p>“我在想，如果那是‘四大自由’，人类该有第五自由了，就是freedomfrom‘资讯’，就将错就错，翻成，‘免于资讯的自由’吧。当然你知道我的意思，这里‘资讯’是负面的意思，真的意思是‘垃圾’，人类要有‘免于垃圾的自由’。”说着，朱仑坐正，像美国总统宣读文告般的，低音发出：Fellow-countrymen,Thefifthisfreedomfromgarbage.（全国同胞们：第五，免于垃圾的自由。）</p>
-<p>我鼓掌。“英文有成语，tosmiteunderthefifthrib、刺杀到第五根肋骨之下，就是刺中要害。朱仑总统把‘资讯’打成‘垃圾’，英明无比，我太爱你了，下次选你做皇帝！”</p>
+<p>“或者画出来。像Norman Rockwell（洛克威尔）。他画得真好。不过，他画的自由图却很普通。大概美国总统口中的自由只是口号，不是真的。朱仑，我看你在浪费你的记忆力，你背那么乏味的假话干嘛？”</p>
+<p>“我在想，如果那是‘四大自由’，人类该有第五自由了，就是freedom from‘资讯’，就将错就错，翻成，‘免于资讯的自由’吧。当然你知道我的意思，这里‘资讯’是负面的意思，真的意思是‘垃圾’，人类要有‘免于垃圾的自由’。”说着，朱仑坐正，像美国总统宣读文告般的，低音发出：Fellow-countrymen, The fifth is freedom from garbage.（全国同胞们：第五，免于垃圾的自由。）</p>
+<p>我鼓掌。“英文有成语，to smite under the fifth rib、刺杀到第五根肋骨之下，就是刺中要害。朱仑总统把‘资讯’打成‘垃圾’，英明无比，我太爱你了，下次选你做皇帝！”</p>
 <p>朱仑笑着。“我们‘仑’字辈真好，拿破仑做皇帝以后，还有朱仑！”</p>
 <p>“朱仑万岁！”我高举右臂。</p>
 <p>“万岁很好。可是垃圾怎办？”</p>
@@ -3620,20 +3661,20 @@
 <p>“我可是纯粹赞美。”</p>
 <p>“我知道。我无法想像18世纪时伦敦那个文学团体BlueStockingSociety（蓝裤社），到底什么样子，我只知道一定很好玩，那么多有文化的人在一起。我也向往那时候的新女性，她们那么有味道，现代的呢？已经没有那种味道。现代太粗浅了、太活泼了。所有慢速的和精致的，都给bluemurder（大声惨叫）了。”</p>
 <p>“我想十八世纪的bluestocking太遥远了，并且，特别出色的新女性，要到19世纪、20世纪期间才多起来。像英国的EllenTerry（爱伦苔丽），她活了八十一岁，生命正跨在19世纪20世纪交汇，这种新女性，好有特色。我看过她写给萧伯纳的情书，才气真了不起，她是英国演莎士比亚的天才演员。她还有一个本领，会生私生子。她跟EdwardGodwin（戈德温）那建筑家生的两个私生子，导演和设计师EdwardGordonCraig（爱德华克雷格）和女演员EdithCraig（伊迪丝克雷格），都是大名鼎鼎的。唉，我何必说这么多，你都会知道，你会欣赏EllenTerry。你这渊博的小神童，说一件你知道的给我。”</p>
-<p>“我吗？我所知有限。但我知道EllenTerry会演MuchAdoAboutNothing《无事自扰》那部莎士比亚中的Beatrice（贝特丽丝），我还会背Beatrice那段道白呢。我演给你看：</p>
+<p>“我吗？我所知有限。但我知道Ellen Terry会演Much Ado About Nothing《无事自扰》那部莎士比亚中的Beatrice（贝特丽丝），我还会背Beatrice那段道白呢。我演给你看：</p>
 <p>Wellthen,goyouintohell?No;buttothegate;andtherewillthedevilmeetme,likeanoldcuckold,withhornsonhishead,andsay,“Getyoutoheaven,Beatrice,getyoutoheaven;here’snoplaceforyoumaids:”sodeliverIupmyapes,andawaytoSaintPeterfortheheavens;heshowsmewherethebachelorssit,andthereliveweasmerryasthedayislong.（那么，你是要下地狱了？不；只到地狱的门口；恶魔在那里迎接我，像个老王八似的，头上有两个角，嚷着说，‘回到天堂去，贝特丽丝，回到天堂去；这可不是你们处女来的地方。’于是我把猴子放下，立刻去找圣彼得领我到天堂；他指点我单身男人所在，在那里，我们整天活得好爽。）</p>
 <p>你看，我真的会背莎士比亚。”</p>
-<p>“你真的会。记得EllenTerry又演TheMerchantofVenice《威尼斯商人》中的富家女Portia（波希亚），更风光一时。”</p>
+<p>“你真的会。记得Ellen Terry又演The Merchant of Venice《威尼斯商人》中的富家女Portia（波希亚），更风光一时。”</p>
 <p>“Portia？我也会背呢，我演给你看：</p>
-<p>Thereforepreparetheetocutofftheflesh.</p>
-<p>Shedthouonblood;norcutthouless,normore,</p>
+<p>Therefore prepare thee to cut off the flesh.</p>
+<p>Shed thou on blood; nor cut thou less, nor more,</p>
 <p>Butjustapoundofflesh;ifthoutak’stmore,</p>
-<p>Orless,thanajustpound,beitbutsomuch</p>
-<p>Asmakesitlightorheavyinthesubstance,</p>
-<p>Orthedivisionofthetwentiethpart</p>
-<p>Ofonepoorscruple,nay,ifthescaledoturn</p>
-<p>Butintheestimationofahair,</p>
-<p>Thoudiestandallthygoodsareconfiscate,</p>
+<p>Or less, than a just pound, be it but so much</p>
+<p>As makes it light or heavy in the substance,</p>
+<p>Or the division of the twentieth part</p>
+<p>Of one poor scruple, nay, if the scale do turn</p>
+<p>But in the estimation of a hair,</p>
+<p>Thou diest and all thy goods are confiscate,</p>
 <p>（所以，你准备割肉罢。</p>
 <p>可以不准流一滴血；</p>
 <p>一刀一来，割得不准多也不准少，</p>
@@ -3643,14 +3684,14 @@
 <p>在秤上有一根毫毛重的落差，</p>
 <p>就叫你人死，财产充公。）</p>
 <p>如何？”</p>
-<p>我一直鼓掌。“太了不起了！我们十七岁的模特儿她全会！不要好奇你怎么会玩起莎士比亚来了。我不再追问，反正你都知道、都记得。你好像一部‘肉身光碟’，你要输出什么，就输出什么。英文有walkingdictionary活字典，像walkingencyclopedia活百科全书、活万宝全书，但是都不如中国古书中一个具体的描写的词儿，叫‘有脚书橱’。你呢，该叫‘有漂亮的脚的电脑’，或是‘有性感的脚的电脑’，多么好呀！”</p>
+<p>我一直鼓掌。“太了不起了！我们十七岁的模特儿她全会！不要好奇你怎么会玩起莎士比亚来了。我不再追问，反正你都知道、都记得。你好像一部‘肉身光碟’，你要输出什么，就输出什么。英文有walking dictionary活字典，像walking encyclopedia活百科全书、活万宝全书，但是都不如中国古书中一个具体的描写的词儿，叫‘有脚书橱’。你呢，该叫‘有漂亮的脚的电脑’，或是‘有性感的脚的电脑’，多么好呀！”</p>
 <p>“我看不够好。人变成电脑，变成你说的‘肉身光碟’，即使无所不知、出口就是data、是资料、是数据、是讯息，又怎么样，打开电脑，全有，只是指尖一按和脱口而出的不同而已。这不算本领。本领要‘超电脑’才算。”</p>
 <p>“Data瞬间出自美女之口，而非电脑画面，就已经‘超电脑’了。”</p>
 <p>“不够吧，并且，一旦把电脑改良成塑胶娃娃式，画面出现在娃娃胸前，或转由娃娃嘴巴播出，娃娃一天二十四小时都可为你裸体服务呢，换成真的美女来，十二小时就着凉送医院了。所以呀，一定要有别的来‘超电脑’。”</p>
 <p>“什么别的？”</p>
 <p>“电脑做不出来的、电脑解释不出来的、电脑融会贯通不出来的，都叫‘超电脑’。”</p>
 <p>“你举个例。”</p>
-<p>“就举刚才那本莎士比亚吧。MuchAdoAboutNothing有一句Sheshallbeburiedwithherfaceupwards.，埋她的时候要脸朝上。为什么脸朝上？正点的解释该是，那时候的人，自杀要脸朝下埋，一个人明明知道对方坏还钟情而死，就不以自杀论，而以死在对方之手论，所以脸就朝上了。这种解释，多么有趣，可是电脑做得出来吗？MuchAdoAboutNothing，中文有的翻成‘无事自扰’、有的翻成‘捕风捉影’、有的翻成‘无事张皇’，但翻成贾宝玉所说的‘无事忙’，我看更有味道。电脑做得到吗？”</p>
+<p>“就举刚才那本莎士比亚吧。Much Ado About Nothing有一句She shall be buried with her face upwards.，埋她的时候要脸朝上。为什么脸朝上？正点的解释该是，那时候的人，自杀要脸朝下埋，一个人明明知道对方坏还钟情而死，就不以自杀论，而以死在对方之手论，所以脸就朝上了。这种解释，多么有趣，可是电脑做得出来吗？Much Ado About Nothing，中文有的翻成‘无事自扰’、有的翻成‘捕风捉影’、有的翻成‘无事张皇’，但翻成贾宝玉所说的‘无事忙’，我看更有味道。电脑做得到吗？”</p>
 <p>“你说得真好，电脑真的不能解释出埋女人的进修要脸朝上，使她有脸见人。因为电脑只会无事忙，又不要脸。”</p>
 <p>“你最后说的这十一个字：‘电脑只会无事忙，又不要脸。’就是典型的‘超电脑’，你会把我说的内容当data，然后，高速化为电脑做不出来的反应和语言，这就是我希望的‘超电脑’。如果我是有脚的电脑，脚的意义不算什么，动物学中diplopoda倍足纲里的millipedes千足虫，动辄有脚两百只以上呢，重要的是，我要有‘超电脑’的本领，不但我有，看来人类也得有，不然的话，未来都被电脑超过了，人类也变成行尸走肉了，甚至做行尸、做走肉，都没电脑要呢。”</p>
 <p>“还是要谈谈你个人的奇异现象。你的大脑的功能太奇异了，你天生就是这样的吗？我知道你是神童，但你的‘神童现象’是超出的，乃是‘变异的神童现象’，你怎么解释你自己？”</p>
@@ -3689,7 +3730,7 @@
 <p>“你现在知道了吧，那是智慧。”</p>
 <p>“智慧？要先头部开刀、脑袋开花吗？”</p>
 <p>“当然，想想希腊智慧女神是怎么生出来的。”</p>
-<p>“噢，你‘点’到了，我知道了。AccordingtomostaccountsAthenawasbornfullygrownandarmedfromtheheadofZeus.ZeushadswallowedhiswifeMetistopreventthebirthofachildforfearthatthechildmightdisplacehim.WhenZeuscomplainedofheadaches,Hephaestus(Vulcan)orPrometheuslaidopenhishead,permittingAthenatoemerge.”</p>
+<p>“噢，你‘点’到了，我知道了。According to most accounts Athena was born fully grown and armed from the head of Zeus. Zeus had swallowed his wife Metis to prevent the birth of a child for fear that the child might displace him. When Zeus complained of headaches, Hephaestus (Vulcan) or Prometheus laid open his head, permitting Athena to emerge.”</p>
 <p>“一点都没错。天神宙斯动了脑部手术，才开出使他头痛的智慧女神女儿。”</p>
 <p>“可是，我不是宙斯，我开什么？”</p>
 <p>“可是，你是我们现代的雅典娜，你开了你自己。”</p>
@@ -3707,9 +3748,9 @@
 <p>“你说什么？”朱化急切的问。“你是说了‘脑前瞻工程’这五个字吗？”</p>
 <p>“是。我是说了。”</p>
 <p>“多么熟悉的五个字！多么熟悉的一个词汇！我仿佛见识过这一data，在你说出它以前，怎么我一点也不陌生？好奇怪好奇怪，‘脑前瞻工程’、‘脑前瞻工程’，天啊，是怎么回事？”朱仑又轻拍着自己的头，她显然在追寻什么、追寻什么。</p>
-<p>我浑身有一股寒意。我明白了。巫主任、巫神医，一定是你！Itworks（它灵了）。</p>
+<p>我浑身有一股寒意。我明白了。巫主任、巫神医，一定是你！It works（它灵了）。</p>
 <p>识破天才的诡秘，一如识破天机，不是快乐、不该是快乐，因为你无法帮人把脸朝下，埋葬他自己，你会看到识破后的真相与玄机，悲怜抢先占据了你、悲怜抢走了所有其他的感情。“脑前瞻工程”，竟和朱仑牵连在一起，而我又是唯一的见证。比当事人更先得知底牌的见证。看到朱仑，令人悲怜的朱仑，在不自知的情况下，尝试突破“肉身光碟”而“超电脑”，多么动人、又多么孤单。时势好像在在翻转了，过去是人造科学怪人，科学怪人孤单的在突破，现在呢，是科学作怪造人，却又阴错阳差，造在十七岁的朱仑身上，轮到十七岁的天才女生在为人类立命，寻求“超电脑”的空间以求自存，朱化若失败，是人类的终极失败。现实的朱仑理应失败，因为，正如巫神医所预言，现在还是试验阶段，是“人体试验”阶段，失败是预期的，并不意外，对朱仑说来，一个脑病病到死亡指日可待的生命，卷进这一试验，也在情理之中。照巫神医的逻辑，他并没要害死病人，病人自己要死，他只是“趁病而为”而已，这可是最离奇的hitchhike（搭便车），车在走向死亡，人却要同途殊归。病人得到什么？得到的是茫然、惘然、与恍然，和强脑针式的死亡之旅。唯一确定的，反倒是那一偶然。偶然，使我在其中，结局玄黄乍变，没想到如此而竟然如此，这叫不期然而然，不是吗？我能做的，是不能说的，对巫主任、巫神医，已不能说，对朱仑呢？我只有黑色的喜剧和白色的谎言。</p>
-<p>虽然来日不可能，也来日无多，但是，getyoutoheaven，回到天堂去，珍惜这一段归程，也是我必须完成的。</p>
+<p>虽然来日不可能，也来日无多，但是，get you to heaven，回到天堂去，珍惜这一段归程，也是我必须完成的。</p>
 <p>震撼！震撼！巫主任啊、巫神医啊，原来她就是我眼前！原来她就住我隔壁！原来她就在这里！Itworks！你的晶片，它灵了、灵了！问题是，天啊，你这鬼主任、鬼神医，你输入了什么？比起宗教的妖妄来，这是真正的“灌顶”啊，真正全无迷信、纯属科学的“灌顶”啊！唐朝的诗人顾况写《行路难》诗，赞美“岂知灌顶有醍醐”。根据佛经《涅磐经》、“从牛出乳、从乳出酪、从酪出生酥、从生酥出熟酥、熟酥出醍醐”的推论，把最上面那层牛奶凝结的皮，加油做成醍醐，灌人之顶，输入智慧。你成功了。但是，还要问，你输入了什么、灌进顶的是什么？总得有个清单啊？可是，恐怕已失传了。并且，不失传又有什么作用？你明明说是要和脑神经交错成长才算的，说成长三个月后才预计发生作用的，什么后果还有待观察的，哈，Dr.巫巫，我观察到了，不是吗？不该会像癫痫那样有“小发作”和“大发作”的分别吧。现在，一切都真想大白了，我也躲不掉了。我真的是接力赛中的anchorman了。我接力到最后一棒。可是，我多么“狼狈”！我接下的，还没开跑；我身上的，却被握住了。多么离奇的缘定！有道是缘定三生，我却缘定被十七岁手淫……</p>
 <p>虽然真相已经浮起，但我非常小心，不要惊动身旁这位“超神童”，一切要她慢慢适应、要她自己发现，或者永远无法发现。朱仑的智慧是不可测的，也许她能自己解开自身之谜，最好是让她自己解开。我采行的，是一种“牙膏主义”，只是被动的挤出一小段一小段，我不能透露什么，但我也不愿说谎，真相止于智者，不是吗？可怜的朱仑。</p>
 <h2 id="制服女"><a class="header" href="#制服女">制服女</a></h2>
@@ -3784,7 +3825,7 @@
 <p>她弯腰拉起裙子，又背起书包，走进了卧室。</p>
 <p>十多分钟后，我站到卧室门外，看到她躺在床上，下身盖着被，上身穿的，是日本的水手领制服！</p>
 <p>走到床边，她望着、我望着。我坐在床边，我望着、她望着。她把手伸过来，瘦白的手臂，从蓝边的短袖伸过来，性感无比。能有一比的，只有一位，名叫朱仑，不是吗？只有朱仑、只有朱仑。</p>
-<p>五点钟快到的时候，十七岁，走出了卧室。“中山女中”再现在她身上，这次，她没被质疑，因为一切都是真的。临去时分，她似乎微露匆忙，她似乎忙着去赴一个不可知又不可测的约会，去整理“推倒的书架”。她无须留下记忆，只须遗忘，一条CalvinKlein的白色内裤，遗忘在床上。她似乎有意留下信物给什么人看，不能确定的是，信物给的是我，还是朱仑。</p>
+<p>五点钟快到的时候，十七岁，走出了卧室。“中山女中”再现在她身上，这次，她没被质疑，因为一切都是真的。临去时分，她似乎微露匆忙，她似乎忙着去赴一个不可知又不可测的约会，去整理“推倒的书架”。她无须留下记忆，只须遗忘，一条Calvin Klein的白色内裤，遗忘在床上。她似乎有意留下信物给什么人看，不能确定的是，信物给的是我，还是朱仑。</p>
 <h2 id="又见昏倒"><a class="header" href="#又见昏倒">又见昏倒</a></h2>
 <p>这是一个警讯：“中山制服女”又出现了。</p>
 <p>唯一的“进步”该是：这回没出现在中山女中，却出现在制服女的邻宅。附带的“进步”是，又加码了“东洋制服女”。</p>
@@ -3839,26 +3880,26 @@
 <p>我翻出了王羲之的《十七帖》印本，摆在眼前，我开始了“朱仑十七帖”的第一页。</p>
 <p>十七行诗</p>
 <p>大师喜欢用博学恶作剧。</p>
-<p>他开玩笑说，Shakespeare的TheSonnets（十四行诗），有太多的十四数字，他不喜欢。我问他喜欢多少，他说他喜欢十七。所以，十四行诗可以恶作剧的改为十七行诗。</p>
-<p>他说他可以举例，他给我看TheSonnets第四十七首：</p>
-<p>Betwixtmineeyeandheartaleagueistook,</p>
-<p>Andeachdothgoodturnsnowuntotheother,</p>
-<p>Whenthatmineeyeisfamishedforalook,</p>
-<p>Orheartinlovewithsighshimselfdothsmother,</p>
+<p>他开玩笑说，Shakespeare的The Sonnets（十四行诗），有太多的十四数字，他不喜欢。我问他喜欢多少，他说他喜欢十七。所以，十四行诗可以恶作剧的改为十七行诗。</p>
+<p>他说他可以举例，他给我看The Sonnets第四十七首：</p>
+<p>Betwixt mine eye and heart a league is took,</p>
+<p>And each doth good turns now unto the other,</p>
+<p>When that mine eye is famished for a look,</p>
+<p>Or heart in love with sighs himself doth smother,</p>
 <p>Withmylove’spicturethenmyeyedothfeast,</p>
-<p>Andtothepaintedbanquetbidsmyheart.</p>
+<p>And to the painted banquet bids my heart.</p>
 <p>Anothertimemineeyeismyheart’sguest,</p>
-<p>Andinhisthoughtsoflovedothshareapart.</p>
-<p>So,eitherbythypictureormylove,</p>
-<p>Thyselfawayarepresentstillwithme;</p>
-<p>Forthounotfartherthanmythoughtscanstmove,</p>
-<p>AndIamstillwiththem,andtheywiththee;</p>
-<p>Or,iftheysleep,thypictureinmysight</p>
+<p>And in his thoughts of love doth share a part.</p>
+<p>So, either by thy picture or my love,</p>
+<p>Thyself away are present still with me;</p>
+<p>For thou not farther than my thoughts canst move,</p>
+<p>And I am still with them, and they with thee;</p>
+<p>Or, if they sleep, thy picture in my sight</p>
 <p>Awakesmyhearttoheart’sandeye’sdelight.</p>
 <p>然后又说，这十四行最后，可以从第二十八首、第四十六首中找到三行，接在它后面，一共十七行，有韵照押呢。我找了一下，就是这三行：</p>
 <p>Mineeyemyheartthypicture’sgightwouldbar,</p>
-<p>Myheartmineeyethefreedomofthatright.</p>
-<p>Itelltheday,topleasehim,thouartbright,</p>
+<p>My heart mine eye the freedom of that right.</p>
+<p>I tell the day, to please him, thou art bright,</p>
 <p>他说我聪明，我对了。</p>
 <p>Shakespeare这十七行的大意思是，为了你的画像，“心”和“眼”相争起来，最后协议互为宾主。而我呢，因为有了爱和画像，就能致你于远方，你走不出我的“思想”以外。我跟着“思想”、“思想”跟着你，“思想”一睡，我的“心”和“眼”就同画像一起。“眼”拒“心”观、“心”拒“眼”望。我媚白天，光得其亮。十四行补成了十七行以后，仿佛在说，“心”和“眼”都以“思想”为依归，而“思想”呢，又依恋在画像。又仿佛在说，“心”和“眼”都没有“思想”实在，“思想”才是爱的屏障。当然，这些仿佛在说，都不是Shakespeare说的，Shakespeare可能反对这样解释他。Shakespeare可能很恨这样解释他。但是，诗中明明有“心”和“眼”和“思想”三者的出现，并指“思想”入睡时候，“心”和“眼”一起欣然欣赏画像呢，可见“思想”是不单纯的。十四行诗谈到“思想”，十七行诗自然更借题发挥了。</p>
 <p>多么奇怪，面对画像，“心”和“眼”相争之下，来了第三者，就是“思想”。Shakespeare似乎在说，面对画像，“思想”是重要的，这是一个很凸出的新观念。对有情人的画像，love’spicture，不但要“心”、要“眼”、更要“思想”。头脑简单的人，不足以尽其情。</p>
@@ -3870,9 +3911,9 @@
 <p>大师要我用了十七行“作弄”了十四行的Shakespeare，由我发挥Shakespeare“心”“眼”到“思想”的层次。最后，他补了一句，别信Shakespeare最早这么说了吧，他拿出一部《皇极经世全书解》，找出了邵雍的一段话，其中赫然是：“夫所以谓之观物者，非以‘目’观之也，非观之以‘目’而观之以‘心’也，非观之以‘心’而观之以‘理’也。”大师说，邵雍是11世纪的中国人，Shakespeare是16到17世纪的英国人。英国人看到的层次，中国人早在五百年前就看到了。当然，看法是越来越细腻了，最后细腻到十七岁的身上。十七岁在有情人的画像里，对这画像，凭“心”凭“眼”是不够的，要凭“思想”来发挥它。有了“思想”，才有了高度、广度、和深度。最微妙的，是“思想”跟着有情人的画像，但大师说，我就是那画像，墙上的画像只是我彩色的影子。</p>
 <p>A片后</p>
 <p>多么久了、多少次了，大师几乎不主动讲什么话、提什么议、或下什么指令。他让我自自然然生活两小时，在他家里，哦，在我家里，因为我有大门钥匙。</p>
-<p>我问起来了。不是说模特儿也有“演出”部分吗？艺术家的模特儿只要摆姿势、僵化自己就好了，文学家的不止于此。要兼有演员条件，要会“演出”、能“演出”、能自动自发“演出”、能被动“演出”，诸如此类。但多么久了、多少次了，他都由我自由自在，他不提任何“演出”，也不ME,BOSS.YOU,NOT（我，老板，你，小卡），任我在他家为所欲为。</p>
-<p>翻他的抽屉，一大堆DVD。ME,BOSS是不去电影院的，他说太浪费时间，并且要细看第二遍的，只能看一遍。所以他买DVD，随时可以看，并且随便看几遍。在电视上放出来，效果比电影院差太多，ME,BOSS说：得可偿失，所谓得，①可以躺下来看，并且，一边看一边按摩脚。②可以随时pause去小便。③可以随时记录灵感。ME,BOSS说当年他在电影院里拿出小本摸黑记录过，效果很差，再整理时，字迹都“糊”了。并且，不方便起身去小便，膀胱不舒服，要得“女老师症”。电影院只是声光效果好。把自己imagination大而化之，在家里看也相差不远，否则自己太笨了。</p>
-<p>从学校里带来五张DVDA片，用大师的机器放放看。他走动搬书时，知道我在看什么。他淡淡的说：你们美国学校来的，是滥A片。看多了，男人会倒阳、女人会变粗货。他说，他有好的A片。我问放在哪里。他说：“在这屋里，你要找，就可以找到。”</p>
+<p>我问起来了。不是说模特儿也有“演出”部分吗？艺术家的模特儿只要摆姿势、僵化自己就好了，文学家的不止于此。要兼有演员条件，要会“演出”、能“演出”、能自动自发“演出”、能被动“演出”，诸如此类。但多么久了、多少次了，他都由我自由自在，他不提任何“演出”，也不ME, BOSS. YOU, NOT（我，老板，你，小卡），任我在他家为所欲为。</p>
+<p>翻他的抽屉，一大堆DVD。ME, BOSS是不去电影院的，他说太浪费时间，并且要细看第二遍的，只能看一遍。所以他买DVD，随时可以看，并且随便看几遍。在电视上放出来，效果比电影院差太多，ME, BOSS说：得可偿失，所谓得，①可以躺下来看，并且，一边看一边按摩脚。②可以随时pause去小便。③可以随时记录灵感。ME, BOSS说当年他在电影院里拿出小本摸黑记录过，效果很差，再整理时，字迹都“糊”了。并且，不方便起身去小便，膀胱不舒服，要得“女老师症”。电影院只是声光效果好。把自己imagination大而化之，在家里看也相差不远，否则自己太笨了。</p>
+<p>从学校里带来五张DVD A片，用大师的机器放放看。他走动搬书时，知道我在看什么。他淡淡的说：你们美国学校来的，是滥A片。看多了，男人会倒阳、女人会变粗货。他说，他有好的A片。我问放在哪里。他说：“在这屋里，你要找，就可以找到。”</p>
 <p>我找到了。</p>
 <p>东洋的A片多，西洋的少。问为什么？大师说：日本的AV女优中，有秀气的、表情也多。欧美的女人都太粗太老了，叫“大老粗”。不过欧美A片中的黑人，大师说好，因为有八吋以上。大师说：他上床就希望自己是黑人、打架就希望自己是以色列人。大师说，看A片就如同看奥林匹克，看到人类性能的极限，一般人不可能达到那极限。所以呀，只能欣赏，不可自卑。大师说看A片看多了，太没意思，跟看《三民主义》一样。大师开玩笑说，他幻想我和他“演出”A片，自拍自导自演自看，这只是幻想，他不会提议，我说如果我愿意呢，大师说，愿意也不可以，但我可以跟他一起幻想。并且，他特别叮咛要把他黑人哟！</p>
 <p>不过，大师又补充意见，他说：我连带想起日本的春宫画，我对日本的印象，正像人类学家所切割的，一边是菊花、一边是剑，印象是两极的，日本人雅致一面，我能肯定的不多，以它的绘画论，我对《光琳派名画集》中本阿弥光甫的“藤花图”一类，尚觉细致，尾形光琳的“虎图”就完全不敢领教了，至于他画的“兔图”，更不成样子了。整体来说，一如日本人的小气八拉。不过，日本绘画浮世绘中的春宫图，可真别致呢，它的特色就是把男人的生殖器官画得N大，大到有意的不成比例。以他们“枕绘”中歌麿“绘本小町引”为例，可以看到勃起的阴茎，粗长的程度，显然超过画中人的脚，且龟头乃至睪丸，都大过画中女孩子的手掌心，真太恐怖了，但也不能不说别有匠心。就像中国古代绘画人物，大人物画得大、小人物画得小，大小依地位高下而定，不依人体真实比例为准。日本画春宫的，大概偷到中国绘画的这种奇异的比例论，画春宫时，自然就以主角——男人生殖器为一枝独秀了。我不喜欢日本，但对日本的春宫画会笑着看，因为实在太有趣，夸大得不无粗趣，只是呀，千万别给非洲黑人看到了，黑人看到会说：“在我身上的，怎么跑到小日本身上了。”</p>
@@ -3880,8 +3921,8 @@
 <p>看过林肯的一段话：“你可以欺骗多数人于暂时，你可以欺骗少数人于永久，但你不能欺骗多数人于永久。”（Youcanfoolsomeofthepeopleallthetimeandallthepeoplesomeofthetime;butyoucan’tfoolallthepeopleallthetime.）看了林肯这段话后，又在《花花公子》（Playboy）上看到一幅漫画，画中有红男绿女，酒食徵逐于户外，一对神父走过，其中一人说：“你可以救多数人于暂时，你可以救少数人于永久，但你不能救多数人于永久。”（“Well,youcansavesomeofthepeopleallthetime,andallthepeoplesomeofthetime;butyoucan’tsaveallthepeopleallthetime”）</p>
 <p>但是，有时候，多数人或少数人，都对你没有意义，你不如欺骗一个人于永久、救一个人于永久。别以为欺骗全是坏事，你可以用好的欺骗，救一个人于永久。</p>
 <p>有时候，一个人自欺太孤单了，要靠更强大的欺骗来取代，我好孤单，我要你的欺骗，真到永久。欺骗是一种“救”，直到永久。</p>
-<p>本来本着甘愿被欺骗而来，结果却是我欺骗了你。你原来要的，就是我的欺骗。你要我一切以“演出”来表达、“假装”来表达，你不要believe，你只要makebelieve，你“救”了我，你使我正确的错乱。</p>
-<p>我从学校带回A片，你跟我讨论A片，你要求你的十七岁模特儿一个人“演出”A片、“假装”种种，你照相、你录音、你赞美我、你惊讶我是好演员，你说WhenHarryMetSally里女主角十七岁演叫床也叫不过我。可是，你知道吗？我欺骗了你，在你面前，我的叫床是真的，不是“演出”的、不是“假装”的。我觉得你真的上了我，照你的偏爱，任你强暴着我，我“欺骗”了你，我用真的喜欢，“救”了我自己。</p>
+<p>本来本着甘愿被欺骗而来，结果却是我欺骗了你。你原来要的，就是我的欺骗。你要我一切以“演出”来表达、“假装”来表达，你不要believe，你只要make believe，你“救”了我，你使我正确的错乱。</p>
+<p>我从学校带回A片，你跟我讨论A片，你要求你的十七岁模特儿一个人“演出”A片、“假装”种种，你照相、你录音、你赞美我、你惊讶我是好演员，你说When Harry Met Sally里女主角十七岁演叫床也叫不过我。可是，你知道吗？我欺骗了你，在你面前，我的叫床是真的，不是“演出”的、不是“假装”的。我觉得你真的上了我，照你的偏爱，任你强暴着我，我“欺骗”了你，我用真的喜欢，“救”了我自己。</p>
 <p>“欺骗”一个人于永久吧，那人就是我、不是你。但是，当画面已经迷茫到进入了我的是勃起的你，你会用真的喜欢，“救”了我和你。</p>
 <p>《附记》下面这篇“A片颂”，是大师写的一篇笔记，他送给了我。</p>
 <p>A片有必要，因它提供了不同的观点。可叫作“切入观点”。</p>
@@ -3889,30 +3930,30 @@
 <p>认为一定“要自己来的才好”的，太egotism（念念不忘自我）了。有时候，你不可能自己来。去一下九寨沟吧。清溪之底，非潜水不可得其真，但潜水设限，一窥究竟，得靠专家拍摄的记录DVD才行，纵你身临其水，你也差得远呢。所以说，此乃A片原理也。问题是A片中意者极少，偶有片段照眼而已。</p>
 <p>另外，从视野和永远一再出现的角度看，A片有“真正你自己上”所不及的优点。“真正你自己上”，多累啊、多短暂啊、这一次与下一次之间，多少经营和等待啊，可是A片就完全不同了。“有召即重来”，并可以放repeat键上，重来十次、二十次、一百次，让你“极视听之娱”到每一细部、每一角度、每一节奏，和各种不同的美丽女人和叫床。在真实生活中，你无力也不可能有这么多的“真实”，这么多的多样、多角度和永久。</p>
 <p>在A片中，又可看到慢镜头，别有奇趣。其中不但看到细部的过程，并且看到过程的细部。射精时，化为慢动作镜头，看到液体在缓缓奔放，真是又奇观又壮观，写“秋声赋”的欧阳修看不到啊。《秋声赋》那句“有动于中，必摇其精”，如把它歪解，正好是慢动作射精的极致，欧阳修无此眼福也。</p>
-<p>Blake,yes;black,no.</p>
+<p>Blake, yes; black, no.</p>
 <p>一首诗的最后一句，出了双胞案，我和大师简单的讨论过，大师夸奖我，要我详细写出来。</p>
 <p>英国诗人WilliamBlake有首诗叫LOVE’SSECRET（爱情的秘密），诗中说爱情是不可以告诉情人的，它只是微风，不是语言。这一真理，我不知道，我告诉了女朋友，虽然千言万语，可是女朋友却离开了我。这时候，一个过客走过来了，诗的最后四句是：</p>
 <p>Soonaftershewasgonefromme,</p>
-<p>Atravelercameby,</p>
-<p>Silently,invisibly:</p>
-<p>Hetookherwithasigh.</p>
-<p>这过客只凭一声叹息、asigh，就带走了别人的女朋友。</p>
+<p>A traveler came by,</p>
+<p>Silently, invisibly:</p>
+<p>He took her with a sigh.</p>
+<p>这过客只凭一声叹息、a sigh，就带走了别人的女朋友。</p>
 <p>我跟大师说，我可要跟你比一次学问呢，我念的Blake原诗跟你背的不一样，原诗最后四句是：</p>
 <p>Soonaftershewasgonefromme,</p>
-<p>Atravelercameby</p>
-<p>Silently,invisibly—</p>
-<p>O,wasnodeny.</p>
-<p>他用惊讶赞美了我。然后说：这诗可改得真好，原诗O,wasnodeny太抽象了，不如Hetookherwithasigh传神。</p>
+<p>A traveler came by</p>
+<p>Silently, invisibly—</p>
+<p>O, was no deny.</p>
+<p>他用惊讶赞美了我。然后说：这诗可改得真好，原诗O, was no deny太抽象了，不如He took her with a sigh传神。</p>
 <p>本来，我也这样想。</p>
 <p>但是，有人又使我重新认识了O,wasnodeny，就是他。他从不sigh，好像也从不deny，从不不deny，他似乎比Blake知道更多的LOVE’SSECRET，那就是在deny有无中，绝对不sigh。他理解的爱情像山色、“山色有无中”，山是只安谧、只雄奇，山从不叹息。</p>
 <p>他说：爱情为什么要羼入叹息？</p>
 <p>他说：爱情被俗人“负面化”。</p>
-<p>“负面化”的爱情，从叹息朝下数：烦恼、哀愁、伤感、悲恸、痛苦、忧虑、闹情绪，到愁眉苦脸、哭个不停，他认为这一切一切都太“负向性”（negativetropism），而太“负向性”是不懂得爱情的，因为明明是人生最大的快乐，反被搅得心神不宁、乌烟瘴气，这太蠢了，爱情是聪明人的事，怎么搅进了蠢物？</p>
+<p>“负面化”的爱情，从叹息朝下数：烦恼、哀愁、伤感、悲恸、痛苦、忧虑、闹情绪，到愁眉苦脸、哭个不停，他认为这一切一切都太“负向性”（negative tropism），而太“负向性”是不懂得爱情的，因为明明是人生最大的快乐，反被搅得心神不宁、乌烟瘴气，这太蠢了，爱情是聪明人的事，怎么搅进了蠢物？</p>
 <p>他说，少年维特就是第一蠢物，包括他的作者和跟着娘娘腔的读者。贾宝玉也够瞧的，《红楼梦》有一个女读者，着了迷，生了大病，她爸爸气得烧了这部书，女读者大哭大闹、拚死拚活，大叫说：“奈何烧杀我宝玉！”</p>
 <p>他说，文学戏剧里、电影电视里，把爱情题目表现得“缠绵悱恻”，是可以的，但真实生活就不可以，因为要生胃癌、要出人命。</p>
 <p>他这样说着，还露出玩世的笑。</p>
 <p>他这样子的情人，女孩子会喜欢吗？</p>
-<p>他有足够的诗意、足够的神秘、足够的高傲、足够的爱理不理似的，他的人生，没有灰色；他的Shakespeare,withouttears。</p>
+<p>他有足够的诗意、足够的神秘、足够的高傲、足够的爱理不理似的，他的人生，没有灰色；他的Shakespeare, without tears。</p>
 <p>洗澡的革命党</p>
 <p>谁说我是模特儿？我是革命党。</p>
 <p>革命党有反叛性格、革命党为所欲为、革命党用钥匙开门进来、革命党要洗澡。</p>
@@ -3922,39 +3963,39 @@
 <p>大师，偷窥者，要不要偷窥？Brand-new十七岁生活版。但他不会。</p>
 <p>这是我了解的大师。大师会忍住不偷窥浴室里的革命党。</p>
 <p>大师反革命。</p>
-<p>我披了大师的ELLE牌浴袍，走出卧室，坐在书桌旁，打起电脑，浴袍包的是一身赤裸，像包个漂亮的EEL。我打出一行回文：EELWASIEREISAWLEE，我很得意，我请大师即MASTERLEE过来看这行回文，他笑起来，他问为什么见到他以前是鳗鱼，我说鳗鱼最后洄游到大海，可是如今你对我来说，就是大海。他笑了。</p>
+<p>我披了大师的ELLE牌浴袍，走出卧室，坐在书桌旁，打起电脑，浴袍包的是一身赤裸，像包个漂亮的EEL。我打出一行回文：EEL WAS I ERE I SAW LEE，我很得意，我请大师即MASTER LEE过来看这行回文，他笑起来，他问为什么见到他以前是鳗鱼，我说鳗鱼最后洄游到大海，可是如今你对我来说，就是大海。他笑了。</p>
 <p>笑的时候，他一闪了浴袍里面，他至少看到一双革命党的小奶。</p>
 <p>我不但写了这篇文章，还替大师写了读后感。读后感只有三行，全文如下：</p>
 <p>多么可爱的一篇文章！</p>
 <p>多么可爱的一个革命党！</p>
 <p>没办法表达我多么喜欢了，只后悔没在浴室里强奸革命党。</p>
 <p>被强奸后的我</p>
-<p>你出题目要我写我，我怎么写呢？因为我不在，我逃离了我，像是18世纪英国智者所说的：“我没捉到我自己。”（Inevercancatchmyself.）原来我是我的逃犯。</p>
-<p>你说庄子说“吾丧我”，我想庄子让他自己逃掉了，他不像休谟（DavidHume）那么笨，要catch、要捉到逃走的自己。</p>
+<p>你出题目要我写我，我怎么写呢？因为我不在，我逃离了我，像是18世纪英国智者所说的：“我没捉到我自己。”（I never can catch myself.）原来我是我的逃犯。</p>
+<p>你说庄子说“吾丧我”，我想庄子让他自己逃掉了，他不像休谟（David Hume）那么笨，要catch、要捉到逃走的自己。</p>
 <p>我照着镜子问：“这是我。这是我吗？这是逃走后剩下的我。那逃走的在哪里？这不是完全的我、完整的我。我在和我捉迷藏，那个我没逃掉，只是藏起来了。”</p>
 <p>我决定寻找，在找字上加一撇，寻我。像那唐代寻春不见春的女尼，最后在梅花枝头，找到了春天。</p>
 <p>可是，那是春天，春天藏在梅花里。我呢？我比春天要早，我的春天，藏在冬天里。</p>
-<p>当我偎在你怀里、容身在你怀里，我仿佛藏在“冬之狮”（TheLioninWinter）里。不是“冬之狮”的舞台剧，也不是电影，只是狮与冬、只是冬与狮。</p>
+<p>当我偎在你怀里、容身在你怀里，我仿佛藏在“冬之狮”（The Lion in Winter）里。不是“冬之狮”的舞台剧，也不是电影，只是狮与冬、只是冬与狮。</p>
 <p>当我藏我在你，那捉迷藏的我，也不再躲藏。那个我，也回归于你。</p>
 <p>但我还是试图捉到我自己。像EdwardG.Robinson（爱德华鲁滨逊）戏中的道白：“Suddenlyitsnappedup,andtherewasonlyonethinglefttodo.Iarrestedmyself.”</p>
 <p>我没捉到我自己，你却捉到了我。</p>
 <p>我又照了镜子，里面出现的是：一个赤裸的我、赤裸的我自己，和看我赤裸的你。</p>
 <p>我终于明白，我自己不认识我自己，我寻找，我找不到我自己。</p>
-<p>听到两个小男孩的对话。男孩甲说：“是这样的吗？谁说的？”男孩乙把手一指自己鼻子，说：“是我、我、我。Me,myself,andI.”多么哲学！我也可以有Me,myself,andI，但哪个是我呢？我寻找，我找不到自己。</p>
+<p>听到两个小男孩的对话。男孩甲说：“是这样的吗？谁说的？”男孩乙把手一指自己鼻子，说：“是我、我、我。Me, myself, and I.”多么哲学！我也可以有Me, myself, and I，但哪个是我呢？我寻找，我找不到自己。</p>
 <p>挪威文学家PeerGynt（皮尔金特）剧本中，说一个人在寻找自己，却发现自己是一颗洋葱，皮一层一层剥开，但却在最后空无一物。我不敢寻找我自己，我怕我是洋葱式“植物人”。</p>
-<p>我是什么？我不在转变得不知自己是什么吗？从“我自认怎样我就怎样”（IamwhatIthink.），到“我被你要怎样，我就怎样”（Iamasyoudesireme.），不正是我的觉悟吗？当我寻找到这一真理，我还要寻找自己吗？</p>
-<p>在镜子里，我赤裸着，却不认识自己；但在镜子里，我赤裸着，同时看到你的赤裸，我恍然寻到了我自己。“我拥有什么就是什么”（IamwhatIhave.）、“我占有什么就是什么”（IamwhatIpossess.）原来谜底在兹。在镜子里，你拥有了占有了我，但是真正的拥有和占有却是你知道如何深入的深处。当那一深入来临，我终于明白，我认识了我自己，我寻找到深入我的强暴，在强暴中，我找到自己。</p>
-<p>我是这样藐小，不论Me,myself,andI，我都无法自力catch到。但我不catch自己而catch你那巨大，你大巨大，竟帮我找到自己。</p>
+<p>我是什么？我不在转变得不知自己是什么吗？从“我自认怎样我就怎样”（I am what I think.），到“我被你要怎样，我就怎样”（I am as you desire me.），不正是我的觉悟吗？当我寻找到这一真理，我还要寻找自己吗？</p>
+<p>在镜子里，我赤裸着，却不认识自己；但在镜子里，我赤裸着，同时看到你的赤裸，我恍然寻到了我自己。“我拥有什么就是什么”（I am what I have.）、“我占有什么就是什么”（I am what I possess.）原来谜底在兹。在镜子里，你拥有了占有了我，但是真正的拥有和占有却是你知道如何深入的深处。当那一深入来临，我终于明白，我认识了我自己，我寻找到深入我的强暴，在强暴中，我找到自己。</p>
+<p>我是这样藐小，不论Me, myself, and I，我都无法自力catch到。但我不catch自己而catch你那巨大，你大巨大，竟帮我找到自己。</p>
 <p>谢谢你那巨大，但不要再照镜子。毕竟只有十七岁。不到十八岁，不宜看到镜里的自己。</p>
 <p>羽化</p>
-<p>望着马克杯上字：YOU,BOSS;ME,NOT.要写一百篇给BOSS。YES，这是第一篇：ME,NOT.。</p>
+<p>望着马克杯上字：YOU, BOSS; ME, NOT.要写一百篇给BOSS。YES，这是第一篇：ME, NOT.。</p>
 <p>一直是“被迫做喜欢的”，那是一种奇异的快乐，只有十七岁才有的快乐……</p>
 <p>每次都是第一次、每次都没有经验与先例、每次都是新解、每次都从苍白开始……</p>
 <p>可怕的事真的太多太多。可怕是永远无法熟悉、可怕是每次都陌生、可怕是第二次就是第一次……</p>
-<p>为什么要写在纸上？因为避免写在身上，受不了的是毛笔在背上写字，我讨饶，哀求停下来。换成鹅毛笔。用反了的时候，又讨饶，请换回毛笔。但BOSS不肯了……Youcouldhaveknockedmeoverwithafeather.啊，是大师、是你。</p>
+<p>为什么要写在纸上？因为避免写在身上，受不了的是毛笔在背上写字，我讨饶，哀求停下来。换成鹅毛笔。用反了的时候，又讨饶，请换回毛笔。但BOSS不肯了……You could have knocked me over with a feather.啊，是大师、是你。</p>
 <p>BOSS用羽毛写了我，我在赤裸中，乞求怜悯。条件是我同意在赤裸中，写篇作文——“片羽”。</p>
 <p>在赤裸中，我写了：</p>
-<p>我的语言已羽化，我的片语就是片羽。我生命中的精华常常是片语可尽，片语化为片羽，飘然羽化而登仙。羽毛是迷人的，尤其和赤裸在一起，它使赤裸更赤裸、更激发出性感与生动，在巴黎歌舞女郎身上，可以感受到“羽毛+赤裸+动态”的美感、性感、与快感。羽毛的神奇，并不全在舞台上，不在羽霓成阵，即使是一小片，它凌云而降或凌空而起的一小片，当它静止在我指端，我仿佛举起神秘、美丽、与世界。我的语言已羽化，我的片语就是片羽。IdeceivemyselfwhenIfancythatonlyweaknessneedssupport.Strengthneedsitmore.Afeathersustainsitselflongintheair.</p>
+<p>我的语言已羽化，我的片语就是片羽。我生命中的精华常常是片语可尽，片语化为片羽，飘然羽化而登仙。羽毛是迷人的，尤其和赤裸在一起，它使赤裸更赤裸、更激发出性感与生动，在巴黎歌舞女郎身上，可以感受到“羽毛+赤裸+动态”的美感、性感、与快感。羽毛的神奇，并不全在舞台上，不在羽霓成阵，即使是一小片，它凌云而降或凌空而起的一小片，当它静止在我指端，我仿佛举起神秘、美丽、与世界。我的语言已羽化，我的片语就是片羽。I deceive myself when I fancy that only weakness needs support. Strength needs it more. A feather sustains itself long in the air.</p>
 <p>因为我是羽毛，所以我来亲近你。</p>
 <p>不要信任不会飞的羽毛，尤其当BOSS有那样一支笔，我变得必须裸体。但是，当我用它写下这篇文字，我要把它收为已有，BOSS没有了羽毛，但没有了，BOSS还是BOSS，他有手指。</p>
 <p>罗盘</p>
@@ -3969,7 +4010,7 @@
 <p>你把答案，化成了指北针。</p>
 <p>指北针没有骗你，但可帮你骗自己。</p>
 <p>在南极</p>
-<p>在北极九十度，NORTHPOLE90°N，站在中间，走向左右。向左五步，下面是加拿大；向右五步，下面是格陵兰；再挪移一下，下面是冰岛；再一下，是俄罗斯。在脚下，东经一百八十度、西经一百八十度，多么神秘，一切在你两条大腿之下，世界变得那么小。北极太熟悉了，我去南极。</p>
+<p>在北极九十度，NORTH POLE 90°N，站在中间，走向左右。向左五步，下面是加拿大；向右五步，下面是格陵兰；再挪移一下，下面是冰岛；再一下，是俄罗斯。在脚下，东经一百八十度、西经一百八十度，多么神秘，一切在你两条大腿之下，世界变得那么小。北极太熟悉了，我去南极。</p>
 <p>在南极，外面是时速三十四英里的强风、是华氏零下三十度以下的气温。二月间，补给飞机走后，要等到十一月才能再来。所以，在温度上和时间上，最有这种“南极感”。</p>
 <p>在南极，看到的方向都是北方，你像一支指北针。你的窗子面向北，你看到的一律是北、北、北。</p>
 <p>到南极，一开始必然疲乏、晕眩、头痛，会出现高山症，因为南极高度是一万一千六百英尺。不过，两个星期内，当身体制造更多红血球以后，症状就开始消退。红血球可能增多百分之十五，但白血球可能少了一半，你会变得更健康，因为没有任何传染病。</p>
@@ -3995,21 +4036,21 @@
 <p>ummmmmm-ummmmmm-ummmmmm-ummmmmm-ummmmmm-ummmmmm-</p>
 <p>ummmmmm-ummmmmm-ummmmmm-ummmmmm-ummmmmm-ummmmmm-</p>
 <p>ummmmmm-ummmmmm-ummmmmm-ummmmmm-ummmmmm-ummmmmm-</p>
-<p>打成一页的篇幅，算是交卷。十七岁看到男人的异议，她从书架上拿下TimClissold（克利索得）的那本Mr.China《中国先生》，翻出第162页的汉文英译：</p>
+<p>打成一页的篇幅，算是交卷。十七岁看到男人的异议，她从书架上拿下Tim Clissold（克利索得）的那本Mr. China《中国先生》，翻出第162页的汉文英译：</p>
 <p>施氏食狮史</p>
 <p>石室诗士施氏，嗜食狮，誓食十狮。氏时时适市视狮。十时，氏适市，适十狮适市。是时，氏视是十狮，恃十石矢势，似是十狮逝世。氏拾是十狮尸适石室，石室湿，似侍试拭石室。石室拭，氏始试食是十狮尸。是时，氏始识事是事实。</p>
 <p>试释是事！</p>
-<p>Shihshihshihshihshih</p>
-<p>Shihshihshihshihshihshih,shihshihshih,shihshihshihshih.Shihshihshihshihshihshihshih.Shihshih,shihshihshih,shihshihshihshihshih.Shihshih,shihshihshihshihshih,shihshihshihshihshih,shihshihshihshihshihshih.Shihshihshihshihshihshihshihshihshih.Shihshihshih,shihshihshihshihshihshih,shihshihshih,shihshihshihshihshihshihshihshih,shihshih,shihshihshihshihshihshihshih.</p>
-<p>Shihshihshihshih!</p>
+<p>Shih shih shih shih shih</p>
+<p>Shih shih shih shih shih shih, shih shih shih, shih shih shih shih. Shih shih shih shih shih shih shih. Shih shih, shih shih shih, shih shih shih shih shih. Shih shih, shih shih shih shih shih, shih shih shih shih shih, shih shih shih shih shih shih. Shih shih shih shih shih shih shih shih shih. Shih shih shih, shih shih shih shih shih shih, shih shih shih, shih shih shih shih shih shih shih shih, shih shih, shih shih shih shih shih shih shih.</p>
+<p>Shih shih shih shih!</p>
 <p>男人笑起来，把十七岁搂在怀里。</p>
 <p>十七岁的男人，是大师。</p>
 <p>梅派叫床</p>
 <p>大师的DVD抽屉里，有那张《当哈利遇见莎莉》，我看了。有一段在餐厅里叫床的镜头。为什么要演出叫床，是莎莉说，女人可以演出高潮，男人察觉不到，于是莎莉即席演出，证实要骗你，你就是看不出来。当时餐厅邻桌客人特别跑来，请教你小姐究竟点了什么菜，竟有这种效果。在“老掉牙”的DVD中，这段镜头有趣味。我倒了片，请大师一起来看，问他感想。</p>
 <p>问大师，MegRyan（梅格莱恩）哪里最漂亮？他说，红颜老去，不必再掉了。但她的嘴角最漂亮。现在，她老了，难道嘴角也老了？问题是，衫出嘴角的周边老了。嘴角再美也没用了。</p>
-<p>叫床呢？大师说你会叫得比她好，如果你“演出”。我说你要我“演出”吗，他摇摇头。我问为什么不要，他笑了，他说他会“演出”强奸我，因为他太喜欢我叫床。我说如果我“演出”喜欢被你强奸呢？大师说：“我是很会强奸的，效果保证很逼真，问题是，那种情况下，不能保证还在‘演出’，万一是真的，就不太好。”问为什么不好，大师说，那会表示十七岁爱上了我。问他是不是怕被十七岁爱上，他勉强的点点头。我问他说：“又没爱情、又不是买卖、又不许自愿、又要叫床、又装成强奸和被强奸，这是什么怪关系啊？”大师说：“这就是BOSS与十七岁模特儿的怪关系。”我说：“我怀疑你爱上了朱仑，可是你不承认。”大师说：“如果一切都不让它发生，只承认爱上朱仑是无害的。”我说：“你认为你老了，你不敢再爱女人了。”大师说：“我认为我聪明了，我不要再听叫床以外的声音了。”我说：“好吧，有一天，我不来了，敲门的是另一个人。”大师问：“是谁？”我说：“MegRyan，她还带了一台扩音器呢！”大师大笑起来，他紧搂住我。</p>
-<p>五世纪的中国诗人谢灵运描写的：“天下才共一石”，一石是十斗，天下的才气一共十斗，“曹子建（曹植）独得八斗，我得一斗，古及今共同一斗。”请注意这种表达法。再看现代的T.S.Eliot（艾略特）描写的：“DanteandShakespearedivide,theworldbetweenthem;thereisnothird.”（但丁和莎士比亚朋分世界〔才气〕，没有第三者。）请注意这种表达法。两种表达法，前后相差十五个世纪，后者也没有抄袭前者，但却不谋而合。这种“他们包了”、“我们包了”的观点，多么自负、多么豪情万丈。</p>
-<p>人间的快乐、高层次的快乐，是高层次的灵犀相通、高层次的触类旁通的一笑，多么快乐；自己高层次，又有幸遇到另一个高层次，由相通到一笑，多么快乐。这种高层次的快乐，来自两人精神上的相知，但是，也许，在这种相知之上，又加上一点点精神以外的，在相通一笑外加上交流颠倒，似乎更加了层次。不过，但丁一定反对、曹子建也不赞成，“一点点精神以外的”，太容易破坏精神层面了，去问李清照、去问ElizabethBarrettBrowning，她们一定都反对，这些才气横溢的，不喜欢长条纵卧、不喜欢青女横陈。</p>
+<p>叫床呢？大师说你会叫得比她好，如果你“演出”。我说你要我“演出”吗，他摇摇头。我问为什么不要，他笑了，他说他会“演出”强奸我，因为他太喜欢我叫床。我说如果我“演出”喜欢被你强奸呢？大师说：“我是很会强奸的，效果保证很逼真，问题是，那种情况下，不能保证还在‘演出’，万一是真的，就不太好。”问为什么不好，大师说，那会表示十七岁爱上了我。问他是不是怕被十七岁爱上，他勉强的点点头。我问他说：“又没爱情、又不是买卖、又不许自愿、又要叫床、又装成强奸和被强奸，这是什么怪关系啊？”大师说：“这就是BOSS与十七岁模特儿的怪关系。”我说：“我怀疑你爱上了朱仑，可是你不承认。”大师说：“如果一切都不让它发生，只承认爱上朱仑是无害的。”我说：“你认为你老了，你不敢再爱女人了。”大师说：“我认为我聪明了，我不要再听叫床以外的声音了。”我说：“好吧，有一天，我不来了，敲门的是另一个人。”大师问：“是谁？”我说：“Meg Ryan，她还带了一台扩音器呢！”大师大笑起来，他紧搂住我。</p>
+<p>五世纪的中国诗人谢灵运描写的：“天下才共一石”，一石是十斗，天下的才气一共十斗，“曹子建（曹植）独得八斗，我得一斗，古及今共同一斗。”请注意这种表达法。再看现代的T. S. Eliot（艾略特）描写的：“Dante and Shakespeare divide, the world between them; there is no third.”（但丁和莎士比亚朋分世界〔才气〕，没有第三者。）请注意这种表达法。两种表达法，前后相差十五个世纪，后者也没有抄袭前者，但却不谋而合。这种“他们包了”、“我们包了”的观点，多么自负、多么豪情万丈。</p>
+<p>人间的快乐、高层次的快乐，是高层次的灵犀相通、高层次的触类旁通的一笑，多么快乐；自己高层次，又有幸遇到另一个高层次，由相通到一笑，多么快乐。这种高层次的快乐，来自两人精神上的相知，但是，也许，在这种相知之上，又加上一点点精神以外的，在相通一笑外加上交流颠倒，似乎更加了层次。不过，但丁一定反对、曹子建也不赞成，“一点点精神以外的”，太容易破坏精神层面了，去问李清照、去问Elizabeth Barrett Browning，她们一定都反对，这些才气横溢的，不喜欢长条纵卧、不喜欢青女横陈。</p>
 <p>偷偷写这些，不要告诉大师。大师高层次又高层次。大师会和曹子建一样，喜欢死去情人的枕头。当我死后，大师会喜欢上我的什么？根本的问题是，我是他的情人吗？他从来没有承认，他只承认他自己的枕头。我承认我睡过那枕头。我似乎不太记起它曾垫高头部以外的我。我只记得一千年前日本清少纳言那本《枕草子》，清少纳言那种女孩子，写书会有枕上的“一点点精神以外的”内容吗？当然不会，虽然事实上，日本女人第二天会为昨夜的“骚笑过度”向男人道歉，并保证以后要严肃。我似乎不太记起可能根本没有发生的一切，但我断定我不会笑，我是庄严的，庄严得不会笑在枕上。大师喜欢冷艳清秀的女人。大师说他喜欢冷艳清秀的十七岁最后失控、要叫床。我似乎不太记起我叫床，但我也不敢否认。我只记得我忘了赞美大师才气的十斗，在重量下，我忘了重量，只想起长度，我赞美了长度。我醒来的时候，枕头在地下。枕头不靠我的承认，它见证了我似乎不太记起的一切、一切、一切，根本没有发生的一切。</p>
 <p>修女洗澡</p>
 <p>一提到模特儿，便有脱衣服的联想和换衣服的联想，它是一个跟衣服有密切关系的行业。不论脱给人看，还是穿给人看。穿给人看，只限于时装模特儿，其他模特儿都是脱的，因此，对自己裸体给人看，要有理解。</p>
@@ -4025,8 +4066,8 @@
 <p>ClarenceDay（克莱伦斯戴）在LifeWithFather《跟爸爸一块儿过日子》一书里，有一章专门讨论电话刚发明时的纠缠不清。爸爸老是认定，只要电话铃响，一定就是他的，抓住不放，闹出好多纠纷。现代人类进步了，爸爸们年纪的男人，都先谢天谢地电话不是他的了。电话是十七岁的。但是，十七岁接手机才对盘，接电话的，真的是女秘书啊。</p>
 <p>我假设大师看了我上面写的，他的读后感是：“知道漂亮的女秘书要脱什么吗？答案是：你以为的答案是错的。正确的答案是：‘脱口而出’。”</p>
 <p>大师低估了我。</p>
-<p>我会写GirlFriday，那意思就是女秘书，她做的事从接电话、收文件、听速写、发打字、倒咖啡、递药丸、订戏票、骗访客等等等等以外，还包括坐大腿、坐在老板大腿上。当然，还要藏在老板办公桌底下，你应该看过那种漫画。</p>
-<p>我想我是ModelSaturday，我在办公室，不做任何事，但在浴室，就会遭遇一点困难。在那个地方，做的，可太多了。</p>
+<p>我会写Girl Friday，那意思就是女秘书，她做的事从接电话、收文件、听速写、发打字、倒咖啡、递药丸、订戏票、骗访客等等等等以外，还包括坐大腿、坐在老板大腿上。当然，还要藏在老板办公桌底下，你应该看过那种漫画。</p>
+<p>我想我是Model Saturday，我在办公室，不做任何事，但在浴室，就会遭遇一点困难。在那个地方，做的，可太多了。</p>
 <p>打倒佛洛伊德</p>
 <p>我不说话的时候，十七岁；说话的时候，像妈妈；写字的时候，像外祖母。为什么要我写字？你要老了我。</p>
 <p>你说我不会再老，你说我像达文西（LeonardodoVinci）画出的圣母和圣外祖母，但在画中，她们年轻得像姊妹，并且都像任何一张耶稣画像的小妹，佛洛伊德分析说，因为达文西是私生子，四岁时跟了父亲及新的妈，前后二妈都慈爱，所以，画出来的耶稣之母与耶稣之外祖母，都是慈云普照。</p>
@@ -4035,7 +4076,7 @@
 <p>维护达文西！打倒佛洛伊德！</p>
 <p>苏小妹主义</p>
 <p>鸵鸟的人生观鸵鸟未必那样，但人给了它那样。第一，它不把眼睛看它不要看的，它宁愿埋在沙里；第二，它把屁股撅起来给你看，你也不必看到我的脸，看我屁股就好了。</p>
-<p>人给鸵鸟主义化，造出ostrichism，叫“藏头露尾主义”、造出ostrichpolicy，“鸵鸟政策”，特色是toplayostrichandpretendnottosee，自欺而佯示不见、假装没看见。但是，真的鸵鸟，安知不存心如此？</p>
+<p>人给鸵鸟主义化，造出ostrichism，叫“藏头露尾主义”、造出ostrich policy，“鸵鸟政策”，特色是to play ostrich and pretend not to see，自欺而佯示不见、假装没看见。但是，真的鸵鸟，安知不存心如此？</p>
 <p>我认为“鸵鸟主义”太消极了，它只是“不见其所不欲见”，其实该积极起来，“只见其所欲见”，岂不更好？大千世界中，丑恶的画面太多了，能够选择性的训练出只看到好的一面，其他“视而不见”，岂不更好。</p>
 <p>能做到“视而不见”，当然也能做到“听而不闻”，诸如此类。</p>
 <p>这一积极，可叫“超鸵鸟主义”。</p>
@@ -4043,16 +4084,16 @@
 <p>不要那么悲观，只要多一点苏小妹，就会少一点牛屎。</p>
 <p>不过，为了给赏心悦目多一点保障，还是接近清爽一点的吧。自己有漂亮的小屁股给你看，就不必埋脸在沙里。也不要假装没看见，因为你真的看到了。</p>
 <p>洋麒麟</p>
-<p>英文中有一个字叫“尤尼康”（unicorn），一般英汉词典里，把它翻成“麒麟”，严格说来，这种翻译是错的。事实上，只能翻成“洋麒麟”。因为中国的麒麟，造型上与洋麒麟有一最大不同，就是前者像羊、后者像马，虽然洋麒麟也不无山羊胡子的羊态，但究竟还是马相毕露。何况，洋麒麟的独角，呈螺丝状，伸张如长螺丝钉，但中国的麒麟却没那样不雅。当然，看到女画家拉丝洛普（DorothyP.Lathrop）的可爱的小洋麒麟图片，又当别论。</p>
-<p>洋麒麟在印度、希腊、罗马的传说中屡见不鲜，在传说中，最有奇趣的，是中古时代传出的一种。说洋麒麟生性凶猛，其他动物莫之能御，但只有处女能生擒之，原因是洋麒麟性好枕在处女大腿上睡觉。头枕处女大腿之日，即化刚为柔之时。画家摩洛（GustaveMoreau）笔下的洋麒麟与裸女，早已画中有诗了。</p>
+<p>英文中有一个字叫“尤尼康”（unicorn），一般英汉词典里，把它翻成“麒麟”，严格说来，这种翻译是错的。事实上，只能翻成“洋麒麟”。因为中国的麒麟，造型上与洋麒麟有一最大不同，就是前者像羊、后者像马，虽然洋麒麟也不无山羊胡子的羊态，但究竟还是马相毕露。何况，洋麒麟的独角，呈螺丝状，伸张如长螺丝钉，但中国的麒麟却没那样不雅。当然，看到女画家拉丝洛普（Dorothy P. Lathrop）的可爱的小洋麒麟图片，又当别论。</p>
+<p>洋麒麟在印度、希腊、罗马的传说中屡见不鲜，在传说中，最有奇趣的，是中古时代传出的一种。说洋麒麟生性凶猛，其他动物莫之能御，但只有处女能生擒之，原因是洋麒麟性好枕在处女大腿上睡觉。头枕处女大腿之日，即化刚为柔之时。画家摩洛（Gustave Moreau）笔下的洋麒麟与裸女，早已画中有诗了。</p>
 <p>女诗人安妮林白（AnneMorrowLindbergh）有诗集《独角兽》（TheUnicorn），其中有《柙中独角兽》（TheUnicorninCaptivity）一诗，说独角兽在缧绁之中，一切寂寂；但是一枝独秀入墙来，生气在兹。横看成囚，纵看却是自由（Quiet,theUnicorn,/Incontemplationstilled,/Withacceptancefilled;/Quiet,saveforhishorn;/Aliveinhishorn;/Horizontally,/Incaptivity;/Perpendicularly,/Free.）。Horn在英文里，一个意思是“勃起的阴茎”。在勃起中生气在兹，却又得有馀式的独角之乐。</p>
 <p>一直把大师当成智者般的unicorn，我高兴我接触了他和它。神秘的，进入智者的神秘。我近乎渎神般的为它洗了，在它弹跳的勃起里，我退下神坛，静默的退出浴室。上帝一定宽恕我，因为它就是上帝；它也许不太宽恕我，因为我用纯洁反过来亵渎阴茎，留下那上帝啊，在失控中喘息。</p>
 <p>缘灭？</p>
 <p>雨。</p>
 <p>记得那首佚名的歌吗？最后两句是：</p>
-<p>Wefoundourlove,</p>
-<p>Becauseofrain.</p>
-<p>是因为下了雨，才发现爱情。但我必须说，这首Becauseofrain写得不够深刻。并且，它还有点BecauseofPain呢。我来写一首吧。</p>
+<p>We found our love,</p>
+<p>Because of rain.</p>
+<p>是因为下了雨，才发现爱情。但我必须说，这首Because of rain写得不够深刻。并且，它还有点Because of Pain呢。我来写一首吧。</p>
 <p>在廊下躲雨，</p>
 <p>陌生的陌生的站在一起。</p>
 <p>雨是躲过了，</p>
@@ -4069,14 +4110,14 @@
 <p>为什么不用看来有点奇怪的标准，去看爱情？爱情可以不是俗套。来如春梦、去似朝云；来如秋雨、去似晚晴，不也是吗？谁规定梦醒时分、雨停之际，要超过一刻钟？</p>
 <p>别以为一刻钟过去了就一切化为乌有了。照西方哲学家的理论，每隔三万五千年或四万九千年，天道会循环一次，一切都将重演；照中国哲学家的理论，每隔十二万九千六百年，天道会循环一次，一切都将重演。所以呀，雨中廊下的，还要轮回，第一次一刻钟的，下一次就半小时了。</p>
 <p>无言而去</p>
-<p>为什么每次一over，就无言离去？因为实在无法面对over后的赤裸。就在刚刚、就在十几分钟前，自己曾那样过、那样失控过、那样不是自己过。不是自己吗？那是无法抵赖的自己，被男人给强暴出来的自己。MyGod！我真无法想像有那样一个我。MyGod！请帮助我忘掉那样一个我。</p>
+<p>为什么每次一over，就无言离去？因为实在无法面对over后的赤裸。就在刚刚、就在十几分钟前，自己曾那样过、那样失控过、那样不是自己过。不是自己吗？那是无法抵赖的自己，被男人给强暴出来的自己。My God！我真无法想像有那样一个我。My God！请帮助我忘掉那样一个我。</p>
 <p>一个声音发出警告：不可以忘掉，如果忘掉，男人会回来再做一次。</p>
 <p>无法面对over以后的赤裸，难堪的是男人的赤裸、最难堪的是在男人眼神反射出来的我的赤裸。我怕看到over后的我的赤裸、怕男人看到我over后的赤裸。</p>
 <p>这并不是说，over以前的赤裸，男人的和我自己的，都可以面对，而是说，在那种激情之下，有比关心赤裸更严重的，并且，也不可能无言离去，因为正有一个女孩子在叫床取悦男人，而那男人，就是你。</p>
 <p>我必须在over以后无言离去，带着我的赤裸，告别你的赤裸。也许会因你的而想起我的、也许会因我的而想起你的、也许都不敢想，为了怕同时想起，那是可怕的画面，至少对十七岁应该是。可怜的十七岁。十七岁不可以做的，却“演出”了。“演出”了，十七岁又不可以看。镜里的自己、照片里的自己，那是我吗？我简直不要我看到那样的我自己，但我无法不喜欢那样的你，你赤裸中，强暴着另一赤裸，就是我。</p>
 <p>我必须远离、无言而去的远离，我要单独收回我自己。但我已难以面对自己的赤裸，因为一有赤裸的我，便浮现赤裸的你。</p>
 <p>也许唯一的盼望是不over，没有止境的一波又一波，死在一波又一波里，愿在你强暴中死去，一波又一波的死去，那是美丽的死，最后也是无言而去，但终场不是默默离开的孤单的赤裸，而是默默依恋强暴的赤裸。十七岁有十七岁的最好死法，如有选择，要的是心上男人对她的“强奸致死”。</p>
-<p>越想越荒谬了。其实，根本没有over。那是连续的、一次接一次连续的，那不是个别事件，不是一小时两小时后的结束，而是一次接一次的开始。over只是逗号（comma）、只是破折号（dash）、只是感叹号（exclamationmark）、只是分号（semicolon）或问号（questionmark），它永远不是句号（fullstop）。对真正的情人而言，那只是连续，不是段落。Over其实是一种误认，不是吗？</p>
+<p>越想越荒谬了。其实，根本没有over。那是连续的、一次接一次连续的，那不是个别事件，不是一小时两小时后的结束，而是一次接一次的开始。over只是逗号（comma）、只是破折号（dash）、只是感叹号（exclamation mark）、只是分号（semicolon）或问号（question mark），它永远不是句号（full stop）。对真正的情人而言，那只是连续，不是段落。Over其实是一种误认，不是吗？</p>
 <p>正因为是误认，所以，无言离去，只是连续中的一个符号变化，再也无法脱离那phallus的图腾。那动人的强暴，永远没有over。</p>
 <p>无言离去啊，只是一段删节号（ellipsis），英文的删节号只用三个点，我可能用六个、九个，多一点吧，让我在再见到图腾以前，有点像逃避、喘息，像乐章里的休止符。但是，休止符是乐章的一部分，它是内在的、不是外在的，它好像中止了音乐，像在无言离去，其实，G大调连续在那里。</p>
 <p>可怜的无言离去、可怜的十七岁。不论十七岁怎样，男人都喜欢。一切的一切，都惹来勃起。对十七岁说来，那从不是个名词，那永远是个动词、没有句号的动词、ing中的动词，我想到文法规则要打破，但是没想到被它打破。它启发出我的结论就是：它伟大得强暴了十七岁高中女生，也强暴了高中文法。</p>
@@ -4085,7 +4126,7 @@
 <p>我被强暴去虚拟，原来虚拟也可以被强暴的。</p>
 <p>我只好试着虚拟。</p>
 <p>他该有许多名字，其中一个，叫强暴。</p>
-<p>一次次的强暴是当然的，他强者、他雄性、他变态，但是啊，可怕的另有强暴以外的强迫，最凸出的两项是一、强迫叫床，二、强迫看自己怎样被强暴。明暗的灯光、多面的镜子、垫高的枕头，都是增加强迫看的设备，更明确的说，是道具。我实在很怕这些道具，它们使我难堪，使我自己看到我的屈从与无奈、看到我的配合与献身、看到我的自尊被in和out摧残，MyGod！我怎么变成了那样子！</p>
+<p>一次次的强暴是当然的，他强者、他雄性、他变态，但是啊，可怕的另有强暴以外的强迫，最凸出的两项是一、强迫叫床，二、强迫看自己怎样被强暴。明暗的灯光、多面的镜子、垫高的枕头，都是增加强迫看的设备，更明确的说，是道具。我实在很怕这些道具，它们使我难堪，使我自己看到我的屈从与无奈、看到我的配合与献身、看到我的自尊被in和out摧残，My God！我怎么变成了那样子！</p>
 <p>终于，我从他收藏的A片封套上找到护符。那是剪下的一幅交通号志式的红圆圈，拦腰一条红杠，杠掉下面18的大黑字，说明是“十八岁以下严禁观赏”。真是好的警告。我把它剪下来，在彩色影印机上放大，贴在一小块抗议牌上，藏在枕头下。</p>
 <p>我得救了！</p>
 <p>当无可避免的发生时候，一开始我尽力屈从，最后，一次又一次，没有停止的摧残，我受不了了，我才十七岁。</p>
@@ -4202,13 +4243,13 @@
 <p>“你以为我认识巫主任？”</p>
 <p>“你认识他吧？好奇怪，我感觉你认识他。”</p>
 <p>“你的感觉好神秘。”我站直了身体。</p>
-<p>“仿佛是missinglink，从巫主任那边断了线，却从你这边接上来。Suddenly,themissinglinkfellintoplace。”</p>
+<p>“仿佛是missing link，从巫主任那边断了线，却从你这边接上来。Suddenly, the missing link fell into place。”</p>
 <p>“你的感觉好神秘。”</p>
 <p>“好奇怪，他为什么自杀？”朱仑在自言自语。</p>
 <p>“你感觉呢？你感觉他为什么？”</p>
 <p>“我的感觉是，巫主任不是为了‘失败’而自杀，他是为了‘不可知’而留下一个谜，像一张白纸。”</p>
 <p>我听到了，为之一震，我想到巫主任留给我的那封信，打开只是一张白纸。</p>
-<p>“也许，”朱仑补充，“也许不是白纸，而是画面的另一半。像八百年前的宋朝画家萧照、夏珪，他们以一半的空白，衬出另一半的构图。说不定巫主任正是如此，他只显示白纸，要别人显示构图。我到底生了什么病，要背出一大堆专有名词也说不清的一大堆病。病不止一种，太复杂了。医生说复杂得可以成立一个以我名字为病名的病名——‘朱仑症’。所以啊，严格说来，是白纸。就如同一则笑话说的，一次宴会上，一位女士发现她正好坐在一位parson（牧师）和一位rabbi（法师）中间，这位女士说她好像是《旧约》和《新约》中间的一页，IfeelasthoughIwasaleafbetweentheOldandtheNewTestaments.”牧师听了，说：‘那一页，通常是一纸空白。’Thepage,madam,isusuallyabland!”好像一个大谜团，其中有一张‘台风眼’式的空白，只不知道是我、还是巫主任。」</p>
+<p>“也许，”朱仑补充，“也许不是白纸，而是画面的另一半。像八百年前的宋朝画家萧照、夏珪，他们以一半的空白，衬出另一半的构图。说不定巫主任正是如此，他只显示白纸，要别人显示构图。我到底生了什么病，要背出一大堆专有名词也说不清的一大堆病。病不止一种，太复杂了。医生说复杂得可以成立一个以我名字为病名的病名——‘朱仑症’。所以啊，严格说来，是白纸。就如同一则笑话说的，一次宴会上，一位女士发现她正好坐在一位parson（牧师）和一位rabbi（法师）中间，这位女士说她好像是《旧约》和《新约》中间的一页，I feel as though I was a leaf between the Old and the New Testaments.”牧师听了，说：‘那一页，通常是一纸空白。’The page, madam, is usually a bland!”好像一个大谜团，其中有一张‘台风眼’式的空白，只不知道是我、还是巫主任。」</p>
 <p>“听来好像你很了解巫主任。”</p>
 <p>“其实我只知道他是为我两次开刀的主治医师。我们没说过几句话。只是感觉他又远在天边、又近在眼前，尤其今年五月第二次开刀后，总是感觉这位名医离我很近，他的表情怪怪的，好像发现了一个帮他寻找什么的工具，又像我是一个风筝。现在，他自杀了，我该像是断了线的了。我不晓得怎么回事，只是感觉上有点纠缠。另一方面，我仿佛觉得我的病不太会好了，这次住院醒来，这种感觉越来越强烈，这次昏倒，没有再动手术了，如今知道巫主任自杀了，我恍然大悟了一切。我仿佛坐在一边，等待第三次昏倒，我准备我不再醒来了。”</p>
 <p>“不许你再胡思乱想了。”我紧紧握着她的手，又轻轻抚摸着。“好好养病，等待医生们弄清楚病情，治好，回家。”</p>
@@ -4238,25 +4279,25 @@
 <p>“你在干什么啊，朱仑。在跷家吗？”</p>
 <p>朱仑一笑。“应该不是跷家，只是希望这些东西放在这房子里。一如VirginiaWoolf所盼望的，‘一间自己的房子’（ARoomofOne’sOwn）。当然，也要一个‘葬花团’（BloomsburyGroup）。”</p>
 <p>“你指他们那个文化人雅集？”</p>
-<p>“是啊，每星期四一次。他们至少包括了吴尔芙和她妹妹、画家贝尔（VanessaBell）；她们的丈夫：作家兼出版商的吴尔芙（LeonardWoolf）以及艺术评论家贝尔（CliveBell）、还有经济学家凯因斯（Keynes）、小说家福斯特（Forster）、传记作家斯特雷奇（LyttonStrachey）、艺术评论家弗赖（RogerFry）、以及画家格兰特（DuncanGrant）。”</p>
+<p>“是啊，每星期四一次。他们至少包括了吴尔芙和她妹妹、画家贝尔（Vanessa Bell）；她们的丈夫：作家兼出版商的吴尔芙（Leonard Woolf）以及艺术评论家贝尔（Clive Bell）、还有经济学家凯因斯（Keynes）、小说家福斯特（Forster）、传记作家斯特雷奇（Lytton Strachey）、艺术评论家弗赖（Roger Fry）、以及画家格兰特（Duncan Grant）。”</p>
 <p>“你记得好熟。不过，在这没有文化水平的岛上，这一票人，只有你和我，还有个林妹妹。”</p>
 <p>“写《红楼梦》的文学家，他写林妹妹林黛玉，没有模特儿吗？真的模特儿林黛玉，就是他爱上的真的人，不是吗？”</p>
 <p>“真相不明。曹雪芹应该有个林妹妹的血肉之躯，再发展出许多林妹妹式的可爱。当然是那一时代的标准，多愁善感，非常病态。那个时代的女人，可爱的条件许多都被推翻了。谁还喜欢‘三寸金莲’呢？身体上的‘三寸金莲’我们扬弃了，还有思想上的‘三寸金莲’，也要扬弃。‘三寸金莲’指小脚、缠足是对身体上束缚的具体象征，也象征对思想上的束缚。以林黛玉为例，她的多愁善感是病态的，虽然有小说的张力。例如花谢了，花瓣落了，她小姐就悲哀起来、就哭哭啼啼，把花埋葬，并以《葬花诗》自悲身世，说‘侬今葬花人笑痴，他年葬侬知是谁？试看春残花渐落，便是红颜老死时，一朝春尽红颜老，花落人亡两不知。’这种在思想上的缠足、裹小脚，是病态的。也不是说花不可以葬，但那只是文字之美而已，英国吴尔芙他们‘葬花’是雅趣，林妹妹就是玩真的了。林妹妹是病态的，新时代的林黛玉，应该脱离病态，展现另一种可爱。”</p>
 <p>“你要的是穿上牛仔裤的林黛玉？”</p>
 <p>“也要的是脱下牛仔裤却看不到内裤的林黛玉。”</p>
 <p>“林妹妹辣妹了。”</p>
-<p>“辣妹太没大脑了，林妹妹可是有大脑的。有大脑多么重要。又唱又跳又扭又叫都不够，有大脑才算美女，否则只是美的过动儿而已。你正确的认同了这钢笔上的女人，但别认同过度。她最后也过不了关，自杀在RiverOuse（奥斯河）里了。”</p>
+<p>“辣妹太没大脑了，林妹妹可是有大脑的。有大脑多么重要。又唱又跳又扭又叫都不够，有大脑才算美女，否则只是美的过动儿而已。你正确的认同了这钢笔上的女人，但别认同过度。她最后也过不了关，自杀在River Ouse（奥斯河）里了。”</p>
 <p>“请放心，我活不到自杀的年纪。”</p>
 <p>“十七岁也有自杀的，那英国诗人。”</p>
-<p>“哦，你指ThomasChatterton（查特顿）？”</p>
+<p>“哦，你指Thomas Chatterton（查特顿）？”</p>
 <p>“除了他还有谁？唉，我真考不倒你，你全知道。”</p>
-<p>“他是十七岁自杀的。吃砒霜。他是神童。他最神的是十二岁就伪造15世纪一个假牧师叫ThomasRowley（劳利）的古文件，把当时英国骗得团团转，但他一开始，好像不是骗人，而是为自己建造一个幻想的世界。”</p>
+<p>“他是十七岁自杀的。吃砒霜。他是神童。他最神的是十二岁就伪造15世纪一个假牧师叫Thomas Rowley（劳利）的古文件，把当时英国骗得团团转，但他一开始，好像不是骗人，而是为自己建造一个幻想的世界。”</p>
 <p>“你说得对，后来弄假成真了。他还造假古董呢，真是神童，和你一样。”</p>
 <p>“这神童在写诗追念他朋友时，诗中提到他自己。</p>
 <p>FewarethepleasuresChattertone’erknew,</p>
-<p>Shortwerethemomentsofhistransientpeace;</p>
+<p>Short were the moments of his transient peace;</p>
 <p>Butmelancholyrobb’dhimofthosefew,</p>
-<p>Andthisharkbidallfuturecomfortcease.</p>
+<p>And this hark bid all future comfort cease.</p>
 <p>（清欢知几许，</p>
 <p>宁静每多磨，</p>
 <p>悲情盗残尽，</p>
@@ -4278,27 +4319,27 @@
 <p>“为了避免这种情况，你最好放弃来生。”</p>
 <p>“你大师真聪明，你在用答案作弄问题。每次看你学贯中西，我也来一次表演好吗？要不要听？”</p>
 <p>“要听，并且很高兴的要听。”</p>
-<p>“那我就表演了。希腊神话中Phrygia国王Gordius（戈尔迪）打了一个难解开的大结，就是GordianKnot（戈登结），神谕能解开这个结的方能为亚洲之王。公元前4世纪，亚历山大大帝看到这个结，大家看他如何解开，他却挥剑一劈，以劈成两半解决了问题。公元前3世纪，秦国的皇帝送了一条玉连环给齐国，说你们齐国人有智谋，能打开这玉雕的连环吗？大家看太后如何打开，老太太拿出锤子，迎头一敲，以敲碎玉连环解决了问题。两个故事，不谋而合，多么有趣。两个故事有同一个教训，就是：聪明人可以用答案作弄了问题。聪明又有决断力的人，用奇异的答案解决了恼人的问题。”</p>
+<p>“那我就表演了。希腊神话中Phrygia国王Gordius（戈尔迪）打了一个难解开的大结，就是Gordian Knot（戈登结），神谕能解开这个结的方能为亚洲之王。公元前4世纪，亚历山大大帝看到这个结，大家看他如何解开，他却挥剑一劈，以劈成两半解决了问题。公元前3世纪，秦国的皇帝送了一条玉连环给齐国，说你们齐国人有智谋，能打开这玉雕的连环吗？大家看太后如何打开，老太太拿出锤子，迎头一敲，以敲碎玉连环解决了问题。两个故事，不谋而合，多么有趣。两个故事有同一个教训，就是：聪明人可以用答案作弄了问题。聪明又有决断力的人，用奇异的答案解决了恼人的问题。”</p>
 <p>我鼓了掌。“朱仑学贯中西，讲得真好！这种‘学贯’，是电脑啦、人工智慧啦、什么什么的，都赶不上的，这是我们自然人的最后骄傲，不是吗？”</p>
 <p>“我们的最后骄傲，除了学贯中西外，我们还可以有我们自然人的演算方式，可以打败电脑啦、人工智慧啦、什么什么的，我可以以表演举例吗？”</p>
 <p>“要听，并且很高兴的要听。”我鼓掌。</p>
-<p>“那我就表演了。我也很阿基米德的，不过我不要一个‘支点’，我只要两条荒谬。任何人给我两条荒谬，我就可以算出他的年纪。一个笑话说，有个数学老师，一天出了一道难题给班上学生：‘一列火车每小时走六十公里，一条毛虫在同样时间内爬十英尺。’老师问：‘同学们，从这个题目，请你们算出我的年纪。’学生们都难住了，有个小男生却站起来说：‘老师，你是三十四岁。’老师说：‘对了，我正好三十四岁，请你告诉同学们，你是怎么算出来的。’小男生回答说：‘我有个邻居，他十七岁，他疯疯癫癫的，你一定是三十四岁，因为你比他疯一倍。’（Ihaveaneighbor,andheisseventeen.Heiscrazy.Youmustbethirty-four,becauseyouaretwiceascrazy.）看到了吧，只要有荒谬的两条，我们就有荒谬的答案。”</p>
+<p>“那我就表演了。我也很阿基米德的，不过我不要一个‘支点’，我只要两条荒谬。任何人给我两条荒谬，我就可以算出他的年纪。一个笑话说，有个数学老师，一天出了一道难题给班上学生：‘一列火车每小时走六十公里，一条毛虫在同样时间内爬十英尺。’老师问：‘同学们，从这个题目，请你们算出我的年纪。’学生们都难住了，有个小男生却站起来说：‘老师，你是三十四岁。’老师说：‘对了，我正好三十四岁，请你告诉同学们，你是怎么算出来的。’小男生回答说：‘我有个邻居，他十七岁，他疯疯癫癫的，你一定是三十四岁，因为你比他疯一倍。’（I have a neighbor, and he is seventeen. He is crazy. You must be thirty-four, because you are twice as crazy.）看到了吧，只要有荒谬的两条，我们就有荒谬的答案。”</p>
 <p>我笑起来。又鼓了掌。“不过，对十七岁的邻居而言，”我神秘停了一下，“不需要两条荒谬，只要一大条荒谬就够了。”</p>
 <p>朱仑一无表情的望着我，突然间，说了一句：“That’scrazy,man,crazy.（太棒了，哥儿们，真棒毙了。）”</p>
 <p>“一大条荒谬是什么？朱仑，它是什么？”</p>
 <p>“让我用一则笑话答复你。某君，以猜谜专家自居。一天，他出题让朋友猜：‘有个东西，上顶着天、下顶着地，是什么？’那朋友说：‘慢着。在我回答你以前，你先答复我这谜题：有个东西，上面朝东、下面朝西，是什么？’猜谜专家想了半天，猜不出来，说：‘我猜不出，到底是什么？’那朋友说：‘其实我的谜底和你一样，只不过我把它放平了而已。’”</p>
 <p>我鼓掌大笑。“总而言之、统而言之，朱仑啊，你的智慧、你的聪明、你的口才、你的反应、你的博学，真是博学……都是超级的、超第一流的，和你在一起，我超快乐超快乐超快乐，我超快乐得想死去，像那playboy大色狼，美国电影明星ErrolFlynn（埃洛弗林）死的时候，有十七岁、A17-years-oldgirl在身边。”</p>
-<p>“A17-years-oldgirl陪他死了？”</p>
+<p>“A 17-years-old girl陪他死了？”</p>
 <p>“没有，看他死了。”</p>
 <p>“你快乐得想死去？”</p>
 <p>“死去，死在超快乐里。”</p>
 <p>朱仑面露傲色，对我一笑。“‘死去，死在超快乐里’，你知道吗？这种幸福是一种特权，只有有这种特权的，才能享有，大师啊，你没有这种特权。”</p>
 <p>“可是，没有特权就不能超快乐及至于死吗？我不相信。我要一个超快乐的死，这是我的愿望，我要用诗意写我的愿望。”</p>
-<p>“用诗意写愿望吗？我倒早有准备了，一种写法应该是：Liveyoung,diesuddenandleaveagoodlookingcorpse.活得年轻、死得突然、留下一具美丽的尸体。你喜欢吗？”</p>
+<p>“用诗意写愿望吗？我倒早有准备了，一种写法应该是：Live young, die sudden and leave a good looking corpse.活得年轻、死得突然、留下一具美丽的尸体。你喜欢吗？”</p>
 <p>“写得真好，洒脱而凄凉，只是你这么年轻，死亡对你太遥远了，你写得太遥远了。”</p>
 <p>“遥远的突然来到，也是人生啊，也是人的一生啊。”</p>
 <p>“就算这前提成立，孔夫子也认为还是关心生吧，他说：‘未知死，焉知死？’生我们都不全知道了，死我们又怎么能知道。”</p>
-<p>“孔夫子说得对，死我们不能知道，但我们可以知道死的模样。不是说死后灵魂会离开尸体吗？有一天我死了，我的灵魂往下看我的尸体，是什么模样，我希望我看到一具美丽的尸体，agoodlookingcorpse。你呢，如果我死了，你看到的我，不是也要看到一具美丽的尸体吗？”</p>
+<p>“孔夫子说得对，死我们不能知道，但我们可以知道死的模样。不是说死后灵魂会离开尸体吗？有一天我死了，我的灵魂往下看我的尸体，是什么模样，我希望我看到一具美丽的尸体，a good looking corpse。你呢，如果我死了，你看到的我，不是也要看到一具美丽的尸体吗？”</p>
 <p>“如果真有这种情节，我想我应该不止于‘看到’，我会更多。”</p>
 <p>“更多？”</p>
 <p>“更多。意思是应该有多于看到的情节。”</p>
@@ -4308,7 +4349,7 @@
 <p>“不是。”</p>
 <p>“悲欣交集？”</p>
 <p>“也不是。应该有更高层次的、更复杂层次的。比如说，一部分的我流在你尸体里面，一同随你一起漂亮；比如说，你成为尸体的-ing中，我是参与者。你这么关心一具美丽的尸体，我也同样关心，但对我说来，并不止于看到，只是看到，对这样的美丽太失敬了。”</p>
-<p>“大师啊，你真是好情人，你如此romantic，并且，从你对我的谈话中，我深刻感觉到你的romantic气质，甚至激情到要‘强暴’你的情人，当然那种‘强暴’是一种性爱的花样，你的chiefhobby。另一方面，大师想像过十七岁的romantic吗？”说着，朱仑从“细软”提袋中拿出一张纸，递了给我，原来是她写的诗：</p>
+<p>“大师啊，你真是好情人，你如此romantic，并且，从你对我的谈话中，我深刻感觉到你的romantic气质，甚至激情到要‘强暴’你的情人，当然那种‘强暴’是一种性爱的花样，你的chief hobby。另一方面，大师想像过十七岁的romantic吗？”说着，朱仑从“细软”提袋中拿出一张纸，递了给我，原来是她写的诗：</p>
 <p>还魂</p>
 <p>我必须赶赴天堂，</p>
 <p>天堂在等我护照。</p>
@@ -4338,8 +4379,8 @@
 <p>上帝啊，不信，请来参观，</p>
 <p>参观小屁股一路上翘。”</p>
 <p>朱仑看得掩了嘴，一副快乐的模样，大概她想到她翘起来的小屁股、迷人的小屁股。她也想到她在诗里的黠趣，多么可爱的女孩子，临死还要赶回给男人in她，多么可爱！</p>
-<p>“问题是，你回来，可能发生‘管夫人现象’，两块泥，混在一起，‘我泥中有你，你泥中有我。’（Ihaveyouinmeandmeinyou.）上帝就苦恼了，因为等你也白等，你开始赖床，不肯回去了。”</p>
-<p>“像十九世纪诗人ChristopherPearseCranch（克兰池）那首IINTHEE,ANDTHOUINME，一开始也以泥为喻，Iambutclayinthyhands，多巧啊，管夫人西方也有。”</p>
+<p>“问题是，你回来，可能发生‘管夫人现象’，两块泥，混在一起，‘我泥中有你，你泥中有我。’（I have you in me and me in you.）上帝就苦恼了，因为等你也白等，你开始赖床，不肯回去了。”</p>
+<p>“像十九世纪诗人Christopher Pearse Cranch（克兰池）那首I IN THEE, AND THOU IN ME，一开始也以泥为喻，I am but clay in thy hands，多巧啊，管夫人西方也有。”</p>
 <p>“啊，我的学贯中西！你的学贯中西！”</p>
 <p>朱仑又回到了冷漠。她说我前面这首诗的确把她写得好可爱，但太“性好男色”了，她有这样“荒淫”吗？我说没有。她说那她一死就不会还魂了。我说：“你根本不会死、不会灵魂出走，因为你的灵魂正在为我‘性服务’。天堂不在太空，天堂在床上。”</p>
 <p>朱仑又回到了冷漠。“我们要严肃一点。我死的时候，你真的那样对我尸体吗？”</p>
@@ -4354,7 +4395,7 @@
 <p>“你算活得好好的一种。你没死啊。”</p>
 <p>“但我——”朱仑停下来，眼望窗外，“但我总觉得我会很早很早就死掉。”</p>
 <p>“如果这是真的，证明了公元前三百年雅典剧作家Menander（米南德）的定律：蒙神爱者早死、神爱者夭。”</p>
-<p>“Whomthegodslovediesyoung.”朱仑补上一句。</p>
+<p>“Whom the gods love dies young.”朱仑补上一句。</p>
 <p>“问题是，你不是蒙神的爱，而是先蒙人的爱。所以呀，没那么容易就给神抢去。”</p>
 <p>“被人爱是不算的，要被你爱的人爱才算。”</p>
 <p>“这也是个好标准。”</p>
@@ -4379,7 +4420,7 @@
 <p>珍惜是摧残、蹂躏、一次又一次强暴情人；</p>
 <p>珍惜是把珍惜凝住。</p>
 <p>“手淫十七岁”结束了、“强暴十七岁”开始了。“强暴十七岁”多么美好、多么珍贵，它的开始，其实就是结束。它不是最后一次，它是最后，只有一次。</p>
-<p>又想到那句：“未知生，焉知死？”“Whileyoudonotknowlife,howcanyouknowaboutdeath?”其实，这句话说反了，正确的顺序该是“未知死，焉知生？”只有深知死亡的人，才能反过来知道珍惜什么是生命。</p>
+<p>又想到那句：“未知生，焉知死？”“While you do not know life, how can you know about death?”其实，这句话说反了，正确的顺序该是“未知死，焉知生？”只有深知死亡的人，才能反过来知道珍惜什么是生命。</p>
 <p>十七岁的自己，是不完整的，因为身体内有了空间。当庞然大物静止的时候，她定义了什么是空间；当庞然大物动作的时候，她定义了什么是时间。宇宙在斯，那里就是宇宙，宇宙不在上帝的手里，宇宙在十七岁漂亮女生的时空里，这就是珍惜。</p>
 <p>不再计算沙漏，只知道它在颠倒、又颠倒。知道每一次漏尽都不是终结，而是开始，只要我们颠倒。</p>
 <p>注目流光也倾听声色，让拍立得、让录音带留下唯一、不再、与永恒。</p>
@@ -4389,7 +4430,7 @@
 <p>浓雾不是屏障、不是窗帘、不是黑夜、也不是魔术师。它不那么生硬、那么粗鲁、那么向晚、那么“演出”。它只是光明与温柔，在一切都存在时，一切不见了。</p>
 <h2 id="走进磺溪"><a class="header" href="#走进磺溪">走进磺溪</a></h2>
 <p>一个人，清早五点，我想我该回家一趟，我走过了磺溪。</p>
-<p>在桥上，我想起哥尼斯堡普雷格尔（Pregel）河的“七桥问题”，问题设定在每座桥只许走一次，再回到起点。18世纪的数学家欧勒（LeonhardEuler）说是不可能的。可是，没人难得倒21世纪的文学家，因为我可以走两次，并且不同的两次。</p>
+<p>在桥上，我想起哥尼斯堡普雷格尔（Pregel）河的“七桥问题”，问题设定在每座桥只许走一次，再回到起点。18世纪的数学家欧勒（Leonhard Euler）说是不可能的。可是，没人难得倒21世纪的文学家，因为我可以走两次，并且不同的两次。</p>
 <p>耶稣是一个。四福音书各写各写的，互有详略，甚至矛盾穿帮。文学书也可以啊。有的章节，采用复式观察、双轨录音，也可以互有详略、也可以矛盾穿帮、也可以小做重复。还可以三维呢、还可以三体呢。像是三国时代的“三体石经”，同时用三种表达法。导演可能是两个，摄影可能是两组。耶稣，是一个也是两个。</p>
 <p>朱仑，也是两个。</p>
 <p>一个的她，正在看我过桥，走过磺溪。</p>
@@ -4403,8 +4444,8 @@
 <p>中国绘画的一个重要观点是“以形为神”，不追求模仿自然，而追求表现自然。“形似”不如“神似”，明末清初的石涛，特别提出“不似之似似之”，要追求形外之韵，不拘于原物之形，不拘原物之形，叫做“不似之似”，以“不似之似”来近科原物，叫作“似之”。</p>
 <p>但我呢，朱仑在我眼前、赤裸的在我眼前，她已形神一体，这艺术品对我，已不属“形似”“神似”的问题，并且，形神都逼近了我，与我为一。我强暴了朱仑，也要强暴那另一个，但是疑真疑幻，我无法确定，是否强暴到另一个。</p>
 <p>唯一的确定是，这世界消逝了朱仑。</p>
-<p>我要谬比，比拟不伦。1627年，这世界消逝了“中欧野牛”（theaurochfromcentralEurope）、1768年，这世界消逝了“史泰勒海牛”（Steller'sseacow）、1861年，这世界消逝了“毛里求斯渡渡鸟”（dodoinMauritius）……多少特种生命死在丧命年的本命年，朱仑不也是吗？2007年，这世界消逝了21世纪的智慧dodo，她叫朱仑。</p>
-<p>登山，有它特殊的两个阶段，一，要攻顶。攻顶成功以后，二，andreturn，要生还、要能回来。你的攻顶记录，要你能生还才颁给你，攻上了顶而不能生还的，记录不算。巫神医“脑前瞻工程”，看来已经攻顶成功，朱仑的尖锋表现说明了一切。问题是andreturn方面，朱仑看来太疲倦了，她不够稳定、不够恒定。可怜的朱仑，她是这一工程的先驱者、探险者，恰像那古代为暴君营造皇陵的建筑师，最后深陷死穴，捐躯在自己的手工里。</p>
+<p>我要谬比，比拟不伦。1627年，这世界消逝了“中欧野牛”（the auroch from central Europe）、1768年，这世界消逝了“史泰勒海牛”（Steller’s sea cow）、1861年，这世界消逝了“毛里求斯渡渡鸟”（dodo in Mauritius）……多少特种生命死在丧命年的本命年，朱仑不也是吗？2007年，这世界消逝了21世纪的智慧dodo，她叫朱仑。</p>
+<p>登山，有它特殊的两个阶段，一，要攻顶。攻顶成功以后，二，and return，要生还、要能回来。你的攻顶记录，要你能生还才颁给你，攻上了顶而不能生还的，记录不算。巫神医“脑前瞻工程”，看来已经攻顶成功，朱仑的尖锋表现说明了一切。问题是and return方面，朱仑看来太疲倦了，她不够稳定、不够恒定。可怜的朱仑，她是这一工程的先驱者、探险者，恰像那古代为暴君营造皇陵的建筑师，最后深陷死穴，捐躯在自己的手工里。</p>
 <p>想到朱仑，她就存在。每次精彩的谈话，都仿佛她在被附体、她在翻译、她在代言，或是双簧的前者。但是，穿插之间，又不全是，只是浑似，因为明显感受到那是一种卡位、一种争胜、一种竞秀、一种抢功、一种新原人因抵制、排斥，而转形出的共存与和声。是一种成功的融合？也不全是，困惑的神情，显出了一切。朱仑活在困惑里，或者说，她死在困惑里。巫神医的工程没有成功，没有美丽的成功，却有美丽的失败，我帮他收尾了美丽的失败，但朱仑例外，她的床，叫得真好。</p>
 <p>巫神医安排我跑第四棒，却发现真正跑第四棒的，是朱仑。她跑到古希腊马拉松式死亡，她用死亡证实了“脑前瞻工程”是可以前瞻的，人类将在科学怪人们的矛盾里、千万人头的斗争里出人头地，伟大又可怜的朱仑，她以身为证又以死为证，证实了人类自己的一线生机，人类与万物合一，但不要与机器合一。在朱仑的天路历程中，她闪入左道，与我合一。在“脑前瞻工程”的挣扎下，她赤裸挣扎在我的赤裸下，她渴望那样呈现自己，又无中生有、又似有还无，她为我呈现了神秘面相，取悦大师是她最大的喜悦，十七岁的美丽灵魂与肉体，是大师最爱。</p>
 <p>在一片现实的世界里、在一片灰色的环境里，十七岁的人好像一定得宿命了、无奈了、心如死灰也面如死灰了，其实不然。一种人生观成了救赎，人不是扁舟，人是浮萍，人无须到达彼岸、也无须回头是岸，可以做一片“一念之转”的浮萍，不必立地成什么，而是飘在天空、飘在水上、飘在顶礼的男人胸前，拼出自己的名字。</p>
@@ -4423,15 +4464,15 @@
 <p>美国学校的建筑，谈不上好看，但却现代，像是现代贵族的一个标志，谈不上文化，美国的文化算什么真正的文化，在欧洲，贵族纵使没落，眼里也没什么美国文化。但美国也有它自己的啦啦队式文化，充满青春、活力、与活泼。啦啦队什么都好，就是女学生们普遍太胖了、营养太好了，飞跃起来的，不单是青春、活力、与活泼，还有薯条、汉堡、和大块炸鸡。</p>
 <p>朱仑显然是例外、例外，朱仑sweet又skinny、朱仑一点也不美国，她欧洲、她法国、夏洛瓦彩色盘下十七岁的法国。美国学校走出来的，没有朱仑，朱仑不在了，美国学校没有了春天。</p>
 <p>但这学校有过朱仑、有过朱仑的春天，一如古堡有过典雅的ALTHORP家具，比拟是荒谬的，ALTHORP可以复制，但唯一的、无可复制的，是朱仑。</p>
-<p>突然间，一群学生走了出来，美国学校的、啦啦队式的，男生群中有一个女生，闪亮了我的眼，MyGod！——竟是朱仑！哦，一定是朱仑！不是别人，一定是朱仑！放弃所有的描写、放弃所有的形容词、放弃惊讶与惊诧、放弃怎么回事的质疑，只抓住这一奇事，抓住它了，那是朱仑！不是别人，一定是朱仑！</p>
+<p>突然间，一群学生走了出来，美国学校的、啦啦队式的，男生群中有一个女生，闪亮了我的眼，My God！——竟是朱仑！哦，一定是朱仑！不是别人，一定是朱仑！放弃所有的描写、放弃所有的形容词、放弃惊讶与惊诧、放弃怎么回事的质疑，只抓住这一奇事，抓住它了，那是朱仑！不是别人，一定是朱仑！</p>
 <p>一群是多少人？七八个、八九个，女生一个，那是朱仑！她夹杂在七嘴八舌里、簇拥在口香糖的粗鄙里、洋溢在美式高中的流行文化里，七八个、八九个，他们慢慢走着，经过我身旁。我清楚看到朱仑，看到她看到了我，却是一脸陌生、浑然不识。那与我相熟悉的朱仑，已经不复存在。那个朱仑没有了，她又回到了世俗的、“泯然众人”的世界。</p>
 <p>看那虚拟的十七岁，她曾彳亍尘土；</p>
 <p>看那虚拟的十七岁，她曾游走人间。</p>
 <p>没人能死两次，死于尘土；只有她活两次，活在人间。不是春残梦断、不是午夜梦回，是虚拟之上又虚拟之外，是十七岁的孤星、殒落、殒落，是朱仑。</p>
 <h2 id="我写虚拟的十七岁"><a class="header" href="#我写虚拟的十七岁">我写“虚拟的十七岁”</a></h2>
 <p>人类有许多好梦，其中一个，是结合两种极端、把不太可能结合的，梦想结合。</p>
-<p>莎士比亚的《威尼斯商人》第四幕第一景里，有Bellario（贝拉利欧）那封介绍信的话。信中说，介绍来的人儿是soyoungabodywithsooldahead（身体，年轻的；头脑，年深的）。《威尼斯商人》写成在16世纪，到了17世纪，英国Strafford（斯垂弗德），就是后来被国会砍了头的大臣ThomasWentworth（温特沃斯），向英国国王CharlesI（查理一世）推荐EarlofOrmond（阿蒙伯爵）时，说：“Heisyoung,buttakeitfromme,averystaidhead.”看到了吧，人们发酵了莎士比亚。多么美妙！多么令人憧憬、令人向往！“身体，年轻的；头脑，年深的。”用中文里的“少年老成”翻译它，是中国莎剧译者的共同错误，“老成”两个字，太老化了年轻的在头脑上的登峰造极，是拙劣的翻译。</p>
-<p>Soyoungabodywithsooldahead，在这一好梦出现五百年后，应赋予新的诠释。五百年前的头脑，涵盖的内容是有限的，soyoung和soold还有个成真的空间。但是，五百年后的今天，头脑上的登峰造极，简直不太可能了。所以说，这一人类的好梦、越来越遥远的好梦，难以成真了。</p>
+<p>莎士比亚的《威尼斯商人》第四幕第一景里，有Bellario（贝拉利欧）那封介绍信的话。信中说，介绍来的人儿是so young a body with so old a head（身体，年轻的；头脑，年深的）。《威尼斯商人》写成在16世纪，到了17世纪，英国Strafford（斯垂弗德），就是后来被国会砍了头的大臣Thomas Wentworth（温特沃斯），向英国国王Charles I（查理一世）推荐Earl of Ormond（阿蒙伯爵）时，说：“He is young, but take it from me, a very staid head.”看到了吧，人们发酵了莎士比亚。多么美妙！多么令人憧憬、令人向往！“身体，年轻的；头脑，年深的。”用中文里的“少年老成”翻译它，是中国莎剧译者的共同错误，“老成”两个字，太老化了年轻的在头脑上的登峰造极，是拙劣的翻译。</p>
+<p>So young a body with so old a head，在这一好梦出现五百年后，应赋予新的诠释。五百年前的头脑，涵盖的内容是有限的，so young和so old还有个成真的空间。但是，五百年后的今天，头脑上的登峰造极，简直不太可能了。所以说，这一人类的好梦、越来越遥远的好梦，难以成真了。</p>
 <p>不过，崇尚科技的科学怪人们不相信，他们不怕好梦遥远，他们不是要把遥远拉近，而是要追上遥远。这些科学怪人未必熟悉莎士比亚和斯垂弗德，但是，不谋而合，同做好梦，却是真的。他们都要“身体，年轻的；头脑，年深的”。</p>
 <p>新时代的思想家、文学家出现了，就是李敖，他创造了“虚拟的十七岁”、创造了“朱仑症”和“朱仑现象”。因为“朱仑症”，凄艳的高中女生成了抵抗科技疯狂的牺牲者；因为“朱仑现象”，这一牺牲给了人类最后的余光。</p>
 <p>小飞侠“彼得潘”（PeterPan）的作者巴里（JamesM.Barrie）道出“巴里定律”：“我未能年轻到无所不知。”（I’mnotyoungenoughtoknoweverything.）在李敖笔下，一位年轻的正在无所不知，她是朱仑。</p>
@@ -4440,24 +4481,24 @@
 <p>这是一本玄之又玄的奇书，十八岁以下不能看、八十岁以上也不能看（看了都要偷买威而钢）。</p>
 <p>有一种人会默默看，是那远去的十七岁。毕竟她不再高中、毕竟曾有流光仰望了岁月、毕竟曾有流盼低回了真情、毕竟曾有流年似水的十七岁，默默走过、默默躺下，以叫床吶喊了人生。</p>
 <p>那远去的十七岁，名字是C.J.周，在台北市朱仑街念了高中，她是《虚拟的十七岁》的模特儿，我写下“朱仑”，一如写下了她的名字。</p>
-<p>“Deliverarealnovelalongwithamystery.”这是我的最后感觉。</p>
+<p>“Deliver a real novel along with a mystery.”这是我的最后感觉。</p>
 <p>小说那么真实、朱仑那么神秘。沿着神秘，我告别了十七岁。</p>
 <p>2008年4月10日，在中国台北</p>
 <h2 id="封面故事"><a class="header" href="#封面故事">封面故事</a></h2>
 <p>封面画作来自画家伯纳夏洛瓦（BernardCharoy），1931年出生于法国。</p>
 <p>李敖说：夏洛瓦很会画女孩子，可是他本人渐渐老了，前几年，他换了新的年轻的模特儿，画出来的就是这一幅。我没去过法国，可是它流传到台湾，让我看到了，画廊开价近三万美金，我以五十万台币收藏了它。也就是说，全世界只有这一幅、人间只有这一幅，我挂在这里，让它看到我。它是原作，我是本尊。我从来不花钱买现代画，这幅是唯一的例外。</p>
 <p>注：油画长102公分，宽86公分，现藏于李敖书房。</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/04.小说剧本类/虚拟的十七岁.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/04.小说剧本类/虚拟的十七岁.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../04.小说剧本类/红色11.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../04.小说剧本类/阳痿美国.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -4467,16 +4508,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../04.小说剧本类/红色11.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../04.小说剧本类/阳痿美国.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -4485,12 +4531,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

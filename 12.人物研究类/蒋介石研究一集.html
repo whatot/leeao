@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,77 +81,98 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <p>#《蒋介石研究一集》目录</p>
 <ul>
@@ -169,7 +202,7 @@
 </ul>
 <p>《蒋介石研究一集》自序</p>
 <p>二十二年前，我出版《胡适研究》；二十二年后，我出版《蒋介石研究》。研究的对象虽然每况愈下，自己的成绩却扶摇直上。换句话说：被研究者的人格，跟我的文格适成反比。——我敢在刀光剑影和黑狱幢幢的压力下研究蒋介石，这种文格，是何等勇气！我敢在资料封锁和众口一声的困难下研究蒋介石，这种文格，是何等突破！古人说“文格渐卑庸福近”，我生平志不在庸福，所以总是变得“文格渐尊奇祸近”，而我文如其人，文格都这样高了，人格更不在话下。当年蔡松坡起义，反对袁世凯，最大理由是“为国民争人格”，如今我在蒋介石阴魂不散的岛上，敢于在他头上动土，也是“为国民争人格”。几十年来，在蒋家淫威下，中国人民被侮辱被作弄，已经到了麻木不仁的程度，看到蒋介石出丧之日，百姓夹道下跪的场面，可以想见：纵古代帝王驾崩，人民被侮辱被作弄，也不逾是！这成什么世界！</p>
-<p>我李敖就是不服这口气，我就是要站出来，一一拆穿蒋家的神话。虽然在情绪上，我对蒋介石深恶痛绝，——我是伍子胥；但在行文上，我却有历史家的谨严，全凭证据来“诛奸谀于既死，发潜德之幽光”，——我是沙尔非米尼（GaetanoSalvemini）。沙尔非米尼是意大利历史家，他因反对大独裁者墨索里尼（BenitoMussolini）的法西斯政权入狱，但他日后下笔写墨索里尼，却凭证据来说话，教人心服口服。</p>
+<p>我李敖就是不服这口气，我就是要站出来，一一拆穿蒋家的神话。虽然在情绪上，我对蒋介石深恶痛绝，——我是伍子胥；但在行文上，我却有历史家的谨严，全凭证据来“诛奸谀于既死，发潜德之幽光”，——我是沙尔非米尼（Gaetano Salvemini）。沙尔非米尼是意大利历史家，他因反对大独裁者墨索里尼（Benito Mussolini）的法西斯政权入狱，但他日后下笔写墨索里尼，却凭证据来说话，教人心服口服。</p>
 <p>这本《蒋介石研究》，就是在教人心服口服的悬格下，我的一些力作。在习惯了歌功颂德的奴性人士眼中，这些力作，也许还有酷评（diatribe）之讥，但是，在真正噩梦初醒的有识之士眼中，一读再读之下，将会发现其实李敖写得很公道。——李敖并没丑化蒋介石，他只是把美化了的拆穿罢了。</p>
 <p>1986年10月20日，国民党大举筹庆蒋介石百年冥诞之日，写于台湾。</p>
 <p>蒋介石的辫子问题</p>
@@ -324,10 +357,10 @@
 <p>军事委员会政训处刊印这篇妙文的时候，蒋介石正是这个会的委员长，当然内容是要他自己钦定的。读了这篇妙文，我们才知道原来当年蒋介石是那么伟大，伟大到连孙中山都要“欣然欲往晤”、要去亲自拜访他。最后总算陈其美说他是晚辈，还是请他去看孙中山，于是蒋介石“衣士官学校制服”（按：蒋介石并没进过士官学校，详见我在“千秋评论”第四十九期所写的《蒋介石是日本士官学校毕业的吗？》一文），“意态雄越，垂手立于总理前”，孙中山“瞪目注视者良久”，乃大喜赞叹。“相与畅论时政，夜深不忍别”。后来任何计划，且都要先问蒋介石云云。“两雄相见”的精彩画面，原来如此！</p>
 <p>董显光马屁经</p>
 <p>二、据1937年董显光写的英文本《蒋介石传》（ChiangKai-shek），第一章“伟人的发初”（TheFormativeYears）中，明说：</p>
-<p>MosteventfulofallwashismeetinginTokyowithDr.SunYat-sen,theFatheroftheRevolution.This'tookplaceatameetingoftheTungmenghui;anditisgreatlytoberegrettedthatnoartistwaspresenttodepictthishistoricfirstmeetingofthegreatplannerandtheequallygreatexecutant.Thetwomenwerecomplementray,andDr.Sunseemstohavesensedimmediatelythattheseriousyoungmanintroducedtohiswasdestinedtoplayanimportantpartinthecomingrevolution.AfteroneofDr.Sun'seloquentaddresses,theyoungcadettalkedtohisatlengthconcerningChina'sproblems;ThattheleaderwsadeeplyimpressedisshownbyanobservationthathemadeatthetimetoChenChi-mei.IndicatingChiangKai-shek,hesaid,"ThatmanwillbetheheroofourRevolutin:weneedjustsuchamaninourrevolutionarymovement."</p>
+<p>Most eventful of all was his meeting in Tokyo with Dr. Sun Yat-sen, the Father of the Revolution. This’ took place at a meeting of the Tungmenghui; and it is greatly to be regretted that no artist was present to depict this historic first meeting of the great planner and the equally great executant. The two men were complementray, and Dr. Sun seems to have sensed immediately that the serious young man introduced to his was destined to play an important part in the coming revolution. After one of Dr. Sun’s eloquent addresses, the young cadet talked to his at length concerning China’s problems; That the leader wsa deeply impressed is shown by an observation that he made at the time to Chen Chi-mei. Indicating Chiang Kai-shek, he said,“That man will be the hero of our Revolutin: we need just such a man in our revolutionary movement.”</p>
 <p>这段妙文，董显光自行中译如下：</p>
 <p>与蒋总统一生关系最重大的事，就是在东京与中国革命之父孙中山先生会见，此举发生于同盟会某一次的会议中，最可惜者那时没有一位艺术家在场，把那位伟大的计划者与同样伟大的执行者的历史性初次会见做成绘画。这两位大人物是相辅相成的；当时国父似乎立即意识到那位被介绍给他的庄重青年，注定了要在未来的革命中做重大的演出。在国父做了动听的演说以后，这位青年见习生便与国父详谈中国的问题。国父在当时所得的深刻印象，可从其对陈其美所表示的态度证之。他谈到蒋总统时，即说：“那位同志将是我们革命的英雄；在我们的革命运动中正需要这样一个人。”</p>
-<p>董显光是蒋介石的老师，后来做到新闻局长、驻美大使。他的文字，也属钦定。在这段妙文中，董显光说“两雄相见”场面恨无艺术家在场传真，行文之肉麻，实超乎军事委员会的钦定传记之上。而孙中山出口居然说出蒋介石是“我们革命的英雄”（theheroofourrevolution）之言，则尤属光怪陆离矣！</p>
+<p>董显光是蒋介石的老师，后来做到新闻局长、驻美大使。他的文字，也属钦定。在这段妙文中，董显光说“两雄相见”场面恨无艺术家在场传真，行文之肉麻，实超乎军事委员会的钦定传记之上。而孙中山出口居然说出蒋介石是“我们革命的英雄”（the hero of our revolution）之言，则尤属光怪陆离矣！</p>
 <p>邓文仪锦上添花</p>
 <p>三、据1945年10月邓文仪写的《蒋主席》（胜利出版社出版），第七章“会见总理”中，明说：</p>
 <p>主席在日本士官预备学校的时候，由于陈英士先生的介绍，加入了同盟会，从此献身革命，实际参加革命工作。</p>
@@ -595,18 +628,18 @@
 <p>太原之防卫实在是反共战争中最富于历史性的。该城除赖空运外，完全与外间隔断，竟能继续抵抗，以迄于民国三十八年4月24日。这样的长期抵抗牵制了大量的匪军，对于全囯的防卫战贡献不少。</p>
 <p>蒋总统之飞赴太原，只是他在这一年内飞行视察极端危险地点无数次之一。在7月之初他冒大险飞往郑州；其时该城已有即被匪军占据之危险。他与防卫该城的将领熟商防卫计划，卒将匪党即时占领之计划打破。而延长该城之命运颇久。稍后，他在济南最后保卫战中，飞往该城，鼓励守城官兵抵抗到底。又在沈阳撤退以前不久，他飞赴该地，指导其最后的军事行动。虽然这一年是蒋总统生涯中最失意之年，他无时不保持其领导人民之职责。</p>
 <p>在这些劳苦万分之时，蒋总统连患失眠，致不能获有适当的休息，任何安眠药剂均无补于事。最后他不得不于每晚饮威士忌酒一杯半，始稍安睡。在南京时，他每夜辄以长途电话与前线各将领交谈，指导散布各地的国军作战。</p>
-<p>最后一段中，明明透露在1948年的局势逆转时，“蒋总统连患失眠”，并且“任何安眠药剂均无补于事”，以至于要靠喝酒，“始稍安睡。”（此段英文版原文是：AdrainonhisenduranceduringtheseexhaustingdayswasacontinuinginsomniawhichdeprivedtheGeneralissimoofhisneededrest.Sleepingaidsgavehimnorelief.Finallyhefoundslumberbythehabitofdrinkingacupandahalfofwhiskyeachnighttoinducedrowsiness.HisnightsinNankingwerespentintenselong-distunceconversationswithhiscommandersinthefield,throughwhichhepersonallydirectedallthefar-flungoperationsoftheNationalarmies.）</p>
+<p>最后一段中，明明透露在1948年的局势逆转时，“蒋总统连患失眠”，并且“任何安眠药剂均无补于事”，以至于要靠喝酒，“始稍安睡。”（此段英文版原文是：A drain on his endurance during these exhausting days was a continuing insomnia which deprived the Generalissimo of his needed rest. Sleeping aids gave him no relief. Finally he found slumber by the habit of drinking a cup and a half of whisky each night to induce drowsiness. His nights in Nanking were spent in tense long-distunce conversations with his commanders in the field, through which he personally directed all the far-flung operations of the National armies.）</p>
 <p>《蒋总统传》的中英文版都是台湾通行的书。像我这样读书仔细的人，都一一拜读。拜读之下，实在的心得是：国民党宣传上“从不失眠”、“从不喝酒”的“蒋总统”，其实也会失眠、也会喝酒的！</p>
 <p>1984年9月4日晨六时三刻，以二十分钟写成</p>
 <p>蒋介石与国库黄金</p>
 <p>史特林席格雷夫（SterlingSeagrave）《宋家王朝》（TheSongDynasty）第二十章中有这么几段：</p>
-<p>ThatFebruary,althoughhewasnolongerPresidentofNationalistChina,ChiangKai-shekarrangedforthegovernment'sremaininggoldreservestoberemovedurgentlytoTaipei.IfhewastoleavePresidentLiholdingthebag,Chiangevidentlywantedtobesurethebagwasempty.ThismeantnopayrollforLi'sdwindlingarmies,nofoodforthesoldiersstillholdingout.WhenLidiscoveredthathistreasuryhadbeenemptied,heplaeadedwithU.S.AmbassadorJohnLeightonStuartforAmericanaid,toallowhimtonegotiatewithMaofromapositionofstrength.AmbassadorStuartadvisedhimtoaskforpatrioticcontributionsfromtheKMTofficialswhohadsaltedawaybillionsofAmericanaidintheirforeignbankaccounts.</p>
-<p>ChiangKai-sheksummonedSunFo,andmadethekindofsuggestionthatwascertaintoelectrifythepoorfellowintofolly.ChiangsuggestedthatthiswasthetimetoestablishaseparatistgovernmentinCanton,justasDr.Sunhaddonesomanyyearsbefore.TheGeneralissimopromisedthedoctor'ssonthatifhedidthisChiangwouldbeabletolaunchanewNorthernExpedition.SunFohurriedofftoCanton.But,beforethemonthwasout,eventhelacklusterSunFocametohissensesandleftquicklyforexileinFrance.ChiangbeganshippinghisremainingloyaltroopsacrosstheFormosaStraittoTaiwan.Withenoughmoneyandsoldiers,andwithalltherichesofmainlandChinathatcouldbetransported,perhapsevenhecouldholdoutthereindefinitely.Hisnext-to-laststopwasShanghai.</p>
-<p>InShanghaithaApril,Big-earedTusawChiangonelasttime.TheGeneralissimowasconferringwithGeneralTangEn-po,whoproposedtomakeShanghaia"SeconStalingrad".PaperTigerTang,theherooftheYellowRiverdikes,madewilddeclarationsofpatriotismandnowforecasttotalvictoryoverthereds.Hehadthousandsofcooliesdigagreatmoatandbuildaten-foot-highbamboopalisade,tonoapparentmilitaryend.Itwasunderstoodthathehadarelativeinthelumberbusiness.</p>
-<p>Chinag'srealreasonforcomingtotownwastogetBig-earedTuandtheGreenGangtohelphisrobtheBankofChina.Hewantedthemoneybadly.HehadnointentionoffleeingtoTaiwanwithoutit.Hishopesforthegoldyuanhadcollapsedafteronlyafewmonths,whenwordgotoutthattherereallywasnogoldtobackthenewcurrency.Thegoldhadbeenthereatonetime-sixmillionouncesofit.WhilehalfofthathadvanishedwiththeSoongsandKungs,accordingtoofficialcharges,theremaininghalfhadjustvanished.WhatgoldtherewasleftinChinawasprivategoldstillinthisbank.</p>
-<p>ThegoldyuanhoaxwasChiang'spartingshotathistory.Fivemonthsafterthegoldyuanwasintroducedatan'artificialexchangerateoffourgoldyuantooneU.S.dollar,therateplummetedtoonemilliontoone.Afterthatitwentcrazy.</p>
-<p>ThepeoplewhosufferedmostwerethoseearnestsoulswhosomehowhadmanagedtosaveoneortwothousandU.S.dollars'worthofgoldinthecourseofalifetime,andobeyedChinang'sordersandbroughtittogovernmentbanksontheprescribeddaytotradeforgoldyuans.Whentheirgoldyuansbecameworthlessovernight,theycouldbeseensittinginteashopsinShanghaiorHankoworCanton,inastateofshock,abandonedbytheKuomintang,certaintobepersecutedascapitalistsbytheCommunists,sittingtherewithoutevenenoughcopperstospiritthewifeandchildrenoutofthecountrytoMacaoorHongKongbeforetheroofcavedin.TheywerethelastofChiang'sconstituents.</p>
-<p>Chiang'splansfortheBankofChinahadbeenlaidwithconsiderablecare.AdingyfreighterwastiedupontheBund,oppostietheCathayHotel.Itscooliecrew,dressedinfilthyrags,werehand-pickednavalratingsindisguise.SeveralexecutivesoftheBankofChinahadbeengivenlargebribesandapromiseofpassagetosafetyonthewaitingfreighter;inreturnforopeningthevaults.Nationalisttroopscordonedoffanareaofseveralblocksaroundthebank,includingpartoftheNankingRoadantheBund.Outofthedarknesscamethesteadychantof"coolies"astheycarriedtheirheavyloads;Eachmancarriedtwoparcelsonabamboo.pole.Theywereghoulishinthelightofarclampsilluminatingthewayformbanktofreighte.Amazed,GeoregVine,aBritishcorrespondent,watchedtheproceedingsunnoticedfromhisoffice,wherehehadbeenworkinglateonadispatch.Whenherealizedwhatwashappening,hecabledhisLondonofficewithanoddlyphilosophicmessagethat"allthegoldinChinawasbeingcarriedawayinthetraditionalmannercoolies".</p>
+<p>That February, although he was no longer President of Nationalist China, Chiang Kai-shek arranged for the government’s remaining gold reserves to be removed urgently to Taipei. If he was to leave President Li holding the bag, Chiang evidently wanted to be sure the bag was empty. This meant no payroll for Li’s dwindling armies, no food for the soldiers still holding out. When Li discovered that his treasury had been emptied, he plaeaded with U.S. Ambassador John Leighton Stuart for American aid, to allow him to negotiate with Mao from a position of strength. Ambassador Stuart advised him to ask for patriotic contributions from the KMT officials who had salted away billions of American aid in their foreign bank accounts.</p>
+<p>Chiang Kai-shek summoned Sun Fo, and made the kind of suggestion that was certain to electrify the poor fellow into folly. Chiang suggested that this was the time to establish a separatist government in Canton, just as Dr. Sun had done so many years before. The Generalissimo promised the doctor’s son that if he did this Chiang would be able to launch a new Northern Expedition. Sun Fo hurried off to Canton. But, before the month was out, even the lackluster Sun Fo came to his senses and left quickly for exile in France. Chiang began shipping his remaining loyal troops across the Formosa Strait to Taiwan. With enough money and soldiers, and with all the riches of mainland China that could be transported, perhaps even he could hold out there indefinitely. His next-to-last stop was Shanghai.</p>
+<p>In Shanghai tha April, Big-eared Tu saw Chiang one last time. The Generalissimo was conferring with General Tang En-po, who proposed to make Shanghai a “Secon Stalingrad”. Paper Tiger Tang, the hero of the Yellow River dikes, made wild declarations of patriotism and now forecast total victory over the reds. He had thousands of coolies dig a great moat and build a ten-foot-high bamboo palisade, to no apparent military end. It was understood that he had a relative in the lumber business.</p>
+<p>Chinag’s real reason for coming to town was to get Big-eared Tu and the Green Gang to help his rob the Bank of China. He wanted the money badly. He had no intention of fleeing to Taiwan without it. His hopes for the gold yuan had collapsed after only a few months, when word got out that there really was no gold to back the new currency. The gold had been there at one time-six million ounces of it. While half of that had vanished with the Soongs and Kungs, according to official charges, the remaining half had just vanished. What gold there was left in China was private gold still in this bank.</p>
+<p>The gold yuan hoax was Chiang’s parting shot at history. Five months after the gold yuan was introduced at an’ artificial exchange rate of four gold yuan to one U.S. dollar, the rate plummeted to one million to one. After that it went crazy.</p>
+<p>The people who suffered most were those earnest souls who somehow had managed to save one or two thousand U.S. dollars’worth of gold in the course of a lifetime, and obeyed Chinang’s orders and brought it to government banks on the prescribed day to trade for gold yuans. When their gold yuans became worthless overnight, they could be seen sitting in teashops in Shanghai or Hankow or Canton, in a state of shock, abandoned by the Kuomintang, certain to be persecuted as capitalists by the Communists, sitting there without even enough coppers to spirit the wife and children out of the country to Macao or Hong Kong before the roof caved in. They were the last of Chiang’s constituents.</p>
+<p>Chiang’s plans for the Bank of China had been laid with considerable care. A dingy freighter was tied up on the Bund, oppostie the Cathay Hotel. Its coolie crew, dressed in filthy rags, were hand-picked naval ratings in disguise. Several executives of the Bank of China had been given large bribes and a promise of passage to safety on the waiting freighter; in return for opening the vaults. Nationalist troops cordoned off an area of several blocks around the bank, including part of the Nanking Road an the Bund. Out of the darkness came the steady chant of “coolies” as they carried their heavy loads; Each man carried two parcels on a bamboo. pole. They were ghoulish in the light of arc lamps illuminating the way form bank to freighte. Amazed, Georeg Vine, a British correspondent, watched the proceedings unnoticed from his office, where he had been working late on a dispatch. When he realized what was happening, he cabled his London office with an oddly philosophic message that “all the gold in China was being carried away in the traditional mannercoolies”.</p>
 <p>党外的地下译本，翻译如下：</p>
 <p>1949年2月，蒋介石虽然已经不再是中华民国的总统了，却还在安排把政府剩余的黄金准备紧急地运到台北。如果他要让代理总统李宗仁拿到钱袋的话，显然也是要先把钱袋掏空。这表示，愈来愈萎缩的李宗仁部队将无薪饷可领，仍然在勉强支撑的士兵将无粮食可吃。当李宗仁发现他的国库已被挖空时，就向美国驻华大使司徒雷登请求援助，让他能够站在强势的位置与毛译东谈判。司徒大使劝他向国民党官员征募爱国基金，因为他们已经把数十亿美元的美援偷到外国存入私人户头。</p>
 <p>蒋介石把孙科召来，提出一个会把这个可怜家伙吓得魂不附体的建议。蒋介石建议，这已经是在广州成立分离政府的时候了，就像许多年前孙文所做的一样。蒋介石答应这位医生儿子，如果孙科愿意成立广州政府，他就能够发动一次新的北伐。于是，孙科赶往广州筹备，但，一个月还不到，即使笨如孙科也发现大势不妙，拔腿就跑，逃往法国当寓公去了。蒋介石开始运送那些仍然效忠于他的部队，渡过台湾海峡，前往台湾。有了足够的金钱和士兵，有了中国大陆可以运过来的一切财富，也许他可以在台湾永远占领下去。他的倒数第二个据点是上海。</p>
@@ -697,7 +730,7 @@
 <p>为便于控制全国各地一切军政措施，蒋先生返溪口之后，便在其故里建立电台七座，随意指挥，参谋总长顾祝同对一兵一卒的调动，完全听命于蒋先生。2月16日，我在总统府宴请留京高级军政人员阎锡山、于右任、居正、顾祝同等，众人方入席，侍从人员便来报告说，溪口蒋先生有电话给顾参谋总长。顾祝同只得放下碗箸去接电话。蒋先生这电话原先打到国防部，部里人说，代总统今日请客，参谋总长现在总统府吃饭。蒋先生便命令将电话接到总统府。是晚我们一席未终，顾祝同先后接了三次溪口的电话。由此可见蒋先生对各项军政大事控制的严密，实与退休之前无异。但是所有我对他的要求，如释放张学良、杨虎城和自台北提运金钞回京等事，蒋先生却又推托说，下野之人，不干预军国大事，把责任推到陈诚头上。但是我给陈诚的命令，蒋又授意陈诚置之不理。</p>
 <p>蒋介石在《引退谋和文告》中呼吁“务望全国军民暨各级政府共矢精诚，同心一德，翊赞李副总统”，话既这样说，说这话的本人，当不例外。可惜的是，他在兵权和财权方面，都给“李副总统”来个金蝉脱壳、釜底抽薪，最后兵撤走了、黄金运走了，还说个“下野之人，不干预军国大事”！好一个“共矢精诚，同心一德”！好一个“翊赞”！这可真是中国现代史、中国宪政史、中国政党史上的最大谑画与笑话。——国民党即使第三次关我，我也要这样说呀！</p>
 <p>1985年12月19日夜</p>
-<p>①TheBund当译“外滩”，译成海滨路是错的。</p>
+<p>①The Bund当译“外滩”，译成海滨路是错的。</p>
 <p>②同①。</p>
 <p>③国民党口口声声说安定台湾人心的是这批黄金，但是，丢掉大陆人心的又是哪批黄金？说这批黄金使台湾得以成功；殊不知正是这些黄金使大陆失败啊！</p>
 <p>④何善垣《俞先生生平言行补述》（收入《俞鸿钧先生纪念集》）中说：“先生凡三综圜政，其第一次为三十四年对日抗战时期，第二次为三十七年行宪开始时期，第三次则为来台后，三十九年反共抗俄时期，三十七年共匪叛乱，举国骚然，先生鉴于情势迫切，密将库存黄金运台，其时予兼机要科主任，凡公文撰拟、缮写、用印、封发，均一人任之，即于总裁室后之一小室中办理，而外间接洽、戒严、航运等事，则由发行局陈副局长延祚负责，一切行动，均保持极度机密，启运之夕，由军方施行特别戒严，断绝交通，以故当时外间无人知有此事，启运后第三日，申报中始刊登一简短消息，谓某夜中国银行曾运出物资若干箱云云，语焉不详，其所以言中国银行者，因中央银行黄金库存，与中国银行比邻，同一门巷出入，以故人不能辨其谁属也，未几先生卸任，由刘攻芸先生继之，时尚有部分黄金未运，迨和谈破裂，共匪渡江，淞沪告警，先生复偕央行桑顾问君仪由港飞沪，筹商启运，到之日，即夕召集有关人员举行秘密会议，会中某君发言，谓先生以前曾为上海市市长，到此时期，自应为上海市市民着想，如将全部库存运空，则市面将何以维持，应请考虑云云，先生鉴于当时情势，结果乃决定留存部分以备缓急，余则悉数运台，前见某君所做记述，谓运金事，系于先生卸任后为之，盖未知有前后经过也，黄金运台后即由何祝封兄负责保管，以迄于今。”按何善垣这些话，似在辨正王康《平凡中的伟大》之文、辨正俞鸿钧并非在“卸任后为之”。但何善垣把时间定为“三十七年”，根本就是错误的。“三十七年”时俞鸿钧固在台上，无奈搬运国库中的黄金一事，实在俞鸿钧下台（1949年1月19日）和蒋介石下台（1949年1月21日）之后，所以说俞鸿钧是在卸任前为之，显属回护。至于文中所忆搬运细节，倒是足广吾人见闻者也！</p>
@@ -712,7 +745,7 @@
 <p>关于邀请美记者团来台事，中央社意以一、遨请对象务须网罗各大报社、大通讯社重要人物；二、万一大报社不肯应邀，则二三等者必须邀其首要人物参加；邀请时必须顾及党派或超然派之均衡；四、参加者不必限于过去同情我国者，即有一二反对或不甚同情我国者亦无妨；五、来往旅费须注意宜否致送并应如何致送；六、……。</p>
 <p>邀请美国记者访台的建议，国内国外的意见颇现纷歧。大家意见不同的焦点是究应以什么名义邀请？以中央社的名义邀请是否妥适？如不妥适，则以什么名义最为妥适？顾少川大使做事向来是最谨慎小心的，他和我一再商讨这个问题。我认为当此国势危急之时，许多事都不能太多顾虑，否则便一事无成。这次邀请美国记者访台是一项大胆的尝试，中央社是中国的新闻机构，由其出面邀请同业到其本国访问一次，并没有什么不妥之处，顾大使大致同意我的看法，但说国内既然指定我来办理，我就依照指示进行好了。</p>
 <p>陈之迈当时是驻美“大使馆”公使衔的参事，他在驻美“大使馆”的上司，是大使顾维钧和公使潭绍华。他依照指示进行后，得到萧同兹的去电。陈之迈回忆人选问题如下：</p>
-<p>萧社长来电所列的几项原则都很适当，唯一考虑是应以报社、通讯社为邀请对象，抑应以记者个人为邀请对象。据我当时的判断，指定著名记者参加是很难办到的，一来因为既是著名记者，业务必然很忙，二来著名记者对于这个他们认为危在旦夕的台湾不会有太大的兴趣。美国的驻华大使司徒雷登尚且没有到台湾来，头牌的新闻记者自很难望其抽身前往。何况这次邀请记者访台，旨在培养一批了解我国新形势的人，著名人物如李普曼（WalterLippmann）等，成见已深，希望他们“以今日之我攻昨日之我”，该是没有可能的。</p>
+<p>萧社长来电所列的几项原则都很适当，唯一考虑是应以报社、通讯社为邀请对象，抑应以记者个人为邀请对象。据我当时的判断，指定著名记者参加是很难办到的，一来因为既是著名记者，业务必然很忙，二来著名记者对于这个他们认为危在旦夕的台湾不会有太大的兴趣。美国的驻华大使司徒雷登尚且没有到台湾来，头牌的新闻记者自很难望其抽身前往。何况这次邀请记者访台，旨在培养一批了解我国新形势的人，著名人物如李普曼（Walter Lippmann）等，成见已深，希望他们“以今日之我攻昨日之我”，该是没有可能的。</p>
 <p>经过一番考虑之后，我决定三项原则：一、向报社和通讯社发出邀请书，请其自己指定记者参加；二、包括各大期刊；三、包括广播公司，尤其是正在勃兴的电视公司。根据这三项原则，我发出邀请书，几天之内便收到复电或复信，愿意参加者意外的踊跃，人选亦有几位知名之士，访问团就此组成了，计自美国前往者二十四人，另有自亚洲其他地区调往就近参加者，连同原在台湾者，一共有三十三人，实已超出预定的人数。</p>
 <p>非头牌的二三流记者组成后，接着便是交通问题了：</p>
 <p>记者访问团既经组成，便开始接洽来往的交通工具。当时政府甫迁台北，通往台北的国际班机甚少，例如从马尼拉到台北，每星期只有一次班机，由各记者个别前往显无可能，故只有包赁专机之一途。我最初的拟议是向泛美航空公司包赁一架专机，已经开始接洽，忽然收到先行返台接洽此事的黄仁泉兄来电，说西北航空公司正在计划开辟美国与远东的航线，台北将为一站，亟愿载运记者团自纽约到台北，作为试航。这件事太凑巧了，我当即与该公司洽妥包机，毫无困难。在这个时候，有人忽然提起，前一年荷兰政府曾组织一个美国记者团访问印尼，不幸在回程中飞机在印度失事，记者全部遇难。为了使访台记者安心起见，我请准为每位自美国启程参加者保险五万美元，皆大欢喜。当时，美国一位最无聊的专栏作家艾兰（RobertS.Allen，即在1971年盗窃发表美军部有关越战秘密文件的艾兰），曾于4月29日的专栏中，指摘我政府系为争取美援而邀请美囯记者访台，文中并且提到荷兰包机失事之事。我们的包机适于该文发表之日到火奴鲁鲁，当地记者即以专栏向我们邀请的记者相询，他们纷纷提出答复，或谓“艾兰未被邀请，故生嫉妒之心”，或谓“艾兰的报道大半是靠不住的”，或谓“艾兰连我们坐的是什么机种都弄错了，还说什么”。无聊的专栏作家总是这样兴风作浪的，也只有这样对付。美国的记者是懂得美国记者的，不劳我们担心。</p>
@@ -732,7 +765,7 @@
 <p>从汉奸陶希圣“谨录”蒋介石的秘密“指示”里，我们清楚看到，蒋介石怎样在指导演假戏。例如在招待方面，蒋介石不要励志社黄仁霖出面负责，目的乃在“使美国记者不感觉其受政府之招待”，这是何等假戏！又如在简报方面“关于匪谍案”的说明，要“注重于（一）台湾人举发，（二）依法审判两点”，以表示国民党得到台湾人支持，然后依法关人杀人，这又是何等假戏！</p>
 <p>上面这种假戏，不但在台湾岛上演，在台湾岛外，蒋介石也命令配合演出呢！这从我搜集到的另一张秘件中，又可看出端倪。这张秘件是驻美大使顾维钧的亲电，写在“外交部收电机字第2404号”译电纸上，日期是1950年5月3日，是以“极密”分类，拍给台北外交部的。全文如下：</p>
 <p>第271号2日</p>
-<p>台北外交部：极密。顷接阿拉巴省寄到匿名信，谓：赴台记者团中CecilBrown系共党分子云，虽所述未必属实，仍请注意。顾维钧。</p>
+<p>台北外交部：极密。顷接阿拉巴省寄到匿名信，谓：赴台记者团中Cecil Brown系共党分子云，虽所述未必属实，仍请注意。顾维钧。</p>
 <p>从驻美大使顾维钧的“极密”电报里，我们清楚看到，国民党在怎样施展待客之道：——国民党一方面专机请人前来捧场，一方面又以共产党怀疑人，全部假戏，原来如此！</p>
 <p>洋大人访问团是1950年5月9日离台的。离台前夜，蒋介石以自助餐方式请他们，并在餐会前答复问题。全部答复，都是官样文章，但有两段，颇为有趣：</p>
 <p>记者问：美国国务院不久以前曾发表白皮书，总统有何评论？</p>
@@ -855,7 +888,7 @@
 <p>由上面随手一列的国民党不遵守时间表的大小“前科”，我们难道还梦想向国民党要时间表吗？康宁祥的“首都公政会”，创立第一炮就是得意洋洋要时间表，其实，有了时间表，又如何？老子不守时间表，给了你，又怎样？到时候，说了的全不算、给了的全作废，你敢咬老子屌吗？</p>
 <p>1986年7月3日，三小时半写成（《民主时代》总号第127期,1986年7月7日）</p>
 <p>蒋介石的大法螺</p>
-<p>佛教用的螺，叫法螺。法螺多采梭尾螺（Charoniatritonis）做成，吹起来有妙音，可用来宣佛号、驱恶魔，所以大吹特吹之。流风所被，俗称吹牛曰吹法螺。</p>
+<p>佛教用的螺，叫法螺。法螺多采梭尾螺（Charonia tritonis）做成，吹起来有妙音，可用来宣佛号、驱恶魔，所以大吹特吹之。流风所被，俗称吹牛曰吹法螺。</p>
 <p>吹法螺，人之常情，但是对一种人说来，却殊有未妥，这种人就是没有幽默感的领袖人物。盖吹法螺者，每因吹得离谱而穿帮，穿帮之日，不妨哈哈一笑，自己妄言，别人妄听，人我平等，也没什么大不了。但是，没有幽默感的领袖人物就大不同，因为这种人自以为高人一等，总是板下脸，作之君作之师，整天膨胀自己，教训别人，这种人一旦吹法螺吹得离谱而穿帮，就不好收场了。</p>
 <p>现以蒋介石为例，证而明之。</p>
 <p>蒋介石是没有幽默感的领袖人物。他因为智识有限、顽固无边、集各色自大狂于一身，所以法螺吹起来，就麻烦大了。</p>
@@ -1001,17 +1034,17 @@
 <p>②事实上，这并不是什么族规，乃是一般的“殇不立后”的中国文化，蒋介石无知，以为只是“吾家族规”耳！</p>
 <p>③据《中国民事习惯大全》明说浙江平湖县“上中下三等社会，凡子弟未婚夭亡，类多择一门户相当，年龄相若之亡女，为之定婚，迎接木主过门，礼节如生人嫁娶，名曰‘冥配’。盖以不如是，则灵魂将无所依归，不能入祠祭祀，且不能立后，一经冥配，即取得被继承人之资格，得为之立后也。”</p>
 <p>④张明镐《蒋介石在溪口》中说：“瑞青早死，由蒋介石兼祧承袭”，是大错误。何国涛《关于〈蒋介石在溪口〉一文的改正与补充》中虽改正为“由蒋经国兼祧承袭”，但在蒋介石《亡弟瑞青哀状》里，却全无兼祧的记载。</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/12.人物研究类/蒋介石研究一集.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/12.人物研究类/蒋介石研究一集.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../12.人物研究类/蒋介石的真面目.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../12.人物研究类/蒋介石研究三集.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1021,16 +1054,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../12.人物研究类/蒋介石的真面目.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../12.人物研究类/蒋介石研究三集.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1039,12 +1077,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

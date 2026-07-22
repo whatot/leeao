@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,215 +81,236 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="李敖议坛哀思录"><a class="header" href="#李敖议坛哀思录">李敖议坛哀思录</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E8%AE%AE%E5%9D%9B%E5%93%80%E6%80%9D%E5%BD%95%E5%B0%8F%E5%BC%95%E4%B8%80">《李敖议坛哀思录》小引一</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E8%AE%AE%E5%9D%9B%E5%93%80%E6%80%9D%E5%BD%95%E5%B0%8F%E5%BC%95%E4%BA%8C">《李敖议坛哀思录》小引二</a></li>
-<li><a href="#%E4%B8%80%E7%BD%91%E6%88%90%E6%93%92%E7%AC%91%E8%AF%9D%E4%BC%BA%E5%80%99">一网成擒，笑话伺候</a></li>
-<li><a href="#%E4%BB%A5%E7%8E%A9%E7%AC%91%E5%87%BA%E4%B9%8B">以玩笑出之</a></li>
-<li><a href="#%E4%B8%BA%E4%BD%95%E8%B5%B7%E4%BA%86%E6%80%AA%E4%B9%A6%E5%90%8D">为何起了怪书名？</a></li>
-<li><a href="#%E6%88%91%E6%8A%8A%E8%87%AA%E5%B7%B1%E5%8F%98%E5%B0%8F%E4%BA%86">我把自己变小了！</a></li>
-<li><a href="#%E7%BB%9D%E6%97%A0%E4%BB%85%E6%9C%89%E7%9A%84%E9%80%89%E4%B8%BE%E6%96%B9%E5%BC%8F">绝无仅有的选举方式</a></li>
-<li><a href="#%E4%BB%8E%E5%8F%82%E9%80%89%E5%88%B0%E4%B8%8A%E5%8F%B0">从参选到上台</a></li>
-<li><a href="#%E6%88%91%E6%89%80%E5%A4%84%E7%9A%84%E5%A4%A7%E6%B0%94%E5%80%99">我所处的大气候</a></li>
-<li><a href="#%E6%96%AF%E5%BE%B7%E5%93%A5%E5%B0%94%E6%91%A9%E7%97%87%E5%80%99%E7%BE%A4">斯德哥尔摩症候群</a></li>
-<li><a href="#%E7%8E%8B%E9%97%BF%E8%BF%90%E7%9A%84%E8%BA%AB%E5%BD%B1">王闿运的身影</a></li>
-<li><a href="#%E5%90%BE%E4%BB%8E%E5%85%B6%E8%AE%BD">吾从其讽</a></li>
-<li><a href="#%E6%88%91%E6%8B%92%E7%BB%9D%E5%90%91%E5%AD%99%E4%B8%AD%E5%B1%B1%E5%AE%A3%E8%AA%93">我拒绝向孙中山宣誓</a></li>
-<li><a href="#%E9%99%A2%E9%95%BF%E7%8E%8B%E9%87%91%E5%B9%B3">院长王金平</a></li>
-<li><a href="#%E6%88%91%E9%80%89%E7%AB%8B%E5%A7%94%E7%9A%84%E7%AC%AC%E4%B8%80%E7%9B%AE%E7%9A%84">我选立委的第一目的</a></li>
-<li><a href="#%E6%8C%A1%E5%86%9B%E8%B4%AD%E5%AE%8B%E6%A5%9A%E7%91%9C%E6%9C%89%E5%89%8D%E5%8A%9F">挡军购，宋楚瑜有前功</a></li>
-<li><a href="#%E9%97%AE%E6%94%BF%E8%BF%B0%E5%A5%87">问政述奇</a></li>
-<li><a href="#%E6%88%91%E5%91%8A%E8%AF%89%E4%BD%A0%E5%B0%B1%E6%98%AF%E7%8B%97">我告诉你，就是狗</a></li>
-<li><a href="#%E6%88%91%E9%97%BB%E8%BF%87%E4%BB%96%E4%BB%AC%E7%9A%84%E8%87%AD%E8%84%9A">我闻过他们的臭脚</a></li>
-<li><a href="#%E8%80%81%E8%B4%BC%E5%8C%96%E7%9A%84%E6%B0%91%E8%BF%9B%E5%85%9A">老贼化的民进党</a></li>
-<li><a href="#%E4%B8%8A%E5%B0%86%E5%89%B2%E5%B1%8C%E8%AE%B0">上将割屌记</a></li>
-<li><a href="#%E6%88%91%E9%AB%98%E6%BD%AE%E4%BD%A0%E5%88%B9%E8%BD%A6">我高潮，你刹车</a></li>
-<li><a href="#%E5%BA%94%E8%AF%A5%E5%8E%BB%E8%B7%9F%E5%A6%87%E4%BA%A7%E7%A7%91%E5%8C%BB%E7%94%9F%E8%AE%B2">应该去跟妇产科医生讲</a></li>
-<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E4%BB%8E%E5%A4%A7%E7%9A%84%E6%88%98%E7%95%A5%E6%9D%A5%E8%80%83%E8%99%91">为什么不从大的战略来考虑</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%80%E8%A2%AB%E5%91%8A%E6%98%AF%E8%B0%A2%E9%95%BF%E5%BB%B7%E7%AC%AC%E4%BA%8C%E5%B0%B1%E6%98%AF%E4%BD%A0">第一被告是谢长廷，第二就是你</a></li>
-<li><a href="#%E7%94%A8%E8%A1%A3%E5%86%A0%E6%95%B4%E7%A6%BD%E5%85%BD">用衣冠整禽兽</a></li>
-<li><a href="#%E5%8E%86%E5%8F%B2%E4%BC%9A%E8%AF%81%E6%98%8E%E6%88%91%E4%BB%AC%E5%90%8C%E5%BD%92%E4%BA%8E%E5%B0%BD">历史会证明我们同归于尽</a></li>
-<li><a href="#%E9%95%BF%E5%BB%B7%E5%95%8A%E4%B8%8D%E8%A6%81%E5%9C%A8%E5%90%8E%E5%8F%B0%E5%94%B1%E6%88%8F">长廷啊，不要在后台唱戏</a></li>
-<li><a href="#%E4%BB%96%E4%BB%AC%E5%BF%98%E4%BA%86%E7%AB%99%E5%9C%A8%E7%AC%AC%E4%B8%80%E6%8E%92%E7%9A%84%E8%A6%81%E7%8A%AF">他们忘了站在第一排的要犯</a></li>
-<li><a href="#%E6%B0%91%E8%BF%9B%E5%85%9A%E4%B8%AD%E6%9C%89%E6%88%91%E5%8D%A7%E5%BA%95%E7%9A%84">民进党中有我“卧底”的</a></li>
-<li><a href="#%E6%88%91%E7%82%AE%E5%8F%A3%E8%BD%AC%E5%90%91%E4%BA%86">我炮口转向了</a></li>
-<li><a href="#%E6%9D%8E%E6%96%87%E4%BB%AA%E4%B8%8E%E6%BD%9C%E8%89%87%E9%87%87%E8%B4%AD">李文仪与潜艇采购</a></li>
-<li><a href="#%E5%8E%BB%E4%BB%96%E5%A6%88%E7%9A%84%E8%AF%9D">去他妈的话</a></li>
-<li><a href="#%E5%86%9B%E4%BA%BA%E8%B0%81%E8%A6%81%E4%BD%A0%E4%BB%AC%E8%88%9E%E6%96%87%E5%BC%84%E5%A2%A8">军人，谁要你们舞文弄墨！</a></li>
-<li><a href="#%E9%92%A2%E7%AC%94%E4%BA%8B%E4%BB%B6">钢笔事件</a></li>
-<li><a href="#%E5%9B%BD%E5%AE%B6%E5%AE%89%E5%85%A8%E5%B1%80%E5%AF%B9%E6%88%91%E4%B8%8B%E6%AF%92">国家安全局对我下毒？</a></li>
-<li><a href="#%E5%AE%89%E5%85%A8%E4%B8%8D%E6%98%AF%E9%BB%91%E6%9A%97%E4%BD%9C%E4%B8%9A%E7%9A%84%E6%8A%A4%E7%AC%A6">安全不是黑暗作业的护符</a></li>
-<li><a href="#%E5%A4%A7%E5%B8%88%E8%AF%B4%E6%98%AF%E7%9C%9F%E7%9A%84%E9%82%A3%E5%A4%A7%E6%A6%82%E5%B0%B1%E6%98%AF%E7%9C%9F%E7%9A%84">“大师说是真的，那大概就是真的。”</a></li>
-<li><a href="#%E5%9B%BD%E5%AE%89%E5%B1%80%E7%A4%BC%E9%81%87%E5%BC%BA%E5%A5%B8%E7%8A%AF%E6%9D%8E%E7%99%BB%E8%BE%89">国安局礼遇“强奸犯”李登辉</a></li>
-<li><a href="#%E9%98%B4%E9%97%A8%E9%98%B5%E4%B8%8E%E5%B1%81%E8%82%A1%E9%98%B5">“阴门阵”与“屁股阵”</a></li>
-<li><a href="#%E8%BF%98%E6%98%AF%E6%A1%A3%E6%A1%88%E8%A2%AB%E9%94%80%E6%AF%81%E4%BA%86">还是档案被销毁了？</a></li>
-<li><a href="#%E5%9B%BD%E5%AE%89%E5%B1%80%E5%AF%86%E4%BB%B6%E8%90%BD%E5%9C%A8%E6%88%91%E6%89%8B%E9%87%8C">国安局密件落在我手里</a></li>
-<li><a href="#%E5%B1%80%E9%95%BF%E6%83%B3%E8%B5%96">局长想赖？</a></li>
-<li><a href="#%E9%A6%99%E8%95%89%E5%A5%BD%E5%90%83%E5%90%97">香蕉好吃吗？</a></li>
-<li><a href="#%E5%91%A8%E5%85%AC%E4%BD%95%E8%BE%9C%E5%95%8A">周公何辜啊！</a></li>
-<li><a href="#%E5%85%AB%E6%AC%A1%E5%8F%AB%E6%9D%9C%E6%AD%A3%E8%83%9C%E9%97%AD%E5%98%B4">八次叫杜正胜闭嘴</a></li>
-<li><a href="#%E5%A4%A7%E5%AD%A6%E6%A0%A1%E9%95%BF%E6%B0%B4%E8%82%A5%E4%BA%8B%E4%BB%B6">大学校长水肥事件</a></li>
-<li><a href="#%E6%9D%9C%E6%AD%A3%E8%83%9C%E5%90%AC%E8%AE%AD">杜正胜听训</a></li>
-<li><a href="#%E9%80%BC%E6%9D%8E%E8%BF%9C%E5%93%B2%E9%81%93%E6%AD%89">逼李远哲道歉</a></li>
-<li><a href="#%E6%8C%96%E8%8B%A6%E8%B0%A2%E9%95%BF%E5%BB%B7">挖苦谢长廷</a></li>
-<li><a href="#%E8%AF%B7%E4%BD%A0%E9%97%AD%E5%98%B4">请你闭嘴！</a></li>
-<li><a href="#%E6%8A%A4%E8%88%AA%E4%B8%91%E8%AF%81">护航丑证</a></li>
-<li><a href="#%E4%BD%9C%E5%BC%84%E8%B0%A2%E9%95%BF%E5%BB%B7%E4%B9%8B%E6%B5%81">作弄谢长廷之流</a></li>
-<li><a href="#%E4%BD%9C%E5%BC%84%E5%9C%B0%E4%B8%8B%E5%A4%A7%E4%BD%BF">作弄“地下大使”</a></li>
-<li><a href="#%E5%AF%84%E6%9C%9B%E5%B0%8F%E9%A9%AC%E5%93%A5">寄望小马哥</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%B0%B1%E5%86%9B%E8%B4%AD%E6%A1%88%E8%AF%B4%E5%B8%96">李敖就军购案说帖</a></li>
-<li><a href="#%E9%A9%AC%E8%8B%B1%E4%B9%9D%E8%AF%B7%E5%90%83%E9%A5%AD">马英九请吃饭</a></li>
-<li><a href="#%E5%B0%8F%E9%A9%AC%E5%93%A5%E9%BB%84%E7%89%9B%E4%BA%86">小马哥黄牛了</a></li>
-<li><a href="#%E8%99%BD%E9%9D%9E%E5%AE%B3%E7%BE%A4%E4%B9%8B%E9%A9%AC%E5%8D%B4%E8%A7%81%E6%AE%8B%E6%97%97%E4%B9%8B%E5%BD%92">虽非害群之马，却见残旗之归</a></li>
-<li><a href="#%E5%8F%AA%E8%A6%81%E6%8E%90%E4%BD%8F%E9%A9%AC%E8%8B%B1%E4%B9%9D">只要掐住马英九</a></li>
-<li><a href="#%E5%85%AC%E5%90%AC%E4%BC%9A%E5%90%AC%E6%88%91%E8%A8%80">公听会听我言</a></li>
-<li><a href="#%E6%9C%80%E7%AE%80%E6%98%8E%E7%9A%84%E6%99%BA%E6%85%A7%E5%8D%81%E9%A2%98">最简明的智慧十题</a></li>
-<li><a href="#%E4%B9%A6%E4%B8%AA%E9%AC%BC%E9%9D%A2">书个鬼面！</a></li>
-<li><a href="#%E6%88%91%E5%BD%93%E5%9C%BA%E6%92%95%E6%8E%89%E5%9B%BD%E9%98%B2%E9%83%A8%E6%96%87%E4%BB%B6">我当场撕掉国防部文件</a></li>
-<li><a href="#%E8%87%AD%E9%AA%82%E8%8B%8F%E5%85%89%E5%A4%B4">臭骂苏光头</a></li>
-<li><a href="#%E7%94%A8%E6%97%A7%E4%BD%9C%E4%BD%9C%E5%BC%84%E5%B0%8F%E4%BA%A8%E5%88%A9">用旧作作弄“小亨利”</a></li>
-<li><a href="#%E4%BD%A0%E4%BB%8A%E5%A4%A9%E5%9D%90%E4%B8%8B%E7%9A%84%E8%AF%9D%E6%88%91%E5%B0%B1%E8%BA%BA%E4%B8%8B%E6%9D%A5">你今天坐下的话，我就躺下来。</a></li>
-<li><a href="#%E5%AE%A1%E6%9F%A5%E7%BD%A2%E5%85%8D%E6%A1%88">审查“罢免案”</a></li>
-<li><a href="#%E9%A9%AC%E8%8B%B1%E4%B9%9D%E6%94%BE%E5%80%92%E9%98%81%E7%9A%84%E6%B0%B4">马英九放倒阁的水</a></li>
-<li><a href="#%E6%88%91%E7%9A%84%E5%9B%BD%E6%B0%91%E5%85%9A%E8%A7%82">我的国民党观</a></li>
-<li><a href="#%E6%88%91%E7%9A%84%E6%B0%91%E8%BF%9B%E5%85%9A%E8%A7%82">我的民进党观</a></li>
-<li><a href="#83-%E5%8F%AA%E9%B8%AD%E5%AD%90%E5%BC%8F%E7%9A%84%E6%B0%91%E4%B8%BB">83 只鸭子式的民主</a></li>
-<li><a href="#%E5%8D%8A%E5%9D%90%E5%8D%8A%E7%AB%8B%E5%BC%8F%E6%B0%91%E4%B8%BB">半坐半立式民主</a></li>
-<li><a href="#%E4%BD%A0%E4%BB%AC%E6%98%AF%E4%B8%8D%E6%98%AF%E9%BB%91%E8%A1%99%E9%97%A8">你们是不是“黑衙门”？</a></li>
-<li><a href="#%E5%8F%B0%E6%B9%BE%E4%BA%BA%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E4%B9%88%E7%AC%A8">台湾人为什么这么笨？</a></li>
-<li><a href="#%E4%B8%8D%E8%A6%81%E5%83%8F%E6%9D%8E%E8%BF%9C%E5%93%B2%E8%BF%99%E6%A0%B7%E5%AD%90%E8%BF%B7%E5%A4%B1">不要像李远哲这样子迷失</a></li>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%A0%B8%E7%94%B5%E5%90%8E%E7%AB%AF">关于核电后端</a></li>
-<li><a href="#%E5%8F%B0%E6%B9%BE%E4%BA%BA%E5%B0%B1%E6%98%AF%E8%A2%AB%E5%90%93%E5%A4%A7%E7%9A%84">台湾人就是被吓大的</a></li>
-<li><a href="#%E7%8B%97%E7%9A%84%E5%8D%88%E9%A4%90%E5%B0%B1%E6%98%AF%E5%85%8D%E8%B4%B9%E7%9A%84">狗的午餐就是免费的</a></li>
-<li><a href="#%E5%96%B7%E7%93%A6%E6%96%AF%E4%BA%8B%E4%BB%B6">喷瓦斯事件</a></li>
-<li><a href="#%E7%93%A6%E6%96%AF%E4%BC%BA%E4%B9%8B%E4%BB%A5%E5%90%8E">瓦斯伺之以后</a></li>
-<li><a href="#%E9%99%88%E6%B0%B4%E6%89%81%E4%BB%AC%E6%98%AF%E7%BE%8E%E5%9B%BD%E8%B5%B0%E7%8B%97%E9%A9%AC%E8%8B%B1%E4%B9%9D%E4%BB%AC%E6%98%AF%E7%BE%8E%E5%9B%BD%E8%B5%B0%E7%8B%97%E7%9A%84%E8%B5%B0%E7%8B%97">“陈水扁们是美国走狗，马英九们是美国走狗的走狗”</a></li>
-<li><a href="#%E5%AA%9A%E7%BE%8E%E5%86%9B%E8%B4%AD%E5%9B%BD%E6%B0%91%E5%85%9A%E6%94%BE%E6%B0%B4%E8%8A%B1%E5%90%8D%E6%A6%9C">媚美军购国民党放水花名榜</a></li>
-<li><a href="#%E4%B8%BA%E5%AA%9A%E7%BE%8E%E5%86%9B%E8%B4%AD%E8%B4%A8%E9%97%AE%E5%9B%BD%E6%B0%91%E5%85%9A%E5%91%98">为媚美军购质问国民党员</a></li>
-<li><a href="#%E7%94%A8%E9%80%89%E5%B8%82%E9%95%BF%E4%BC%A0%E6%92%AD%E7%90%86%E5%BF%B5">用选市长传播理念</a></li>
-<li><a href="#%E4%B8%8E%E4%BA%94%E5%A4%A7%E5%90%8D%E6%A8%A1%E5%90%8C%E8%A3%B8">与五大名模同裸</a></li>
-<li><a href="#%E5%8F%AA%E8%A6%81%E4%BA%94%E5%A4%A9%E5%A4%A9%E5%B0%B1%E4%BC%9A%E4%BA%AE">“只要五天，天就会亮”</a></li>
-<li><a href="#%E8%A6%81%E6%8A%9B%E5%BC%83%E8%93%9D%E7%BB%BF%E5%B1%95%E5%BC%80%E6%96%B0%E7%9A%84%E6%80%9D%E7%BB%B4">要抛弃蓝绿，展开新的思维</a></li>
-<li><a href="#%E9%80%89%E5%B8%82%E9%95%BF%E7%9A%84%E9%81%93%E5%BE%B7%E6%84%8F%E4%B9%89">选市长的道德意义</a></li>
-<li><a href="#%E7%AC%91%E6%95%96%E5%B9%B4%E4%BB%A3">“笑‘敖’年代”</a></li>
-<li><a href="#%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8C%E4%BA%8C%E5%85%AB">“你不知道的二二八”</a></li>
-<li><a href="#%E5%8F%B0%E6%B9%BE%E7%9A%84%E8%B4%B1%E7%A7%8D%E6%80%A7%E6%A0%BC">台湾的“贱种”性格</a></li>
-<li><a href="#%E5%A4%AA%E5%B9%B3%E5%B2%9B%E7%BA%A0%E7%BC%A0%E6%88%98">太平岛纠缠战</a></li>
-<li><a href="#%E6%9D%8E%E6%9D%B0%E4%B8%8B%E5%8F%B0%E4%BA%86">李杰下台了！</a></li>
-<li><a href="#%E4%BC%9A%E8%87%AA%E6%9D%80%E7%9A%84%E5%9B%BD%E9%98%B2%E9%83%A8%E9%95%BF">会自杀的国防部长</a></li>
-<li><a href="#%E5%91%A8%E9%83%8E%E9%A1%BE%E6%9B%B2%E6%88%91%E7%9C%8B%E9%83%81%E6%96%B9">周郎顾曲，我看郁方</a></li>
-<li><a href="#%E4%BD%A0%E7%A1%AE%E5%AE%9E%E9%9D%9E%E5%B8%B8%E6%B7%B1%E5%85%A5">“你确实非常深入”</a></li>
-<li><a href="#%E6%88%91%E8%A7%A3%E9%87%8A%E4%BA%86%E5%A4%A7%E6%B3%95%E5%AE%98">我解释了“大法官”</a></li>
-<li><a href="#%E6%88%91%E5%8F%88%E5%AE%B0%E4%BA%86%E5%9B%9B%E4%B8%AA">我又宰了四个</a></li>
-<li><a href="#%E6%96%AF%E6%96%87%E8%B1%AA%E6%B0%8F%E8%9B%99">“斯文豪氏蛙”</a></li>
-<li><a href="#%E4%BB%80%E4%B9%88%E6%9C%BA%E5%AF%86%E6%9C%BA%E4%B8%AA%E5%B1%81%E5%AF%86">什么机密？机个屁密！</a></li>
-<li><a href="#%E6%B8%B8%E9%94%A1%E5%A0%83%E7%9A%84%E7%88%B8%E7%88%B8%E6%98%AF%E5%A4%96%E7%9C%81%E5%A3%AB%E5%AE%98">游锡堃的爸爸是外省士官</a></li>
-<li><a href="#%E6%88%91%E6%98%AF%E5%8F%8D%E5%AF%B9%E4%BD%A0%E5%87%BA%E4%BB%BB%E7%9A%84">我是反对你出任的</a></li>
-<li><a href="#%E5%8F%B0%E7%8B%AC%E6%98%AF%E5%81%87%E7%9A%84">台独是假的</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%AF%B9%E5%8F%B0%E7%8B%AC%E5%85%AC%E6%8A%95%E8%AF%B4%E6%98%8E%E4%B9%A6">李敖对“台独公投”说明书</a></li>
-<li><a href="#%E4%B8%8D%E8%A6%81%E7%AD%89%E4%B8%AA%E5%B1%81%E5%91%80">不要等个屁呀！</a></li>
-<li><a href="#%E4%B8%A4%E7%BB%84%E8%80%90%E4%BA%BA%E5%AF%BB%E5%91%B3%E7%9A%84%E5%90%8D%E5%8D%95">两组耐人寻味的名单</a></li>
-<li><a href="#%E5%85%AC%E6%8A%95%E4%BB%96%E6%8A%95%E7%BD%97%E7%BD%91%E4%BD%A0%E6%8A%95">公投他投，罗网你投</a></li>
-<li><a href="#%E9%80%89%E4%B8%89%E5%8F%AA%E8%80%81%E9%BC%A0%E5%91%A2%E8%BF%98%E6%98%AF%E4%B8%80%E5%A4%B4%E8%80%81%E8%99%8E">选三只老鼠呢？还是一头老虎？</a></li>
-<li><a href="#%E6%88%91%E8%BF%99%E4%B8%80%E7%A5%A8%E4%BA%BA">我这一票人</a></li>
-<li><a href="#%E4%BB%96%E5%A6%88%E7%9A%84%E4%B8%8E%E4%BD%A0%E5%A6%88%E7%9A%84">“他妈的”与“你妈的”</a></li>
-<li><a href="#%E5%8F%8D%E5%86%9B%E8%B4%AD%E5%9B%BA%E7%9B%98%E7%A7%98%E8%BE%9B">反军购固盘秘辛</a></li>
-<li><a href="#%E5%BC%A0%E6%98%BE%E8%80%80%E5%80%BC%E5%BE%97%E7%89%B9%E5%88%AB%E8%A1%A8%E6%89%AC">张显耀值得特别表扬</a></li>
-<li><a href="#%E6%9D%8E%E5%BA%86%E5%8D%8E%E6%9D%8E%E5%BA%86%E5%AE%89%E5%85%84%E5%A6%B9%E6%A1%A3">李庆华李庆安兄妹档</a></li>
-<li><a href="#%E6%88%91%E6%90%82%E7%9D%80%E6%B4%AA%E7%A7%80%E6%9F%B1">我搂着洪秀柱</a></li>
-<li><a href="#%E9%82%B1%E6%AF%85%E7%9A%84%E5%BA%8A%E5%A4%B4%E4%B9%A6">邱毅的床头书</a></li>
-<li><a href="#%E6%9D%8E%E7%BA%AA%E7%8F%A0%E4%B8%BA%E6%88%91%E8%A3%B8%E5%A5%94">李纪珠为我“裸奔”</a></li>
-<li><a href="#%E6%88%91%E6%98%AF%E5%BE%88%E5%88%97%E5%AE%81%E7%9A%84">我是很列宁的</a></li>
-<li><a href="#%E6%88%91%E4%B8%8D%E7%94%A8%E5%85%AC%E5%AE%B6%E4%BF%A1%E5%B0%81">我不用公家信封</a></li>
-<li><a href="#%E5%88%98%E5%BF%86%E5%A6%82%E6%B4%92%E8%84%B1%E4%B9%8B%E8%87%B3">刘忆如洒脱之至</a></li>
-<li><a href="#%E8%B5%B5%E8%89%AF%E7%87%95%E7%8E%B0%E8%B1%A1">赵良燕现象</a></li>
-<li><a href="#%E9%AB%98%E9%87%91%E7%B4%A0%E6%A2%85%E9%80%81%E6%88%91%E8%A3%B8%E7%85%A7">高金素梅送我“裸照”</a></li>
-<li><a href="#%E5%88%9B%E7%AB%8B%E4%B8%AD%E5%9B%BD%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%8B%B1%E7%BE%8E%E5%BC%8F%E6%B0%91%E4%B8%BB%E6%94%BF%E5%85%9A">创立中国第一个英美式民主政党</a></li>
-<li><a href="#%E4%B8%AD%E5%9B%BD%E6%99%BA%E6%85%A7%E5%85%9A%E7%81%8C%E9%A1%B6%E5%AE%A3%E8%A8%80">“中国智慧党”灌顶宣言</a></li>
-<li><a href="#%E4%B8%AD%E5%9B%BD%E6%99%BA%E6%85%A7%E5%85%9A%E7%AB%A0%E7%A8%8B">“中国智慧党”章程</a></li>
-<li><a href="#%E4%B8%AD%E5%9B%BD%E6%99%BA%E6%85%A7%E5%85%9A%E6%99%BA%E6%85%A7%E6%B5%8B%E9%87%8F%E8%A1%A8">“中国智慧党”智慧测量表</a></li>
-<li><a href="#%E6%88%91%E7%9A%84%E5%8F%B0%E6%B9%BE%E4%BA%BA%E6%9C%8B%E5%8F%8B">我的台湾人朋友</a></li>
-<li><a href="#%E4%BC%AA%E5%9B%BD%E4%BC%9A">伪国会</a></li>
-<li><a href="#%E8%92%8B%E4%BB%8B%E7%9F%B3%E9%98%B4%E9%AD%82%E4%B8%8D%E6%95%A3">蒋介石阴魂不散</a></li>
-<li><a href="#%E6%A1%83%E8%8A%B1%E5%9C%A3%E8%A7%A3%E5%8D%81%E4%BA%94%E5%88%99">“桃花圣解”十五则</a></li>
-<li><a href="#%E6%91%B8%E5%B1%81%E8%82%A1%E9%80%81%E5%AE%A2">摸屁股送客</a></li>
-<li><a href="#%E7%BB%99%E7%AB%8B%E6%B3%95%E9%99%A2%E5%90%84%E4%BD%8D%E5%90%8C%E4%BB%81%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1">给立法院各位同仁的一封信</a></li>
-<li><a href="#%E6%8E%A7%E5%91%8A%E5%85%A8%E9%83%A8%E7%AB%8B%E6%B3%95%E5%A7%94%E5%91%98%E6%B0%91%E4%BA%8B%E8%B5%B7%E8%AF%89%E7%8A%B6">控告全部立法委员民事起诉状</a></li>
-<li><a href="#%E6%8E%A7%E5%91%8A%E5%B8%83%E4%BB%80%E6%9D%8E%E7%99%BB%E8%BE%89%E9%99%88%E6%B0%B4%E6%89%81%E7%9A%84%E7%8A%B6%E5%AD%90">控告布什、李登辉、陈水扁的状子</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#李敖议坛哀思录小引一">《李敖议坛哀思录》小引一</a></li>
+<li><a href="#李敖议坛哀思录小引二">《李敖议坛哀思录》小引二</a></li>
+<li><a href="#一网成擒笑话伺候">一网成擒，笑话伺候</a></li>
+<li><a href="#以玩笑出之">以玩笑出之</a></li>
+<li><a href="#为何起了怪书名">为何起了怪书名？</a></li>
+<li><a href="#我把自己变小了">我把自己变小了！</a></li>
+<li><a href="#绝无仅有的选举方式">绝无仅有的选举方式</a></li>
+<li><a href="#从参选到上台">从参选到上台</a></li>
+<li><a href="#我所处的大气候">我所处的大气候</a></li>
+<li><a href="#斯德哥尔摩症候群">斯德哥尔摩症候群</a></li>
+<li><a href="#王闿运的身影">王闿运的身影</a></li>
+<li><a href="#吾从其讽">吾从其讽</a></li>
+<li><a href="#我拒绝向孙中山宣誓">我拒绝向孙中山宣誓</a></li>
+<li><a href="#院长王金平">院长王金平</a></li>
+<li><a href="#我选立委的第一目的">我选立委的第一目的</a></li>
+<li><a href="#挡军购宋楚瑜有前功">挡军购，宋楚瑜有前功</a></li>
+<li><a href="#问政述奇">问政述奇</a></li>
+<li><a href="#我告诉你就是狗">我告诉你，就是狗</a></li>
+<li><a href="#我闻过他们的臭脚">我闻过他们的臭脚</a></li>
+<li><a href="#老贼化的民进党">老贼化的民进党</a></li>
+<li><a href="#上将割屌记">上将割屌记</a></li>
+<li><a href="#我高潮你刹车">我高潮，你刹车</a></li>
+<li><a href="#应该去跟妇产科医生讲">应该去跟妇产科医生讲</a></li>
+<li><a href="#为什么不从大的战略来考虑">为什么不从大的战略来考虑</a></li>
+<li><a href="#第一被告是谢长廷第二就是你">第一被告是谢长廷，第二就是你</a></li>
+<li><a href="#用衣冠整禽兽">用衣冠整禽兽</a></li>
+<li><a href="#历史会证明我们同归于尽">历史会证明我们同归于尽</a></li>
+<li><a href="#长廷啊不要在后台唱戏">长廷啊，不要在后台唱戏</a></li>
+<li><a href="#他们忘了站在第一排的要犯">他们忘了站在第一排的要犯</a></li>
+<li><a href="#民进党中有我卧底的">民进党中有我“卧底”的</a></li>
+<li><a href="#我炮口转向了">我炮口转向了</a></li>
+<li><a href="#李文仪与潜艇采购">李文仪与潜艇采购</a></li>
+<li><a href="#去他妈的话">去他妈的话</a></li>
+<li><a href="#军人谁要你们舞文弄墨">军人，谁要你们舞文弄墨！</a></li>
+<li><a href="#钢笔事件">钢笔事件</a></li>
+<li><a href="#国家安全局对我下毒">国家安全局对我下毒？</a></li>
+<li><a href="#安全不是黑暗作业的护符">安全不是黑暗作业的护符</a></li>
+<li><a href="#大师说是真的那大概就是真的">“大师说是真的，那大概就是真的。”</a></li>
+<li><a href="#国安局礼遇强奸犯李登辉">国安局礼遇“强奸犯”李登辉</a></li>
+<li><a href="#阴门阵与屁股阵">“阴门阵”与“屁股阵”</a></li>
+<li><a href="#还是档案被销毁了">还是档案被销毁了？</a></li>
+<li><a href="#国安局密件落在我手里">国安局密件落在我手里</a></li>
+<li><a href="#局长想赖">局长想赖？</a></li>
+<li><a href="#香蕉好吃吗">香蕉好吃吗？</a></li>
+<li><a href="#周公何辜啊">周公何辜啊！</a></li>
+<li><a href="#八次叫杜正胜闭嘴">八次叫杜正胜闭嘴</a></li>
+<li><a href="#大学校长水肥事件">大学校长水肥事件</a></li>
+<li><a href="#杜正胜听训">杜正胜听训</a></li>
+<li><a href="#逼李远哲道歉">逼李远哲道歉</a></li>
+<li><a href="#挖苦谢长廷">挖苦谢长廷</a></li>
+<li><a href="#请你闭嘴">请你闭嘴！</a></li>
+<li><a href="#护航丑证">护航丑证</a></li>
+<li><a href="#作弄谢长廷之流">作弄谢长廷之流</a></li>
+<li><a href="#作弄地下大使">作弄“地下大使”</a></li>
+<li><a href="#寄望小马哥">寄望小马哥</a></li>
+<li><a href="#李敖就军购案说帖">李敖就军购案说帖</a></li>
+<li><a href="#马英九请吃饭">马英九请吃饭</a></li>
+<li><a href="#小马哥黄牛了">小马哥黄牛了</a></li>
+<li><a href="#虽非害群之马却见残旗之归">虽非害群之马，却见残旗之归</a></li>
+<li><a href="#只要掐住马英九">只要掐住马英九</a></li>
+<li><a href="#公听会听我言">公听会听我言</a></li>
+<li><a href="#最简明的智慧十题">最简明的智慧十题</a></li>
+<li><a href="#书个鬼面">书个鬼面！</a></li>
+<li><a href="#我当场撕掉国防部文件">我当场撕掉国防部文件</a></li>
+<li><a href="#臭骂苏光头">臭骂苏光头</a></li>
+<li><a href="#用旧作作弄小亨利">用旧作作弄“小亨利”</a></li>
+<li><a href="#你今天坐下的话我就躺下来">你今天坐下的话，我就躺下来。</a></li>
+<li><a href="#审查罢免案">审查“罢免案”</a></li>
+<li><a href="#马英九放倒阁的水">马英九放倒阁的水</a></li>
+<li><a href="#我的国民党观">我的国民党观</a></li>
+<li><a href="#我的民进党观">我的民进党观</a></li>
+<li><a href="#83-只鸭子式的民主">83 只鸭子式的民主</a></li>
+<li><a href="#半坐半立式民主">半坐半立式民主</a></li>
+<li><a href="#你们是不是黑衙门">你们是不是“黑衙门”？</a></li>
+<li><a href="#台湾人为什么这么笨">台湾人为什么这么笨？</a></li>
+<li><a href="#不要像李远哲这样子迷失">不要像李远哲这样子迷失</a></li>
+<li><a href="#关于核电后端">关于核电后端</a></li>
+<li><a href="#台湾人就是被吓大的">台湾人就是被吓大的</a></li>
+<li><a href="#狗的午餐就是免费的">狗的午餐就是免费的</a></li>
+<li><a href="#喷瓦斯事件">喷瓦斯事件</a></li>
+<li><a href="#瓦斯伺之以后">瓦斯伺之以后</a></li>
+<li><a href="#陈水扁们是美国走狗马英九们是美国走狗的走狗">“陈水扁们是美国走狗，马英九们是美国走狗的走狗”</a></li>
+<li><a href="#媚美军购国民党放水花名榜">媚美军购国民党放水花名榜</a></li>
+<li><a href="#为媚美军购质问国民党员">为媚美军购质问国民党员</a></li>
+<li><a href="#用选市长传播理念">用选市长传播理念</a></li>
+<li><a href="#与五大名模同裸">与五大名模同裸</a></li>
+<li><a href="#只要五天天就会亮">“只要五天，天就会亮”</a></li>
+<li><a href="#要抛弃蓝绿展开新的思维">要抛弃蓝绿，展开新的思维</a></li>
+<li><a href="#选市长的道德意义">选市长的道德意义</a></li>
+<li><a href="#笑敖年代">“笑‘敖’年代”</a></li>
+<li><a href="#你不知道的二二八">“你不知道的二二八”</a></li>
+<li><a href="#台湾的贱种性格">台湾的“贱种”性格</a></li>
+<li><a href="#太平岛纠缠战">太平岛纠缠战</a></li>
+<li><a href="#李杰下台了">李杰下台了！</a></li>
+<li><a href="#会自杀的国防部长">会自杀的国防部长</a></li>
+<li><a href="#周郎顾曲我看郁方">周郎顾曲，我看郁方</a></li>
+<li><a href="#你确实非常深入">“你确实非常深入”</a></li>
+<li><a href="#我解释了大法官">我解释了“大法官”</a></li>
+<li><a href="#我又宰了四个">我又宰了四个</a></li>
+<li><a href="#斯文豪氏蛙">“斯文豪氏蛙”</a></li>
+<li><a href="#什么机密机个屁密">什么机密？机个屁密！</a></li>
+<li><a href="#游锡堃的爸爸是外省士官">游锡堃的爸爸是外省士官</a></li>
+<li><a href="#我是反对你出任的">我是反对你出任的</a></li>
+<li><a href="#台独是假的">台独是假的</a></li>
+<li><a href="#李敖对台独公投说明书">李敖对“台独公投”说明书</a></li>
+<li><a href="#不要等个屁呀">不要等个屁呀！</a></li>
+<li><a href="#两组耐人寻味的名单">两组耐人寻味的名单</a></li>
+<li><a href="#公投他投罗网你投">公投他投，罗网你投</a></li>
+<li><a href="#选三只老鼠呢还是一头老虎">选三只老鼠呢？还是一头老虎？</a></li>
+<li><a href="#我这一票人">我这一票人</a></li>
+<li><a href="#他妈的与你妈的">“他妈的”与“你妈的”</a></li>
+<li><a href="#反军购固盘秘辛">反军购固盘秘辛</a></li>
+<li><a href="#张显耀值得特别表扬">张显耀值得特别表扬</a></li>
+<li><a href="#李庆华李庆安兄妹档">李庆华李庆安兄妹档</a></li>
+<li><a href="#我搂着洪秀柱">我搂着洪秀柱</a></li>
+<li><a href="#邱毅的床头书">邱毅的床头书</a></li>
+<li><a href="#李纪珠为我裸奔">李纪珠为我“裸奔”</a></li>
+<li><a href="#我是很列宁的">我是很列宁的</a></li>
+<li><a href="#我不用公家信封">我不用公家信封</a></li>
+<li><a href="#刘忆如洒脱之至">刘忆如洒脱之至</a></li>
+<li><a href="#赵良燕现象">赵良燕现象</a></li>
+<li><a href="#高金素梅送我裸照">高金素梅送我“裸照”</a></li>
+<li><a href="#创立中国第一个英美式民主政党">创立中国第一个英美式民主政党</a></li>
+<li><a href="#中国智慧党灌顶宣言">“中国智慧党”灌顶宣言</a></li>
+<li><a href="#中国智慧党章程">“中国智慧党”章程</a></li>
+<li><a href="#中国智慧党智慧测量表">“中国智慧党”智慧测量表</a></li>
+<li><a href="#我的台湾人朋友">我的台湾人朋友</a></li>
+<li><a href="#伪国会">伪国会</a></li>
+<li><a href="#蒋介石阴魂不散">蒋介石阴魂不散</a></li>
+<li><a href="#桃花圣解十五则">“桃花圣解”十五则</a></li>
+<li><a href="#摸屁股送客">摸屁股送客</a></li>
+<li><a href="#给立法院各位同仁的一封信">给立法院各位同仁的一封信</a></li>
+<li><a href="#控告全部立法委员民事起诉状">控告全部立法委员民事起诉状</a></li>
+<li><a href="#控告布什李登辉陈水扁的状子">控告布什、李登辉、陈水扁的状子</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -439,7 +472,7 @@
 <p>李大师 2005 年 5 月 22 日</p>
 <p>因为国民党选青年团头子时，林益世大胜周守训（或说林益世大败周守训），故我戏言“哭得哇哇哇”，其实并无哇哇之事。林益世忠厚老实，只是太胖了。林益世瞄了更胖的颜清标后，一定瞪我一眼。</p>
 <p>九、周守训。曾任国民党中常委、发言人兼传播部主任、2004 年连宋竞选总部发言人、私立铭传大学传播管理研究所教授、TVBS 新闻制作人暨主播、中视新闻部记者兼主播。俊男也；太太汪用和，美女也。周守训常和我的保镖小常（常修治）喝酒，两人总指对方醉倒，真相不明。我开支不够，卖了一支名牌钢笔给他。分期付款，每月 2 万。李大师穷乏有如是者。所以，全世界最怕他落选的，是李大师，他落选，大师就倒账了。周守训万岁！</p>
-<p>十、陈银河。属台湾团结联盟。曾任建筑公会理事长、亚太经合会建筑师计划中央议会（APECArchitectProjectCentralCouncil）首任秘书长。跟我熟起来了，熟到可以互相笑骂王八蛋的程度。我鼓动他反叛台联，他说他是不分区的立法委员，不听话就给赶出家门了，哪里敢闹。他为人随和友善，常送我一些不值钱的小礼物。他办公厅里哪一盆花好看，我就可以搬走。有了他，证明台联不全是坏人，至少对我不是。</p>
+<p>十、陈银河。属台湾团结联盟。曾任建筑公会理事长、亚太经合会建筑师计划中央议会（APEC Architect Project Central Council）首任秘书长。跟我熟起来了，熟到可以互相笑骂王八蛋的程度。我鼓动他反叛台联，他说他是不分区的立法委员，不听话就给赶出家门了，哪里敢闹。他为人随和友善，常送我一些不值钱的小礼物。他办公厅里哪一盆花好看，我就可以搬走。有了他，证明台联不全是坏人，至少对我不是。</p>
 <p>十一、叶芳雄。2007 年 6 月 11 日，办公室对门的国民党立委叶芳雄党内提名落选。我登门要他办公室煮咖啡一杯送我，并送他《李敖回忆录》一册，扉页上题“脱衣与脱党是人生二乐”。他说对手在开票前已能准确说出其得票数字，可见国民党内作弊的严重，我乘机煽风点火，劝他脱党。他曾任竹北市第四、五届市长、新竹县退伍军人协会理事长、竹北市体育会理事长、竹北市后备军人辅导中心主任、人文交流推广协会理事长。他跟我说，从中午 12 点到 2 点半，他赶过 16 场婚丧喜庆，可见多么辛苦。他的口号是“出身基层，忠贞踏实”。真的如此，他是好人。我也不能不说他是好人，我成立“中国智慧党”时，只有他送了花。</p>
 <p>十二、李复甸。世新大学法学院院长，在顾崇廉死后，补上亲民党不分区立委的缺。有人说你李敖告了 224 个立委，224 个都是你的被告，李复甸事后才补进来，总不是被告了吧？我听了一笑。其实李复甸做秦孝仪律师时，就被我借故告上法院，所以他不但是被告，更是有前科的老被告，贼底累累呢。李复甸是个书呆子，听他问政可知。他遇人不淑，做了秦孝仪律师。秦孝仪被我打败，赔了我 30 万，我一口气花光，痛快极了。</p>
 <p>以上随手写“一网成擒，笑话伺候”一打。还有更精彩的，从高金素梅“裸照”到李纪珠“裸奔”，分藏此书某处，你去找吧。</p>
@@ -462,7 +495,7 @@
 <p>我在参选海报上，印了一行字：</p>
 <p>他把自己变小了，却把国家变大了。</p>
 <p>离狗屎太近，有自我小化之嫌，把自己变小了；但是，使台湾不绝于中国之外，却把国家变大了，以小易大，这种努力方向，也算值得。</p>
-<p>在参选海报里，我印上一张牛顿（IsaacNewton）的像，而附之以妙文曰：</p>
+<p>在参选海报里，我印上一张牛顿（Isaac Newton）的像，而附之以妙文曰：</p>
 <p>只有李敖教我爽</p>
 <p>向左看！这是牛顿。</p>
 <p>苹果掉在他头上，他发现了地心引力，对不对？</p>
@@ -545,7 +578,7 @@
 <h2 id="斯德哥尔摩症候群"><a class="header" href="#斯德哥尔摩症候群">斯德哥尔摩症候群</a></h2>
 <p>一个代表性的小故事，特别值得写出。我出狱以后 10 多年，路遇当年抓我的蒋家鹰犬、警备总司令部保安处处长吴彰炯中将，那时他已退役，在富贵楼餐厅任总经理，他约我到他办公室，做了他单方面“相逢一笑泯恩仇”式的长谈。我最后打趣他，我说：“你们军人有‘五大信念’，所谓主义、领袖、国家、责任、荣誉。现在呢，你们革了几十年的命，民族主义等被敌人实行了、领袖死了、国家变成千分之三了、责任扯不清了、荣誉也不好意思说了，全没了，处长啊，你也老了，你输了。”不料他眨眨眼睛，神秘地告诉我：“李先生，我没输，我移民到美国了，我子女都是博士，个个在美成家立业。李先生，我没输！”</p>
 <p>真的哟！这些鹰犬没有输。输的是他们的“五大信念”，但谁信这些信念呢？五大、六大、一百大，管他妈的几大！</p>
-<p>更妙的是，不但没输，还有更赢的呢！吴中将又算老几？看看郝上将，看看郝上将的将门虎子，在蒋家丧事频仍之际，从行政院长到台北市长，郝家父子一路亨通至今，不是吗？尤其怪异的是民选市长部分，当年被蒋介石裹胁而来的中下层外省族群，竟投票给郝家少爷，这种现象是典型的“斯德哥尔摩症候群”（StockholmSyndrome）。这种症候群，不但表现在外省族群上，本省族群也尾随不误，或尾随而不自觉。</p>
+<p>更妙的是，不但没输，还有更赢的呢！吴中将又算老几？看看郝上将，看看郝上将的将门虎子，在蒋家丧事频仍之际，从行政院长到台北市长，郝家父子一路亨通至今，不是吗？尤其怪异的是民选市长部分，当年被蒋介石裹胁而来的中下层外省族群，竟投票给郝家少爷，这种现象是典型的“斯德哥尔摩症候群”（Stockholm Syndrome）。这种症候群，不但表现在外省族群上，本省族群也尾随不误，或尾随而不自觉。</p>
 <p>58 年来，台湾最大的转型在从一批坏人转型成一批浑人。蒋介石的流亡政权基本架构是坏人架构，中有好人而附逆，其好也可知，“扶同为恶”之谥是跑不了的。蒋家政权没落后，取而代之的所谓本土政权，基本架构是前朝政权的学生，却连基本朝仪和细腻都没有了，只是粗俗的争权夺利的一批浑人，全无见识，更无世界性的见识，是夜郎也是井蛙，早就腾笑国际，只是此辈肉麻当有趣耳。</p>
 <h2 id="王闿运的身影"><a class="header" href="#王闿运的身影">王闿运的身影</a></h2>
 <p>去立法院，有一个有趣的身影时而冒出，就是清末民初的那位大儒王闿运。他是前清第一遗老，他在日记里评定清朝是儿戏亡国，改朝换代之际他已经八十开外了，但可不是普通的八十开外，他的来头大得很。他年轻时曾劝曾国藩反朝廷，又写《湘军志》惹得大家要杀他；他文采冠天下，国学大师章太炎眼高于顶，却称赞王闿运文章得其雅。袁世凯当中华民国第一任总统，请他做国史馆馆长，他笑傲就之。榜门一联曰：</p>
@@ -559,7 +592,7 @@
 <p>二、先知也要求生，也要行道。先知无法悉免于冲突。</p>
 <p>三、先知会被抓、被关、被害。</p>
 <p>四、先知在现代，连门徒，不论是 12 还是 72，也罕见或根本没有了。</p>
-<p>五、先知要自兼恩格斯（F.Engels）养自己。</p>
+<p>五、先知要自兼恩格斯（F. Engels）养自己。</p>
 <p>六、先知要狐狸般地抵抗暴君暴民和美帝。</p>
 <p>七、先知要明星般地卡到媒体。</p>
 <p>八、先知要顽童般地会作秀。</p>
@@ -755,12 +788,12 @@
 <p>所以我必须向部长报告的是，今天我们做了冤大头的不止这一笔，在你尚未担任国防部长以前，国防部购买长程预警雷达就花掉了 340 亿台币，事实上，长程预警雷达的有效范围为 5000 千米。换句话说，它可以侦测出从莫斯科所发射的导弹，但台湾海峡平均只有 200 千米，我们何须设置 5000 千米的长程预警雷达？当那边发射导弹，即使我们立即获知，导弹在 3 分钟内即将落地，但我们只剩下 2 分钟的时间回应，我们花了这么多的钱，结果却是知道我们早死 3 分钟。这等于是在帮美国在台湾海峡做狗，还帮美国在莫斯科与台湾之间做狗，我们要维护我们的尊严。本席请部长挡一下，不要这么急嘛！</p>
 <p>此外，国防部在报告中还提出“爱国者”导弹预算，但事实上，公投早已否决此事。请部长告诉我，国防部要不要执行公投已否决之事？为什么你们在今日的报告中再次提及此事？陈水扁不尊重公投，你们也不尊重公投，你们置台湾人民于何地？本席的意思是，你身为将军就应该勇敢地抵抗。本席曾经询问国防部，到底美国给那些国家多少不要钱的武器？请部长看看国防部提供给本席的数据，你们的答复竟是，美国提供不要钱的武器是援助拉丁美洲与加勒比海地区等国家，请部长回去查看 2004 年 10 月 17 日英国《独立报》，美国愿意购买最新的武器给英国，荷兰亦比照办理，由此可见，“国防部”提供给本席的报告是在敷衍我，请你们重新查报，并提供相关数据给本席。</p>
 <p>部长，请看看今日的报纸标题为《母子三人合吃一碗泡面》，台湾人民已经穷到这种程度，国防部却花这么多的钱购买武器，你们该不该这么做？本席方才说过，以往国防部购买长程预警雷达，只是提早通知我们 3 分钟后即将死亡，如今政府花费 6108 亿元，却只能独撑 14 天，如果美国经过 14 天仍不来救我们，我们该怎么办？如果美国在 14 天之后才来救我们，台湾在历经 610 颗导弹的摧残下，早已夷为平地、满目疮痍。试问：美国人会来拯救一个战场吗？请你看一个小官僚钱复所写的《钱复回忆录》，他写到美国对台湾说话不算话共有 40 次之多，我们怎么能相信美国人？如果我要求你踢他，也许太重了一点，可是，至少我们也要挡一下。我们无法接受这笔预算，并央求政府不要购买武器，但你们要怎么办呢？本席曾经说过，依照《与台湾关系法》的规定，美国是基于该国的政治、经济、安全的利益购买武器提供给台湾，但是他们并没有表示将保护台湾的政治、经济与安全利益。既然美国没有给予我们承诺，我们为什么要相信美国会保护台湾？一旦战争发动，美国迟迟不来，即使我们抵抗了 14 天，最后战到只剩下一兵一卒，还不是死路一条？部长需要时间答复吗？本席会给你时间答复，部长只要答复 yesorno。</p>
-<p>总之，本席认为，我们可以暂缓军购行动，再看小官僚钱复所写的《钱复回忆录》中所指出，当卡特总统与我方断交时，高华德参议员还要告美国政府。由此可见，当台湾不花钱购买武器，而美国不给我们武器时，我们可以运用美国人告美国政府。所以我要求国防部编列一笔预算，请 100 位美国律师比照假“台独”分子辜宽敏的做法，在美国刊登大幅广告，要求美国人免费提供给我们武器。请部长答复 yesorno。</p>
+<p>总之，本席认为，我们可以暂缓军购行动，再看小官僚钱复所写的《钱复回忆录》中所指出，当卡特总统与我方断交时，高华德参议员还要告美国政府。由此可见，当台湾不花钱购买武器，而美国不给我们武器时，我们可以运用美国人告美国政府。所以我要求国防部编列一笔预算，请 100 位美国律师比照假“台独”分子辜宽敏的做法，在美国刊登大幅广告，要求美国人免费提供给我们武器。请部长答复 yes or no。</p>
 <p>主席：请国防部李部长答复。</p>
 <p>李部长杰：主席、各位委员。我的答复大概还是 no。依照过去若干年的情况来看，若我们不投资任何计划，也许便无法维持现状，所以这些武器投资的效益正是在此……</p>
 <p>李委员敖：对不起，我必须打断李部长的话。我告诉你，美国在提供我国武器以前，已经向宋楚瑜说得清清楚楚，这些武器保护不了我们，可是为什么美国逼着我们购买？主要是希望我们能够表达决心，对不对？</p>
 <p>李部长杰：对的，这是自我防卫的决心。</p>
-<p>李委员敖：事实上，我们表达决心有很多种方法，当年明朝宦官魏忠贤是拿刀割下自己的 LP 以表达自己的决心。我告诉你一个故事，当年我小儿子年幼时，将《小星星》的歌词改编为“一闪一闪亮晶晶，满天都是‘小鸡鸡’”。今天前来国防委员会，我看到在座都是大将军，所以这应该是满天都是“大星星”。你们有没有考虑割下 LP 以展现自己的决心？本席绝不是在开玩笑，韩国人切下手指头以表达抗日的决心。为什么你们不能割下 LP？请部长答复 yesorno。</p>
+<p>李委员敖：事实上，我们表达决心有很多种方法，当年明朝宦官魏忠贤是拿刀割下自己的 LP 以表达自己的决心。我告诉你一个故事，当年我小儿子年幼时，将《小星星》的歌词改编为“一闪一闪亮晶晶，满天都是‘小鸡鸡’”。今天前来国防委员会，我看到在座都是大将军，所以这应该是满天都是“大星星”。你们有没有考虑割下 LP 以展现自己的决心？本席绝不是在开玩笑，韩国人切下手指头以表达抗日的决心。为什么你们不能割下 LP？请部长答复 yes or no。</p>
 <p>李部长杰：我有看过相关的报道，个人认为，展现自我的决心与割下 LP，两者根本无关。</p>
 <p>李委员敖：如此做法绝对有效，你要割下你的 LP……</p>
 <p>李部长杰：美国人看不懂此种行为的含意，美国只看得懂自己要什么，我们只要向他们买什么。</p>
@@ -772,13 +805,13 @@
 <p>主席：李委员的质询时间已届。</p>
 <p>李委员敖：主席刚才并未阻止蔡明宪发言，在未经本席同意的情况下，主席同意他发言，这是主席的不对。</p>
 <p>主席：本席向在座委员建议，请各位在询答时尽可能预留时间给备询官员答复，如此才能达成询答的意义。</p>
-<p>李委员敖：我给过他们机会，那个机会就是请他们答复 yesorno。谢谢。</p>
+<p>李委员敖：我给过他们机会，那个机会就是请他们答复 yes or no。谢谢。</p>
 <h2 id="我高潮你刹车"><a class="header" href="#我高潮你刹车">我高潮，你刹车</a></h2>
 <p>2005 年 3 月 17 日，我在内政及民族委员会，质询大陆委员会主任委员吴钊燮，记录如下：</p>
 <p>主席：请李委员敖质询。</p>
 <p>李委员敖：主席、各位列席官员、各位同仁。本席收到吴主委寄给本席的信了，也许你已经忘记你曾经在本席当选之后写过一封信给我，你说希望本席指教你，所以今天本席就来了。</p>
-<p>刚才林委员引证了一句英文谚语，叫做“Givethedevilhisdue.”你的会是什么会呢？你的会应该是“魔鬼委员会”，行政院部会都有自己的职责，好比客委会要保护客家人，青辅会要保护青年人，严格来说，陆委会应该要保护内地、关切内地，但就本席的感觉，却认为事实正好相反。</p>
-<p>本席跟你谈一个比较大的问题。在二次大战以前，英国史学家汤因比曾写了一篇文章劝日本人，要日本不要老是跟一个拥有 4.5 亿人口的中国作对，这不是好现象。本席的意思是说，今天我方的整体方向、政策和气氛都是在跟 13 亿人口作对，而有一个人拥有足够的官方位阶，能够阻止我们继续跟他们作对，这个人就是你！本席讲一个也许不太文雅的笑话。一个人开卡车从山上下来，突然看到路边有一对狗男女在马路上做爱，这位司机就拼命按喇叭要他们闪开，但这对狗男女却不肯闪开，卡车司机只好紧急刹车。在几乎压到狗男女之际，卡车总算刹住了。卡车司机非常光火，下车大骂他们，结果那个男的从马路上爬起来讲了一句话：“Iamcoming.”这句话在英文有两个意思，一个是“我来了”，一个则是“我高潮了”，接着他又说：“Sheiscoming，andyouarecoming，butonlyyouhasbreak.”意思是三个人都“来了”，但只有司机有刹车。</p>
+<p>刚才林委员引证了一句英文谚语，叫做“Give the devil his due.”你的会是什么会呢？你的会应该是“魔鬼委员会”，行政院部会都有自己的职责，好比客委会要保护客家人，青辅会要保护青年人，严格来说，陆委会应该要保护内地、关切内地，但就本席的感觉，却认为事实正好相反。</p>
+<p>本席跟你谈一个比较大的问题。在二次大战以前，英国史学家汤因比曾写了一篇文章劝日本人，要日本不要老是跟一个拥有 4.5 亿人口的中国作对，这不是好现象。本席的意思是说，今天我方的整体方向、政策和气氛都是在跟 13 亿人口作对，而有一个人拥有足够的官方位阶，能够阻止我们继续跟他们作对，这个人就是你！本席讲一个也许不太文雅的笑话。一个人开卡车从山上下来，突然看到路边有一对狗男女在马路上做爱，这位司机就拼命按喇叭要他们闪开，但这对狗男女却不肯闪开，卡车司机只好紧急刹车。在几乎压到狗男女之际，卡车总算刹住了。卡车司机非常光火，下车大骂他们，结果那个男的从马路上爬起来讲了一句话：“I am coming.”这句话在英文有两个意思，一个是“我来了”，一个则是“我高潮了”，接着他又说：“She is coming，and you are coming，but only you has break.”意思是三个人都“来了”，但只有司机有刹车。</p>
 <p>今天陆委会就有“刹车”，你应该站出来告诉大家，我们必须尊重《宪法》，《宪法》规定一个中国，《宪法》增修条款里面有 5 次提到自由地区，一次提到内地。今天当大家都在喊反并吞的时候，本席认为你有资格出来讲话，根据《宪法》，是我们在并吞他们，为什么你不站出来，用你的道德勇气、丰富的学识和职位来讲一句公道话，为大家踩踩刹车呢？本席认为你有这个责任，但你站在这个职位上却没有给魔鬼应该得到的，本席的意思是你没有好好处理我方与大陆的关系，让局面变成一个仇视大陆、仇视 13 亿人口的危险状况，但你却还是不踩刹车。本席今天要讲的就那么简单，只有你有这个资格这样做，你也应该告诉大家，按照“宪法”就应该这样做。</p>
 <p>你是否应该要遵守《国统纲领》呢？这是李登辉核定的法案，《国统纲领》规定“共同重建一个统一的中国”，你为什么不把这个喊出来呢？里面还说“大陆与台湾均是中国领土”，这个就是《反分裂国家法》里面的文字，我们自己这样定没事，人家这样定，我们就要上街游行，为什么你不出来讲句公道话？本席认为如果继续跟 13 亿人口作对，我们将会走向英国历史家劝告日本的悲剧，在台湾举世滔滔鼎沸的状态下，本席希望你出来讲句公道话。</p>
 <p>主席：请行政院陆委会吴主任委员答复。</p>
@@ -864,44 +897,44 @@
 <p>谢院长长廷：主席、各位委员。身体好一点了没有？</p>
 <p>李委员敖：好多了，谢谢你。我不晓得怎么称呼你，谢院长。我现在老了，再过 12 天，我就满 70 岁。</p>
 <p>谢院长长廷：恭喜。</p>
-<p>李委员敖：我比你大 12 岁，你和我过去是朋友吗？应该是好朋友，对不对？你承认吗，yesorno？</p>
+<p>李委员敖：我比你大 12 岁，你和我过去是朋友吗？应该是好朋友，对不对？你承认吗，yes or no？</p>
 <p>谢院长长廷：你如果当我是朋友那就是朋友。</p>
 <p>李委员敖：谢谢你。在我的《李敖大全集》中还有我们在阳明山的合照，也许现在做你的朋友是高攀，我希望做你的次要朋友会有好下场。</p>
 <p>谢院长长廷：一定有。</p>
-<p>李委员敖：为了节省时间，请尽量以 yesorno 来行使我的质询权及你的答询权。yesorno，尽量简化。你不要紧张，我不会对你不客气。</p>
+<p>李委员敖：为了节省时间，请尽量以 yes or no 来行使我的质询权及你的答询权。yes or no，尽量简化。你不要紧张，我不会对你不客气。</p>
 <p>谢院长长廷：在国会要用国家语言。</p>
 <p>李委员敖：对不起，我没有请你答复前，你就不要答复，好不好？我现在可能有一点倚老卖老，可是我要告诉你，院长，我自己还倚靠了一个东西，那就是英国国会的标准，就是大家彼此之间还有一点点人情味，我希望我们也有一点点人情味，就像英国首相丘吉尔在野时，他过生日，大家都站起来替他祝寿，他们有那种传统国会的温馨；本席并不是要求 12 天之后你为我祝寿，但是我们的气氛可以友好一点。</p>
-<p>院长，你是第三届立法委员全台湾第一名，不像本席是吊车尾的，不能和你相比，我的话有点讽刺，但本席要告诉你，今天你站在这里，希望你能履行你送我这本书——《契约实务全书》的规则。何谓契约关系？fairplay，公道是契约关系，可是今天本席第一点要跟院长谈的，就是 26 年来，我们都是付钱向美国买武器，但是请问，我们可不可以不买武器？本席一再提及，美国的《与台湾关系法》说得很清楚，是基于美国政治的、经济的、安全的三个利益，所以他和我们并没有契约关系，他是自说自话的，他说 provide，供应台湾防御性的武器。请问谢院长，英文 provide 这个字是买卖的意思吗？它可能是买卖，也可能是赠与，也可能是租借。丘吉尔在《第二次世界大战回忆录》中有专章谈到有关租借的问题，第二次世界大战开始时，英国没有钱买武器，所以一再研究和美国谈租借武器的事，最后美国人被英国人说服，愿意租借武器。本席要请问谢院长，我们花了 26 年买武器，今天，连小学生的营养午餐费都付不出来了，台湾情况已经这么坏了，所以本席并不赞成买武器，但是若实在不得已，我们可不可以通过谈判，要求租借武器，经费就可以便宜许多？另外，本席要向李部长抗议，早上你向费委员鸿泰致意，却没有向本席致意，是否你有大小眼？</p>
+<p>院长，你是第三届立法委员全台湾第一名，不像本席是吊车尾的，不能和你相比，我的话有点讽刺，但本席要告诉你，今天你站在这里，希望你能履行你送我这本书——《契约实务全书》的规则。何谓契约关系？fair play，公道是契约关系，可是今天本席第一点要跟院长谈的，就是 26 年来，我们都是付钱向美国买武器，但是请问，我们可不可以不买武器？本席一再提及，美国的《与台湾关系法》说得很清楚，是基于美国政治的、经济的、安全的三个利益，所以他和我们并没有契约关系，他是自说自话的，他说 provide，供应台湾防御性的武器。请问谢院长，英文 provide 这个字是买卖的意思吗？它可能是买卖，也可能是赠与，也可能是租借。丘吉尔在《第二次世界大战回忆录》中有专章谈到有关租借的问题，第二次世界大战开始时，英国没有钱买武器，所以一再研究和美国谈租借武器的事，最后美国人被英国人说服，愿意租借武器。本席要请问谢院长，我们花了 26 年买武器，今天，连小学生的营养午餐费都付不出来了，台湾情况已经这么坏了，所以本席并不赞成买武器，但是若实在不得已，我们可不可以通过谈判，要求租借武器，经费就可以便宜许多？另外，本席要向李部长抗议，早上你向费委员鸿泰致意，却没有向本席致意，是否你有大小眼？</p>
 <p>李部长杰：没有。</p>
 <p>李委员敖：我开个玩笑！现在我念一段话给谢院长听：“艾森豪威尔尽管以前为军人，但都是经过选举的考验，具有民意基础，反观我们的国防部长，名为内阁制的阁员，但并非通过选举进入国会而进入内阁，一生兵戎，只因为一道命令就脱下军装，换上西装，不知民为何物，却号称文人部长，教国人怎能够相信他的色彩已经褪尽？”谢院长，你赞不赞成这段话？</p>
 <p>谢院长长廷：你要我回答是不是？</p>
-<p>李委员敖：是，赞成或不赞成也算是 yesorno。</p>
+<p>李委员敖：是，赞成或不赞成也算是 yes or no。</p>
 <p>谢院长长廷：在那个时空上我是赞成的。</p>
-<p>李委员敖：你不要有条件，我希望你给我 yesorno，赞不赞成？</p>
+<p>李委员敖：你不要有条件，我希望你给我 yes or no，赞不赞成？</p>
 <p>谢院长长廷：基本上赞成。</p>
 <p>李委员敖：谢谢！就是你赞成陈水扁当立法委员时说过的这段话，我很高兴你有这样的默契，不会踩到地雷。李杰李部长，本席绝对不是用这段话来否定你，上次本席在国防委员会时曾请教你，是否试着以租借武器的方式租武器，你说你们试验过，但没有成功。请问这是军人的态度吗？为什么第一次不成功，你们不能两次、三次地再试验呢？英国丘吉尔先生可以花这么多时间去试验，最后说服了美国人，你们呢？在此，本席再说一次，李部长，依你这么正直的性格，是干不久的，上次我曾举岳飞的故事告诉你，岳飞当时是骄兵悍将，北伐打不赢敌人，但却又是一个大将军，而最后之所以会成功，是因为他的失败，他作为一个忠臣而被整死了。部长，你可不可以用你专业的知识告诉大家，不能再做军备竞赛，买武器是骗人的，是做不到的。你活着做一次岳飞，永远是万古留名；像现在死拖活拖下去，你很快就被牺牲掉了。对不起，我的话就讲到这里，我对你是勉励的，而不是伤害的，现在就请你回座。谢谢。</p>
-<p>再请问谢院长，愿不愿意以租借方式和美国谈谈看？在这个谈判没有成功前，军购案先暂时停下来，可不可以？Yesorno？</p>
+<p>再请问谢院长，愿不愿意以租借方式和美国谈谈看？在这个谈判没有成功前，军购案先暂时停下来，可不可以？Yes or no？</p>
 <p>谢院长长廷：租借案可以尝试，但不能说没有成功前不购买，我们还是要购买。</p>
-<p>李委员敖：不对的，法律适用不是这样的，法律判决后，不因再审而阻止执行。本席的意思是，我们先把这个紧迫盯人的军购案停下来，试着考虑看看军租案，事实上，依照美方的标准，我们根本就可以免费取得武器，像今天的中南美洲一样，为什么我们还要花钱？所以，我请教谢院长，你考不考虑先停下军购案，至少也要同时进行军租案，你愿不愿意？Yesorno？</p>
+<p>李委员敖：不对的，法律适用不是这样的，法律判决后，不因再审而阻止执行。本席的意思是，我们先把这个紧迫盯人的军购案停下来，试着考虑看看军租案，事实上，依照美方的标准，我们根本就可以免费取得武器，像今天的中南美洲一样，为什么我们还要花钱？所以，我请教谢院长，你考不考虑先停下军购案，至少也要同时进行军租案，你愿不愿意？Yes or no？</p>
 <p>谢院长长廷：停下来，让台湾民众冒险，这个责任我担不起，除非大陆答应这段期间不会打我们……</p>
-<p>李委员敖：谢院长，对不起，我打断你的话。不是带着台湾人民冒险，是带着美国人民冒险，因为美国的《与台湾关系法》中自说自话，是根据美国政治的、经济的及安全的利益，我们不买武器是妨碍了美国的利益，所以我们可以跟美国谈判，是他们违反了契约的公道精神，我们请美国人就契约精神解释什么是 provide。本席的意思是，你愿不愿意经过类似英国丘吉尔式谈判租赁的手续？yesorno？愿不愿意？</p>
+<p>李委员敖：谢院长，对不起，我打断你的话。不是带着台湾人民冒险，是带着美国人民冒险，因为美国的《与台湾关系法》中自说自话，是根据美国政治的、经济的及安全的利益，我们不买武器是妨碍了美国的利益，所以我们可以跟美国谈判，是他们违反了契约的公道精神，我们请美国人就契约精神解释什么是 provide。本席的意思是，你愿不愿意经过类似英国丘吉尔式谈判租赁的手续？yes or no？愿不愿意？</p>
 <p>谢院长长廷：这个不是简单可以回答的。</p>
 <p>李委员敖：买东西是简单的问题吗？</p>
 <p>谢院长长廷：可以尝试，但不能现在停下来，现在停下来……</p>
 <p>李委员敖：你现在只走一条军购的路，却没想到我们也可以军租，也没有想到我们可以免费取得。谢院长，这两条路，你愿不愿意同时进行？</p>
 <p>谢院长长廷：可以同时进行。</p>
-<p>李委员敖：OK，我记着你的话，现在开始同时进行，也请你随时报告进度。另外，本席再请教你，我们是不是中国？Yesorno？</p>
+<p>李委员敖：OK，我记着你的话，现在开始同时进行，也请你随时报告进度。另外，本席再请教你，我们是不是中国？Yes or no？</p>
 <p>谢院长长廷：这很难定义。</p>
 <p>李委员敖：你不能讲条件，不能给“中国”加条件。</p>
-<p>谢院长长廷：不是所有的事情都可以用 yesorno 回答，你是读历史的，你应该很清楚。</p>
-<p>李委员敖：一国的行政院长，当他给“中国”加条件时，院长，你不是以一个优秀的法律人士身份讲话。我这里有一个表愿意借给你看，让你看我们的法律中有多少提到“中国”的字眼。首先列出的，就是《民法》。你太熟悉了，也太清楚了，《民法》总则中就有“中国”字眼，请问你要如何回避这个问题？你不敢给“中国”下定义，那么法律中提到的“中国”又是什么呢？再问你一遍，“中国”，有没有 yesorno 的问题，你讲，你不要闪躲。</p>
+<p>谢院长长廷：不是所有的事情都可以用 yes or no 回答，你是读历史的，你应该很清楚。</p>
+<p>李委员敖：一国的行政院长，当他给“中国”加条件时，院长，你不是以一个优秀的法律人士身份讲话。我这里有一个表愿意借给你看，让你看我们的法律中有多少提到“中国”的字眼。首先列出的，就是《民法》。你太熟悉了，也太清楚了，《民法》总则中就有“中国”字眼，请问你要如何回避这个问题？你不敢给“中国”下定义，那么法律中提到的“中国”又是什么呢？再问你一遍，“中国”，有没有 yes or no 的问题，你讲，你不要闪躲。</p>
 <p>谢院长长廷：没有闪躲，你如果给我一分钟，我可以……</p>
 <p>李委员敖：你讲，法律中的“中国”是什么？</p>
 <p>谢院长长廷：你给我一分钟，我就给你讲清楚。</p>
-<p>李委员敖：我不要给你一分钟，我要你说 yesorno？</p>
+<p>李委员敖：我不要给你一分钟，我要你说 yes or no？</p>
 <p>谢院长长廷：那就很难了。</p>
-<p>李委员敖：你心里清清楚楚知道，你不能拒绝回答我们的法律，这不是国防机密，也不是外交机密，你必须答复我 yesorno！</p>
-<p>谢院长长廷：这没有 yesorno 的问题。</p>
+<p>李委员敖：你心里清清楚楚知道，你不能拒绝回答我们的法律，这不是国防机密，也不是外交机密，你必须答复我 yes or no！</p>
+<p>谢院长长廷：这没有 yes or no 的问题。</p>
 <p>李委员敖：你拒绝回答，我给你 20 天去考虑，以书面答复我，好不好？</p>
 <p>谢院长长廷：可以。</p>
 <p>李委员敖：长廷，你觉不觉得很丢人？</p>
@@ -912,10 +945,10 @@
 <p>谢院长长廷：这是平等的意思。</p>
 <p>李委员敖：我不给你一分钟，因为你的一分钟全是你的条件。长廷啊！戏台唱戏是对着观众唱的，后台怎么跟自己人唱戏呢？我不希望你跟我后台唱戏，我们是曾经的朋友，至少我是你第二号敌人、次要的敌人，不是吗？</p>
 <p>我认为你在闪躲这个问题。我告诉你，我赞成你说这个“中国”不是我们，可是我必须要问你，如果是这样子的话，比照《真相条例》，我要求谢院长把这些法律送请大法官解释，在解释是否“违宪”前，这些法律全部停止适用。我求你们、求你们行政院的官员，用抵抗权来抵抗这些法律，使它们不要适用，好不好？</p>
-<p>你接不接受这种抵抗权？《真相条例》是立法院公开通过的法律，是总统签署的法律，你们行政院——当然不是你担任院长时，可以公开抵抗不执行，等大法官解释，请问这个行政院还叫行政院吗？游锡堃太奇怪了，可是我问你，这些单位像警政署、安全局用抵抗权方法拒绝实行立法院通过的《真相条例》，请你告诉我，这些单位该不该处分他们？Yesorno？立法院通过的法律，他们可以抗拒不执行，该不该处分？Yesorno？以你那么聪明要想那么久吗？</p>
+<p>你接不接受这种抵抗权？《真相条例》是立法院公开通过的法律，是总统签署的法律，你们行政院——当然不是你担任院长时，可以公开抵抗不执行，等大法官解释，请问这个行政院还叫行政院吗？游锡堃太奇怪了，可是我问你，这些单位像警政署、安全局用抵抗权方法拒绝实行立法院通过的《真相条例》，请你告诉我，这些单位该不该处分他们？Yes or no？立法院通过的法律，他们可以抗拒不执行，该不该处分？Yes or no？以你那么聪明要想那么久吗？</p>
 <p>谢院长长廷：有效的法律应该执行，应该遵守。</p>
-<p>李委员敖：有效、无效不是侯友宜这些人所能决定的，违不违宪也不是他们能决定的，也不是你们行政院所能决定的，对不对？在没有解释出来以前，你们可以停止适用吗？这也能停止？你该不该处分他们？Yesorno？</p>
-<p>谢院长长廷：世界上的事不是 yesorno……</p>
+<p>李委员敖：有效、无效不是侯友宜这些人所能决定的，违不违宪也不是他们能决定的，也不是你们行政院所能决定的，对不对？在没有解释出来以前，你们可以停止适用吗？这也能停止？你该不该处分他们？Yes or no？</p>
+<p>谢院长长廷：世界上的事不是 yes or no……</p>
 <p>李委员敖：长廷兄，你是堂堂的行政院院长，不是泥鳅，你怎么这么滑头？</p>
 <p>谢院长长廷：如果你这样问，我怎么……</p>
 <p>李委员敖：这个问题 20 天后书面答复我，好不好？</p>
@@ -931,7 +964,7 @@
 <p>谢院长长廷：恭喜！恭喜！</p>
 <p>李委员敖：我倚老卖老，请你原谅我，可是我必须说，在我有生之年，我要讲几句话。长廷兄，你记不记得有一个 70 岁时死在“立法委员”任上的可爱的台湾人？那个人就是郭国基。</p>
 <p>郭国基当年被国民党政府抓起来，戴了 6 斤半的脚镣，出来后和国民党的副总统陈诚有一段谈话。我听了后几乎要垂泪。他跟陈诚说，你们这些外省人怎样看我们台湾人？整个中国大陆的资源、领土，是你们的祖先和我们的祖先共同取得、共同创造的。今天你以为我们要搞“台独”，我们把“台独”搞得这么小？你太小看我们台湾人了！这就是 70 岁死在立法委员任上的郭国基的一段话。他那样地被外省人迫害，戴了 6 斤半的脚镣，可是他觉得他的世界不在台湾，整个中国是他的一部分，是他的祖先所创造的一部分，他的眼里不只是台湾。</p>
-<p>长廷，我讲这话真的很痛苦，因为你是我民进党朋友里最理性的、学问最好的、口才最好的，跟我有某种程度私交的。昨天在电梯里我抱住了王幸男，他的思想和我南辕北辙，可是长廷兄不要忘记，今天在立法院里只有王幸男和我是坐过政治犯牢的，其他的人统统没有。我必须跟你说，我们台湾人有情有义，美丽岛事件在辩论时，站在第一排最左边的林弘宣，今天去哪里了？过年的时候，写信给我的朋友林宪同，也是你的朋友，要借两万元。当满朝富贵的时候，大家都是做副总统的副总统、做总统的总统、做院长的院长，你们这些美丽岛系统通吃了我们政治犯的资源以后，长廷兄，我为林弘宣请命，请你特别照顾他一下，可以吗？Yesorno？</p>
+<p>长廷，我讲这话真的很痛苦，因为你是我民进党朋友里最理性的、学问最好的、口才最好的，跟我有某种程度私交的。昨天在电梯里我抱住了王幸男，他的思想和我南辕北辙，可是长廷兄不要忘记，今天在立法院里只有王幸男和我是坐过政治犯牢的，其他的人统统没有。我必须跟你说，我们台湾人有情有义，美丽岛事件在辩论时，站在第一排最左边的林弘宣，今天去哪里了？过年的时候，写信给我的朋友林宪同，也是你的朋友，要借两万元。当满朝富贵的时候，大家都是做副总统的副总统、做总统的总统、做院长的院长，你们这些美丽岛系统通吃了我们政治犯的资源以后，长廷兄，我为林弘宣请命，请你特别照顾他一下，可以吗？Yes or no？</p>
 <p>谢院长长廷：可以。</p>
 <p>李委员敖：谢谢你，我总算抓到你一句 yes。我必须跟你讲，为什么我们国防委员会会谈到杜正胜？你晓得那句话——教育是最廉价的“国防”。对于杜正胜，长廷兄，当年我们两人和林永丰医师游阳明山，我跟你讲了一句话也许你还记得，我说真正的问题是民进党对我们是什么？你说民进党对我们是汉献帝，它代表了正统。今天你抓到了正统，从政治斗争来说，我又想起了十几年前和你说过的话，我曾说你们不要赶走国民党老贼，因为老贼对你们而言是好的，只有老贼才证明国民党是多么黑暗、多么丑陋、多么恶心、多么使我们发笑。老贼赶走了，这么好的道具就没有了。今天大家说我反对杜正胜，其实从政治厉害的观点来讲，我赞成 40+1，40 位立委再加上我，留下杜正胜。杜正胜会永远是你谢长廷的痛，他给你制造情况，为什么会痛呢？让我们看看数据。有一份极机密资料，那是杜正胜亲笔为李登辉写的演讲稿，其中提到“在台湾的中国人”，那时他承认是中国人。到了 1989 年他写《历史的再生》一书时，又提到“台湾有 1800 万的中国人”，可是现在杜正胜出了这本书，我们发现“中国人”不见了。由此可见，谢院长用的教育部长是个前后不一致、捏造变造历史事实的人。1800 万人怎么忽然不见了？关键就在于杜正胜的意识形态出了问题。你的教育部、你的文建会印出来的地图把台湾放在上面，今天本席带来了一幅地图，我愿意把这幅地图捐给“政府”，在地图上台湾尾在左边，和杜正胜的地图正好相反。本席在教育委员会质询杜正胜说，你的图台湾尾在右边，我的图则在左边，你看过我的地图吗？杜正胜说没有见过。我问他，你不是台湾史专家吗？他说他不是，他第一次在我面前谦虚地承认自己不是台湾史专家。为什么地图中台湾尾可以在左边，也可以在右边或下边？因为当时画地图的人基于一时需要，并没有政治的解释。今天你的文建会、你的教育部把台湾作了政治解释，就是这样乱搞，一会儿 1800 万人变成不是中国人了、一会儿台湾又变成了世界的中心。现在本席手中的这份地图是 1964 年国民党政府画的图，是以台湾为中心的世界地图，真是自大狂！今天你们搞这些还不如国民党，国民党以台湾为世界中心，你们的地图只是把台湾放在大陆上面，这算什么？全世界围着台湾转，国民党意淫世界比你们强烈多了！</p>
 <p>杜正胜不是他个人好坏的问题，而是他的学问不行，制造了这么多争议，你今天不请他下台，等于是要拆陈水扁的台。容我作恶意的解释，你是给陈水扁难看，找了这么个货色整天出情况，成了大家奚落、打击、愤恨的对象，进而迁怒于陈水扁，当然久了以后，你也无法脱身。长廷兄，你有没有考虑不要让杜正胜的问题继续消耗我们的资源，不要拿我们做白老鼠？游锡堃的班底已经实验了两年，官吏走马换将成了白老鼠，现在连人民都变成了白老鼠。长廷兄，这样子好吗？我必须在我的质询时间结束前，把最后要讲的话讲给你听，以后我可能会死掉，你也不会受到这种折磨，可是今天还有这么一个人，在这么难得的机会里，山不转路转，好死不死站在你的面前，又是你的老朋友，在和你讲话。</p>
@@ -1014,7 +1047,7 @@
 <p>李委员敖：主席、各位列席官员、各位同仁。副部长的报告中提到，遵照前副部长康宁祥先生指导，成立精简小组。你对康宁祥了解多少？你认为他有能力来主持精简小组吗？</p>
 <p>主席：请国防部蔡副部长答复。</p>
 <p>蔡副部长明宪：主席、各位委员。我认识康宁祥前副部长，我跟他也是好朋友，虽然那段期间我不在国内，但史编室向我表示，他很用心地召集会议来改革与提高军事刊物。</p>
-<p>李委员敖：你知道他办的《首都早报》最后是办垮了赖债吗？你知道他的党外杂志最后都办垮了吗？你知道他在搞文字宣传方面是一个低能的人物吗？请回答 yesorno。</p>
+<p>李委员敖：你知道他办的《首都早报》最后是办垮了赖债吗？你知道他的党外杂志最后都办垮了吗？你知道他在搞文字宣传方面是一个低能的人物吗？请回答 yes or no。</p>
 <p>蔡副部长明宪：我不很清楚。</p>
 <p>李委员敖：我现在告诉你，你要清楚一点，他是这样一个无能的人，他唯一的本领就是在外面搞女人，生了私生子，然后赖债，不肯承认；经过法院鉴定，认为他是私生子的爸爸，然后才讨价还价，给那位蓝女士钱。他是如此行为不堪的人，做了你们国防部的副部长，现在由你出任，当然我承认有进步，但是我必须说，你成立这种精简的方式还是有问题的。请问总政战局文宣处的王处长，你做了军方刊物的社长也好，发行人也罢，你总共主持了几种刊物？</p>
 <p>主席：请总政战局文宣处王处长答复。</p>
@@ -1072,7 +1105,7 @@
 <p>部长，不要再讲了，你要好好做，我会盯着你，辩什么？不要辩了，你辩不过我的，再见！</p>
 <p>以上质询，会议及提案内容是“邀请国防部部长李杰，行政院主计处副主计长陈庆财，财政部政务次长李瑞仓报告‘2006 年至 2010 年国防财力预算’”等。</p>
 <p>一开始我就赶副主计长和财政部次长下台，就因为他们还在主张用“特别预算”来军购，与国防部一个鼻孔出气，所以我就把他们三角联盟切开，逼国防部孤立。</p>
-<p>至于质询中谈到我借给李杰那本书，书名是“AmericanPolicytowardCommunistChinaTheHistoricalRecord：1949-1969”。</p>
+<p>至于质询中谈到我借给李杰那本书，书名是“American Policy toward Communist China The Historical Record：1949-1969”。</p>
 <h2 id="国家安全局对我下毒"><a class="header" href="#国家安全局对我下毒">国家安全局对我下毒？</a></h2>
 <p>国家安全局是一个神秘的单位，当年成立时炙手可热，主其事者是陈大庆上将，整我们异己分子，无役不与。后来这个衙门愈变愈弱了，原因是它“家法”不太好用了。“家法处分”受到了限制，内控能力就减弱了。到了李登辉主政，跟国安局的关系，迥非蒋氏父子的主奴关系，能力更减弱了。对这种衙门，“内斗内行，外斗外行”，八字论定而已。它的局长宋心濂裸毙中国大饭店地下室后，殷宗文继起，所作所为，悉以非法为李登辉搞钱为要务。殷宗文最后因病下台，丁渝洲继起，细人细务，蔚为局风。2000 年所谓总统大选，由他分别向五组候选人马做简报，向我也演出一番。丁渝洲下台后，到我书房来拜访，透露李登辉拿钱却耍赖，责任都推到国安局局长头上，陈水扁亦步亦趋。他委婉问计于我，我说你的麻烦不止一方面，连宋当选后，也会追究你助纣之罪。他问怎么办，我说除了你先写书和盘托出真相以自保外，没有什么法子了。后来他果然出版了《丁渝洲回忆录》，有所揭发。我到立法院后，根据此书线索，追查不绝。这时局长是薛石民，细人细务之外，更唯扁是从，国安局变成了“阿扁保护局”、“李登辉掩护局”。这种局务，当然过不了李敖这一关，所以被我盯住。最成功的是，逼薛石民追回李登辉贪污的“台综院”的钱，和陈水扁贪污的罗太太的钱，薛石民都配合了。</p>
 <p>我在立法院，不肯收官员或公家单位的礼，有时东西送来，退不回去，我就汇钱过去，自来水公司、台北故宫博物院、国防部史政局等单位都收到我的汇票，表示盛情可感，但我照价付费。有一次国安局送了盒水果，没及时退回，我乃请小常小龙（赵锦龙）到中央菜场，买了 2000 元香蕉，有两大筐，送到国安局。并告知是礼尚往来，香蕉大家可分吃，男职员每人一根，女职员每人两根。</p>
@@ -1135,7 +1168,7 @@
 <p>薛局长石民：报告委员，因为我们已经找了台综院，近期之内会跟我们核对财产列表，研究报告的部分已经没有办法追，只有不动产的部分我们要清点，哪些是动产，哪些是不动产，因为这件案子已经在审理中，所以我们不能作任何评论。</p>
 <p>李委员敖：对不起，局长，我没有要你评论，我要你采取法律行动，刑事由安全局出面告李登辉贪污。</p>
 <p>薛局长石民：他已经在审理中。</p>
-<p>李委员敖：没有，我的意思是由安全局出面，当时的案件是由调查追查到安全局，那是调查局的事情。今天被害人是安全局，当然要由安全局出面告李登辉，并做民事上的追索，若在这之前，台综院把财产变卖处理怎么办，所以要假扣押，需要 1.054 亿元，我愿意替你募捐，若你不接受募捐，这个月（4 月）12 号，我会在院会质询谢院长，请他动用第二预备金给你们，如果第二预备金拨过来，你们要不要假扣押，yesorno，假扣押李登辉侵占我们的 3.16 亿元，要或不要？</p>
+<p>李委员敖：没有，我的意思是由安全局出面，当时的案件是由调查追查到安全局，那是调查局的事情。今天被害人是安全局，当然要由安全局出面告李登辉，并做民事上的追索，若在这之前，台综院把财产变卖处理怎么办，所以要假扣押，需要 1.054 亿元，我愿意替你募捐，若你不接受募捐，这个月（4 月）12 号，我会在院会质询谢院长，请他动用第二预备金给你们，如果第二预备金拨过来，你们要不要假扣押，yes or no，假扣押李登辉侵占我们的 3.16 亿元，要或不要？</p>
 <p>薛局长石民：报告大师，我们回去和律师研究以后再决定。</p>
 <p>李委员敖：下次我们还是要见面的，你不要研究这么久。</p>
 <p>薛局长石民：我们也要找律师，我不能在这里跟你说要或不要。</p>
@@ -1217,7 +1250,7 @@
 <p>王副局长进旺：没有，刘泰英的部分现在还在审理中。这部分凡有涉及刑事……</p>
 <p>李委员敖：请问，你们可否安排时间让我们去参观你们的台湾综合研究院第四所？</p>
 <p>王副局长进旺：目前这不是由我们管理。</p>
-<p>李委员敖：可是根据刘冠军所公布的密件，你们是要控制台综院的股东，如此才能保护你们的产权。如果你们不能带我们去看台综院的第四所，证明方才李文忠委员所说的。如果它是你们的外围组织，我们就可去参观。它到底是不是你们的外围组织？Yesorno？</p>
+<p>李委员敖：可是根据刘冠军所公布的密件，你们是要控制台综院的股东，如此才能保护你们的产权。如果你们不能带我们去看台综院的第四所，证明方才李文忠委员所说的。如果它是你们的外围组织，我们就可去参观。它到底是不是你们的外围组织？Yes or no？</p>
 <p>王副局长进旺：它确实是本局委托研究的对象，但是，现在已经停止运作。</p>
 <p>李委员敖：研究对象也包括研究盖房子吗？</p>
 <p>王副局长进旺：不是，台综院确实是本局委托研究对象，但是，目前已经停止运作。</p>
@@ -1350,7 +1383,7 @@
 <p>杜部长正胜：委员可以让我讲话吗？</p>
 <p>李委员敖：闭嘴，我已经第 8 次叫你闭嘴。今天请各位校长来这边，其实我心里是很痛苦的，尤其是对台大的陈校长，你已经连续做了台大 12 年的校长，像李登辉一样连续做了 12 年的总统。记得有一次你天良发现而说了一段话，你说台湾大学当年对殷海光教授不好，给他聘书却不让他上课；可是当法院传你作证时，你可以以台湾大学校长的身份站出来维护台湾大学当年被迫害的教授时，你却不敢出席！当年你请假的信还在我手里。为什么该有道德勇气的时候，你不敢站出来？今天有 11 个中央研究院的院士站出来反对军购案，其中不乏台湾大学的教授，他们站出来说政府搞军购是不合理的。我必须告诉陈校长，当时挂名的第一个院士就是最近被打一拳的劳思光，他在 47 年前于《自由中国》和殷海光打过一仗，他骂殷海光是曲学而不阿世，殷海光很生气地告诉我。劳思光骂殷海光曲学是扭曲学术、不阿世是敢跟政府对干，他赞美殷海光这点。在 47 年以后的今天，我们看到了同一个劳思光，乃至于其他的院士们，他们才敢站出来跟政府对干一次，晚了殷海光 47 年。殷海光是伟大的台湾大学教授，但当他在法院被污蔑时，你却不敢出来作证。本席今天之所以很痛苦地讲这个故事，就是要告诉大家，当年在北洋军阀时代，他们用的大学校长是国民党的蔡元培，北洋军阀都有这个度量而用国民党的党员来做大学校长。当年蔡元培担任校长时，北京大学不承认教育部，因为教育部部长太烂了，所以他退回教育部的公文，但会使用教育部给的预算。今天台湾大学搞了半天却是个封闭的文化、搞了半天是个近亲繁殖。很抱歉，清大的徐校长就是近亲繁殖的产品，不是吗？在宋朝时，大学校长是跟皇帝面对面坐着的，皇帝坐南面、校长就坐北面。今天陈校长已经做了 12 年的台大校长，在台湾社会风气这么坏的时候，你有没有以学术领袖的地位出来说句公道话？你不肯讲。你们埋头做学术研究，但台湾大学的学术排名又如何？当教育部长乱搞时，你们几个大学校长有没有站出来说话？教育办得不行时，你们应该要站出来！像方才有委员说曾宪政反对近亲繁殖，但他不就是李远哲手下近亲繁殖的人？他们将整个情况搞得非常荒谬，台湾大学是公开征才、暗中做掉。不是吗？哪里容得下台湾大学以外的人？你们现在整个甄选标准，没有一条规定不是要教授。我李敖能当教授吗？我连讲师都干不上。只有东吴大学敢请我，台湾大学绝对不敢请我。你们可以怀疑我的学术成分，我也可以怀疑你们的甄选标准。按照你们的标准，傅斯年校长没有资格做台湾大学的校长。可是我要告诉你们，人格伟大、敢跟政府对干、敢拒绝教育部长、敢把我们良知的话散布出来、敢到法庭作证，这些都是大学校长应该有的风骨。你们为我们示范了多少？今天我们谈的都是枝枝节节的问题，可是最该谈的是，第一流的知识分子应该站在第一线，而这些知识分子不是别人就是大学校长。当年蔡元培在五四运动时，就是个校长，是个匹夫，但他能抵抗一个时代，不是吗？你们这些校长有那么好的学问，可是你们在人格上、在肩膀上太软弱了；尤其台大的陈校长，你没有道德勇气到法院去作证，让殷海光在法律上遭到被污蔑的判决，我认为你真的要好好反省。</p>
 <p>过去在戒严时代我的书被查禁，我总共写了 100 多本，被查禁了 96 本。每次查禁时，国民党官方都会派查禁大队到印刷厂抄走我的书；当时在第一线帮我照顾书的是我的弟弟，我告诉他，在他们抄我书之前，你必须和他们见面，等争执以后才能离开。可是我弟弟忽然要方便，他从万华区跑回大安区去方便，方便完回去以后，书就不见了。我就臭骂我弟弟，我说人家是肥水不落外人田，你是水肥不落外人田，为什么方便非要回家不可？今天你们就是水肥不落外人田，你们大学教授都是知识分子，却变成一堆水肥，然后在水肥里面分赃，这样是什么意思？社会这么黑暗，你们这样搞，真是丢脸死了！黄光彩不足任，而你们这些有头有脸的大学校长，你们也是丢脸死了，还不好好反省？这样的教育部长，你们不要和他对抗，还蒙在那里不吭气，真是丢脸死了！我今天这样臭骂你们，就是要告诉你们没有资格当第一流的知识分子。或许你们要说我很冲动，其实我应该已经过了冲动的年纪，但我今天实在是忍不住了，你们都是我的小老弟，我们在第一线和国民党对抗的时候，李远哲是逃兵，李远哲在台湾大学时和我同届，我是历史系，他是化工系，第二年才转去化学系，不是吗？你们是我的小老弟，结果你们这样在逃脱责任，面对这样的教育部长，你们不和他对干，我真为你们悲哀，请你们好好想一想，我不要听你们答复。</p>
-<p>我只问杜部长，你要不要我为你上一堂课？只要回答 yesorno，我可以讲一堂台湾史的课给你听。</p>
+<p>我只问杜部长，你要不要我为你上一堂课？只要回答 yes or no，我可以讲一堂台湾史的课给你听。</p>
 <p>杜部长正胜：这个……</p>
 <p>李委员敖：如果你不答复，就不用再啰唆。谢谢主席！</p>
 <p>这天质询，会议及提案内容是“教育部部长杜正胜率同台湾大学、台湾师范大学、台湾清华大学、交通大学、中央大学……备询”。事后报载，大学校长们“纷纷私下表示无法接受‘水肥’的羞辱”，但“私下表示”了又怎样，他们没人敢公开对抗李敖。倒有一个伪君子李家同，发表文章，李家同做过 3 个大学的校长，他不跟当道走得近，谁有这么好的机会？“九二一”地震时，他率先带大学生逃离埔里，置人民于不顾，全无高等知识分子的心怀，还满口仁义道德，是典型伪君子。另外还有个女伪君子，是龙应台。这些人恶心死了。</p>
@@ -1376,7 +1409,7 @@
 <p>10 年前的今天，即 1995 年 10 月 13 日，你在中研院 545 期周报发表了一篇重要的文章，还记得吗？</p>
 <p>李院长远哲：我不太记得。</p>
 <p>李委员敖：我念其中一段的文章给你听：如何保持学术研究机构的应有分际，这是我们应该留意的事情。中央研究院的每一个人都有权利发表自己的意见，可是从自己的工作岗位来看，应该考虑到即使郑重的声明是个人的意见，也或多或少影响了中央研究院的公信力，无可避免地将会影响到别人的意见。有关助选的言论，特别是具有较强的排他性言论，更容易引发这种争议，伤害本院公正的、中立的地位。中央研究院同仁应该表现出一种风范，不要介入这种政治。</p>
-<p>院长，当你苦口婆心在 10 年前的 10 月 13 日发表了这篇文章，劝告中央研究院的同仁后，很不幸地，院长本人忘了这些话。所以在 2000 年总统大选时，你出来发表有名的《向上提升，不要向下沉沦》一文，公开支持陈水扁的行动。请问你，你本人是否违反了这个写文章的李远哲？你只要告诉我 yesorno 就可以了，谢谢你。</p>
+<p>院长，当你苦口婆心在 10 年前的 10 月 13 日发表了这篇文章，劝告中央研究院的同仁后，很不幸地，院长本人忘了这些话。所以在 2000 年总统大选时，你出来发表有名的《向上提升，不要向下沉沦》一文，公开支持陈水扁的行动。请问你，你本人是否违反了这个写文章的李远哲？你只要告诉我 yes or no 就可以了，谢谢你。</p>
 <p>李院长远哲：No！</p>
 <p>李委员敖：没有违反？</p>
 <p>李院长远哲：我那时候辞掉了中央研究院院长的职务。</p>
@@ -1761,8 +1794,8 @@
 <p>李代表大维：应该是这样没错。</p>
 <p>李委员敖：现在我们与美国的关系是一种猜谜的游戏，台湾的国防就是一种猜谜的游戏。</p>
 <p>李代表大维：对于整个外交工作，我们的确不会将任何东西讲成百分之百。</p>
-<p>李委员敖：可是在假设对方打过来的情况下，国防部长告诉我们，如果我们不买武器，我们就会完蛋，但买武器也只能抵抗两个星期，两个星期以后，你办外交的责任就出现了。老美如果不来救我们，到时台湾将成为一片废墟和火海。如果比照本席刚才所说的，美国参议员评估，有 4 次退票的记录，导致他们不再来的时候，届时我们该怎么办？你现在根本没有答复本席这个问题，你只是告诉本席，美国可能来，也可能不来。你的报告里面提到，该法虽未规定美国必须以武力响应，当然也未排除任何可能之做法。今天请你明确地告诉本席，美国可能不会来，是不是？这是 yesorno 的问题。</p>
-<p>李代表大维：这个问题不能用 yesorno 来回答。</p>
+<p>李委员敖：可是在假设对方打过来的情况下，国防部长告诉我们，如果我们不买武器，我们就会完蛋，但买武器也只能抵抗两个星期，两个星期以后，你办外交的责任就出现了。老美如果不来救我们，到时台湾将成为一片废墟和火海。如果比照本席刚才所说的，美国参议员评估，有 4 次退票的记录，导致他们不再来的时候，届时我们该怎么办？你现在根本没有答复本席这个问题，你只是告诉本席，美国可能来，也可能不来。你的报告里面提到，该法虽未规定美国必须以武力响应，当然也未排除任何可能之做法。今天请你明确地告诉本席，美国可能不会来，是不是？这是 yes or no 的问题。</p>
+<p>李代表大维：这个问题不能用 yes or no 来回答。</p>
 <p>李委员敖：这只有来和不来两种情况，难道还有来了一半还跑回去的情形吗？</p>
 <p>李代表大维：这也不无可能。美国用兵的原则是如果他们决定要来，就必须做有把握的事情。如果他们发觉台湾已成为一片废墟，军事就派不上用场了。</p>
 <p>李委员敖：你今天让本席明确地得到一个结论，就国防部长的说法，我们买了武器之后可以抵抗两个星期，并等待美国来救援。但你今天告诉我们一个讯息，就是美国可能不会来，本席在此谢谢你。</p>
@@ -1781,12 +1814,12 @@
 <p>澄清一《与台湾关系法》并非“台湾保护法”，没说美国保护</p>
 <p>A.《与台湾关系法》是美国的单方国内法，不是对台湾的双方条约，美国并没有保护台湾的依据，台湾无法要求美国给出任何承诺，这对台湾是极难堪的处境。</p>
 <p>B.人家立法叫《与台湾关系法》，可是关系了半天，只是美国跟台湾的关系，不是台湾跟美国的关系，像是窑子里的妓女一样，只有人家来同你发生关系，你不能找上门去发生关系，台湾人出头天，要当家做主，原来在老美面前，只是窑子。</p>
-<p>C.今天有信心满满、洋洋自得的台湾人说《与台湾关系法》会保护台湾，可是遍查全文，并无依据。此由当年美国众议院亚太小组主席查布劳基（Zablocki）要定名《台湾保护法》（TaiwanProtectiveAct）而被否决，可见端倪。</p>
-<p>D.这一否决内幕，李大维分别于 1985 年 11 月 27 日、1986 年 2 月 13 日，走访众议院外交委员会幕僚长布雷迪（JackBrady）及资深幕僚古力克（LewisGulick），得到证实。所谓《与台湾关系法》保护台湾之说，依法无据、于愿一厢耳。</p>
+<p>C.今天有信心满满、洋洋自得的台湾人说《与台湾关系法》会保护台湾，可是遍查全文，并无依据。此由当年美国众议院亚太小组主席查布劳基（Zablocki）要定名《台湾保护法》（Taiwan Protective Act）而被否决，可见端倪。</p>
+<p>D.这一否决内幕，李大维分别于 1985 年 11 月 27 日、1986 年 2 月 13 日，走访众议院外交委员会幕僚长布雷迪（Jack Brady）及资深幕僚古力克（Lewis Gulick），得到证实。所谓《与台湾关系法》保护台湾之说，依法无据、于愿一厢耳。</p>
 <p>澄清二《与台湾关系法》只说“严重关切”，没说美国出兵</p>
 <p>A.李杰在国防委员会答复李敖说，军购买了，大陆打来，我们可以支撑两周。两周以后，要等美国出兵救我们。问他美国会不会出兵，他说不便说。问他美国不来怎么办？他说战到一兵一卒。</p>
-<p>B.李大维在外交委员会向李敖承认说：美国可能不来救台湾。依《与台湾关系法》，美国会“严重关切”（graveconcern）。</p>
-<p>C.李敖追问：“严重关切”不等于出兵。李敖举证美国参议员裴西（CharlesPercy）就认为“严重关切”是不够的，要求改为“安全利益”（securityinterest），但是被否决了，否决理由是，用“安全利益”一词会迫使美国对大陆采取军事行动！</p>
+<p>B.李大维在外交委员会向李敖承认说：美国可能不来救台湾。依《与台湾关系法》，美国会“严重关切”（grave concern）。</p>
+<p>C.李敖追问：“严重关切”不等于出兵。李敖举证美国参议员裴西（Charles Percy）就认为“严重关切”是不够的，要求改为“安全利益”（security interest），但是被否决了，否决理由是，用“安全利益”一词会迫使美国对大陆采取军事行动！</p>
 <p>D.但用“严重关切”就太滑头了、也太放水了。裴西参议员就举出 4 个例子，我列表如下：</p>
 <p>时间事件美国宣布结果</p>
 <p>1956 年前苏联侵匈牙利严重关切美国放水</p>
@@ -1798,7 +1831,7 @@
 <p>F.《使美八年纪要——沈剑虹回忆录》中，一再列举美国不守《与台湾关系法》之处，以亲身痛苦经历，宣称“不再相信美国”，岂容忘之？</p>
 <p>澄清三《与台湾关系法》基于美国利益，没提台湾利益</p>
 <p>A.正因为《与台湾关系法》是美国的国内法，所以它在第二条 B 项第二款中，明说是基于“美国政治上、安全上与经济上的利益”，但没说是基于台湾的这三种利益，所以，台湾自然无须看它脸色。</p>
-<p>B.如今美国的脸色竟是 2005 年 9 月 19 日它的国防部大员罗斯（EdRoss）说出的：“台湾的自卫是台湾的责任，不是美国的责任。”“如果你们无法防卫自己，我们也无法帮忙防卫你们。”（Wecannothelpdefendyou，ifyoucannotdefendyourself.）问题是，既然台湾的处境是攸关你们美国自己的三种利益，为什么防卫你们的利益却是“台湾的责任”？台湾为什么要下贱地接受这种不通的美式逻辑？</p>
+<p>B.如今美国的脸色竟是 2005 年 9 月 19 日它的国防部大员罗斯（Ed Ross）说出的：“台湾的自卫是台湾的责任，不是美国的责任。”“如果你们无法防卫自己，我们也无法帮忙防卫你们。”（We can not help defend you，if you can not defend yourself.）问题是，既然台湾的处境是攸关你们美国自己的三种利益，为什么防卫你们的利益却是“台湾的责任”？台湾为什么要下贱地接受这种不通的美式逻辑？</p>
 <p>C.台湾在第一线为美国看门，俨然看门狗也；如今看门狗要自费买骨头，有些台湾人还争先恐后要付钱，一说不付钱就是不爱台湾，其实是更爱美国也；一说不付钱就买不到了，其实是美国马克吐温的魔术也，此公笔下汤姆莎耶（TomSawyer）骗小朋友为他刷墙，还得给他好处，苍生之欺，有如是者，走狗之欺，有如是者！</p>
 <p>D.美国口口声声要台湾买武器表现自卫决心，其实正该反过来要求美国才对，台湾人真笨！你美国该把武器给出来表现自卫决心哟。</p>
 <p>澄清四《与台湾关系法》只说供应武器，没说要花钱买</p>
@@ -1806,22 +1839,22 @@
 <p>B.台湾有一点骨气，就可比照英国等国的模式，“不花分文”地取得美国防御性的武器。最新的报道是 2004 年 10 月 17 日的英国《独立报》，上面说：布莱尔首相指出，让美国部署导弹，可使英国不花分文获得防御性武器，同时，数个东欧国家均表达高度意愿，尤其是波兰。</p>
 <p>C.台湾不但买武器，还高出“世价”（世界价格）来买，主子不但卖骨头给走狗，还卖得特别贵，台湾非凯子而何？今之觉者自亲民党而国民党，憬然不做“凯子军购”，盼以合理价格买骨头，殊不知只要是“购”，就是凯子。看看美国怎样低姿态对待它在欧洲的看门狗英国吧，它要送武器给英国，英国说要得到我们国会同意，我们才收呢，做狗也得有点“狗格”呀！</p>
 <p>澄清五《与台湾关系法》置台湾于何地，没理由不先弄清楚</p>
-<p>A.1979 年 1 月 1 日，美国在《中美建交公报》中，白纸黑字地作出两个承认：一、承认中华人民共和国政府是中国的唯一合法政府；二、承认中国的立场，即只有一个中国，台湾是中国的一部分。</p>
-<p>B.3 个月零 10 天以后（1979 年 4 月 10 日），美国私下里推出一部《与台湾关系法》，并向前追溯 3 个月零 10 天，把生效时间拉到上面的《中美建交公报》同一天，做了另一种自相矛盾的白纸黑字，闹出美国开国以来的一个笑话。</p>
+<p>A. 1979 年 1 月 1 日，美国在《中美建交公报》中，白纸黑字地作出两个承认：一、承认中华人民共和国政府是中国的唯一合法政府；二、承认中国的立场，即只有一个中国，台湾是中国的一部分。</p>
+<p>B. 3 个月零 10 天以后（1979 年 4 月 10 日），美国私下里推出一部《与台湾关系法》，并向前追溯 3 个月零 10 天，把生效时间拉到上面的《中美建交公报》同一天，做了另一种自相矛盾的白纸黑字，闹出美国开国以来的一个笑话。</p>
 <p>C.为什么是笑话呢？因为全世界国际法或国内法中，都没有这种怪胎。根据 1979 年 3 月 13 日的美国“国会记录”S2581 页，在《与台湾关系法》立法时，就有参议员忍不住质问：在我们已承认北京是中国唯一的政府以后，我们怎么能给台湾武器呢？这岂不是支援中国的一个叛乱省份吗？这是笑话之一。</p>
 <p>D.台湾在中国宪法里相当于美国的一个州。美国宪法第一条明定任何州都不得与外国订约，美国既然承认台湾是中国的一部分，过去与台湾的许多约定怎么还能在《与台湾关系法》中声言继续有效呢？参议员质问：难道美国能够不经加拿大的同意，就跟加拿大西边的不列颠哥伦比亚省勾肩搭背吗？这是笑话之二。这个笑话，在《美国参议院外交委员会关于与台湾关系法的听证会记录》第 48 到 49 页中，美国人可以脸红地看到。</p>
 <p>E.可见依据《与台湾关系法》而大动干戈，是师出无名的，是立场脆弱的，是随时会放水的。</p>
-<p>英九主席老弟，关于军购的案子，你身为国民党党主席，美国找上了你，民进党找上了你，18 日报载民进党明指马英九应对军购案提出一套完整说法，“不能一下推给国民党团，一下又推给亲民党主席宋楚瑜”。另一方面，国民党等又实际上以你马首是瞻。Thebuckstopshere.大局唯你是问，一人系成败关键，已无可推托，因此我特别写这封信给你。为免误解，此信不谈易滋纷扰的两岸政策或两岸定位，也不谈台湾是否该走中立化路线或该走哥斯达黎加式的只有警察没有军队的路线，我只是擒贼先擒王式地锁定祸头子美国和头子你，以谋釜底抽薪之计，在根本上谋求解决。英国诗人丁尼生的名句说得好：</p>
-<p>Itmaybethatthegulfswillwashusdown；</p>
-<p>ItmaybeweshalltouchtheHappyIsles.</p>
+<p>英九主席老弟，关于军购的案子，你身为国民党党主席，美国找上了你，民进党找上了你，18 日报载民进党明指马英九应对军购案提出一套完整说法，“不能一下推给国民党团，一下又推给亲民党主席宋楚瑜”。另一方面，国民党等又实际上以你马首是瞻。The buck stops here.大局唯你是问，一人系成败关键，已无可推托，因此我特别写这封信给你。为免误解，此信不谈易滋纷扰的两岸政策或两岸定位，也不谈台湾是否该走中立化路线或该走哥斯达黎加式的只有警察没有军队的路线，我只是擒贼先擒王式地锁定祸头子美国和头子你，以谋釜底抽薪之计，在根本上谋求解决。英国诗人丁尼生的名句说得好：</p>
+<p>It may be that the gulfs will wash us down；</p>
+<p>It may be we shall touch the Happy Isles.</p>
 <p>当年严复的美丽译文是：</p>
 <p>挂帆沧海，风波茫茫；</p>
 <p>或沦无底，或达仙乡。</p>
 <p>使台湾“沦”于“无底”或“达”于“仙乡”，使你个人做千古功臣还是千古罪人，全在英九主席老弟的一择。国民党几十年来，祸国殃民已千件万件，如果你主席老弟有以自赎代赎，也算功德积德一件。阅此信后，请你严格督师把关，在以上五项澄清未得解决前，坚持削减、冻结政策，以免“国防”开支祸延生民也。</p>
 <p>专此奉闻，静候佳音。</p>
 <p>李敖 2005 年 12 月 23 日</p>
-<p>附告笑话：ATREASURYOFHUMORII 书中有笑话一则：</p>
-<p>Thewidowofadeadmanfiledataxreturnforhimin1991.TheInternalRevenueServicesentaletteraddressedtothedeadman.Itsaid：“Pleaseprovideyourdateofdeath.”</p>
+<p>附告笑话：A TREASURY OF HUMOR II 书中有笑话一则：</p>
+<p>The widow of a dead man filed a tax return for him in 1991. The Internal Revenue Service sent a letter addressed to the dead man. It said：“Please provide your date of death.”</p>
 <p>遗孀退税，国税局竟问死期于亡者，赫然 provide 在焉，是由亡者供应（provide）死讯也。小马哥别以为此系纯笑话，美国以价值 7 亿 5200 万美元的长程预警侦测雷达给“凯子”台湾，说有助于提前 7 分钟得知导弹过来云云。可是，以台湾海峡纵深太短，得知导弹来时，导弹已在台湾头顶上了，抢救不及，只好等死。“凯子”台湾花了 230 亿台币买了这玩意儿，唯一效果是早知死期 7 分钟，此与亡者自报死期于国税局何异？美国高价卖给凯子台湾的是他们雷神公司 FPS115“铺路爪”相位数组雷达，有效侦测距离 3000 千米，可侦测到俄罗斯来的导弹，试问对我们有什么用？俄罗斯要打我们吗？台湾买了对美国才有用的雷达，是看门狗替主子买了帮主子通风报信的雷达，“贱种”台湾人不但自己买骨头，还买雷达请主子客呢！</p>
 <h2 id="马英九请吃饭"><a class="header" href="#马英九请吃饭">马英九请吃饭</a></h2>
 <p>2006 年 4 月 21 日，马英九请我吃午饭，在座的有金惟纯和金溥聪。第二天的《联合报》报道如下：</p>
@@ -1843,7 +1876,7 @@
 <p>一年来，我一直等待两件事：</p>
 <p>一、你公开一再表示要与友党及个人（点名李敖先生）确定“合理军购”共商，赏饭时亦蒙面告此一步骤，但我等了一年了，迄无共商之事，反倒预算放水了。</p>
 <p>二、你承诺邀我去贵党中常会“单刀赴会”与大家谈谈军购之事，我也等了一年了。</p>
-<p>58 年来，贵党一直“单边主义”决定我们的命运，虽然其间有民进党 7 年执政，但 7 年前“养痈成患”，7 年来“姑息养奸”，贵党皆不能卸责。深盼小马哥示天下以广，别再一切都由你们说了算，一切都由你们决定我们的命运。58 年了，我李敖决不接受。王尔德（OscsrWilde）感叹择敌不易（Amancannotbetoocarefulinthechoiceofhisenemies.），但惹毛了李敖这种敌人，以致蒋家亡后被十本书“鞭尸”，实在也不算高明。昨天重看了你在 2003 年 1 月 8 日贵党中常会的追忆蒋氏之子的家臣式谈话，对贵党迫害人民竟不置一词。小马哥啊，我罪不及家臣，并不想与你结怨，但我也请你珍惜机会，因为机会难再。</p>
+<p>58 年来，贵党一直“单边主义”决定我们的命运，虽然其间有民进党 7 年执政，但 7 年前“养痈成患”，7 年来“姑息养奸”，贵党皆不能卸责。深盼小马哥示天下以广，别再一切都由你们说了算，一切都由你们决定我们的命运。58 年了，我李敖决不接受。王尔德（Oscsr Wilde）感叹择敌不易（A man cannot be too careful in the choice of his enemies.），但惹毛了李敖这种敌人，以致蒋家亡后被十本书“鞭尸”，实在也不算高明。昨天重看了你在 2003 年 1 月 8 日贵党中常会的追忆蒋氏之子的家臣式谈话，对贵党迫害人民竟不置一词。小马哥啊，我罪不及家臣，并不想与你结怨，但我也请你珍惜机会，因为机会难再。</p>
 <p>一年容易，别时容易。小马哥啊，承诺（并遵守承诺）不再“单边主义”决定别人的命运，是那么难吗？</p>
 <p>李敖 2007 年 6 月 1 日</p>
 <p>小马哥收件后，很有风度地写信来，向我道歉。但是，军购终于放水了，一切都太迟了。</p>
@@ -2103,7 +2136,7 @@
 <p>李部长杰：这 15 年大陆根本没有办法……</p>
 <p>李委员敖：不许讲话。主席，他如果再讲话，要把我的时间扣掉，还我时间。你太啰唆了，请回，谢谢你。苏院长，我们要承认下面几个事实：一、美国人没有来救我们；二、我们的实力不能够保护我们；三、按照《与台湾关系法》，美国人是提供 provide 防御性武器给我们。苏院长，请你告诉我：provide 的英文是什么意思？</p>
 <p>苏院长贞昌：我不在这里让你考英文。不过，我从来没有说美国会来救我们，你的记性那么好，应该记得住。我一再表示，我们是要增强自己的防卫能力，展现自我防卫的决心，无论别人怎么打，我们一定要守住自己。</p>
-<p>李委员敖：不要讲了，主席，请你制止他讲话。你不要耽误我的时间，美国众议院最新记录第 232 页谈到 provide 是 withoutcharge，按照《与台湾关系法》，美国应该提供 provide 防御性武器给我们，按照美国众议院的解释，是免费的，为什么我们要花这么多钱买？为什么不据理力争，或像本席一样把美国总统布什告到美国法院？为什么他们给英国、中美洲的武器是免费的，却要我们以高价购买？你深谙法律，为什么我们不依法论法，在法律面上进行抗争？</p>
+<p>李委员敖：不要讲了，主席，请你制止他讲话。你不要耽误我的时间，美国众议院最新记录第 232 页谈到 provide 是 without charge，按照《与台湾关系法》，美国应该提供 provide 防御性武器给我们，按照美国众议院的解释，是免费的，为什么我们要花这么多钱买？为什么不据理力争，或像本席一样把美国总统布什告到美国法院？为什么他们给英国、中美洲的武器是免费的，却要我们以高价购买？你深谙法律，为什么我们不依法论法，在法律面上进行抗争？</p>
 <p>苏院长贞昌：如果你要问我这个问题，应该先问问当年提出申购的国民党，因为军购案早在政党轮替之前就提出，当时的……</p>
 <p>李委员敖：好，我懂了。</p>
 <p>苏院长贞昌：克林顿批准了，后来的布什又批准了。</p>
@@ -2135,12 +2168,12 @@
 <p>柯副部长承亨：记得。</p>
 <p>李委员敖：里面谈到“文人领军”，今天你的报告里面又有“文人领军”，你有没有核对一下，这本书里面有 10 个重点，在成书之后 14 年的今天，你当了国防部副部长，陈水扁当了所谓总统，你有没有觉得自己言行不符？我不勉强你现在答复我，你回去想想看，可以用书面答复我。</p>
 <p>这几天我没有来立法院，刚刚也晚来，原因是在国防部的很多努力只能作秀，最后政党协商都被吞掉了，我觉得很怄气。虽然 224 位立法委员都被我告了，因为你们影响我的权益，可是我觉得在国防委员会里做再多的质询，最后都被搓掉了！我今天忙什么？忙着做状子，我要告美国总统小布什，今天就是告发！我也告了李登辉和陈水扁，为什么告他？等一下我可以送一份给你看，这攸关台湾的国防政策。</p>
-<p>在状子第六页有一个重要的关键，如果台湾不买这些武器有什么结果？美国说，按照《与台湾关系法》卖武器给我们，如果台湾不买，美国给不给我们？如果美国不给，有什么结果？台湾没有武器。台湾没有武器会有什么结果？影响了台湾的防卫。这会造成什么结果？影响了美国在《与台湾关系法》中列明的“三个利益”，美国立法说是基于政治的、安全的、经济的三个利益，影响的是美国利益，不是台湾利益，美国不管台湾死活。影响了美国利益，就是美国总统没有实现《与台湾关系法》，美国总统违法就是渎职，所以美国人可以告他，例如我在北京的女儿是美国人就可以告他，而我们在台湾的可以告什么？台湾为什么这么多贱骨头？因为根据法律，台湾可以不花钱就拿到武器，但是 27 年来，可以查到的就花掉台币 6600 亿元买武器，我们要追回这些钱，而这次军购案的 6108 亿元当然也不要付钱。为什么这样？台湾的法律可以告美国总统吗？去年 11 月，有个名叫慕可舜的台湾人被抓，美国的法律可以公开抓台湾人，为什么台湾人不能告美国总统？这是为了台湾人的尊严，所以我提出诉告，我告诉大家我们有尊严，我们要正视这一点。美国按照《与台湾关系法》要 provide 台湾武器，有人说是“售予”，但是我查过所有词典，包括法律词典，都没有这个意思，这还不严重，我查到最新美国参众议院的记录，它说 provide（withoutcharge），美国都说免费的，我们过去 27 年却付钱买武器，台湾人是不是贱骨头？台湾人是贱骨头，台湾的“总统”从蒋经国、李登辉到陈水扁都有责任，蒋经国只是死了而已，我都要告他们，而我为了我们的尊严才这样做。请副部长看一张照片，这是谁？</p>
+<p>在状子第六页有一个重要的关键，如果台湾不买这些武器有什么结果？美国说，按照《与台湾关系法》卖武器给我们，如果台湾不买，美国给不给我们？如果美国不给，有什么结果？台湾没有武器。台湾没有武器会有什么结果？影响了台湾的防卫。这会造成什么结果？影响了美国在《与台湾关系法》中列明的“三个利益”，美国立法说是基于政治的、安全的、经济的三个利益，影响的是美国利益，不是台湾利益，美国不管台湾死活。影响了美国利益，就是美国总统没有实现《与台湾关系法》，美国总统违法就是渎职，所以美国人可以告他，例如我在北京的女儿是美国人就可以告他，而我们在台湾的可以告什么？台湾为什么这么多贱骨头？因为根据法律，台湾可以不花钱就拿到武器，但是 27 年来，可以查到的就花掉台币 6600 亿元买武器，我们要追回这些钱，而这次军购案的 6108 亿元当然也不要付钱。为什么这样？台湾的法律可以告美国总统吗？去年 11 月，有个名叫慕可舜的台湾人被抓，美国的法律可以公开抓台湾人，为什么台湾人不能告美国总统？这是为了台湾人的尊严，所以我提出诉告，我告诉大家我们有尊严，我们要正视这一点。美国按照《与台湾关系法》要 provide 台湾武器，有人说是“售予”，但是我查过所有词典，包括法律词典，都没有这个意思，这还不严重，我查到最新美国参众议院的记录，它说 provide（without charge），美国都说免费的，我们过去 27 年却付钱买武器，台湾人是不是贱骨头？台湾人是贱骨头，台湾的“总统”从蒋经国、李登辉到陈水扁都有责任，蒋经国只是死了而已，我都要告他们，而我为了我们的尊严才这样做。请副部长看一张照片，这是谁？</p>
 <p>柯副部长承亨：看起来好像是陈诚。</p>
 <p>李委员敖：副部长眼力还不错，他是陈诚，他在过世前和我有过一次谈话，他说国民党觉悟到一点，共产党的失败并不等于国民党的胜利。今天从马英九到绝大部分的国民党人，还相信民进党的失败就是国民党的胜利，所以可以不用努力，等待民进党的失败来换取他们的胜利。我今天要利用这个机会谴责小马哥和有这种想法的国民党，你们不努力却到美国干什么？今天的《中华日报》刊载小马哥说“访美谈军购太窄化目的”，他的意思是说国民党所做的军购的声明和立法院所做的决议是有距离的，所以他在声明中可以说“台独”是选项，但是对国民党而言，“统一”是最后目的，他可以这么滑头，今天把责任丢给立法院，把责任丢给帅将军这些人。所以今天看得很清楚，立法院如果不把关，最后一定是大家翻脸。</p>
 <p>最后拿一本书给大家看，副部长看过这本书吗？这本书是《上山上山爱》。</p>
 <p>柯副部长承亨：这是委员的大作。</p>
-<p>李委员敖：邱毅跟我讲他每天晚上做爱时都要看这本书，在 191 页有一段拉丁文：Cogito，ergosum，这是什么意思呢？就是刚才帅委员提到的“我思想所以我存在”，你们无知的外交部长说这句话是德国哲学家康德的话，错了！这是法国哲学家笛卡尔的话，我们了不起的亲民党的张显耀委员念了一段法文，说出它的来源。不过我要告诉你，我的学问多么大，原来笛卡尔讲的是拉丁文，出现在我的书里，所以我提醒你为什么“我思想所以我存在”，为什么王阳明说这朵花我没有看到所以不存在？可以这样自欺？今天国统会在美国存在，在台湾就不存在？《国统纲领》在美国存在，在台湾就不存在？可以这样乱搞吗？今天本席是第一次质询副部长，对你非常客气，希望你回去之后好好用功，重新看你的书，也看我的书，好好提升你的思想，否则在立法院很难过关。谢谢。</p>
+<p>李委员敖：邱毅跟我讲他每天晚上做爱时都要看这本书，在 191 页有一段拉丁文：Cogito，ergo sum，这是什么意思呢？就是刚才帅委员提到的“我思想所以我存在”，你们无知的外交部长说这句话是德国哲学家康德的话，错了！这是法国哲学家笛卡尔的话，我们了不起的亲民党的张显耀委员念了一段法文，说出它的来源。不过我要告诉你，我的学问多么大，原来笛卡尔讲的是拉丁文，出现在我的书里，所以我提醒你为什么“我思想所以我存在”，为什么王阳明说这朵花我没有看到所以不存在？可以这样自欺？今天国统会在美国存在，在台湾就不存在？《国统纲领》在美国存在，在台湾就不存在？可以这样乱搞吗？今天本席是第一次质询副部长，对你非常客气，希望你回去之后好好用功，重新看你的书，也看我的书，好好提升你的思想，否则在立法院很难过关。谢谢。</p>
 <p>柯副部长承亨：谢谢委员。</p>
 <h2 id="你今天坐下的话我就躺下来"><a class="header" href="#你今天坐下的话我就躺下来">你今天坐下的话，我就躺下来。</a></h2>
 <p>2006 年 4 月 4 日，我在院会质询行政院长苏贞昌，记录如下：</p>
@@ -2237,11 +2270,11 @@
 <p>人或有言：国民党不要总是吃干抹净，实宜礼让，在李大师选区，退避一百舍。我笑曰：“那死国民党既无理又不让，不见棺材不流泪，怎么可以相信他们？”人又有言：李大师在台北县任一选区空降，都有与国民党参选人同归于尽的实力（上届选举，且打败国民党的陈学圣），此一讯息，宜正告吴秘书长。我笑曰：“此议甚当，吾当白纸黑字，通知台大历史系小学弟也。”</p>
 <p>今日的便，存证告知，你们要不要退避一百舍，悉听尊便，届时同归于尽（或由本学兄一展所长，打败陈学圣之流），勿谓吾言之不预也。</p>
 <p>本学兄李敖手启，2007 年 4 月 3 日</p>
-<p>总之，国民党今日沦落到二吴（吴伯雄、吴敦义）之手，本质上，给我们看到的是大同小异的双胞党，国民党即民进党，民进党即国民党，看来像两条雌雄同体的蚯蚓，一条做 180 度倒转，就你肏我我肏你互相肏起来，对肏不算互斗，而是互通有无。试问民进党作恶，若国民党不在立法院帮它，一个民进党做得出来吗？整个预算都会塌掉，美国政治大角巴克莱（AlbenW.Barkley）有言曰：“官僚者，一个想取代民主党之共和党也。”（AbureaucratisaDemocratwhoholdssomeofficethataRepublicanwants.）一如蚯蚓，反之亦然；一如老美，台湾亦然。说国民党民进党有别者，是不知蚯蚓者也。</p>
+<p>总之，国民党今日沦落到二吴（吴伯雄、吴敦义）之手，本质上，给我们看到的是大同小异的双胞党，国民党即民进党，民进党即国民党，看来像两条雌雄同体的蚯蚓，一条做 180 度倒转，就你肏我我肏你互相肏起来，对肏不算互斗，而是互通有无。试问民进党作恶，若国民党不在立法院帮它，一个民进党做得出来吗？整个预算都会塌掉，美国政治大角巴克莱（Alben W. Barkley）有言曰：“官僚者，一个想取代民主党之共和党也。”（A bureaucrat is a Democrat who holds some office that a Republican wants.）一如蚯蚓，反之亦然；一如老美，台湾亦然。说国民党民进党有别者，是不知蚯蚓者也。</p>
 <h2 id="我的民进党观"><a class="header" href="#我的民进党观">我的民进党观</a></h2>
 <p>十二年前，1995 年 8 月 21 日，我应杨宪村写序之请，写了一篇《我看&lt;民进党执政&gt;》，我预言说：</p>
 <p>国民党是一个非常可恶又非常令人厌恶的恶党，我一生同它恶斗，并以一生未加入过任何政党为荣，尤以没加入过这个恶党为荣。我写过《国民党研究》、《国民党研究续集》等书斗倒它，如今它已摇摇欲坠、垮台在即，这个恶党不复成为执政党，自为有识之士所乐见。任何取代它而执政的党，都值得我们大力支持。——这是我们认清的第一步。</p>
-<p>不过，第二步也要紧接着认清，就是我们大力支持的新执政党，它必须不是国民党的借尸还魂、必须不是“国民党第二”或“小国民党”。否则的话，跳出油锅又堕入火坑（outofthefryingpanintothefire），每下愈况之讥，又岂能免？</p>
+<p>不过，第二步也要紧接着认清，就是我们大力支持的新执政党，它必须不是国民党的借尸还魂、必须不是“国民党第二”或“小国民党”。否则的话，跳出油锅又堕入火坑（out of the frying pan into the fire），每下愈况之讥，又岂能免？</p>
 <p>正如杨宪村先生的论定，民进党显然是取代国民党的执政党。这个党是否执政后一定比国民党好，自为我们所关切。我写过《民进党研究》一书，对两党的同一性，早加论列。如果这个党执政后能够清除它被国民党的污染、选择正确的方向，才是岛上生灵之幸。</p>
 <p>三十年前，国民党的副总裁陈诚（伪君子陈履安之父）邀我做一席谈，他感慨的说：共产党的失败并不就是国民党的胜利。不久他死了，我不无“人之将死，其言也善”之想。如今，我们心同此理，也要同样认清：国民党的失败并不就是民进党的胜利。——民进党要胜利、要长保胜利，还得涤除旧染、洗心革面才成。但是，民进党能吗？盼杨宪村先生继续观察、给我们最后的答案。</p>
 <p>这篇序文写后五年，正如我们所预料，国民党真的垮台了，民进党真的执政了。有趣的是，民进党的大员吴乃仁却公然说：「民进党不是执政党」这不是怪事吗？也许吴乃仁有苦说不出又要说出，所以发为怪论。但仔细一想，陈水扁的胜利其实也并不就是民进党的胜利，因为两者并不同一，陈水扁眼里，其实没有民进党，他有的，乃是他自己的陈氏小集团。不过对我们说来，陈水扁执政和民进党执政都是一样，就是我们是否「跳出油锅又堕入火坑」了？</p>
@@ -2374,9 +2407,9 @@
 <p>李委员敖：核一有没有取得四十年的运转执照？</p>
 <p>主席：请核后端营运基金徐执行秘书说明。</p>
 <p>徐执行秘书怀琼：主席，各位委员。报告李委员，我国与美国不一样，美国是在一开始就取得四十年运转执照，而我国的原能会是每十年要更新一次执照。</p>
-<p>李委员敖：你回答得太复杂了，请告诉本席，yesorno，核一有没有取得四十年运转执照？</p>
+<p>李委员敖：你回答得太复杂了，请告诉本席，yes or no，核一有没有取得四十年运转执照？</p>
 <p>徐执行秘书怀琼：没有。</p>
-<p>李委员敖：好，如果没有取得，核一在九十七年就要除役了，这一批又一批的核废料如何做最终处置？你们一直跟我们要经费，今天又开出最终处置，请问难道真的是要公投吗？现在你们吵着说最终处置设施场址由公投决定，这不是等于在欺负原住民吗？你们清清楚楚的知道，台湾只有这么小的空间，放置这些核废料是非常危险的，现在已有腐蚀性的现象出现了，就应该面对这问题而解决。你们应该根据专业经验去据理力争，告诉这个烂的中央政府，核四问题就在眼前，废料问题不解决，台湾就永远没有办法安宁，这比白色恐怖、绿色恐怖的问题更严重。这问题要如何解决？过去收买北韩贮存我国核废料的案子成功了吗？yesorno？</p>
+<p>李委员敖：好，如果没有取得，核一在九十七年就要除役了，这一批又一批的核废料如何做最终处置？你们一直跟我们要经费，今天又开出最终处置，请问难道真的是要公投吗？现在你们吵着说最终处置设施场址由公投决定，这不是等于在欺负原住民吗？你们清清楚楚的知道，台湾只有这么小的空间，放置这些核废料是非常危险的，现在已有腐蚀性的现象出现了，就应该面对这问题而解决。你们应该根据专业经验去据理力争，告诉这个烂的中央政府，核四问题就在眼前，废料问题不解决，台湾就永远没有办法安宁，这比白色恐怖、绿色恐怖的问题更严重。这问题要如何解决？过去收买北韩贮存我国核废料的案子成功了吗？yes or no？</p>
 <p>徐执行秘书怀琼：目前没有成功。</p>
 <p>李委员敖：就是没有成功，还要赔北韩钱，为什么不能成功？因为按照国际标准，核废料只能存放在自己的国家，不是吗？按照宪法规定，现在是一个中国，如果不承认一个中国就请修宪，但现在又不敢修宪，所以是一个中国，如果像本席这样的人去跟大陆谈判，本席可以逼中共在新疆让我们存放核废料，新疆比台湾打了四十四倍，为了安全，可以把核废料放置在新疆，所以台电就要面对两岸问题来解决如何存放废料。你们非但没有针对此问题做出应有的呼吁、警告，还只会拼命左一笔、右一笔的跟委员们要经费，还出版一些核能简讯的刊物，很明显的是想收买兰屿岛上的原住民，让原住民以为核废料是金鸡母，简直是害死人了。本席觉得经济部有责任利用专业的立场告诉人民、告诉这个烂政府，核四问题、核废料的问题就在眼前，九十七年就会给我们好看。你们不去呼吁，只会要钱，真是太失职了。核四厂从停建到复建，共损失了多少钱？被林义雄这些混蛋提议停止核四、废核四然后又复工，损失了多少钱？</p>
 <p>徐执行秘书怀琼：直接的损失大概三十多亿元。</p>
@@ -2460,12 +2493,12 @@
 <p>李敖与 V 怪客</p>
 <p>历史会记住这一天，2006 年 10 月 24 日。</p>
 <p>这一天，十五位诺贝尔和平奖得主在联合国共同发表一封公开信，呼吁各国政府签署决议文，承诺严格控管国际间的武器买卖，停止一切不负责任的武器输出，“因为，武器买卖已对全世界人民造成难以言喻的痛苦和伤害。”</p>
-<p>就在同一天，立委李敖大闹立法院程序委员会。他为了阻挡军购案付委，礼貌性要求女性立委离场之后，戴上仿自电影《V 怪客》（VforVendetta）的防毒面具，取出预藏的催泪瓦斯向会场喷射，成功阻挠军购案的进程。李敖出人意表的行为立即遭到蓝绿立委的同声痛斥，媒体也一片挞伐之声，而李大师也的确为此付出了代价，当场被提案移送纪律委员会处置。</p>
+<p>就在同一天，立委李敖大闹立法院程序委员会。他为了阻挡军购案付委，礼貌性要求女性立委离场之后，戴上仿自电影《V 怪客》（V for Vendetta）的防毒面具，取出预藏的催泪瓦斯向会场喷射，成功阻挠军购案的进程。李敖出人意表的行为立即遭到蓝绿立委的同声痛斥，媒体也一片挞伐之声，而李大师也的确为此付出了代价，当场被提案移送纪律委员会处置。</p>
 <p>这真是一个极端讽刺的对比。相对于十五位诺贝尔和平奖得主对军火交易的指控，相对于军火商利润为全世界人民带来的巨大痛苦和伤害，李敖在立法院的行为只不过就是一场嘲讽性的抗议，现场同事幕僚豪发无伤，议场设备器材完好无缺。他用和平的手段成功挡下了一场金额庞巨、即将交易完成的武器交易。其豪情壮举，恐怕所有诺贝尔和平奖得主都要为他鼓掌叫好！</p>
 <p>这个星期的程序委员会本来就风云诡谲。前美国副国务卿阿米塔吉寄给行政院长苏贞昌和立法院长王金平的亲笔信函曝光，证明美国军火商果然神通广大，昔日的华府高官转瞬间成为今日的军火掮客，代表美国军工复合体的各路人马在台湾党、政、军高层畅行无阻。执政的民进党以巨额的军事採购来向华府输诚，并以超高比率的利润回扣做为拢络美国政要的手段；在野的国民党为了争宠夺爱，终究得向华盛顿方面的人马示好卖乖。10 月 24 日，根据朝野协议，本来应该就是国民党放水的日子。然而，正当联合国慎重其事讨论禁制武器买卖的同时，台湾却是大张旗鼓地準备与美国完成一笔庞巨的军火交易，在国际社会上，我们究竟是要选择站在什么位置？而一旦军购案成立，未来因为武器交易所造成的“难以言喻的痛苦和伤害”，在台湾，究竟是由谁来承受？</p>
 <p>诺贝尔和平奖得主们在公开信中强调：武器买卖是人权重大危害的根源，因此，在联合国的见证下，一份禁制军火输出的决议文是有必要的。“国际特赦组织”秘书长坎恩（IreneKhan）也极力支持这项计划，她说得更为彻底：“各国政府应该採取历史性的决定，停止既不负责任又不道德的武器买卖，大家应该立即签订公约，以阻止成千上万人的死亡、流离和遭受强暴。”</p>
 <p>遗憾的是，这种“既不负责任又不道德的武器买卖”，在华盛顿和台北之间，却一直是进行式。台湾三军各大营队中，已经琳瑯满目尽是采购自美国的军火，却还是迫不及待地把动輒千百亿计的人民纳税钱往美国搬。这样的武器买卖当然少不了暗藏的政治交易和暗杠的政客利益。所幸，就在诺贝尔和平奖得主携手在联合国推动和平法案的同时，戴上 V 怪客面具的李敖也以他自己的方法，暂时挡下了一大笔“既不负责任又不道德”的军火交易。只不过，在电影里，革命英雄 V 怪客是以炸毁整栋国会大厦来点燃人民的怒火，用恐怖的手段，来让独裁政权感到害怕。李敖的行动，比起 V 怪客，只能算是和平鸽的振翅。而他立即被移送立法院纪律委员会的事实，也显示，他的义举似乎并未能让当权者感到害怕。军购案随时会再回来。</p>
-<p>电影《V 怪客》里有一句话：Peopleshouldnotbeafraidoftheirgovernments.Governmentsshouldbeafraidoftheirpeople.人民不应畏惧政府，政府应当畏惧人民。唯其政府敬畏人民，既定不合理、不负责、不道德的制度才有被检讨、被改革的空间。当前台湾的种种抗争，从反军购到反贪腐，似乎都未能达到“让当权者畏惧”的效果。抗争者反而一再遭到来自执政当局的嘲弄和奚落。这样的抗争，连“胜利”（VforVictory）都不可能，如何能对残民以逞的贪腐政权进行“报复”（VforVendetta）？电影结尾时，人民一波波蜂拥而出，他们全部戴上 V 怪客的面具，坚定地走向街头，人民自主地选择复仇者的面目。这样的镜头，不得不让我们想到被反贪腐运动召唤出来红衫军，他们自主地穿上红衣，渴望汇聚集体的意志，渴望将自己消融在反贪倒扁的巨潮之中。但是，红潮来去，似乎并未能让当权者感到畏惧。红衫军反而因为反挫而内伤。于今，如果反贪倒扁的集体意志仍未涣散，那么，在未来的动员之前，恐怕得先自问：一、如果不能让当权者感到畏惧，那么，一次又一次的群众动员，究竟胜利的基础在哪里？二、如果要让当权者畏惧，那么，有哪些作么可以被允许？</p>
+<p>电影《V 怪客》里有一句话：People should not be afraid of their governments. Governments should be afraid of their people.人民不应畏惧政府，政府应当畏惧人民。唯其政府敬畏人民，既定不合理、不负责、不道德的制度才有被检讨、被改革的空间。当前台湾的种种抗争，从反军购到反贪腐，似乎都未能达到“让当权者畏惧”的效果。抗争者反而一再遭到来自执政当局的嘲弄和奚落。这样的抗争，连“胜利”（V for Victory）都不可能，如何能对残民以逞的贪腐政权进行“报复”（V for Vendetta）？电影结尾时，人民一波波蜂拥而出，他们全部戴上 V 怪客的面具，坚定地走向街头，人民自主地选择复仇者的面目。这样的镜头，不得不让我们想到被反贪腐运动召唤出来红衫军，他们自主地穿上红衣，渴望汇聚集体的意志，渴望将自己消融在反贪倒扁的巨潮之中。但是，红潮来去，似乎并未能让当权者感到畏惧。红衫军反而因为反挫而内伤。于今，如果反贪倒扁的集体意志仍未涣散，那么，在未来的动员之前，恐怕得先自问：一、如果不能让当权者感到畏惧，那么，一次又一次的群众动员，究竟胜利的基础在哪里？二、如果要让当权者畏惧，那么，有哪些作么可以被允许？</p>
 <p>海外“凤凰博客网友反馈”，也有意见如下：</p>
 <p>关于李敖大师戴面具闹立法院</p>
 <p>By：kunan5591（游客）</p>
@@ -2497,8 +2530,8 @@
 <p>《立法委员行为法》第三条明定：“立法委员代表人民依法行使立法权”，如今彼辈公然以不公平手段妨碍李敖行使此权，完全违背第四条“公平”原则之提醒，可见该被纪律者，正在此辈也。李敖前在法院一网打尽，控告 224 名立委，其理正在此也。</p>
 <p>第二面——就议事面言之</p>
 <p>不平则鸣，议会常理，故真民主之下，有“阻挠议事”（filibuster）以遂少数发言之争与推迟、阻挠之功。</p>
-<p>“阻挠议事”首见于古罗马，后来 filibuster 转成未受本国命令而在他国蛮干的海盗派，最终本义又转回来，六十年前《哥伦比亚百科全书》（TheColumbiaEneyclopedia）就曾指出（Inrecentyearsthetermhascometobeusedtodesignateorganizedobstructionisttacticsinlegislativeassemblies.）。</p>
-<p>在美国参议院中表现 filibuster 之尤者，是参议员赛蒙德（J.StormThurmond），他创下一次发言 22 小时又 26 分钟。依例，发言内容可采美国中南部“十八扯”（potllcker）方式逼多数就范，1905 年，参议员迪尔曼（PitchforkBenTillman）就以念拜伦（Byron）长诗念得大家吃不消而屈服。这一 filibuster 的良法美意，即使当年老贼时代，亦变相相沿。惜乎国民党当道不已，最后悍然删除。</p>
+<p>“阻挠议事”首见于古罗马，后来 filibuster 转成未受本国命令而在他国蛮干的海盗派，最终本义又转回来，六十年前《哥伦比亚百科全书》（The Columbia Eneyclopedia）就曾指出（In recent years the term has come to be used to designate organized obstructionist tactics in legislative assemblies.）。</p>
+<p>在美国参议院中表现 filibuster 之尤者，是参议员赛蒙德（J. Storm Thurmond），他创下一次发言 22 小时又 26 分钟。依例，发言内容可采美国中南部“十八扯”（potllcker）方式逼多数就范，1905 年，参议员迪尔曼（Pitchfork Ben Tillman）就以念拜伦（Byron）长诗念得大家吃不消而屈服。这一 filibuster 的良法美意，即使当年老贼时代，亦变相相沿。惜乎国民党当道不已，最后悍然删除。</p>
 <p>今日李敖以瓦斯伺之，filibuster 一环而已，以瓦斯抗议国民党及其余孽政党之假民主，人心大快，自不待言。</p>
 <p>第三面——就比例而言之</p>
 <p>自来假民主庙堂之争，拳脚相向，有基于瓦斯者，国民党及其余孽政党优为之，屡见不鲜，最新一次，2005 年 10 月 11 日，即李敖“催泪瓦斯阻军购”案前 379 天，立法院发生——</p>
@@ -2506,7 +2539,7 @@
 <p>B、国民党委员张硕文被打得眼睛出血。</p>
 <p>在场者，除挂彩者外，共 109 人（名单附后），试问有谁追究纪律问题？在场者中，国民党籍雷倩以老妪厕身、发言盈庭，试问为何不比照对付告李敖模式，到法院告民进党及行凶者？今日仗纪律委员会招邀对付李敖者，亦复瓦釡雷鸣、同孔同气，不亦悲乎？眼睛打出血来无罪，鼻子闻点瓦斯就娇啼，此何等“比例原则”乎？不敢纪律民进党及行凶者，反来招惹李大师，真不知在美国军购压力下，诸蓝绿委员何以自明？又何以自脱？置大动干戈、同室操戈于不问，独对李敖区区瓦斯大感兴趣，不亦怪哉？美国人之威力，呜呼噫嘻，我知之矣。</p>
 <p>第四面——就军购面言之</p>
-<p>所谓“催泪瓦斯阻军购”案，根本伏机，在李敖独当一面，以证据证明美国人欺骗台湾人，台湾人忠厚而浑，所以美国得售。不察伏机所在，只知着眼在瓦斯或纪律者，皆浅人也。谈到民主议会之纪律，有博学如李大师者乎？今以 21 版之英国国会规范（ErskineMay'sTreatiseonTheLaw.Privilegen,ProceedingsandUsageofParliament）附卷（本案结案十日后，请由尹伶瑛委员归还），聊做“机会教育”，台湾人须知此乃英国七百年努力民主之功，非一朝可蹴几者，台湾人要努力，得先追随大师起步。</p>
+<p>所谓“催泪瓦斯阻军购”案，根本伏机，在李敖独当一面，以证据证明美国人欺骗台湾人，台湾人忠厚而浑，所以美国得售。不察伏机所在，只知着眼在瓦斯或纪律者，皆浅人也。谈到民主议会之纪律，有博学如李大师者乎？今以 21 版之英国国会规范（Erskine May’s Treatise on The Law. Privilegen, Proceedings and Usage of Parliament）附卷（本案结案十日后，请由尹伶瑛委员归还），聊做“机会教育”，台湾人须知此乃英国七百年努力民主之功，非一朝可蹴几者，台湾人要努力，得先追随大师起步。</p>
 <p>纵观本案，李大师慈悲苦心，昭然若揭。因材施教，何其智也；喷而不伤，何其仁也；一夫当关，何其勇也；得主席同意方发言，何其礼也；请女性先出场，何其体贴也；来去自如，何其手脚利落也；不伤人也不问马，何其孔夫子也……国民党及其余孽政党，不知李大师教而不诛、谑而不虐，反而相惊伯有、不识叔度，真是沟壑之人，真该痛改，特此叮咛如上。</p>
 <p>李敖手启，2006 年 12 月 22 日</p>
 <p>张昌财、罗世雄、桌伯源、曾永权、林炳坤、雷倩、林正峰、李显荣、草尔忠、颜清标、林惠官、孔文吉、曾华德、刘盛良、陈秀卿、郭素春、丁守中、吴英毅、陈根德、吕学樟、李永萍、李庆安、陈杰、吴志扬、杨琼璎、帅化民、朱凤芝、吴育昇、顾崇廉、陈志彬、周守训、张庆忠、洪玉钦、廖婉汝、蔡家福、杨仁福、林鸿池、伍锦霖、李全教、林春德、徐少萍、洪秀柱、赖士葆、黄健庭、刘铨忠、费鸿泰、翁春钧、林沧敏、谢文政、柯淑敏、沈智慧、赵良燕、李鸿钧、黄志雄、许舒博、王昱婷、李复兴、江丙坤、吴光训、刘文雄、苏起、白添枝、黄昭顺、李庆华、周锡玮、张显耀、徐中雄、江连福、李纪珠、曹寿民、叶芳雄、林南生、黄德福、吴敦义、朱俊晓、蔡锦隆、林建荣、纪国栋、柯俊雄、徐国勇、王世坚、李明宪、林重谟、林国庆、郭荣宗、江昭仪、黄昭辉、潘孟安、郭玟成、陈宪中、赖清德、黄伟哲、林进兴、颜文章、郑朝明、卢天麟、何敏豪、黄适卓、廖本烟、郭林勇、彭邵瑾、李振楠、陈朝龙、郭俊铭、洪奇昌、郭正亮、陈朝容、钟邵和、张俊雄</p>
@@ -2516,7 +2549,7 @@
 <p>在“军购汉奸”（含“军购台奸”）们的簇拥表决下，我独步向前，走在主席台正面，在全部立委面前，手拿标语，光天化日宣告：</p>
 <p>陈水扁们是美国走狗</p>
 <p>马英九们是美国走狗的走狗</p>
-<p>第二天，2006 年 12 月 30 日，英文报 TAIPEITIMES（台北时报），以头版头题刊出图文，TheChinaPost（英文中国邮报）且译以“ArmsdealprovesChenShui-bianistheU.S.’srunningdog,MaYing-jeouistheU.S.runningdog’srunningdog.”图片中李敖身穿黑色风衣，一手举牌示走狗之文，一夫当关，千山我独行，尽在其中。至于中文报纸，从《联合报》到《中国时报》到《自由时报》等蓝绿走狗报，皆尽力封杀，我已经习惯被走狗报封杀，所以也不以为意，要为意，早被气死了，还能又打主人又打狗吗？</p>
+<p>第二天，2006 年 12 月 30 日，英文报 TAIPEI TIMES（台北时报），以头版头题刊出图文，The China Post（英文中国邮报）且译以“Arms deal proves Chen Shui-bian is the U.S.’s running dog, Ma Ying-jeou is the U.S. running dog’s running dog.”图片中李敖身穿黑色风衣，一手举牌示走狗之文，一夫当关，千山我独行，尽在其中。至于中文报纸，从《联合报》到《中国时报》到《自由时报》等蓝绿走狗报，皆尽力封杀，我已经习惯被走狗报封杀，所以也不以为意，要为意，早被气死了，还能又打主人又打狗吗？</p>
 <p>2006 年就这样过去了。我在立法院正好两年，最烂的一场仗我已打过，不论绿色与蓝色，立法委员们在美国主子面前那种贱相，终于被我逼出原形于天下。此辈或迟速不同、或深浅稍异，其为贱也，九九归一。马英九能有所阻而不为，“军购汉奸”之尤也。</p>
 <h2 id="媚美军购国民党放水花名榜"><a class="header" href="#媚美军购国民党放水花名榜">媚美军购国民党放水花名榜</a></h2>
 <p>看台湾的假民主，最荒谬部分，不在执政党身上，而在在野党身上，在野党有两大奇观：</p>
@@ -2632,7 +2665,7 @@
 <p>雷倩说：她现在丈夫与前妻婚变时，她“不是第三者”。</p>
 <p>李敖质问：因为这涉及民意代表的诚信问题，我特别拿出两件铁证质问你：</p>
 <p>（一）第一件：户号 YA896241“户籍誊本”，记录你现任丈夫是“民国九十四年 11 月 15 日”离婚的。</p>
-<p>（二）第二件：泰国曼谷 THEEMERALDHOTEL 账单，抬头是 Mr.&amp;Mrs.Chang(Spencer)Chien，日期是（29/12/02），是民国九十一年 12 月 29 日。问题来了：</p>
+<p>（二）第二件：泰国曼谷 THE EMERALD HOTEL 账单，抬头是 Mr.&amp; Mrs. Chang (Spencer) Chien，日期是（29/12/02），是民国九十一年 12 月 29 日。问题来了：</p>
 <p>第一个问题是：这一天，比照“户籍誊本”，你的前夫还没离婚。</p>
 <p>第二个问题是：账单抬头是先生和夫人，但夫人经查并没去曼谷。</p>
 <p>第三个问题是：那么夫人是谁？</p>
@@ -2708,7 +2741,7 @@
 <p>不是林黛玉，没有眼泪。</p>
 <p>真的没有眼泪，他回去了，他笑嘻嘻的做了言近旨远的演讲，人们说他以后会再回来，只有陈文茜看出了玄机，在接机时，文茜悄悄点破：“我看你在跟北京道别。”他听了，会心一笑。真的，他在道别，用一种奇异的方式，在做道别。</p>
 <p>在台湾一住 57 年，多在台北。那年冬天，他投身台北市长选举。他一生坚持原则，不参加任何政党，所以，在党同伐异的政党夹杀下、在朝野对决的非我族类下，他压根儿不从胜负考量。政治挂帅的人们，没人会理解他意欲何为，只有古代“知其不可而为之”的圣者，知道他意欲所在：他在道别，用一种奇异的方式，在做道别。</p>
-<p>四千年四百年来，台湾从来没走过这样一票人物；57 年来，台湾从来只有他是这票人物。台湾，他来了，他没有走。可是，他要道别，他要在别人粉墨时以真面目登场、在蓝绿褪色时以“雁来红”（Amarantustricolor）谢幕，他告诉台湾朋友：还要上当吗，我们上了坏的外省人 39 年当而不能反攻、我们上了混的台湾人 59 年当而不能台独，我们要抛弃蓝绿，展开新的思维。让智慧的他指出这一新的思维。</p>
+<p>四千年四百年来，台湾从来没走过这样一票人物；57 年来，台湾从来只有他是这票人物。台湾，他来了，他没有走。可是，他要道别，他要在别人粉墨时以真面目登场、在蓝绿褪色时以“雁来红”（Amarantus tricolor）谢幕，他告诉台湾朋友：还要上当吗，我们上了坏的外省人 39 年当而不能反攻、我们上了混的台湾人 59 年当而不能台独，我们要抛弃蓝绿，展开新的思维。让智慧的他指出这一新的思维。</p>
 <p>注意啊，他在道别，用一种奇异的方式，在做道别。珍惜这个岛上曾经走过他，从青春走到老去，最后把老去的智慧，以参选方式，挥洒给你。还在怀疑吗？还要跟蓝绿随波逐流吗？拿住选票，你该想一想。</p>
 <h2 id="选市长的道德意义"><a class="header" href="#选市长的道德意义">选市长的道德意义</a></h2>
 <p>这次市长选举，对我的最大意义是彰显了道德、李敖式的道德：</p>
@@ -2727,11 +2760,11 @@
 <p>你也不够聪明。</p>
 <p>你不服气。你又圆睁双眼。</p>
 <p>先别气，一投票就知道了。原来你投了郝龙斌！</p>
-<p>宋楚瑜的错误，是在三一九枪击案时，与连战一起做傻瓜给美国人耍。他回忆：“美方曾经确切承诺，扁对他们再三的保证，只要群众退了，他一定会成立调查委员会，美方确实向连和宋做过这样的保证。但现在美方说这是包道格个人的承诺，不是美方的承诺，你能接受吗？那你个人（指包道格）不要来看我，这是浪费时间。三二七人潮退了以后，陈水扁立刻改口，后来说要成立，但却有一大堆烂七八糟的条件。”这段“上当记”告诉我们，他和连战这种国民党宫廷派宠儿是多么自失良机。宋楚瑜的每下愈况，都和他屡次自失良机有关，最后时不我与，陷入苦战而不自知。市长选举投票那天，王祥基他们接我下山，要我书面存证，预估我得几票，我写下 8500，与王祥基另纸写下的 8500 不谋而合，开出来的是 7900 票。我们自知之明，准确有如是者！因传播理念而来，因落选一笑而去。而宋楚瑜呢，却认真如彼，走遍台北 449 个里，换来的，却是一条蓝色多恼河！宋楚瑜曾是我的敌人，转成我的朋友，我一直把他当作台湾政治气候的一个指标。他的失败，是台湾政治走向的失败，从废省开始，台湾政治就走向脱轨了。原来的轨并不高明，但是恐怖止于白色。脱轨以后，个人遭受的恐怖减轻了，但是群体的中风疾走，却全岛若狂。英文成语说“作恶之报，果大于因”（reapthewhirlwind），蒋氏父子死有余忏、吾人死有余恨矣。</p>
+<p>宋楚瑜的错误，是在三一九枪击案时，与连战一起做傻瓜给美国人耍。他回忆：“美方曾经确切承诺，扁对他们再三的保证，只要群众退了，他一定会成立调查委员会，美方确实向连和宋做过这样的保证。但现在美方说这是包道格个人的承诺，不是美方的承诺，你能接受吗？那你个人（指包道格）不要来看我，这是浪费时间。三二七人潮退了以后，陈水扁立刻改口，后来说要成立，但却有一大堆烂七八糟的条件。”这段“上当记”告诉我们，他和连战这种国民党宫廷派宠儿是多么自失良机。宋楚瑜的每下愈况，都和他屡次自失良机有关，最后时不我与，陷入苦战而不自知。市长选举投票那天，王祥基他们接我下山，要我书面存证，预估我得几票，我写下 8500，与王祥基另纸写下的 8500 不谋而合，开出来的是 7900 票。我们自知之明，准确有如是者！因传播理念而来，因落选一笑而去。而宋楚瑜呢，却认真如彼，走遍台北 449 个里，换来的，却是一条蓝色多恼河！宋楚瑜曾是我的敌人，转成我的朋友，我一直把他当作台湾政治气候的一个指标。他的失败，是台湾政治走向的失败，从废省开始，台湾政治就走向脱轨了。原来的轨并不高明，但是恐怖止于白色。脱轨以后，个人遭受的恐怖减轻了，但是群体的中风疾走，却全岛若狂。英文成语说“作恶之报，果大于因”（reap the whirlwind），蒋氏父子死有余忏、吾人死有余恨矣。</p>
 <p>至于我选起市长，乍看荒谬，其实游戏人间。吾道亦颇不孤。美国思想家亨利乔治（HenryGeorge），文人杰克伦敦（JackLondon）、巴克莱（WilliamBuckley）、梅勒（NormanMailer），都是选市长的败将，下海者众矣，小事一件。</p>
 <h2 id="笑敖年代"><a class="header" href="#笑敖年代">“笑‘敖’年代”</a></h2>
 <p>新闻界、电视界有一奇才，严智径，他主持年代电视时，想在每周日晚上 8 到 9 点，推出“笑‘敖’年代”专集，由女主播访问我一个人，在 2006 年 5 月 7 日起播出。女主播前后由陈静兰和汪用和担任。我的经纪人王祥基为表示李敖是大牌，录影要由年代派专车和一位可爱的女孩子杨士仪陪同接送。节目开播前十七天，年代在喜来登二楼办开播记者会，并约王金平、宋楚瑜及市长候选人等二十多位“贵宾”前来。当场有两段致词，Vicky 打字出来了。一段是王幸男的：</p>
-<p>当然是祝贺他这个节目成功，从年轻的时候就敬佩他，到现在还找不到不敬佩他的理由，所以这个敬佩还存在。他坚持他的中国统一，我坚持我的台湾独立，大家都是互相尊重，但是我还是有一句话，李敖大哥，我大概没有当场跟您讲过，我是赞成你的“反军购”的，你的“反军购”跟国民党、亲民党的“反军购”不一样，你是把美国台湾关系法里面“provide”necessarywithoutcharge，你把它原文都拿出来，是美国在我们需要的时候，要提供我们所有的防卫性武器，不用买的，你讲得我心服口服，这个朋友交定了！另外一点，我拜托你这个节目，第一个邀请马英九马主席，你把我们现在纠缠不清，搞得我们都精神混乱，就是中国已经把所谓中华民国是台湾，台湾是中华民国就是台独这个问题，请他解释好不好？大师，跟您拜托了！</p>
+<p>当然是祝贺他这个节目成功，从年轻的时候就敬佩他，到现在还找不到不敬佩他的理由，所以这个敬佩还存在。他坚持他的中国统一，我坚持我的台湾独立，大家都是互相尊重，但是我还是有一句话，李敖大哥，我大概没有当场跟您讲过，我是赞成你的“反军购”的，你的“反军购”跟国民党、亲民党的“反军购”不一样，你是把美国台湾关系法里面“provide”necessary without charge，你把它原文都拿出来，是美国在我们需要的时候，要提供我们所有的防卫性武器，不用买的，你讲得我心服口服，这个朋友交定了！另外一点，我拜托你这个节目，第一个邀请马英九马主席，你把我们现在纠缠不清，搞得我们都精神混乱，就是中国已经把所谓中华民国是台湾，台湾是中华民国就是台独这个问题，请他解释好不好？大师，跟您拜托了！</p>
 <p>一段是郝龙斌的：</p>
 <p>李大师，其实笑敖年代讲大师的节目“狠、痛、快”，我觉得是言副其实，绝对出招“狠”、对手“痛”，而且观众“快乐”。我跟李大师有过一小段的交往，我清楚李大师的为人，他是一个侠骨柔情的人，他之所以狠、之所以痛，是因为他有所本，引经据典，而且见解独到，大家认同。另外，在交往过程中间，我注意到李大师其实心肠非常软，其实他狠，可是如果你是柔情的攻势，有时候是有效的；另外就是他从不占人家便宜，我非常清楚这一点，不管任何方面，甚至他常常都是吃亏的。所以原来很多他的敌人都因为这个样子化敌为友，我有很多原来包括是跟李大师打过官司打到后来变成朋友的也很多。另外其实我最佩服李大师的一点，我也希望李大师今天给我一个答案，为什么很多时候，您跟我几个好朋友一起在评论有些政治人物，结果我的好朋友都被告，你却都没有事，我的两个好朋友，一位是赵少康赵先生，我刚刚本来想问他这件事，另外一位李庆元李先生，我记得李庆元先生好像是跟您一起吧，结果李庆元先生被告，现在褫夺公权，李大师之所以没事，我想主要就是大家对他非常的敬畏，所以我现在很清楚一点，虽然对手痛我很高兴，我不是他的对手也不是他的敌人，谢谢！</p>
 <p>当天又出现神秘嘉宾，从后面出来向我献花，原来是莫文蔚！我又搂又抱了这个动人的女人。</p>
@@ -2819,8 +2852,8 @@
 <p>李部长天羽：九十六年度的国防预算占 GDP 的 2.85%，我们规划九十七年度将达到 3%……</p>
 <p>李委员敖：国防部应自九十六年度起将国防预算提升至 GDP 的 3%，无法达成，国防部正副部长就要下台。提案人：卢秀燕、李敖、柯俊雄、林郁方、赵良燕、帅化民，请问这有没有效？如果有效，预算今天一通过，部长、副部长就要下台，你接不接受这个协议？</p>
 <p>李部长天羽：跟委员报告，我们是规划逐年达到 3%。</p>
-<p>李委员敖：对不起，部长。我们讲的清清楚楚，是九十六年度，没有说是逐年。不要浪费时间，请你告诉本席，愿不愿意接受这个协议、下台？yesorno？</p>
-<p>李部长天羽：我不能用 yesorno。</p>
+<p>李委员敖：对不起，部长。我们讲的清清楚楚，是九十六年度，没有说是逐年。不要浪费时间，请你告诉本席，愿不愿意接受这个协议、下台？yes or no？</p>
+<p>李部长天羽：我不能用 yes or no。</p>
 <p>李委员敖：你给本席什么答复？用是和非也可以。</p>
 <p>李部长天羽：我们要随着国情、随着敌人的威胁……</p>
 <p>李委员敖：没有国情！你要尊重立法院伟大的立法委员；林郁方、帅化民等老弟的决议，你不愿意答复，本席能够了解。本席请问你，在《立法院公报》第九十五卷第六期，本席问李杰：美国人答不答应来救我们？李杰说：汉光演习的时候会想办法请他们拿出书面。两次汉光演习过去了！书面呢？美国人来不了？告诉本席，老美有没有书面？</p>
@@ -2868,7 +2901,7 @@
 <p>李部长天羽：谢谢委员指教。</p>
 <p>2007 年 10 月 5 日中午，李天羽请国防委员会委员便饭并做简报。因诈欺吃健保被提起求刑五年公诉的民进党立委林进兴，在我发言后说：“你们军人要战到一兵一卒，别的不要听。”我当场笑起来。此“蒋公附体”也！问题是“蒋公”当年若战到一兵一卒，也不会来台湾了。真正的“蒋公”早就脱体而逃了，他自己都不信自己呢，你们傻瓜才信他！</p>
 <h2 id="周郎顾曲我看郁方"><a class="header" href="#周郎顾曲我看郁方">周郎顾曲，我看郁方</a></h2>
-<p>2007 年 6 月 21 日，林郁方约我吃高级日本料理。我素恨日本，但涉及食色，此恨稍消。日本料理有益赐身（除咸汤外）、日本女人偶益此心（除短腿外），一服食、一悦目。如此马路野狼国家，勉而求之，尚有二得。因郁方请我不止一次，故小携礼物回敬。这次我带了一本 OXFORDUNIVERSITYPRESS（牛津大学出版社）印行的 Martyrs'Shrine—ThestoryoftheReformMovementof1898inchina，也就是我《北京法源寺》的英译本，上题“郁方正字”，因林郁方是外文系出身的；另一本是林郁方自己十三年前的论文，收到庆祝李登辉当政八周年的纪念集《传承-创造-革新》里，我题词如下：</p>
+<p>2007 年 6 月 21 日，林郁方约我吃高级日本料理。我素恨日本，但涉及食色，此恨稍消。日本料理有益赐身（除咸汤外）、日本女人偶益此心（除短腿外），一服食、一悦目。如此马路野狼国家，勉而求之，尚有二得。因郁方请我不止一次，故小携礼物回敬。这次我带了一本 OXFORDUNIVERSITYPRESS（牛津大学出版社）印行的 Martyrs’Shrine—ThestoryoftheReformMovementof1898inchina，也就是我《北京法源寺》的英译本，上题“郁方正字”，因林郁方是外文系出身的；另一本是林郁方自己十三年前的论文，收到庆祝李登辉当政八周年的纪念集《传承-创造-革新》里，我题词如下：</p>
 <p>读郁方老弟十三年前旧作</p>
 <p>往者何谏</p>
 <p>今请更张</p>
@@ -2890,8 +2923,8 @@
 <p>七、台湾应走哥斯达黎加、冰岛路线（无军队）。</p>
 <p>我同时说，这七点大家一体适用，包括小马哥，我能理解为了选举效应你们放的水。郁方点头同意我的七点，并理解我能理解他们“选举效应”的苦心，他说立法院不能没有我，我一定要留下来，他说他在文山区拿过第一高票，他劝我到文山区，劝进之情，溢于言表。第二天，我留了一封信给他：</p>
 <p>郁方兄：</p>
-<p>昨午之谈甚快。Jefferson 墓碑上镌功确系三项：“HerewasBuriedTHOMASJEFFERSON/AuthoroftheDectarationofAmericanIndependenceoftheStatuteofVirginis/forReligiousFreedom/andFatheroftheUniversityofVirginia”我神游效果高于亲历。我不是与你争胜，只是戏作效率评估耳。老氏说不出户知天下，意在此也。你再提拐我去西藏新疆，当打手心三下。席间所述“鲍氏之子”（JamesBoswell）与其师（SamuelJohnson）对话，是 1779 年事，原文为：</p>
-<p>He,Iknownotwhy,sheweduponalloccasionsanaversiontogotoIreland,whereIproposedtohimthatweshouldmakeatour.JOHNSON."ItisthelastplacewhereIshouldwishtotravel."BOSWELL"ShouldyounotliketoseeDublin,Sir?"JOHNSON."No,Sir,Dublinisonlyaworsecapital."BOSWELL"IsnottheGiant's-causewayworthseeing?"JOHNSON."Worthseeing?ye;butnotworthgoingtosee."</p>
+<p>昨午之谈甚快。Jefferson 墓碑上镌功确系三项：“Here was Buried THOMAS JEFFERSON / Author of the Dectaration of American Independence of the Statute of Virginis / for Religious Freedom / and Father of the University of Virginia”我神游效果高于亲历。我不是与你争胜，只是戏作效率评估耳。老氏说不出户知天下，意在此也。你再提拐我去西藏新疆，当打手心三下。席间所述“鲍氏之子”（James Boswell）与其师（Samuel Johnson）对话，是 1779 年事，原文为：</p>
+<p>He, I know not why, shewed upon all occasions an aversion to go to Ireland, where Iproposed to him that we should make a tour. JOHNSON.“It is the last place where Ishould wish to travel.” BOSWELL“Should you not like to see Dublin, Sir? “ JOHNSON.“No, Sir, Dublin is only a worse capital.” BOSWELL“ Is not the Giant’s-causeway worth seeing?“ JOHNSON.“ Worth seeing? ye ; but not worth going to see.“</p>
 <p>世之以游为乐不安于室者，必将有感于斯文。</p>
 <p>李敖，2007 年 6 月 22 日</p>
 <p>由这些友谊性的信件，可看出我一方面以私情护盘大义；一方面炫博学震撼小林，郁方未必察觉我用“鲍氏之子”的典故，这是《列子》的故事，他察觉了，会更别有会心。郁方出身淡江大学英文系、美国维吉尼亚博士、淡江大学国际事务与战略研究所所长、立法院第三、第五、六届国防委员会召集委员、大陆委员会咨询委员、三军大学战争学院荣誉讲座。他好学深思，又爱国，故我以大义劫之。他述说他拒绝做美国人的故事，我说了我的，我们都是人家把美国国籍送到眼前、送到嘴边，都弃若敝屣的，这种坚决，一般人是做不到的。罗大佑为抗议美国侵略伊拉克，公然放弃美国国籍，很了不起。我对他开玩笑说：“大佑啊，不做美国人最好，既然做了，总要占点便宜再放弃才划得来，比如说逃点税什么的，对美帝、他妈的美帝，你太好心肠了。”</p>
@@ -2906,11 +2939,11 @@
 <p>主席：请李委员敖询问，询答时间为十五分钟。</p>
 <p>李委员敖：主席、赖被提名人、谢被提名人、各位同仁。两位都是美国留学回来的，尤其赖先生还是哈佛博士，因此，请赖先生先答复本席，美国第一任大法官是谁？</p>
 <p>主席：请赖英照先生答复。</p>
-<p>赖英照先生：主席、各位委员。谢谢李委员的指教，第一任最高法院首席大法官是 JohnJay。</p>
-<p>李委员敖：很好，你答复得很好，表示你的确在哈佛念了五年书。现在本席手中拿的是 JohnJay 的传记，1935 年出版，就是本席出生的那一年。我们都知道，华盛顿当年得到总统选举人票 69 票，而当时参与竞选的人有 11 人，得票第三名的就是 Jay，他得到 9 票，当时汉密尔顿欲拉拢他和第二名的亚当斯，他几乎就可以当上美国总统了，但是因为他不肯同流合污，宁愿和汉密尔顿翻脸，也不愿用不光明的方法取得总统位阶，是不是这样？</p>
+<p>赖英照先生：主席、各位委员。谢谢李委员的指教，第一任最高法院首席大法官是 John Jay。</p>
+<p>李委员敖：很好，你答复得很好，表示你的确在哈佛念了五年书。现在本席手中拿的是 John Jay 的传记，1935 年出版，就是本席出生的那一年。我们都知道，华盛顿当年得到总统选举人票 69 票，而当时参与竞选的人有 11 人，得票第三名的就是 Jay，他得到 9 票，当时汉密尔顿欲拉拢他和第二名的亚当斯，他几乎就可以当上美国总统了，但是因为他不肯同流合污，宁愿和汉密尔顿翻脸，也不愿用不光明的方法取得总统位阶，是不是这样？</p>
 <p>赖英照先生：是</p>
 <p>李委员敖：这就是美国第一任大法官的风骨。另外，我再请问你，美国最高法院院长谁的任期最久？</p>
-<p>赖英照先生：是 JohnMarshall。</p>
+<p>赖英照先生：是 John Marshall。</p>
 <p>李委员敖：Marshall 做了多少年？</p>
 <p>赖英照先生：34 年。</p>
 <p>李委员敖：Marshall 制订很多规则，包括曾传唤他的远方表兄杰克逊总统，是不是？</p>
@@ -2938,7 +2971,7 @@
 <p>李委员敖：什么将来！他老成那个样子，哪还有将来！你不要讲出这种不合乎正义标准的话，今天我们要不要投票给你，就看你有没有这点风骨！没有人怀疑你们的法学水准，但你们没有这样的风骨，才是最重要的。</p>
 <p>另外，你说你看过林语堂写的《苏东坡传》，而苏东坡的性格也影响了你，现在我手上拿的正是林语堂写的这本书，请问你看的是翻译本，还是原文？</p>
 <p>赖英照先生：我看的是翻译本。</p>
-<p>李委员敖：这本书严格说来是要查禁的，它的原文书名是 GayGenius。</p>
+<p>李委员敖：这本书严格说来是要查禁的，它的原文书名是 Gay Genius。</p>
 <p>赖英照先生：Gay 是欢喜的意思。</p>
 <p>李委员敖：当时是快乐的天才，现在变成是同性恋的天才、同志的天才……</p>
 <p>赖英照先生：两个意义并存。</p>
@@ -2980,7 +3013,7 @@
 <p>昨天赖英照不敢做承诺，他说：如果我们要对当政者表示意见，用我们的解释文字就可以表示意见。你解释个屁啊！我们亲眼看到怎么解释的！你们骗我们！关于真调会，你们怎么解释的？立法院通过的法律，你们怎么解释的？司法院大法官是一群非常可恶的人，拿了高薪却不办事，甚至太慢做出解释、做出错误的解释、贵的解释；当然，这并不涵盖你们四位。可是，现在我们正要投票同意你们出任大法官，所以，本席必须关心这个问题，以决定是否应该同意你们。今天本席要请你们每个人向本席说，你们要不要和总统翻脸？要不要宣布总统违宪？但总统并不等于陈水扁。请叶女士先说。</p>
 <p>主席：请叶赛莺女士说明。</p>
 <p>叶赛莺女士：主席、各位委员。感谢李委员的指教，有关李委员对大法官职务及解释的深入研究，个人深表敬佩，尤其您的用心、您的期许，我个人可以理解。我从事法官及法务行政已多年，向来都本着良知、良能办事，也就是，一定要对得起自己的良心，然后再本着自己的经验和学识做合理的判断……</p>
-<p>李委员敖：对不起，我很不礼貌地打断你的话，你说的太长了。你能不能告诉本席，为了正义，你愿意和总统翻脸吗？你只需要答复本席 yesorno。</p>
+<p>李委员敖：对不起，我很不礼貌地打断你的话，你说的太长了。你能不能告诉本席，为了正义，你愿意和总统翻脸吗？你只需要答复本席 yes or no。</p>
 <p>叶赛莺女士：我的意思就是，根据宪法，应该怎么解释，我就会凭着学识、经验解释，不会受到任何人影响。</p>
 <p>李委员敖：你的话很像赖英照所说的话。我们的语言可能和你不太一样，本席只想问你要不要跟他翻脸？所谓的翻脸，可能就是要责备他，或者公开划清界线，你是否愿意这么做？</p>
 <p>叶赛莺女士：我的意思是，在解释或者统一解释法律命令时，该怎么解释，我就会怎么做，不会顾及个人的职位。</p>
@@ -2992,12 +3025,12 @@
 <p>叶赛莺女士：我不是逃兵，是因为长期工作太累。</p>
 <p>李委员敖：你知道什么叫做鞠躬尽瘁、死而后已？本席已经得到你的答复，那就是，你在闪躲。请第二位告诉本席，愿不愿意翻脸？</p>
 <p>林锡尧先生：李委员是法律系的前辈，对我们有所期许，我可以理解。宪法赋予大法官的职责就是要说出“什么是法”，而不是翻不翻脸的问题。</p>
-<p>李委员敖：你讲话和他一样复杂，只要告诉本席 yesorno。</p>
-<p>林锡尧先生：没有所谓的 yesorno，只要说出什么是“法”。</p>
+<p>李委员敖：你讲话和他一样复杂，只要告诉本席 yes or no。</p>
+<p>林锡尧先生：没有所谓的 yes or no，只要说出什么是“法”。</p>
 <p>李委员敖：美国大法官 Holmes 曾说宪法是活的，美国最高法院有九个可恶的老头子，每当其他八位通过时，他就一定投下反对票，虽然在法律上、在议案上、在学理上，他都应该投下赞成票，但他却投了反对票，因为他觉得他代表的是反对精神，在最高法院提出反对意见比众口一声更重要。本席要告诉你们，无论总统是谁，你们都要能够反对，再大的总统，在你们眼里都是“烂脚”，要敢骂、敢打、敢拆穿，这样才像个大法官。要知道，大法官不是法官。刚才叶女士提到“荣获总统提名”，本席觉得不能用“荣获”这样的动词，因为，被陈水扁提名是你们的耻辱，但你们还是可以委曲求全担任大法官，然后上任之后，就要像美国大法官一样，一个一个地反了，这样才是大法官应该走的路，这就是本席的意思。</p>
 <p>继续请池先生答复本席，敢不敢跟总统翻脸？</p>
 <p>池启明先生：对于李委员的期许与鼓励，我很感激。31 年来，我从事刑事审判工作，一向坚持是非分明，这也是法律与命令。至于委员提到是否与总统对干一事，我觉得，情节似乎严重了一点，如果真有这种必要，我会发表文章以示浅见，谢谢。</p>
-<p>李委员敖：说的稍微好一点，也进步一点。接下来请蔡先生答复，时间只剩几秒钟，请直接讲 yesorno，不用再谢谢本席。</p>
+<p>李委员敖：说的稍微好一点，也进步一点。接下来请蔡先生答复，时间只剩几秒钟，请直接讲 yes or no，不用再谢谢本席。</p>
 <p>蔡清遊先生：谢谢委员的指教，这不是“对干”的问题，大法官还是要……</p>
 <p>李委员敖：不要讲了，本席了解你的意思。</p>
 <h2 id="我又宰了四个"><a class="header" href="#我又宰了四个">我又宰了四个</a></h2>
@@ -3025,7 +3058,7 @@
 <p>李委员敖：我问你，你当然要回答！你的脊椎有没有问题？</p>
 <p>许志雄先生：我是稍微的脊椎侧弯，应该不算什么大问题。</p>
 <p>李委员敖：告诉你，你腰杆要撑直一点，不要再继续侧弯！</p>
-<p>另外，你在报告中提到三个美国大法官，我告诉你，你没有资格答复。现在我要请教第四位的叶先生，你在公投辩论时和许信良一起辩论，是吗？你是个反动分子、你是个保护陈水扁这个烂政权的分子、你是个曲学阿世的分子！你在美国念耶鲁，耶鲁是你这种念法吗？是配合政府的念法吗？YankeefromOlympus 这本书你看过没有？晓不晓得这个人？你们四位是不是都喜欢看柯南道尔的侦探小说？如果你们有异议，可以表示出来。柯南道尔的侦探小说当中有个重要人物叫做福尔摩斯，你们有没有听说过？如果没有，也可以说出来。福尔摩斯的英文怎么拼？</p>
+<p>另外，你在报告中提到三个美国大法官，我告诉你，你没有资格答复。现在我要请教第四位的叶先生，你在公投辩论时和许信良一起辩论，是吗？你是个反动分子、你是个保护陈水扁这个烂政权的分子、你是个曲学阿世的分子！你在美国念耶鲁，耶鲁是你这种念法吗？是配合政府的念法吗？Yankee from Olympus 这本书你看过没有？晓不晓得这个人？你们四位是不是都喜欢看柯南道尔的侦探小说？如果你们有异议，可以表示出来。柯南道尔的侦探小说当中有个重要人物叫做福尔摩斯，你们有没有听说过？如果没有，也可以说出来。福尔摩斯的英文怎么拼？</p>
 <p>刘幸义先生：Holmes。</p>
 <p>李委员敖：为什么翻译成福尔摩斯？</p>
 <p>刘幸义先生：这我就不知道了！</p>
@@ -3280,16 +3313,16 @@
 <p>上面这一参选时期的广告，我不厌重复的收在这里，一方面意在保存历史文件；一方面证实“我选立委的第一目的”，就是反对美帝，蓄谋深远矣！</p>
 <h2 id="我这一票人"><a class="header" href="#我这一票人">我这一票人</a></h2>
 <p>我在立法院，因为孤家寡人一个，碰到一些局面，不无斟酌、不无荒谬好笑之感。</p>
-<p>最荒谬好笑的，是投票。我在赞成或反对之间，往往感到为难。该投反对票的，固然该反对，但相对的，赞成票也赞成不起来。以军购案为例，执政党要向美国大人交心，一次付款，固该反对；但在野党也未尝不向美国大人交心，只是要求打点折扣分期付款而已，这样的赞成，赞成的起来吗？所以结论是：我反对了执政党的媚美方案，但也赞成不起来在野党的媚美方案，虽然那种方案也是执政党反对的，但他们的反对并不等于我的赞成。最后若不反对也不赞成，投弃权票，又显示不出我的强烈立场，乍看起来，弃权是消极的，而我又绝不消极，反倒积极反美反得要命。反对、赞成、弃权三种票都难乎为投，说它荒谬好笑，不亦宜乎。虽然洋规矩有“以缺席表示反对”（conspicuousbyhisabsence）的办法，但总嫌消极有余也。</p>
+<p>最荒谬好笑的，是投票。我在赞成或反对之间，往往感到为难。该投反对票的，固然该反对，但相对的，赞成票也赞成不起来。以军购案为例，执政党要向美国大人交心，一次付款，固该反对；但在野党也未尝不向美国大人交心，只是要求打点折扣分期付款而已，这样的赞成，赞成的起来吗？所以结论是：我反对了执政党的媚美方案，但也赞成不起来在野党的媚美方案，虽然那种方案也是执政党反对的，但他们的反对并不等于我的赞成。最后若不反对也不赞成，投弃权票，又显示不出我的强烈立场，乍看起来，弃权是消极的，而我又绝不消极，反倒积极反美反得要命。反对、赞成、弃权三种票都难乎为投，说它荒谬好笑，不亦宜乎。虽然洋规矩有“以缺席表示反对”（conspicuous by his absence）的办法，但总嫌消极有余也。</p>
 <p>投票问题，不止见之于大案子，小案子也有，陈聪明案就是一例。2007 年 1 月 18 日 YAHOO！奇摩新闻登：</p>
 <p>检察总长人事/肯定陈聪明曾起诉胡因梦，李敖拟投赞成票</p>
 <p>立法院行使检察总长人事同意权，陈聪明人事案会不会通过，每一票都是关键，而原本外界预期会投下反对票的无党籍立委李敖，今（18）日上午竟然公开表示会支持陈聪明，原因是陈聪明曾经起诉它的前妻胡因梦，为总长人事投下一颗震撼弹。</p>
 <p>为了检察总长被提名人陈聪明人事案，蓝绿吵翻天，国民党强调要投下反对票，且党中央对每一个党籍立委有充分信心……根据法院组织法规定，最高法院检察总长由总统提名，经立法院同意任命之，任期四年，不得连任。立院现有 218 席立委，只要三分之一以上立委出席，出席立委二分之一以上同意，就能通过检察总长人事案。由于国民党表态反对，民进党和台联支持，因此亲民党和无盟的动向是关键。</p>
 <p>值得关注的是，原本外界预期会投下反对票的李敖，今日上午接受媒体采访时强调，他会投下赞成票，原因是陈聪明当年曾经抵抗军方的打压力量，起诉伪造文书的女人，也就是胡因梦。李敖还提到，他投下赞成票是为了当年的陈聪明，而非现在的陈聪明。</p>
 <p>我在回忆录里写过我当年的冤狱。我写道：“这个案子在林晃、黄剑青、顾锦才还没做成冤狱前，因为萧孟能诬告我，我曾就他和他姘妇王剑芬伪造文书的部分，告到地检处。检察官陈聪明不但起诉了他们这对男女，并已连同一起伪造文书陷害李敖的共犯胡茵梦也一块儿起诉了。”这是那一段历史背景，当时陈聪明只是一名小检察官。记得罗斯福夫人一段话，大意说，一个人在理智困惑时应相信感情，如我传意无误，这次投票，是我非常感情用事的一次。</p>
-<p>洋鬼语云：Godneverwroughtmiracletoconvinceatheismbecausehisordinaryworksconvinceit.（上帝说不创造奇迹使无神论者相信他，因为他普通作品就足以服众了。）上帝如此，李敖何独不然？这次投票，我生公说法，如话家常，鬼神自然就点头了。国民党事先由小马哥出面，阻投陈聪明，凭什么都你们国民党说了算？老子就投一次给你们看！当天《联合晚报》说：“无党籍立委李敖这次对陈聪明投下同意票，还亮票给大家看，获得在场绿委掌声叫好。”陈聪明案啊陈聪明案，“李敖委员”这一票，可真刁钻之至。</p>
+<p>洋鬼语云：God never wrought miracle to convince atheism because his ordinary works convince it.（上帝说不创造奇迹使无神论者相信他，因为他普通作品就足以服众了。）上帝如此，李敖何独不然？这次投票，我生公说法，如话家常，鬼神自然就点头了。国民党事先由小马哥出面，阻投陈聪明，凭什么都你们国民党说了算？老子就投一次给你们看！当天《联合晚报》说：“无党籍立委李敖这次对陈聪明投下同意票，还亮票给大家看，获得在场绿委掌声叫好。”陈聪明案啊陈聪明案，“李敖委员”这一票，可真刁钻之至。</p>
 <h2 id="他妈的与你妈的"><a class="header" href="#他妈的与你妈的">“他妈的”与“你妈的”</a></h2>
-<p>美国人搞出飞弹打到别人，但不愿别人的飞弹打到它，它搞出两个防御别人飞弹的系统。（一）战区导弹防御（TheaterMissileDefense，简称“他妈的”TMD），（二）国家导弹防御（NationalMissileDefense，简称“你妈的”NMD）。“他妈的”用在外国，“你妈的”用在美国本土。在把“他妈的”朝台湾卖的时候，当时国防部长是蒋仲苓，埋怨太贵了，要 94 亿台币，“是一个钱坑”。新任国防部长唐飞上任后，去美国见到洋大人，一回来，就从“是一个钱坑”转调成“台湾有极高意愿要加入 TMD”了。唐飞之流的宣传说：94 亿美金比 NMD 便宜，殊不知 NMD 防御的面积，是 930 万平方公里的美国都会区，而 TMD 防御的台湾，只 5300 平方公里的有毛的和不毛之地。以每平方公里成本比较，是 1 比 250，也就是说，比美国贵了 250 倍！这不是冤大头是什么？并且台湾买的，还是不完整的“他妈的”。完整的 TMD 系统包括低空防御系统和高空防御系统，两者以 40 公里的拦截高度为临界点。台湾买的是低空防御系统，拦截半径为 50 至 60 公里，“爱国者 2”和“爱国者 3”都是低空导弹防御系统。它们如能拦截，拦的也只是共产党的短程导弹。这就是说，共产党如从内陆打来中程导弹，台湾就没辙了。台湾只能打高度下半截的。要有辙，还得买高空防御系统，再买打高度上半截的。这样搞法，可有的买了。</p>
+<p>美国人搞出飞弹打到别人，但不愿别人的飞弹打到它，它搞出两个防御别人飞弹的系统。（一）战区导弹防御（Theater Missile Defense，简称“他妈的”TMD），（二）国家导弹防御（National Missile Defense，简称“你妈的”NMD）。“他妈的”用在外国，“你妈的”用在美国本土。在把“他妈的”朝台湾卖的时候，当时国防部长是蒋仲苓，埋怨太贵了，要 94 亿台币，“是一个钱坑”。新任国防部长唐飞上任后，去美国见到洋大人，一回来，就从“是一个钱坑”转调成“台湾有极高意愿要加入 TMD”了。唐飞之流的宣传说：94 亿美金比 NMD 便宜，殊不知 NMD 防御的面积，是 930 万平方公里的美国都会区，而 TMD 防御的台湾，只 5300 平方公里的有毛的和不毛之地。以每平方公里成本比较，是 1 比 250，也就是说，比美国贵了 250 倍！这不是冤大头是什么？并且台湾买的，还是不完整的“他妈的”。完整的 TMD 系统包括低空防御系统和高空防御系统，两者以 40 公里的拦截高度为临界点。台湾买的是低空防御系统，拦截半径为 50 至 60 公里，“爱国者 2”和“爱国者 3”都是低空导弹防御系统。它们如能拦截，拦的也只是共产党的短程导弹。这就是说，共产党如从内陆打来中程导弹，台湾就没辙了。台湾只能打高度下半截的。要有辙，还得买高空防御系统，再买打高度上半截的。这样搞法，可有的买了。</p>
 <p>由此可见，唐飞之流实在可恶。但比起唐飞来，李杰之流不遑多让。但李杰比较愣，容易被激出真话。1999 年 10 月 27 日，国防部长唐飞在立法院报告说，台湾的防卫极限是 14 天到 30 天。可是，李杰呢，就只说 14 天了，可见李杰比唐飞“老实”。</p>
 <h2 id="反军购固盘秘辛"><a class="header" href="#反军购固盘秘辛">反军购固盘秘辛</a></h2>
 <p>我多聪明，我深知我在立法院，帮我阻止军购的唯一团队是亲民党，因此我暗中锁定了它。郭中一、张亚中、谢大宁他们发起民主同盟反军购时，我在现场捐出口袋里的 7 万元，看到宋楚瑜也参加了游行，还跟我在反军购招牌下握手合影。2005 年 2 月 23 日，我发表《李敖的六点声明》，先把宋楚瑜咬定，全文是：</p>
@@ -3303,11 +3336,11 @@
 <p>2005 年 9 月 17 日，陈水扁在电视专访中指出：三大军购不是他当总统才有这样的需求，也不是他提出的，而是旧政府时代，也就是国民党、亲民党还同党的时代，就决定的政策。</p>
 <p>他说：民国八十三年李登辉主持 271 次的军事会谈就决定要买潜舰，当时连战是行政院长。八十六年决定买长程定翼反潜机并向美国提出，八十七年再提出要买爱国者三型飞弹。只是当时美国总统不批准而已。八十八年克林顿总统批准爱国者三型飞弹，2001 年布什就职，批准其他两项。本来拖了这么久，大家应该高兴才对，没想到在野党换了位子就换脑袋；执政时认为需要军购，当时中共军力还没有这么强；现在两岸军力已经向中共倾斜，却反对军购。他表示，2000 年连战在总统大选访问美国，也说当选后会支持军购，但是没选上后就变反对。宋楚瑜和他举行扁宋会时，十条共识中也有军购，只是没写明，因为宋楚瑜怕被立委李敖骂，所以写成“强化国防”。现在是宋楚瑜找碴，借故反对军购。</p>
 <p>由这一段陈水扁的公开谈话里，他点名指出是李敖反对，才使宋楚瑜不敢在所谓“扁宋会”中公然支持军购。事实上，正因为宋楚瑜的态度，才使亲民党立委在立法院有了明确立场，军购案就给拖住了。</p>
-<p>中国传统标准讲“三不朽”，讲立德、立功、立言。其实该分成两组，立德组（立言属之）和立功组。立德组是树立人格思想的典范，匹夫而为百世师，一言而为天下法，失败英雄而为万古流芳，在事功上，这种人是无缘的。失败的，孔夫子、文天祥，伏尔泰是也。这种立德立言以外，就全是立功组了，立大功小功，从科学界到政治界到企业界到建筑界等等等等，全都属之。艺术界等比较特殊，很像强盗界，成则为王，败则为寇，让他们自成一格吧。不晓得是幸还是不幸，我在乱世、浊世、混蛋世界中，归类成立德组。我既立德又立言，形式上看，自然肝脑涂地后一败涂地，人们看到这方面的我，会笑是一场空，甚至是一场闹剧。真的是闹剧呢。不过立委三年，我在反美军购上，用力最多、用计最深、用心最苦，倒是正经八百的。最后把美国总统小布什都告进去，由我和生在美国的李文（HedyLee）同步提出，最有奇趣。诉状由我亲笔，法律意见由杨宗儒律师续尾，由林宪同律师附跋，虽被太平洋两岸封杀，但功德在兹。我老眼平生空四海，美帝亦在被空之中。不同流而砥柱中流，或无补于现实，但能有吾声在兹，为历史存鸿爪、为空谷留余音，自属功德。</p>
+<p>中国传统标准讲“三不朽”，讲立德、立功、立言。其实该分成两组，立德组（立言属之）和立功组。立德组是树立人格思想的典范，匹夫而为百世师，一言而为天下法，失败英雄而为万古流芳，在事功上，这种人是无缘的。失败的，孔夫子、文天祥，伏尔泰是也。这种立德立言以外，就全是立功组了，立大功小功，从科学界到政治界到企业界到建筑界等等等等，全都属之。艺术界等比较特殊，很像强盗界，成则为王，败则为寇，让他们自成一格吧。不晓得是幸还是不幸，我在乱世、浊世、混蛋世界中，归类成立德组。我既立德又立言，形式上看，自然肝脑涂地后一败涂地，人们看到这方面的我，会笑是一场空，甚至是一场闹剧。真的是闹剧呢。不过立委三年，我在反美军购上，用力最多、用计最深、用心最苦，倒是正经八百的。最后把美国总统小布什都告进去，由我和生在美国的李文（Hedy Lee）同步提出，最有奇趣。诉状由我亲笔，法律意见由杨宗儒律师续尾，由林宪同律师附跋，虽被太平洋两岸封杀，但功德在兹。我老眼平生空四海，美帝亦在被空之中。不同流而砥柱中流，或无补于现实，但能有吾声在兹，为历史存鸿爪、为空谷留余音，自属功德。</p>
 <p>古今中外，以独行行道、且以快意行之，李敖一人而已。</p>
-<p>我在立法院议场坐右后角，用望远镜细看群丑，有时候反过来看。或问望远镜怎么拿反了，答案是：“我知道，我比较喜欢看他们又小又远。”如今告起美国总统来，正所谓 Ilikeitbetterwhenyoulooksmallandfaraway 也。</p>
-<p>相对的，美国方面也真识货，美帝在官方刊物上，以“LegislativeInactionSapsTaiwan'sMilitary”为大题，公开点名批判“LiAo”（李敖），一如陈水扁公开点名归罪“李敖”。由这些反面证据，可见李敖反军购，确属首功。夫子不必自道，美帝及其走狗已白纸黑字、确立文徵在兹，非我自己吹牛也。</p>
-<p>2006 年 10 月 19 日，Vicky 说美国在台协会副会长 Dr.RobertS.Wang 想约我一见，并留下两个见面时间。我说：“不要理他们，我讨厌美国人。”</p>
+<p>我在立法院议场坐右后角，用望远镜细看群丑，有时候反过来看。或问望远镜怎么拿反了，答案是：“我知道，我比较喜欢看他们又小又远。”如今告起美国总统来，正所谓 I like it better when you look small and far away 也。</p>
+<p>相对的，美国方面也真识货，美帝在官方刊物上，以“Legislative Inaction Saps Taiwan’s Military”为大题，公开点名批判“Li Ao”（李敖），一如陈水扁公开点名归罪“李敖”。由这些反面证据，可见李敖反军购，确属首功。夫子不必自道，美帝及其走狗已白纸黑字、确立文徵在兹，非我自己吹牛也。</p>
+<p>2006 年 10 月 19 日，Vicky 说美国在台协会副会长 Dr. Robert S. Wang 想约我一见，并留下两个见面时间。我说：“不要理他们，我讨厌美国人。”</p>
 <h2 id="张显耀值得特别表扬"><a class="header" href="#张显耀值得特别表扬">张显耀值得特别表扬</a></h2>
 <p>2007 年 5 月 26 日，《联合晚报》华盛顿专电，说美国国会最新报告分析：“台湾议题上的角色愈来愈不吃重，一项主要原因，是台湾在对美军购议题上没有进展，因为国会这些年来，一直逼迫行政部门给台湾更多的军事支持，并要求行政部门同意出售台湾先进武器，支持台湾自我防卫。但台湾迟不购买，已让国会无法再借军售和行政部门例行讨论台湾议题。”我想，被美国从掌握中放过，这是台湾之福。由于我们带头的努力，我们真的把时机带来转机了、真的把老美拖得不耐烦了。这里写出我们，是李敖的谦虚，事实上，真正纯度一百反对向美国军购的，只是“李敖委员”一个而已。别人虽纯度不够，甚至助纣为虐、助纣自虐，但在李敖的泰山压顶下，他们自然多少感受到压顶之苦，而有以首鼠两端、有以七折八扣、有以拖拖拉拉、有以藏头缩尾……宽大的说，这是好现象。“李敖委员”在最后，决定陪同亲民党的张显耀出席了一次“拦截会”。会是他们偷偷摸摸开的，由国防部副部长“小亨利”柯承亨带队前来，他们看到我不请自来，不敢讲话，国防部国会联络人崔永生少将一直在我身旁示好。我与张显耀先入座，最后，门口鬼祟走进了林郁方、苏起、帅化民三个军购派，他们一见到我，面露意外、窘态可掬。张显耀很了不起，当场表示他代表的亲民党是不签字的，一切先拖四个月再说。在我虎视眈眈之下，大家都识时务了，就流会了。那是我最后一次也是唯一一次目击国民党立委配合民进党政府开秘密会，确认议会政治已死。张显耀值得特别表扬。</p>
 <h2 id="李庆华李庆安兄妹档"><a class="header" href="#李庆华李庆安兄妹档">李庆华李庆安兄妹档</a></h2>
@@ -3357,7 +3390,7 @@
 <p>既然我在这段期间，做了两位数字以上的“冻结案”（帮我连署的有朱俊晓、朱凤芝、吴志扬、吕学樟、李纪珠、李庆华、李鸿钧、周守训、帅化民、高金素梅、张显耀、陈银河、黄义交、刘文雄）和两位数字以上的“控诉案”（被我告到法院的人数是三位数，直逼 300 人）。我也清楚知道立法院如彼、法院如此，诉诸“冻结”，空忙一场；诉诸“控诉”，效果难彰，但我毕竟还是做了极多。其中有些特例，是教训性的报复性的，例如我把又国民党又新党的雷老太太，告到法院，教训并报复她在我喷瓦斯事件上，联合民进党林姓小卒冒犯李委员；又把林姓小卒告到法院，教训并报复他干扰我的质询案和谎报台大“假演戏”案。由于我的控诉，使法院难以吃案了事。雷老太太终于被起诉了，林姓小卒也在劫难逃。这些小事，颇类恶作剧，但我不浪费一点时间，予以教训和报复，别人就不怕我了，那怎么行？</p>
 <p>白色恐怖时代严打禁书，我看不到《列宁全集》，但我曾近乎恶作剧的从蒋介石《苏俄在中国》书中挖到列宁的话。《苏俄在中国》有这样两段：“马克思主义是反对议会政治的。”“但在一个自由国家里，共党并不是不参加议会。列宁在 1920 年说道：‘布尔什维克参加过最反动的国会。经验告诉我们：这种参加，对于布尔什维克准备第二次革命（指十月革命）不但是有益的，并且是必要的。’但是我们要知道，共党参加议会，不是赞成议会政治，而是为了破坏议会。列宁说得非常明白：‘我们参加国会，不但无害于无产阶级，而且使我们更容易向群众证明，为什么这种国会必须解散。’”</p>
 <p>列宁这番话，我青年时受用，并在老年时力行，真要感谢“娘希匹”的蒋介石。</p>
-<p>我在立法院，像是拿了“南森护照”（Nansenpassport）的世界公民，跟他们本不相干，但是，既然有了《正气歌》描绘的牛鸡杂处，也就心里有数在先。那种有数，就是列宁式的。根本上，是心存颠覆的。我在倒阁罢免之际曾拟“倒阁罢免联盟”五帖，它们是：</p>
+<p>我在立法院，像是拿了“南森护照”（Nansen passport）的世界公民，跟他们本不相干，但是，既然有了《正气歌》描绘的牛鸡杂处，也就心里有数在先。那种有数，就是列宁式的。根本上，是心存颠覆的。我在倒阁罢免之际曾拟“倒阁罢免联盟”五帖，它们是：</p>
 <p>一、有权必烂，中外皆然。“权力使人腐化，绝对的权力使人绝对腐化。”这是英国历史家艾克顿觉察出来的定律，我们深信不疑。</p>
 <p>二、防止权力腐化的法子很多，最彻底的是“把你赶下台”。</p>
 <p>三、赶院长下台，是谓“倒阁”；赶总统下台，是谓“罢免”；大家群策群力一起来，是谓“联盟”。</p>
@@ -3371,7 +3404,7 @@
 <p>输的是谁？是真正的民主政治！</p>
 <p>上面这段话，可以看出第一流思想家、历史家早在 18 年前的睿智。</p>
 <p>18 年后，看台湾的伪民主，我的朋友邱立本在《亚洲周刊》提出新的切入点。《亚洲周刊》提出判断民主，“并不是看领导人如何上台，而是看他们如何下台。”“日本首相安倍晋三因为内阁形象破坏、治国无能，甚至涉嫌规避遗产税的违法事端，闪电请辞。菲律宾前总统埃斯特拉达，他 98 年当选总统，但因涉贪，01 年遭逮捕，判了无期徒刑。”“这些镜子照映下的台湾政坛，却是执政七年、贪腐缠身但人民无法令其下台的陈水扁，此等民主是台湾的最大悲哀。”“台湾别说和日本比，就是比起菲律宾，也逊色一大筹。这种台式民主，不正是台湾的最大悲哀吗？”</p>
-<p>当年罗斯福夫人说宋美龄：“她可以把民主政治说得天花乱坠，却不知道如何过民主生活。”（Shecantalkbeautifullyaboutdemocracy,butdoesnotknowhowtolivedemocracy.）这句话说得可真入骨极了。今天的台湾，一干人等，正是如此，人人宋美龄，且比宋美龄还宋美龄，台湾真玩完了。我们受够了坏的外省人的，如今又受外省人余孽的和台湾人新贵的，我们绝不甘心。我进了所谓国会，当然要列宁一下。中国早年介绍列宁时，翻成“李宁”，列宁在台，真“李宁”矣！</p>
+<p>当年罗斯福夫人说宋美龄：“她可以把民主政治说得天花乱坠，却不知道如何过民主生活。”（She can talk beautifully about democracy, but does not know how to live democracy.）这句话说得可真入骨极了。今天的台湾，一干人等，正是如此，人人宋美龄，且比宋美龄还宋美龄，台湾真玩完了。我们受够了坏的外省人的，如今又受外省人余孽的和台湾人新贵的，我们绝不甘心。我进了所谓国会，当然要列宁一下。中国早年介绍列宁时，翻成“李宁”，列宁在台，真“李宁”矣！</p>
 <h2 id="我不用公家信封"><a class="header" href="#我不用公家信封">我不用公家信封</a></h2>
 <p>“立法院”头衔，在市井世俗中，自然好用。</p>
 <p>立法委员为利益施压，司空见惯。即使所谓以清新号召的，也卷入千堆雪式的千堆粪。以一则报载为例吧。</p>
@@ -3406,7 +3439,7 @@
 <p>李大哥你好：</p>
 <p>我是素梅，昨天的小米酒之夜，非常的热闹及成功。您赠送的油画，也在现场以 50 万元的高价卖出，是由希望工程的周老板购得！这是我的第一笔收入，真的非常感激。尤其在现场我提及您的支持，更让大家万分的鼓舞！再次谢谢您！</p>
 <p>因为有您的支持，让我觉得有个靠！</p>
-<p>素梅（吉娃斯）敬上 2001 年 9 月 13 日 PM4:45</p>
+<p>素梅（吉娃斯）敬上 2001 年 9 月 13 日 PM 4:45</p>
 <p>大师：</p>
 <p>谢谢您的支持，芒果是来自屏东排湾族人的感谢。多放几天会更好吃。再一次感谢。</p>
 <p>高金素梅（吉娃斯阿丽）2005 年 4 月 8 日</p>
@@ -3439,13 +3472,13 @@
 <p>20 世纪过去了，中国人开了自己一个世纪的玩笑，民国了半天、民主了百年，原来挂上羊头、卖了狗肉。所谓民主，原来是假民主。</p>
 <p>我们厌恶政治的人，我们受够了。我们一时无法摆脱这些假民主的政党，但我们至少可以拆穿它们，留下一些智慧的星火，期待燎原。</p>
 <p>拆穿它们的第一步，就是我们成立一个真正英美式民主国家的政党给人民看，让人民恶梦初醒、让人民午夜梦回。</p>
-<p>政治学里有常常被忽略的一章，就是“使命政党”（missionaryparty）。成立“使命政党”的人们，他们知道无法赢得选举，但却因此散播了理想跟理念。美国的“社会主义劳工党”（SocialistWorkersParty.SWP）就是显例。它在 1988 年总统选举中，拿下 13338 张选票，是所有选票的千分之一。它显示了：美国人不全是大党刍狗、美国人还有骨气和正义、美国还有千分之一的星火。这一星火，到了 2000 年和 2004 年，由美国消费者保护英雄纳达（RalphNader）出面，分别以绿党（Green）和独立参选人身分下海争雄，在 2000 年，还得到千分之三十的选票。</p>
+<p>政治学里有常常被忽略的一章，就是“使命政党”（missionary party）。成立“使命政党”的人们，他们知道无法赢得选举，但却因此散播了理想跟理念。美国的“社会主义劳工党”（Socialist Workers Party.SWP）就是显例。它在 1988 年总统选举中，拿下 13338 张选票，是所有选票的千分之一。它显示了：美国人不全是大党刍狗、美国人还有骨气和正义、美国还有千分之一的星火。这一星火，到了 2000 年和 2004 年，由美国消费者保护英雄纳达（Ralph Nader）出面，分别以绿党（Green）和独立参选人身分下海争雄，在 2000 年，还得到千分之三十的选票。</p>
 <p>一般市井小民不能理解“使命政党”和“使命人物”的怀抱，长夜漫漫，这需要时间。</p>
 <p>我们厌恶政治又有使命感的人，站出来，成立“中国智慧党”。孔子说：“我欲仁，斯仁至矣。”要做“中国智慧党”党员，只要符合智慧的标准，就斯党员至矣。</p>
 <p>乍看起来，党与党员的关系有点疏离。其实，疏离正是它的特色与真髓。28 年前，政治学者已经看出：政党将愈来愈变为 labels（标签）作用。“中国智慧党”与党员的关系，恰如盖洛普民意调查中的那个民主党党员，他说：“我是个民主党员。”但他和民主党的关系，只是球队和球迷的关系。他只是个球迷，但他喜欢那标签。</p>
 <p>喜欢“中国智慧党”，这是你球迷的标签。标签了它，也标签了你。你可以微笑告诉别人：“我中国，所以我智慧；我智慧，所以我中国。我怕变成‘台湾笨蛋党’，所以我标签‘中国智慧党’。高兴我终于找到一个真的党，我是它的迷。”</p>
 <h2 id="中国智慧党章程"><a class="header" href="#中国智慧党章程">“中国智慧党”章程</a></h2>
-<p>第一条（名称）：本党名称为“中国智慧党”，英文名称“ChinaWisdomParty”（CWP）。以下称本党。</p>
+<p>第一条（名称）：本党名称为“中国智慧党”，英文名称“China Wisdom Party”（CWP）。以下称本党。</p>
 <p>第二条（宗旨）：本党为政治学理上英美式柔性政党，其宗旨，顾名思义，非“台湾笨蛋党”、非刚性政党。</p>
 <p>第三条（组织区域）：本党以全国行政区域为组织区域。</p>
 <p>第四条（会址）：党址设于台北市。</p>
@@ -3478,8 +3511,8 @@
 <p>明确证据：</p>
 <p>民进党党纲又白纸黑字说：“以台湾名义加入联合国”，20 年下来，如今陈水扁又信誓旦旦，但这问题的根本情况是：</p>
 <p>1.以中华民国名义进入，因这名义已被中华人民共和国继承并代表了，所以，根本没有余地。</p>
-<p>2.1971 年 10 月 25 日，联合国第 2758 号决议文是：“立即赶出蒋介石在联合国及其所属机构内的代表，因所有席位皆非法占有。”（toexpelforthwiththerepresentativesofChiangKai-shekfromtheplacewhichtheyunlawfullyoccupyattheUnitedNationsandinalltheorganizationsrelatedtoit）并非赶出中国台湾。</p>
-<p>3.所以，《联合国年鉴》（YearbookoftheUnitedNations）中，至今在 China（中国）项下还 IncludesFormosa（包括台湾）。</p>
+<p>2.1971 年 10 月 25 日，联合国第 2758 号决议文是：“立即赶出蒋介石在联合国及其所属机构内的代表，因所有席位皆非法占有。”（to expel forthwith the representatives of Chiang Kai-shek from the place which they unlawfully occupy at the United Nations and in all the organizations related to it）并非赶出中国台湾。</p>
+<p>3.所以，《联合国年鉴》（Yearbook of the United Nations）中，至今在 China（中国）项下还 Includes Formosa（包括台湾）。</p>
 <p>4.可见台湾一直在联合国里面，根本没退出，如今你声言要加入，人家会奇怪你有精神病，怎么会有两个台湾？</p>
 <p>5.所以，不论用什么国号：什么“台湾”、“台湾国”、“台湾共和国”、“中华台湾国”、“台湾中华国”、“中华民国在台湾”，乃至“蒋经国”“蒋纬国”，都没有进联合国的可能。</p>
 <p>6.不论所谓“重返”联合国或“加入”联合国，都绝不可能。“重返”要北京高抬屁股（他退出）；“参加”要北京高抬贵手（不否决），都是异想天开。</p>
@@ -3502,7 +3535,7 @@
 <p>1.因为师承了蒋介石的仇共轻共宣传，所谓国防政策就是打打打，以兵凶战危为能事。再加上美国日本等从中媒孽，台湾居然以美日的“第一岛链”成员自居，做美日的看门狗，仗著美势日势，对付起中国人来。</p>
 <p>2.美国人发明出一种“看门狗自费论”，意谓你为我看门，但所需武器得向我买，这种看门狗自己买骨头的奇论，真亏他们想得出，也真亏台湾人咽得下，有所稽迟，下三滥的陈水扁还前后两次一再道歉呢！</p>
 <p>3.军购起算在美国承认中华人民共和国后第二年，当时是小买，后来越买越大，几千亿花下去了，最近一笔是 6108 亿，这时李敖做了立法委员，揭竿而起，群情反对，国民党马英九以下被迫道出反对“凯子军购”，但赞成“合理军购”，但什么是“合理军购”，马英九却秘而不宣，群谋佥同，一直蓄谋偷渡。李敖乃指斥所谓“合理军购”根本不通，因为后面有个“购”字，就是不通、就是不合理。</p>
-<p>4.李敖指出：军购的法源是《台湾关系法》，但该法关键字是 provide（供应），然后益之以 makeavailableto（供应）钉紧此义，明明是“供应”不是“售予”。不可思议的是，自《台湾关系法》立法 27 年来，美国政府对 provide 一字，一直武断而霸道的解释成“售予”。此字在英文字典中从无“售予”之义。经查最新出版的美国众议院《2006 至 2007 财政年度外交关系授权法》（FOREIGNRELATIONSAUTHORIZATIONACT，FISCALYEARS2006AND2007）小册，其中第 234 页倒数第 14 行中，赫然有“ThePresidentisauthorizedtoprovide（withoutcharge）…”字样，足证美国立法单位已明确将 provide（提供）定义为 withoutcharge（免费），从而美国年年要台湾以巨资买武器，乃属不当得利。</p>
+<p>4.李敖指出：军购的法源是《台湾关系法》，但该法关键字是 provide（供应），然后益之以 make available to（供应）钉紧此义，明明是“供应”不是“售予”。不可思议的是，自《台湾关系法》立法 27 年来，美国政府对 provide 一字，一直武断而霸道的解释成“售予”。此字在英文字典中从无“售予”之义。经查最新出版的美国众议院《2006 至 2007 财政年度外交关系授权法》（FOREIGN RELATIONS AUTHORIZATION ACT，FISCAL YEARS 2006 AND 2007）小册，其中第 234 页倒数第 14 行中，赫然有“The President is authorized to provide（without charge）…”字样，足证美国立法单位已明确将 provide（提供）定义为 without charge（免费），从而美国年年要台湾以巨资买武器，乃属不当得利。</p>
 <p>5.而马英九以下所自欺欺人的“合理军购”，正是笨蛋奇谈。</p>
 <p>6.台湾即使需要武器，也要比照英国等国的模式，“不花分文”的自美国取得。2004 年 10 月 17 日的英国《独立报》上说：布莱尔首相指出：让美国部署飞弹，可使英国不花分文获得防御性武器，文证俱在。看到美国怎样低姿态对待它在欧洲的看门狗了吧，它要送武器给英国，英国说要得我们国会同意，我们才收呢，做狗也要有点狗格呀！</p>
 <p>7.美国人摆明的鸭霸前提是：买武器虽不足以自卫，但可以证明你有自卫决心。正相反的，该证明有决心的，是“我决心来救你”的美国人自己。美国不决心，台湾决心，有个屁用？但美国有决心吗？美国智库学者一致意见是：“台湾勿轻率认定美终将驰援台湾！”（2004 年 12 月 14 日《中国时报》）美国的决心，原来如此！</p>
@@ -3524,11 +3557,11 @@
 <p>项目：智慧使我们不相信美国来救我们</p>
 <p>明确证据：</p>
 <p>1.国防部长李杰在立法院国防委员会招认：军购买了并不能打败共产党，只是可撑 14 天，等美国人来救我们。李敖问他美国人有承诺来救吗？李杰答不出来，事实上美国只说依《台湾关系法》行事，遍查《台湾关系法》，从无派兵救台湾的承诺。</p>
-<p>2.驻美“地下大使”李大维在外交委员会向李敖也招认说：台湾变废墟，美国可能不来救台湾。依《台湾关系法》，美国会“严重关切”（graveconcern）。李敖追问：“严重关切”不等于出兵。李敖举证美国参议员斐西（CharlesPercy）就认为“严重关切”是不够的，要求改为“安全利益”（securityinterest），但是被否决了，否决理由是：用“安全利益”一词会迫使美国对中共采取军事行动！</p>
+<p>2.驻美“地下大使”李大维在外交委员会向李敖也招认说：台湾变废墟，美国可能不来救台湾。依《台湾关系法》，美国会“严重关切”（grave concern）。李敖追问：“严重关切”不等于出兵。李敖举证美国参议员斐西（Charles Percy）就认为“严重关切”是不够的，要求改为“安全利益”（security interest），但是被否决了，否决理由是：用“安全利益”一词会迫使美国对中共采取军事行动！</p>
 <p>3.而美国在 1956 年、1975 年、1976 年、1979 年，有四次高叫“严重关切”，可是却按兵不动，“严重关切”又算什么承诺呢？</p>
 <p>4.《台湾关系法》中的“严重关切”，我们还敢信吗？买武器买来一片火海后，美国只是“严重关切”而已，“死道友，不死贫道”，原来如此！台湾怎可将自己的安危未来，建筑在这种滑头的四个字上？“严重关切”四字，何以安天下？</p>
-<p>5.今天有信心满满、洋洋自得的台湾人又说《台湾关系法》会保护台湾，美国会依法救我们，可是遍查全文，并无依据。此由当年美国众议院亚太小组主席查布劳基（Zablocki）要订名“台湾保护法”（TaiwanProtectiveAct）而被否决，可见端倪。美国才不要保护呢！</p>
-<p>6.2005 年 9 月 19 日，美国国防部首席大员罗斯（EdwardRoss）终于撕开了面具，他说：美国根据《台湾关系法》，没有义务防卫台湾，只有义务协助台湾“自我防卫”。原来底牌只是卖武器，一切台湾自求多福了，美国才没有承诺呢。</p>
+<p>5.今天有信心满满、洋洋自得的台湾人又说《台湾关系法》会保护台湾，美国会依法救我们，可是遍查全文，并无依据。此由当年美国众议院亚太小组主席查布劳基（Zablocki）要订名“台湾保护法”（Taiwan Protective Act）而被否决，可见端倪。美国才不要保护呢！</p>
+<p>6.2005 年 9 月 19 日，美国国防部首席大员罗斯（Edward Ross）终于撕开了面具，他说：美国根据《台湾关系法》，没有义务防卫台湾，只有义务协助台湾“自我防卫”。原来底牌只是卖武器，一切台湾自求多福了，美国才没有承诺呢。</p>
 <p>7.有了承诺又怎么样？“末代大使”沈剑虹在回忆录里说：“不管有没有条约，都不可指望美国会实践防卫台湾安全的承诺。”这是他使美八年的最后哀呼，聪明人还相信美国吗？</p>
 <p>八、</p>
 <p>项目：智慧使我们不相信美国是我们的朋友</p>
@@ -3537,10 +3570,10 @@
 <p>1.《台湾关系法》是美国的单方国内法，不是对台湾的双方条约，美国并没有保护台湾的依据，台湾也无法要求美国给出任何承诺，对台湾说来，这是极难堪的处境。美国是我们的朋友吗？</p>
 <p>2.人家立法叫《台湾关系法》，可是关系了半天，只是美国跟台湾的关系，不是台湾跟美国的关想，像是妓女户的窑子一样，只有人家来同你发生关系，你不能找上门去发生关系，台湾人出头天，要当家做主，原来在老美面前，只是窑子。美国是我们的朋友吗？</p>
 <p>3.《台湾关系法》明定基于“美国的政治、安全与经济”三种“利益”而立法，全文没提到基于台湾这三种利益，可见台湾只是维护美国三种利益的看门狗。美国是我们的朋友吗？</p>
-<p>4.美国国防部大员罗斯又说：“台湾的自卫是台湾的责任，不是美国的责任。”“如果你们无法防卫自己，我们也无法帮忙防卫你们。”（Wecannothelpdefendyouifyoucannotdefendyourself.）令人不解的是：既然台湾的处境是攸关你们美国的三种利益，为什么防卫你们的利益却是“台湾的责任”？台湾为什么要下贱的接受这种不通的美式逻辑？美国是我们的朋友吗？</p>
+<p>4.美国国防部大员罗斯又说：“台湾的自卫是台湾的责任，不是美国的责任。”“如果你们无法防卫自己，我们也无法帮忙防卫你们。”（We cannot help defend you if you cannot defend yourself.）令人不解的是：既然台湾的处境是攸关你们美国的三种利益，为什么防卫你们的利益却是“台湾的责任”？台湾为什么要下贱的接受这种不通的美式逻辑？美国是我们的朋友吗？</p>
 <p>5.帐再朝前算，1978 年 12 月 16 日清早 2 点 15 分，美国大使叫醒了蒋经国，告诉他：7 个小时后，美国即与你们断交。蒋经国说：“从未料到美国会如此轻言寡信，骤然宣布”，“对我个人系一大侮辱。”（《钱复回忆录》卷 1，页 391），但侮辱了又怎样？你给美国做走狗，下场就是 7 小时前才通知！美国是我们的朋友吗？</p>
 <p>6.帐再朝前算，有史以来，谁是第一个用军舰打台湾的？不是 1867 年的美国吗？谁是协助日本登陆台湾制造“牡丹社事件”的？不是 1874 年的美国吗？谁是甲午战争军售日本并迫使中国割让台湾的？不是 1894、1895 年的美国吗？谁是“以日制华”、“以台制中”阴谋的推动者？不是 19 到 21 世纪的美国吗？美国是我们的朋友吗？</p>
-<p>7.何况，即使既往不咎，认美国做朋友、认美国做父、抱美国大腿，由于中国的崛起，也来不及了。就在日前中国潜艇 8 公里有效射程内，直逼美国航母事件以后，2006 年 11 月 16 日，美国国会发出年度报告，明说中国可在美国驰援前拿下台湾（beforeU.S.orothermilitaryassistancecanarrive.）。美国是我们的朋友吗？是什么样的朋友？收尸的吗？</p>
+<p>7.何况，即使既往不咎，认美国做朋友、认美国做父、抱美国大腿，由于中国的崛起，也来不及了。就在日前中国潜艇 8 公里有效射程内，直逼美国航母事件以后，2006 年 11 月 16 日，美国国会发出年度报告，明说中国可在美国驰援前拿下台湾（before U.S. or other military assistance can arrive.）。美国是我们的朋友吗？是什么样的朋友？收尸的吗？</p>
 <p>九、</p>
 <p>项目：智慧使我们不相信自己不是中国</p>
 <p>明确证据：</p>
@@ -3602,7 +3635,7 @@
 <p>几十年下来，就蒋家王朝而言，是及身而绝；就蒋家走狗而言，留下几条幸运家犬（如郝家、马家、连家、吴家之类）；就国民党而言，是空忙一场；就台独而言，是假忙一场。</p>
 <p>蒋家王朝到台湾后，它的问题不在及身而绝，而在及身而不绝。它延续出两股接班人：一股是绿色的；一股是蓝色的。这绿蓝两股，为了争政权，固然小异其无趣，但在大方向上，却是蒋介石的传人。传出了一个像民进党的国民党，和一个像国民党的民进党。但像来像去，更像蒋介石自己的反射。</p>
 <p>虽然是蒋介石的学生，但有不如乃师之处。以金援外交为例。蒋介石当年靠非洲小黑人支持他，要买小黑人，钱不够，乃使出花样，拉“农耕队”帮小黑人种田。“非洲先生”杨西崑退休后到我家，告诉我“农耕队”队员到了非洲，问他办公室在哪里？他手朝外一指：“就在田里。”现在呢，台湾人好吃懒做了，花钱买邦交，也愈来愈买不起了。</p>
-<p>古往今来，高明之士或烂人，因爱国爱乡土而不识大体，引发战端，或延续战争，以致生灵涂炭者多矣。从中国李将军（李广）到美国李将军（RobertLee），中外皆然。此中最令人深省者，是日本军阀引发的祸国殃民，广岛、长崎吃了两颗原子弹，善战者服上刑一一绞死。没人否认此辈爱国爱乡土，但不识大体之爱，爱之适足以害之。</p>
+<p>古往今来，高明之士或烂人，因爱国爱乡土而不识大体，引发战端，或延续战争，以致生灵涂炭者多矣。从中国李将军（李广）到美国李将军（Robert Lee），中外皆然。此中最令人深省者，是日本军阀引发的祸国殃民，广岛、长崎吃了两颗原子弹，善战者服上刑一一绞死。没人否认此辈爱国爱乡土，但不识大体之爱，爱之适足以害之。</p>
 <p>台湾一群假货，侈言爱台湾，以其假而小，本不足论，然入此轮回，下场堪虞。</p>
 <p>蒋介石来台湾，兵败山倒，非但挟江河以俱下，且挟泥沙以俱下，大量的“混蛋箍圈”一个接一个套在淳朴的台湾人头上，蒋介石套了 26 年、蒋经国套了 13 年、蒋氏父子鹰犬李登辉跟外省走狗又套了 12 年、陈水扁混蛋又跟进 8 年，于是，台湾人大脑胶着了大量大量的浆糊，一个人时，是目光如豆；两个人时，是王八看绿豆。台湾人的视野是鼹鼠级的。不知中国也不知世界，从蒋氏政权继承来的，都是没落王朝的宫廷糟粕，虽然为了选举，他们也以“去蒋化”自得，但举手投足，无一不是蒋介石的徒子徒孙。</p>
 <p>蒋介石阴魂不散。</p>
@@ -3632,7 +3665,7 @@
 <p>我早说过，我来立法院这鬼地方，就是把李敖变小了。</p>
 <p>因为敌友都太小了，或者说，太狗屎了，所以，现代东方朔只好游戏处之。他不得不与侏儒交朋友，并且吓唬他们。</p>
 <p>但玩久了，也令人自倦。我又想起王闿运。王闿运日记中说：“圣人所无可如何者有四：一、饱食终日；二、群居终日；三、不曰如之何；四、法语不从、异语不释。因及周公迁殷顽民。此数者，皆无显过可摘，然圣人无如何，足以困圣人者，此类人也。”我比王闿运聪明，我反过来，要困俗人。但我毕竟 72 岁了，虽然走过台湾，但我的终点是走向世界。</p>
-<p>爱因斯坦说甘地：“后代子孙很难相信这世界上曾经走过这样一位血肉之躯。”（Generationstocomewillscarcebelievethatsuchaoneasthiseverinfleshandbloodwalkeduponthisearth.）对台湾说来，后代子孙很难相信这个岛上曾经走过这样一位血肉之躯，但是，台湾有幸，李敖毕竟走过了。</p>
+<p>爱因斯坦说甘地：“后代子孙很难相信这世界上曾经走过这样一位血肉之躯。”（Generations to come will scarce believe that such a one as this ever in flesh and blood walked upon this earth.）对台湾说来，后代子孙很难相信这个岛上曾经走过这样一位血肉之躯，但是，台湾有幸，李敖毕竟走过了。</p>
 <p>也算蓦然回首，我留下这本书。</p>
 <p>我写书上百册，这本书，却是我最懒得写的一本。</p>
 <p>这本书，对我的意义是“缴卷”，先天就显示了它的狭小和乏味。今日的我，已非昨日的我，可是我又有点不得不为昨日善后，也是为昨日收尸。</p>
@@ -3644,7 +3677,7 @@
 <p>立法院各位同仁：</p>
 <p>2005 年 2 月 1 号，我们就任立法委员，一开始要所谓宣誓，其实一开始就上了当。上谁的当呢？上了 75 年前国民党的当。《宣誓条例》是 75 年前国民党搞出的神权时代的把戏，虽不再有“放血”（blood-letting）一类的仪式，但不论怎么修正，还是封建不脱。并且，最荒谬的是：它内容中的负面胪列，已经到了可笑的地步，例如它要宣誓人发誓“不徇私舞弊”，“不受授贿赂”等等，都是笑话，就如同结婚时要求“不劈腿”、“不偷人养汉”一样，不劈腿不偷人养汉，这是婚约当事人的基本规格，不在话下，岂可负面胪列、假设在先，假设我会劈腿偷人养汉，这成什么话！不徇私舞弊不受授贿赂，同样是做民意代表的基本规格，也不在话下，岂可自我胪列、假设在先，假设我会舞弊拿红包，把自己假设成王八蛋后再“愿受最严厉之制裁”，这成什么话？</p>
 <p>别的国家虽有残留下来的“上帝保佑”等遗风，但誓词内容，都已正面化，以《美国陆军年鉴》第 619 页为例：</p>
-<p>Officer(DAForm71;TheArmyAlmanac,p.619):Theoathofoffice,sworntobyeachcommissionedandwarrantofficerreads:"I,<em>,havingbeenappointeda</em>,ArmyoftheUnitedStates,dosolemnlyswear(oraffirm)thatIwillsupportanddefendtheConstitutionoftheUnitedStatesagainstallenemies,foreignordomestic,thatIwillbeartruefaithandallegiancetothesame;thatIwilltakethisobligationfreely,withoutanymentalreservationorpurposeofevasion;andthatIwillwellandfaithfullydischargethedutiesoftheofficeuponwhichIamabouttoenter;sohelpmeGod."</p>
+<p>Officer(DA Form 71; The Army Almanac, p. 619): The oath of office, sworn to by each commissioned andwarrant officer reads:“ I,<em>,having been appointed a</em>, Army of the United States, do solemnly swear(or affirm)that I will support and defend the Constitution of the United States against all enemies, foreign or domestic, that I will bear true faith and allegiance to the same; that I will take this obligation freely, without any mental reservation or purpose of evasion; and that I will well and faithfully discharge the duties of the office upon which I am about to enter; so help me God.“</p>
 <p>内容都是正面胪列，胪列自己如何效忠宪法恪尽职责而已，从没把自己假设成王八蛋再伸出龟头甘愿受罚的，太好笑了！</p>
 <p>我建议大家何妨来一次 225 人的集体智慧，废止这一《宣誓条例》。用《中央法规标准法》第 21 条“因情势变迁”的废止理由，把它铲除掉。立委上任第一天第一件事就被这种鬼法耍，75 年了，我们还没受够它吗？总该进步一次了吧？</p>
 <p>李敖 2005 年 2 月 1 日</p>
@@ -3669,42 +3702,42 @@
 <h2 id="控告布什李登辉陈水扁的状子"><a class="header" href="#控告布什李登辉陈水扁的状子">控告布什、李登辉、陈水扁的状子</a></h2>
 <p>告发人：李敖，台北市济南路 1 段 3 之 1 号 1108 室</p>
 <p>告发代理人：杨宗儒律师，台北市仁爱路 2 段 34 号 8 楼之 3</p>
-<p>被告：GeorgeWalkerBush,TheWhiteHouse1600PennsylvaniaAvenue,NWWashington,DC20500U.S.A.、李登辉、陈水扁</p>
+<p>被告：George Walker Bush , The White House 1600 Pennsylvania Avenue, NW Washington, DC 20500 U.S.A.、李登辉、陈水扁</p>
 <p>为被告等涉犯公务员图利罪嫌依法提起告发事：</p>
 <p>犯罪事实</p>
 <p>一、1949 年，中华人民共和国成立于大陆，“中华民国”亡国于台湾。绝妙的是：“中华民国”亡国的证据，却出自“中华民国”所谓总统止口，蒋介石在 1950 年 3 月 13 日秘密讲话中，自承：“我们的中华民国到去年年终就随大陆沦陷而已经灭亡了！我们今天都已成了亡国之民。”（蒋介石：《复兴的使命与目的》）</p>
 <p>二、但蒋介石串通美国演假戏，双方都假设“中华民国”存在，互派大使，邦交死拖了 29 年，终于暴毙。1978 年 12 月 16 日清早 2 点 15 分，美国大使叫醒了蒋经国，告诉他：7 个小时后，美国即与你们断交。蒋经国说：“从未料到美国会如此轻言寡信，骤然宣布”，“对我个人系一大侮辱。”（《钱复回忆录》卷 1，页 391），但侮辱了又怎样？你给美国做走狗，下场就是 7 小时前才通知！</p>
 <p>三、1979 年 1 月 1 日，美国在与中华人民共和国的建交公报中，白纸黑字的做出两个承认：（一）“承认中华人民共和国政府是中国的唯一合法政府”；（二）“承认中国的立场，即只有一个中国，台湾是中国的一部分”。</p>
-<p>3 个月零 10 天以后（1979 年 4 月 10 日），美国私下里推出一部《台湾关系法》（TaiwanRelationsAct）（附证一），并向前追溯 3 个月零 10 天，把生效时间拉到与上面的建交公报同一天，做了另一种自相矛盾的白纸黑字，闹出美国开国以来的一个笑话。</p>
+<p>3 个月零 10 天以后（1979 年 4 月 10 日），美国私下里推出一部《台湾关系法》（Taiwan Relations Act）（附证一），并向前追溯 3 个月零 10 天，把生效时间拉到与上面的建交公报同一天，做了另一种自相矛盾的白纸黑字，闹出美国开国以来的一个笑话。</p>
 <p>四、根据 1979 年 3 月 10 日的美国《国会记录》S2581 页，在《台湾关系法》立法时，就有参议员忍不住质问：在我们已承认北京是中国唯一的政府以后，我们怎么能给台湾武装呢？这岂不是支援中国的一个叛乱省份吗？这是笑话之一。台湾在中国宪法里相当于美国的一个州，美国宪法第一条明定任何州都不得与外国订约，美国既然承认台湾是中国的一部分，过去与台湾的许多约定怎么还能在《台湾关系法》中声言继续有效呢？参议员质问：难道美国能够不经加拿大的同意，就跟加拿大西边的不列颠哥伦比亚省勾肩搭背吗？这是笑话之二。这个笑话，在《美国参议院外交委员会关于&lt;台湾关系法&gt;的听证会记录》第 48 至 49 页中，美国人可以脸红的看到。</p>
 <p>五、《台湾关系法》第 2 条 B 项第 5 款明定：</p>
-<p>以防卫性武器供应台湾（toprovideTaiwanwitharmsofadefensivecharacter.）。</p>
+<p>以防卫性武器供应台湾（to provide Taiwan with arms of a defensive character.）。</p>
 <p>又在第 3 条 A 项明定：</p>
-<p>为促进本法第 2 条所订定的政策，美国将以台湾足以维持其自卫能力所需要数量的防卫武器与防卫性服务，供应台湾（Infurtheranceofthepolicysetforthinseetion2ofthisAct,theUnitedStateswillmakeavailabletoTaiwansuchdefensearticlesanddefenseservicesinsuchquantityasmaybenecessarytoenableTaiwantomaintainasufficlentself-defensecapability.）。</p>
-<p>关键字是 provide（供应），然后益之以 makeavailableto（供应）钉紧此义。</p>
+<p>为促进本法第 2 条所订定的政策，美国将以台湾足以维持其自卫能力所需要数量的防卫武器与防卫性服务，供应台湾（In furtherance of the policy set forth in seetion 2 of this Act, the United States will make available to Taiwan such defense articles and defense services in such quantity as may be necessary to enable Taiwan to maintain a sufficlent self-defense capability.）。</p>
+<p>关键字是 provide（供应），然后益之以 make available to（供应）钉紧此义。</p>
 <p>六、不可思议的是，自《台湾关系法》立法 27 年以来，美国政府对 provide 一字，一直武断而霸道的解释成“售予”。而台湾小岛穷一岛之力，历年以巨资沦为买主，如今已 27 年于兹，并且 27 年来，自当年 4 亿美金到今天 200 亿美金，已使台湾民穷财尽，自杀及举家自杀者日有所闻，7 万小学生缴不出学费……而美国大人又日以恐吓相逼，声言台湾不买这批 200 亿美金的军购，将被外国朋友视为负债而非伙伴云云。此类相逼，自其国防部副部长以下，不一而足。</p>
-<p>七、美国说它售予台湾武器的发源是《台湾关系法》，但该法 provide 一字，在英文字典中从无“售予”之义，自《韦氏字典》（WEBSTER'SNEWINTERNATIONALDICTIONARYOFTHEENGLISHLANGUAGE）（附证二）以下，任何字典，一翻即知，此乃美国独立宣言中所谓“不证自明的”（self-evident）常识，何能桃花圣解，发为财释？若说是法律名词，试查权威典籍，也全属无据。《布雷克法律词典》（BLACL'SLAWDICTIONARY）（附证三）：</p>
-<p>Provide:Tomake,procure,orfurnishforfutureuse,prepare.Boothv.State179Ind405,100N.E.563,566,L.R.A.1915B,420,Cas,1915D,987.Tosupply;toafford;tocontribute.Keithv.RustLand&amp;LumberCo.167Wis.528,167N.W.432,435.</p>
-<p>可证全无“售予”可言。再查《伯顿法律词典》（BURTON'SLEGALTHESAURUS）（附证四）中，</p>
-<p>PROVIDE(Supply),verbaccommodate,accord,administer,afford,allow,award,bestow,confer,contribute,deliver,donate,endow,equip,feed,fund,furnish,give,grant,impart,maintain,ornare,praebere,present,produce,purvey,replenish,stock,suppeditare,sustain</p>
+<p>七、美国说它售予台湾武器的发源是《台湾关系法》，但该法 provide 一字，在英文字典中从无“售予”之义，自《韦氏字典》（WEBSTER’S NEW INTERNATIONAL DICTIONARY OF THE ENGLISH LANGUAGE）（附证二）以下，任何字典，一翻即知，此乃美国独立宣言中所谓“不证自明的”（self-evident）常识，何能桃花圣解，发为财释？若说是法律名词，试查权威典籍，也全属无据。《布雷克法律词典》（BLACL’S LAW DICTIONARY）（附证三）：</p>
+<p>Provide: To make, procure, or furnish for future use,prepare. Booth v. State 179 Ind 405, 100 N.E. 563,566, L.R.A.1915B,420, Cas, 1915D, 987. To supply; to afford; to contribute. Keith v. Rust Land &amp; Lumber Co.167 Wis. 528, 167 N.W. 432,435.</p>
+<p>可证全无“售予”可言。再查《伯顿法律词典》（BURTON’S LEGAL THESAURUS）（附证四）中，</p>
+<p>PROVIDE(Supply), verb accommodate, accord, administer, afford, allow, award, bestow, confer, contribute, deliver, donate, endow, equip, feed, fund, furnish, give, grant, impart, maintain, ornare, praebere, present, produce, purvey, replenish, stock, suppeditare, sustain</p>
 <p>可证也全无“售予”可言。</p>
 <p>八、纵如陈水扁美国走狗政府中外交部长黄志芳所言，《台湾关系法》解释权不在台湾，但抗议权和诉讼权却在台湾。为什么不抗议？为什么不诉讼？解释权也不在美国行政单位啊！为什么不找美国司法单位？为什么不找美国立法单位？为什么一个屁也不敢放？并且追随国民党美国走狗政府，一买 27 年下来，不敢吭声？</p>
-<p>九、复查最新出版之美国众议院《2006 至 2007 财政年度外交关系授权法》（FOREIGNRELATIONSAUTHORIZATIONACT,FISCALYEARS2006AND2007）小册，其中第 234 页倒数第 14 行中，赫然有“ThePresidentisauthorizedtoprovide(withoutcharge)…”字样（附证五），足证美国立法单位业已明确将 provide（提供）定义为 withoutcharge（免费），比照权威法律词典及一般英文字典中 provide 定义，其无“售予”之怪解或唯一一解，已至为显然。从而美国年年要以台湾以巨资买武器，乃属不当得利。不但此次 200 亿美金（6108 亿台币）军购案不应支付，即使过去 27 年来已经付出的天文数字美金，亦当依法追回。</p>
+<p>九、复查最新出版之美国众议院《2006 至 2007 财政年度外交关系授权法》（FOREIGN RELATIONS AUTHORIZATION ACT, FISCAL YEARS 2006 AND 2007）小册，其中第 234 页倒数第 14 行中，赫然有“The President is authorized to provide(without charge)…”字样（附证五），足证美国立法单位业已明确将 provide（提供）定义为 without charge（免费），比照权威法律词典及一般英文字典中 provide 定义，其无“售予”之怪解或唯一一解，已至为显然。从而美国年年要以台湾以巨资买武器，乃属不当得利。不但此次 200 亿美金（6108 亿台币）军购案不应支付，即使过去 27 年来已经付出的天文数字美金，亦当依法追回。</p>
 <p>十、细核《台湾关系法》原文，第 2 条 B 项第 5 款既明定美国“以防御性武器供应台湾”，所谓“供应”，并不是军售或军购，它可以解释成“赠予”，解释成“求你收下”，解释成“我不要了，放在你家”，解释成“为了保护我们‘美国政治上、安全上与经济上的利益’，请你笑纳，多多使用”……这是英文 provide 一字的真义与正解，provide 从来没说是买卖，既无硬性的买卖字义，为什么美国方面一定要硬性解释成军售；而台湾方面一定要硬性屈从为军购？就美国说来，这不是欺负人吗？就台湾说来，这不是贱骨头吗？台湾有一点骨气，就可比照英国等国的模式，“不花分文”的取得美国防御性的武器。最新的报导是 2004 年 10 月 17 日的英国《独立报》，上面说：布莱尔首相指出：让美国部署飞弹，可使英国不花分文获得防御性武器，同时，数个东欧国家均表达高度意愿，尤其是波兰。这就是今日世界活生生的例子！美国武器带给台湾是招祸是折福姑不论，但是花钱去买却是台湾之耻。何况，台湾不但买武器，还高出世价（世界价格）来买，主子不但卖骨头给走狗，还卖得特别贵，台湾非凯子而何？今之觉者自亲民党而光明的，憬然不做“凯子军购”，盼以合理价格买骨头，殊不知只要是“购”，就是“凯子”。看看美国怎样低姿态对待它在欧洲的看门狗英国吧，它要送武器给英国，英国说要得我们国会同意，我们才收呢，做狗也得有点狗格呀！</p>
 <p>十一、复查《台湾关系法》第 2 条 B 项第 2 款：</p>
-<p>宣布该地区的和平与稳定，与美国政治、安全与经济的利益息息相关，也是国际关切之事（todeclarethatpeaceandstabilityintheareaareinthepolitical,security,andeconomicinterestsoftheUnitedStates,andaremattersofinternationalconcern.）。</p>
+<p>宣布该地区的和平与稳定，与美国政治、安全与经济的利益息息相关，也是国际关切之事（to declare that peace and stability in the area are in the political, security, and economic interests of the United States, and are matters of international concern.）。</p>
 <p>是基于美国的“政治、安全与经济”三种“利益”而立法，全文没提到是基于台湾的这三种利益，可见台湾只是维护美国三种利益的看门狗。《台湾关系法》只是美国国内自说自话的国内法，全世界任何国家和地区都无义务受它约束，包括被它自行夹带的台湾在内。它根本不是约束性的双边条约，既然不是条约，既然不是条约，别人（包括台湾）为什么要听他的？</p>
-<p>十二、如今美国的脸色竟是 2005 年 9 月 19 日它的国防部大员罗斯（EdRoss）说出的：“台湾的自卫是台湾的责任，不是美国的责任。”“如果你们无法防卫自己，我们也无法帮忙防卫你们。”（Wecannothelpdefendyou,ifyoucannotdefendyourself.）问题是，既然台湾的处境是攸关你们美国自己的三种利益，为什么防卫你们的利益却是“台湾的责任”？台湾为什么要下贱的接受这种不通的美式逻辑？由此反推，《台湾关系法》中的 provide，乃是供应看门狗武器，使看门狗不虞匮乏，于理绝非“售予”。如是“售予”，假定台湾拒买，则是什么逻辑结果？列表便知：</p>
-<p>美国“售予”武器 → 台湾拒买 → 美国拒赠 → 台湾没武器 → 影响美国三种利益 → 美国总统违反《台湾关系法》→ 美国总统渎职 → 美国公民（如 Dr.HedyLee 等）可“控告”美国总统</p>
+<p>十二、如今美国的脸色竟是 2005 年 9 月 19 日它的国防部大员罗斯（Ed Ross）说出的：“台湾的自卫是台湾的责任，不是美国的责任。”“如果你们无法防卫自己，我们也无法帮忙防卫你们。”（We cannot help defend you, if you cannot defend yourself.）问题是，既然台湾的处境是攸关你们美国自己的三种利益，为什么防卫你们的利益却是“台湾的责任”？台湾为什么要下贱的接受这种不通的美式逻辑？由此反推，《台湾关系法》中的 provide，乃是供应看门狗武器，使看门狗不虞匮乏，于理绝非“售予”。如是“售予”，假定台湾拒买，则是什么逻辑结果？列表便知：</p>
+<p>美国“售予”武器 → 台湾拒买 → 美国拒赠 → 台湾没武器 → 影响美国三种利益 → 美国总统违反《台湾关系法》→ 美国总统渎职 → 美国公民（如 Dr. Hedy Lee 等）可“控告”美国总统</p>
 <p>故一旦“台湾拒买”现象发生，美国除正常解释 provide 外，别无转圜空间。所以说，美国既没说是基于台湾的这三种利益，台湾自然可以基于它自己的利益，自为解释。那就是拒买，看谁违反它自己的国内法？</p>
-<p>十三、美国的国内法，由于以帝国主义心态自为解释，已无限上纲。甚至解释成可以出兵长驱直入他国抓外国人，1989 年 12 月 20 日出兵巴拿马，就是一例。1990 年 1 月 3 日，美国军人抓到巴拿马总统诺瑞加（GeneralManuelAntonioNoriega），绑回美国审判，全部行动名之为“正当理由计划”（OperationJustCause），足见其解释面之广，无远弗届。此类届远神威，不特巴拿马也，台湾亦涵盖在内。最新一例即 2005 年 11 月逮捕台湾公民慕可舜（Ko-Suen'Bill'Mu），罪名是不当军火买卖，正可为美国总统不当军火销台做一反讽也。</p>
-<p>十四、循美国国内法诉诸正义，已困难重重。此由辛普森杀妻案无罪可证，“有钱王八大三辈”，美国司法为之蒙羞。今天李敖比照美国以国内法对付诺瑞加、慕可舜前例，以中国国内法还治其人，法上往还，怨怨相报，正所谓 fairplay 也！何况，《台湾关系法》前言及第 2 条 A 项第 2 款既以“台湾人民”（thepeopleonTaiwan）为对象，则“台湾人民”自可循“台湾人民”所拥有之国内法提出诉讼，此本案告发之所以提出也。台湾当政者，自国民党而民进党，凡 27 年，以军购进贡上国，是人之贱者也；若台湾法院，就此案而闪躲之，是法之贱者也。是耶非耶，试贱之石，就在眼前！</p>
+<p>十三、美国的国内法，由于以帝国主义心态自为解释，已无限上纲。甚至解释成可以出兵长驱直入他国抓外国人，1989 年 12 月 20 日出兵巴拿马，就是一例。1990 年 1 月 3 日，美国军人抓到巴拿马总统诺瑞加（General Manuel Antonio Noriega），绑回美国审判，全部行动名之为“正当理由计划”（Operation Just Cause），足见其解释面之广，无远弗届。此类届远神威，不特巴拿马也，台湾亦涵盖在内。最新一例即 2005 年 11 月逮捕台湾公民慕可舜（Ko-Suen’Bill’ Mu），罪名是不当军火买卖，正可为美国总统不当军火销台做一反讽也。</p>
+<p>十四、循美国国内法诉诸正义，已困难重重。此由辛普森杀妻案无罪可证，“有钱王八大三辈”，美国司法为之蒙羞。今天李敖比照美国以国内法对付诺瑞加、慕可舜前例，以中国国内法还治其人，法上往还，怨怨相报，正所谓 fair play 也！何况，《台湾关系法》前言及第 2 条 A 项第 2 款既以“台湾人民”（the people on Taiwan）为对象，则“台湾人民”自可循“台湾人民”所拥有之国内法提出诉讼，此本案告发之所以提出也。台湾当政者，自国民党而民进党，凡 27 年，以军购进贡上国，是人之贱者也；若台湾法院，就此案而闪躲之，是法之贱者也。是耶非耶，试贱之石，就在眼前！</p>
 <p>十五、浅人或以成败之见看待本案，不可不辨。1966 年，当英国伟大的哲学家罗素（BertrandRussell）倡议审判美国在越南的恶行，他筹组“国际战犯法庭”（TheWarCrimesTribunal）审判美国总统，在该年 11 月 13 日的演说中，他提到：</p>
-<p>此一法庭在历史上没有明确的前例（TheTribunalhasnoclearhistoricalprecedent.）。</p>
+<p>此一法庭在历史上没有明确的前例（The Tribunal has no clear historical precedent.）。</p>
 <p>但是</p>
-<p>我确信此一法庭将扮演一个历史性的角色……（IfeelcertainthatthisTribunalwillperformahistorierole…）</p>
-<p>但愿此法庭遏止沉默之罪（MaythisTribunalpreventthecrimeofsilence.）。</p>
-<p>如今，四十年后，李敖继起，在历史上“没有明确的前例”的中国人控告美国总统事件上，李敖绝不“沉默”，“扮演一个历史性的角色”，将美国总统交付正义性的法律造型的制裁。恰似那漫画中“冲决网罗”的哲学家罗素，荷枪者追问：“妈的！最后一次问：谁是大哥大？”（ALLRIGHT!FORTHELASTTIME,WHO'STHEBRAINSBEHINDTHIS?）相信答案就在智者仁者与勇者。特此具状如上。台湾的司法，硬起来呀！（以上为李敖亲撰，以下为杨宗儒律师代撰。）</p>
+<p>我确信此一法庭将扮演一个历史性的角色……（I feel certain that this Tribunal will perform a historie role…）</p>
+<p>但愿此法庭遏止沉默之罪（May this Tribunal prevent the crime of silence.）。</p>
+<p>如今，四十年后，李敖继起，在历史上“没有明确的前例”的中国人控告美国总统事件上，李敖绝不“沉默”，“扮演一个历史性的角色”，将美国总统交付正义性的法律造型的制裁。恰似那漫画中“冲决网罗”的哲学家罗素，荷枪者追问：“妈的！最后一次问：谁是大哥大？”（ALL RIGHT! FOR THE LAST TIME, WHO’S THE BRAINS BEHIND THIS?）相信答案就在智者仁者与勇者。特此具状如上。台湾的司法，硬起来呀！（以上为李敖亲撰，以下为杨宗儒律师代撰。）</p>
 <p>证据及所犯法条</p>
 <p>一所犯法条部分</p>
 <p>（一）关于历任总统部分：</p>
@@ -3712,13 +3745,13 @@
 <p>（二）关于美国总统布什部分：</p>
 <p>次按：“因身份或其他特定关系成立之罪，其共同实行教唆或帮助者，虽无特定关系，仍以正犯或共犯论。”复为刑法第 31 条所明文，揆诸上开法条意旨，布什虽非我国公务员，然以其美国总统之身份自当对位属其美国国内法之《台湾关系法》相关规定知之甚祥，讵其未依规定无偿提供我国军需已然违法，犹竟于顷近“6108 亿之军购案”中，频经由政府官员以“台湾如不通过军购无法表示自我防卫之决心”，要求我国应通过该既未合法更未合理之“凯子军购”预算案，自与我国公务员部分之被告成立纯正身份犯之共犯，自不待言。</p>
 <p>二证据部分</p>
-<p>（一）《美国台湾关系法》（TaiwanRelationsAct）：</p>
+<p>（一）《美国台湾关系法》（Taiwan Relations Act）：</p>
 <p>1.内容：</p>
-<p>按“SECTION,2.A.ThePresident-havingterminatedgovernmentalrelationsbetweentheUnitedStatesandthegoverningauthoritiesonTaiwanrecognizedbytheUnitedStatesastheRepublicofChinapriortoJanuary1,1979,theCongressfindsthattheCongressfindsthattheenactmentofthisActisnecessary-1.tohelpmaintainpeace,security,andstabilityintheWesternPacifie;and…”（由于美国总统已终止美国和台湾统治当局，在 1979 年 1 月 1 日前美国承认其为中华民国间的政府关系，美国国会认为有必要制订本法：一、有助于维持西太平洋地区的和平。安全及稳定）“b,ItisthepolicyoftheUnitedStates-5.toprovideTaiwanwitharmsofadefensivecharacter”（美国的政策如下：五，提供防御性武器给台湾人民。）为《台湾关系法》第 2 条第 A 项第 1 款及第 B 项第 5 款所明文。</p>
+<p>按“SECTION,2. A. The President-having terminated governmental relations between the United States and the governing authorities on Taiwan recognized by the United States as the Republic of China prior to January 1, 1979, the Congress finds that the Congress finds that the enactment of this Act is necessary-1. to help maintain peace, security, and stability in the Western Pacifie;and…”（由于美国总统已终止美国和台湾统治当局，在 1979 年 1 月 1 日前美国承认其为中华民国间的政府关系，美国国会认为有必要制订本法：一、有助于维持西太平洋地区的和平。安全及稳定）“b, It is the policy of the United States-5.to provide Taiwan with arms of a defensive character”（美国的政策如下：五，提供防御性武器给台湾人民。）为《台湾关系法》第 2 条第 A 项第 1 款及第 B 项第 5 款所明文。</p>
 <p>2.待证事实关联性：</p>
 <p>据上开自 1979 年 1 月 1 日生效之《台湾关系法》条文可以证明，美国有提供防御性武器给台湾人民之法律义务。</p>
-<p>（二）《美国外交关系授权法》（FroeignRelationsAuthorizationAct）：</p>
-<p>1.《美国外交关系授权法》第 232 页第 2 章 ForeignMilitatySalesAuthorizations（外国军售授权）上，明定外交关系中之提供即为无偿，provide(withoutcharge)。</p>
+<p>（二）《美国外交关系授权法》（Froeign Relations Authorization Act）：</p>
+<p>1.《美国外交关系授权法》第 232 页第 2 章 Foreign Militaty Sales Authorizations（外国军售授权）上，明定外交关系中之提供即为无偿，provide (without charge)。</p>
 <p>2.待证事实关联性：</p>
 <p>自上开《美国外交关系授权法》之规定，足以证明《台湾关系法》第 2 条第 B 项第 5 款所定：“美国应提供防御性武器给台湾人民”之规定，其解释应为“美国应无偿提供”。</p>
 <p>（三）我国宪法第 57 条、宪法增修条文第 3 条、预算法等相关规定：</p>
@@ -3747,17 +3780,17 @@
 <p>三、盖查：（一）政府采购制度系在建立“公平、公开之采购程序以提升采购效率及确保采购品质”（政府采购法第 1 条）；“预算之编制及执行应……遵守总体经济均衡之原则”（预算法第 1 条第 2 项）。对美军购已完全摧毁上揭“公平公开采购”及“维持总体经济均衡预算”之法制。（二）“国家需求 → 预算编列 → 公开采购”本是我国预算及采购法制之正常序列；对美军购则是完全的逆向操作；由美国政府（军火商）开列清单及订死价格，我国政府则只能照单全收。由是言之，国防采购预算之编列及立法院的预算案议，只不过是一层图利美国政客（军火商）的议会布幕程序而已。此种破坏国家预算及采购法制，而形成图利特定美籍政客（军火商）结果的作业程序，应已符合“利用职务上机会直接或间接图其他私人不法利益（之犯罪）”（贪污治罪条例第 6 条第 1 项第 4 款）。（三）以上逆向操作议会预算以满足图利特定他人之犯罪行为，俗称为“议会（预算）绑樁”；司法实例均依上揭贪污渎职之罪名，进行追诉及处刑。以上法理及法制，合予说明。</p>
 <p>四、“6108 亿对美军购预算”并不符合我国现时军需；抑且，交货时机及买卖标的均已不符合我国国防事况。关于此点，民间及议会（在野政党）之举证与批判，历历在卷。被告陈水扁等人（执政党）运用政府执行外交及编制预算之公权力，藉以遂行图利外国政商人士（包括被告布什）之犯罪目的，被告等人共同实施图利犯罪之犯意，则属应堪认定。</p>
 <p>林宪同律师</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/01.自传回忆类/李敖议坛哀思录.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/01.自传回忆类/李敖议坛哀思录.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../01.自传回忆类/李敖自传与回忆.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../02.精品散文类/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -3767,16 +3800,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../01.自传回忆类/李敖自传与回忆.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../02.精品散文类/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -3785,12 +3823,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,77 +81,98 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <p>#《只爱一点点》目录</p>
 <ul>
@@ -201,10 +234,10 @@
 <p>他们说你的甜蜜是痛苦，</p>
 <p>当你丰富的果实</p>
 <p>比任何果实都甜蜜。</p>
-<p>Oh!Love!Theywrongtheemuch!</p>
-<p>Thatsaythysweetisbitter,</p>
-<p>Whenthyrichfruitissuch</p>
-<p>Asnothingcanbesweeter.</p>
+<p>Oh! Love! They wrong thee much!</p>
+<p>That say thy sweet is bitter,</p>
+<p>When thy rich fruit is such</p>
+<p>As nothing can be sweeter.</p>
 <p>这才是健康的爱情观。</p>
 <p>有的人恐惧爱情带给他的痛苦，因而逃避爱情，“且喜无情成解脱”。其实“无情”并不能真的“解脱”，即使有所“解脱”，也不算本领，只能算是头埋沙中的鸵鸟。真正此中高手，不是“无情”，而是非常“有情”、“多情”的。只是高手在处理爱情态度上，非常洒脱，得固欣然，失亦可喜；来既欢迎，去也欢送，甚至洒脱得送玫瑰花以为欢送，这种与女人推移、而不滞于尤物的洒脱，才是唯一正确的态度。</p>
 <p>洒脱的一个重要关键是，高手处理爱情，并不以做到极致为极致。如果情况只适合“少食多餐”、“蜻蜒点水”、“似有若无”、“虎头蛇尾”、“迷离惚恍”、“可望而不可即”，……其实适可而止的态度，也是一种极高明的爱情境界。1974年，我在牢中有一首诗——《只爱一点点》，最能表达出高手的基本态度：</p>
@@ -258,10 +291,10 @@
 <p>纪元一世纪时，就有一种“幻影说”（Docetism），认为基督系幻影，并无肉身，不过以人间形体出现，僅属幻相，其说与观音菩萨并无肉身之说略同。我觉得在真幻上，跡近于此。在第一流的爱情里，情人既真且幻，千百年后，肉身无存。人间真幻至义，洵可如是观。</p>
 <p>1989年12月29日</p>
 <p>他会为爱情同我结婚</p>
-<p>十九世纪英国首相狄士累利（BenjaminDisraeli），是近代保守党的开山大师，是犹太。</p>
-<p>他对自己倒不犹太，衣服考究，气派非凡，他是作家出身，能说能写。他有点讨厌别的作家，他说作家一谈起他的作品，就像母亲谈起她的儿女一样地教人吃不消。所以，他简直不要看别人的书，他说：“当我想看一本书，我就自己写它一本。”（WhenIwanttoreadabookIwriteone.）熟悉一个问题的最好方法，他认为是干脆写一本关于这个问题的书。</p>
-<p>事实上，当然也不能什么都写，该写的才写。狄士累利说：“人生短得不够扯鸡毛蒜皮。”（Lifeistooshorttobelittle.）知识分子该争该争的，不该争不该争的。</p>
-<p>狄士累利有个一生争的对头，就是格兰斯顿（WilliamGladstone）格兰斯顿三任英国首相，一辈子气虎虎的瞪着狄士累利，狄士累利死的时候，他都不吊丧，为了狄士累利常常开他的玩笑。相对的，维多利亚女王却以私人身份前去，把一束鲜花，两行情泪，洒在他坟头。</p>
+<p>十九世纪英国首相狄士累利（Benjamin Disraeli），是近代保守党的开山大师，是犹太。</p>
+<p>他对自己倒不犹太，衣服考究，气派非凡，他是作家出身，能说能写。他有点讨厌别的作家，他说作家一谈起他的作品，就像母亲谈起她的儿女一样地教人吃不消。所以，他简直不要看别人的书，他说：“当我想看一本书，我就自己写它一本。”（When I want to read a book I write one.）熟悉一个问题的最好方法，他认为是干脆写一本关于这个问题的书。</p>
+<p>事实上，当然也不能什么都写，该写的才写。狄士累利说：“人生短得不够扯鸡毛蒜皮。”（Life is too short to be little.）知识分子该争该争的，不该争不该争的。</p>
+<p>狄士累利有个一生争的对头，就是格兰斯顿（William Gladstone）格兰斯顿三任英国首相，一辈子气虎虎的瞪着狄士累利，狄士累利死的时候，他都不吊丧，为了狄士累利常常开他的玩笑。相对的，维多利亚女王却以私人身份前去，把一束鲜花，两行情泪，洒在他坟头。</p>
 <p>狄士累利年轻时候，曾讨了比他大十二岁的寡妇爱雯丝（MaryAnneEvans）做太太，大家都说他为了寡妇的钱才结婚的，爱雯丝也不否认。但是多年前的感情与了解，却使爱雯丝骄傲的宣布：“如果再来一次，他会为爱情同我结婚。”（Butifhehadthechanceagainhewouldmarrymeforlove.）</p>
 <p>1982年1月1日</p>
 <p>霸王-公鸭-情书</p>
@@ -280,7 +313,7 @@
 <p>从大一到现在，我没有在任何人面前说你是不可爱的，为了坚持这一点，我曾遭受了不少的麻烦，但我甘愿忍受这些，我在每一个场合都从不讳言我已经喜欢并且还在喜欢那个“充满恶意”而又“坏得可爱”的小Rosa。</p>
 <p>南国的五月也许正如歌德所说，是个“真正的恋爱时节”，但它对我说来，却显然是一片悒郁的回忆，在我的猜想中，对爱情看法的悬殊可能是我们之间的最大裂痕：我愿意无所保留的去爱我真正爱的人，可是在另一方面，我却不能无所保留的失掉我自己，我始终觉得，对女孩子轻微的masochism是好的，可是不能过度，一过度便是奴才了。</p>
 <p>我清楚的知道，如果想恋爱有所成就，具有几分奴性是多么必要的事，当我亲眼看到那些以低首下心强聒不舍的手段获致成果的“男人”时，我不能不感叹我实在是一个不识时务的老朽了！</p>
-<p>好像一个GordianKnot，</p>
+<p>好像一个Gordian Knot，</p>
 <p>割是割断了，</p>
 <p>但是痛苦的。</p>
 <p>带着几分怅然的情绪，在五月三十一日的中午，我从图书馆中走下楼来，人间的离合毕竟是轻雾与飞烟，烟雾消时，留给我们的，除了陌生的怅惘和幽明的永隔，再也没有别的了！</p>
@@ -355,7 +388,7 @@
 <p>快寻欢作乐吧，道德修养很好的先生们！大概你已虚度了不少时间，已为一些没有根据的虚伪观念耽搁了不少岁月，是顺流而下，还是道貌自封，全在你的选择，只是你的清楚绝不再等你了！</p>
 <p>1971年4月6日</p>
 <p>公开手淫与公开意淫</p>
-<p>看到格罗波尔（WilliamGropper）的作品《狄阿杰尼斯》（DIOGENES），非常喜欢。犬儒派哲学家狄阿杰尼斯在白天打灯笼寻找大丈夫、男子汉，其愤世讽世气概，在格罗波尔的画笔下，神情毕现。</p>
+<p>看到格罗波尔（William Gropper）的作品《狄阿杰尼斯》（DIOGENES），非常喜欢。犬儒派哲学家狄阿杰尼斯在白天打灯笼寻找大丈夫、男子汉，其愤世讽世气概，在格罗波尔的画笔下，神情毕现。</p>
 <p>狄阿杰尼斯布衣无被，居破桶中。八十之年，傲然独处。亚历山大大帝慕名去拜访他，问可有效劳之处，此老夷然答曰：“有的。站开一点，别挡了我的阳光。”其戏公卿、弄王侯、全无媚骨，令亚历山大退而感慨说：“如果我不是亚历山大，我愿我是狄阿杰尼斯。”后来拿破仑师此故智，曾说：“如果我不是拿破仑，我愿我是亚历山大。”人同此心，有如此者。</p>
 <p>狄阿杰尼斯怪行极多。他认为事无不可告人者，公开手淫，即为其一。</p>
 <p>狄阿杰尼斯死后两千四百年，在台湾，居然有其“信徒”出现，“信徒”者谁？国民党与民进党也！国民党明明势力不及中国大陆和外蒙古，却公开意淫（手淫还不够资格）中国大陆和外蒙古，说是属于它的；而民进党特予纠正，说“事实主权”不及于中国大陆和外蒙古。乍看起来，民进党大脑似乎高出国民党之上，但是细看起来，原来民进党所志者小，只是台湾国耳！不过，台湾国现在“事实独立”于国民党势力之下，民进党哓哓为言，毫无实际势力，只是公开意淫——另一种公开意淫而已。</p>
@@ -393,16 +426,16 @@
 <p>最有趣的一个黄色笑话是：一家旅馆主人，最喜欢他的驴，并引以为傲。有一天，他在旅馆贴出海报，悬赏说：“谁能使我这头驴笑，我送他一千元。”大家面面相觑，没有办法。独有某君说他可以。于是，把驴带到中庭，大家围观，某君走上前去，在驴耳旁边，低声说了一句话，驴听了，果然面露笑意。旅馆主人无法，只好照付一千元。过了几天，旅馆主人又贴出海报，悬赏说：“谁能使我这头驴哭，我送他一千元。”大家面面相觑，也没办法。这时候某君又出现了，他说他可以，但是这次要在墙脚边对驴说话，才有效果，旅馆主人同意了。于是某君牵驴于墙脚，解开裤子，让驴看看，果然该驴掉头就走，泪流满面而归。旅馆主人无法，只好又照付一千元。</p>
 <p>旅馆主人前后付了两千元，心有未甘，坚请某君透露他有何种本领，能令吾驴啼笑随之。某君说，我可以透露，没有关系。我上次跟它说的话，只有一句，就是：“我的比你的大。”驴一听，果然笑了，它以为我在乱盖。这次呢？我把它带到墙脚，脱裤子给它看，一看之下，千真万确，真的比它的大！</p>
 <p>俗话说：“三个女人没好话，三个男人比屌大。”一般无聊男子，比屌都是人与人来比的，可是某君却敢与驴来比，其气势之不凡，远胜俄国兵矣！</p>
-<p>正因为驴的屌大，所以在新女性眼中，就有了特殊感觉。新女性年轻貌美时代，纵之在色；及其老也，又戒之在得，不但自己作怪，甚至怪及动物。报载法国女星碧姬芭杜（BrigitteBardot），美人迟暮，已息影十六年，独居以外，独以爱护动物自居。最近她的邻居外出，以家中公驴一头，托她照顾。不料这位过气的新女性为防公驴打她家中母驴的主意，竟快刀阉之。——保护动物保护得如此断绝驴道，除了新女性，又有谁干得出来？</p>
-<p>碧姬芭杜养了四十只猫、十条狗、若干山羊和一匹母驴，虽然百兽为伴，但自谓“每当夜晚降临，我就有快要发疯的感觉，做一个独居的女人实在不容易。”——古代贞节烈妇，入夜暗中数铜钱以遣悲怀；今之百战红颜，晚来公然割驴屌以正天下。--断兽道，淋人道；绝兽伦，敦人伦，呜呼，其驴也夫！</p>
+<p>正因为驴的屌大，所以在新女性眼中，就有了特殊感觉。新女性年轻貌美时代，纵之在色；及其老也，又戒之在得，不但自己作怪，甚至怪及动物。报载法国女星碧姬芭杜（Brigitte Bardot），美人迟暮，已息影十六年，独居以外，独以爱护动物自居。最近她的邻居外出，以家中公驴一头，托她照顾。不料这位过气的新女性为防公驴打她家中母驴的主意，竟快刀阉之。——保护动物保护得如此断绝驴道，除了新女性，又有谁干得出来？</p>
+<p>碧姬芭杜养了四十只猫、十条狗、若干山羊和一匹母驴，虽然百兽为伴，但自谓“每当夜晚降临，我就有快要发疯的感觉，做一个独居的女人实在不容易。”——古代贞节烈妇，入夜暗中数铜钱以遣悲怀；今之百战红颜，晚来公然割驴屌以正天下。–断兽道，淋人道；绝兽伦，敦人伦，呜呼，其驴也夫！</p>
 <p>1989年11月3日</p>
 <p>从简方达的后悔谈到政治不是众人之事</p>
 <p>3月8日报上说：美国老牌明星简方达（JaneFonda）的一个朋友在《国家询问报》（NationalEnquirer）上引述她的话说，她的男朋友泰德特纳（TedTurner）不了解她。</p>
-<p>谈到泰德特纳劝她对波斯湾战争紧闭嘴巴时，这当年在越战时支持河内的女明星说：“我很遗憾泰德不信任我。难道他以为我会去手执胡森像坐在‘飞云’飞弹弄姿不成？”（IresentthatTeddoesn'ttrustme.DoeshethinkI’mgoingtoposeonaScudmissilewithabunchofSaddamHusseinlookalikes?）</p>
-<p>她说：“我当年在越南做的，的确太傻了一点，我不会再傻了。现在，我年纪大了，也更有智慧。”（WhatIdidinVietnamwasstupid,andIwouldn’tdoitagain.I'manolderandwiserwoman.）</p>
+<p>谈到泰德特纳劝她对波斯湾战争紧闭嘴巴时，这当年在越战时支持河内的女明星说：“我很遗憾泰德不信任我。难道他以为我会去手执胡森像坐在‘飞云’飞弹弄姿不成？”（IresentthatTeddoesn’ttrustme.DoeshethinkI’mgoingtoposeonaScudmissilewithabunchofSaddamHusseinlookalikes?）</p>
+<p>她说：“我当年在越南做的，的确太傻了一点，我不会再傻了。现在，我年纪大了，也更有智慧。”（What I did in Vietnam was stupid, and I wouldn’t do it again. I’m an older and wiser woman.）</p>
 <p>简方达这一自责之言，并不始于今日，在三年前，她就如此秀过一次。1988年6月17日外电说，在电视访问中，简方达表示对当年越战时期，她妨害美国军人的行为道歉。她说她特别要道歉的就是1972年的河内之行，当年她在敌国首都攻击美国在越战中的行为，她后悔说了许多引人争议的话，包括自称是“革命妇女”。她说她当时发表那些声明，是因为“我不愿意别人把我看成是小明星”。</p>
 <p>越战时简方达在河内电台对美军广播，指他们把炸弹装上飞机是“非法的”，而使用这些炸弹“会使你们成为战犯”；对获释美军战俘诉说被越共刑求的内容，指他们说谎、是“骗子”。如今简方达后悔了。她说：“未经考虑的说出那种话是残忍的事。”</p>
-<p>简方达的结论是：“当时我想为结束杀戮和战争略尽绵薄，但有些时候我行动鲁莽而欠考虑，现在我……为当时伤到他们感到非常过意不去，我要向他们和他们的家属道歉。”（IwastryingtohelpendthekillingandthewarbutthereweretimeswhenIwasthoughtlessandcarlessaboutitandI'm……verysorrythatIhurtthem.AndIwanttoapologizetothemandtotherefamilies.）</p>
+<p>简方达的结论是：“当时我想为结束杀戮和战争略尽绵薄，但有些时候我行动鲁莽而欠考虑，现在我……为当时伤到他们感到非常过意不去，我要向他们和他们的家属道歉。”（IwastryingtohelpendthekillingandthewarbutthereweretimeswhenIwasthoughtlessandcarlessaboutitandI’m……verysorrythatIhurtthem.AndIwanttoapologizetothemandtotherefamilies.）</p>
 <p>近二十年前简方达以新女性姿态、大明星派头，亲赴河内，头戴钢盔，在北越一座高射炮旁留影，她言辞刁泼、意气风发，被称为“河内的简”，故一世之雌也；可是，近二十年后，她红颜老去、悔悟迟来，竟其言也善，愿求化解，这自是件好事。1988年7月2日外电说，一个退伍军人团体宣布，影星简方达将参加一项义演，为越战老兵的后裔募款，也可见她的道歉与义演，跟化解退伍军人对她的不满不无关联，明星总是要人鼓掌的，老是有人跟着她喝倒彩，抵制她，终非佳事也。</p>
 <p>简方达的例子，使我有一个结论，就是：在专业化的时代里，政治其实也是一种专业、一种专家才能玩的复杂职业。没有专业训练的人，贸然发表政见，摇旗呐喊也好、游行示威也罢，其实都可能造成“盲人骑瞎马，夜半临深池”的危险。简方达演电影是她的专业，她演电影是专家，如同尼克松搞政治是专家，越战该不该打，是尼克松深思熟虑的专业，不是一知半解的简方达的专业。尼克松若不好好在华盛顿做美国总统，却跑到好莱坞代简方达演戏或指导简方达演戏，简方达一定笑他外行；反过来说，简方达不好好演戏，却跑来指导越战，尼克松会不窃笑乎？</p>
 <p>简方达的捞过了界，乱搞政治，基本真相，是做政治秀耳，“我不愿意别人把我看成是小明星”，一语道破明星政治的心态，归根结底，这是新女性的噱头而已，本不值识者一笑。不过，在台湾自诩为专业搞政治的人，不论所隶何党，他们的专业程度，也至为可疑，他们普遍的水平，都是很差很差的。赵少康公然把18世纪的罗兰夫人（MadameRoland）错成20世纪的罗曼罗兰（RomainRolland）夫人来说话；黄余绣鸾公然把雅尔塔会议和波茨坦会议当成有中华民国代表来发言；张俊雄公然把两万零七百平方公里的以色列说成比台湾小好几倍来炫耀！……我们整天见他们做政治明星的秀，却不见他们做政治家的事，这些无知妄作，是很可虑的蔓延。</p>
@@ -424,12 +457,12 @@
 <p>前一阵子胡茵梦兼修姓名之学，走火入魔，改名“胡‘因’梦”。孟绝子来电话说：“胡茵梦应该把‘茵’字改为‘姻’字才对，婚姻如梦，不亦宜乎？”我说：“本来是绿草如茵，人生如梦。现在他要落草为因，自然又是大神附体的杰作。这是小事一件。大事倒是胡茵梦红颜老去，后事如何，倒真有待下回分解呢！”老孟叹息，我亦顿悟，开户视之，云深无处。</p>
 <p>1992年3月2日</p>
 <p>文化美容-财政美容-司法美容</p>
-<p>十七世纪的人说：“上帝给你一张脸，你自己另造一张。”（Godhasgivenyouoneface,andyoumakeyourselvesanother.）其实那时候的人，对另造一张脸并不在行，人类真正“给脸不要脸”而能另造一张，是三百年后二十世纪的事。这种造脸，就是今天的所谓“美容”。</p>
+<p>十七世纪的人说：“上帝给你一张脸，你自己另造一张。”（God has given you one face, and you make yourselves another.）其实那时候的人，对另造一张脸并不在行，人类真正“给脸不要脸”而能另造一张，是三百年后二十世纪的事。这种造脸，就是今天的所谓“美容”。</p>
 <p>看看美容广告，我们就不得不惊讶人类在巧夺天工。什么“丰额丰颞”也、“印堂填平”也、“眉骨加高”也、“割双眼皮”也、“鼻头拉长”也、“美化下巴”也、“笑颜成形”也、“瘦面加胖”也，花样之多，令上帝叹为观止。《创世纪》记上帝说：“我们要照我们的形象、按我们的样式造人。”如今上帝看到人类如此美容，嫌他原始的形象与样式不中看，他在自惭形秽之余，真要感慨知人知心不知面了。</p>
 <p>美容既然带给人类那么多的人定胜天，可是人类还不知足，尤其人类中有一群靠脸蛋吃饭的——台湾的演艺人员，他们整天争奇斗艳，想尽怪招，来自抬身价、来美化自己内在的丑态与浅盘。在这种钻研之下，有一种演艺人员听从星妈的设计，发明出一种所谓“文化美容”，以从事文艺活动，结交作家做秀为手段，附庸风雅，用来“眉骨加高”、“瘦面加胖”。事实上，这种人实在浅薄得跟文化不相干，文化只是化妆而已。</p>
 <p>“文化美容”以外，另有一种钻研的美容，设计人不是星妈，而是政子（张群的儿子，财政部长张继正）。在台湾，由于官方的照顾无微不至，台湾的银行也就被照顾成公营的。一变成公营，麻烦来了，上下其手的腐败局面自然愈滚愈大。滚的结果，光在呆帐方面，就滚成一百六十一亿之多！但是政子一直把真相瞒住，说这是催收款，不是呆帐。但是催收款就要催呀收呀，总得有个期限，不能有的一拖十几年，有的一拖二十几年，有的一拖三十几年。由于最近各界逼得紧，政子终于答复下来了，说：催收款只有一百二十二亿，其中七十三亿“可望收回”，其余四十八亿已“收回无望”！既然有这么多的民脂民膏给糟蹋掉，这明明是呆帐，为什么过去一直以“机密”的理由拒绝透露，并且说只有催收款，没有呆帐呢？现在我们懂了美容学，从美容学观点研究财政学，我们才恍然大悟：原来这是政子的“财政美容”，政子李代桃僵，用来“眉骨加高”、“瘦面加胖”。事实上，催收款明明是呆帐，催收款只是财政的化妆而已。</p>
 <p>“文化美容”“财政美容”以外，更有一种钻研的美容，设计人是中国国民党大官。在全世界各地都有政治犯或承认政治犯的今天，中国国民党大官居然公开宣称、一再宣称：台湾没有政治犯！说台湾有的只是叛乱犯，不是政治犯！查1949年6月21日公布的《惩治叛乱条例》，第一条明定“叛乱罪犯适用本条例惩治之”，这是叛乱犯的法源；第二条明定在内乱外患罪上，“刑法”的罪名而以这一条例严刑重罚而已。所以，政治犯的罪名，骨子里都不过是“刑法”的罪名。既用了“刑法”的罪名，不论用哪一条，目的都是整政敌的冤枉而已。所以余登发既以“叛乱”罪名坐牢，也以“图利他人”罪名坐牢；李敖既以“叛乱”罪名坐牢，也以“侵占”罪名坐牢。……除非一个人是官式宣传下的受害者、除非一个人是不能明辨是非的可怜虫，他绝不会相信余登发是“图利他人”的人，一如绝不会相信李敖是“侵占”的人，不论国民党的报纸与法院怎么斗臭、怎么判决，政治犯就是政治犯。但国民党大官说没有政治犯，只有叛乱犯，只有图利他人的余登发、只有侵占的李敖、只有知匪不报的雷震、只有妨害兵役的王地、只有涉嫌窃盗的高玉树、只有贪污的杨金虎、只有包庇的宋霖康、只有收贿的杨玉城、只有伤害的吴哲朗、只有妨害公务的黄玉娇。……只有这个、只有那个，就是没有政治犯，这不是怪事吗？现在我们懂了美容学，从美容学观点研究国民党，我们才恍然大悟：原来这是国民党大官的“司法美容”，国民党大官另用卑鄙的罪名加给政敌，巧妙的闪开政治犯：政治原因，法律解决；军法大审，司法斗臭；使政敌灰头土脸，使自己“眉骨加高”、“瘦面加胖”。事实上，司法案件明明是政治迫害的整型，所谓没有政治犯、所谓纯粹司法案件，只是政治的化妆而已。</p>
-<p>东方的谚语说：“欲加之罪，何患无辞？”西方的谚语说：“给狗一条罪名，就可吊死它。”（Giveadogabadnameandhanghim.）但不论东方西方，打击政敌后给他罪名者多，但给他罪名后自己又横加美容者少，美容到全世界都为抓政治犯付代价，唯独国民党能脱身，这不是国民党独有的中国功夫又是什么？</p>
+<p>东方的谚语说：“欲加之罪，何患无辞？”西方的谚语说：“给狗一条罪名，就可吊死它。”（Give a dog a bad name and hang him.）但不论东方西方，打击政敌后给他罪名者多，但给他罪名后自己又横加美容者少，美容到全世界都为抓政治犯付代价，唯独国民党能脱身，这不是国民党独有的中国功夫又是什么？</p>
 <p>1981年12月1日</p>
 <p>对胡茵梦伪造文书案的证词</p>
 <p>一、静庐买价一百一十万，萧孟能出了一半，用王剑芬名义取得土地权状；李敖出了另一半，由胡茵梦名义取得房子权状。李敖说：“萧孟能随你选：我给你五十五万，你把土地给我；或你还我五十五万，我把房子给你。”萧孟能不选，计划硬要房子。</p>
@@ -486,13 +519,13 @@
 <p>《电影沙龙》1981年1月1日</p>
 <p>我看处女寇乃馨</p>
 <p>三十五年前，1963年10月，我写了一篇两万多字的论文——《论处女膜整型》，探讨有关处女的种种问题，这是有史以来探讨这一问题的空前绝后之作。我做梦也没想到，在多年以后，一个梦样的可爱女人，却现身说法，身体力行，以处女的肉身，发扬唯灵的真义，这一对比，自是空前绝后的外一章。这个可爱女人，就是寇乃馨。</p>
-<p>1963年九月号的《骑士》(Cavalier)杂志有一幅漫画，画中一对情侣在汽车中幽会，女的说：“我是个处女，可是对它并不‘执迷’。”(I'mavirgin,butI'mnotfanaticaboutit.)寇乃馨正好相反，她对处女非常“执迷”，她自台大外文系毕业后，徜徉演艺圈四年，被称为“台湾演艺圈最后一个处女”，自属“异类”，因为别人落红成阵之时，当然怪她何以自处。乃馨说：</p>
+<p>1963年九月号的《骑士》(Cavalier)杂志有一幅漫画，画中一对情侣在汽车中幽会，女的说：“我是个处女，可是对它并不‘执迷’。”(I’m a virgin, but I’m not fanatic about it.)寇乃馨正好相反，她对处女非常“执迷”，她自台大外文系毕业后，徜徉演艺圈四年，被称为“台湾演艺圈最后一个处女”，自属“异类”，因为别人落红成阵之时，当然怪她何以自处。乃馨说：</p>
 <p>“坦白说，我才不是无聊地为了做处女才是处女，只是因为基督徒的信仰，让我更珍惜、更尊重自己的身体。”</p>
 <p>乃馨的立论，落脚在“基督徒的信仰”上，我认为她上了没读懂《圣经》的传教士们的当。《圣经》提到处女之处，分见于《创世纪》第二十四章第十六节、《利未记》第二十一章第三节、《申命记》第二十二章第十九节第二十八节、《列王记》下第十九章第二十一节、《以赛亚书》第七章第十四节、第二十三章第十二节、第三十七章第二十二节、《耶利米书》第十四章第十七节、第十八章第十三节、第三十一章第四节第十三节第二十一节、《阿摩司书》第五章第二节、《马太福音》第一章第二十三节、《路加福音》第一章第二十七节、《哥林多前书》第七章第二十五节、第三十七节。细查这些章节，完全做不出乃馨的立论，甚至也做不出类似的推论，所以，“更珍惜、更尊重自己的身体”而守身如处，实与“基督徒的信仰”无关。虽然如此，乃馨的“执迷”并不失落，因为她可以自成一说而不必靠神说或耶稣说。乃馨相信“欲望的满足会降低爱情的强度”，因此坚持要她的情人“爱她，就是为她憋着”，坚持要她的情人为她自抑自制，不可发生婚前性行为。由此看来，乃馨的“处女癖”实在驾乎有“处女癖”的男士之上，她执此一念，为了精神的愉悦，宁可年复一年舍肉体的快乐而不辞，这种“异类”，洵属罕见；这种“执迷”，迹近“疯狂”，也无异暴殄天物与尤物。虽然她“疯狂”得如此慧黠、如此曼妙，但是有朝一日或一夜或一日一夜，当她初尝到灵肉一致的极致，她未免要为她多年虚度青春而悔恨。——没有肉，哪有灵？没有欲，哪有情？过度的唯灵抑肉、过度的非欲崇情，在许多方面，是一种自误。虽然它非常诗意，令人依恋与流连。</p>
-<p>乃馨也不必为我这些话而震撼、而困惑，事已如此，还是把握一些可肯定的光明面吧。看看赛尔迈斯(RobertSermaise)那本《肉欲的前奏》(TheFleshlyPrelude)，整本小说只写一个故事，就是一个珍惜、尊重自己处女之身的女孩子，最后如何缠绵献身。——乃馨的多年云深知处，若能化为文学名著以传千古，亦是大好，不过，得先找到文学家才成，乃馨勉之。</p>
+<p>乃馨也不必为我这些话而震撼、而困惑，事已如此，还是把握一些可肯定的光明面吧。看看赛尔迈斯(Robert Sermaise)那本《肉欲的前奏》(The Fleshly Prelude)，整本小说只写一个故事，就是一个珍惜、尊重自己处女之身的女孩子，最后如何缠绵献身。——乃馨的多年云深知处，若能化为文学名著以传千古，亦是大好，不过，得先找到文学家才成，乃馨勉之。</p>
 <p>1998年10月3日</p>
 <p>风度全在一吻中</p>
-<p>5月16日，我看到法国新任女总理奎松（EdithCresson）女士，在完成接任手续后，在总理官邸马蒂格农饭店（HotelMatignon）外面，吻颊道别她的前任罗卡（MichelRocard）。美联社照片传来，我见图有感，深叹法国人的政治风度，真是坦荡无比。</p>
+<p>5月16日，我看到法国新任女总理奎松（Edith Cresson）女士，在完成接任手续后，在总理官邸马蒂格农饭店（Hotel Matignon）外面，吻颊道别她的前任罗卡（Michel Rocard）。美联社照片传来，我见图有感，深叹法国人的政治风度，真是坦荡无比。</p>
 <p>十三天后，我看到法新社电。电文说两人吻颊一事凸显出法国一股新兴的潮流——亲吻双颊正快速取代握手致意，成为法国两性之间彼此互相问好致意的社交礼仪。</p>
 <p>不过，在这里想要一亲芳泽的外国人士可得尊重一条规范——唯有情侣才可以亲吻双唇；此外，只亲一边脸颊会被认为是不够诚意的表现。</p>
 <p>法国人公认，至少得左颊、右颊各亲一吻，才足以表达打招呼或说再见的诚意。至于亲上三、四吻是否“合乎礼数”，则视各地民情或家族传统而定。观察入微的巴黎记者斯基菲指出：“其他地方的人遇上亲人多半会献上四个吻，巴黎人则对任何人都是献上两个吻。”</p>
@@ -520,21 +553,21 @@
 <p>女人大腿上的“丝路之旅”</p>
 <p>中国传说中黄帝做衣裳，黄帝元妃西陵氏之女嫘祖教民养蚕，自此中国人独霸丝业二千年。奇怪的是，中国人只发明丝衣丝裳，却没发明丝袜，这真是千古遗恨。</p>
 <p>中国的养蚕术，在六世纪时被两个洋和尚学到，他们私盗蚕卵，运到欧洲，从此中国人独占市场的局面逐渐打破，丝衣丝裳之外，泽被女人大腿——洋鬼子巧夺天工，造出丝袜。</p>
-<p>十八世纪英国文学家约翰逊（SamuelJohnson）歌颂丝袜，意谓丝袜引人大动、情嗜随之（Thesilkstockingsandwhitebosomsofactressesexcitemyamorouspropensities.）。现在二十世纪九十年代，丝袜的工业，早越蚕丝业而上之，吸引人的程度，自亦在十八世纪之上。现在流行的是二合一一件头的裤袜，固然不错，但却失掉了用吊袜带的趣味。用吊袜带时代的女人，她们在内裤与丝袜之间，就是吊袜带发生作用那一段，大腿是裸露的。冬夜时分，与美女夜游，坐在车上，伸手去摸那一段大腿，虽约翰复生，亦将别著福音，以告来者。“深情哪比旧时浓”，今不如昔，吾于丝袜见之。</p>
+<p>十八世纪英国文学家约翰逊（Samuel Johnson）歌颂丝袜，意谓丝袜引人大动、情嗜随之（The silk stockings and white bosoms of actresses excite my amorous propensities.）。现在二十世纪九十年代，丝袜的工业，早越蚕丝业而上之，吸引人的程度，自亦在十八世纪之上。现在流行的是二合一一件头的裤袜，固然不错，但却失掉了用吊袜带的趣味。用吊袜带时代的女人，她们在内裤与丝袜之间，就是吊袜带发生作用那一段，大腿是裸露的。冬夜时分，与美女夜游，坐在车上，伸手去摸那一段大腿，虽约翰复生，亦将别著福音，以告来者。“深情哪比旧时浓”，今不如昔，吾于丝袜见之。</p>
 <p>1990年8月23日</p>
 <p>上帝与服装</p>
 <p>传说中的人类祖先是不穿衣服的，他们根本没有衣服的观念。最初是亚当先生一个人，在伊甸园中，光着身体，到处闲荡。没想到一觉醒来，少了肋骨，多了女人，一个赤身露体的夏娃小姐，居然招展在他面前，于是，麻烦立刻开始，在《旧约全书》《创世纪》的第三章里，就爆出了全新的情节：</p>
 <p>耶和华上帝所造的，唯有蛇比田野一切的活物更狡猾。蛇对女人说：“上帝岂是真不许你们喫园中所有树上的果子么？”女人对蛇说：“园中树上的果子我们可以喫，唯有园当中那棵树上的果子，上帝曾说你们不可喫，也不可摸，免得你们死。”蛇对女人说：“你们不一定死，因为上帝知道，你们吃的日子眼睛就明亮了，你们便如上帝能知道善恶。”于是女人见那棵树的果子好作食物，也悦人的眼目，且是可喜爱的，能使人有智慧，就摘下果子来喫了，又给她丈夫，她丈夫也喫了。他们二人的眼睛就明亮了，才知道自己是赤身露体，便拿无花果树的叶子，为自己编作裙子。</p>
 <p>天起了凉风，耶和华上帝在园中行走，那人和他妻子听见上帝的声音，就藏在园里的树木中，躲避耶和华上帝的面。耶和华上帝呼唤那人，对他说：“你在哪里？”他说：“我在园中听见你的声音，我就害怕。因为我赤身露体，我便藏了。”耶和华说：“谁告诉你赤身露体呢？莫非你喫了我吩咐你不可喫的那树上的果子么？”那人说：“你赐给我，与我同居的女人，她把那树上的果子给我，我就喫了。”耶和华上帝对女人说：“你做的是什么事呢？”女人说：“那蛇引诱我，我就喫了。”耶和华上帝对蛇说：“你既做了这事，就必受咒诅，比一切的牲畜野兽更甚，你必用肚子行走，终身喫土。我又要叫你和女人彼此为仇，你的后裔和女人的后裔，也彼此为仇。女人的后裔要伤你的头，你要伤他的脚跟。”又对女人说：“我必多多加增你怀胎的苦楚，你生产儿女必多受苦楚，你必恋慕你丈夫，你丈夫必管辖你。”又对亚当说：“你既听从妻子的话，喫了我所吩咐你不可喫的那树上的果子，地必为你的缘故受咒诅，你必终身劳苦，才能从地里得喫的。地必给你长出荆棘和蒺黎来，你也要喫田间的菜蔬。你必汗流满面才得糊口，直到你归了土，因为你是从土而出的。你本是尘土，仍要归于尘土。”</p>
 <p>亚当给他妻子起名叫夏娃，因为她是众生之母。耶和华上帝为亚当和他妻子用皮子作衣服给他们穿。</p>
-<p>亚当、夏娃因为吃了苹果，所以四只眼睛发亮，才发现自己是赤身露体。他们小两口儿当时采取的初步行动是：抓起无花果的树叶，胡乱编成裙子，他们并没有服装设计。当时他们生长的地方是幼发拉底河（Euphrates）与底格里斯河（Tigris），并没生长在夏威夷，所以，他们虽然会用树叶，却不会编草裙。所以，当时他们所穿的，一定很难看。上帝把这一对男女驱逐出境，除了奉送一大堆报复和咒诅外，唯一一件善举，就是妙手“天工”的“为亚当和他妻子用皮子做衣服，给他们穿”。所以，无疑的，上帝是有史以来第一个服装设计家（thetopfashiondesigner），从此以后，亚当夏娃的子孙所能施展的，只是“巧夺”上帝的“天工”而已，因为上帝忘记了申请专利、忘记了办个“衣服公卖局”来公然敛财，他只是把衣服造成了一种“人类众恶天性的标记”，所有他“所造的生物中，只有人类，才穿着衣服”①，只达到这一个目的，就满足了②。</p>
+<p>亚当、夏娃因为吃了苹果，所以四只眼睛发亮，才发现自己是赤身露体。他们小两口儿当时采取的初步行动是：抓起无花果的树叶，胡乱编成裙子，他们并没有服装设计。当时他们生长的地方是幼发拉底河（Euphrates）与底格里斯河（Tigris），并没生长在夏威夷，所以，他们虽然会用树叶，却不会编草裙。所以，当时他们所穿的，一定很难看。上帝把这一对男女驱逐出境，除了奉送一大堆报复和咒诅外，唯一一件善举，就是妙手“天工”的“为亚当和他妻子用皮子做衣服，给他们穿”。所以，无疑的，上帝是有史以来第一个服装设计家（the top fashion designer），从此以后，亚当夏娃的子孙所能施展的，只是“巧夺”上帝的“天工”而已，因为上帝忘记了申请专利、忘记了办个“衣服公卖局”来公然敛财，他只是把衣服造成了一种“人类众恶天性的标记”，所有他“所造的生物中，只有人类，才穿着衣服”①，只达到这一个目的，就满足了②。</p>
 <p>1982年2月1日</p>
-<p>①这是圣经学家海莱（HenryH.Halley）博士的话，见他的《圣经手册》（PocketBibleHandbook）《创造女人》一节。</p>
+<p>①这是圣经学家海莱（Henry H. Halley）博士的话，见他的《圣经手册》（Pocket Bible Handbook）《创造女人》一节。</p>
 <p>②只是不知道上帝穿不穿衣服？如果不穿，难道真如中国的刘伶，以天地为衣服吗？</p>
 <p>写给模特儿看的</p>
 <p>中国古代的雅人们，对水的看法，可有点特别。“沧浪之水清”的时候，他们要“濯我缨”（洗帽子）；“沧浪之水浊”的时候，他们却要“濯我足”（洗脚），他们从未想到要洗洗身体，更甭谈“游泳”了！</p>
 <p>“游泳”在中国传统中，不属于正统运动范围，也不属于一般娱乐范围，“游泳”这玩意，至多是“浪里白条”式水上人家的专技，任何身强体壮的大汉，只能在陆地上展览他的阔臂肌，一旦不幸下水，就只有口吐白沫的份。《水浒传》里的黑旋风李逵，本何等威武，可是一落清波，就被浪里白条张顺灌得“喘做一团，口里只吐白水”！李逵皆如此，其他大汉可以想见！其他大汉皆如此，其他小娘子更可想见。故总而言之，中国古人对“游泳”这一门学问，实在差劲，因而从尾生以下，被淹死的记录也就颇多。奇怪的是，尾生明明不会游泳，却偏偏跟女朋友在“水门”旁边约会，结果竟送掉老命一条，真是哀哉！</p>
-<p>反观外国，外国的游泳历史，却源远流长得多。在非洲北部利比亚沙漠（LibyanDesert）中，就有了游泳的壁画，历史在1万1000年以上。纪元前2160年前的埃及贵族，乃至纪元前880年的亚述战士，都纷纷留下了不少游泳的史迹。这些流风，广被之下，游泳这门子玩艺，就愈来愈在洋鬼子身上发达起来。</p>
+<p>反观外国，外国的游泳历史，却源远流长得多。在非洲北部利比亚沙漠（Libyan Desert）中，就有了游泳的壁画，历史在1万1000年以上。纪元前2160年前的埃及贵族，乃至纪元前880年的亚述战士，都纷纷留下了不少游泳的史迹。这些流风，广被之下，游泳这门子玩艺，就愈来愈在洋鬼子身上发达起来。</p>
 <p>洋鬼子分两类：一种是男洋鬼子，一种是女洋鬼子。男洋鬼子喜欢游泳，自然毫不稀奇。可是游呀游的，女洋鬼子在旁边看得不服气了，“怎么，只许你们男人游？难道老娘不能游？”于是，不晓得在什么时候，夏娃女士也跳到水里来了！男洋鬼子既然无法阻止“祸水”下水，但总要亡羊补牢，设法使“祸水”别在水里惹祸。于是，男人（当然是已婚的男人）说：“游泳可以呀！可是要穿游泳装呀！让我们来设计泳装吧！”</p>
 <p>于是，在1905年，男人们设计出来的“进步”泳装是这样的：</p>
 <p>用布：十码。</p>
@@ -546,9 +579,9 @@
 <p>接着是法国女人开了先河，泳装又发生革命性的突变，上下一身的传统式样首先被拦腰剪断，——女人的泳装变成两件头了！十码布的时代过去了！五码布的时代过去了，最后一码布的时代也为“比基尼”（Bikini）所取代，三点式的泳装，终于抢尽了风头。</p>
 <p>泳装在比基尼时代，自然也千变万化，有各种因暴露程度不同而耍出来的花样，更严重的是“迷你基尼”（Mini-Kini），胸罩后面甚至没有带子，其次是“迷底基尼”（Midi-Kini），再其次是“麦克斯基尼”（Mini-Kini）。种类繁多，举不胜举。</p>
 <p>自比基尼时代以降，女人泳装近年来，主流已朝三路转变：</p>
-<p>第一路是“裸胸装”（Toplesssuit），1964年风靡世界。</p>
-<p>第二路是“洞洞装”，1965年起流行，以若隐若现的“假裸”（FakelyNude）为号召。</p>
-<p>第三路是“裸背装”，1967年开始时髦，重点是暴露背部。（Backexposure）。</p>
+<p>第一路是“裸胸装”（Topless suit），1964年风靡世界。</p>
+<p>第二路是“洞洞装”，1965年起流行，以若隐若现的“假裸”（Fakely Nude）为号召。</p>
+<p>第三路是“裸背装”，1967年开始时髦，重点是暴露背部。（Back exposure）。</p>
 <p>此外，复古的趋向偶尔也进入时装杂志，那是一种一件头的泳装，居然有长袖或短袖，甚至还有段紧身裤腿。另外，在007的魔力下，类似潜水衣式的泳装也出现了，拉链从脖子直拉到小腹下端，极尽非非之能事。</p>
 <p>至于男人，简直可说没什么泳装上的变化。早期男人的泳装，本和目前保守一点的女人泳装一样（一件头，遮胸遮背），后来男人把这种衣服“送给”女人，自己只穿起短裤来。近来男装又开始复古，在裤腿上面，稍微变长，好像斯文一些。男人毕竟是理性的动物，当他发现在泳装上撒野撒不过女人，他们不回到斯文，又能怎样？</p>
 <p>1968年7月4日上午以二小时半写成</p>
@@ -575,7 +608,7 @@
 <p>虽然“颇不容易分别”，但是，当我们按件计“仇”，发现帝国主义的实际表现，却因事件而容有不同，不可一概而论。它们的确有着多种的面目：在苏联式帝国主义里，我们看到的特色是掠地、奸淫、与粗暴；在比利时式帝国主义里，我们看到的特色是压榨、漠视、与无情；在丹麦式帝国主义里，我们看到的特色是一片和煦；但在英国式帝国主义里，我们看到的特色却是丑恶中的许多光明。这些，对热爱中国又热爱自由民主现代化的英式文明的中国人而言，的确是一种痛苦的局面。</p>
 <p>蒋廷黻说：“我们拿什么标准来评断帝国主义的善恶呢？有些人说，不问其成绩如何，外族的统治都是恶的。因为统治本身是民族生活最基本的一部分；剥夺一个民族的统治权就是剥夺它的生活的一部分。并且一切的统治都是为统治者谋利益，不是为被治者谋利益。……但是有不少的中国人，丝毫未受英人的逼迫，自动的搬到各地的英租界去住，甘心的脱离本族一部分的统治而接受英人的统治。这不是民众意志很好的一个表示，表示英人的帝国主义是善的么？</p>
 <p>蒋廷黻的文章是近六十年前写的。时代变化后，“英租界”没有了，不但租界没有了，最后的英国式帝国主义的象征，即将也在九七大限时在香港落幕。但是，香港人尽管心怀祖国、与有荣焉，可是却不愿给非帝国主义的自己中国人同胞统治，为什么？中国人在许多方面，连帝国主义都比不上，英国离开加纳后，给这个非洲国家留下了国会、文官制度、公正的司法传统和普选制度。此真英式帝国主义之遗爱也！但是中式非帝国主义，除了带给人们民族的光荣与雪耻外，其它还很遥远！</p>
-<p>在帝国主义中，美国帝国主义是一个怪胎，美帝爱贸易，却关税壁垒高筑；美帝爱邻居，却到别人国家放枪抓人；美帝爱人权，却不准它的敌人寻求政治庇护；美帝爱中国，却一爱爱上两个。……美帝是伟大的国家，它的伪善也相对伟大，别人只是伪君子，美国却是超级伪君子。爱默生说，美国是青年人之国（Americaisacountryofyoungmen.）。错了，美国是超级伪君子之国才对。正因它是超级伪君子之国，所以它做的好事，到头来都被自己冲掉，还变得里外不是人。论今世之帝国主义，大多没落，只剩美帝尚有本事胡搅蛮缠，但怎么也惹得四邻怨恨，令人好气又好笑。为今之计，美帝最好少来一点伪君子的身段、少说一点大道理、少一点神气。以大国打人，是暂时的；以大国骄人，是永久的。骄人比打人后患无穷。后患如能由牛仔摆平，倒也是好；只怕摆不平时，修女遭殃矣！修女又何辜哉？</p>
+<p>在帝国主义中，美国帝国主义是一个怪胎，美帝爱贸易，却关税壁垒高筑；美帝爱邻居，却到别人国家放枪抓人；美帝爱人权，却不准它的敌人寻求政治庇护；美帝爱中国，却一爱爱上两个。……美帝是伟大的国家，它的伪善也相对伟大，别人只是伪君子，美国却是超级伪君子。爱默生说，美国是青年人之国（America is a country of young men.）。错了，美国是超级伪君子之国才对。正因它是超级伪君子之国，所以它做的好事，到头来都被自己冲掉，还变得里外不是人。论今世之帝国主义，大多没落，只剩美帝尚有本事胡搅蛮缠，但怎么也惹得四邻怨恨，令人好气又好笑。为今之计，美帝最好少来一点伪君子的身段、少说一点大道理、少一点神气。以大国打人，是暂时的；以大国骄人，是永久的。骄人比打人后患无穷。后患如能由牛仔摆平，倒也是好；只怕摆不平时，修女遭殃矣！修女又何辜哉？</p>
 <p>1991年4月12日</p>
 <p>《中正大学历史所性骚扰事件调查报告》序</p>
 <p>《中正大学历史所性骚扰事件调查报告》出版在即，索序于我，我感于“可找对了人了”，因乐为之序。</p>
@@ -602,7 +635,7 @@
 <p>红色与美色</p>
 <p>——从“坐怀不乱”到“见色流精”；从“老僧入定”到“饿虎扑羊”</p>
 <p>共产党所秉持的共产主义，在理想上道德上极为完美伟大；简直无懈可击。但在实行上，却只有一种人能实行它，就是圣人。只有圣人行之，能成其完美伟大，凡人行之，则就矛盾迭起，败相百出。</p>
-<p>处理矛盾与败相的法子是曲为解释、是自圆其说、是虚伪的遮掩、是图穷而匕首见。——到了这种地步，共产党的原始风貌就荡然了，他们抓紧的政权，只是和他们推翻的先前政权半斤八两。他们要打倒旧阶级，但他们自己却变成了新阶级。南斯拉夫副总统吉拉斯（MilovanDjilas）猛回头后，写《新阶级》（TheNewClass）一书拆穿此一真相，就是实证。</p>
+<p>处理矛盾与败相的法子是曲为解释、是自圆其说、是虚伪的遮掩、是图穷而匕首见。——到了这种地步，共产党的原始风貌就荡然了，他们抓紧的政权，只是和他们推翻的先前政权半斤八两。他们要打倒旧阶级，但他们自己却变成了新阶级。南斯拉夫副总统吉拉斯（Milovan Djilas）猛回头后，写《新阶级》（The New Class）一书拆穿此一真相，就是实证。</p>
 <p>正因为共产主义在理想上道德上极为完美伟大，在其中男女问题上，自然也是“郅治”的境界，例如中共大力“扫黄”，目的就在端正男女问题上的理想化与道德化。不过，这又是圣人之事。圣人可以“坐怀不乱”、“老僧入定”；而凡人呢，却是“见色流精”、“饿虎扑羊”。因此，凡人毛泽东以下（周恩来等少数人应属例外），自叶剑英以次，男女关系之乱，也就跟他们打天下得天下守天下的大业成了正比。他们愈统一了中国，也就愈统一了中国的美女。利用权势，横行奸淫，劣迹累累、秽史连连，谁也无法遮盖了。</p>
 <p>理想上道德上极为完美伟大的共产主义，与美女一齐沦落至此，这是人们迷于它，而想“超凡入圣”不成的结果。这样看来，共产主义不但无法真正解决原始经济问题，就连原始男女问题，也无法真正解决。这真是圣人的悲剧！</p>
 <p>1991年8月13日</p>
@@ -760,7 +793,7 @@
 <p>龚定庵写诗说：“不容儿辈妄谈兵，镇物何妨一矫情？别有狂言谢时望，东山妓即是苍生。”国民党自从东山岛登陆失败，就把“二年反攻”当做空头支票；如今东山妓下床失败，“二年内全部取缔完竣”也成了空头支票。从军人登陆到妓女下床，国民党全部退票，国民党真是大骗子！</p>
 <p>1989年8月8日</p>
 <p>林洋港与妓女接客</p>
-<p>七年前，1983年5月12日，我鉴于当时内政部长林洋港曲意包庇包娼包赌的警察人员，乃写《林洋港与应召女郎》公开信责备他，我指出：“回想前年12月5日，先生在立法院内政委员会上夸口，说色情问题内政部要‘禁’‘导’兼施，如今，我们又等了一年半了，我们实在看不出先生的‘禁’禁在哪里？先生的‘导’导向何方？我们看到的，是色情营业的泛滥、泛滥、更泛滥，可是‘取缔重大风化案件’，却一件都没有。我总觉得：先生若这样没有信心下去、没有魄力下去，内政部长实在不好干下去了。可怜的林肯说得好：‘你可以欺骗多数人于暂时，你可以欺骗少数人于永久，但你不能欺骗多数人于永久。’（Youcanfoolallthepeoplesomeofthetime,andsomeofthepeopleallthetime,butyoucannotfoolallthepeopleallthetime.）洋港先生，当永久的多数人厌倦你的大嘴巴——光说不练的大嘴巴——以后，你的末日，也就为期不远了！”</p>
+<p>七年前，1983年5月12日，我鉴于当时内政部长林洋港曲意包庇包娼包赌的警察人员，乃写《林洋港与应召女郎》公开信责备他，我指出：“回想前年12月5日，先生在立法院内政委员会上夸口，说色情问题内政部要‘禁’‘导’兼施，如今，我们又等了一年半了，我们实在看不出先生的‘禁’禁在哪里？先生的‘导’导向何方？我们看到的，是色情营业的泛滥、泛滥、更泛滥，可是‘取缔重大风化案件’，却一件都没有。我总觉得：先生若这样没有信心下去、没有魄力下去，内政部长实在不好干下去了。可怜的林肯说得好：‘你可以欺骗多数人于暂时，你可以欺骗少数人于永久，但你不能欺骗多数人于永久。’（You can fool all the people some of the time, and some of the people all the time, but you cannot fool all the people all the time.）洋港先生，当永久的多数人厌倦你的大嘴巴——光说不练的大嘴巴——以后，你的末日，也就为期不远了！”</p>
 <p>如今，七年过去了。林洋港自内政部长而行政院副院长而司法院院长，官越做越大，嘴巴越说越大，想“欺骗多数人于永久”的雄心，也越来越大了。</p>
 <p>昨天上午，林洋港招待记者，说明他公布《司法革新实况简报》的经过。他说，今年六月，李总统登辉先生首次向他提及外界对司法革新主张很多，司法院的意见如何？七月间，总统又再度问他对司法革新的看法。他当即向总统表示，司法革新内容很多，以书面简报方式做完整报告为宜。八月间，他撰就《司法革新实况简报》，呈送总统核阅。总统详阅简报后，透过总统府秘书长蒋彦士向他表示，总统已经了解司法革新全貌及实况并很满意；但可惜的是，外界并不了解司法革新的全盘计划，宜予公布以让人民也能了解司法革新现况。他接到指示后才予公布。</p>
 <p>所谓《司法革新实况简报》当然是官样文章，因为是官样文章，所以空话多于实情。林洋港为补充不足，还在记者问他“对于司法革新这么多的方向，您觉得首要工作在哪里？”时，他答道：“我还是觉得裁判品质提高是最重要的工作。所有民刑事审判案件，能够做到确实、公正，而获得当事人及整个社会的信任，整个司法才能获得尊重。这是司法革新的根本问题。如果把这个问题忘了，而做其他机构调整等枝节问题，就都不是当务之急。”</p>
@@ -823,7 +856,7 @@
 <p>自古以来，有一种毫无根据的怪论，就是“唯灵论”，或说“灵魂至上论”，或说“崇灵贬肉论”。这种怪论，不论怎么叠床架屋，怎么演绎，它的基本调门，不外是灵高的、圣的、好的；肉是低的、邪的、坏的。这种灵上肉下的思想，究其根源，最明显的，是来自西方中古前期的基督教。基督教的理论家和“文字警察”们，认为对“肉”的克制，是达到“灵”的永生的必要条件。所以他们就此起步，将灵提升，直提升到基本人性所不能负荷的程度。一位中古的教棍子，也是学者，竟发为妙论，认为一个信奉天主的人，只要在灵的方面不怀邪念，甚至可以摸摸修女的大奶奶（或小奶奶），并不犯罪。此类妙论，似乎也正是佛教教棍子所谓的“目中有色，心中无色”。其实这种不近人情的唯灵论，究竟能在灵的方面有多少纯度，倒大有问题。因为实际显示出来的是：自教皇以下，都不乏有私生子的纪录。私生子生下来，大都谎报为自己的侄儿外甥（nephew），进而大加提拔，演变成标准的“引用亲戚主义”（nepotism）。这种现象，正是高度唯灵论者的低级下场，其灵魂至上崇灵贬肉的程度，也就可知矣！</p>
 <p>最早打破这种唯灵怪论的先知者，最早坦白承认灵不比肉高肉不比灵低的开路人，该是十九世纪的英国大诗人勃朗宁。勃朗宁曾用美丽的诗句，巧妙指出：</p>
 <p>……灵之对肉，并不多于肉之对灵。</p>
-<p>（“……Norsoulhelpsfleshmore,nowthanfleshhelpssoul.”）</p>
+<p>（“……Nor soul helps flesh more, now than flesh helps soul.”）</p>
 <p>这是何等灵肉平等的伟大提示！勃朗宁又指出：肉乃是“愉快”（pleasant）的象征，是可以给灵来做漂亮的“玫瑰网眼”（rose-mesh）的，这种卓见，实在值得满脑袋“灵魂纯洁”“肉体不纯洁”的卫道者的反省。崇灵贬肉的论调，早已是落了伍的论调。只肯定灵的快乐而否决肉的快乐，乃是对寻乐本身的一种残缺、一种怪症，并不值得神气活现。</p>
 <p>真正开明智慧的人物，当他起居饮食寻欢作乐的时候，绝不背着灵上肉下的错误思想去苦恼自己。所以，一旦当他有机会去摸修女的乳房，他没有大道理，也没有罪恶感，他是快乐、温柔而一致的，他的灵魂，就在他的手上。</p>
 <p>论“灵肉”不可二分</p>
@@ -833,17 +866,17 @@
 <p>真正的灵肉一致者，他的和谐表现，是《列子》书中所谓的“心凝形释”，这种和谐，是以真情为准则，不以买卖为手段。在扬州二十四桥的诗人杜牧，形式上是逛窑子，实质上却是与妓谈情，因为谈情，所以才有所谓“青楼薄悻”。台湾北部的妓女们，绝不会怪中部的某教授薄悻，因如某教授者，实无悻可薄！——灵乎哉？不灵也！</p>
 <p>不过有一点可为某教授开脱的是：灵肉的分野，也有其时代与环境的背景，不能独责于他。原来真正灵肉一致的旧艺综合体，乃是古代的窑姐和日本的艺妓。这些女士们，不但会饮酒赋诗、小红低唱，同时还会举手投足，“教君恣意怜”。不料后来世风日下，人心不古，人身亦不古，并且身心不再合一。女人“灵”的一部分，已上升到女作家皇冠上；“肉”的一部分，已下降到江山楼的“卡紧卡紧”派，以致心物二元起来。弄得前者启灵过分、后者泄欲太多，活像祭孔的“牺牲”——既不灵也不肉。今日的悲剧正是在此。不灵不肉的女人太多了，不灵不肉的男人更多。真正灵肉一致的快乐，几乎已不易找到典型。寻乐的智者，必然会认清灵肉关系的真相，而开始努力寻求。也许他会找不到对象，但这也没什么好埋怨，卓越的个人，常常是时代与环境的“牺牲”，——为寻欢献身，又何足怪？</p>
 <p>1980年10月1日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/16.李敖祸台十书/只爱一点点.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/16.李敖祸台十书/只爱一点点.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../16.李敖祸台十书/从万宝囊到臭屎堆.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../16.李敖祸台十书/君子爱人以色.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -853,16 +886,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../16.李敖祸台十书/从万宝囊到臭屎堆.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../16.李敖祸台十书/君子爱人以色.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -871,12 +909,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

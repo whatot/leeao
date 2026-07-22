@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,121 +81,142 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="你笨蛋你笨蛋"><a class="header" href="#你笨蛋你笨蛋">你笨蛋，你笨蛋</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E9%80%81%E9%AB%98%E4%BF%A1%E7%96%86%E5%BD%92%E5%A4%A7%E9%99%86%E5%BA%8F">送高信疆归大陆序</a></li>
-<li><a href="#%E5%87%86%E4%BC%A4%E7%97%95%E6%96%87%E5%AD%A6">准伤痕文学</a></li>
-<li><a href="#%E6%88%91%E5%86%99%E4%B8%8A%E5%B1%B1%E4%B8%8A%E5%B1%B1%E7%88%B1">我写《上山上山爱》</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E7%9A%84%E6%B7%AB%E5%A8%81">李敖的“淫威”</a></li>
-<li><a href="#%E5%88%86%E4%B8%AA%E7%AC%AC%E4%B8%80%E7%BB%99%E5%A5%B9">分个第一给她</a></li>
-<li><a href="#%E8%83%A1%E9%80%82%E8%AF%AD%E7%B2%B9%E6%96%B0%E5%BA%8F">《胡适语粹》新序</a></li>
-<li><a href="#%E8%83%A1%E9%80%82%E9%80%89%E9%9B%86%E8%A1%A5%E5%BA%8F">《胡适选集》补序</a></li>
-<li><a href="#%E4%BA%94%E5%8D%81%E5%B9%B4%E6%98%AF%E4%BB%80%E4%B9%88">五十年是什么</a></li>
-<li><a href="#%E7%BB%99%E7%8E%8B%E9%87%91%E5%B9%B3%E9%99%A2%E9%95%BF%E7%9A%84%E4%B8%80%E5%B0%81%E7%A7%98%E4%BB%B6">给王金平院长的一封秘件</a></li>
-<li><a href="#%E4%BB%8E%E6%9D%8E%E6%96%87%E5%91%8A%E5%B0%8F%E5%B8%83%E4%BB%80%E8%AF%B4%E8%B5%B7">从李文告小布什说起</a></li>
-<li><a href="#%E4%BB%8E%E7%9C%BC%E7%A5%9E%E5%88%B0%E8%83%8C%E5%BD%B1">从眼神到背影</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E8%AE%AE%E5%9D%9B%E5%93%80%E6%80%9D%E5%BD%95%E5%B0%8F%E5%BC%95">《李敖议坛哀思录》小引</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E4%B8%8E%E6%B0%91%E6%AD%8C">李敖与民歌</a></li>
-<li><a href="#%E6%88%91%E5%86%99%E8%99%9A%E6%8B%9F%E7%9A%84%E5%8D%81%E4%B8%83%E5%B2%81">我写《虚拟的十七岁》</a></li>
-<li><a href="#%E4%BB%8E%E9%A9%AC%E5%81%95%E8%A1%8C%E5%8C%BB%E5%9B%BE%E5%88%B0%E9%BB%84%E8%BE%BE%E5%A4%AB">从《马偕行医图》到黄达夫</a></li>
-<li><a href="#%E4%B8%BA%E6%9D%A8%E7%AD%B1%E7%AD%A0%E6%96%B0%E4%B9%A6%E5%86%99%E5%BA%8F">为杨筱筠新书写序</a></li>
-<li><a href="#%E5%90%BE%E4%BB%8E%E5%85%B6%E4%B8%91">吾从其丑</a></li>
-<li><a href="#%E7%9F%B3%E9%BD%90%E5%B9%B3%E4%B8%AD%E5%9B%BD%E5%A4%A7%E8%B6%8B%E5%8A%BF%E5%BA%8F">石齐平《中国大趋势》序</a></li>
-<li><a href="#%E7%BB%99%E5%8D%8E%E4%B8%A5%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1">给华严的一封信</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%A4%A7%E5%85%A8%E9%9B%86%E5%A4%A7%E9%99%86%E6%96%B0%E7%89%88%E5%BA%8F">《李敖大全集》大陆新版序</a></li>
-<li><a href="#%E6%9C%89%E6%84%9F%E4%BA%8E%E5%B9%B4%E5%A4%8D%E4%B8%80%E5%B9%B4%E7%9A%84%E7%BE%8E%E5%9B%BD%E4%BA%BA%E6%9D%83%E7%BA%AA%E5%BD%95">有感于年复一年的《美国人权纪录》</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E6%8E%A7%E5%91%8A%E8%AE%B8%E5%80%AC%E4%BA%91%E9%80%A0%E8%B0%A3%E8%AF%BD%E8%B0%A4">李敖控告许倬云造谣诽谤</a></li>
-<li><a href="#%E4%B8%AD%E5%9B%BD%E5%8F%AF%E4%BB%A5%E6%9D%A5%E4%B8%AA%E5%A4%8F%E5%A8%81%E5%A4%B7%E5%85%B3%E7%B3%BB%E6%B3%95%E5%90%97">中国可以来个《夏威夷关系法》吗？</a></li>
-<li><a href="#%E4%B9%B0%E9%94%99%E4%BA%86%E4%B9%A6">买错了书</a></li>
-<li><a href="#%E6%88%91%E5%A4%B4%E6%89%80%E5%9C%A8%E7%9A%84%E5%9C%B0%E6%96%B9%E6%88%91%E5%BF%83%E4%B8%8E%E5%AE%83%E5%90%8C%E5%9C%A8">我头所在的地方，我心与它同在</a></li>
-<li><a href="#%E5%85%B3%E4%BA%8E%E8%BF%90%E5%8A%A8abc">关于运动ABC</a></li>
-<li><a href="#%E8%B0%81%E8%AF%B4%E5%85%B1%E4%BA%A7%E4%B8%BB%E4%B9%89%E4%B8%8D%E9%9D%A0%E8%BF%90%E6%B0%94">谁说共产主义不靠运气</a></li>
-<li><a href="#%E4%B8%BA%E4%B8%AD%E5%A4%AE%E7%A0%94%E7%A9%B6%E9%99%A2%E5%BC%8A%E6%A1%88%E8%B4%A8%E9%97%AE">为中央研究院弊案质问</a></li>
-<li><a href="#%E5%B8%9D%E7%8E%8B%E8%93%9D">帝王蓝</a></li>
-<li><a href="#%E6%9D%8E%E6%88%A1%E6%88%A1%E4%B9%B1%E8%AE%B0%E5%AF%BC%E8%AF%BB">《李戡戡乱记》导读</a></li>
-<li><a href="#%E8%83%8C%E5%BD%B1%E4%B8%8E%E5%90%8E%E8%AE%B0">背影与后记</a></li>
-<li><a href="#%E6%88%91%E5%86%99%E9%98%B3%E7%97%BF%E7%BE%8E%E5%9B%BD">我写《阳痿美国》</a></li>
-<li><a href="#%E6%BD%98%E6%AF%93%E5%88%9A%E6%88%91%E4%B9%9F%E6%9D%8E%E6%95%96%E4%B8%80%E4%B8%8B%E7%A5%96%E5%9B%BD%E7%89%88%E5%BA%8F">潘毓刚《我也李敖一下》祖国版序</a></li>
-<li><a href="#%E9%A1%BD%E7%AB%A5%E5%93%B2%E5%AD%A6%E5%AE%B6">顽童哲学家</a></li>
-<li><a href="#%E5%A4%A7%E6%B1%9F%E5%A4%A7%E6%B5%B7%E9%AA%97%E4%BA%86%E4%BD%A0%E4%B9%A6%E8%A1%A3%E8%AF%8D">《大江大海骗了你》书衣词</a></li>
-<li><a href="#%E7%AC%AC73%E7%83%88%E5%A3%AB%E5%BF%97%E7%BC%98">《第73烈士》志缘</a></li>
-<li><a href="#%E8%8B%B1%E6%96%87%E6%B1%89%E8%AF%82%E6%AE%8B%E7%A8%BF">《英文汉诂》残稿</a></li>
-<li><a href="#%E8%81%94%E8%AF%AD%E5%AF%B9%E6%AF%94%E4%B8%BE%E4%BE%8B">联语对比举例</a></li>
-<li><a href="#%E4%BB%96">他</a></li>
-<li><a href="#%E4%BD%A0%E7%AC%A8%E8%9B%8B%E4%BD%A0%E7%AC%A8%E8%9B%8B">你笨蛋，你笨蛋</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#送高信疆归大陆序">送高信疆归大陆序</a></li>
+<li><a href="#准伤痕文学">准伤痕文学</a></li>
+<li><a href="#我写上山上山爱">我写《上山上山爱》</a></li>
+<li><a href="#李敖的淫威">李敖的“淫威”</a></li>
+<li><a href="#分个第一给她">分个第一给她</a></li>
+<li><a href="#胡适语粹新序">《胡适语粹》新序</a></li>
+<li><a href="#胡适选集补序">《胡适选集》补序</a></li>
+<li><a href="#五十年是什么">五十年是什么</a></li>
+<li><a href="#给王金平院长的一封秘件">给王金平院长的一封秘件</a></li>
+<li><a href="#从李文告小布什说起">从李文告小布什说起</a></li>
+<li><a href="#从眼神到背影">从眼神到背影</a></li>
+<li><a href="#李敖议坛哀思录小引">《李敖议坛哀思录》小引</a></li>
+<li><a href="#李敖与民歌">李敖与民歌</a></li>
+<li><a href="#我写虚拟的十七岁">我写《虚拟的十七岁》</a></li>
+<li><a href="#从马偕行医图到黄达夫">从《马偕行医图》到黄达夫</a></li>
+<li><a href="#为杨筱筠新书写序">为杨筱筠新书写序</a></li>
+<li><a href="#吾从其丑">吾从其丑</a></li>
+<li><a href="#石齐平中国大趋势序">石齐平《中国大趋势》序</a></li>
+<li><a href="#给华严的一封信">给华严的一封信</a></li>
+<li><a href="#李敖大全集大陆新版序">《李敖大全集》大陆新版序</a></li>
+<li><a href="#有感于年复一年的美国人权纪录">有感于年复一年的《美国人权纪录》</a></li>
+<li><a href="#李敖控告许倬云造谣诽谤">李敖控告许倬云造谣诽谤</a></li>
+<li><a href="#中国可以来个夏威夷关系法吗">中国可以来个《夏威夷关系法》吗？</a></li>
+<li><a href="#买错了书">买错了书</a></li>
+<li><a href="#我头所在的地方我心与它同在">我头所在的地方，我心与它同在</a></li>
+<li><a href="#关于运动abc">关于运动ABC</a></li>
+<li><a href="#谁说共产主义不靠运气">谁说共产主义不靠运气</a></li>
+<li><a href="#为中央研究院弊案质问">为中央研究院弊案质问</a></li>
+<li><a href="#帝王蓝">帝王蓝</a></li>
+<li><a href="#李戡戡乱记导读">《李戡戡乱记》导读</a></li>
+<li><a href="#背影与后记">背影与后记</a></li>
+<li><a href="#我写阳痿美国">我写《阳痿美国》</a></li>
+<li><a href="#潘毓刚我也李敖一下祖国版序">潘毓刚《我也李敖一下》祖国版序</a></li>
+<li><a href="#顽童哲学家">顽童哲学家</a></li>
+<li><a href="#大江大海骗了你书衣词">《大江大海骗了你》书衣词</a></li>
+<li><a href="#第73烈士志缘">《第73烈士》志缘</a></li>
+<li><a href="#英文汉诂残稿">《英文汉诂》残稿</a></li>
+<li><a href="#联语对比举例">联语对比举例</a></li>
+<li><a href="#他">他</a></li>
+<li><a href="#你笨蛋你笨蛋">你笨蛋，你笨蛋</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -273,8 +306,8 @@
 <p>去年我跟《联合报》社长张作锦吃饭，他半真半假的说：“李敖兄，多少年来，我们一直以为你是‘匪谍’，现在承认我们错了，——你不是‘匪谍’，你根本就是‘匪’！”我听了大笑。如今，看了真正的匪夷所思的匪货，我想张作锦会改口了：“李敖兄，我们一直以为你是破除迷信的‘西门豹’，现在承认我们错了，——你不是‘西门豹’，君子豹变，原来你是‘西门庆’！”</p>
 <p>2001年5月7日在中国台湾</p>
 <h2 id="分个第一给她"><a class="header" href="#分个第一给她">分个第一给她</a></h2>
-<p>英文谚语中有的是不合文法的，像Diamondcutdiamond就是一例，其中cut后面不加s，成何体统？瑞士学者斯超曼（HeinrichStraumann）予以分析，说这是blocklanguage（类聚语言），前面的字与后面的字并无文法上的关系，只在意思表示时送做堆而已。</p>
-<p>Diamond是金刚钻、是钻石，其硬可知，Diamondcutdiamond意思是旗鼓相当、是势均力敌、是棋逢敌手、是强中更有强中手。我生平以金刚钻自许，坚信自己的长处像钻石一样，多面发光，不过，其中两面，在陈文茜面前，我未免要有Diamondcutdiamond的沮丧。</p>
+<p>英文谚语中有的是不合文法的，像Diamond cut diamond就是一例，其中cut后面不加s，成何体统？瑞士学者斯超曼（Heinrich Straumann）予以分析，说这是block language（类聚语言），前面的字与后面的字并无文法上的关系，只在意思表示时送做堆而已。</p>
+<p>Diamond是金刚钻、是钻石，其硬可知，Diamond cut diamond意思是旗鼓相当、是势均力敌、是棋逢敌手、是强中更有强中手。我生平以金刚钻自许，坚信自己的长处像钻石一样，多面发光，不过，其中两面，在陈文茜面前，我未免要有Diamond cut diamond的沮丧。</p>
 <p>哪两面呢？一面是文采，一面是口才。</p>
 <p>古人说“言语妙天下”，陈文茜的口才可说前无古人，大家都推服无间。陈文茜以“言语妙天下”出道，她的光环，也因此被锁定，大家称道她的口才，有点忽略她的文采，一如李敖以文章出道，大家称道李敖的文采，有点忽略他的口才一样。事实上，陈文茜文采也是“妙天下”的，赞美她的文采，有四个字最恰当，就是“精、灵、鬼、怪”，在陈文茜笔下，构思之精、比喻之灵、布局之鬼、运作之怪，都是中国独步的，中文在她手里、国语在她口里，都是Diamond一波未平、Diamond一波又起的，被称为“媒体霸权”的陈文茜如此波霸，岂不名至实归吗？</p>
 <p>名至实归如此，却也别有用心之处，那就是陈文茜口诛笔伐中的例证，往往都离不开台湾这个小岛，这是她的无奈，因为你不就地取材，你就争不到一时，也争不到千秋。但陈文茜显然查觉及此，因此在“妙天下”的同时，她不时从小岛朝世界带，要岛民放眼世界，这种作风，是典型的“借题发挥”。39年前，胡适先生死前一个月，对李敖有所评论，他说李敖“喜欢借题发挥”，说“作文章切莫要借题发挥”。胡适先生能够一眼看出李敖喜欢“借题发挥”，是他老先生的高明处，但他把“喜欢借题发挥”看成一种大忌，却是大错特错。试看他在1930年写《介绍我自己的思想》，辩护他为什么要考证《红楼梦》，曾说考证《红楼梦》只是“消极”的目的，他别有“积极”的目的，那就是借小说考证来“教人一个思想学问的方法”，教人不要“被人蒙着眼睛牵着鼻子走。”考证《红楼梦》是本题，是“消极”的；考证以外“借题发挥”的题外有题，才是“积极”的。这样“借题发挥”起来，陈文茜和李敖纵Diamond加Diamond，也无法不借小岛之题，以为朝世界发挥的张本，虽然小岛对我们是这么小，我们连小题大做，都不无“与子偕小”之憾也。</p>
@@ -306,7 +339,7 @@
 <p>不过，在同一段时间里，有一个“求士”后的奇迹出现了，那就是我。我做了三件事：一、我出版了《胡适研究》一册；二、我出版了《胡适评传》一册；三、我编了《胡适选集》13册。都由文星书店出版。《胡适选集》是一种普及的版本，当时每册定价只14元，特价期间每册只卖9元，该是一般读者都能买得起或设法买得起的。内容共分13类，每类一册：①述学（共10篇）、②考据（共13篇）、③人物（共25篇）、④年谱（共4篇）、⑤历史（共10篇）、⑥政论（共28篇）、⑦序言（共42篇）、⑧杂文（共35篇）、⑨日记（共9篇）、⑩书信（共74篇）、⑾诗词《共70篇》、⑿翻译（共28篇）、⒀演说（共30篇）。</p>
 <p>胡适先生以他70年零70天的生命，在人间留下了大量的文字，由于年代湮远，人事动乱，这些文字，散逸的很多。一般想读他的文字的人，通常是依靠《胡适文存》、《胡适论学近著》、《胡适文选》、《章宝斋先生年谱》、《先秦名学史》、《中国古代哲学史》、《白话文学史》等专书。在这些专书以外的大量文字，却没有被有计划的编选过，这不能不说是一个大遗憾。《胡适选集》的构想，是我鉴于胡适先生著作的这种散佚，无法看到在《胡适文存》等书以外的大量文字，所以才加以搜集，用来嘉惠士林的。</p>
 <p>选集中的文字，都是从几十年以来的报章书刊中陆续一篇篇搜集到的，在搜集过程中，曾遍访海内外公私藏书，所以有时候虽一篇之微、一诗之细，都得之不易。因而它的珍贵性，也就益形增加。我相信，凡是稍懂现代编辑经验的人，都会发现这套选集编纂的仔细精审。中国图书馆专家童世纲先生编《胡适文存索引》，把这套选集全部编入，更可显出这套选集的价值。</p>
-<p>《胡适选集》出版后，极受欢迎，对胡适思想的流传，有了极大的影响。《胡适留学日记》里有一则《借一千，还十万》的札记，写施特来特（WillardStraight）以10万元的纪念堂，酬答他欠过1000元的知己休尔可夫（Schoellkopf）的故事。胡适先生在我穷困时送了我1000元，可是我说1962年3月要还他，但他2月就死了。最后我以《胡适选集》给他做了最好的纪念。文星被国民党封门后，市面上也出了多种翻印本，单册流传，总在10万册以上。我这点酬答死友的心意，比起《胡适留学日记》中的故事来，也算好有一比了。</p>
+<p>《胡适选集》出版后，极受欢迎，对胡适思想的流传，有了极大的影响。《胡适留学日记》里有一则《借一千，还十万》的札记，写施特来特（Willard Straight）以10万元的纪念堂，酬答他欠过1000元的知己休尔可夫（Schoellkopf）的故事。胡适先生在我穷困时送了我1000元，可是我说1962年3月要还他，但他2月就死了。最后我以《胡适选集》给他做了最好的纪念。文星被国民党封门后，市面上也出了多种翻印本，单册流传，总在10万册以上。我这点酬答死友的心意，比起《胡适留学日记》中的故事来，也算好有一比了。</p>
 <p>在胡适先生生前，他对自己著作的排印流传，曾感到力不从心。1953年的7月4日，他在为傅斯年遗集写序后，曾有这样的感叹：“我的全集的编辑重印，大概也得等到我死后了。”胡适先生这段自述，可算是一语成识。但是令他想不到的是：他的全集，即使等到他死后，甚至死后第1年、第2年、第3年、第4年，甚至第40年，都还没有被印行的信息。</p>
 <p>胡适全集的缩印，原由中央研究院主持。在胡适先生死后，他的亲朋好友和门生故旧居然集合在一起，要负责整理他的遗作，并且声言要编全集。这些自以为有权编全集并自认有能编好全集的人，他们摆出的姿态是垄断的、是有排斥性的。由于他们这些人大都是台湾的“学阀”阶层，所以他们便不愁没有一个所在来表现他们的大权与能力，最后表现的总汇，便是中央研究院。结果呢，胡适死后，胡适全集却全没影儿！</p>
 <p>奇怪的是，1966年2月25日，国民党《中央日报》刊载胡适先生去世4周年的消息，我们听到胡夫人的谈话，竟然是：“付印适之的全集，现在还谈不到！”我们实在忍不住要问：到底什么时候才看得到胡适全集的出版呢？更奇怪的是，按照1963年出版的《中央研究院概况》，明说胡夫人“已于1963年4月16日在遗产转移同意证明书上签字”，出版之权显然已不在胡夫人，既与胡夫人无关了，胡夫人还发表什么谈话呢？</p>
@@ -367,7 +400,7 @@
 <p>四、可见未得美承诺或立法前，军购无意义。</p>
 <p>五、但据沈剑虹、钱复回忆录，美承诺或立法皆不可信。</p>
 <p>六、况军购法源《台湾关系法》只说provide（供应）武器，而provide并无“购”意。</p>
-<p>七、去年7月13日美众院报告第232页明文“provide（withoutcharge）”，不但无“购”意，且是“免费”。</p>
+<p>七、去年7月13日美众院报告第232页明文“provide（without charge）”，不但无“购”意，且是“免费”。</p>
 <p>八、故所谓“合理军购”，全是自欺欺人，因有“购”在其中，即不合理。</p>
 <p>九、军购不能保台，且因军备竞赛拖垮台湾。</p>
 <p>十、军购且会惹祸上身。国防部说潜艇可制中国石油运输，共产党会坐等你掐他吗？</p>
@@ -385,26 +418,26 @@
 <p>李文打官司，大家众说纷纭，市民看见矫情、娱记看见噱头、法学家看见律法漏洞、社会学家看见制度重建、艺术家看见行动先锋、男人看见胆量、女人看见鼓舞、朋友们看见她的辛苦、读者朋友们也会看见她的认真。</p>
 <p>这段观察入微的话，写的很逗，只是临尾漏了一句，该补在下面：</p>
 <p>最后，李敖看见什么？李敖看见他的钞票不见了。</p>
-<p>这当然是戏谑之词，但实情却也未可忽视。打官司，是要钱的。有道是“仗义输（疏）财”，做正义的事，是要放得开钱的。别以为“市义”是笑话，孟尝君的门客“为君市义”（替你收买正义），就是实践检验出来的真理。当然打官司花钱也可以“市不义”，美国明星球员辛普森（O.J.Simpson），明明杀妻而可脱罪，玩法律于钞票之上，足见美式正义，不过乃尔。</p>
+<p>这当然是戏谑之词，但实情却也未可忽视。打官司，是要钱的。有道是“仗义输（疏）财”，做正义的事，是要放得开钱的。别以为“市义”是笑话，孟尝君的门客“为君市义”（替你收买正义），就是实践检验出来的真理。当然打官司花钱也可以“市不义”，美国明星球员辛普森（O. J. Simpson），明明杀妻而可脱罪，玩法律于钞票之上，足见美式正义，不过乃尔。</p>
 <p>以上所说，无非指出打官司的入门条件很多，钱是其一，有钱撑着，才有正义。钱是中性的，但是必要的，有之不必然，无之必不然。有入门的钱撑着，正义才可展现，李文博士能力持正义，鸢飞鱼跃，为“上访村”小市民所不及者，正因其“仗义”条件，优于他人；“输财”支持，其来有自也。</p>
 <p>以上所说，在指出“输财”才能“仗义”，否则正义是空头的，天下道德之士喊正义者多矣，沦为空头，或因为穷、或因为小气，拿不出实践正义的入门条件，所以不能落实，勇于“仗义”而怯于“输财”者，大病在此也。</p>
 <p>有了打官司的入门条件，打官司干嘛？为了出气吗？为了理赔吗？为了善待自己吗？为了教训对方吗？为了打赢官司吗？依我看来，这些目标A“失之太小”，也B“希望太高”了。</p>
-<p>就A“失之太小”来说，英国首相狄士雷利（B.Disraeli）说：“人生太短不要鸡毛蒜皮。”（Lifeistooshorttobelittle.）一般打官司，除非我志在官不聊生、告的是政府，其它私人缠讼，多属鸡毛蒜皮。</p>
+<p>就A“失之太小”来说，英国首相狄士雷利（B. Disraeli）说：“人生太短不要鸡毛蒜皮。”（Life is too short to be little.）一般打官司，除非我志在官不聊生、告的是政府，其它私人缠讼，多属鸡毛蒜皮。</p>
 <p>就B“希望太高”来说，希望从法院得到满意的判决，本就困难重重，即使有所收获，也不无劳己伤财、得不偿失之感，也就是说，会有划得来吗之疑。</p>
 <p>所以，从A“失之太小”和B“希望太高”的后果看，好讼并不足取。但是，我个人不但是好讼者，且是健讼者，为什么？因为我不从AB算计，而是从更高的道德层面维权，维到有关世道人心的大权，这才是我们打官司的真正精髓。</p>
 <p>从李文书中“和爸爸一起告布什”一篇上，就可以看到这种神髓。</p>
 <p>英国历史家汤恩比（A.Toynbee）说，“美国是在小房间里的一条又大又友善的狗，摇下尾巴就掀桌子倒板凳。”（Americaisalarge,friendlydoginaverysmallroom.Everytimeitwagsitstailitknocksoverachair.）我年纪越大，越发现汤恩比这段话说得太客气了，真正的说法该是洋泾浜英文的：</p>
-<p>Americaisabullinachinashop.Everytimeitwagsitstailittailspinsatailwagging.</p>
+<p>America is a bull in a china shop. Every time it wags its tail it tailspins a tailwagging.</p>
 <p>美国是一条未阉的公牛进了瓷器店，摇下尾巴就打翻一次高速滑雪急转弯。</p>
 <p>下场之惨不忍睹，自不待言。为什么？因为美国恃其强大国力，得天独厚，称雄国际，外加其牛仔水平，鲁莽灭裂，动辄以举国之力，做“非法侵入他国”（filibuster）之行，自活捉他国将军（如对巴拿马）、到绞死他国总统（如对伊拉克）、到文化侵略、到经济制裁、到军事占领、到武器销售……举凡联合国宪章和国际法所谴责到或谴责未到的恶性，皆悍然为之。一百年前，美国人还知道说话温和但手执巨棒（Speaksoftlyandcarryabigstick.）；如今骄气凌人，说话温和都免了，已是一派富凶恶极。以武器销售为例，它吃定中国台湾，已到予取予求地步。这次两百亿武器销售案，台湾的空军总部座落的土地都得卖掉，请看竭泽而渔，已到什么局面。台湾这边，朝野同昏，“唯美主义”，一任需索，我实在看不下去，乃联合李文（她因生在美国，依美国法律，一生下来即有美国国籍），一起告发美国总统小布什（GeorgeW.Bush），依不过乃尔的美国法律，官司这样打法，自然毫无胜算希望，一如当年英国哲学家罗素（B.Russell），自开国际法庭审判美国总统约翰逊（LyndonB.Johnson）一样，除道德意义外，并无法律效果，但是，透过法律程序以达到象征目的，这不正是我们能做的也该做的吗？</p>
 <p>在李文电传来的参考数据中，我又看到杨澜的一段话：</p>
 <p>李文是个很较真的人，甚至为许多人眼中的“小事”而较真。但是想想看，如果我们都不对这些小事较真，难道在大事面前就果真会有人较真吗？李文在大陆的种种官司，既是她的个性使然，也是用另一个视角来观察我们习以为常的社会的一面镜子。</p>
 <p>李文在北京打官司，讼案10起，投诉20起，都是她从“‘小事’较真”的成绩，最后，她不但告中国人，也告起他们美国人来了，并且被告的还是他们总统，真正示范出“大事面前就果真会有人较真”了。这是一个好的方向、好的里程碑。“要劫劫皇杠，要玩玩娘娘”，连美国总统都能告，告个张三李四、告个业主房东，又算老几啊？</p>
-<p>英文有拨丛寻猎（beatthebush）之谚,也有旁敲侧击（beataroundthebush）之谚，皆锁定bush（布什）而对付之。如今李文奇正相生、侧目以告，打官司打到这种境界，允称佳作。美国体育记者瑞斯（GrantlandRice）说的好：不在输赢，在你怎么玩——</p>
-<p>ForwhentheOneGreatScorercomes</p>
-<p>Towriteagainstyourname，</p>
-<p>Hemarks-notthatyouwonorlost-</p>
-<p>Buthowyouplayedthegame.</p>
+<p>英文有拨丛寻猎（beat the bush）之谚,也有旁敲侧击（beat around the bush）之谚，皆锁定bush（布什）而对付之。如今李文奇正相生、侧目以告，打官司打到这种境界，允称佳作。美国体育记者瑞斯（Grantland Rice）说的好：不在输赢，在你怎么玩——</p>
+<p>For when the One Great Scorer comes</p>
+<p>To write against your name，</p>
+<p>He marks-not that you won or lost-</p>
+<p>But how you played the game.</p>
 <p>因小见大、化小为大、其始也小、其成也大，李文得之矣。</p>
 <p>2007年1月17日</p>
 <h2 id="从眼神到背影"><a class="header" href="#从眼神到背影">从眼神到背影</a></h2>
@@ -421,7 +454,7 @@
 <p>一句成语多么好，它叫“急流勇退”。</p>
 <p>不过，小朋友问题又来了。“急流勇退”？好像没那么简单。</p>
 <p>我发现我的儿子有点怪异，他就立委选举问题，不只一次的问东问西。我暗示他多么难选，每个选区都有大党重兵围困，理由一二三四五，我的儿子多聪明，他似乎听懂了，我看到他走开的背影，背着沉重书包的背影，我知道我使他有些失望。在小朋友的心目中，爸爸是个战士，战士只有打赢或打输，战士没有退休的。德国的总理艾德诺（Adenaur）老得不肯让步，别人劝他退休，艾德诺说：他年轻时早都退休到牢里了，他退休过了。爸爸年轻时也是牢里的，爸爸会退休吗？退休还是爸爸吗？</p>
-<p>我想起普瑞斯柏格（EmericPressburger）那本《看那灰色马》（BeholdAPaleHorse）的故事。那老去的浪迹天涯的战士已经无力扭转乾坤，但是，专程来看他的小男孩却相信他能扭转，为了小男孩的一个信仰、一个梦、一个背影，他出发了，天涯归来，却被打死了。</p>
+<p>我想起普瑞斯柏格（Emeric Pressburger）那本《看那灰色马》（Behold A Pale Horse）的故事。那老去的浪迹天涯的战士已经无力扭转乾坤，但是，专程来看他的小男孩却相信他能扭转，为了小男孩的一个信仰、一个梦、一个背影，他出发了，天涯归来，却被打死了。</p>
 <p>也许小朋友知道，但我仍认为小朋友不完全知道。</p>
 <p>小朋友不是别人，是念国中的我的儿子。</p>
 <p>我比他大58岁。</p>
@@ -474,8 +507,8 @@
 <p>李敖2007年9月28夜</p>
 <h2 id="我写虚拟的十七岁"><a class="header" href="#我写虚拟的十七岁">我写《虚拟的十七岁》</a></h2>
 <p>人类有许多好梦，其中一个，是结合两种极端、把不太可能结合的，梦想结合。</p>
-<p>莎士比亚的（WilliamShakespeare）《威尼斯商人》第4幕第1景里，有Bellario（贝拉利欧）那封介绍信的话。信中说，介绍来的人儿是soyoungabodywithsooldahead（身体，年轻的；头脑，年深的）。《威尼斯商人》写成在16世纪，到了17世纪，英国Strafford（斯垂弗德），就是后来被国会砍了头的大臣ThomasWentworth（温特沃斯），向英国国王CharlesI（查理一世）推荐EarlofOrmond（阿蒙伯爵）时，说：“Heisyoung,buttakeitfromme,averystaidhead.”看到了吧，人们发酵了莎士比亚。多么美妙！多么令人憧憬、令人向往！“身体，年轻的；头脑，年深的。”用中文里的“少年老成”翻译它，是中国莎剧译者的共同错误，“老成”两个字，太老化了年轻的在头脑上的登峰造极，是拙劣的翻译。</p>
-<p>Soyoungabodywithsooldahead，在这一好梦出现500年后，应赋予新的诠释。500年前的头脑，涵盖的内容是有限的，soyoung和soold还有个成真的空间。但是，500年后的今天，头脑上的登峰造极，简直不太可能了。所以说，这一人类的好梦、越来越遥远的好梦，难以成真了。</p>
+<p>莎士比亚的（William Shakespeare）《威尼斯商人》第4幕第1景里，有Bellario（贝拉利欧）那封介绍信的话。信中说，介绍来的人儿是so young a body with so old a head（身体，年轻的；头脑，年深的）。《威尼斯商人》写成在16世纪，到了17世纪，英国Strafford（斯垂弗德），就是后来被国会砍了头的大臣Thomas Wentworth（温特沃斯），向英国国王Charles I（查理一世）推荐Earl of Ormond（阿蒙伯爵）时，说：“He is young, but take it from me, a very staid head.”看到了吧，人们发酵了莎士比亚。多么美妙！多么令人憧憬、令人向往！“身体，年轻的；头脑，年深的。”用中文里的“少年老成”翻译它，是中国莎剧译者的共同错误，“老成”两个字，太老化了年轻的在头脑上的登峰造极，是拙劣的翻译。</p>
+<p>So young a body with so old a head，在这一好梦出现500年后，应赋予新的诠释。500年前的头脑，涵盖的内容是有限的，so young和so old还有个成真的空间。但是，500年后的今天，头脑上的登峰造极，简直不太可能了。所以说，这一人类的好梦、越来越遥远的好梦，难以成真了。</p>
 <p>不过，崇尚科技的科学怪人们不相信，他们不怕好梦遥远，他们不是要把遥远拉近，而是要追上遥远。这些科学怪人未必熟悉莎士比亚和斯垂弗德，但是，不谋而合，同做好梦，却是真的。他们都要“身体，年轻的；头脑，年深的”。</p>
 <p>新时代的思想家、文学家出现了，就是李敖，他创造了《虚拟的十七岁》、创造了“朱仑症”和“朱仑现象”。因为“朱仑症”，凄艳的高中女生成了抵抗科技疯狂的牺牲者；因为“朱仑现象”，这一牺牲给了人类最后的余光。</p>
 <p>小飞侠《彼得潘》（PeterPan）的作者巴里（JamesM.Barrie）道出“巴里定律”：“我未能年轻到无所不知。”（I’mnotyoungenoughtoknoweverything.）在李敖笔下，一位年轻的正在无所不知，她是朱仑。</p>
@@ -484,7 +517,7 @@
 <p>这是一本玄之又玄的奇书，18岁以下不能看、80岁以上也不能看（看了都要偷买威而钢）。</p>
 <p>有一种人会默默看，是那远去的17岁。毕竟她不再高中、毕竟曾有流光仰望了岁月、毕竟曾有流盼低回了真情、毕竟曾有流年似水的17岁，默默走过、默默躺下，以叫床吶喊了人生。</p>
 <p>那远去的17岁，名字是C.J.周，在台北市朱仑街念了高中，她是《虚拟的十七岁》的模特儿，我写下“朱仑”，一如写下了她的名字。</p>
-<p>“Deliverarealnovelalongwithamystery.”这是我的最后感觉。</p>
+<p>“Deliver a real novel along with a mystery.”这是我的最后感觉。</p>
 <p>小说那么真实、朱仑那么神秘。沿着神秘，我告别了17岁。</p>
 <p>2008年4月10日，在中国台北</p>
 <h2 id="从马偕行医图到黄达夫"><a class="header" href="#从马偕行医图到黄达夫">从《马偕行医图》到黄达夫</a></h2>
@@ -496,14 +529,14 @@
 <p>今年春天，因义受难的高信疆病倒在和信医院里，医药费是庞大的，绝非我送的一点小钱所能济事。正巧5月2日，和信黄达夫院长接受他夫人的提议，请我到医院演讲，我突然从黄达夫想到马偕、想到这幅长捐仓库的名画。于是，在我站上讲台的时候，名画也同我一起现了身。我当场建议：黄达夫院长以600万收购它，所得一半送给高信疆看病。其余一半，三分之一捐给黄达夫基金会、三分之二由我处理，我在立法院3年的捐赠，早已赶过这一金额。要做的善事太多了，每觉力不从心，所以我就擅自分配了。</p>
 <p>演讲一小时内，黄达夫院长坐在台下第一排，显然被我说动了。他最后做了动人的结论。</p>
 <p>散会后，我接受记者采访半小时，转到张念雪护理长那边处理签名书。公关主任Rita何走过来，神秘的说：院长要她去找600万来，要留下这幅画。我开玩笑问真的吗？她说院长最守信用，说一不二，这件事就这样敲定了。我说你找得到600万吧？她说1000万她都找到过。我说你这“台独”分子，真有办法。我又说，我刚才演讲时卖关子，没说出画家名字，你知道这是谁画的吗？Rita何说，这种画，别人没有能力画得出来，我看是冉茂芹画的，他还画过《先民渡海图》，也画得极好。我听了，吃了一惊，想不到常跟我开玩笑的Rita何，竟有这么好的眼力。随着，Rita何补上一句：冉茂芹这幅画价，100万而已，你大师要义卖600万？我说，什么100万？一二十年来，台湾艺术市场对冉茂芹这样贬低，公道吗？何况，一幅画，由谁收藏，又身价不同。宋朝谢元的《桃花》，因为张学良收藏，身价倍增又倍增。此外，还要看这艺术品为何脱手？别忘了这里面的道义意义、也别忘了艺术品的主题何在，这画画的是谁啊？这又是谁画的啊？Rita何啊，你的艺术水平是很高的，但在注意艺术品的“价格”以外，请多留意它的“价值”吧。</p>
-<p>英国文学家王尔德（Wilde）在《少奶奶的扇子》（LadyWindermere’sFan）里，讽刺“犬儒主义者”（cynic），说此辈但知“价格”（theprice）而不知“价值”（thevalue）（Amanwhoknowsthepriceofeverythingandthevalueofnothing.）。Rita何是被我戏称的“台独”分子，尚不足上语“犬儒”水平，但她未能整体看出全部作业的“价值”，我又吃了一惊。因我认为英国回来的Rita何，一定听过王尔德这句话。</p>
+<p>英国文学家王尔德（Wilde）在《少奶奶的扇子》（Lady Windermere’s Fan）里，讽刺“犬儒主义者”（cynic），说此辈但知“价格”（the price）而不知“价值”（the value）（A man who knows the price of everything and the value of nothing.）。Rita何是被我戏称的“台独”分子，尚不足上语“犬儒”水平，但她未能整体看出全部作业的“价值”，我又吃了一惊。因我认为英国回来的Rita何，一定听过王尔德这句话。</p>
 <p>到了5月5日，星期一，Rita何打电话来，说院长想以200万收购《马偕行医图》，大师同意吗？我答道，我是不讨价还价的，替我谢谢院长吧。她问画要运回给我吗？我说我会请人运回来。</p>
 <p>我想起一个故事。在白色恐怖时代，我一路被打压，不但坐牢失业，甚至长达14年之久，台湾媒体与印刷品中，不能出现“李敖”两个字。后来虽罗网渐疏，但抹杀照旧。东吴大学校长章孝慈，听了学生黄宏成建议，居然把李敖请来开课，彰显大学对李敖的肯定。后来章孝慈病倒了、形同植物人了，我义卖收藏，捐了700万给他（600万送他夫人和两个小孩、100万以他名义送给东吴）。事后有人问我说：章孝慈不是你的仇人蒋介石的私生孙子吗？你捐他这么多，不后悔吧？我说我有先后两个念头：“第一念头”是捐出700万；“第二念头”是少捐一点，“捐个三分之一吧。”原来，在700万面前，我有两个我，一个是十分豪迈的、一个是有点小气的，我笑了我自己。于是，我开了记者会，当众捐出700万，告诉人们，李敖多么爱蒋介石的孙子；同时，我发表了与汪荣祖教授合写的《蒋介石评传》，告诉人们，李敖多么恨章孝慈的爷爷。</p>
 <p>我想起这个故事，想起黄达夫院长。在600万面前，他可能遭遇到同我一样的困惑。</p>
 <p>也许我不该设定有两个他。但我相信他面临了“价值反应”和“价格反应”的困惑。“价值反应”是“第一念头”，往往是至善的；“价格反应”是“第二念头”，就杂念四起了。当“第二念头”继起的时候，我们可以冒出100个理由问心无愧，但是，当时过境迁以后，问心是无愧了，但却于心有憾了。</p>
 <p>我老了，我回想当年捐出的700万，我会更成熟的“自欺”了自己：“700万和三分之一的700万，毕竟有着不同的‘价值’。当我有能力和愿望捐700万的时候，三分之一的700万是不好的。”</p>
-<p>富兰克林（Franklin）在《可怜的理察历书》（PoorRichard’sAlmanack）里，提醒人们“钱的价值”（thevalueofMoney），他把Money有意大写，并且与value衔接，似乎提醒我们把“价格化”的金钱升等到“价值化”的意味。黄达夫院长为陈耀昌医师《生技魅影》一书写序，赞美陈耀昌“善尽知识分子的社会责任”，当年我为每人50万义助慰安妇、捐出100件艺术品义卖3000万的时候，其中100万，是由陈耀昌医师“买单”的，那是一件胡适写给李敖的条幅，若照“价格论者”的评价，当年陈耀昌医师似应讨价还价。但是，“善尽知识分子的社会责任”的名医，自是“价值论者”，他在《生技魅影》的新书发表会上，还悬挂了胡适这幅字给大家看、给李敖看。我并没对这件“吾家旧物”的离我而去而伤情，因我割爱了这幅字，却义助了两位慰安妇，每人50万，又何乐而不为？胡适先生死而有知，也会乐见这样牺牲了纪念品吧？</p>
-<p>黄达夫院长是我佩服的人，我并没错估他，所以我把《马偕行医图》带来了，他在第一时间，也叫Rita何去找600万了，我很佩服他至善的一面。只是，人生的无奈之一是，你会被你至善的一面轻捏着，或在偶然、或在巧遇、或在天人交战之际、或在始生初动之时，那一面的你，会轻轻捏了一下你，你被捏了，你会蓦然回首、你会怅然若失。以《马偕行医图》为例，谁知道它归泊何处呢？也许它真的挂进了马偕纪念医院、也许它真的停靠在淡水真理大学、也许它真的永驻于台北市美术馆、也许它真的过海飘洋、直抵马偕加拿大的故乡……谁知道呢？只知道“艺术永存”（Artislong），而“时序漂泊”（Timeisfleeting）。也许有一天，当时序已尽、当李敖长眠在和信医院太平间，黄达夫院长挥别了这位使他头痛的朋友，也许蓦然回首、也许怅然若失、也许对他的夫人叹息低语：“大师走了、天下太平了，当年啊，花600万留下那幅画，该多好！”</p>
+<p>富兰克林（Franklin）在《可怜的理察历书》（Poor Richard’s Almanack）里，提醒人们“钱的价值”（the value of Money），他把Money有意大写，并且与value衔接，似乎提醒我们把“价格化”的金钱升等到“价值化”的意味。黄达夫院长为陈耀昌医师《生技魅影》一书写序，赞美陈耀昌“善尽知识分子的社会责任”，当年我为每人50万义助慰安妇、捐出100件艺术品义卖3000万的时候，其中100万，是由陈耀昌医师“买单”的，那是一件胡适写给李敖的条幅，若照“价格论者”的评价，当年陈耀昌医师似应讨价还价。但是，“善尽知识分子的社会责任”的名医，自是“价值论者”，他在《生技魅影》的新书发表会上，还悬挂了胡适这幅字给大家看、给李敖看。我并没对这件“吾家旧物”的离我而去而伤情，因我割爱了这幅字，却义助了两位慰安妇，每人50万，又何乐而不为？胡适先生死而有知，也会乐见这样牺牲了纪念品吧？</p>
+<p>黄达夫院长是我佩服的人，我并没错估他，所以我把《马偕行医图》带来了，他在第一时间，也叫Rita何去找600万了，我很佩服他至善的一面。只是，人生的无奈之一是，你会被你至善的一面轻捏着，或在偶然、或在巧遇、或在天人交战之际、或在始生初动之时，那一面的你，会轻轻捏了一下你，你被捏了，你会蓦然回首、你会怅然若失。以《马偕行医图》为例，谁知道它归泊何处呢？也许它真的挂进了马偕纪念医院、也许它真的停靠在淡水真理大学、也许它真的永驻于台北市美术馆、也许它真的过海飘洋、直抵马偕加拿大的故乡……谁知道呢？只知道“艺术永存”（Art is long），而“时序漂泊”（Time is fleeting）。也许有一天，当时序已尽、当李敖长眠在和信医院太平间，黄达夫院长挥别了这位使他头痛的朋友，也许蓦然回首、也许怅然若失、也许对他的夫人叹息低语：“大师走了、天下太平了，当年啊，花600万留下那幅画，该多好！”</p>
 <p>2008年5月8日在山之阳</p>
 <p>附录</p>
 <p>访李敖（冉茂芹）</p>
@@ -519,14 +552,14 @@
 <p>弟茂芹敬呈</p>
 <p>2010年5月15日</p>
 <h2 id="为杨筱筠新书写序"><a class="header" href="#为杨筱筠新书写序">为杨筱筠新书写序</a></h2>
-<p>筱筠说：“日本人只要听到英文就像听到鬼要来似的。”我喜欢这句话，我就鬼一下：GodinventedthemonkeybecausehewasdisappointedintheJapanese.（上帝因为发明了日本人失望才发明猴子。）</p>
-<p>筱筠告诉我她要去日本梦游奇境，我心里纳闷：“可爱的爱丽丝，她一定发生了美丽的错误。我们这边动物园这么多猴子不看，到日本看什么？”我又纳闷：“也许筱筠向往《源氏物语》时代的日本女人，也许向往《北海道物语》里的Aino（虾夷人），喜欢看他们用钩子钩开大胡子才能吃饭……也许这个、也许那个，反正爱丽丝中了‘东洋毒’，劝也没用，不过有朝一日，她会迷途知返，像美国小说家Michener（密契纳）一样，来一番Sayonara（Japanesegood-bye）！我就期待那一天吧。”</p>
-<p>一年过去了、三年五年过去了，筱筠非但没有Bye-bye日本，反倒以爱丽丝之笔、和风式中文，潇洒写出这本书。我有本领从书里看到微言大义——筱筠自己都未必承认的微言大义，那就是：日本的问题不在ED（creetiledysfunction，勃起机能不全）而在SW（sumowrestling，国戏摔角），大胖子要多胖有多胖，但来真的前全是假动作，又抬左脚又抬右脚、又蹲下又站起来、又洒来洒去，折腾半天，实际摔角好像不到一分钟，英文又来了：Theactualwrestlingseemstolastforlessthanaminute.日本的一切啊，菊花与剑、镜花与水月，洵作如是观。</p>
+<p>筱筠说：“日本人只要听到英文就像听到鬼要来似的。”我喜欢这句话，我就鬼一下：God invented the monkey because he was disappointed in the Japanese.（上帝因为发明了日本人失望才发明猴子。）</p>
+<p>筱筠告诉我她要去日本梦游奇境，我心里纳闷：“可爱的爱丽丝，她一定发生了美丽的错误。我们这边动物园这么多猴子不看，到日本看什么？”我又纳闷：“也许筱筠向往《源氏物语》时代的日本女人，也许向往《北海道物语》里的Aino（虾夷人），喜欢看他们用钩子钩开大胡子才能吃饭……也许这个、也许那个，反正爱丽丝中了‘东洋毒’，劝也没用，不过有朝一日，她会迷途知返，像美国小说家Michener（密契纳）一样，来一番Sayonara（Japanese good-bye）！我就期待那一天吧。”</p>
+<p>一年过去了、三年五年过去了，筱筠非但没有Bye-bye日本，反倒以爱丽丝之笔、和风式中文，潇洒写出这本书。我有本领从书里看到微言大义——筱筠自己都未必承认的微言大义，那就是：日本的问题不在ED（creetile dysfunction，勃起机能不全）而在SW（sumo wrestling，国戏摔角），大胖子要多胖有多胖，但来真的前全是假动作，又抬左脚又抬右脚、又蹲下又站起来、又洒来洒去，折腾半天，实际摔角好像不到一分钟，英文又来了：The actual wrestling seems to last for less than a minute.日本的一切啊，菊花与剑、镜花与水月，洵作如是观。</p>
 <p>筱筠只身远引，东瀛猎奇，一书以蔽之，是她的传神处。可是日本男人太讨厌了，究竟有多少神可传，不无可议。和服中的爱丽丝啊，勉之勉之。</p>
 <p>2009年2月22日</p>
 <h2 id="吾从其丑"><a class="header" href="#吾从其丑">吾从其丑</a></h2>
 <p>戏剧中看来像配角的，其实却是主角之一，那就是丑角。丑角使戏剧免于枯燥，并说出太多的反讽与真话。这种反讽与真话，在争取言论自由史上，更展现出张力；在中国戏剧中，尤为明显。王国维有《优语录》之作，举证历历。丑角在哈哈一笑的喜感中，偷关漏税，搞犯颜、进谏、开玩笑的勾当，比较容易被忽略、被原谅、免予计较，当然也有送了命的，清朝丑角刘赶三是也。</p>
-<p>身为丑角，每有其独特造型，电影中的卓别林（CharlieChaplin）、马戏团的凯利（EmmettKelly）都属之。正点说来，则是传统中“净脸丑角”（theneat-facedtraditionalclown），就是脸上涂白底妆，马歇马叟（MarcelMarceau）典型俱在。在中国戏剧中，虽有“净脸丑角”的变体，像《巧连环》中的时迁、《巴骆和》中的胡里、《生辰纲》中的阮小七、《花蝴蝶》中的蒋平、《马上缘》中的陈金定、《博望坡》中的夏侯兰等等。基本上，多是以“方巾丑”（文丑）这型为正传，再由演出者出神入化。当年京剧名丑萧长华、马富禄、刘斌昆等等，在在皆以丑表功，今则丑流云散矣。</p>
+<p>身为丑角，每有其独特造型，电影中的卓别林（Charlie Chaplin）、马戏团的凯利（Emmett Kelly）都属之。正点说来，则是传统中“净脸丑角”（the neat-faced traditional clown），就是脸上涂白底妆，马歇马叟（Marcel Marceau）典型俱在。在中国戏剧中，虽有“净脸丑角”的变体，像《巧连环》中的时迁、《巴骆和》中的胡里、《生辰纲》中的阮小七、《花蝴蝶》中的蒋平、《马上缘》中的陈金定、《博望坡》中的夏侯兰等等。基本上，多是以“方巾丑”（文丑）这型为正传，再由演出者出神入化。当年京剧名丑萧长华、马富禄、刘斌昆等等，在在皆以丑表功，今则丑流云散矣。</p>
 <p>吴兆南先生有心人也，他不忍云散，乃独出将相、粉墨自登，演出《百丑图》在世。图成之日，他托弟子侯冠群邀我写序：“倘蒙惠赐序言，不啻点石成金。”我不敢当、也不敢辞，敬佩之余，聊作笔上引介，涂抹青红，以待知者。</p>
 <p>2009年8月19日</p>
 <h2 id="石齐平中国大趋势序"><a class="header" href="#石齐平中国大趋势序">石齐平《中国大趋势》序</a></h2>
@@ -548,7 +581,7 @@
 <p>这是邓小平第二次“忧”，因为“出现了一些消极的东西”。</p>
 <p>“消极现象”也好、“消极的东西”也罢，说破了，穷本溯源，在“采用资本主义的一些方法”。这一采用，的确有副作用，但是，“中国不走这条路，就没有别的路可走”了。</p>
 <p>为了给中国建立“物质基础”，我们不能无忧。因为“中国大趋势”最后情归何处，我们不能不做先知式的思考。毕竟“美国大趋势”、“资本主义大趋势”，我们已经领教过了、预见到了。原来人类要有8个地球，才能维系美式奢靡和美式“全球化”，可是，我们有8个地球吗？</p>
-<p>在电视画面里，我看到美国总统奥巴马（BarackHusseinObama）走进北京紫禁城，由故宫博物院郑欣淼院长当家做主、带着参观。在赞美郑院长之余，历史的画面涌上了我，那是1900年八国联军时，美国的残暴军人一马当先，首先打进紫禁城。110年下来，美国再也不能这样对中国了，同样的进了紫禁城，但是，什么是前倨后恭，我们终于看到了。</p>
+<p>在电视画面里，我看到美国总统奥巴马（Barack Hussein Obama）走进北京紫禁城，由故宫博物院郑欣淼院长当家做主、带着参观。在赞美郑院长之余，历史的画面涌上了我，那是1900年八国联军时，美国的残暴军人一马当先，首先打进紫禁城。110年下来，美国再也不能这样对中国了，同样的进了紫禁城，但是，什么是前倨后恭，我们终于看到了。</p>
 <p>110年来，由于中国的壮大，虽然修正了帝国主义国家的“豪夺”态度，但是，防范他们的“巧取”，仍是我们的当务之急，我们不能不警惕。邓小平口中的“消极现象”、“出现了一些消极的东西”，多年下来，已经积极蔓延，除了造成中国内部的问题外，还须面对新式帝国主义“软功夫”的“巧取”。旧式帝国主义是杀人越货，新式帝国主义却不杀人而只越货，尤其越你的通货，用它的滥美金越你的通货。今日中国沦为美国的大债主，其实又无奈又烦恼，再加上美式宣传的一面倒，大家被这恶少吃了，还以为他是好人呢。海峡两岸都有一些媚美之徒，其蠢在此。</p>
 <p>中国共产党建党以来，近90年，它历经了28年青春与血泪，“忽报人间曾伏虎”⑤，取得政权。在“国在山河破”的艰苦中，跌跌撞撞，建设中国，其中又有20多年陷于左道，就是邓小平说的“20年‘左’的错误”⑥。以邓小平为例，他一生中花掉50年去清除路障，人生几何啊。幸亏他在垂老之年、在“三落三起”之后，能够为中国决定大趋向，能够“摸着石头过河”。</p>
 <p>我试图以最简明的语言来描绘这90年来的三个阶段：</p>
@@ -586,7 +619,7 @@
 <p>四分之一世纪过去了，邓小平的预言，早已成真，他口中的“整体力量”的国力，已化为“综合国力”驰骋世界。而海峡对岸的国民党伪政权足以夸口的诸多单项“发展程度”，相形之下，也就“缩小”了、乃至瞠乎其后了。</p>
 <p>有一个耐人寻味的单项发展，值得特别讨论。</p>
 <p>远在1949年国民党逃到台湾起，这个伪政权，就大力打压言论自由——伪宪法中白纸黑字保障的言论自由。在漫漫长夜中，先后有两道星火，更是伪政权大力扑灭的对象：一个是胡适发端的《自由中国》杂志，一个是李敖殿后的《文星》杂志。</p>
-<p>45年前，在国民党大力扑灭《文星》杂志的时候，我曾说：“文星是一道主流，虽然这主流反对国民党，但反对之道，还有规格可寻、还可聚合各路细流，成为高明的导向；文星一旦没了，主流就会变成乱流，国民党早晚会更惨，还要赔上国家的命脉和别人的青春。国民党有一天会知道：当一切情势改变了的时候，他们将欲求有《文星》而不可得！甚至欲求有《自由中国》而不可得！他们那时候才会发现——迟来的发现——《文星》、《自由中国》式的反对他们，是太客气了的！可惜笨得要命的国民党永远不会明白，他们总是不见棺材不流泪。马歇尔（GeorgeC.Marshall）说国民党会做好事但总做得太迟，他的看法，真是一针见血了！”</p>
+<p>45年前，在国民党大力扑灭《文星》杂志的时候，我曾说：“文星是一道主流，虽然这主流反对国民党，但反对之道，还有规格可寻、还可聚合各路细流，成为高明的导向；文星一旦没了，主流就会变成乱流，国民党早晚会更惨，还要赔上国家的命脉和别人的青春。国民党有一天会知道：当一切情势改变了的时候，他们将欲求有《文星》而不可得！甚至欲求有《自由中国》而不可得！他们那时候才会发现——迟来的发现——《文星》、《自由中国》式的反对他们，是太客气了的！可惜笨得要命的国民党永远不会明白，他们总是不见棺材不流泪。马歇尔（George C. Marshall）说国民党会做好事但总做得太迟，他的看法，真是一针见血了！”</p>
 <p>如今，15年过去了、55年过去了、60年也过去了，国民党伪政权尸居余气，早已无力打压“主流”言论了。但是，如我早就预言了的，四面八方的“乱流”淹没了它，也淹没了中国的台湾岛。这个岛，已经坐失了“高明的导向”，一切都太迟了。</p>
 <p>一个插曲不可不提。当年国民党伪政权大力扑灭言论自由，并不止于查禁杂志，杂志是一时的，半个月一个月就完成了“阶段性使命”，真正源远流长的，不是杂志而是丛书，这也是《文星》杂志远胜于《自由中国》杂志的地方，《文星》有书店跟着，《文星》封门了、李敖下狱了，李敖的地下丛书还在流窜，更精彩的是，李敖出狱后又重操旧业、又增加了几十倍的反动书刊，光是李敖写的、被查禁有案的，就高达96本，造成了古今中外写禁书最多的世界纪录。最耐人寻味的，是大力扑灭几十年后，主持查禁的国民党许历农上将，公开向我口头道歉，并写信向我表示，他垂老寻思：当年若从宽处理查德禁事件，对促进自由民主，或有正面作用。我拿到他的信，不无戏谑性的到处张扬说：“看吧，不查禁李敖的书，原来也不会亡党亡国呢！”</p>
 <p>虽然一切都太迟了，但我仍然佩服这位白发苍苍的将军，他老骥伏枥，充满了服善之勇！</p>
@@ -664,10 +697,10 @@
 <p>（注2）CrimeintheUnitedStates,2008,<a href="http://www.fbi.gov">http://www.fbi.gov</a></p>
 <p>（注3）《纽约时报》，2009年12月30日。</p>
 <p>（注4）《侨报》，2009年12月30日。</p>
-<p>（注5）<a href="http://www.usatoday.com%EF%BC%8C2009%E5%B9%B46%E6%9C%881">http://www.usatoday.com，2009年6月1</a>日。</p>
-<p>（注6）<a href="http://www.reuters.com%EF%BC%8C2009%E5%B9%B410%E6%9C%887">http://www.reuters.com，2009年10月7</a>日。</p>
+<p>（注5）<a href="http://www.usatoday.com，2009年6月1">http://www.usatoday.com，2009年6月1</a>日。</p>
+<p>（注6）<a href="http://www.reuters.com，2009年10月7">http://www.reuters.com，2009年10月7</a>日。</p>
 <p>（注7）《侨报》，2009年9月25日。</p>
-<p>（注8）<a href="http://review.usqiaobao.com%EF%BC%8C2009%E5%B9%B44%E6%9C%886">http://review.usqiaobao.com，2009年4月6</a>日。</p>
+<p>（注8）<a href="http://review.usqiaobao.com，2009年4月6">http://review.usqiaobao.com，2009年4月6</a>日。</p>
 <p>（注9）《今日美国报》，2009年9月15日。</p>
 <p>（注10）<a href="http://www.thefreelibrary.com">http://www.thefreelibrary.com</a></p>
 <p>（注11）《今日美国报》，2009年3月11日。</p>
@@ -677,41 +710,41 @@
 <p>（注15）AReportofTheHeritageCenterforDataAnalysis,SchoolSafetyinWashington,D.C.:NewDataforthe2007-2008SchoolYear,<a href="http://www.herigage.org">http://www.herigage.org</a></p>
 <p>（注16）根据新泽西州教育局2009年10月发布的公校系统暴力和故意伤害年度报告，<a href="http://www.state.nj.us">http://www.state.nj.us</a></p>
 <p>（注17）《纽约邮报》，2009年9月22日。</p>
-<p>（注18）<a href="http://gothamist.com%EF%BC%8C2009%E5%B9%B411%E6%9C%8817">http://gothamist.com，2009年11月17</a>日。</p>
-<p>（注19）<a href="http://www.mercurynews.com%EF%BC%8C2009%E5%B9%B410%E6%9C%8827">http://www.mercurynews.com，2009年10月27</a>日。</p>
+<p>（注18）<a href="http://gothamist.com，2009年11月17">http://gothamist.com，2009年11月17</a>日。</p>
+<p>（注19）<a href="http://www.mercurynews.com，2009年10月27">http://www.mercurynews.com，2009年10月27</a>日。</p>
 <p>（注20）《俄勒冈人报》，2009年10月23日，<a href="http://blog.oregonlive.com">http://blog.oregonlive.com</a></p>
 <p>（注21）<a href="http://theduckshoot.com">http://theduckshoot.com</a></p>
 <p>（注22）《华盛顿邮报》，2009年7月19日。</p>
 <p>（注23）《芝加哥论坛报》，2009年9月，<a href="http://www.chicagobreakingnews.com">http://www.chicagobreakingnews.com</a></p>
 <p>（注24）《芝加哥论坛报》，2009年9月19日。</p>
 <p>（注25）《华盛顿邮报》，2009年11月18日。</p>
-<p>（注26）<a href="http://www.huffingtonpost.com%EF%BC%8C2009%E5%B9%B410%E6%9C%888">http://www.huffingtonpost.com，2009年10月8</a>日。</p>
+<p>（注26）<a href="http://www.huffingtonpost.com，2009年10月8">http://www.huffingtonpost.com，2009年10月8</a>日。</p>
 <p>（注27）<a href="http://www.wsws.org">http://www.wsws.org</a></p>
-<p>（注28）<a href="http://mensnewsdaily.com%EF%BC%8C2010%E5%B9%B41%E6%9C%8818">http://mensnewsdaily.com，2010年1月18</a>日。</p>
-<p>（注29）<a href="http://news.yahoo.com%EF%BC%8C2010%E5%B9%B41%E6%9C%8826">http://news.yahoo.com，2010年1月26</a>日。</p>
+<p>（注28）<a href="http://mensnewsdaily.com，2010年1月18">http://mensnewsdaily.com，2010年1月18</a>日。</p>
+<p>（注29）<a href="http://news.yahoo.com，2010年1月26">http://news.yahoo.com，2010年1月26</a>日。</p>
 <p>（注30）《华盛顿邮报》，2009年9月11日。</p>
 <p>（注31）《纽约时报》，2009年6月24日。</p>
-<p>（注32）<a href="http://www.news-medical.net%EF%BC%8C2009%E5%B9%B412%E6%9C%882">http://www.news-medical.net，2009年12月2</a>日。</p>
-<p>（注33）<a href="http://thecrimereport.org%EF%BC%8C2009%E5%B9%B412%E6%9C%882">http://thecrimereport.org，2009年12月2</a>日。</p>
+<p>（注32）<a href="http://www.news-medical.net，2009年12月2">http://www.news-medical.net，2009年12月2</a>日。</p>
+<p>（注33）<a href="http://thecrimereport.org，2009年12月2">http://thecrimereport.org，2009年12月2</a>日。</p>
 <p>（注34）www.hrw.org，2009年3月24日。</p>
-<p>（注35）<a href="http://onlinejournal.com,2009%E5%B9%B411%E6%9C%8823">http://onlinejournal.com,2009年11月23</a>日。</p>
+<p>（注35）<a href="http://onlinejournal.com,2009年11月23">http://onlinejournal.com,2009年11月23</a>日。</p>
 <p>（注36）《纽约时报》，2008年7月10日。</p>
 <p>（注37）《纽约时报》，2009年4月15日。</p>
 <p>（注38）《纽约时报》，2009年4月20日。</p>
 <p>（注39）<a href="http://blogs.rnw.nl">http://blogs.rnw.nl</a></p>
-<p>（注40）<a href="http://www.nytimes.com%EF%BC%8C2009%E5%B9%B410%E6%9C%885">http://www.nytimes.com，2009年10月5</a>日。</p>
+<p>（注40）<a href="http://www.nytimes.com，2009年10月5">http://www.nytimes.com，2009年10月5</a>日。</p>
 <p>（注41）<a href="http://www.floridabankruptcyblog.com">http://www.floridabankruptcyblog.com</a></p>
 <p>（注42）《芝加哥论坛报》，2009年12月4日。</p>
 <p>（注43）《纽约时报》，2009年11月7日。</p>
 <p>（注44）《纽约时报》，2009年11月13日。</p>
 <p>（注45）《华盛顿邮报》，2009年9月7日。</p>
-<p>（注46）<a href="http://247wallst.com%EF%BC%8C2009%E5%B9%B43%E6%9C%8819">http://247wallst.com，2009年3月19</a>日。</p>
+<p>（注46）<a href="http://247wallst.com，2009年3月19">http://247wallst.com，2009年3月19</a>日。</p>
 <p>（注47）《华盛顿邮报》，2009年9月11日。</p>
 <p>（注48）《纽约时报》，2009年9月29日。</p>
 <p>（注49）<a href="http://www.msnbc.msn.com">http://www.msnbc.msn.com</a></p>
 <p>（注50）<a href="http://www.time.com">http://www.time.com</a></p>
 <p>（注51）《洛杉矶时报》，2009年7月21日。</p>
-<p>（注52）《纽约时报》，2009年11月17日；14.6%ofAmericansCouldNotAffordEnoughFoodin2008，《大西洋商业频道》。</p>
+<p>（注52）《纽约时报》，2009年11月17日；14.6% of Americans Could Not Afford Enough Food in 2008，《大西洋商业频道》。</p>
 <p>（注53）美国生命科学网站，2009年11月26日。</p>
 <p>（注54）美联社，2009年11月27日。</p>
 <p>（注55）<a href="http://www.associatedcontent.com">http://www.associatedcontent.com</a></p>
@@ -732,7 +765,7 @@
 <p>（注70）《休斯敦纪事报》，2009年3月16日。</p>
 <p>（注71）《华尔街日报》，2009年9月11日；《今日美国报》，2009年9月11日。</p>
 <p>（注72）《纽约时报》，2009年9月29日。</p>
-<p>（注73）Income,Poverty,andHealthInsuranceCoverageintheUnitedStates:2008,www.Census.gov</p>
+<p>（注73）Income, Poverty, and Health Insurance Coverage in the United States: 2008, www. Census.gov</p>
 <p>（注74）《华盛顿邮报》，2009年6月10日。</p>
 <p>（注75）《华尔街日报》，2009年4月8日；美国联邦疾病控制和预防中心2009年发表的报告。</p>
 <p>（注76）《今日美国报》，2009年11月6日。</p>
@@ -750,7 +783,7 @@
 <p>（注88）《侨报》，2009年10月9日。</p>
 <p>（注89）《纽约时报》，2009年11月17日。</p>
 <p>（注90）www.hrw.org，2009年3月2日。</p>
-<p>（注91）<a href="http://www.washingtontimes.com%EF%BC%8C2009%E5%B9%B49%E6%9C%8810">http://www.washingtontimes.com，2009年9月10</a>日。</p>
+<p>（注91）<a href="http://www.washingtontimes.com，2009年9月10">http://www.washingtontimes.com，2009年9月10</a>日。</p>
 <p>（注92）《世界日报》，2009年3月26日。</p>
 <p>（注93）《星岛日报》，2009年4月13日。</p>
 <p>（注94）《纽约时报》，2009年11月2日。</p>
@@ -758,25 +791,25 @@
 <p>（注96）www.hrw.org，2009年3月16日。</p>
 <p>（注97）《华尔街日报》，2009年8月18日。</p>
 <p>（注98）www.fbi.gov</p>
-<p>（注99）victimcharacteristics，2009年10月21日,www.fbi.gov</p>
+<p>（注99）victim characteristics，2009年10月21日, www.fbi.gov</p>
 <p>（注100）《华盛顿邮报》，2009年6月11日；《华尔街日报》，2009年6月11日。</p>
 <p>(注101）《纽约时报》，2009年9月3日。</p>
-<p>(注102)Membersofthe111thUnitedStatesCongress，维基百科。</p>
+<p>(注102) Members of the 111th United States Congress，维基百科。</p>
 <p>(注103)《华盛顿时报》，2009年9月20日。</p>
 <p>(注104)www.eeoc.gov，2009年11月3日。</p>
 <p>(注105)《华尔街日报》，2009年9月11日；www.census.gov，2009年9月10日。</p>
 <p>(注106)美联社，2009年10月5日。</p>
-<p>(注107)www.census.gov，2009年9月10日。</p>
+<p>(注107) www.census.gov，2009年9月10日。</p>
 <p>(注108)《侨报》，2009年5月12日。</p>
 <p>(注109)Occurrenceofrape，<a href="http://www.sa.rochester.edu">http://www.sa.rochester.edu</a></p>
 <p>(注110)《星岛日报》，2009年3月14日。</p>
 <p>(注111)美国哥伦比亚广播公司晚间新闻，2009年3月17日。</p>
 <p>(注112)路透社，2009年4月16日。</p>
 <p>(注113)《华盛顿邮报》，《今日美国报》，2009年11月17日。</p>
-<p>(注114)www.feedingamerica.org，2009年5月7日。</p>
-<p>(注115)www.census.gov，《华盛顿邮报》，2009年9月11日。</p>
-<p>(注116)CNN.com，MSNBUC.com，2009年3月10日。</p>
-<p>(注117)<a href="http://www.census.gov%EF%BC%8C%E3%80%8A%E5%8D%8E%E7%9B%9B%E9%A1%BF%E9%82%AE%E6%8A%A5%E3%80%8B%EF%BC%8C2009%E5%B9%B49%E6%9C%8821">http://www.census.gov，《华盛顿邮报》，2009年9月21</a>日。</p>
+<p>(注114) www.feedingamerica.org，2009年5月7日。</p>
+<p>(注115) www.census.gov，《华盛顿邮报》，2009年9月11日。</p>
+<p>(注116) CNN.com，MSNBUC.com，2009年3月10日。</p>
+<p>(注117)<a href="http://www.census.gov，《华盛顿邮报》，2009年9月21">http://www.census.gov，《华盛顿邮报》，2009年9月21</a>日。</p>
 <p>(注118)《洛杉矶时报》，《侨报》，2009年8月14日。</p>
 <p>(注119)《公共卫生杂志》，2009年10月30日。</p>
 <p>(注120)《今日美国报》，《华尔街日报》，2009年11月13日。</p>
@@ -800,9 +833,9 @@
 <p>（注138）法新社索马里哈尔格萨，2009年12月21日电。</p>
 <p>（注139）《纽约时报》，2009年6月3日。</p>
 <p>（注140）美国国际新闻社纽约2009年2月25日电。</p>
-<p>（注141）<a href="http://www.yourpolicicsusa.com%EF%BC%8C2009%E5%B9%B47%E6%9C%8816">http://www.yourpolicicsusa.com，2009年7月16</a>日。</p>
-<p>（注142）<a href="http://www.lexisnexis.com%EF%BC%8C2009%E5%B9%B45%E6%9C%8817">http://www.lexisnexis.com，2009年5月17</a>日。</p>
-<p>（注143）OverwhelmingInternationalRejectionofUSBlockadeofCubaatUN，www.cubanews.ain.cu</p>
+<p>（注141）<a href="http://www.yourpolicicsusa.com，2009年7月16">http://www.yourpolicicsusa.com，2009年7月16</a>日。</p>
+<p>（注142）<a href="http://www.lexisnexis.com，2009年5月17">http://www.lexisnexis.com，2009年5月17</a>日。</p>
+<p>（注143）Overwhelming International Rejection of US Blockade of Cuba at UN，www.cubanews.ain.cu</p>
 <p>（注144）维基百科。</p>
 <h2 id="李敖控告许倬云造谣诽谤"><a class="header" href="#李敖控告许倬云造谣诽谤">李敖控告许倬云造谣诽谤</a></h2>
 <p>告诉人李敖男住台北市仁爱路二段34号8楼之3</p>
@@ -899,7 +932,7 @@
 <p>西元年月日</p>
 <p>附注：道歉人应将上开“道歉启事”以18号字体及四分之一版之篇幅（宽16公分、长25公分）刊登《联合报》A版之全国版头版一天。</p>
 <h2 id="中国可以来个夏威夷关系法吗"><a class="header" href="#中国可以来个夏威夷关系法吗">中国可以来个《夏威夷关系法》吗？</a></h2>
-<p>1978年12月30日，美国卡特（JimmyCarter）总统发出备忘录。全文如下：</p>
+<p>1978年12月30日，美国卡特（Jimmy Carter）总统发出备忘录。全文如下：</p>
 <p>白宫华盛顿</p>
 <p>1978年12月30日备忘录</p>
 <p>受文者：所有部署机关。</p>
@@ -915,7 +948,7 @@
 <p>此备忘录将在联邦政府报上发表。</p>
 <p>吉米卡特</p>
 <p>卡特上一文件，大体尚按规矩来，没有什么异状。接着，进一步，美国总统必须经由国会程序，规范“与台湾人民间非政府关系，予以立法”。1979年1月26日，卡特向国会提出“综合法案”，“案由”是“为求和台湾人民在非官方基础上维持商务、文化及其他关系，以促进美国外交政策，以及其他目的”。于是，花样来了。花样就是双簧。</p>
-<p>美国国会是最会陪着唱双簧的。2月下旬，参众两院外交委员会分别就“综合法案”进行听证与讨论，该法案参院编好S245、众院编好H.R.2479。分别于3月1日与7日通过审议报告，再向两院院会提出。3月中旬，两院院会辩论修正结束，参众两院分别以90票对6票、345票对55票绝对多数通过。再由两院推派议员，组成协调委员会，协调与改写两院通过法案的语意措词，以求一致。复经两院再通过如仪后，咨送卡特于4月10日签署，成为法律，就是“综合法案”改头换面后的《台湾关系法》（TaiwanRelationsAct）。</p>
+<p>美国国会是最会陪着唱双簧的。2月下旬，参众两院外交委员会分别就“综合法案”进行听证与讨论，该法案参院编好S245、众院编好H.R.2479。分别于3月1日与7日通过审议报告，再向两院院会提出。3月中旬，两院院会辩论修正结束，参众两院分别以90票对6票、345票对55票绝对多数通过。再由两院推派议员，组成协调委员会，协调与改写两院通过法案的语意措词，以求一致。复经两院再通过如仪后，咨送卡特于4月10日签署，成为法律，就是“综合法案”改头换面后的《台湾关系法》（Taiwan Relations Act）。</p>
 <p>《台湾关系法》最咄咄逼人的，在第二条，全文如下：</p>
 <p>第二条：（A）由于美国总统已终止美国和台湾统治当局（在1979年1月1日前美国承认其为中华民国）间的政府关系，美国国会认为有必要制定本法：</p>
 <p>（一）有助于维持西太平洋地区的和平、安全及稳定；</p>
@@ -935,17 +968,17 @@
 <p>“己所不欲，勿施于人”是做人之道理，也是为邦之道。但是，骄傲的美国却完全不懂。美帝不该打倒吗？美帝不该打倒吗？</p>
 <p>2010年4月1日</p>
 <h2 id="买错了书"><a class="header" href="#买错了书">买错了书</a></h2>
-<p>1944年，数学家冯纽曼（JohnvonNeumann）和经济学家摩根斯坦（OskarMorgenstern）合写了《赛局理论与经济行为》（TheoryofGamesandEconomicBehavior），这本书5年内卖不到4000本，却是20世纪最有影响力的著作。最有趣的，4000本书中，很多还是被职业赌徒买走的，赌徒相中了这本书名，因而买错了书。</p>
+<p>1944年，数学家冯纽曼（John von Neumann）和经济学家摩根斯坦（Oskar Morgenstern）合写了《赛局理论与经济行为》（Theory of Games and Economic Behavior），这本书5年内卖不到4000本，却是20世纪最有影响力的著作。最有趣的，4000本书中，很多还是被职业赌徒买走的，赌徒相中了这本书名，因而买错了书。</p>
 <p>我想起有关我的一个类似经历。在白色恐怖时代，我写了100多本书，但其中96本被查禁了。那个时代警察是很辛苦的，他们整天要忙着替“上有政策”服务，但是，在“下有对策”的平衡下，我最后想出了新点子来反制。白色恐怖总有它的黑市，只要是非政治性的书，尤其是黄色书刊，流入黑市，警察在辛苦之余，也会疏于防范。于是，我把我的书都黄色化，以大量穿着凉快的美女做封面，蒙混在黑市地摊上。从此我的书也变相流传不少，增加了很多读者。问题是，有些读者并非要买我的书，他买的是黄色书刊，不小心买到了李敖的书而已。所以，结论是，我的读者多了，可是却是一些色情狂。色情狂相中了书的封面，因而买错了书。</p>
 <p>冯纽曼和摩根斯坦的《赛局理论与经济行为》，最具特色的理论是“大中取小定理”（minimaxtheorem）。这定理涵盖的赛局种类包括简单的井字○╳游戏到复杂的棋类游戏，适用于所有一输一赢的两人游戏。但是，“大中取小定理”不止于这一些，其中蕴含了更深的意义。这本书，把“大中取小定理”做基础，延伸到包含所有其它类型赛局的理论，这样扩充以后，赛局理论可以适用于所有类型的人世冲突。在经济领域方面，冯纽曼和摩根斯坦把赛局理论当作经济学的数学基础。在他们眼中，不同的经济冲突可以看成不同的赛局，以赛局理论的定理来分析。竞标一项工程的两个承包商、拍卖会上争相出价的一群买主，都缠绕在互相猜测的微妙赛局中，值得严密分析。冯纽曼说：“任何棋局必然有个正确解答。真正的赛局完全不是这个样子，实际生活也不是这个样子。实际生活中包括虚张声势、包括骗人的小策略、包括互相揣测对方以便应付等等。我的赛局理论研究的就是这些内容。”</p>
 <p>冯纽曼和摩根斯坦的书，被视为“经济科学”的开山之作。他们这本书，641页，其中公式洋溢，显系用数理方法，奋其张力，包办人理范畴。我总觉得，人理范畴，涉及机率与变量部分，不是数理万能的，认为数理万能的天才们，实在有所蔽而不自知，他们太骄傲了。也许冯纽曼有他骄傲的本钱，他能帮忙造原子弹。但原子弹落到政客手里，他们再想控制用途，就力有未逮了。科学家以为能全面掌握人理，结果却被真正洞悉人文现象的非科学家作弄，不亦哀哉。</p>
 <p>2010年4月2日</p>
 <h2 id="我头所在的地方我心与它同在"><a class="header" href="#我头所在的地方我心与它同在">我头所在的地方，我心与它同在</a></h2>
-<p>2010年3月29日的清早7点57分，莫斯科地铁的一个站发生爆炸，一片血肉横飞、一片血肉模糊，几百人受伤了、20人炸死了。莫斯科警方跑过来，在月台上，找到一颗头颅，头颅满脸是血，但是脸还完整，脸部表情，一片坚毅与悲怆。她是“凶手”，她把自己绑成“人肉炸弹”，由另一名女同伙陪她走进车站，炸弹引爆时候，她被炸得身首异处，但是，恰如翻转过来的那句英诗：Wheremyheadlies,letmyheartliealso.我头所在的地方，我心与它同在。这“凶手”，用头布置了“人肉炸弹”，用心引爆了它。</p>
+<p>2010年3月29日的清早7点57分，莫斯科地铁的一个站发生爆炸，一片血肉横飞、一片血肉模糊，几百人受伤了、20人炸死了。莫斯科警方跑过来，在月台上，找到一颗头颅，头颅满脸是血，但是脸还完整，脸部表情，一片坚毅与悲怆。她是“凶手”，她把自己绑成“人肉炸弹”，由另一名女同伙陪她走进车站，炸弹引爆时候，她被炸得身首异处，但是，恰如翻转过来的那句英诗：Where my head lies, let my heart lie also.我头所在的地方，我心与它同在。这“凶手”，用头布置了“人肉炸弹”，用心引爆了它。</p>
 <p>3天后，警方公布了“凶手”的生前照片，少女、娃娃脸、17岁、一袭伊斯兰黑衣，依偎在丈夫胸前，手中分别拿着的，却是手枪和手榴弹。</p>
-<p>“凶手”的丈夫叫马格梅多夫（UmalatMagomedov），是俄国南部达吉斯坦共和国伊斯兰反抗分子，也是南部车臣共和国叛军领袖的同伙，刚在2009年12月31日那天，被俄国军队打死。</p>
-<p>“凶手”的名字叫贾涅特阿布都拉玛诺娃（DzhennetAbdurakhmanova），名字中第一个字是阿拉伯文Jannat的变体，意思是“天堂”，丈夫被打死了，17岁的女孩子名字有天堂，心中没有了天堂。</p>
-<p>“天堂”贾涅特不想再活下去，她加入了“黑寡妇”反抗团体，做了成员。丈夫死后119天，她轰然一响，从容的殉死在敌方的车站。Wheremyheadlies,letmyheartliealso.但是，我心所在的地方，就是我和丈夫的天堂。</p>
+<p>“凶手”的丈夫叫马格梅多夫（Umalat Magomedov），是俄国南部达吉斯坦共和国伊斯兰反抗分子，也是南部车臣共和国叛军领袖的同伙，刚在2009年12月31日那天，被俄国军队打死。</p>
+<p>“凶手”的名字叫贾涅特阿布都拉玛诺娃（Dzhennet Abdurakhmanova），名字中第一个字是阿拉伯文Jannat的变体，意思是“天堂”，丈夫被打死了，17岁的女孩子名字有天堂，心中没有了天堂。</p>
+<p>“天堂”贾涅特不想再活下去，她加入了“黑寡妇”反抗团体，做了成员。丈夫死后119天，她轰然一响，从容的殉死在敌方的车站。Where my head lies, let my heart lie also.但是，我心所在的地方，就是我和丈夫的天堂。</p>
 <p>一对小夫妻，他们是那么渺小，但是，他们会向强梁抗争、向强梁示威、向强梁复仇。丈夫死后，“天堂”从北高加索的偏远村落出发，搭上公车、转公车、搭公车、转公车，夜以继日的奔向征途。她未能拥有核子弹，拥有的，只是土制炸弹，她和丈夫一样，无力消灭敌人，但却能以血肉之躯，向敌人一轰、向世界一闪。</p>
 <p>谁说小人物不能做什么？小人物可以抗争、小人物可以示威、小人物可以复仇。在强梁面前，小人物不想再活了，终于以自己的一死，换回“与死偕亡”“同归于尽”的正义。</p>
 <p>我头所在的地方，我心与它同在；我心所在的地方，就是我和丈夫的天堂。</p>
@@ -984,9 +1017,9 @@
 <p>自1963年由中华教育文化基金会支付美金起，《中国上古史》一拖47年，至今尚在未成专书之中。如今王世杰死了，李济也死了，只剩下许倬云逍遥域外。特此提出质询，请彻查中央研究院弊案，免贻士林之羞也。</p>
 <p>2010年6月15日，代立委作</p>
 <h2 id="帝王蓝"><a class="header" href="#帝王蓝">帝王蓝</a></h2>
-<p>RoyalBlue，帝王蓝、宝蓝、品蓝、极好的蓝、高贵的蓝、尊严的蓝、钦定的蓝、国王的蓝、我那N支钢笔喜爱的蓝。</p>
-<p>喜爱RoyalBlue，喜爱它的高贵、美丽，喜爱它的蓝里透青、浓中带淡，更喜爱它的不可捉摸、它的不稳定、五十年后的不稳定——它会褪色、会淡出、会淡死自己，像在自杀，也许，它还是它，五十年后，它佯装未死，但是，那只是奇迹，基本上，它将逸走，在短暂的世界里，它以更快的短暂，消逝于无形。</p>
-<p>我的一只手、我的N支钢笔，不论写什么，RoyalBlue都是墨水。可是，五十年后，当人已老去、当钢笔已成古董，RoyalBlue啊，它不再Royal、也不再Blue，它化为雅贼，用它的淡化，物化了纸、幻化了笔下的虚无。</p>
+<p>Royal Blue，帝王蓝、宝蓝、品蓝、极好的蓝、高贵的蓝、尊严的蓝、钦定的蓝、国王的蓝、我那N支钢笔喜爱的蓝。</p>
+<p>喜爱Royal Blue，喜爱它的高贵、美丽，喜爱它的蓝里透青、浓中带淡，更喜爱它的不可捉摸、它的不稳定、五十年后的不稳定——它会褪色、会淡出、会淡死自己，像在自杀，也许，它还是它，五十年后，它佯装未死，但是，那只是奇迹，基本上，它将逸走，在短暂的世界里，它以更快的短暂，消逝于无形。</p>
+<p>我的一只手、我的N支钢笔，不论写什么，Royal Blue都是墨水。可是，五十年后，当人已老去、当钢笔已成古董，Royal Blue啊，它不再Royal、也不再Blue，它化为雅贼，用它的淡化，物化了纸、幻化了笔下的虚无。</p>
 <p>以为你因它而永恒，你错了，它不动声，它只动色，使你只有五十年。五十年后，它用它再不是它，使你不再是你。它仿佛在做无声的告别：在一起，五十年，就好了。大限过后，让我失色而去，让一切化为白纸。</p>
 <p>2010年6月18日晨</p>
 <h2 id="李戡戡乱记导读"><a class="header" href="#李戡戡乱记导读">《李戡戡乱记》导读</a></h2>
@@ -1004,12 +1037,12 @@
 <p>从初二到高一，14岁到16岁，我因为国语好、国文好，参加过多起演讲、辩论、论文比赛。初二时得过全台中市第4届全市国语演说竞赛，得初中组第二名（第一名是我四姐，她代表省立台中女中；第三名是张立纲，他代表台中二中。张立纲的哥哥张立豫后来成了我四姐夫，张立纲也变成院士级的学者。广义的说，台中市演讲比赛被我们全家包了）。高一时参加台中市论文赛、本校论文赛，皆获第一名。高二时在《合作经济》第2卷第12期发表《合作制度与节制资本》，这是参加庆祝第30届国际合作节征文而作，得了全台湾第一名，并拿到有生以来最大一笔数目的奖金。我用那笔钱买了中华书局版40册的《饮冰室合集》。</p>
 <p>在参加各种比赛以外，我在高一也写过《李敖札记》四卷；并在《学生》杂志第46期发表《杜威的教育思想及其他》；在《新生报》发表《“英伦归来”的启示》、《生也有涯知无涯》；另外还写了《学习英语的目的》、《诸葛亮的军政》、《虚字的对联》、《字形的对联》、《毋忘在莒的出处》、《行李考》等稿子。那时我17岁。</p>
 <p>1953年我念高三，只念了十几天，就自愿休学在家。我那北京大学毕业的老子他随我的便，轻松的说：“好！你小子要休学，就休罢！”他当时正是台中一中国文科主任，他跑到学校，向教务主任说：“我那宝贝儿子不要念书啦！你们给他办休学手续吧！”于是，我蹲在家里，在我那四面是书的两个榻榻米大的书房兼卧室里，痛痛快快的养了一年浩然之气。也写了不少文章，其中有《李敖诗集》和《从读&lt;胡适文存&gt;说起》一文等。过了两年，我进了大学，陆啸钊办《大学杂志》，把这篇文字拿去刊登。刊登后近一年，有一天，我的女朋友罗君若忽然提议，说：“何不寄给《自由中国》？他们一定登！”于是我删了一部分，她代为抄好，遂改登《自由中国》。这是我在《自由中国》上发表的第一篇也是最后一篇文字。这篇老练的文字，大家都不清楚是我17岁时写的。有这么好的写作能力，和我从小就养成了重视课外书的习惯、也养成了买书藏书的癖好有关。到台湾时，我的全部财产是500多本藏书，进台中一中后，我的大部分时间都消耗在这个中学的图书馆里。这个图书馆的藏书相当丰富，我以义务服务生的资格在书库中泡了4年之久，使我对一般书籍有了不少的常识。最使管理员们惊讶的是，我甚至可以闭起眼睛，单用鼻子就能鉴定一本书是上海哪个大书店印的，这是我在teen-age中，最得意的一门绝技。</p>
-<p>在制式教育中，我慢慢长大，也慢慢对中学教育不能容忍。就客观环境来说，我总觉得我所经验的中学教育赶不上我在北京时的残余记忆。在残余记忆里，我认为北京的中学生不像台湾这样呆板、肤浅、缺乏常识与性灵；就主观感受来说，我读的课外书越多，我越觉得中学教育不适合一般少年的个性发展，更不要提IQ较高的学生了。中学的教育制度、教授法、师资、课程分配等等，都有着极严重的缺陷与流弊，我高一时候那篇4000字的文章——《杜威的教育思想及其他》，就可看出我曾对杜威那种“进步教育”（progressiveeducation）有着极强烈的憧憬，这种憧憬使我在有着强烈对比的中学里面非常痛苦，到了高三，我已完全不能忍耐，我决心不想拿这张中学文凭。所以我就自动休学了。</p>
+<p>在制式教育中，我慢慢长大，也慢慢对中学教育不能容忍。就客观环境来说，我总觉得我所经验的中学教育赶不上我在北京时的残余记忆。在残余记忆里，我认为北京的中学生不像台湾这样呆板、肤浅、缺乏常识与性灵；就主观感受来说，我读的课外书越多，我越觉得中学教育不适合一般少年的个性发展，更不要提IQ较高的学生了。中学的教育制度、教授法、师资、课程分配等等，都有着极严重的缺陷与流弊，我高一时候那篇4000字的文章——《杜威的教育思想及其他》，就可看出我曾对杜威那种“进步教育”（progressive education）有着极强烈的憧憬，这种憧憬使我在有着强烈对比的中学里面非常痛苦，到了高三，我已完全不能忍耐，我决心不想拿这张中学文凭。所以我就自动休学了。</p>
 <p>我在台中一中可谓无书不读，但在思想定型上，却是读了许多书、困学求变以后的事。思想定型的范围是多方面的，其中包括左右问题、中西问题、新旧问题。……这些多方面的问题，是每个中国知识分子的大困惑，由于水平不好、政治干扰，绝大多数的中国知识分子都失败了，他们困惑终身，无法在思想定型上有又早又正确的判断。在这方面，我是非常鲜明的一个例外，但在这些问题上，我也有过一段时间的困学求变的过程。这段时间最明显的是在初中，到高中后期，我就逐渐定了型。那时候，我正17岁，我的最大顺境是我孤独中的进步；我的最大困境是我陷身在孤独里，没有什么朋友可以商量讨论，只有自己暗中摸索、探境寻幽。更大的困境是国民党白色恐怖下的氛围，由于国民党统治思想、管制书刊，进步和左派的旧书都查禁了，新书一本也看不到，而我在北京时候读过的大量左派书刊，又在我心里发酵，我益发看不起国民党，并且益陷困境，我的老师严侨的被捕，更带来震撼。</p>
 <p>我在台中一中，最难忘的一位老师就是严侨。严侨是福建福州人，是严复的长孙。身材瘦高、头生密发、两眼又大又有神。31岁时到台中一中，那是1950年8月间，他比别的老师稍晚来，但却很快使大家对他感到兴趣。他有一股魔力似的迷人气质，洒脱、多才、口才好、喜欢喝酒，和一点点疯狂气概，令人一见他就有对他好奇、佩服的印象。有一次高班生踢足球，足球踢到场外，正巧严侨经过，此公也不走路了，突然直奔此球，奋身一脚，就给踢了回来。大家为之叫好，他也趁机加入，大踢特踢起来了。</p>
 <p>1951年到了，我16岁。暑假后进了高一上甲。正好严侨教数学，这样他就正式成了我班上的老师。这时我在知识成长已经极为快速，在班上喜放厥辞，好争好辩，颇为张狂。当时班上同学很吃我不消，王文振甚至写匿名信丢在我书包里痛骂我；施启扬（后来做了国民党的司法院长）喜欢同我辩，但他实在很笨，又做少年老成状，令我总要用口舌修理他。由于我张狂好辩，在严侨课堂上，也常常在数学以外，扯到别处去。严侨上课，才华四溢，大而化之，许多机械的题目，他自己干脆不做，反倒自己坐到学生座位上，叫吴铸人等数学极好的同学“站板”（站到黑板前）去做。他常在课堂上聊天。有一天居然说：“我要把你们的思想搅动起来！”还有一次为了证明他说得对，他近乎打赌的说：“我若说错了，我就把我的名字倒写！”说着就用极熟练的笔画，把倒写的严侨写在黑板上，俨然是“镜子书法”（mirrorwriting）专家，我们鼓掌呼啸，师生之情，融成一片。那时我们的数学作业有专门印好的“数学练习簿”，我在练习簿中做习题不在行，但扯别的倒有一套。我来了一段“簿首引言”，引OscarW.Anthony的一段话，说：“数学是人类智力的灵魂。……它超越了空间与时间的领域，告诉我们宇宙是这样的悠远，光线曾经历百万年的行程，方才照射到大地上。……”后来，“数学练习簿”发回来了，在“它超越了空间与时间”的一行下，被严侨打了一条红杠子，下有朱笔批曰：“我想它超越不了空时！”——这就是严侨的可爱处，他是数学老师，但他在精改习题以外，他还会跟学生的引文打笔仗！</p>
 <p>严侨真是迷人的老师，我越来越欣赏他。我花了几天的时间，写了一封长信，信中细述我成长的历程、我对现实的不满、我对国民党的讨厌等等，交了给他。严侨看了，对我有所劝慰。他跟我的交情，自然也就不同一般师生了。</p>
-<p>1952年我升高中二年级后，编到高二戊，数学改由黄钟老师来教。黄钟那时28岁，安东凤城人，他是国立东北大学毕业的，严侨是私立福建协和大学毕业的。在数学造诣上，黄钟似乎比严侨专精。黄钟对学生的诲人不倦，是我生平仅见的老师。他常常在下课时不下课，延长时间为学生讲课；或另外跟学生约定时间，在空堂时候跑来加讲。黄钟面目瘦削，身体很弱，有肺病，眉宇之间，总是一片忧愁。他几乎从来没有开怀的笑过，态度总是严肃而认真，令人敬畏。黄钟的父亲黄剑秋是我爸爸老友，爸爸担心我数学不好，特别请黄钟照顾我。黄钟对我印象很好，他在“数学练习簿”上批写：“为人诚实可爱。”给了我不少鼓励。当然他从没说过我数学好，——我的数学实在不好。我像许多恨数学的大人物{如丘吉尔（SirWinstonChurchill）、如萧伯纳（G.BernardShaw）}一样，对数学恨得要命。我的苦恼是数学老师却一一同我有交情，使我不胜尴尬之至。</p>
+<p>1952年我升高中二年级后，编到高二戊，数学改由黄钟老师来教。黄钟那时28岁，安东凤城人，他是国立东北大学毕业的，严侨是私立福建协和大学毕业的。在数学造诣上，黄钟似乎比严侨专精。黄钟对学生的诲人不倦，是我生平仅见的老师。他常常在下课时不下课，延长时间为学生讲课；或另外跟学生约定时间，在空堂时候跑来加讲。黄钟面目瘦削，身体很弱，有肺病，眉宇之间，总是一片忧愁。他几乎从来没有开怀的笑过，态度总是严肃而认真，令人敬畏。黄钟的父亲黄剑秋是我爸爸老友，爸爸担心我数学不好，特别请黄钟照顾我。黄钟对我印象很好，他在“数学练习簿”上批写：“为人诚实可爱。”给了我不少鼓励。当然他从没说过我数学好，——我的数学实在不好。我像许多恨数学的大人物{如丘吉尔（Sir Winston Churchill）、如萧伯纳（G. Bernard Shaw）}一样，对数学恨得要命。我的苦恼是数学老师却一一同我有交情，使我不胜尴尬之至。</p>
 <p>1953年到高三后，我自愿休学在家，准备以同等学力资格去考大学。同等学力总额管制，比较难考。要命的是黄钟仍不放过我，他和我爸爸“通谋”成功，硬要我到他家去，专门为我一个人补习。他家住台中市永安街一巷五号，我每次去补习，视若畏途，但是实在不能不去，内心交战，非常痛苦。这一痛苦，最后终因黄钟病倒而暂告结束。黄钟病倒，住在台中医院里，昏迷不醒，整天只好用机器抽痰。我每天去照料他，直到他无言死去。我大为伤感，写了一篇《黄钟诔》和《九泉唯有好人多》等几首诗纪念他，并把他的遗像挂在墙上。爸爸生平最好占卜星象，他跟我说：“黄钟是好人，可是长了一副坏人相。他的人与相不相称，所以要早死。”黄钟死时，还不到30岁。</p>
 <p>严侨虽然不再教我数学，但他和我的交情却与日俱深。他家住在一中斜对面宿舍，就是育才街5号，是一栋日式木屋，分给两家住，前面住的是郭大傅老师（他是江西兴国人，国立中正大学毕业。20年后，在景美军法处坐牢，和我见过面。真没想到他还有这样迟来的红帽），后面就是严侨家。因为一栋房子硬分成二户，所以变得狭长阴暗，不成格局。严侨约我去他家看他，我有时去。在黄钟住院后，一天严侨正好去探望，碰到我，我告诉他医生说黄老师恐怕已没希望了，严侨颇多感触。那时已是晚上，严侨要回家了，约我同行。在路上，他低声而神秘的告诉我：“你不要回头看，我感觉到好像有人跟踪我，是蓝色的。”（国民党特务源出蓝衣社，他指蓝色，当然是指国特。）我顿时若有所悟。隔天黄钟死了，严侨再去医院，感触更多。当天晚上我送他回家，他约我进去坐，在昏暗的灯光下，他劣酒下肚，终于告诉我，他是“那边来的”——原来他是共产党！</p>
 <p>当时的台中一中，像其他学校一样，不时有所谓共产党、匪谍被捕去。最令我心动的是，当时女老师牟琴和她男友杨肇南老师的双双被捕。他们都是山东人，牟琴年轻艳丽，身材尤其肉感动人，令我们暗慕。一天夜里，他们都被捕去了，听说都是共产党、匪谍（多少年后，彷佛听说牟琴给放出来了，可是已被折磨得年华销尽了）；还有一位教数学的杨肖震老师（福建政和人，24岁），也被捕去（后来听说太太生活无着，已改嫁给他的一个朋友了）；还有一位王怀中老师（山东诸城人，38岁），教历史的，也神秘失踪了（多少年后才在新竹中学重拾教职）。当时颇有人人自危的味道。黄钟死后，外界盛传他是共产党，“畏罪自杀”云云。可是直到今天，我还不能相信。因为他咽气时候，我正守在他身边，他久病属实，绝不像是自杀（几十年后，他的弟弟黄锷院士告诉我：黄钟本来要留在大陆做共产党的，但他爸爸逼他到台湾养家，他就来了台湾，结果悒郁而死）。</p>
@@ -1024,7 +1057,7 @@
 <p>以手推松曰：“去！”</p>
 <p>每背到最后一句的时候，他也总是伸开十指，双手向前推去，郑重表示不要“松”来扶他。中国国学非严侨所长，他“以手推松曰‘去！’”，自然不知道《汉书》龚胜传中这一典故，也不知道龚胜79岁成了殉道者的悲剧，但他那醉后一推曰“去！”的真情，如今事隔半个多世纪，却使我记忆犹新，永远难忘。</p>
 <p>在多次跟严侨的夜谈中，我约略知道了他的一些情况。他来台湾比较晚，并且是从福建偷渡上岸的，当时还带着严师母。他坐的船是最小的木船，他说船上只有埋在沙上的一个罗盘，扬帆过海，就过来了，言下不胜得意。到台湾后，他被发现，国特把他请去，问他你来台湾干什么？他说我来投奔自由；国特说你胡扯，你的爸爸在福州做共产党的市长，他那么前进，你怎么这么落伍？一般情形总是老一代跟国民党走，青年一代跟共产党走，为什么你们家特别；你老子反倒前进，你反倒开倒车，来投奔我们？严侨说我不是来投奔你们，我是来投奔自由，何况我有老母在台，我要来照顾她。国特查出严侨果然有老母在台，只好暂且相信。但这样总不能结案，总得找个保人，于是，由妹夫叶明勋出面，保了严侨。严侨有两个妹妹，大妹严倬云，嫁给辜振甫；小妹严停云（就是风华绝代的女作家华严），嫁给叶明勋。</p>
-<p>严侨在台中一中教书，自己也看了不少书，他过去的看书基础又厚，所以能够吸收新知，与日俱进。在他和我的谈话中，显然因为读书和受我的一点影响，而开始有点自由主义的倾向。这种转变，其实是很不容易的，是只有严侨那种智慧高人的青年人才做得到的。严侨投身在中国现代的狂飙运动之中，他投入这个运动，在知识上、见解上、情感上，都强烈受到左派教条的辐射，他们那个时代的这类革命者，一般都有着热情而崇高的气质，这种气质使他们勇于献身、勇于殉道，心之所善，九死无悔。但是，他们对他们献身、殉道的对象，却由于“目的热”，未免沦为“方法盲”，他们之中智慧高人的，一旦成为狂飙运动的浪花余沫，在百尺竿头、更进一步的当口，他们必然会有所觉悟，这是很当然的。严侨是共产党，但却是身陷在台湾的，他脱离了红色的磁场，孤单的局促在蓝色的泥淖，在日新又新的成长下，以他的智慧，一定程度的觉悟，是可以想象的。这种觉悟也许没有《修炼失败的神》（TheGodThatFailed）作者那种细腻、也许没有《新阶级》（TheNewClass）作者那种深沉，但是严侨有他自己的特色。那特色就是尽管他有所失落，但他并不因失落而脱离；相反的，他要归队，要归队去重建那父母之邦。一天晚上，严侨又喝醉了酒，他突然哭了起来，并且哭得很沉痛。在感情稍微平静以后，他对我做了最重要的一段谈话：</p>
+<p>严侨在台中一中教书，自己也看了不少书，他过去的看书基础又厚，所以能够吸收新知，与日俱进。在他和我的谈话中，显然因为读书和受我的一点影响，而开始有点自由主义的倾向。这种转变，其实是很不容易的，是只有严侨那种智慧高人的青年人才做得到的。严侨投身在中国现代的狂飙运动之中，他投入这个运动，在知识上、见解上、情感上，都强烈受到左派教条的辐射，他们那个时代的这类革命者，一般都有着热情而崇高的气质，这种气质使他们勇于献身、勇于殉道，心之所善，九死无悔。但是，他们对他们献身、殉道的对象，却由于“目的热”，未免沦为“方法盲”，他们之中智慧高人的，一旦成为狂飙运动的浪花余沫，在百尺竿头、更进一步的当口，他们必然会有所觉悟，这是很当然的。严侨是共产党，但却是身陷在台湾的，他脱离了红色的磁场，孤单的局促在蓝色的泥淖，在日新又新的成长下，以他的智慧，一定程度的觉悟，是可以想象的。这种觉悟也许没有《修炼失败的神》（The God That Failed）作者那种细腻、也许没有《新阶级》（The New Class）作者那种深沉，但是严侨有他自己的特色。那特色就是尽管他有所失落，但他并不因失落而脱离；相反的，他要归队，要归队去重建那父母之邦。一天晚上，严侨又喝醉了酒，他突然哭了起来，并且哭得很沉痛。在感情稍微平静以后，他对我做了最重要的一段谈话：</p>
 <p>我不相信国民党会把中国救活，他们不论怎样改造，也是无可救药，他们的根儿烂了。十多年来，我把自己投入一个新运动，我和一些青年人冒险、吃苦，为了给国家带来一个新远景，所以我做了共产党，我志愿偷渡过来，为我的信仰做那最难做的一部分。可是这两年来，我发现我变了，我的精神好像飞向那自由主义的神像，可是我的身体却永远被一个党锁住，被另外一个党监视，这是我最大的痛苦。虽然这样，我还是想回大陆去，那里虽然不满意，可是总有一点“新”的气味，有朝气，对国民党我是始终看不起的，它不配我去自首！现在我们的名册里并没有你，可是我想带你回去，带你去共同参加那个新尝试的大运动，这个大运动是成功是失败不敢确定，但它至少牺牲了我们这一代而为了另外一个远景，至少比在死巷里打滚的国民党痛快得多了！</p>
 <p>由于他有那样的背景、那样的偷渡经验，我相信他说的，我答应了跟他走。我当时梦想我会参加一个重建中国的大运动。可是梦想毕竟是梦想，半夜里，五个大汉惊破了他的梦和我的梦，他被捕了。这是1953年的事。那时严侨33岁，我刚刚过了17岁。</p>
 <p>严侨被捕时我还不知情，第二天的中午，爸爸从一中回来，说到一中传出严侨被捕的事，我听了，十分感伤。我的感伤不重要，重要的是如何照顾严师母和三个小孩。那时1950年生的大女儿严方才3岁，儿子严正尚小，小女儿严谅还在怀里吃奶。我跟严师母商议多次，一筹莫展。我那时休学在家，只是高三上的学生身分，家里又穷，没有任何收入，实在愧无以帮助严师母。我只好饿早饭不吃，存了一些钱，送给了严师母，后来我爸爸知道了，严肃责备我不可以这样做：“严侨既然被捕了，谁还敢帮他呢？”这是爸爸的理由。这种理由是缺乏同情心的，但是在国民党的苛政下，同情毕竟是一种跳到黄河洗不清的“危险品”，在阴影幢幢的株连下，残存的一些道德品质，也就备受考验了。</p>
@@ -1072,10 +1105,10 @@
 <p>国民党丢掉了祖国，逃到台湾，却以祖国自居，说它代表“中华民国”，但是，它有什么脸皮代表“中华民国”呢？所谓“中华民国”的国都南京，就被它丢掉两次；所谓“中华民国”的国父陵寝，就被它辞庙两回；所谓“中华民国”的国土，就被它丢掉千分之九百九十七，而只剩下千分之三……。如果这些只是暂时现象，也就罢了。事实上绝非暂时，不是3年5年，也不是13年15年，也不是23年25年，国民党根本回不去祖国了。到了第26年，国民党的领导人蒋介石死了；又过了13年，他的儿子蒋经国也死了。接下去是儿子的大玩偶李登辉12年、大玩偶的小玩偶陈水扁8年，和美国玩偶马英九两年，总共61年，就自欺欺人过去了。</p>
 <p>自欺欺人的实例太多了、太多了。我以问题做纲目，举出一些常见的：</p>
 <p>一、自欺欺人说“中华民国”是一个国家——其实，“中华民国”不是一个国家，证据是蒋介石亲口说的。蒋介石在1950年3月13日秘密讲话中，自承：“我们的中华民国到去年年终就随大陆沦陷而已经灭亡了！我们今天都已成了亡国之民。”看到了吧，连“中华民国”总统都说“中华民国”亡国了，还是国家吗？事实上，“中华民国”只是一具死尸，一具被共产党消灭了的死尸。但共产党盼国民党在旁边守灵，为了怕另一个孤魂野鬼借尸还魂。台独就是那孤魂野鬼。</p>
-<p>二、自欺欺人说“中华民国”有国家主权——有人以为，今天台湾有24个国家承认，难道不是国家吗？答案是：还不是，因为没得到192个会员国的联合国承认，也没得到抱大腿的美国承认。2004年10月25日，美国国务卿鲍威尔（ColinPowell）公开说：“台湾不是独立的，没有国家主权。”可见抱大腿也没用，还被踢了一脚。</p>
+<p>二、自欺欺人说“中华民国”有国家主权——有人以为，今天台湾有24个国家承认，难道不是国家吗？答案是：还不是，因为没得到192个会员国的联合国承认，也没得到抱大腿的美国承认。2004年10月25日，美国国务卿鲍威尔（Colin Powell）公开说：“台湾不是独立的，没有国家主权。”可见抱大腿也没用，还被踢了一脚。</p>
 <p>三、自欺欺人说“中华民国”是民主国家——国民党自蒋介石黑暗统治下无民主，已是定说，但民进党继起，却给无民主做了更粗野的示范。以2006年对陈水扁的罢免案为例，三次投票，民进党立委83人全部三次不敢出席，这种在领队控制下的集体不敢进场事件，真是人类议会史上奇闻。他们团队在议场门口台阶下，像一群被赶的鸭子，团左团右团进团出，这太骇人了。民主政治是议会政治，议会表决是民主程序，你们整个的民进党立委，可以集体拒绝表决、甚至不敢参与表决反对，这是什么态度呢？人家罢免你的总统，你连反对都不敢表达，这是何等可耻、何等荒谬！台湾的民主是假的，由这一83只鸭子式民主，正好开了吉尼斯世界记录！另一种彰显伪民主的现象是：少数党民进党竟可用暴力阻止多数党国民党投票，国民党竟因之就范，真是世界级的奇闻。</p>
 <p>四、自欺欺人说可以“中华民国”之名进联合国——不论所谓“重返”联合国或“加入”联合国，都绝不可能。“重返”要共产党“高抬贵屁股”（他退出）；“加入”要共产党“高抬贵手”（不否决），都是异想天开。“中华民国”这名义，已被中华人民共和国继承并代表了，所以，根本没有余地。难道要共产党“高抬贵屁股”让你吗？</p>
-<p>五、自欺欺人说可以“台湾”之名进联合国──殊不知（一）1971年10月25日，联合国第2758号决议文是：“立即赶出蒋介石在联合国组织及其所属机构内的代表，因所有席位皆非法占有。”（...toexpelforthwiththerepresentativesofChiangKai-shekfromtheplacewhichtheyunlawfullyoccupyattheUnitedNationsandinalltheorganizationsrelatedtoit.）并非赶出中国台湾。（二）《联合国年鉴》（YearbookoftheUnitedNations）中，至今在China（中国）项下还IncludesFormosa（包括台湾）。（三）可见台湾一直在联合国里面，根本没退出，如今你声言要加入，人家会奇怪你有精神病，怎么会有两个台湾？（四）何况，共产党有否决权，以“台湾”之名“加入”联合国，难道要共产党“高抬贵手”让你吗？国民党“意淫大陆，手淫台湾”；民进党“意淫联合国，手淫台湾”，两党无独有偶，同样可恶。</p>
+<p>五、自欺欺人说可以“台湾”之名进联合国──殊不知（一）1971年10月25日，联合国第2758号决议文是：“立即赶出蒋介石在联合国组织及其所属机构内的代表，因所有席位皆非法占有。”（…to expel forthwith the representatives of Chiang Kai-shek from the place which they unlawfully occupy at the United Nations and in all the organizations related to it.）并非赶出中国台湾。（二）《联合国年鉴》（Yearbook of the United Nations）中，至今在China（中国）项下还Includes Formosa（包括台湾）。（三）可见台湾一直在联合国里面，根本没退出，如今你声言要加入，人家会奇怪你有精神病，怎么会有两个台湾？（四）何况，共产党有否决权，以“台湾”之名“加入”联合国，难道要共产党“高抬贵手”让你吗？国民党“意淫大陆，手淫台湾”；民进党“意淫联合国，手淫台湾”，两党无独有偶，同样可恶。</p>
 <p>六、自欺欺人说要“台独”——作为政见，未执政时可以相信台独；但作为政策，执了政就不能躲着不敢台独，台独啊台独，口号从228起算，已63年；从彭明敏、谢聪敏、魏廷朝宣言起算，已45年；从民进党成立起算，已24年。民进党党纲白纸黑字说“以公民投票方式”决定建立“台湾共和国”，可是执政了8年都不敢。至今犹在口腔期。“台独”只是口号，不敢来真的，一直都不敢。</p>
 <p>七、自欺欺人说要“正名”——为什么只是叫“正名”，而不敢真“正名”？你是执政党、你是行政院长、你是国会半数、你是总统副总统、你说台湾人不是被吓大的、你说台湾人要有尊严，可是正名“台湾共和国”呀，你不敢，你还整天骗人要“正名”，正什么名？就宣布你叫“台湾共和国”不就得了？可是，你不敢，你只能像贼一样，偷偷在文件写上“中华民国（台湾）、偷偷在护照印“TAIWAN”，名不正言不顺，等了63年、等了45年、等了24年，你还不敢台独，你是骗子，什么台独大老小老、什么台独什么派、基本教义派，都是懦种和骗子。</p>
 <p>八、自欺欺人说“中共侵略”——有台湾人口口声声“中共侵略”，事实上中共没拿过台湾一寸土地，反倒是日本人拿走了台湾的钓鱼台。台湾人说中共宪法说台湾是他们的一个省，但台湾的宪法又何尝不说大陆是台湾的领土？2003年行政院新闻局出版的《中华民国年鉴》明列“全国共划分35个省”，而其中34个省在大陆，台湾只是三十五分之一！宪法上互相“吃豆腐”算“侵略”吗？至于说中共不该有《反分裂法》，为什么不查查台湾自己的《国家安全法》呢？《国家安全法》中禁止“分裂国土”条文，要比中共早18年呢！</p>
@@ -1084,8 +1117,8 @@
 <p>十一、自欺欺人相信《台湾关系法》对美有约束力——美国出卖“中华民国”并予以断交后，私下推出一部《台湾关系法》，它是美国国内法，只是美国国内自说自话的法律。它对全世界任何国家和地区都无约束，包括被它自行夹带的台湾在内。它根本不是约束性的双边条约，既然不是条约，别人（包括台湾）就不能要求它履约。台湾人不清楚《台湾关系法》根本不是条约，根本没有约束力，就一厢情愿去相信，其蠢可知。正因为《台湾关系法》是美国的国内法，所以它在第2条B项第2款中明说是基于“美国政治上、安全上与经济上的利益”，从没说是基于台湾的这三种利益，台湾人相信《台湾关系法》的，其蠢又加一级。</p>
 <p>十二、自欺欺人以为《台湾关系法》可以保护台湾——今天有信心满满、洋洋自得的台湾人说《台湾关系法》会保护台湾，可是遍查该法全文，并无依据。此由当年美国众议院亚太小组主席查布劳基（Zablocki）要订名《台湾关系法》（TaiwanProtectiveAct）而被否决，可见端倪。这一否决内幕，李大维分别于1985年11月27日、1986年2月13日，走访众议院外交委员会幕僚长布雷迪（JackBrady）及资深幕僚古力克（LewisGulick），得到证实。所谓《台湾关系法》保护台湾之说，依法无据、于愿一厢耳。</p>
 <p>十三、自欺欺人以为《台湾关系法》可以要求美国——《台湾关系法》是美国的单方国内法，不是对台湾的双方条约，美国并没有保护台湾的依据，台湾无法要求美国给出任何承诺。人家立法叫《台湾关系法》，可是关系了半天，只是美国跟台湾的关系，不是台湾跟美国的关系，像是妓女户的窑子一样，只有人家来同你发生关系，你不能找上门去发生关系，台湾人出头天，要当家作主，原来在老美面前，只是妓院中的窑子。并且，由于妓院未经合法登记（没有邦交），还不是有执照的妓女，实乃私娼而已。</p>
-<p>十四、自欺欺人以为《台湾关系法》明文规定美国有出兵承诺——事实上，《台湾关系法》规定的，只是美国会“严重关切”（graveconcern）。但“严重关切”并不等于出兵。美国参议员裴西（CharlesPercy）就认为“严重关切”是不够的，提案要求改为“安全利益”（securityinterest），但提案被否决了，否决理由是，用“安全利益”一词，会迫使美国对中共采取军事行动！裴西参议员就举出四个例子，证明“严重关切”是骗人的。</p>
-<p>十五、自欺欺人相信“军购”——《台湾关系法》第2条B项第5款明定美国得“以防御性武器供应（provide）”台湾，所谓“供应”，并不是军售或军购，它可以解释成“赠予”、解释成“求你收下”、解释成“我不要了，放在你家”、解释成“为了保护我们‘美国政治上、安全上与经济上的利益’，请你笑纳，多多使用”……根据条文，从来没说一定要“购买”，而台湾人傻傻的向美国拿钱去买，其蠢可想。美国众议院《2006至2007年财政年度外交关系授权法》（FOREIGNRELATIONSAUTHORIZATIONACT,FISCALYEARS2006AND2007）小册，其中第234页倒数第14行中，赫然有“ThePresidentisauthorizedtoprovide(withoutcharge）...”字样，足证美国立法单位业已明确将provide（提供）定义为withoutcharge（免费），从而美国年年要台湾以巨资买武器，乃属不当得利。至于马英九所谓“合理军购”根本不通，因为后面有个“购”字，就是不通、就是不合理。</p>
+<p>十四、自欺欺人以为《台湾关系法》明文规定美国有出兵承诺——事实上，《台湾关系法》规定的，只是美国会“严重关切”（grave concern）。但“严重关切”并不等于出兵。美国参议员裴西（Charles Percy）就认为“严重关切”是不够的，提案要求改为“安全利益”（security interest），但提案被否决了，否决理由是，用“安全利益”一词，会迫使美国对中共采取军事行动！裴西参议员就举出四个例子，证明“严重关切”是骗人的。</p>
+<p>十五、自欺欺人相信“军购”——《台湾关系法》第2条B项第5款明定美国得“以防御性武器供应（provide）”台湾，所谓“供应”，并不是军售或军购，它可以解释成“赠予”、解释成“求你收下”、解释成“我不要了，放在你家”、解释成“为了保护我们‘美国政治上、安全上与经济上的利益’，请你笑纳，多多使用”……根据条文，从来没说一定要“购买”，而台湾人傻傻的向美国拿钱去买，其蠢可想。美国众议院《2006至2007年财政年度外交关系授权法》（FOREIGN RELATIONS AUTHORIZATION ACT, FISCAL YEARS 2006 AND 2007）小册，其中第234页倒数第14行中，赫然有“The President is authorized to provide (without charge）…”字样，足证美国立法单位业已明确将provide（提供）定义为without charge（免费），从而美国年年要台湾以巨资买武器，乃属不当得利。至于马英九所谓“合理军购”根本不通，因为后面有个“购”字，就是不通、就是不合理。</p>
 <p>十六、自欺欺人向美展示“决心”——美国人摆明的“军购”心态是：买武器虽不足以自卫，但可以证明你有自卫决心。正相反的，该证明有决心的，是“我决心来救你”的美国人自己。美国不决心，台湾决心，有个屁用？但美国有决心吗？美国智库学者一致意见是：台湾“勿轻率认定美终将驰援台海！”（2004年12月14日《中国时报》）美国的决心，原来如此！花大钱才证明有“决心”，这是什么鬼逻辑！</p>
 <p>十七、自欺欺人否认“以狗自居”——从1949年来，台湾就陷入一种错乱，这种错乱是蒋介石政权、美国和日本“三角架构”形成的，它的基调是使台湾脱离中国大陆的范围，也就是说，台湾要变成中国统一的阻力。乍看起来，蒋介石是中国统一的信仰者，但他实际做的，却反其道而行之，并沦为美、日“第一岛链”的正犯。蒋介石有一点值得“赞美”的是，他替美国做看门狗，但却花的是美国主子的美援，到他死了，他的接班人，不论国民党还是民进党，却“看门狗自费”了，这种下贱，的确为蒋介石所不及。蒋介石的接班人“以狗自居”，花民脂民膏军购武器，其贱可卑、其蠢可想，今年马英九花2045亿军购武器，给美国主子朋分吃红，尤其是狗中之尤。</p>
 <p>十八、自欺欺人飞弹可以保台——其实飞弹并不能保台，即使买来的爱国者飞弹可以打下老共的飞弹，也只能打下三分之一，其他三分之二根本无能为力，并且还要要求老共只能发射爱国者飞弹弹之所及的才成。如果老共开玩笑，来的是M7飞弹，或来的是东风21或东风25飞弹，拦也拦不住，如果老共再开玩笑，来的是卫士2型（WS-2）火箭，就更要命了，那种火箭一枚只要1万美金，而爱国者飞弹一枚却要300万美金！三枚拦一枚去吧，就算拦得住，也要近1000万拦1万，你花1000万成本拦他1万成本，你去哭吧。还没完，他的鸿鸟系列飞弹能以10到30公尺高度低空而来，你的爱国者最小射高却是50公尺，它比你矮，你根本拦不住它，他在你裤裆里炸你LP，你去哭吧。</p>
@@ -1116,7 +1149,7 @@
 <p>第一，它是17岁的抗议之作。一般17岁，或无能为力、或默尔而息，但这本书，却揭竿而起、挺身而斗，以六七万字对付你，这是何等抗议！</p>
 <p>第二，它是17岁的务实之作。这本书少说空话，而是用比对、用证据来说话。“乘空文以自见”是不够的，这本书，“獭祭”出许多“实文”。这是何等务实！</p>
 <p>第三，它是17岁的论世之作。一般说来，17岁尚不足以知人论世，但是，李戡别开生面、独成一格。他的论世范围，是与我前面举出的20个实例同级的，这就是说，他有论世的高度和准确度。这是何等可信！</p>
-<p>几十年前，我读劳伦斯《查泰莱夫人的情人》（LadyChatterley'sLover），我最喜欢这么一段：“苦难当前，我们正置身废墟之中。在废墟中，我们开始盖一些小建筑，寄一些小希望。这当然是一件困难的工作，但已没有更好的路通向未来了。我们要迂回前进，要爬过层层障碍，不管天翻也好、地覆也罢，我们还是要活。”（Thecataclysmhashappend,weareamongtheruins,westarttobuildupnewlittlehabitats,tohavenewlittlehopes.Itisratherhardwork,thereisnosmoothroadintothefuture;butwegoround,orscrambleovertheobstacles.We'vegottolive,nomatterhowmanyskieshavefallen.）这段文字，可说是我在这岛上处境的最好描写。我的确是在“废墟之中”一次又一次的“开始盖一些小建筑、寄一些小希望”，可是一次又一次被摧毁了。在每一层的“废墟之中”，都有我“小建筑”和“小希望”的残迹，恰像那一层盖在又一层上面的特洛伊古城，你会发现：自己既是过去、又是现在。过去已经化为尘土，可是，就凭那些尘土，你活到现在；不但活到现在，还从现在朝向未来。</p>
+<p>几十年前，我读劳伦斯《查泰莱夫人的情人》（Lady Chatterley’s Lover），我最喜欢这么一段：“苦难当前，我们正置身废墟之中。在废墟中，我们开始盖一些小建筑，寄一些小希望。这当然是一件困难的工作，但已没有更好的路通向未来了。我们要迂回前进，要爬过层层障碍，不管天翻也好、地覆也罢，我们还是要活。”（The cataclysm has happend, we are among the ruins, we start to build up new little habitats, to have new little hopes. It is rather hard work, there is no smooth road into the future; but we go round, or scramble over the obstacles. We’ve got to live, no matter how many skies have fallen.）这段文字，可说是我在这岛上处境的最好描写。我的确是在“废墟之中”一次又一次的“开始盖一些小建筑、寄一些小希望”，可是一次又一次被摧毁了。在每一层的“废墟之中”，都有我“小建筑”和“小希望”的残迹，恰像那一层盖在又一层上面的特洛伊古城，你会发现：自己既是过去、又是现在。过去已经化为尘土，可是，就凭那些尘土，你活到现在；不但活到现在，还从现在朝向未来。</p>
 <p>多少年来，我身处孤岛，对这段文字，每做不无苍凉的解释，但是，当我变得越来越壮大，我终于以艺术家“老弃敦煌”的心境，疏远了这个只占世界万分之二的地方，对我，毕竟它太小了。</p>
 <p>17岁的李戡超越了17岁的我，我希望他继续超越、逐年超越，提前发现我们要有更高更远的视野，“老弃敦煌”何如“少弃敦煌”，当那一天到来的时候，我们将会凭吊废墟，因为它曾是我们的一切。</p>
 <p>2010年7月4日，在中国台湾</p>
@@ -1419,7 +1452,7 @@
 <p>蔡金铿及孟祥柯是以盗取国民党列为极机密的政治犯名单遭捕。张茂雄因为帮助一些处于饥饿状态中的政治犯家属也遭逮捕。其中孟先生是一位多产作家。</p>
 <p>吴松枝律师曾被关过四个月，原因是秘密警察想向他逼问省议员郭雨新的消息。吴先生已于1971年8月23日被释放。政大毕业的白先生也因为国民党想调查非党籍议员或候选人的背景而遭捕。身为新闻记者又与彭先生有亲戚关系的陈炳煌先生，在访问彭先生的兄妹之后被捕，并且被逼提供彭教授家属的近况。</p>
 <p>安全室警官洪武雄被控以在彭教授离台后，将警察局找我麻烦之方法的资料偷送给我。（但在地方法庭，警察局安全室曾经否认对我找过麻烦。倘说他们的否认是真的，为什么洪武雄还会被控告呢？多么自相矛盾啊！）</p>
-<p>治安措施真有点像女巫之猎（witchhunting），我的很多好友都被贴上反蒋的标签，分门别类地放进黑名单的档案里。他们以后会遭受逮捕的。</p>
+<p>治安措施真有点像女巫之猎（witch hunting），我的很多好友都被贴上反蒋的标签，分门别类地放进黑名单的档案里。他们以后会遭受逮捕的。</p>
 <p>我不确知到底有多少人牵涉此案而遭逮捕或折磨，秘密警察提过很多我从未听过的名字。一个叫作洪昭男的台大毕业生被控以企图把我从这个无法忍受的地方走私出去。这完全是虚构的故事，因为我根本不认识他。</p>
 <p>1971年7月6日，蒋经国前来，秘密警察及监牢的总部以遂行他们的密谋。一小撮将军围住在他的四周，就像扑火的飞蛾。三周过后，一个省刑警大队的专家来告诉我，爆炸美国商业银行的不是我，而是李政一和他对朋友们。我确知那也不过是另一宗诬告而已。他们拿李政一和他对朋友来当代罪的替身。今（1971年8月28日）早，我收到起诉文的要旨，里面共牵涉四个人：魏先生、李政一和我被引用惩治叛乱条例第二条第一项，李敖先生则被引用第二条第三项起诉。其他的朋友未被提及，爆炸银行一事也不在内。显然地，其他朋友一定在另案中被起诉，而李政一和他的朋友们将在另一案中被审判。这群血腥的魔鬼准备把他们埋葬于暗室之中。多狡猾的计谋啊！我很为他们担心。</p>
 <p>国民党靠阴谋生存，乃不得不经常怀疑别人对他的阴谋。在这几个月当中，他们一次又一次这样问我：美国大使教过你如何推翻政府吗？他告诉过你美援如何减少吗？日本想用什么方法来取代这个政府呢？——我的好友啊，我从未会见过美国大使馆的任何馆员，你能帮助回答这类问题吗？</p>
@@ -1436,7 +1469,7 @@
 <p>1993年6月，《中国时报》记者张平宜采访再次来台访问的小林正成。张平宜在《新新闻》杂志中厘清了那封信的迷津。文中说：</p>
 <p>原来，小林答应帮谢聪敏带信后，心中也自有盘算，他知道出狱前一定会被搜身，所以他心想一定要找出一个安全的地点，暂时妥藏这封重要的信函。所以在事前就到处勘察地形，聪明的小林发现在厕所洗手台后面结满了蜘蛛网，他知道这个地方一定没人注意，所以一拿到信之后，就用饭粒将信黏在洗手台后面。</p>
 <p>出狱前，全身被脱光检查后，他借着“尿遁”，神不知鬼不觉地取走信，并藏在袜子里，心里紧张得七上八下，直担心万一再被搜身逮到，得依照谢聪敏再三的叮嘱：“吃了它，毁灭一切证据！”（见张平宜著《小皇帝与大国民》，三思堂，1994年8月初版）。</p>
-<p>这封信被送到日本的《台湾青年》社。日本虽然是民主国家，还是缺乏西方的人权概念。日本的媒体虽然看到国际特赦协会推荐的书信，还是“画地为牢”，不敢登出监狱来信。这封信就辗转被送给旅居美国的彭明敏教授。但是他为顾虑我们的安全不敢交给报纸。据《台湾青年》社社长许世楷谈话，经过再三催促，才在8个月后的1972年4月24日的《纽约时报》登出，标题是：FromaTaiwanPrison。</p>
+<p>这封信被送到日本的《台湾青年》社。日本虽然是民主国家，还是缺乏西方的人权概念。日本的媒体虽然看到国际特赦协会推荐的书信，还是“画地为牢”，不敢登出监狱来信。这封信就辗转被送给旅居美国的彭明敏教授。但是他为顾虑我们的安全不敢交给报纸。据《台湾青年》社社长许世楷谈话，经过再三催促，才在8个月后的1972年4月24日的《纽约时报》登出，标题是：From a Taiwan Prison。</p>
 <p>国民党政府驻美的沈大使写了一份读者投书，也在《纽约时报》反驳，意指我人在台湾监狱，不可能有来信。纽约市立大学蔡同荣教授则在美国国会人权听证会上宣读了“狱中来信”，并且收入国会纪录。</p>
 <p>二十一</p>
 <p>从特务追寻来自日本的“羊羹”下落，我们可以发现：特务从日本获得情报应为事实。特务自陈逸松的“羊羹”得不到证据，立刻转到颜艮昌身上。“羊羹”来自日本“台湾独立联盟”的《台湾青年》社，负责人正是辜宽敏。主持“羊羹”工作的是由辜宽敏推荐的继任人许世楷。</p>
@@ -1501,12 +1534,12 @@
 <h2 id="我写阳痿美国"><a class="header" href="#我写阳痿美国">我写《阳痿美国》</a></h2>
 <p>阉割美国太不幽默了，让我们阳痿它。</p>
 <p>对美国，我们不是“治疗阳痿”，我们是“阳痿治疗”。是用使美国阳痿的方法，治疗美国“强阳不倒”的绝症（“强阳不倒”的学名是“阴茎异常勃起”，priapism）。</p>
-<p>美国的绝症很邪门儿，它得了“政治上的强阳不倒”（politicalpriapism），祸害世界和它自己。</p>
+<p>美国的绝症很邪门儿，它得了“政治上的强阳不倒”（political priapism），祸害世界和它自己。</p>
 <p>美国得天独厚，变得强大，却不知以其强大，与世修好；反自恃强大，与世为仇，惹来人恨，又不知自己多么可恨，其骄纵狂妄，亦复可知。美国以拳头威胁世界，它的“拳头开支”（军费），占世界一半，它不但自己伸出大拳头，还卖小拳头给四方，激发军备竞赛、制造世界紧张。全世界66亿人口，平均每人要花202美元玩拳头，听任全世界穷死、饿死，这是什么对比？美国宣传说它爱好和平，现在查出来了，它花在杀人的钱与救人的钱的比例是30：1；美国宣传说它慷慨，给欧洲多少钱，现在查出来了，原来美国人每人只花了6.7美分的钱，相当于一块糖的钱，给了欧洲；美国宣传说它对世界捐助最多，并且有八成一的美国人如此相信，现在查出来了，比例上，它是全世界最小气的国家，“联合国世界卫生组织”公布：只要拿出美国所得百分之0.1%的钱救人，相当于每个美国人出一毛钱，即可救出成千上万条人命，可是美国人却一毛都不拔！</p>
 <p>如果钱是美国大富翁自己的，它小气，倒也罢了。真相是，这大富翁越来越是假的，它外场的珠光宝气，却建筑在“以邻为壑”的内场上。</p>
 <p>美国曾经安分过、曾经有钱过，但是今天它变了，它变得鸭霸四海、狂吃八方，债台高筑之下，它的政府，每花1美元，其中4角1分是借来的；它的人民呢，1美元当10美元大花特花、虚掷浪费。在美国境外流通的美金总数，比在美国本土还多得多，这就是说，美国在用印钞机吃世界，一张百元美钞的印刷费只要两分钱，一张张印出来，全世界都被它偷吃了。</p>
 <p>美国变了，美国是他国的祸害、是人类的噩梦、是世界的狰狞。</p>
-<p>美国动用排山倒海的“柔性力量”（softpower）载歌载舞，在欢乐中使我们向往它，淡化它的恶形恶状。我们曾经向往过，但是，我们必须觉悟了。我们用这本书，举证历历，表达我们的不安与愤怒，我们决心不再受骗了。</p>
+<p>美国动用排山倒海的“柔性力量”（soft power）载歌载舞，在欢乐中使我们向往它，淡化它的恶形恶状。我们曾经向往过，但是，我们必须觉悟了。我们用这本书，举证历历，表达我们的不安与愤怒，我们决心不再受骗了。</p>
 <p>阉割美国太不幽默了，让我们阳痿它。</p>
 <p>2010年8月13日</p>
 <h2 id="潘毓刚我也李敖一下祖国版序"><a class="header" href="#潘毓刚我也李敖一下祖国版序">潘毓刚《我也李敖一下》祖国版序</a></h2>
@@ -1558,7 +1591,7 @@
 <p>这是李棠一人转。</p>
 <p>一岁的小顽童是“顽童哲学家”，他从一线天里，看到天堂和自己。</p>
 <p>其他的什么什么家，都是叫你追别人；只有“顽童哲学家”，叫你追自己。</p>
-<p>自己，要追吗？能追吗？有人不在追吗？像彼得潘（PeterPan），他不发现自己的影子在离他而去吗？人身上的一部分，或先于你、或后于你；或早于你、或晚于你，你会发现，你不是那么一致的、平行的、同步的，你的一部分会远扬，要你追它。</p>
+<p>自己，要追吗？能追吗？有人不在追吗？像彼得潘（Peter Pan），他不发现自己的影子在离他而去吗？人身上的一部分，或先于你、或后于你；或早于你、或晚于你，你会发现，你不是那么一致的、平行的、同步的，你的一部分会远扬，要你追它。</p>
 <p>“顽童哲学家”是聪明的，他不追别人，只追自己。</p>
 <p>2011年</p>
 <h2 id="大江大海骗了你书衣词"><a class="header" href="#大江大海骗了你书衣词">《大江大海骗了你》书衣词</a></h2>
@@ -1598,13 +1631,13 @@
 <p>《英文汉诂》此书，积良箴先生周旋英汉60余年心得，和我逍遥字海50多年管窥，以札记体裁，随缘抽样，点化为之，不拘系统，以偏概全，自在意中。读者举一反三，从而略知吾等老辈万花学问之片羽吉光，即云幸矣。孔子曰：“斐然成章，不知所以裁之。”狂简之讥，立此存照可也。</p>
 <p>2007年3月6日</p>
 <p>一点石与点金</p>
-<p>中国道教讲炼丹术，要炼到点石成金。唐朝贯休《禅月集》（拟君子有所思诗之二）：“安得龙猛笔，点石为黄金。”宋朝胡仔《苕溪渔隐丛话后集》（孟浩然）：“诗句以一字为工，自然颖异不凡，如灵丹一粒，点石成金也。”这种一点成金的观念，英文有“金手指”（GoldenTouch），凯瑟琳斯陀尔（CatherineStorr）写道：</p>
-<p>ThegodDionysussentamessagetoMidas.“Iwillrewardyouforlookingaftermyoldfriend.Tellmewhatyourdearestwishis,andIwillgrantit.”</p>
-<p>Midassaidatonce,“IshouldlikebestthateverythingItouchshouldturnintogold.”</p>
-<p>“Thinkcarefullyaboutwhatyouareaskingfor,”Dionysussaid.ButMidaswouldnotstoptothink.Hewantedtobetherichestmanintheworld.Dionysussaid,“ThenIwillgrantyourwish.Fromnowon,youhavetheGoldenTouch.”</p>
-<p>足证希腊传统中弗里吉亚（Phrygia）王麦得斯（Midas）有吕洞宾本领且过之，因所点不止于石，全部成金也。英文成语tohavetheMidastouch（知道如何赚大钱）本此，007电影且光而大之。</p>
+<p>中国道教讲炼丹术，要炼到点石成金。唐朝贯休《禅月集》（拟君子有所思诗之二）：“安得龙猛笔，点石为黄金。”宋朝胡仔《苕溪渔隐丛话后集》（孟浩然）：“诗句以一字为工，自然颖异不凡，如灵丹一粒，点石成金也。”这种一点成金的观念，英文有“金手指”（Golden Touch），凯瑟琳斯陀尔（Catherine Storr）写道：</p>
+<p>The god Dionysus sent amessage to Midas.“I will reward you for looking after my old friend. Tell me what your dearest wish is, and I will grant it.”</p>
+<p>Midas said at once,“I should like best that everything I touch should turn into gold.”</p>
+<p>“Think carefully about what you are asking for,”Dionysus said. But Midas would not stop to think. He wanted to be the richest man in the world. Dionysus said,“Then I will grant your wish. From now on, you have the Golden Touch.”</p>
+<p>足证希腊传统中弗里吉亚（Phrygia）王麦得斯（Midas）有吕洞宾本领且过之，因所点不止于石，全部成金也。英文成语to have the Midas touch（知道如何赚大钱）本此，007电影且光而大之。</p>
 <p>二中文文法与英文文法</p>
-<p>丹麦语言学家耶斯柏森（OttoJespersen）赞美中文文法最合逻辑、是最进步的文法。英文文法圣之时者，几百年来，越来越向中看齐了。虽然have与has之分，仍有醉后狐尾，但比起德文、法文，已经超越前进多多矣。德文“这个”有12种变化，第一位英国诗人乔叟（GeoffreyChaucer）开创所谓“乔叟式文体”（Chaucerism）中，犹见此类凿痕，今日the只有一种而已。英文得以成强势语言，从语言本身看，亦有其道。中文文法是全世界最简单的，中国称强国，从语言本身看，亦着先鞭，洋鬼子想不到也，唯语言学家先得之。</p>
+<p>丹麦语言学家耶斯柏森（Otto Jespersen）赞美中文文法最合逻辑、是最进步的文法。英文文法圣之时者，几百年来，越来越向中看齐了。虽然have与has之分，仍有醉后狐尾，但比起德文、法文，已经超越前进多多矣。德文“这个”有12种变化，第一位英国诗人乔叟（Geoffrey Chaucer）开创所谓“乔叟式文体”（Chaucerism）中，犹见此类凿痕，今日the只有一种而已。英文得以成强势语言，从语言本身看，亦有其道。中文文法是全世界最简单的，中国称强国，从语言本身看，亦着先鞭，洋鬼子想不到也，唯语言学家先得之。</p>
 <p>三鲁迅之流与余光中之流</p>
 <p>鲁迅之流，讥中文文法，说文法太差，因而强学文章，以“的”“地”“得”等字附丽其后，表示中文有现代文法，其实是林语堂所讥的“盲人摸象，庸人自扰”。林语堂举例说：</p>
 <p>我们且就代名的“牠”说起。左派仁兄看见人家有it，而国语没有，非常惭愧。此“牠”字之所由来也。然而事实并不如此简单。袭人、紫鹃等，可以差小丫头说，东西须收好，“仔细别给丢了”，绝不说“仔细不要丢了牠”。这是纯粹国语。凡宾位说法，平常说，“把人杀了，把钱抢走，把屋子烧了。”绝用不着“牠”字。手表“丢”了，或“给丢”了，用不着说“丢了牠”。国语何时演出此文法构造，应该做语言学上的考据。因为古文未见此种构造。</p>
@@ -1618,28 +1651,28 @@
 <p>孙中山传世题字中，有为居正写的一幅，上书：“美语曰民国者，民之国也，为民而设，由民而治者也。觉生先生正。”语意较细，但宾主尽欢，不可得也。</p>
 <p>五洋泾浜正字</p>
 <p>三民书局《大辞典》洋泾浜条下说：</p>
-<p>“洋泾浜”（pidgin）由两种语文的接触而产生的一种比较简单的辅助性语文。这种语文在文法上是两种语文特色的结合，发音常与两者有很大的差异。洋泾浜一词可能是“必斯诺斯”（business生意）讹误发音而形成。旧时“上海”租界以及其他港口，因“华”、洋人杂处，语言相混，所以称不纯正或杂有“中国”语文的“英”语为洋泾浜“英”文（pidginEnglish）。而今此词并广泛用来指远东、“美拉尼西亚”（Melanesia）或“西非”等与“英”“美”人士交往的地区，所使用带有与当地语文混杂的“英”文。“洋泾浜”的“浜”字，有人以为是“滨”字的简体字，因而改为“洋泾滨”，是绝对错误的。马英九之流号召正体字挂帅，不知乱正一通，适显其无知耳。</p>
+<p>“洋泾浜”（pidgin）由两种语文的接触而产生的一种比较简单的辅助性语文。这种语文在文法上是两种语文特色的结合，发音常与两者有很大的差异。洋泾浜一词可能是“必斯诺斯”（business生意）讹误发音而形成。旧时“上海”租界以及其他港口，因“华”、洋人杂处，语言相混，所以称不纯正或杂有“中国”语文的“英”语为洋泾浜“英”文（pidgin English）。而今此词并广泛用来指远东、“美拉尼西亚”（Melanesia）或“西非”等与“英”“美”人士交往的地区，所使用带有与当地语文混杂的“英”文。“洋泾浜”的“浜”字，有人以为是“滨”字的简体字，因而改为“洋泾滨”，是绝对错误的。马英九之流号召正体字挂帅，不知乱正一通，适显其无知耳。</p>
 <p>PidgeenEnglish字面上是“鸽子英文”，别作pidginEnglish，pidgin是“混杂语”、“混杂行话”。三民书局《大辞典》把《洋泾浜》一词解释成“讹误发音而形成”，是错的。洋泾滨是上海的一块地名。19世纪上海的“圣若瑟天主堂”就叫“洋泾浜天主堂”，位于洋泾浜南岸（后为四川南路）。</p>
 <p>六Yes与No</p>
-<p>英文“唯诺之辈”曰yesman；“反调者流”曰noman。美国有笑话说里根（RonaldReagan）总统手下非yesman（yesmen），因里根以no斥敌人时，彼辈众口一no也。</p>
+<p>英文“唯诺之辈”曰yesman；“反调者流”曰no man。美国有笑话说里根（Ronald Reagan）总统手下非yesman（yesmen），因里根以no斥敌人时，彼辈众口一no也。</p>
 <p>杨绛《我们仨》写钱钟书和女儿钱瑷故事：</p>
-<p>钟书爱逗她、惹她、欺她，每次有吃的东西，总说：“Babynoeat.”她渐渐听懂了，总留心看妈妈的脸色。一次爸爸说了“Babynoeat.”她看看妈妈的脸，迸出了她自造的第一句英语：“Babyyeseat！”她那时约6岁。</p>
+<p>钟书爱逗她、惹她、欺她，每次有吃的东西，总说：“Baby no eat.”她渐渐听懂了，总留心看妈妈的脸色。一次爸爸说了“Baby no eat.”她看看妈妈的脸，迸出了她自造的第一句英语：“Baby yes eat！”她那时约6岁。</p>
 <p>这是很有趣的洋泾浜英文，但别忘了，yes虽是副词、名词，也是动词“同意”、“赞同”、“称是”之意也；no是副词、形容词、名词。所以，以词性评定父女二人的洋泾浜，别有高下也。</p>
 <p>七另</p>
 <p>英文another，有“另一个”和“再一个”歧义，前者是“换一个”，后者是“加一个”。太太对菲佣说：“小心吧，再发生这种事，我要另找一个了。”（Now,mind,ifthisoccursagain,Ishallhavetogetanotherservant.）菲佣答话说：“太太，真求之不得了。家里事太多了，我一个人忙不过来。”（Iwishyouwould,ma’am;there’squiteenoughworkherefortwoofus.）</p>
 <p>刘家昌《往事只能回味》情歌，最后一句是“梦里相依偎”。可是，听来像“另外想一位”。——乐观者之听觉，多图利自己也。</p>
 <p>八</p>
 <p>以具体写抽象</p>
-<p>高明的表达法，除了数学一类以外，都在于以具体写抽象。例如表达什么是“过去式”（pasttense）呢？答案是：</p>
+<p>高明的表达法，除了数学一类以外，都在于以具体写抽象。例如表达什么是“过去式”（past tense）呢？答案是：</p>
 <p>一种从咬紧牙根到张牙咧嘴的状况。</p>
-<p>Theconditionwhereyougofromgrittingyourteethtobaringyourteeth.</p>
+<p>The condition where you go from gritting your teeth to baring your teeth.</p>
 <p>把past别解作“超越”、把tense别解作“紧张”，然后桃花圣解，别解出“超越紧张”的复合词，呈现出具体意象，这就是高明。</p>
 <p>九正名哲学</p>
-<p>Spade是铲子，也是纸牌中黑桃。Callaspadeaspade，通常译为“是啥说啥”、“有啥说啥”、“直言不讳”、“直言无隐”。都是指铲子而来，不是黑桃。实际上，此中涉及正名哲学，一如孔子所坚持的“觚不觚。觚哉？觚哉？”英国作家本奈特（ArnoldBennett），1911年有作曰“卡”（TheCard），中有句曰：</p>
-<p>“yecancallitinfluenzaifyelike,”saidMrsMachin.“Therewasnoinfluenzainmyyoungdays.Wecalledacoldacold.”</p>
+<p>Spade是铲子，也是纸牌中黑桃。Call a spade a spade，通常译为“是啥说啥”、“有啥说啥”、“直言不讳”、“直言无隐”。都是指铲子而来，不是黑桃。实际上，此中涉及正名哲学，一如孔子所坚持的“觚不觚。觚哉？觚哉？”英国作家本奈特（Arnold Bennett），1911年有作曰“卡”（The Card），中有句曰：</p>
+<p>“ye can call it influenza if yelike,”said Mrs Machin.“There was no influenza inmy young days. We called a cold a cold.”</p>
 <p>沈约有言：“守株胶瑟，难与适变。”动辄以学名为雅者，名正而言不顺，失之雅矣。</p>
 <p>十铁弗龙</p>
-<p>1983年8月2日美国国会纪录（CongressionalRecord）有民主党女众议员一分钟发言，批共和党总统里根，说细看此公，在政治技术上试行突破，优为“不沾锅总统”是也（Mr.Speaker,aftercarefullywatchingRonaldReagan,heisattemptingagreatbreakthroughinpoliticaltechnology—hehasbeenperleetingtheTeflono-coatedpresidency.）。</p>
+<p>1983年8月2日美国国会纪录（Congressional Record）有民主党女众议员一分钟发言，批共和党总统里根，说细看此公，在政治技术上试行突破，优为“不沾锅总统”是也（Mr. Speaker, after carefully watching Ronald Reagan, he is attempting a great breakthrough in political technology—he has been perleeting the Teflono-coated presidency.）。</p>
 <p>英文teflon音译“铁弗龙”，即聚四氟乙烯，是一种不沾性涂料。</p>
 <p>中国古人有首相级大员号称“刘棉花”者，百官劾之，安然无恙，耐“弹”者也，古之铁弗龙也。</p>
 <h2 id="联语对比举例"><a class="header" href="#联语对比举例">联语对比举例</a></h2>
@@ -2168,7 +2201,7 @@
 <p>不是林黛玉，没有眼泪。</p>
 <p>真的没有眼泪，他回去了，他笑嘻嘻的做了言近旨远的演讲，人们说他以后会再回来，只有陈文茜看出了玄机，在接机时，文茜悄悄点破：“我看你在跟北京道别。”他听了，会心一笑。真的，他在道别，用一种奇异的方式，在做道别。</p>
 <p>在台湾一住61年，多在台北。那年冬天，他投身台北市长选举。他一生坚持原则，不参加任何政党，所以，在党同伐异的政党夹杀下、在朝野对决的非我族类下，他压根儿不从胜负考量。政治挂帅的人们，没人会理解他意欲何为，只有古代“知其不可而为之”的圣者，知道他意欲所在：他在道别，用一种奇异的方式，在做道别。</p>
-<p>四千年四百年来，台湾从来没走过这样一票人物；六十一年来，台湾从来只有他是这票人物。台湾，他来了，他没有走。可是，他要道别，他要在别人粉墨时以真面目登场、在蓝绿褪色时以“雁来红”（Amarantustricolor）谢幕，他告诉台湾朋友：还要上当吗，我们上了坏的外省人四十年当而不能反攻、我们上了混的台湾人六十年当而不能台独，我们要抛弃蓝绿，展开新的思维。让智慧的他指出这一新的思维。</p>
+<p>四千年四百年来，台湾从来没走过这样一票人物；六十一年来，台湾从来只有他是这票人物。台湾，他来了，他没有走。可是，他要道别，他要在别人粉墨时以真面目登场、在蓝绿褪色时以“雁来红”（Amarantus tricolor）谢幕，他告诉台湾朋友：还要上当吗，我们上了坏的外省人四十年当而不能反攻、我们上了混的台湾人六十年当而不能台独，我们要抛弃蓝绿，展开新的思维。让智慧的他指出这一新的思维。</p>
 <p>注意啊，他在道别，用一种奇异的方式，在做道别。珍惜这个岛上曾经走过他，从青春走到老去，最后把老去的智慧，以参选方式，挥洒给你。还在怀疑吗？还要跟蓝绿随波逐流吗？拿住选票，你该想一想。</p>
 <p>2011年8月17日改写</p>
 <h2 id="你笨蛋你笨蛋-1"><a class="header" href="#你笨蛋你笨蛋-1">你笨蛋，你笨蛋</a></h2>
@@ -2194,17 +2227,17 @@
 <p>第三次/2000年3月18日/选国民党连战/陈水扁当选总统</p>
 <p>你笨蛋，你笨蛋。</p>
 <p>2011年8月29日改写</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/03.惊世杂文类/你笨蛋，你笨蛋.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/03.惊世杂文类/你笨蛋，你笨蛋.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../03.惊世杂文类/你是景福门.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../03.惊世杂文类/历史与人像.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -2214,16 +2247,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../03.惊世杂文类/你是景福门.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../03.惊世杂文类/历史与人像.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -2232,12 +2270,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

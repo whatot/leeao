@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,77 +81,98 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <p>#《胡适评传》目录</p>
 <ul>
@@ -163,14 +196,14 @@
 <p>于是，我又捡起七八年前的心愿，想给胡适写部传。不过这回不再是一本了，我决定给他写一部十本的大传记，我要用这一百二三十万字的大传记，让“死掉的人”重新“活过来”，让他重新“说些什么”①，也让我们“说些什么”。</p>
 <p>我所以发愤由我来写这部传记，另外一个主要的原因是看到别人迟迟不肯动手，或做得实在令人不满意。在胡适生前，我读过胡不归的《胡适之先生传》；在胡适死后，我看过毛子水的《胡适传》。这些简陋的传记都出于胡适的学生之手，基本的姿态都是维护他的，或是只有颂扬没有批评的，同时在史料处理方面又过于粗疏，难免有很多错误。</p>
 <p>10多年来，我遍读有关胡适的一切著作，深觉不过是两类而已：一类是近于酷评的（diatribe）；一类是过度颂扬的（eulogy）。两类共有的毛病，是不能用严格的方法训练去接触史料、解释史料。于是，旌旗开处，胡适一出场，喊打与叫好之声此起彼落，胡适一方面被骂得天诛地灭，一方面又被捧得缩地戡天。结果呢，双方的感情因素是满足了，可惜被搬弄的却不是真正的胡适之！</p>
-<p>英国的大政治家克伦威尔曾骂给他画像的人说：“画我须是我。”（PaintmeasIam.）这句话，可以给任何想给别人“画像”的人做为警戒。胡适之不是轻易被了解的人，所以他也不容易被论断，没有受过严格的方法训练和史学训练的人，没有学会呼吸新时代空气的人，是没有办法给他“画像”的。</p>
+<p>英国的大政治家克伦威尔曾骂给他画像的人说：“画我须是我。”（Paint me as I am.）这句话，可以给任何想给别人“画像”的人做为警戒。胡适之不是轻易被了解的人，所以他也不容易被论断，没有受过严格的方法训练和史学训练的人，没有学会呼吸新时代空气的人，是没有办法给他“画像”的。</p>
 <p>做为一个对方法训练和史学训练稍有所知的人、做为一个对新时代空气稍曾呼吸的人，我现在自告奋勇地来做这件大工作。我的目的不仅是“画”胡适之的“像”，并且还要画这个时代的像，我要画出这个时代里的大舞台、画出它的喜剧和悲剧、画出剧里的主角和配角、画出它的场地的布景、画出布景后面的众生相，也画出戏台前面的千万只眼睛。</p>
 <p>所以，可以这么说，这部《胡适评传》，不该单是胡适之个人的评传，它是时代的评传，它是以胡适为主角之一的时代的评传。</p>
 <p>所以，很可能的，许多人看了这部评传会感到惊讶骇异，从正文来看，它可能是文学的；从脚注来看，它可能是历史的②；从夹缝来看，它可能是无孔不入惊世骇俗的。它的结局是：君子既不喜欢它，小人也不喜欢它，只有跟李敖一个调调儿的，才会喜欢它。</p>
 <p>但这都没关系，这都不影响这部评传的方向和进度，一个载浮载沉的传主，被一个乱蹦乱跳的作者来写他、画他、捧他、捶他，这该是中国传记文学史上的新尝试——只有在新时代里才能肯定这种尝试，只有这种尝试才能延伸另外一个新时代。</p>
 <p>民国五十三（1964）年2月24日胡适死后二周年的深夜</p>
 <p>①：我热烈希望凡是和胡适有关系的人，都能帮助我这个使他“说些什么”的计划。这意思就是说，凡是知道或保存有关胡适的言行、文件、信札、图片、稿本等材料的人，都欢迎能够提供、惠借，好使这部评传增色。在传记文学不发达的中国，在这个动乱的时代，试问能有几部一百二三十万的传记来收入你所知道或保存的材料？所以请你不要错过这个广布流传的机会。</p>
-<p>②：我尽量不在正文里掺入繁琐的历史考订，我的目标是“正文轻快，脚注详细”。这种做法是一种费力不讨好的工作。我所以不能放手写文学式的正文，而要兼顾历史性的脚注，乃是因为有关胡适的基层史料工作还没有人做好，所以我不能自自在在的走斯特雷奇（LyttonStrachey）、莫洛亚（AndreMaurois）等人的路。</p>
+<p>②：我尽量不在正文里掺入繁琐的历史考订，我的目标是“正文轻快，脚注详细”。这种做法是一种费力不讨好的工作。我所以不能放手写文学式的正文，而要兼顾历史性的脚注，乃是因为有关胡适的基层史料工作还没有人做好，所以我不能自自在在的走斯特雷奇（Lytton Strachey）、莫洛亚（Andre Maurois）等人的路。</p>
 <p>《胡适评传》楔子</p>
 <p>理想的中国是一座圣山。</p>
 <p>山，在虚无缥缈间。</p>
@@ -183,7 +216,7 @@
 <p>在时代的潮水中，没有人是一个孤岛，不影响潮水或不受潮水侵蚀。个人的生命是时代的生命，个人的消逝是时代的死亡（至少是部分的死亡）。时代漂来了人像，又漂去了他们，自己也随着远去，或早或迟，一齐静化成历史的潭水——透视了自己，也反照了新的个人与时代。</p>
 <p>在这蜕变过程里，往往有新一代的人儿，想从折戟沉沙里、残碑断简里、旧作遗容里，去追摹那些一世之雄的往迹，追寻他们的真相和假面，和那假面背后的精灵。</p>
 <p>这里是一次尝试，尝试对一段朝山进香的历史，做一番追摹与追寻。摹寻的结果不但要找出香客的脚印，而且要越过脚印，重新走进那圣山。</p>
-<p>①威尔逊是胡适最佩服的人中的一人。我这里用这个ordeal是套用胡佛（HerbertHoover）《威尔逊的苦炼》（TheOrdealofWoodrowWilson）的书名。</p>
+<p>①威尔逊是胡适最佩服的人中的一人。我这里用这个ordeal是套用胡佛（Herbert Hoover）《威尔逊的苦炼》（The Ordeal of Woodrow Wilson）的书名。</p>
 <p>可怜的县太爷（1841-1895）</p>
 <p>蔡元培当进士前的七十天，孙逸仙西医书院毕业前一百二十八天①，一个浓眉大眼却愁眉苦脸的壮汉，带着十七条火腿、九十个皮蛋、四十支毛笔、两坛绍兴酒，在上海码头登了船。</p>
 <p>船的目的地是台湾——70年前的台湾，这个52岁的壮汉当时从心眼里讨厌这次旅行。他本是江苏的税务督察，是江苏抚宪刚毅的红人，这次调差到台湾，完全是台湾巡抚邵友濂搞的鬼。刚毅想留住他，可是皇帝不准。所以，他硬着头皮，只好上了船。</p>
@@ -363,7 +396,7 @@
 <p>此外，胡传在光绪二十年（1894）编成《台东州采访修志册》（已详注(13)）也是重要参考材料。关于胡传的日记与禀启，毛子水有一段话颇为平允：</p>
 <p>……这虽然是一位地方官的日常生活和公事的纪录，但从这纪录里，非特可以看出清代末年政治和军事一部分的情形，亦可以知道当时少数知识分子对于时局的态度，以及一个实事求是的读书人对于改进政治的措施。这倒是很值得读的一部传记类的书。（《台湾日记与禀启》弁言，1960年3月台北台湾银行经济研究室版）</p>
 <p>张经甫代撰《胡铁花先生家传》记胡传著作，“有诗文集四卷，钝夫年谱四卷，日记若干卷，禀启存稿若干卷。均未印行。”其中日记与稟启存稿的绝大部分已经印行。诗文方面，胡适曾一再引用他父亲的一句诗——“水必出山无可疑”来说明实验主义：</p>
-<p>在我父亲的诗集子里面有一首诗，讲他在东三省吉林的时候，奉命办一件公事，连人带马都在大森林里迷失了路，三天三夜都没有方法走出来。这个问题就是思想，因为当前的行动发生了障碍。我父亲在诗里面就说他怎样想法子找路出去：有人爬到树上去看，只见四周茫茫无边的树木：在地上也找不出路来，也找不出牛马的蹄痕。这两个办法都不行。这时候，我父亲想到古书上讲过：在山林中迷了路时可以找水；跟着水去找，必定可以出山的。大家就四下去听；听到有水流的声音，果然找到了一条水；跟着水走，居然出险。他诗里面有一句“水必出山无可疑”，就是指的这回事。（华国版《胡适言论集》甲编第84页。另参看《胡适文存》卷二《实验主义》六《杜威论思想》及LivingPhilosophiespp.235-236）</p>
+<p>在我父亲的诗集子里面有一首诗，讲他在东三省吉林的时候，奉命办一件公事，连人带马都在大森林里迷失了路，三天三夜都没有方法走出来。这个问题就是思想，因为当前的行动发生了障碍。我父亲在诗里面就说他怎样想法子找路出去：有人爬到树上去看，只见四周茫茫无边的树木：在地上也找不出路来，也找不出牛马的蹄痕。这两个办法都不行。这时候，我父亲想到古书上讲过：在山林中迷了路时可以找水；跟着水去找，必定可以出山的。大家就四下去听；听到有水流的声音，果然找到了一条水；跟着水走，居然出险。他诗里面有一句“水必出山无可疑”，就是指的这回事。（华国版《胡适言论集》甲编第84页。另参看《胡适文存》卷二《实验主义》六《杜威论思想》及Living Philosophies pp. 235-236）</p>
 <p>此外，胡传楷（不归）曾发表胡传的《游历琼州黎峒行程日记》（《禹贡》半月刊第二卷第一期，1934年9月出版）；胡适又发表以他父亲的《记台湾台东州强域道里地方情形并书后》（《大陆杂志》第三卷第十二期，1951年12月台北出版。胡适校写，方豪后记）。</p>
 <p>在年谱方面，胡适透过潘光旦，发表了《一本有趣的年谱》（《新月》第三卷第五、六期，1931年7、8月上海出版）作为纪念。又：方豪先生把胡适在1951年8月17日给他的信借给我用，信里有一段说：“（先人自定年谱编到四十一岁为止，余十四年，我拟用日记与诗文禀启补编。）别人编年谱远不如本人自己编年谱，故我用诗文禀启编入日记，或为弥补此缺陷。此即先生所指示之方法。”</p>
 <p>罗尔纲在《太平天国史丛考》（1943年8月重庆正中书局版）的《自序》里，曾提到他在民国十九年给胡适的父亲编遗集的事，他描写胡传的稿本，颇可看出胡传的一面，也可看出当时“老前辈”们的一面：</p>
@@ -416,15 +449,15 @@
 <p>五、她借钱为儿子买书(21)。</p>
 <p>最后，她还为儿子订了终身大事，使她的儿子在婚姻问题上，做了一个“保守主义者”(22)(23)。</p>
 <p>①胡适的父亲是安徽绩溪八都上庄人；母亲是绩溪七都中屯人。</p>
-<p>②胡适的父亲生在1841，母亲生在1873，父亲比母亲大三十二岁，结婚那年是1889，按中国算法多加一岁，男方四十九，女方十七。胡适在《四十自述》序幕《我的母亲的订婚》里，三次都提到他父亲当时是“四十七”岁。认为他父亲比母亲“大三十岁”，这都是很粗心、很可笑的错误。胡不归《胡适之先生传》、毛子水《胡适传》都跟着错了（胡适在LivingPhilosophiespp.237-238里也错做大三十岁，父年四十七岁）。</p>
-<p>③许世英是安徽秋浦县（今至德县）人。他“不辜负胡适之先生以及爱护我的朋友的期望”，总算开始写《世英回忆录》。他说他生在清同治十二年癸酉，并两次提到是公元1872年（《人间世》第五卷第一、二，1961年1、2月台北出版），这都是不对的。同治十二年应该是1873，若按1872做基点算，则该是同治十一年（1936年上海密勒氏评论报出版的Who'sWhoinChina,fifthedition中说他生于1872，如果这样，他该比胡适的母亲大一岁。总之，他似乎老得不能记忆他生在哪一年了）。</p>
+<p>②胡适的父亲生在1841，母亲生在1873，父亲比母亲大三十二岁，结婚那年是1889，按中国算法多加一岁，男方四十九，女方十七。胡适在《四十自述》序幕《我的母亲的订婚》里，三次都提到他父亲当时是“四十七”岁。认为他父亲比母亲“大三十岁”，这都是很粗心、很可笑的错误。胡不归《胡适之先生传》、毛子水《胡适传》都跟着错了（胡适在Living Philosophies pp. 237-238里也错做大三十岁，父年四十七岁）。</p>
+<p>③许世英是安徽秋浦县（今至德县）人。他“不辜负胡适之先生以及爱护我的朋友的期望”，总算开始写《世英回忆录》。他说他生在清同治十二年癸酉，并两次提到是公元1872年（《人间世》第五卷第一、二，1961年1、2月台北出版），这都是不对的。同治十二年应该是1873，若按1872做基点算，则该是同治十一年（1936年上海密勒氏评论报出版的Who’sWhoinChina,fifthedition中说他生于1872，如果这样，他该比胡适的母亲大一岁。总之，他似乎老得不能记忆他生在哪一年了）。</p>
 <p>④请注意前面所说的胡传“一人抓过三个洪秀全的兵士”的事。而他绝没想到，他后来的老丈人，竟是“洪秀全的兵士”——“长毛贼”！</p>
 <p>⑤在姓名上雌雄易位阴阳颠倒，也是中国人的传统把戏之一。古史中的女蜗、息姑、石曼姑，孟子中的冯妇，庄子中的偊女高，战国策中的女阿，史记中的女防、徐夫人，汉书中的丁夫人，后汉书中的鲁女生，三国志中的暨艳，晋书载记中的耆婆，宋书中的女生，梁书中的仙婢，唐书中的五娘，五代史中的婆儿，砀山县志中的刘玉媛等等，统统都是男人！另外，古史中的嫘祖，汉书中的赵子儿、君孺、少儿、少夫、后汉书中的鲁班，南史中的兴策、次男、荣男、惠男、要儿、金史中的崔哥、定哥、石哥等等，又统统是女人！</p>
 <p>⑥他竟如愿以偿，后来有了一个儿子。</p>
 <p>⑦这是胡适《我的母亲的订婚》里的话。汤尔和说他在这里“暗用‘发长垂地’的典故”，见胡适《丁文江的传记》（中央研究院版；台北启明书局版）第76页，如果是真的，那他触犯了“八不主义”中“不用典”的诫。</p>
 <p>⑧《九年的家乡教育》（《四十自述》一）。</p>
 <p>⑨这是我根据1963年2月台北市绩溪同乡会印的《绩溪县志》统计出来的。</p>
-<p>(10)胡适死后，1962年2月25日的《纽约时报》（NewYorkTimes）说他母亲……wasanilliteratepeasantwhowasneverabletoreadalineofherson’svoluminouswritings.”若照胡适说，则她的母亲可以“toreadaline”！</p>
+<p>(10)胡适死后，1962年2月25日的《纽约时报》（New York Times）说他母亲……was an illiterate peasant who was never able to read a line of her son’s voluminous writings.”若照胡适说，则她的母亲可以“to read a line”！</p>
 <p>(11)《九年的家乡教育》（《四十自述》一）。</p>
 <p>(12)《先母行述》（《胡适文存》亚东版卷四，《胡适文存》有上海亚东版和台北远东版，在评传中全用亚东版）。</p>
 <p>(13)在《先母行述》中，胡适有这样三十六个字：</p>
@@ -441,7 +474,7 @@
 <p>关于这首诗，参看《胡适文存》卷四《我的儿子》中胡适答汪长禄的信。</p>
 <p>(15)胡适本来预定在1918年11月27日在北京“通俗讲演所”演说《丧礼改良》。可是11月23日他的母亲就死了，他只好自己先去实行“丧礼改良”了。他在母亲死后第二年，写了《我对于丧礼的改革》（《新青年》第六卷第六期4919年11月1日北京出版，后收入《胡适文存》卷四）。</p>
 <p>(16)必须带一句：凡是看过钱穆《中国近三百年学术史》（1937年5月商务版）中“附表”的人，一定会奇怪我在这儿为什么不比较另一位革命先烈——蹈海而死的杨守仁（笃生）的生年？照钱穆的说法，杨守仁也是这年生的。其实这是很不可原谅的错误，任何有点现代史训练的人都知道杨守仁不生在这一年！</p>
-<p>(17)胡适在LivingPhilosophies里说：“Mymother'sgreatestgiftwasforbearance.”（P.238）随着他列举他母亲忍耐的本领。他在《先母行述》中也提到：</p>
+<p>(17)胡适在Living Philosophies里说：“My mother’s greatest gift was forbearance.”（P. 238）随着他列举他母亲忍耐的本领。他在《先母行述》中也提到：</p>
 <p>先母内持家政，外应门户，凡十余年。以少年做后母，周旋诸子诸妇之间，其困苦艰难有非外人所能喻者。先母一一处之至诚至公，子妇间有过失，皆容忍曲喻之；至不能忍，则闭户饮泣自责；子妇奉茶引过，始已。</p>
 <p>在《九年的家乡教育》（《四十自述》一）里，他有更逼真的描写：</p>
 <p>我母亲二十三岁做了寡妇，又是当家的后母。这种生活的痛苦，我的笨笔写不出一万分之一二。家中财政本不宽裕，全靠二哥在上海经营调度。大哥从小就是败家子，吸鸦片烟、赌博，钱到手就光，光了就回家打主意，见了香炉就拿出去卖，捞着锡茶壶就拿出去押。我母亲几次邀了本家长辈来，给他定下每月用费的数目。但他总不够用，到处都欠下烟债赌债。每年除夕我家中总有一大群讨债的，每人一盏灯笼，坐在大厅上不肯去。大哥早已避出去了。大厅的两排椅子上满满的都是灯笼和债主。我母亲走进走出，料理年夜饭，谢灶神，压岁钱等事，只当做不曾看见这一群人。到了近半夜，快要“封门”了，我母亲才走后门出去，央一位邻舍本家到我家来，每一家债户开发一点钱。做好做歹的，这一群讨债的才一个一个提着灯笼走出去。一会儿，大哥敲门回来了。我母亲从不骂他一句。并且因为是新年，她脸上从不露出一点怒色。这样的过年，我过了六七次。</p>
@@ -459,7 +492,7 @@
 <p>(21)《胡适留学日记》（商务版，即亚东版的《藏晖室札记》）第四卷第二则《母之爱》（1914年3月12日）：</p>
 <p>得家书，叙贫状，老母至以首饰抵借过年。不独此也，守焕兄家有图书集成一部，今以家贫，愿减价出售，至减至八十元：吾母知余欲得此书，遂借贷为儿子购之。吾母遭此窘状，犹处处为儿子设想如此。</p>
 <p>(22)我在后面的评传中，会详细说明这一点。</p>
-<p>(23)关于胡适的妈妈的主要材料，除了《先母行述》《我的母亲的订婚》《九年的家乡教育》等以外，可参看1938年12月美国新泽西州出版的TheBulletin,publishedbytheWoman'sClubofUpperMontclair第14卷第3号：TwoPoemsbyHuShih,EnglishvereerenderingsbyMabelIIves,1，22,Subtitle：MyMother。</p>
+<p>(23)关于胡适的妈妈的主要材料，除了《先母行述》《我的母亲的订婚》《九年的家乡教育》等以外，可参看1938年12月美国新泽西州出版的The Bulletin, published by the Woman’s Club of Upper Montclair第14卷第3号：Two Poems by Hu Shih, English veree renderings by Mabel I Ives, 1，22, Subtitle：My Mother。</p>
 <p>半个台湾人（1891-1895）</p>
 <p>——胡适也是“阿海”吗？</p>
 <p>可怜的县太爷死后，剩下了可怜的小寡妇，和小寡妇身边的小儿子。</p>
@@ -468,7 +501,7 @@
 <p>这一年，是英国“牛津运动”（TheOxfordMovement）的头儿纽曼（J.H.Newman）死后第一年，是荷兰割耳朵的画家凡高（VincentVanGogh）死后第一年，是“吾生唯知猛进兮”③的乐观诗人勃朗宁死后第二年。</p>
 <p>这一年，世界上有许许多多的人物还在世，或才出世不久，列一个对照表看看④，是很好玩的：</p>
 <p>出生/大于胡适岁数/外国/中国</p>
-<p>1804/87岁/欧文（RichardOwen）</p>
+<p>1804/87岁/欧文（Richard Owen）</p>
 <p>1805/86岁</p>
 <p>1806/85岁</p>
 <p>1807/84岁/董恂（忱甫）、陈英豪（绍荣）</p>
@@ -509,7 +542,7 @@
 <p>1842/49岁/克鲁泡特金、伊藤博文/王先谦（益吾）</p>
 <p>1843/48岁/丁谦</p>
 <p>1844/47岁/E.加本特、法朗士、尼采/缪荃荪</p>
-<p>1845/46岁/夏德（FriedrichHirth）/樊增祥</p>
+<p>1845/46岁/夏德（Friedrich Hirth）/樊增祥</p>
 <p>1846/45岁/倭铿/袁昶</p>
 <p>1847/44岁/A.G.贝尔、T.A.爱迪生/张百熙</p>
 <p>1848/43岁/孙诒让、黄遵宪、陈宝琛</p>
@@ -524,10 +557,10 @@
 <p>1857/34岁/吉辛、普列哈诺夫/徐世昌、刘鹗、杨锐、辜汤生（鸿铭）</p>
 <p>1859/33岁/G.赫普特曼、T.罗斯福、坪内逍遥/李盛铎、冯国璋、康有为、易顺鼎</p>
 <p>1859/32岁/杜威、柏格森、霭理士、浩斯曼、凡勃伦（T.Veblen）、尾崎行雄/袁世凯、刘光第、梁鼎芬、梁济（巨川）、王照（小航）、唐绍仪（少川）</p>
-<p>1860/31岁/杰斯拍森（OttoJespersen）、柏德罗斯基、契诃夫/汪康年</p>
+<p>1860/31岁/杰斯拍森（Otto Jespersen）、柏德罗斯基、契诃夫/汪康年</p>
 <p>1861/30岁/R.N.泰戈尔、怀德海/端方、詹天佑、严修</p>
 <p>1862/29岁/梅特林克、A.斯坦因、E.A.威斯特马克</p>
-<p>1863/28岁/弗莱克斯纳（SimonFlexner）、福特、劳合乔治、桑塔耶那/宋衡（平子）</p>
+<p>1863/28岁/弗莱克斯纳（Simon Flexner）、福特、劳合乔治、桑塔耶那/宋衡（平子）</p>
 <p>1864/27岁/马克斯韦伯/丘逢甲</p>
 <p>1865/26岁/吉卜林、鲁登道夫、叶慈、石进菊次郎/谭嗣同、唐文治、夏曾佑、吴敬恒、段祺瑞</p>
 <p>1866/25岁/J.R.麦唐纳、罗曼罗兰、H.G.威尔士、内藤虎次郎、高楠顺次郎/吴沃尧、禹之谟、孙文、罗振玉</p>
@@ -548,7 +581,7 @@
 <p>1881/10岁/毕加索/史坚如、马和（君武）李煜瀛（石曾）、周树人（鲁迅）、孔祥熙、章士钊、陈汉章、王宠惠、张知本</p>
 <p>1882/9岁/房龙、F.D.罗斯福/何成濬、蔡锷、宋教仁、蒋方震（百里）、王正廷、沈尹默、张继、许寿裳、谌湛溪、郭秉文</p>
 <p>1883/8岁/亚斯培、山额夫人、墨索里尼、高田保马/周诒春（寄梅）、叶楚伧、黄郛、阎锡山、汪兆铭（精卫）、江亢虎、李协（仪祉）</p>
-<p>1884/7岁/蒂斯代尔（SaraTeasDale）、杜鲁门、伊诺努/马宗汉、刘师培、苏玄瑛（曼殊）、刘道一、吕思勉、吴忠信、马叙伦、马寅初、吴鼎昌</p>
+<p>1884/7岁/蒂斯代尔（Sara Teas Dale）、杜鲁门、伊诺努/马宗汉、刘师培、苏玄瑛（曼殊）、刘道一、吕思勉、吴忠信、马叙伦、马寅初、吴鼎昌</p>
 <p>1885/6岁/D.H.劳伦斯、莫瑞亚珂、范杜伦（CarlVanDoren）、杜兰特（W.Durant）、武者小路实笃/林文、朱大符（执信）、邹容、邹鲁、周作人、高一涵</p>
 <p>1886/5岁/R.徐满、田立克、本间久雄、佐野架裟美/胡彬夏、黄侃（季刚）、任鸿隽（叔永）、张嘉森（君劢）、朱经（经农）、陈大齐</p>
 <p>1887/4岁/佩斯（Sr.JohnPerse)、摩尔（M.Moore）、重光葵/熊成基、焦达峰、钱玄同、蒋梦麟、蒋中正、陶履恭（孟和）、张星烺、金邦正（仲藩）、王伯秋、丁文江、王云五、柳亚子、胡宣明</p>
@@ -579,7 +612,7 @@
 <p>三子（嗣秠，又名洪駓，后字振之，和嗣秬是双胞胎）1877-1904，活了二十七岁。过继给伯父胡珍。独子（思永）1902-1923，活了二十一岁，手足瘸，遗著《胡思永的遗诗》（亚东版）。</p>
 <p>冯夫人（顺弟）1873-1918，活了四十五岁。死于喘疾和庸医。</p>
 <p>四子（嗣穈，又名洪骍，后改名适，字适之）1891-1962，活了七十一岁。长子（思祖，改名祖望）1919-复（仔仔）1955-，得了小儿麻瘦，现在美国。做中华民国驻美大使馆经济专员。次子**（思杜）现在大陆（编者略）。女（素素）早夭。她死后一年半，胡适“在三万里外哭她一场”。</p>
-<p>*胡适在LivingPhilosophiesp.236里说他父亲二娶后有三男四女，可能有一个女儿早夭了。</p>
+<p>*胡适在Living Philosophies p.236里说他父亲二娶后有三男四女，可能有一个女儿早夭了。</p>
 <p>**李书华在《胡适之先生生平及其贡献》（《大陆杂志》第二十四卷第十期，1962年5月31日台北出版）中说：“长公子名祖望，取‘祖母望孙’之意；二公子名思杜，取‘思念杜威’之意（根据适之在纽约谈天时向我所述）”。我倒觉得胡祖望的命名和他们的安徽老乡全祖望不无关系。</p>
 <p>胡先生走出了校长室，走到操场，场边排着一长列的小朋友，他们一齐鼓掌对他欢呼……这场面很使胡先生感动，他频频向孩子们摆手，连声谢谢。今天真可说是孩子们的世界，孩子们的声音欢悦地响着，其实此时此地与孩子们的声音相呼应的胡先生，在六十年前在这同一地方也是个孩子，而且是更小的孩子，他那时是个孤独的盐务提调的少爷，是缺少同伴听不到这样欢悦的声音的……</p>
 <p>走过操场，胡先生被导引到一个方方朴陋的老楼房里去。这是前清台湾道署遗留至今未毁的一个仅存的房子，它在这个学校里，本来因为位置最偏、光线最坏，所以一向就被当做仓库。……不管它是不是胡先生的旧居，总算是道署旧物，应该与他有关系。于是清理打扫，教它飞上枝头，挂起“胡适纪念馆”的招牌来……</p>
@@ -633,7 +666,7 @@
 <p>2.死在1962年2月25日。</p>
 <p>3.活了七十岁零七十天。差九个月零二十二天满七十一岁。</p>
 <p>4.照中国旧式算法，活了七十一岁零七十天。差九个月零二十二天满七十二岁。</p>
-<p>②1956年出版的《克里尔百科全书》（Cohier'sEncyclopedia）第十册胡适条下说他“WasborninAnhweiProvince”完全搞错了（作者是RuthvenTodd,FreeLanceWriter；FormerVisitingProfessorofCreativeWriting,StateUniversityofIowa.）。</p>
+<p>②1956年出版的《克里尔百科全书》（Cohier’s Encyclopedia）第十册胡适条下说他“Was born in Anhwei Province”完全搞错了（作者是Ruthven Todd, Free Lance Writer；Former Visiting Professor of Creative Writing, State University of Iowa.）。</p>
 <p>③这是胡适所译勃朗宁的诗句，见《胡适留学日记》第三卷第四十一则《乐观主义》1914年1月29日）。</p>
 <p>④胡不归《胡适之先生传》里第5-6页中，也列举了胡适生时的一些名人的年纪，可是错太多了！我这个表，只不过是抽样列举，看它的人可以举一反三，不必“刻舟求之”！表里的许多人和胡适很有关系，对胡适有深刻的影响，或跟胡适交互影响，比较重要的一些，我将在评传里各别论述。</p>
 <p>⑤《胡适留学日记》第四卷第三十七则《思家》1914年6月9日。</p>
@@ -757,7 +790,7 @@
 <p>有一天，我正在温习朱子的《小学》，念到一段司马温公的家训，其中有论地狱的话，说：</p>
 <p>“形既朽灭，神亦飘散，虽有剑烧舂磨，亦无所施(14)……”</p>
 <p>我重读了这几句话，忽然高兴的直跳起来。目莲救母、玉历钞传等书里的地狱惨状，都呈现在我眼前，但我觉得都不怕了。放焰口的和尚陈设在祭坛上的十殿阎王的画像，和十八层地狱的种种牛头马面用钢叉把罪人叉上刀山，叉下油锅，抛下奈河桥下去喂饿狗毒蛇，——这种种惨状也都呈现在我眼前，但我现在觉得都不怕了。我再三念这句话：“形既朽灭，神亦飘散，虽有到烧舂磨，亦无所施。”我心里很高兴，真像地藏王菩萨把锡杖一指，打开地狱门了(15)。</p>
-<p>这是他开始倾向无神论的起点。——由朱熹的书，开始知道司马光的非地狱论。这种论调，使他“对死后的地狱审判感到怀疑”（ThissoundedlikegoodreasoningandIbegantodoubttheideaofjudgmentafterdeath.）(16)。接着，又“有一天”：</p>
+<p>这是他开始倾向无神论的起点。——由朱熹的书，开始知道司马光的非地狱论。这种论调，使他“对死后的地狱审判感到怀疑”（This sounded like good reasoning and I began to doubt the idea of judgment after death.）(16)。接着，又“有一天”：</p>
 <p>有一天，我读到《资治通鉴》第一百三十六卷，中有一段记范缜（齐梁时代人，死时约在公元510年）反对佛教的故事，说：</p>
 <p>缜著神灭论，以为“形者神之质，神者形之用也。神之于形，犹利之于刀。未闻刀没而利存，岂容形亡而神在哉？”此论出，朝野喧哗，难之，终不能屈。</p>
 <p>我先读司马光论地狱的话了，所以我读了这一段议论，觉得非常明白、非常有理。司马光的话教我不信地狱，范缜的话使我更进一步，就走上了无鬼神的路。范缜用了一个譬喻，说形和神的关系像刀子和刀口的锋利一样；没有刀子，便没有刀子的“快”了；那么，没有形体，还能有神魂吗？这个譬喻是很浅显的，恰恰合一个初开知识的小孩子的程度，所以我愈想愈觉得范缜说得有道理。司马光引了这三十五个字的神灭论，居然把我脑子里的无数鬼神都赶跑了。从此以后，我不知不觉的成了一个无鬼无神的人。(17)</p>
@@ -766,7 +799,7 @@
 <p>子良笃好释氏，招致名僧，议论佛法。道俗之盛，江左未有。或亲为众僧赋食行水，世颇以为失宰相体。</p>
 <p>范缜盛称无佛。子良曰：“君不信因果，何得有富贵贫贱？”缜曰：“人生如树花同发，随风而散，或拂帘幌，坠菌席之上；或关篱墙，落粪溷之中。坠茵席者，殿下是也，落粪溷者，下官是也。贵贱虽复殊途，因果竟在何处？”子良无以难。</p>
 <p>这一段议论也只是一个譬喻，但我当时读了只觉得他说得明白有理，就熟读了记在心里。我当时实在还不能了解范缜的议论的哲学意义。他主张一种“偶然论”，用来破坏佛教的果报轮回说。我小时听惯了佛家果报轮回的教训，最怕来世变猪变狗，忽然看见了范缜不信因果的譬喻，我心里非常高兴，胆子就大得多了。他和司马光的神灭论教我不怕地狱，他的无因果论教我不怕轮回。我喜欢他们的话，因为他们教我不怕。我信服他们的话，因为他们教我不怕(19)。</p>
-<p>这是他由无神论扩大而为偶然论，由“偶然论代替宿命论”（ChanceversusDeterminism）(20)，这种突变的经验，本身就是偶然论的最好说明：一个人“只读了这三十五个字，就换了一个人”，这不是很偶然的事件么(21)？这种偶然，使这个十一岁的小孩子在六年以后写下了他的《无鬼丛话》(22)；在十二年后写下了他的《神灭论与神不灭论》(23)；在十七年后写下了他的宗教——《社会的不朽论》(24)；使他“一生的思想”(25)受到“感悟”，并且把这种感悟，又影响给别人。</p>
+<p>这是他由无神论扩大而为偶然论，由“偶然论代替宿命论”（Chance versus Determinism）(20)，这种突变的经验，本身就是偶然论的最好说明：一个人“只读了这三十五个字，就换了一个人”，这不是很偶然的事件么(21)？这种偶然，使这个十一岁的小孩子在六年以后写下了他的《无鬼丛话》(22)；在十二年后写下了他的《神灭论与神不灭论》(23)；在十七年后写下了他的宗教——《社会的不朽论》(24)；使他“一生的思想”(25)受到“感悟”，并且把这种感悟，又影响给别人。</p>
 <p>十一岁的胡适的“思想经过这回解放之后，就不能虔诚拜神拜佛了”。但是他在“母亲面前，还不敢公然说出不信鬼神的议论”。他母亲叫他烧香，他还得烧’还是梆梆磕响头，——虽然他“满心里的不愿意”。</p>
 <p>有一次他游说他的外甥要捣毁三门亭的神像，要“把这几个烂泥菩萨拆下来抛到茅厕里去”。结果被告了密，幸亏他“想出了一条妙计”，躲过了一顿打。可是他万万没想到，“责罚却在一个月以后”：</p>
 <p>过了一个月，母亲同我上中屯外婆家去。她拿出钱来，在外婆家办了猪头供献，备了香烛纸钱，她请我母舅领我到三门亭里去谢神还愿。我母舅是个虔诚的人，他恭恭敬敬的摆好供献，点起香烛，陪着我跪拜谢神。我忍住笑，恭恭敬敬的行了礼，——心里只怪我自己当日扯谎时不曾想到这样比挨打还难为情的责罚！(26)</p>
@@ -800,7 +833,7 @@
 <p>⑧《九年的家乡教育》（《四十自述》一）</p>
 <p>⑨这些小说给他的影响，胡适有两段自述：</p>
 <p>1.从《薛仁贵征东》《薛丁山征西》《五虎平西》《粉妆楼》一类最无意义的小说，到《红楼梦》和《儒林外史》类的第一流作品，这里面的程度已是天悬地隔了。我到离开家乡时，还不能了解《红楼梦》和《儒林外史》的好处。但这一大类都是白话小说，我在不知不觉之中得了不少的白话散文的训练，在十几年后于我很有用处。（《九年的家乡教育》）</p>
-<p>2.FromthattimeonIdevouredeverynovelknowninourcommunityandinthenearbyvillages.Theywerewritteninthepei-hua,orspokenlanguage,andwereeasilyintelligibleandabsorbinglyentertaining.Theytaughtmelife,forgoodorforevil,andgavemealiterarymediumwhichyearslaterenabledmetostartwhathasbeencalled“theLiteraryRenaissanceinChina.”（LivingPhilosophies，p.243）</p>
+<p>2.From that time on I devoured every novel known in our community and in the nearby villages. They were written in the pei-hua, or spoken language, and were easily intelligible and absorbingly entertaining. They taught me life, for good or for evil, and gave me a literary medium which years later enabled me to start what has been called“the Literary Renaissance in China.”（Living Philosophies，p. 243）</p>
 <p>⑩胡适在《从拜神到无神》（《新月》第三卷第四期，1931年5月上海出版，后收入《四十自述》二）里，这样写他父亲：</p>
 <p>我父亲不曾受过近世自然科学的洗礼，但他很受了程颐朱熹一系的理学的影响。理学家因袭了古代自然主义的宇宙观，用“气”和“理”两个基本观念来解释宇宙，敢说“天即理也鬼神者，二气（阴阳）之良能也。”这种思想，虽有不彻底的地方，很可以破除不少的迷信。</p>
 <p>……我父亲死得太早，我离开他时，还只是三岁小孩，所以我完全不曾受着他的思想的直接影响。他留给我的，大概有两方面：一方面是遗传，因为我是“我父亲的儿子”。一方面是他留下了一点程朱理学的遗风：我小时跟着四叔念朱子的《小学》，就是理学的遗风；四叔家和我家的大门上都贴着“僧道无缘”的条子，也就是理学家庭的一个招牌。</p>
@@ -812,20 +845,20 @@
 <p>这段话使胡适“高兴得直跳起来”！可见影响之深。这部朱子《小学》，在其他方面对胡适的影响也是很多的，例如《小学》中记“陶渊明为彭泽令……”一段，胡适回忆说：</p>
 <p>我至今还记得我做小孩子时代读的朱子《小学》里面记载的几个可爱的人物，如汲黯、陶渊明之流。朱子记陶渊明，只记他做县令时送一个长工给他儿子，附去一封家信，说：“此亦人子也，可善遇之。”这寥寥九个字的家书，印在脑子里，也颇有很深刻的效力，使我三十年来不敢轻用一句暴戾的辞气对待那帮我做事的人。（《领袖人才的来源》，《独立评论》第十二号，1932年8月7日北平出版，收入《胡适论学近著》卷四）</p>
 <p>这是《小学》对他的好脾气的影响。</p>
-<p>又如《小学》中记“张公艺九世同居……”一段，胡适在LivingPhilosophiespp.238-239里，也特别提出来，这对他日后提倡“容忍”的精神，也不无影响。</p>
+<p>又如《小学》中记“张公艺九世同居……”一段，胡适在Living Philosophies pp. 238-239里，也特别提出来，这对他日后提倡“容忍”的精神，也不无影响。</p>
 <p>(15)《从拜神到无神》（《四十自述》二）。</p>
-<p>(16)LivingPhilosophiesp.249。</p>
+<p>(16) Living Philosophies p. 249。</p>
 <p>(17)《从拜神到无神》（《四十自述》二）。</p>
-<p>(18)LivingPhilosophiesp.249。</p>
+<p>(18)Living Philosophies p. 249。</p>
 <p>(19)《从拜神到无神》（《四十自述》二）。</p>
-<p>(20)LivingPhilosophiesp.249。</p>
-<p>(21)参看胡适自己的话：“Therewasnosophisticatedreasoningonmypartinthosedaysofmyboyhood.Itwasmeretemperamentalattractionandrepulsion.Iwasmyfather’sson,andSsumaKuangandFanChenattratedme.Thatwasall.”（LivingPhilosophies,p.245）</p>
+<p>(20)Living Philosophies p. 249。</p>
+<p>(21)参看胡适自己的话：“There was no sophisticated reasoning on my part in those days of my boyhood. It was mere temperamental attraction and repulsion. I was my father’s son, and Ssuma Kuang and Fan Chen attrated me. That was all.”（Living Philosophies, p. 245）</p>
 <p>很奇怪，在胡适父亲的日记里，居然也有这样一则：</p>
 <p>齐竟陵王子良笃好释氏；范缜盛称无佛。子良曰：“君不信因果，何得有富贵？”缜曰：“人生如树花同发，随风而散；或拂帘幌坠茵席之上；或关篱墙落粪溷之中。坠茵席者殿下是也；坠粪溷者下官是也。贵贱虽复殊途，因果竟在何处？”子良无以难。缜又著神灭论，以为“形者，神之质；神者！形之用也。神之于形，犹利之于刀；未闻刀没而利存，岂容形亡而神在哉？”此论出，朝野喧哗难之；终不能屈。（光绪二十一年三月二十二日）</p>
-<p>我不相信胡适在读朱子《小学》和《资治通鉴》之前读过他父亲这条日记，如果我没有猜错，那么这种巧合与“遗传”，真所谓“Iwasmyfather'sson”了！</p>
+<p>我不相信胡适在读朱子《小学》和《资治通鉴》之前读过他父亲这条日记，如果我没有猜错，那么这种巧合与“遗传”，真所谓“I was my father’s son”了！</p>
 <p>(22)《竞业旬报》第二十八期（1908年8月上海出版）。署名“适之”。</p>
 <p>(23)《胡适留学日记》第六卷第十七则（1914年8月24日）。</p>
-<p>(24)《不朽——我的宗教——》（《新青年》第六卷第二期，1919年2月9日北京出版。1920年2月改成英文Immortality,MyReligion,有改动；1921年5月，又改定中文原稿。后收入《胡适文存》卷四）。</p>
+<p>(24)《不朽——我的宗教——》（《新青年》第六卷第二期，1919年2月9日北京出版。1920年2月改成英文Immortality, My Religion,有改动；1921年5月，又改定中文原稿。后收入《胡适文存》卷四）。</p>
 <p>(25)胡适在《从拜神到无神》里写道：</p>
 <p>我那时并不知道范缜的《神灭论》全文载在梁书（卷四八）里，也不知道当时许多人驳他的文章保存在《弘明集》里。我只读了这三十五个字，就换了一个人。大概司马光也受了范缜的影响，所以有“形既朽灭，神亦飘散”的议论；大概他感谢范缜，故他编通鉴时，硬把神灭论摘了最精彩的一段，插入他的不朽的历史里。他绝想不到，八百年后这三十五个字竟感悟了一个十一二岁的小孩子，竟影响了他一生的思想。</p>
 <p>另外在《不朽——我的宗教——》里，他也特别指出：</p>
@@ -842,22 +875,22 @@
 <p>(27)《九年的家乡教育》（《四十自述》一）。</p>
 <p>(28)同上。</p>
 <p>(29)同上。</p>
-<p>(30)同上。胡适在，LivingPhilossphies里说：</p>
-<p>“……Inevrplayedwiththechildrenofthevilliageand,becauseofmycompletelackofchildplay,IwasgiventhenicknameofShien-seng(theMaster)whenIwasfive.Fifteenyearslater,atCornellUniversity,Iwasnicknamd‘Doc’whenIwasaSophomore,andforthissameweakness.”（p.239）</p>
+<p>(30)同上。胡适在，Living Philossphies里说：</p>
+<p>“……I nevr played with the children of the villiage and, because of my complete lack of child play, I was given the nickname of Shien-seng (the Master) when I was five. Fifteen years later, at Cornell University, I was nicknamd‘Doc’when I was a Sophomore, and for this same weakness.”（p. 239）</p>
 <p>(31)《九年的家乡教育》（《四十自述》一）。</p>
 <p>(32)同上。</p>
-<p>(33)同上。对这类事，胡适总是心有余痛。他在《胡适留学日记》第十二卷第三十则《伊丽鹗论教育宜注重官能之训练》（1916年3月6日）中，在连引了一大篇哈佛校长伊丽鹗（CharlesW.Eliot）的话以后，感慨道：</p>
+<p>(33)同上。对这类事，胡适总是心有余痛。他在《胡适留学日记》第十二卷第三十则《伊丽鹗论教育宜注重官能之训练》（1916年3月6日）中，在连引了一大篇哈佛校长伊丽鹗（Charles W. Eliot）的话以后，感慨道：</p>
 <p>上所记伊丽鹗校长之言，余读之深有所感矣。吾国旧教育之大病，在于放弃官能之教练，诵读习字之外，他无所授。犹忆余幼时酷嗜画人像，然既无师资，又无范本，其所本者，石印小说之绘像而已。不独此也，即偶有所作，均不敢以示人。一日为塾师所见，大遭诟责，桌屉中所有绘像皆被搜去，遂不敢更为矣。音乐则更无机会可学。犹忆一年，里中秋赛，应有童子昆腔乐队，翰香叔欲令余与列其中，后家人以为吾家子弟不应学吹弹与“子弟”（俗谓优伶为“子弟”）为伍，遂不果。至今思之，以为憾事。吾不知果有绘画与音乐之天资否。然即令有之，经此二十年之压抑挫折，更能余几何乎？后之言教育改良者当知所从事矣。</p>
 <p>余幼时酷嗜小说，家人禁抑甚力。然所读小说尚不少。后来之文学观念未必非小说之功。此种兴趣所以未为家人塾师之阻力所摧残者，盖有二因：一以小说易得。余以一童子处于穷乡，仍能得读四五十种小说，其易求可见。二则以有近仁之助力。近仁与余每以所得小说互传观之，又各作一手折记所读小说，每相见，辄互稽所读多寡以相夸焉。</p>
 <p>然以家人干涉之故，所读小说皆偷读者也。其流毒所及盖有二害，终身不能挽救也。一则所得小说良莠不齐，中多淫书，如《肉蒲团》之类，害余不浅。傥家人不以小说为禁物而善为选择，则此害可免矣。二则余常于夜深人静后偷读小说，其石印小字之书伤目力最深，至今受其影响。</p>
 <p>教育之宗旨在发展人身所固有之材性。目之于视、耳之于听、口之于言、声之于歌、手之于众技，其为天赋不可放废之材性一也。岂可一概视为小道而听其荒芜残废哉？</p>
 <p>教育之方法首在鼓舞儿童之兴趣，今乃摧残其兴趣，禁之罚之，不令发生，不可谓非千古一大谬哉！</p>
 <p>看了这些话，再看胡适日后大力捧小说，考证小说，大力捧梅兰芳，大力为齐白石写年谱，我们都该知道这是很不足奇怪的事，这都可说是心理学上的所谓“补偿作用”。</p>
-<p>(34)“Earlyinmythirteenthyear(1940),Ilefthomeonaseven-dayjourneytoseedaneweducation,inShanghai.”(LivingPhilosophies,p.246)又胡适《十七年的回顾》（十、十、十三，收入《胡适文存二集》卷三）：“我于光绪三十年的二月间从徽州到上海求那当时所谓‘新学’。”</p>
+<p>(34)“Early in my thirteenth year (1940) ,I left home on a seven-day journey to seed a new education, in Shanghai.”(Living Philosophies, p. 246)又胡适《十七年的回顾》（十、十、十三，收入《胡适文存二集》卷三）：“我于光绪三十年的二月间从徽州到上海求那当时所谓‘新学’。”</p>
 <p>(35)这当然是夸大的说法。这是套用江冬秀辑安徽儿歌“东边来了一个小学生”里的句子（参看孙俍工《新诗作法讲义》，1925年8月上海商务印书馆版）</p>
 <p>(36)《胡适留学日记》第四卷第三十六则《第一次访女生宿舍》（1914年6月8日）：</p>
 <p>吾之去妇人之社会也，为日久矣。吾母为妇人中之豪杰，二十二岁而寡，为后母。吾三兄皆长矣，吾母以一人撑拒艰难，其困苦有非笔墨所能尽者。而吾母治家有法，内外交称为贤母。吾母虽爱余，而督责棊严，有过失未尝宽假。每日黎明，吾母即令起坐，每为余道吾父行实，勉以毋忝所生。吾少时稍有所异于群儿，未尝非吾母所赐也。吾诸姐中唯大姐最贤而多才，吾母时咨询以家事。大姐亦爱余。丁未，余归省，往见大姐，每谈辄至夜分。吾外祖母亦极爱余。吾母两妹皆敏而能，视余如子。余少时不与诸儿伍，师友中唯四叔介如公、禹臣兄、近仁叔切磋指导之功为最，此外则唯上所述诸妇人（吾母、吾外祖母、诸姨、大姐）陶冶之功耳。吾久处妇人社会，故十三岁出门乃怯怄如妇人女子，见人辄面红耳赤，一揖而外不敢出一言，有问则答一二言而已。吾入澄衷学堂以后，始稍稍得朋友之乐。居澄衷之第二年，已敢结会演说，是为投身社会之始。及入中国公学，同学多老成人，来自川陕粤桂诸省，其经历思想都已成熟，余于世故人情所有经验皆得于是，前此少时所受妇人之影响，至是脱除几尽。</p>
-<p>(37)“Outofhergreatloveformesentmeawaywithoutapparentlysheddingatear,andallowedmetoseekmyowneducationanddevelopmentinthegreatworldallalone,armedonlywithamother’slove,ahabitofstudy，andalittletendencytodoubt.(LivingPhilosoPhies,p.246)</p>
+<p>(37)“Out of her great love for me sent me away without apparently shedding a tear, and allowed me to seek my own education and development in the great world all alone, armed only with a mother’s love, a habit of study，and a little tendency to doubt. ( Living PhilosoPhies, p. 246)</p>
 <p>《努力做徽骆驼》（1904）</p>
 <p>在中国安徽省的南部，长江自西南流向东北，把这块丘陵切成两段。在江南那边，丘陵是零碎的。丘陵向上升，直升到海拔一千七百公尺，造成了全安徽最高的峰顶——黄山①。从这座名山再朝南看，便是一条河水，人们叫做新安江②。在新安江的旁边，六月梅雨的冲洗下，一个湿淋淋的穷城出现了——那是绩溪。</p>
 <p>绩溪，用传统而不精确的称法，该叫徽州③。这个县境的土壤太差了，出的米，不够大家吃④。所以居民只好种种茶⑤、制制漆⑥、做做全国驰名的“徽墨”⑦，用来赚取“外汇”。于是，自然而然的，这个地方的许多人变得有点“不安于室”——要跑到外面去操奇计赢的做生意，于是，在中国商业史上便出现一批大大小小的经商集团，外省人就把这些集团戴上一顶帽子，叫做“徽帮”⑧；在“徽帮”势力的膨胀下，又流行出来一句成语，叫做“无徽不成镇”。</p>
@@ -884,7 +917,7 @@
 <p>如今客自桐江来，不拜西台拜钓台。</p>
 <p>人心趋向乃如此，天下事尚可为哉(33)！</p>
 <p>这首咏史诗里的意思，很可以代表当时胡适的思想——一种“不退隐的入世思想”，一种“非严光的思想”，一种“谢翱（皋羽）思想”。</p>
-<p>当时这条路线上，另外一件值得描写的是它的“宁静”。“宁静”是指没有警察或士兵，没有任何nakedpower，走在路上，会油然而起“无为氏之民欤”或“葛天氏之民欤”的幽情。这种幽情，是培养无为而治的心理的必要条件。少年时代的胡适，走在这条路上，享有过这种幽情，到他花白了头发的时候，他回忆说：</p>
+<p>当时这条路线上，另外一件值得描写的是它的“宁静”。“宁静”是指没有警察或士兵，没有任何naked power，走在路上，会油然而起“无为氏之民欤”或“葛天氏之民欤”的幽情。这种幽情，是培养无为而治的心理的必要条件。少年时代的胡适，走在这条路上，享有过这种幽情，到他花白了头发的时候，他回忆说：</p>
 <p>汉朝的四百二十年，可说是规定了以后二千多年政治的规模，就是无为而治这个观念。这可说是两千多年前祖先留下来的无穷恩惠。这个大帝国，没有军备、没有治安警察，也没有特务，租税很轻（讲到这里，使我想起我在小时，曾从安徽南部经过浙江到上海。到了杭州，第一天才看到警察；以前走了七天七夜并没有看到一个警察或士兵，路上一样很太平）(34)。</p>
 <p>这正是胡适后来搬出老子和淮南王，鼓吹无为哲学和政治的张本。</p>
 <p>总结前面的叙述，我们可以这么说：在当年的徽杭道上，少年时代的胡适之，似乎得到了三种深刻的印象。</p>
@@ -918,7 +951,7 @@
 <p>胡适的乡土观念，我随手举个例子：</p>
 <p>1.他常常称“吾徽人”、“我们徽州”或“我们安徽”如何如何。如《胡适留学日记》卷十六第三则《睐》（1917年3月29日）；如《归国杂感》（《新青年》第四卷第一号，1918年1月15日北京出版，后收入《胡适文存》四）；如《我对于丧礼的改革》（《新青年》第六卷第六号，1919年11月1日北京出版，后收入《胡适文存》卷四）；如《谈新诗——八年一件大事——》（《星期评论》民国八年双十节纪念号，后收入《胡适文存》卷一）；如《吴敬梓传》（《胡适文存》卷四）；如1951年10月2日给方豪的信等等都是。</p>
 <p>2.他在《胡适留学日记》卷九第十九则《理想中之藏书楼》（1915年3月8日）中说：</p>
-<p>吾归国后，每至一地，必提倡一公共藏书楼。在里则将建续溪阅书社，在外则将建皖南藏书楼、安徽藏书楼。然后推而广之，乃提倡一中华民国国立藏书楼，以比英之BritishMuseum，法之BibliothequeNational，美之LibraryofCongress，亦报国之一端也。</p>
+<p>吾归国后，每至一地，必提倡一公共藏书楼。在里则将建续溪阅书社，在外则将建皖南藏书楼、安徽藏书楼。然后推而广之，乃提倡一中华民国国立藏书楼，以比英之British Museum，法之Bibliotheque National，美之Library of Congress，亦报国之一端也。</p>
 <p>3.他在《新青年》第四卷第三号（1919年3月15日北京出版）的《旅京杂记》里，就特别表扬“吾乡”的石鹤妨，说石鹤舫“很有许多可存的白话词”。</p>
 <p>4.他在三十八年（1949年）1月24日给吴忠信的信上自称“乡晚胡适”（见虞君质《艺苑精华录》第三五五则《人格之美》，1963年12月11日台北《新生报》副刊）。</p>
 <p>5.至于他特嗜徽州口味，那更不消说。参看彭麒：《护士小姐谈胡适》（《教信新闻》，1962年2月28日台北出版）；苏雪林：《悼大师，话往事（适之先生和我的关系）》（《新生报》副刊，1962年3月4日台北出版）；南君：《风雨凄其忆大师》（《大华晚报》，1962年3月4日台北出版）等文。</p>
@@ -1007,7 +1040,7 @@
 <p>于是，上课了。</p>
 <p>胡适是读过许多古书的，这回国文念的是蒙学读本，对他简直是牛刀小试，毫不费力。所以他集中精力，专搞ABCD和＋－×÷。六个星期以后，他“翻身”的日子来了：</p>
 <p>国文课上教蒙学读本的是一位沈先生，他大概没把这类读本放在眼里，也压根儿没想到这些小毛头里面会卧虎藏龙。有一天，他讲读本里面“传曰，二人同心，其利断金。同心之言，其臭如兰”一段话，他随口说这个“传”是《左传》。这时候胡适不服气了，他的怀疑精神冒出来了。他走到讲台前面，用半生不熟的洋泾浜上海话，低声向老师说：这个“传”不是《左传》，应该是《易经》的《系辞传》。</p>
-<p>先生脸红了！用上海话来说，先生gaiga（尴尬）了！先生说：“侬读过《易经》？”</p>
+<p>先生脸红了！用上海话来说，先生gai ga（尴尬）了！先生说：“侬读过《易经》？”</p>
 <p>胡适说：“阿拉读过。”</p>
 <p>先生说：“阿曾读过别样经书？”</p>
 <p>胡适数出了《诗经》《书经》《礼记》。先生问他有没有“开笔”做文章，胡适说没有。先生说：“我出个题目，把侬做做试试看。”</p>
@@ -1040,9 +1073,9 @@
 <p>胡适刚进这个学校的时候被编在第五班，可是第二年（1906）便跳进了第二班（当时的学制不像今天这样死板；功课好的学生可以越级升班），胡适和“跳班”似乎很有缘，他在梅溪学堂，一天中跳了四班；他在澄衷学堂，一年中跳了四班。</p>
 <p>这个常常考第一的学生，在一年半的澄衷生活里，“最有进步的是英文算学”，这都是他以前在家乡里所不能想象的新学问。他很喜欢算学(20)，“常常在宿舍熄灯之后，起来演习算学习题”：</p>
 <p>卧房里没有桌子，我想出一个法子来，把蜡烛放在帐子外床架上，我伏在被窝里，仰起头来，把石板放在枕头上做算题。因为下半年要跳过一班，所以我需要自己补习代数。我买了一部丁福保先生编的代数书，在一个夏天把初等代数习完了，下半年安然升班(21)。</p>
-<p>这样的用功，使他的身体受到损害，有一个时期，他的两只耳朵几乎全聋了。后来幸好渐渐复原，使他在日后的外交场合里，避免做了一个伊诺努（IsmetInonu）(22)。</p>
+<p>这样的用功，使他的身体受到损害，有一个时期，他的两只耳朵几乎全聋了。后来幸好渐渐复原，使他在日后的外交场合里，避免做了一个伊诺努（Ismet Inonu）(22)。</p>
 <p>这时候，一个重要的“触媒”进入他的生命里，那就是他的国文老师杨千里（天骥）先生。这位先生“思想很新”，他鼓励胡适，在胡适的作文稿本上题了四个字——“言论自由”。杨千里曾在胡适作文“生物竞争适者生存论”后面批道：“赏制钱二百，以示奖励”（胡不归《胡适之先生传》第55页）。</p>
-<p>更重要的启发是：这个老师带领着胡适接触到那一代奇书——严复译的《天演论》（ThomasHenryHuxley:EvolutionandEthics）：</p>
+<p>更重要的启发是：这个老师带领着胡适接触到那一代奇书——严复译的《天演论》（Thomas Henry Huxley: Evolution and Ethics）：</p>
 <p>有一次，他教我们班上买吴汝纶删节的严复译本天演论来做读本(23)，这是我第一次读天演论，高兴得很。他出的作文题目也很特别，有一次的题目是“物竞天择，适者生存，试申其义”（我的一篇，前几年澄衷校长曾赐爵先生和现在的校长葛祖兰先生曾在旧课卷内寻出，至今还保存在校内）。这种题目自然不是我们十几岁小孩子能发挥，但读天演论，做“物竞天择”的文章，却可以代表那个时代的风气(24)。</p>
 <p>胡适读《天演论》的时候，这书的中译本已经出版八年了。那时正是这本书以“瑰辞达奥旨，风行海内”(25)的时候，正是中国知识分子欢呼接受的时候(26)。</p>
 <p>《天演论》出版之后，不上几年，便风行到全国，竟做了中学生的读物了。读这书的人，很少能了解赫胥黎在科学史和思想史上的贡献。他们能了解的只是那“优胜劣败”的公式在国际政治上的意义。在中国屡次战败之后，在庚子辛丑大耻辱之后，这个“优胜劣败，适者生存”的公式确是一种当头棒喝，给了无数人一种绝大的刺激。几年之中，这种思想像野火一样，延烧着许多少年的心和血。“天演”“物竞”“淘汰”“天择”等等术语，都渐渐成了报纸文章的熟语，渐渐成了一班爱国志士的“口头禅”。还有许多人爱用这种名词做自己或儿女的名字。陈炯明不是号竞存吗？我有两个同学，一个叫做孙竞存，一个叫做梅天择(27)。我自己的名字也是这种风气底下的纪念品。我在学堂里的名字是胡洪骍。有一天的早晨，我请我二哥代我想一个表字，二哥一面洗脸，一面说：“就用‘物竞天择，适者生存’的‘适’字，好不好？”我很高兴，就用“适之”二字（二哥字绍之，三哥字振之）。后来我发表文字，偶然用“胡适”作笔名，直到考试留美官费时（1910），我才正式用“胡适”的名字(28)。</p>
@@ -1069,7 +1102,7 @@
 <p>这一点野心就是我后来做中国哲学史的种子(42)。</p>
 <p>从这些叙述里，我们可以看出梁启超对胡适思想的影响是多么重大，这种影响成了胡适“日后思想的滥觞，平生所学的抉择，终身兴趣的所在”(43)，无怪乎在十多年后，胡适要写信给梁启超，要去天津拜访他，“以慰生平渴思之怀”(44)了！</p>
 <p>胡适在澄衷学堂第二年的时候，已经慢慢从内向羞涩的童年时代转向到外向的团体活动，他在学校里发起组织“自治会”，并且还演起说来了：</p>
-<p>我在澄衷的第二年，发起各斋组织“自治会”。有一次，我在自治会演说，题目是“论性”。我驳孟子性善的主张，也不赞成荀子的性恶说。我承认王阳明的性“无善无恶，可善可恶”是对的。我那时正读英文的格致读本（TheScienceReaders），懂得了一点最浅近的科学知识，就搬出来应用了！孟子曾说：</p>
+<p>我在澄衷的第二年，发起各斋组织“自治会”。有一次，我在自治会演说，题目是“论性”。我驳孟子性善的主张，也不赞成荀子的性恶说。我承认王阳明的性“无善无恶，可善可恶”是对的。我那时正读英文的格致读本（The Science Readers），懂得了一点最浅近的科学知识，就搬出来应用了！孟子曾说：</p>
 <p>人性之善也，犹水之就下也。人无有不善，水无有不下。</p>
 <p>我说：孟子不懂得科学——我们在那时候还叫做“格致”——不知道水有保持水平的道理，又不知道地心吸力的道理。“水无有不下”，并非水性向下，只是地心吸力引它向下。吸力可以引它向下，高地的蓄水塔也可以使自来水管里的水向上。水无上无下，只保持它的水平，却又可上可下，正像人性本无善无恶，却又可善可恶！</p>
 <p>我这篇性论很受同学的欢迎，我很得意，以为我真用科学证明告子王阳明的性论了！(45)</p>
@@ -1095,11 +1128,11 @@
 <p>(14)《十七年的回顾》：“我从前十四岁到十九岁的六年之中——一个人最重要最容易感化的时期——受了时报的许多好影响。”</p>
 <p>(15)《十七年的回顾》（《胡适文存二集》卷三）。</p>
 <p>(16)胡适在《十七年的回顾》里，有一段追记当时白话小说、白话译本等对他的影响：</p>
-<p>《时报》出世以后每日登载“冷”或“笑”译著的小说，有时每日有两种冷血先生的白话小说，在当时译界中确要算很好的译笔。他有时自己也做一两篇短篇小说，如福尔摩斯来华侦探案等，也是国人做新体短篇小说最早的一段历史。《时报》登的许多小说之中，《双泪碑》最风行。但依我看来，还应该推那些白话译本为最好。这些译本如《销金窟》之类，用很畅达的文笔，作很自由的翻译，在当时最为适用。倘《基督山恩仇记》（CountofMonteCristo）全书都能像《销金窟》（此乃恩仇记的一部分）这样的译出，这部名著在中国一定也会成了一部“家喻户晓”的小说了。《时报》当日还有平等阁诗话一栏（敖按：这是《时报》主持人狄葆贤作的），对于现代诗人的绍介，选择很精。诗话虽不如小说之风行，也很能引起许多人的文学兴趣。我关于现代中国诗的知识差不多都是先从这部诗话里引起的。</p>
+<p>《时报》出世以后每日登载“冷”或“笑”译著的小说，有时每日有两种冷血先生的白话小说，在当时译界中确要算很好的译笔。他有时自己也做一两篇短篇小说，如福尔摩斯来华侦探案等，也是国人做新体短篇小说最早的一段历史。《时报》登的许多小说之中，《双泪碑》最风行。但依我看来，还应该推那些白话译本为最好。这些译本如《销金窟》之类，用很畅达的文笔，作很自由的翻译，在当时最为适用。倘《基督山恩仇记》（Count of Monte Cristo）全书都能像《销金窟》（此乃恩仇记的一部分）这样的译出，这部名著在中国一定也会成了一部“家喻户晓”的小说了。《时报》当日还有平等阁诗话一栏（敖按：这是《时报》主持人狄葆贤作的），对于现代诗人的绍介，选择很精。诗话虽不如小说之风行，也很能引起许多人的文学兴趣。我关于现代中国诗的知识差不多都是先从这部诗话里引起的。</p>
 <p>这里提到的《基督山恩仇记》是胡适最爱读的一部小说。1961年2月以后，他在台北台湾大学附属医院疗病，身边还放着这部书。1961年4月22日台北《中央日报》上有李青来的《胡适博士养病有术》一文，记他的秘书胡颂平的谈话，有一段是：</p>
 <p>胡颂平说，胡适博士对于《基督山恩仇记》《侠隐记》《续侠隐记》，一向非常喜爱并推崇，它们都是法国大文豪大仲马的作品。他说，有一天，胡适博士曾在看了《侠隐记》之后对他说：“我觉得真是奇怪，为什么我们中国的武侠小说，没有受到大仲马的影响，这是世界的名著，在欧洲和美国流传很广，为一般社会人士所爱读。”胡颂平说，胡适博士并告诉他，《基督山恩仇记》，他于十几岁时，在上海读书时，就在一张报纸上看到，那是一种文言的翻译，他每天看一段，一连看了两年，但是还没有完，因为那时他已能看英文译本，所以就放弃了那张报纸所刊载的，他觉得英文译本很过瘾。胡颂平又说，胡适博士非常欢喜那本书，在他的一生中，曾看过很多遍，过去他曾买了一本送给他的老友梅贻琦，现在他又送了一本给杨亮功，他并且把这书介绍给很多在医院养病的人看。胡博士认为，这本书对于人生的了解很有帮助，他并且对杨亮功先生说过，“一个学教育的人应该多看小说。”</p>
-<p>他在LivingPhilosophies里，更进一步的提到他当时读书的状况：</p>
-<p>“ThroughthefreetranslationsbythelateMr.LinShuandothers,ImademyfirstacquaintancewithanumberofEnglishandEuropeannovels,includingthoseofScott.Dickens,Dumaspereandfils,Hugo,andTolstoy.Ireadtheworksofafewofthenon-ConfucianandNeo-ConfucianphilosophersofancientandmedievalChinaandwasdelightedinthealtruismofMoTiandthenaturalisticphilosophyofLaotzeandChuang-tze.”(p.247)</p>
+<p>他在Living Philosophies里，更进一步的提到他当时读书的状况：</p>
+<p>“Through the free translations by the late Mr. Lin Shu and others, I made my first acquaintance with a number of English and European novels, including those of Scott. Dickens, Dumas pere and fils, Hugo,and Tolstoy. I read the works of a few of the non-Confucian and Neo-Confucian philosophers of ancient and medieval China and was delighted in the altruism of Mo Ti and the naturalistic philosophy of Laotze and Chuang-tze.”(p. 247)</p>
 <p>总之，胡适之在这几年少年时代里，看了不少的小说，也受了不少的影响，这种影响，一部小说曾予描写，这部小说是1933年6月上海益华书局出版的《婆汉迷》（上下），别题《儒林新史》，是张若谷著的。在第五章《新文化运动》里，写一个“吴式之”，就是影射“胡适之”。因为这部书有一点点史料价值和时代意义，所以我抄几段拙劣的影射的文字和“想当然耳”的文字在下面：</p>
 <p>不久，他借到了一部《红楼梦》，夜上钻在被筒里，偷看那满纸荒唐言的《红楼梦》。看到古今第一个淫人贾宝玉初试云雨的一回，他初次认识了两性的秘密，得到了性的方面的知识。吴式之的脸发烧起来，觉得全身发痒难熬，在他脑海中浮出了一幅偷情的图画，他情不自禁，不能自持，犯了一次青年人习犯的自渎罪恶。</p>
 <p>十三岁后，他到上海读书，六年中换了三个学堂。这时候，他已经把中国的旧小说看得厌了，他偶然看见林琴南译的《茶花女》，他从林译小说中，开始认识了一大批外国小说家，大小仲马、雨果、托尔斯泰、司各特、狄更斯等等的名字。又在梁任公的通俗文字中，他知道在世界上，除了孔子孟子以外，还有卢梭、康德、笛卡儿、斯宾塞、达尔文一大串的大哲师和大学问家哩。</p>
@@ -1113,8 +1146,8 @@
 <p>(23)《天演论&gt;是严复四十四岁（1896）译的，译后第二年（1898），吴汝纶为他写序，并在这一年4月雕版完成。</p>
 <p>(24)《在上海（一）》（《四十自述》三）。</p>
 <p>(25)参看王蘧常：《严几道年谱》（1936年1月上海商务版）第41页。这里引的话据陈宝琛《严又陵先生墓志》（《碑传集补》）。</p>
-<p>(26)“…hadbeenimmediatelyacceptedbytheChineseintelligentsiawithacclamation.”（LivingPhilosophiespp.247-248）。</p>
-<p>(27)胡适在LivingPhilosophies（p.248）里又拼做“NaturalSelectionYang”，则此人该叫“杨天择”。在同一页里，他又提到他这时候受了达尔文、斯宾塞等人的影响，使他“童心大悦”（……delightedmyboyishheart），因而把他们的理论与中国古代的自然主义凑在一起。他举了《列子》中《说符》篇的一段：</p>
+<p>(26)“…had been immediately accepted by the Chinese intelligentsia with acclamation.”（Living Philosophies pp. 247-248）。</p>
+<p>(27)胡适在Living Philosophies（p. 248）里又拼做“Natural Selection Yang”，则此人该叫“杨天择”。在同一页里，他又提到他这时候受了达尔文、斯宾塞等人的影响，使他“童心大悦”（……delighted my boyish heart），因而把他们的理论与中国古代的自然主义凑在一起。他举了《列子》中《说符》篇的一段：</p>
 <p>齐田氏祖于庭，食客千人，中座有献鱼雁者。田氏视之，乃叹曰：“天之于民厚矣！置五谷，生鱼鸟，以为之用。”众客和之如响。鲍氏之子年十二，预于次，进曰：“不如君言。天地万物，与我竝生类也；类无贵贱，徒以小大智力而相制，迭相食，非相为而生之。人取可食者而食之。岂天本为人生之？且蚊蚋唱肤，虎狼食肉，非天本为蚊蚋生人，虎狼生肉者哉！”</p>
 <p>这种纯自然主义的论调，很早便中了胡适的胃口，并且终其一生，都没有改变。</p>
 <p>(28)《在上海（一）》（《四十自述》三）。</p>
@@ -1128,20 +1161,20 @@
 <p>这种存疑的态度，五十年来，影响于无数的人。</p>
 <p>达尔文的武器只是他三十年中搜集来的证据。三十年搜集的科学证据，打倒了二千年尊崇的宗教传说！这一场大战的结果——证据战胜了传说一遂使科学方法的精神大白于世界。赫胥黎是达尔文的作战先锋（因为达尔文身体多病，不喜欢纷争），从战场上的经验里认清了科学的唯一武器是证据，所以大声疾呼的把这个无敌的武器提出来，教人们认为思想解放和思想革命的唯一工具。自从这个“拿证据来”的喊声传出以后，世界的哲学思想就不能不起一个很大的革命，——哲学方法上的大革命。于是19世纪前半的哲学的实证主义（Positivism），就一变而为19世纪末年的实验主义（Pragmatism）了。</p>
 <p>胡适死后，在1962年11-12月伦敦《中国季利》（TheChinaQuarterly）第十二号里，JeromeB.Grieder写了一篇《胡适：一个评价》（HuShih:AnAppreciation），有一段说：</p>
-<p>“Manyinfluences,ChineseaswellasWestern,helpedtoshapehisopinions.Fromhisfather,aminorofficialduringthedecliningyearsoftheCh'ingdynasty,heinheritedanappreciationofthehumanisitictraditionoforthodoxConfucianthought,andthiscontributedtothegrowthofamaturescepticisminwhichheincorporatedalsoideasborrowedfromsuchWesternsourcesasT.H.Huxley.”</p>
+<p>“Many influences, Chinese as well as Western, helped to shape his opinions. From his father, a minor official during the declining years of the Ch’ing dynasty, he inherited an appreciation of the humanisitic tradition of orthodox Confucian thought, and this contributed to the growth of a mature scepticism in which he incorporated also ideas borrowed from such Western sources as T. H. Huxley.”</p>
 <p>这里所说受赫胥黎的影响是对的，不过胡适得自他父亲的影响，并不如一般想象的那样多。</p>
 <p>(31)郭斌和：《严几道》（《国风月刊》第八卷第六期）。</p>
 <p>(32)萧公权：《中国政治思想史》（1946年10月上海商务版）第二册第426页。</p>
 <p>(33)参看《问题与主义》（《每周评论》第三十一期以后，后收入《胡适文存》卷二）以及《介绍我自己的思想》（《胡适论学近著》卷五）等文。</p>
-<p>(34)李敖：《播种者胡适》（《文星》第53期，1962年1月1日台北出版），收入《胡适研究》（1964年3月台北文星书店初版，1979年6月台北远景出版社再版）。有人说胡适是一个“保守的自由主义者”（conservativeliberal），傅斯年是一个“急进的自由主义者”（radicalliberal），见程沧波《记傅孟真》（《历史文化与人物》，1954年7月台北中央文物供应社版）。</p>
+<p>(34)李敖：《播种者胡适》（《文星》第53期，1962年1月1日台北出版），收入《胡适研究》（1964年3月台北文星书店初版，1979年6月台北远景出版社再版）。有人说胡适是一个“保守的自由主义者”（conservative liberal），傅斯年是一个“急进的自由主义者”（radical liberal），见程沧波《记傅孟真》（《历史文化与人物》，1954年7月台北中央文物供应社版）。</p>
 <p>(35)梁启超：《清代学术概论》第二十五节。</p>
-<p>(36)胡适在LivingPhilosophiesp.247里，肯定他这时候读了《群己权界论》（JohnStuartMill:OnLibetry）。</p>
+<p>(36)胡适在Living Philosophies p. 247里，肯定他这时候读了《群己权界论》（John Stuart Mill: On Libetry）。</p>
 <p>(37)《在上海（一）》（《四十自述》三）。</p>
 <p>(38)同上。胡适在《胡适留学日记》卷二（1912年11月10日）里，曾记下一段最歌颂梁启超的话：</p>
 <p>阅报时，如梁任公归国，京津人士都欢迎之，读之深叹公道之尚在人心也。梁任公为吾国革命第一大功臣，其功在革新吾国之思想界。十五年来，吾国人士所以稍知民族思想主义及世界大势者，皆梁氏之赐，皆百喙所不能诬也。去年武汉革命，所以能一举而全国响应者，民族思想政治思想入人已深，故势如破竹耳。使无梁氏之笔，虽有百十孙中山、黄克强，岂能成功如此之速耶！近人诗“文字收功日，全球革命时”，此二语唯梁氏可以当之无愧。</p>
 <p>(39)(40)《在上海（一）》（《四十自迷》三）。</p>
 <p>(41)同上。胡适在里，有一大段总论梁启超对他的大影响：</p>
-<p>“ThroughthepopularwritingsofthelateMr.LiangChj-chao,themostpowerfulwriteroftheage，IcametoknowalittleofsuchWesternthinkersasHobbes,Descartes,Rousseau，Bentham，Kant，andDarwin.Mr.LiangwasagreatadmirerofmodemWesterncivilizationandpublishedaseriesofessaysinwhichhefranklyadmittedthattheChineseasaracehadsufferedfromthedeplorablelackofmanyfinetraitpossessedbytheEuropeanpeople,notablyemphasisonpublicmorality,nationalismloveofadventure,theconceptionofpersonalrightsandtheeagernesstodefendthemagainstencroachment,loveoffreedom,abilxtyforself-control，beliefintheinfinitepossibilityofprogress，capacityforcorporateandorganizedeffort,andattentiontobodilycultureeandhealth.Itwastheseessayswhichfirstviolentlyshockedmeoutofthecomfortabledreamthatoutancientcivilizationwasself-sufficientandhadnothingtolearnfromthemiliantandmaterialisticWestexceptintheweaponsofwarandvehiclesofcommerce.Theyopenedtome,astohundredsofothers,anentirelynewvisionoftheworld.”（p.247）</p>
+<p>“Through the popular writings of the late Mr. Liang Chj-chao, the most powerful writer of the age，I came to know a little of such Western thinkers as Hobbes, Descartes, Rousseau，Bentham，Kant，and Darwin. Mr. Liang was a great admirer of modem Western civilization and published a series of essays in which he frankly admitted that the Chinese as a race had suffered from the deplorable lack of many fine trait possessed by the European people, notably emphasis on publicmorality, nationalism love of adventure, the conception of personal rights and the eagerness to defend them against encroachment, love of freedom, abilxty for self-control，belief in the infinite possibility of progress，capacity for corporate and organized effort, and attention to bodily culturee and health. It was these essays which first violently shocked me out of the comfortable dream that out ancient civilization was self-sufficient and had nothing to learn from the miliant and materialistic West except in the weapons of war and vehicles of commerce. They opened to me, as to hundreds of others, an entirely new vision of the world.”（p. 247）</p>
 <p>(42)同上。胡适又接着说：“我从那时候起，就留心读周秦诸子的书。我二哥劝我读朱子的《近思录》，这是我读理学的第一部。梁先生的《德育鉴》和《节本明儒学案》，也是这个时期出来的。这些书引我去读宋明理学书，但我读的并不多，只读了王守仁的《传习录》和正谊堂丛书内的程朱语录。”</p>
 <p>(43)李敖：《胡适与梁启超》（1957年3月15日台北《中央日报》副刊），收入《胡适研究》。</p>
 <p>(44)这是1918年11月20日胡适给梁启超信中的话。见丁文江编《梁任公先生年谱长编初稿》（1958年7月台北世界书局版）第550-551页。</p>
@@ -1242,7 +1275,7 @@
 <p>我们的父母生我育我，我们的兄弟爱我助我，我所以爱他们。难道我们的祖国，保护我、教育我，我们倒可以忘记了它吗？倒可以不爱它吗？所以我第一句话就说国是人人都要爱的，爱国是人人本分的事……</p>
 <p>他又说：</p>
 <p>爱国的人，第一件要保存祖国的光荣历史，不可忘记。忘记了自己祖国的历史，便要卑鄙龌龊，甘心做人家的牛马奴隶了……</p>
-<p>像这些浅显的爱国论，也都多少可以表现这个少年人的心地。当然这些浅显的爱国论，极容易流为“沙文主义”（Chauvinism），因为真正“理智的爱国主义”（patriotismofreflection）的境界，究竟是不容易到达的。对胡适本人说来，他在写《读爱国二童子传》《爱国》等文以后六七年，似乎就已接近了“理智的爱国主义”的境界，所以他那时竟被人骂做“木石心肠，不爱国”(43)了！</p>
+<p>像这些浅显的爱国论，也都多少可以表现这个少年人的心地。当然这些浅显的爱国论，极容易流为“沙文主义”（Chauvinism），因为真正“理智的爱国主义”（patriotism of reflection）的境界，究竟是不容易到达的。对胡适本人说来，他在写《读爱国二童子传》《爱国》等文以后六七年，似乎就已接近了“理智的爱国主义”的境界，所以他那时竟被人骂做“木石心肠，不爱国”(43)了！</p>
 <p>关于《竞业旬报》本身跟胡适的关系，是他先由投稿者变成主编，再由主编变成“包办者”。他的回忆如下：</p>
 <p>《竞业旬报》出到第十期，便停办了。我的小说续到第六回，也停止了。（1908）3月11日，旬报复活，第十一期才出世。但傅君剑已不来了，编辑无人负责，我也不大高兴投稿了。到了戊申七月，旬报第二十四期以下就归我编辑。从第二十四期到第三十八期，我做了不少的文字，有时候全期的文字，从论说到时闻，差不多都是我做的。《真如岛》也从第二十四期上续作下去，续到第十一回，旬报停刊了，我的小说也从此停止了。这时期我改用了“铁儿”的笔名(44)。</p>
 <p>我从《四十自述》和国民党“党史史料编纂委员会”现藏的五本《竞业旬报》中，辑出胡适这个时期所发表的一些文字的题目，当然不完全，只是聊见一斑：光绪三十二年（丙午，1906）：</p>
@@ -1261,7 +1294,7 @@
 <p>12.《中国的政府》（《时评》中《社会杂评》（二）。署名“适广”），第二十八期，九月朔日(45)。</p>
 <p>13.《论承继之不近人情》，第二十九期，转载自李莘伯办的《安徽白话报》。</p>
 <p>14.《爱国》（社说。署名“铁儿”），第三十四期，十一月朔日。</p>
-<p>15.《金玉良言》（格言。署名“铁儿”），第三十四期，十一月朔日。为译文。自记：“美国马威克所著《真国民》一书，中有MemoryGems一种，因汉译之，名之曰金玉良言，以为我国人增一种座右铭云尔，戊申十月译者识。”</p>
+<p>15.《金玉良言》（格言。署名“铁儿”），第三十四期，十一月朔日。为译文。自记：“美国马威克所著《真国民》一书，中有Memory Gems一种，因汉译之，名之曰金玉良言，以为我国人增一种座右铭云尔，戊申十月译者识。”</p>
 <p>16.《对于中国公学风潮之感言》（论说。署名“骍”），第三十四期，十一月朔日。</p>
 <p>17.《读汉书杂记（一）》（谈丛。署名“铁儿”），第三十四期，十一月朔日。</p>
 <p>18.《苟且》，第三十六期。</p>
@@ -1350,7 +1383,7 @@
 <p>(13)饶可权是广东梅县人，字竞夫，又字辅廷。据丘哲《饶辅廷传》（此传曾收入邹鲁《广州二月二十九革命史》和他的《中国国民党史稿》第四篇《刊传》），说他“丙午岁乞兄资助。肄业上海中国公学。庚戌毕业旋里。充高等小学教师”。后来参加三月二十九之役被捕，“研讯数次。施以惨刑。……四月初八日就义。年三十一。”胡适在《胡适留学日记》卷一，1911年6月11日记说：</p>
 <p>得保民仲诚慰慈蜀川书。蜀川书言饶敬夫（名可权，嘉应州人）亦死于广州。此君前殉其妇，吾辈救之，得不死，今乃死于革命，可谓得所矣。</p>
 <p>在饶可权死后，他的“妇”又“殉”他，当时被劝住，可是几个月后，还是呕血死了。</p>
-<p>(14)任鸿隽（1886-1961）字叔永，四川巴县人。后来成为胡适最好的朋友之一，他的太太就是陈衡哲。任鸿隽最初在日本高等工业学校卒业，民国成立，任总统府秘书，后就学美国康奈耳大学、哥伦比亚大学。任中国科学社社长、北京大学有机化学教授、四川省教育厅长、四川大学校长，1961年11月死于大陆，年七十六（据1962年2月28日台北《民族晚报》）。译有W.C.D.Dampier-Whetham的《科学与科学思想发展史》（商务版，与李珩、吴学周合译）。</p>
+<p>(14)任鸿隽（1886-1961）字叔永，四川巴县人。后来成为胡适最好的朋友之一，他的太太就是陈衡哲。任鸿隽最初在日本高等工业学校卒业，民国成立，任总统府秘书，后就学美国康奈耳大学、哥伦比亚大学。任中国科学社社长、北京大学有机化学教授、四川省教育厅长、四川大学校长，1961年11月死于大陆，年七十六（据1962年2月28日台北《民族晚报》）。译有W. C. D. Dampier-Whetham的《科学与科学思想发展史》（商务版，与李珩、吴学周合译）。</p>
 <p>(15)《中国公学校史》。</p>
 <p>(16)于右任《新闻自由万岁中华自由万岁》（《右任文存》，1957年7月台北中华丛书委员会版）：</p>
 <p>四十年前我初办《神州日报》时，发起的同人，复旦公学有八位（金怀秋，乎湖人；叶仲玉，嘉兴人；邵仲辉，绍兴人即力子；陈□□，海宁人；陆冠春即秋心；叶藻亭，上海人；王公侠，湖北人），中国公学有八位（王搏沙，河南人；张邦杰，四川人；孙性廉，四川人；谭介人，湖南人；黄祯呈，湖南人；梁乔山，湖南人；钟古愚，江西人等）。</p>
@@ -1380,7 +1413,7 @@
 <p>(29)1906年11月16日。</p>
 <p>(30)《在上海（二）》（《四十自述》四）。</p>
 <p>(31)同上。</p>
-<p>(32)1952年12月17日台北《中央日报》，这篇文章的副标题是《祝胡适先生六二寿诞》。</p>
+<p>(32) 1952年12月17日台北《中央日报》，这篇文章的副标题是《祝胡适先生六二寿诞》。</p>
 <p>(33)参看宋人季南金的词——《贺新郎（赠妓）》中的几句：“君看取落花飞絮，也有吹来穿绣幌，有因风飘堕随尘土。人世事，总无据。”</p>
 <p>(34)《在上海（二）》（《四十自述》四）。</p>
 <p>(35)同上。</p>
@@ -1418,11 +1451,11 @@
 <p>立德，立功，立言，皆所谓无后之后也。释迦孔子老子耶稣皆不赖子孙传后。华盛顿无子，而美人尊为国父，则举国皆其子孙也。李白杜甫裴伦邓耐生，其著作皆足传后。有后无后，何所损益乎？</p>
 <p>到了11月2日，他又写下《近世不婚之伟人》（卷七第二十一则）：</p>
 <p>被拧肉的时代吾尝倡“无后”说，今录近世不婚之伟人如下：</p>
-<p>哲学家：笛卡儿（Descartes）、巴斯卡尔（Pascal）、斯宾诺沙（Spinoza）、康德（Kant）、霍布斯（Hobbes）、洛克（Locks）、斯宾塞（H.spencer）</p>
+<p>哲学家：笛卡儿（Descartes）、巴斯卡尔（Pascal）、斯宾诺沙（Spinoza）、康德（Kant）、霍布斯（Hobbes）、洛克（Locks）、斯宾塞（H. spencer）</p>
 <p>科学家：牛顿（Newton）</p>
 <p>经济学家：亚当斯密（AdamSmith）</p>
 <p>文学家：伏尔泰（Voltaire）</p>
-<p>政治家：皮特（Wm.Pitt）、加富尔（Cavour）</p>
+<p>政治家：皮特（Wm. Pitt）、加富尔（Cavour）</p>
 <p>史学家：吉本（Gibbon）</p>
 <p>这些记录都可表示他的“无后主义”的狂热，及反对承继和遗产传子孙的色彩，这些思想的种子，都是《竞业旬报》时代他所播下的。</p>
 <p>可是，他后来还是难逃结婚这一关了，（他在1915年8月23日访问斐卿氏FrederickFitschen一家，曾认为“此种家庭可称圆满，对之几令我暂忘吾之‘无后”主义！”）不但逃不掉“婚姻关”，并且还逃不掉“儿子关”，民国八年，他的第一个儿子出世了，他无可奈何地在7月30日写了一首诗——《我的儿子》，发表在8月的《每周评论》里（后来收入《尝试集》第二版）：</p>
@@ -1432,8 +1465,8 @@
 <p>将来你长大时，莫忘了我怎样教训儿子：我要你做一个堂堂的人，不要你做我的孝顺儿子。</p>
 <p>从此以后，他的“‘无后主义’的招牌”，再也不挂了！</p>
 <p>在《胡适留学日记》中，有许多他关于家族、婚姻的议论，如卷三第二十则《吾国女子所处地位高于西方女子》（1914年1月4日）、第三十五则《演说吾国婚制》（1914年1月27日）、卷四第三十五则《我国之“家族的个人主义”》（1914年6月7日）、卷六第十一则《一个模范家庭》（1914年8月16日）、卷七第二十一则《近世不婚之伟人》（1914年11月2日）、第四十三则《择偶之道》（1914年11月22日）等等，皆可参看，这些意见，都多少是以《竞业旬报》时代的思想做基点的。</p>
-<p>(39)《在上海（二）》（《四十自述》四）参看他在LivingPhilosophies里写的这段话：</p>
-<p>ThedeathofmymotherinNovember,1918,wastheoccasionwhichledtothefirstformulationofthecredoforwhichIhadbeengropinginthevastworldforeverfourteen-years.ItwaspublishedinFebruary,1919,inanessayentitledImmortalityMyReligion.(p.256)</p>
+<p>(39)《在上海（二）》（《四十自述》四）参看他在Living Philosophies里写的这段话：</p>
+<p>The death of my mother in November, 1918, was the occasion which led to the first formulation of the credo for which I had been groping in the vast world forever fourteen-years. It was published in February, 1919, in an essay entitled Immortality My Religion. (p. 256)</p>
 <p>并参看他的《不朽——我的宗教》（原栽《新青年》第六卷第二号，1919年2月19日北京出版，收入《胡适文存》卷四）。</p>
 <p>(40)在该期《竞业旬报》的目次里略作《杨斯盛传》。这篇文章曾由《中央日报》记者从国民党党史史料编纂委员会抄出，发表在1952年12月17日的台北《中央日报》副刊。</p>
 <p>(41)胡适这一时期对婚姻的思想，也曾引申发挥在《胡适留学日记》中，参看注(38)最后一段。</p>
@@ -1441,7 +1474,7 @@
 <p>(43)这是《留美学生月报》的主笔邝煦堃骂他的话，见《胡适留学日记》卷九第三十三则《致留学界公函发表后之反响》（1915年5月25日）。</p>
 <p>(44)《在上海（二）》（《四十自述》四）。</p>
 <p>(45)龚选舞《四十五年前的胡适》（1952年12月17日台北《中央日报》）中误为第二十五期。</p>
-<p>(46)胡适很喜欢同新闻界攀关系。他1952年12月1日，向台北市编辑人协会说：“我曾编过三个周报、两个月报。……因为有这个资格，所以我在美国做外交官的时候，美国有个新闻记者名誉协会，叫我‘正在工作中的新闻记者’，并送我一个金质钥匙，因为我正在做外交官。……因为有这个资格，所以刚才我敢称大家为同仁。”（《胡适言论集》乙篇第93页）约翰冈瑟（JohnGunther）在《亚洲内幕》（InsideAsia）索性说当时胡适是journalist(1938Harper&amp;Brothers版p.284)。</p>
+<p>(46)胡适很喜欢同新闻界攀关系。他1952年12月1日，向台北市编辑人协会说：“我曾编过三个周报、两个月报。……因为有这个资格，所以我在美国做外交官的时候，美国有个新闻记者名誉协会，叫我‘正在工作中的新闻记者’，并送我一个金质钥匙，因为我正在做外交官。……因为有这个资格，所以刚才我敢称大家为同仁。”（《胡适言论集》乙篇第93页）约翰冈瑟（John Gunther）在《亚洲内幕》（Inside Asia）索性说当时胡适是journalist (1938 Harper &amp; Brothers版p. 284)。</p>
 <p>(47)《在上海（二）》（《四十自述》四）。</p>
 <p>(48)同上。</p>
 <p>(49)《胡适留学日记》卷九第六则《范鸿仙》（1915年2月22日）中，称范为“吾友范鸿仙”：</p>
@@ -1510,13 +1543,13 @@
 <p>秋柳有序（己酉）</p>
 <p>秋日适野，见万木皆有衰意。而柳以弱质，际兹高秋，独能迎风而舞，意态自如。岂老氏所谓能以弱者存耶？感而赋之。</p>
 <p>但见萧飕万木摧，尚余垂柳拂人来。西风莫笑长条弱，也向西风舞一回(18)。</p>
-<p>这时候，他除了读写中国旧诗外，还念过英文诗。他念过19世纪名诗人朗费罗（HenryWadsworthLongfellow）的《一支箭，一支曲子》（TheArrowandTheSong），对这首诗，他在近半个世纪以后，回忆说：“我十几岁时在中国公学念这首小诗，就想翻译它。那时我还学古文，初学做旧诗。中国公学的英文教员有诗人胡梓方，有辜汤生的学生姚康侯，他们都鼓励学生们用旧诗体来翻译外国诗歌。朗费罗这首小诗的意思很简单，但我曾试译，总觉得译不出他那简单明白的风格。”(19)</p>
+<p>这时候，他除了读写中国旧诗外，还念过英文诗。他念过19世纪名诗人朗费罗（Henry Wadsworth Longfellow）的《一支箭，一支曲子》（The Arrow and The Song），对这首诗，他在近半个世纪以后，回忆说：“我十几岁时在中国公学念这首小诗，就想翻译它。那时我还学古文，初学做旧诗。中国公学的英文教员有诗人胡梓方，有辜汤生的学生姚康侯，他们都鼓励学生们用旧诗体来翻译外国诗歌。朗费罗这首小诗的意思很简单，但我曾试译，总觉得译不出他那简单明白的风格。”(19)</p>
 <p>他在《四十自述》里又回忆说：</p>
 <p>英文教员姚康侯先生，是辜鸿铭先生的学生，也是很讲究中国文学的。辜先生译的痴汉骑马歌，其实是姚康侯先生和几位同门修改润色的。姚先生在课堂上常教我们翻译，从荚文译汉文，或从汉文译英文。有时候，我们自己从读本里挑出爱读的英文诗，邀几个能诗的同学分头翻译成中国诗，拿去给姚先生和胡〔梓方〕先生评改。姚先生常劝我们看辜鸿铭译的《论语》，他说这是翻译的模范。但五六年后，我得读辜先生译的《中庸》，感觉很大的失望。大概当时所谓翻译，都侧重自由的意译，务必要“典雅”，而不妨变动原文的意义与文字。这种训练也有它的用处，可以使学生时时想到中西文字异同之处，时时想某一句话应该怎样翻译，才可算“达”与“雅”。我记得我们试译一首英文诗，中有Scarecrow一个字，我们大家想了几天，想不出一个典雅的译法。但是这种功夫，现在回想起来，不算是浪费了的(20)。</p>
-<p>现在我们回看当时胡适以文言译诗的成绩，我们不能不惊讶他译得真不错！试看他在光绪皇帝死的那一年（戊申，1908），所译的18到19世纪诗人坎贝尔（ThomasCampbell）《军人梦》（ASoldier'sDream）：</p>
+<p>现在我们回看当时胡适以文言译诗的成绩，我们不能不惊讶他译得真不错！试看他在光绪皇帝死的那一年（戊申，1908），所译的18到19世纪诗人坎贝尔（Thomas Campbell）《军人梦》（A Soldier’s Dream）：</p>
 <p>笳声销歇暮云沉，耿耿天河灿列星。战士疮痍横满地，倦者酣眠创者逝。枕戈藉草亦蘧然，时见刍灵影摇曳。长夜沉沉夜未央，陶然入梦已三次。梦中忽自顾，身已离行伍，秋风佛襟袖，独行殊踽踽。唯见日东出，迎我归乡土。纵横阡陌间，尽是钓游迹，时闻老农刈稻歌，又听牛羊嗥山脊。归来戚友咸燕集，誓言不复相离别。娇儿数数亲吾额，少妇情深自呜咽。举室争言君已倦，幸得归休免征战。惊回好梦日熹微，梦魂渺渺成虚愿(21)。</p>
 <p>我们试找出原文(22)来对照，我们不能不说这十七岁的少年人翻译得很工巧，我们不得不赞美这个“少年诗人”和他的文言译诗。</p>
-<p>他所以有这种译诗的好成绩，很明显的他得到他的老师姚康侯的不少指点，但是姚康侯是谁？姚康侯不是别人，却正正是《读易草堂文集》《张文襄幕府纪闻》等书的作者的学生，而这个作者就是蒋梦麟笔下的“享誉国际愤世嫉俗的学者”(23)、毛姆（W.SomersetMaugham）笔下的“有人格的好汉”(24)——厦门辜汤生（鸿铭）！</p>
+<p>他所以有这种译诗的好成绩，很明显的他得到他的老师姚康侯的不少指点，但是姚康侯是谁？姚康侯不是别人，却正正是《读易草堂文集》《张文襄幕府纪闻》等书的作者的学生，而这个作者就是蒋梦麟笔下的“享誉国际愤世嫉俗的学者”(23)、毛姆（W. Somerset Maugham）笔下的“有人格的好汉”(24)——厦门辜汤生（鸿铭）！</p>
 <p>辜鸿铭万万没想到，在这个时间以后十几年，他竟向蒋梦麟大骂胡适之是“洋迷”(25)，胡适之也万万没想到，也在十几年后，他竟跟他的太老师(26)同在一个教员休息室(27)里，分做新时代和旧社会的代表人物(28)，并且因为他写了一篇“辜鸿铭”(29)的短文，竟惹得他的太老师要告他“毁谤”(30)！</p>
 <p>①他的父亲就死在脚气病上。</p>
 <p>②《在上海（二）》（《四十自述》四）。陆丹林在《革命史谭》（1945年8月重庆独立出版社版）《胡适之与竞业旬报》中也引申此事，说：</p>
@@ -1566,46 +1599,46 @@
 <p>与吾诗意正同。余大喜，因记之。</p>
 <p>这首诗又收入《尝试集》。</p>
 <p>据胡不归《胡适之先生传》（第95页），这一年中胡适还作了一些诗，如：《纪梦》《闰月六日中国新公学全体合影》《菊部四律》《送二兄入都》《登楼》《十月题新校合影时公学将解散》《十月再题新校教员合影》《已见一律》《读儒林外史》等。</p>
-<p>(19)胡适译：《一支箭，一支曲子》（《文学杂志》第一卷第一期，1956年9月20日台北出版）。胡适在1943年6月里翻译了这首小诗，那时候他已经52岁了。也许他该翻译朗费罗的那首《逝去的青春》（MyLostYouth）了，可是他没有。</p>
+<p>(19)胡适译：《一支箭，一支曲子》（《文学杂志》第一卷第一期，1956年9月20日台北出版）。胡适在1943年6月里翻译了这首小诗，那时候他已经52岁了。也许他该翻译朗费罗的那首《逝去的青春》（My Lost Youth）了，可是他没有。</p>
 <p>这首译诗他在1956年8月“寄给梁实秋先生，请他很不客气的批评改削”，并且问“是不是该得零分”。因为这是一首他在少年时代“就想翻译”，直到中年以后犹未忘情的旧读物，所以原诗中的意思，多少也可以反映出他自己的心境。正如朗费罗《逝去的青春》里所说的：</p>
-<p>AndaverseofaLaplandsong</p>
-<p>Ishauntingmymemorystill：</p>
+<p>And a verse of a Lapland song</p>
+<p>Is haunting my memory still：</p>
 <p>“Aboy’swillisthewind’swill,</p>
-<p>Andthethoughtsofyoutharelong,longthoughts.”</p>
+<p>And the thoughts of youth are long, long thoughts.”</p>
 <p>梁实秋把胡适的译诗没有打“零分”，反倒把它送给了《文学杂志》。</p>
 <p>(20)《在上海（二）》（《四十自述》四）。</p>
 <p>(21)《在上海（二）》（《四十自述》四）。诗中的“刍灵”在1931年改为“刍人”。</p>
-<p>(22)我从牛津大学教授帕尔格雷夫（FrancisT.Palgrave）的《金库诗选》（TheGoldenTreasury）转录出这首诗的原文：</p>
-<p>Ourbuglessangtruce，forthenight-cloudhadlower'd,</p>
-<p>Andthesentinelstarssettheirwatchinthesky；</p>
-<p>Andthousandshadsunkonthegroundoverpower'd,</p>
-<p>Thewearytosleep,andthewoundedtodie.</p>
-<p>Whenreposingthatnightonmypalletofstraw</p>
-<p>Bythewolf-scaringfaggotthatguardedtheslain，</p>
-<p>AtthedeadofthenightasweetvisionIsay；</p>
-<p>AndthriceerethemorningIdreamtitagain.</p>
-<p>Methoughtfromthebattle-field'sdreadfularray</p>
-<p>Far,FarIhadroam'donadesolatetrack：</p>
-<p>Itwasautumn,andsunshinearoseontheway</p>
-<p>Tothehomeofmyfathers,thatwelcomedmeback.</p>
-<p>Iflewtothepleasantfieldstraversedsooft</p>
-<p>Inlife'smorningmarch,whenmybosomwasyoung；</p>
-<p>Iheardmyownmountain-goatsbleatingaloft，</p>
-<p>Andknewthesweetstrainthatthecom-reaperssung.</p>
-<p>Thenpledgedwethewine-cup,andfondlyIswore</p>
-<p>Frommyhomeandmyweepingfriendsnevertopart；</p>
-<p>Mylittleoneskiss'dmeathousandtimeso'er</p>
-<p>Andmywifesobb'daloudinherfullnessofheart.</p>
-<p>'Stay-staywithus!-rest!-thouartwearyandworn!'</p>
-<p>Andfainwastheirwar-brokensoldiertostay；</p>
-<p>Butsorrowreturn'dwiththedawningofmom，</p>
-<p>Andthevoiceinmydreamingearmeltedaway.</p>
+<p>(22)我从牛津大学教授帕尔格雷夫（Francis T. Palgrave）的《金库诗选》（The Golden Treasury）转录出这首诗的原文：</p>
+<p>Our bugles sang truce，for the night-cloud had lower’d,</p>
+<p>And the sentinel stars set their watch in the sky；</p>
+<p>And thousands had sunk on the ground overpower’d,</p>
+<p>The weary to sleep, and the wounded to die.</p>
+<p>When reposing that night on my pallet of straw</p>
+<p>By the wolf-scaring faggot that guarded the slain，</p>
+<p>At the dead of the night a sweet vision I say；</p>
+<p>And thrice ere the morning I dreamt it again.</p>
+<p>Methought from the battle-field’s dreadful array</p>
+<p>Far, Far I had roam’d on a desolate track：</p>
+<p>It was autumn, and sunshine arose on the way</p>
+<p>To the home of my fathers, that welcomed me back.</p>
+<p>I flew to the pleasant fields traversed so oft</p>
+<p>In life’s morning march, when my bosom was young；</p>
+<p>I heard my own mountain-goats bleating aloft，</p>
+<p>And knew the sweet strain that the com-reapers sung.</p>
+<p>Then pledged we the wine-cup, and fondly I swore</p>
+<p>From my home and my weeping friends never to part；</p>
+<p>My little ones kiss’d me a thousand times o’er</p>
+<p>And my wife sobb’d aloud in her fullness of heart.</p>
+<p>’Stay-stay with us! -rest! -thou art weary and worn! ’</p>
+<p>And fain was their war-broken soldier to stay；</p>
+<p>But sorrow return’d with the dawning of mom，</p>
+<p>And the voice in my dreaming ear melted away.</p>
 <p>(23)蒋梦麟：《西潮》（1959年12月台北中华日报社版）第104页。</p>
-<p>(24)毛姆在OnAChineseScreen里有一章ThePhilosopher专写辜鸿铭，有一句是：“FromallIheardofhimIconcludedthathewasamanofcharacter.”</p>
+<p>(24)毛姆在On A Chinese Screen里有一章The Philosopher专写辜鸿铭，有一句是：“From all I heard of him I concluded that he was a man of character.”</p>
 <p>(25)蒋梦麟：《文化多元论》（1952年6月15日台北《新生报》每日专栏，收入《孟邻文存》，1954年5月台北正中书局版）。</p>
 <p>(26)胡适只提辜鸿铭是姚康侯的老师，而姚康侯又是他的老师，但他却从来不提辜鸿铭是他的“太老师”。</p>
 <p>(27)在北京大学。参看柳存仁：《北大和北大人（二）》——《记北京大学的教授（中）》（《宇宙风》乙刊第29期，1940年9月16日上海出版）。</p>
-<p>(28)毛姆在OnAChineseScreen里记辜鸿铭对他说：“IamthelastrepresentativeoftheoldChina.”</p>
+<p>(28)毛姆在On A Chinese Screen里记辜鸿铭对他说：“I am the last representative of the old China.”</p>
 <p>(29)文章是1919年8月写的，署名“天风”，登在北京《每周评论》第三十三期。</p>
 <p>(30)因为胡适在文章里批评了辜老头儿的小辫儿，所以辜老头儿要告他。这件事的经过，胡适曾有《记辜鸿铭》（《大公报》文艺副刊，1935年8月11日天津出版）一文，写得很详细。</p>
 <p>“无忘城下盟”（1908-1909）</p>
@@ -1695,7 +1728,7 @@
 <p>杨杏佛曾在美国送给胡适一首词——《水调歌头》，收入《胡适留学日记》卷十一第十八则《水调歌头，杏佛赠别》（1915年8月28日）：</p>
 <p>三稔不相见，一笑遇他乡。暗惊狂奴非故，收束入名场。秋水当年神骨，古柏而今气概，华贵亦苍凉，海鹤入清冥，前路正无疆。羡君健，嗟我拙，更颓唐。名山事业无分，吾志在工商。不羡大王（指托那司）声势，欲共斯民温饱，此愿几时偿？各有千秋业，分道共翱翔。</p>
 <p>其中有“暗惊狂奴非故”一语，可证胡适当年在上海教杨杏佛时的神态！五天以后，胡适回了一首《沁园春别杏佛》（《胡适留学日记》卷十一第二十三则），词前说：“实则杏佛亦扬州梦醒之杜牧之耳。其词又有‘欲共斯民温饱，此愿几时偿’之语。余既喜吾与杏佛今皆能放弃故我，重修学立身，又壮其志愿之宏，故造访此词奉答，即以为别。”词文是：</p>
-<p>朔国秋风，汝远东来，过存老胡。正相看一笑，使君与我，春申江上，两个狂奴。万里相逢，殷勤问字，不似黄垆旧酒徒。还相问：“岂当年块垒，今尽消乎？”君言：“是何言欤！只壮志新来与昔殊。愿乘风役电，戡天缩地（科学之目的在于征服天行以利人事），颇思瓦特（JameWatt），不羡公转输。户有余精，人无菜色，此业何尝属腐儒？吾狂甚，欲斯民温饱，此意何如？”（敖按：此词曾收入《尝试集》）</p>
+<p>朔国秋风，汝远东来，过存老胡。正相看一笑，使君与我，春申江上，两个狂奴。万里相逢，殷勤问字，不似黄垆旧酒徒。还相问：“岂当年块垒，今尽消乎？”君言：“是何言欤！只壮志新来与昔殊。愿乘风役电，戡天缩地（科学之目的在于征服天行以利人事），颇思瓦特（Jame Watt），不羡公转输。户有余精，人无菜色，此业何尝属腐儒？吾狂甚，欲斯民温饱，此意何如？”（敖按：此词曾收入《尝试集》）</p>
 <p>这样一来，不但当时师徒二人都是“狂奴”，并且都是“酒徒”了！</p>
 <p>十多年后，在他们两人“各有千秋业”的时候，曾互有文字上的“攻击”。</p>
 <p>(14)严庄是陕西人，比胡适还大四岁。后来也留学美国。《胡适留学日记》卷八第十一则《再游波士顿记》（1915年1月27日追记）中记他：</p>
@@ -1739,7 +1772,7 @@
 <p>关于胡适毕业与否的问题，杨亮功既不知道，王云五也记忆错误，因为胡适自己曾有文字说明他没有毕业，他在LivingPhilosophies里明明白白的说：IspentsixyearsinShanghai(1904-1910)andsevenyearsinAmerica(1910-1917).DuringmystayinShanghaiIwentthroughthreeschoolsnoneofwhichwasamissionaryschoolwithoutgraduatingfromany.(p.246)他又在《我怎样到外国去》（《四十自述》五）里，也相当明白的说我这时候还不满十七岁，虽然换了三个学堂，始终没有得着一张毕业证书。我若继续上课，明年可以毕业了。但我那时确有不能继续求学的情形所以，杨亮功的“问”和王云五的“答”，都是没有必要的、错误的。</p>
 <p>从逛窑子到上北京（1909-1910）</p>
 <p>离开了中国新公学以后的胡适之，茫茫然不知所归。他的家庭已经“败坏到不可收拾的地步”，所以他无法回家，也不敢回家，只好寄居在上海，混饭吃。</p>
-<p>他的理想主义遭到打击，心情忧愁烦闷，他这时候缺乏一种“英雄式的反动”（aheroicreaction），正好又碰到一批酒肉朋友，于是，他“就跟着他们堕落了”①。</p>
+<p>他的理想主义遭到打击，心情忧愁烦闷，他这时候缺乏一种“英雄式的反动”（a heroic reaction），正好又碰到一批酒肉朋友，于是，他“就跟着他们堕落了”①。</p>
 <p>“堕落”的引子是一个德国人：</p>
 <p>中国新公学有一个德国教员，名叫何德梅（Ottomeir），他的父亲是德国人，母亲是中国人，他能说广东话、上海话、官话。什么中国人的玩意儿，他全会。我从新公学出来，就搬在他隔壁的一所房子里住，这两所房子是通的，他住东屋，我和几个四川朋友住西屋。和我同住的人，有林君墨（恕）、但怒刚（懋辛）诸位先生；离我们不远，住着唐桂梁（蟒）先生，是唐才常的儿子。这些人都是日本留学生，都有革命党的关系；在那个时候各地的革命都失败了，党人死的不少，这些人都很不高兴、都很牢骚。何德梅常邀这班人打马将，我不久也学会了。我们打牌不赌钱，谁赢谁请吃雅叙园。我们这一班人都能喝酒，每人面前摆一大壶，自斟自饮。从打牌到喝酒，从喝酒又到叫局，从叫局到吃花酒②，不到两个月，我都学会了。</p>
 <p>幸而我们都没有钱，所以都只能玩一点穷开心的玩意儿：赌博到吃馆子为止，逛窑子到吃“镶边”的花酒或打一场合股份的牌为止。有时候，我们也同去看戏。林君墨和唐桂梁发起学唱戏，请了一位小喜禄来教我们唱戏③，同学之中有欧阳予倩④，后来成了中国戏剧界的名人。我最不行，一句也学不会，不上两天我就不学了。此外，我还有一班小朋友，同乡有许怡荪、程乐亭、章希吕诸人，旧同学有郑仲诚、张蜀川、郑铁如诸人。怡荪见我随着一班朋友发牢骚、学堕落，他常常规劝我⑤。但他在吴淞复旦公学上课，是不常来的，而这一班玩的朋友是天天见面的，所以我那几个月之中真是在昏天黑地里胡混。有时候，整夜的打牌；有时候，连日的大醉⑥。</p>
@@ -1748,7 +1781,7 @@
 <p>后来改为</p>
 <p>霜浓欺曰薄！⑦</p>
 <p>他给它的英译是：</p>
-<p>“Howproudlydoesthewintryfrostscornthepowerlessraysofthesun!”⑧</p>
+<p>“How proudly does the wintry frost scorn the powerless rays of the sun!”⑧</p>
 <p>他这样昏天黑地地鬼混，到底混出麻烦来了：</p>
 <p>有一个晚上，闹出乱子来了。那一晚我们在一家“堂子”⑨里吃酒，喝的不少了，出来又到一家去“打茶围”⑩。那晚上雨下得很大，下了几点钟还不止。君墨、桂梁留我打牌，我因为明天要教书（那时我在华童公学教小学生的国文），所以独自雇人力车走了。他们看我能谈话，能在一叠“局票”上写诗词，都以为我没有喝醉，也就让我一个人走了。</p>
 <p>其实我那时已大醉了，谈话写字都只是我的“下意识”的作用，我全不记忆。出门上车以后，我就睡着了。</p>
@@ -1804,82 +1837,82 @@
 <p>留美考试分两场，第一场考国文英文，及格者才许考第二场的各种科学。国文试题为“不以规矩不能成方圆说”，我想这个题目不容易发挥，又因我平日喜欢看杂书，就做了一篇乱谈考据的短文，开卷就说：</p>
 <p>矩之作也，不可考矣。规之作也，其在周之末世乎？</p>
 <p>下文我说周髀算经作圆之法足证其时尚不知道规用作圆；又孔子说“不逾矩”，而不并举规矩，至墨子孟子始以规矩并用，足证规之晚出。这完全是一时异想天开的考据，不料那时看卷子的先丰也有考据癖，大赏识这篇短文，批了一百分。英文考了六十分，头场平均八十分，取了第十名。第二场考的各种科学，如西洋史、如动物学、如物理学，都是我临时抱佛脚预备起来的，所以考得很不得意。幸亏头场的分数占了大便宜，所以第二场我还考了个第五十五名。取送出洋的共七十名，我很挨近榜尾了(24)。</p>
-<p>胡适这次考试总平均并不及格（只有597/40），他能考取，说他得力于国文得了一百分并不为过，所以，这真是他的好运气(25)。</p>
+<p>胡适这次考试总平均并不及格（只有59 7/40），他能考取，说他得力于国文得了一百分并不为过，所以，这真是他的好运气(25)。</p>
 <p>在他还不知道好运气以前，还有一段看榜的过程，我们看他的自述：</p>
 <p>宣统二年（1910）7月，我到北京考留美官费。那一天，有人来说，发榜了。我坐了人力车去看榜，到史家胡同(26)时，天已黑了。我拿了车上的灯，从榜尾倒看上去（因为我自信我考得很不好），看完了一张榜，没有我的名字，我很失望。看过头上，才知道那一张是“备取”的榜(27)。</p>
 <p>于是，他擦了一下汗，再看——还是倒看——正取的榜，这张榜，赵元任先生从美国寄给我，因为史料价值极高，所以我把它全附在后面：</p>
 <p>第二次考取庚子赔款留学美国学生榜（宣统二年）</p>
 <p>名次姓名/年岁/籍贯/学堂/平均分数</p>
-<p>1/杨锡仁/18/江苏震泽/上海南洋中学/797/20</p>
-<p>2/赵元任/19/江苏阳湖/江南高等/732/5</p>
-<p>3/王绍祁/19/广东南海/唐山路矿/7117/20</p>
-<p>4/张谟实/19/浙江鄞县/约翰书院/693/4</p>
-<p>5/徐志芗/18/浙江定海/约翰书院/6927/40</p>
-<p>6/谭颂瀛/20/广西苍梧/上海南洋中学/691/10</p>
-<p>7/朱录/19/江苏金匮/东吴大学/682/5</p>
-<p>8/王鸿卓/19/直隶天津/家塾/687/20</p>
-<p>9/胡继贤/18/广东番禺/岭南学堂/6717/20</p>
-<p>10/张彭春/18/直隶天津/天津私立中学/674/5</p>
-<p>11/周厚坤/20/江苏无锡/唐山路矿/6729/40</p>
-<p>12/邓鸿宜/18/广东东莞/岭南学堂/6719/40</p>
-<p>13/沈祖伟/18/浙江归安/约翰书院/6623/40</p>
-<p>14/区其伟/18/广东新会/岭南学堂/669/10</p>
-<p>15/程闿运/19/浙江山阴/东吴大学/667/8</p>
-<p>16/钱崇树/20/浙江海宁州/直隶高等/6617/20</p>
-<p>17/陈天骥/17/浙江海盐/约翰书院/663/5</p>
+<p>1/杨锡仁/18/江苏震泽/上海南洋中学/79 7/20</p>
+<p>2/赵元任/19/江苏阳湖/江南高等/73 2/5</p>
+<p>3/王绍祁/19/广东南海/唐山路矿/71 17/20</p>
+<p>4/张谟实/19/浙江鄞县/约翰书院/69 3/4</p>
+<p>5/徐志芗/18/浙江定海/约翰书院/69 27/40</p>
+<p>6/谭颂瀛/20/广西苍梧/上海南洋中学/69 1/10</p>
+<p>7/朱录/19/江苏金匮/东吴大学/68 2/5</p>
+<p>8/王鸿卓/19/直隶天津/家塾/68 7/20</p>
+<p>9/胡继贤/18/广东番禺/岭南学堂/67 17/20</p>
+<p>10/张彭春/18/直隶天津/天津私立中学/67 4/5</p>
+<p>11/周厚坤/20/江苏无锡/唐山路矿/67 29/40</p>
+<p>12/邓鸿宜/18/广东东莞/岭南学堂/67 19/40</p>
+<p>13/沈祖伟/18/浙江归安/约翰书院/66 23/40</p>
+<p>14/区其伟/18/广东新会/岭南学堂/66 9/10</p>
+<p>15/程闿运/19/浙江山阴/东吴大学/66 7/8</p>
+<p>16/钱崇树/20/浙江海宁州/直隶高等/66 17/20</p>
+<p>17/陈天骥/17/浙江海盐/约翰书院/66 3/5</p>
 <p>18/吴家高/19/江苏吴县/美国加利福尼亚大学/66.5</p>
-<p>19/路敏行/20/江苏宜兴/复旦公学/6611/20</p>
+<p>19/路敏行/20/江苏宜兴/复旦公学/66 11/20</p>
 <p>20/周象贤/20/浙江定海厅/上海高等实业/66.5</p>
-<p>21/沈艾/17/福建侯官/家塾/6539/40</p>
-<p>22/陈延寿/17/广东番禺/长沙雅礼大学/6527/40</p>
-<p>23/傅（左马右耆）/19/四川巴县/复旦公学/652/5</p>
-<p>24/李松涛/19/江苏嘉定/约翰书院/651/5</p>
-<p>25/刘寰伟/18/广东新宁/岭南学堂/6419/20</p>
-<p>26/徐志诚/19/浙江定海/约翰书院/6417/20</p>
+<p>21/沈艾/17/福建侯官/家塾/65 39/40</p>
+<p>22/陈延寿/17/广东番禺/长沙雅礼大学/65 27/40</p>
+<p>23/傅（左马右耆）/19/四川巴县/复旦公学/65 2/5</p>
+<p>24/李松涛/19/江苏嘉定/约翰书院/65 1/5</p>
+<p>25/刘寰伟/18/广东新宁/岭南学堂/64 19/20</p>
+<p>26/徐志诚/19/浙江定海/约翰书院/64 17/20</p>
 <p>27/高崇德/19/山东栖霞/山东广文学堂/64</p>
-<p>28/竺可桢/19/浙江会稽/唐山路矿/634/5</p>
-<p>29/程延庆/19/江苏震泽/约翰书院/633/10</p>
-<p>30/沈溯明/19/浙江乌程/浙江两级师范/633/10</p>
-<p>31/郑达宸/19/江苏江阴/复旦公学/6311/40</p>
-<p>32/席德炯/17/江苏吴县/上海实业/631/5</p>
-<p>33/徐墀/20/广东新宁/唐山路矿/631/10</p>
-<p>34/成功一/19/江苏江都/东吴大学/6232/40</p>
-<p>35/王松海/18/江苏丹徒/约翰书院/627/10</p>
-<p>36/王预/20/江苏桃源/江南高等/6213/20</p>
+<p>28/竺可桢/19/浙江会稽/唐山路矿/63 4/5</p>
+<p>29/程延庆/19/江苏震泽/约翰书院/63 3/10</p>
+<p>30/沈溯明/19/浙江乌程/浙江两级师范/63 3/10</p>
+<p>31/郑达宸/19/江苏江阴/复旦公学/63 11/40</p>
+<p>32/席德炯/17/江苏吴县/上海实业/63 1/5</p>
+<p>33/徐墀/20/广东新宁/唐山路矿/63 1/10</p>
+<p>34/成功一/19/江苏江都/东吴大学/62 32/40</p>
+<p>35/王松海/18/江苏丹徒/约翰书院/62 7/10</p>
+<p>36/王预/20/江苏桃源/江南高等/62 13/20</p>
 <p>37/谌立/19/贵州平远/家塾/62.5</p>
-<p>38/杨维桢/19/四川新津/复旦公学/622/5</p>
-<p>39/陈茂康/20/四川巴县/重庆广益中学/623/10</p>
+<p>38/杨维桢/19/四川新津/复旦公学/62 2/5</p>
+<p>39/陈茂康/20/四川巴县/重庆广益中学/62 3/10</p>
 <p>40/朱进/20/江苏金匮/东吴大学/62	1/8</p>
 <p>41/施赞元/20/浙江钱塘/约翰书院/62</p>
-<p>42/胡宣明/19/福建龙溪/约翰书院/6117/20</p>
+<p>42/胡宣明/19/福建龙溪/约翰书院/61 17/20</p>
 <p>43/胡宪生/20/江苏无锡/译学馆/61	19/40</p>
-<p>44/郭守纯/10/广东潮阳/约翰书院/611/40</p>
-<p>45/毛文锺/19/江苏吴县/直隶高等工业/609/10</p>
-<p>46/霍炎昌/20/广东南海/岭南学堂/609/10</p>
-<p>47/陈福习/18/福建闽县/福建高等/6013/20</p>
-<p>48/殷源之/19/安徽合肥/江南高等/601/2</p>
-<p>49/符宗朝/18/江苏江都/两淮中学/602/5</p>
-<p>50/王裕震/20/江苏上海/美国加利福尼亚大学/607/20</p>
-<p>51/孙恒/19/浙江仁和/杭州育英书院/5925/40</p>
-<p>52/柯成楙/17/浙江平湖/上海南洋中学/5911/20</p>
-<p>53/过宪先/19/江苏金匮/上海高等实业/597/20</p>
-<p>54/邝翼堃/19/广东番禺/约翰书院/591/4</p>
-<p>55/胡适/19/安徽绩溪/中国新公学/597/40</p>
-<p>56/许先甲/20/贵州贵筑/四川高等/581/4</p>
+<p>44/郭守纯/10/广东潮阳/约翰书院/61 1/40</p>
+<p>45/毛文锺/19/江苏吴县/直隶高等工业/60 9/10</p>
+<p>46/霍炎昌/20/广东南海/岭南学堂/60 9/10</p>
+<p>47/陈福习/18/福建闽县/福建高等/60 13/20</p>
+<p>48/殷源之/19/安徽合肥/江南高等/60 1/2</p>
+<p>49/符宗朝/18/江苏江都/两淮中学/60 2/5</p>
+<p>50/王裕震/20/江苏上海/美国加利福尼亚大学/60 7/20</p>
+<p>51/孙恒/19/浙江仁和/杭州育英书院/59 25/40</p>
+<p>52/柯成楙/17/浙江平湖/上海南洋中学/59 11/20</p>
+<p>53/过宪先/19/江苏金匮/上海高等实业/59 7/20</p>
+<p>54/邝翼堃/19/广东番禺/约翰书院/59 1/4</p>
+<p>55/胡适/19/安徽绩溪/中国新公学/59 7/40</p>
+<p>56/许先甲/20/贵州贵筑/四川高等/58 1/4</p>
 <p>57/胡达/19/江苏无锡/高等商业/58	1/10</p>
-<p>58/施莹/20/江苏吴县/上海高等实业/5729/40</p>
+<p>58/施莹/20/江苏吴县/上海高等实业/57 29/40</p>
 <p>59/李平/20/江苏无锡/江苏高等/57	7/20</p>
-<p>60/计大雄/19/江苏南汇/高等实业/5713/40</p>
-<p>61/周开基/19/江苏吴县/上海南洋中学/5619/20</p>
+<p>60/计大雄/19/江苏南汇/高等实业/57 13/40</p>
+<p>61/周开基/19/江苏吴县/上海南洋中学/56 19/20</p>
 <p>62/陆元昌/19/江苏阳湖/上海高等实业/56</p>
-<p>63/周铭/19/江苏泰兴/上海高等实业/559/10</p>
+<p>63/周铭/19/江苏泰兴/上海高等实业/55 9/10</p>
 <p>64/庄俊/19/江苏上海/唐山路矿/55	3/20</p>
-<p>65/马仙峤/18/直隶开州/保定高等/532/5</p>
-<p>66/易鼎新/20/湖南醴陵/京师财政/532/5</p>
+<p>65/马仙峤/18/直隶开州/保定高等/53 2/5</p>
+<p>66/易鼎新/20/湖南醴陵/京师财政/53 2/5</p>
 <p>67/周仁/19/江苏江宁/江南高等/51	7/10</p>
-<p>68/何斌/20/江苏嘉定/浙江育英高等/519/40</p>
-<p>69/李锡之/19/安徽合肥/安徽高等/5023/40</p>
-<p>70/张宝华/20/浙江平湖/美国加利福尼亚大学/501/5(28)</p>
+<p>68/何斌/20/江苏嘉定/浙江育英高等/51 9/40</p>
+<p>69/李锡之/19/安徽合肥/安徽高等/50 23/40</p>
+<p>70/张宝华/20/浙江平湖/美国加利福尼亚大学/50 1/5(28)</p>
 <p>我再拿灯照读那“正取”的榜，仍是倒读上去。看到我的名字了！仔细一看，却是“胡达”，不是《胡适》(29)。我再看上去，相隔很近，便是我的名字了。我抽了一口气，放下灯，仍坐原车回去了，心里却想着，“那个胡达不知是谁，几乎害我空高兴一场！”</p>
 <p>那个胡达便是胡明复(30)。后来我和他和（胡）宪生都到康南耳大学，中国同学见了我们的姓名，总以为胡达胡适是兄弟，却不知道宪生和他是堂兄弟，我和他却全无亲属关系(31)。</p>
 <p>既然在北京考取了留美，做了所谓“清华学校第二期毕业老校友”(32)，于是，他就准备“放洋”了。</p>
@@ -1894,8 +1927,8 @@
 <p>少年人的理想主义受打击之后，反动往往是很激烈的。在戊申己酉（1908-1909）两年之中，我的家事败坏到不可收拾的地步。己酉年，大哥和二哥回家，主张分析家产；我写信回家，说我现在已能自立了，不要家中的产业。其实家中本没有什么产业可分，分开时，兄弟们每人不过得着几亩田，半所屋而已。那一年之中，我母亲最心爱的一个妹子和一个弟弟先后死了，她自己也病倒了。我在新公学解散之后，得了两三百元的欠薪，前途茫茫，毫无把握，哪敢回家去？只好寄居在上海，想寻一件可以吃饭养家的事。在那个忧愁烦闷的时候，又遇着一班浪漫的朋友，我就跟着他们堕落了。</p>
 <p>②《胡适留学日记》卷四第四十六则《提倡禁嫖》（1914年6月30日）：</p>
 <p>又念及狎邪（嫖）一事，此邦上流人士视为大恶，方竞思善策禁遏之，虽不能绝，而中上社会皆知以此为大恶（Vice）。其犯此者，社会争不之齿，亦无敢公然为之者。余谓即此一端，此邦道德，高出吾国远矣。吾国人士从不知以狎邪为大恶，其上焉者，视之为风流雅事，著之诗歌小说，轻薄文士，至发行报章（小报），专为妓女作记室登告白。其下焉者，视之为应酬不可免之事，以为逢场作戏，无伤道德。妓院女闾，遂成宴客之场、议政之所。夫知此为大恶，知犯此为大耻，则他日终有绝迹之一日也；若上下争为之，而毫不以为恶、不以为耻，则真不可为矣。何也？以此种道德之观念已斲丧净尽，羞恶之心无由发生故也。今日急务，在于一种新道德，须先造成一种新舆论，令人人皆知皮肉生涯为人类大耻，令人人皆知子女堕落为天下最可怜之事，令人人皆知卖良为娼为人道大罪，令人人皆知狎妓为人道大恶、为社会大罪，则吾数千年文教之国，犹有自赎之一曰也。吾在上海时，亦尝叫局吃酒，彼时亦不知耻也。今誓不复为，并誓提倡禁嫖之论，以自忏悔，以自忏悔记此以记吾悔。</p>
-<p>③1962年2月25日《纽约时报》（NewYorkTimes）；</p>
-<p>Thiswasabout1910,andtheyoungChineseintellectualswereveryconfused.ThesurgeofWesternlearningwasmeetingtheancientconceptsoftheEast.Dr.Hurecalledthatheandhisfriendshad“talkeddayandnight”writtenbitterpoetryandhadbeensoaddledandboredthattheyhadhiredaninstructortoteachthemtosing.</p>
+<p>③1962年2月25日《纽约时报》（New York Times）；</p>
+<p>This was about 1910, and the young Chinese intellectuals were very confused. The surge of Western learning was meeting the ancient concepts of the East. Dr. Hu recalled that he and his friends had“talked day and night”written bitter poetry and had been so addled and bored that they had hired an instructor to teach them to sing.</p>
 <p>④欧阳予倩，1897年生，湖南人。日本早稻田大学出身。早年搞京剧，以旦角出名。后来从事提倡话剧，改良京剧。曾任桂林艺术馆馆长。著有《予倩论剧》（泰山）、《回家以后》《梁红玉》《桃花扇》《屏风后》《青纱帐》《忠王李秀成》《木兰从军》等书。</p>
 <p>⑤胡适在《许怡荪传》（《胡适文存》卷四）里说：</p>
 <p>怡荪名棣常，从前号绍南，后来才改做怡荪。他是安徽绩溪十五都磡头的人。先进绩溪仁里的思诚学堂，毕业之后，和他的同学程干丰、胡祖烈、程敷模、程干诚等人同来上海求学。他那几位同学都进了吴淞复旦公学，只有怡荪愿进中国公学。那时我住在校外，他便和我同居。后来中国公学解散，同学组织中国新公学，怡荪也在内，和我同住《竞业旬报》馆。后来怡荪转入复旦公学。</p>
@@ -1906,20 +1939,20 @@
 <p>前诗以乐观主义作结，盖近来之心理如是。吾与友朋书，每以“乐观”相勉，自信去国数年所得，唯此一大观念足齿数耳。在上海时，悲观之念正盛，偶见日出，霜犹未消，有句云：“日淡霜浓可奈何！”后改为“霜浓欺日薄”，足成一律，今绝不能复作此念矣。前作雪诗亦复如是，盖自然如此，初非有意作吉祥语也。一日偶吟云：</p>
 <p>三年之前尝悲歌：“日淡霜浓可奈何！”年来渐知此念非，“海枯石烂终有时！”一哀一乐非偶尔，三年进德只此耳。</p>
 <p>盖纪实也。觐庄有句云：“要使枯树生花，死灰生火，始为豪耳。况未必为枯树死灰乎！”余极喜之。</p>
-<p>⑧他在LivingPhilosophies里说：</p>
-<p>Thoseyears(1909-10)weredarkyearsinthehistoryofChinaaswellasinmypersonalhistory.Revolutionsbrokeoutsinceseveralprovincesandfailedeachtime.QuiteanumberofmyformerschoolmatesattheChinaNationalInstitutewhichwasacenterofrevolutionaryactivities,wereinvolvedintheseplotsandnotafewlosttheirlives.SeveralofthesepoliticalfugitivescametoShanghaiandstayedwithme.Wewerealldespondentandpessimistic.Wedrank,wrotepessimisticpoetry,talkeddayandnight，andoftengambledfornostakes.Weevenengagedanoldactortoteachussinging.OnecoldmorningIwroteapoemwhichcontainedthisline：“Howproudlydoesthewintryfrostscornthepowerlessraysofthesun!”（p.250）</p>
+<p>⑧他在Living Philosophies里说：</p>
+<p>Those years (1909-10) were dark years in the history of China as well as in my personal history. Revolutions broke out since several provinces and failed each time. Quite a number of my former school mates at the China National Institute which was a center of revolutionary activities, were involved in these plots and not a few lost theirlives. Several of these political fugitives came to Shanghai and stayed with me. We were all despondent and pessimistic. We drank, wrote pessimistic poetry, talked day and night，and often gambled for no stakes. We even engaged an old actor to teach us singing. One cold morning I wrote a poem which contained this line：“How proudly does the wintry frost scorn the powerless rays of the sun!”（p. 250）</p>
 <p>参看李敖：《胡适悲观诗》（《中央日报》副刊，1957年1月27日台北出版）。</p>
 <p>⑨王书奴《中国娼妓史》（1934年11月上海生活书店版）第299页：“次等娼妓曰‘么二’，或称曰‘堂名’，‘亦叫“堂子’。同光间〔上海〕城中不满十家。以出局必银币二元，故名。从未贬价。不似‘长三’出局已由三元减至一元。无人介绍，亦可往打茶围。”另参看王小广《神秘的上海》（1934年12月北平东方快报社版）第42-44页。</p>
 <p>⑩王书奴《中国娼妓史》（1934年11月上海生活书店版）第298页：“上海娼妓差等，辄曰书寓、长三、么二。但在同治初，书寓自书寓，长三自长三。书寓先生身份在长三之上。其后二者混而为一，长三都称书寓，长三已变成普通娼妓。长三为最上等之妓，以待召侑酒例取银币三元，故名，通称先生。客人对于长三，非由出场点曲相识，亦必有人为之介绍。往其家作茶会，曰‘打茶围’。不须给钱。有水果瓜子鸦片等相饷。”</p>
 <p>(11)胡适这种骂法颇有“义和团”的口气。</p>
 <p>(12)《我怎样到外国去》（《四十自述》五）。</p>
 <p>(13)据衡山聂氏刊本《崇德老人纪念册》中《崇德老人自订年谱》戊午民国七年条下说：“……先是将上海培开尔路地亩捐出，由工部局开办公学。探西例名之曰聂中丞公誉云。”祟德老人是曾国藩的第六个女儿（么小姐），据李瀚章黎庶昌《曾文正公年谱》壬子咸丰二年条下，说这小女儿“后宇衡山聂氏，婿名缉规”。聂缉规曾做过江苏巡抚，也做过上海制造局总办（见铢庵《湘乡曾氏遗闻》，《人间世》第26期，1935年4月20日上海出版），所以在上海很有声望和势力，华童公学一变而为缉规中学，就是纪念他的。我在民国三十七八年间，曾在这个学校读过初中一年级，校舍颇庄严可爱。回想整整半个世纪前，胡适执教于这个学校，可以想见他的神气。他这次闹事，使他觉得他的行为“玷辱了那个学校的名誉”，因而辞职。</p>
-<p>他在华童公学教书的时日，据他在LivingPhilosophiesp.250中说：“In1910ItaughtChineseforafewmonths.”</p>
+<p>他在华童公学教书的时日，据他在Living Philosophies p. 250中说：“In 1910 I taught Chinese for a few months.”</p>
 <p>(14)《我怎样到外国去》（《四十自述》五）。</p>
 <p>(15)刘崇铉《国立清华大学》（《中华民国大学志》，1954年11月台北中华文化出版事业委员会版）中说：</p>
 <p>当时所收学生，分两部分，第二届留美考试所录取的备取生，编为高等科学生，入学不久即派留学。另外又收一批幼年生，为中等科，从基础训练做起。做了日后清华的基本队伍。</p>
-<p>(16)《我怎样到外国去》（《四十自述》五）。对这段荒唐事，他在LivingPhilosophies里有扼要的叙述：</p>
-<p>Despondencyanddrudgerydroveustoallkindsofdissipation.OnerainynightIgotdeadlydrunk,foughtwithapolicemaninthestreet,andlandedmyselfinprisonforthenight.WhenIwenthomethenextmorningandsawinthemirrorthebruisesonmyface.ThislineLiPo'sDrinkingSongcametomymind：“Someusemightyetbemadeofthismaterialbominme.”Idecidedtoquitteachingandmyfriends.Afteramonthofhardwork,IwenttoPekingtotaketheexaminationforthescholarshipfoundedonthereturnedAmericanportionoftheBoxerIndemnity.IpasseytheexaminationandinJulysailedforAmerica,(p.250)……（编者略）</p>
+<p>(16)《我怎样到外国去》（《四十自述》五）。对这段荒唐事，他在Living Philosophies里有扼要的叙述：</p>
+<p>Despondencyanddrudgerydroveustoallkindsofdissipation.OnerainynightIgotdeadlydrunk,foughtwithapolicemaninthestreet,andlandedmyselfinprisonforthenight.WhenIwenthomethenextmorningandsawinthemirrorthebruisesonmyface.ThislineLiPo’sDrinkingSongcametomymind：“Someusemightyetbemadeofthismaterialbominme.”Idecidedtoquitteachingandmyfriends.Afteramonthofhardwork,IwenttoPekingtotaketheexaminationforthescholarshipfoundedonthereturnedAmericanportionoftheBoxerIndemnity.IpasseytheexaminationandinJulysailedforAmerica,(p.250)……（编者略）</p>
 <p>(17)舒新城《近代中国留学史》（1926年上海中华书局版）第72页误为光绪三十八年。光绪哪里有三十八年！</p>
 <p>(18)袁希涛：《庚子赔款退还之实际与希望》（《教育与人生》第五十二期）。</p>
 <p>(19)后来每年都有，参看常道直《留美学生状况与今后之留学政策》（《中华教育界》第十五卷第九期）。到了民国十三年（1924），已经达到六百八十九人。</p>
@@ -1961,7 +1994,7 @@
 <p>又《胡适留学日记》第四卷第三十七则《思家》（1914年8月9日）：</p>
 <p>吾日来归思时萦怀绪，以日日看人归去，遂惹吾思家之怀耳。吾去家十年余矣。丁未一归，亦仅作三月之留。庚戌去国，亦未能归别吾母，耿耿至今。</p>
 <p>(36)《胡适留学日记》第十七卷《归国记》：</p>
-<p>〔六年6月〕20日到温哥华（Vancouver）。吾先与张慰慈（祖训），约会于此。慰慈先二日到，今晨迎我于车站。同居一旅馆。慰慈为澄衷旧同学，五年前来美，今在爱荷华大学（UniversityofIowa）得博士学位。其论文题为AStudyoftheCommissionandCitymanagerPlanofMunicipalGovernmentintheUnitedStates。吾七年前去国时，在上海旅馆中与慰慈及仲诚为别，今仲诚死已数年，与慰慈话旧，不胜今昔之感矣。</p>
+<p>〔六年6月〕20日到温哥华（Vancouver）。吾先与张慰慈（祖训），约会于此。慰慈先二日到，今晨迎我于车站。同居一旅馆。慰慈为澄衷旧同学，五年前来美，今在爱荷华大学（University of Iowa）得博士学位。其论文题为A Study of the Commission and Citymanager Plan of Municipal Government in the United States。吾七年前去国时，在上海旅馆中与慰慈及仲诚为别，今仲诚死已数年，与慰慈话旧，不胜今昔之感矣。</p>
 <p>郑仲诚事参看第六章注⑦，张慰慈名祖训，以字行。江苏吴江人。比胡适小一岁。曾任北京大学、北京法政大学政治学教授、财政部秘书、沪宁、沪杭甬铁路管理局运输课副课长、上海东吴大学及吴淞中国公学教授、北宁铁路管理局总务处长、安徽大学图书馆馆长、铁道部参事。著有《市政制度》（亚东）、《政治学》（商务）、《政治学大纲》（商务）、《英国选举制度史》（商务）、《政治制度浅说》（神州）等书。</p>
 <p>(37)《我怎样到外国去》（《四十自述》五）：</p>
 <p>我在学校里用胡洪骍的名字；这回北上应考，我怕考不取为朋友学生所笑，所以临时改用胡适的名字。从此以后，我就叫胡适了。</p>
@@ -1996,24 +2029,24 @@
 <p>28.胡博士——一般称呼。</p>
 <p>29.不可救药的乐观主义者——别称。</p>
 <p>30.到哪儿去——张丹翁等对他的称呼。此名把“胡适”两字翻成白话。</p>
-<p>31.Q.V.——笔名。“QuoVadis”一书名的前二字母。胡适曾以“胡适”二字为谜语，打一欧洲名小说，即是此书。此书译名为“你往何处去”（Sienkiewicz原著，徐炳昶、乔曾劬译，商务版；复有译名即“暴君焚城录”）。</p>
+<p>31.Q.V.——笔名。“Quo Vadis”一书名的前二字母。胡适曾以“胡适”二字为谜语，打一欧洲名小说，即是此书。此书译名为“你往何处去”（Sienkiewicz原著，徐炳昶、乔曾劬译，商务版；复有译名即“暴君焚城录”）。</p>
 <p>32.WGT——笔名。</p>
 <p>33.Who——笔名。</p>
-<p>34.HuSuh——英名。</p>
-<p>35.HuShih——英名。</p>
-<p>36.H.S.C.——为“胡适之”三字英文拼写的第一个字母。</p>
+<p>34.Hu Suh——英名。</p>
+<p>35.Hu Shih——英名。</p>
+<p>36.H. S. C.——为“胡适之”三字英文拼写的第一个字母。</p>
 <p>37.ュテキ——日名</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/12.人物研究类/胡适评传.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/12.人物研究类/胡适评传.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../12.人物研究类/胡适研究.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../12.人物研究类/蒋介石的真面目.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -2023,16 +2056,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../12.人物研究类/胡适研究.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../12.人物研究类/蒋介石的真面目.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -2041,12 +2079,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

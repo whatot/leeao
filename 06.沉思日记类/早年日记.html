@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,85 +81,106 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="早年日记"><a class="header" href="#早年日记">早年日记</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E5%8D%81%E4%B8%83%E5%A4%A9%E7%9A%84%E6%A0%A1%E5%9B%AD%E7%94%9F%E6%B4%BB">十七天的校园生活</a></li>
-<li><a href="#%E6%AF%95%E4%B8%9A%E4%BB%A5%E5%90%8E%E4%BB%8E%E5%86%9B%E4%BB%A5%E5%89%8D">毕业以后，从军以前</a></li>
-<li><a href="#%E5%9B%9B%E5%B8%AD%E5%B0%8F%E5%B1%8B%E6%97%A5%E8%AE%B0">四席小屋日记</a></li>
-<li><a href="#%E4%BA%8C%E5%8D%81%E5%B9%B4%E5%89%8D%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%AD%E7%89%87">二十年前的一些断片</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#十七天的校园生活">十七天的校园生活</a></li>
+<li><a href="#毕业以后从军以前">毕业以后，从军以前</a></li>
+<li><a href="#四席小屋日记">四席小屋日记</a></li>
+<li><a href="#二十年前的一些断片">二十年前的一些断片</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -168,7 +201,7 @@
 <p>一、晨与彦增谈。</p>
 <p>二、晨见赵依依。午后同上军训于普三，白衬衫，浅绿裙，笑语之间似有深意。</p>
 <p>三、昌平言受我影响之深。</p>
-<p>四、夜与信郑同看《一袭灰衣万缕情》。JenniferJones娇态极多。</p>
+<p>四、夜与信郑同看《一袭灰衣万缕情》。Jennifer Jones娇态极多。</p>
 <p>五、饿死鬼叫“若敖”。</p>
 <p>5月29日星期四</p>
 <p>一、精神欠佳时，故意抖擞可提神，甚有效。</p>
@@ -247,7 +280,7 @@
 <p>十七、看《战地春梦》：“假如死后没有上帝，我把坏消息保守秘密。”“重要的是在一起，能多久就多久。”“有时爱人们会彼此故意误会。”……海明威的人生经验多丰富多深刻，岂是这些学者所可及！</p>
 <p>6月7日星期六</p>
 <p>一、印书要像外国书印得那样漂亮。</p>
-<p>二、艾伯特马西斯（AlbertMathiez）与其师友等打了一辈子笔墨官司。他生在1874，死在1932。Frenchhistorian,anauthorityontheFrenchRevolution.HestudiedunderAulard,whosescientificmethodheadopted,thoughitledhimtodifferentconclusions.Mathiez’schiefwork,LaRevolutionfrangaise(3vols.，1922-27；Eng.tr.，1928)，followedsubstantiallythesocialistinterpretation,whichviewedtheFrenchRevolutionastheproductoftheclassstruggleandofeconomicnecessity.Hisargumentsandpresentation,however,wereunbiasedenoughtopermittheroyalisthistorian,PierreGaxotte,tousemuchofMathiez'sworktosupportentirelyoppositeconclusions.MathiezextolledRobespierre,belittledDanton,andconsideredtheThermidorianreactionafterRobespierre'sfallin1794asthetriumphofthebourgeoisieovertheworkingclass.AmongMathiez’sotherworksareAutourdeRobespierre(1925；Eng.tr.，TheFallofRobespierre，1927),LaReactionthermidorienne(1929)，andothermorespecializedstudiesoftherevolutionaryperiod.AlthoughMathiez’sinterpretationwasputtousebytheFrenchSocialists，notablyJaures，Mathiezhimselfwasnotapartymember.</p>
+<p>二、艾伯特马西斯（AlbertMathiez）与其师友等打了一辈子笔墨官司。他生在1874，死在1932。Frenchhistorian,anauthorityontheFrenchRevolution.HestudiedunderAulard,whosescientificmethodheadopted,thoughitledhimtodifferentconclusions.Mathiez’schiefwork,LaRevolutionfrangaise(3vols.，1922-27；Eng.tr.，1928)，followedsubstantiallythesocialistinterpretation,whichviewedtheFrenchRevolutionastheproductoftheclassstruggleandofeconomicnecessity.Hisargumentsandpresentation,however,wereunbiasedenoughtopermittheroyalisthistorian,PierreGaxotte,tousemuchofMathiez’sworktosupportentirelyoppositeconclusions.MathiezextolledRobespierre,belittledDanton,andconsideredtheThermidorianreactionafterRobespierre’sfallin1794asthetriumphofthebourgeoisieovertheworkingclass.AmongMathiez’sotherworksareAutourdeRobespierre(1925；Eng.tr.，TheFallofRobespierre，1927),LaReactionthermidorienne(1929)，andothermorespecializedstudiesoftherevolutionaryperiod.AlthoughMathiez’sinterpretationwasputtousebytheFrenchSocialists，notablyJaures，Mathiezhimselfwasnotapartymember.</p>
 <p>三、看云看天不看世俗群，可使我愈来愈广阔。我独坐在新兴的左角，遥望远处的云山，我想到：“跟这些世俗的男女们扯，我能得到些什么呢？我一定是得不偿失的。”</p>
 <p>四、与孙智燊谈。</p>
 <p>五、“神识超迈，飘然而来，忽然而去，不屑于雕章琢句，亦不劳劳于镂心刻骨。”</p>
@@ -299,7 +332,7 @@
 <p>8月12日星期三</p>
 <p>一、寄去为崔写的中堂。</p>
 <p>二、收六信。</p>
-<p>三、与景：“……酷爱一个小女人，想给她写一百封信，唯从未见伊一面，亦不想见她，很想谈一次‘柴可夫斯基式’的PlatonicLove，有人欲介绍我与伊见面，已拒之，只见相片，即已足矣。”</p>
+<p>三、与景：“……酷爱一个小女人，想给她写一百封信，唯从未见伊一面，亦不想见她，很想谈一次‘柴可夫斯基式’的Platonic Love，有人欲介绍我与伊见面，已拒之，只见相片，即已足矣。”</p>
 <p>四、夜与周弘、述古逛街，弹子戏，贏二人。</p>
 <p>五、购烟嘴一个，五元。</p>
 <p>8月13日星期四</p>
@@ -326,7 +359,7 @@
 <p>打油诗报王状元。</p>
 <p>二、其元来夜谈，并宿。</p>
 <p>三、一连数天不外出矣。</p>
-<p>四、读TheConquestofHappiness至3时。</p>
+<p>四、读The Conquest of Happiness至3时。</p>
 <p>8月18日星期二</p>
 <p>一、我不对理发师发怒。</p>
 <p>二、常学罗素，带着欣赏的态度去听教士广播。</p>
@@ -401,7 +434,7 @@
 <p>四、傍晚给系中一信，限时托周弘转。</p>
 <p>五、夜与尔琳、华民看《一夜夫人》于金都。</p>
 <p>8月27日星期四</p>
-<p>一、晨广诚来谈并午饭。饭后广诚请我及李八看埃洛弗林之《剑底游龙》，史蒂文森之MasterofB(?)，临死前叹恨尚多未花的钱和未接触过的女人。</p>
+<p>一、晨广诚来谈并午饭。饭后广诚请我及李八看埃洛弗林之《剑底游龙》，史蒂文森之Master of B(?)，临死前叹恨尚多未花的钱和未接触过的女人。</p>
 <p>二、请杨寿贞吃冰，送她归家。</p>
 <p>三、夜杨来。广诚、述古、仁龙、姚嶂来夜谈。</p>
 <p>8月28日星期五</p>
@@ -423,8 +456,8 @@
 <p>五、颇喜在窄格滑纸上写字。</p>
 <p>8月31日星期一</p>
 <p>一、晨“接送”景白等，送二人凤梨酥一盒。</p>
-<p>二、喜欢我喜欢的，讨厌我讨厌的，对那些足以使我“厌恶”的人，我决心不再去想“它”们，我决心往前看，我简直有点讨厌诗人，——他们缅旧与伤感的气味太浓了，他们对人间的遭遇，缺乏一种勇敢的强悍的HeroicReaction，至少我不愿意自己是这样一个人。我非常愿意在这一年中，更进一步的磨练我自己，对自己的哪一点不满意都修正过来。</p>
-<p>三、看《天涯一妇人》（WomanObsessed）于丰中。后父前子甚不易处也。</p>
+<p>二、喜欢我喜欢的，讨厌我讨厌的，对那些足以使我“厌恶”的人，我决心不再去想“它”们，我决心往前看，我简直有点讨厌诗人，——他们缅旧与伤感的气味太浓了，他们对人间的遭遇，缺乏一种勇敢的强悍的Heroic Reaction，至少我不愿意自己是这样一个人。我非常愿意在这一年中，更进一步的磨练我自己，对自己的哪一点不满意都修正过来。</p>
+<p>三、看《天涯一妇人》（Woman Obsessed）于丰中。后父前子甚不易处也。</p>
 <p>四、看电影归来，略读今午购来的《存在主义哲学》。</p>
 <p>五、写英文情书，囊谈一切？</p>
 <p>六、仁龙、姚嶂、华民来夜谈。</p>
@@ -517,7 +550,7 @@
 <p>十一、小读几行，夜深始睡去。“初夜”也！</p>
 <p>2月19日星期日</p>
 <p>一、一觉醒转，已近10时，“初夜”睡得真痛快！</p>
-<p>二、钉稳桌子等等，12时后抵第一宿舍，谈天吃橘，直扯到2点才由珂陪吃包子，敖小姐借三百元，珂与英善皆借款，今日办货良多，脸盆、拖鞋、杯、壶、钉、烧水器、绿瓷烟缸（四元，甚可爱）、衣架、鞋油，遍购书架不到，真是欠文明之地域！跑到女师找广诚不在，去大理街取回日记及书，强送阿兵哥送我的Parker21给新汉，上次送他光锦赠我之Parker21原子笔，我专门把纪念品送给这位待我最厚的通心粉专家。谎言已晚饭，出来在小店食二十饺子，花了十元。在万华购《双梅景暗丛书》及TheArtofKissing，共花六元。</p>
+<p>二、钉稳桌子等等，12时后抵第一宿舍，谈天吃橘，直扯到2点才由珂陪吃包子，敖小姐借三百元，珂与英善皆借款，今日办货良多，脸盆、拖鞋、杯、壶、钉、烧水器、绿瓷烟缸（四元，甚可爱）、衣架、鞋油，遍购书架不到，真是欠文明之地域！跑到女师找广诚不在，去大理街取回日记及书，强送阿兵哥送我的Parker 21给新汉，上次送他光锦赠我之Parker 21原子笔，我专门把纪念品送给这位待我最厚的通心粉专家。谎言已晚饭，出来在小店食二十饺子，花了十元。在万华购《双梅景暗丛书》及The Art of Kissing，共花六元。</p>
 <p>三、在逍遥池热水淋浴，真痛快。</p>
 <p>四、归与英星等谈笑风生，强英星送夜壶一，取来《大学论坛》，有杨庆仪的诗与文，“小儿女感情”真浓。</p>
 <p>五、有点头疼。</p>
@@ -550,7 +583,7 @@
 <p>马宿我处，我4时始睡。</p>
 <p>2月22日星期三</p>
 <p>一、上午整理。</p>
-<p>二、下午换得钱N.T$4140，买周历十、TheCallGirl五、硬胶底皮鞋当雨鞋139.5，在马家理书，马戈不善保存吾书及情绪幼稚状态及为女人变相逼债方法，使我伤心而厌恶，做朋友，并非对老朋友不能容，乃是他这种种乖戾的幼稚病之屡萌屡现，深令人不能长期忍受，我还彼二百元，决定不复友其人，“8月以前，谢绝交游！”</p>
+<p>二、下午换得钱N.T $4140，买周历十、The Call Girl五、硬胶底皮鞋当雨鞋139.5，在马家理书，马戈不善保存吾书及情绪幼稚状态及为女人变相逼债方法，使我伤心而厌恶，做朋友，并非对老朋友不能容，乃是他这种种乖戾的幼稚病之屡萌屡现，深令人不能长期忍受，我还彼二百元，决定不复友其人，“8月以前，谢绝交游！”</p>
 <p>三、花二十四元与善培计程运书归。知新汉来过。</p>
 <p>2月23日星期四</p>
 <p>一、新汉晨来，边工作谈天：</p>
@@ -563,17 +596,17 @@
 <p>二、还是大量的整理。午后给连长寄还二百元。给老太一片，买块大木板，在士振房中速成一小书架。</p>
 <p>三、碰到又亮和他女友，又亮甚可爱。</p>
 <p>四、晚独赴西门町，以一百四十五元选得一旧行军床，大起买书瘾，花一百二十五元买得：</p>
-<p>（一）Ploetz'ManualofUniversalHistory</p>
-<p>（二）AcrosstheRiversandintotheTrees</p>
-<p>（三）VoltaireinHisLetters</p>
+<p>（一）Ploetz’Manual of Universal History</p>
+<p>（二）Across the Rivers and into the Trees</p>
+<p>（三）Voltaire in His Letters</p>
 <p>（四）Thais</p>
 <p>（五）Rome</p>
-<p>（六）TabaccoRoad</p>
-<p>（七）TheManchesterGuardianThirdCrosswordPuzzleBook</p>
-<p>（八）ExpansionofEnglish</p>
-<p>（九）Occam'sRrazor</p>
-<p>（十）TheGodthatFailed</p>
-<p>（十一）DownandOutinParisandLondon</p>
+<p>（六）Tabacco Road</p>
+<p>（七）The Manchester Guardian Third Crossword Puzzle Book</p>
+<p>（八）Expansion of English</p>
+<p>（九）Occam’s Rrazor</p>
+<p>（十）The God that Failed</p>
+<p>（十一）Down and Out in Paris and London</p>
 <p>真价廉也，此为大收割——此后要不买他书，皆以钱市旧英文书。善培及下午赖黄二小子言我英文书少亦一刺激也。</p>
 <p>五、在归车上，成剑秋言我学者风度。在车上旁坐互换皆友人，吾交游真广也。归知英善夫妇及士振来过。</p>
 <p>六、总算有个床了！真高兴有点基本的享受。</p>
@@ -601,7 +634,7 @@
 <p>四、接到副座一信：“……没有你在一块儿，实在也欠缺一些轻松的风趣，而王宇也缺少了一位对手。”</p>
 <p>五、接马戈一片，装得好像没事儿似的，言高阮去信问他我行踪。</p>
 <p>六、珂下午来，做“施氏定律”：</p>
-<p>友情+爱情-爱情=0</p>
+<p>友情+爱情-爱情= 0</p>
 <p>七、夜广诚来，Rosa同班闻我系他好朋友大摇头，谓李敖大坏人也。</p>
 <p>八、题室名“四席小屋”，榜于门上。</p>
 <p>九、夜算账，亏空至少千元，非鬻文不足为功矣。</p>
@@ -620,11 +653,11 @@
 <p>1961.2.27，今日索性改订时间如下:</p>
 <p>每日下午3时以前皆是外出——交际、听课、写稿、写信、借书、办事——的时间。3时以后即杜门，专攻英文与历史，只准英文与历史占3时以前的时间，而不可喧宾夺主，切戒切记。</p>
 <p>2月27日星期一</p>
-<p>一、一早英善带大卫丹尼（DavidDanny）来，小鬼最喜玩火。</p>
+<p>一、一早英善带大卫丹尼（David Danny）来，小鬼最喜玩火。</p>
 <p>二、与启庆、叔潜在校园谈，在守孔室借故事，一年来未摸它们了。</p>
 <p>三、午与善培合宴启庆于寿尔康，归与启庆品茗谈，再赴校找姚老头，还钱他不受，他言对我之信任与能力之期许与赞扬，又写名片介绍蒋复璁，翻看《东方杂志》后归。</p>
-<p>四、应新汉信邀与面谈，今晚破例去其家，送还锯刨，并赠以AcrosstheRiverintotheTrees及线装《护生画集》，新汉欣喜之状殊罕见也。新汉言见十七师预官云我口才之佳。新汉怪我对彼等男女事漠然，我真的不关心他们这些小儿女的事了！</p>
-<p>五、在衡阳街地摊以十元市四英文杂志，拟译其中之ErnestHemingway'sFree——WarSaga寄文星。</p>
+<p>四、应新汉信邀与面谈，今晚破例去其家，送还锯刨，并赠以Across the River into the Trees及线装《护生画集》，新汉欣喜之状殊罕见也。新汉言见十七师预官云我口才之佳。新汉怪我对彼等男女事漠然，我真的不关心他们这些小儿女的事了！</p>
+<p>五、在衡阳街地摊以十元市四英文杂志，拟译其中之ErnestHemingway’sFree——WarSaga寄文星。</p>
 <p>六、与萧谈的两点结论：</p>
 <p>（一）四年中有的课完全没上过，没有课完全上过。</p>
 <p>（二）租儿子拜年。启庆友人小孩拿到压岁钱妙语：“爸爸，钱到手了，咱们走吧！”</p>
@@ -632,9 +665,9 @@
 <p>七、明天也许去看Rosa，足足一年没见了，上次见她也是2月的最后一天。</p>
 <p>2月28日星期二</p>
 <p>一、早起去理发。附近投尸案闹得甚凶。</p>
-<p>二、去第一请英善及DavidDanny吃糖。在毓刚家与小璞儒做鬼脸，今天仔细看到毓萱小腿甚好，有点像SandraDee，新穿耳，是恶习也，打扮穿高跟鞋去看电影。毓刚送我书多册，并谓家人皆传观我文皆笑。与小璞儒逛校园，小璞儒终与我言归于好。我很少喜欢小孩子，可是真喜欢他，他肉真嫩，炒起酱爆来一定精彩！抱小璞儒时被梁慕琴看到了，晚上他哥哥来即知此事。</p>
-<p>三、感冒，午饭少食。归小寐，2时30分毓刚来，与培三人同赴美国新闻处，参观图书室，取得applicationform，去询问处找文化组Rosa，小姐初言无此人，及我言新来的，始与另一人相笑点头，我站门口朝内，Rosa下楼见我，笑，我迎上去，她立于楼梯转角不再下走，穿整套的灰上衣，灰瘦裙，灰粉尖鞋，上似有斜带，搽口红，似更瘦弱，我似立于一阶之下，递出申请卡片，她接过去——“真想不到原来是你呀！”卡片掉下来，我又接住了。“你真有办法能在这里找到我。”“替我做保证人好吗？”她问明白后，说：“我没有资格保证你！我不是这里的职员，我明天就要离开这里了，我只是来帮忙。”我述说找铺保太麻烦。我以失望与惋惜的神情，以“你明天就要离开这里了”的低沉语气回答她，我最后说：“一年不见，你好吧？”她笑了，好像不约而同地，我们都退缩了，她说：“这么一件事我都没有办到，很对不起。”我好像说“没关系”，我很迷乱，我也不记得我是否说再见。我茫然良久，徘徊看画片，我知道她不会再下来的。与二人去中和乡，在竹林国校参观，与女校长（小潘表姐）谈笑，极见吾口才之动人灵巧，归在五路车上言吾不再去中和乡及美新闻处，以侯君集事为喻。</p>
-<p>四、在重庆南路逛书店，买LifewithFather中译。与善培在如意村吃饭，广诚姐似久仰我矣。</p>
+<p>二、去第一请英善及David Danny吃糖。在毓刚家与小璞儒做鬼脸，今天仔细看到毓萱小腿甚好，有点像Sandra Dee，新穿耳，是恶习也，打扮穿高跟鞋去看电影。毓刚送我书多册，并谓家人皆传观我文皆笑。与小璞儒逛校园，小璞儒终与我言归于好。我很少喜欢小孩子，可是真喜欢他，他肉真嫩，炒起酱爆来一定精彩！抱小璞儒时被梁慕琴看到了，晚上他哥哥来即知此事。</p>
+<p>三、感冒，午饭少食。归小寐，2时30分毓刚来，与培三人同赴美国新闻处，参观图书室，取得application form，去询问处找文化组Rosa，小姐初言无此人，及我言新来的，始与另一人相笑点头，我站门口朝内，Rosa下楼见我，笑，我迎上去，她立于楼梯转角不再下走，穿整套的灰上衣，灰瘦裙，灰粉尖鞋，上似有斜带，搽口红，似更瘦弱，我似立于一阶之下，递出申请卡片，她接过去——“真想不到原来是你呀！”卡片掉下来，我又接住了。“你真有办法能在这里找到我。”“替我做保证人好吗？”她问明白后，说：“我没有资格保证你！我不是这里的职员，我明天就要离开这里了，我只是来帮忙。”我述说找铺保太麻烦。我以失望与惋惜的神情，以“你明天就要离开这里了”的低沉语气回答她，我最后说：“一年不见，你好吧？”她笑了，好像不约而同地，我们都退缩了，她说：“这么一件事我都没有办到，很对不起。”我好像说“没关系”，我很迷乱，我也不记得我是否说再见。我茫然良久，徘徊看画片，我知道她不会再下来的。与二人去中和乡，在竹林国校参观，与女校长（小潘表姐）谈笑，极见吾口才之动人灵巧，归在五路车上言吾不再去中和乡及美新闻处，以侯君集事为喻。</p>
+<p>四、在重庆南路逛书店，买Life with Father中译。与善培在如意村吃饭，广诚姐似久仰我矣。</p>
 <p>五、接连长二信：</p>
 <p>以后恐怕向你求援的事不会少的。你是个热心肠的人。使人很信任你这点。</p>
 <p>六、晚珂言述《金屋泪》中，女的远行，头不回而招手，盖知道男的必然在背后看她也。彦增亦来室，助他们教学书籍。由于施珂极度关心一百元之美金事，我慨然良久，朋友好比做生意，他若只能掏出那么多，而你却要更多，徒然使你烦恼，因人适度而交游可也，否则乃是自已的错，每人皆像前天被牛皮纸与石灰包起来的尸体，外面那一层剥掉，就难看了，钱为最伤朋友感情之物！我真恨我经济不能独立！我真不愿与好朋友因钱伤感情、露真面。</p>
@@ -669,7 +702,7 @@
 <p>六、接召雄一片。</p>
 <p>3月4日星期六</p>
 <p>一、第一次与姚个别谈话，他似仍不赞成我的婚姻研究，此人真迂！</p>
-<p>二、再度借来TheChineseRenaissance，决定译之。</p>
+<p>二、再度借来The Chinese Renaissance，决定译之。</p>
 <p>三、午请善培、又亮午饭。</p>
 <p>四、英善与正义为要回唱机，下午与善培市收音机六百三十元，我买唱片共四张，书二册，花一百元。</p>
 <p>五、以十八元购得绝版：</p>
@@ -691,9 +724,9 @@
 <p>据说你们已经退伍了，想你已回到台北，不知现在做何工作，是不是留校，希望你与英善兄都能出来，此间生活太容易了，尤其是学生，学校对graduatestudents息是帮忙的，大约每周替学校工作（如改习题之类的轻松工作）十五小时，实际上十到十二小时便做完了，便可足够维持生活，而且是相当水准的生活。学费方面，只要三四年级成绩有八十五分左右，便可立即免学费，相信你与英善兄都无问题，免学费是要到来此后才能申请的，预为申请多不会准，除非成绩特别好，当然可想办法申请scholarship，但据说加大很少给外国学生scholarship，如果你想申请奖学金，当然还是多试几个学校好，我倒是的确希望你能来这里。</p>
 <p>这里天气尤其好，夏季与冬季气温差不到五十度（指华氏——编者）。夏季很少超过八十度，冬季低于四十度的时间也不多，当然夜间比较冷些。</p>
 <p>这里有些中国同学是住在外国人家的，有两个好处，不用自己烧饭，而且还可以增进英文，只是每周需工作十小时左右，供吃住之外，每月还有零用钱可拿，这种工作我知道你是绝不会去做的，可供你的一些同学参考而已，所以也一并写在这里。我现在自行租屋住，自己弄吃的，只求填饱肚子而已，不敢花时间做好吃的，但每周可能不止“工作”十小时，只是精神上愉快些，但想到一月花六七十元时精神也不会愉快了，不多写了，有空盼来信，我的地址是：</p>
-<p>H.Chow</p>
-<p>2462BancroftWay</p>
-<p>Barkeley4Calif.</p>
+<p>H. Chow</p>
+<p>2462 Bancroft Way</p>
+<p>Barkeley 4 Calif.</p>
 <p>即问</p>
 <p>好</p>
 <p>弘2月26日</p>
@@ -707,11 +740,11 @@
 <p>四、今日七个客人，珂来云为我介绍改一班初中国文的作文。</p>
 <p>五、深夜工作，不停地吃喝，小休看裸体画片，益觉工作过后女人更可爱。</p>
 <p>六、试拟题：</p>
-<p>（一）SocialProblemsoftheChineseFamily</p>
-<p>（二）TheStatusofWomaninModemChina</p>
-<p>（三）FromCovertureSchemetoSeperateExistenceScheme</p>
-<p>（四）ModemChineseWomen,TheirRoleinComflictingCultures</p>
-<p>（五）ModemChineseWoman'sShareinSocialCultures</p>
+<p>（一）Social Problems of the Chinese Family</p>
+<p>（二）The Status of Woman in Modem China</p>
+<p>（三）From Coverture Scheme to Seperate Existence Scheme</p>
+<p>（四）Modem Chinese Women, Their Role in Comflicting Cultures</p>
+<p>（五）Modem Chinese Woman’s Share in Social Cultures</p>
 <p>夜4时5分订好，以（四）最佳，大概就是它了！今日工作兴趣太浓，4时已过，犹乏倦意，只两眼酸耳。</p>
 <p>七、既同样费精力，为什么不写英文paper而写中文论文呢？过去的念头真太傻！畏难觉得不可能似这些老古董矣！</p>
 <p>八、退伍足足一个月了。</p>
@@ -741,7 +774,7 @@
 <p>已谙姨食性，</p>
 <p>还要尝小姨！</p>
 <p>五、新汉庆功宴，善培作陪于寿尔康。归来景不自觉小寐，我为之盖被，见其年来罕有此心满意足，女人之为功大矣哉！景言喜欢与我谈，看我日记成习惯，我说：“一夜通心粉，胜于与李敖谈十年！”</p>
-<p>六、David说BurnProfessorLee’shouse！闹了许久，这小纵火犯真是可爱，我大痒之，又拿大顶以逗之。</p>
+<p>六、David说Burn Professor Lee’s house！闹了许久，这小纵火犯真是可爱，我大痒之，又拿大顶以逗之。</p>
 <p>七、下午小潘来，谓曾忆读过“梁徐”（《梁启超与徐志摩》）文，谓家人甚喜读我文，晚又与清茂偕来，拒看春宫，真是纯真有趣，我介绍旧物给他们看。送小潘一读书架。</p>
 <p>八、鸿飞北来。</p>
 <p>九、3时前改写出昨日之文，改题为《独身者的独白》，颇满意。灵感涌来，两日间出此文，且大都为无腹稿即出新辞，真是可喜，清茂劝我做文人，勿再做左道之历史家，或真知我才具之言也！</p>
@@ -752,7 +785,7 @@
 <p>二、午后赴校转一圈，天气阴沉得可怕，述古玉森来，定远来。</p>
 <p>三、很阴沉，但我始终不肯选择情绪的途径，今晚的大决定是我放弃了理性的平静，转而采取“永远是玩笑、永远是顽皮、永远是笑哈哈的路线”，我要使我的心境永远保持开朗与晴天，理智的平静还是太消极，我要在永不休息的顽皮与笑脸中，表现出任何年轻人所赶不上的修养。</p>
 <p>又发明了“强笑法”“贼笑法”。</p>
-<p>四、今晚开始译TheChineseRenaissance，很吃力，翻译真不容易！</p>
+<p>四、今晚开始译The Chinese Renaissance，很吃力，翻译真不容易！</p>
 <p>3月10日星期五</p>
 <p>一、一早被方印叫醒，旋士振带敖小姐来，新汉又来，他的“最后一次”又跟他约会了。</p>
 <p>二、以一百元买一资料架，六十元买一藤椅，室中添此二物，奢侈不少，欣喜甚，听音乐良久。</p>
@@ -772,7 +805,7 @@
 <p>十二、又吃又喝又使屁股舒适，工作效率惊人矣！</p>
 <p>十三、明天姚老头个别谈话，可是不影响我“4时后睡”的进度。我几天来“4时后睡”是做到了，可是该再努力早起一点。</p>
 <p>3月11日星期六</p>
-<p>一、与姚第二次谈，甚洽，他甚至不知有TheChineseRenaissance，其赞同吾译，谓可设法印出，与晋生谈甚久。</p>
+<p>一、与姚第二次谈，甚洽，他甚至不知有The Chinese Renaissance，其赞同吾译，谓可设法印出，与晋生谈甚久。</p>
 <p>二、等新汉佳音，下午整理与胡适有关的材料。新汉甚乱，陈玉叫他存款，新汉说他只有感情可存，答得真好！仍是原地被赶下来，我笑以宫廷之下马碑。</p>
 <p>三、午饭请述古，晚饭请新汉。</p>
 <p>四、夜赴街购黑板三十元，甚满意，又索得广告上的娜妲丽华，极艳丽过人，归不久陈马王来，马言我闭关生活早晚会似老景会爆炸的。</p>
@@ -792,7 +825,7 @@
 <p>（三）清茂劝我改行文学，言林海音最欣赏我。</p>
 <p>（四）强吻璞儒后他轻言：你不要这样好不好？</p>
 <p>（五）冷而淡之？</p>
-<p>（六）思给Reader'sDigest写稿。</p>
+<p>（六）思给Reader’s Digest写稿。</p>
 <p>同步至川端头，我赴市，碰到彦增，市书九册唱片一张而归。在田园碰到韩卓民，在中广做事。</p>
 <p>四、培言你出了大名了，近邻围看“四席小屋”，此文之为祸也！</p>
 <p>3月13日星期一</p>
@@ -819,16 +852,16 @@
 <p>3月17日星期五</p>
 <p>一、上午四客人，改写出杨论，傍晚寄出。</p>
 <p>二、下午去“中央图书馆”，见牯岭街书摊急下车，市三书：</p>
-<p>TheArtofLiving</p>
-<p>GatewaystoBookland</p>
-<p>TheArmyWife（可作军中乐园研究之副料。）</p>
+<p>The Art of Living</p>
+<p>Gateways to Bookland</p>
+<p>The Army Wife（可作军中乐园研究之副料。）</p>
 <p>三、去“中央图书馆”路上巧遇华俊。归途上车碰到小平下车，羞红的小脸儿，“喂！”“喂，好久不见。”“喂。”真是可爱的小东西，在车上望她转进巷子里。</p>
 <p>四、晚两小鬼看春宫而不硬，香蕉只好我请。</p>
 <p>五、迁“四席小屋”一月，今付房租。</p>
 <p>六、或谓杨如与我好起来，正是“黄花鱼掉到黄粪缸里”。</p>
 <p>七、新居已一月，始终没正式花时间于英文之上，不可也，不可也，决定从今晚起按照工作表实行！2时完成工作表，每日英文西史要足十三小时。</p>
 <p>八、又亮夜来，华俊夜宿。</p>
-<p>九、译ClarenceDay文至5时始睡。怕叫醒华俊，乃和衣睡于地板上。</p>
+<p>九、译Clarence Day文至5时始睡。怕叫醒华俊，乃和衣睡于地板上。</p>
 <p>3月18日星期六</p>
 <p>一、午前个别谈话，姚给我带来《宋史》，并给我看他的本子中记不再过问我私事那一段，以及我批评丁文江传记等事，此公做考绩似是好手。彼言胡适问我在报上发牢骚，头绪甚多，不知何故牢骚？牢骚何所指？姚又言发表文章亦一佳事，盼用笔名。</p>
 <p>二、中午许家深来。高冀平来邀写武侠，谓可赚大钱，几次找我，今日终拒之。</p>
@@ -856,7 +889,7 @@
 <p>3月21日星期二</p>
 <p>一、新汉亦疑此信出自聪明过人字迹奇劣的陈小丢手笔。新汉助修好唱机，鸿飞又指点，电器吾人真不懂也，是一快事。</p>
 <p>二、下午陈又亮带施庆璋来小坐，此厮坚不招认，且谓吾若不之信而不复信给杨，将遗憾终身，我则以剥皮恫之。</p>
-<p>三、夜独赴街，购YesterdayandToday、China'sDestiny、70TrueStoriesoftheSecondWorldWar共二十五元，又买TheAmericanCharacter一册及画报四册，大腿颇多。</p>
+<p>三、夜独赴街，购Yesterday and Today、China’s Destiny、70 True Stories of the Second World War共二十五元，又买The American Character一册及画报四册，大腿颇多。</p>
 <p>3月22日星期三</p>
 <p>一、11时始起。</p>
 <p>二、珂送来新生意，半小时又改了二十篇。</p>
@@ -906,7 +939,7 @@
 <p>3月28日星期二</p>
 <p>一、午后赴参考室小坐，杨（？）戴眼镜，不好看。</p>
 <p>二、下午景来送马之一百元，坚挟我去看马戈。</p>
-<p>三、请珂晚饭于清真，买画报十册，Playboy一册及LadyChatterley'sLover共花五十九元，彩色女人真诱人，以后要大量买。</p>
+<p>三、请珂晚饭于清真，买画报十册，Playboy一册及Lady Chatterley’s Lover共花五十九元，彩色女人真诱人，以后要大量买。</p>
 <p>现在是1点半：刚才在车上曾想到我应该做一番具体而深远的计划与打算，Playboy的生活给我很大的刺激，那才是生活，那才是女人，学人的平静生活不能算是生活！眼前这些缺陷百出的女孩子不能算是女人！我不要做那种男人，也不需要那种女人，我听唱片、看画片，它们牵我走进理想的境界，我决心要活在理想里：</p>
 <p>艺术家的遥远理想境界——诗人。</p>
 <p>哲学家的平静——学者。</p>
@@ -954,14 +987,14 @@
 <p>七、6时半自第一归来始睡。</p>
 <p>4月2日星期日</p>
 <p>一、睡到一点一刻才昏昏醒，梦到娜妲来找我小室，待我极殷。</p>
-<p>二、醒来昏沉甚，未食午饭。借五十赴街，碰到鸿毅，买唱片Stop。又访得AChild'sHistoryoftheWorld，为之大喜，求此书久矣，竟以十五元得之摊上，可喜可喜！清真馆后在马家小坐，马送彩色裸女日历，马家二小姐言其同学又剪报上我文。</p>
+<p>二、醒来昏沉甚，未食午饭。借五十赴街，碰到鸿毅，买唱片Stop。又访得AChild’sHistoryoftheWorld，为之大喜，求此书久矣，竟以十五元得之摊上，可喜可喜！清真馆后在马家小坐，马送彩色裸女日历，马家二小姐言其同学又剪报上我文。</p>
 <p>三、夜之昂小两口及士振来坐。良久始去。之昂又言介绍我印书事，目前以其关系，不失为一少有之良机，珂来亦赞同，洗澡归来，舒舒服服地考虑了一阵子。以论文形式出，太吃力不讨好，篇篇皆当以小说体出之。但也未必尽然，观夫吴鲁序、居浩然等作品，引证亦不须很多。继而思之，“独”文作法甚好，融引证及高论于小说之中，效果反佳。</p>
 <p>四、今天在车上见到王（?），胸前细白肉与胸罩甚令人心动，我真挡不住女人的诱惑。</p>
 <p>五、饭票已光，明将断炊矣！</p>
 <p>六、一口气替至正写完《无为先生传》，时天已微明。替别人做事做到对自己有大好处，此转嫁法极佳。</p>
 <p>七、天亮时写信给老太六小姐，并送老太一眼镜套。</p>
 <p>4月3日星期一</p>
-<p>一、只有一张饭票了，我叫善培去吃，饿了肚子，下午译Letbeforgotten。新汉来，留下三十元，新汉待我最厚，不以久而怠，“孝敬”之忱，每令我不安，恩格斯、恩格斯，我该叫他景格斯。</p>
+<p>一、只有一张饭票了，我叫善培去吃，饿了肚子，下午译Let be forgotten。新汉来，留下三十元，新汉待我最厚，不以久而怠，“孝敬”之忱，每令我不安，恩格斯、恩格斯，我该叫他景格斯。</p>
 <p>二、决定把债务整顿，彻底控制钞票，否则漏洞愈来愈大，必将不可收拾，我的决定是：</p>
 <p>（一）非为写稿，不上街、不买书。</p>
 <p>（二）不买纸烟。</p>
@@ -979,7 +1012,7 @@
 <p>三、11时后与善培等商定，决定改成早睡法，像Clemenceau早上一二时起，一直工作到晚上八九点钟。</p>
 <p>王云五也是此法。</p>
 <p>4月5日星期三</p>
-<p>一、5时半即醒过来，犹豫方起，明早改用BenitoMussolini法，一醒即欠伸以苏筋骨，即时离床。</p>
+<p>一、5时半即醒过来，犹豫方起，明早改用Benito Mussolini法，一醒即欠伸以苏筋骨，即时离床。</p>
 <p>早起法的好处在晚上时间亦可尽量自朋友手中夺回，且工作时更可一口气贯串下来，毋虞睡眠将至也。</p>
 <p>二、理发后始吃豆浆放蛋。在系中一上午，午与萧偷看老头儿日记，言我个性强而自负，见其改动国兴信及给宾四寄书题字甚好玩。</p>
 <p>三、下午又到图书馆，坐至5时始归。</p>
@@ -994,7 +1027,7 @@
 <p>三、赴南港，与庄申在车上大消遣姚老头儿。与高阮谈，高阮房挂希特勒照片，颇乖谬兮兮，送我校书一部。在史语所读书颇勤，读三十年集及新文学大系颇有兴趣。午归在车上与学备等纵谈极欢。</p>
 <p>四、夜给Rosa写信。</p>
 <p>4月7日星期五</p>
-<p>一、梦到与做了妓女的B.B.性交。</p>
+<p>一、梦到与做了妓女的B. B.性交。</p>
 <p>二、以复写纸的小毛病，阻止了我把写好的信寄出去。</p>
 <p>三、在南洋室攘臂登梯，捞到史学会志，为之大喜不止。吕小姐说我是最能利用这图书馆的人。</p>
 <p>四、接六小姐转来王宇一片。</p>
@@ -1108,7 +1141,7 @@
 <p>4月25日星期一</p>
 <p>一、二十六岁生日，二十六年足足过去了！</p>
 <p>二、新汉午前来。</p>
-<p>三、善培、鸿飞为“效忠领袖”花三十五元市蛋糕，上有字样HappyBirthdaytoOurMaster！午又花三十五请我于寿尔康。</p>
+<p>三、善培、鸿飞为“效忠领袖”花三十五元市蛋糕，上有字样Happy Birthday to Our Master！午又花三十五请我于寿尔康。</p>
 <p>四、午后桃桃来。</p>
 <p>五、小寐，彦增持唱片、长寿烟及大量瓜子来，后珂来，士振来，我大摄裸照。新汉、马戈、彦增请我于寿尔康，小丢作陪。后强我不去补习，乃赴校园，在福利社坐，并打弹子一小时。</p>
 <p>六、归知小潘清茂合送裸照、长寿烟及唱片一张折现。</p>
@@ -1132,7 +1165,7 @@
 <p>六、借来法文林格风。</p>
 <p>七、与李祖鹤见到，言旧事甚欢。</p>
 <p>八、珂夜送大量“大陆杂志”来，珂年来辄送我物品书籍与资料，其情之厚，深可怀念。</p>
-<p>九、重译MotherandBessieSkinner'sRing首段，等习用意译法，颇成功而自如，翻译一定要用此法才行！</p>
+<p>九、重译MotherandBessieSkinner’sRing首段，等习用意译法，颇成功而自如，翻译一定要用此法才行！</p>
 <p>4月29日星期六</p>
 <p>一、午前与姚谈，姚言胡适欲写信给我，他阻之，以我在军中也。</p>
 <p>二、萧请午饭。后在参考室小坐，下午萧、袁来、景来、又亮来。</p>
@@ -1170,10 +1203,10 @@
 <p>（五）勇气——虽困难重重，吾往矣。</p>
 <p>（六）活力——精神十足，生龙活虎，生机勃勃。</p>
 <p>三、下午天培钱来了，绿衣人使李善培突然变得可爱起来了！</p>
-<p>四、晚与培市场，买BonjourTristesse英法文本及法德手册共花二十五元，为小林及敖小姐各买框一，共五十元。又买背心二（二十四），内裤（二十八），培坚说以买木床，乃以一百二十五置之，夜收拾完毕，大快大快。</p>
+<p>四、晚与培市场，买Bonjour Tristesse英法文本及法德手册共花二十五元，为小林及敖小姐各买框一，共五十元。又买背心二（二十四），内裤（二十八），培坚说以买木床，乃以一百二十五置之，夜收拾完毕，大快大快。</p>
 <p>五、二米临行，秋波一片。</p>
 <p>5月4日星期四</p>
-<p>一、下午在南港遍看C.P.书，随手作记，此法甚好。看所售旧书。</p>
+<p>一、下午在南港遍看C. P.书，随手作记，此法甚好。看所售旧书。</p>
 <p>二、凤翰假百元。助理员一人一室颇不坏。</p>
 <p>三、送敦煌本《金刚经》折子给庄申，申请夜饭。</p>
 <p>四、补德文归，做计划：</p>
@@ -1184,7 +1217,7 @@
 <p>五、凤翰在《幼狮学报》发表得千五，拉我投之，他可为介，我拒绝（因我讨厌“救国团”）。</p>
 <p>六、改写1/20《秘本二十篇》甚有趣，造句练习味甚足。入夜一直看书，这儿碰碰，那儿摸摸，味极浓。</p>
 <p>七、我对自己充满了自信，不以那些年轻人的“飞黄腾达”而自卑，他们骨头烧成灰也不过是“那一类人”，我在任何环境底下，也终归是个玩火的人。早晚我要被戴上荆冕，有无数的Pilate的高叫：</p>
-<p>eccehomo！</p>
+<p>ecce homo！</p>
 <p>八、决定编一《简明拉丁语手册》。</p>
 <p>5月5日星期五</p>
 <p>一、上午李士振、小潘、又亮、施珂、新汉来，午请新汉午饭，下午赴新汉家换蚊帐看玫园，粉玫瑰甚丽。</p>
@@ -1218,7 +1251,7 @@
 <p>一、10时赴校借书，并抄得：461206，薛永懿，江苏海门，27，5，10。</p>
 <p>二、谢莹莹借我笔记。</p>
 <p>三、俞小薇的天蓝无袖衬衫甚艳。</p>
-<p>四、启庆送ASurveyofEuropeanCivilization一部二册，大人情也。极喜之。</p>
+<p>四、启庆送A Survey of European Civilization一部二册，大人情也。极喜之。</p>
 <p>五、下午与萧在参考室，并与霭鎣小谈。我说立刚将来一定要做王八。</p>
 <p>六、夜赴景美，助桃桃钉布幔，修电灯，并送灯泡一支，取回大量书，掘出旧笔记，甚兴奋。</p>
 <p>5月10日星期三</p>
@@ -1283,7 +1316,7 @@
 <p>一、在老头儿室中一整天，看他四十四年的日记，记老李（玄伯）无耻，记老钱（思亮）反胡，记他偷看儿子日记。</p>
 <p>二、这两天我震撼于鲍家麟的变得美丽起来了，戴起眼镜，非常古典，在参考室出口迎面，我真喜欢起她来了。</p>
 <p>三、召雄来二次皆未见我，告善培我是他最崇拜的。</p>
-<p>四、夜给胡姚做卡片，一口气翻完C.P.史学索引。</p>
+<p>四、夜给胡姚做卡片，一口气翻完C. P.史学索引。</p>
 <p>五、我喜欢忙，忙忙地做许多工作，一天忙到黑，才有意思，一天杀出许多事，才有意思！</p>
 <p>六、日前詹森穿牛仔衫上街，说：“让我们卷起袖子，并保持卷起。”他又送名片，抱小孩，下车数次。此人作风实值得研究。</p>
 <p>七、马维君当选“中国小姐”后我之感想。</p>
@@ -1300,12 +1333,12 @@
 <p>5月19日星期五</p>
 <p>一、在中文系翻期刊与索引。</p>
 <p>二、下午大睡，醒来昏甚，乃修改给陈琪信至7时始竣工，午睡一定要戒掉。</p>
-<p>三、夜做《我们也来个SungProject》一张长卷，给老姚。</p>
+<p>三、夜做《我们也来个Sung Project》一张长卷，给老姚。</p>
 <p>5月20日星期六</p>
 <p>一、把“谢谢谢莹莹”的口袋给张。</p>
 <p>二、向方、姚谈“你们不肯交给我们”。黎敔荣相当可爱，皮肤又白又细，安安静静的，说话轻轻的，看人笑笑的，我帮她放书：“中间下面的，插进去就对了。”老姚亦怪我不搞正经题目，走偏锋，“不要在旁边搞，当正面搞进去”。</p>
 <p>三、下午周渝来，送他照片及《酸与咸》。</p>
-<p>四、为彦增买香花生等，与萧、陈、王、景、马聚欢，我一一消遣之，尤以试卷打击马戈最快。又在傅园谈，马戈攻击我之恋爱方式，在寿尔康看了摩托女郎侧影，鼻以下最似Lo，为之心动，直看得那混账男人用眼睛瞪我，其实小气什么？看看又有什么关系？又不搞她。喝米酒三杯后醉，大畅谈不休，四座极欢。出来景挽我手谓PrideofLiAo，我之才华纵逸，真是惊人。请他们打弹子，我连打二十五点，哄堂不已，归马陈又小坐，老广来，珂来。</p>
+<p>四、为彦增买香花生等，与萧、陈、王、景、马聚欢，我一一消遣之，尤以试卷打击马戈最快。又在傅园谈，马戈攻击我之恋爱方式，在寿尔康看了摩托女郎侧影，鼻以下最似Lo，为之心动，直看得那混账男人用眼睛瞪我，其实小气什么？看看又有什么关系？又不搞她。喝米酒三杯后醉，大畅谈不休，四座极欢。出来景挽我手谓Pride of Li Ao，我之才华纵逸，真是惊人。请他们打弹子，我连打二十五点，哄堂不已，归马陈又小坐，老广来，珂来。</p>
 <p>五、没有我，朋友们就没有了水泥，我不说话，就好像不正常了。即席作联：</p>
 <p>阴魂不散</p>
 <p>（咪咪我爱你）</p>
@@ -1417,7 +1450,7 @@
 <p>三、写信。</p>
 <p>6月9日星期五</p>
 <p>一、鼓应来信，午桃桃来。</p>
-<p>二、看B.B.新照入睡。</p>
+<p>二、看B. B.新照入睡。</p>
 <p>6月10日星期六</p>
 <p>大梦及Lo，从无此有系统之长梦。醒来茫然不已。</p>
 <p>6月11日星期日</p>
@@ -1497,8 +1530,8 @@
 <p>请他一客（2月19日）</p>
 <p>今晚在家请客，回请曾请我吃饭各位：彭明敏、徐熙光、丘宏达、郭鑫生、陆啸钊、段宏俊。白帆、成飞、尚霞等亦在座。</p>
 <p>绍鹏席间赠言（3月6日）</p>
-<p>Myadvice：</p>
-<p>①Constructionbeforebombardment；</p>
+<p>My advice：</p>
+<p>①Construction before bombardment；</p>
 <p>②Don’tmarry.</p>
 <p>黄宝实之言（3月9日）</p>
 <p>彭先生请晚饭，在座者黄宝实、小钊、老郭。</p>
@@ -1513,11 +1546,11 @@
 <p>下午与吴铁城夫人、孟能等同去阳明山公墓看坟地，有处颇不恶，拟为老子老太购。</p>
 <p>夜与黄三、老段逛街、聊天。</p>
 <p>与江南谈话（4月5日）</p>
-<p>江南（刘宜良）自香港回来，来信约见。今天下午跟他大聊一阵。再转赴书摊。买P.F.Valentine的TwentiethCenturyEducation等书，欠账而归。</p>
+<p>江南（刘宜良）自香港回来，来信约见。今天下午跟他大聊一阵。再转赴书摊。买P. F. Valentine的Twentieth Century Education等书，欠账而归。</p>
 <p>Telemark（4月6日）</p>
 <p>写信给杨羊（王彤）、吴福进各一封。</p>
-<p>很累，看了一场夜9点15开演的《铁勒玛九壮士》（TheHeroesofTelemark），殊劣，且太戏剧化矣！</p>
-<p>1959年TheColumbiaEncyclopedia(SecondEdition)记Telemark如下：Telemark,county(5875sq.mi.；pop.131879)，SNorway,extendingfromtheHardangerplateaueastwardtotheshoresoftheSkagerrak.Skienisthecountyseat.Remarkableforitslakeandmountainscenery，thecountyattractsmanytourists.</p>
+<p>很累，看了一场夜9点15开演的《铁勒玛九壮士》（The Heroes of Telemark），殊劣，且太戏剧化矣！</p>
+<p>1959年The Columbia Encyclopedia (Second Edition)记Telemark如下：Telemark, county (5875 sq. mi.；pop. 131879)，S Norway, extending from the Hardanger plateau eastward to the shores of the Skagerrak. Skien is the county seat. Remarkable for its lake and mountain scenery，the county attracts many tourists.</p>
 <p>老太太今天下午回台中。</p>
 <p>今晚雾色甚浓。</p>
 <p>《李敖新书》（4月7日）</p>
@@ -1550,11 +1583,11 @@
 <p>李万居昨天死了！人才凋落，真可惜，真可惜！</p>
 <p>《风雨艺林》论“李敖”（4月12日）</p>
 <p>清早被H吵醒，又失眠。乃上街理发、买文具。以后一失眠就干脆上街，反正做事也头昏昏的做不下。</p>
-<p>下午6时醒来。收到《临床医学》（TaiwanClinicalMedicine）二卷二期，及香港风雨文社寄赠的《风雨艺林》第五号（非卖品），是3月出版的，上有吴水丽的一篇《李敖》，写得还不错。论我与存在主义等关系，甚见奇思。另有李年熙的《传统下的缪斯》等文。</p>
+<p>下午6时醒来。收到《临床医学》（Taiwan Clinical Medicine）二卷二期，及香港风雨文社寄赠的《风雨艺林》第五号（非卖品），是3月出版的，上有吴水丽的一篇《李敖》，写得还不错。论我与存在主义等关系，甚见奇思。另有李年熙的《传统下的缪斯》等文。</p>
 <p>收到Grace一信，陈正澄自西德来信，云林读者张赞合信，并收到绍鹏先生一信。</p>
 <p>夜9时半独去对面的大兴戏院看了一场《铁面人》，甚残忍。</p>
 <p>整日在家（4月15日）</p>
-<p>整天没外出，夜看电视《龙城飞将》（AWalkwithanEngle）。飞将军甚勇迈，颇动人。</p>
+<p>整天没外出，夜看电视《龙城飞将》（A Walk with an Engle）。飞将军甚勇迈，颇动人。</p>
 <p>半夜看香港《天文台》中评论我的文字。</p>
 <p>接孙陵一信，约喝酒。并说：“与谢然之又‘战斗’一番，总算不给朋友丢脸，谢派人来自承疏忽，也就算了。”敖按：此又“大风雪被禁事件”外一章也！</p>
 <p>附孙陵来信：</p>
@@ -1583,9 +1616,9 @@
 <p>林水泉来（4月18日）</p>
 <p>接到苏长坤寄来的陈情书。</p>
 <p>夜市议员林水泉带台大学生吕国民（法四）、林道平（医四）来，跟他们聊了六小时，并请他们吃消夜。</p>
-<p>买到SocialProblems（4月19日）</p>
+<p>买到Social Problems（4月19日）</p>
 <p>傍晚骑脚踏车甚久。</p>
-<p>东门买书而归，买到1884年版的HenryGeorgeSocialProblems。夜孟能来谈至1时。</p>
+<p>东门买书而归，买到1884年版的Henry George Social Problems。夜孟能来谈至1时。</p>
 <p>给Grace一信。</p>
 <p>林水泉请客（4月21日）</p>
 <p>接忠琳信，说如要离婚了，并托我找房子。</p>
@@ -1601,7 +1634,7 @@
 <p>接铭传商职女生陈真一信。</p>
 <p>接善培一信。复忠琳信。</p>
 <p>不再是三十岁（4月24日）</p>
-<p>午后与三三、继梅、白帆逛街，买台灯，算他们送的生日礼物。同看电影AliBaba，女主角甚美。</p>
+<p>午后与三三、继梅、白帆逛街，买台灯，算他们送的生日礼物。同看电影Ali Baba，女主角甚美。</p>
 <p>夜三三、继梅又加送浴巾、床罩、面油等生日礼物。谈做生意之道至夜12时。</p>
 <p>做工，清早写信给小姨，四千字。</p>
 <p>三十岁时代去矣！（这次生日大家送买书代金，黄胜常、刘凤翰、陈彦增、刘宗向、郭鑫生、陆啸钊、华肖忠、吴海蒂、萧孟能、段宏俊合送二千元，石锦、三姐送五百元，大革、六妹送三百元，老太寄赠包襄。李士振自海外寄鞋来。陈彦增合祙送我，并题诗曰：“李兄送鞋，陈弟送袜。千里鹅毛，俱为足下。”）</p>
@@ -1617,7 +1650,7 @@
 <p>夜孟能来谈</p>
 <p>与王德溥谈（4月28日）</p>
 <p>鑫生晚6时请我和王德溥（润生）于广州饭店，相谈极欢。王言他做内政部长时反对“户警合一”事，甚令人感佩。我讲话亦颇直杵，颇攻击和他有关的“中医”“奉命不上诉”及“出版法”等事。王说他颇为东北出我这种人才而爱惜。</p>
-<p>8时后和鑫生在西门町碰到“闲荡”之孟能，一同看电影——TheSpyWhoCameinfromtheCold，颇深刻。“反共”于不落斧痕中，导演手法极高。</p>
+<p>8时后和鑫生在西门町碰到“闲荡”之孟能，一同看电影——The Spy Who Came in from the Cold，颇深刻。“反共”于不落斧痕中，导演手法极高。</p>
 <p>碰到老同学许子正。为我这几年来的努力喝彩。</p>
 <p>夜写完《李敖年表》。</p>
 <p>李声庭婚礼（4月30日）</p>
@@ -1627,12 +1660,12 @@
 <p>碰到老同学詹思聪。称道我这几年来的文字成绩。</p>
 <p>二一二期《时与潮》中有《为什么中国女孩子缺少罗曼蒂克的气氛？》一文，颇受我影响，且有抄袭我言之处。</p>
 <p>中国知识分子的两种类型（5月1日）</p>
-<p>夜与三三、继梅看电影《胡不归》（MarriageontheRocks）。后与三三谈通宵。</p>
+<p>夜与三三、继梅看电影《胡不归》（Marriage on the Rocks）。后与三三谈通宵。</p>
 <p>中国知识分子有两种：一种娘娘腔型；一种犀牛型。</p>
 <p>碰到张化民，请他与三三喝咖啡。</p>
 <p>看《愚人船》（5月3日）</p>
-<p>傍晚海蒂来，同吃饭并看ShipofFools。今天台湾重要报纸登出《窗外》电影广告。</p>
-<p>ShipofFools有对话颇不错，如</p>
+<p>傍晚海蒂来，同吃饭并看Ship of Fools。今天台湾重要报纸登出《窗外》电影广告。</p>
+<p>Ship of Fools有对话颇不错，如</p>
 <p>一、以牙还牙是没有用的，要用头脑。</p>
 <p>二、这是世界最惨的事：两人相爱却以为相配。</p>
 <p>三、以眼泪洗眼可以看得更清楚。</p>
@@ -1655,7 +1688,7 @@
 <p>三三当兵去也（5月8日）</p>
 <p>星期天。今天《联合报》登出我控徐复观、余纪忠消息。</p>
 <p>午后还书债，并与谭卓民先生大谈，约八年不见了。他从菲律宾带来领带一条给我。</p>
-<p>独看《浴血金沙》（SandoftheKalahari），女主角甚诱人。</p>
+<p>独看《浴血金沙》（Sand of the Kalahari），女主角甚诱人。</p>
 <p>晚赴三三家，他明天当兵去也。乃现身说法，点化一阵。在三三家晚饭，与萧同兹、黄雪村大聊（萧大谈培元保本之意）。</p>
 <p>汤元吉来访二次，我回访一次，都未碰见。</p>
 <p>夜与小钊谈生计。</p>
@@ -1684,7 +1717,7 @@
 <p>支票开户（5月13日）</p>
 <p>失眠。乃不睡觉，与小钊去办支票开户手续，正式领下支票簿。林光民先生颇帮忙。</p>
 <p>下午高院开庭，我与推事颇有争辩。出庭后去喝咖啡，继高说余纪忠被我告后第二天就去找他。</p>
-<p>夜独看《万绿丛中一点红》（Sylvia），写一好看书写作之妓女的故事，颇动人。原著者是E.V.Cunningham。</p>
+<p>夜独看《万绿丛中一点红》（Sylvia），写一好看书写作之妓女的故事，颇动人。原著者是E. V. Cunningham。</p>
 <p>给居蜜一长信。</p>
 <p>认识许多新朋友（5月26日）</p>
 <p>Miles睡到中午始去。</p>
@@ -1713,7 +1746,7 @@
 <p>下午小睡。</p>
 <p>夜接Hedy回来。</p>
 <p>空军士官求援（6月13日）</p>
-<p>士振寄来Maison&amp;Jardin等。</p>
+<p>士振寄来Maison &amp; Jardin等。</p>
 <p>从清早直到晚饭后，一直同Hedy在一起。</p>
 <p>吴相湘太太送来点心一盒。</p>
 <p>接一空军士官曾唯英信，绝症求援。</p>
@@ -1727,13 +1760,13 @@
 <p>晨Hedy去。</p>
 <p>李律师又劝我放弃余徐案，我仍不肯。他说余徐又来看他。余要请大家客以解怨。</p>
 <p>接黄琨生信、陈彦增信、吴相湘信，给孟能一信。</p>
-<p>夜请绍唐、小华吃饭于云南馆，又请他们看电影《破镜边缘》（MomenttoMoment）。</p>
+<p>夜请绍唐、小华吃饭于云南馆，又请他们看电影《破镜边缘》（Moment to Moment）。</p>
 <p>碰到蓝明，说Bottorff明天北来。</p>
 <p>作一联（6月18日）</p>
 <p>取三千弱水；</p>
 <p>为一代强人。</p>
 <p>Grace生日（7月5日）</p>
-<p>今天是Grace二十六岁生日（阴历五月十七日），下午陪她看电影二场〔《小飞俠》（PeterPan）和《破镜边缘》（MomenttoMoment）〕。因太妹不守公共道德，与她们口角。</p>
+<p>今天是Grace二十六岁生日（阴历五月十七日），下午陪她看电影二场〔《小飞俠》（Peter Pan）和《破镜边缘》（Moment to Moment）〕。因太妹不守公共道德，与她们口角。</p>
 <p>与Grace晚饭于青城，碰到纪镇南。</p>
 <p>买书四百元。</p>
 <p>接尔琳一信。</p>
@@ -1747,10 +1780,10 @@
 <p>晚独看《谍报露雳船》（TheMysteryofThreeJunks）。</p>
 <p>与文星“封门”（7月27日）</p>
 <p>正式“封门”，与文星间盖起“柏林围墙”。（不知道哪一边是东柏林？）</p>
-<p>夜看打牌，独看《月宫宝盒》（TheThiefofBagadad）。</p>
+<p>夜看打牌，独看《月宫宝盒》（The Thief of Bagadad）。</p>
 <p>与萧孟能办移交（8月2日）</p>
 <p>下午与孟能办移交甚累。算是正式迁出21-23号。</p>
-<p>夜去永和，与Grace去看《间谍大会战》（OperazionePoker），再去青叶吃粥。</p>
+<p>夜去永和，与Grace去看《间谍大会战》（Operazione Poker），再去青叶吃粥。</p>
 <p>门上贴条如下：</p>
 <p>李宅已全部迁到左边白门25号之3，有事请直洽，别再敲23号之3的门。</p>
 <p>送殷海光咖啡（8月6日）</p>
@@ -1768,17 +1801,17 @@
 <p>胡志伟结婚（8月20日）</p>
 <p>上午访绍唐新寓。</p>
 <p>夜与尚勤参加胡志伟赵万年婚礼。历史系中新旧老朽云集。</p>
-<p>酒后看电影《二十九壮士》（DuelatDiablo）。</p>
+<p>酒后看电影《二十九壮士》（Duel at Diablo）。</p>
 <p>殷海光来长谈（8月21日）</p>
 <p>星期天。午在三姐家吃饭。</p>
 <p>下午5-10点，海光先生在家中谈。</p>
 <p>齐铁生来谈（8月23日）</p>
 <p>下午5-6点半，齐世英先生来寓。看到我藏有十九年前他编的《时与潮副刊》，大叹我是有心人。</p>
-<p>夜与Grace看B.B.电影。</p>
+<p>夜与Grace看B. B.电影。</p>
 <p>东北“元老”（8月23日）</p>
 <p>下午与小左谈。</p>
 <p>夜参加王家二小姐婚礼。东北“元老”王铁汉等殷殷问我近况，梁肃戎先生且过来敬酒。与鲁传鼎长聊。</p>
-<p>微醉出礼堂，与Grace看《疯狂大赛车》（TheGreatRace）。</p>
+<p>微醉出礼堂，与Grace看《疯狂大赛车》（The Great Race）。</p>
 <p>高雄文星书店被封门（8月24日）</p>
 <p>整日在家。小华来，孟能来，言高雄文星书店分店（大勇书店）已正式被封门，只开六十天！</p>
 <p>收到陈来奇、简志信寄送《电影沙龙》第二期。</p>
@@ -1815,7 +1848,7 @@
 <p>李敖饮食企业股份有限公司章程（9月11日）</p>
 <p>孟能午前来。</p>
 <p>小钊下午来订“李敖饮食企业股份有限公司章程”。</p>
-<p>夜去王家，并与尚勤看《阿哥哥》（HoldOn!），影中泳装少女跳阿哥哥极诱人。</p>
+<p>夜去王家，并与尚勤看《阿哥哥》（Hold On!），影中泳装少女跳阿哥哥极诱人。</p>
 <p>附：李敖饮食企业股份有限公司章程</p>
 <p>一、本公司定名为“李敖饮食企业股份有限公司”。</p>
 <p>二、营业项目：</p>
@@ -1874,7 +1907,7 @@
 <p>上次新竹畅谈后，迄未晤面。每念及你们在“清华园”中的“神仙生活”，辄为神往。</p>
 <p>我的“告别文坛十书”，因在印刷过程中发生“微妙情况”，所以至今还不能出书，大概还得拖几天。你们“清华园派”，只由李怡严出面买了一套，未免太小气，真该杀杀杀。</p>
 <p>尊大人买了一套，同时赐言赐书，我这一阵太忙，过些日子当去请安，便中请先代为致意。</p>
-<p>在台大哲学系执教的刘福增先生，为我好友，学贯文理法三科。近与友人组织“水牛出版社”，并译印SeymourLipschutz的SetTheoryandRelatedTopic，盼能合学院中数学系之用。当然这方面你是权威，如果你觉得合用，盼能酌为推介。</p>
+<p>在台大哲学系执教的刘福增先生，为我好友，学贯文理法三科。近与友人组织“水牛出版社”，并译印Seymour Lipschutz的Set Theory and Related Topic，盼能合学院中数学系之用。当然这方面你是权威，如果你觉得合用，盼能酌为推介。</p>
 <p>匆匆奉闻，顺颂</p>
 <p>大安并请代候</p>
 <p>“园”中各位</p>
@@ -1914,11 +1947,11 @@
 <p>返家休息，又赴东门吃东西，1时前寝（此夜起警方派人住入装订厂）。</p>
 <p>11月11日</p>
 <p>上午赴衡阳路，平景帮王家搬家，敖赴约会。下午3时赴梅家。后敖赴装订厂，平景买印台，购印等。6时在装订厂，郑分局长来，命厂方装订《大学后期日记甲、乙集》《妈离不了你》《传统下的再白》四书，但蝴蝶页、封底字须涂掉，书出厂时须送警检查。</p>
-<p>在“美而廉”夜饭，共看豪华电影《湖边春露浓》（Boy,DidIGetaWrongNumber!）11时半返家。</p>
+<p>在“美而廉”夜饭，共看豪华电影《湖边春露浓》（Boy, Did I Get a Wrong Number!）11时半返家。</p>
 <p>共笑“读书人”他妈的懂什么“是那种人”不是？真他妈的“完全服了”。</p>
 <p>在齐铁生家大谈（11月12日）</p>
 <p>星期六。</p>
-<p>与平景看一影，《谍破铁幕》（TomCurtain）。</p>
+<p>与平景看一影，《谍破铁幕》（Tom Curtain）。</p>
 <p>晚与世英、肃戎、司马桑敦、石坚等大谈。</p>
 <p>绍鹏今早接我电报，夜来未见。</p>
 <p>夜H来，in。</p>
@@ -1935,7 +1968,7 @@
 <p>警察仍不肯放行（11月15日）</p>
 <p>午前取福元印的信。</p>
 <p>上午因驻厂警察仍不肯放行，乃再会郑局长、娄振岳等，并自娄处取得准发书信（娄去电李中校，知“之X”不要涂改），娄约小左去做笔录。</p>
-<p>午与焕文、焕源、白帆食于金城。后看《魔屋梨花劫》（Die!Die!MyDarling!）。</p>
+<p>午与焕文、焕源、白帆食于金城。后看《魔屋梨花劫》（Die! Die! My Darling!）。</p>
 <p>下午再去装订厂，并接老太归。</p>
 <p>车大抛锚，夜写一长信致裕隆。</p>
 <p>连接传票（11月16日）</p>
@@ -1998,19 +2031,19 @@
 <p>晨8点30分出控曹圣芬庭。9点30分后始开。我传票上是第一名（8点30分庭）。一开始，法院一便衣持册向法警查我到否（此册为油印本，上有四个庭号，似皆为有关之庭也），法官来后竟不开我的庭，经审二案后我起立质问，法官做无奈状，忽命女书记官下去拿卷，（卷都没带来！）然后大家心照不宣地对面一阵。后一男书记官来，乃开庭，照例是废话一阵。约半小时。</p>
 <p>控徐等案上诉驳回！</p>
 <p>今在法院涌现司法黑暗之念，时时不已！</p>
-<p>下午彦增来。看病。晚饭于R.M.后即回家做工。近三天来工作不恶，当持之以不断与大量。</p>
+<p>下午彦增来。看病。晚饭于R. M.后即回家做工。近三天来工作不恶，当持之以不断与大量。</p>
 <p>傍晚电小左，知基隆方面又发生禁卖李敖书之事。小左已电李中校，李中校答应去电解决。</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/06.沉思日记类/早年日记.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/06.沉思日记类/早年日记.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../06.沉思日记类/大学札记.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../06.沉思日记类/李敖五五日记.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -2020,16 +2053,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../06.沉思日记类/大学札记.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../06.沉思日记类/李敖五五日记.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -2038,12 +2076,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

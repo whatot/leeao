@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,154 +81,175 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="坐牢家爸爸给女儿的八十封信"><a class="header" href="#坐牢家爸爸给女儿的八十封信">坐牢家爸爸给女儿的八十封信</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E5%9D%90%E7%89%A2%E5%AE%B6%E7%88%B8%E7%88%B8%E7%BB%99%E5%A5%B3%E5%84%BF%E7%9A%84%E5%85%AB%E5%8D%81%E5%B0%81%E4%BF%A1%E8%87%AA%E5%BA%8F">《坐牢家爸爸给女儿的八十封信》自序</a></li>
-<li><a href="#%E4%B8%80%E5%B0%8F%E6%96%87%E5%8D%81%E5%B2%81%E7%94%9F%E6%97%A5%E6%AD%8C">一、小文十岁生日歌</a></li>
-<li><a href="#%E4%BA%8C%E7%8C%AB%E7%8B%97%E8%B0%9A">二、猫狗谚</a></li>
-<li><a href="#%E4%B8%89%E5%86%8D%E4%BC%9A%E5%91%80%E9%B3%84%E9%B1%BC%E5%91%80">三、再会呀，鳄鱼呀！</a></li>
-<li><a href="#%E5%9B%9B%E7%BA%B8%E4%B8%8A%E8%B0%88%E9%92%B1">四、纸上谈钱</a></li>
-<li><a href="#%E4%BA%94%E5%96%8A%E4%B8%80%E5%A3%B0%E8%8A%9D%E9%BA%BB%E5%BC%80%E9%97%A8%E5%B0%B1%E8%A1%8C%E4%BA%86">五、喊一声「芝麻开门！」就行了</a></li>
-<li><a href="#%E5%85%AD%E5%A4%B4%E5%A4%B4%E5%A4%A7%E8%A7%82">六、头头大观</a></li>
-<li><a href="#%E4%B8%83%E6%8C%87%E6%95%99">七、指教</a></li>
-<li><a href="#%E5%85%AB%E7%90%86%E5%8F%91%E5%8C%A0%E5%B0%B1%E6%98%AF%E5%A4%96%E7%A7%91%E5%8C%BB%E7%94%9F%E5%A4%96%E7%A7%91%E5%8C%BB%E7%94%9F%E5%B0%B1%E6%98%AF%E7%90%86%E5%8F%91%E5%8C%A0">八、理发匠就是外科医生，外科医生就是理发匠</a></li>
-<li><a href="#%E4%B9%9D%E9%80%81%E7%A4%BC-%E5%90%91%E5%8E%95%E6%89%80%E8%B7%91">九、送礼-向厕所跑</a></li>
-<li><a href="#%E5%8D%81%E4%BD%A0%E7%BE%8A%E6%88%91%E5%B0%B1%E9%A9%AC%E4%BD%A0%E9%A9%AC%E6%88%91%E5%B0%B1%E7%BE%8A">十、你羊我就马，你马我就羊</a></li>
-<li><a href="#%E5%8D%81%E4%B8%80%E6%89%93%E8%80%81%E8%99%8E%E7%A7%98%E8%AF%80">十一、打老虎秘诀</a></li>
-<li><a href="#%E5%8D%81%E4%BA%8C%E4%BD%A0%E9%80%81%E7%A5%9E%E5%83%8F%E6%88%91%E6%90%AD%E5%8F%B0">十二、你送神像我搭台</a></li>
-<li><a href="#%E5%8D%81%E4%B8%89%E5%8D%83%E5%B9%B4%E7%8E%8B%E5%85%AB%E4%B8%87%E5%B9%B4%E9%BE%9F">十三、千年王八万年龟</a></li>
-<li><a href="#%E5%8D%81%E5%9B%9B%E4%B8%8D%E9%A3%9E%E7%9A%84%E9%B8%9F">十四、不飞的鸟</a></li>
-<li><a href="#%E5%8D%81%E4%BA%94%E4%BD%A0%E6%9D%80%E9%B9%85%E6%88%91%E5%B0%B1%E6%9D%80%E9%B8%A1">十五、你杀鹅我就杀鸡</a></li>
-<li><a href="#%E5%8D%81%E5%85%AD%E5%8E%9F%E5%AD%90%E5%BC%B9%E4%B8%8E%E6%B2%89%E9%B1%BC%E8%90%BD%E9%9B%81">十六、原子弹与沉鱼落雁</a></li>
-<li><a href="#%E5%8D%81%E4%B8%83%E4%BB%96%E6%89%80%E6%9C%89%E7%9A%84%E9%B9%85%E9%83%BD%E6%98%AF%E5%A4%A9%E9%B9%85">十七、他所有的鹅都是天鹅</a></li>
-<li><a href="#%E5%8D%81%E5%85%AB%E9%BA%BB%E6%98%AF%E9%BA%BB%E7%83%A6%E5%8F%AF%E6%98%AF%E4%B8%8D%E4%BC%9A%E7%94%9F%E8%83%83%E7%97%85">十八、麻是麻烦，可是不会生胃病</a></li>
-<li><a href="#%E5%8D%81%E4%B9%9D%E7%A0%B4%E9%94%85%E6%9C%89%E7%83%82%E7%81%B6%E6%9D%8E%E5%A4%A7%E6%9C%89%E5%BC%A0%E5%AB%82">十九、破锅有烂灶、李大有张嫂</a></li>
-<li><a href="#%E4%BA%8C%E5%8D%81%E6%83%85%E4%BA%BA%E4%B8%8E%E5%A4%A9%E4%BD%BF">二十、情人与天使</a></li>
-<li><a href="#%E4%BA%8C%E4%B8%80%E7%9C%8B%E9%82%A3%E7%86%8A%E7%9B%B8">二一、看那熊相</a></li>
-<li><a href="#%E4%BA%8C%E4%BA%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%98%E5%8F%AB%E5%88%AB%E4%BA%BA%E6%98%AF%E5%A7%A5%E5%A7%A5">二二、为什么还叫别人是姥姥？</a></li>
-<li><a href="#%E4%BA%8C%E4%B8%89%E8%8B%8D%E8%9D%87%E7%9A%84%E8%80%81%E5%A9%86%E6%9C%80%E5%A4%9A">二三、苍蝇的老婆最多</a></li>
-<li><a href="#%E4%BA%8C%E5%9B%9B%E8%8B%B1%E6%96%87%E5%9B%9E%E6%96%87%E4%B8%AD%E6%96%87%E5%9B%9E%E6%96%87">二四、英文回文，中文回文</a></li>
-<li><a href="#%E4%BA%8C%E4%BA%94%E5%85%B3%E4%BA%8E%E8%84%96%E5%AD%90%E7%9A%84%E7%A7%8D%E7%A7%8D">二五、关于脖子的种种</a></li>
-<li><a href="#%E4%BA%8C%E5%85%AD%E7%9C%BC%E7%9D%9B%E6%9C%89%E6%97%B6%E5%80%99%E4%BC%9A%E4%B8%8A%E5%BD%93">二六、眼睛有时候会上当</a></li>
-<li><a href="#%E4%BA%8C%E4%B8%83%E5%A6%88%E5%A6%88%E9%AA%91%E9%A9%AC%E9%A9%AC%E6%85%A2%E5%A6%88%E5%A6%88%E9%AA%82%E9%A9%AC">二七、「妈妈骑马，马慢，妈妈骂马」</a></li>
-<li><a href="#%E4%BA%8C%E5%85%AB%E8%80%81%E9%BC%A0%E4%B8%8D%E4%BF%A1%E4%BB%BB%E4%B8%80%E4%B8%AA%E6%B4%9E">二八、老鼠不信任一个洞</a></li>
-<li><a href="#%E4%BA%8C%E4%B9%9D%E8%AF%B4%E5%A7%93%E9%81%93%E5%90%8D">二九、说姓道名</a></li>
-<li><a href="#%E4%B8%89%E5%8D%81%E7%8C%AB%E5%A4%B4%E9%B9%B0%E4%B8%BA%E4%BB%80%E4%B9%88%E8%B7%9F%E5%9C%A8%E6%99%BA%E6%85%A7%E5%A5%B3%E7%A5%9E%E5%B1%81%E8%82%A1%E5%90%8E%E9%9D%A2">三十、猫头鹰为什么跟在智慧女神屁股后面？</a></li>
-<li><a href="#%E4%B8%89%E4%B8%80%E7%8B%BC%E6%9D%A5%E4%BA%86%E7%8B%BC%E6%9D%A5%E4%BA%86">三一、狼来了！狼来了！</a></li>
-<li><a href="#%E4%B8%89%E4%BA%8C%E8%B0%81%E5%85%88%E5%AE%8C%E8%9B%8B">三二、谁先完蛋</a></li>
-<li><a href="#%E4%B8%89%E4%B8%89%E7%8C%B4%E7%9B%B8">三三、猴相</a></li>
-<li><a href="#%E4%B8%89%E5%9B%9B%E4%BB%8E%E4%BA%BA%E7%8C%BF%E5%88%B0%E7%8C%BF%E4%BA%BA">三四、从人猿到猿人</a></li>
-<li><a href="#%E4%B8%89%E4%BA%94%E8%98%91%E8%8F%87%E4%B8%AA%E6%B2%A1%E5%AE%8C">三五、蘑菇个没完</a></li>
-<li><a href="#%E4%B8%89%E5%85%AD%E9%9D%9E%E9%A9%B4%E9%9D%9E%E9%A9%AC">三六、非驴非马</a></li>
-<li><a href="#%E4%B8%89%E4%B8%83%E9%AA%91%E5%B0%8F%E9%A9%AC-%E5%9B%9E%E5%8F%B0%E6%B9%BE">三七、骑小马-回台湾</a></li>
-<li><a href="#%E4%B8%89%E5%85%AB%E9%B8%BD%E5%AD%90-%E5%9B%AE%E5%AD%90-%E5%87%AF%E5%AD%90">三八、鸽子-囮子-凯子</a></li>
-<li><a href="#%E4%B8%89%E4%B9%9D%E6%96%97%E5%87%BA%E8%87%AA%E5%A4%A7%E6%9D%A5">三九、斗出自大来</a></li>
-<li><a href="#%E5%9B%9B%E5%8D%81%E8%B0%81%E5%9C%A8%E7%9E%8E%E5%BF%99">四十、谁在瞎忙？</a></li>
-<li><a href="#%E5%9B%9B%E4%B8%80%E8%BF%90%E5%8A%A8%E9%81%93%E5%BE%B7%E5%90%97">四一、运动道德吗？</a></li>
-<li><a href="#%E5%9B%9B%E4%BA%8C%E7%94%9F%E6%97%A5%E4%B8%8E%E5%8D%81%E4%BA%8C%E5%AE%AB%E5%9B%BE">四二、生日与十二宫图</a></li>
-<li><a href="#%E5%9B%9B%E4%B8%89%E6%9E%97%E8%82%AF-%E6%A0%97%E5%AD%90-%E7%AC%91">四三、林肯-栗子-笑</a></li>
-<li><a href="#%E5%9B%9B%E5%9B%9B%E6%B5%AA%E8%B4%B9%E8%9C%A1%E7%83%9B%E5%8E%BB%E6%89%BE%E9%92%88">四四、「浪费蜡烛去找针」</a></li>
-<li><a href="#%E5%9B%9B%E4%BA%94%E5%9D%90%E7%89%A2%E7%9A%84%E5%90%8D%E4%BA%BA">四五、坐牢的名人</a></li>
-<li><a href="#%E5%9B%9B%E5%85%AD%E6%B0%B4%E8%82%89-%E6%B0%B4%E6%9C%88-%E5%BD%B1%E5%AD%90%E6%88%8F">四六、水肉-水月-影子戏</a></li>
-<li><a href="#%E5%9B%9B%E4%B8%83%E6%80%AA%E7%AD%BE%E5%90%8D">四七、怪签名</a></li>
-<li><a href="#%E5%9B%9B%E5%85%AB%E4%BD%A0%E7%9C%8B%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%88%86%E5%BE%97%E5%A4%9A%E7%BB%86">四八、你看中国人分得多细</a></li>
-<li><a href="#%E5%9B%9B%E4%B9%9D%E5%A4%A9%E4%B8%8A%E5%A4%A9%E5%A0%82%E4%B8%8E%E4%BA%BA%E9%97%B4%E5%A4%A9%E5%A0%82">四九、天上天堂与人间天堂</a></li>
-<li><a href="#%E4%BA%94%E5%8D%81%E7%8C%AB%E6%8A%93%E8%80%97%E5%AD%90%E6%B3%95%E6%A1%88">五十、猫抓耗子法案</a></li>
-<li><a href="#%E4%BA%94%E4%B8%80%E8%B0%88%E5%B9%B4%E8%AE%BA%E5%AD%9D">五一、谈年论孝</a></li>
-<li><a href="#%E4%BA%94%E4%BA%8C%E7%88%B8-%E7%88%B9-%E5%A6%88">五二、「爸」-「爹」-「妈」</a></li>
-<li><a href="#%E4%BA%94%E4%B8%89%E6%9C%A8%E5%AD%97%E5%A4%B4%E7%9A%84">五三、木字头的</a></li>
-<li><a href="#%E4%BA%94%E5%9B%9B%E8%B8%8F%E8%84%9A%E7%9F%B3%E4%B8%8E%E9%A9%AC%E9%93%83%E8%96%AF">五四、踏脚石与马铃薯</a></li>
-<li><a href="#%E4%BA%94%E4%BA%94%E6%88%91%E8%AE%A8%E5%8E%8C%E6%97%A5%E6%9C%AC">五五、我讨厌日本</a></li>
-<li><a href="#%E4%BA%94%E5%85%AD%E4%BB%8E%E8%BE%BE%E8%8A%AC%E5%A5%87%E5%88%B0%E8%92%B2%E5%85%AC%E8%8B%B1">五六、从达芬奇到蒲公英</a></li>
-<li><a href="#%E4%BA%94%E4%B8%83%E7%9E%8E%E5%AD%90%E5%8F%AF%E4%BB%A5%E6%91%B8%E5%87%BA%E8%B1%A1%E6%9D%A5">五七、瞎子可以摸出象来</a></li>
-<li><a href="#%E4%BA%94%E5%85%AB%E5%BD%BC%E5%BE%97-%E6%BD%98-%E6%BD%98%E5%BD%BC%E5%BE%97">五八、彼得-潘-潘彼得</a></li>
-<li><a href="#%E4%BA%94%E4%B9%9D%E8%AE%B0%E5%8D%B0%E5%BA%A6%E9%98%BF%E4%B8%89">五九、记印度阿三</a></li>
-<li><a href="#%E5%85%AD%E5%8D%81%E8%90%A8%E6%91%A9%E4%BA%9A%E4%B8%8E%E8%87%AA%E6%8C%BD%E8%AF%97">六十、萨摩亚与自挽诗</a></li>
-<li><a href="#%E5%85%AD%E4%B8%80%E7%B4%A0%E9%A3%9F%E7%A7%8D%E7%A7%8D">六一、素食种种</a></li>
-<li><a href="#%E5%85%AD%E4%BA%8C%E4%B8%93%E9%97%A8%E5%90%83%E5%A4%A7%E9%B1%BC">六二、专门吃大鱼</a></li>
-<li><a href="#%E5%85%AD%E4%B8%89%E6%B5%B7%E5%A4%96%E4%BA%BA%E9%B1%BC">六三、「海外人鱼」</a></li>
-<li><a href="#%E5%85%AD%E5%9B%9B%E4%BB%96%E4%BB%AC%E5%85%AD%E4%B8%AA">六四、他们六个</a></li>
-<li><a href="#%E5%85%AD%E4%BA%94%E4%BB%8E%E9%B8%AD%E5%98%B4%E5%85%BD%E5%88%B0%E6%B0%B4%E7%8D%AD">六五、从鸭嘴兽到水獭</a></li>
-<li><a href="#%E5%85%AD%E5%85%AD%E9%82%A3%E4%B9%88%E8%AE%A9%E4%BB%96%E4%BB%AC%E5%90%83%E9%A5%BC%E5%98%9B">六六、「那么让他们吃饼嘛！」</a></li>
-<li><a href="#%E5%85%AD%E4%B8%83%E5%98%B4%E5%90%AB%E4%B8%80%E6%A0%B9%E8%8D%89">六七、嘴含一根草</a></li>
-<li><a href="#%E5%85%AD%E5%85%AB%E6%88%91%E7%9A%84%E6%9C%AC%E9%A2%86%E5%B0%B1%E6%98%AF%E8%87%AD">六八、我的本领就是臭</a></li>
-<li><a href="#%E4%B8%83%E4%B8%80%E5%8F%A4%E5%B8%8C%E8%85%8A%E7%9A%84%E8%BE%89%E7%85%8C">七一、「古希腊的辉煌」</a></li>
-<li><a href="#%E4%B8%83%E4%BA%8C%E5%8F%A4%E7%BD%97%E9%A9%AC%E7%9A%84%E5%A3%AE%E4%B8%BD">七二、「古罗马的壮丽」</a></li>
-<li><a href="#%E4%B8%83%E4%B8%89%E6%B3%A2%E6%BE%9C%E5%A4%9A%E5%A4%9A%E7%9A%84%E6%B3%A2%E5%85%B0">七三、波澜多多的波兰</a></li>
-<li><a href="#%E4%B8%83%E5%9B%9B%E7%99%BB%E5%A4%A9%E6%A2%AF">七四、登天梯</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#坐牢家爸爸给女儿的八十封信自序">《坐牢家爸爸给女儿的八十封信》自序</a></li>
+<li><a href="#一小文十岁生日歌">一、小文十岁生日歌</a></li>
+<li><a href="#二猫狗谚">二、猫狗谚</a></li>
+<li><a href="#三再会呀鳄鱼呀">三、再会呀，鳄鱼呀！</a></li>
+<li><a href="#四纸上谈钱">四、纸上谈钱</a></li>
+<li><a href="#五喊一声芝麻开门就行了">五、喊一声「芝麻开门！」就行了</a></li>
+<li><a href="#六头头大观">六、头头大观</a></li>
+<li><a href="#七指教">七、指教</a></li>
+<li><a href="#八理发匠就是外科医生外科医生就是理发匠">八、理发匠就是外科医生，外科医生就是理发匠</a></li>
+<li><a href="#九送礼-向厕所跑">九、送礼-向厕所跑</a></li>
+<li><a href="#十你羊我就马你马我就羊">十、你羊我就马，你马我就羊</a></li>
+<li><a href="#十一打老虎秘诀">十一、打老虎秘诀</a></li>
+<li><a href="#十二你送神像我搭台">十二、你送神像我搭台</a></li>
+<li><a href="#十三千年王八万年龟">十三、千年王八万年龟</a></li>
+<li><a href="#十四不飞的鸟">十四、不飞的鸟</a></li>
+<li><a href="#十五你杀鹅我就杀鸡">十五、你杀鹅我就杀鸡</a></li>
+<li><a href="#十六原子弹与沉鱼落雁">十六、原子弹与沉鱼落雁</a></li>
+<li><a href="#十七他所有的鹅都是天鹅">十七、他所有的鹅都是天鹅</a></li>
+<li><a href="#十八麻是麻烦可是不会生胃病">十八、麻是麻烦，可是不会生胃病</a></li>
+<li><a href="#十九破锅有烂灶李大有张嫂">十九、破锅有烂灶、李大有张嫂</a></li>
+<li><a href="#二十情人与天使">二十、情人与天使</a></li>
+<li><a href="#二一看那熊相">二一、看那熊相</a></li>
+<li><a href="#二二为什么还叫别人是姥姥">二二、为什么还叫别人是姥姥？</a></li>
+<li><a href="#二三苍蝇的老婆最多">二三、苍蝇的老婆最多</a></li>
+<li><a href="#二四英文回文中文回文">二四、英文回文，中文回文</a></li>
+<li><a href="#二五关于脖子的种种">二五、关于脖子的种种</a></li>
+<li><a href="#二六眼睛有时候会上当">二六、眼睛有时候会上当</a></li>
+<li><a href="#二七妈妈骑马马慢妈妈骂马">二七、「妈妈骑马，马慢，妈妈骂马」</a></li>
+<li><a href="#二八老鼠不信任一个洞">二八、老鼠不信任一个洞</a></li>
+<li><a href="#二九说姓道名">二九、说姓道名</a></li>
+<li><a href="#三十猫头鹰为什么跟在智慧女神屁股后面">三十、猫头鹰为什么跟在智慧女神屁股后面？</a></li>
+<li><a href="#三一狼来了狼来了">三一、狼来了！狼来了！</a></li>
+<li><a href="#三二谁先完蛋">三二、谁先完蛋</a></li>
+<li><a href="#三三猴相">三三、猴相</a></li>
+<li><a href="#三四从人猿到猿人">三四、从人猿到猿人</a></li>
+<li><a href="#三五蘑菇个没完">三五、蘑菇个没完</a></li>
+<li><a href="#三六非驴非马">三六、非驴非马</a></li>
+<li><a href="#三七骑小马-回台湾">三七、骑小马-回台湾</a></li>
+<li><a href="#三八鸽子-囮子-凯子">三八、鸽子-囮子-凯子</a></li>
+<li><a href="#三九斗出自大来">三九、斗出自大来</a></li>
+<li><a href="#四十谁在瞎忙">四十、谁在瞎忙？</a></li>
+<li><a href="#四一运动道德吗">四一、运动道德吗？</a></li>
+<li><a href="#四二生日与十二宫图">四二、生日与十二宫图</a></li>
+<li><a href="#四三林肯-栗子-笑">四三、林肯-栗子-笑</a></li>
+<li><a href="#四四浪费蜡烛去找针">四四、「浪费蜡烛去找针」</a></li>
+<li><a href="#四五坐牢的名人">四五、坐牢的名人</a></li>
+<li><a href="#四六水肉-水月-影子戏">四六、水肉-水月-影子戏</a></li>
+<li><a href="#四七怪签名">四七、怪签名</a></li>
+<li><a href="#四八你看中国人分得多细">四八、你看中国人分得多细</a></li>
+<li><a href="#四九天上天堂与人间天堂">四九、天上天堂与人间天堂</a></li>
+<li><a href="#五十猫抓耗子法案">五十、猫抓耗子法案</a></li>
+<li><a href="#五一谈年论孝">五一、谈年论孝</a></li>
+<li><a href="#五二爸-爹-妈">五二、「爸」-「爹」-「妈」</a></li>
+<li><a href="#五三木字头的">五三、木字头的</a></li>
+<li><a href="#五四踏脚石与马铃薯">五四、踏脚石与马铃薯</a></li>
+<li><a href="#五五我讨厌日本">五五、我讨厌日本</a></li>
+<li><a href="#五六从达芬奇到蒲公英">五六、从达芬奇到蒲公英</a></li>
+<li><a href="#五七瞎子可以摸出象来">五七、瞎子可以摸出象来</a></li>
+<li><a href="#五八彼得-潘-潘彼得">五八、彼得-潘-潘彼得</a></li>
+<li><a href="#五九记印度阿三">五九、记印度阿三</a></li>
+<li><a href="#六十萨摩亚与自挽诗">六十、萨摩亚与自挽诗</a></li>
+<li><a href="#六一素食种种">六一、素食种种</a></li>
+<li><a href="#六二专门吃大鱼">六二、专门吃大鱼</a></li>
+<li><a href="#六三海外人鱼">六三、「海外人鱼」</a></li>
+<li><a href="#六四他们六个">六四、他们六个</a></li>
+<li><a href="#六五从鸭嘴兽到水獭">六五、从鸭嘴兽到水獭</a></li>
+<li><a href="#六六那么让他们吃饼嘛">六六、「那么让他们吃饼嘛！」</a></li>
+<li><a href="#六七嘴含一根草">六七、嘴含一根草</a></li>
+<li><a href="#六八我的本领就是臭">六八、我的本领就是臭</a></li>
+<li><a href="#七一古希腊的辉煌">七一、「古希腊的辉煌」</a></li>
+<li><a href="#七二古罗马的壮丽">七二、「古罗马的壮丽」</a></li>
+<li><a href="#七三波澜多多的波兰">七三、波澜多多的波兰</a></li>
+<li><a href="#七四登天梯">七四、登天梯</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -353,7 +386,7 @@
 <p>写一点好玩的和狗有关的英文给你：</p>
 <ol>
 <li>
-<p>A dog's nose and a maid's knees are always cold.（狗鼻子和少女膝盖总是凉的。）</p>
+<p>A dog’s nose and a maid’s knees are always cold.（狗鼻子和少女膝盖总是凉的。）</p>
 </li>
 <li>
 <p>Before you hit the dog, look at the master．（打狗看主人。这一句是中文成语翻成英文。因为打一个人的狗，你就得罪了它的主人。If you beat a dog, you insult his master.）</p>
@@ -374,7 +407,7 @@
 <p>He that sleeps with dogs, must rise with fleas．（跟狗躺下的就要跟跳蚤起来。这句有点中文「近朱者赤，近墨者黑」的意思，劝人交朋友要小心。）（你养小狗要注意替它们捉跳蚤，并问清楚该怎么给它们洗澡。）</p>
 </li>
 <li>
-<p>Dog won't eat dog，but men will eat each other up like cannibals．（狗不吃狗，但人吃人，cannibal 是吃人肉的野蛮人，但文明人也「吃人」，吃法不同就是了。）</p>
+<p>Dog won’t eat dog，but men will eat each other up like cannibals．（狗不吃狗，但人吃人，cannibal 是吃人肉的野蛮人，但文明人也「吃人」，吃法不同就是了。）</p>
 </li>
 </ol>
 <p>爸爸 1974 年 9月21 日</p>
@@ -417,25 +450,25 @@
 <p>一百块（俗称 century）上是万能先生（a jack-of-all-trades and master of many）富兰克林（Benjamin Franklin），他的太太是跟别人结婚又回来的老情人，是个半文盲；儿子效忠英国，是保皇党，反对他。</p>
 <p>五百块上是第二十五任总统麦金利（William McKinley），太太有精神病，但他对她极好。他也是 Ohio 州人（Ohio 州共出了七个总统）。</p>
 <p>一千块（俗称 grand）上是做过第二十二、二十四两任总统的克利夫兰（Grover Cleveland），他年轻时候，跟一位叫 Maria Halpin 小姐生了一个小孩，但没结婚。他后来竞选总统，政敌套小孩口气，做了口号叫：</p>
-<p>妈！妈！哪儿去了我爸？Ma! Ma! Where's my Pa?</p>
+<p>妈！妈！哪儿去了我爸？Ma! Ma! Where’s my Pa?</p>
 <p>到白宫去啦，哈，哈，哈！Gone to the White House, ha, ha, ha!</p>
 <p>但他人好，老百姓说他好，他竟当了两次（不是连任）美国总统。在他当总统前九十年，他的一位亲戚建了全 Ohio 州最大的城，就是克利夫兰。</p>
 <p>爸爸 1973 年 10 月 7 日上午</p>
 <p>一早上连写两封信都是「纸上谈钱」的，好阔呀！（姥姥 26 日信收到。）</p>
 <h2 id="五喊一声芝麻开门就行了"><a class="header" href="#五喊一声芝麻开门就行了">五、喊一声「芝麻开门！」就行了</a></h2>
 <p>亲爱的小文：</p>
-<p>过生日姑姑给你烤蛋糕，多好啊！蛋糕叫 sponge cake，sponge 是海绵，蛋糕蓬蓬的，不是正像海绵吗？cake 就是糕饼的意思，美国有一种「饼步舞」（cakewalk），谁表演得最好就给谁一块 cake。有一句成语叫 take the cake，怎么用，姊姊做完功课时，向她请教。「两者不可得兼」是 You can not eat your cake and have it．「望梅止渴，画饼充饥」是 to gaze at plums to quench one's thirst, to sketch a cake to satisfy one's hunger.</p>
+<p>过生日姑姑给你烤蛋糕，多好啊！蛋糕叫 sponge cake，sponge 是海绵，蛋糕蓬蓬的，不是正像海绵吗？cake 就是糕饼的意思，美国有一种「饼步舞」（cakewalk），谁表演得最好就给谁一块 cake。有一句成语叫 take the cake，怎么用，姊姊做完功课时，向她请教。「两者不可得兼」是 You can not eat your cake and have it．「望梅止渴，画饼充饥」是 to gaze at plums to quench one’s thirst, to sketch a cake to satisfy one’s hunger.</p>
 <p>有一个故事说请人吃饭，主人光用嘴说一道一道的菜，并没有真的菜端上来，这叫「巴米赛德酒席」（a Barmecide feast），也正是「画饼充饥」的意思。这个故事是《天方夜谭》里头的，天方就是现在的伊朗（Iran）。《天方夜谭》是一本一千多年的故事书，非常有意思，你要把它看一遍。姥姥给八舅写信，一开头就叫「辛巴」，就是《天方夜谭》里的「辛巴达」（Sinbad 或 Sindbad the Sailor），因为姥姥想叫八舅七航妖岛，所以这样叫。</p>
 <p>这本书里还有中国小孩阿拉丁（Aladdin）神灯故事，还有阿里巴巴与四十大盗（Ali Baba and the Forty Thieves），一喊咒话（charm）「芝麻开门！」（open sesame!）（芝麻是由中国经墨西哥（Mexico）传到美国去的）门就开了（他们若活到今天，若想开六姑锁来锁去的保险箱，喊一声「芝麻开门！」就行了）。《天方夜谭》英文名字叫《阿拉伯之夜》（Arabian Nights），也叫《一千零一夜》（The Thousand and One Nights），英文中跟阿拉伯有关的还有：</p>
 <p>Arabic numerals，也叫 Arabic figures（阿拉伯数字），就是你算术上用的 1，2，3，4，5，6，7，8，9，0（姥姥说你算术很好，爸爸很高兴）。street Arab 意思是街上阿拉伯人，就是无家可归流浪街头又偷又讨的小孩。</p>
-<p>Arabian camel（阿拉伯骆驼）也叫单峰驼（dromedary），另外有两个峰的叫双峰驼（Bactrian camel）。骆驼虽然能负重致远（一天可走 100 英里），但苦背东西背过了头，最后一根稻草（the last straw）也会压垮了它。英文有句格言叫 The last straw breaks the camel's back。意思就是最后的小负担也会弄垮了全部、小事酿成大祸、凡事要适可而止。</p>
+<p>Arabian camel（阿拉伯骆驼）也叫单峰驼（dromedary），另外有两个峰的叫双峰驼（Bactrian camel）。骆驼虽然能负重致远（一天可走 100 英里），但苦背东西背过了头，最后一根稻草（the last straw）也会压垮了它。英文有句格言叫 The last straw breaks the camel’s back。意思就是最后的小负担也会弄垮了全部、小事酿成大祸、凡事要适可而止。</p>
 <p>亲爱的小文，你喜欢爸爸写给你这些「台北夜谭」吗？</p>
 <p>爸爸  1973 年 10 月 21 日</p>
 <h2 id="六头头大观"><a class="header" href="#六头头大观">六、头头大观</a></h2>
 <p>亲爱的小文：</p>
 <p>你到美国上学才一个多月，就干上了「班主席」，你搞政治，可真有一手！</p>
 <p>美国第三十一任总统胡佛（Herbert C. Hoover，他的太太会说中国话，他没当总统前，在中国做工程师）预言女人当美国总统的成绩会比男人好，你就好好干吧！「班主席」是头儿，英文中表示头儿的字，最普通是 head，例如四姑父是「一家之主」，英文就是 head of (the) family，校长也是 head，电报局局长是 the head of the telegraph office。</p>
-<p>Boss 是老板、领袖，但有时翻成中文「说了算」的意思最传神。His wife's the boss in his family.（在他家他老婆说了算；他老婆是他一家之主。）老板娘是 boss's wife，小开是 young boss of a business，就是小老板。chief 也是常用的，the chief of police（警察局长），chief justice（首席法官），Chief of (the General) Staff（参谋[总]长），the Chief Executive（大写美国总统，小写各州州长），commander in chief（总司令），俗语 chief itch and rub 是指重要的人（校长也算），有点中文「巨头」的意思。另有一个字叫 VIP 或 V.I.P. 是 very important person 的缩写。美国有一种鱼叫「王鱼」（kingfish），也被用来叫 boss，「祸首」则是 chief culprit（罪魁）。</p>
+<p>Boss 是老板、领袖，但有时翻成中文「说了算」的意思最传神。His wife’s the boss in his family.（在他家他老婆说了算；他老婆是他一家之主。）老板娘是 boss’s wife，小开是 young boss of a business，就是小老板。chief 也是常用的，the chief of police（警察局长），chief justice（首席法官），Chief of (the General) Staff（参谋[总]长），the Chief Executive（大写美国总统，小写各州州长），commander in chief（总司令），俗语 chief itch and rub 是指重要的人（校长也算），有点中文「巨头」的意思。另有一个字叫 VIP 或 V.I.P. 是 very important person 的缩写。美国有一种鱼叫「王鱼」（kingfish），也被用来叫 boss，「祸首」则是 chief culprit（罪魁）。</p>
 <p>Leader 是领袖、头目，the leader of labor movement（工运领袖）、group without a leader（群龙无首）。Leading lady（女主角），leading man（男主角），leading article（头条新闻）也叫 leader，乐队指挥也叫 leader，「顶头香蕉」（top banana）是俗语，也是 leader 的意思。</p>
 <p>国王（皇帝）是 king，教皇是 pope，大师是 master、maestro，主人是 master，主管是 manager，主席是 chairman，领班是 headman，大亨（巨子）是 tycoon，注意台风是 typhoon。</p>
 <p>Better be the head of an ass than the tail of a horse. 是宁做驴头不做马尾，正巧是中文「宁为鸡口，毋为牛后（牛屁股）」的意思。英文还有一句 Better to reign in hell than serve in heaven.（宁在地狱当阎王，不在天堂当听差的），也该把它记住。</p>
@@ -445,26 +478,26 @@
 <p>亲爱的小文：</p>
 <p>你说姥姥手指肿了，要不要紧？肿的是哪一只？</p>
 <p>手指是 finger，指头尖是 fingertip。She was a lady to her fingertips. 是「她浑身都是淑女」，连指头尖（里）都是。指甲是 nail，钉子也是，也叫 fingernail。He is witty to the fingernails 是说浑身都是机智，机智都跑到指甲里头去了，连指甲里都有机智。</p>
-<p>My fingers itch to box his ears 是手痒得想打他一个耳光，My fingers are itching to do it. 是「跃跃欲试」，但对应中文中「食指大动」「技痒」一类的意思。have a finger in the pie 是「染指」「参与」，look through one's fingers at 是假装看不见（从指头缝中偷看），finger alphabet 是「手势字母」，是聋子哑巴用的。</p>
-<p>大拇指是 thumb，童话里有一个 Tom Thumb，任何小东西矮东西也叫 Tom Thumb，喜欢吮大拇指叫 thumb-sucker。thumb one's nose 是一种做鬼脸。你在路上，若看到有人伸大拇指拦车，这种动作就叫 thumb（也叫 hitch-hike），这种人就叫 thumb-pusher（也叫 hitch-hiker），thumber 就是揩油搭便车的。说这个人笨手笨脚的，常用 His fingers are all thumbs. 十个指头全跟大拇指一样，不是完蛋了吗？</p>
+<p>My fingers itch to box his ears 是手痒得想打他一个耳光，My fingers are itching to do it. 是「跃跃欲试」，但对应中文中「食指大动」「技痒」一类的意思。have a finger in the pie 是「染指」「参与」，look through one’s fingers at 是假装看不见（从指头缝中偷看），finger alphabet 是「手势字母」，是聋子哑巴用的。</p>
+<p>大拇指是 thumb，童话里有一个 Tom Thumb，任何小东西矮东西也叫 Tom Thumb，喜欢吮大拇指叫 thumb-sucker。thumb one’s nose 是一种做鬼脸。你在路上，若看到有人伸大拇指拦车，这种动作就叫 thumb（也叫 hitch-hike），这种人就叫 thumb-pusher（也叫 hitch-hiker），thumber 就是揩油搭便车的。说这个人笨手笨脚的，常用 His fingers are all thumbs. 十个指头全跟大拇指一样，不是完蛋了吗？</p>
 <p>食指是 index finger，index，forefinger，书的「索引」也叫 index。
 中指是 middle finger，middle 是「中间」的意思。
 无名指是 ring finger，尤其是指左手的，ring 是戒指，key ring 是钥匙环。
-小指是 little finger，说「玩弄别人于股（大腿）掌（手心）之上」，英文则是 He has a remarkable talent for twisting people around his little finger. 这 turn（twist）around one's little finger 是成语，要记住。</p>
+小指是 little finger，说「玩弄别人于股（大腿）掌（手心）之上」，英文则是 He has a remarkable talent for twisting people around his little finger. 这 turn（twist）around one’s little finger 是成语，要记住。</p>
 <p>中文里的「屈指可数」翻成英文是 can count on the fingers (of a hand)，「指不胜屈」是 too many to count (on the fingers)。打棒球时，若老是接不住球，这种人叫「奶油指头」（butterfingers），奶油指头跟十个指头都是大拇指比起来，正好是「半斤八两」（Tweedledum and Tweedledee）！</p>
 <p>爸爸 1973 年 10 月 28 日夜</p>
 <h2 id="八理发匠就是外科医生外科医生就是理发匠"><a class="header" href="#八理发匠就是外科医生外科医生就是理发匠">八、理发匠就是外科医生，外科医生就是理发匠</a></h2>
 <p>亲爱的小文：</p>
 <p>你有没有按头发的颜色，把班上的同学分一下？金发碧眼是 blonde，褐色是 brunette，浅黄色是 towhead，红色是 redhead。发型是 hairdo，发针（发夹）是 hairpin。中国人描写生气，气得头发把帽子顶起来，叫「怒发冲冠」（so angry that the hair stand up and tips off the hat）；气得头发像指头一样立起来，叫「发指」（so angry that the hair rises）。英文中这类字眼，不是描写生气而是描写害怕，a hair-raising story 或 The tales of the jungle made our hair stand on end. 都是写害怕，有中文「毛发悚然」的意思。没有头发叫秃子（baldhead、baldy、baldie），只脑门上秃叫 as bald as a coot，有一句名言是：</p>
 <p>Opportunity has hair in front but is bald behind.（机会——前面有发后面秃。）</p>
-<p>意思就是一失掉机会，就抓也抓不住了——秃秃的，怎么抓？这句名言出自《伊索寓言》（Aesop's Fables），伊索是 2600 年前希腊的一名奴隶（a Greek slave），这本书非常好，你要看看，像小孩子喊：「狼来了！狼来了！」（Wolf! Wolf!）像「狗占马槽」（dog in the manger——「占着毛坑不拉屎」）都是这本书里的故事。</p>
+<p>意思就是一失掉机会，就抓也抓不住了——秃秃的，怎么抓？这句名言出自《伊索寓言》（Aesop’s Fables），伊索是 2600 年前希腊的一名奴隶（a Greek slave），这本书非常好，你要看看，像小孩子喊：「狼来了！狼来了！」（Wolf! Wolf!）像「狗占马槽」（dog in the manger——「占着毛坑不拉屎」）都是这本书里的故事。</p>
 <p>中国人骂和尚叫「贼秃」「秃驴」（「指着和尚骂贼秃」），美国人叫知识分子「蛋头」（egghead），蛋和光头不是很像吗？假发叫 wig，英国的法官都戴假发，难看死了。</p>
-<p>给女人做头发的叫 hairdresser，给男人理发的叫 barber。英国古时候理发匠就是外科医生，外科医生即理发匠，直到四百年前国王亨利八世（Henry VIII）出来，才订法律把 barber surgeon 分开，但仍许理发的给人放血（bloodletting）和拔牙，却不准外科医生给人刮脸了。现在理发店（barbershop）门口有活动的柱子，叫 barber 或 barber's pole，就是以前给病人放血后的绷带，如今已变成理发店的招牌了。打棒球时，故意投球从 batter 的脸边擦过，好像给人刮脸一样，这种 pitcher 叫 barber。</p>
+<p>给女人做头发的叫 hairdresser，给男人理发的叫 barber。英国古时候理发匠就是外科医生，外科医生即理发匠，直到四百年前国王亨利八世（Henry VIII）出来，才订法律把 barber surgeon 分开，但仍许理发的给人放血（bloodletting）和拔牙，却不准外科医生给人刮脸了。现在理发店（barbershop）门口有活动的柱子，叫 barber 或 barber’s pole，就是以前给病人放血后的绷带，如今已变成理发店的招牌了。打棒球时，故意投球从 batter 的脸边擦过，好像给人刮脸一样，这种 pitcher 叫 barber。</p>
 <p>爸爸 1973 年 11 月 4 日</p>
 <h2 id="九送礼-向厕所跑"><a class="header" href="#九送礼-向厕所跑">九、送礼-向厕所跑</a></h2>
 <p>亲爱的小文：</p>
 <p>你的生日礼物（birthday gift or present）连同圣诞节礼物（Christmas gift），一并折成礼金（cash gift）30 元，由姥姥转给你，再由你自己选要买的东西，好不好？同时你还该送礼（give gifts）给姊姊哥哥等，自然他们也会送礼给你，这叫「礼尚往还」。「礼尚往还」是中文，英文的意思则是「礼物像鱼钩」（Gifts are like fish hooks.）。就是可以「钓」到别人的，转成中文，又是「抛砖引玉」（to throw a brick and to get a gem in return）的意思。中国的规矩是礼物当面不打开，所以你送一盒砖头给人，人家也不知道。但美国规矩却要当面打开看，大概是过去有人送了砖头，所以人家不再上当，为保险起见，干脆当面看个清楚（若还是砖头，可以立刻跟你算账！）。这也是美国人比中国人「实际」的地方。如果你真的送的不是砖头，那你就「真金不怕火炼」（Genuine gold is not afraid of fire.），不怕别人当面打开。所以当姊姊说 May I open it now？（我现在可以打开看吗？）的时候，你就可以大胆地说 Sure, I wish you would.（当然，我恨不得你打开看看）。</p>
-<p>但如果你真的送的是砖头，那你就「做贼心虚」（One who has done something bad secretly cannot look others in the eye.）你就要赶紧跑到厕所去！If you don't mind, I'd like to wash my hands. 锁上厕所门后，你可以大声向姊姊喊：Don't look a gift horse in the mouth!（不要挑人家礼物呀！）如果姊姊气得用砖头打门，说 I wouldn't take it as a gift!（就是白给我我也不要！），那你就做一个「送了礼又收回去的人」（Indian giver），包起来，再送给哥哥吧！哈哈！</p>
+<p>但如果你真的送的是砖头，那你就「做贼心虚」（One who has done something bad secretly cannot look others in the eye.）你就要赶紧跑到厕所去！If you don’t mind, I’d like to wash my hands. 锁上厕所门后，你可以大声向姊姊喊：Don’t look a gift horse in the mouth!（不要挑人家礼物呀！）如果姊姊气得用砖头打门，说 I wouldn’t take it as a gift!（就是白给我我也不要！），那你就做一个「送了礼又收回去的人」（Indian giver），包起来，再送给哥哥吧！哈哈！</p>
 <p>爸爸 1973 年 11 月 11 日</p>
 <p>马愈老，牙愈多，公马最后可生 40 颗牙，母马 36。送马给人家，人家从马嘴里可以看到这礼物的好坏，四百年前英文格言 No man ought to look a given horse in the mouth. 就是说不要挑剔人家的礼物。中文说「马齿徒增」则表示自惭老大。小马有两种：年纪小的是 colt，身体小的是 pony。</p>
 <h2 id="十你羊我就马你马我就羊"><a class="header" href="#十你羊我就马你马我就羊">十、你羊我就马，你马我就羊</a></h2>
@@ -473,13 +506,13 @@
 <p>We think Thee, Lord, for giving us Thy gift of bread and meat.（谢谢上帝给我们吃的。）
 We think Thee, too — a little more — That we are here to eat.（还谢谢让我们在这儿[活着]去吃！）</p>
 <p>信教的人认为对上帝能够感恩，对人也自然不会忘恩负义（ungrateful）。林肯总统在 111 年前，受了女编辑 Mrs. S. J. Hale 的影响，规定每年 11 月的最后一个星期四是感恩节，到了 1939 年台北罗斯福路指的那位罗斯福总统为了经济繁荣，延长圣诞节前买东西的时间，所以，把感恩节提前到 11 月的第四个星期四。</p>
-<p>Mrs. S. J. Hale 曾写过一首有名的儿歌叫《玛莉有一只小羊》（Mary Had a Little Lamb），你问问你老师看，她大概会唱。发明唱机的美国大发明家爱迪生（Thomas A. Edison）灌他第一张唱片时，唱的就是这首歌（爱迪生发明了电灯等 1100 件东西）。lamb 是小羊、羔羊，温和天真的人也叫 lamb，没经验容易上当的人也叫 lamb。羊是 sheep，是绵羊，​One may as well be hanged for a sheep as a lamb. 意思是如果一个人偷羊也给吊死，偷小羊也给吊死，那倒不如偷羊（偷个大的），就是中文「一不做，二不休」的意思。​A wolf in sheep's clothing 是狼披了羊皮，就是坏人假装好人、伪君子、口蜜腹剑的家伙，是骂人的话，但 ​​「He is a sheep in sheep's clothing.」​ 不是骂人的话（这句话是以前英国首相丘吉尔 W. Churchill 打趣他的政敌艾德礼 C. R. Attlee 的）。另有一种羊叫山羊（goat），公的有胡子，​Separate the sheep from the goats 是分别好人和坏人（separate good people from bad）。中文的「害群之马」翻成英文正巧是「黑绵羊」（black sheep），但中文的「亡羊补牢」翻成英文又正巧是「丢马锁门」（Lock the stable door after the horse has been stolen.）。</p>
+<p>Mrs. S. J. Hale 曾写过一首有名的儿歌叫《玛莉有一只小羊》（Mary Had a Little Lamb），你问问你老师看，她大概会唱。发明唱机的美国大发明家爱迪生（Thomas A. Edison）灌他第一张唱片时，唱的就是这首歌（爱迪生发明了电灯等 1100 件东西）。lamb 是小羊、羔羊，温和天真的人也叫 lamb，没经验容易上当的人也叫 lamb。羊是 sheep，是绵羊，​One may as well be hanged for a sheep as a lamb. 意思是如果一个人偷羊也给吊死，偷小羊也给吊死，那倒不如偷羊（偷个大的），就是中文「一不做，二不休」的意思。​A wolf in sheep’s clothing 是狼披了羊皮，就是坏人假装好人、伪君子、口蜜腹剑的家伙，是骂人的话，但 ​​「He is a sheep in sheep’s clothing.」​ 不是骂人的话（这句话是以前英国首相丘吉尔 W. Churchill 打趣他的政敌艾德礼 C. R. Attlee 的）。另有一种羊叫山羊（goat），公的有胡子，​Separate the sheep from the goats 是分别好人和坏人（separate good people from bad）。中文的「害群之马」翻成英文正巧是「黑绵羊」（black sheep），但中文的「亡羊补牢」翻成英文又正巧是「丢马锁门」（Lock the stable door after the horse has been stolen.）。</p>
 <p>你马我就羊，你羊我就马，小文你说，英文是不是故意跟中文捣蛋？</p>
 <p>爸爸 1973 年 11 月 18 日</p>
 <h2 id="十一打老虎秘诀"><a class="header" href="#十一打老虎秘诀">十一、打老虎秘诀</a></h2>
 <p>亲爱的小文：</p>
 <p>你看这画片上的两只小老虎多可爱。那头白的很少有，值一万美金，并且愈大愈贵。老虎只在亚洲才有，印度、中国、伊朗（就是 10 月 21 日信上跟你提到过的天方）、日本，都有。老虎可以长到四五百磅，能爬树、会游泳，虽然狮子是「百兽之王」（king of beasts），但专家说老虎比狮子还有力量。</p>
-<p>因为老虎厉害，所以中国人说惹厉害的人叫「捋虎须」，美国人则说「拧狮子尾巴」（twist lion's tail）。老虎厉害，惹了它就收不了场，所以中国有成语说「骑虎难下」​Once mounted it is hard to get off，也叫「势成骑虎」​Like riding on tiger。「捉虎容易放虎难」​It's easier to catch a tiger than to set it free，英文也有一句话说 ​Supposing you miss your tiger, he is not likely to miss you.​（你打不着老虎，老虎不见得吃不着你）。</p>
+<p>因为老虎厉害，所以中国人说惹厉害的人叫「捋虎须」，美国人则说「拧狮子尾巴」（twist lion’s tail）。老虎厉害，惹了它就收不了场，所以中国有成语说「骑虎难下」​Once mounted it is hard to get off，也叫「势成骑虎」​Like riding on tiger。「捉虎容易放虎难」​It’s easier to catch a tiger than to set it free，英文也有一句话说 ​Supposing you miss your tiger, he is not likely to miss you.​（你打不着老虎，老虎不见得吃不着你）。</p>
 <p>惹老虎虽然危险，但人间有很多事要冒险才有收获，中国话说「不入虎穴，焉得虎子」（「不到老虎窝里去，哪里找得到小老虎？」）也正是英文中 ​Nothing venture, nothing have 的意思。</p>
 <p>中国人说老虎厉害，不但人怕它，鬼也怕它。有一种鬼叫「伥」，神话里说这种鬼专门听老虎使唤，于是就出来一句成语叫「为虎做伥」，意思就是帮着坏东西做坏事（to help an evil person do evil）。</p>
 <p>猎人打老虎，常把自己装在笼子里，再把笼子捆在象背上，这样老虎就咬不到他了。有一句英文很好玩：​Those who go tiger hunting should remember that there are tigers and tigers. 这意思并不是「打老虎要记着老虎多得很」，而是「打老虎要记着老虎有各式各样的——有好打的，有难打的。」学英文要不马虎，才能学好。</p>
@@ -543,7 +576,7 @@ wild swan —— 野天鹅又叫鸿也叫鸿鹄</p>
 <p>爸爸 1974 年 3 月 1 日</p>
 <h2 id="十七他所有的鹅都是天鹅"><a class="header" href="#十七他所有的鹅都是天鹅">十七、他所有的鹅都是天鹅</a></h2>
 <p>亲爱的小文：</p>
-<p>英文中说一个人吹牛，就说 ​All his geese are swans.​（他所有的鹅都是天鹅）。天鹅比鹅珍贵，珍贵得人人都想吃，包括癞蛤蟆。请姥姥给你讲什么叫「癞蛤蟆想吃天鹅肉」（a toad dreaming of eating the swan's meat）。爸爸有一个朋友，在台北衡阳街口卖芝麻饼，他追一个阔家小姐，阔家小姐的妈妈把他告到警察局，警察骂他「想吃天鹅肉」，他后来把卖的饼改名「天鹅饼」。</p>
+<p>英文中说一个人吹牛，就说 ​All his geese are swans.​（他所有的鹅都是天鹅）。天鹅比鹅珍贵，珍贵得人人都想吃，包括癞蛤蟆。请姥姥给你讲什么叫「癞蛤蟆想吃天鹅肉」（a toad dreaming of eating the swan’s meat）。爸爸有一个朋友，在台北衡阳街口卖芝麻饼，他追一个阔家小姐，阔家小姐的妈妈把他告到警察局，警察骂他「想吃天鹅肉」，他后来把卖的饼改名「天鹅饼」。</p>
 <p>因为天鹅优雅美丽，所以很多诗、歌都写它。德国名作曲家瓦格纳（Richard Wagner）作过名曲 ​Lohengrin（这个 h 字不发音），描写天鹅，四姑父四姑会有这唱片。写《丑小鸭》（The Ugly Ducking）的丹麦童话家安徒生（Hans Christian Andersen），也写过《野天鹅》（The Wild Swans），你看安徒生童话的时候，可以特别注意这一篇。另外俄国作曲家柴可夫斯基（Peter Tchaikovsky）也作过舞剧《天鹅湖》（The Swan Lake）。</p>
 <p>虽然说人像鹅一样笨（as silly as a goose），但却称赞人举止像天鹅一样闲雅（graceful as a swan），闲雅也可以写做娴雅。</p>
 <p>游泳有一种跳水的姿势，就叫天鹅式（swan dive），这是美国的叫法，英国则叫燕子式（swallow dive）。</p>
@@ -581,14 +614,14 @@ jackleg lawyer 坏蛋律师。
 jackrabbit 长耳朵长腿兔，是一种大的野兔（hare），只在北美洲才有。
 Jack Sprat​（儿歌里面的）小矮人，很胖。但他的太太很瘦。</p>
 <p>汽车换车胎时候用的「千斤顶」，也叫 ​jack、jackscrew。</p>
-<p>jack-o'-lantern 是南瓜灯。把南瓜挖成人脸，里头放蜡烛。万圣节（Halloween）的时候，你有没有看到？万圣节点灯笼，是因为爱尔兰传说有个人叫 ​Jack 的，因为太吝啬，上不了天堂；又因为寻魔鬼开心，下不了地狱，所以只好点个灯笼在地上逛，等待最后审判。</p>
+<p>jack-o’-lantern 是南瓜灯。把南瓜挖成人脸，里头放蜡烛。万圣节（Halloween）的时候，你有没有看到？万圣节点灯笼，是因为爱尔兰传说有个人叫 ​Jack 的，因为太吝啬，上不了天堂；又因为寻魔鬼开心，下不了地狱，所以只好点个灯笼在地上逛，等待最后审判。</p>
 <p>中国人有「上天无路，入地无门」的话，但没有这故事。</p>
 <p>爸爸 1974 年 2 月 22 日</p>
 <p>南瓜叫 pumpkin，尼克松总统二十四年前揭发的 ​Hiss 间谍案，证据就藏在南瓜里。</p>
 <h2 id="二十情人与天使"><a class="header" href="#二十情人与天使">二十、情人与天使</a></h2>
 <p>亲爱的小文：</p>
 <p>昨天收到你 2 月 13 的信和卡片。你有那么好的成绩——在短短几个月中就有那么好的成绩，爸爸很高兴。你现在正是赶功课的时候，所以不和别的小朋友一样，你必须比他们多花一些时间在功课上面，等到功课赶过他们，才好大玩特玩，你说对不对？</p>
-<p>瓦伦丁节（Valentine's Day）翻做「情人节」不算完全，该翻做「爱节」或「情爱节」。</p>
+<p>瓦伦丁节（Valentine’s Day）翻做「情人节」不算完全，该翻做「爱节」或「情爱节」。</p>
 <p>圣瓦伦丁（St. Valentine）是一千七百年前的基督徒，有两个，都在 2 月 14 被罗马人砍掉脑袋。但这个节，跟他们却没什么关系。</p>
 <p>跟 ​Valentine 这个字只差一个字母，有个字叫 ​Valentino，就是半个世纪前鼎鼎大名的电影明星瓦伦蒂诺。他原是洗窗户的，后来变成了大情人（the great lover），31 岁就死了，有好几千女影迷参加他的丧礼。姥姥那时候如在美国，一定也去参加，因为那时候姥姥才 16 岁。</p>
 <p>瓦伦丁节卡片上有一颗心，心上又被箭射穿，你给爸爸的卡片上也这样画着，你知道为什么吗？在神话里，爱和美的女神叫维纳斯（Venus），她的小孩叫爱神丘比特（Cupid），手上有弓和箭，箭有金的银的，被他射上金箭就爱得快乐，被他射上银箭就爱得痛苦。丘比特不但射别人，也射自己，他爱上一个美得被维纳斯嫉妒的女人，闹得天翻地覆。</p>
@@ -601,7 +634,7 @@ Jack Sprat​（儿歌里面的）小矮人，很胖。但他的太太很瘦。<
 <p>亲爱的小文：</p>
 <p>你以后如果有机会到黄石公园（Yellowstone，在 Wyoming 州）或约塞米蒂公园（Yosemite，在 California 州）去，你可以看到有大黑熊（the common black bear）跑出来，让你照相。但你别以为它是个好的模特儿（model），所有的熊都是急性子的和动不动就发脾气的（All bears are short-tempered and get angry quickly）。</p>
 <p>熊的眼睛小，也不大灵光，但鼻子很行。最喜欢吃甜的，常去搅蜂窝抢蜜吃，因为皮毛都厚，蜂螫它它也不怕。它又喜欢搅白蚁窝，这一点上爸爸最佩服它，爸爸对白蚁，可没熊那样有办法。</p>
-<p>熊老是独来独往，公熊（he-bear）和母熊（she-bear）在一块个把月就分开了。小熊（cub）由妈妈带。熊掌（bear's paw）是中国古人的名菜，孟夫子说：「鱼我所欲也，熊掌亦我所欲也。」熊掌上有个肉疙瘩，叫熊丸（a pill of bear's paw），是给小熊咬着玩的。</p>
+<p>熊老是独来独往，公熊（he-bear）和母熊（she-bear）在一块个把月就分开了。小熊（cub）由妈妈带。熊掌（bear’s paw）是中国古人的名菜，孟夫子说：「鱼我所欲也，熊掌亦我所欲也。」熊掌上有个肉疙瘩，叫熊丸（a pill of bear’s paw），是给小熊咬着玩的。</p>
 <p>英雄虽然独来独往，但小偷也独来独往，熊是个小偷，喜欢偷人的东西吃。
 熊冬眠，可是天暖时，也爬起来溜达溜达（stroll），再睡。
 熊爬树，是专家。</p>
@@ -611,9 +644,9 @@ Jack Sprat​（儿歌里面的）小矮人，很胖。但他的太太很瘦。<
 <p>提到牛和熊，在英文中另有相对的组意思：
 bull 是哄抬物价、股票，有中文中「买空」的意思；
 bear 是抛卖，使物价、股票下跌，有中文中「卖空」的意思。</p>
-<p>熊和做生意还有一句谚语 ​Sell the skin before one has killed the bear.​（熊没到手先卖皮）。正式说法是 ​Never sell the bear's skin until you have killed the bear.​（没宰到熊以前你先别卖熊皮）。</p>
+<p>熊和做生意还有一句谚语 ​Sell the skin before one has killed the bear.​（熊没到手先卖皮）。正式说法是 ​Never sell the bear’s skin until you have killed the bear.​（没宰到熊以前你先别卖熊皮）。</p>
 <p>你可以比较比较另外一句：
-Count one's chickens before they are hatched.​（蛋没孵出前先算多少鸡。）
+Count one’s chickens before they are hatched.​（蛋没孵出前先算多少鸡。）
 这就表示不稳健了（稳健的意思看爸爸给你 1 月 12 日的信），所以人该宰到熊后再卖皮，孵出蛋后再算鸡。</p>
 <p>中文中有一个「罴」（pí）字，就是褐色的熊（brown bear），「熊罴入梦」的意思是：「祝你生个儿子！」（May you bear a son!）如果六姑肚子大了，你就可以这样祝贺她。bear 的动词有生小孩的意思，所以这句话要硬翻成英文则是 ​May you bear a 「he-bear」​，外国人就不懂了。六姑如果也不清楚「熊罴入梦」的典故，也会发脾气，说：「小文你什么意思！六姑是人，怎么你倒盼她生个以熊！」</p>
 <p>中文的「狗熊」就是指黑熊，「耍狗熊」是马戏中表演熊的演出（give a bear show），但也有耍无赖的意思。</p>
@@ -633,7 +666,7 @@ Nothing to wear but clothes
 To keep me from going nude.</p>
 <p>但你要注意 ​nothing to do 后面加上别的字的意思：
 You have nothing to do but wait.​（「你除等以外没法子」，即「你只有等」。）
-It has nothing to do with me.​（「这不关我的事」，「干我屁事」，即 ​It's not my business.）</p>
+It has nothing to do with me.​（「这不关我的事」，「干我屁事」，即 ​It’s not my business.）</p>
 <p>又美国俗话中 ​Nothing doing 是「我才不干呢！」「不行！」的意思。北平土话中说「姥姥！」正是这个意思，但你只跟北平人说他才懂，否则他会奇怪：你有那么好的姥姥为什么还叫别人是姥姥？</p>
 <p>爸爸 1974 年 3 月 15 日</p>
 <h2 id="二三苍蝇的老婆最多"><a class="header" href="#二三苍蝇的老婆最多">二三、苍蝇的老婆最多</a></h2>
@@ -653,8 +686,8 @@ He is just the chap to strain at a gnat and swallow a camel.​（他就是那�
 这些字第一个字母都跟最后一个字母一样。</p>
 <p>boob​（傻瓜）​noon​（中午）​peep​（偷看）​radar​（雷达）​madam​（女士、太太）
 这些字第一个字母都跟最后一个一样，第二个字母跟倒数第二个一样。由 ​madam 这个字，还可以变出一句来，也是前面第几就跟倒数第几的字母一样：</p>
-<p>Madam, I'm Adam.
-这句的意思是：「太太，我是亚当。」亚当是夏娃丈夫，是第一个男人，吃苹果（apple）被苹果核塞住喉管，所以每个男人都有一个「喉核」，就叫「亚当的苹果」（Adam's apple）。还有一句，也是前面第几就跟倒数第几的字母一样：</p>
+<p>Madam, I’m Adam.
+这句的意思是：「太太，我是亚当。」亚当是夏娃丈夫，是第一个男人，吃苹果（apple）被苹果核塞住喉管，所以每个男人都有一个「喉核」，就叫「亚当的苹果」（Adam’s apple）。还有一句，也是前面第几就跟倒数第几的字母一样：</p>
 <p>Poor Dan is in a droop.​（可怜的 Dan 垂头丧气 ​droop。）</p>
 <p>法国有一个皇帝叫拿破仑（Napoleon），最会打仗，但仍被英国等国捉住，把他流放到意大利（Italy）国西边的厄尔巴（Elba）岛上，于是就有一句最妙的英文描写他：</p>
 <p>Able was I ere I saw Elba.
@@ -697,9 +730,9 @@ He is just the chap to strain at a gnat and swallow a camel.​（他就是那�
 <p>赛跑或赛马的时候，跑得一般快，就叫 ​neck and neck​（脖子和脖子）。如果只比别人（或别的马）跑快一点点而赢了，就叫 ​win by a neck​（以一脖之差赢了，就是赢了一个脖子）（险胜）。如果这样输了就叫 ​lose by a neck​（以一脖之差输了，就是输了一个脖子）。所以，小文呀，你要记得，千万别跟长颈鹿赛跑。
 但可以跟长颈鹿比赛谁吃的东西先到胃里。</p>
 <p>Neck or nothing 是冒险干一下、拼命干一下。打棒球偷垒时，你自己就可以同自己说：
-I'll try it, neck or nothing.​（我要拼命试一下。）</p>
-<p>看了上面七行的意思，好像脖子老是跟冒险有关系，老是在紧要关头。​save one's neck 是本来要绞死但不绞了，就是「救了他的脖子」，更有险的意思了（中文是「幸免一死」的意思）。</p>
-<p>同样的还有一句 ​stick (one's) neck out，也是冒险的意思（to take a risk）。如你劝人「Don't stick your neck out too far」，就是劝人别太冒险。</p>
+I’ll try it, neck or nothing.​（我要拼命试一下。）</p>
+<p>看了上面七行的意思，好像脖子老是跟冒险有关系，老是在紧要关头。​save one’s neck 是本来要绞死但不绞了，就是「救了他的脖子」，更有险的意思了（中文是「幸免一死」的意思）。</p>
+<p>同样的还有一句 ​stick (one’s) neck out，也是冒险的意思（to take a risk）。如你劝人「Don’t stick your neck out too far」，就是劝人别太冒险。</p>
 <p>中国人说最要好的朋友是「刎颈之交」。「刎」是拿刀切脖子，「刎」字别写成「吻」字，因为若写错了，写成「吻颈」，就变成英文 ​necking 的意思了。</p>
 <p>爸爸 1974 年 4 月 6 日</p>
 <h2 id="二六眼睛有时候会上当"><a class="header" href="#二六眼睛有时候会上当">二六、眼睛有时候会上当</a></h2>
@@ -715,7 +748,7 @@ Lookers-on see most of the game.
 在旁边看的看到最多的游戏
 就是中文「旁观者清」（看得清楚）的意思。</p>
 <p>《伊索寓言》说一个狮子听到青蛙叫（hearing the frog croaking），以为一定是个大得不得了的动物，后来脚踩（tramp）到青蛙，才知道原来这么小，这个寓言引出一句英文：
-Don't be afraid of a thing you hear until you have seen it.
+Don’t be afraid of a thing you hear until you have seen it.
 别怕一件东西你听到的除非你已经看到它。</p>
 <p>这个意思就是看了才相信，英文是 ​Seeing is believing，也是中文俗语「百闻不如一见」的意思。
 但是全靠亲眼看见，有时候也不一定可靠，因为眼睛有时候会上当。人在沙漠中常常看到「海市蜃楼」（mirage），也就是幻觉、错觉。
@@ -745,7 +778,7 @@ A big black bug bites a big black bear.
 Peter Piper picked a peck of pickled peppers;
 A peck of pickled peppers Peter Piper picked;
 If Peter Piper picked a peck of pickled peppers.
-Where's the peck of pickled peppers Peter Piper picked？
+Where’s the peck of pickled peppers Peter Piper picked？
 a peck of pickled peppers
 很多腌胡椒（辣椒）</p>
 <p>写到这儿，爸爸又想到一段长一点的英文绕口令：
@@ -765,7 +798,7 @@ Better one grain of pepper than a basketful of pumpkins.</p>
 <p>It rained cats and dogs and, look, I am wet as a drowned rat.（雨下得好大呀，看呀，我变成落汤鸡了。）</p>
 <p>英文中说人穷，就说「穷得像教堂的老鼠」（as poor as a church mouse）。</p>
 <p>英文还有一句</p>
-<p>A mouse doesn't trust to one hole.</p>
+<p>A mouse doesn’t trust to one hole.</p>
 <p>（一个）老鼠不信任一个洞。</p>
 <p>正是中文「狡兔三窟」的意思。</p>
 <p>传说船要沉了或房子要塌了或着火了以前，船里或房里的老鼠就先跑了。英文是：</p>
@@ -784,7 +817,7 @@ Better one grain of pepper than a basketful of pumpkins.</p>
 <p>②Everyone pushes a falling fence.（人人都推快倒的篱笆，就是中文「墙倒众人推」的意思。）</p>
 <p>③When the ox falls, they sharpen their knives.（当牛倒了，他们都去磨快他们的刀。）</p>
 <p>④When the tree is fallen, all go with their hatchet.（当树被弄倒了，所有的人都拿斧头来。）</p>
-<p>⑤Kick a man when he's down.（当他垮的时候踢他。）</p>
+<p>⑤Kick a man when he’s down.（当他垮的时候踢他。）</p>
 <p>爸爸常说英文要一窝一窝的学，上面这些，就是一窝一窝的学的例子。</p>
 <p>爸爸 1974 年 4 月 26 日</p>
 <p>本周只给你写信。你 11、17 日的信和卡片同于今天收到。传说中大寿星 Methuselah 活了 969 岁，Adam 活了 930 岁，他们两个老头儿岁数相减的零头是 39 岁。爸爸昨天一个人静静的过 39 岁生日，一天之内，看了一本传记，又看了一个剧本。</p>
@@ -833,10 +866,10 @@ Better one grain of pepper than a basketful of pumpkins.</p>
 <p>《伊索寓言》里有三十七个关于狼的故事，你可以自己看。其中最有名的是牧羊小孩骗人喊：「狼来了！」The wolf is coming!（这是合文法的句子，但狼真来了，只要喊Wolf! Wolf!就可以了。）后来狼真来了，他再喊也没人信了。这故事变成英文成语cry wolf，现在让我们造一个句子：</p>
 <p>Is she really sick or is she just crying wolf？</p>
 <p>意思是她真病了呢，还是她只不过是发假警报？cry wolf就是give a false alarm。cry wolf too often以后，说真话也没人信了。This is the punishment of a liar：He is not believed, even when he speaks the truth.（说谎话的惩罚是：即使他说真话时候，人家也不信他。）中文有「江山易改，本性难移」的话，英文有「狼可能丢了它们的牙，但丢不了它们的本性」Wolves may lose their teeth, but not their nature.。</p>
-<p>在杰克伦敦以前的美国文学家奥尔科特（Louisa M. Alcott），写过名著《小妇人》（Little Women），她说她写书的目的是Keep the wolf from the door。有一个笑话，老师问学生：What do you think Miss Alcott meant by saying she was trying to keep the wolf from the door？（你想奥尔科特女士说她设法不让狼进门是怎么回事？）一个学生答道：I suppose she just didn't want the guys bothering her.（我想她不过不要男人打扰她罢了。）这为什么是笑话呢？因为Keep the wolf from the door的意思并不是「不让狼进门」而是「免得挨饿」。wolf在美国俗语中有「色狼」的意思，那个学生以为wolf是指「色狼」，所以把整个意思给弄拧了。</p>
+<p>在杰克伦敦以前的美国文学家奥尔科特（Louisa M. Alcott），写过名著《小妇人》（Little Women），她说她写书的目的是Keep the wolf from the door。有一个笑话，老师问学生：What do you think Miss Alcott meant by saying she was trying to keep the wolf from the door？（你想奥尔科特女士说她设法不让狼进门是怎么回事？）一个学生答道：I suppose she just didn’t want the guys bothering her.（我想她不过不要男人打扰她罢了。）这为什么是笑话呢？因为Keep the wolf from the door的意思并不是「不让狼进门」而是「免得挨饿」。wolf在美国俗语中有「色狼」的意思，那个学生以为wolf是指「色狼」，所以把整个意思给弄拧了。</p>
 <p>Wolf既是色狼，wolf whistle，就是色狼的啸，男孩子向女孩子吹口啸（哨），就是wolf whistle。</p>
 <p>狼的耳朵是立起来的，并且很小。英文中有「抓狼耳朵」的意思，很像中文的「狼狈不堪」，也像「骑虎难下」。</p>
-<p>It's like holding a wolf by the ears, bad to hold on, but worse to let go.（就像抓住了狼耳朵，抓住固然糟，放了更糟。）</p>
+<p>It’s like holding a wolf by the ears, bad to hold on, but worse to let go.（就像抓住了狼耳朵，抓住固然糟，放了更糟。）</p>
 <p>固然糟是因为耳朵小，不好抓；更糟是因为放了狼又会咬人。worse是bad的比较级。He goes from bad to worse.（他每况愈下。）「每况愈下」也写做「每下愈况」，是文言，白话的意思是「一天不如一天」「王小二过年——一年不好一年」。</p>
 <p>爸爸1974年6月7日</p>
 <p>姥姥5月23日信6月5日收到，这信写得太长了，不给姥姥写了。</p>
@@ -855,12 +888,12 @@ Better one grain of pepper than a basketful of pumpkins.</p>
 <p>爸爸把这句翻成绕口令：</p>
 <p>不论是刀掉瓜上还是瓜掉刀上，掉来掉去总是瓜走样。</p>
 <p>有一个故事说，一个少女头上顶了一篮蛋，走在路上，盘算着蛋生鸡，鸡生蛋，蛋又生鸡，鸡又生蛋，蛋再生鸡，鸡再生蛋。……愈算愈多，发了大财。突然一不小心，篮子掉了下来，蛋都碎了。所以英文有成语劝人要稳健：</p>
-<p>Don't venture all your eggs in one basket.（别冒险把你所有的蛋放在一个篮子里。）</p>
+<p>Don’t venture all your eggs in one basket.（别冒险把你所有的蛋放在一个篮子里。）</p>
 <p>你在小朋友的书上，会看到一位「蛋先生」叫Humpty Dumpty，有一首儿歌就是写他的</p>
 <p>HUMPTY DUMPTY</p>
 <p>「Humpty Dumpty sat on a wall；
 Humpty Dumpty had a great fall；
-Not all the king's horses nor all the king's men
+Not all the king’s horses nor all the king’s men
 Could set Humpty Dumpty up again.」</p>
 <p>爸爸1974年6月14日</p>
 <p>因催丁伯伯寄钱，本周不给姥姥写信。</p>
@@ -883,7 +916,7 @@ Could set Humpty Dumpty up again.」</p>
 <p>All right, boys, no monkey business now.（好啦，孩子们，别再淘了[现在要做点正经的了]。）</p>
 <p>She made a monkey（out）of him in front of all his friends.（她在他朋友面前，当众给他出丑。）</p>
 <p>He threw a monkey wrench into our plans.（他破坏我们的计划。）monkey wrench 是活口扳子（活动扳钳），是用来修机器的，但不用来修，反倒把它丢进（throw into）机器里，机器就不能动了，就是捣乱了。</p>
-<p>Don't monkey with the buzz saw！（圆锯可不是闹着玩的！[太危险了，不可掉以轻心！]）</p>
+<p>Don’t monkey with the buzz saw！（圆锯可不是闹着玩的！[太危险了，不可掉以轻心！]）</p>
 <p>艾森豪威尔（IKE）当将军，打了胜仗。另一场仗本来要换别人来领导，但富兰克林罗斯福总统怕打扰一群正在赢的队伍（dangerous to monkey with a winning team），所以还是让艾森豪威尔继续指挥了。</p>
 <p>猴子是群居的，可以活二三十年。</p>
 <p>爸爸 1974 年 6 月 23 日</p>
@@ -918,7 +951,7 @@ Could set Humpty Dumpty up again.」</p>
 </ol>
 <p>这是刺罗马统治者凯撒的刺客说的话。</p>
 <p>美国有一位作家叫 Edgar Rice Burroughs，他写了小说 Tarzan of the Apes，就是人猿泰山。泰山是美国爵士的儿子，丢在非洲，被猩猩养大，非常有本领，所以英文中说人在树林里又能跑又能跳又会在树中间飞来荡去，这种大力士，就叫 Tarzan，因为发音和中国「泰山」很像，所以翻成「泰山」，其实泰山若指人，在中国乃是指丈人，都是老头子了。</p>
-<p>在喜马拉雅山中（全世界最高的山），传说有一种「雪人」叫 Yeti，也叫 Abominable Snowman，身像猩猩脸像人（apelike body and a face that resembles a man's），但是二十一年前，New Zealand 一个养蜜蜂的 Edmund P. Hillary 和尼泊尔人 Tenzing Norgay 爬上了喜马拉雅的最高峰 Mount Everest（29028 英尺），并没有看到这种雪人（29028 英尺只是五英里半，但是爬山爬五英里半，就是难事了。）</p>
+<p>在喜马拉雅山中（全世界最高的山），传说有一种「雪人」叫 Yeti，也叫 Abominable Snowman，身像猩猩脸像人（apelike body and a face that resembles a man’s），但是二十一年前，New Zealand 一个养蜜蜂的 Edmund P. Hillary 和尼泊尔人 Tenzing Norgay 爬上了喜马拉雅的最高峰 Mount Everest（29028 英尺），并没有看到这种雪人（29028 英尺只是五英里半，但是爬山爬五英里半，就是难事了。）</p>
 <p>科学家说人是从猩猩这类动物演变出来的，所以在猩猩和人之间，有一种又像猩猩又像人的「猿人」（Homo erectus）。Homo 是人的意思，erect 是直立的意思，猩猩直立立不久，但猿人和人都可以直立。在河北省周口店就发现过「北京人」的骨头，推断是五十万年以前的「猿人」。可惜这骨头在第二次世界大战前给弄丢了。</p>
 <p>爸爸 1974 年 6 月 30 日</p>
 <h2 id="三五蘑菇个没完"><a class="header" href="#三五蘑菇个没完">三五、蘑菇个没完</a></h2>
@@ -927,7 +960,7 @@ Could set Humpty Dumpty up again.」</p>
 <p>蘑菇就是菌，英文叫 mushroom。英文中有一个谜语（riddle），也是个字谜（charade），谜面是——</p>
 <p>Which is the smallest room in the world？（哪个是最小的房子在世界上？）</p>
 <p>答案（就是谜底）是 mushroom，因为 mushroom 这个字里头，正好有个 room 在。</p>
-<p>菌是一种小植物，有三万八千多种，可分两大类，一类是没毒的，一类是有毒的。没毒的有的可以吃，像香菇、草菇、冬菇都是，还有一种叫「犹太人的耳朵」（Jew's ear），中国人最喜欢吃，是木耳那一类（「犹太人的眼睛」Jew's eye 则是指极贵重的东西）；有毒的一类叫 toadstool（toad，癞虾蟆；stool，凳子）。俄国的沙皇 Alexis（就是彼得大帝 Peter the Great 的老子）就是吃了毒菌 the fly mushroom 被毒死的。俄国最后一任沙皇的儿子也叫 Alexis，叫这个鬼名字，也没得好死（十四岁就挨了枪），第一个 Alexis 是 17 世纪的人，第二个 Alexis 是 20 世纪的人。</p>
+<p>菌是一种小植物，有三万八千多种，可分两大类，一类是没毒的，一类是有毒的。没毒的有的可以吃，像香菇、草菇、冬菇都是，还有一种叫「犹太人的耳朵」（Jew’s ear），中国人最喜欢吃，是木耳那一类（「犹太人的眼睛」Jew’s eye 则是指极贵重的东西）；有毒的一类叫 toadstool（toad，癞虾蟆；stool，凳子）。俄国的沙皇 Alexis（就是彼得大帝 Peter the Great 的老子）就是吃了毒菌 the fly mushroom 被毒死的。俄国最后一任沙皇的儿子也叫 Alexis，叫这个鬼名字，也没得好死（十四岁就挨了枪），第一个 Alexis 是 17 世纪的人，第二个 Alexis 是 20 世纪的人。</p>
 <p>原子弹爆炸起来，就像一种菌状云（the mushroom-shaped cloud），又可怕，又好看。军舰跟它比起来，就好像一只蟑螂比一个人一样。</p>
 <p>菌是长得快得不得了的植物，就是中文「暴发」的模样，所以描写「暴发户」，就用 mushroom 这个字。</p>
 <p>mushroom fame（突然出了名，暴得大名）</p>
@@ -944,7 +977,7 @@ Could set Humpty Dumpty up again.」</p>
 <p>但中文「骑马找马」就另一种意思了，指先找个位置再找更好的。</p>
 <p>如果老师问问题，学生答得跟问题不相干，就是「答非所问」，也就是「驴唇不对马嘴」。这只是中文的特殊用法，英文没有。</p>
 <p>中文有「驴年马月」的话，因为十二生肖中没有驴，所以「驴年」就是永远不会有的日子（impossible date, since there is no 「donkey year」），就是 a time that will never come，英文俗语中的驴年是另外一种意思：</p>
-<p>donkey's years 是 a very long time</p>
+<p>donkey’s years 是 a very long time</p>
 <p>这是从 donkey 和 ears 两个字变出来的，y + ears 就是 years。</p>
 <p>驴比马可以吃得坏而活干得多，但如果主人对它没弄对劲，它就耍「驴脾气」或「驴性子」，就是很「拧」（stubborn），当然也有笨、傻、呆、蠢等意思在内：</p>
 <p>He has made an ass of himself．（他做傻事而弄出笑话来。）</p>
@@ -960,7 +993,7 @@ Could set Humpty Dumpty up again.」</p>
 <p>亲爱的小文：</p>
 <p>你在纽约骑的那种马，叫 Shetland Pony，Shetland 是英国最北面的一百多个小岛的总称，加在一起有 551 平方英里（台湾的二十五分之一），这个地方产的这种小马，是所有马里最小的一种，长得结实，吃得少，最适合小朋友骑。</p>
 <p>中文英文都有太多太多和马有关的故事和成语，爸爸写一些好玩的给你：</p>
-<p>一、拍马屁：英文是 lick another's spittle（舐人口水，舐也就是舔）boot lick（舐人靴子）。</p>
+<p>一、拍马屁：英文是 lick another’s spittle（舐人口水，舐也就是舔）boot lick（舐人靴子）。</p>
 <p>二、马屁精：lick spittle 或 boot licker 或 apple-polisher。</p>
 <p>三、露出马脚：阴谋或谎话泄漏。</p>
 <p>四、马路如虎口：The street is as dangerous as a tiger.</p>
@@ -969,13 +1002,13 @@ Could set Humpty Dumpty up again.」</p>
 <p>七、盲人骑瞎马，夜半临深池：表示危险。</p>
 <p>八、马后炮：为时已晚的努力（belated efforts），临去的多余的动作。</p>
 <p>九、Ride the high horse（骑高头马）：趾高气扬。</p>
-<p>十、Ride one's horse to death（把马骑死）：把得意事讲得太多惹人讨厌。</p>
+<p>十、Ride one’s horse to death（把马骑死）：把得意事讲得太多惹人讨厌。</p>
 <p>十一、Pay for a dead horse（在死马身上花钱）：花冤枉钱。</p>
 <p>但在中国古代，有国王叫人去买千里马，结果马死了，那人却花了很多钱，买了马骨头回来，国王问那人什么意思？那人说，消息传出去，人家听说你国王这样爱马——爱得连马骨头都要买，天下的好马就都送来给你买了，在好马中，一定有千里马。可见在死马身上花钱，有时也不冤枉。</p>
 <p>十二、Flog a dead horse（鞭死马）：白费气力。</p>
 <p>十三、Put the cart before the horse.（车放马前面）：本末倒置，前后颠倒。</p>
 <p>十四、A good horse has no need of the spur.（好马无须踢马刺）：骏马勿鞭。spur 是靴上的踢马刺。</p>
-<p>十五、From the horse's mouth（从马嘴里出来的）：表示可靠、可信的来源。I have it straight from the horse's mouth. 我从马嘴里直接拿出来，表示绝对可靠（的消息）。</p>
+<p>十五、From the horse’s mouth（从马嘴里出来的）：表示可靠、可信的来源。I have it straight from the horse’s mouth. 我从马嘴里直接拿出来，表示绝对可靠（的消息）。</p>
 <p>爸爸 1974 年 8 月 4 日</p>
 <p>回台湾</p>
 <p>亲爱的小文：</p>
@@ -1000,7 +1033,7 @@ Could set Humpty Dumpty up again.」</p>
 <p>鸽子的普通叫法pigeon，文雅用法叫dove，小的鸽子也叫dove，共有290种。</p>
 <p>鸽子最会认家，不会迷路，所以古代人都用鸽子传消息，这种鸽子叫信鸽（carrier pigeon）。美国主战的人叫鹰派（The Hawks），反对战争的就叫鸽派，因为鸽子被用做和平的象征（a symbol of peace），其实鸽子也很会打架。</p>
 <p>你见过鸟喝水吗？鸟喝水，用嘴沾了水，再仰起头来，咽下去。可是鸽子却不这样，它的喝水方法和马一样，把嘴伸到水里去吸（sucking）。</p>
-<p>孵蛋由公的母的轮流，通常只孵两个蛋。公的白天孵，母的晚上孵。一共要孵十七天。小鸽子叫squabs，刚生下来又瞎又没毛，丑得要死。喂它们的是由公鸽母鸽嘴里吐出来的一种鸽子奶（pigeon's milk）。</p>
+<p>孵蛋由公的母的轮流，通常只孵两个蛋。公的白天孵，母的晚上孵。一共要孵十七天。小鸽子叫squabs，刚生下来又瞎又没毛，丑得要死。喂它们的是由公鸽母鸽嘴里吐出来的一种鸽子奶（pigeon’s milk）。</p>
 <p>在美国俗话中，pigeon用来指女孩子，也用来指赌钱时候那被骗输钱的傻瓜（中文叫「凯子」）。</p>
 <p>用一只鸽子骗别的鸽子来，这只鸽子叫stool-pigeon，中文叫「鸟媒」或「囮鸠」、「囮鸽」。stool的意思是板凳，把这只鸽子绑在stool上以引诱别的鸽子，所以叫stool-pigeon，不然它也许反倒跟别的鸽子跑了。</p>
 <p>英文中decoy这个字也是这种意思，但比stool-pigeon用得宽，可以用来指「饵兽」，也可用来指人，还可当动词来用，像</p>
@@ -1012,7 +1045,7 @@ Could set Humpty Dumpty up again.」</p>
 <h2 id="三九斗出自大来"><a class="header" href="#三九斗出自大来">三九、斗出自大来</a></h2>
 <p>亲爱的小文：</p>
 <p>你有没有见过「斗鸡眼」？「斗鸡眼」就是一种斜眼，英文叫 cockeye，形容词是 cockeyed，在美国俗语中表示疯狂的、荒谬的、笨蛋、全错了的意思：</p>
-<p>Anybody who thinks I'm kidding is cockeyed.（谁以为我说着玩谁就是疯了。）</p>
+<p>Anybody who thinks I’m kidding is cockeyed.（谁以为我说着玩谁就是疯了。）</p>
 <p>The world is all going cockeyed.（这世界一切都是疯狂的。）</p>
 <p>cockeye 是从斗鸡（cockfighting）的公鸡（cock）表情想出来的。斗鸡在世界上已有几千年的历史，全世界各地都有，因为很残忍，所以美国除三州以外，都禁止了（三个例外的州是 Florida 佛罗里达，Kansas 堪萨斯和 New Mexico 新墨西哥），英国也宣布违法了。</p>
 <p>斗鸡的鸡叫 game cock，凶得很。英文中描写「家里光棍」都很好玩，跟公鸡有关的有：</p>
@@ -1046,7 +1079,7 @@ Could set Humpty Dumpty up again.」</p>
 <p>He promises much and gives little.（他答应的多，给出的少。）</p>
 <p>A man apt to promise, is apt to forget.（容易答应容易忘。）</p>
 <p>He who lightly promise will seldom keep his word.（轻诺寡信。）</p>
-<p>Promises don't fill the belly.（好听的许愿填不饱肚子。）</p>
+<p>Promises don’t fill the belly.（好听的许愿填不饱肚子。）</p>
 <p>鼹鼠整天做的是「地下活动」，忙得很，但不晓得在忙什么，有这么一句英文：</p>
 <p>a molehill man</p>
 <p>意思就是假忙的人。中国名小说《红楼梦》的男主角贾宝玉说的「无事忙」，就是指这种意思。</p>
@@ -1061,7 +1094,7 @@ Could set Humpty Dumpty up again.」</p>
 <p>①Calling a fig a fig and a tub a tub.（叫无花果就是无花果，叫桶子就是桶子。）</p>
 <p>②Calling black, black, and white, white.（黑的就叫黑的，白的就叫白的。黑就是黑，白就是白。）</p>
 <p>如果该叫什么却不叫什么，就是「颠倒黑白」。中国有「指鹿为马」的故事，请姥姥讲给你听。莎士比亚剧本中有《驯悍记》（The Taming of the Shrew），写丈夫驯服他那个凶老婆。指月亮叫太阳，凶老婆最后屈服，也跟着月亮叫太阳了。</p>
-<p>不该叫什么，反倒叫什么，就是「名不副实」（名字和实在的不符合）。孔夫子曾在《四书》里有一句话（《四书》里头有三书算是孔子作的，一书算是孟子作的，孟子就是孟伯伯的老老老老老老老老老老老老老老老（写累了，歇一会儿）老老老老老老......祖宗），那句话是</p>
+<p>不该叫什么，反倒叫什么，就是「名不副实」（名字和实在的不符合）。孔夫子曾在《四书》里有一句话（《四书》里头有三书算是孔子作的，一书算是孟子作的，孟子就是孟伯伯的老老老老老老老老老老老老老老老（写累了，歇一会儿）老老老老老老……祖宗），那句话是</p>
 <p>觚，不觚。觚哉？觚哉？</p>
 <p>觚（gu）是有角的酒杯，若没有角，就不能叫觚了，所以这句话的意思是：</p>
 <p>该有角的酒杯，没有角。这还叫觚吗？这还叫觚吗？</p>
@@ -1120,7 +1153,7 @@ Could set Humpty Dumpty up again.」</p>
 <p>中文成语也有：</p>
 <p>笑面虎 a wicked person with a hypocritical smile</p>
 <p>笑里藏刀 a smile of treachery 或 conceal a dagger behind a smile</p>
-<p>英文中也有笑里藏刀的意思，爸爸看到过一句 A woman will laugh in your face and cut your throat。另有莎士比亚的 Macbeth 悲剧里看到 There's daggers in men's smiles，跟中文的成语不谋而合。</p>
+<p>英文中也有笑里藏刀的意思，爸爸看到过一句 A woman will laugh in your face and cut your throat。另有莎士比亚的 Macbeth 悲剧里看到 There’s daggers in men’s smiles，跟中文的成语不谋而合。</p>
 <p>英文中另有一个笑的字是laugh，笑的程度比smile重，有一句英文正好写出它跟smile的不同：A vulgar often laugh, but never smile；whereas well-bred people often smile, but seldom laugh。意思是凡夫俗子常大笑，从不微笑；有教养的人常微笑，很少大笑。</p>
 <p>中文中还有一句成语叫「啼笑皆非」，就是「哭笑不得」的意思，等于英文的 between tears and laughter，林肯竞选参议员失败了，人家问他感觉，他说：I suppose that I feel very much like the overgrown boy who stumped his toe.（很像大孩子的脚趾头给撞疼了。）人家又问这是什么意思？（How was that？）他解释道：Well, when someone asked him how he felt, he said that he was hurt too bad to laugh and was too big to cry.（人家问他有什么感觉，他说他疼得没法笑，又年纪大得不好意思哭。）这是一句很巧妙的英文，小文你要把它背下来。</p>
 <p>爸爸 1974年9月27日</p>
@@ -1129,11 +1162,11 @@ Could set Humpty Dumpty up again.」</p>
 <p>去年1月12日跟你谈过的小松鼠和nut，你还记得吗？</p>
 <p>有一种跟橡树很像的树，叫栗树，叫chestnut，结出来的就是栗子，也叫chestnut。chest是箱子，nut是核中果子，你在台北市可以买到糖炒栗子，就可以吃到箱子里的果子，很好吃。</p>
 <p>栗树是很好看的树（a handsome tree），木头可以做成木板和造纸。生命力很强，根死了还会长一阵子，这叫做「虽死犹生」。</p>
-<p>一个故事说猴子（monkey）要吃火里面的栗子，可是自己怕烫，就骗猫去代它拿，猫伸手去拿（就是猫脚爪 cat's paw），结果给烫了，于是出来一句英文成语，叫：</p>
-<p>火中取栗 Pull chestnuts from fire。或 To pull out the chestnuts with the cat's paw</p>
+<p>一个故事说猴子（monkey）要吃火里面的栗子，可是自己怕烫，就骗猫去代它拿，猫伸手去拿（就是猫脚爪 cat’s paw），结果给烫了，于是出来一句英文成语，叫：</p>
+<p>火中取栗 Pull chestnuts from fire。或 To pull out the chestnuts with the cat’s paw</p>
 <p>因为猫被猴子利用了，做了傻瓜、做了瘟生、做了傀儡，所以：</p>
-<p>To make a cat's-paw of a person</p>
-<p>就是利用某人的意思。cat's-paw or cats-paw —— a person used by another to do something unpleasant or dangerous.</p>
+<p>To make a cat’s-paw of a person</p>
+<p>就是利用某人的意思。cat’s-paw or cats-paw —— a person used by another to do something unpleasant or dangerous.</p>
 <p>另有一种跟栗树一类的树，结出来的栗子大，以前用来喂马（horse），所以叫 horse-chestnut，中文叫做七叶树（叶子有七片）。horse-chestnut, 1. a large shade tree having spreading branches, large leaves, clusters of showy, white flowers, and glossy, brown nuts resembling chestnuts. 2. the nut. 3. any tree or shrub of the same family as the horse chestnut. horse-chestnut 这个字若反过来，成为 chestnut horse，就变成栗色马。</p>
 <p>林肯跟道格拉斯（Stephen A. Douglas）辩论的时候（1858年竞选参议员 the U.S. Senate），林肯挖苦 Douglas 胡说八通，说他 A man can prove a horse-chestnut to be a chestnut horse.（一个想把七叶树证明是栗色马的人）。</p>
 <p>你的成绩单影本和六页剪贴都收到了，爸爸很高兴你有这么好的成绩、这么快的进步。</p>
@@ -1170,7 +1203,7 @@ Could set Humpty Dumpty up again.」</p>
 <p>中国古代的大诗人李白，听说喝醉了酒到水里去捞月亮淹死的，后来有了句成语，叫「水中捞月」；还有一句诗，叫「镜花水月总成空」。</p>
 <p>为什么成空呢？因为水里的只是一种倒影，镜里的只是一种投影，影子不是真实的。但有人很笨，老是追求影子，并且拿影子来骗人，人间有很多小儿子骗老母亲，都是这样的。老母亲因为溺爱小儿子，永远「牺牲实在而信虚幻」（to sacrifice the substance to the shadow），也就是「抓紧影子而失掉实在」（grasp at the shadow and lose the substance）。结果自己一场空，还害了别的亲人。</p>
 <p>人间有很多现象是很好玩的；每个吝啬爱钱省吃俭用的守财奴父亲都会摊到一个花天酒地浪费钱的儿子；每个自以为聪明的老太太都会摊到一个永远把她骗得神不知鬼不觉的小儿子。你将来若看到法国文学家莫泊桑（De Maupassant）的《女人的一生》的小说，你就可以看到那些小儿子一再骗老母亲，老母亲一再原谅一再上当的妙事。这种情形，中国外国都一样的，可惜每位老母亲都认为她的小儿子跟别人的小儿子不一样，是好人。而在不知不觉间，成为小儿子作恶的同谋，骗爸爸哥哥。</p>
-<p>还有一种影子是剪影、侧影，英文叫 silhouette。The cat's silhouette（dark silhouette）on the wall．就是猫的影子现在墙上，这种影子特指清楚的侧面像。</p>
+<p>还有一种影子是剪影、侧影，英文叫 silhouette。The cat’s silhouette（dark silhouette）on the wall．就是猫的影子现在墙上，这种影子特指清楚的侧面像。</p>
 <p>有一种「皮人影子戏」使影子可以动。汉武帝想李夫人，艺人就做出影子戏骗汉武帝说李夫人的魂来了，汉武帝说：「是耶？非耶？偏何姗姗其来迟！」从此就出来一句「姗姗来迟」的成语。</p>
 <p>爸爸 1974 年 10 月 27 日</p>
 <h2 id="四七怪签名"><a class="header" href="#四七怪签名">四七、怪签名</a></h2>
@@ -1223,16 +1256,16 @@ Could set Humpty Dumpty up again.」</p>
 <h2 id="五十猫抓耗子法案"><a class="header" href="#五十猫抓耗子法案">五十、猫抓耗子法案</a></h2>
 <p>亲爱的小文：</p>
 <p>这是在这边爸爸所能买到的最好的一张圣诞卡片。左边那头猫，眼睛没印好，好像变成了「重瞳」。瞳是眼球，英文是 pupil，跟小学生 pupil 同一个字。重瞳是两个瞳仁重复在一起了，在中国历史上一个皇帝叫虞舜的，是重瞳，还有一个失败的英雄，叫项羽也叫楚霸王的，也是重瞳，其实这很可能是一种叫「白内障」的眼病，并没有神秘可言（很巧，英文中白内障就叫 cataract）。「双瞳翦水」是形容女人眼睛的好看，clear，beautiful eyes of a pretty girl。</p>
-<p>cat's-eye 是猫眼石，是一种宝石。</p>
-<p>cat's-eye 是小孩玩的弹珠子（playing marble）游戏，这字是美国俗语，也是因为珠子像猫眼睛的缘故。</p>
-<p>cat's cradle 也是小孩玩的游戏，中文叫「挑花线」或「翻花鼓」或「编花筐」或「翻绞绞」，你玩过吗？</p>
-<p>cat and mouse 也是小孩玩的游戏，中文叫「猫抓耗子」。（Cat and Mouse. This is a very good tag game. The players join hands in a circle. Two players are picked to be 「cat」 and 「mouse」. The cat stands outside the circle and the mouse inside. The cat tries to catch the mouse. The rest of the players help or hinder the cat by raising or lowering their arms. The cat and mouse can run in and out of the circle under the other players' arms. When the mouse is caught, other players are picked.）你在育仁小学时玩过吗？</p>
+<p>cat’s-eye 是猫眼石，是一种宝石。</p>
+<p>cat’s-eye 是小孩玩的弹珠子（playing marble）游戏，这字是美国俗语，也是因为珠子像猫眼睛的缘故。</p>
+<p>cat’s cradle 也是小孩玩的游戏，中文叫「挑花线」或「翻花鼓」或「编花筐」或「翻绞绞」，你玩过吗？</p>
+<p>cat and mouse 也是小孩玩的游戏，中文叫「猫抓耗子」。（Cat and Mouse. This is a very good tag game. The players join hands in a circle. Two players are picked to be 「cat」 and 「mouse」. The cat stands outside the circle and the mouse inside. The cat tries to catch the mouse. The rest of the players help or hinder the cat by raising or lowering their arms. The cat and mouse can run in and out of the circle under the other players’ arms. When the mouse is caught, other players are picked.）你在育仁小学时玩过吗？</p>
 <p>和 cat and mouse 这字有关的有一个好玩的词儿叫 Cat-and-mouse Act「猫抓耗子法案」。过去女人没有权利投票或参加政治活动，于是有些女人便出来捣乱，英国政府便把这些捣乱鬼抓到牢里，她们就赌气绝食（不吃饭，英文叫 fast，吃饭就打破了 break 这 fast，所以早餐就叫 breakfast）。于是 1913 年英国国会通过了这个「猫抓耗子法案」，规定坐牢不吃饭，就放她出去，可是在外面吃饭了，再抓回来，意思就是不让犯人投机。猫抓耗子，习惯并不立刻吃，猫让耗子跑，跑了几步又抓回来，所以这个法案才有这么个怪名字。印度的甘地七十四岁的时候在牢里宣布要绝食二十一天，英国政府要他出去绝，绝好了再回来，他不肯，结果居然熬过了这么久（只喝橘子汁活），英国 cat 对这只印度 mouse，实在也没什么好法子。</p>
 <p>爸爸 1974 年 12 月 15 日</p>
 <h2 id="五一谈年论孝"><a class="header" href="#五一谈年论孝">五一、谈年论孝</a></h2>
 <p>亲爱的小文：</p>
 <p>一年就要过去了，一个新的一年又要开始了。对小朋友说来，是一年又开始了；对老年人说来，是一年又过去了。对王小二说来，是一年不如一年了（中国俗谚「王小二过年，一年不如一年」）。</p>
-<p>王小二「一年到头」（all the year round）混、拖，但总是「一年不如一年」（Every year gets worse.），总是「年景不好」（This year's business is not good.），一快到「急景凋年」（Time slips away fast, and the year is approaching its end.）就「抓耳挠腮」（uneasy）了。中国宋朝时候有一个名词人写过：</p>
+<p>王小二「一年到头」（all the year round）混、拖，但总是「一年不如一年」（Every year gets worse.），总是「年景不好」（This year’s business is not good.），一快到「急景凋年」（Time slips away fast, and the year is approaching its end.）就「抓耳挠腮」（uneasy）了。中国宋朝时候有一个名词人写过：</p>
 <p>而今已不如昔，后定不如今。</p>
 <p>就是王小二处境的文雅说法。</p>
 <p>一年有365天，8760个小时，525600分钟，31536000秒。365天是根据地球绕太阳一圈所需的时间来的，但绕一圈并不整整是365天，要多5小时48分46秒，多出来的既然不够算一天，于是把它「存」起来，每隔3年，就在2月28天上加一天，就变成了366天。</p>
@@ -1248,10 +1281,10 @@ Could set Humpty Dumpty up again.」</p>
 <p>All the rest have thirty-one；</p>
 <p>February twenty-eight alone，——</p>
 <p>Except in leap year, at which time</p>
-<p>February's days are twenty-nine.</p>
+<p>February’s days are twenty-nine.</p>
 <p>中文则是</p>
 <p>1月大，2月平，3月大，4月小，5月大，6月小，7月大，8月大，9月小，10月大，11月小，12月大。</p>
-<p>A leap-year proposal（闰年求婚）是说平年的时候男人向女人求婚，闰年时候却相反，女人要向男人求婚，爸爸看过一句英文：But I don't remember anyone having given me an 「engaged ring」 before；and it's not leap year neither.是抱怨又不是在闰年，为什么收不到订婚戒指的意思。</p>
+<p>A leap-year proposal（闰年求婚）是说平年的时候男人向女人求婚，闰年时候却相反，女人要向男人求婚，爸爸看过一句英文：But I don’t remember anyone having given me an 「engaged ring」 before；and it’s not leap year neither.是抱怨又不是在闰年，为什么收不到订婚戒指的意思。</p>
 <p>上面所写的都是「阳历」。中国旧时算法是用「阴历」。阳历是跟月亮没关系的，只是把年分成十二段，阴历则是跟月亮的盈亏算的，月亮的亮不亮满不满变化是29天到30天之间（阳历除2月外，是30到31天之间），所以阴历闰起来可麻烦了，十九年里头要有七个闰月（多一个月）。现在有许多节日，还是阴历留下来的，像</p>
 <p>春节（就是阴历年）</p>
 <p>元宵节（就是灯节，上元）正月十五（阴历的一月叫正月）吃元宵</p>
@@ -1268,19 +1301,19 @@ Could set Humpty Dumpty up again.」</p>
 <p>小孩子刚学说话，最先发的音也就是最容易发的音就是「爸」、「爹」、「妈」这些音，中外都是一样的。英文Pa或Papa或Dad或Daddy都是「父亲」（Father）的意思，但比Father亲热得多。所以你以后写信，不要写Dear Father而该写Dear Dad，我附一封英文给爸爸信的样本在下面：</p>
 <p>June 10</p>
 <p>Dear Dad,</p>
-<p>The flowers are beautiful! Mother and I will enjoy them at our table for several days, I know. Everything is so new and so exciting. I heard several French Canadians singing their songs as they stood at the stern waving to some friends on the dock. It is like a foreign land already. I'm all anticipation for the summer to come. I only wish you could be with us.</p>
+<p>The flowers are beautiful! Mother and I will enjoy them at our table for several days, I know. Everything is so new and so exciting. I heard several French Canadians singing their songs as they stood at the stern waving to some friends on the dock. It is like a foreign land already. I’m all anticipation for the summer to come. I only wish you could be with us.</p>
 <p>Love, and thank you for the wonderful trip and for the flowers.</p>
 <p>Joan</p>
 <p>但Mother这个字，却不像Father这个字这么正式，所以常和Mom或Ma或Mamma或Mama混用，我再附一段英文小说在下面：</p>
 <p>Davie was next down.「Morning, Mother. Morning, Dad.」 he said with that deference that comes on a sixteen-year-old when he has something to ask for, something he wants much.</p>
-<p>「Here're your waffles, Davie,」 his mother said.「Four.」</p>
-<p>「That'll do fine to start on,」 Davie said, and grinned up at her.「You sure can sling a wicked waffle, Mom.」</p>
+<p>「Here’re your waffles, Davie,」 his mother said.「Four.」</p>
+<p>「That’ll do fine to start on,」 Davie said, and grinned up at her.「You sure can sling a wicked waffle, Mom.」</p>
 <p>当然正式的说法都用Father，尤其成语里都是固定用Father的，如：</p>
 <p>Like father, like son.（有其父必有其子，子必肖其父，虎父无犬子，什么样的爸爸什么样的儿子。）</p>
 <p>Like mother, like daughter.（也是一样的意思。）</p>
 <p>我再附一段用Daddy的例子：</p>
-<p>As our 11-year-old daughter's birthday approached, she let it be known that the thing she wanted most, was an automatic record player. We agreed to give it to her on condition that she promise to take good care of it. She promised, of course. But we had no idea how serious she was until one day when my wife was tidying her room she found a list of rules headed：「How To Take Care of My Record Player.」</p>
-<p>The rules included such things as keeping the machine clean, caring for the needle and so on. But the clincher was the last rule of all. It read：「If record player gets broke, don't let Daddy try to fix it.」</p>
+<p>As our 11-year-old daughter’s birthday approached, she let it be known that the thing she wanted most, was an automatic record player. We agreed to give it to her on condition that she promise to take good care of it. She promised, of course. But we had no idea how serious she was until one day when my wife was tidying her room she found a list of rules headed：「How To Take Care of My Record Player.」</p>
+<p>The rules included such things as keeping the machine clean, caring for the needle and so on. But the clincher was the last rule of all. It read：「If record player gets broke, don’t let Daddy try to fix it.」</p>
 <p>我们十一岁女儿的生日快到前，她暗示最想要的东西是一架自动电唱机。我们同意要是她答应好好照管，就可以送给她，当然她答应了。但我们还不知道她对此是何等认真，直到有一天我太太替她收拾房间，发现一张标题是「如何照管我的唱机」的照管规则时，我们才恍然大悟。</p>
 <p>这些规则包括保持机件清洁、当心针头等等。但是使人没话讲的是最后一条：「假使唱机坏了，别让爹爹去修。」</p>
 <p>「长服爹爹」（Daddy longlegs）不是人，是一种不咬人的蜘蛛，也叫「收割者」（harvestman），在动物学上，翻作「盲蜘蛛」。它的腿，可以说丢就丢，遇到危险，它就丢个腿骗敌人，敌人注意到腿，它就趁机跑了。（壁虎也有这种本领，不过壁虎丢的是尾巴。）</p>
@@ -1306,9 +1339,9 @@ Could set Humpty Dumpty up again.」</p>
 <p>这350多年前的99个人，就是今天美国白人的老祖宗（ancestors）。</p>
 <p>这条船，早就烂掉了，但1957年，英国做了一条一模一样的，叫Mayflower II，英文叫复制品（replica），送给美国。</p>
 <p>美国白人有的很神气，总是炫耀他们Mayflower来的老祖宗，认为他们最老资格，但忘了在白人到美洲前，早有黄种人印地安（Indian）人在那儿了。美国历史上最有名的牛仔哲学家（the cowboy philosopher），最会表演挥鞭子、说笑话的Will Rogers（1935年爸爸出世后三个多月，他坐飞机失事死了）说过一句挖苦这些美国白人的话：</p>
-<p>My folks didn't come over on the Mayflower, but they were there to meet the boat.（我们家的人没坐五月花来，但他们却是[在岸上]接这条船的。）</p>
+<p>My folks didn’t come over on the Mayflower, but they were there to meet the boat.（我们家的人没坐五月花来，但他们却是[在岸上]接这条船的。）</p>
 <p>原来Will Rogers的祖先是印地安人！远在两万年前，就从亚洲到美洲了！</p>
-<p>可见一个人不要老吹自己的祖宗，要自己有本领才好。Thomas Overbury用植物中的马铃薯（potato）做过一个比喻，他说自己乏善可陈老是吹他有名的祖宗的家伙，就像马铃薯——属于他的好东西都在地底下（祖宗都死了，埋在地底下）。The man who has not anything to boast of but his illustrious ancestors is like a potato-the only good belonging to him is underground.（Sir Thomas Overbury：Characters）</p>
+<p>可见一个人不要老吹自己的祖宗，要自己有本领才好。Thomas Overbury用植物中的马铃薯（potato）做过一个比喻，他说自己乏善可陈老是吹他有名的祖宗的家伙，就像马铃薯——属于他的好东西都在地底下（祖宗都死了，埋在地底下）。The man who has not anything to boast of but his illustrious ancestors is like a potato-the only good belonging to him is under ground.（Sir Thomas Overbury：Characters）</p>
 <p>小文你说，这个比喻好不好玩？</p>
 <p>马铃薯的球根叫tuber，马铃薯全世界苏联最多，其次是波兰、德国、中国、美国。</p>
 <p>跟马铃薯有关的英文，hot potato和small potatoes你可问老师什么意思。</p>
@@ -1352,7 +1385,7 @@ Could set Humpty Dumpty up again.」</p>
 <p>可惜Leonardo的思想比他所处的时代早，He had a knowledge far beyond his own time. 以致大家只以为他是一个大画家，不晓得他在其他多方面的本领。这可叫「相见恨早」而不是「相见恨晚」。古往今来，很多第一流的天才都跟他同时代的人「相见恨早」，生不逢时，一直要到死了多年以后，才被人了解。</p>
 <p>降落伞（parachute - an umbrella like apparatus made of strips of silk or nylon sewn together and used in descending safely through the air from a great height, as from an aircraft）的构想，在实际发明前三百多年，就被Leonardo设计出来了，跳伞的人叫parachutist。在18世纪时候，人只能从高塔或气球上跳，因为没有飞机，第二次世界大战才正式有伞兵（parahutist）出现。德国人用三千伞兵占了Crete岛，把英国人打得落花流水，这叫做「祸从天降」。</p>
 <p>有一种植物中的小伞兵，叫蒲公英（dandelions），这字是从法文dent de lion（狮子的牙）变出来的。美国本来没有，是从欧洲传过去的。每个小蒲公英都由它妈妈给了一把小白伞，飞到别的地方去寻找自己的命运。</p>
-<p>Dandelion - You may never have looked into a lion’s mouth, but if you should (and you were a botanist with a lively imagination), you might notice a resemblance between the lions' teeth and the edges of the dandelion’s leaves. 「Dandelion」 means 「lion's tooth,」 from the French dent de lion.</p>
+<p>Dandelion - You may never have looked into a lion’s mouth, but if you should (and you were a botanist with a lively imagination), you might notice a resemblance between the lions’ teeth and the edges of the dandelion’s leaves. 「Dandelion」 means 「lion’s tooth,」 from the French dent de lion.</p>
 <p>诗人Helen Gray Cone（1859-1934）写过一首The Dandelions的诗，最后四句是：</p>
 <p>They shook their trembling heads and gray</p>
 <p>With pride and noiseless laughter；</p>
@@ -1365,24 +1398,24 @@ Could set Humpty Dumpty up again.」</p>
 <p>亲爱的小文：</p>
 <p>感官（senses）一般说有五种（Most people speak of the five senses：sight——眼，视觉；hearing——耳，听觉；smell——鼻，嗅觉；taste——舌，味觉；feeling——皮肤，触觉），事实上不只五种，人类有十一种。</p>
 <p>还有一种叫「第六感」的「直觉」（sixth sense，an unusual power of perception；intuition；a power of perception beyond the five senses）。很多人信这第六种，但它没有科学的根据。这就是说，「第六感」有迷信的（superstitious）味儿。</p>
-<p>爸爸在去年3月22日信上告诉过你蜻蜓（dragonfly）有最好的眼睛，它可以看到十八英尺远的一只小蚊子（gnat）。另外鹰（eagle）也有极好的眼睛，可以看到半里以外的小兔子，中国诗人描写说「草枯鹰眼疾」，就是夸它的目光犀利。一只小鹰的眼力就比人类好八倍，可见人类真是「目光如豆」（short-sighted）。人类不但不能「鸟瞰」（a bird's eye view）事物，还常常不肯「正视」（face），常常「视而不见」（look but do not see）他所「目睹」（see with one's own eyes）的，所以常常是「打马虎眼」（pretend not to see或to overlook）。所以人常常是睁着眼睛的瞎子，尤其在love的时候，因为大诗人Chaucer说love is blind.。</p>
+<p>爸爸在去年3月22日信上告诉过你蜻蜓（dragonfly）有最好的眼睛，它可以看到十八英尺远的一只小蚊子（gnat）。另外鹰（eagle）也有极好的眼睛，可以看到半里以外的小兔子，中国诗人描写说「草枯鹰眼疾」，就是夸它的目光犀利。一只小鹰的眼力就比人类好八倍，可见人类真是「目光如豆」（short-sighted）。人类不但不能「鸟瞰」（a bird’s eye view）事物，还常常不肯「正视」（face），常常「视而不见」（look but do not see）他所「目睹」（see with one’s own eyes）的，所以常常是「打马虎眼」（pretend not to see或to overlook）。所以人常常是睁着眼睛的瞎子，尤其在love的时候，因为大诗人Chaucer说love is blind.。</p>
 <p>瞎了一只眼，叫「独眼龙」（one-eyed person），独眼龙如果运气好，还可以做国王，「In the land of the blind, the one-eyed is king．」（在盲人之国，独眼龙就是王。）这是一句好玩的英文谚语，这才真是中文谚语里头的「别具只眼」呢！（英文eye for eye大概是独眼龙发明的，中文的意思是以眼还眼，一报还一报，报复，一拳来一脚去。）</p>
 <p>如果人两只眼睛全瞎了，瞎得像鼹鼠（as blind as a mole），瞎得像甲虫（as blind as a beetle），那么就要靠「摸」才行了，摸，就是另一种sense——「触觉」了。</p>
 <p>（关于视觉会上当的情形，你可看去年4月13日爸爸给你的信。现在贴一张「视觉暂留」现象的实验给你，你可跟小朋友们立刻试试看，非常好玩。）</p>
-<p>现在谈「触觉」。触觉瞎子最灵，中国有一个笑话说「盲人摸象」，因为象太大了，盲人们each touching merely a small part of the elephant's body，结果每个人说出的象的形状都不一样。其实这是时间不够的缘故。如果时间够，瞎子一定可以模出象的模样来。</p>
+<p>现在谈「触觉」。触觉瞎子最灵，中国有一个笑话说「盲人摸象」，因为象太大了，盲人们each touching merely a small part of the elephant’s body，结果每个人说出的象的形状都不一样。其实这是时间不够的缘故。如果时间够，瞎子一定可以模出象的模样来。</p>
 <p>19世纪的时候，一个十五岁的法国瞎子布雷尔（Louis Braille），他发明了一种凸起的用小点表示的字母，瞎子可以摸着，于是他的名字Braille便成了a code of small raised dots on paper（A blind person reads braille by running his fingers along on the dots. He can write braille on a 6-key machine called a braille writer, or with a stylus on a pocket size metal or plastic state.），于是瞎子可以「看」（摸）书了。</p>
 <p>美国的海伦·凯勒（Helen Keller），她克服了聋、哑、瞎的困难，她的故事极动人，你可请老师讲给你听。触觉当然不限于手，皮肤都有这种感觉。山鹬（woodcock）鸟能用嘴放在地上，凭触觉确定出地下的蚯蚓在哪儿动，你说多厉害！这种触觉多精细啊！植物中含羞草（sensitive plant）也有这种感觉，你说怪不怪？</p>
 <p>蜥蜴（lizards，你看到的壁虎，叫house lizare，是lizards的一种）和蛇（snakes）的舌头，不但有触觉，还有的另一种——smell嗅觉。</p>
-<p>嗅觉可分二大类，香和臭。中文中带香字的好多，香气（fragrant）、香闺（lady's chamber）、香肠（sausage）、香瓜（muskmelon）、香蕉（banana）、香料（spices）、香片（scented tea）、香肉（dog meat）、香水（perfume，cologne water）、香甜（sweet and nice-smelling）、香喷喷、香酥鸭、香饽饽、鸟语花香、国色天香……除了「香港脚」（Hong Kong-foot）外，所有香都是好的。</p>
+<p>嗅觉可分二大类，香和臭。中文中带香字的好多，香气（fragrant）、香闺（lady’s chamber）、香肠（sausage）、香瓜（muskmelon）、香蕉（banana）、香料（spices）、香片（scented tea）、香肉（dog meat）、香水（perfume，cologne water）、香甜（sweet and nice-smelling）、香喷喷、香酥鸭、香饽饽、鸟语花香、国色天香……除了「香港脚」（Hong Kong-foot）外，所有香都是好的。</p>
 <p>中文带臭字的也好多，臭虫（bedbug）、臭名（notorious）、臭美（smug）、臭沟（stinking ditch）、臭钱（stinking money）、臭骂（scold）、臭揍（a good beating）、臭鼬（skunk）、臭烘烘（stinking）、臭小子（bum）、臭女人（hussy）、臭皮囊（the human body）、臭吃臭喝（drink like a fish and eat like a pig）、遗臭万年（leave a name that stinks through the ages）……除了「臭豆腐」（fermented bean curd）外，所有臭都是坏的。</p>
 <p>嗅觉会疲劳，所以刚闻的时候最觉得臭或香，闻久了就不觉得了，中文成语叫「久而不闻其臭」，并且还要做「逐臭之夫」，因为「臭味相投」啊！</p>
 <p>人的嗅觉比起狗来，又差得多了，狗鼻子最灵。有些蛾子（moth）它们的「鼻子」长在「触须」（antennae，电视的天线也antennae）上，也灵得很。女蛾子不需用香水，男蛾子就闻到了。</p>
 <p>第四种sense方面，味觉也是千奇百怪。鲶鱼（catfish）在肚皮上有味觉器官（organs），你把肉放在它肚子旁边，它就会转过身来咬，比专靠舌头的人类妙多了。</p>
-<p>一般说味有五种，就是「五味」：酸（sour）、甜（sweet）、苦（bitter）、辣（hot）、咸（salty），没有味道，中国成语是「味同嚼蜡」（tastes like chewing candle）。还有—句叫「索然无味」（uninteresting，tasteless）。「鸡肋」（chicken's ribs）的意思是「弃之可惜，食之无味」，有点进退两难的矛盾。</p>
+<p>一般说味有五种，就是「五味」：酸（sour）、甜（sweet）、苦（bitter）、辣（hot）、咸（salty），没有味道，中国成语是「味同嚼蜡」（tastes like chewing candle）。还有—句叫「索然无味」（uninteresting，tasteless）。「鸡肋」（chicken’s ribs）的意思是「弃之可惜，食之无味」，有点进退两难的矛盾。</p>
 <p>有的人的舌头天生有「品味」的能力，这种人就可以做品味师。有的人的舌头就很差，山珍海味吃起来，也不觉得有什么不得了，这叫「食而不知其味」。</p>
 <p>还有很多「有味」的味，你慢慢就会「体味」出来，像「美味」、「趣味」、「兴味」、「滋味」、「情味」、「韵味」、「玩味」、「往事只能回味」……你书看多了，就全都知道了。</p>
 <p>第五种sense是听觉。</p>
-<p>中文有「装聋作哑」（pretend to be deaf and dumb），所以有时候对声音会故意「听而不闻」（I hear, but I don't listen），有时候人要故意听别人说什么，于是就plant「bug」，这是不对的，所以Nixon下台了。所以中国古人希望的「顺风耳」，实行起来，要有限度才好。</p>
+<p>中文有「装聋作哑」（pretend to be deaf and dumb），所以有时候对声音会故意「听而不闻」（I hear, but I don’t listen），有时候人要故意听别人说什么，于是就plant「bug」，这是不对的，所以Nixon下台了。所以中国古人希望的「顺风耳」，实行起来，要有限度才好。</p>
 <p>你记得《木偶奇遇记》里那只小蟋蟀（cricket）吗？cricket只有男的才叫（only the male cricket produces sound），女的比人类中的女性沉默多了，她们只是听。用什么听呢？用耳朵。耳朵在哪儿呢？在前面两条腿上！</p>
 <p>更奇怪的就是小瞎子蝙蝠（bat）了，英文说全瞎像蝙蝠一样瞎（as blind as a bat），但蝙蝠的声觉，却比人类的雷达（radar，可问老师是什么）还高明，它凭声波抓小虫来吃，它根本用不着眼睛！</p>
 <p>鲨鱼（shark）也是个听音专家，浑身是「耳」（佛经上说「通身是眼」，它却「通身是耳」），正常的声音它听而不闻，但声音中一有异动，就哪怕300码（一码yard是三呎，呎就是英尺foot）外，它也不会「充耳不闻」（turn a deaf ear to），它立刻游过去，准备大吃特吃一顿。</p>
@@ -1393,29 +1426,29 @@ Could set Humpty Dumpty up again.」</p>
 <p>上月23号，给你信上提到的 Leonardo Da Vinci 画的那幅《最后的晚餐》（The Last Supper），爸爸把它贴在下面。画的意思是耶稣（Jesus）说 One of you shall betray me.（你们之中有一个要出卖我了），于是大家纷纷问他 Is it I？（是我吗？）</p>
 <p>画上有 Jesus 的十二个徒弟，但并不是「十二使徒」Twelve Apostles - the twelve disciples and associates of Jesus（Peter, James, John, Andrew, Thomas, James the Less, Jude, Philip, Bartholomew, Matthew, Simon, and Judas），Who were chosen as His Apostles. 画上说明（The Last Supper, as painted by Leonardo Da Vinci, shows Jesus and the twelve apostles, left to right：Bartholomew, James the Less, Andrew, Judas, Peter, John, Thomas, James, Philip, Matthew Thaddeus, and Simon.）说是 the twelve apostles，是不妥的，因为十二使徒里的 Judas（犹大），并不是画里那个 Judas，但一般人总以为画里那个 Judas 是十二使徒之一，这是一般人看书没有爸爸仔细的缘故。</p>
 <p>坐在画里 Judas 旁的白胡子老头叫彼得（Peter），Jesus 死后，Peter 是头牌的使徒。他原来是打鱼的，Jesus 招他做徒弟，说做了 Jesus 徒弟就「得人如得鱼一样」（I will make you fishers of men.）。于是 Peter 就跟 Jesus 传道了。Jesus 死后十五年，Peter 因传教被关在牢里，但传说天使帮他越狱，天使来的时候，看守他的兵也睡了，锁着他的两条铁链也开了。可见天使的本领真大，不但会催眠术（hypnotism），还是锁匠（locksmith），也许锁就是 Peter 自己开的，因为 Jesus 早就说给 Peter「天国的钥匙」（I will give to thee the keys of the kingdom of heaven.），这 keys 既然能开天门，开个铁链上的锁自然不在话下。</p>
-<p>Peter 越狱后二十多年，又被抓住了，这次天使不来了，Peter 被钉十字架上，临钉以前他要求头朝下脚朝上钉（他老师 Jesus 是头上脚下钉）。死后，被称为圣彼得（Saint Peter）。现在罗马（Rome）的圣彼得教堂（St. Peter's Church）是世界上最大最有名的 Christian church，Peter 的坟就在里面，但直到1950年——Peter 死后近一千九百年，才发现（英文 Rob Peter to pay Paul 就是「慷他人之慨」「挖东墙补西墙」的意思）。</p>
+<p>Peter 越狱后二十多年，又被抓住了，这次天使不来了，Peter 被钉十字架上，临钉以前他要求头朝下脚朝上钉（他老师 Jesus 是头上脚下钉）。死后，被称为圣彼得（Saint Peter）。现在罗马（Rome）的圣彼得教堂（St. Peter’s Church）是世界上最大最有名的 Christian church，Peter 的坟就在里面，但直到1950年——Peter 死后近一千九百年，才发现（英文 Rob Peter to pay Paul 就是「慷他人之慨」「挖东墙补西墙」的意思）。</p>
 <p>谈完了 Peter，再谈 Pan（潘）。Pan 是牧羊神，是希腊神话里半人半羊的神，怪吓人的，所以英文 panic 一个字，便是被他「吓」出来的，如说 They fall into a panic. 就是「他们大感恐慌」。</p>
 <p>另外 panpipe（牧神笙）这种乐器，也是他「吹」出来的。panpipe - a primitive wind instrument consisting of a series of hollow pipes of graduated length, the tones being produced by blowing across the upper ends.</p>
 <p>爸爸为什么跟你谈 Peter 和 Pan 呢？</p>
 <p>因为要介绍一个小朋友，他的名字叫 Peter Pan（潘彼得）。</p>
 <p>Peter Pan 是谁？Peter Pan 是一个童话里的小男孩，他不肯长大（refuses to grow up），下面是他的履历：</p>
 <p>Peter Pan, the hero of a play by Sir James Barrie, is a boy who refuses to grow up. Peter Pan persuades Wendy, John, and Michael Darling to fly with him and the fairy Tinker Bell to Never-Never Land. The Darling children and Peter Pan have adventures with the pirate Captain Hook, a crocodile, and an Indian princess. The play was first produced in 1904.</p>
-<p>The character first appears in Barrie's story The Little White Bird（1902）. Several chapters from the story were published in 1906 as Peter Pan in Kensington Gardens. In 1911, Barrie made the play into a story called Peter Pan and Wendy.</p>
+<p>The character first appears in Barrie’s story The Little White Bird（1902）. Several chapters from the story were published in 1906 as Peter Pan in Kensington Gardens. In 1911, Barrie made the play into a story called Peter Pan and Wendy.</p>
 <p>作者巴利是美国人，写了很多书。He once summed up his work as a means 「to play hide and seek with angels」.（跟天使捉迷藏）</p>
 <p>Peter Pan 这书你学校里一定有。中文也有译本，叫《潘彼德》，重庆南路商务印书馆可以买到。译者梁实秋，现在有七十五六岁了，他是三姑三姑父在师范大学时的文学院院长，他给爸爸写的一本书《胡适评传》写过书评，说「李敖先生收集材料的本领很大」。</p>
 <p>Peter Pan 的小朋友 Wendy 这名字念起来很像中文的「文谛」，你要爸爸给你起一个中间的名字，就叫 Wendy 好不好？</p>
 <p>Hedy Wendy Lee 可写做 Hedy W. Lee 或 H. W. Lee，你喜欢吗？你可以写信问问妈妈再决定用不用。</p>
-<p>有人用 middle name，反而不用前面的，美国前总统 Nixon 的太太叫 Thelma Patricia（Pat）Ryan 只用 middle name。1952年大选的时候，政敌 Nixon 说收了 slush fund（红包），A fund or sum of money set aside for political purposes, to use to buy influence or votes, or to use in bribery. 说他太太 Pat 有貂皮大衣（mink coat），于是 Nixon 上了电视，称呼他太太就用 Pat 这 middle name：He discussed his personal finances in detail, showing that he had not profited personally from the fund. He said that 「Pat doesn't have a mink coat. But she does have a respectable Republican cloth coat.」 And he vowed to keep Checkers, a cocker spaniel that had been a gift to his daughters. After the program, Republicans hailed Nixon as a hero. Eisenhower put his arm around Nixon when they next met and declared：「You're my boy.」 Eisenhower and Nixon went on to defeat their Democratic opponents. 他说他只收了人家送他的一条 cocker spaniel（这是一种短腿、长毛、大耳朵下垂的小猎犬），「不论他们说什么，我们也把它留下来。」（Regardless of what they say about it, we're going to keep it.）当然一条小狗不能算是 slush fund，所以 Nixon 当选了。</p>
+<p>有人用 middle name，反而不用前面的，美国前总统 Nixon 的太太叫 Thelma Patricia（Pat）Ryan 只用 middle name。1952年大选的时候，政敌 Nixon 说收了 slush fund（红包），A fund or sum of money set aside for political purposes, to use to buy influence or votes, or to use in bribery. 说他太太 Pat 有貂皮大衣（mink coat），于是 Nixon 上了电视，称呼他太太就用 Pat 这 middle name：He discussed his personal finances in detail, showing that he had not profited personally from the fund. He said that 「Pat doesn’t have a mink coat. But she does have a respectable Republican cloth coat.」 And he vowed to keep Checkers, a cocker spaniel that had been a gift to his daughters. After the program, Republicans hailed Nixon as a hero. Eisenhower put his arm around Nixon when they next met and declared：「You’re my boy.」 Eisenhower and Nixon went on to defeat their Democratic opponents. 他说他只收了人家送他的一条 cocker spaniel（这是一种短腿、长毛、大耳朵下垂的小猎犬），「不论他们说什么，我们也把它留下来。」（Regardless of what they say about it, we’re going to keep it.）当然一条小狗不能算是 slush fund，所以 Nixon 当选了。</p>
 <p>因为 Wendy 这个名字，发音有「文」的音，跟你中文名字正好呼应，我认为你可以像 Pat 一样，多用 Wendy 这个 middle name 也不错。</p>
 <p>爸爸 1975年4月6日</p>
 <h2 id="五九记印度阿三"><a class="header" href="#五九记印度阿三">五九、记印度阿三</a></h2>
 <p>亲爱的小文：</p>
 <p>古时候，有人有一种特技，能够一只脚站很久，他向斯巴达（Sparta，在今天 Greece）人说：「我不信你们有这本事。」（I do not believe you can do as much.）但斯巴达人回他一句，这有什么了不起，「每条鹅都能。」（True, but every goose can.）</p>
 <p>古时候过去了，但现代仍有这种用一只脚站着显摆的人，这就是印度人。印度人这种鬼名堂多得很，一只脚站着，一只手举着，太阳底下晒着（standing exposed to the sun for many hours），拿大顶（remain with the head bent down），手握拳，让指甲穿过手心长出来（Keep their fists closed for years, so that the nails grow through the palm and out of the back of the hand.），或埋在地里几天，还活过来（remain buried for days at a time and emerge from their 「graves」 alive）。……</p>
-<p>这些无聊的特技，都是印度人的本事。这一套本事，最像样的部分就叫「瑜伽」（yoga 1. [in Hindu religious philosophy] a system of ascetic practice, abstract meditation, and mental concentration, used as a method of attaining union with the supreme spirit. 2. a system of exercises or rigid physical positions for achieving serenity and well-being.），信瑜伽的就叫 yogi，印度人很多都信。去年10月19日爸爸给你信上提到的现在印度总理甘地夫人的爸爸（坐过十年半牢的），每天早起就要拿大顶，据说这样可 relax himself（Nehru's wife died in 1936 and his only daughter is his official hostess. He likes playing with his two grandsons. Every morning he starts his day by standing on his head to relax himself.）。中国古话说，救老百姓是「解民倒悬」，如果老百姓都这样以「倒悬」为乐，那还解个屁！（上次信上谈到 Peter 要求倒钉十字架以表示他对他老师耶稣的敬意，大概 Peter 也是一个 yogi！）</p>
+<p>这些无聊的特技，都是印度人的本事。这一套本事，最像样的部分就叫「瑜伽」（yoga 1. [in Hindu religious philosophy] a system of ascetic practice, abstract meditation, and mental concentration, used as a method of attaining union with the supreme spirit. 2. a system of exercises or rigid physical positions for achieving serenity and well-being.），信瑜伽的就叫 yogi，印度人很多都信。去年10月19日爸爸给你信上提到的现在印度总理甘地夫人的爸爸（坐过十年半牢的），每天早起就要拿大顶，据说这样可 relax himself（Nehru’s wife died in 1936 and his only daughter is his official hostess. He likes playing with his two grandsons. Every morning he starts his day by standing on his head to relax himself.）。中国古话说，救老百姓是「解民倒悬」，如果老百姓都这样以「倒悬」为乐，那还解个屁！（上次信上谈到 Peter 要求倒钉十字架以表示他对他老师耶稣的敬意，大概 Peter 也是一个 yogi！）</p>
 <p>印度人好像脑袋顶上总要来点什么，「包头」是最起码的，其他头顶上的东西可多了！印度女人有一种「水壶舞」（The Dance of the Water Pots），每人头顶上顶了一把大铜茶壶，中国人要「顶天立地」，印度人只要「顶茶壶立地」就满意了，虽没中国人志气大，但比中国人实际而具体。</p>
 <p>印度还有六百万头上顶自己胡子的人，这种人叫锡克（Sikhs），他们很早就主张男女平等，全世界最恨他们的人就是理发的，因为他们不理发，也不刮胡子（但他们如果擦皮鞋，就可能被理发的捉住，因为印度的理发馆看起来像个擦皮鞋的摊位）。</p>
-<p>锡克人长得人高马大，是战士，常做警察和开计程车的（There are about six million Sikhs, and their picturesque appearance distinguishes them from the rest of the population. They are strong, tall and vigorous, and in cities often serve as policemen, watchmen and cab drivers.）, 所以理发的也不敢捉他们，也捉不到。锡克人为什么不理发呢，因为他们信锡克教，锡克教（Sikhism）不准，于是锡克人就把须发缠在一起，在头顶上用白布包起来。（Keeping the hair and beard tied in a knot above the head.）（The Sikhs' religion forbids them to cut their hair or beards. It strongly emphasizes the brotherhood of all men and forbids the drinking of alcohol. These soldiers have their hair fastened into a tightly-rolled topknot on the crown of the head and are wearing the characteristic beard retainer, a fine net attached to the ears at either end.）</p>
+<p>锡克人长得人高马大，是战士，常做警察和开计程车的（There are about six million Sikhs, and their picturesque appearance distinguishes them from the rest of the population. They are strong, tall and vigorous, and in cities often serve as policemen, watchmen and cab drivers.）, 所以理发的也不敢捉他们，也捉不到。锡克人为什么不理发呢，因为他们信锡克教，锡克教（Sikhism）不准，于是锡克人就把须发缠在一起，在头顶上用白布包起来。（Keeping the hair and beard tied in a knot above the head.）（The Sikhs’ religion forbids them to cut their hair or beards. It strongly emphasizes the brotherhood of all men and forbids the drinking of alcohol. These soldiers have their hair fastened into a tightly-rolled topknot on the crown of the head and are wearing the characteristic beard retainer, a fine net attached to the ears at either end.）</p>
 <p>锡克教虽然「一毛不拔」，但却集合了别的宗教的长处，主张平等。它的教主叫 Nanak，是15到16世纪的人，为了信仰，死在牢里了。锡克教也不准喝酒，所以不但理发公会理事长恨他们，烟酒公卖局的局长也恨他们。</p>
 <p>你记得去年2月16日爸爸给你谈牛的信上，提到的印度「牛被惯得可以在马路上逛」吗？这是因为印度有百分之八十五是印度教徒，印度教徒只拿牛耕田拉车，但不许吃牛肉，因为他们认为牛是神圣的。印度选举的时候，因为不认识字的人太多，不知道哪一党是哪一党，于是在选票上印上图画，用牛代表国大党（就是甘地夫人那一党），结果大家都投牛的票！（牛以外，monkeys and snakes 也神圣。）</p>
 <p>印度教（Hinduism）（The religious [Polytheistic] and social systems of the Hindus, developed from Brahmanism, and embodying animistic beliefs. The caste system is the chief characteristic. 印度多神教，为婆罗门教的变相，并信灵魂造生命之说，社会阶级制度是它主要特点）虽然对牛客气，对人却极不客气。印度教把人分四种阶级（caste），每一阶级干什么，永远干什么（从爷爷的爷爷到孙子的孙子）。四阶级中，第三级是农人商人（甘地就属于这一级，甘地坐过近六年五个月的牢，爸爸在去年10月19日信上跟你谈过），第四级是奴隶、仆人。另有一种不入级的叫「不能碰的」（Untouchables），连做奴隶、仆人都不准，甚至不准他们工作，只准讨饭（even forbidden to work, and can only beg），讨饭还不准在给钱的人的身边讨，要躲得远远的，钱由给钱的人丢在地下，Untouchables 再去捡，直接给是不行的，这叫「授受不亲」！</p>
@@ -1427,16 +1460,16 @@ Could set Humpty Dumpty up again.」</p>
 <p>又如两手「合十」，这也是佛教的习惯。去年10月19日信上跟你提到的坐过一年一个月牢的 political prisoner 甘地夫人这个手势（gesture），你注意一下。</p>
 <p>恒河（Ganges）是印度的大河，中国佛教里有「恒河沙数」的话，表示很多很多。印度教徒相信死后河葬可升天堂，所以不但在河里洗澡，把火葬后的骨灰也丢到河里去。</p>
 <p>印度人火葬，因为相信人死了一烧，就可把灵魂烧出来，使灵魂从肉体里解脱出来（free the soul from the body）（中国直到宋朝才有火葬，《水浒传》你看过吗？打虎的武松哥哥即潘金莲的丈夫武大郎就是火葬的）。</p>
-<p>印度的火葬是公开的露天的（public cremation），印度古习惯，丈夫死了，太太要在火葬时跳到火堆里陪死！英文叫 suttee，印度人以前平均只活三十二岁（现在已到四十一岁了），丈夫很容易早死，一死太太就倒了霉，这种坏风俗，现在已经犯法了。（SUTTEE is a Hindu custom that people once practiced is India. Its name comes from the Sanskrit word sati, which means faithful wife. By the custom of suttee, a widow allows herself to be burned to death beside her husband's body on the funeral pyre. The pyre is a pile of material that burns easily. No one knows how the custom began. An ancient book states that a widow should lie by her husband's body on the funeral pyre. A few widows, especially the wives of kings, refused to leave the pyre and burned to death. In 1829, the British, then the rulers of India, made suttee illegal.）</p>
+<p>印度的火葬是公开的露天的（public cremation），印度古习惯，丈夫死了，太太要在火葬时跳到火堆里陪死！英文叫 suttee，印度人以前平均只活三十二岁（现在已到四十一岁了），丈夫很容易早死，一死太太就倒了霉，这种坏风俗，现在已经犯法了。（SUTTEE is a Hindu custom that people once practiced is India. Its name comes from the Sanskrit word sati, which means faithful wife. By the custom of suttee, a widow allows herself to be burned to death beside her husband’s body on the funeral pyre. The pyre is a pile of material that burns easily. No one knows how the custom began. An ancient book states that a widow should lie by her husband’s body on the funeral pyre. A few widows, especially the wives of kings, refused to leave the pyre and burned to death. In 1829, the British, then the rulers of India, made suttee illegal.）</p>
 <p>不过做印度人老婆，有一个人至少占了便宜，那就是三百年前印度国王沙迦罕（Shah Jahan）的老婆默哈儿（Mahal），她死后，她丈夫为她花了二十多年，修了一座漂亮的大坟——Taj Mahal，taj 是阿拉伯文皇冠（crown）的意思。Taj Mahal 是印度最有代表性的建筑，在印度 Agra 地方（地图上没有，爸爸为你点了一个小·点就在那儿）。它是全世界最漂亮的坟。（TAJ MAHAL at Agra, in north central India, the crowning jewel of Indo-Islamic architecture. A Mogul ruler, Shah Jahan, erected the monument as a tomb for a beloved wife, Arjumand Banu, better know by her title of Mumtaz Mahal or Taj Mahanl（Crown of the Palace）. In 1631 she died after bearing fourteen children in eighteen years. The construction of the tomb, begun the next year, employed some 20000 workmen for nearly twenty years.）</p>
-<p>印度女人头上多点小点，叫「吉祥点」，她们披「纱丽」（sari），二十英尺长三英尺宽，不用裁缝（当然裁缝恨这东西）。有的女人穷得只有一件纱丽，所以没法洗换。（Many Indian men have partly adopted European dress. Indian women, however, remain loyal to the national costume, the sari, a garment which emphasizes their dignified and majestic bearing. The simple yet extremely elegant line of the sari is reminiscent of the costume of ancient Greece, while its striking colors, and gold and silver embroidery, are a further example of the Indians' love of bright things. The garment is a strip of cloth some twenty feet long and three feet wide. It is draped round the body without any pin or button being used. It is extremely simple in use and presents no dress-making problem.）</p>
+<p>印度女人头上多点小点，叫「吉祥点」，她们披「纱丽」（sari），二十英尺长三英尺宽，不用裁缝（当然裁缝恨这东西）。有的女人穷得只有一件纱丽，所以没法洗换。（Many Indian men have partly adopted European dress. Indian women, however, remain loyal to the national costume, the sari, a garment which emphasizes their dignified and majestic bearing. The simple yet extremely elegant line of the sari is reminiscent of the costume of ancient Greece, while its striking colors, and gold and silver embroidery, are a further example of the Indians’ love of bright things. The garment is a strip of cloth some twenty feet long and three feet wide. It is draped round the body without any pin or button being used. It is extremely simple in use and presents no dress-making problem.）</p>
 <p>印度女人喜欢装饰品，甚至装饰到鼻子上，这当然要很有钱的才办得到。印度穷人根本没家，睡马路上，有钱的最阔的有十亿美金！这是最不对的事。英国人统治印度190年，这种现象当然英国人要负责任。</p>
 <p>印度太穷，人太多（全世界中国人最多，其次是印度人）。</p>
 <p>印度的宪法，是全世界最长的。（The constitution of India is the longest in the world.）</p>
 <p>印度人吃饭用右手抓着吃，认为左手没右手干净。（他们这些怪毛病可真多！）（The various Hindu castes have different food laws. Most castes eat only with the right hand because they consider the left hand unclean. Some castes eat meat, and others eat fish but not meat. Some eat neither meat nor fish, but so eat eggs. Still others do not eat eggs.）</p>
 <p>印度象比非洲象小一点，长得也不太一样。</p>
 <p>India ink 就是中国的墨汁。India paper 就是中国的圣经纸。这两样东西明明是中国的却用上印度名字。</p>
-<p>印度的蛇很多，每年咬死三十万人。印度有玩蛇的或弄蛇的（snake-charmer），在蛇面前吹笛子，其实蛇听不见，只是看他动作再跟着动。（Indian Snake Charmer may fool his audience, but he does not charm the snake. The cobra cannot hear the music of the flute. Its ways merely to follow the movements of the charmer.）</p>
+<p>印度的蛇很多，每年咬死三十万人。印度有玩蛇的或弄蛇的（snake-charmer），在蛇面前吹笛子，其实蛇听不见，只是看他动作再跟着动。（Indian Snake Charmer may fool his audience, but he does not charm the snake. The cobra cannot hear the music of the flute. It sways merely to follow the movements of the charmer.）</p>
 <p>印度人喜欢看猫鼬（mongoose）和眼镜蛇（cobra）大战，猫鼬的动作比蛇快，所以老是占上风。猫鼬鼬平时很温和，但看到蛇就凶得很。</p>
 <p>印度最有名的文学家叫泰戈尔（Tagore），他到中国来过，得过 Nobel Prize（诺贝尔奖），中国的一位学者梁启超，给 Tagore 起了一个中国名字叫「竺震旦」。（竺是天竺，古代中国叫印度是「天竺」，震旦是「中国」的另一叫法。）（TAGORE was an Indian poet, philosopher, and supporter of freedom for India. In his many poems and songs, he stirred pride among his Hindu countrymen. He also had a strong influence on the West. Tagore was influenced by European models in his writings. He was a mystical and religious poet, and saw God in all beauties of nature. He wrote prose and poetry in the Bengali Language. These have been translated into many languages. Tagore received the 1913 Nobel Prize in Iiterature.）</p>
 <p>你可请姥姥替你买一本竺震旦的书看。《失群的鸟》也有人翻译成《漂鸟集》或《飞鸟集》。</p>
@@ -1457,7 +1490,7 @@ Could set Humpty Dumpty up again.」</p>
 <p>男女多穿一种叫 lava-lava 的裙子，其实就是一块布，卷成裙子。（Most Samoan men and some women wear only a lava-lava, a piece of cloth wrapped around the waist like a skirt. Some wear a blouse or shirt with their lava-lava. Most of the women wear dresses, or a skirt and blouse.）</p>
 <p>在国会里开会也穿裙子。</p>
 <p>他们的囚犯白天不坐牢，白天照常做自己的事，晚上才到牢里报到。并且监狱也没有铁栏杆（Prisoners live in jail without bars.），房子比平常住的还像样，因为他们平常只住四面通风的 fale（open-sided fale），是用椰子树做材料搭起来的。（The people live in open-sided fale（house）that have a thatched roof supported by poles. They roll down palm leaf blinds when it rains.）</p>
-<p>中国古话说「画地为牢」（to draw a circle on the ground for a prison, as was done in the 「good old days」）、说「夜不闭户」（There's no need to close doors at night.）……这些世界大同的标准，西萨摩亚人都做到了。</p>
+<p>中国古话说「画地为牢」（to draw a circle on the ground for a prison, as was done in the 「good old days」）、说「夜不闭户」（There’s no need to close doors at night.）……这些世界大同的标准，西萨摩亚人都做到了。</p>
 <p>西萨摩亚人并没有钱，他们每人每年只有七十五美金，就是每月六块美金（每天两毛钱），但他们不需要钱。</p>
 <p>《金银岛》（Treasure Island）的作者斯蒂文森（R. L. Stevenson）九十年前死在西萨摩亚。只活了四十四岁（他的太太比他大十一岁），死前他写了一首《安魂曲》（Requiem）。（Requiem - 1. A Mass for the repose of a departed soul or souls, 安魂祭（安去世灵魂的弥撒祭）。2. A setting of the Mass for the dead, 安魂曲（即死者弥撒祭时所奏之曲）的一段乐谱。Also, a piece of like character for other words, 又指吊歌、挽歌。3. Any grand musical service of hymn in honor of the dead, 对于死者表示敬意的严肃音乐演奏或壮丽的圣歌。）中国的文学家陶渊明也写过《自祭文》。爸爸把它翻译给你看：</p>
 <p>REQUIEM</p>
@@ -1485,7 +1518,7 @@ Could set Humpty Dumpty up again.」</p>
 <h2 id="六一素食种种"><a class="header" href="#六一素食种种">六一、素食种种</a></h2>
 <p>亲爱的小文：</p>
 <p>英文里有四句诗：</p>
-<p>It's a very odd thing—</p>
+<p>It’s a very odd thing—</p>
 <p>As odd as can be—</p>
 <p>That whatever Miss T eats</p>
 <p>Turns into Miss T.（Walter de la Mare，「Miss T.」1913）</p>
@@ -1541,18 +1574,18 @@ Could set Humpty Dumpty up again.」</p>
 <p>第一个是亚里士多德（Aristotle），活了六十二岁。</p>
 <p>公元前5到4世纪的时候，有四个人有师生关系，并且都是大名人，前三个人都是哲学家（philosophers），最后一个是东征西讨的皇帝 Alexander the Great。</p>
 <p>苏格拉底：Socrates
-柏拉图：Plato, Socrates' greatest pupil
-亚里士多德：Aristotle, Plato's greatest pupil
-亚历山大：Alexander, Aristotle's greatest pupil</p>
+柏拉图：Plato, Socrates’ greatest pupil
+亚里士多德：Aristotle, Plato’s greatest pupil
+亚历山大：Alexander, Aristotle’s greatest pupil</p>
 <p>Aristotle 的学问很大，是哲学家，也是教育家（educator），也是科学家（scientist），他在科学方面的著作有 logic、physics、natural history、psychology……但他究竟是两千三百年前的人，他的科学有很多错误，比如他认为地球是宇宙中心，太阳星星绕地球转，这是错的；他认为月亮表面是光滑的，自己发光，这是错的；他认为同时下落，重的东西比轻的东西先着地，这是错的；他认为男人的牙比女人多，这也是错的，这大概是 Mrs. Aristotle 的牙掉了的缘故！</p>
 <p>Aristotle 的真正贡献，chief contribution 是他把学问造成一个「继往开来」（to carry on the heritage so as to pave the way for future generations）的局面，使人类爱真理（truth）。Aristotle 在他的 Ethica（ethics 伦理学）中表示他爱老师 Plato，但是更爱真理。在中国也有这种看法，叫「当仁不让于师」。（to yield to nobody when one is doing what is right；do not refuse to accept a reward or position which one deserves；to be behind none in the desire to benefit mankind.）Aristotle differed from Plato both in the aims of his philosophy and in the methods of his investigation. In his Ethica he states that, while both Plato and truth are dear to him, he is bound to prefer truth.</p>
-<p>While Aristotle was a biologist of note, even if we allow for some rather peculiar lapses, his views on physics and astronomy were hopelessly muddled. Plato, combining the Milesian and Pythagorean traditions, had been much nearer the mark, and so were later Hellenistic scientists like Aristarchus and Eratosthenes. Aristotle's most famous contribution to systematic thought is probably his work in logic.</p>
-<p>对 Aristotle 在 science 方面的 conclusion 是——300's B.C. Aristotle's studies in logic and classification contributed to the foundations of science.</p>
+<p>While Aristotle was a biologist of note, even if we allow for some rather peculiar lapses, his views on physics and astronomy were hopelessly muddled. Plato, combining the Milesian and Pythagorean traditions, had been much nearer the mark, and so were later Hellenistic scientists like Aristarchus and Eratosthenes. Aristotle’s most famous contribution to systematic thought is probably his work in logic.</p>
+<p>对 Aristotle 在 science 方面的 conclusion 是——300’s B.C. Aristotle’s studies in logic and classification contributed to the foundations of science.</p>
 <p>第二个科学家——伽利略（Galileo），活了七十八岁。Galileo was the first great experimenter and the father of modern astronomy. He was also an outstanding mathematician. Galileo 说 Aristotle 认为重东西先落地，不对，他跑上比萨斜塔（the Leaning Tower of Pisa），拿两个不同重量的球实验，结果证明 Aristotle 错了。——但别人都错的时候，他一个人对没有用，他被大学赶走了。</p>
 <p>Galileo 又印了一本书，说太阳不动，动的是地球，于是，惹起公愤，虽然他对了。——但别人都错的时候，他一个人对没有用，他被抓到「宗教裁判所」，宗教法庭（Inquisition）。Inquisition 动不动就把人烧死，因为 Galileo 是大学者，又太老了（七十岁），又有点后台（有贵人保护），又「认错」，于是「优待」，改判为「终身软禁」（permanent house arrest）。House arrest, a form of arrest in which a person is confined under guard in his own house：Authorities insisted no one had been jailed but said some strikers were under house arrest.（Tuscaloosa News）</p>
 <p>他「认错」以后，偷偷在一个朋友耳边说：「但它（地球）还在动啊！」Yet it does move！（E pur si muove！）</p>
 <p>他被关在家里，大诗人 John Milton（当时三十岁）到 Italy 旅行，到 Galileo 家里拜访，Galileo 已经瞎了，真巧，十四年后，Milton 也瞎了。</p>
-<p>John Milton, an English poet and political writer, wrote one of the world's greatest epics, Paradise Lost.（1667）He composed this famous epic and two other works, Paradise Regained（1671）and Samson Agonistes（1671）, when he was totally blind. Milton 也坐过牢。</p>
+<p>John Milton, an English poet and political writer, wrote one of the world’s greatest epics, Paradise Lost.（1667）He composed this famous epic and two other works, Paradise Regained（1671）and Samson Agonistes（1671）, when he was totally blind. Milton 也坐过牢。</p>
 <p>Galileo 的头脑比时代新，所以老是倒霉。这叫「生不逢辰」（born at a wrong time；luckless；unlucky）。</p>
 <p>对 Galileo 在 science 方面的 conclusion 是——c. 1600 Galileo emphasized the mathematical interpretation of experiments in science. He discovered many important physical laws.</p>
 <p>第三个科学家——哈维（William Harvey），活了七十九岁。</p>
@@ -1563,16 +1596,16 @@ Could set Humpty Dumpty up again.」</p>
 <p>波义尔是哲学家、物理学家、化学家（Boyle was a philosopher, a physicist and a chemist）,「the father of modern chemistry」。</p>
 <p>英国最有名，也是世界最有名的学术团体——皇家学会（the Royal Society）创办的时候，本来要请 Boyle 做会长，但因为他在 religion 方面的原因不愿宣誓，所以没做。（While at Oxford he was the leader of a group of scientists known as the Invisible College, which in 1663 was incorporated as the Royal Society of London. Although Boyle was invited to be president of this organization in 1680, he refused because he had religious scruples against taking an oath. Boyle was deeply religious. At Geneva he had been under strong Calvinist influence which deeply impressed him and gave his life a serious character.）</p>
 <p>ROYAL SOCIETY is the oldest scientific society in the world and probably the most famous. The full title of the organization is The Royal Society of London for Improving Natural Knowledge. It grew out of weekly meetings which London scientists held as early as 1645. In 1660, the society was officially organized with the approval of King Charles II.（就是 Charles I 的儿子。）</p>
-<p>In 1662, the society was formally incorporated by charter of Charles II as the Royal Society of London for Promoting Natural Knowledge, or, as it is popularly known, the Royal Society. From its earliest years, the Society maintained correspondence with Continental philosophers, and selections from this correspondence became the world-famous Philosophical Transactions. Sir Isaac Newton was the Society's president from 1703 until his death in 1727. In the approximately 300 years of its existence, the Society has sponsored numerous scientific expeditions and extensive research, including, in recent years, a notable series of investigations of tropical diseases.</p>
-<p>对 Boyle 在 science 方面的 conclusion 是——1660's Robert Boyle applied the scientific method to chemistry.</p>
+<p>In 1662, the society was formally incorporated by charter of Charles II as the Royal Society of London for Promoting Natural Knowledge, or, as it is popularly known, the Royal Society. From its earliest years, the Society maintained correspondence with Continental philosophers, and selections from this correspondence became the world-famous Philosophical Transactions. Sir Isaac Newton was the Society’s president from 1703 until his death in 1727. In the approximately 300 years of its existence, the Society has sponsored numerous scientific expeditions and extensive research, including, in recent years, a notable series of investigations of tropical diseases.</p>
+<p>对 Boyle 在 science 方面的 conclusion 是——1660’s Robert Boyle applied the scientific method to chemistry.</p>
 <p>第五个科学家——牛顿（Isaac Newton），活了八十五岁。</p>
 <p>Galileo 死的那年（Jan. 8, 1642），就是 Newton 生的那年（Dec. 25, 1642）。</p>
 <p>Galileo 死在年头，Newton 生在年尾。他们都没结婚，但 Galileo 有两个女儿一个儿子。Galileo 的一些观察是错的，他虽然把球从斜塔朝下丢，但并没发现落体的真正速度，也没成立定律（law），直到 Newton 出来，才完成了这一解释。牛顿是个「遗腹子」（an infant born after the death of its father；a posthumous child），从小妈妈不在身边，跟姥姥长大，他从小就喜欢科学。</p>
-<p>① Newton discovered that sunlight is a mixture of light of all colors. He passed a beam of sunlight through a glass prism and studied the colors that were produced.（By passing a beam of sunlight through a prism, Newton showed that white light is made up of the rainbow's colors.）</p>
+<p>① Newton discovered that sunlight is a mixture of light of all colors. He passed a beam of sunlight through a glass prism and studied the colors that were produced.（By passing a beam of sunlight through a prism, Newton showed that white light is made up of the rainbow’s colors.）</p>
 <p>② He made great discoveries in the field of mathematics. He is credited with inventing integral and differential calculus.（微积分）</p>
 <p>③ He was the first to state the laws of gravitation.</p>
 <p>Newton 的成绩，英国诗人 Alexander Pope 有两句诗描写得最好：</p>
-<p>Nature and Nature's laws lay hid in night：
+<p>Nature and Nature’s laws lay hid in night：
 God said, Let Newton be！and all was light.</p>
 <p>（Alexander Pope：Epigram on Sir Isaac Newton）</p>
 <p>In 1705 Newton was knighted by Queen Anne. 所以他名字前面有 Sir. 就是爵士。热门音乐中文也翻成爵士，但那是 jazz 的译音，并不真的是爵士，并且乱扭乱唱，一点也不爵士。</p>
@@ -1582,7 +1615,7 @@ God said, Let Newton be！and all was light.</p>
 <p>第六个科学家——爱因斯坦（Albert Einstein），活了七十六岁。</p>
 <p>爱因斯坦是 German（德国人），又变成了 Swiss（瑞士人），又变成了 German，又变成了 American（美国人），但他的 blood 是 Jew（犹太人）。他帮助 Jews 复国，但成立 Israel（以色列）的时候，他拒绝做总统，结果由他的朋友，会六国语言的 Weizmann 做了。</p>
 <p>Einstein 的新学说是「相对论」（the Theory of Relativity），使 Newton 的学说一部分动摇。</p>
-<p>Albert Einstein, the German-American physicist, rejected Newton's explanation of universal gravitation but not the fact of its operation. He said that his own work would have been impossible without Newton's discoveries. He also said that the concepts Newton developed「are even today still guiding our thinking in physics」.</p>
+<p>Albert Einstein, the German-American physicist, rejected Newton’s explanation of universal gravitation but not the fact of its operation. He said that his own work would have been impossible without Newton’s discoveries. He also said that the concepts Newton developed「are even today still guiding our thinking in physics」.</p>
 <p>人类能够利用原子能（atomic power），就是从 Einstein 来的，没有 Einstein，就没有原子弹（atomic bomb）用来 war，也没有原子能用来 peaceful uses。</p>
 <p>对 Einstein 在 science 方面的 conclusion 是——1905 Albert Einstein presented his Special Theory of Relativity. Einstein developed the theory of relativity which revised older theories of time and space, and led to the use of atomic power.</p>
 <p>爸爸 1975年5月31日</p>
@@ -1590,7 +1623,7 @@ God said, Let Newton be！and all was light.</p>
 <h2 id="六五从鸭嘴兽到水獭"><a class="header" href="#六五从鸭嘴兽到水獭">六五、从鸭嘴兽到水獭</a></h2>
 <p>亲爱的小文：</p>
 <p>一个半世纪前，科学家刚听说有一种下蛋的哺乳动物（egg-laying mammal），他们都不相信，说胡扯（a hoax），没想到世界上真有这么一种动物，就是「鸭嘴兽」（platypus）。鸭嘴兽只在澳洲（Australia）东海岸才有，澳洲也叫澳大利亚，是世界上最小的洲是一个国家。</p>
-<p>澳洲本来跟亚洲连在一起，但在五千万年以前分开了，所以它自己成为一个特别的地方，老是有些全世界只有它有别人没有的怪东西，鸭嘴兽就是其中之一。（Australia has many kinds of strange animals not found on other continents. This is because the bridge of land that once connected Australia with Asia disappeared about 50 million years ago. From then on, most of Australia's animal life developed independently）</p>
+<p>澳洲本来跟亚洲连在一起，但在五千万年以前分开了，所以它自己成为一个特别的地方，老是有些全世界只有它有别人没有的怪东西，鸭嘴兽就是其中之一。（Australia has many kinds of strange animals not found on other continents. This is because the bridge of land that once connected Australia with Asia disappeared about 50 million years ago. From then on, most of Australia’s animal life developed independently）</p>
 <p>另外一种只有澳洲有的小动物，就是 koala，爸爸有一封信专门跟你谈过它，你记得吗？</p>
 <p>Koala 意为「不喝水」，这个原住民词汇很好地描述了这种温和的有袋动物——它们仅从食物（特定桉树的叶子，桉树是常绿乔木，生长迅速）中摄取水分。凭借奇特的手指排列（前两指与后三指相对），一只考拉正紧抓着瓦伊克里保护区的树枝。直到 20 世纪 20 年代保护法出台前，考拉因毛皮猎杀濒临灭绝，如今法律开始保护这片大陆上的数十种有袋动物。</p>
 <p>Koala 也叫袋鼠熊（kangaroo bear）。</p>
@@ -1601,7 +1634,7 @@ God said, Let Newton be！and all was light.</p>
 <p>澳洲虽独立仍受英国影响，国旗含英国元素，交通规则沿用左行制（最早宣布澳洲属英国的库克船长 James Cook 于 1770 年登陆悉尼南岸植物学湾，后于夏威夷遇害）。</p>
 <p>首都堪培拉（Canberra）拥有超 1500 万棵树，国会大厦尤为壮丽。墨尔本（Melbourne）以英国首相命名，原为首都，1927 年迁都堪培拉，现以植物园、美术馆和三所大学闻名。</p>
 <p>澳洲南部两大名岛：
-塔斯马尼亚岛（Tasmania）曾作为英国监狱使用五十年。岛上的塔斯马尼亚狼雌性具背向育儿袋，通常孕育两崽，幼体需在袋内发育三月。（The Tasmanian wolf's pouch opens backwards with four teats, accommodating up to four pups though typically bearing two. Cubs remain hairless and blind in embryonic state for three months before transitioning to nest life.）</p>
+塔斯马尼亚岛（Tasmania）曾作为英国监狱使用五十年。岛上的塔斯马尼亚狼雌性具背向育儿袋，通常孕育两崽，幼体需在袋内发育三月。（The Tasmanian wolf’s pouch opens backwards with four teats, accommodating up to four pups though typically bearing two. Cubs remain hairless and blind in embryonic state for three months before transitioning to nest life.）</p>
 <p>袋鼠岛（Kangaroo Island）北临澳洲第三大城阿德莱德（Adelaide）。该市毗邻圣文森特湾（长 90 英里，宽 45 英里），以规划完善、花园众多著称。</p>
 <p>澳洲东北海岸外延绵 1250 英里的珊瑚礁群（大堡礁）光怪陆离，景色奇绝却危机四伏，库克船长曾在此三度遇险。（The Great Barrier Reef 作为世界最大珊瑚礁群，拥有数千岛屿与水下珊瑚构造，是浮潜胜地。）礁群中的绿岛（Green Island）恰与台湾绿岛同名！</p>
 <p>绵羊与山羊之别在于山羊具胡须与体味。羊奶可制奶酪与黄油，羊毛用于纺织，羊身贡献肉、皮、肥皂、网球拍肠线等。（Sheep provide wool, meat, leather and byproducts like glue, cosmetics, etc.）</p>
@@ -1621,7 +1654,7 @@ God said, Let Newton be！and all was light.</p>
 <p>凡尔登是名战场，有「国殇」（a martyr to the national cause）五十万。</p>
 <p>贝当的国防部长叫魏冈（Weygand），被判无罪，虽然坐了三年多牢，但最后证明清白。魏冈也真能活，活了九十八岁！</p>
 <p>还有一个能活的，是法国在第一次世界大战时的总理克里蒙梭（George Clemenceau），活了八十八岁。死的时候叫护士走开，他说他不要死在女人面前！他要人把他的棺材立起来，他说他死也要站着死！他的外号叫「老虎」（The Tiger），这个人有多厉害，可想而知。</p>
-<p>第一次世界大战德国没能打进 Paris 去，最后，德国失败了，于是开了一个「巴黎和会」，在法国凡尔赛宫开的，凡尔赛（Versailles, The Palace of Versailles was built by Louis XIV in the 1600's. Now a national museum, it contains exhibits of fine painting and sculpture.）可比凡尔登贵多了。法国代表是老虎总理，美国是威尔逊总统（Woodrow Wilson），爸爸跟你谈过威尔逊，威尔逊的像，印在十万美金的钞票上面，你还记得吗？</p>
+<p>第一次世界大战德国没能打进 Paris 去，最后，德国失败了，于是开了一个「巴黎和会」，在法国凡尔赛宫开的，凡尔赛（Versailles, The Palace of Versailles was built by Louis XIV in the 1600’s. Now a national museum, it contains exhibits of fine painting and sculpture.）可比凡尔登贵多了。法国代表是老虎总理，美国是威尔逊总统（Woodrow Wilson），爸爸跟你谈过威尔逊，威尔逊的像，印在十万美金的钞票上面，你还记得吗？</p>
 <p>凡尔赛离 Paris 十一 miles，有六百多间房子，有三百多年了。五十多年前，美国大富翁洛克菲勒（John D. Rockefeller, Jr.）——就是现在美国副总统的老子，送了近 300 万美金重修，所以房子虽老，还很漂亮。</p>
 <p>法国大革命的时候，皇帝和皇后（皇帝是路易十六 Louis XVI，皇后是玛丽安托瓦内特 Marie Antoinette）正在凡尔赛宫。当时老百姓吵着要面包，手下报告说巴黎大乱，「因为他们没有面包。」（Because they have no bread.）皇后说：「那么让他们吃饼嘛！」（Then let them eat cake.）中国也有这种不知道民间疾苦的笑话，在玛丽安托瓦内特说这话前一千五百年，中国大乱，手下向皇帝（晋惠帝）报告老百姓没饭吃了，皇帝奇怪，反问：「他们为什么不吃肉啊？」（「何不食肉糜？」）（糜 congee；porridge；rice gruel）后来玛丽安托瓦内特死在断头台（guillotine）上。断头台是一个医生发明的。</p>
 <p>法国女人在政治上，虽然到 1945 年才与男人平等，但有影响力，却早在 1945 年以前，只是多不得好死。玛丽安托瓦内特死的时候三十八岁，另外一个比她小一半的，十九岁就被烧死的，是圣女贞德（Joan of Arc）。她的「事业」表现在奥尔良（Orléans），她死在卢昂（Rouen），她是法国的民族女英雄（the national heroine of France），虽然她死的罪名却是假的。（Condemned as a witch, Joan of Arc was burned at the stake in 1431 in the marketplace at Rouen, France. Later, in 1456, the pope pronounced her innocent. She was declared a saint in 1920.）</p>
@@ -1635,7 +1668,7 @@ God said, Let Newton be！and all was light.</p>
 <p>一、French doors（法兰西式两用门）门上有玻璃，像是窗户。</p>
 <p>二、French horn（法国号）。</p>
 <p>三、French leave（不辞而别）。</p>
-<p>四、French walk（逐出室外）这是美国俗语，也叫 the bum's rush，是抓一个人，把他推到房子外面去。</p>
+<p>四、French walk（逐出室外）这是美国俗语，也叫 the bum’s rush，是抓一个人，把他推到房子外面去。</p>
 <p>意大利人看起来聪明，人也聪明；
 西班牙人看起来聪明，人是傻瓜；
 法国人看起来傻瓜，人却聪明；
@@ -1644,7 +1677,7 @@ God said, Let Newton be！and all was light.</p>
 <p>爸爸 1975 年 6 月 29 日</p>
 <p>一、买卡式（cassette）中最新式的一种，就是全自动往复回卷正反面那种。</p>
 <p>二、台湾百鹰股份有限公司总代理美国神鹰美格福斯（Magnavox）牌有最新式的。别的牌子如也有，要买名牌的，像索尼（Sony）等。</p>
-<p>三、最小型的最方便，但每次只能装一盒（一卷录音带）小文如想买大一点的录音机，可买美格福斯 IK8844 型那种（可装进十二盒，连续录放），声音也比最小型的好。</p>
+<p>三、最小型的最方便，但每次只能装一盒（一卷录音带）小文如想买大一点的录音机，可买美格福斯 IK 8844 型那种（可装进十二盒，连续录放），声音也比最小型的好。</p>
 <p>四、要托小彭以他电器同业身份买，可打到大折扣。</p>
 <h2 id="六七嘴含一根草"><a class="header" href="#六七嘴含一根草">六七、嘴含一根草</a></h2>
 <p>亲爱的小文：</p>
@@ -1690,8 +1723,8 @@ God said, Let Newton be！and all was light.</p>
 <p>②姥姥会记得这位美人儿，她就是电影明星洛丽泰扬。</p>
 <h2 id="六八我的本领就是臭"><a class="header" href="#六八我的本领就是臭">六八、我的本领就是臭</a></h2>
 <p>亲爱的小文：</p>
-<p>中文成语：「各人自扫门前雪（Everybody minds his own business.），休管他人瓦上霜（the frost on neighbor's roof - none of one's business.）。」用英文来说，就是 Let every man skin his own skunk.（让每个人剥他自己的臭鼬的皮）。</p>
-<p>臭鼬以它的自卫（self-defense；to defend oneself）方法出名，它可以从十二英尺远，由屁股眼射出臭水，立刻「臭气冲天」（stinking smell assaulting one's nostrils），除非你和它「臭味相投」（persons of similar (atrocious) taste；a meeting of (dirty) minds），否则一定大败而逃。</p>
+<p>中文成语：「各人自扫门前雪（Everybody minds his own business.），休管他人瓦上霜（the frost on neighbor’s roof - none of one’s business.）。」用英文来说，就是 Let every man skin his own skunk.（让每个人剥他自己的臭鼬的皮）。</p>
+<p>臭鼬以它的自卫（self-defense；to defend oneself）方法出名，它可以从十二英尺远，由屁股眼射出臭水，立刻「臭气冲天」（stinking smell assaulting one’s nostrils），除非你和它「臭味相投」（persons of similar (atrocious) taste；a meeting of (dirty) minds），否则一定大败而逃。</p>
 <p>驴用腿自卫，狗用嘴自卫，象用鼻子自卫，臭鼬用屁股眼自卫。</p>
 <p>臭鼬「所向无敌」（to encounter no significant opponent on the way；undefeatable；invincible），除了一种大角猫头鹰（great horned owl）不怕它臭以外，谁都怕。</p>
 <p>臭鼬的臭水蕴藏量（deposit）丰富，可以连发六次，好像人类的左轮手枪（左轮可连发六次，所以也叫 six-shooter），但人类的手枪要执照（a license），臭鼬的「水枪」却自由。</p>
@@ -1721,8 +1754,8 @@ God said, Let Newton be！and all was light.</p>
 <p>世界上土人有的吃人肉不猎头，有的猎头不吃人肉，飞枝的土人两样全来，真凶来兮（兮，an adjunct with no independent meaning，roughly equivalent to 「Oh」 or 「Ah」 in English．）。</p>
 <p>以前台湾的土人，除兰屿的雅美族以外，都猎头，不吃肉。他们猎到一个最有名的头就是吴凤的（吴凤，Wu Feng, an official who, when head hunting was still common among the aborigines of Taiwan, ended the practice at the cost of his own life in 1768.）。</p>
 <p>这样看来，台湾的警察大概也不敢到飞枝去，因为搞不好，飞枝人发起疯来，野蛮复兴，两样来一样，台湾的警察都吃不消（cannot stand or bear；too much to take or endure）。</p>
-<p>Fijians once were cannibals and head-hunters. Most of them are now Christians, but they still observe local customs. They make outrigger canoes from hollowed logs. They also manufacture pottery and personal ornaments of shell, bone, and boar's tusks. A small clan living near Viti Levu still practices the ancient custom of fire walking. Performers do not walk on fire, but on hot stones. Fijians drink kava（yangona in Fijian）, a strong but non-intoxicating drink made from the root of a pepper plant. The drink partially numbs the tongue and lips. Fijians use it as part of most ceremonies. They celebrate every occasion with dancing.</p>
-<p>Most Fijians grow crops or catch fish for a living, but many work for the Europeans as clerks, carpenters, and police. People of Indian descent grow most of the island's sugarcane, and they also keep dairy cattle. Miners take gold, copper, and iron from the rocks of the lager island. The Fiji Islands produce coconuts, sugar, gold, timber, and tobacco. They ship tropical fruits to Australia and New Zealand. Most eastern Fiji Islands are volcanic. The only industry there is making copra（dried coconut meat）.</p>
+<p>Fijians once were cannibals and head-hunters. Most of them are now Christians, but they still observe local customs. They make outrigger canoes from hollowed logs. They also manufacture pottery and personal ornaments of shell, bone, and boar’s tusks. A small clan living near Viti Levu still practices the ancient custom of fire walking. Performers do not walk on fire, but on hot stones. Fijians drink kava（yangona in Fijian）, a strong but non-intoxicating drink made from the root of a pepper plant. The drink partially numbs the tongue and lips. Fijians use it as part of most ceremonies. They celebrate every occasion with dancing.</p>
+<p>Most Fijians grow crops or catch fish for a living, but many work for the Europeans as clerks, carpenters, and police. People of Indian descent grow most of the island’s sugarcane, and they also keep dairy cattle. Miners take gold, copper, and iron from the rocks of the lager island. The Fiji Islands produce coconuts, sugar, gold, timber, and tobacco. They ship tropical fruits to Australia and New Zealand. Most eastern Fiji Islands are volcanic. The only industry there is making copra（dried coconut meat）.</p>
 <p>爸爸1975年9月7日</p>
 <p>（后记）这封信中所引有关吴凤的英文解说，自然是从「神话」立论的。事实上，吴凤是因背约、骂人、与曹族格斗下被杀的。详见连横《吴凤列传》。</p>
 <p>七十、古国神游</p>
@@ -1731,8 +1764,8 @@ God said, Let Newton be！and all was light.</p>
 <p>苏伊士运河挖了十年才挖成，现在已经106岁了。挖它的人是法国外交家李希普（De Lesseps），他在六十四岁那年挖成。他有挖运河的瘾，又去挖巴拿马运河（the Panama Canal），结果公司倒闭，差点坐牢，因为他八十四岁了，所以免了。</p>
 <p>中国的隋炀帝，也喜欢挖运河，后来也倒了霉。大概土地神不喜欢人家挖他。</p>
 <p>埃及的棉花最有名。</p>
-<p>埃及的首都是开罗（Cairo），已经有1135年历史（A.D.640年就有了）。</p>
-<p>Cairo bazaars很有名，bazaar是东方的小工艺品商店（1. In the East, an exchange, marketplace, or assemblage of shops, 市场、商场（东方的）。2. A spacious hall or suite of rooms for the sale of goods, as at a fair, 百货商场。also, a fair for the sale of fancy wares, toys, etc. commonly for a charitable object, 又指售卖珍玩以充善举的市场）。</p>
+<p>埃及的首都是开罗（Cairo），已经有1135年历史（A. D. 640年就有了）。</p>
+<p>Cairo bazaars很有名，bazaar是东方的小工艺品商店（1. In the East, an exchange, market place, or assemblage of shops, 市场、商场（东方的）。2. A spacious hall or suite of rooms for the sale of goods, as at a fair, 百货商场。also, a fair for the sale of fancy wares, toys, etc. commonly for a charitable object, 又指售卖珍玩以充善举的市场）。</p>
 <p>埃及最有名的是三十五座金字塔（pyramid）。</p>
 <p>金字塔有十个足球场那么大。</p>
 <p>金字塔是埃及国王（埃及叫法老Pharaoh）的坟，里面有金银财宝，所以老是被偷。所以以后的埃及国王就不盖金字塔了。</p>
@@ -1740,9 +1773,9 @@ God said, Let Newton be！and all was light.</p>
 <p>金字塔前面的狮身人面像，叫Sphinx（the 「Strangler」）。最有名的Sphinx故事是叫人猜谜语的故事。</p>
 <p>谜语是什么东西又四只脚又两只脚又三只脚，后来Oedipus猜出来了。（SPHINX, in Greek mythology, a winged monster with the body of a lion and the head and breast of a woman. According to the myth, the Sphinx destroyed the passersby from the Greek city of Thebes when they failed to guess her riddle: 「What is four-footed in the morning, two-footed at noon, three-footed in the evening?」 Oedipus solved the riddle by replying: 「Man, who in childhood creeps on hands and knees, in manhood walks erect, and in old age uses a staff.」 The Sphinx, hearing this, threw herself from a rock and perished, and Oedipus thus became the liberator of Thebes and was made its king.）</p>
 <p>法老们不用金字塔以后，开始在地底下挖坟。1922年，考古学家Howard Carter（an English archaeologist, specialized in excavating ancient Egyptian tombs）挖到了小法老Tutankhamen的坟——3300年前的宝贝全部出土。小法老十八岁就死了，装在金棺材里，棺材盖是用金子做的小法老的全身雕像。坟共有四个房间，在chiff中挖成的，里面宝贝多极了，琳琅满目。（Good gems fill the eyes, a vast array of beautiful and fine things.）小法老Tutankhamen的名字，在3300年后，名闻全世界。Will Rogers（爸爸跟你谈过的美国牛仔哲学家，印地安祖先）甚至把Tutankhamen这个名词（noun）当动词（verb）来用。他说：</p>
-<p>If the father of our country, George Washington, was Tutankhamen tomorrow, and, after being aroused from his tomb, was told that the American people today spend two billion dollars yearly on bathing material, he would say, 「What got 'em so dirty?」</p>
+<p>If the father of our country, George Washington, was Tutankhamen tomorrow, and, after being aroused from his tomb, was told that the American people today spend two billion dollars yearly on bathing material, he would say, 「What got ’em so dirty?」</p>
 <p>埃及有全世界最长的河尼罗河（Nile River），埃及为了利用尼罗河，自1960年起用十亿美金盖了大水库，叫阿斯旺水库（阿斯旺坝The Aswan High Dam）（台湾的石门水库只是一亿美金），有了阿斯旺水库，会使尼罗河的水存起来。但这样一来，许多埃及的古迹都要被淹，尤其是有名的四千年前的大庙阿布辛拜勒（Abu Simbel）。于是进行抢救，全世界五十个国家捐了一千七百万美金救它，救的方法是朝上搬家。于是，这座待在那儿四千年的大庙，就被锯成一块一块的，用起重机搬了家。</p>
-<p>这个大庙里面的名堂很多，设计奇特。每年有两次，阳光照进法老石像的脸上。大庙外面这四个大石像也都是这法老，这法老叫Ramesses II（Ramses II, Ramesses II），在位时间是公元前13三世纪（reigned 1290-1224 B.C.），他把他自己做成四胞胎，替自己的庙守门，他老家伙谁也不信，只信自己。四千年前，他把古人忙得臭死；四千年后，他又把今人忙得臭死，他真有办法，他真行。</p>
+<p>这个大庙里面的名堂很多，设计奇特。每年有两次，阳光照进法老石像的脸上。大庙外面这四个大石像也都是这法老，这法老叫Ramesses II（Ramses II, Ramesses II），在位时间是公元前13三世纪（reigned 1290-1224 B. C.），他把他自己做成四胞胎，替自己的庙守门，他老家伙谁也不信，只信自己。四千年前，他把古人忙得臭死；四千年后，他又把今人忙得臭死，他真有办法，他真行。</p>
 <p>爸爸1975年9月20日</p>
 <h2 id="七一古希腊的辉煌"><a class="header" href="#七一古希腊的辉煌">七一、「古希腊的辉煌」</a></h2>
 <p>亲爱的小文：</p>
@@ -1762,7 +1795,7 @@ And the grandeur that was Rome</p>
 <p>英文谚语 A cat has nine lives.（猫有九命）City with nine lives 是套这一谚语。</p>
 <p>中国人说「人非圣贤，孰能无过？」但外国人却说圣贤也有过，在英文中，这 Even Homer nods.。Even Homer sometimes nods.（连荷马也打瞌睡）荷马是第一个西方作家，是个瞎子（中国最老的作家之一左丘明 Tso Chiu-ming 也是个瞎子！）荷马活的时候穷得讨饭，死后有七个城拍他的马屁，说荷马是他们老乡。</p>
 <p>Seven wealthy towns contend for Homer dead,
-Through which the living Homer begg'd his bread.</p>
+Through which the living Homer begg’d his bread.</p>
 <p>——Thomas Seward：On Homer(1788)</p>
 <p>荷马的 Odyssey 里说 Greeks 从 Troy 回来，路上经过千辛万苦。他们的大英雄是 Odysseus（英文多叫他 Odysses），带着 Greeks 逃离了 Lotus-Eaters 等等要命的地方。</p>
 <p>中国的王宝钏等她丈夫回来，等了十八年。她的纪录被 Odysseus 的老婆 Penelope 打破，Penelope 等了她丈夫二十年。Odysseus 回来的时候，只有老狗还认识他。</p>
@@ -1797,7 +1830,7 @@ Through which the living Homer begg'd his bread.</p>
 <p>从恺撒身上，出来许多英文名句子，像：</p>
 <p>1．to cross the Rubicon——孤注一掷；胜败一举；采取断然手段（the Rubicon 是意大利中部的一条河）。</p>
 <p>2．Veni，vidi，vici．（I came, I saw, I conquered．——「我来了，我看到了，我征服了。」（恺撒名言。）</p>
-<p>3．Render therefore unto Caesar the things which are Caesar's；and unto God the things that are God's．——「恺撒的东西还给恺撒，上帝的东西还给上帝。」（这是《马太福音》中记耶稣的话。恺撒不但是指 Julius Caesar，也指一般的罗马皇帝。）</p>
+<p>3．Render therefore unto Caesar the things which are Caesar’s；and unto God the things that are God’s．——「恺撒的东西还给恺撒，上帝的东西还给上帝。」（这是《马太福音》中记耶稣的话。恺撒不但是指 Julius Caesar，也指一般的罗马皇帝。）</p>
 <p>英文中 7 月 July 就是从恺撒名字 Julius 来的。7 月有三十一天也是他的杰作。</p>
 <p>恺撒打 Egypt 后，被埃及女皇 Cleopatra 迷住。恺撒被刺后，他的部下 Antony 又被 Cleopatra 迷住。所以法国哲学家 Pascal 说：如果 Cleopatra 的鼻子短一点，整个世界的脸蛋都变了。（If the nose of Cleopatra had been a little shorter the whole face of the world would have been changed.）</p>
 <p>还有一个罗马将军叫 Quintus Fabius Maximus Rullianus（？—290 B.C.），他拖垮了罗马大号敌人汉尼拔（Hannibal）。</p>
@@ -1813,9 +1846,9 @@ Through which the living Homer begg'd his bread.</p>
 <p>波兰夹在德国俄国之间，老是被侵略、被瓜分、被瓜剖豆分（[of a county] to be divided or split like a melon or a bean；to be partitioned）。</p>
 <p>Chopin 音乐激起波兰人的爱国心。</p>
 <p>The Poles also have an insatiable appetite for translations of Molière and Shaw and for their own 19th-century dramatists who wrote from exile, when their country was partitioned among three neighboring empires.</p>
-<p>The plays, novels, and music of this period helped keep the Poles' sense of nationhood alive. One composer, in particular, has stirred Polish pride through the dark years, He, of course, is Chopin, whose birthplace at Zelazowa Wola, 28 miles west of Warsaw, is a national shrine. Here, every Sunday in the spring and summer, the public is invited to a Chopin concert.</p>
+<p>The plays, novels, and music of this period helped keep the Poles’ sense of nationhood alive. One composer, in particular, has stirred Polish pride through the dark years, He, of course, is Chopin, whose birthplace at Zelazowa Wola, 28 miles west of Warsaw, is a national shrine. Here, every Sunday in the spring and summer, the public is invited to a Chopin concert.</p>
 <p>波兰在 1772、1793、1795、1939 年前后被瓜分四次。1914 年被瓜分了以后，地图上没有波兰了。1945 年苏联（Russia/U.S.S.R.）分了波兰东边，却把德国东边补给波兰。所以波兰「失之东隅，收之桑榆」（to suffer a loss in one place but make a gain somewhere else）。</p>
-<p>苏联这种作风，叫「慷他人之慨」（to show generosity or unselfishness by another's wealth；to be generous at the expense of others）。爸爸在四、六信中跟你谈过，英文叫 Rob Peter to pay Paul（抢彼得赔保罗）。</p>
+<p>苏联这种作风，叫「慷他人之慨」（to show generosity or unselfishness by another’s wealth；to be generous at the expense of others）。爸爸在四、六信中跟你谈过，英文叫 Rob Peter to pay Paul（抢彼得赔保罗）。</p>
 <p>波兰的首都是华沙（Warsaw），Warsaw, Warsaw, Warsaw 可真 saw 了 war。二次世界大战，华沙城全毁，人死了四分之一。</p>
 <p>格但斯克（Gdańsk）在德文叫但泽（Danzig），是造船中心，这个城和波兰走廊（Polish Corridor）过去都是世界大新闻，因为它们老是和德国扯不清。</p>
 <p>POLISH CORRIDOR is a historic strip of land that was once the ancient Polish province of Pomorze. Poland lost the province to Prussia in 1772. When Prussia become a German state in 1871, the area fell into German control.</p>
@@ -1824,7 +1857,7 @@ Through which the living Homer begg'd his bread.</p>
 <p>波兰的瓷器很有名，瓷器又叫 china，所以，可以说，Poland 的 china 很有名。</p>
 <p>小文你还记得爸爸跟你谈过的一种猪叫 Poland China 吗？Poland Chinas gain weight rapidly and make excellent meat hogs. Farmers in Ohio developed the Poland China breed.</p>
 <p>Kraków 是波兰的文化城，以前是首都（Kraków is the traditional capital of Polish culture）波兰天文学家哥白尼（Copernicus）就是在这个城里出头的。</p>
-<p>Copernicus skillfully applied this new idea in his masterpiece, Concerning the Revolutions of the Celestial Spheres（1543）. In this book, Copernicus demonstrated how the earth's motions could be used to explain the motions of other heavenly bodies. His theory laid the foundations for the telescopic discoveries of Galileo, the planetary laws of Johannes Kepler, and the gravitation principle of Sir Isaac Newton.</p>
+<p>Copernicus skillfully applied this new idea in his masterpiece, Concerning the Revolutions of the Celestial Spheres（1543）. In this book, Copernicus demonstrated how the earth’s motions could be used to explain the motions of other heavenly bodies. His theory laid the foundations for the telescopic discoveries of Galileo, the planetary laws of Johannes Kepler, and the gravitation principle of Sir Isaac Newton.</p>
 <p>Copernicus was born in the city of Thorn（now Toruń, Poland）, and attended the University of Kraków.</p>
 <p>波兰人跑到外国成名的：</p>
 <p>①在法国有居里夫人 Marie Sklodowska Curie（1867-1934），Polish chemist and physicist in France, wife of Pierre Curie, Madame Curie. 她是做下女出身的，苦学成功。她是唯一一个人得过两次 Nobel Prize 的科学家。她的大女儿 Iréne 后来也得了 Nobel Prize；小女儿 Ève. Her life of her mother, Madame Curie（1937）, had a great and immediate success, as did Among Warriors（1943）．</p>
@@ -1839,30 +1872,30 @@ Through which the living Homer begg'd his bread.</p>
 <h2 id="七四登天梯"><a class="header" href="#七四登天梯">七四、登天梯</a></h2>
 <p>亲爱的小文：</p>
 <p>你注意到警察局里消防车上的云梯（ladder）了吗？那种梯子升起来很高，可高出一百英尺。美国 underworld slang 把 ladder 叫做 Jacob，你知道是谁吗？</p>
-<p>Jacob was the son of Isaac, and the father of the 12 sons who founded the Twelve Tribes of Israel, according to the Old Testament. He bought his older brother Esau's birthright with a bowl of savory stew（「mess of pottage」）. Later, Jacob enforced his claim by pretending to his blind and aged father that he himself was Esau. Thus, he obtained from Isaac the words of blessing Isaac had meant for Esau. Esau was so angry that Jacob fled for his life.</p>
-<p>On the way to his uncle Laban, Jacob slept at a place called Bethel, where he dreamed of a wonderful ladder between heaven and earth. In the dream, God promised to protect and bless him while he was away from home. Much encouraged, Jacob went on to Laban's home. There he fell in love with Laban's daughter, Rachel. But Laban forced Jacob to marry his older daughter. Leah, before he could have Rachel for his wife. After working 20 years for Laban, Jacob left for home.</p>
+<p>Jacob was the son of Isaac, and the father of the 12 sons who founded the Twelve Tribes of Israel, according to the Old Testament. He bought his older brother Esau’s birthright with a bowl of savory stew（「mess of pottage」）. Later, Jacob enforced his claim by pretending to his blind and aged father that he himself was Esau. Thus, he obtained from Isaac the words of blessing Isaac had meant for Esau. Esau was so angry that Jacob fled for his life.</p>
+<p>On the way to his uncle Laban, Jacob slept at a place called Bethel, where he dreamed of a wonderful ladder between heaven and earth. In the dream, God promised to protect and bless him while he was away from home. Much encouraged, Jacob went on to Laban’s home. There he fell in love with Laban’s daughter, Rachel. But Laban forced Jacob to marry his older daughter. Leah, before he could have Rachel for his wife. After working 20 years for Laban, Jacob left for home.</p>
 <p>On the way, Jacob prayed all night until God reassured him that Esau would spare his life. Esau met him with forgiveness, and they parted good friends. Jacob spent his last years in Egypt, where his son Joseph brought him to live.</p>
-<p>Esau was the son of Isaac and Rebecca, and twin brother of Jacob in the Bible. He is a main character in many stories found in Genesis 25-33. The best known are Jacob's cheating him out of his birthright for a 「mess of pottage」（Gen.25：27-34）, and the loss of his blessing through the plotting of his mother and brother（Gen.27）. Esau was reconciled to Jacob after the latter's return to Palestine 20 years later.</p>
+<p>Esau was the son of Isaac and Rebecca, and twin brother of Jacob in the Bible. He is a main character in many stories found in Genesis 25-33. The best known are Jacob’s cheating him out of his birthright for a 「mess of pottage」（Gen.25：27-34）, and the loss of his blessing through the plotting of his mother and brother（Gen.27）. Esau was reconciled to Jacob after the latter’s return to Palestine 20 years later.</p>
 <p>Biblical history regards Esau as the founder of the Edomite nation.</p>
 <p>Jacob 就是现在以色列（Israel）人的老老老老老老老老老老……老祖宗。</p>
 <p>Mess of pottage 就是「因小失大」、「得不偿失」、「划不来」的意思。</p>
-<p>A Jacob's ladder is a ladder made of rope or cable, usually with wooden rungs. It is dropped over the side of a ship to enable people to ascend from or descend to small boats alongside. Harbor pilots usually come aboard via a Jacob's ladder.</p>
-<p>The Jacob's ladder gets its name from an incident in the Book of Genesis（28：12）. The patriarch Jacob falls asleep and the a vision：「And he dreamed, and behold a ladder set upon the earth, and the top of it reached to heaven；and behold the angels of God ascending and descending on it.」</p>
-<p>Jacob's ladder has been used in at least two other quite earthly meanings. A small plant with a flower-and-leaf formation resembling a ladder bears this name. In England, also what we Americans call 「runs」 in hosiery were formerly called Jacob's ladders. Nowadays they are simply ladders.</p>
-<p>Jacob's ladder 可以登天，所以美国黑社会的 thieves' Latin（盗贼的隐语，切口）就把梯子叫 Jacob。</p>
-<p>植物里头花葱属（polemoniums）中的一种就叫 Jacob's ladder，因为它们有 ladderlike leaves。</p>
+<p>A Jacob’s ladder is a ladder made of rope or cable, usually with wooden rungs. It is dropped over the side of a ship to enable people to ascend from or descend to small boats alongside. Harbor pilots usually come aboard via a Jacob’s ladder.</p>
+<p>The Jacob’s ladder gets its name from an incident in the Book of Genesis（28：12）. The patriarch Jacob falls asleep and the a vision：「And he dreamed, and behold a ladder set upon the earth, and the top of it reached to heaven；and behold the angels of God ascending and descending on it.」</p>
+<p>Jacob’s ladder has been used in at least two other quite earthly meanings. A small plant with a flower-and-leaf formation resembling a ladder bears this name. In England, also what we Americans call 「runs」 in hosiery were formerly called Jacob’s ladders. Nowadays they are simply ladders.</p>
+<p>Jacob’s ladder 可以登天，所以美国黑社会的 thieves’ Latin（盗贼的隐语，切口）就把梯子叫 Jacob。</p>
+<p>植物里头花葱属（polemoniums）中的一种就叫 Jacob’s ladder，因为它们有 ladderlike leaves。</p>
 <p>爸爸 1975 年 11 月 1 日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/08.书信函件类/坐牢家爸爸给女儿的八十封信.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/08.书信函件类/坐牢家爸爸给女儿的八十封信.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../08.书信函件类/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../08.书信函件类/李敖书信集.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1872,16 +1905,21 @@ Through which the living Homer begg'd his bread.</p>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../08.书信函件类/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../08.书信函件类/李敖书信集.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1890,12 +1928,16 @@ Through which the living Homer begg'd his bread.</p>
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,82 +81,103 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="求是新语"><a class="header" href="#求是新语">求是新语</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E6%B1%82%E6%98%AF%E6%96%B0%E8%AF%AD%E8%87%AA%E5%BA%8F">《求是新语》自序</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#求是新语自序">《求是新语》自序</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <p>《求是新语》自序</p>
@@ -352,7 +385,7 @@
 <p>由于浑蛋教育的成功，人们居然忘了自己应该面对的现实与真相，而要不断异想天开、一厢情愿。国民党昧于“台独分子”的存在，自以为长治久安；“台独分子”昧于中共的虎视眈眈，自以为斯台可独。这种不知今夕何夕、身处何地的浑蛋性格，真被全世界有识之士窃笑、也被中共窃笑。但国民党和“台独分子”居然在台湾还洋洋自得，这边搞“中华民国宪法”自渎，那边搞“台湾共和国基本法草案”手淫，双料浑蛋，真不知自己在大世界大中国中是老几。跟这些外省的、台湾的奴才浑蛋同居一岛，整天看他们肉麻当有趣，又好气又好笑。其中“台独分子”们，竟不知他们这样笨，都是国民党教育成功的产品，还茫然以为自己在反国民党呢，这种浑蛋，更是混得邪门儿了。有道是“台湾第一”，若以浑蛋论，真是世界第一。</p>
 <p>台湾哪有大事！</p>
 <p>老友段宏俊打电话来，说有读者抗议，埋怨李敖的文章谈了许多小人物的小事。我告诉段宏俊：“你呀，要有见识一点！台湾哪有大事可谈？台湾有的，都是屁事小事，不谈这些，没得可谈了。你可以转告我的话给这种林正杰水准的读者，叫他好好想想吧。读了我这么久的文章，这种人头脑还这么浑，他应该惭愧！”</p>
-<p>其实，我的文章，大小事皆谈，就近取譬、随缘论人、因材施教、雅俗共赏，并无所定型。纵所论者小，也是以小喻大，乍看起来，或是论断一些杂碎小人物，其实文章深处，别有大义存焉。这些大义，都表现在我文章中的新意见上。英国哲学家洛克（JohnLocke）说得好：新意见常被怀疑且时遭反对者，无他焉，只因其不落俗套耳。（Newopinionsarealwayssuspected,andusuallyopposed,withoutanyotherreasonbutbecausetheyarenotalreadycommon.）</p>
+<p>其实，我的文章，大小事皆谈，就近取譬、随缘论人、因材施教、雅俗共赏，并无所定型。纵所论者小，也是以小喻大，乍看起来，或是论断一些杂碎小人物，其实文章深处，别有大义存焉。这些大义，都表现在我文章中的新意见上。英国哲学家洛克（John Locke）说得好：新意见常被怀疑且时遭反对者，无他焉，只因其不落俗套耳。（New opinions are always suspected, and usually opposed, without any other reason but because they are not already common.）</p>
 <p>寄语段宏俊，不要被那些浑人搅昏了头，没水准的抗议，是不值得一顾的。</p>
 <p>毋忘李氏父子</p>
 <p>我常向台湾朋友戏谑说：“你们台湾人太笨，搞政变、搞颠覆，非你们所长。但有两次小成功，把外省人赶走，也可留为历史纪录。一次是张建邦逼走外省舅舅居浩然、又逼外省妈妈居瀛玖上吊，抢到淡江大学；一次是吴三连逼走外省合伙人李玉阶，抢到《自立晚报》。”我的台湾朋友听了我的戏谑，都会觉得好笑。</p>
@@ -371,7 +404,7 @@
 <p>我很怕看报纸上柏杨式的油腔滑调文章，因为这种文章既不幽默、又不精辟，只是耍嘴皮子，并且是很庸俗的嘴皮子，从“柏老”式天天“赌一块钱”，到“老包”式天天“搜索枯肠”，实在腻人。</p>
 <p>如果只是很庸俗的耍嘴皮子，倒也罢了，胡说八道，只是所见者小而已。最吃不消的，是他们知识水平不够，在事实上，就先出了大错，这就未免太不读书了。</p>
 <p>以11月12日《自由时报》老包的《认错又如何》一文为例。老包写道：“四百年前波兰的哥白尼发表‘地动说’（地球绕着太阳转动），随即招惹基督教为首的恶势力群起迫害，有人要求他向恶势力妥协认错，他说：‘认错又如何？地球还是在动啊！’”</p>
-<p>事实上，哥白尼在1530年就完成地动说了，但他不敢发表，直到死前，他才发表，书成之日，也就是他弥留之时。据威尔逊（GroveWilson）《科学家奋斗史话》（GreatMenofScience）所述，哥白尼在世时，并没因此书受到什么辱骂或称赞。老包所谓“随即招惹基督教为首的恶势力群起迫害”等话，全是胡说。哥白尼的书，因为当时审查书刊的特务们无知，并没被禁，但后来经伽利略一宣扬，反倒书被查禁、人被鞭尸。传说伽利略悔罪签字后，向当时的特务们补了一句：“但它（地球）还在动啊！”（Epursimuove.）老包显然弄不清哥白尼与伽利略，因而“伽冠哥戴”了。天啊，这样子的程度，还要做《自由时报》副刊主编呢！</p>
+<p>事实上，哥白尼在1530年就完成地动说了，但他不敢发表，直到死前，他才发表，书成之日，也就是他弥留之时。据威尔逊（Grove Wilson）《科学家奋斗史话》（Great Men of Science）所述，哥白尼在世时，并没因此书受到什么辱骂或称赞。老包所谓“随即招惹基督教为首的恶势力群起迫害”等话，全是胡说。哥白尼的书，因为当时审查书刊的特务们无知，并没被禁，但后来经伽利略一宣扬，反倒书被查禁、人被鞭尸。传说伽利略悔罪签字后，向当时的特务们补了一句：“但它（地球）还在动啊！”（E pur si muove.）老包显然弄不清哥白尼与伽利略，因而“伽冠哥戴”了。天啊，这样子的程度，还要做《自由时报》副刊主编呢！</p>
 <p>两种花蝴蝶</p>
 <p>11月11日报上说：“台大政治系教授张忠栋昨天透露，中央研究院与台大教授们，正在暗中进行联系，要为民进党台北县长候选人尤清‘做一些事情’。”因为张忠栋透露的地点是在尤清的募款餐会上，当然所谓“为尤清‘做一些事情’”，是不外助选那档子事。</p>
 <p>过去尤清到我家来，我就坦白告诉他，你做“监委”，做不出一点事情。后来他跑去做“立委”，也不出我所料。如今又要三迁去做台北县长了，结果可想而知。尤清有他的长处，长处是在作秀，而不在做事。美丽岛事件以来，他一路趁人于危，自己坐收名利，却看不到他“做一些事情”给我们。他年复一年干的事，只是一只“政治花蝴蝶”而已。</p>
@@ -460,9 +493,9 @@
 <p>说郭倍宏“心灵经过正义和邪恶的战争”而知所“抉择”，这是好的，不过，我们忍不住要纳闷，他的抉择，为什么抉择得这么迟？这么晚？真正男子汉们前仆后继“给正义抬头，让邪恶沉沦”而受苦受难的时候，他郭倍宏在干什么？在干的，正是人人看不起的特务啊！</p>
 <p>郭倍宏要做男子汉，自然为我们所乐见。但是，做男子汉不是嘴巴说的，尤其不是在海外国民党恶势力所不及的安全地方说的，要真见诸行动才算，但郭倍宏的“铁的事实”，呈现给我们的，却是一连串的助纣为虐、为虎作伥，今天给国民党做狗腿，明天又以立地成佛姿态，夤缘而成“台独”主席。这样反复无常的小人、投机靠大边的懦夫、没有任何实际成绩来立功于台湾的假货，如今居然以“傲骨凛然的台湾男子汉”招摇撞骗，台湾的男子汉，都跳浊水溪可也！</p>
 <p>不足为训的弃投</p>
-<p>陈英士的孙子，为了护照纠纷，愤而朝民进党钩手指；关中的继母，为了遗产纠纷，愤而朝民进党吊膀子……这种“弃暗投明”的理由是不足为训的。你可以光明磊落的唾弃国民党、你可以光明磊落的加入民进党，但为了一己的私利或屁事，就决定个人的大局，这是不得体的小动作。何况，民进党当了道，你的纠纷，就不发生了吗？太天真了吧？英文有自拉丁文转出的一句谚语是：Outofthefrying-panintothefire，中译“跳出油锅又入火坑”，脱小难而陷大难，智者不为也！</p>
+<p>陈英士的孙子，为了护照纠纷，愤而朝民进党钩手指；关中的继母，为了遗产纠纷，愤而朝民进党吊膀子……这种“弃暗投明”的理由是不足为训的。你可以光明磊落的唾弃国民党、你可以光明磊落的加入民进党，但为了一己的私利或屁事，就决定个人的大局，这是不得体的小动作。何况，民进党当了道，你的纠纷，就不发生了吗？太天真了吧？英文有自拉丁文转出的一句谚语是：Out of the frying-pan into the fire，中译“跳出油锅又入火坑”，脱小难而陷大难，智者不为也！</p>
 <p>“跖非诛盗之人”</p>
-<p>古话有一种“以盗首弭盗”，流行的说法是“以贼捉贼”，英谚“Setathieftocatchathief”就是这个意思。为什么“以贼捉贼”呢？因为贼最了解贼的习性，用贼去抓贼，必然手到擒来。</p>
+<p>古话有一种“以盗首弭盗”，流行的说法是“以贼捉贼”，英谚“Set a thief to catch a thief”就是这个意思。为什么“以贼捉贼”呢？因为贼最了解贼的习性，用贼去抓贼，必然手到擒来。</p>
 <p>虽然在当政者的立场，贪图方便，而要“以贼捉贼”；但对贼自己说来，却也有其立场。古话又说：“盗固不义，而跖非诛盗之人。”意思是说，贼虽然不是好东西，可是贼头子却不适合宣布贼的罪状而杀之。原因何在？他们本是一流货耳！基于“盗亦有道”的道理，一流货的人，不可以这样干自己人。干贼这一行的，也许在不得已时，被迫要去“以贼捉贼”，但是他不能以此为理直气壮，认为自己有资格“评鉴”别人。原因无他，你们本是一流货耳！你好意思吗？</p>
 <p>厚脸皮的是，居然有一种本是国民党或国民党同路人的一流货知识分子，他们靠国民党的黑暗统治而身膺荣华地位，却在蒋家老贼衰亡之际，以清流、公正、中立姿态，“评鉴”起自己人来了，并把自己人从零分打起，极伪善之能事。这种品格，纵“盗亦有道”的黑道人物，都将耻与为伍。知识分子应该人人起而鄙视这些货色！——我们看不起国民党，但也看不起国民党被这些学术小人物们“墙倒众人推”。我们无爱于国民党，但有爱于知识分子的格调与尊严，这些货色是知识分子的败类，要拆穿他们才好。</p>
 <p>陈重光之言</p>
@@ -505,7 +538,7 @@
 <p>上月20日晚上邓维桢偕小魏（魏廷昱）来，小魏是衔许信良之命，要他同邓维桢和我商量商量许信良的处境。谈话中，小魏详述这次土城事件的内幕，原来是大家决议一起去按规定探监，人愈多愈好，以显出大家对许信良的关怀。不料临时小魏生病去医院，林正杰趁机要许信良太太同意他做总干事，于是局面转为个人竞选作秀的好机会，纯粹关怀许信良的计划，也被一人秀给搞砸了。许信良的处境，也变得转为不利，这个牢，恐怕有得坐了。</p>
 <p>如今，一人秀因而窜起的林正杰得到了及时雨，许信良却遭遇了闷天雷。林正杰在医院中，信誓旦旦的声言一出院即再去土城搞运动，可是，这是姑妄言之的空话，他一出院就说了不算了。何必算呢？许老大被他利用了个够，并且利用完了，他要忙着去利用其他题目了。</p>
 <p>这是一个活生生的近在眼前的小政客翻云覆雨的例子，选民是没头脑的，他们只会看热闹投选票，哪管小政客人而不仁、言而无信？于是，小政客当选，许老大坐牢；小政客选得容易，许老大坐得艰难，新时代的官场现形记，又别开新章矣！</p>
-<p>洋人谚语说：“每人都抱怨自己记忆力不好，却从不抱怨自己判断力太差。”（Everyonecomplainsofhismemory,andnoonecomplainsofhisjudgment.）台湾的选民判断力差，正因为他们的记忆力不好。林正杰在医院的信誓旦旦一出院就说了不算，而选民居然也立刻记忆力不好起来，跟着忘得一干二净。许老大坐牢兴叹，还用说吗？</p>
+<p>洋人谚语说：“每人都抱怨自己记忆力不好，却从不抱怨自己判断力太差。”（Everyone complains of his memory, and no one complains of his judgment.）台湾的选民判断力差，正因为他们的记忆力不好。林正杰在医院的信誓旦旦一出院就说了不算，而选民居然也立刻记忆力不好起来，跟着忘得一干二净。许老大坐牢兴叹，还用说吗？</p>
 <p>不认老大而性好从政</p>
 <p>流氓盗亦有道，有对老大的认同，今天台湾的流氓盗亦无道，竟连老大都不认了。“一清专案”坐牢回来的老大，竟遭后生小辈排挤；其他各地老大，人被杀、店被砸者，亦时有所闻。世风之下，在台湾蔚为特色。</p>
 <p>另一特色是台湾流氓喜欢参与政治活动，这就好像荡妇倡议贞节，令人有哭笑不得之感。贞节固美德也，但是一经荡妇打拼，则一切化为闹剧。我始终怀疑，在人类抗暴追求自由民主的历程中，是否需要这号人物？自由民主是一种有气质的运动，在这种运动中，混进了这么多的没气质货色，绝非任何政党之福。这种货色带给我们的只是流氓底子的暴民政治，这样子的抗暴追求，只是追求到自己的一面镜子而已。</p>
@@ -534,7 +567,7 @@
 <p>中外浅人看这次选举，认为是台湾民主政治好的起点，我却以第一流思想家、历史家的慧眼，看出它是一个坏的开始，它密集了古今中外独此一家的浑头脑和粗胳臂，十足反证了国民党和民进党都是台湾民主政治的罪人。他们给我们一个这么坏的开始，正是失败的一半。</p>
 <p>输的是谁？是真正的民主政治！</p>
 <p>谁是最不要脸的女人？</p>
-<p>谁是最不要脸的女人？我看郭婉容当之无愧。一个内阁大员，对租税政策，出尔反尔，千分之多少都行，千分之十五，由她信誓旦旦；千分之六，也由她言之谆谆。千变万化，一如人尽可夫似的小大随意，而丝毫不以政策不行而该引咎辞职。全世界做内阁大员的，哪个能这样不要脸？哪个敢这样不要脸？只有郭婉容为了做“财政部长”敢。说她是最不要脸的女人，一点也没错。国民党过去不要脸，都是男人不要脸，女人还知点廉耻；如今连女人都上场了，真是大限已到。英国撒切尔夫人（MargaretThatcher）说在政治上，托诸空言找男人、见诸行事找女人。（Inpolitics,ifyouwantanythingsaid,askamen;ifyouwantanythingdone,askawoman.）撒切尔错了，郭婉容就来个不男不女给你看！</p>
+<p>谁是最不要脸的女人？我看郭婉容当之无愧。一个内阁大员，对租税政策，出尔反尔，千分之多少都行，千分之十五，由她信誓旦旦；千分之六，也由她言之谆谆。千变万化，一如人尽可夫似的小大随意，而丝毫不以政策不行而该引咎辞职。全世界做内阁大员的，哪个能这样不要脸？哪个敢这样不要脸？只有郭婉容为了做“财政部长”敢。说她是最不要脸的女人，一点也没错。国民党过去不要脸，都是男人不要脸，女人还知点廉耻；如今连女人都上场了，真是大限已到。英国撒切尔夫人（Margaret Thatcher）说在政治上，托诸空言找男人、见诸行事找女人。（In politics, if you want anything said, ask a men; if you want anything done, ask a woman.）撒切尔错了，郭婉容就来个不男不女给你看！</p>
 <p>同流不合污</p>
 <p>在贼船上，人可以同流，但不可以合污。同流可以原谅，合污却该谴责。</p>
 <p>法律问题，政治解决</p>
@@ -544,7 +577,7 @@
 <p>“评鉴”者的嘴脸</p>
 <p>大陆时代的清流教授，他们站在政府对面，骂政府是盗贼；降至台湾的清流教授，他们躺在政府怀里，为盗贼上条陈；最近的清流教授，他们吃里媚外，一方面拿盗贼的，一方面红杏出墙做“评鉴”。他们的行径，其实还不如偷人养汉的女人。这种女人偷人养汉，还不好意思张扬；可是这种清流教授却出于贼窝，反倒公然“评鉴”以出贼丑。人间没有这样“窝里反”的模式，拿盗贼的，还骂盗贼，骂了还不肯洁身引退，还在从贼不已。这是什么清流教授？偷人养汉的女人，都要羞与他们为伍呢！</p>
 <p>民主如晦，鸡鸣不已</p>
-<p>19世纪美国自由派牧师比彻（HenryWardBeecher），有一次做政治性演说，听众有捣乱者，故作鸡叫以扰之。比彻乃掏出怀表，一边看一边说：“真奇怪，怎么十点钟鸡就叫了？不过，一定是清早了，因为低等动物的天性是不会错的。”</p>
+<p>19世纪美国自由派牧师比彻（Henry Ward Beecher），有一次做政治性演说，听众有捣乱者，故作鸡叫以扰之。比彻乃掏出怀表，一边看一边说：“真奇怪，怎么十点钟鸡就叫了？不过，一定是清早了，因为低等动物的天性是不会错的。”</p>
 <p>民进党没有政治风度，在别人演说时鼓噪闹场，其天性低等，可以概见。民主水准，是19世纪的呀！</p>
 <p>民进党的友情问题</p>
 <p>《时代》周刊登民进党尤清的谈话，谴责国民党“过去四十年间，只照顾自己的朋友”。</p>
@@ -577,9 +610,9 @@
 <p>民进党的公函问题</p>
 <p>12月7日，民进党新竹市党部，由主任委员施性融署名，发出公函，行文给“中央党部及各地方党部”，主旨竟是“防止施性忠加入民进党案”！——古今中外的政党，门槛再紧也没有这样紧法的，竟以堂堂公函，防人于先有如是者，天啊！</p>
 <p>卡萨尔斯的决绝</p>
-<p>西班牙大提琴家卡萨尔斯（PabloCasals），不但是第一流的艺术家，也是第一流的人道主义者。他认为音乐这种艺术，绝非贵族或少数人所独享，他坚持要与平民利益有关。所以他的演奏会，会有从五千美金到五块美金的不同价码，使没钱的人，也有机会听得到。</p>
+<p>西班牙大提琴家卡萨尔斯（Pablo Casals），不但是第一流的艺术家，也是第一流的人道主义者。他认为音乐这种艺术，绝非贵族或少数人所独享，他坚持要与平民利益有关。所以他的演奏会，会有从五千美金到五块美金的不同价码，使没钱的人，也有机会听得到。</p>
 <p>卡萨尔斯的人道主义还不仅此，他还扩张到“危邦不入、乱邦不居”的气派。凡是他视同不人道的国家，他都要加以抵制，拒绝前往演奏。他抵制希特勒的德国于先，又抵制墨索里尼的意大利于后，到了1946年，又因英国勾搭他祖国的独裁者佛朗哥而不去英国；1950年，又因美国同此勾搭而不去美国。至于独裁国家，当然悉在他拒赴之列了。</p>
-<p>卡萨尔斯相信“曲非纸传”。（Theheartofthemelodycanneverbeputdownonpaper），他一生服膺的精神，自然也难跃然纸上，刘宾雁来此“危邦”，我颇有所感，特聊写卡萨尔斯的决绝，以遣我怀。</p>
+<p>卡萨尔斯相信“曲非纸传”。（The heart of the melody can never be put down on paper），他一生服膺的精神，自然也难跃然纸上，刘宾雁来此“危邦”，我颇有所感，特聊写卡萨尔斯的决绝，以遣我怀。</p>
 <p>大风论民进党</p>
 <p>《新官场现形记》的作者大风来信，有这样一段：“关于民进党之好谈‘台独’，并以此作为号召，令人难解。台湾之不可能被久许独立乃属常识问题，面对中共强势，侈言台独，愚不可及一也；民进党当前急务在取得岛上政权，俗语说：‘得陇望蜀’，今陇尚未得，何谈其他？蠢乎？狂乎？此其二也；得中国核子伞之保护，贸易四海，享乐台湾，退可以骄乡里、进可以傲美日，无国防之烦心、有酒肉之征逐，取国民党以代之、得一国之两制，虽五十年，而可以高枕无忧，何乐而不为？此其不解之三也。若不才是民进党，绝不侈言台独，当帅一千八百万阿土，以推翻国民党为职志，即使手无寸铁，揭竿而起，以人海战术，亦出头天久矣！民进党不此之图，而一味狂言乱语；旧敌未除，新敌又树，连‘一鸟在手，胜于二鸟在林’的简单道理都不知道，诚一群傻鸟也！既无力战胜中共手下败将国民党；而又要向中共挑战，不自量力，实自取灭亡耳！”</p>
 <p>大风的结论是：“国民党是坏得可恨；民进党是蠢得可怜。”</p>
@@ -590,7 +623,7 @@
 <p>本来是政府违“宪”，四十多年下来，竟变成人民违“宪”，人民也跟着违“宪”，跟着违“宪”而不自知，这是多可悲的事！我常说今天人民的思路，其实正是国民党教育下的国民党思路，现光就违“宪”一事来观察，就可证明我是先知。</p>
 <p>“只会筑桥，不会玩桥”</p>
 <p>交通大学学生请我去讲演。二十五年前，交通大学校长凌鸿勋遥住我在安东街公寓的对街，我想起他在《七十自述》中的一段夫子自道。</p>
-<p>凌鸿勋说：“因自小即以清苦自励，所以我一直没有任何嗜好。烟酒自然不敢沾染，后来大了，出外应酬，酒类不能点滴不饮，凡是被迫而系象征性的举杯是免不了，但烟则的确一生未有碰过我的嘴唇。我所生长的广州赌风甚盛，我父亲最恨的是赌博，他一生未尝打牌。我母亲晚年偶尔在家打牌消遣，我也曾陪着她打过几次的牌，但自从她逝世以后，我就不再打牌了。我因环境关系，使我的活动范围甚为狭窄。例如象棋我是懂得的，但并不爱看人着棋，自己更未曾下棋。围棋想是一种很高尚的艺术，但我性子绝不近，一点都不懂。近来桥牌的风气甚盛，甚至有国际比赛的举行，但我对桥牌也一样没有兴趣。偶然有人用句英文问我，你玩桥吗？（Youplaybrideg？）我总是回答说，我只会筑桥，不会玩桥。”</p>
+<p>凌鸿勋说：“因自小即以清苦自励，所以我一直没有任何嗜好。烟酒自然不敢沾染，后来大了，出外应酬，酒类不能点滴不饮，凡是被迫而系象征性的举杯是免不了，但烟则的确一生未有碰过我的嘴唇。我所生长的广州赌风甚盛，我父亲最恨的是赌博，他一生未尝打牌。我母亲晚年偶尔在家打牌消遣，我也曾陪着她打过几次的牌，但自从她逝世以后，我就不再打牌了。我因环境关系，使我的活动范围甚为狭窄。例如象棋我是懂得的，但并不爱看人着棋，自己更未曾下棋。围棋想是一种很高尚的艺术，但我性子绝不近，一点都不懂。近来桥牌的风气甚盛，甚至有国际比赛的举行，但我对桥牌也一样没有兴趣。偶然有人用句英文问我，你玩桥吗？（You play brideg？）我总是回答说，我只会筑桥，不会玩桥。”</p>
 <p>我自己就是“只会筑挢，不会玩桥”的人，所以，我最欣赏凌鸿勋这种单调的生活方式。</p>
 <p>以前记者访问阎锡山，问他有何消遣，他说他不觉得人生有什么要消遣的。他的答话很逗，其实这才是一种了不得的境界。一个人，活到不需靠什么世俗的“嗜好”与“消遣”来过每天生活，这才是高人。</p>
 <p>抗争的戏路</p>
@@ -673,9 +706,9 @@
 <p>超级伪君子之国</p>
 <p>美国人爱贸易，却关税壁垒高筑；美国人爱邻居，却到别人国家放枪抓人；美国人爱人权，却不准它的敌人寻求政治庇护；……美国是伟大的国家，它的伪善也相对伟大，别人只是伪君子，美国却是超级伪君子。爱默生说，美国是青年人之国。（Americaisacountryofyoungmen.）错了，美国是超级伪君子之国才对。</p>
 <p>不能交给民进党</p>
-<p>外国政治家说战争太重要了，不能交给将军。（Warismuchtooimportantamattertobelefttothegenerals.）我说民主进步太重要了，不能交给民进党。</p>
+<p>外国政治家说战争太重要了，不能交给将军。（War is much too important a matter to be left to the generals.）我说民主进步太重要了，不能交给民进党。</p>
 <p>做错事勇敢，做对事胆怯</p>
-<p>美国幽默家说一个人对了就不能太急进，错了就不能太保守。（Ifamanisright,hecan'tbetooradical;ifheiswrong,hecan'tbetooconservative.）台湾给我的印象，却正好相反，而是错了反倒太急进，对了反倒太保守。犯错的蠢人们，勇气十足，激进的执迷错误的目标，要打拼得“自焚通衢”或“血染沙滩”，却不知道那种目标是不合常识的；另一方面，许多不蠢的人们，却又有着太多的保守性格，不敢勇于独行其道。——台湾是个怪地方，做错事勇敢，做对事胆怯，这叫什么鬼社会！</p>
+<p>美国幽默家说一个人对了就不能太急进，错了就不能太保守。（Ifamanisright,hecan’tbetooradical;ifheiswrong,hecan’tbetooconservative.）台湾给我的印象，却正好相反，而是错了反倒太急进，对了反倒太保守。犯错的蠢人们，勇气十足，激进的执迷错误的目标，要打拼得“自焚通衢”或“血染沙滩”，却不知道那种目标是不合常识的；另一方面，许多不蠢的人们，却又有着太多的保守性格，不敢勇于独行其道。——台湾是个怪地方，做错事勇敢，做对事胆怯，这叫什么鬼社会！</p>
 <p>“私生立委”</p>
 <p>有私生子，也有“私生立委”。</p>
 <p>什么是“私生立委”？按照“宪法”第64条规定：“立法院立法委员依下列规定选出之：一、各省、各直辖市选出者，其人口在三百万以下者五人，其人口超过三百万者，每满一百万人增选一人。……”以台湾省人口两千万人来计算，则只能选出二十人；再加上台北高雄两院辖市各选出五人，总共只能选出三十人而已。如今比“宪法”规定多选出一百多，怎么来的？是违“宪”私生的！</p>
@@ -748,7 +781,7 @@
 <p>我真没想到：像林云这种妖僧及其妖妄之言，居然被林正杰这种迷信之人提到庙堂之上来，真太可耻了！所谓“国会”，竟是这种水准的；所谓“民进党议员”，竟是这样荒唐的，真要被全世界有识之士笑煞也！</p>
 <p>“只是想吃一顿”、“只是想搞一下”、“只是想干一次”</p>
 <p>李卓吾《初潭集》记“襄阳罗友，少时多谓之痴。尝伺人祠，欲乞食，往太蚤，门未开。主人迎神出见，问以非时何得在此，答曰：‘闻卿祠，欲乞一顿食耳！’遂隐门侧，至晓得食，乃退。”我很喜欢这个故事。——人家拜神拜鬼，他罗友先生却只是想吃一顿，所志在此，别无他意。</p>
-<p>在Playboy中看到一幅漫画，台上有美女答问，布告要求有话直说畅所欲问，但是一听众站了起来，他说：“Idon'thaveaquestion.IjustsaidI'dliketoputittoMissHotchkiss.”此话直译并无奇趣，我认为干脆可译成：“我并不想问一下，只是想搞一下。”如此译法，才能传神纸上。</p>
+<p>在Playboy中看到一幅漫画，台上有美女答问，布告要求有话直说畅所欲问，但是一听众站了起来，他说：“I don’t have a question. I just said I’d like to put it to Miss Hotchkiss.”此话直译并无奇趣，我认为干脆可译成：“我并不想问一下，只是想搞一下。”如此译法，才能传神纸上。</p>
 <p>“只是想吃一顿”、“只是想搞一下”，这是何等洒脱的境界！饮食男女如此，写文章又何独不然？——任凭政坛人物翻云覆雨、出将入相，你在下笔之际，统统一律拆穿，别无所图，只是想干他一次。——“只是想干一次”，这是何等快事呀！</p>
 <p>学生自己打自己</p>
 <p>4月4日《联合晚报》登标题是：“自我体罚，小手打肿小脸。”内文提到：“一位家住新店北宜路的女读者投书指出，她五岁大的侄女正就读幼稚园大班，老师的管理方式也很有可议之处。小朋友上课说话若被老师发现超过三次，就要自己打十下耳光，声音不响要重打。小孩子哪知轻重，常把小脸蛋打得红肿。另一位住在台北市南昌街的读者投书说，他小学六年级的老师自己不批改作业，而是交给排长改，作业中如有错字，错一个字罚同学自己掌嘴十下。错得多的同学有时要把自己脸都打红了。另一位林姓家长则投诉说，老师会叫爱讲话的学生自己‘掌嘴’。林姓家长说，有一天，她心血来潮到学校探视女儿上课情形，看到女儿和十来名同学被老师叫上讲台，她以为老师要他们抄黑板，却听到老师威风无比地喝声‘打’，十几只小手动作划一，齐往自己脸颊‘啪’地掌嘴。林姓家长说，老师一个口令，学生一个动作，每人掌嘴三下。看此画面，令她错愕不已，女儿后来看见她站在教室外，羞得抬不起头，她却难过得眼泪差点掉下来。这些家长指出，大人挨了别人一己耳光，都会觉得是无比羞辱，为什么老师教育小朋友要用这种大人都受不了的体罚方法？”</p>
@@ -760,7 +793,7 @@
 <p>玛莎葛兰姆之死</p>
 <p>玛莎葛兰姆（MarthaGraham）死了。此婆生在中日甲午之战那一年，1894，实活九十七岁。一说生于1893，那就又多了一岁。</p>
 <p>她是美国最有影响力的现代舞舞者、编导和教师，她折腾一生，直到1970年七十六岁时才告别舞台。接着就看中台湾，以至一来再来，所有老态，均跌破于此矣！</p>
-<p>此婆倡婆娑之舞，以泄人机（revealtheinnerman），但她老去犹不量美而行，反以活骷髅一具，漂洋过海，台湾自李登辉以下无不捧她，看到那种画面，真令人浑身起鸡皮疙瘩。</p>
+<p>此婆倡婆娑之舞，以泄人机（reveal the inner man），但她老去犹不量美而行，反以活骷髅一具，漂洋过海，台湾自李登辉以下无不捧她，看到那种画面，真令人浑身起鸡皮疙瘩。</p>
 <p>名女人应知老服老，有些事情，上了年纪实在不宜再干了，至少九十七岁的人不能再干了。</p>
 <p>台湾的毛笔字</p>
 <p>台湾的毛笔字，严格说来，只有两个半可举：一个张大千、一个溥心畲、半个王壮为。张大千得其势、溥心畲得其逸、王壮为得其技。其他之人，皆不足道。至于大学有特务教起毛笔字来、电视有“专家”写起毛笔字来、车站有女人挂起毛笔字来，全是笑话。我李敖笔下，不足语毛，兴之所至，亦毛起毛落以告世人，王安石诗“千载纷争共一毛”，其实台湾并无此纷争，盖整个岛上，皆毛不成毛也！</p>
@@ -783,7 +816,7 @@
 <p>在中国，历代杰出的颜氏族人不少，如颜回、颜师古、颜真卿、颜延之、颜杲卿等。</p>
 <p>据非正式的统计，新加坡颜氏族人大约有一万二千人，其中以原籍福建占多数。福建籍中又以永春人居多。颜氏族人南来新加坡的历史悠久，人才辈出，对社会贡献良多。但他们以宗亲会办法招朋引类，未免太封建了。</p>
 <p>可怜飞燕倚秋装</p>
-<p>写九十五岁的苏雪林老太太，愈写愈觉得自己也老了、丑了，还是换写一下模特儿吧！4月9日，纽约已有罗斯（ChristianFrancisRoth）的1991年秋装大展揭幕。模特儿之一展出龟领毛线上衣、围巾和宽条短裙。看去大有可怜飞燕倚秋装之感。</p>
+<p>写九十五岁的苏雪林老太太，愈写愈觉得自己也老了、丑了，还是换写一下模特儿吧！4月9日，纽约已有罗斯（Christian Francis Roth）的1991年秋装大展揭幕。模特儿之一展出龟领毛线上衣、围巾和宽条短裙。看去大有可怜飞燕倚秋装之感。</p>
 <p>全世界得风气之先者，莫过于时装；造风气之先者，莫过于模特儿。孔夫子说未见好德如好色者，殊不知色即德目之一，惜孔氏不知也！</p>
 <p>教廷还开倒车哪！</p>
 <p>教廷在枢机主教特别会议结束后，本月9日发表声明说，人类的生命应受到尊重，天主教反对堕胎和安乐死。</p>
@@ -802,7 +835,7 @@
 <p>“高检署”没法，只好把犯人拖回刑场，再枪毙一次。“法务部”政务次长林锡湖指出，就法律层面而言，医院不应对此种死刑犯实施救治，而应稍事等候，直到该死刑犯合乎脑死判定条件才对。但这名死刑犯一直无脑死迹象，怎么办？林锡湖次长说，这就如同死刑执行仍未“完毕”，死刑犯应再送回刑场补办枪决。</p>
 <p>记者问“高检署”检察官陈追说：医院如果现在就拔掉黄嘉庆的呼吸器，让他死亡，可以吗？陈追答道：不行，医师没有法律依据可以执行死刑，这种做法会触犯杀人罪。但如果现在急救无效，他死了，就算了。如果拖回刑场补执行途中，他死了，那也没关系，但就是不能由医生让他死。</p>
 <p>上面这一妙事，关键在于医生。医生收到送来的、不是普通病人，而是供死后捐赠器官的死刑犯。医生该做的，是解剖死刑犯。但医生一见死刑犯没死，就救起人来了，这种“救人症”或“救人狂”固然源自仁心，但此仁却是妇人之仁。因为他们不分“标的”，见人就动手去救，认为不救不行，总该认清对象，救一个枪毙未死的人，其实对死者是一种病态、一种仁慈的残忍。</p>
-<p>一幅漫画中，画着丈夫杀妻，把太太绑在铁轨上，但却为太太撑起“五百万”洋伞、垫上枕头、打开手提电视，以候火车之将至。太太说，我承认你真体贴入微，虽然病态备至。（Imustadmit,inyourownsickway,youareconsiderate.）看了荣总医生的妙事，我忍不住比拟不伦想到这幅漫画。</p>
+<p>一幅漫画中，画着丈夫杀妻，把太太绑在铁轨上，但却为太太撑起“五百万”洋伞、垫上枕头、打开手提电视，以候火车之将至。太太说，我承认你真体贴入微，虽然病态备至。（I must admit, in your own sick way, you are considerate.）看了荣总医生的妙事，我忍不住比拟不伦想到这幅漫画。</p>
 <p>作诗岂可成群结队</p>
 <p>4月18日《新生报》登：一项别开生面的“世界华文学生传统诗交流联吟大会”将于22日在彰化师范学院举行，配合21日的青年诗人联吟大会及全国诗人联吟大会，将在天宝宫举行，应邀参加的除台湾学者外，尚包括香港、新加坡的教授学生。这项活动是由财团法人金生文教奖助基金会所举办。该会系由故王金生先生的遗产及董事长王炳奎先生捐助而成立，今年刚好十周年。今年金生文教会为庆祝成立十周年及“建国”八十年，举办的世界华文学生传统诗交流联吟大会，目前已肯定来参加的包括香港大学中文系教授黄坤尧博士、常宗豪博士及四名学生、香港浸会学院中文系主任左松超博士、韦金满博士及四名学生、新加坡大学皮述民博士与四名学生。台湾则有师大邱燮友教授等数十人及学生云云。</p>
 <p>在我看来，这是一件最虚情的活动。作诗是个人的事，岂可挤成一团，学古人无聊的联吟行径？</p>
@@ -818,9 +851,9 @@
 <p>丁玲是李自成之后？</p>
 <p>香港中国通讯社北京4月18日电：“著名作家丁玲晚年在家中，向外人披露了她是李自成后裔这一鲜为人知的家史，引起此间学术界的关注。丁玲原名蒋冰之，出生于湖南临澧蒋家大院，家中占有土地跨十个县份。蒋冰之生父早年曾向她透露长期秘而不宣的家史。明末，闯王李自成兵败之后的一天，一位五十多岁的汉子挑着一副箩筐，带着一个五六岁的男孩和一位病重的妇女来到湖南临澧境内。那人自称姓蒋，向村人借了一间破屋安身。过了十几年，他扬言在地里挖掘一罐金锭，置办田产、屋舍，并为儿子娶妻，不久添了两个孙儿，后成为附近十几县之首富。老人谢世后，清廷已放松了对‘闯军’的追捕，蒋家长居的一支迁回陕西米脂，恢复李姓，留在湖南的仍沿用蒋姓，一南一北，繁衍着子子孙孙。在米脂和临澧，分别盖了李氏宗祠和蒋氏宗祠，其建筑出自于同一图纸、同一格局，查祖溯源，都落在明末清初那位‘逃荒’到临澧姓‘蒋’的男人身上，丁玲称，‘他’就是隐姓埋名的闯王李自成。丁玲在接待作家殷白和王群生时透露了这一史实，在场的有她的丈夫陈明。这段奇特而富传奇性的家史倘若有历史根据，将为史学界解决李自成下落之谜的疑案，提供一份可贵的参考资料。”</p>
 <p>作为一个优秀的史学家，我就不相信这一说法。</p>
-<p>中共是“吹捧”李自成的。李自成当红，自然就有妄想症者“自我涉入”（ego-involvement），产生“夸大的妄想”或“光荣的妄想”（delusionofgrandeur）。例如英国国王乔治四世，在老糊涂了的时候，硬说他参加过滑铁卢之战，打败过拿破仑。拿破仑都在战场上被自己打败了，又何况败军之将李自成来投奔呢？</p>
+<p>中共是“吹捧”李自成的。李自成当红，自然就有妄想症者“自我涉入”（ego-involvement），产生“夸大的妄想”或“光荣的妄想”（delusion of grandeur）。例如英国国王乔治四世，在老糊涂了的时候，硬说他参加过滑铁卢之战，打败过拿破仑。拿破仑都在战场上被自己打败了，又何况败军之将李自成来投奔呢？</p>
 <p>送死送得真够朋友</p>
-<p>美国加州阿拉姆米达（Alameda）政府官员泊拉塔（DonPerata）说，在他县府同仁潘道佛（AngeloPandalfo）的葬礼上，另一同仁参塔纳（CharlesSantana）于讲话时倒地，显然是心脏病发而死。</p>
+<p>美国加州阿拉姆米达（Alameda）政府官员泊拉塔（Don Perata）说，在他县府同仁潘道佛（Angelo Pandalfo）的葬礼上，另一同仁参塔纳（Charles Santana）于讲话时倒地，显然是心脏病发而死。</p>
 <p>这位朋友可真够朋友！</p>
 <p>台湾老“立法委员”也有类似的。有老“委员”为死“委员”送丧，在归途车上，就“坐化”而去的例子。可见世界珍闻，在台湾早已有之，又何珍之有呀！</p>
 <p>马克吐温是真正大丈夫</p>
@@ -842,7 +875,7 @@
 <p>按照“出版法”第10条：“变更登记之申请，如系变更新闻纸或杂志之名称、发行人或发行所所在地管辖者，应于变更前，附缴原领登记证，按照前条之规定重行登记。”“重行登记”绝不是一夜之间能办好的，没办好就公然印而出之，足证邵玉铭主持下的新闻管理作业，全是因人而异的。要是别人，早就按“出版法”第39条扣押了。</p>
 <p>梦露六五</p>
 <p>1962年8月5日，美国性感明星玛丽莲梦露（MarilynMonroe）以自杀闻。死时年三十六岁。</p>
-<p>梦露死后第五天，我读到8月10日的《时代》（time）杂志，中间谈到她那种“赤身裸体的热望”（theurgetogonude），引起我很大的感触。《时代》杂志说：“……她给一个摄影记者专利权，在拍片时，去照她那几乎全裸的镜头，她的理由是：‘我要全世界来看我的肉体’（Iwanttheworldtoseemybody）。上一星期，她还在跟一家图书杂志商量卖她另外一张裸体照片。”</p>
+<p>梦露死后第五天，我读到8月10日的《时代》（time）杂志，中间谈到她那种“赤身裸体的热望”（the urge to go nude），引起我很大的感触。《时代》杂志说：“……她给一个摄影记者专利权，在拍片时，去照她那几乎全裸的镜头，她的理由是：‘我要全世界来看我的肉体’（I want the world to see my body）。上一星期，她还在跟一家图书杂志商量卖她另外一张裸体照片。”</p>
 <p>彼特马丁（PeteMartin）有《梦露逸闻》（WillActingSpoilMarilynMonroe？）一书，把这种袒裼裸裎的超群拔俗，誉之为“梦露风”（Monroeism）。——名女人一裸而成风，谁云不宜？</p>
 <p>今年6月1日，是玛丽莲梦露六五冥寿。她在红颜将尽之年自杀，不留老态、空留裸影，此种作风，亦寰宇一奇。特为新语，以旌笃信“青春一裸体”长存人间者。噫，微斯人，吾与谁归？</p>
 <p>线民火烧刑事局</p>
@@ -953,7 +986,7 @@
 <p>从当年男扮女装的梅兰芳在美国“成功演出”京戏、到今天女扮男装的杨丽花在美国“成功演出”歌仔戏，我们清楚看到中国戏剧文化的没落、中国戏剧文化的一代不如一代。——一切退步恶心人，连反串人妖都退步了！</p>
 <p>伊梅尔达的数学</p>
 <p>7月2日，届满六十二岁的前菲律宾第一夫人伊梅尔达马科斯（ImeldaMarcos），在纽约富丽堂皇的家里，一副端庄高贵的打扮，满口大谈仁义道德。1986年此婆之出走也，宫中遗留珍宝无数，光鞋子就有三千双。据美联社报道：“这些鞋子都是进口高级皮鞋，从优雅的高跟鞋、镂空凉鞋，到五英寸高的饰花拖鞋，应有尽有。”</p>
-<p>消息传出，伊梅尔达在外扬言，说：“我并没有三千双鞋子，我只有一千零六十双而已。”（Ididnothavethreethousandpairsofshoes,Ihadonethousandandsixty.）</p>
+<p>消息传出，伊梅尔达在外扬言，说：“我并没有三千双鞋子，我只有一千零六十双而已。”（I did not have three thousand pairs of shoes, I had one thousand and sixty.）</p>
 <p>这一壮语，使我想起中国某军阀所说的：“我只有十六个姨太太，可是人家诽谤我，说我有十七个！”</p>
 <p>感谢伊梅尔达，她教我们知道了什么话会使你哭笑不得。</p>
 <p>难道不是“台湾省海基会”么？</p>
@@ -1019,17 +1052,17 @@
 <p>这个人，在文星被蒋氏父子迫害时，出版《文化旗》等书刊，整天“诛”文星人物。如今下场如此！</p>
 <p>李登辉与许信良</p>
 <p>8月11日报上可真无独有偶。一边是国民党主席李登辉声言“一切作为向历史交代，不在乎目前的毁誉，而在于将来历史上的评价”；一边是民进党候选主席许信良声言“从小就期许自己成为历史人物，从政几十年，只在乎个人志业、历史地位，对于一时的毁誉，则不屑计较、不屑去辩解，我要用一生来证明自己”。多么巧呀，他们的抱负都是一样的。我常说民进党跟国民党一模一样，于此又得一实证。</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/03.惊世杂文类/求是新语.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/03.惊世杂文类/求是新语.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../03.惊世杂文类/李敖杂文集.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../04.小说剧本类/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1039,16 +1072,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../03.惊世杂文类/李敖杂文集.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../04.小说剧本类/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1057,12 +1095,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,77 +81,98 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <p>#《从万宝囊到臭屎堆》目录</p>
 <ul>
@@ -186,7 +219,7 @@
 <p>面子给尽、里子淘空</p>
 <p>孙中山死后，留下庞大的“思想”给国人消化不良，以他信徒自命的国民党厉行党化教育，挟死人以令活人，本来也是政治戏法的常情。要命的是，“国父思想”本身出了大问题。孙中山一生搞统战、不择手段的搞统战，牛鬼蛇神、里通外国，什么全来，结果一生之中，什么都一网兜收、什么话都说得出口，到头来印成全集，发现“国父思想”变成了万宝囊，什么都是、也什么都不是。有心人要利用他，只消就万宝囊一探，即可引“国父”为己用，得心应手极了。</p>
 <p>窃国大盗蒋介石是孙中山死后的最大受益人，他搞党化教育，打着孙中山的旗号，定天下于一尊，由来已久，并且获利非凡。不料这样搞了二十年后，要实施宪政做戏码了，演宪政戏就得有宪法、有其他党派一起来参加演出，就不得不迁就点别人。于是，在坚持“三民主义共和国”的前提下，蒋介石开始排演宪政戏。</p>
-<p>但是，其他党派却不以为然。当时起草宪法的民社党头子张君劢，后来有回忆说他如何在跟国民党变戏法。他说：“国民党所要的是三民主义、五权宪法和总统制。我说‘三民主义共和国’是不通的。因为孙中山先生领导革命，是历史事实，我们承认；但三民主义一书里面说民生主义即共产主义云云，如果此段将来做为解释宪法之标准，与美国大理院之引用‘Federadist’一书相同，则将来思想界之错综复杂，遗害无穷。所以有一条中只能说中华民国基于三民主义，是承认民国之造成由孙中山先生三民主义为主动，至于今后之民国，则主权在于人民，故名曰：‘民有民治民享共和国’，结果幸得通过。关于五权，中山先生是把各国制度杂凑而成，虽有意于独出心裁，但二十年来五权宪法施行之成效如何，为众所共见。五权名目，国民党一定不肯放弃，所以照旧采用。实质上此次新宪法之精神，为两层楼政府之废止——国民政府为上层，行政院为下层——以行政院与立法院对峙为中心。”张君劢的设计，根本是架空了“国父思想”，面子给尽、里子淘空。这一设计，国民党起初不肯，但是，张君劢心生一计，把设计翻成英文，寄给美国特使马歇尔（GeorgeC.Marshall）看。在洋大人“关爱的眼神”下，蒋介石屈服了，于是，《中华民国宪法》在前言中，就有了“依据孙中山先生创立中华民国之遗教”的帽顶，就有了第一条“中华民国基于三民主义，为民有民治民享之民主共和国”的帽沿，蒋介石也值回票价了。</p>
+<p>但是，其他党派却不以为然。当时起草宪法的民社党头子张君劢，后来有回忆说他如何在跟国民党变戏法。他说：“国民党所要的是三民主义、五权宪法和总统制。我说‘三民主义共和国’是不通的。因为孙中山先生领导革命，是历史事实，我们承认；但三民主义一书里面说民生主义即共产主义云云，如果此段将来做为解释宪法之标准，与美国大理院之引用‘Federadist’一书相同，则将来思想界之错综复杂，遗害无穷。所以有一条中只能说中华民国基于三民主义，是承认民国之造成由孙中山先生三民主义为主动，至于今后之民国，则主权在于人民，故名曰：‘民有民治民享共和国’，结果幸得通过。关于五权，中山先生是把各国制度杂凑而成，虽有意于独出心裁，但二十年来五权宪法施行之成效如何，为众所共见。五权名目，国民党一定不肯放弃，所以照旧采用。实质上此次新宪法之精神，为两层楼政府之废止——国民政府为上层，行政院为下层——以行政院与立法院对峙为中心。”张君劢的设计，根本是架空了“国父思想”，面子给尽、里子淘空。这一设计，国民党起初不肯，但是，张君劢心生一计，把设计翻成英文，寄给美国特使马歇尔（George C. Marshall）看。在洋大人“关爱的眼神”下，蒋介石屈服了，于是，《中华民国宪法》在前言中，就有了“依据孙中山先生创立中华民国之遗教”的帽顶，就有了第一条“中华民国基于三民主义，为民有民治民享之民主共和国”的帽沿，蒋介石也值回票价了。</p>
 <p>“国父思想”，二折推出</p>
 <p>《中华民国宪法》劈头就说“依据孙中山先生创立中华民国之遗教”，“制定本宪法”，但是搬出“本宪法”与遗教一对照，便发现抵触丛生。乍看起来，定章分节，全是遗教的外壳，从第三章国民大会，到第十一章地方制度，无一不“五权宪法”也；但实际上，从第三章国民大会起，就大干一票，只师遗教之词、而不师其意了。第二十五条先打了国民大会职权的折扣；第二十七条又剥夺了国民大会一大部分政权；第二十八条、第二十九条使国大代表六年开会一次，无从行使政权、参与中央政事。到了第四章总统，从第三十五条到第五十二条，共有十八条，但是除了第四十四条总统得召集各院院长会商解决争执外，其他十七条，全部与遗教不相干。第五章至第九章五院出现了，在行政院部分，第五十五条：“行政院长由总统提名，经立法院同意任命之。”但按《五权宪法》，任命五院院长之同意权，在国民大会，根本不在立法院或其他各院；第五十六条：“行政院副院长、各部会首长及不管部会之政务委员，由行政院院长提请总统任命之。”但按《建国大纲》，任命这些官吏之选举权，在国民大会，根本不在行政院院长或总统手里。第五十七条：“行政院依左列规定，对立法院负责。”则是内阁制了，根本不是五院制。在立法院部分，第六十二条、第六十五条、第六十六条、第六十八条、第六十九条、第七十二条、第七十三条、第七十五条，八条之中，条条与遗教不合，立法院在《五权宪法》中明明是治权机关，立法院是官署，立法委员是官吏，如今第七十五条说“立法委员不得兼任官吏”，殊不知照遗教说法，立法委员本身就是官吏也！至于司法、考试、监察三院部分，第七十九条、第八十三条、第八十四条、第八十六条、第就是条、第九十一条、第九十二条、第一零四条、也统统都与遗教不合。估计之下，整个一部《中华民国宪法》，其与遗教不合者，约占百分之八十以上！全部“国父思想”，二折推出，这样的宪法，还打着“国父”的招牌来“永矢咸遵”，“国父”真死不瞑目矣！</p>
 <p>气喘咻咻，徒呼负负</p>
@@ -254,7 +287,7 @@
 <p>一、孙中山说他“于1870年11月24日在柯湖岛衣华（Ewa）镇之位问奴（Waimanu）地方诞生。”事实上，他是1866年11月12日诞生在广东省香山县翠亨村，文件上所说年龄，少报了四岁；生日少报了十二天；诞生地点，全是谎话。</p>
 <p>二、孙中山说他“是一名医生，现在茂宜（Maui）岛的姑刺（Kula）地方行医。”事实上，孙中山在行医上，已“此道荒疏”（见冯自由《革命逸史》二集《孙眉公传略》），他当时并无正式行医的事实。说在茂宜岛的姑刺地方行医云云，全是谎话。</p>
 <p>三、孙中山说他“父亲孙达成于1874年前往中国，约八年后在那里逝世。”事实上，孙达成根本没去过檀香山，一生没离开过中国（去过澳门），又何来“1874年前往中国”？所谓孙达成约八年后逝世，八年后是1882年，事实上，孙达成是1888年死的，孙中山为了方便，兴之所至的使他老爸早死了六年。所以文件中关于他老爸的陈述，也全是谎话。</p>
-<p>这些谎话，依法是典型的伪造文书；且以宣誓行之，依律又是典型的发假誓。孙中山这种双料的为了目的、不择手段，并没给他带来立即的方便，反倒带来立即的麻烦。——他到了旧金山码头，立刻被捕，被美国政府关在安琪儿岛（AngelIsland）候审所的木屋监狱中，《旧金山检论报》（TheSanFranciscoExaminer）且刊出消息，出尽不名誉的洋相。关了几天，被人以五百美金保出，最后才不了了之。</p>
+<p>这些谎话，依法是典型的伪造文书；且以宣誓行之，依律又是典型的发假誓。孙中山这种双料的为了目的、不择手段，并没给他带来立即的方便，反倒带来立即的麻烦。——他到了旧金山码头，立刻被捕，被美国政府关在安琪儿岛（Angel Island）候审所的木屋监狱中，《旧金山检论报》（The San Francisco Examiner）且刊出消息，出尽不名誉的洋相。关了几天，被人以五百美金保出，最后才不了了之。</p>
 <p>这件史实只说明了一件事：——国民党的国父，竟在外国有这样有辱国体的纪录，他的行为是如此的不堪，真令我们惋惜也！</p>
 <p>1991年4月27日</p>
 <p>勿忘孙中山努力卖国的学术资料！</p>
@@ -289,7 +322,7 @@
 <p>《求是报》创刊开始，就拒绝奉“中华民国”正朔。特此正告中外各界，兼告国民党狗腿子。</p>
 <p>1991年2月10日夜2时</p>
 <p>刘家昌与亚运名称</p>
-<p>我生在1935年，美国有位早生我一百年（1835）的大作家阿勃特（LymanAbbott）,此公是美国内战后在思想界的重量级人物，惟颇多神学色彩。他主编《外观报》（Outlook），本就是《基督徒同盟》（ChristianUnion）改名过来的。他在1916年有《回忆集》（Reminiscences）出版，其中有记他那作家兼牧师爸爸老阿勃特（JacobAbbott）的一些名言。有一则是，他爸爸告诉他，凡是宗教中的门户之争，十分之九都是名词之争。阿勃特补充说，其实，那剩下的十分之一，也是名词之争。</p>
+<p>我生在1935年，美国有位早生我一百年（1835）的大作家阿勃特（Lyman Abbott）,此公是美国内战后在思想界的重量级人物，惟颇多神学色彩。他主编《外观报》（Outlook），本就是《基督徒同盟》（Christian Union）改名过来的。他在1916年有《回忆集》（Reminiscences）出版，其中有记他那作家兼牧师爸爸老阿勃特（Jacob Abbott）的一些名言。有一则是，他爸爸告诉他，凡是宗教中的门户之争，十分之九都是名词之争。阿勃特补充说，其实，那剩下的十分之一，也是名词之争。</p>
 <p>最近看到亚运名称中“中华台北”与“中国台北”之争，就令人想到这十分之一。——名词之争又岂止宗教哉！</p>
 <p>国民党偏安四十多年，在心态上，有一个最重要的，就是我指出的“意淫大陆，手淫台湾”。国民党对大陆力所未逮而淫之，正是“意淫大陆”；对台湾力所有逮而淫之，正是“手淫台湾”。一切政治上的波谲云诡，一经此八字分析，立刻全无剩义、真相大白矣！</p>
 <p>国民党“意淫大陆”的最大远景镜头是：它不承认它被赶出大陆了，它自认它仍是大陆的主宰者、统治者，因此发号施令、颐指气使，完全是“全国”性的气派。首先，国民党保存了气派豪华的“中央政府”，虽然此一“中央政府”，国民党早已明知不过小岛台湾一省和小小岛金马两个而已，实与地方边陲无异。国民党在小岛之上，一会儿主张烟酒公卖应归国营、一会儿主张台湾铁路应归国营、一会儿主张爱国奖券发行权应归中央，……他们诪张为幻，所争当非实际利益，因为今天“中华民国”“中央政府”实际有效管辖的地区，除台北、高雄两院辖市及金马两小岛外，都属台湾省政府管辖，就土地面积而言，约占百分之九十八，即两者重叠率高达百分之九十八，中央和地方之别，所差百分之二而已，百分之二又有什么好争的？争的所在，显然别有洞天。</p>
@@ -297,7 +330,7 @@
 <p>不过，一旦碰到真刀真枪，“意淫”就“银样镴枪头”了。大陆那边开放了亚运，要你放马过来，老子给你“真肏”一下，国民党就阳痿了。国民党真到大陆，再也无法说它代表“全国”了，明明是隔海一小岛耳，能够自称台湾，就算造化了。于是，亚运一开始，国民党就蓄意做名词之争，明明是“中国台北”，却斤斤要求用“中华台北”。最后，中共放它一马，同意了。不料日来传说又出情况，中共又要称“中国台北”了，吓得李焕之子——中华奥会副主席兼亚运代表团副团长李庆华屁滚尿流。今天早上，特别发表五点声明，说：</p>
 <p>（一）经查证，北京亚运组委会前天确实举行新闻发布会，但我方代表团英文名称在三十七个参加单位中，字母排在第三十五，不是最后一个，新闻报导有误，据了解此新闻为香港中新社记者发出。</p>
 <p>（二）大陆奥会接到中华奥会反应后，很重视这个名称问题，决定追查“中华台北”说法的来源，大陆奥会秘书长魏纪中表示这项报导有误，将彻查到底。</p>
-<p>（三）“中华台北”在亚运中文排序第六、英文（ChineseTaipei）在英文字母排序第三十五，依照亚运会惯例，开幕、闭幕代表团进场顺序以主办国文字，因此中华代表团排在第六个进场。</p>
+<p>（三）“中华台北”在亚运中文排序第六、英文（Chinese Taipei）在英文字母排序第三十五，依照亚运会惯例，开幕、闭幕代表团进场顺序以主办国文字，因此中华代表团排在第六个进场。</p>
 <p>（四）北京亚运组委会在第九期公报发布名牌，我代表团为“中华台北“。</p>
 <p>（五）我相信大陆奥会主席何振梁会遵守去年四月六日与中华奥会签订的体育交流协议，以“中华台北”称呼我方体育团队，如果大陆方面违反协议，我方奥会会提出最严重的反应。</p>
 <p>看了这啰啰嗦嗦的一大堆暴殄文字的把戏，我们能不好笑吗？“意淫”者人亦“意淫”之，今番国民党死怕中共以“中国台北”“意淫”它，因此频频以“中华台北”做护符，挡住其意识形态中的屁眼，其实，“中国”与“中华”何殊？挡了半天，适见其“脱肛”而已！</p>
@@ -354,7 +387,7 @@
 <p>至苏后，李招待优渥，言谈之际秘密相告，对吾事妥为安排后，将来送吴返渝，拟请余先赴渝，将此情报告戴先生转达中央，同时余在李寓探访吴氏，吴相告被捕自杀遇救经过，以及李逆左右极力相劝投伪情形，吴表示愿以一死报国，余至此乃知李欲余赴苏之用意，以余与吴、杜两先生及戴先生均有密切关系，利用余至苏可向戴先生及中央证实李对吴被捕后之优待情形，当时察觉李对吴之用意其二：其一为，如吴肯接受李之力劝投伪，则可增强伪组织之阵容，自为李向汪逆与敌方所建之功绩。其二，如吴拒绝投伪，即以适应此时日本当局正谋与渝方议和，使吴返渝可转达蒋委员长为词以贻日方，令吴感李之私恩，且使中央对李之观感，自不能以一般汉奸相视。旋至三十二年2月下旬经李安排妥善，由日方出面将吴护送经广州至重庆。</p>
 <p>余祥琴此处所说“即以适应此时日本当局正谋与渝（重庆）方议和”的话，是语焉不详的。事实上这是一连串国民党与日本秘密和谈的又一页而已。从抗战开始后，国民党口口声声抗战到底，骨子里却与日本秘密和谈不绝，例如1937年到1938年间的陶德曼调停和谈、1939年到1940年间的“桐工作”和谈、1942年的黑田和谈，断断续续，都媚态不绝。这次吴开先的出马，只是承前启后而已。吴开先本是公开投敌的国民党中央组织部副部长，他在被捉放曹后，带着日军参谋长小林浅三郎的条件，于1943年5月飞往重庆。他到机场时，国民党大员三百多人拥上前去欢迎，欢迎的对象不是这一变节分子，而是欢迎和谈在望。不料摊开小林浅三郎的条件之后，发现苛刻难行，于是国民党又暂时死心塌地的抗起战来。国民党对此类丑史，虽然百般遮盖，但是，在我这种历史家的法眼里，仍旧一一给揭露出来。</p>
 <p>“降官如毛，降将如潮”</p>
-<p>李士群为什么这样反反复复？自国民党而汉奸，自汉奸而又国民党？原因很简单，他看清了国民党的一个特质，国民党是没有什么是非的，国民党也没有什么一定的忠奸标准的，一切只以利害为转移。因而，国民党的政头军头们，也就无所谓跟谁，其实谁大就跟谁。古代金世宗曾骂“辽兵至则从辽，宋人至则从宋”，八百年后的国民党，恰恰如此。在抗战时候，由于日本人大，所以国民党做汉奸，就十分自然，尤以“将军族”为甚。其他小萝卜头的校级以下军官（包括不为黄金飞过去的“投汉奸非义士”），更是甚中之甚。例如1941年2月，国民党苏鲁战区游击纵队副总指挥李长江，就率领五个司令八个支队共四万人投敌；到了3月，国民党江苏保安八旅旅长杨仲华、新编第五军副军长刘月亭等等，也率部投敌；接着是国民党六十九军军长毕泽宇又率部投敌。1942年2月，国民党骑兵第一军赵瑞、杨诚两个师也投了敌；到了4月，国民党第二十九集团军副司令孙良诚也率师长三名、旅长三名、纵队司令两名投敌。到了1943年的不完全统计，国民党已前后有十八批将领投了敌，包括将校以上军官七十多名、军队五十多万，另外党国大员六十名以上也投敌。其中1943年四五月间，国民党中央监察委员、河北省党部主任委员、河北省主席兼第二十四集团军总司令庞炳勋与新编第五军军长孙殿英的投敌，尤为壮观。据美国公布的财政部长摩根韬（HenryMorgenthau,Jr.）的日记，他在1944年11月10日就收到这样的报告：</p>
+<p>李士群为什么这样反反复复？自国民党而汉奸，自汉奸而又国民党？原因很简单，他看清了国民党的一个特质，国民党是没有什么是非的，国民党也没有什么一定的忠奸标准的，一切只以利害为转移。因而，国民党的政头军头们，也就无所谓跟谁，其实谁大就跟谁。古代金世宗曾骂“辽兵至则从辽，宋人至则从宋”，八百年后的国民党，恰恰如此。在抗战时候，由于日本人大，所以国民党做汉奸，就十分自然，尤以“将军族”为甚。其他小萝卜头的校级以下军官（包括不为黄金飞过去的“投汉奸非义士”），更是甚中之甚。例如1941年2月，国民党苏鲁战区游击纵队副总指挥李长江，就率领五个司令八个支队共四万人投敌；到了3月，国民党江苏保安八旅旅长杨仲华、新编第五军副军长刘月亭等等，也率部投敌；接着是国民党六十九军军长毕泽宇又率部投敌。1942年2月，国民党骑兵第一军赵瑞、杨诚两个师也投了敌；到了4月，国民党第二十九集团军副司令孙良诚也率师长三名、旅长三名、纵队司令两名投敌。到了1943年的不完全统计，国民党已前后有十八批将领投了敌，包括将校以上军官七十多名、军队五十多万，另外党国大员六十名以上也投敌。其中1943年四五月间，国民党中央监察委员、河北省党部主任委员、河北省主席兼第二十四集团军总司令庞炳勋与新编第五军军长孙殿英的投敌，尤为壮观。据美国公布的财政部长摩根韬（Henry Morgenthau, Jr.）的日记，他在1944年11月10日就收到这样的报告：</p>
 <p>这实在是一个丢人的纪录：伪军中的百分之六十二是以前的国民党军队，自1941年以来，足足有六十七个全衔将级军官投敌。国民党为投敌的人辩护时振振有词，他们说庞炳勋是在受伤以后被俘的，但我见到过一份北京的《新民报》，上面登出他在日本人主持的一次会议上的讲话。该报还指出他是傀儡政权的一位将领。看来被俘与叛变是没有什么大差别的。</p>
 <p>庞炳勋照国民党官方说法，是太行山之役受伤被俘的，其实他是政头军头，国民党奈何他不得，抗战胜利后，照旧给他新编第一路军总司令做，这就是李士群说的，“自己是洗不清，但是谁要自己洗呢！”只要你有势力、有实力，不愁国民党不来给你洗的！</p>
 <p>像庞炳勋这类人的这种行为，还算是非容有争论的，举一些绝无争论的例子，就更明白国民党了。我举吴化文为例。吴化文是陆军中将，1931年起任韩复渠的独立手枪旅旅长兼济南市警备司令，抗战发生后，韩复渠被枪毙，他改隶孙良诚部，孙良诚投敌，他也投敌。他引导日军进攻于学忠，摧毁了山东省政府经营多年的抗战基地。抗战胜利后，因他手上有兵，国民党奈何他不得，就不敢以汉奸办他，不但不敢办他，还给他做整编第九十六军军长兼第八十四师师长，最后在济南之战，他又倒戈而去，他一辈子倒了国民党两次戈，而国民党奈何他不得，其高杆可想。</p>
@@ -410,7 +443,7 @@
 <p>以国民党同俄国关系为例，几十年来，国民党公开联俄，共有三次：第一次是联俄容共，靠俄国金钱、枪杆、大炮、顾问等支援，成立黄埔军校，进行东征北伐。打下江山，固俄国之力也；第二次是中俄复交，靠俄国飞机、顾问等支援，进行抗战。保住江山，固俄国之力也；第三次是签订中苏友好条约，割让外蒙，丧权辱国。失掉江山，固俄国之力也。</p>
 <p>国民党总裁在1952年10月13日，发表《对第七次全国代表大会政治报告》，沉痛的说：“……我主张放弃外蒙的决心，实基于此。这在现在看起来，实在是一个幼稚的幻想，决非谋国之道；……这是我的责任，亦是我的罪愆，所以我不能不向大会报告的。”同时他表示：“对总理，对革命，对国家和人们应该引咎自责。”这一自责，显示给我们，国民党吃尽了跟老毛子纠缠不清的苦头。苦头吃尽之余，在台湾楬橥反共抗俄，自是痛定思痛的反应。</p>
 <p>不过，国民党究竟能够“抗俄”多久，我是早就怀疑的。我是最细心观察资料的专家，在我的法眼下，我终于在习见的资料里，看出苗头。十多年前，我在电话号码簿上看出蒋宋美龄主持的“中华妇女反共抗俄联合会”暗中改名叫“中华妇女反共联合会”了，其中“抗俄”忽然悄悄不见了。正好当时《纽约时报》的记者包德甫（FoxButterfield,《苦海余生》的作者）来看我，向我讨独家消息，我笑着说：“独家消息就在电话号码簿中。”顺便把“国民党不‘抗俄’了”的证据，翻给他看，他一看大喜，立刻发出消息，并从而查出俄国文化特务维克多路易斯（VictorLouis）到台湾来有所接洽等事。海外见报之日，害得国民党新闻局大肆否认，结果越描越黑，顿成笑料云。</p>
-<p>当年德国在希特勒（Hitler）统治下，新闻极不自由，有某记者居然神通广大，写出专文，报导军队近情，事为希特勒所知，下令彻查谁在泄露军机。不料彻查之下，发现该记者全凭公开资料研判而成，毫无独得之秘，这一本领，令人惊叹不置。其实，全世界最好的情报作业，都是情报研判，不是007。一九一八年，大史学家汤恩比（ArnoldJ.Toynbee）负责英国外交部政治情报处（PoliticalIntelligenceDepartment）的情报研判工作，就是一例。难怪当年调查局局长沈之岳在请彭明敏和我吃饭时，即席开玩笑的表示：“李先生是最优秀的情报研判高手，如能被本局罗致，是调查局的光荣”了。</p>
+<p>当年德国在希特勒（Hitler）统治下，新闻极不自由，有某记者居然神通广大，写出专文，报导军队近情，事为希特勒所知，下令彻查谁在泄露军机。不料彻查之下，发现该记者全凭公开资料研判而成，毫无独得之秘，这一本领，令人惊叹不置。其实，全世界最好的情报作业，都是情报研判，不是007。一九一八年，大史学家汤恩比（Arnold J. Toynbee）负责英国外交部政治情报处（Political Intelligence Department）的情报研判工作，就是一例。难怪当年调查局局长沈之岳在请彭明敏和我吃饭时，即席开玩笑的表示：“李先生是最优秀的情报研判高手，如能被本局罗致，是调查局的光荣”了。</p>
 <p>在我研判出国民党不“抗俄”了以后，十多年来，国民党的确暗中在“打苏联牌”，其中包括蒋经国夫人的暗中返苏小住、女子篮球队公然赴俄参加比赛，以及其他种种暧昧的接触在内。最明显的一次是，一九七八年十二月十八日，国民党第十一届第三次全体中央委员会议上，中委胡健中公开倡议联俄的事，可见已相当明朗化。如今工商界人士且有“苏联贸易访问团”之行出现。虽然从沈昌焕到劭玉铭，都有假惺惺之言，力持“我国对苏联的政策绝无任何改变”。但是，国民党的信誓旦旦是绝不可信的，有朝一日，老毛子又要上门来了。</p>
 <p>1988年10月15日</p>
 <p>胡秋原有“反俄远见”吗？</p>
@@ -459,8 +492,8 @@
 <p>国民党的学术笑话</p>
 <p>国民党的学者张金鉴死了，活了八十六岁。此公河南安阳人，北京大学没念完，就进了党校，毕业于中央党务学校，留美归来，历任党政要职，著书三十多册，据说著作达千万言云。他不但是立法委员至今，并且兼任中华学术院行政管理研究所理事长、教育部学术审议委员会委员，综其一生，十足是党、政、学的三棲人物，三棲之中，且以行政学专家的学者身份显于世，被国民党奉为此道瑰宝焉。</p>
 <p>对国民党的学者，我是素来看不起的。因为基本上，他们是以党政人员，附庸风雅、唐突学术。在这一点上，国民党就远不如军阀。军阀自承自己是大老粗，他们对学术敬而远之、对学者恭而敬之，他们从来不敢梦想涉身学术或冒充学者，但是国民党却不然，国民党大量生产了许许多多速成的和即溶的学者，厕身学界，以为炫耀，并占名器。流风所及，国民党的领导人自然更是学界翘楚，所以，我们看到种种头衔，凌云而将，领导人被称为“思想家”、“大哲学家”、“都市管理学家”、“未来学家”等等等等，不一而足，整个的学术规格，也就因此大乱。这些人著作等身可以，但说等于学术，就未免见笑大方之家了。</p>
-<p>以张金鉴为例。他的书，我看了一些，最大的感觉是此公头脑，非常混乱，下笔刺刺不休，但是常常前言不对后语。例如《美国政府》一书中，159页出现的是“关岛”（Guam），但是前18页、第141页中，却变成了“葛姆”（Guam）岛；159页出现的是“波多黎各”（PerertoRico），但在141页中，却变成了“巴都里沟”（PuertoRico），在64页中又变成了“普头里沟”（Puertsrico）；明明是“维金群岛（维尔京群岛）”（VirginIslands），却在64页、141页、159页三度出现的是“渥金岛”（UirginIsland），把V字当成U字来发音中译。……这些笑话，没有一条可以笔误或手民之误来搪塞，这种粗糙胡来的著作，又是哪国的学术呢？这种专家程度，岂不太荒唐了吗？</p>
-<p>其实，国民党学者这种荒唐，并不以张金鉴为然。跟他同类的大学教授，他们的无知，一抓就是一把。例如萨孟武在《中国社会问题之社会学的研究》中，竟说纽约“当初只有数千人的印度人在那里经营其狩猎生活”。可见此公根本分不清印度人和印第安人，竟犯上哥伦布（ChristopherColumbus）时代的人的错误！——“数千人的印度人”要到纽约去“狩猎”，纽约何辜、印度人又何辜啊！又如郎裕宪在《云五社会科学大辞典》第三册《政治学》中“印度联邦共和国（India）政党”条下说：“尼嚇鲁之妹甘地（IndiraGandhi）夫人继任总理至今。”事实上，甘地夫人是尼赫鲁（JawaharlalNehru）的女儿，不是妹妹。尼赫魯也不是“尼嚇鲁”，赫斯可矣，又嚇个什么呀！又如台大中文系主任、越晚越鸣写肉麻文章拍蒋介石马屁的叶庆炳，在《中国文学史》中说：“如《东京梦华录》载：‘霍四究说三分，尹常卖五代史。’霍四究于三国故事，尹常卖于五代史话，必有精至独到之处。”事实上，《东京梦华录》中所提“尹常卖五代史”，“卖”字乃说书之意，并非跟上面“尹常”两字连在一起而成人名“尹常卖”也！叶庆炳中文这样糟，连古字基本解释都不懂，竟还当中文系主任！</p>
+<p>以张金鉴为例。他的书，我看了一些，最大的感觉是此公头脑，非常混乱，下笔刺刺不休，但是常常前言不对后语。例如《美国政府》一书中，159页出现的是“关岛”（Guam），但是前18页、第141页中，却变成了“葛姆”（Guam）岛；159页出现的是“波多黎各”（Pererto Rico），但在141页中，却变成了“巴都里沟”（Puerto Rico），在64页中又变成了“普头里沟”（Puertsrico）；明明是“维金群岛（维尔京群岛）”（Virgin Islands），却在64页、141页、159页三度出现的是“渥金岛”（Uirgin Island），把V字当成U字来发音中译。……这些笑话，没有一条可以笔误或手民之误来搪塞，这种粗糙胡来的著作，又是哪国的学术呢？这种专家程度，岂不太荒唐了吗？</p>
+<p>其实，国民党学者这种荒唐，并不以张金鉴为然。跟他同类的大学教授，他们的无知，一抓就是一把。例如萨孟武在《中国社会问题之社会学的研究》中，竟说纽约“当初只有数千人的印度人在那里经营其狩猎生活”。可见此公根本分不清印度人和印第安人，竟犯上哥伦布（Christopher Columbus）时代的人的错误！——“数千人的印度人”要到纽约去“狩猎”，纽约何辜、印度人又何辜啊！又如郎裕宪在《云五社会科学大辞典》第三册《政治学》中“印度联邦共和国（India）政党”条下说：“尼嚇鲁之妹甘地（Indira Gandhi）夫人继任总理至今。”事实上，甘地夫人是尼赫鲁（Jawaharlal Nehru）的女儿，不是妹妹。尼赫魯也不是“尼嚇鲁”，赫斯可矣，又嚇个什么呀！又如台大中文系主任、越晚越鸣写肉麻文章拍蒋介石马屁的叶庆炳，在《中国文学史》中说：“如《东京梦华录》载：‘霍四究说三分，尹常卖五代史。’霍四究于三国故事，尹常卖于五代史话，必有精至独到之处。”事实上，《东京梦华录》中所提“尹常卖五代史”，“卖”字乃说书之意，并非跟上面“尹常”两字连在一起而成人名“尹常卖”也！叶庆炳中文这样糟，连古字基本解释都不懂，竟还当中文系主任！</p>
 <p>上面随手抓到的国民党学者的笑话，大家看了，能不哈哈吗？</p>
 <p>1988年11月11日</p>
 <p>学术领袖的自处之道</p>
@@ -491,13 +524,13 @@
 <p>7月3日中央日报头条登出国民党十三全大会的报导，说记者会中，“李焕宣布大会此次出席及列席人数共计一千六百一十一位”，旋在后页登出《十三全会代表名单》。我把这些上榜的老年才俊和青年才俊名单翻了一下，赫然发现，其中竟不乏死去之人！例如中央评议委员中有石九龄者，他早在今年2月4日死在荣民医院，由倪文亚做主任委员的“石故立法委员九龄先生治丧委员会”也早发过讣闻，此讣闻并早登在2月22日的中央日报上。如今中央日报竟起死人于地下，把安葬在台北县山佳佛教墓园的石老先生不由分说，簇拥来开十三全会，除非全会已成酆都鬼域，真不知这会怎么个开法？</p>
 <p>这种死人上榜的妙事，还不止开会呢！还有更妙的呢！去年7月15日解严前，司法院与法务部对于通缉作业完成两份：已判决确定要执行的，由院方发布通缉；还在侦查中的，由部方通令高检处发布通缉。于是，7月15日通缉令下。不料上榜的名单一出，赫然发现，其中竟不乏死去之人！例如有郭连荫者，他早已死去多年，如今高检处竟起死人于地下，把尸骨已寒的郭逆连荫也不由分说，榜示以为捉拿，除非阎罗殿牛头马面帮忙，真不知这缉怎么个通法？</p>
 <p>这种死人上榜，看似有趣，其实还没活人成双有趣。</p>
-<p>1966年5月，国民党立法委员胡秋原，暗中勾结国防部总政治部，发起大规模的“国内学人教授一千六百余人驳斥美国姑息分子费正清运动”，胡秋原等写了驳斥信，透过总政治部，要大专教授们一一签名。胡秋原等蠢到不知一千六百教授的集体众口一声，非但不能驳斥别人，适足反证了这些知识分子的被强奸。在一声令下之后，这些没脊梁的教授，纷纷在各校签名枱上，签字如仪。不料名单公布，一千六百人中，因为在各校兼课而见名就签，以致签名重复者，竟有六起之多！其中朱建民、董世祁、何静安、郑小杰、卢英权、林碧沧六教授，大名都出现两次！这一笑话，当时无人察觉，只有我看出来。到了那年七月，新闻局又受到总政治部压力，要到美国纽约时报买下广告，把签名信英译给洋鬼子看，消息传出，我实在看不过去了，在7月7日写信给新闻局长沈剑虹，提醒他说：“洋鬼子一个人不幸‘二分法’，也至多是Dr.JekyllandMr.Hyde来他一个‘化身博士’。我国‘教授’，岂可不化如此哉？”请他特别注意签名重复问题，别再把人丢到国外去。沈剑虹立刻回我信，说已悬崖勒马了，特别感谢我云云。</p>
+<p>1966年5月，国民党立法委员胡秋原，暗中勾结国防部总政治部，发起大规模的“国内学人教授一千六百余人驳斥美国姑息分子费正清运动”，胡秋原等写了驳斥信，透过总政治部，要大专教授们一一签名。胡秋原等蠢到不知一千六百教授的集体众口一声，非但不能驳斥别人，适足反证了这些知识分子的被强奸。在一声令下之后，这些没脊梁的教授，纷纷在各校签名枱上，签字如仪。不料名单公布，一千六百人中，因为在各校兼课而见名就签，以致签名重复者，竟有六起之多！其中朱建民、董世祁、何静安、郑小杰、卢英权、林碧沧六教授，大名都出现两次！这一笑话，当时无人察觉，只有我看出来。到了那年七月，新闻局又受到总政治部压力，要到美国纽约时报买下广告，把签名信英译给洋鬼子看，消息传出，我实在看不过去了，在7月7日写信给新闻局长沈剑虹，提醒他说：“洋鬼子一个人不幸‘二分法’，也至多是Dr. Jekyll and Mr. Hyde来他一个‘化身博士’。我国‘教授’，岂可不化如此哉？”请他特别注意签名重复问题，别再把人丢到国外去。沈剑虹立刻回我信，说已悬崖勒马了，特别感谢我云云。</p>
 <p>如今，二十二年过去了，但国民党这种把名乱签一气的习惯，依然故我。今年五月，国民党立法委员周书府带头，七十五人连署，提出书面质询，建议政府适时发布紧急处分或实施局部戒严，以免暴乱活动危机国家安全、人民生计。七十五人签名完毕后，突然发现侨选立委李继渊也不化身起来，签名竟出现两次！这时把七十五人改为七十四人也来不及了，因为新闻已发出去了，于是只好商得另一立委黄振华同意，临时加签，凑足了七十五人。</p>
 <p>死人不会讲话，你把他大名上榜，死者本人，情有可原；但活人乱签名，发生签名重复，活人本人，就理不可恕。这些丑闻的发生，基本原因都在执事者与当事者的不认真、不负责任。执事者照本宣科，于是死人上榜；当事者见名就签，于是活人成双。——国民党中做事荒唐又愚蠢者无所不在，本文所举，只抽样耳。</p>
 <p>1988年7月4日</p>
 <p>文学侍从之死</p>
 <p>蒋介石文学侍从之臣程沧波，于7月21日以米寿之年，死于台北。十三年前杨管北去世，他挽以联说：“零落归山邱，风景不殊陵谷换；凄迷望故国，他生未卜此生休！”这一挽联，当年写的是朋友，今天看来，却正写的是他自己。</p>
-<p>程沧波，江苏武进人，早年名中行，他在商务出版《国家主义之历史观》，用的就是“程中行”名字。他生在民国前九年的1903年（清光绪二十九年癸卯）。十三岁小学毕业，从江南名儒钱名山遊，执贽受业，博涉经史。再入中学，毕业后，进上海圣约翰大学文科。1925年转复旦大学毕业。1930年去英国深造，入伦敦政治经济学院，从拉斯基（HaroldLaski）教授习政治哲学、韦勃斯脱（CharlesK.Webster）教授习外交史。1937年二次去英，入大学学院（UniversityCollege）习历史及英国文学。曾任国立复旦大学教授兼新闻系主任、中国公学大学部教授、政治大学教授、东吴大学教授、上海《时事新报》主笔、南京《中央日报》社长、重庆《世界日报》总主笔、香港《星岛日报》总主笔、上海《新闻报》社长、国难会议委员、军事委员会秘书、中央政治会议秘书、国民党中央委员、中央评议委员、国民大会制宪代表、立法委员、中央宣传部副部长、监察院秘书长、江苏监察史、联合国新闻自由会议中国代表、中华民国书法访日代表团团长、中日文化访日团副团长（团长何应钦）、亚洲国会议员联合会（APU）中华民国代表、中华民国新闻评议委员会主任委员、中国书法学会理事长。著作有《土耳其革命史》（民智）、《民族革命史》（商务）、《时论集》（一、二、三、四册）、《历史、文化及人物》（中央文物供应社）、《沧波文选》（文星）、《沧波文存》（传记文学社）等书。</p>
+<p>程沧波，江苏武进人，早年名中行，他在商务出版《国家主义之历史观》，用的就是“程中行”名字。他生在民国前九年的1903年（清光绪二十九年癸卯）。十三岁小学毕业，从江南名儒钱名山遊，执贽受业，博涉经史。再入中学，毕业后，进上海圣约翰大学文科。1925年转复旦大学毕业。1930年去英国深造，入伦敦政治经济学院，从拉斯基（Harold Laski）教授习政治哲学、韦勃斯脱（Charles K. Webster）教授习外交史。1937年二次去英，入大学学院（University College）习历史及英国文学。曾任国立复旦大学教授兼新闻系主任、中国公学大学部教授、政治大学教授、东吴大学教授、上海《时事新报》主笔、南京《中央日报》社长、重庆《世界日报》总主笔、香港《星岛日报》总主笔、上海《新闻报》社长、国难会议委员、军事委员会秘书、中央政治会议秘书、国民党中央委员、中央评议委员、国民大会制宪代表、立法委员、中央宣传部副部长、监察院秘书长、江苏监察史、联合国新闻自由会议中国代表、中华民国书法访日代表团团长、中日文化访日团副团长（团长何应钦）、亚洲国会议员联合会（APU）中华民国代表、中华民国新闻评议委员会主任委员、中国书法学会理事长。著作有《土耳其革命史》（民智）、《民族革命史》（商务）、《时论集》（一、二、三、四册）、《历史、文化及人物》（中央文物供应社）、《沧波文选》（文星）、《沧波文存》（传记文学社）等书。</p>
 <p>综观程沧波一生简历，足见他是一位学术与政治之间的人物，且究其实际，在国民党号称群彦之中，允为不可多得之人才，他的章法与书法，自成一家，并且超迈侪辈。论者以“哪一个人也写不过陈布雷”（刘大白语），其实陈布雷的才气，不足与程沧波比。至于成舍我、潘公展诸人，皆不足论。萧同兹厕身文宣多年，为人休休有容，为文则粗识之无而已，相形之下，更为望尘。至于今日国民党中央日报主笔政者秦孝仪、曹胜芬、楚崧秋、石永贵之流，人文水平，已在望尘之外，国民党人才寥落，自程沧波死，更成广陵之散矣！</p>
 <p>程沧波正以才具高于侪辈，所以对比而言，综其一生，得志之中亦寓失意。九年前叶公超去世，他挽以联说：“学术擅中西，零落山邱同一哭；达官兼名士，苍凉身世又谁知！”这一挽联，书死者却适足以自画。程沧波混迹政海，百无聊赖，或以自嘲。他回忆傅斯年，有这样一段：“记得在重庆时，有一次不知怎样我们谈论近代人物，忽然提到俞明震（恪士）。我忽发议论说，俞恪士一位名翰林，为什么到两江去做候补道，他立刻答我：‘你为什么现在当监察院秘书长？俞恪士当时不做候补道又做什么！人世间几个人能做有聊的事！’”可见伤心人别有怀抱。他写评罗光《陆征祥传》，讥评罗光“庸俗与势利”，说：“全书给我第一个印象，好像这本书的作者，不是一个出世的人，也不是一位‘学究天人’之学者。因为书中对于陆氏的官爵，似乎崇拜得过分。譬如在陆氏宗教进修每一阶段中，著者一再重复地讲：什么人会想到这一位修道者，从前做过钦差大臣、总长、国务总理。书中这一类的语调，大概重复讴詠，不下十几处。陆氏在比国修道院，晋陞司铎和会长，国民政府主席以次所赠楹联幛，中国驻欧使节八人莅临道贺，著者尤在书中渲染备至，十足流露著者对于这种场面，向往之深。这种语调，使我们教外人实在感到十二分的惶惑。我们惶惑天主教中对于人世纷华与虚荣的观念，我们更惶惑天主教出教修道人的精神世界。天主教中以得一个陆征祥为荣幸，以得一个曾做过总长与总理的陆征祥为荣幸。这使我们郑重地怀疑：教以人重，还是人以教重？龚定庵有两句诗：‘科以人重科益重，人以科传人可知。’他这两句是说以前科第与科中人的关系。我们读过罗光神父所著《陆征祥传》，使我怀疑天主教对陆征祥，教以人重，还是人以教重？如果引用龚定庵的诗意，‘科以人重科益重’，那亦可以说‘教以人重教益重’。换句话说，天主教因陆征祥其人而重要，使天主教愈益重要。因为罗光是神父，他是梵蒂冈积学之士，使教外人读其书后不能不有此引伸。”……立论之正，一时无两，足见程沧波别有怀抱。他复以“独立与独行”为文，历举中外特立独行之士，深致向往，可见程沧波独爱风流高格调，虽不能至，心向往之矣！</p>
 <p>程沧波以如此怀抱，他生未卜，此生已休，晚岁自谓：“我已老入空门，一空到底。”又谓：“潜心佛典，专力修持，久已搁笔不复作文，且视诗文为慧业之戒。回思畴昔，慷慨自负，以不能为英国之尼格拉孙与韦勃斯脱，或美国之李普曼，为自己悲叹、为时代悲叹。由今忏悔，此种狂心，真是莫大妄念、莫大罪业，自兹以往，但愿歇灭狂心，日即菩提。”可见及其老也，犹以自戒自悔，玄黄乍变，矛盾随之。如今以高才归于大化，自“达官”观察，或有衮衮之生荣；以“名士”论定，不无苍凉之死哀。特重述生平，以为哀词。为国民党做文化走狗者，有如此程！</p>
@@ -808,7 +841,7 @@
 <p>1974年的6月里，我正在国民党牢中做政治犯，在警备总部军法处看守所第八房独居（现在第八房由张俊宏接力在住，不过不是独居了）。6月下旬一天傍晚，通道上，远远的有脚镣拖地之声，渐渐过来，最后在第八房门前走过，接着我隔壁的第九房打开了，脚镣声进了屋里。第二天上午，放封开始了，第九房出现了戴脚镣的新人，身材中等，两眼有神，跟我一组散步，打听之下，他是台北博爱银楼的抢犯——刘云龙。</p>
 <p>据刘云龙说：他这案子是和他小舅子张明发，以及张明发的邻居沈金乾干的，做案时间是6月17日上午7点，当时他们在博爱银楼借口兑换美金，进入内室，由张明发制服杨满兴的女儿杨蕴玢、由沈金乾制服杨宝金、再由刘云龙一一加以捆绑。然后三人上楼，被杨满兴发觉，这时沈金乾赶下楼去把风，杨满兴从后抱住他不放，张明发乃捅了杨满兴三刀。他们三人做案后，走到博爱银楼门口，警察已赶到了，他自知难逃，乃束手就擒。不料在他被拷上手铐后，警察忽然用枪顶在他背后，开了一枪，然后就把他送到医院里急救。为什么要无缘无故多开这一枪呢？据刘云龙说：开枪后，可向上面报告是经过激烈枪战才把强盗制服的，可反证警察的英勇，英勇是可以拿到更多的奖金和奖状的，所以，警察就这样在人犯背上，玩起花样来了。</p>
 <p>刘云龙的谈话真使我顿开茅塞。在谈话后几天，他在午饭后给请了出去，立刻绑赴刑场枪决了。他虽死了，但他这一谈话，和他当时伤口未愈的痛苦神情，却使我印象深刻，至今难忘。</p>
-<p>十多年来，每当我看到报上警察背后开枪的故事，我就想起刘云龙，我试试从刘云龙的解释，去发掘警察背后开枪的千古之秘。《大江东去》（RiverofNoReturn）电影中的小男孩，从小对他爸爸不谅解，为了听说他爸爸做了不名誉的故事——背后开过枪。直到有一天，他终于恍然大悟，知道背后开枪是不得已的事。十多年来，我终于发现警察老是背后开枪的真相，我终于恍然大悟：原来在射击训练不足以外、在枪法不准以外、在“突然转身”以外、在“正当防卫”以外，原来更有使警察背后开枪的秘密、更有使他们“扳机——快乐”的心理原因，我终于懂了、终于知道他们是“不得已”的了！</p>
+<p>十多年来，每当我看到报上警察背后开枪的故事，我就想起刘云龙，我试试从刘云龙的解释，去发掘警察背后开枪的千古之秘。《大江东去》（River of No Return）电影中的小男孩，从小对他爸爸不谅解，为了听说他爸爸做了不名誉的故事——背后开过枪。直到有一天，他终于恍然大悟，知道背后开枪是不得已的事。十多年来，我终于发现警察老是背后开枪的真相，我终于恍然大悟：原来在射击训练不足以外、在枪法不准以外、在“突然转身”以外、在“正当防卫”以外，原来更有使警察背后开枪的秘密、更有使他们“扳机——快乐”的心理原因，我终于懂了、终于知道他们是“不得已”的了！</p>
 <p>1983年8月26日午后</p>
 <p>附录</p>
 <p>此文发表后，收到“陈情书”一件如下：</p>
@@ -824,17 +857,17 @@
 <p>未亡人：陈焕招泣启</p>
 <p>住址：屏东县竹田乡南势村南兴路27号</p>
 <p>中华民国七十二年9月27日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/16.李敖祸台十书/从万宝囊到臭屎堆.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/16.李敖祸台十书/从万宝囊到臭屎堆.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../16.李敖祸台十书/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../16.李敖祸台十书/只爱一点点.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -844,16 +877,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../16.李敖祸台十书/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../16.李敖祸台十书/只爱一点点.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -862,12 +900,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

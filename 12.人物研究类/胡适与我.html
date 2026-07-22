@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,77 +81,98 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <p>#《胡适与我》目录</p>
 <ul>
@@ -320,7 +353,7 @@
 <p>胡适谈惧内（《中央日报》）</p>
 <p>〔本报讯〕教育部国民教育司司长叶楚生，昨天下午2点30分，带了一盆亲手种植的蝴蝶兰，前往台大医院，探望胡适博士，并将中央通讯社巴黎特派员李强光托带转递的“巴黎惧内会的十枚会章”交给胡适博士。</p>
 <p>PTT怕太太</p>
-<p>胡适博士接到这十枚“会章”，不但爱不忍释，并且高兴得笑了起来。他告诉叶司长说，中央社驻巴黎特派员李强光，曾于本年2月25日上午到南港去看他。那时，他已答应人家一篇演说，讲的是关于惧内的故事。他和李强光谈到这篇演讲，并且谈了许多关于惧内的哲学。他说，当时李强光曾告诉他，在巴黎有一种打公用电话的小角子，上面铸有PTT三个字母，这三个字母，恰巧与中国话“怕太太”（PaTaiTai）三个字的英文拼音的每一个字的第一个字母相同。李强光并曾告诉他，他回巴黎之后，一定要找这种角子送给他。</p>
+<p>胡适博士接到这十枚“会章”，不但爱不忍释，并且高兴得笑了起来。他告诉叶司长说，中央社驻巴黎特派员李强光，曾于本年2月25日上午到南港去看他。那时，他已答应人家一篇演说，讲的是关于惧内的故事。他和李强光谈到这篇演讲，并且谈了许多关于惧内的哲学。他说，当时李强光曾告诉他，在巴黎有一种打公用电话的小角子，上面铸有PTT三个字母，这三个字母，恰巧与中国话“怕太太”（Pa Tai Tai）三个字的英文拼音的每一个字的第一个字母相同。李强光并曾告诉他，他回巴黎之后，一定要找这种角子送给他。</p>
 <p>打电话的角子</p>
 <p>这种由叶楚生司长带来中国，被李强光称为“巴黎惧内会会章”送给我国第一位权威学者胡适博士的幸运的小角子，乃是一种镍合金，娇小玲珑，光洁可爱，大小与我国的一毛钱的镍币差不多。正面中间有一个类似法国古代武士的人头，人头上边各有一字，一个是Republique，一个是Francaise，人头下面并有1937四个阿拉伯字。反面中间有一个凹道，铸有横排的PTT三个大写的英文字母。凹道上边凸起处铸有Telphonss字，下面凸起处铸有Publics字样。</p>
 <p>胡适博士风趣地对叶司长说，昨天上午看到报纸，知道李强光托她带来“巴黎惧内会会章”，并要他全权分配十位惧内同志时，他还很担心，不知要分给谁好。</p>
@@ -353,7 +386,7 @@
 <p>在以上八大派里，有一个奇怪的派就是“骂胡派”中的第⑤——栽赃派。这一派在胡适生前，曾以匿名小册《胡适与国运》到处散发，以致被警察老爷找上门来。后来在事件过去以后，他们的匿名行为开始作废，一一把真名亮了出来。原来一个是台湾大学历史系教授，一个是国防医学院教授，前者以提倡读经名世，后者以提倡中医著称。他们在事发后宣称这本匿名小册是“学术研究”，这更增加了它的传奇性——因为它不但栽诬了胡适，并且把“学术”予以强奸。对这种现象，一位大学教授气不过了，他就是殷海光。他在《自由中国》第十八卷第八期（1958年4月16日）里，以《请勿滥用“学术研究”之名》为题，指出：</p>
 <p>……《胡适与国运》这本小册的问题在什么地方呢？笔者幸运，有机会将这本小册看了一遍。我所得到的印象是：一、人身攻击；二、毫无思路；三、缺乏常识；四、汉文欠通；五、不诉诸论证而诉诸情绪；六、有主张而无解析。七、专门向真正学人不屑一顾的现实政治权利等问题上瞎扯。这样的小册之本身，明眼人一看就可知道是现实政治的副产物。我看过之后以为不过是高等师范一年级程度的人干的勾当，所以看过了以后，正如我看到这一类的任何其他货色一样，就放下了，没有把它当一回事。尤其是其中有一篇说胡适不该提倡白话文的作品，却是用白话文写的。这位作者，似乎中枢神经都有点问题。万料不到这样的一堆作品，竟是出于“大学教授”的手笔！我真惭愧。</p>
 <p>其实殷海光何必“惭愧”？中国目前的许许多多所谓的“大学教授”的文章、程度与人格作风，就是这个样子。《胡适与国运》的作者群，唯一不同的是，他是非常不善于“藏拙”的“教授”。他们要表现，要用“春秋笔法”诛人，要散发匿名小册来“学术研究”，要以孔丘诛少正卯的心情来杀他们心目中的“乱臣贼子”。结果呢，他们的真相因此暴露，使天下有识之士恍然大悟：原来眼前的一些“大学教授”的文笔、程度、人格、作风，竟是这个样子！这在统计学上和教育史上，该是多么有用的抽样资料呵！</p>
-<p>《胡适与国运》的作者，不但暴露给我们统计学上和教育史上的资料，并且他们的心理因素，也构成了变态心理学上的好题材。他们之中有“被虐狂”（persecutionmania）的症状已十分明显，他们不但想迫害人，并且幻想自己被人迫害，以为自己无比重要，别人因此打击他、陷害他。试看《胡适与国运》的作者之一——那个国防医学院的教授，在《胡适与国运续集》里的一段道白，便可“思过半矣”！</p>
+<p>《胡适与国运》的作者，不但暴露给我们统计学上和教育史上的资料，并且他们的心理因素，也构成了变态心理学上的好题材。他们之中有“被虐狂”（persecution mania）的症状已十分明显，他们不但想迫害人，并且幻想自己被人迫害，以为自己无比重要，别人因此打击他、陷害他。试看《胡适与国运》的作者之一——那个国防医学院的教授，在《胡适与国运续集》里的一段道白，便可“思过半矣”！</p>
 <p>我是吃硬不吃软的人，恶势力愈膨胀，我愈下决心与它周旋。我觉得既无法争得发言权，唯有发行“小册子”。在付印之前，我曾两夜不眠来考虑一切可能的恶果：</p>
 <p>一、政府援用戒严法：</p>
 <p>二、胡人罗织和暗算：</p>
@@ -544,7 +577,7 @@
 <p>可见胡适自己，远在四十年前，就有了这一心愿，不但有这一心愿，他还把这一心愿付诸了事实。</p>
 <p>但胡适编《胡适文选》的时候，是1930年（民国十九年），从编《胡适文选》后，到他在1962年（民国五十一年）去世，他还有三十二年的写作生命。在这漫长的三十二年中，胡适自己没有再续编《胡适文选》一类的选本，这对爱读他的文字的读者来说，是一件很大的缺憾。</p>
 <p>就通盘了解胡适思想的标准看，《胡适文选》和即使续编《胡适文选》一类的书，还是不够，因为它们的基本缺点，乃在但求代表性的文章成单元，却忽略了思想方面的普遍选样。结果是代表性的文章虽然完整了，可是代表性的思想却遗漏得很厉害。</p>
-<p>为了免除思想上面的遗漏，西方对才智之士的全部著作，有一种可叫做“隽语选粹”（ananthologyofWitticisms）式的收罗方法，分门别类，撷取才智之士的文章片段，综合印行。像伊格奈（RobertE.Egner）编的《罗素短论集》（BertrandRussell'sBest）、沙诺姆斯基（F.B.Czarnomski）编的《丘吉尔雄辩集》（TheEloquenceofWinstonChurchill）等，都属于这一类。这一“语粹”式的编法，把才智之士的全部著作，不论长篇大论也好、片语只字也罢，都能一一撷取精华，巨细不遗，故对整个思想的选样流传，极有帮助。</p>
+<p>为了免除思想上面的遗漏，西方对才智之士的全部著作，有一种可叫做“隽语选粹”（an anthology of Witticisms）式的收罗方法，分门别类，撷取才智之士的文章片段，综合印行。像伊格奈（Robert E. Egner）编的《罗素短论集》（Bertrand Russell’s Best）、沙诺姆斯基（F. B. Czarnomski）编的《丘吉尔雄辩集》（The Eloquence of Winston Churchill）等，都属于这一类。这一“语粹”式的编法，把才智之士的全部著作，不论长篇大论也好、片语只字也罢，都能一一撷取精华，巨细不遗，故对整个思想的选样流传，极有帮助。</p>
 <p>这本《胡适语粹》，就是比照上述编法而又略微详赡一点的思想选集。它的内容以胡适一生的主要专书和文字汇集为基料，以“哲学-思想史”“宗教-迷信”“东西文化”“中国前途”“政治”“社会-经济”“教育-知识人”“方法论-国故”“文学-语文”以及“人物”等大类，分别囊括这些基料，并且贯串这些基料。全部囊括的基料经贯串为五百个小单元，各加标题，以资醒目。</p>
 <p>在“哲学-思想史”方面，小单元包括的有：</p>
 <p>一、哲学史的三个目的；二、中国哲学的地位；三、中国哲学史的区分；四、《中国古代哲学史》缺点；五、中国古典思想；六、九流；七、中国思想史三期；八、革命家之老子；九、老子论天道；十〇、老子论无；十一、老子论无为；一二、老子人生哲学；一三、儒；一四、五百年必有王者兴；一五、小人儒；一六、殷；一七、孝的哲学；一八、观象制器；一九、春秋影响；二〇、尊孔；二一、祭孔；二二、孔家店；二三、读经；二四、荀子论天；二五、墨家名学；二六、法家；二七、法的哲学；二八、道家；二九、道家是杂家；三〇、道的观念；三一、与时推移；三二、庄子生物进化论；三三、杨朱为我论；三四、邓析；三五、中国中古思想；三六、中古思想史长编；三七、中古哲学的前奏；三八、贱身；三九、暮气哲学；四〇、征服自然；四一、用众智；四二、以退为进；四三、道先称古；四四、造假书；四五、三圣说；四六、符命；四七、距师伐圣；四八、中国近世思想；四九、中国学术史的一大转机；五〇、理学；五一、理学运动；五二、理之害；五三、以理责人；五四、以理杀人；五五、格物；五六、格物毛病；五七、敬与静；五八、反玄学；五九、义理；六〇、新理学与新经学；六一、清朝的新理学；六二、朴学；六三、“清官”</p>
@@ -605,7 +638,7 @@
 <p>到华寅生家吃午饭，见着Michon。</p>
 <p>下午美大使馆参赞Peck来。</p>
 <p>友人来谈者甚多。</p>
-<p>与慰慈、驭万、蒋、梅诸位到Galfclub小坐，到老万全吃饭。</p>
+<p>与慰慈、驭万、蒋、梅诸位到Galf club小坐，到老万全吃饭。</p>
 <p>这一天，北方将士赵登禹等战死。日本兵舰炮轰塘沽，并用飞机和大炮，摧毁了南开大学。南开大学的被毁，象征了日本向中国文化界点名宣战。</p>
 <p>傅斯年要绝交</p>
 <p>胡适南来参加庐山谈话会，他的心情，是未尝不主战的。七七以后第五天，他在《独立评论》的“编辑后记”里，表示对“卢案”的意见：</p>
@@ -672,7 +705,7 @@
 <p>和平的幻梦自此完全破灭。但在没破灭之前，从高宗武到胡适，都努力力挽狂澜，要造一件奇迹。胡适本人，把这个奇迹的达成，完全冀望在高宗武身上，他在痴痴地等。胡适8月1日日记：</p>
 <p>今早6点50分，蒋先生召集一个扩大纪念周，听说他报告的是中央军与飞机何以不上去的说明等事。</p>
 <p>今天高君无报告。</p>
-<p>与Fichex吃饭，同座者有一位Dr.Abegg，是记者。</p>
+<p>与Fichex吃饭，同座者有一位Dr. Abegg，是记者。</p>
 <p>这一天，日本飞机已经在郑州上空开始扰乱，局势是一天比一天紧了。8月2日，胡适记下他“要做一次最大的和平努力”的细则：</p>
 <p>寄梅先生约吃午饭。</p>
 <p>回寓见蒋先生约谈的通知，先作一长函，预备补充谈话之不足。</p>
@@ -712,7 +745,7 @@
 <p>9月7日政府发布的胡适去美国消息，幕后有段曲折。据王世杰回忆：八一三以后，蒋委员长对他说，我们现在国际宣传工作非常重要，想找适之到欧洲和美国走一趟。于是王世杰找胡适，谈了两三晚，胡适却不肯，胡适表示：“战争已经发生，我不愿意在这时候离开南京，我愿意与南京共存亡。”王世杰没法，抬出傅斯年劝驾。最后，傅斯年将胡适说服，胡适同意出国。王世杰说：“胡先生在战争发生前，希望避免战争，战争一发生，他则坚决表示与南京共存亡的决心，这件事是我永远不能忘的。”这段回忆，使我想起艾森豪威尔写丘吉尔，艾森豪威尔说丘吉尔在讨论过程里，总是固执己见，一再提出自己的方案，不肯罢休；可是一旦通过了别人的方案，丘吉尔就全力以赴，一意执行。</p>
 <p>9月7日胡适日记：</p>
 <p>晚上高宗武、程沧波为我们饯行。</p>
-<p>听广播，知上海美国商人甚怨SecretaryHull召回美侨的谈话，责备甚多。</p>
+<p>听广播，知上海美国商人甚怨Secretary Hull召回美侨的谈话，责备甚多。</p>
 <p>9月8日，他在日记里，对“和平努力”做了最后留影：</p>
 <p>九点半到英大使馆访Blackburn参赞，谈时局。他说英国海军太弱，在中囯海上只有四只巡洋舰，其中Capetoron被困在长江，Suffolk搁浅受损伤，只佘两只船，有何力量。</p>
 <p>关于英美关系，他是不信美国对远东有积极办法的。</p>
@@ -768,7 +801,7 @@
 <p>胡适先生以他七十年零七十天的生命，在人间留下了大量的文字，由于年代久远、人事动乱，这些文字，散佚的很多。一般想读他的文字的人，通常是依靠《胡适文存》《胡适论学近著》《胡适文选》《章实斋先生年谱》《先秦名学史》《中国古代哲学史》《白话文学史》等专书。在这些专书以外的大量文字，却没有被有计划的编选过，这不能不说是一个大遗憾。</p>
 <p>《胡适选集》的构想，是我鉴于胡适先生著作的这种散佚，无法看到在《胡文存》等书以外的大量文字，所以才加以搜集，用来嘉惠士林的。</p>
 <p>选集中的文字，都是从几十年以来的报章书刊中陆续一篇篇搜集到的，在搜集过程中，曾遍访海内外公私藏书，所以有时候虽一篇之微、一诗之细，都得之不易。因而它的珍贵性，也就益形增加。我相信，凡是稍懂现代编辑经验的人，都会仔细发现这套选集编纂的精审。中国图书馆专家童世纲先生编《胡适文存索引》，把这套选集全部编入，更可显出这套选集的价值。</p>
-<p>《胡适选集》出版后极受欢迎，对胡适思想的流传有了极大的影响。《胡适留学日记》里有一则《借一千，还十万》的札记，写施特雷特（WillardStraight）以十万元的纪念堂，酬答他欠过一千元的知己舍尔科夫（Schoellkopf）的故事。胡适先生送了我一千元，可是我说3月要还他，但他2月就死了。最后我以《胡适选集》给他做了最好的纪念。文星被国民党封门后，这书转给了传记文学社，市面上也出了多种翻印本，单册流传，总在十万册以上。我这点酬答死友的心意，比起《胡适留学日记》中的故事来，也算好有一比了。</p>
+<p>《胡适选集》出版后极受欢迎，对胡适思想的流传有了极大的影响。《胡适留学日记》里有一则《借一千，还十万》的札记，写施特雷特（Willard Straight）以十万元的纪念堂，酬答他欠过一千元的知己舍尔科夫（Schoellkopf）的故事。胡适先生送了我一千元，可是我说3月要还他，但他2月就死了。最后我以《胡适选集》给他做了最好的纪念。文星被国民党封门后，这书转给了传记文学社，市面上也出了多种翻印本，单册流传，总在十万册以上。我这点酬答死友的心意，比起《胡适留学日记》中的故事来，也算好有一比了。</p>
 <p>窜改了遗嘱</p>
 <p>在胡适先生生前，他对自己著作的排印流传，曾感到力不从心。1953年的7月4日，他曾有这样的感叹：</p>
 <p>……我自己当然没有重新排印这些书的力量。我看见我的朋友傅孟真先生的全集的编辑印行，我当然忍不住一点歆羨，去年12月10日早晨4点钟，我写完孟真遗集的序文，天还没有亮，我脱衣服要上床睡了，忍不住笑着对自己说：“我的全集的编辑重印，大概也得等到我死后了。”（《傅孟真先生遗著-序》）</p>
@@ -1123,7 +1156,7 @@
 <p>每逢统一有成功可能的时候，二等军阀就联合起来，假打倒专制的名，来破坏统一。</p>
 <p>“打倒专制”的口号可以使统一不能成功，这就是一个新时代的新意态的力量，不是刘邦朱元璋的老把戏所能应付的了。吴景超先生曾分析中国历史上的内乱，建立他的内乱八阶段说（《独立》第八四号），也以为只有武力统一可以完成统一的使命。但他忘了他那八阶段里没有“打倒独裁”一类的阶段。这一类的新意态不是武力能够永久压服的。在今日这些新意态已成不可无视的力量的时代，独裁绝不是统一政权的方法。所以从统一政权的观点看，我们也不信独裁制度是必要的。</p>
 <p>在文章后段，胡适又补充他的未尽之言：</p>
-<p>……民主政治是幼稚园的政治，而现代式的独裁可以说是研究院的政治。这个见解在这一年中似乎不曾引起国内政治学者的注意，这大概是因为这个见解实在太不合政治学书里的普通见解了。其实我这个说法，虽然骇人听闻，却是平心观察事实得来的结论。试看英国的民主政治，向来是常识的政治，英国人也向来自夸“混混过”（MuddlingThrough）的政治；直到最近几十年中，一班先知先觉才提倡专门技术知识在政治上的重要；费宾会（TheFabianSociety）的运动最可以代表这个新的觉悟。大战的后期和最近经济恐慌时期，国家权力特别伸张时，专家的政治才有大规模试行的可能。试看美国的民主政治，哪一方面不是很幼稚的政治？直到最近一年半之中，才有所谓“智囊团”的政治出现于美国，这正是因为平时的民主政治并不需要特殊的专家技术，而到了近年的非常大危机，国会授权给大总统，让他试行新式的独裁，这时候大家才感觉到“智囊团”的需要了。英美都是民主政治的发祥地，而专家的政治（“智囊团”的政治）却直到最近期才发生，这正可证明民主政治是幼稚的，而需要最高等的专门技术的现代独裁，乃真是最高等的研究科政治。</p>
+<p>……民主政治是幼稚园的政治，而现代式的独裁可以说是研究院的政治。这个见解在这一年中似乎不曾引起国内政治学者的注意，这大概是因为这个见解实在太不合政治学书里的普通见解了。其实我这个说法，虽然骇人听闻，却是平心观察事实得来的结论。试看英国的民主政治，向来是常识的政治，英国人也向来自夸“混混过”（Muddling Through）的政治；直到最近几十年中，一班先知先觉才提倡专门技术知识在政治上的重要；费宾会（The Fabian Society）的运动最可以代表这个新的觉悟。大战的后期和最近经济恐慌时期，国家权力特别伸张时，专家的政治才有大规模试行的可能。试看美国的民主政治，哪一方面不是很幼稚的政治？直到最近一年半之中，才有所谓“智囊团”的政治出现于美国，这正是因为平时的民主政治并不需要特殊的专家技术，而到了近年的非常大危机，国会授权给大总统，让他试行新式的独裁，这时候大家才感觉到“智囊团”的需要了。英美都是民主政治的发祥地，而专家的政治（“智囊团”的政治）却直到最近期才发生，这正可证明民主政治是幼稚的，而需要最高等的专门技术的现代独裁，乃真是最高等的研究科政治。</p>
 <p>所以我说，我们这样一个知识太低、经验又太幼稚的民族，在这最近的将来，怕没有试行新式独裁政治的资格。新式的独裁政治并不是单靠一个领袖的圣明的——虽然领袖占一个绝重要的地位——乃是要靠那无数专门技术人才的。我们从前听丁文江先生说（《独立》第一一四号），苏俄的地质探矿联合局有三千个地质家，在野外工作的有两千队，我们都不免吓一大跳。现在陈西滢先生在上期《独立》里说，苏俄自从实行五年计划以来，据官方的统计，需用一百五十万专家，其中工业方面需用四十四万工程师及专家；农业方面需用九万高级的，三十六万中级的专家，森林方面需用一万一千高级的和二万七千中级的专家；交通方面需用三万高级的和十二万中级的专家。这种骇人的统计是今日高谈新式独裁政制的人们万不可忽视的。民主政治只要有选举资格的选人能好好的使用他们的公权：这种训练是不难的（我在美国观察过两次大选举，许多次地方选举，看见许多知识程度很低的公民都能运用他们的选举权）。新式独裁政治不但需要一个很大的“智囊团”做总脑筋，还需要整百万的专家做耳目手足：这种需要是不容易供给的。</p>
 <p>苏俄与意大利都不是容易学的。意大利有两个一千年的大学；五百年以上的大学是遍地都有的。苏俄也有近二百年的大学。他们又都有整个的欧洲做他们的学校与训练所。我们呢？我们号称五千年文明古国，而没有一个满四十年的大学。专门人才的训练从哪里来？领袖人才的教育又从哪里来？所以钱端升先生期望的那个“有能力、有理想的独裁”，蒋廷黻先生期望的那个开明专制，在中国今日都是不可能的。</p>
 <p>在这个时候，不少的学者和政客鼓吹独裁的政治，而他们心目中比较最有独裁资格的领袖却公然向全国宣言：“中国今日之环境与时代实无产生意俄政制之必要与可能。”只此一端已可证中国今日实无独裁的可能了。这个宣言的发表，表示在今日有发表这样一个宣言的必要。而在今日何以有这样一个宣言的必要呢？岂不是因为“中国人的意态和物质状况”（《环境与时代》）都不容许“意俄政制”的产生吗？</p>
@@ -1145,7 +1178,7 @@
 <p>以上五事，不过是随便想出的几种具体事项，来充实汪蒋两先生的大原则。可是这些具体事项若不能做到，他们的原则就难教我们信仰了。</p>
 <p>胡适在《中国无独裁的必要与可能》一文中，对汪蒋通电有“姑且不问这种宣言含有多大的诚意”的话；又在《汪蒋通电里提起的自由》此文中，又有“这些具体事项若不能做到，他们的原则就很难教我们信仰了”的话，这些话的语气，在在都表露出他对国民党当权派的通电，是难免信任不足的。其实，这并不是胡适的多疑，尽管汪精卫、蒋介石诸公在通电里在文字上信誓旦旦，但他们希旨承风的手下，在事实上究竟搞的是什么，也大有可议。例如就在通电前三十八天（1934年10月20日），北平《人民评价》第五十七期上，就有《斥胡适之自由思想》一文出现，大言曰：“吾人主张党政一体由党产生党魁以宣布独裁，乃救时之良剂。时至今日，已届非常之变局，急起救亡，唯在领袖独裁之实现。”同一期里，又有《为五全大会代表进一言》一文出现，也大言曰：“国民党第五次全国代表大会行将举行，我人对此早有一根本之建议：即由党产生党魁以宣布独裁，既不必要循训政之故辙，亦不必急于召开空洞无物、徒供军阀政客贪污土劣利用之国民大会。而党务之推动及政治之设施，则于党魁兼摄行政领袖之后，以少壮干部及统计人才为之辅，大刀阔斧，斩除党内之腐恶分子及行政机关之贪污官吏，为党国造一新局面。……”霍霍杀气如此，说国民党一夜之间，凭一纸通电就立地成佛了，如此高速向善，其谁能信乎？</p>
 <p>丁文江的“新式的独裁”论</p>
-<p>在胡适的好朋友蒋廷黻等走上主张独裁的路子以后，1934年12月18日，好朋友丁文江又大神附体，发表了《民主政治与独裁政治》（《大公报》星期论文），也大唱起独裁的调子。丁文江说：“近年来许多人——不赞成独裁的人如威尔士（H.G.Wells）、如罗素（BertrandRussell）——都觉得真正的平民政治事实上不可能。维多利亚时代的人以为大家都识字，选举权普遍，政权当然是在选举人手里的了。近几十年来的经验才知道是不然。多数人对于政治根本没有兴趣。他们识了字是看体育新闻（Sportingnews）、读侦探小说。政治上的问题除非是为他们直接有利害关系的，他们绝不愿意过问。同时靠政治吃饭的人又发明了一种骗人的利器——宣传。宣传是要组织的，组织是要钱的，于是就是在西欧选举权普遍的国家，实际的政权旁落在出党费、开报馆、办无线电广播的人手里。所以现在连反对独裁的人对于民主政治都发生了很大的疑问。”“胡适之先生说，‘民主宪政只是一种幼稚的政治，最适宜于训练一个缺乏政治经验的民族。’这句话是不可通的。理论的根据我们姑且不讨论；事实上看起来，民主宪政有相当成绩的国家，都是政治经验最丰富的民族。反过来说，政治经验比较缺乏的民族，如俄、如意、如德，都放弃了民主政治，采用了独裁制度。足见民主宪政不是如胡适之先生所说的那样幼稚的。‘民主政治只要有选举资格的选人能好好的使用他们的公权。’不错的，但是这就是世界上最困难的一件事。所有行民主宪政的先进的国家，都还没有做到这个地步。”“胡先生说，‘民主政治的好处在于不甚需要出类拔萃人才……在于集思广益，使许多阿斗把他们的平凡常识凑起来也可以勉强应付。’他似乎相信，‘两个臭皮匠，凑起来是个诸葛亮。’他太乐观了。事实上两个臭皮匠，凑起来依然是两个臭皮匠！……”“‘试行新式的独裁’！我们应该注意‘新式’二字。因为新式的独裁与旧式的专制是根本不能相容的。胡先生说，‘打倒专制’的口号可以使统一不能成功，这是真的。但是大家要打倒的是改头换面的旧式的专制，并不是新式的独裁。独裁如何才可以算是‘新式’，我以为有以下的几个条件：一、独裁的首领要完全以国家的利害为利害。二、独裁的首领要彻底了解现代化国家的性质。三、独裁的首领要能够利用全国的专门人才。四、独裁的首领要利用目前的国难问题，来号召全国有参与政治资格的人的情绪与理智，使他们站在一个旗帜之下。”“我已经说过，目前的中国这种独裁还是不可能的。但是我们大家应该努力使它于最短期内变为可能。放弃民主政治的主张就是这种努力的第一个步骤。”</p>
+<p>在胡适的好朋友蒋廷黻等走上主张独裁的路子以后，1934年12月18日，好朋友丁文江又大神附体，发表了《民主政治与独裁政治》（《大公报》星期论文），也大唱起独裁的调子。丁文江说：“近年来许多人——不赞成独裁的人如威尔士（H. G. Wells）、如罗素（Bertrand Russell）——都觉得真正的平民政治事实上不可能。维多利亚时代的人以为大家都识字，选举权普遍，政权当然是在选举人手里的了。近几十年来的经验才知道是不然。多数人对于政治根本没有兴趣。他们识了字是看体育新闻（Sporting news）、读侦探小说。政治上的问题除非是为他们直接有利害关系的，他们绝不愿意过问。同时靠政治吃饭的人又发明了一种骗人的利器——宣传。宣传是要组织的，组织是要钱的，于是就是在西欧选举权普遍的国家，实际的政权旁落在出党费、开报馆、办无线电广播的人手里。所以现在连反对独裁的人对于民主政治都发生了很大的疑问。”“胡适之先生说，‘民主宪政只是一种幼稚的政治，最适宜于训练一个缺乏政治经验的民族。’这句话是不可通的。理论的根据我们姑且不讨论；事实上看起来，民主宪政有相当成绩的国家，都是政治经验最丰富的民族。反过来说，政治经验比较缺乏的民族，如俄、如意、如德，都放弃了民主政治，采用了独裁制度。足见民主宪政不是如胡适之先生所说的那样幼稚的。‘民主政治只要有选举资格的选人能好好的使用他们的公权。’不错的，但是这就是世界上最困难的一件事。所有行民主宪政的先进的国家，都还没有做到这个地步。”“胡先生说，‘民主政治的好处在于不甚需要出类拔萃人才……在于集思广益，使许多阿斗把他们的平凡常识凑起来也可以勉强应付。’他似乎相信，‘两个臭皮匠，凑起来是个诸葛亮。’他太乐观了。事实上两个臭皮匠，凑起来依然是两个臭皮匠！……”“‘试行新式的独裁’！我们应该注意‘新式’二字。因为新式的独裁与旧式的专制是根本不能相容的。胡先生说，‘打倒专制’的口号可以使统一不能成功，这是真的。但是大家要打倒的是改头换面的旧式的专制，并不是新式的独裁。独裁如何才可以算是‘新式’，我以为有以下的几个条件：一、独裁的首领要完全以国家的利害为利害。二、独裁的首领要彻底了解现代化国家的性质。三、独裁的首领要能够利用全国的专门人才。四、独裁的首领要利用目前的国难问题，来号召全国有参与政治资格的人的情绪与理智，使他们站在一个旗帜之下。”“我已经说过，目前的中国这种独裁还是不可能的。但是我们大家应该努力使它于最短期内变为可能。放弃民主政治的主张就是这种努力的第一个步骤。”</p>
 <p>“一定是那残民以逞的旧式独裁”</p>
 <p>丁文江文章发表后十二天，1934年12月30日，胡适写《答丁在君先生论民主与独裁》（《独立评论》第一三三号），表示失望。胡适说：</p>
 <p>我仔细读了两遍，很感觉失望。他对于英美的民主政治实在不很了解，所以他不能了解我说的民治是幼稚园政治的话。民主政治的好处正在它能使那大多数“看体育新闻、读侦探小说”的人，每“逢时逢节”都得到选举场里想想一两分钟的国家大事。平常人的政治兴趣不过尔尔。平常人的政治能力也不过尔尔。然而从历史上看来，这班阿斗用他们“看体育新闻、读侦探小说”的余闲来参加政治，也不见得怎样太糊涂。即如英国，那些包办“骗人的利器”的人们，当真能欺骗民众于永久，岂真能长期把持政杈了吗？伦敦的报纸，除了《每日前锋》（Herald）外，可以说全是保守党的。在几年之前，《前锋》报（工党报）的销路小极了，直到最近几年中，他们才采用“读者保险”计划，才能与其他通行的大报竞争。然而英国在这几十年中，保守党是否永执政权？工党何以也能两度大胜利？自由党的得政权以及后来的瓦解——更奇怪了！——却正和他们的党费的盈绌成反比例！美国的全国财权当然是操在共和党的手里，然而我留学以来，不过二十四年，已看见民主党三度执政了。可见这班看棒球新闻、读侦探小说、看便宜电影、听Jazz音乐的阿斗，也不是永久可欺骗的啊！所以林肯说的最公允：“你可以欺骗民众于一时，而不能欺骗他们于永久。”英美的民主政治虽然使韦尔斯、罗素诸人不满意，却正可证明我的意见是不错的。英美国家知道绝大多数的阿斗是不配干预政治，也不爱干预政治的，所以充分容许他们去看棒球、看赛马、看Cricket、看电影，只要他们“逢时逢节”来画个诺、投张票、做个临时诸葛亮，就行了。这正是幼稚园的政治，这种“政治经验”是不难学得的。……</p>
@@ -1164,7 +1197,7 @@
 <p>不悉。</p>
 <p>《大公报》事，我已去信说孟：“真兄要我代写一决，我代他决的是继续任撰作星期论文。”</p>
 <p>我也觉得《大公报》的星期论文是值得维持的，所以不但按期作了，还替别位朋友“枪替”了好几次。</p>
-<p>香港之行，势不容已。已决定29日南下，过京不停，在上海过年，元旦之夜在上海搭PresidentHarison去港，4日到港，9日到广州，约12日到梧州，16日到港搭Taft船回来。</p>
+<p>香港之行，势不容已。已决定29日南下，过京不停，在上海过年，元旦之夜在上海搭President Harison去港，4日到港，9日到广州，约12日到梧州，16日到港搭Taft船回来。</p>
 <p>香港大学去年要给我名誉学位，我托故辞了；今年没有法子再辞了，只好去走一趟。我的意思是“开辟殖民地”，你定要笑我不脱“通天教主”味儿了！</p>
 <p>在君兄忽然作驳我的独裁不可能论，我写信（两千多字的长信）答他，你见着否？</p>
 <p>我说：“将来你们这班教猱升木的学者们终有一天要回想到我的话。那时我也许早已被‘少壮干部’干掉了，可是国家也必定弄得不可收拾了，你们那时自己忏悔误国之罪，已无及了！”</p>
@@ -1176,7 +1209,7 @@
 <p>用这封私信做我这篇长文的收尾，真再合适没有了⑨。</p>
 <p>1986年3月2日夜</p>
 <p>①1937年5月30日，胡适写《再谈谈宪政》（《独立评论》第二三六号），进一步论他这一“僻见”说：“我这个‘僻见’，蒋廷黻先生不屑答复；有一天他对我说：‘你那一段议论简直是笑话，不值得讨论。’过了一年之后，丁在君先生在《大公报》的星期论文里引了我这一段话的第一句，他的批评是：‘这句话是不可通的。’（丁先生的全文转载在《独立》第一三三期。）这大概是因为我不是专学政治的人，所以我的‘僻见’，廷黻先生说是‘笑话’，在君先生说是‘不可通的’。”“我自己相信，上文说的僻见并不是笑话，乃是我在美国七年细心观察民主宪政实地施行的结论。”</p>
-<p>②在《再谈谈宪政》一文中，胡适还有这样一段，自道生平经验：“我也曾学政治理论和制度，我的运气最好，我最得力的政治学先生是曾在Ohio做过多年实际政治改革的SamuelP.Orth。例如他教我们《政党论》，从不用书本子；那年正当1912的大选年，他教我们每人每天看三个大党（那年罗斯福组织了进步党）的三种代表报纸，每周做报告；并且每人必须参加各党的竞选演说会场；此外，我们每人必须搜集四十八邦的‘选举舞弊法’，做比较的分析。我受了他的两年训练，至今看不起那些从教科书里学政治的人们。我对于民主宪政的始终拥护，完全是因为我曾实地观察这种政治的施行，从实地观察上觉悟到这种政治并不是高不可及的理想制度，不过是一种有伸缩余地，可以逐渐改善、逐渐推广政权的常识政治。”</p>
+<p>②在《再谈谈宪政》一文中，胡适还有这样一段，自道生平经验：“我也曾学政治理论和制度，我的运气最好，我最得力的政治学先生是曾在Ohio做过多年实际政治改革的Samuel P. Orth。例如他教我们《政党论》，从不用书本子；那年正当1912的大选年，他教我们每人每天看三个大党（那年罗斯福组织了进步党）的三种代表报纸，每周做报告；并且每人必须参加各党的竞选演说会场；此外，我们每人必须搜集四十八邦的‘选举舞弊法’，做比较的分析。我受了他的两年训练，至今看不起那些从教科书里学政治的人们。我对于民主宪政的始终拥护，完全是因为我曾实地观察这种政治的施行，从实地观察上觉悟到这种政治并不是高不可及的理想制度，不过是一种有伸缩余地，可以逐渐改善、逐渐推广政权的常识政治。”</p>
 <p>③1914年5月13日，陈炯明有信给吴敬恒，有这么一段，正好与蒋廷黻之论针锋相对：“譬如现在国中摧残共和，扰害百姓者，实一私人的武力主义横行。申言之，则大军阀扰乱于中枢，小军阀扰乱于各省，而官僚、政客、民党依附其中，口福利而行盗跖，日在老百姓头上肆其践踏，合之为民国四凶，今欲扫平此乱，确非空口赤拳所能从事。不得已而以毒攻毒，暂用小军阀之集合，以推倒大军阀之酿乱，能一次摧陷而廓清之，根本解决也。不能，而先打破大军阀，创建联省制，钳制大军阀之不能产生，安排小军阀之鬼有所归，以此收束，暂作统一，名曰假联治，此亦不得已而思其次之办法也。唯假联治之下，得一和平机会，自可从事裁兵，清理内外债；一面以党之进行，带领老百姓组织团体，储养自治、自卫之能力，再起而与小军阀算账，收回民治之权，使小军阀不能不归于国防地位，真联治乃可实现、真共和始告成功。”可见陈炯明虽是“武夫”，但见解比“文人”“教授”还高明多多呢！</p>
 <p>④胡适在《一年来关于民治与独裁的讨论》文中引了这段话后，说：“我至今还相信这种民主政治的方式是国家统一的最有效方法。”</p>
 <p>⑤胡适在《一年来关于民政与独裁的讨论》中，还有这样的结尾：“我个人当然是欢迎汪蒋两先生这种宣言的。他们承认中国今日无独裁的必要与可能，这种见解，很可以对一般求治过急的人们下一种忠告。在这个国家和平统一最有希望的时机，在中央政府将要正式实行民主宪政的时期，这种郑重宣言是最需要的。”当然，事实上国民党当权派的真意如何，则大有文章，袁世凯在称帝以前，岂不也信誓旦旦的表示中国实无帝制之必要与可能吗？</p>
@@ -1295,20 +1328,20 @@
 <p>胡适出国后十七天，4月23日，南京落入中共之手。再过一个月零四天，5月27日，上海落入中共之手。蒋介石这封密件是上海丢了第二天写的，信中所述各点，都是请胡适代为进行海外宣传。信中“魏将军”是指魏德迈（Wedemeyer）、“少川大使”是指顾维钧、“德邻兄”是指李宗仁。</p>
 <p>据胡虚一追忆雷震对他的谈话，曾有这样的记录：雷震谈告蒋介石于民国三十八年5月28日写这封信给胡适的时候，胡先生才坐轮船渡太平洋到达美国不久。胡先生是应蒋介石之请，赴美替其国民党政府做反共宣传，并协助驻美大使顾维钧争取美国朝野的道义支援。胡先生由上海赴美以前，先应台湾省府主席陈诚之邀，访问台湾参观旬日。而赴英不成的王世杰，则做了国民党总裁蒋介石的政治顾问，于民国三十八年2月先到了台湾。王得悉陈诚邀胡适于3月间访游台湾后，便立分电邀约雷震和杭立武急到台湾，俾与胡适及已在台北之傅斯年，一起和陈诚共商他们在京沪会商议定之发动展开“自由中国”和“民主中国”的两大运动，联络并号召所有信持民主自由理念的学术文教界知识分子，抗阻日益扩张的共产主义等大事，雷杭两人立飞台北，与胡适等会商两天后，又各匆返京沪。而胡先生于稍后返沪不久，便首途赴美。雷震、蒋经国和胡在沪住处之主人陈光甫等，都在码头送行。而中央银行奉政府令支送胡适做赴美生活等费用之美金两万元，亦由其总裁俞鸿钧亲自交请雷震转交给胡适。</p>
 <p>不过，我对雷震这一谈话不无疑义。因为1942年的CurrentBiography和VOLLXXIXNo.9和Time杂志，都登有胡适退还政府给他六万美金宣传费的事；钱思亮告诉我他看到胡适写给我的一封残信，也否认此事，前后相较，我认为胡适收下此两万美金的事，是很可疑的。</p>
-<p>至于蒋介石盼望胡适在美的活动，胡适办得却有困难。据蒋介石写信前六天，5月22日，胡适写给赵元任夫妇的信，说：“别后，我的心境很不好，没有一件事值得报告你们！到Washington去了两次，都不曾住过一天半。许多同情于中国的朋友，如Hombeck、如Bullitt、如Prof.GeorgeH.Blakeslee都觉得‘一筹莫展’！第二次去时，见着Wedemeyer，他也是‘有心无力’。”可见连“魏将军”也一样帮不上蒋介石的忙——蒋介石把中国局面搞得太臭太臭了，神仙也救不了他了。</p>
+<p>至于蒋介石盼望胡适在美的活动，胡适办得却有困难。据蒋介石写信前六天，5月22日，胡适写给赵元任夫妇的信，说：“别后，我的心境很不好，没有一件事值得报告你们！到Washington去了两次，都不曾住过一天半。许多同情于中国的朋友，如Hombeck、如Bullitt、如Prof. George H. Blakeslee都觉得‘一筹莫展’！第二次去时，见着Wedemeyer，他也是‘有心无力’。”可见连“魏将军”也一样帮不上蒋介石的忙——蒋介石把中国局面搞得太臭太臭了，神仙也救不了他了。</p>
 <p>据1952年12月7日胡适在北大同学会上演讲回忆：“……在民国三十八年，我感到抬不起头、说不出话。我曾对家人说：‘不要以为胡适之在吃自己的饭。’我们家乡有句俗话：‘留得青山在，不怕没柴烧！’以我几十年的经验，我感到青山就是国家。国家倒霉的时候，等于青山不在，青山不在的时候，就是吃自己的饭、说自己的话，都不是容易的事情。我在国外这几年，正是国家倒霉的时候，我充满了悲痛的心情，更体验到青山真是我们的国家。这次出去我很苦痛；由于许多老朋友的失败心理，使我感到难于说话。所以在民国三十八年7月16日，我通知中国驻美大使馆，取消一切约会，不接见任何政府或国会的领袖。因为大家成见太深，使我处处碰壁；也因为局势太大，不是私人间的谈话所能转移的。在这个时候，只有替国家保留一些尊严、替国家保留一些人格，所以我取消一切约会。就是自己作文章、说几句话，也是人家请我作、请我说话，才作才说的。因此，三年以来，我只是给国家留了一些体面，其他毫无贡献……（编者略）”由这一回忆中，足见蒋介石密件中对胡适的期盼，是落空了的。</p>
 <p>1990年11月12日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/12.人物研究类/胡适与我.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/12.人物研究类/胡适与我.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../12.人物研究类/李登辉的真面目.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../12.人物研究类/胡适研究.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1318,16 +1351,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../12.人物研究类/李登辉的真面目.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../12.人物研究类/胡适研究.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1336,12 +1374,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

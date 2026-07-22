@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,81 +81,102 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="中国现代史定论"><a class="header" href="#中国现代史定论">中国现代史定论</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#目录">目录</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -186,7 +219,7 @@
 <p>一、看他的黄金政策。他上台最初一件事，是给以前买金子者一个六折，这中间，有小公务员、小资本家；也有大商人、官僚资本者。当时《大公报》还是有条件的赞成，我也一样，写了一文，载《大公报》，强调政府在战时可以征用私人的资本，但须用累进的办法，尤其是再想法子找大户。前者的原则是，国家为战争筹款，必须有钱者出钱；后者的原则是，担负不能在穷人身上。现在想起来，王芸生先生和我，真正做到“君子可欺以其方”了。累进办法，在参政会并且屡次提出过，我们强调他更改，财政当局说，大户买时化小户，无法子分，争执不得结果。假如照那时他的说话，已买者尚可收回，未买者如何可以不加管制？近来，有一天抛五顿，经常是每天几千条或几百条，真正做到他的“自由贸易”的原则！然而试问，如果今日如此“自由”，当年何必“充公”？金价的波动，寻常百姓是吃不消的。虽然各处集到上海的游资许多不易查考，然而一买几千条的大户是谁，岂皆不能查出？报载最近风波之掀起是山西帮，传说是孔宋斗法，二公本无好感，何不可查查？自己的人是不是也在中间？是不是因为自己的人，一家同姓、一派下属、一大组合（如美国报所说：“SoongCombine”“KungCombine”而无从下手？如其不然，中央银行卖金子的铁幕何不可以为立法院、监察院、参政会驻会委员会揭开？我们国家是不是一个金子国，取之不尽的？如其不然，是不是还有别的方法吸收游资？是不是能和整个经济政策配合？一旦用得差不多了之后，何以善其后？如果今日之“自由”是，则前年之“充公”非；如果前车之“充公”是，则今日之“自由”非。所以纵然“不是”黑暗重重，也是无办法、无见识、无原则。子子孙孙要还的黄金债，他这样子玩，玩得领导物价，不特不足平抑物价，反而刺激物价、紊乱物价，至少说来，他是彻底失败了。</p>
 <p>二、看他的工业政策。抗战胜利，他宣言曰，后方工业，无法保持，这是事实；但总要仔细检点一下，哪些确有设备、哪些只是玩花枪，分别情形，检好的收买其设备，所以答其赞助抗战自沪迁川之热诚，这也不是太难的事，正所谓“栽者培之，倾者覆之”。然而他一笔抹杀，不分青红皂白，于是共产党大得意，高喊民族资本家。所有收复区敌伪的工业，全部眼光看在变钱上，有利可图者收归“国有”，无利可图者“拍卖”，于是工厂一片停止声。去年一年，上海小工业，停顿者百分之七十五以上，今年上半年恐怕要全部解决。他为政府筹款，办中纺公司之类，只要办得好，是可以的，那些闹的，也是要分赃的，不出代价，又借流动金。然而一般工业在水准上者总须加以维持，不好，改良他，不能坐视其死；更不好，不管他，不能连好带坏一律不问，政府是有责任的。这是失业的问题，即最严重的政治问题。他毫无根本办法，听说新任经济部长，本有一个“收购成品”的计划，如生产局。他置之不理，仅仅贷小款，这是把钱投入大海的；比投大海还糟，他们拿去；好的屯积，坏的又是黄金美钞，捣政府的乱。省小钱于前，花大钱于后；忽关头于前，无所措手于后；治病的办法不做，添紊乱的办法做去。年前年后，一切一跃一倍，最近一跃几倍，还不是更要多发钞票？听说他在做了行政院长后，第一次出席院会，说：计划不必行者，即不付钱，减了还是费钱；计划可行者，不必减他钱。这是神智开朗的话，何以行起来并不如此？为少用法币，抓得紧，是对的。然而要有经济政策，使人不失业；无经济政策之财政政策，是玩不转的。发大票子，专选年关，出口加补助，不看美英法律，前者毫无常识，后者毫无知识。再由他这样下去，三个月后，景象可想，也不忍想。今天连资本家也有许多同情共产党，开万国未有之奇，他把他的政府伺候得这样子的，人民不必说了，他心中反正没有人民的。</p>
 <p>三、看他的对外信用。美国人有许多话也是乱说的，但严重的话，出于有地位之人，不能不弄个明白，为国家留体面。麦帅的经济顾问，说他如何如何，他愤然“更正”，那个人又说，宋如不承认，我举出事实来，所谓（SoongCombine）如何如何。他便不响了。又如美国纽约《下午报》说他把联总送中国医院的调节温度器几架搬到自己家里，这几件东西究竟在哪里，他也不弄明白。诸如此类，我实在不忍多说下去。大凡一个上轨道的国家，一人纵经商，一经从政，须摆脱商业，英国制度，不特阁员如此，即一个下院议员（上院是无作用的“辩论会”，故无此限）如其公司与政府签买卖合同，其议员资格自然无效。偏偏孔宋二公行为如此，公私难分。“大凡物不得其平则鸣”，而“以直道使人，虽劳不怨”。国家困难，上海经济难维持，假如自己有清风，仍旧可以有办法的，办人也可以取谅于人的。自己无代8vestedinterest可以制人的，如自己（包括其一群人）又是当局，又是“人民”，他人不得到意外便宜的，皆要反抗的。我向社会广泛提议，如立法院、如参政会，以及一切人民，都该彻底调查，上海及他地以及国外，所有豪门权族之“企业”是些什么内幕？他们的营业范围如何？他们的外汇得自何处？</p>
-<p>四、看看他的办事。他在行政院，把各部长都变成奴隶或路人。一个主管部的事，他办了，部长不知，看报方知之。真正偏劳得很，各部长建议，置之不理是最客气，碰钉子更寻常。这是他有兴趣的部。如无兴趣的部，则路人相待，反正要钱无钱，说话不理。他可以说，行政院不是由他组织的，这也是事实，然而如由他组织，不知是哪些小鬼呢！他平常办事，总是三几个秘书，在上海，总是三几个亲信，还有他的三几个“智囊团”，行政大事尽于其中矣，国家命运如此决定矣。我看，他心中是把天下人分做两类：其一类为敌人，即现行的敌人和潜伏的敌人（potentialenemies）；其一类为奴隶，中间并无其他，所以他管到哪个机关，那个机关的长官便是他的奴隶。至于一切其他人，他都不愿见，见亦无可谈，开会不到，立法院参政会请他不来；至于人民请愿，更不待说，见人傲慢而无话，似乎奴隶之外全是他的敌人。这样行政，岂特民国“民主”不容有此，即帝国专制又何尝可以，只有中国是他的私产，他才可以如此做的。</p>
+<p>四、看看他的办事。他在行政院，把各部长都变成奴隶或路人。一个主管部的事，他办了，部长不知，看报方知之。真正偏劳得很，各部长建议，置之不理是最客气，碰钉子更寻常。这是他有兴趣的部。如无兴趣的部，则路人相待，反正要钱无钱，说话不理。他可以说，行政院不是由他组织的，这也是事实，然而如由他组织，不知是哪些小鬼呢！他平常办事，总是三几个秘书，在上海，总是三几个亲信，还有他的三几个“智囊团”，行政大事尽于其中矣，国家命运如此决定矣。我看，他心中是把天下人分做两类：其一类为敌人，即现行的敌人和潜伏的敌人（potential enemies）；其一类为奴隶，中间并无其他，所以他管到哪个机关，那个机关的长官便是他的奴隶。至于一切其他人，他都不愿见，见亦无可谈，开会不到，立法院参政会请他不来；至于人民请愿，更不待说，见人傲慢而无话，似乎奴隶之外全是他的敌人。这样行政，岂特民国“民主”不容有此，即帝国专制又何尝可以，只有中国是他的私产，他才可以如此做的。</p>
 <p>五、当政的人，总要有三分文化，他的中国文化，请化学家把他分解到一公忽，也不见踪影的。至于他的外国文化，尽管英国话流畅、交些个美国人（有美国人说，看他交结的是些什么美国人，便知道他是什么人），是绝不登大雅之堂的。至于他的态度，举两件一轻一重的事为例：他大可不请客，既请客，偏无话可说，最客气的待遇，是向你面前夹菜，此之谓喂客，非请客也。胜利后第一次到北平，时常在某家，一日，大燕会，演戏，文武百僚地方绅士毕集，他迟迟而来，来的带着某家之某人，全座骇然，此为胜利后北平人士轻视中央之始。因为当时接收笑话，尚未传遍，这事我只可说到此为止。在高位者，这些是要检点的。</p>
 <p>说他不聪明吧，他洋话说得不错，还写一笔不坏的中国字（我只看到报载他的签名）；说他聪明吧，他做这些事，难道说精神有毛病吗？</p>
 <p>我真愤慨极了，一如当年我在参政会要与孔祥熙在法院见面一样，国家吃不消他了，人民吃不消他了，他真该走了，不走一切垮了。当然有人欢迎他或孔祥熙在位，以便政府快垮。“我们是救火的人，不是趁火打劫的人。”我们要求他快走。</p>
@@ -210,10 +243,10 @@
 <p>“官僚资本”一个名词是抗战时候的产物，还是我的朋友某教授造的，当时的中心对象是孔祥熙，现在大家注意宋子文多些了，但也绝不当忘了孔祥熙。现在我解释这名词一下。</p>
 <p>现在必须分辨三件东西：第一，国家资本。国家资本的发达是走上计划经济、民生主义、温性的社会主义必由之路，所以如果办得好，我是百分的赞成。这些年国家资本相当发达，但内容和表面大不相同。从表面说，铁路除中长为俄有外，几全是国有（除去宋家与洋人要修的成渝铁路等）；航业则招商局，压倒一切民航；航空号称民营，实是国家资本；主要的银行全是政府的（四行二局）；又有资源委员会号称办理一切重工业。这样发达的国家资本，我们应该几乎要成社会主义国家了，然而内容大大不然。糟的很多，效能二字谈不到的更多。譬如两路局、资源委员会等，你不能说它贪污。但无能和不合理的现象更普遍。推其原因，各种恶势力支配着（自然不以孔宋为限）、豪门把持着，于是乎大体上在紊乱着、荒唐着、僵冻着、腐败着。恶势力支配，便更滋养恶势力；豪门把持，便是发展豪门。循环不已，照道理说，国家必糟。英国现在工党所行的社会主义政纲，好多我们已经实行了，例如铁路、银行、主要工业之国有，我们都做了，而结果不特愈弄得去社会主义愈远，而且去任何有效政体、像样社会也愈远，其故皆在人事，不在国家资本之基础观念上。</p>
 <p>第二，官僚资本。官僚资本在中国真发达极了，上自权门，下至稍稍得意稍能经营的公务员，为数实在不少，这几乎包括中国的资本阶级及上等布尔乔亚。西洋的布尔乔亚总是投资在股票或债券上，中国工业不发达，已有者又破产，谁玩股票？债券是靠国家信用的，今天还说得上吗？中国过去官僚总是投资在田地，今天田地是个大累赘，谁肯？于是乎小官僚资本托庇于大官僚资本，大官僚资本托庇于权门资本。小官僚大官僚资本有些是以“合法”方法聚集的，有些则由于鼠窃狗偷。无论如何，是必须依靠大势力的，尤其是豪门资本。</p>
-<p>第三，权门资本。权门资本本是官僚资本之一类，然而其大无比，便应该分别看了。这些权门资本，一方面可以吸收、利用、支配国家资本，一方面可以吸取、保护（因保护而受益）次于它的官僚资本。为所欲为，愈受愈大。用着一批又一批的“机器”（这“机器”在宋氏门下很多是些美国留学生，自以为了解所谓SoundBusiness的，极肤浅的人）爪牙、走狗（例如战前广东银行经理，已经枪毙了的）、家奴……其效能与注重工业远不如三菱三井，而其支配力过之。</p>
+<p>第三，权门资本。权门资本本是官僚资本之一类，然而其大无比，便应该分别看了。这些权门资本，一方面可以吸收、利用、支配国家资本，一方面可以吸取、保护（因保护而受益）次于它的官僚资本。为所欲为，愈受愈大。用着一批又一批的“机器”（这“机器”在宋氏门下很多是些美国留学生，自以为了解所谓Sound Business的，极肤浅的人）爪牙、走狗（例如战前广东银行经理，已经枪毙了的）、家奴……其效能与注重工业远不如三菱三井，而其支配力过之。</p>
 <p>今天的官僚资本当然推孔宋二家，二家以外，有些在滋长中。两家的作风并不尽同。孔氏有些土货样色，号称他家是票号“世家”，他也有些票号味道，尤其是胡作非为之处。但“世家”二字，我曾打听他的故人，如严庄监察使，那就真可发一笑了。这一派是雌儿雏儿一齐下手，以政治势力，垄断商务，利则归己、害则归国，有时简直是扒手。我说到这里，我想，他该告我诽谤罪了，我却有事实证明。利则归己、害则归囯者，例如某某几个私家银行，在战前不能支持了，由政府入官股维持，两三年前他准许这几家银行退还官股，以当时一元当战前一元！所有这些银行在收到官股后所获的利益都不算了，这简直是拿国家的利益，直接的、毫无掩盖的送人；其实并不是送人，而是送己，因为其中某某几个银行他都有支配力。不幸事机不密，为若干参政员所知；于是参政会大闹几阵，“此说作罢”，但真正罢了未罢，以后谁来查过？至于扒手之说，绝不冤他，即如中央银行国库局案，人证物证齐全，虽说政治上使其搁着，因为已经“退还”（试问小偷强盗退还赃物，是不是就算了事），法律上并未完结，因为原告并未撤销。所以他如以我为侮辱，必须告我于法院，我很愿对薄公庭。言归正传，我们能知道多少呢？尤其我这与经济无关之人。办这样事，哪有不严密的呢？然而八年参政会已经闹出那些事实来，铁幕也有漏缝之处，然而漏缝之处究竟所窥有限了。其实人既活着，即不留心，也不能无所见，请看扬子公司，进口那样好，他结外汇何以那么容易呢？资产遍中外，是他祖宗的钱吗？若说“久宦必富”（在天津因接收案被抢毙的故海军上校刘乃沂答辩的理由），我看，这些年来久宦，如何可以必富，尤其是满天的富，除非用某些某些办法。</p>
 <p>宋氏的作风又是一样，他有时仿佛像是有政策的，战前也曾吸收过若干社会上认为可以有为之人，上海的“高等华人”战前有不少信服他。他的作风是极其蛮横，把天下人分为二类，非奴才即敌人。这还不必多说，问题最重要的，在他的无限制的极狂蛮的支配欲，用他这支配欲，弄得天下一切物事将来都不能知道公的私的了。</p>
-<p>国民党整天谈“民生主义”“节制资本”“国营”……宋子文做了国民党的沙赫特，尽管他相信他的soundbussiness，也应该稍许有个样儿，然而完全与这些口号相反的。</p>
+<p>国民党整天谈“民生主义”“节制资本”“国营”……宋子文做了国民党的沙赫特，尽管他相信他的sound bussiness，也应该稍许有个样儿，然而完全与这些口号相反的。</p>
 <p>不谈国有国营则已，要谈则第一件要国有国营的便是公用事业（Publicutilities），偏偏我们要“宋营”。现在全国电气事业，除冀北由资源委员会接收外，其余均非国营，而且走上了集中垄断的路。如戚墅堰电厂（垄断京沪之间）、首都电厂以及武汉之既济水电公司等，均为建设银公司所有之扬子电气公司经营。人人皆知建设银公司姓什么。</p>
 <p>煤矿在原则上亦应由国家经营，因为它是动力的来源。中国煤矿除胜利后在东北及热河接收者外，皆非国菅，北方的多为北洋军阀官僚所菅，本是国民党北伐时打倒的呼声之一。现在扬子江东区之唯一大煤矿，即淮南煤矿，也是建设银公司所营。最近江西之鄱乐煤矿，又为建银所买到。四川某煤矿，又以另法支配。现在北方局面未平定，一经定了，北洋军阀多已破落倒出去，由谁买，是可想的。</p>
 <p>说到这些事，煤矿、电厂，本由张静江先生之建设委员会而来，当时是国营，因为建设委员会是等于政府一部的。由准许私人投股之国营，一下而入于中国银行，又由中国银行而姓了宋，这中间，也许有他的“合法”手续，凡创朝代都是合法的。</p>
@@ -223,7 +256,7 @@
 <p>这样说下去，多着呢，今天止于此。现在说结论。</p>
 <p>豪门资本这样发达，中国几无国家的形象。三菱三井把日本弄到这样子，太惨了（虽说是日军阀做祸首，然财阀如不发达，军阀无能为力）。他们还是几代（从江户时）辛苦建立的，不像我们的这样“直接”，天下人怨怒所集，如何下得去？今天欢迎孔宋当国者，只有一派人，即共产党和他的尾巴，因为二氏最可使中国紊乱的。我们不愿我们的国家成五胡十六国、成外蒙古，我们实在不能欢迎他。</p>
 <p>在今天宋氏暴行之下，还有人说，孔比他好，这真全无心肝之论，孔几乎把抗战弄垮，每次盟邦帮助，他总有妙用，并且成了他的续命汤。</p>
-<p>在今天宋氏这样失败之下，他必须走开，以谢国人。在位者要负责任的。他的自由买卖，彻底失败了。顶好的说，你总不能用甲思想做反甲思想的事，何况他的思想是由于他的vestedinterest？</p>
+<p>在今天宋氏这样失败之下，他必须走开，以谢国人。在位者要负责任的。他的自由买卖，彻底失败了。顶好的说，你总不能用甲思想做反甲思想的事，何况他的思想是由于他的vested interest？</p>
 <p>这还不能算完。今天我们要觉得晋惠帝不愚，因为他听到公园里虾蟆声，他问是公的私的。今天一切事都引不出公的私的。我们必须清算十年的事物，哪些是公而私的，哪些是私而公的。总而言之，借用二家财产，远比黄金拢回法币多，可以平衡今年预算（我在参政会如此说过。有些报纸说我说，二家财产够国人过一年美国人生活水准，那是他们说的，说过与不及一样坏）。所以要征用，最客气的办法是征用十五年，到民国五十一年还他们本息，他们要的是黄金美钞，到那时都可以的。你们饶国家十五年，给一个喘息的机会吧。这办法自须先有立法程序，我想立法院可以压倒多数（如非一致）通过。</p>
 <p>有朋友问我，你说孔宋不好，张嘉璈何如？我说，何止张嘉璈，连那些“自由计划经济家”、无知低能的“民生主义哲学家”等等，都是愈弄愈糟的！我对于过去的万忍不住，对于将来，我并是“政治经济病菌学”专家。</p>
 <p>这篇文字全由我负责，与编辑无涉，另有在《世纪评论》两文（第一卷第七期、八期）可与此文参看。（《观察》第二卷第一期，1947年3月1日）</p>
@@ -358,17 +391,17 @@
 <p>地长久，天不老，九子五婿齐家道，孙辈满堂环膝绕，怎敢比古时，郭老令公福禄与寿考，知足返璞乐陶陶。</p>
 <p>“九子五婿”，他竟以郭子仪自期呢！好个国民党郭子仪哟！国民党一介武夫，竟以文事收场，亦堪哂矣！</p>
 <p>1991年8月16日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/09.历史文化类/中国现代史定论.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/09.历史文化类/中国现代史定论.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../09.历史文化类/中国性研究.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../09.历史文化类/中国现代史正论.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -378,16 +411,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../09.历史文化类/中国性研究.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../09.历史文化类/中国现代史正论.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -396,12 +434,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

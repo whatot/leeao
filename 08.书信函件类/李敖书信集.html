@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,81 +81,102 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="李敖书信集"><a class="header" href="#李敖书信集">李敖书信集</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#目录">目录</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -312,9 +345,9 @@
 <p>亲爱的酒鬼（醉鬼？）：</p>
 <p>“不为酒饮，乃为醉饮”，古人之言，君实证之。</p>
 <p>这几天苏联作家Kuznetsov在英国请求政治庇护事件，颇使我注意。——在苏联，竟还有放他出境再被他逃掉的“自由”！一些整天骂苏联的“非铁幕”国家，当然不会发生这种尴尬事——因为没有“放他出境”，所以自然美名在外（可是人不在外）！人都他妈的成了“内人”！</p>
-<p>8号登出他的声明和三封信，真动人。他说：“IfIwerenotawriter,Imighthavebeenabletobearit.But，sinceIamawriter，Ican't”Kuznetsov又证明：“……IsolemnlydeclarethatKuznetsovisadishonest,conformist,cowardlyauthor.Irenouncethisname.”他可真行！</p>
+<p>8号登出他的声明和三封信，真动人。他说：“IfIwerenotawriter,Imighthavebeenabletobearit.But，sinceIamawriter，Ican’t”Kuznetsov又证明：“……IsolemnlydeclarethatKuznetsovisadishonest,conformist,cowardlyauthor.Irenouncethisname.”他可真行！</p>
 <p>我在台湾，所差强人意的是，我尚没有否认什么的必要。“文星”以来，我没写过任何我不高兴写的。区区纪录，得来亦颇不易！</p>
-<p>Kuznetsov又致书宣布退出theUnionofWritersoftheU.S.S.R.，不管如何天翻地覆，我尚不致如此。因为我从不加入什么文协和青协。区区傲骨，岂易致哉？今日台湾作家能拒统制文艺势力如此者，又有谁哉？</p>
+<p>Kuznetsov又致书宣布退出the Union of Writers of the U. S. S. R.，不管如何天翻地覆，我尚不致如此。因为我从不加入什么文协和青协。区区傲骨，岂易致哉？今日台湾作家能拒统制文艺势力如此者，又有谁哉？</p>
 <p>在可诅咒的时代里，“有所不为”竟成为不易达到的美德——懦夫式的自豪美德，你说多该可叹！</p>
 <p>不能出境的在家里坐的“作家”1969年8月11日夜深</p>
 <p>有书，或可便中代访：</p>
@@ -334,7 +367,7 @@
 <p>我向贵部申请“护照”，是锡安旅行社代办的，旅行社早在8月25号下午，就向贵部送件了（560526），按照贵部一般作业程序，是四十八小时内发下护照，可是旅行社转告我：“别人都准了，可是李先生的护照外交部不肯发，请李先生打电话到3111826亲自解决吧！”</p>
 <p>我打电话到3111826，对方是一位脾气奇大的公务员，后来知道是专员级的，叫汪应松，他向我咆哮的情形，我已在上一封信告诉你了。这个案子一压两个多月，直到我写信给你以后，贵部才给我回信，前后稽延，已长达两个月零二十天。查公务人员执行职务的态度和不得稽延，于《公务员服务法》第一条、第七条著有明文，这在西方行政学中叫做“服务道德”，在东方行政学中叫做“公务员的伦理义务”，“如果违反了这种义务，就是失职”（美浓部达吉《日本行政法》、田中三郎《行政法总论》、林纪东《行政法上的公务员》等均栽于专著），如今贵部公务员在公然侵害人民权利以后，又公然违背公务员起码的服务态度与规范，桿不置复，这种“衙门风气”，究竟如何处理，请你答复。</p>
 <p>关于贵部“违宪”与违法部分</p>
-<p>从1949年起，直到今年8月18号以前，三十一年间，我一直困居此岛，未能离开也未能获准离开。这一“强迫永不分离”的事实，我在上封信中也对你说过了。三十一年间，最跟贵部有关的，是美国国务院邀请我访问那件事。美国大使馆在1964年5月18号、6月1日写信邀我访美，但是因我不准离境，只好谢绝。三十一年来，因为这个地区的公务员对我的特别关爱、过分服务和紧迫盯人，使我自由、权利受损情形，被违法侵害得卡有厉害。这些违法侵害相激相荡以后，就形成法律中的“因果关系”（causeandeffect），就是说：无先行的事实，则后行的事实就不致发生，先行事实成为对结果发生有重要而直接影响的条件，结果发生，是违法的自然相当的结果（naturalandprobableconsequence,见TheProximateConsequenceofanAct,33Harv.LRev.633，1920）。按照《宪法》第24条，本明文规定：“凡公务员违法侵害人民之自由或权利者，除依法律受惩戒外，应负刑事及民事责任。被害人民就其所受损害，并得依法律向国家请求赔偿。”《民法》第186条，也规定公务员因故意违背对于第三人应执行之职务，致第三人之权利受损害者，负赔偿责任。”自由在《民法》上也为权利的一种，贵部违法侵害我自由、权利，并违背对我应执行的职务，究竟如何处理，请你答复。</p>
+<p>从1949年起，直到今年8月18号以前，三十一年间，我一直困居此岛，未能离开也未能获准离开。这一“强迫永不分离”的事实，我在上封信中也对你说过了。三十一年间，最跟贵部有关的，是美国国务院邀请我访问那件事。美国大使馆在1964年5月18号、6月1日写信邀我访美，但是因我不准离境，只好谢绝。三十一年来，因为这个地区的公务员对我的特别关爱、过分服务和紧迫盯人，使我自由、权利受损情形，被违法侵害得卡有厉害。这些违法侵害相激相荡以后，就形成法律中的“因果关系”（cause and effect），就是说：无先行的事实，则后行的事实就不致发生，先行事实成为对结果发生有重要而直接影响的条件，结果发生，是违法的自然相当的结果（natural and probable consequence ,见The Proximate Consequence of an Act, 33 Harv. L Rev. 633，1920）。按照《宪法》第24条，本明文规定：“凡公务员违法侵害人民之自由或权利者，除依法律受惩戒外，应负刑事及民事责任。被害人民就其所受损害，并得依法律向国家请求赔偿。”《民法》第186条，也规定公务员因故意违背对于第三人应执行之职务，致第三人之权利受损害者，负赔偿责任。”自由在《民法》上也为权利的一种，贵部违法侵害我自由、权利，并违背对我应执行的职务，究竟如何处理，请你答复。</p>
 <p>关于贵部不采信“公文书”而采信报章部分</p>
 <p>11月1号写信给你后，总算在半个月后（11月15日）得到回信，信中说：</p>
 <p>径启者：奉交下台端本月一日致本部朱部长函敬悉。查申领护照按规须据实填写护照资料卡，台端所填资料卡婚姻状况经查与事实不符。用特函达，请即亲自或书面委托他人前来本处办理更正，以凭发照。</p>
@@ -389,7 +422,7 @@
 <p>第一套是“已清查法”（说质询内容他们早已清查，表示你提出的是陈年老案。）</p>
 <p>第二套是“有出入法”（说质询内容与事实不无出入，表示你提出的是不准确的。）</p>
 <p>第三套是“改善中法”（说质询内容他们正查明改善中，表示你提出的他们很感谢、很佩服，他们可能有镨，但在改善中，至于错在哪儿，他们是推得好远的。）</p>
-<p>对付这三套太极拳，唯一方法就是“大题小做”——避免同他们谈任何不具体的题目。任何可能被他们架空的题目，都不提出，而只是提出活生生的实例，逼他们只能说YesorNo的实例，这样他们才无所遁其形。从这种实例上使他们窘态百出，才是正途。</p>
+<p>对付这三套太极拳，唯一方法就是“大题小做”——避免同他们谈任何不具体的题目。任何可能被他们架空的题目，都不提出，而只是提出活生生的实例，逼他们只能说Yes or No的实例，这样他们才无所遁其形。从这种实例上使他们窘态百出，才是正途。</p>
 <p>所以，千言万语的国事一百零一问，不如直截了当的国事十一问、国事一问。这就好像考试，不要出“问答题”给他们发挥，（因为一发挥，就“太极”出矣！）而要出“是非题”、“填空题”，逼他们一翻两瞪眼。</p>
 <p>你说你要就我的《天下没有白坐的黑牢》提质询，这篇文字，我已配上图片，并酌加订正，以《监狱学土城？》的题目收在《李敖千秋评论丛书》第七册《勇气-脚镣-针》里，我同时加进九篇补充性文字（自第131页《只换屁股不换针》起到第167页《坐牢的三十三不亦快哉》）。你质询时候，不妨就这十篇找出YesorNo式的题目，例如：</p>
 <p>一、屠寄贪污案（第59页）是否李敖“幻想”出来的？</p>
@@ -428,8 +461,8 @@
 <p>如果我是出入境管理的掌权人，以上这些论点，就会是我“禁止李敖出境”的理由。这些理由，将使我们对历史有所交代；对列祖列宗保留了一个优秀的文化精英；对子子孙孙留下一个宝贵的文化遗产——李敖。（《政治家》，1981年3月16日）</p>
 <p>给徐璐的一封信</p>
 <p>徐璐：</p>
-<p>十五年前，我翻译了D.H.Lawrence书中的一段文字：</p>
-<p>苦难当前，我们正置身废墟之中。在废墟中，我们开始盖一些小建筑、寄一些小希望。这当然是一件困难的工作，但已没有更好的路通向未来了。我们要迂回前进，要爬过层层障碍，不管天翻也好地覆也罢，我们还是要活。（Thecataclysmhashappend,weareamongtheruins,westarttobuildupnewlittlehabitats,tohavenewlittlehopes.Itisratherhardwork：thereisnosmoothroadintothefuture：butwegoround，orscrambleovertheobstacles.We'vegottolive，nomatterhowmanyskieshavefallen.）</p>
+<p>十五年前，我翻译了D. H. Lawrence书中的一段文字：</p>
+<p>苦难当前，我们正置身废墟之中。在废墟中，我们开始盖一些小建筑、寄一些小希望。这当然是一件困难的工作，但已没有更好的路通向未来了。我们要迂回前进，要爬过层层障碍，不管天翻也好地覆也罢，我们还是要活。（The cataclysm has happend, we are among the ruins, we start to build up new little habitats, to have new little hopes. It is rather hard work：there is no smooth road into the future：but we go round，or scramble over the obstacles. We’ve got to live，no matter how many skies have fallen.）</p>
 <p>这段文字，可说是我在这岛上处境的最好描写。我的确是在“废墟之中”不断地“开始盖一些小建筑、寄一些小希望”，恶势力总不断地在搞垮我的小建筑、摧毁我的小希望，他们没完，但我也没完，就这样的，我自“文星”以来，过了二十年！</p>
 <p>陶渊明诗里说他在长江边种桑树，种了三年，刚要收成的时候，忽然山河变色，桑树“柯叶自摧折，根株浮沧海”，一切成绩都漂失了，但他并无悔意，因为“本不植高原，今日复何悔”？——本来就不在安全地带种树，又有什么好后悔的呢？</p>
 <p>你说你为了理想，甚至车都卖了，用来办杂志，亲人怪你是“败家女”，朋友对你也说泄气话。……我觉得，这些都是正常的现象。我特别把D.Lawrence和陶渊明的心境写给你，表示我对你的佩服与支持。</p>
@@ -484,7 +517,7 @@
 <p>总之，今天的许多法官，他们根本缺乏仁心仁术，根本不知道在目前的腐败狱政之下，刑是不可以乱判的。因为判人的基础必须要有四个相对条件：一、司法公正的相对条件（要国民党不能干涉审判，法官不能贪墨）；二、司法制度的相对条件（要制度合于基本条件，如需兑现孙中山保证的陪审制等）；三、最低处遇的相对条件（要合于1955年联合国“在监人最低处遇标准规则”）；四、假释制度的相对条件（要假释得够比例，并且不靠关系与红包就可依法假释）。以上四个相对条件，目前官方都做不到。做不到，却要整天抓人关人判人，这又叫什么司法公正呢？这样的法官，又叫什么公正廉明呢？</p>
 <p>结论是，法官明知“狱犴不治，不可刑也”的道理；却还抓人关人判人，这样的法官，心术就大有问题了。这样心术有问题的法官，纵使如你所说，去“坐假牢”，又有什么用呢？如果反其道而行，不要法官客串囚犯，而要囚犯客串法官，来次“判假刑”，你看会有什么戏剧效果呢？三十三年的积怨，恐怕能得好死的法官，不会很多吧？</p>
 <p>所以，你的法官“坐假牢”的提议，最后只是“好玩”而已。</p>
-<p>写到这里，我劝你看看奥斯本（ThomasMottOsborne）那本“坐假牢”的专书——《狱中身历记》（WithinPrisonWalls）。奥斯本是1913年纽约州监狱改良委员会会长，他坐了七天假牢，1914年印出这本书。这本书可以告诉你，你的建议是乌托邦的，除了有一点讽刺，别无其他作用。不过，在这众口一声的官场里，你老兄忽然思出其位，做了这么一段大胆的谈话，也算一次空谷之音了。</p>
+<p>写到这里，我劝你看看奥斯本（Thomas Mott Osborne）那本“坐假牢”的专书——《狱中身历记》（Within Prison Walls）。奥斯本是1913年纽约州监狱改良委员会会长，他坐了七天假牢，1914年印出这本书。这本书可以告诉你，你的建议是乌托邦的，除了有一点讽刺，别无其他作用。不过，在这众口一声的官场里，你老兄忽然思出其位，做了这么一段大胆的谈话，也算一次空谷之音了。</p>
 <p>李敖1982年9月6日</p>
 <p>回邓维桢的一封信</p>
 <p>维祯：</p>
@@ -517,7 +550,7 @@
 <p>敖哥1982年9月29日</p>
 <p>自大者言</p>
 <p>彦增：</p>
-<p>所命之事已转到，不能不抗命，因为我已隐居，不见人了，当然也就不能接受你家大小姐的访问。但是大小姐面子还是很大很大，所以，我提一折中办法，如大小姐愿意以书面问题提出，我保证以书面奉答。她们学新闻的，重点在fromthehorse'smouth，不在tolookagifthorseinthemouth。所以，对这一模式，希望我不是tomountthehighhorse也！</p>
+<p>所命之事已转到，不能不抗命，因为我已隐居，不见人了，当然也就不能接受你家大小姐的访问。但是大小姐面子还是很大很大，所以，我提一折中办法，如大小姐愿意以书面问题提出，我保证以书面奉答。她们学新闻的，重点在from the horse’s mouth，不在to look a gift horse in the mouth。所以，对这一模式，希望我不是to mount the high horse也！</p>
 <p>我想，大概只有像你这样深知我的老朋友，才对我这种“关门自大”的态度，不以为异，也毫不见怪。不深知我的人，就不习惯我这种大模大样了。其实我的自大，从不表现在脸上，只是表现在身上，我从无“满脸骄气”，却总有“一身傲骨”。这种傲骨，如今表现在“拒人千里之外，而不拒人于‘千秋’之外”上面，就更一发而不可收拾。我每月在《千秋评论》上用印刷品呼么喝六，的确未免张狂了一点、神气活现了一点，只有深知自己的老朋友，才能消受得起，不是吗？</p>
 <p>我认为，自大如果变为一种施教或武器，自大是可贵的。李鸿章、戴高乐，都是出了名的自大的人，他们在受别人气的国势里，居然能以气势凌人，以自大获得别人的慑服与尊敬，这真是了不起的事。但是，李鸿章、戴高乐他们这种大模大样的外铄，都因为在内心中，他们真的都有“不畏浮云遮望眼，自缘身在最高层”的自许气魄，所以“诚于中，形于外”，就是有那种架势，并不是演戏，而是真的舍我其谁的。我这种看法，你以为如何？</p>
 <p>你的回忆录（尤其是战乱部分的），务必趁早写出来，给苦难中国作见证。你的新娘子太好，家庭太美满，难免缺乏战斗气氛，所以写作量太少，实在该打。我建议新娘子要对你凶一点、坏一点，这样才有助于你的写作。王夫之一边跟太太吵架，一边向学生上课，可资借鉴。愿你们举行一次家庭会议，通过同室操戈打成一团纲领，这样你才好做大文豪。</p>
@@ -534,7 +567,7 @@
 <p>香港的作家黄思骋，在一篇文章里论李敖说：</p>
 <p>大陆里的一个体育界人士，前几年曾经以羡慕的口气说：“这几年，台湾出了个杨传广！”他却没有想到，还有个成就超过杨传广的纪政。但是，台湾的真正光荣，却是出了个李敖！有李敖，始可以看出台湾有若干言论自由；有李敖，始可以看到台湾有活力；有李敖，始可以说我们已得到沉淀近代思想的明矾；有李敖，我们将可以说近代白话文的顶峰成就在台湾说了……</p>
 <p>所以李敖实在是一盏天赐的明灯，在这个苦难混沌的年代里，使我们看到它的光亮，感受到它的热力。</p>
-<p>其实，李敖的空前绝后并不止此。并不止台湾出了个李敖，而是中国出了个李敖。李敖是真正大陆型的知识分子，虽然我像拿破仑一样的在厄尔巴（Elba）岛上、在圣赫勒拿（St.Helena）岛上，但我总归是大陆型的人。也许多年以后，我会归骨于昆仑之西，那时候，□□，别忘了再来饼干一盒，以送我行。</p>
+<p>其实，李敖的空前绝后并不止此。并不止台湾出了个李敖，而是中国出了个李敖。李敖是真正大陆型的知识分子，虽然我像拿破仑一样的在厄尔巴（Elba）岛上、在圣赫勒拿（St. Helena）岛上，但我总归是大陆型的人。也许多年以后，我会归骨于昆仑之西，那时候，□□，别忘了再来饼干一盒，以送我行。</p>
 <p>李敖1982年11月28日</p>
 <p>乱世中的一个感想</p>
 <p>荣文：</p>
@@ -543,7 +576,7 @@
 <p>唯一的例外是负责每月《李敖千秋评论丛书》印务的“出版生意上的朋友”，但也四十多天不见他了。我试验以遥控方法解决印务上的困难，试行了四十多天，成绩尚好。</p>
 <p>你也许会怪我别扭、矫情。其实这是爱惜生命之道、充分发挥打击力之道、乱世中不失掉自我之道，也是“看破红尘”仍要独力救世之道。此中真意，也许要多年以后，才能为一般人了解。</p>
 <p>阿胜接手出版的《殷海光先生文集》（二）中，第1388页有殷海光这样一段给何友晖的信：</p>
-<p>李敖从前托人告诉我，说我“为人应世笨拙不堪”。我想他的话是有相当道理的。第一，他为人应世比我灵巧得太多；第二，他跟人接触，最根本的着眼点就是自卫，因此他总先假定人是坏的。我的自卫意识远落在求真精神之后。我跟人接触时，尤其是跟青年接触时，常不假定他别有用意；除非确有明证来证明他是别有用意的，我不轻易下这样的判断。可是，等到有了明证时，我已经吃亏了。然而，我无悔，我并不因此对人类绝望。一个理想主义者常常不免要为他的理想付出这类吃亏的代价的。我们没有决定性的理由（decisivereason）来断言这个地球上没有真诚的人。我们可以碰，也可以寻找，与我们共心通灵的人。我想你们在香港可能交结到不少朋友。当然，时至今日，仅靠言词不足以知人，我们还得在共同的工作里交友。</p>
+<p>李敖从前托人告诉我，说我“为人应世笨拙不堪”。我想他的话是有相当道理的。第一，他为人应世比我灵巧得太多；第二，他跟人接触，最根本的着眼点就是自卫，因此他总先假定人是坏的。我的自卫意识远落在求真精神之后。我跟人接触时，尤其是跟青年接触时，常不假定他别有用意；除非确有明证来证明他是别有用意的，我不轻易下这样的判断。可是，等到有了明证时，我已经吃亏了。然而，我无悔，我并不因此对人类绝望。一个理想主义者常常不免要为他的理想付出这类吃亏的代价的。我们没有决定性的理由（decisive reason）来断言这个地球上没有真诚的人。我们可以碰，也可以寻找，与我们共心通灵的人。我想你们在香港可能交结到不少朋友。当然，时至今日，仅靠言词不足以知人，我们还得在共同的工作里交友。</p>
 <p>殷海光不知道，在乱世中，一般人做人品质已经被扭曲到何种程度，这种扭曲，即使我们“不后悔”，但是我们又哪来那么多的精力与机会去付“代价”呢？回想这二十年来，我做了一些功德，但是所付“代价”之大——不论是心理的（包括名誉被毁等等）、生理的（包括被刑求等等）、自由的、时间的、金钱的等等……已足以痛加检讨，检讨之下，虽然“并不因此对人类绝望”，但是对“碰”、对“寻找”那些“与我们共心通灵的人”却觉得不宜再花太多的生命了。珍惜余生，反求诸自己，做千秋大业，才是来日无多的智者该做的事。因此我才决定：成品是检验真理的唯一标准，共同创造出成品，才是朋友的最大意义，其他一切，在此时此地，实在没有什么意义了。</p>
 <p>问候你和新娘子</p>
 <p>敖之1982年12月8日</p>
@@ -608,7 +641,7 @@
 <p>我上次写给你的信上说：</p>
 <p>至于你说对鼓应事想请我“别再这么写”，我可以告诉你：从鼓应和《文星》分开起、从鼓应在师大演说起，鼓应公开骂了我二十年，可是我没回过一句。在这二十年中，你和晓波也没为我公开仗义执言过一句。我可以对老朋友优待二十年，我的大度、我的识大体，你们不会不明白。对鼓应对我个人的诽谤与抹杀，我可以沉默；但对他窄化、小化殷先生，对他曲学阿世，我却万难沉默。我万难沉默的这些话，也许你和晓波都早该写的，但你们太“懒”（？），所以才轮到我来。如今我来了，你们却又要我“别再这么写”，你们是什么意思啊？你们这些被国民党特务徐复观统战过的小兄弟，未免太乡愿了吧？</p>
 <p>看了晓波的近作和你的来信，我真忍不住说你们毫无进步，不但毫无进步，并且愈来愈退步了：你们不但把《春蚕吐丝》中的白纸黑字，继续默许、继续无睹，而且还进一步，想把历史翻修了，你们这些小兄弟未免太眼里没“敖哥”了吧？未免太将错就错了吧？鼓应公开骂了我二十年，大家都耳熟能详，只有你平景、你晓波听到的是使我受宠若惊的，你们未免太迟钝了吧？</p>
-<p>鼓应的长处很多，但他的大病在见识不足、不够坚定、喜欢政治投机，结果总是被人利用、跟着人跑而不自知。《文星》时代他跟着老包跑、《中国一周》时代跟着张其昀跑、《美丽岛》时代跟着群雄跑，为余登发桥头示威那一次，他竟跑到凤桥宫上香，这对鼓应说来，就是曲学阿世。——做高等知识分子的人，要给群众带路才对，怎可走迷信路线来讨好群众？高等知识分子要绝对为信仰献身，不打折扣，鼓应这样子飘来飘去，岂不给高等知识分子丢人？如今鼓应口口声声说受许信良他们攻击，但他为什么不想想，他们为什么攻击你？政见有大出入吗？在台湾双方曾经打得火热，政见不是最基本的。最基本的，是你的政治投机性格使人看不起，是你的见识不足、不够坚定，老想在刀口上把自己洗得清洁溜溜。如今鼓应又在大洗特洗了，又何必呢？鼓应应该使党外了解他，不该盼国民党了解他。美国布瑞格（EdwardS.Bragg）将军支持克利夫兰（GroverCleveland），在演说中指出：“人们为他有正直、卓见和刚毅而爱他；为他有那样的敌人而爱他爱得要命。”（Theylovehim……forhisintegrityandjudgmentandironwill;buttheylovehimmostfortheenemieshehasmade.）这句名言，实在值得鼓应想想。鼓应一辈子不会选敌人，所以总是一再失态，搞得“猪八戒照镜子——里外不是人”，他实在不该如此，也不必如此。</p>
+<p>鼓应的长处很多，但他的大病在见识不足、不够坚定、喜欢政治投机，结果总是被人利用、跟着人跑而不自知。《文星》时代他跟着老包跑、《中国一周》时代跟着张其昀跑、《美丽岛》时代跟着群雄跑，为余登发桥头示威那一次，他竟跑到凤桥宫上香，这对鼓应说来，就是曲学阿世。——做高等知识分子的人，要给群众带路才对，怎可走迷信路线来讨好群众？高等知识分子要绝对为信仰献身，不打折扣，鼓应这样子飘来飘去，岂不给高等知识分子丢人？如今鼓应口口声声说受许信良他们攻击，但他为什么不想想，他们为什么攻击你？政见有大出入吗？在台湾双方曾经打得火热，政见不是最基本的。最基本的，是你的政治投机性格使人看不起，是你的见识不足、不够坚定，老想在刀口上把自己洗得清洁溜溜。如今鼓应又在大洗特洗了，又何必呢？鼓应应该使党外了解他，不该盼国民党了解他。美国布瑞格（Edward S. Bragg）将军支持克利夫兰（Grover Cleveland），在演说中指出：“人们为他有正直、卓见和刚毅而爱他；为他有那样的敌人而爱他爱得要命。”（They love him……for his integrity and judgment and iron will; but they love him most for the enemies he has made.）这句名言，实在值得鼓应想想。鼓应一辈子不会选敌人，所以总是一再失态，搞得“猪八戒照镜子——里外不是人”，他实在不该如此，也不必如此。</p>
 <p>就因为鼓应见识不足、不够坚定，所以我始终深知他选我做敌人、他对我的诬谤，是情绪的，不是看法的。见识不足与不够坚定使他随时可变化他的看法，此由他对许信良等离合可知。所以对鼓应的看法，实在不足重视。鼓应的悲剧，在他不是自己能发光的人，他要靠依附别人以自闪，或诬谤别人以偷光。从《文星》开始，他对我“暴得大名”的嫉妒，我是可以理解的、原谅的，这种嫉妒，自然造成疏远，虽然这样，我认为鼓应本质上还是一个书生①，我很珍惜他同我过去的友情，直到我在二十年前，写给他绝交信为止。我生平只写过一次绝交信，就是写给鼓应的。我写那封信，显然相信使你过分痛苦的朋友，还是让他去做敌人吧！从那时以后，虽然他结婚我也参加，但在我心中，却只有“少年十五二十时”的鼓应了！但是，鼓应却一直打着李敖朋友的旗号，做一连二十年的敌人的事，我觉得他太不光明磊落了！</p>
 <p>如今，我年纪愈大，反应愈来愈跟凡夫俗子不一样了。凡夫俗子愈大愈没是非，我却愈大愈是非分明。我有生以来，从来没像现在这样厌恶伪君子过、厌恶烂好人过、厌恶中立主义者过。不幸的是，这个时代里，不但朋友有的都不够光明磊落了，甚至连敌人也都不够敢作敢当了。这种敌人骂我二十年，骂完了竟不敢承认，还冒充是我朋友，还被乡愿和稀泥，说他有德于我，这算哪一类的品质呢？</p>
 <p>另一方面，我忧患余生，愈来愈觉得：我在对立的两类人中，只能选一类做朋友，左右逢源，是一种道德上的软弱，基于这种认识，我自己绝不做伪君子、烂好人、中立主义者。我也不希望你是、也不希望晓波是。可叹的是，你们年纪愈来愈大，大脑却愈来愈小了。</p>
@@ -674,7 +707,7 @@
 <p>正杰一再表示老康如果要正杰助选，正杰愿意去帮忙。我一开始以为这是策略运用耳，说说而已，不值得认真。但这一阵子，我发现正杰愈来愈不对劲，继正杰声言“体会康委员的心境”以后，现在看了正杰的谈话，我突然恍然大悟：“谁说正杰是批康的呢？大家以为他是，其实他不是，事实上，他也许正是不可思议的拥康派，因为他和老康愈来愈像了。可怜的是：这一真相，又有谁知道呢？老康领情吗？No！新生代谅解吗？No！李敖支持吗？No！咳，可怜的林正杰，好好的一个年轻人，不走堂堂大道而走羊肠小径，结果里外不是人，真是呜呼哀哉了！”</p>
 <p>以上的火气之言，我本想忍住不写，但实在忍不住，就一发不可收拾了。我想这封不客气的信，如能带给正杰一点警觉，也是好的。</p>
 <p>《自由中国》社被遗忘的战士胡虚一，（后援会列党外元老，列傅正而忘了胡虚一，是一种党外巨头的典型表现——忘恩负义！）15日写信给我，其中有一段论祖珺，他说：</p>
-<p>谈完写作之事，再说点轻逸事儿吧。上次问兄：“祖珺何如人也？”及读续期《前进广场》，才知祖珺原是林正杰小老弟的太太，自然是小老妹了。她原来是位很出色的folksongsilver，又是位热心的socialreformer，真了不起！但这两者的工作，似乎都无须假借什么“政治挂帅”呀！尤其是folksong，欲假借“政治挂帅”，那就不成为folksong了。美国著名的StephenCollinsFoster(1826-1864)，是位有名的“negromelodiesComposer”。他们的那些negrosongs，都是很出色的folksong（如“MyOldKentuckyHome,GoodNight”，“OedBlackJoe”，岂仅美国家喻户晓乎），他的这些folksongs被folksongsingers唱得风靡全球，singer无一位是要当什么congressman或senator呀！我们再听苏格兰的森林民歌，歌者也都无“巴力门”的兴趣。祖珺小妹应朝folksongs百尺竿头前进，大可不必搞什么law-maker的劳什子。再说socialreformer'swork，祖珺小妹也该师法世人景仰的AlbertSchwitzer的努力。Schwitzer三十一岁去非洲，对那些蛮荒土著所作的socialreformations，其贡献之伟大，何在千万个立法委员之下呢？这很值得老兄将鄙意转给祖珺小妹想想的。抗战期间，我的同学中，很多都有一本油印翻版的歌集，叫“OneHundredBestSongs”，其中都为folksongso。而“YouAreMySunshine”和“RememberOcrPlantationofCotton”、“OldBlackjoe”等，都是其中之一。我至今还能哼得出“MyOldKentuckyHome,GoodNight”中的最末几句来。“Ohweepnomore,mylady,oh,weepnomoretoday,WellsingonesongtormyoldKentuckyHome,formyoldKentuckyHome,faraway，”这几句哼起来，真是既词雅曲美，又是情味长啊。我想祖珺小妹定会唱此歌。希望我有天认识她，更能听到她优美folksong的歌声。我想她的一声“Wellsingonesongformynativehome”之歌声，一定要比那“请惠赐一票，拜托拜托”之噪音，要悦耳动听得多！老兄以为如何？</p>
+<p>谈完写作之事，再说点轻逸事儿吧。上次问兄：“祖珺何如人也？”及读续期《前进广场》，才知祖珺原是林正杰小老弟的太太，自然是小老妹了。她原来是位很出色的folk song silver，又是位热心的social reformer，真了不起！但这两者的工作，似乎都无须假借什么“政治挂帅”呀！尤其是folk song，欲假借“政治挂帅”，那就不成为folk song了。美国著名的Stephen Collins Foster(1826-1864)，是位有名的“negro melodies Composer”。他们的那些negro songs，都是很出色的folk song（如“My Old Kentucky Home, Good Night”，“Oed Black Joe”，岂仅美国家喻户晓乎），他的这些folk songs被folk song singers唱得风靡全球，singer无一位是要当什么congressman或senator呀！我们再听苏格兰的森林民歌，歌者也都无“巴力门”的兴趣。祖珺小妹应朝folk songs百尺竿头前进，大可不必搞什么law - maker的劳什子。再说social reformer’s work，祖珺小妹也该师法世人景仰的Albert Schwitzer的努力。Schwitzer三十一岁去非洲，对那些蛮荒土著所作的social reformations，其贡献之伟大，何在千万个立法委员之下呢？这很值得老兄将鄙意转给祖珺小妹想想的。抗战期间，我的同学中，很多都有一本油印翻版的歌集，叫“One Hundred Best Songs”，其中都为folk songso。而“You Are My Sunshine”和“Remember Ocr Plantation of Cotton”、“Old Black joe”等，都是其中之一。我至今还能哼得出“My Old Kentucky Home, Good Night”中的最末几句来。“Oh weep no more, my lady, oh, weep no more today, Well sing one song tor my old KentuckyHome, for my old Kentucky Home, far away，”这几句哼起来，真是既词雅曲美，又是情味长啊。我想祖珺小妹定会唱此歌。希望我有天认识她，更能听到她优美folk song的歌声。我想她的一声“Well sing one song for my native home”之歌声，一定要比那“请惠赐一票，拜托拜托”之噪音，要悦耳动听得多！老兄以为如何？</p>
 <p>胡虚一的民歌水平，虽然是同我一样的老掉牙级的，但是其他所说，倒不无清气，特予引录，以供参考。</p>
 <p>此信自知闯下大祸，但心所谓危，不敢不告，严复译《天演论》，中有丁尼生的诗：“挂帆沧海，风波茫茫，或沦无底，或达仙乡。”一个人的下坠“无底”或上达“仙乡”，都在于自己的明智一择。新生代自己有足够的青春做试验，但环境没有足够的机会去给你做试验，所以，常常是一招错，满盘输矣！我是武林高手，不怕输的，可是新生代一输就脱底了，那时候，一切都太迟了。</p>
 <p>李大哥1983年10月22日午</p>
@@ -704,13 +737,13 @@
 <p>去年隐居后，因想还债，乃为荣文所诱，承包工程，致息交绝游之功，间为人事所破，如今债还了一二，可是旷功疲神，事情愈办愈多，对我的写作至有妨碍。4日起发愿大隐，又不近人情起来了，老友如你，当不见怪。</p>
 <p>一年又将尽，总觉得自己已来日无多，固然再活一倍，也不过“为何将军寿”，但是真能活他那么久吗？恐怕“窃比我于老何”，也只是窃比而已，比谁是老王八，大概是比不过国民党的。</p>
 <p>在写给邓维桢前三天（11月4日），我有日记如下：</p>
-<p>这一阵子为一时一地的目标奋斗，占去了太多的时间，耽误我另一方面的大目标，最后好像忙得比例不对、轻重倒置了。今天起，决定要扭转、重定，严格执行“隐而不退”，并且比去年还要严格。我希望我愈来愈接近休斯（HowardHughes）式的隐居标准。这种标准的极致是：不闻其声，不见其人，只感到他强大的影响力，由神秘而生到神秘而死，高人出没，当如是也！</p>
-<p>这样看来，大家见我恐怕愈来愈难了，为了聊慰大家想我之苦，故以照片义卖，以供“音容宛在”之资。EmilyDickinson有诗说上帝：</p>
-<p>Iknowthatheexists;</p>
-<p>Somewhere,insilence,</p>
-<p>Hehashidhisrarelife</p>
-<p>Fromourgrosseyes.</p>
-<p>我会在Somewhere存在，但绝不insilence，要说的话，一句也不会少说，吾敌吾友，走着瞧吧！此祝</p>
+<p>这一阵子为一时一地的目标奋斗，占去了太多的时间，耽误我另一方面的大目标，最后好像忙得比例不对、轻重倒置了。今天起，决定要扭转、重定，严格执行“隐而不退”，并且比去年还要严格。我希望我愈来愈接近休斯（Howard Hughes）式的隐居标准。这种标准的极致是：不闻其声，不见其人，只感到他强大的影响力，由神秘而生到神秘而死，高人出没，当如是也！</p>
+<p>这样看来，大家见我恐怕愈来愈难了，为了聊慰大家想我之苦，故以照片义卖，以供“音容宛在”之资。Emily Dickinson有诗说上帝：</p>
+<p>I know that he exists;</p>
+<p>Somewhere, in silence,</p>
+<p>He has hid his rare life</p>
+<p>From our gross eyes.</p>
+<p>我会在Somewhere存在，但绝不in silence，要说的话，一句也不会少说，吾敌吾友，走着瞧吧！此祝</p>
 <p>胜利！</p>
 <p>敖之1983年11月13日</p>
 <p>选举期间的三封信</p>
@@ -742,7 +775,7 @@
 <p>并祝</p>
 <p>安康</p>
 <p>晚苏淑娟敬上1983年11月8日</p>
-<p>P.S.先生若能参加，交通工具方面，我们也有准备，希望先生能提早通知我，谢谢！</p>
+<p>P. S.先生若能参加，交通工具方面，我们也有准备，希望先生能提早通知我，谢谢！</p>
 <p>我的答书</p>
 <p>淑娟：</p>
 <p>你11月8日的信，辗转到我手中，已是12日傍晚了。我因为总喜欢“云深不知处”式的一个人隐居工作，外界和我联络很不方便，这种不方便，也是我有意造成的。二十五年前，有一次我去南港中央研究院看胡适先生，客厅里高朋满座，他同时接待那么多客人，从容周到，令人叹为观止，我想起古书中说王导会客的情况：王导在客厅，能够使“群胡（胡人）同笑，四座并欢”。胡适先生的叔度汪汪，也正如此。我在这一方面，也颇自憙我的高段，我是很会交朋友的。你在《李敖全集》第二册《大学后期日记乙集》中，可以看到1959年8月2日的一个小场面，那天我毕业返中，车站有二十六位朋友送我，可见我交游之广。我这种习惯，在我年纪渐大以后，尤其在我一坐牢再坐牢以后，慢慢就修正了。我慢慢感到：“息交绝游”式的生活，该是我中年以后最该过的生活，这种生活劲气内敛、时间集中，可以大量工作，工作成绩才是检验人生的唯一标准。胡适先生为人一团和气，会交朋友，但他的工作成绩，显然因此受到严重的妨碍。我回忆在南港客厅见他，觉得他的生命，简直在被每一个仰慕他的人分割以去，活像《老人与海》中的那条被吃光的大鱼。我常常想，这样子的人生，也许很快活、很有人情味，可是，对第一流的人说来，就未免太浪费了。第一流的人不该花这么多的时间去做人际关系，第一流的人应该珍惜光阴、去做大事。</p>
@@ -764,10 +797,10 @@
 <p>扳手与玫瑰</p>
 <p>正杰：</p>
 <p>已通知世煜撤下我给式渊的信，不发表了。我把它重作一次，变成回你的信了。我想把这封信发表在《千秋评论》第二十七期，想你不会吃不消。</p>
-<p>西班牙航空公司（IberiaAirLinesofSpain）有一个玫瑰花的广告，我很喜欢，它的主题是“扳手与玫瑰”（Thewrenchandtherose），说：</p>
-<p>OnIberiaAirLinesofSpainthewrenchcomesfirstthentherose.</p>
-<p>ThewrenchstandsforthecarefulwayallIberiaDC-8FanJetsareserviced.ItalsostandsfortheskillofIberiapilotswithmillionsofmilesofexperience.</p>
-<p>Nextinimportanceistherose.ItrepresentsthegraciouswayallIberiapeopledelightinshowingtheirpassengerswhatSpanishhospitalityreallymeans.</p>
+<p>西班牙航空公司（Iberia Air Lines of Spain）有一个玫瑰花的广告，我很喜欢，它的主题是“扳手与玫瑰”（The wrench and the rose），说：</p>
+<p>On Iberia Air Lines of Spain the wrench comes first then the rose.</p>
+<p>The wrench stands for the careful way all Iberia DC - 8 Fan Jets are serviced. It also stands for the skill of Iberia pilots with millions of miles of experience.</p>
+<p>Next in importance is the rose. It represents the gracious way all Iberia people delight inshowing their passengers what Spanish hospitality really means.</p>
 <p>引申说来，这是“力”与“美”的联合作业。“玫瑰夫人”的竞选，在“美”上功力不错，但在“扳手先生”的“力”的展示上，盼能更形明确。你我之间的疙疙瘩瘩，都出在我希望你更明确，可是你们年轻人总是慢半拍，因此我只好自己前进了。祝你好，并祝祖珺胜利！</p>
 <p>李大哥1983年11月27日午</p>
 <p>大丈夫不怕失败</p>
@@ -797,12 +830,12 @@
 <p>秋镇老哥：</p>
 <p>你在不识泰山的国民党和不识大体的党外人士夹击下，功成身退，消息传来，我立刻想到丘吉尔。丘吉尔才华盖世、特立独行，他在国会，脾气暴躁，脑筋灵活，在大吵大闹之中，每每指出英国的危机所在。第二次世界大战开始，英国人觉悟到他是先知，给他做首相，在艰苦的战争期间，他带英国转危为安，最后变成战胜国。可是，胜利十一个星期以后，保守党突然在竞选中失败。一位高人说得好：“丘吉尔所以失败，正由于大家太尊敬他。……在太平盛世他不应再为例行的政务操劳。此外，人性中似乎还有一种劣根性使然，那就是对他们自己的伟人产生妒意。”</p>
 <p>丘吉尔在著作中，爱引希腊史家布鲁达克的一句话是：“对他们伟大领袖无情，是强大民族的特征。”看到你的落选，我真依稀感到这个岛上的子民是强大民族的苗裔了，虽然在我理智里，我清楚这种“依稀感到”是错的。因为当年英国人拉下丘吉尔，照工党国防部长的妙论，是“像丘吉尔先生这样伟大的战时领袖，我很抱歉说一句，实在不能被信任维护和平”。但是我们呢？我们的子民，居然在战时就做和平的忘恩负义了。——过河时候换马，这种愚蠢，也真到家了。</p>
-<p>AlidaSimsMalkus的TheStoryofWinstonChurchill写落选消息传来，丘吉尔一家反应如下：</p>
-<p>WhenthisastoundingnewsreachedtheChurchillfamily，Winston'swifeanddaughterswept，andChurchillhimselffeltverybadly.</p>
-<p>“Nevermind，”hesaidtohiswife.“IshallbePrimeMinisteragainsomeday.Ifwefighthardenoughforit，theConservativeswillwinanotherelection.Untilthen，Ihaveplentytodo.I'veboughtfivehundredmoreacresoflandadjoiningChartwell，Clemmie，andIintendtobecomeafarmer.”</p>
+<p>Alida Sims Malkus的The Story of Winston Churchill写落选消息传来，丘吉尔一家反应如下：</p>
+<p>When this astounding news reached the Churchill family，Winston’s wife and daughters wept，and Churchill himself felt very badly.</p>
+<p>“Never mind，”he said to his wife.“I shall be Prime Minister again some day. If we fighthard enough for it，the Conservatives will win another election. Until then，I have plenty to do. I’ve bought five hundred more acres of land adjoining Chartwell，Clemmie，and I intend to become a farmer.”</p>
 <p>大意为：这个令人吃惊的消息传到了丘吉尔家里，妻子和女儿都哭了，丘吉尔自己的情绪也一落千丈。</p>
 <p>“不要紧，”他安慰妻子，“总有一天，我会再当上首相。只要我们在下次竞选中多使把劲，保守党将再次获胜。到时候，我又得忙起来了。我曾在紧靠chartwell的地方买了五百多亩地，现在我准备去当个农夫。”</p>
-<p>果然不出所料，六年以后，英国人民又把他拉回到首相位置，重新给他鼓掌与欢呼。这就是小市民，小市民是不可理喻的，小市民最喜欢使人啼笑皆非。所以，秋镇老哥，你还是intendtobecomeafarmer吧，你辛苦了三年，休而不息一下，也是好的。我相信不久以后，你会东山再起，和丘吉尔一样——苏秋镇是不会倒的！</p>
+<p>果然不出所料，六年以后，英国人民又把他拉回到首相位置，重新给他鼓掌与欢呼。这就是小市民，小市民是不可理喻的，小市民最喜欢使人啼笑皆非。所以，秋镇老哥，你还是intend to become a farmer吧，你辛苦了三年，休而不息一下，也是好的。我相信不久以后，你会东山再起，和丘吉尔一样——苏秋镇是不会倒的！</p>
 <p>敖之1983年12月5日</p>
 <p>[附记]12月4日的《自立晚报》上，登有国民党立委当选人李志鹏的谈话，说苏秋镇“他是一位非常尽责的委员，此次落选，或许与个人作风有关，但他花太多时间在立法院而没时间照顾选民，应是主要原因”。我对李志鹏毫无好感，但不以人废言，这段话倒说得蛮中肯。三年来，苏秋镇全神贯注在向国民党的战斗上面，形而上不敢大意，形而下不敢小便，以致没有太多的余力去做小功夫、去吻小市民的小儿子的小脸蛋，以致他纯度一百的阳刚形象，为小市民所难知，这真是一件难以两全的事。虽然如此，我仍盼望他在这三年休而不息中，多注意一下人间阴柔面。英国诗人萨松（SiegfriedSassoon）有名句是：“我心里有老虎在闻玫魂。”（Inmethetigersniffstherose.）苏秋镇一代豪杰，无可奈何之中，也该三年在朝做老虎，三年下野闻玫瑰，这样周而复始，沉而又浮，虽不免失之浪费，但是要有发言权，有时也不得不“亲民”，此亦民之所以为主也。</p>
 <p>李敖1983年12月8日</p>
@@ -826,10 +859,10 @@
 <p>选举完后，他们会一致发表声明，相信这次的选举是“干净”的，执政党赢得“光明磊落”。</p>
 <p>从这一报道里，你可以知道许多高票落选的党外人士（像黄顺兴、像苏秋镇、像许国泰），他们是多么不服气了。</p>
 <p>谈到贿选，我有一个故事说给你：</p>
-<p>在北洋政府时代的安福部当权时，颁布了一个新的《选罢法》，法中规定，有一部分的参议员，是须由一种中央通儒院选举的，凡国立大学教授，在国外大学得学位的，都有选举权。于是，许多留学生有文凭的，都有人前来兜买。投票时，这些留学生本人不必到场，自有人拿文凭去登记投票。据说当时每张文凭可卖到高价——大洋两百元。兜买的人拿到了文凭，还可以做手脚发财。比如一张文凭上的姓名是WuTinge，第一次可报“武定”，第二次可报“丁武”，第三次可报“吴廷”，第四次可报是江浙发音的“丁和”。这样一来，原价两百元的，就可以卖八百元了。</p>
+<p>在北洋政府时代的安福部当权时，颁布了一个新的《选罢法》，法中规定，有一部分的参议员，是须由一种中央通儒院选举的，凡国立大学教授，在国外大学得学位的，都有选举权。于是，许多留学生有文凭的，都有人前来兜买。投票时，这些留学生本人不必到场，自有人拿文凭去登记投票。据说当时每张文凭可卖到高价——大洋两百元。兜买的人拿到了文凭，还可以做手脚发财。比如一张文凭上的姓名是Wu Tinge，第一次可报“武定”，第二次可报“丁武”，第三次可报“吴廷”，第四次可报是江浙发音的“丁和”。这样一来，原价两百元的，就可以卖八百元了。</p>
 <p>在这种贿选的流风里，有一个兜买辜汤生的故事，最能警世：</p>
 <p>辜汤生（1857-1928），字鸿铭，别署汉滨读易者，福建同安人。他是英属马来西亚槟榔屿的华侨，早年留学英国、德国，得到文学、工学学位。1880年后，在新加坡英国殖民政府任职。后来跟马建忠一夕谈，深感当为祖国效命，第二天就辞职，然后蓄辫易服，回祖国了。</p>
-<p>辜汤生从二十八岁（1885）起，入张之洞幕府，为张之洞主持英文译述，历时二十多年。他说张之洞对他“虽未敢云以国士相待，然始终礼遇不少衰”。张之洞死后，他以二十多年间见闻所及，写成《张文襄幕府纪闻》，对晚清掌故礼俗，多有生动的记述。另以英文写《中国的牛津运动》（TheStoryofChineseOxfordMovement）一书。德国汉学家卫礼贤（RichardWilhelm）把它译为德文，名叫《中国反对欧洲观念之理由》，指定为哥廷根大学哲学系学生必读参考书。民国以后，辜汤生又用英文写成《原华》（TheSpiritoftheChinesePeople)一书，一名《春秋大义》，宣传中国文化的博大精深。</p>
+<p>辜汤生从二十八岁（1885）起，入张之洞幕府，为张之洞主持英文译述，历时二十多年。他说张之洞对他“虽未敢云以国士相待，然始终礼遇不少衰”。张之洞死后，他以二十多年间见闻所及，写成《张文襄幕府纪闻》，对晚清掌故礼俗，多有生动的记述。另以英文写《中国的牛津运动》（The Story of Chinese OxfordMovement）一书。德国汉学家卫礼贤（Richard Wilhelm）把它译为德文，名叫《中国反对欧洲观念之理由》，指定为哥廷根大学哲学系学生必读参考书。民国以后，辜汤生又用英文写成《原华》（The Spirit of the Chinese People)一书，一名《春秋大义》，宣传中国文化的博大精深。</p>
 <p>辜汤生晚年在北京大学教书，愤世玩世骂世，被人看做“老怪物”。但他的特立独行，却是一个榜样。他曾自述被买票的经过如下：</p>
 <p>□□□来运动我投他一票，我说：“我的文凭早就丟了。”他说：“谁不认得你老人家？只要你亲自来投票，用不着文凭。”我说：“人家卖两百块钱一票，我老辜至少要卖五百块。”他说：“别人两百，你老人家三百。”我说：“四百块，少一毛钱不来，还得先付现款，不要支票。”他要还价，我叫他滚出去。他只好说：“四百块钱依你老人家，可是投票时务必请你到场。”</p>
 <p>选举的前一天，□□□果然把四百元钞票和选举入场证都带来了，还再三叮嘱我明天务必到场。等他走了，我立刻出门，赶下午的快车到了天津，把四百块钱全报效在一个姑娘——你们都知道，她的名字叫一枝花——的身上了。两天工夫，钱花光了，我才回北京来。</p>
@@ -863,7 +896,7 @@
 <p>我这些话，都收在《李敖千秋评论号外》第三期第四期里，想早蒙洞鉴。鹏坚兄不能对费希平坚持原则，这是很令我们失望的。因为我们希望他一上台，是该多一点迥异别人的新气象的。</p>
 <p>第二，费希平是一个国民党老政工出身，努力不够，水平不高，常干糊涂事。例如去年11月7日，他召开后援会，说要“协调第二选区张德铭和许国泰间的争执”云云，殊不知所谓争执之起，就是费希平之流“公然目无第二选区的筹备委员”的身份、公然自行砸掉党外后援会的体制、作用与招牌气而去参与张德铭非法召集“桃竹苗党外后援会代表推选大会”之过！因为“桃竹苗党外后援会代表推选”的“任务”，依后援会成立大会决议，全在第二选区的四位筹备委员身上，也就是在林清松、简锦益、黄玉娇、傅文政四位身上，除了他们四位以外，任何人是不能假借“党外后援会”的名义，去发请帖的，这是常识，更是法学素养颇差的费希平口中“立法专家”张德铭所应知道的常识。但是，张德铭却可以目中无人的非法发这种请帖、非法召集这种名义之下的大会，这不是越俎代庖吗？请问这又置四位法定筹备委员于何地？置后援会通过的文件于何地？张德铭如果无爱于后援会，就不该打着“桃竹苗党外后援会代表推选大会”的招牌；如果有爱于后援会，就不该不尊重后援会明定的筹备人选与规则，后援会明定如此清楚，张德铭居然还非法召集、费希平之流居然还非法参与，这不是老糊涂又是什么？</p>
 <p>第三，党外以“党中央”自居的，最不该做的，就是贸然介入地方的选举，这种介入，是使分裂加深、使流弊扩大、使单纯变为复杂、使没事闹出有事，当然是老糊涂的事。新竹市的地方选举，根本施性忠就是当然人选。施性忠从国民党手中抢到新竹市，因义受难后，又逼国民党吃了咽不下的骨头，吐出新竹市，造成改选，解铃系铃之妙，存乎一心，这全是他一个人的杰作、一个人的功劳，别人岂可以逸待劳的来“接漏油”？来怀疑他的地位？施性忠是党外光芒四射的杰出人物、是以一当十的第一功臣，他的当然人选的地位，根本是不可怀疑的。但是鹏坚兄却“偕费希平委员前往新竹”，这在大前提上，就示人以施性忠不是当然人选之意、示人以有“协调”、“仲裁”的余地，而助长新竹政客党外或假党外的气焰，这岂是解决问题之道？所以，总归一句，鹏坚兄除非事先宣布支持施性忠是当然人选，就没有去新竹的必要，但他不此之图，因此我才批评他是老糊涂。</p>
-<p>我用的字眼，在庄重的人眼中，的确不够庄重，但鹏坚兄是我小学弟，我知道他不会怪我，他当然知道我的坏脾气、知道我用字遣词的坏毛病。我曾经想，为什么我常常笑语伤人？后来我想通了，原来我救世心切，但以愤世、玩世为“小李飞刀”，以致刀刀见血，使人吃不消。不过我很够朋友，朋友只要在大义上不出错，我一定维护。我的“缺点”是常常公开与朋友争大义，原因无他，既为大义，就不是见不了人的，为什么不公而开之呢？为了使朋友在大义轨道上滑进，我有时会吆喝一声，小割一下，然后用BAND-AID（plasticstrips）贴起，以防发炎或失血，可见朋友是不必紧张的，鹏坚兄是朋友啊！</p>
+<p>我用的字眼，在庄重的人眼中，的确不够庄重，但鹏坚兄是我小学弟，我知道他不会怪我，他当然知道我的坏脾气、知道我用字遣词的坏毛病。我曾经想，为什么我常常笑语伤人？后来我想通了，原来我救世心切，但以愤世、玩世为“小李飞刀”，以致刀刀见血，使人吃不消。不过我很够朋友，朋友只要在大义上不出错，我一定维护。我的“缺点”是常常公开与朋友争大义，原因无他，既为大义，就不是见不了人的，为什么不公而开之呢？为了使朋友在大义轨道上滑进，我有时会吆喝一声，小割一下，然后用BAND - AID（plastic strips）贴起，以防发炎或失血，可见朋友是不必紧张的，鹏坚兄是朋友啊！</p>
 <p>以上微意，请你便中转告鹏坚兄。此祝</p>
 <p>大好。并候</p>
 <p>鹏坚、英夫、顺吉及贵律师楼各位好。</p>
@@ -1067,7 +1100,7 @@
 <p>答王拓难弟（李敖）</p>
 <p>王拓难弟：</p>
 <p>19日来信收到。你此番受难归来，我未能和你恳谈，实感不安。但当我看到从极右派大小文化特务到号称左派老少左倾幼稚病者对你的欢迎会，我的不安就没有了。我有点为你可惜，可惜你竟被这些杂碎们这样耍。——你是文艺工作者，文艺工作者要保持耿介与纯度、保持此心此身的澄明独立，不能人缘太好，人缘太好，好到生张熟魏都一网兜收，就大不祥了。台湾的文艺工作者之没有大成绩，原因之一，就是人缘太好，怕得罪人，结果许多精力用来做公关、做交际、做捧场、做掩护，最后自己的澄明与独立都混浊了、沦没了，他们的下场，就是我说的“做人成功，作文失败”。你我之间，虽从无一面之雅、一信之通，但我总想以难兄身份，把这一意思提醒给你。我想廷朝在狱中，也许会觉察到这一意思而向你提醒过，我相信真正关切你的难兄们，都会不揣冒昧，向你这样进言忠告。当然以你的睿智和大度，也自会笑而受之，不会怪我们的。</p>
-<p>接到你的信，我首先想起的，便是《伊索寓言》中那则《破船人和海》的故事（一本书上把TheShipwreckedman翻成“破船人”，翻得怪异而有深意）。“破船人”的船被海弄碎，流亡到海岛上，醒来望海兴叹。海装成妇人好女，对他说：你别怪我啊，我本性和陆地一样，只是有风吹我，我身不由己，所以生出一些波浪，你别怪我啊。我手拿你的信，心里一直想着这个寓言。我同我自己说王拓真是忠厚人！他明明知道他那些号称左派的同志是滥污分子，他却为他们‘生出一些波浪’，王拓真是忠厚人！”</p>
+<p>接到你的信，我首先想起的，便是《伊索寓言》中那则《破船人和海》的故事（一本书上把The Shipwrecked man翻成“破船人”，翻得怪异而有深意）。“破船人”的船被海弄碎，流亡到海岛上，醒来望海兴叹。海装成妇人好女，对他说：你别怪我啊，我本性和陆地一样，只是有风吹我，我身不由己，所以生出一些波浪，你别怪我啊。我手拿你的信，心里一直想着这个寓言。我同我自己说王拓真是忠厚人！他明明知道他那些号称左派的同志是滥污分子，他却为他们‘生出一些波浪’，王拓真是忠厚人！”</p>
 <p>王拓难弟，我跟你说，告诉我号称左派吃同志、出卖同志真相的人，是你我都相信的黄怡。（别人也有大同小异的传闻，但不完整。）她跟我道出这些真相的时候，是在她看你回来的那天晚上，记忆犹新，不致有误。她坚嘱我不要公布，可是我为使她没有心灵负担，没让她知道，就公布了。这一方式，一如马丁公布麦克阿瑟的信，事关公义，不得不然，虽然使麦克阿瑟不无困扰，但是既涉人间大义，也就不必拘泥小让。我深信这种人间大义的事，我们追求真理的人，要让它曝光才是，曝光的目的不在揭谁隐私，而在检讨、在反省、在鉴往知来、在知过能改或要求他们改。如果不此之图，而一味温情主义、一路无条件的掩饰真相、为同志护短，则对理想主义挂帅者而言，就未免太不相称了。</p>
 <p>当年章太炎为冯自由《中华民国开国前革命史》写序，曾感慨说：</p>
 <p>自亡清义和团之变，而革命党始兴，至武昌倡义凡十一年，自武昌倡义至于今又十七年，事状纷拏，未尝有信史，故旧或劝余为之，余犹豫未下笔。盖身不与其事者，非审问则不敢言；身与其事者，所见干没忮戾之事亦多矣！书其美不隐其恶，或不足以为同志光宠，是以默而息也。</p>
@@ -1183,7 +1216,7 @@
 <p>迟来的“Ping”</p>
 <p>张大为致李敖</p>
 <p>李敖先生：</p>
-<p>我是您的一个读者，很早就想写封信给您，只是在感觉上您似乎离开我们太远而作罢。过年期间在家看到一本TomWilson的漫画专集，里面有一图如下：</p>
+<p>我是您的一个读者，很早就想写封信给您，只是在感觉上您似乎离开我们太远而作罢。过年期间在家看到一本Tom Wilson的漫画专集，里面有一图如下：</p>
 <p>第一个印象就是：李敖！</p>
 <p>当我是个学生的时候我就没放过您任何一本书，我做的事说的话都是李敖式，当然在传道时，也是传李敖的道，知道我的人说我被李敖定了形。然而这是多么让人气愤的事，我只是做我认为对的事，大家都做温吞吞的好人，为什么不剖开胸膛看看自己心肺里面是什么东西做的？</p>
 <p>今天是大年初三，大家都在家过年，您大概也不想过个什么鸟年，只是突然接我一信略嫌唐突，没什么，一个陌生人不希望您感觉自己在这个岛上是个脱了钩的空中飞人而已。您的价值也正如您说殷海光一样，是启蒙的思想家，而您的文字、您的特立独行，更让大多数人受教诲而不自知，这岂是一百元门票可以比拟？</p>
@@ -1197,7 +1230,7 @@
 <p>两年前的“大年初三”，你写信给我，今天又是“大年初三”了，我忽然要回信给你。林青霞曾劝我千万不要给崇拜你你的人回信（因为一回信，他又来信，就没完没了），事实上，我极少回信，不论对方崇拜不崇拜，我都一视闻仁，原因是要写大文章，无暇私交。古代人“大夫无私交”，从反面看，无私交固是怕帝王猜忌；但从正面看，无私交却也“深得大臣之体”。《论语》纪澹台灭明“行不由径，非公事未尝至于偃（子游）之室”。《史记》记宋昌说：“所言公，公言之；所言私，王者无私。”申屠嘉说：“使君所言公事，之曹与长史掾议，吾且奏之；即私邪，吾不受私语。”我颇欣赏这类作风。虽然回不回信，算不上什么公不公之事，比拟或嫌不伦，但是无私交一点上，却属同一性质（如采写信也涉嫌私交的话）。</p>
 <p>正因为一切都可“公言之”而无“私语”，我年纪愈大，愈觉得自已所言所行，其实都不妨公开。我敢说，我是秘密最少的人，一个人光明正大久了、坦荡荡久了，自然就有“王者无私”的气概、自然就没有什么秘密了。</p>
 <p>十多年前，我被李翰祥国联公司的刘经理诬告“诈赌”，说我跟蒋光超串通做假牌，法院传蒋光超去，蒋光超说大家玩牌是实，何来“诈赌”？并且当天晚上才与李敖相识，二人原系素昧平生，又怎能串通？法官大人发现整李敖就要整到蒋光超，乃不了了之。法官顺便问我会不会做假牌，我说假牌实不会做，但真牌打得极好。——我凭真牌就可以贏别人，谁还要做假牌？</p>
-<p>如今我在这个岛上，凭真牌就可以贏尽死友死敌死百姓，可以“Ping”尽芸芸众生而成one-manshow，谁还要做假牌？</p>
+<p>如今我在这个岛上，凭真牌就可以贏尽死友死敌死百姓，可以“Ping”尽芸芸众生而成one-man show，谁还要做假牌？</p>
 <p>因此，我是第一真人，无须作假，也不屑作假，处处以真面目示人，这是我最值得自豪的。谢章铤《赌棋山庄词话》中说辛弃疾，说：“稼轩是极有性情人，学稼轩者，胸中须先具一股真气奇气，否则虽纸上奔腾，其中俄空焉。”一般人只知道李敖有才，却不知道李敖是“极有性情人”，我打遍天下的一“Ping”其实非我之才，而是我之真。大为老弟，以为然否？</p>
 <p>李敖1985年2月22日夜1时50分</p>
 <p>李敖看《消灭李敖，还是被李敖消灭？》</p>
@@ -1210,7 +1243,7 @@
 <p>寿星杂感</p>
 <p>心仪、李宁、文茜三千金（以收礼先后为序）：</p>
 <p>李放他们合送我一座达摩佛像，高与书桌齐，据云价值一万五千元，是硬树根凿成（我看是雕不动的），奇重无比，其丑亦无比。我一听说自外埠买来，即断言此绝非好礼品，因此岛民俗水平极低也。及看之下，不出所料，乃斥令他们收回。（我考虑禁止他们再送礼，一切折现可也！）他们的“罪状”不是自己艺术水平差，而是把我和他们的水平视为同类，这些小鬼们如此冒犯老寿星，不被老寿星所斥，老寿星尚有何面目苟存于世乎？</p>
-<p>相对起来，你们的礼品却是各有千秋，心仪的衬衫极高雅，老寿星已于华诞之日穿上，一派“可怜寿星倚新装”打扮，好像一张银纸，包了一个有双脚的炸弹；李宁的古董花瓶极典雅，摆在那里，提醒我花瓶只是花瓶做得，人是不可做花瓶的——但美女除外，“李瓶儿”式美女尤其除外，我早就说西门大官人是中国文化之一，其与“李瓶儿”之事可证也；文茜的四十五名美国歌星与十六名加拿大歌星援非饥民演唱专辑（WeAreTheWorld），听了一遍，对五十老翁艺术水平而言，固不乏鬼哭狼嚎（并且是洋鬼哭、洋狼嚎）之处，但有些歌词却好，那首《流泪还不够》（TearsAreNotEnough），题目尤佳；《多一点爱》（ALittleMoreLove），似最好听。文茜说送这张唱片是“代李敖行善到非洲去、罗宾汉到非洲去”，意存戏谑甚明。幸好我不是三毛，我之人道，给中国自己人犹且不足，对非洲固“不能人道”也！写到此处，想到昨天香港《九十年代》转来港仔李惠慈者写给李敖的信，李惠慈根本不知李敖为何许人，她只在一本《三毛昨日、今日、明日》书上，看到李敖论三毛伪善一文，就写信来，原信甚逗，全文曰：</p>
+<p>相对起来，你们的礼品却是各有千秋，心仪的衬衫极高雅，老寿星已于华诞之日穿上，一派“可怜寿星倚新装”打扮，好像一张银纸，包了一个有双脚的炸弹；李宁的古董花瓶极典雅，摆在那里，提醒我花瓶只是花瓶做得，人是不可做花瓶的——但美女除外，“李瓶儿”式美女尤其除外，我早就说西门大官人是中国文化之一，其与“李瓶儿”之事可证也；文茜的四十五名美国歌星与十六名加拿大歌星援非饥民演唱专辑（We Are The World），听了一遍，对五十老翁艺术水平而言，固不乏鬼哭狼嚎（并且是洋鬼哭、洋狼嚎）之处，但有些歌词却好，那首《流泪还不够》（Tears Are Not Enough），题目尤佳；《多一点爱》（A Little More Love），似最好听。文茜说送这张唱片是“代李敖行善到非洲去、罗宾汉到非洲去”，意存戏谑甚明。幸好我不是三毛，我之人道，给中国自己人犹且不足，对非洲固“不能人道”也！写到此处，想到昨天香港《九十年代》转来港仔李惠慈者写给李敖的信，李惠慈根本不知李敖为何许人，她只在一本《三毛昨日、今日、明日》书上，看到李敖论三毛伪善一文，就写信来，原信甚逗，全文曰：</p>
 <p>李敖先生/小姐：</p>
 <p>你好，很唐突写信给你，原因是你的一篇《三毛式伪善》像一盘冷冰水从我的头顶一灌而下，令我顿然清醒继而燃起一点冲动向你提笔，你说三毛伪善，这是我看了不少三毛著作后的感受，亦是我继续看下去所要追寻的，今天被你道破，可见我心中淋漓尽致的感受。</p>
 <p>中国人有道（我的中文根底不好，不知应否如此起首）：“修身、齐家、治国、平天下”，我想修身非易，但只要努力也不难，修身除了名副其实“修”外，还是有保护自己的意味吧！那么三毛在加那利群岛的别墅和外汇存底也应值得原谅，因为自身难保，何来助人之力。但我的疑问也在于她舍近求远，去亲就疏，尽管她外语如流，同声同气总增添一分热诚、亲切感而发挥更大的助力、爱心更能沟通。但黄皮肤的始终是黄皮肤，这是“根”，因此她迷信“徒”（教徒），我觉得只是现今潮流的装饰品，用来表现人的一种虚荣心。再者，我不是说中国人迷信，而是我觉得，中国人始终隐藏着一种逻辑及玄学，在那虚无缥缈中。</p>
@@ -1220,8 +1253,8 @@
 <p>李惠慈上1985年3月23日</p>
 <p>可见根本不知李敖为男为女者，读了李敖之文，也可顿开茅塞。这封港仔的信，其实阴错阳差，是我最好的寿礼。它虽然把老寿星给“人妖”了，但是这样知文而不知人，才真是客观呢！台湾读者对我太主观，爱憎失度，未免王八蛋一点。罗斯金（JohnRuskin）呼吁你只要看一个人的书就好了，不必看他这个人，实乃真知者言。我如今闭关，使人人不得得睹龙颜，目的之一，似在贯彻罗斯金之言耳！今早华视新闻前，报道《蒋总统经国先生知勉录》，有蒋氏之言曰：“人生最大的乐趣，就是不孤独。”但是对我说来，却正相反，我的乐趣就在孤独上面。1982年3月15日，我在病后写《罗宾汉的心理准备》（《千秋评论》第八期），我就说：</p>
 <p>罗宾汉有恩于匹夫匹妇，但他未尝没有心理准备，准备匹夫匹妇的忘恩负义。像是黑泽明笔下的七武士，功德圆满后，却落得匹夫匹妇的冷眼。自古以来，英雄豪杰对世态人心，早就有苍茫与大度的了解。匹夫匹妇是现实的、健忘的、嫉妒的、残忍的、不可恃的。但英雄豪杰并不因此就心灰意懒，他们还是要在夹道欢呼中或路人啐骂里，走上前去。</p>
-<p>侠盗罗宾汉是12世纪时英格兰中部诺丁汉郡（Nottinghamshire）谢伍德森林（SherwoodForest）中的胡子。谢伍德森林是皇家森林，罗宾汉出没于此，显然有跟皇家过不去的意味。罗宾汉“盗亦有道”，他劫富济贫、惩贪除暴、侠骨柔情、光明磊落。八百年来，他的轶事众口相传，多少民歌与传奇都以他为主角，他成为正义的化身。但这些正义，却是以趣味、奇情、生动、悲壮的形式行使，一点也不枯燥。罗宾汉是八百年前的草莽英雄，他们是伟人，但却伟大在趣味、奇情、生动、悲壮的形式里，这种形式降至现代，已经被一层又一层的社会罗网给活活罩住。所以，现代的伟人也就变更了造型，他们不能以罗宾汉式的原始与痛快，去替天行道了，人间的天道也变得细腻而复杂了。于是，现代罗宾汉只好退居书房，以“地下工作”的文案作业，代替光天化日的森林作业，除此之外，他们没有不枯燥的法子了，现代罗宾汉必然以孤独为“人生最大乐趣”了。</p>
-<p>在完成细腻而复杂的努力里，现代罗宾汉必须准备过全神贯注的安静的生活，而没有余力去从事世俗的狂欢的娱乐。罗素说：“所有伟大生活都有无趣的阶段。”（Allgreatliveshavecontaineduninterestingstretches.）“伟人的生活除了少数伟大时期外，并无令人兴奋的地方。”（Norhavethelivesofmostgreatmenbeenexcitiingexceptatafewgreatmoments.）“相传康德一生没走出故乡十英里以外。达尔文周游世界后，剩下的时间在家里度过。马克思鼓动几次暴动后，在大英博物院度其余年。”（Kantissaidnevertohavebeenmorethantenmilesfromkonigsberginallhislife.Darwin,aftergoingroundtheworld,spentthewholeoftherestofhislifeinhisownhouse.Marx，afterstirringupafewrevolutions，decidedtospendtheremainderofhisdaysintheBritishMuseum.）“从全体看来，安静的生活是伟人的特征，他们的喜乐并不是世俗心目中所认定的那一种。一切伟大的成绩必由于历久不懈的工作，其全神贯注与繁重程度，使人没有余力去从事狂热的娱乐。……”（Altogetheritwillbefoundthataquitelifeischaracteristicofgreatmen，andthattheirpleasureshavenotbeenofthesortthatwouldlookexctingtotheoutwardeye.Nogreatachievementispossiblewithoutpersistentwork,soabsorbingandsodifficultthatlittleenergyisleftoverforthemorestrenuouskindsofamusement……）如今我“形若槁木，心若死灰”，所志端在完成“伟大的成绩”而已。信笔所之，三千金以为然否？专此道谢，并请</p>
+<p>侠盗罗宾汉是12世纪时英格兰中部诺丁汉郡（Nottingham shire）谢伍德森林（Sherwood Forest）中的胡子。谢伍德森林是皇家森林，罗宾汉出没于此，显然有跟皇家过不去的意味。罗宾汉“盗亦有道”，他劫富济贫、惩贪除暴、侠骨柔情、光明磊落。八百年来，他的轶事众口相传，多少民歌与传奇都以他为主角，他成为正义的化身。但这些正义，却是以趣味、奇情、生动、悲壮的形式行使，一点也不枯燥。罗宾汉是八百年前的草莽英雄，他们是伟人，但却伟大在趣味、奇情、生动、悲壮的形式里，这种形式降至现代，已经被一层又一层的社会罗网给活活罩住。所以，现代的伟人也就变更了造型，他们不能以罗宾汉式的原始与痛快，去替天行道了，人间的天道也变得细腻而复杂了。于是，现代罗宾汉只好退居书房，以“地下工作”的文案作业，代替光天化日的森林作业，除此之外，他们没有不枯燥的法子了，现代罗宾汉必然以孤独为“人生最大乐趣”了。</p>
+<p>在完成细腻而复杂的努力里，现代罗宾汉必须准备过全神贯注的安静的生活，而没有余力去从事世俗的狂欢的娱乐。罗素说：“所有伟大生活都有无趣的阶段。”（All great lives have contained uninteresting stretches.）“伟人的生活除了少数伟大时期外，并无令人兴奋的地方。”（Nor have the lives of most great men been excitiing except at a few great moments.）“相传康德一生没走出故乡十英里以外。达尔文周游世界后，剩下的时间在家里度过。马克思鼓动几次暴动后，在大英博物院度其余年。”（Kant is said never to have been more than ten miles from konigsberg in all his life. Darwin, after going round the world, spent the whole of the rest of his life in his own house. Marx，after stirring up a few revolutions，decided to spend the remainder of his days in the British Museum.）“从全体看来，安静的生活是伟人的特征，他们的喜乐并不是世俗心目中所认定的那一种。一切伟大的成绩必由于历久不懈的工作，其全神贯注与繁重程度，使人没有余力去从事狂热的娱乐。……”（Altogether it will be found that a quite life is characteristic of great men，and that their pleasures have not been of the sort that would look excting to the outward eye. No great achievement is possible without persistent work, so absorbing and so difficult that little energy is left over for the more strenuous kinds of amusement……）如今我“形若槁木，心若死灰”，所志端在完成“伟大的成绩”而已。信笔所之，三千金以为然否？专此道谢，并请</p>
 <p>“金”安</p>
 <p>寿星李敖1985年4月26日晨</p>
 <p>可以怀古，不必怀乡</p>
@@ -1232,10 +1265,10 @@
 <p>廖泉裕指出台湾省有二十条主要河川，二十七条次要河川，一般河川有八十一条，很遗憾的是，这一百二十九条河川中，没有一条是干净的。</p>
 <p>他说，主要是我们的下水道太少，目前只有0.3%，所有的污水均直接排至沟渠，流入河川。</p>
 <p>可见我所谓水臭之言，实在也不乏具体的张本。虽然我的原意是抽象的。我的老友马戈（宏样）现住日内瓦湖畔，得湖光山色之胜，举世罕匹，但是整日清愁不绝——又思大陆，又怀台湾，可见乡愁自是乡愁，固无待水塘之香臭。至于我个人，我素来讨厌中国人轻易乡愁的情绪，我早就说乡愁观念的基本成因，一个是农业社会的安土重迁；一个是古代交通的不发达、通讯的不方便。这些因素，在我们现代化以后，都不存在了或减少了，所以乡愁的意义也就愈来愈没意义。古人的诗里有“却恐他乡胜故乡”、“此心安处即为乡”的境界；有“埋骨何须桑梓地，人间何处不青山”的境界，可见古人也不无提升起来的水准。台湾是我成长之地，我对台湾当然有一种浓厚的感情，但在地缘上和感情上，我却深知我是“真正大陆型的知识分子”，我不喜欢台湾。1982年11月28日，我写信给李宁，我就说过：</p>
-<p>并不止台湾出了个李敖，而是中国出了个李敖。李敖是真正大陆型的知识分子，虽然我像拿破仑一样的在厄尔巴（Elba）岛上、在圣赫勒拿（St.Helena）岛上，但我总归是大陆型的人。也许多年以后，我会归骨于昆仑之西，那时候，李宁，别忘了再来饼干一盒，以送我行。</p>
-<p>永丰请注意，我是归骨于昆仑之西，而不是东，我的真正大陆故乡其实在昆仑之东。但昆仑之西是大陆的根、大陆的动脉，虽然那个根、那个动脉，已经一片浩瀚、荒凉与死寂。我最佩服唐三藏西天取经，他偷渡出关，直奔昆仑之西，面对一片浩瀚、荒凉与死寂，在这种气氛里孤军奋斗，真是中国第一豪杰。（RichardByrd在南极独自探险五个月，我看都比不上他。不过Byrd他能在摄氏零下六十二度活那么久，倒是天下第一！）</p>
+<p>并不止台湾出了个李敖，而是中国出了个李敖。李敖是真正大陆型的知识分子，虽然我像拿破仑一样的在厄尔巴（Elba）岛上、在圣赫勒拿（St. Helena）岛上，但我总归是大陆型的人。也许多年以后，我会归骨于昆仑之西，那时候，李宁，别忘了再来饼干一盒，以送我行。</p>
+<p>永丰请注意，我是归骨于昆仑之西，而不是东，我的真正大陆故乡其实在昆仑之东。但昆仑之西是大陆的根、大陆的动脉，虽然那个根、那个动脉，已经一片浩瀚、荒凉与死寂。我最佩服唐三藏西天取经，他偷渡出关，直奔昆仑之西，面对一片浩瀚、荒凉与死寂，在这种气氛里孤军奋斗，真是中国第一豪杰。（Richard Byrd在南极独自探险五个月，我看都比不上他。不过Byrd他能在摄氏零下六十二度活那么久，倒是天下第一！）</p>
 <p>我觉得现代人可以怀古（我就最喜欢流连江山胜迹，我生平最大的愿望不是徐复观那样去孔林，而是去挖孔夫子的坟，看看里面有些什么有益于中华文化），但实在不必怀乡。怀古是一种博大的情操，怀乡却是一种渺小的滥情，我的基本分际，就是在此。</p>
-<p>台湾对我并不那么全部，它太小了、太被污染了。当然大陆对我也绝非“长江美”“黄河壮”那一种虚幻。我能喜欢大陆多少，也至为可疑。LordByron说他爱英国但不爱英国人，也许我的感觉比他还多还强烈。但个人的好恶却也不重要，重要的是自己要真正有功德于苍生，长江美不美、黄河壮不壮、水塘臭不臭，都其余事也！</p>
+<p>台湾对我并不那么全部，它太小了、太被污染了。当然大陆对我也绝非“长江美”“黄河壮”那一种虚幻。我能喜欢大陆多少，也至为可疑。Lord Byron说他爱英国但不爱英国人，也许我的感觉比他还多还强烈。但个人的好恶却也不重要，重要的是自己要真正有功德于苍生，长江美不美、黄河壮不壮、水塘臭不臭，都其余事也！</p>
 <p>敖之1985年5月3日午</p>
 <p>附录</p>
 <p>看看臭水塘也满意（《民主天地》周刊）</p>
@@ -1293,17 +1326,17 @@
 <p>信笔一写，狂疾不可止，老兄当然不笑我，善仪同窗也不准笑也！此颂</p>
 <p>双安</p>
 <p>敖之1986年3月5日午</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/08.书信函件类/李敖书信集.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/08.书信函件类/李敖书信集.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../08.书信函件类/坐牢家爸爸给女儿的八十封信.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../08.书信函件类/李敖书函集.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1313,16 +1346,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../08.书信函件类/坐牢家爸爸给女儿的八十封信.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../08.书信函件类/李敖书函集.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1331,12 +1369,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

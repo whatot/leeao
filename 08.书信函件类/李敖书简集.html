@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,103 +81,124 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="李敖书简集"><a class="header" href="#李敖书简集">李敖书简集</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E6%80%8E%E6%A0%B7%E4%BF%AE%E7%90%86%E8%B4%A2%E9%98%80">怎样修理财阀</a></li>
-<li><a href="#%E5%85%9A%E6%8A%A5%E7%9A%84%E7%8B%82%E5%A6%84">党报的狂妄</a></li>
-<li><a href="#%E8%B4%A2%E9%98%80%E6%9C%89%E8%BE%9C">财阀有辜</a></li>
-<li><a href="#%E8%83%A1%E8%8C%B5%E6%A2%A6%E6%98%AF%E5%A4%B9%E5%BF%83%E9%A5%BC%E5%B9%B2%E5%90%97">胡茵梦是夹心饼干吗？</a></li>
-<li><a href="#%E7%BB%99%E9%BB%84%E5%B0%91%E8%B0%B7%E5%85%88%E7%94%9F%E7%9A%84%E5%85%AC%E5%BC%80%E4%BF%A1">给黄少谷先生的公开信</a></li>
-<li><a href="#%E6%AE%B7%E6%B5%B7%E5%85%89-%E5%91%86-%E9%B8%9F">殷海光-呆-鸟</a></li>
-<li><a href="#%E7%8E%AF%E6%B8%B8-%E8%BF%98%E5%8E%9F-%E6%8A%A2">环游-还原-抢</a></li>
-<li><a href="#%E6%97%A2%E8%81%94%E5%90%88%E5%8F%88%E6%96%97%E4%BA%89">“既联合，又斗争”？</a></li>
-<li><a href="#%E6%8F%AD%E5%8F%91%E9%BB%91%E5%B9%95%E4%BB%A5%E5%90%8E">揭发黑幕以后</a></li>
-<li><a href="#%E8%AE%BA%E7%9C%8B%E7%9C%8B%E4%B9%9F%E5%A5%BD">论看看也好</a></li>
-<li><a href="#%E4%BB%8B%E7%BB%8D%E6%88%91%E7%88%B1%E6%9D%8E%E6%95%96">介绍《我爱李敖》</a></li>
-<li><a href="#%E5%AF%84%E6%9E%97%E6%B0%B8%E4%B8%B0%E8%AE%BA%E8%B7%9F%E8%B0%81%E5%90%83%E9%A5%AD">寄林永丰论跟谁吃饭</a></li>
-<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B4%BB%E4%B8%80%E7%99%BE%E5%B2%81">为什么活一百岁？</a></li>
-<li><a href="#%E7%BB%99%E5%91%A8%E6%B8%85%E7%8E%89%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1">给周清玉的一封信</a></li>
-<li><a href="#%E7%BB%99%E6%A2%81%E8%82%83%E6%88%8E%E5%85%88%E7%94%9F%E7%9A%84%E5%85%AC%E5%BC%80%E4%BF%A1">给梁肃戎先生的公开信</a></li>
-<li><a href="#%E4%BF%9D%E8%AF%81%E4%BA%92%E7%9B%B8%E6%AF%81%E7%81%AD">保证互相毁灭</a></li>
-<li><a href="#%E6%8A%B1%E8%B0%81%E5%A4%A7%E8%85%BF">抱谁大腿？</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E5%86%A4%E7%8B%B1%E5%B9%B3%E5%8F%8D-%E5%B0%A4%E6%B8%85%E5%86%A4%E7%8B%B1%E5%9C%A8%E6%9C%9B">李敖冤狱平反-尤清冤狱在望</a></li>
-<li><a href="#%E6%BC%AB%E8%B0%88%E5%A4%A7%E5%A7%91%E5%A8%98%E6%B4%97%E6%BE%A1%E5%BF%83%E7%90%86">漫谈“大姑娘洗澡心理”</a></li>
-<li><a href="#%E8%87%B4%E5%B0%8F%E9%87%91">致小金</a></li>
-<li><a href="#%E8%AE%BA%E4%B8%A4%E9%9D%A2%E4%BA%BA">论两面人</a></li>
-<li><a href="#%E8%AE%BA%E7%BA%A2%E8%89%B2%E5%8F%98%E8%8A%82%E8%80%85">论红色变节者</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#怎样修理财阀">怎样修理财阀</a></li>
+<li><a href="#党报的狂妄">党报的狂妄</a></li>
+<li><a href="#财阀有辜">财阀有辜</a></li>
+<li><a href="#胡茵梦是夹心饼干吗">胡茵梦是夹心饼干吗？</a></li>
+<li><a href="#给黄少谷先生的公开信">给黄少谷先生的公开信</a></li>
+<li><a href="#殷海光-呆-鸟">殷海光-呆-鸟</a></li>
+<li><a href="#环游-还原-抢">环游-还原-抢</a></li>
+<li><a href="#既联合又斗争">“既联合，又斗争”？</a></li>
+<li><a href="#揭发黑幕以后">揭发黑幕以后</a></li>
+<li><a href="#论看看也好">论看看也好</a></li>
+<li><a href="#介绍我爱李敖">介绍《我爱李敖》</a></li>
+<li><a href="#寄林永丰论跟谁吃饭">寄林永丰论跟谁吃饭</a></li>
+<li><a href="#为什么活一百岁">为什么活一百岁？</a></li>
+<li><a href="#给周清玉的一封信">给周清玉的一封信</a></li>
+<li><a href="#给梁肃戎先生的公开信">给梁肃戎先生的公开信</a></li>
+<li><a href="#保证互相毁灭">保证互相毁灭</a></li>
+<li><a href="#抱谁大腿">抱谁大腿？</a></li>
+<li><a href="#李敖冤狱平反-尤清冤狱在望">李敖冤狱平反-尤清冤狱在望</a></li>
+<li><a href="#漫谈大姑娘洗澡心理">漫谈“大姑娘洗澡心理”</a></li>
+<li><a href="#致小金">致小金</a></li>
+<li><a href="#论两面人">论两面人</a></li>
+<li><a href="#论红色变节者">论红色变节者</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -299,11 +332,11 @@
 <p>六、辜振甫先生在表示惭愧以后，宣布他不要干董事长了，他私人名下和“中国信托”他代表名下的表决权，他也全部放弃。他的勇于负责的态度，很令人佩服。但是这一形式上光明磊落的表示，立刻引起了他左右支持者和劝进者的顿失所依之感，纷纷大叫这怎么可以！这样不行！都连任！一切都维持原状！……于是叫嚣鼓掌，没经过任何合法表决程序，就说一切都通过了。李放回来告诉本人说：“他好像参加了一次西装笔挺的暴民大会。”</p>
 <p>李敖 1979 年 4 月 6 日</p>
 <p>李敖致“中国信托公司”各董事的信</p>
-<p>受文者：“中国信托投资公司”董事长辜振甫先生、总经理辜濂松先生、常务董事王永庆先生、赵璋先生、吴尊贤先生、辜濂松先生、陈启清先生、赵廷箴先生，董事曹起成先生、焦廷标先生、叶山母先生、林明成先生、叶明勋先生、黄政旺先生、徐有庠先生、侯贞雄先生、N.JoelSmith 先生、安田信先生，监察人王祝康先生、林挺生先生、林自西先生、何传先生、颜惠忠先生。</p>
+<p>受文者：“中国信托投资公司”董事长辜振甫先生、总经理辜濂松先生、常务董事王永庆先生、赵璋先生、吴尊贤先生、辜濂松先生、陈启清先生、赵廷箴先生，董事曹起成先生、焦廷标先生、叶山母先生、林明成先生、叶明勋先生、黄政旺先生、徐有庠先生、侯贞雄先生、N. Joel Smith 先生、安田信先生，监察人王祝康先生、林挺生先生、林自西先生、何传先生、颜惠忠先生。</p>
 <p>副本收受者：经济部、台北市政府财政局。</p>
 <p>主旨：贵公司在辜振甫先生领头下违法舞弊，通谋诈财，请答复、谢罪并赔偿。</p>
 <p>说明：</p>
-<p>六十五（1976）年 6 月，本人得读贵公司发行《中国信托为您做些什么？》小册，宣示：“‘提供亲切的服务’是本公司一贯的营业信念，本公司的全体同仁随时准备为您效劳。”本人信以为真，乃于该年 6 月 10 日，自台北县土城乡清水村仁爱庄筹集新台币五万元，邮政划拨至贵公司，作为一年期普通信托资金。一年后满期，贵公司要求继续，并改为二年期，本人同意，当即收到信托凭证 CITC076574 一纸，上注 1979 年 6 月 11 日满期。前后信托，为时已近三年，本人对贵公司信托，既重且久，由此可见。半月前得知报载财政部表示贵公司违规营业消息，本人发现受骗，乃搜集资料，写成此函，请答复、谢罪并赔偿。</p>
+<p>六十五（1976）年 6 月，本人得读贵公司发行《中国信托为您做些什么？》小册，宣示：“‘提供亲切的服务’是本公司一贯的营业信念，本公司的全体同仁随时准备为您效劳。”本人信以为真，乃于该年 6 月 10 日，自台北县土城乡清水村仁爱庄筹集新台币五万元，邮政划拨至贵公司，作为一年期普通信托资金。一年后满期，贵公司要求继续，并改为二年期，本人同意，当即收到信托凭证 CITC 076574 一纸，上注 1979 年 6 月 11 日满期。前后信托，为时已近三年，本人对贵公司信托，既重且久，由此可见。半月前得知报载财政部表示贵公司违规营业消息，本人发现受骗，乃搜集资料，写成此函，请答复、谢罪并赔偿。</p>
 <p>关于蒙混“银行”名义，损害公众部分</p>
 <p>查财金当局同意设置者，仅为《银行法》第六章之“信托投资公司”，与第三章“商业银行”、第四章“储蓄银行”、第五章“专业银行”、第七章“外国银行”对应，名词区分甚严，不容瞒天过海。且《银行法》特意修订第 20 条，在“银行之种类或其专业，应在其名称中表示之”原文中，加入“除政府设立者外”七字，即显然明文约束“信托投资公司”，不得袭取“银行”名目，鱼目混珠。但查贵公司以“银行”名目在外招摇，事有多起，如贵公司公然自称——</p>
 <p>全国最大民营银行（1976 年 12 月 6 日《中国时报》广告）</p>
@@ -312,7 +345,7 @@
 <p>依最高法院上字第 1432 号判例，贵公司行为相当于“与该商号成立时之名称不符”，显系触犯刑法上伪造文书罪。且依最高法院二十六年上字第 2731 号判例：“伪造、变造私文书罪之所谓足生损害，系指他人事实上有因此受损害之虞而言，至此项文书在法律上是否有效，在所不问。”复依最高法院 1958 年台上字第 193 号判例：“刑法上伪造文书罪，所谓足以生损害于公众或他人，以有损害之虞为已足，不以实际发生损害为必要。”</p>
 <p>据《刑法》第 215 条：“从事业务之人，明知为不实之事项而登载于其业务上作成之文书，足以生损害于公众或他人者，处三年以下有期徒刑、拘役或五百元以下罚金。”而“所谓业务上作成之文书”，依最高法院 1958 年台上字第 515 号判例：“系指从事业务之人，本于业务上作成之文书者而言。”是乃说明凡出自贵公司之不以“信托投资公司”出之而以“银行”名义出之等行为，皆属犯法行为。</p>
 <p>关于蒙混银行业务，发行信用卡部分</p>
-<p>本人在 1976 年与贵公司办理“普通信托基金”之时，即早知信用卡在欧美、日本风行多年，美国一万四千家银行中，已有一千五百家以上以其银行名称，发行属于其本身之信用卡，其中美国运通银行（AmericanExpressCo.）所发行旅游信用卡（T.andE.CreditCard），在美国超过两百万卡户，且广及全球四十余国，美国银行所发行美银卡（BankAmericard）与美国花旗银行所发行万用卡（TheEverythingCard）亦同属其著者。是证信用卡之发行，以银行业为常。当时贵公司在“信托信用卡简介”中，曾以参加普通信托基金为条件，本人办理普通信托基金，此为原因之一。</p>
+<p>本人在 1976 年与贵公司办理“普通信托基金”之时，即早知信用卡在欧美、日本风行多年，美国一万四千家银行中，已有一千五百家以上以其银行名称，发行属于其本身之信用卡，其中美国运通银行（American Express Co.）所发行旅游信用卡（T. and E. Credit Card），在美国超过两百万卡户，且广及全球四十余国，美国银行所发行美银卡（Bank Americard）与美国花旗银行所发行万用卡（The Everything Card）亦同属其著者。是证信用卡之发行，以银行业为常。当时贵公司在“信托信用卡简介”中，曾以参加普通信托基金为条件，本人办理普通信托基金，此为原因之一。</p>
 <p>现查知 1978 年 4 月 16 日《中国时报》报道：</p>
 <p>信托公司因急于寻求发展，只好“节外生枝”（如法令不准投资信托公司开办“信用卡”业务，但国人身上带有信托公司“信用卡”者不在少数）。……如要等到真正合法的“信用卡”问世，诚不知何年何月。</p>
 <p>本人方发现本人手中所有 03930-A 号信用卡，竟是与法律不合之“私生卡”。查《银行法》第 22 条明定：“银行不得经营未经中央主管机关核定经营之业务。”同法第六章“信托投资公司”各条规定，亦从无可发行信用卡字样。足证贵公司以“损害公众或他人宣传结果，使本人误以为贵公司有发行”银行之身份，而误为出资领用 03930-A 号信用卡之行为，结果与贵公司扶同违法，无异共犯，实对本人人格构成严重侮辱。</p>
@@ -365,7 +398,7 @@
 <p>则双方关系之泾渭分明，本无疑义。唯立法者深知信托行业之惯技，故于《银行法》第 101 条明文预防。第 101 条规定信托投资公司经营之业务共十七款，但前七款与后十款严定为两截，于次条第 102 条预防如下：“信托投资公司自有资金之营运，除存放银行外，以经营前条第 1 款至第 7 款之业务为限。”《银行法》并预立罚则于第 130 条第 4 款之中，违反 102 条之规定运用资金者，“处三千元以上五千元以下罚锾”。</p>
 <p>但贵公司于资金运用上，却始终以“你的就是我的，我的还是我的”方式行使，使“自有基金与信托资金交互运用”（1979 年 3 月 15 日《中国时报》），而使《银行法》第 111 条“不得流用”之规定，形同具文；贵公司自印之所谓“保障信托资金之独立性”广告，亦悉属谎言。</p>
 <p>关于巧取豪夺委托人权益部分</p>
-<p>法律上信托之成立，须具备三要素：一、受托人，二、受益人，三、信托标的物。凡享有财产权利之一方为他方之利益而处理其财产权益者，皆应依诚实信用之原则而为之（JamesA.Ballentine,LawDictionary；BlacksLawDictionary）。此种关系，是为“信任关系”（FiduciaryRelation）。信任关系乃指一方对于他方所加以信托之关系。例如律师与当事人、本人与代理人、主债务人与连带保证人、地主与佃户、父与子、夫与妻、受托人与受益人等。一方基于信托关系为他方管理事务，不得从中巧取利益，否则自属严重违法（见 JamesA.Ballentine,LawDictionary）。此种关系，贵公司自无不知之理。贵公司“信托投资”小册中，早经宣扬如下：</p>
+<p>法律上信托之成立，须具备三要素：一、受托人，二、受益人，三、信托标的物。凡享有财产权利之一方为他方之利益而处理其财产权益者，皆应依诚实信用之原则而为之（James A. Ballentine, Law Dictionary；Blacks Law Dictionary）。此种关系，是为“信任关系”（Fiduciary Relation）。信任关系乃指一方对于他方所加以信托之关系。例如律师与当事人、本人与代理人、主债务人与连带保证人、地主与佃户、父与子、夫与妻、受托人与受益人等。一方基于信托关系为他方管理事务，不得从中巧取利益，否则自属严重违法（见 James A. Ballentine,Law Dictionary）。此种关系，贵公司自无不知之理。贵公司“信托投资”小册中，早经宣扬如下：</p>
 <p>信托的意义即财产所有人，为其本身或第三者的利益，将其财产交付予他人经营运用。换言之，信托是财产管理人为着另一人的利益，以善良、公平的身份职责，去管理、使用、处分其所托管的财产。</p>
 <p>故贵公司已明知贵公司受托人地位为何，不容蒙混舞弊。且贵公司自行印订之“普通信托资金约款”第 6 条中，明示信托资金到期后——</p>
 <p>依实际运用所得收益，除先扣除第五条税捐及其他费用外，并按收益最高年收百分之二十扣除信托手续费，及于每年信托收益中，最高提存百分之十之保本特别准备金后，其余悉数分配与委托人或其指定之受益人。</p>
@@ -491,7 +524,7 @@
 <p>在我和萧孟能先生的讼案中，对造忽然在法庭上和舆论上，提出贵公司的一封信，是去年 7 月 16 号回给对造律师的，全文说：</p>
 <p>本公司前股东李敖先生原持本公司股票 5630 股，已凭其本人所提股东转让过户申请书经于民国六十八（1979）年 4 月 18 日办理转让过户手续，依照本公司存证之证券交易税代缴税款自动报缴缴款书所载上述股票全部之成交总价额为新台币二百万元整，复请查照。</p>
 <p>对造提出这封信，目的在借贵公司之力，用来在法庭上和舆论上想把李敖双杀。贵公司在这样明显而敏感的情况下，回出这样一封信，自然明知你们在做什么，你们在与谁为敌，你们的法律和公正观念——如要有的话——何在。</p>
-<p>依照文明国家的法律，无故泄露因业务知悉或持有的他人秘密，要受法律处分，除非有正当理由。所谓有正当理由，包括：（1）为履行法律上的义务（如受法院之传唤，到庭作证），（2）秘密所有者的同意公开，（3）可得推测的同意（mutmasslicheEinwilligung），（4）依据法益权衡原则（GrundsatzderGuterabwagung）或义务权衡原则（Grundsatzderpflichtenabwagung）而做的公开或其他具有违法阻却事由的公开。除了这些正当理由以外，其他的泄露，都是无故的、不得体的、有违商业道德的、犯法的。贵公司既然胆敢泄露曾为贵公司股东的秘密——并且包括内容并不正确的秘密，自然要负法律责任和道德责任。请贵公司收这信后，复我一信：</p>
+<p>依照文明国家的法律，无故泄露因业务知悉或持有的他人秘密，要受法律处分，除非有正当理由。所谓有正当理由，包括：（1）为履行法律上的义务（如受法院之传唤，到庭作证），（2）秘密所有者的同意公开，（3）可得推测的同意（mutmassliche Einwilligung），（4）依据法益权衡原则（Grundsatz der Guterabwagung）或义务权衡原则（Grundsatz der pflichtenabwagung）而做的公开或其他具有违法阻却事由的公开。除了这些正当理由以外，其他的泄露，都是无故的、不得体的、有违商业道德的、犯法的。贵公司既然胆敢泄露曾为贵公司股东的秘密——并且包括内容并不正确的秘密，自然要负法律责任和道德责任。请贵公司收这信后，复我一信：</p>
 <p>一、请出示李敖本人签字、签发、签收的全部第一手证据影本，用来证明你们信中所说的不是谎话。</p>
 <p>二、请出示你们有义务如此回信给李敖对造律师的道德依据和法律依据。</p>
 <p>如果不得贵公司满意答复，我只有依法采取一切行动。</p>
@@ -503,7 +536,7 @@
 <p>查泄露因业务得知之他人秘密罪，其主体须为医师、药剂师、药商、助产师、宗教师、律师、辩护人、公证人、会计师或其业务上之佐理人，或曾任此等职务之人（《刑法》第 316 条），业务上泄露工商秘密罪，其主体须为依法令或契约有守因业务知悉或持有工商秘密之义务人（《刑法》第 317 条），所泄露之工商秘密系指专利物品之制造方法或药品之化学原料或商业之计划等（请参照孙德耕先生著《刑法实用分则编》第 381 页），本公司既无上述身份，且依据事实复文澄清，又未涉及所谓工商秘密，应不负任何道德的、法律的责任。</p>
 <p>这些话，都不能成立：</p>
 <p>一、泄露因业务得知他人秘密，正是贵公司所有的身份。依法：公司的行为能力，有的主张法人拟制说，认为公司的行为，是代理人的行为，公司本身没有行为能力；有的主张法人实在说，认为构成公司的组织是代理机关而不是代理人，代理机关所为的行为，在法律上就是公司的行为，所以公司有行为能力。台湾立法例釆取后说。因此公司的侵权行为，依法人拟制说，由代理人负责；依法人实在说，由公司负责。《公司法》规定：“公司负责人对于公司业务之执行，如有违反法令，致他人受有损害时，对他人应与公司负连带赔偿之责。”就是由此而来，贵公司巧辩没有责任是根本站不住的。贵公司犯的，正是文明国家中典型“侵害他人秘密（InterferencewiththeRightofPrivacy）罪”。</p>
-<p>二、所谓“依据事实复文澄清……应不负任何道德的、法律的责任”，全是贵公司的一种怪说。“依据事实复文澄清”必须有正当理由。所谓有正当理由，包括：（1）为履行法律上的义务（如受法院之传唤，到庭作证），（2）秘密所有者的同意公开，（3）可得推测的同意（mutmasslicheEinwilligung），（4）依据法益权衡原则（GrundsatzderGuterabwagung）或义务权衡原则（Grundsatzderpflichtenabwagung）而做的公开或其他具有违法阻却事由的公开。除了这些正当理由以外，其他的泄露，都是无故的、不得体的、有违商业道德的、犯法的。《刑法》第 316 条列举的人，和一般商业道德所规范下的人，哪个能径依“事实”就可对第三者“复文”，这不太无法无天了吗？</p>
+<p>二、所谓“依据事实复文澄清……应不负任何道德的、法律的责任”，全是贵公司的一种怪说。“依据事实复文澄清”必须有正当理由。所谓有正当理由，包括：（1）为履行法律上的义务（如受法院之传唤，到庭作证），（2）秘密所有者的同意公开，（3）可得推测的同意（mutmassliche Einwilligung），（4）依据法益权衡原则（Grundsatz der Guterabwagung）或义务权衡原则（Grundsatz der pflichtenabwagung）而做的公开或其他具有违法阻却事由的公开。除了这些正当理由以外，其他的泄露，都是无故的、不得体的、有违商业道德的、犯法的。《刑法》第 316 条列举的人，和一般商业道德所规范下的人，哪个能径依“事实”就可对第三者“复文”，这不太无法无天了吗？</p>
 <p>第二，贵公司说：</p>
 <p>本公司前收到正义法律事务所争永然律师来函询问台端是否将五千股股份，以新台币一百万元向本公司办理退股等事实。因本公司为股份有限公司组织，依法股东得自由转让其股份，但并无退股之规定。本公司乃依据本公司存证之“股东转让过户申请书”及“证券交易税代缴税款自动报缴缴款书”所载内容，据实复函澄清。</p>
 <p>这些话，都不能成立：</p>
@@ -649,7 +682,7 @@
 <p>文星时期李敖为萧孟能卖命，萧孟能欠李敖实多，最后同意送李敖水晶大厦八楼房子，不料房未落成李敖就入狱，萧孟能遂食言，不送了，说“便宜”卖给李敖，作价壹佰贰拾萬伍仟，有公证书可按（附证三十五）。事后查出售价表，一块钱也没“便宜”（附证三十六）。</p>
 <p>李敖出狱后，萧孟能因经营水晶大厦不善，向李敖借钱不还，为表示补偿李敖因文星而蒙的损失，重践萧孟能送水晶大厦房子的宿诺，弥补李敖坐牢时萧孟能的无情无信，偿还萧孟能对李敖的钱债义债，乃同意以水晶大厦房子作为部分抵偿，遂有萧孟能亲笔书明以房抵债文件（见附证三十三）：</p>
 <p>1-40 号、张桂贞、一百八十万</p>
-<p>1-1281-129 号、李敖、二百五十万</p>
+<p>1-128 1-129 号、李敖、二百五十万</p>
 <p>其中 1-128、1-129 房子，且经台北市大安区公所监证申报在案（附证三十七），有何荣松代书可以为证。</p>
 <p>不料萧孟能以 1-128、1-129 为空屋，易于别作处理，反悔以 1-108、1-109 代替，1-108、1-109 用郑锡华名义置产，由叶公超租赁使用，萧孟能乃有亲笔文件如下（见附证三十七）：</p>
 <p>同意书</p>
@@ -708,7 +741,7 @@
 <p>你的牙怎样了？我临走前还付了张牙医两万元，你知道吗？</p>
 <p>再谈书呆子殷海光。他一辈子只打过四次电话（至多四次），有一次他太太教他如何打，把他带到公用电话旁，替他把号码拨好，对方说话，才递给他。殷海光紧握听筒，满头大汗，打完了，要昏倒的样子。他太太赶忙抓住他，发现两手冰冷，两眼发直，好一阵子才恢复正常。</p>
 <p>再谈他的鲜事。有一天，他和政大的另一书呆夏道平教授，忽然要开洋荤，跑进观光饭店喝咖啡，咖啡厅在十二楼，他们就进入电梯，可是很久很久还不到，空气闷得难过。殷海光说：“这么久了，即使一百二十层也该到了。”于是紧张起来，还是夏道平聪明，他看电梯墙上有许多阿拉伯数字，就乱按了一个，门突然开了，原来还在一楼！两人得庆重生，吓得不敢再坐电梯，决定走楼梯上去。走到二楼，就发现没有上三楼的楼梯了，只好又下一楼。殷海光说：“我们到别家去，何必一定要在这里。”夏道平说：“不行，既来了，一定要找到。”于是两人四处去找，找到一座有人开的电梯，总算到了咖啡厅，不巧那天咖啡厅休息。两人只好再摸索到另一较暗的房子，一进去，发现都是一对对情侣，两个老头也顾不得了，挤进坐下。看到一位歌手正在边弹边唱，夏道平碰碰殷海光，大声说：“你看，是真的人在唱歌呢！”</p>
-<p>殷海光死后，我和王晓波、王小明、孟绝子一起去看解剖，出来老孟对我说：“你看到老殷那个鸟了吗？那么小！”我想，殷海光可能在这方面不行，他的婚姻情况，他的教棍太太，都该从这一不行上来观察。他服膺罗素，但罗素写的 MarriageandMorals 他绝口不提，这可真怪。写到这里，我忽然收到一封托我转给你的信，我把它贴在上面。圆环大流氓张武修，绰号梧州，因杀人被判无期。跑来托我写状子，改判下来，变成五年，昨晚送来一大水桶特制的粥，我不吃消夜，结果都给附近的杀人犯们吃了。</p>
+<p>殷海光死后，我和王晓波、王小明、孟绝子一起去看解剖，出来老孟对我说：“你看到老殷那个鸟了吗？那么小！”我想，殷海光可能在这方面不行，他的婚姻情况，他的教棍太太，都该从这一不行上来观察。他服膺罗素，但罗素写的 Marriage and Morals 他绝口不提，这可真怪。写到这里，我忽然收到一封托我转给你的信，我把它贴在上面。圆环大流氓张武修，绰号梧州，因杀人被判无期。跑来托我写状子，改判下来，变成五年，昨晚送来一大水桶特制的粥，我不吃消夜，结果都给附近的杀人犯们吃了。</p>
 <p>转告 □□，要保持警觉、机动与三窟来印书，切忌集中，以防意外时不得化整为零。</p>
 <p>1981 年 11 月 23 日晨</p>
 <h2 id="环游-还原-抢"><a class="header" href="#环游-还原-抢">环游-还原-抢</a></h2>
@@ -716,13 +749,13 @@
 <p>汝清——只有你见得到我的：</p>
 <p>早上在篮球场运动的时候，这边的“制服”跑来，说：“所长紧急通知，法务部次长到所里来了，想见见李先生。”我说：“可是，我不想见他啊！”我拒绝见这些讨厌鬼。我的架子大得要死。</p>
 <p>收到你 19 号的平信，我一直窃笑——有一点恶作剧那样的笑。你说：“还以为你记忆力惊人呢！”难道不是吗？把明明记得住的故意装记不住，这种记忆力，难道不惊人吗？世间喜欢 frame 别人的，一旦被别人 frame 一下，就气起来了，就怪人家的记忆力了。我记得你不但哭过，并且还非常爱哭，是台湾话的爱哭妹（爱哭面），看到这里，你又怪我记错了吧？你看，说不哭也不行，说爱哭也不行。你 19 号信上说：“一点也不赞成人哭得太凶，看看月亮，流两滴泪，也就够了。”好吧！（我也说好吧！）就记得你哭过流两滴泪式的吧，你知道有人多喜欢、多珍惜吗？</p>
-<p>我现在还做一些环游世界的准备工作，前几天 WashingtonCatheddral 的浮雕 ExNihilo 大大的吸引了我，秦始皇陵也一直使我兴致奇高。将来我要和女秘书天南地北，仔仔细细周游列国，“审视”木乃伊或秦始皇（但如宋局长不在，我可能“验尸”一下）。当然，如果有孟姜女在旁边哭的话，就另当别论，那就到长城去，完成丝路之旅，在焉支山脚，采小黄花……</p>
+<p>我现在还做一些环游世界的准备工作，前几天 Washington Catheddral 的浮雕 Ex Nihilo 大大的吸引了我，秦始皇陵也一直使我兴致奇高。将来我要和女秘书天南地北，仔仔细细周游列国，“审视”木乃伊或秦始皇（但如宋局长不在，我可能“验尸”一下）。当然，如果有孟姜女在旁边哭的话，就另当别论，那就到长城去，完成丝路之旅，在焉支山脚，采小黄花……</p>
 <p>希腊天文家说：世界经过一万六千年后必还原一次。所以，在环游世界一万六千年后，我们虽已归入尘土，仍可卷土重来，旧地重游。不过，这一定得先井然有序，搞不好的话，我们变成了 Tutankhamen 或秦始皇，而他们却变成了我们，如果那样，我们就该把图唐卡门关入土城看守所、把秦始皇关入秦城监狱，使他们不能进入时光隧道，这样的话，自然就是我们“审视”他们，而不是他们“审视”我们了。总之，这个一万六千年还原论的确很好玩，尤其可以在白头偕老后又可青梅竹马，该多有趣。不过，那时候，我该自台中一中转学到建中来，那样离中山女高才近一些。并且我一定参加她指挥的音乐会，我还要参加“中国女兵”、官拜“中校”。（1981 年 11 月 23 日）</p>
 <p>我去做中校剧务吧！那样就可以确实发薪给场记，你说好不好？</p>
-<p>云贵高原的狼，夜里在山路上吃行人方法是：从后面用它前脚搭在行人肩上，行人一回头，他就乘机从后面咬住脖子，所以行人都相告以在那种场合，不要回头，要先用匕首向后刺去。一般说来，一个人的双肩，如在背后被人按住，这时抵抗力最弱，台湾一个文人周弃子，专门向人借钱，方法就是先到你家，绝口不提钱，可是你一到厨房给他倒茶，他就乘机从后按你双肩，然后开口借钱，如此高段，人人无法抵抗。聂华苓跟我说：“你不借钱给他，你会觉得不好意思，他就能造成那种气氛。”有一次他向殷海光借钱，殷海光不说任何世俗的话来同意或推托，干脆答道：“不借！”使周弃子吃瘪而去。周弃子也没能向我借得到钱，因为我一见他就先发制人，先向他借。周弃子是 Apersonwhenweknowwellenoughtoborrowfrom,butnotwellenoughtolendto，人间就是有很多这种人，你说多可悲。</p>
+<p>云贵高原的狼，夜里在山路上吃行人方法是：从后面用它前脚搭在行人肩上，行人一回头，他就乘机从后面咬住脖子，所以行人都相告以在那种场合，不要回头，要先用匕首向后刺去。一般说来，一个人的双肩，如在背后被人按住，这时抵抗力最弱，台湾一个文人周弃子，专门向人借钱，方法就是先到你家，绝口不提钱，可是你一到厨房给他倒茶，他就乘机从后按你双肩，然后开口借钱，如此高段，人人无法抵抗。聂华苓跟我说：“你不借钱给他，你会觉得不好意思，他就能造成那种气氛。”有一次他向殷海光借钱，殷海光不说任何世俗的话来同意或推托，干脆答道：“不借！”使周弃子吃瘪而去。周弃子也没能向我借得到钱，因为我一见他就先发制人，先向他借。周弃子是 A person when we know well enough to borrow from, but not well enough to lend to，人间就是有很多这种人，你说多可悲。</p>
 <p>世界各地强盗抢钱，都抢钱就完了，不嗜杀人，但云贵地区，强盗却是先杀后抢。原因是这地区人太穷（“天无三日晴，地无三里平，人无三两银”），你抢他钱，他就跟你拼命，所以强盗都相告以干脆先杀了再说，免得麻烦。如果将来我们去做雌雄大盗，最好不要去云贵地区。结论是：不要在云贵地区作案，也不要做狼。</p>
 <p>在这边有许多强盗，大概一起住得太近了，也起了歹念，所以写了一大堆。其实人间除了抢亲外，也没有什么好抢的。</p>
-<p>下午要去台北“远足”（萧孟能诽谤案开庭），要坐 BlackMaria（不过有窗的）。</p>
+<p>下午要去台北“远足”（萧孟能诽谤案开庭），要坐 Black Maria（不过有窗的）。</p>
 <p>1981 年 11 月 25 日</p>
 <h2 id="既联合又斗争"><a class="header" href="#既联合又斗争">“既联合，又斗争”？</a></h2>
 <p>《联合报》编者先生：</p>
@@ -909,7 +942,7 @@
 <p>今晚的饭局，我想了一下，决定是谢绝了。我在《只许我中央，不许你中央》（“李敖千秋评论丛书”第四册）里，曾有这样一段话：</p>
 <p>中央冷气系统中的牧羊人，在士农工商各行各业中，都牧了羊，成了“士羊”“农羊”“工羊”“商羊”。其中最不争气的就是“士羊”，就是知识分子这一阶层的羊。这一阶层，包括为人师表派、大众传播派、学者作家派、艺术工作者派和政治工作者派。不论哪一派，凡是如今有知名度的，有见报率的，有点头露点脸的，我敢说，除了李敖之流外，都是跟官方同一标准的，都是趋炎附势的，都是希旨承风的，都是扶同为恶的，都是曲学阿世的，都是众口一声的，都是与中央同一呼吸同一脉搏的。否则的话，他们休想混，休想占一席教席，休想做一名记者，休想做“座谈会专家”，休想做“文艺大会作家”，休想做达官贵人来捧场的画家，休想能做安全上垒的政治活动家。（此一地区的政治活动家，一开始，也多走正字标记的路线，所以多是先党员而后脱出而成党外，纯粹跟国民党毫不相千，而能安全上垒者，天下鲜矣！）</p>
 <p>从这段话里，你可以明显看到我对这些知识分子的失望与厌恶，我认为他们是怯懦而失职的，同他们一起吃饭，实在使我痛苦，你总不好使我吃一顿痛苦的美食吧？</p>
-<p>也许你会怪我太矫情了一点、太狂狷了一点，但是，想想看，矫情与狂狷岂不也正是我的性格吗？你记得戴高乐吗？他住在巴黎最边上的一幢房子里，讨厌所有第四共和（TheFourthRepublic）的法国政客，他看不起他们，甚至连谈都不要谈，同这些人，谈个什么呢？这些人的言行，你既然早就有了正确的判定，谈来谈去，岂不都是废话吗？</p>
+<p>也许你会怪我太矫情了一点、太狂狷了一点，但是，想想看，矫情与狂狷岂不也正是我的性格吗？你记得戴高乐吗？他住在巴黎最边上的一幢房子里，讨厌所有第四共和（The Fourth Republic）的法国政客，他看不起他们，甚至连谈都不要谈，同这些人，谈个什么呢？这些人的言行，你既然早就有了正确的判定，谈来谈去，岂不都是废话吗？</p>
 <p>不同他们吃饭并非不同你吃饭，也并非不同你认为我大可一见的党外人士吃饭，以后如有机会，我仍愿三人小组式的小吃一次或一百次，你说好不好？</p>
 <p>敖之 1982 年 6 月 1 日</p>
 <h2 id="为什么活一百岁"><a class="header" href="#为什么活一百岁">为什么活一百岁？</a></h2>
@@ -972,7 +1005,7 @@
 <p>前天他们持命令来搜书，因为多已卖完，在四季出版公司没收了十九册，其他书店书摊上还不详。康宁祥系的杂志，以暧昧的口吻表示官方没禁李敖的书，这种口吻，显然不是以事实做根据的。他们自己向官方整天柳腰款摆，当然不被査禁，他们自己媚态之不足，还要恶意暗示，真是别有用心了！</p>
 <p>所以，从事实上一査证，就知道“千秋评论”并没“得以顺利发行”，我们为争取言论自由所付的辛苦代价，一般人是不清楚的；康宁祥他们清楚，却故意捏饰，以掩护他们向官方献媚取容，真太卑鄙了！</p>
 <p>至于老 K 对我的态度，当然不是“礼遇有加”，老 K 是不懂什么叫礼贤下士的，真正的士，也绝不受他们的礼——老 K 是绝无诚意的。在这一点上，在这岛上，没有人比我认识更清了（因为这种认识，要对老 K 历史有深入了解为基础）。所以我一直提倡“不合作主义”对付老 K，我这种先知式的观点，当然不是一般座谈会专家和小政客们所能了解的，一般党外人士和小百姓了解的程度，也有待加强。这是因为在同一小岛上“酱”在一起太久了，在浑蛋一方面，深受老 K 的感染，而不容易自觉与自拔，这也就是老 K 能够在这岛上整天群魔乱舞、口沫横飞的缘故。因为有人受他骗，所以他们才骗个不停，这当然是相对的。这种受骗的惯性不改善，一切当然继续下去：老 K 继续做瘟神，党外和小百姓继续做瘟生，前途有限，后患无穷，如此而已。</p>
-<p>老 K 对我虽然没有“礼遇有加”之可言，但是我的知名度与打击率，他们显然已逐渐心里有数，不敢低估，显然逼得他们不得不调整他们对我的暗算。在核子战略术语上，有一种 MAD（MutuallyAssuredDestruction，保证互相毁灭），就是作战的一方，不怕另一方的一举毁灭性的攻击，因为不论你怎么毁灭我，我在被毁灭同时，都有毁灭你的能力，使你清楚知道：你惹我，你是得不偿失的，你自己也要付被毁灭的代价。我想，老 K 对暗算我，已经清楚知道他们要付这种代价。他们第二次以冤狱毁灭我的名誉，我出狱回台北后五个小时，就毁灭了他们的狱政和司法形象。当然李敖可以予以“陈文成”处理，但我死了，他们有便宜占吗？他们还有多少自由民主的假象可以透支呢？他们还有多少干净的双手可以彼拉多（PontiusPilate）呢？他们还有多少松鹤与南山可以益寿延年呢？他们在横行之后直卧，总该这样想想吧？</p>
+<p>老 K 对我虽然没有“礼遇有加”之可言，但是我的知名度与打击率，他们显然已逐渐心里有数，不敢低估，显然逼得他们不得不调整他们对我的暗算。在核子战略术语上，有一种 MAD（Mutually Assured Destruction，保证互相毁灭），就是作战的一方，不怕另一方的一举毁灭性的攻击，因为不论你怎么毁灭我，我在被毁灭同时，都有毁灭你的能力，使你清楚知道：你惹我，你是得不偿失的，你自己也要付被毁灭的代价。我想，老 K 对暗算我，已经清楚知道他们要付这种代价。他们第二次以冤狱毁灭我的名誉，我出狱回台北后五个小时，就毁灭了他们的狱政和司法形象。当然李敖可以予以“陈文成”处理，但我死了，他们有便宜占吗？他们还有多少自由民主的假象可以透支呢？他们还有多少干净的双手可以彼拉多（Pontius Pilate）呢？他们还有多少松鹤与南山可以益寿延年呢？他们在横行之后直卧，总该这样想想吧？</p>
 <p>苏秋镇有三个保镖和一辆车子，我没有保镖，也卖了车子，我准备随时面临意外。苏秋镇引用海明威的《老人与海》来描写他的处境，我却引用海明威的《杀人者》来描写一个人随时等待职业杀手的来临。老 K 逼我、关我、“陈文成”我，都随他们的便，可是不论我的生与死、不论我的全和残，老 K 都要付代价，付他们愈来愈付不起的代价。——这是我李敖笔上笔下牢里牢外二十多年的最大副产品、最大制衡力量，老 K 要继续惹我，就惹吧！</p>
 <p>拉杂写来，聊报难兄来信之情。关于康宁祥等对老政治犯忘恩负义部分，我主要意思，都写在回吕国民的信里了，这里不再写了。祝</p>
 <p>长命百岁</p>
@@ -1048,7 +1081,7 @@
 <p>一、我从没“认为”，“对一个事实的描述”，“非用哪一个特定的‘用语’不可”。但刘福增却血口喷人，说我这样认为过，这是典型的曲解。刘福增曲解我说林毓生迷信方法学的一段以后，曾说：</p>
 <p>什么叫做稻草人的谬误呢？我现在要下定义了，否则李敖恐怕不知道。由此可见，在文章中，给某一些字眼下定义，往往是很必要的。</p>
 <p>在一个辩论中，一个人有意无意把对方的说话或论点加以曲解，然后把曲解了的话当做对方的话加以攻击，这个人便犯了稻草人的谬误。当我们错解、曲解或断章取义别人的意见，而攻击别人时，我们便犯了这个谬误。</p>
-<p>由于我从没“认为”过“非用哪一个特定‘用语’不可”，所以，刘福增曲解我而加以攻击，他自己犯的，就是典型的“稻草人的谬误”（thefallacyofstrawman）！</p>
+<p>由于我从没“认为”过“非用哪一个特定‘用语’不可”，所以，刘福增曲解我而加以攻击，他自己犯的，就是典型的“稻草人的谬误”（the fallacy of straw man）！</p>
 <p>二、刘福增说：“对同一件事实，我们可以用各种不同的用语去正确的描述它”，这是对的。但是重点必须是“正确的描述”，若不是“正确的描述”，则“对同一件事实”，就是“窜改”、就是“推翻”。刘福增说“进出”可以代替“侵略”，但他又明说“进出”乃是“进军”之意，而“当一国未被另一国允许而在另一国领土上进军时，当然是‘侵略’”，以他之矛，攻他之盾，一眼我们就可以看到：当他以“进出”代替“侵略”的时候，显然有意漏掉了“未得中国允许”的“正确的描述”！在描述上动了手脚，当然就把“未被另一国允许”的事实给逻辑掉了！给方法学掉了！刘福增口口声声赞许日本人用“纯描述的”字眼“进出”来代替“有价值判断的”字眼“侵略”，但却不深究描述得是否完整，是否是“正确的描述”，他是什么居心呢？他挨了大家骂以后，竟回护说：</p>
 <p>李敖说：“请问刘福增，五十年来，你和……日本人，‘拿什么有力的新证据’来推翻‘公认’的历史事实来了吗？”我前面说过，日本政府这次并没有要推翻什么历史事实。刘福增更没有。而李教又硬指有而加以攻击。李敖又在犯稻草人的谬误了。</p>
 <p>请看这算什么？刘福增和他的日本人，因为不肯做“正确的描述”，暗中做手脚，把光秃秃的“进出”两字代替“侵略”，这不显然窜改掉了真正的史实了吗？这不是“推翻”，又是什么呢？刘福增大可用他的逻辑和方法学来蒙混一般人，可是绝对蒙混不过细腻的李敖，他这回可栽定了！</p>
@@ -1071,7 +1104,7 @@
 <p>陶百川一方面辞了监委给党外看，一方面接受了国策顾问给国民党看，这不是两面人是什么？徐复观一方面在 1960 年 9 月 1 日同党外相见欢，一方面在 9 月 2 日到中央党部大告密，这不是两面人是什么？结果两面久了，陶百川一离台，中央党部秘书长和党外巨公级就争相邀宴了；徐复观一咽气，中央党部秘书长和党外巨公级就争相吊丧了。维桢你看，除了两面做人成功以外，谁又能如此两面讨好呢？</p>
 <p>问题严重倒不在这些蝙蝠性格的人得名得利，问题严重在当他们这种人被奉为“国之大佬”“国之大儒”的时候，真正的是非显然就给强奸了。我在《党外与混蛋》中写道：</p>
 <p>在康宁祥系刊物这样大捧徐复观的同时，香港的左派刊物上，公布了徐复观的手迹，证明了徐复观一方面匿名写文章投左派刊物，一方面真名写文章投台湾刊物，并在台湾国民党统治下养老、看病、送终。试问古往今来，哪一位“诚实、勇敢、自尊、自信”的人会这样做呢？哪一位“大儒的风骨”会这样软呢？而徐复观两面为之，不以为耻；康宁祥系刊物八面捧之，不以为异，这表示了什么？表示了不是别的，就是典型的乡愿风。</p>
-<p>孔夫子说：“乡愿，德之贼也。”乡愿就是没有是非，也不追究是非。就是一一弥缝，事事伪善。并且，更严重的是，乡愿还会故意搅局，故意弄浑正宗的颜色。孔夫子讨厌紫颜色，因为紫的颜色，对正宗的红色是一种搅局、一种似是而非。丘吉尔说他不喜欢委靡的棕褐色，他“不能假装对颜色不偏不倚”（Icannotpretendtofeelimpartialaboutcolors）。但是，乡愿风的出现，就把一切弄浑，弄得天下为之变色！</p>
+<p>孔夫子说：“乡愿，德之贼也。”乡愿就是没有是非，也不追究是非。就是一一弥缝，事事伪善。并且，更严重的是，乡愿还会故意搅局，故意弄浑正宗的颜色。孔夫子讨厌紫颜色，因为紫的颜色，对正宗的红色是一种搅局、一种似是而非。丘吉尔说他不喜欢委靡的棕褐色，他“不能假装对颜色不偏不倚”（I cannot pretend to feel impartial about colors）。但是，乡愿风的出现，就把一切弄浑，弄得天下为之变色！</p>
 <p>这也正是你在《我们应对党外公仆继续施加压力》中所说的：</p>
 <p>我赞同李教的观点。李敖讨厌伪君子、讨厌乡愿、讨厌两面人，认为这些人混淆了社会是非、善恶、真伪的标准。我的看法是，像徐复观和陶百川这种人，论学问、论道德都很平凡，但是他们都得到不相称的声望。如果他们是可敬仰的人，我只有说，我们这个社会是既贫乏又悲哀的！</p>
 <p>[陶百川、徐复观]他们都是老狐狸。在关键的时刻，他们都很清楚应该站在哪一边。就过去的表现看，他们跟正常人没有两样，最先是为自己，其次才轮到他们的党，我怀疑人民在他们的心目中有没有地位。在人民的权力这么薄弱的时刻，争取他们至少有两个坏处：第一，人民可能被他的甜言蜜语迷惑，不做更辛苦的努力，以争取应有的权利；第二，鼓励了投机分子，使他们以为人民是可欺骗的，八面玲珑的人可以到处受到欢迎，那么真正正直、有勇气的人便被孤立，便被认为是偏激分子。</p>
@@ -1093,7 +1126,7 @@
 <h2 id="论红色变节者"><a class="header" href="#论红色变节者">论红色变节者</a></h2>
 <p>维桢：</p>
 <p>紧急转话已转到，我决定用“□□□□”来代替，这样再发表给你的信，就不会影响“善意第三人”了，你以为然吗？</p>
-<p>我知道有人怕给我写信，也怕我给他写信，收发之间，像你这样坦然的，毕竟不多。我认为大丈夫敢作敢当，凡是下笔的，就不怕人发表。美国众议院议长马丁（JosephW.Martin,Jr.）发表麦克阿瑟给他的信，惹得麦克阿瑟被总统杜鲁门解职，但马丁和麦克阿瑟两人都无遗憾，因为大丈夫写了那种信，又何在乎得罪什么总统不总统？照“庸德之行，庸言之谨”的小丈夫标准，也许马丁该向麦克阿瑟抱歉，或麦克阿瑟要向马丁责问，但是他们都是第一等人，第一等人写下来的东西，又何在乎被人发表或自己发表呢？</p>
+<p>我知道有人怕给我写信，也怕我给他写信，收发之间，像你这样坦然的，毕竟不多。我认为大丈夫敢作敢当，凡是下笔的，就不怕人发表。美国众议院议长马丁（Joseph W. Martin, Jr.）发表麦克阿瑟给他的信，惹得麦克阿瑟被总统杜鲁门解职，但马丁和麦克阿瑟两人都无遗憾，因为大丈夫写了那种信，又何在乎得罪什么总统不总统？照“庸德之行，庸言之谨”的小丈夫标准，也许马丁该向麦克阿瑟抱歉，或麦克阿瑟要向马丁责问，但是他们都是第一等人，第一等人写下来的东西，又何在乎被人发表或自己发表呢？</p>
 <p>我在二十一年前，由于穷得当了裤子，胡适特别写了一封限时信给我，并送了我一千元来赎当，我很感动，就写了一封长信给他，说出很多我个人的历史。胡适对我的信很欣赏，拿给一些人看，最后他拿给徐高阮看，徐高阮扣住不还。不久胡适死了，徐高阮遂在 1961 年 11 月 7 日，在台北妇女之家举行声讨李敖大会，“邀约了国青民三党人士和若干文化界的朋友三十人”（有陈启天、胡秋原等等），开会斗倒李敖。徐高阮等当场油印公布了我给胡适的信，说我是“叛逆分子”，并把我一状告到警总。警总保安处派魏以之组长主持，把我约谈多次，每次早出晚归，并没过夜。我信中提到的严侨（华严的哥哥）却被再度捕去，关了十六天，调査他同我的关系。魏组长精明能干，同我说话的时候，甚至可以整段背得出我信中的话。最后，在魏组长研究清楚了这是徐高阮等私人的借刀杀人之计，研判若由官方出面整我，对官方不利，乃不了了之。徐高阮等的卑鄙阴谋，才没有得售。</p>
 <p>我在《我的殷海光》中，对徐高阮等迫害殷海光，曾有这样的话：</p>
 <p>先说胡秋原。胡秋原早年参加共产党 CY，又参加闽变，抗战时加入国民党做中央委员并办党报，大陆丢掉时“打算做共党百姓”，不肯出来，后来才到台湾。有一次被派出去，竟“在英国与共党有过接触”，而遭国民党党纪处分。他是一个反复多变的人，由于反复多变，政治上，自然也就不能被一再信任。因而在心理上，他有了一种幻想的被迫害症，他的自高自大自我膨胀，过分重视自己，使他老觉得有人想打击他，他完全不能了解何物胡秋原，胡秋原何物。谁要打击这样一个宦海失意和学界走板的人呢？在心病之下，他刻意寻找“幻想的迫害者”（imaginarypersecutor），最后找到殷海光。殷海光从《自由中国》停刊后，已失掉地盘，全靠我以文星来支持，胡秋原恨我揭发他的真面目，因此迁怒到殷海光。当然啦，打击殷海光是合乎官方希望的，胡秋原属于何种色彩，也就一看即知。再说徐高阮。徐高阮也是出身左派的健将，当年参加一二九运动，被捕后，投降国民党，在中央研究院做副研究员，可是写不出学术论文。李济等学阀大概知道他有背景，不敢惹他，让他管图书室。他有突发性狂怒症，发病时甚至将书架推倒，根本不是正常的人。徐高阮与殷海光在西南联大同学，殷海光主持《自由中国》时代，徐高阮又巴结又嫉妒，《自由中国》停刊后，徐高阮乃施报复，挑殷海光不小心误译的一个名词，联合胡秋原，指为“学术诈欺”，其实胡秋原、徐高阮在翻译上的错误，早就是超越前进的，但他们却一点也没有不好意思的指摘殷海光、罗织殷海光，并要求国民党政府调查……</p>
@@ -1112,17 +1145,17 @@
 <p>恕未具名 9 月 28 日</p>
 <p>我很感谢这位老先生的劝告。但我始终不明白，这样诚恳的劝告，又何必出之以匿名的方式？写一封匿名信，还要“经过无数次的犹豫”，这岂不太胆小了吗？我很佩服这位老先生，但他如站出来，不匿名的劝我，我会更感谢、更感动。由此一例，可见在极权的统治里，一般知识分子巳被恫吓到什么程度了，他们连“坐不更名，立不改姓”的爽快，都不能不有所顾忌了；他们连写一封信，都不敢署真名了！虽然这样，我还是得到鼓舞、我还是很欣赏这位老先生。</p>
 <p>敖之 1982 年 11 月 22 日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/08.书信函件类/李敖书简集.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/08.书信函件类/李敖书简集.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../08.书信函件类/李敖书笺集.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../08.书信函件类/李敖书翰集.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1132,16 +1165,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../08.书信函件类/李敖书笺集.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../08.书信函件类/李敖书翰集.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1150,12 +1188,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,85 +81,106 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="读史指南"><a class="header" href="#读史指南">读史指南</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E5%9B%9B%E9%83%A8%E5%A4%87%E8%A6%81%E6%9A%A8%E5%9B%9B%E9%83%A8%E4%B8%9B%E5%88%8A%E4%B9%A6%E7%9B%AE%E5%AF%B9%E7%85%A7%E8%A1%A8%E4%BE%8B">四部备要暨四部丛刊书目对照表例</a></li>
-<li><a href="#%E5%8F%A4%E4%BB%8A%E5%9B%BE%E4%B9%A6%E9%9B%86%E6%88%90%E7%A0%94%E7%A9%B6">《古今图书集成》研究</a></li>
-<li><a href="#%E4%BB%8B%E7%BB%8D%E4%B8%96%E7%95%8C%E6%9C%80%E5%A4%A7%E7%9A%84%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6">介绍世界最大的百科全书</a></li>
-<li><a href="#%E4%B8%AD%E5%9B%BD%E5%8E%86%E5%8F%B2%E6%BC%94%E4%B9%89%E6%80%BB%E8%AF%B4">中国历史演义总说</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#四部备要暨四部丛刊书目对照表例">四部备要暨四部丛刊书目对照表例</a></li>
+<li><a href="#古今图书集成研究">《古今图书集成》研究</a></li>
+<li><a href="#介绍世界最大的百科全书">介绍世界最大的百科全书</a></li>
+<li><a href="#中国历史演义总说">中国历史演义总说</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -793,7 +826,7 @@
 <p>梁章钜《归田琐记》卷四“陈省齐”条下，有一段话说：</p>
 <p>吾乡相传国朝图书集成一书，成于陈省齐之手，实未核也。恭读康熙六十一年十一月谕内阁九卿等：“陈梦雷原系叛附耿精忠之人。皇考宽仁，免戮。发往关东。后东巡时，以其平日稍知学问，带回京师，交诚亲王处行走。累年以来，招摇无忌，不法甚多。京师断不可留，着将陈梦雷父子，发遣边外。或有陈梦雷之门生，平日在外生事者，亦即指名陈奏。杨文言乃耿逆伪相，一时漏网，公然潜匿京师，著书立说。今虽已服冥刑，如有子弟在京者，亦即奏明驱遣，尔等毋得徇私隐蔽。陈梦雷处所存古今图书集成一书，皆皇帝指示训海，钦定条例，费数十年圣心，故能贯穿今古，汇合经史，天文地理，皆有图记，下至山川草木，百工制造，海西秘法，靡不备具。洵为典籍之大观。此书工犹未竣，着九卿公举一二学问渊通之人，令其编辑竣事。原稿内有讹错未当者，即加润色增删。仰副皇考稽古博览至意。”据此，则图书集成之成帙，非省齐所能专其功。而省齐之负才跅弛。读此，亦可见其概矣。</p>
 <p>这是很迴护雍正皇帝等人的话。梁章钜根据雍正的诏谕来推论“图书集成之成帙，非省齐所能专其功”，这是很不公平的话。</p>
-<p>英国名汉学家H.A.翟理思（HerbertAllenGiles）的儿子L.翟理思（LionelGiles），曾应大英博物馆之托，在1911年，出版了他的《钦定古今图书集成索引》（AnAlphabeticalIndextotheChineseEncyclopaediaCh'inTingKuChinTuShuChiCh'eng）。在序里，他就梁章钜这段《归田琐记》中的话而加以论述道：</p>
+<p>英国名汉学家H.A.翟理思（HerbertAllenGiles）的儿子L.翟理思（LionelGiles），曾应大英博物馆之托，在1911年，出版了他的《钦定古今图书集成索引》（AnAlphabeticalIndextotheChineseEncyclopaediaCh’inTingKuChinTuShuChiCh’eng）。在序里，他就梁章钜这段《归田琐记》中的话而加以论述道：</p>
 <p>关于梁章钜这段文字的措辞，显然的，他不敢违忤清朝政府。在他们眼中，陈梦雷当然是一个蒙羞而死的叛徒。但是凡读过雍正上谕的人，都会明白的看出，这部书在康熙去世之前就已经完成，不仅原稿已经完成待印，就是字模也做好了。然而我们无法确知印书的工作是否已经开始。但我们很容易了解，雍正皇帝之所以及早除去陈梦雷，其目的在使他的仇敌的姓名不得流传后世，同时跟康熙时代最有价值的巨著所关联。他的目的在当时虽然达到了，但值得注意的是，迟至1845年，关于这部书的编者实际上是陈梦雷的传说依然存在。现在需要几个替身去正式宣布这件工作的完成了，于是蒋廷锡便被任命为新的编辑。蒋廷锡是一个在学术和政治方面颇有声名的人物，年轻时以长于作诗和善画花卉闻名。上谕中所称的“润色”（polish）工作就由他去执行。然而对于这部书内容方面的润色是很有限的，因为书中的章句全都本是逐字在原著中抄录。所以我们可以假定，他的主要职责是蒙蔽人们的视线，并且将时间一直延迟到1726年，那时已经拖延了相当长的一段时间，人们思想上的“错误”也已经被改正了，这部书才终于获准问世。</p>
 <p>L.翟理思这段话中，最可注意的是，他指出：“《古今图书集成》这部书在康熙去世之前就已经完成，不仅原稿已经完成待印，就是字模也做好了”。</p>
 <p>对这段话，我们可以从乾隆皇帝的《御制题武英殿聚珍版十韵有序》里得到不少印证。这首《御制题武英殿聚珍版十韵有序》，叶德辉在《书林清话》卷八《宋以来活字版》一则中引录并有注解：</p>
@@ -831,10 +864,10 @@
 <p>当时就有私行刷印，所以在名义上印六十四部，而实际印了多少部，实不可知。不过流传不多。刷印未必甚多。所可怪的，现存的铜模活字本，我见过六部。四库阁所藏如：文津阁、文溯阁、文澜阁，都是黄纸。其他尚有山东省立图书馆所藏一部也是黄纸。白纸甚少，只见过两部：一部是不全本，在北平琉璃厂求售而看到的；一部是清华大学所藏，人都称为写本图书集成，我细细审阅，方知是光绪十六年影印，特用一部白纸本，加以墨笔描润，但纸背则见活字版刷印痕迹，并非缮写。文渊阁我虽到过，但未阅此书，是书现运来台，是黄是白一看即知。</p>
 <p>关于黄白纸的问题，L.翟理思在《钦定古今图书集成索引》序中说：</p>
 <p>根据麦尔的说法，在他那个时候，相传北京一共印了一百部，这个数目似乎较为正确。印刷时一共用了两种字体：较大的——用于正文部分——字体比一方公分稍大；较小的——用于注释等用途——字体五方毫米。两卷合成一本，每本的尺寸大约是27.5×17.5cm；全书共五百二十三函，每函八本至十本。最后，用麦尔先生的话：“有几部是用高级白纸印成的，是作为赏赐王侯及高级官吏而用的；用普通纸张所印的本子较多。”</p>
-<p>据我所知，在中国以外所发现的唯一一部原版图书集成，是属于大英博物馆的那部，为黄纸印成，并洋装成七百四十五巨册。现在放在皇家图书馆（King'sLibrary）的玻璃樹窗中；柏林的KoniglicheBibliothek藏有与此同一版却仅存五分之四的一部；巴黎国家图书馆后来也得到了一部相同的差不多完整的白纸版，它的缺页，是用第二版补足的。</p>
+<p>据我所知，在中国以外所发现的唯一一部原版图书集成，是属于大英博物馆的那部，为黄纸印成，并洋装成七百四十五巨册。现在放在皇家图书馆（King’sLibrary）的玻璃樹窗中；柏林的KoniglicheBibliothek藏有与此同一版却仅存五分之四的一部；巴黎国家图书馆后来也得到了一部相同的差不多完整的白纸版，它的缺页，是用第二版补足的。</p>
 <p>万国鼎在《古今图书集成考略》中提到他在江浙间看到过三部：</p>
 <p>江浙间存者，余所见有三部（上海东方图书馆、杭州省立图书馆、南浔嘉业堂藏书楼各一部），然均残缺不全，互相钞补。</p>
-<p>美国普林斯顿大学葛思德东方书库中，藏有原版图书集成一全套，这是由义理寿（CaptainI.V.Gilis）费心配齐的。据童世纲《葛思德东方书库记略》（《教育与文化》第九卷第九期），曾记这部书说：</p>
+<p>美国普林斯顿大学葛思德东方书库中，藏有原版图书集成一全套，这是由义理寿（Captain I. V. Gilis）费心配齐的。据童世纲《葛思德东方书库记略》（《教育与文化》第九卷第九期），曾记这部书说：</p>
 <p>古今图书集成一万卷，清雍正六年铜活字排印，每部五千册，附目录四十卷，二十册。据说，当初只排印了六十四部。全部现存的，世间大概只有三四部而已。外间流行的有两种……义理寿为葛库搜集这部铜活字原印本，曾费了多年工夫，从许多批残缺不全的图书集成里，耐心检点配合，才配成了一套五千零二十册的全书。他费的钱大概不多，但他的耐心是可佩服的。</p>
 <p>至于目前在台湾，有全套的两套。据梁廷炜在《故宫博物院图书馆简介》（《教育与文化》第252-253期合刊）里记故宫现藏《古今图书集成》的情形说：</p>
 <p>图书集成、三部、八十六箱</p>
@@ -862,7 +895,7 @@
 <p>万国鼎在《古今图书集成考略》里提到这种扁体铅字本，说：</p>
 <p>光绪十年（公元1884年）上海图书集成局铅印本，字体及版框均缩小。分订一千六百二十册。内目录八册。共印一千五百部。所用铅字，概作扁形，与近今通行之铅字异，益以排印密接，殊失美观，且伤目力。图尚可。颇有讹字。</p>
 <p>L.翟理思在《钦定古今图书集成索引》序中说：</p>
-<p>第二次重印的工作是由中国的一家图书公司负责，而由上海的MajarBrothers工厂担任印的。当时铅模活字版已经开始使用，印刷的工作从1885年到1888年，一共花了三年的时间。这一版所用的字体虽然缩小了很多，但按一般人的视力来说并不严重。全书只有一千六百二十本，尺寸大约是19.5×13cm，在欧洲与美洲有些汉学家与公立研究机构都藏有这种使用比较方便的版本。</p>
+<p>第二次重印的工作是由中国的一家图书公司负责，而由上海的Majar Brothers工厂担任印的。当时铅模活字版已经开始使用，印刷的工作从1885年到1888年，一共花了三年的时间。这一版所用的字体虽然缩小了很多，但按一般人的视力来说并不严重。全书只有一千六百二十本，尺寸大约是19.5×13cm，在欧洲与美洲有些汉学家与公立研究机构都藏有这种使用比较方便的版本。</p>
 <p>这个版本在国内流传还不少。例如在广州中山大学中，我们就可以看到有两部（据《民国二十四年国立中山大学图书馆中文古书分类目录》）。</p>
 <p>石印本</p>
 <p>光绪十六年（1890）开始的。蒋复璁在《古今图书集成的前因后果》里有详细的记述：</p>
@@ -994,7 +1027,7 @@
 <p>上面这个例子，足以说明文星版《古今图书集成》索引在“中有苦心”和“中有调剂”方面的过程与成绩，它不但有益于今人和后人，并且校正了前人。它的功德，由此可见一斑。</p>
 <p>1964年9月</p>
 <h2 id="介绍世界最大的百科全书"><a class="header" href="#介绍世界最大的百科全书">介绍世界最大的百科全书</a></h2>
-<p>文星版《古今图书集成》是中国有史以来最大的百科全书，也是全世界有史以来最大的百科全书。比世界驰名的《大英百科全书》（EncyclopediaBritannica）在字数和册数上多四倍，在体积上多五倍。全书一万卷，一亿四千四百万字，在质量上，先从这些统计数字，你就不难了解它的惊人程度了！</p>
+<p>文星版《古今图书集成》是中国有史以来最大的百科全书，也是全世界有史以来最大的百科全书。比世界驰名的《大英百科全书》（Encyclopedia Britannica）在字数和册数上多四倍，在体积上多五倍。全书一万卷，一亿四千四百万字，在质量上，先从这些统计数字，你就不难了解它的惊人程度了！</p>
 <p>中国由于文化悠久，古代的典籍，愈累积愈多。格于经济、交通、战乱、印刷技术、保存方法等种种之限制，对庞大的中国典籍想有所钻研，学者每感无从下手之苦，至于费时费カ，事倍功半，当然更不在话下。</p>
 <p>例如想从十三经中找材料，你除了翻遍十三经没有别的法子（《十三经索引》等书是不够用的）；又如你要想从二十一史中找材料，你除了翻遍二十一史，也没有别的法子（《廿四史传目引得》《二十五史索引》等书也是不够用的）。这些还都是普通的容易找到的古书；至于一些专门的不易搜求到的古书，你应用起来困难的程度也就更形增加，你想搜求的材料，也就更深藏不显了！</p>
 <p>在这种情况下，文星版《古今图书集成》为你解决了一切！</p>
@@ -1053,7 +1086,7 @@
 <p>十九、例如法律学家、法制史家，他不会不去检查文星版《古今图书集成》中的“祥刑典”的丰富资料，律令、盗贼、牢狱、听断、刑制、赦宥等等法学项目，一样也不少。</p>
 <p>二十、例如从事应用科学的人，不论是工程和制造，他不可不查文星版《古今图书集成》中的“考工典”材料，不论工匠、度量、城池、桥梁、宫室、器用等等，都巨细不遗，一检便得。</p>
 <p>综观文星版《古今图书集成》的功用，现代学科举凡：</p>
-<p>人类学（Anthropology）、宗教（Religion）、考古学（Archaeology）、文学（Literature）、历史学（History）、语言学（Philology）、地理学（Geography）、教育学（Education）、哲学（Philosophy）、家政学（DomesticScience）、心理学（Psychology）、法学（Scienceoflaw）、刑罚学（Penology）、人体结构（StructureofTheDisease）、政治学（PoliticalScience）、疾病预防（PreventionofDisease）、行政学（Administration）、地质学（Geology）、经济学（Economics）、工艺学（Technology）、财政学（Finance）、工程学（Engineerings）、国际关系（InternationalRelations）、数学（Mathematics）、军事学（Military）、艺术（Arts）、天文学（Astronomy）、音乐（Music）、社会学（Sociology）、绘画（Painting）、图书学（BookArts）、雕刻（Sculpture）、物理学（Physics）、建筑（Architecture）、化学（Chemistry）、体育运动（SportsandGames）、生物学（Biology）、娱乐（Amusements）、动物学（Zoology）、传记（Biography）、植物学（Botany）、游记（Travels）、医药学（Medicine&amp;Health）、礼俗（Custom，Costume，Folklore）、农业（Agriculture）、交通商业（Communication，Business）、谱系学（Genealogy）</p>
+<p>人类学（Anthropology）、宗教（Religion）、考古学（Archaeology）、文学（Literature）、历史学（History）、语言学（Philology）、地理学（Geography）、教育学（Education）、哲学（Philosophy）、家政学（Domestic Science）、心理学（Psychology）、法学（Science of law）、刑罚学（Penology）、人体结构（Structure of The Disease）、政治学（Political Science）、疾病预防（Prevention of Disease）、行政学（Administration）、地质学（Geology）、经济学（Economics）、工艺学（Technology）、财政学（Finance）、工程学（Engineerings）、国际关系（International Relations）、数学（Mathematics）、军事学（Military）、艺术（Arts）、天文学（Astronomy）、音乐（Music）、社会学（Sociology）、绘画（Painting）、图书学（Book Arts）、雕刻（Sculpture）、物理学（Physics）、建筑（Architecture）、化学（Chemistry）、体育运动（Sports and Games）、生物学（Biology）、娱乐（Amusements）、动物学（Zoology）、传记（Biography）、植物学（Botany）、游记（Travels）、医药学（Medicine &amp; Health）、礼俗（Custom，Costume，Folklore）、农业（Agriculture）、交通商业（Communication，Business）、谱系学（Genealogy）</p>
 <p>等学科，都不得不有赖于它的资料，以为参考。文星版《古今图书集成》的工具书价值，于此更可显见。</p>
 <p>1968年3月</p>
 <h2 id="中国历史演义总说"><a class="header" href="#中国历史演义总说">中国历史演义总说</a></h2>
@@ -1205,17 +1238,17 @@
 <p>七十八年过去了！如今是1980年了！七十八年前预言性的演义，时过境迁，竟变成先知型的文献。《新中国未来记》预言理想国号是没有帝制的大中华民主国，后来成为事实；预言到十年后民国成立，后来成为事实；甚至预言到开国伟人名叫黄克强，后来也成为事实……这种演义体的奇迹，岂不是“青年心死秋梧悴，老国魂归蜀道难”时代的最好读物吗？因此我说：</p>
 <p>有了这部大书，你可以翘起两脚，读得津津有味；你可以纵横上下，把古往今来从头说起；你可以变成渊博的人，加入“白头宫女谈天宝”“古董山人说晚明”的行列；你可以变成理智的爱国者——因为你真的透过它，了解了中国！</p>
 <p>1980年3月20日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/09.历史文化类/读史指南.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/09.历史文化类/读史指南.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../09.历史文化类/要把金针度与人.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../10.李敖节目演讲合集/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1225,16 +1258,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../09.历史文化类/要把金针度与人.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../10.李敖节目演讲合集/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1243,12 +1281,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

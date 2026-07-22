@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,110 +81,131 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="我是天安门"><a class="header" href="#我是天安门">我是天安门</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E9%A6%99%E6%B8%AF%E7%9A%84%E6%9C%BA%E4%BC%9A%E4%B8%AD%E5%9B%BD%E7%9A%84%E6%9C%BA%E4%BC%9A">香港的机会，中国的机会</a></li>
-<li><a href="#%E6%9C%89%E5%85%B3%E9%A6%99%E6%B8%AF%E7%9A%84%E5%87%A0%E6%AE%B5%E9%B2%9C%E4%BA%8B">有关香港的几段鲜事</a></li>
-<li><a href="#%E4%B8%AD%E5%85%B1%E4%BD%95%E5%A6%A8%E5%9B%9E%E5%BD%92">中共何妨回归</a></li>
-<li><a href="#%E4%B8%AD%E5%9B%BD%E6%B2%A1%E8%A3%A4%E5%AD%90%E7%A9%BF%E7%9A%84%E9%97%AE%E9%A2%98">中国没裤子穿的问题</a></li>
-<li><a href="#%E4%B8%AD%E5%9B%BD%E6%B2%A1%E8%A3%A4%E5%AD%90%E7%A9%BF%E7%9A%84%E7%89%87%E6%AE%B5">中国没裤子穿的片段</a></li>
-<li><a href="#%E8%AF%BB%E6%AF%9B%E5%B2%B8%E8%8B%B1%E7%BB%99%E8%A1%A8%E8%88%85%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1">读《毛岸英给表舅的一封信》</a></li>
-<li><a href="#%E4%BE%9D%E7%84%B6%E9%AA%A8%E8%82%89%E5%87%A0%E5%AE%B6%E8%83%BD%E5%A4%9F">“依然骨肉，几家能够？”</a></li>
-<li><a href="#%E5%BC%BA%E8%80%85%E7%9A%84%E5%96%98%E6%81%AF">强者的喘息</a></li>
-<li><a href="#%E7%A1%AC%E7%9A%84%E6%98%AF%E4%BB%96%E4%BD%86%E4%BB%96%E4%B8%8D%E8%A6%81%E7%A1%AC">硬的是他，但他不要硬</a></li>
-<li><a href="#%E4%B8%AD%E5%9B%BD%E9%97%AE%E9%A2%98%E7%9A%84%E7%9C%9F%E8%A7%A3%E5%86%B3">中国问题的真解决</a></li>
-<li><a href="#%E4%B8%BA%E9%92%B1%E5%85%B6%E7%90%9B%E8%B0%88%E8%AF%9D%E8%BF%9B%E4%B8%80%E8%A7%A3">为钱其琛谈话进一解</a></li>
-<li><a href="#%E6%98%AF%E4%BA%A6%E4%BA%BA%E6%9D%83">是亦人权</a></li>
-<li><a href="#%E4%B8%BA%E8%A5%BF%E8%97%8F%E9%97%AE%E9%A2%98%E6%B1%82%E7%9C%9F%E7%9B%B8">为西藏问题求真相</a></li>
-<li><a href="#%E8%A5%BF%E8%97%8F%E4%B8%BA%E4%B8%AD%E5%9B%BD%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86">西藏为中国不可分割的一部分</a></li>
-<li><a href="#%E6%BD%98%E6%AF%93%E5%88%9A%E6%95%99%E6%8E%88%E5%A6%99%E7%AC%94%E5%86%99%E6%B4%BB%E4%BD%9B">潘毓刚教授妙笔写活佛</a></li>
-<li><a href="#%E8%BE%BE%E8%B5%96%E5%96%87%E5%98%9B%E6%80%8E%E6%A0%B7%E8%BF%AB%E5%AE%B3%E4%BA%BA%E6%9D%83">达赖喇嘛怎样迫害人权？</a></li>
-<li><a href="#%E6%9F%A5%E6%9F%A5%E8%BE%BE%E8%B5%96%E5%96%87%E5%98%9B%E7%9A%84%E4%BA%BA%E6%9D%83%E8%AE%B0%E5%BD%95">查查“达赖喇嘛的人权记录”</a></li>
-<li><a href="#%E6%88%91%E6%98%AF%E5%A4%A9%E5%AE%89%E9%97%A8">我是天安门</a></li>
-<li><a href="#%E5%85%B1%E4%BA%A7%E5%85%9A%E4%B8%8A%E4%BA%86%E4%B8%A4%E4%B8%AA%E5%BD%93">共产党上了两个当</a></li>
-<li><a href="#%E5%8F%8C%E5%9F%8E%E5%A4%96%E8%AE%B0">双城外记</a></li>
-<li><a href="#%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%B1%80%E4%B8%8D%E5%8F%AF%E6%84%9F%E6%83%85%E7%94%A8%E4%BA%8B">中国大局不可感情用事</a></li>
-<li><a href="#%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%B1%80%E4%B8%8D%E5%8F%AF%E8%BD%BB%E6%98%93%E6%82%B2%E8%A7%82">中国大局不可轻易悲观</a></li>
-<li><a href="#%E5%AD%A6%E7%94%9F%E5%B9%B2%E6%94%BF%E7%9A%84%E9%99%90%E5%BA%A6">学生干政的限度</a></li>
-<li><a href="#%E4%BB%8E%E6%B3%95%E5%9B%BD%E5%A4%A7%E9%9D%A9%E5%91%BD%E7%9C%8B%E4%B8%AD%E5%9B%BD">从法国大革命看中国</a></li>
-<li><a href="#%E4%BD%A0%E6%98%AF%E6%AF%9B%E6%B3%BD%E4%B8%9C">你是毛泽东</a></li>
-<li><a href="#%E7%89%BA%E7%89%B2%E5%93%AA%E4%B8%80%E4%BB%A3">牺牲哪一代</a></li>
-<li><a href="#%E9%95%BF%E4%BD%BF%E9%95%BF%E5%BE%81%E6%B3%AA%E6%BB%A1%E8%A5%9F">长使《长征》泪满襟</a></li>
-<li><a href="#%E9%95%BF%E5%BE%81%E7%9F%AD%E8%AF%B4">《长征》短说</a></li>
-<li><a href="#%E8%B0%A2%E8%B0%A2%E4%BD%A0%E5%B8%9D%E5%9B%BD%E4%B8%BB%E4%B9%89">谢谢你，帝国主义！</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#香港的机会中国的机会">香港的机会，中国的机会</a></li>
+<li><a href="#有关香港的几段鲜事">有关香港的几段鲜事</a></li>
+<li><a href="#中共何妨回归">中共何妨回归</a></li>
+<li><a href="#中国没裤子穿的问题">中国没裤子穿的问题</a></li>
+<li><a href="#中国没裤子穿的片段">中国没裤子穿的片段</a></li>
+<li><a href="#读毛岸英给表舅的一封信">读《毛岸英给表舅的一封信》</a></li>
+<li><a href="#依然骨肉几家能够">“依然骨肉，几家能够？”</a></li>
+<li><a href="#强者的喘息">强者的喘息</a></li>
+<li><a href="#硬的是他但他不要硬">硬的是他，但他不要硬</a></li>
+<li><a href="#中国问题的真解决">中国问题的真解决</a></li>
+<li><a href="#为钱其琛谈话进一解">为钱其琛谈话进一解</a></li>
+<li><a href="#是亦人权">是亦人权</a></li>
+<li><a href="#为西藏问题求真相">为西藏问题求真相</a></li>
+<li><a href="#西藏为中国不可分割的一部分">西藏为中国不可分割的一部分</a></li>
+<li><a href="#潘毓刚教授妙笔写活佛">潘毓刚教授妙笔写活佛</a></li>
+<li><a href="#达赖喇嘛怎样迫害人权">达赖喇嘛怎样迫害人权？</a></li>
+<li><a href="#查查达赖喇嘛的人权记录">查查“达赖喇嘛的人权记录”</a></li>
+<li><a href="#我是天安门">我是天安门</a></li>
+<li><a href="#共产党上了两个当">共产党上了两个当</a></li>
+<li><a href="#双城外记">双城外记</a></li>
+<li><a href="#中国大局不可感情用事">中国大局不可感情用事</a></li>
+<li><a href="#中国大局不可轻易悲观">中国大局不可轻易悲观</a></li>
+<li><a href="#学生干政的限度">学生干政的限度</a></li>
+<li><a href="#从法国大革命看中国">从法国大革命看中国</a></li>
+<li><a href="#你是毛泽东">你是毛泽东</a></li>
+<li><a href="#牺牲哪一代">牺牲哪一代</a></li>
+<li><a href="#长使长征泪满襟">长使《长征》泪满襟</a></li>
+<li><a href="#长征短说">《长征》短说</a></li>
+<li><a href="#谢谢你帝国主义">谢谢你，帝国主义！</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -273,7 +306,7 @@
 <p>误国外交，可真办得太鲜了！</p>
 <p>做过国民党中央党部秘书长的张其昀，在《党史概要》中说：</p>
 <p>此次平等新约之订立，亦有其遗憾之处，就是九龙租借地本为我国领土，而英国未能将此问题在新约内同时解决，实为中英两国间美中不足之缺点。英国认为九龙与香港在地理上有互相依恃的连带关系，故不肯交还租借地。当初我国坚持收回九龙之主张，否则宁不订新约。复经再四考虑，以新约对我之利益最大，不宜为九龙局部问题而致破坏全局，且于同盟国之形势亦多不利，故决定退让。</p>
-<p>但是，使我们不能理解的是：英国租借地，北有威海卫，南有九龙。1922年华盛顿会议，“军阀”曾经要求收回各国租借地。当时英国允许退还威海卫租借地，至1930年正式收回。所以不还九龙的理由，已因威海卫一例而不成立。国民党的误国外交，真不知道是怎么办的！根据我们今天看到的当时英国负责人的文件，事实上，国民党的“再四考虑”，对英国而言，却是既莫名其妙又突如其来的大好消息！（见Seymour致Eden电，tel.1753,31December；Eden致Seymour电，tel.1663，31December1942,FO(ForeignOffice)371/31665.）从这些事后公布英国驻华大使薛穆（HoraceSeymour）和外相艾登（AnthonyEden）的文件中，我们不得不清楚判定：国民党的误国外交，可真办得太鲜了！</p>
+<p>但是，使我们不能理解的是：英国租借地，北有威海卫，南有九龙。1922年华盛顿会议，“军阀”曾经要求收回各国租借地。当时英国允许退还威海卫租借地，至1930年正式收回。所以不还九龙的理由，已因威海卫一例而不成立。国民党的误国外交，真不知道是怎么办的！根据我们今天看到的当时英国负责人的文件，事实上，国民党的“再四考虑”，对英国而言，却是既莫名其妙又突如其来的大好消息！（见Seymour致Eden电，tel. 1753, 31 December；Eden致Seymour电，tel. 1663，31 December 1942, FO (Foreign Office) 371/31665.）从这些事后公布英国驻华大使薛穆（Horace Seymour）和外相艾登（Anthony Eden）的文件中，我们不得不清楚判定：国民党的误国外交，可真办得太鲜了！</p>
 <p>汉奸的妙文妙论</p>
 <p>在国民党行政院长孙运璿“孙四点”谈话前六天（10月1日），汉奸出身的国民党文宣大将陶希圣，在《中央日报》发表了《关于香港问题》，他提到几件历史事实：</p>
 <p>一、民国三十一年，双十节，英国通知中华民国，放弃其在中国之治外法权，中英新约于三十二年1月1日在重庆与伦敦同时公布。</p>
@@ -398,7 +431,7 @@
 <p>钱其深这一谈话，自是针对1989年六四天安门事件以来，中国方面顶回美国方面的重要谈话。不过，我们认为，中国虽然立论至正，但由于六四后当政者在发挥美国的丑史方面，功力显然不足。因此，在国际宣传上，六四以来，中国全处于挨打的地位、处于被美国奚落的地位，这是不公平的。</p>
 <p>中国方面只能指控美国伪善，在举证上若不能跟进，这种指控，是没有力量的。中国的当政者，应该昭告天下、昭告美国人：</p>
 <p>一、朝学生开枪之事，美国自己，早优为之。试看1970年美国历史上“肯特大学枪杀事件”，便知端详。1970年4月30日尼克松下令进军柬埔寨之后，激起了肯特大学学生们的满腔怒火。5月4日上午，当学生不顾禁止集会的命令、敲响校钟、数千名学生立即从四面八方奔向操场、参加抗议集会的时候，美国政府出动了坦克、出动第一〇七装甲骑兵团、第一四五步兵团、出动了大批国民警卫队和警察，前去镇压。排枪齐放，当场打死男女学生四名、打伤十名，然后又用刺刀戳伤学生多人。死难者的鲜血染红了肯特大学的校园。接着，又进行了大逮捕。九百名军警占领了学校。一个目击者愤慨的说：这是“有组织的屠杀”。在“有组织的屠杀”当时，一名学生怀着对死难同学的无限悲痛，和对政府当局的满腔仇恨，奋不顾身，爬上校园里一座高大雕像的顶上，他用手指做出“V”字形的象征胜利的手势，号召学生们继续坚持斗争。一千多名教职员义愤填膺的到学校附近的一个教堂举行集会，强烈抗议美国政府的暴行。一位被打伤的学生的母亲闻讯赶到肯特市，谴责美国政府“像在越南战场上一样”，派出大批军队和坦克屠杀学生。一位死难女学生的父亲愤怒控诉说：“一个年轻的女孩子，仅仅因为她不同意政府的行动，就应该被枪杀吗？”但是，枪杀了又怎样，又有谁有了制裁的行动了？</p>
-<p>二、朝国家广场开枪之事，美国自己，也早优为之。试看1932年美国历史上“酬恤金进军事件”（BonusMarch），便知端详。1932年7月，美国经济恐慌已进入第三年，全国失业处处，民不聊生。这时第一次世界大战的退伍老兵，难于维生，齐集首都华盛顿广场，要求提早发给退伍军人酬恤金，以利生活。</p>
+<p>二、朝国家广场开枪之事，美国自己，也早优为之。试看1932年美国历史上“酬恤金进军事件”（Bonus March），便知端详。1932年7月，美国经济恐慌已进入第三年，全国失业处处，民不聊生。这时第一次世界大战的退伍老兵，难于维生，齐集首都华盛顿广场，要求提早发给退伍军人酬恤金，以利生活。</p>
 <p>这笔酬恤金，本是美国政府1924年答应二十年后即1945年发放的退伍资助金、补偿金，资助、补偿他们在第一次世界大战的保国卫民行动。但是，1932年的全国经济大萧条，使他们不愿再等了。因此成群结队，帐篷搭到“美国天安门”前，要求提前发给。他们全部人数，是一万七千人。7月28日，美国政府无法忍耐了，乃由参谋总长麦克阿瑟将军主持驱离行动。据美国传记作家伦纳德莫斯利（LeonardMosley）的《马歇尔传》（MARSHALLHEROFOROURTIMES）描述：“马歇尔因为执行别的任务，没有被派到街上去执行包围老兵和他们家属的航脏勾当，他为此暗自庆幸。他的一些老同事却深深被卷了进去，例如，第一次世界大战期间的同事乔治S巴顿奉命指挥坦克、步兵和骑兵，保护华盛顿纪念碑，‘和打垮退伍军人远征军’。无论从哪方面来说，巴顿都没有必要命令他的步兵开枪，和命令他的坦克和骑兵发起冲击。不过，马歇尔一定暗自思忖过，要是他处在巴顿的地位，而且接到同样的命令，他又该怎么办。作为一个现役军官，难道他会平生第一次违抗命令，拒绝向他的同胞开枪？就连巴顿后来也承认，他当时也曾犯过犹豫。当时，另外一个同麦克阿瑟在一起服役的正规军官也迟疑过。参谋长办公室的一位助理德怀特D.艾森豪威尔少校（按：即后来的艾森豪总统，他当时只是少校、巴顿是准将、麦克阿瑟是四星上将）认为，与要求补发资助金的游行队伍发生冲突，肯定有损于陆军的形象，请求参谋长不要出去同示威群众照面。麦克阿瑟不听他的忠告，身穿挂满奖章的军服走了出去，观看向游行队伍施放催泪毒气弹。”再据1932年7月28日路透社电，明说“大队步兵，殿以坦克，搜査房舍，尽行驱走。”又驱逐五英里外的一处营地，该处驻有退伍军人七千人、妇女四百八十八人、小孩三百八十人，妇孺先已退出，军队在参谋长麦克阿瑟统率下，放瓦斯、烧帐篷，受伤者五十余人。更严重的是，还有老兵给打死了。根据麦克阿瑟的回忆录，他否认有骑兵冲锋，并宣称在现场上一枪未发。被打死的两名退伍军人，是警察开枪干掉的。但是，谁是凶手都一样，这有什么意义呢？反正老兵没死于敌人之手，却死于自己人之手了。</p>
 <p>比起这次天安门事件来，美国开枪也、坦克也、催泪瓦斯也，都是小焉者也，但是施暴于人民，又有何不同呢？不同的是，美国人迫害的，是第一次世界大战曾经保护过他们的老兵，这种忘恩负义，尤为中国所不及。威尔逊总统曾说“美国第一”（Americafirst），如此无情，不是第一，还是什么呢？</p>
 <p>不过，对挨枪的人说来，五十步和百步，由于程度上的差距，受害的深浅与广狭，也有不一样的地方。比较之下，美国在基本人权（fundamentalhumanrights）的保障上，正常情况下，要比中国高明得太多太多。在法律方面，美国独立两百多年来，在“基本人权”上的立法保障，可谓精益求精，宪法以外，宪法修正案中，有一半以上都是进一步保障“基本人权”的。虽然1970年“肯特大学枪杀事件”与1932年“酬恤金进军事件”死的人都不能跟天安门事件相比，但在人口比例上与人权保障的教养上，美国人枪杀学生与老兵，其罪犹在中国人之上。以集会自由而论，1791年美国宪法修正案第一条就规定人民和平集会的权利，但在1876年克鲁山克案件（UnitedStatesV.Cruikshank）中，联邦最高法院对集会自由的解释，却是狭义的指为达到请愿目的的一种方法，直到1937年琼治案件（DeJongeV.Dregon）中，才广义的解释为一种独立的人权。可见美国的自由民主，也是在演进中，并非没经过反动分子的阻烧。美国自己的人权，都是在演进的，又何能苛责于落后的中国？</p>
@@ -420,7 +453,7 @@
 <p>为什么达赖根本错误了，却得在海外以西藏问题秀遍世界，引人同情，甚至得到诺贝尔和平奖呢？原因也很简单，帝国主义者希望西藏脱离中国耳！正因为帝国主义者有此阴谋，所以，宣传所至，达赖喇嘛就给美化包装起来。</p>
 <p>诺贝尔和平奖给了达赖喇嘛，中国立刻有了反应。驻奥斯陆大使馆指控说，这是干预中国内部事务的做法，这种做法已经伤害了中国人民的感情。西藏多年来一直是中国领土不可分离的一部分。达赖的目的是要分裂祖国并破坏民族团结。</p>
 <p>这是不错的。从19世纪俄国英国势力入侵西藏起，西藏一直在跟着帝国主义搞“藏独”，真的目的就在此，手段上非暴力是不得已的。对达赖喇嘛，只有这样定位，才一针见血。其他都是遁词而已。</p>
-<p>诺贝尔和平奖给了达赖喇嘛，颁赠的理由是：“达赖喇嘛在寻求解放西藏的奋斗中，一直反对使用暴力，他主张使用以容忍和相互尊重为基础的和平解决方法，以期维护西藏人民的历史与文化遗产。”（……DalaiLamainhisstrugglefortheliberationofTibetconsistentlyhasopposedtheuseofviolence.Hehasinsteadadvocatedpeacefulsolutionsbasedupontoleranceandmutualrespectinordertopreservethehistoricalandculturalheritageofhispeople.）</p>
+<p>诺贝尔和平奖给了达赖喇嘛，颁赠的理由是：“达赖喇嘛在寻求解放西藏的奋斗中，一直反对使用暴力，他主张使用以容忍和相互尊重为基础的和平解决方法，以期维护西藏人民的历史与文化遗产。”（……Dalai Lama in his struggle for the liberation of Tibet consistently has opposed the use of violence. He has instead advocated peaceful solutions based upon tolerance and mutual respect in order to preserve the historical and cultural heritage of his people.）</p>
 <p>达赖喇嘛在得奖后说：“如果西藏人拿起武器，中共部队会有借口压制，我们可能很轻易被消灭。”由此看来，达赖喇嘛的非暴力，似乎也不是那么纯真的、慈悲的、在理论上自足的，实乃因为打不过中共军队，所以只好宣传非暴力。</p>
 <p>从达赖喇嘛的“前科”看，也可证实这一点。1959年3月10日，达赖喇嘛操纵西藏人，在拉萨发动上万人的武装行动，包围中国西藏区司令部和驻藏机关，大喊“西藏独立”和“驱逐汉人”口号，惹毛了中共政府，派兵镇压，达赖喇嘛在七天后出亡，或骡马、或步行，越冰天雪地的喜马拉雅山而南之，以“十万”之众，表演“出西藏记”，他的精神可嘉，但是并没有非暴力的高层次，这是事实真相。所以今天美化他“一直反对使用暴力”，是溢美的。</p>
 <p>达赖喇嘛以暴力争西藏独立不遂，改口说只争内政上宗教上的自治，至于国防与外交，可由中国处理，乍看起来，是一种立场的软化，究其实际，不过换汤不换药。</p>
@@ -481,7 +514,7 @@
 <p>上面这些，都有数字为证，空口抹黑中共，是非常不公道的！</p>
 <p>1991年5月21日</p>
 <h2 id="查查达赖喇嘛的人权记录"><a class="header" href="#查查达赖喇嘛的人权记录">查查“达赖喇嘛的人权记录”</a></h2>
-<p>前一阵子，诺贝尔委员会把1989年诺贝尔和平奖给了达赖喇嘛，理由是：“达赖喇嘛在寻求解放西藏的奋斗中，一直反对使用暴力，他主张使用以容忍和相互尊重为基础的和平解决方法，以期维护西藏人民的历史与文化遗产。”（……DalaiLamainhisstrugglefortheliberationofTibetconsistentlyhasopposedtheuseofviolence.Hehasinsteadadvocatedpeacefulsolutionsbasedupontoleranceandmutualrespectinordertopreservethehistoricalandculturalheritageofhispeople.）这一阵子，达赖喇嘛访问美国，美国国会领袖纷纷致词欢迎他，所说颂辞，也与诺贝尔委员会如出一辙，并且还强调了他争人权的记录。</p>
+<p>前一阵子，诺贝尔委员会把1989年诺贝尔和平奖给了达赖喇嘛，理由是：“达赖喇嘛在寻求解放西藏的奋斗中，一直反对使用暴力，他主张使用以容忍和相互尊重为基础的和平解决方法，以期维护西藏人民的历史与文化遗产。”（……Dalai Lama in his struggle for the liberation of Tibet consistently has opposed the use of violence. He has instead advocated peaceful solutions based upon tolerance and mutual respect in order to preserve the historical and cultural heritage of his people.）这一阵子，达赖喇嘛访问美国，美国国会领袖纷纷致词欢迎他，所说颂辞，也与诺贝尔委员会如出一辙，并且还强调了他争人权的记录。</p>
 <p>稍知历史的人，都不会同意上面这些完全与事实不符的立论。</p>
 <p>事实上，达赖喇嘛是最落伍、最黑暗、最迷信神权政教统治的代表，所谓“西藏人民的历史与文化遗产”，其实正是这种丑恶统治的护符。说“解放西藏”、为西藏争取自由吗？首先该做的，乃是该打破这种最落伍、最黑暗、最迷信的神权政教统治，才是当务之急。但是，从7世纪的吐蕃政权开始，到20世纪的达赖政权为止，西藏人民，完全笼罩在奴隶制与精神奴隶制的统治之下，又何来自由与解放？更何来人权？</p>
 <p>今年5月是和平解放西藏四十年的日子，国民党《中央日报》左一句“中共迫害西藏人权”，右一句“中共迫害西藏人权”，向西方帝国主义学舌，惟妙惟肖。但是，令人不解的是，他们为何不看看达赖喇嘛的人权记录呢？</p>
@@ -516,7 +549,7 @@
 <p>多可怜呀！</p>
 <p>1989年6月5日</p>
 <h2 id="共产党上了两个当"><a class="header" href="#共产党上了两个当">共产党上了两个当</a></h2>
-<p>法国老虎总理克里蒙梭（GeorgeClemenceau）说：“一个人二十岁前不信共产主义，这种人就没有良知；二十岁后还信共产主义，这种人就是傻瓜。”美国总统候选人威尔基（WendellLewisWillkie）说：“任何人四十岁前不来点社会主义者，没心肝者也；四十岁以后还干社会主义者，没头脑者也。”（Anymanwhoisnotsomethingofasocialistbeforeheisfortyhasnoheart.Anymanwhoisstillasocialistafterheisfortyhasnohead.）共产主义是社会主义的一种，说社会主义，可涵盖共产主义在内。美国人闻道较法国人为迟，所以觉悟年纪，延了二十岁。不过，二十岁也好，四十岁也罢，照他们说法，都不是再适合做共产党的年纪了，过了这种年纪的人还信共产主义，一定出了什么差错。</p>
+<p>法国老虎总理克里蒙梭（George Clemenceau）说：“一个人二十岁前不信共产主义，这种人就没有良知；二十岁后还信共产主义，这种人就是傻瓜。”美国总统候选人威尔基（Wendell Lewis Willkie）说：“任何人四十岁前不来点社会主义者，没心肝者也；四十岁以后还干社会主义者，没头脑者也。”（Any man who is not something of a socialist before he is forty has no heart. Any man who is still a socialist after he is forty has no head.）共产主义是社会主义的一种，说社会主义，可涵盖共产主义在内。美国人闻道较法国人为迟，所以觉悟年纪，延了二十岁。不过，二十岁也好，四十岁也罢，照他们说法，都不是再适合做共产党的年纪了，过了这种年纪的人还信共产主义，一定出了什么差错。</p>
 <p>依我看来，差错之尤者，有两方面：一方面是上了思想的当，一方面是上了制度的当。换句话说，一方面在目的上上了当，一方面在手段上也上了当。</p>
 <p>在思想上，共产主义的目的，是世界大同、是“各尽所能，各取所需”，这种类乎“自由、平等、博爱”的目的，是伟大的、动人的。一旦揭橥这种目的来号召，全世界志士仁人，谁曰不宜？沛然又谁能御之？共产主义的招牌，已经“通吃”如此，马克斯出来，再予以细腻的建构化、学术化，自然更是如虎生翼起来。不过，马克斯的理论，连他自己都不无动摇。马克斯早在1865年就完成《资本论》初稿的最后两卷，但他不让恩格斯看，事实上，他在第三卷中，已经动摇了他在第一卷中——劳动价值论的基础。他在1872年海牙大会讲演中，也有“我们不否认有些国家如英国、美国，甚至荷兰的劳工们，可用和平方法达到目的”的石破天惊之言，可见马克斯本人，对马克斯主义，也不无疑义。恩格斯1890年写信给舒密特，提到马克斯曾自讽的说：“我所知道的就是我不是一个马克斯主义者！”由此可见，此马来头大，固有自知之明者也。如今一个世纪下来，马克斯预言的资本主义，依然逍遥健在；他预言的资本主义下，工人阶级应随工业发达而日趋贫困，事实上也大谬不然。……虽然检讨马克斯的理论后，真相恍然如此，但是，执迷的人照样视而不见，硬说共产主义、马克斯主义是地义天经。不过，我们虽然承认共产主义揭橥的目的的伟大动人，但一经过事实的检验，却痛苦的发现它行不通。蔡元培说有一介不取之义方足以言共产，但是，这与匹夫匹妇的人性不合，“各尽所能，各取所需”，这是圣人才做得到的境界，如何要匹夫匹妇做得到？要匹夫匹妇做圣人，得到的，却是怠工、倦勤、“拖死狗”、与成千上万尸居余气的恶婆与懒汉。所以，共产党为了一个做不到、行不通的思想走进死胡同，在目的上上了当。</p>
 <p>在制度上，共产主义的制度，共产党口口声声师承马克斯，并以之为手段，但是，共产党一旦变成了当权派，他们立刻发现马克斯不够看。例如共产党全国党代表大会每年开一次会，制度是马克斯订的，但是，到了史太林手里，制度就给破坏了，弄得几年乃至十几年才开会。于是，最高权力机关，由多数人变成少数人，变成中央委员会、变为政治局、变为五人小组、变为个人独裁。这种演变，固资本主义不若也！资本主义下人民享有的自由民主，还比共产主义多得多，革命革到这步田地，怎生了得？共产党中奇才异能之士，在忧心之余，也未尝不出之以改革。像邓小平，他先从经济体制改革开始，但是，正如1986年他表示的：“经济体制改革向前走了一步之后，就会感到政治体制改革的必要性。”事实上，政治体制改革，却困难重重。共产党的制度，从长远看，是一种自我窒息的制度。1980年邓小平就指出：“我们过去发生的各种错误，固然与某些领导人的思想、作风有关，但是组织制度、工作制度方面的问题更重要。这些方面的制度好可以使坏人无法任意横行，制度不好可以使好人无法充分做好事，甚至会走向反面。”如今，在天安门前的血祭，使我们清楚看到了经济开放政治开枪的无奈。制度不改，好人坏人都无以善终，在手段上上了当。</p>
@@ -568,13 +601,13 @@
 <p>1989年7月2日</p>
 <h2 id="从法国大革命看中国"><a class="header" href="#从法国大革命看中国">从法国大革命看中国</a></h2>
 <p>1789年7月14日下午六点钟，当巴黎市民攻下象征四百年禁锢权威的巴士底（Bastille）监狱的时候，这些人们根本就没有想到这是一个革命开始的大日子。但是他们的“敌人”中，却有了先知式的预感。当法国皇帝路易十六（LouisXIV）听到巴士底陷落，大呼“这是造反啊”的时候，他的大臣李恩古（Liancourt）却提醒他说：“不，陛下，这是一次革命。”</p>
-<p>路易十六不到二十岁，就从他祖父手里接下王位，也接下四十亿的国债。路易十六的兴趣只在打猎和打铁，在那种烂摊子下，此君罪在不足为王而其老婆又过于为后。（TheKingcommittedtheunforgivablesinofbeinginsufficientlyaking;whiletheQueenwastoomuchaqueen。）于是悲剧终于发生。</p>
+<p>路易十六不到二十岁，就从他祖父手里接下王位，也接下四十亿的国债。路易十六的兴趣只在打猎和打铁，在那种烂摊子下，此君罪在不足为王而其老婆又过于为后。（The King committed the unforgivable sin of being insufficiently a king; while the Queen was too much a queen。）于是悲剧终于发生。</p>
 <p>路易十六罪在不足为王的品质之一是，他在刀口上不够心狠。他迟迟不肯在法国的“天安门”前动用武力，原因之一是军队中有外国佣兵，他不愿意以外籍部队对付自己同胞，最后他自己却死在自己同胞的刀口下。</p>
 <p>表面看来，法国有许多不发生革命的条件，因为他人口多于英国三倍，在美洲争胜得手。基础农业与纺织工业都不错，道路良好，运河畅通，自路易十四（louisXIV）以来，外贸增加五倍。但骨子里，它的内政却发生了困难。困难原因竟不在它专制而在它开放。在路易十六时代：论专制，他不但不如乃祖与前人，甚至不如当时大路上其他国家君主。但是，这个国家在经济上的前进，却同样并进了政治上的要求。——特权阶级带头起来闹，他们要限制王权。而限制王权，就是当时的“天安门”前的口号。而那时的人民，他们只是要面包，并不反对王权，陈情书里也并不要求推翻王权。路易十六本人，对人民也极尽宽大之能事，他接受了青白红三色徽章，还含笑佩戴起来，以示对群众认同，并在市政厅楼台宣布宽大政策，保证不“秋后算账”，对攻打巴士底的事，概不追究。他还为巴士底的死难者，举行了宗教仪式。人民对他的欢呼之声，还不绝于耳呢！</p>
 <p>虽然一开始的情况不过如此，但是，随着革命情势的升高，路易十六不死，则师出无名，一如罗伯斯庇尔（Roberspierre）所说：“判处路易十六死刑，是基于政治需要，非关任何法理与人道问题。”正因为政治需要，这三十九岁的皇帝上了断头台后，革命党还特别指示，下葬时候，他的头，不准放回脖子之上，而要夹在两腿之间，放在阴茎之下。——基于政治需要，革命革的可以走火入魔如此！</p>
 <p>路易十六非暴君，但背着暴君之名身首异处；法国人民是好人，但演出暴民动作横行宇内。革命家们控制了“国会”，而这个“国会”，只由总投票数百分之六的选票产生的，其代表性可想。原有的“国会”，早被“朱高正”“林正杰”式货色给搅臭了。旁听席上充满了叫嚣的暴民，甚至公然贩卖起水果和食物来，“国会”已不成其为“国会”。在革命家的带头下，成千上万的屠杀，造成了哀鸿遍野。革命党不但杀反动派，也把自己人一个个当反动派送上断头台。丹敦（Danton）被杀后，人们忍不住问：“假使这些人都是叛徒，我们以后还靠谁呢？”靠罗伯斯庇尔。可是，曾几何时，杀人者罗伯斯庇尔也人亦杀之。</p>
 <p>革命者罗伯斯庇尔都是品格极为高尚的人物，但是基于政治需要，他和路易十六，都不得不一个个不得好死。头头们下场都如此，其他可知矣！</p>
-<p>法国大革命第二年，英国的先知柏克（EdmundBurke）就看出，虽然法国的皇帝专制已不存在，但它的危险趋势，在于发展成为“一种不理性，没原则，禁制，没收，抢掠，激烈，血腥和暴政的民主”！法国人民在十年革命期间，不但付出了“十年文革式”的惨痛代价，并且在新十一月政变后，继之以督政时代、领政时代、第一帝政时代、自王政而共和，共和完了又帝制、又共和。直闹到一百年后，才把祖国规模粗定。——千万人头落地，无可回首，也是百年身矣！</p>
+<p>法国大革命第二年，英国的先知柏克（Edmund Burke）就看出，虽然法国的皇帝专制已不存在，但它的危险趋势，在于发展成为“一种不理性，没原则，禁制，没收，抢掠，激烈，血腥和暴政的民主”！法国人民在十年革命期间，不但付出了“十年文革式”的惨痛代价，并且在新十一月政变后，继之以督政时代、领政时代、第一帝政时代、自王政而共和，共和完了又帝制、又共和。直闹到一百年后，才把祖国规模粗定。——千万人头落地，无可回首，也是百年身矣！</p>
 <p>法国的不幸在于它那种柏克形容的民主，使它迟迟无法定型，这种革命，去美国革命远矣。不幸的是，中国也走上这种形式的革命之路，中国更大、人民更混、主义与教条更残忍、制度与组织更严密、招式与手法更花样百出。所以，中国人民所受的痛苦也就更大。这种痛苦，杀人者与被杀者都不能免。从文革受害到天安门害人，邓小平并不快乐。邓小平爱国情殷、品格出众，但他在朝野中风狂走的局面下，也无法做得更多或更少。——中国还有一段长路要走，如今才走了四十年，比起法国人的，还早着哩！</p>
 <p>1989年7月14日</p>
 <h2 id="你是毛泽东"><a class="header" href="#你是毛泽东">你是毛泽东</a></h2>
@@ -671,17 +704,17 @@
 <p>①比利时统治刚果七十年，没为小黑人培植一个公务员、一个医生、一个工程师、一个律师，只在一千二百万人口中，培植出三个大学生！比利时被赶出刚果后，刚果暴民轮奸比利时在刚果做慈善事业的修女，如此报应，真令人浩叹！</p>
 <p>②丹麦根本不用帝国主义手段对付格陵兰。</p>
 <p>③英国离开加纳后，给这个非洲国家留下了国会、文官制度、公正的司法传统和善选制度，此真英式帝国主义之遗爱也！</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/03.惊世杂文类/我是天安门.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/03.惊世杂文类/我是天安门.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../03.惊世杂文类/历史与人像.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../03.惊世杂文类/我梦碎所以我梦醒.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -691,16 +724,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../03.惊世杂文类/历史与人像.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../03.惊世杂文类/我梦碎所以我梦醒.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -709,12 +747,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

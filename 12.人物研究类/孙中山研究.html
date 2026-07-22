@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,77 +81,98 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <p>#《孙中山研究》目录</p>
 <ul>
@@ -158,7 +191,7 @@
 <li>十二、孙中山与陈粹芬</li>
 </ul>
 <p>《孙中山研究》自序</p>
-<p>中国国民党的总理孙中山有两个，一个是他自己那个孙中山；一个是别人变造的孙中山。别人变造的孙中山，不论基于任何立场，总未免走样，孙中山本人，概不负责、可以侧过脸去；但他自己那个孙中山，却责无旁贷、必须面对。这种面对，不论孙中山生前死后，在优秀的历史家笔下，都难逃斧钺。就某种讽世意味来说，优秀的历史家逼人面对，生则为“袋鼠法庭”（kangaroocourt）的法官，死则为阎王爷，在生死线外，历史人物应负的罪责，都无所遁形。</p>
+<p>中国国民党的总理孙中山有两个，一个是他自己那个孙中山；一个是别人变造的孙中山。别人变造的孙中山，不论基于任何立场，总未免走样，孙中山本人，概不负责、可以侧过脸去；但他自己那个孙中山，却责无旁贷、必须面对。这种面对，不论孙中山生前死后，在优秀的历史家笔下，都难逃斧钺。就某种讽世意味来说，优秀的历史家逼人面对，生则为“袋鼠法庭”（kangaroo court）的法官，死则为阎王爷，在生死线外，历史人物应负的罪责，都无所遁形。</p>
 <p>换句话说，优秀的历史家是真正的最后审判者，——上帝嘛，请靠边站！最后审判孙中山，不是一件容易的事。因为这位中国国民党的总理，生前死后，都被政治迷雾包装着，使真面目难以显现，直到死后几十年的今天，他仍是被海峡两岸政治尸布争相缠裹的木乃伊，这可真教人看不惯！凭着优秀的历史家的本领，我终于解开尸布，把真正孙中山的功过，加以论定。这种论定，从1965年我推出《孙逸仙和中国西化医学》，到1987年我出版《孙中山研究》，都是一个主线。主线是求真，方法是从干尸里把孙中山开棺论定。</p>
 <p>孙中山一生的大成功是推翻中国帝制，一生的大失败是自己夺权不择手段，甚至一再勾结帝国主义而不惜。西太后明与八国联军为敌，固属离奇；孙中山私通日、英、德、俄等国为友，也未尝不荒谬，孙中山既是爱国者，又是卖国者，爱国爱到以卖国为手段，这种荒谬，也真是青史罕见！至于他搞出三民主义等讨厌透顶的“遗教”来闭门造车、提拔蒋介石等等而下之的“同志”来开门揖盗，则更属荒谬之外者。这本《孙中山研究》，特就孙中山一生的荒谬处多加笔墨、以启苍生。海峡两岸读是书而不窃笑于中山陵者，非人也！</p>
 <p>1987年8月16日在台湾台北写</p>
@@ -175,7 +208,7 @@
 <p>陈少白回忆</p>
 <p>1882年，孙中山十七岁时候就结交了陈少白等，被呼为“四大寇”。陈少白后来在《兴中会革命史要》里，曾有这样的追忆：</p>
 <p>有一天，我在香港，他在广州，忽然药房里有信来，说：“孙先生失踪了，药房中开销很难，收入不敷只剩十几块钱了。”我接到信，就到广州去，替他维持店务。等了多天，一点消息都没有，心里非常焦急。到十六那天，他忽然跑来了，手里拿了很大一卷像文件的东西，他见了我就说：“对不起！对不起！”我问他：“你跑到什么地方去的？”他说：“这些事情不要去管他了。”就打开手里的一卷纸给我，我拿起来一看，里面乃是一篇上李鸿章书，我方才知道他是跑到翠亨村的家里关起门来做文章去的。他叫我替他修改修改，我就随便修改一下，以后，他对于药房也不管理了，就到上海去要把这封信上给李鸿章。我没有办法，就让他去，同时我就替他把两间药房收拾起来，交回那些出过股本的人。</p>
-<p>孙先生到了上海，找着了一个香山人，就是著《盛世危言》的郑观应（字陶斋）托他想方法见李鸿章。有一天，在陶斋家里碰到一位太平天国的状元王韬（号紫铨，别号天南遯叟），王韬曾到过香港助英国牧师沥博（Dr.Legge）翻译四书五经，沥博士回英国也请王韬同去，在英国住了几年，后来回到香港，为《循环日报》主笔。再回上海来，声名很盛，笔底对于世界知识，也很充分，并且他是和太平天囯有关系的人，所以孙先生在陶斋家里一见如故，就把那篇大文章，同王韬商量起来，王韬也重新替他加以修正。</p>
+<p>孙先生到了上海，找着了一个香山人，就是著《盛世危言》的郑观应（字陶斋）托他想方法见李鸿章。有一天，在陶斋家里碰到一位太平天国的状元王韬（号紫铨，别号天南遯叟），王韬曾到过香港助英国牧师沥博（Dr. Legge）翻译四书五经，沥博士回英国也请王韬同去，在英国住了几年，后来回到香港，为《循环日报》主笔。再回上海来，声名很盛，笔底对于世界知识，也很充分，并且他是和太平天囯有关系的人，所以孙先生在陶斋家里一见如故，就把那篇大文章，同王韬商量起来，王韬也重新替他加以修正。</p>
 <p>这时候，王韬有一个朋友在李鸿章幕下当文案，王韬就写了封信，介绍孙先生到天津，见这位李鸿章幕下的老夫子，同老夫子商量，或者可以见李鸿章，孙先生快乐极了，就到天津去见老夫子。那时候，刚刚中日大战，打得很厉害，李鸿章至芦台督师，军书旁午，老夫子把孙先生的大文章送到李鸿章那边去，李鸿章是否看过，就不得而知了。不过后来李鸿章说：“打仗完了以后再见吧！”孙先生听了这句话，知道没有办法，闷闷不乐的回到上海，陶斋看见了，就替他想方法到江海关去领了一张护照，请他出国去设法，孙先生也就乘轮到檀香山去了。</p>
 <p>孙先生所以要上李鸿章书，就因为李鸿章在当时算为识时务之大员，如果能够听他的话，办起来也未尝不可挽救当时的中国，岂知所有希望完全成泡影。所以到了这时候，孙先生的志向益发坚决，在檀香山就积极筹备兴中会，找人入会，一定要反抗满洲政府。大约在是年（甲午）八九月之间，就正式成立兴中会。</p>
 <p>由于陈少白是孙中山的老友，他的回忆，最值得重视。当然他的回忆也须加以考订。例如他说郑观应与孙中山的关系，就太疏略了，此事牵涉到上李鸿章书的内容，不可不先弄清楚。</p>
@@ -232,7 +265,7 @@
 <p>唯孙先生在该院，除于学校规定课程外，亦兼喜研究农田、舆地与经史诸学。尤嗜于中夜起床读书，法国革命史与达尔文《物种原始》（《物种起源——编者》）一类专书，最所喜读。盖是时适值达尔文逝世后数年，其进化论学说风靡全欧，康德黎博士即首为介绍其学说于香港。孙先生殆为国人研究进化论之最早起者。</p>
 <p>唯孙先生于科学研究特深、于生理学为最有心得、于进化论为探索最殷，故俟配合其毕业后之经验，遂能发明“知难行易”之学说，与修正进化论，而引伸其体系，斯则尤属西医书院曾获致其预期成效之明征也。</p>
 <p>罗香林又说：</p>
-<p>近人有谓中国人知有进化论，乃自严复于1895年出版所译赫胥黎（T.H.Huxley）之天演论（EvolutionandEthicsandOtherEssays）始者，其实，孙先生之首治进化论学说，乃在1887年至1892年肄业西医书院之时代，较严氏译书时代为早。</p>
+<p>近人有谓中国人知有进化论，乃自严复于1895年出版所译赫胥黎（T. H. Huxley）之天演论（Evolution and Ethics and Other Essays）始者，其实，孙先生之首治进化论学说，乃在1887年至1892年肄业西医书院之时代，较严氏译书时代为早。</p>
 <p>这些阐发，大体上都是很独到的。但是最重要的一点阐发，我认为罗香林应该做出而没做出的，则该是：</p>
 <p>一、达尔文的学说是“演化”的，并没有中国译名中“进化”的意味。旧译“进化论”是不通的，也是以词害意的。</p>
 <p>二、孙中山受达尔文的影响是不错的，这从他自述“于西学则雅癖达文之道（Darwinism即达尔文主义）”可得证明。但是达尔文真正影响孙中山的，“知难行易”学说还属小焉者也，并且还待考。真正影响他的，乃是一种对人际看法的“演化眼光”。由于具有“演化眼光”，所以即使革命，也“究不过抱温和主义，其所主张者非极端主义”。这种因达尔文而来的影响，对当时深信“演化论”的人，不论是严复或孙中山，都没有例外。而介绍“演化论”到中国来的人，从伟大的严复以下，他们的最大“孤独”，也许却正是感到中国人并没真正的了解“达尔文之道”！中国人所能了解的，只是“物竞天择”“适者生存”那一套，并不是真正的“演化眼光”那一套。因此之故，中国人近百年来，最多的是鲁莽灭裂的所谓“革命家”“革命英雄”“终身革命者”和“吃革命饭者”。他们“彻底”这个、“极端”那个，整天“革”别人的“命”，可是革来革去，不但没达到“彻底”“极端”的“革命”的大效果，甚至连他们所看不起的“改良”的小效果都没达到。虽然这样，他们却还日复一日的高叫“革命”“革命”、年复一年的高叫“革命”“革命”。总还迷信鲁莽灭裂的方法，妄想“一了百了”、妄想“一蹴而就”、妄想“迎头赶上”、妄想“一次解决”，而其结果，却永远是欲速则反迟、想快却更慢。这些悲剧，追究起来，都是没有深刻了解“演化眼光”的缘故。他们这些人的智慧，比起严复和孙中山来，真是太远了、太远了！</p>
@@ -256,8 +289,8 @@
 <p>中视当家小生崔浩然在演出国父时，内心严肃而庄重，生怕无法将一代伟人的凜然正气，表现出来，而老牌演员李影的“康德黎”角色，将康与国父间的师生之情，发挥得淋漓尽致。</p>
 <p>为了看看国民党最近在宣传上“新猷”些什么，我在11月11日下午，居然浪费了一点时间，一边做工，一边断断续续看了这出电视剧。一看之下会失望，早在意中；但是边看边骂，却也稍嫌意外，边看边骂了国民党这种busy宣传以后，我真忍不住要再写上一笔。</p>
 <p>孙中山如是说</p>
-<p>国民党笔下的伦敦蒙难事件，其实真相是很“罗生门”的。换句话说，真相是有不同的说法的，并且有的说法还是矛盾的、对立的，包括孙中山自己的说法在内。我们先看孙中山自己的说法。《伦敦被难记》（《伦敦被难记》原文系英文，名为“KidnappedinLondon”，由甘作霖中译，中华民国元年5月初版，上海商务印书馆印行，以后各处所翻印均本此）中说法如下：</p>
-<p>1896年10月1日，予始抵伦敦，投宿于斯屈朗（Strand，伦敦路名）之赫胥旅馆①。翌日即至波德兰（Portlandplace，伦敦区名）覃文省街（DevonshireStreet）46号康德黎②君之寓所相访。康君夫妇招待甚殷，并为予觅相近之舍馆曰葛兰旅店（Gray'sInn），使徙止焉③。予自是即暂居，每日独处无聊，辄往伦敦博物院游览，或访各处之遗迹，观其车马之盛、贸易之繁，而来往道途，绝不如东方之喧哗纷扰。且警察敏活，人民和易，在在均足使人怦怦向往也。予无日不造访康德黎君，每至必取其藏书，读而消遣。一日，予饭于其家，康德黎君戏谓中国使馆与伊家为邻，盍过访之，因相视而笑。康德黎夫人戒曰：“子毋然，彼公使馆中人睹子之面，行当出而相捕，解送回国耳。”予闻夫人言，益相与大笑，初不料后日竟成实事也。一夕，孟生医学博士（Dr.Manson）④邀余往餐，孟生君亦予香港旧识，曾授予医学者。君亦笑谓予曰：“慎勿行中国使馆，致堕陷阱。”予以是于中国使馆之可畏，及其相距之不远，历经良友之告诫，非全无措意者。然予至伦敦，为日犹浅，途径未熟，彼良友之告诫，于予初无所济也。</p>
+<p>国民党笔下的伦敦蒙难事件，其实真相是很“罗生门”的。换句话说，真相是有不同的说法的，并且有的说法还是矛盾的、对立的，包括孙中山自己的说法在内。我们先看孙中山自己的说法。《伦敦被难记》（《伦敦被难记》原文系英文，名为“Kidnapped in London”，由甘作霖中译，中华民国元年5月初版，上海商务印书馆印行，以后各处所翻印均本此）中说法如下：</p>
+<p>1896年10月1日，予始抵伦敦，投宿于斯屈朗（Strand，伦敦路名）之赫胥旅馆①。翌日即至波德兰（Portland place，伦敦区名）覃文省街（Devonshire Street）46号康德黎②君之寓所相访。康君夫妇招待甚殷，并为予觅相近之舍馆曰葛兰旅店（Gray’s Inn），使徙止焉③。予自是即暂居，每日独处无聊，辄往伦敦博物院游览，或访各处之遗迹，观其车马之盛、贸易之繁，而来往道途，绝不如东方之喧哗纷扰。且警察敏活，人民和易，在在均足使人怦怦向往也。予无日不造访康德黎君，每至必取其藏书，读而消遣。一日，予饭于其家，康德黎君戏谓中国使馆与伊家为邻，盍过访之，因相视而笑。康德黎夫人戒曰：“子毋然，彼公使馆中人睹子之面，行当出而相捕，解送回国耳。”予闻夫人言，益相与大笑，初不料后日竟成实事也。一夕，孟生医学博士（Dr. Manson）④邀余往餐，孟生君亦予香港旧识，曾授予医学者。君亦笑谓予曰：“慎勿行中国使馆，致堕陷阱。”予以是于中国使馆之可畏，及其相距之不远，历经良友之告诫，非全无措意者。然予至伦敦，为日犹浅，途径未熟，彼良友之告诫，于予初无所济也。</p>
 <p>是年10月11日，适值星期，予于上午10点半钟时，自葛兰旅店（葛兰旅店在伦敦霍尔庞Holborn之葛兰旅店街。霍尔庞区名）赴覃文省街，意欲随康德黎君等赴礼拜堂祈祷。正踯躅间，一华人悄然自后至，操英语问予曰：“君为日本人欤？抑中国人欤？”予答曰：“予中国人也。”其人叩予以何省籍，予答曰：“广东。”其人仍操英语曰：“然则我与君为同乡，我亦来自广州者也。”夫中国盛行不规则之英语，名曰Pigeon英语，意即商业英语也。华人虽同隶一国，而言语多相扞格。譬如汕头之与广州，相距仅一百八十英里，视伦敦之与利物浦犹相近，然其商人之言语，乃彼此不相通，以是不得不借商业英语相通款。彼汕头人与广州人之商于香港者，多以英语相晋接，此足以见我国言语之歧杂矣。</p>
 <p>予途遇之华人，既知予为粤产，始以粵语相谈，且行且语，步履颇舒缓。俄而又一华人来，与予辈交谈，于是予之左右，乃有二人相并而行矣。二人且坚请予过其所居，谓当烹茶进点，略叙乡谊，予婉却之，遂相与伫立于道旁阶砌。未几，又有一华人至，其最先与予相遇者，即迤逦去。于是此留而未去之二人，或推予、或挽予，必欲强予过从，其情意诚挚非常，予是时已至于阶砌傍屋之侧。正趦趄间，忽闻邻近之屋门砉然而辟，左右二人挟予而入，其形容态度又似谐谑、又似周旋。一纷扰间，而予已入，门已闭，键已下矣。然予尚未知此屋为谁之所居，故中心无所疑惧。初予之所以犹豫不即入者，盖急欲往访康德黎君及孟生博士冀同往礼拜堂，恐中途迟回而不及耳。迨予既入门，睹其急遽之状，且屋宇若是宽广，公服之华人若是众多，因陡然动念曰：是殆即中国使馆乎？又忆中国使馆在覃文省街之邻，意者予向时踯躅之所，必中国使馆左右之道途也。</p>
 <p>予入门后，被引至一室，室中有一二人与予接谈数语，又自相磋商数语，遂遣二人挟予登楼，予亦不之抗。既登楼，复入一室，令予坐候。未几，而二人又至，更挟予上，是为第三层楼，仍令入一室中，其室有窗，护以铁栅，窗外即使馆之屋后也。须臾来一须发俱白之老人，施施然饶有官气，一入室即谓予曰：“汝到此即到中国，此间即中国也。”</p>
@@ -268,7 +301,7 @@
 <p>予曰：“然则予之留此，可告吾友乎？”</p>
 <p>曰：“否！是不能。唯旅馆中之行李，汝可草一函，此间人当为汝取之。”</p>
 <p>予告以欲致书于孟生博士，其人乃命人给予纸笔，予书中大意谓此身已被禁于中国使馆，请转告康德黎君，俾取予之行李带下云云。其人阅竟。曰：“函中何能书及被禁二字，汝可别缮一函。”予乃另缮曰：“顷予在中国使馆，乞告康德黎君，为予送行李至此云云。”</p>
-<p>是老人者，予初不知为何许人，厥后而始知其即声名鼎盛之马凯尼（SirHallidayMarcartney）也。</p>
+<p>是老人者，予初不知为何许人，厥后而始知其即声名鼎盛之马凯尼（Sir Halliday Marcartney）也。</p>
 <p>马凯尼君一转念间，忽又谓予可径函告旅馆，不必托友代取。予答以予所寓者并非旅馆，除康德黎君外无知者，因以改缮之函授之。马凯尼唯唯，许为代寄。马凯尼之所以忽然转念者，盖欲借是以搜予行箧，或能得吾同党之姓名及往来之函耳。计诚狡哉。</p>
 <p>照孙中山的说法，他的被关入伦敦中国使馆，是走在路上，碰到广东老乡，两人以乡音交谈，“且行且语，步履颇舒缓”的，后来又来了一个老乡，大家一起聊，在他左右，就一边一个人了。他们请他到家里坐坐，“烹茶进点，略叙乡谊”，他谢绝了，遂在路边又聊天。后来，又来了一位，最先跟他聊天的先走了，剩下的两位，一阵“情意诚挚非常”的推拉，他已到了路边的房子旁边了。“正趦趄间，忽闻邻近之屋门砉然而辟，左右二人挟予而入，其形容态度又似谐谴、又似周旋。一纷扰间，而予已人，门已闭，键已下矣。”照孙中山这种说法，他的被关在伦敦中国使馆，是在一片粤语发音中的半推半就，是非自愿入使馆的。不但如此，在康德黎老师戏言何不一访中国使馆的时候，康师母还特别警告过他，并且孟生医学博士也警告他“慎勿行中国使馆，致堕陷阱”。可见他从1896年10月1日抵伦敦，到11日被关进使馆前，十一天中，绝未近中国使馆一步，更别提身入虎穴，自行进入使馆了。</p>
 <p>只是“派人密尾行踪”而已</p>
@@ -306,7 +339,7 @@
 <p>爵士：</p>
 <p>关于我们10月1日通信上所提的事，我们现在报告你。我们在赫胥旅馆方面，做有系统的监视。在1日那天，就是星期四，此人于下午四点半钟外出，沿着斯屈朗走，经过佛立特街（FleetStreet），到露朅特场（LudgateCircus），看看商店的破璃窗子，以后又回到旅馆。那时候是下午6点30分，以后就没有看见他出来了。</p>
 <p>在2日星期五那天，他于上午10点30分离开赫胥旅馆，雇了一个10880号四轮马车装行李，坐到葛兰旅店街8号，将行李运入，该人亦进去。</p>
-<p>他在该处到上午11点30分才出来，步行到牛津街（OxfordStreet），看看商店的玻璃窗子，于是走进上霍尔庞（HighHolborn）119号（文具店），再进加快食堂（ExpressDairyCo.），吃了中饭，于下午1点45分回到葛兰旅店街8号。</p>
+<p>他在该处到上午11点30分才出来，步行到牛津街（Oxford Street），看看商店的玻璃窗子，于是走进上霍尔庞（High Holborn）119号（文具店），再进加快食堂（Express Dairy Co.），吃了中饭，于下午1点45分回到葛兰旅店街8号。</p>
 <p>下午6点45分他再出来，走到霍尔庞的一个饭馆里停留了三刻钟，再回到葛兰旅店街8号的时候，已经8点30分钟，就不再看见他了。</p>
 <p>以后每天都有人监视他，但是没有什么重要的事情发生。此人常在主要的街道上散步，四周顾望。他不在家里吃饭，到各种饭馆去吃。</p>
 <p>提起你电报里所说的一层，我们可以说在监视期间，他不曾见过什么中国人。在利物浦听说有几个在“Majestic”和他同船的人，答应到伦敦来看他。</p>
@@ -350,7 +383,7 @@
 <p>唐乃劝我致书公使，求其相宥。吾从之。唐立命西仆柯尔取纸笔墨水至，吾请换中国文具，因上书公使应用汉文，未便做西字也。</p>
 <p>唐曰：“否。英文甚好，因此间大权均操于马凯尼之手，公使不过坐拥虚名而已。君之此书，宜畀马凯尼也。”</p>
 <p>予问书中宜如何写法？唐曰：“君必须极力表白，谓身系良民，并非乱党，只以华官诬陷至被嫌疑，因亲到使馆，意在吁求昭雪云云。”</p>
-<p>予即在唐某之前，照其授意书成一长函，折叠既毕，照例应于纸背标明受书人之姓名，唐乃为予读马凯尼姓名之拼法曰：“SirHallidayMarcartney”。盖此时予但知其姓氏之音为马凯尼，而犹未知其拼法。既而吾授信于唐，唐怀之而去，此后遂不再见此人之面矣。</p>
+<p>予即在唐某之前，照其授意书成一长函，折叠既毕，照例应于纸背标明受书人之姓名，唐乃为予读马凯尼姓名之拼法曰：“Sir Halliday Marcartney”。盖此时予但知其姓氏之音为马凯尼，而犹未知其拼法。既而吾授信于唐，唐怀之而去，此后遂不再见此人之面矣。</p>
 <p>吾此举实堕入唐某之奸计，可谓愚极。盖书中有亲至使馆吁求昭雪等语，岂非授以口实，谓吾之至使馆，乃出于自愿，而非由诱劫耶？虽然，人当陷入深渊之时，苟有毫发可以凭借者，即不惜攀援以登，初不遑从容审择，更何能辨其为奸伪耶？</p>
 <p>唐曾告我，凡我所书各函，均由仆人出首于使馆，并未达于诸友。此时吾自思希望巳绝，唯有坐以待毙耳。</p>
 <p>孙中山笔下“自称唐先生者”就是邓廷铿，他是当时的翻译。邓廷铿出现，目的是在骗取孙中山“求其相宥”的悔过书，孙中山自承被骗“可谓愚极”，但是“人当陷人深渊之时，苟有毫发可以凭借者，即不惜攀援以登”。他自感无法，只好“吾从之”。</p>
@@ -405,22 +438,22 @@
 <p>十五、孙中山《伦敦被难记》中说他对使馆中英国仆人柯尔（GeorgeCole）晓以大义，请他带信，只是“酬以二十镑”(16)据陈少白《兴中会革命史要》中说：“再当时柯尔答应救孙中山先生的时候，孙先生除了把身上所有的钱给他，还允许他将来出去之后，再要酬报他，所以后来康德黎博士介绍孙先生到处演说请大家帮助，所捐到的几百英镑，也统统送给柯尔。柯尔为了这事，早已被使馆辞退了。”可见在“二十镑”外，别有承诺。据吴相湘《海外新见中国现代史史料》（《中国现代史丛刊》第一册），在英国政府档案中，得知柯尔“承认孙允许给予一千镑之酬劳金并且立即付给二十镑”。足证《随轺笔记》所述，并非空穴来风。《随轺笔记》中说：“19日，仙舟接短工洋仆查耳时来信，内言孙文起初几次着伊送信，优给金钱，伊皆一律缴呈马格里爵参赞，未得分毫奖赏。嗣孙复许酬英金五百镑送一密信，并嘱其事后离开使署，随孙度日，故伊甘冒不法，以洋信密报孙友坎特立及门森两英医。两英医因即在外设法派人伺守，并报外部及巡捕房，各报闻之，遂亦附和做不平鸣，致贵署不能不将孙文释放，曷胜怅怅。马爵参赞当时曾经恫吓，谓如有走漏风声者，当送官严办，余是以照实洪明，听候惩治云云。仙舟司马以此信示马参赞，马参赞无计可施，徒形愤愤。……然传递密信之奸仆，以孙文所酬只有英金二十五镑，控诸刑司，又不得直，至今迄不甘服。”这一内幕，也极为有趣。</p>
 <p>以上所写伦敦蒙难的一些“罗生门”(17)，足见我们多年来，在国民党一面之词的宣传下所得的印象，实不足凭。现在史料的陆续出现，证明孙中山《伦敦被难记》所说，也不无错误(18)。我们在研究这一问题的时候，实在该注意别上国民党的大当才好(19)。</p>
 <p>1984年12月15日午</p>
-<p>①HaxellesHotel。</p>
-<p>②SirJamesCantlie。</p>
-<p>③《国父年谱》：“康氏夫妇招待甚殷，并为觅居附近之葛兰法学协会场（Gray'sInnplace）8号宝勒特小姐（MissPollard）开设之私人公寓（BoardingHome）。翌日，携先生迁往。”</p>
-<p>④Dr.PatrickManson。</p>
+<p>①Haxelles Hotel。</p>
+<p>②Sir James Cantlie。</p>
+<p>③《国父年谱》：“康氏夫妇招待甚殷，并为觅居附近之葛兰法学协会场（Gray’s Inn place）8号宝勒特小姐（Miss Pollard）开设之私人公寓（Boarding Home）。翌日，携先生迁往。”</p>
+<p>④Dr. Patrick Manson。</p>
 <p>⑤即芝加哥。</p>
 <p>⑥即李鸿章。</p>
 <p>⑦杞优公子是郑观应，不是孙中山。</p>
 <p>⑧原文：“中国民人因犯法逃在香港或潜往英国船中者，中国官照会英国官访查严拿，查明实系罪犯，即行交出。通商各口但有中国犯罪民人潜匿英船中房屋，一经中国官员照会，领事官即行交出，不得隐匿袒庇。”</p>
 <p>⑨原文：“英国之民有犯罪逃至中国地界者，一经行文请交逃犯，两国即应设法查拿，查有可信其为犯罪之据，交与索犯之官。行文将交逃犯之意，系言无论两国何官，只要有官印关防便可行文请交；此种请交逃犯之文书，亦可行于犯罪逃往之地最近之边界官。”</p>
-<p>⑩“窦使”是英国驻华公使窦纳乐（SirClaudeMacDonald），恐怕他得知后打电报，英国政府会干涉也。《随轺笔记》卷二有《龚星宪论英国驻华新使致总署总办公函》，说：“该使姓窦乃乐，名克罗特，系苏格兰之世族。其父曾任陆军提督，而渠亦行伍出身，年约四十余岁，初次膺使臣之职，沙外部立意欲将驻华公使一缺，以素未奉使之人补授，似别有深意焉。渠在英国陆军中职如中国之都司，光绪三年，曾赴香港，随营小驻，继而英平埃及叛党之乱，与敌战于石勒甘蒲，功绩卓著。自光绪八年以后，历办阿非利加事务，因转用文职，人甚精明，颇愿学习中国语言。”“沙外部”是指英国外相沙里斯伯侯爵（LordSalisbury）。</p>
+<p>⑩“窦使”是英国驻华公使窦纳乐（Sir Claude MacDonald），恐怕他得知后打电报，英国政府会干涉也。《随轺笔记》卷二有《龚星宪论英国驻华新使致总署总办公函》，说：“该使姓窦乃乐，名克罗特，系苏格兰之世族。其父曾任陆军提督，而渠亦行伍出身，年约四十余岁，初次膺使臣之职，沙外部立意欲将驻华公使一缺，以素未奉使之人补授，似别有深意焉。渠在英国陆军中职如中国之都司，光绪三年，曾赴香港，随营小驻，继而英平埃及叛党之乱，与敌战于石勒甘蒲，功绩卓著。自光绪八年以后，历办阿非利加事务，因转用文职，人甚精明，颇愿学习中国语言。”“沙外部”是指英国外相沙里斯伯侯爵（Lord Salisbury）。</p>
 <p>(11)以上文件都根据王宠惠《总理伦敦蒙难史料》，1930年上海《建国月刊》第三卷第五期。王宠惠原记：“民国十八年10月，宠惠有事于国际法庭，道出英伦，于我国使馆中，得阅昔年馆中所存总理被难时文牒，亟录一份，携之回国，并摘其于党史有关，足为参考资料者，发表于建国月刊中，以供同志研览。”</p>
 <p>(12)马格里系据史馆档中呈报的正式译名，《伦敦被难记》中做“马凯尼”，当“名从主人”改正。</p>
-<p>(13)“司赖特侦探社”原文是SlateisDetectiveAgency。见罗家伦《中山先生伦敦蒙难史料考订》。</p>
+<p>(13)“司赖特侦探社”原文是Slateis Detective Agency。见罗家伦《中山先生伦敦蒙难史料考订》。</p>
 <p>(14)吴相湘在《〈大革命家孙逸仙〉影印本前言》里说：</p>
 <p>按罗家伦编撰《中山先生伦敦蒙难史料考订》，是罗君自诩史学成名之作。民国四十七年罗君主编《国父年谱初稿》中于伦敦蒙难仍多从《考订》之说。但以今看来：实在是一无可原谅的谬误。</p>
-<p>原来自孙先生蒙难事件发生，英国外部之所以采取干涉态度，即在清使馆非法使用管辖权违反孙先生本人意旨而加以诱拐。清使馆所持以辩护的理由则谓：孙在被幽禁之先一日曾到过清使馆，即被禁当日亦彼个人自动前来。这一论调正式形之文字，首见于1896年10月24日清使馆参赞马格里致伦敦泰晤士报投函中；其后包齐《马格里传》（TheLifeofSirHallidayMacartneybyD.C.Boulger）采录此函。清使馆随员吴宗濂归国后梓行《随轺笔记》，着意描述被禁先一日孙先生与使馆学生宋芝田的谈话，用意正复相同：企图脱卸诱拐责任。</p>
+<p>原来自孙先生蒙难事件发生，英国外部之所以采取干涉态度，即在清使馆非法使用管辖权违反孙先生本人意旨而加以诱拐。清使馆所持以辩护的理由则谓：孙在被幽禁之先一日曾到过清使馆，即被禁当日亦彼个人自动前来。这一论调正式形之文字，首见于1896年10月24日清使馆参赞马格里致伦敦泰晤士报投函中；其后包齐《马格里传》（The Life of Sir Halliday Macartney by D. C. Boulger）采录此函。清使馆随员吴宗濂归国后梓行《随轺笔记》，着意描述被禁先一日孙先生与使馆学生宋芝田的谈话，用意正复相同：企图脱卸诱拐责任。</p>
 <p>民国四十八年10月，笔者幸有机会游伦敦并获阅英国外交部档案：F.O.1718《英国领土内之中国革命党》，副题即“KidnappingofSunYat-senbyChineseLegation”，其中1896年11月16日英外部印行之机密文件（据以编印之原始文件亦存同档），第一附件即讨论孙先生是否曾先一日至清使馆一问题：因为这是此一事件是非的主要关键，也是英国政府能否采取干涉态度的重要枢纽。英内务部司法人员因为马格里坚持孙先生曾先一日至清使馆的论调；孙先生则矢口否认，其他人证又均予支持；故再三详细调查审问有关人证，虽以未能至清使馆调查为憾（事实上曾与清使馆主谋之马格里谈话多次），但综合详勘反复推敲各种可能后的结论，认定孙先生的说法是真实的（HavingfoundSuntruthfulonMaterialPoints）。就是说：孙先生在被诱禁前一日未曾到过清使馆，他完全是被诱拐入内的。项外部这一专档题名开宗明义着明“Kidnapping”，可说正名综实（评见正中书局印行《中国现代史丛刊》第一册拙撰《海外新见中国现代史史料》）。</p>
 <p>但令人诧异的是：罗家伦编国父年谱（上册第67页）竟着明：孙先生“先一日并曾行经清使馆，遇学生宋芝田……询以馆中有无粵人？欲向其宣传革命大义，宋答有。先生遂入晤邓廷铿……相约次日再来……是日（10月11日）上午，先生果至……”。这是很明白地指出：孙先生曾两次进入清使馆，并且都是根据自己的意愿！而不是“被诱拐”！这不仅与上述英国档案纪录完全不符（上文曾指明：英政府于此曾特别注意审慎，有事实根据判定为“诱拐”后才采取干涉行动），也与孙先生早经发表的《伦敦被难记》背道而驰——然而罗家伦编《国父年谱》注脚竟指明是根据孙先生《伦敦被难记》及罗著《中山先生伦敦蒙难史料考订》所引清使馆密档。就是说国父年谱这一段记载是揉合孙先生和清吏两方完全对立的说词而成的。</p>
 <p>任何一具备史学训练粗浅知识的人都知道：处理两种对立立场的说词，应尽可能寻找旁证来判断是非；万不得已，无第三方面资料可据则唯有存疑：绝对不能揉合两方对立见解而成“中庸之道”。尤其是这一事例，英政府既采取干涉态度，清吏之诡辩不足采信，已昭然若揭；这一段记载，遵依《伦敦被难记》说词，更为义不容辞之责任。然而其所主编之《国父年谱》中竟出现揉合两说的怪特现象，而又自作聪明擅加“盖欲向其宣传革命大义”一语以为揉合的媒介。但这一语句不仅不见于孙先生之《伦敦被难记》（吴宗濂《随轺笔记》有孙与宋芝田对话，但《国父年谱》注脚未着录，故今不采），并且与《伦敦被难记》原文精神完全背道而驰，更出乎一般情理之外。这一“揉合”真是匪夷所思。中国现代史一中华民国史的研究成绩迄不显著，这些自诩“成名之作”具有“劣币驱逐良币”的作用，实在是主要原因，怎能不令人感慨系之！</p>
@@ -603,7 +636,7 @@
 <p>老美的观察</p>
 <p>关于这一阵子的混乱情形，一个冷眼人写了一份报告，使我们更对孙中山的性格有了了解。这个冷眼人就是美国驻华公使雪曼（JacobGouldSchurman），他写了《对华机密报告》（ConfidentialReportonChina）（1924年4月8日写于北京，现存康奈尔大学大学档案处）。报告文长二十五页，是专门写给柯立芝总统的。报告里面有雪曼亲笔签证：“应柯立芝总统之命而写，对将来或有参考价值。”（“WrittenForPresidentCoolidgeandatHisRequest.”ThisMayBeofValueinFutureYear，J.G.S.）报告中提到：</p>
 <p>在广东的敌对领袖中，陈炯明有军队四万五千人，孙中山有三万人。</p>
-<p>当两年前我初次访问该省时，孙、陈合作无间。时陈炯明担任省长，给人民带来一个廉能的政府（AnHonestandCapableAdministration）。陈倡导“联省自治”，他告诉我，将建设广东为中国的模范省。</p>
+<p>当两年前我初次访问该省时，孙、陈合作无间。时陈炯明担任省长，给人民带来一个廉能的政府（An Honest and Capable Administration）。陈倡导“联省自治”，他告诉我，将建设广东为中国的模范省。</p>
 <p>当孙中山高唱挥师北伐时，已几乎动摇陈炯明的忠心，再加上孙中山在广东建立一个无法无天、压榨人民的政权，使陈早已对孙的信仰幻灭了。</p>
 <p>报告中又提到他在1924年1月对孙中山的谈话。他说：“你像你所批评的军阀一样，在打内战！”孙中山答道：“不！我不是军阀，我是医生，我打仗是以毒攻毒！”报告中又说孙中山：</p>
 <p>事实上，他认为他做的任何事全是对的，而且为达成目的，不计一切牺牲。</p>
@@ -611,7 +644,7 @@
 <p>报告中说孙中山花了一刻钟的时间，阐扬“压迫”和“被压迫”世界间的斗争。但雪曼事后写道：</p>
 <p>可是他自己却建立一个最残酷剥削的政府，就在他控制下的广东。</p>
 <p>尤其广州市，没收私产、封闭寺庙、开放赌博、横征暴敛，逼使人民组织了一万人的民间武力来保护人民（指“商团事件”）。</p>
-<p>孙之能占有广东，靠着一部分极差的粤军，一部分湖南雇佣兵及一部分云南的盗匪（FreeBooters）（据闻，最近已有叛变迹象）。</p>
+<p>孙之能占有广东，靠着一部分极差的粤军，一部分湖南雇佣兵及一部分云南的盗匪（Free Booters）（据闻，最近已有叛变迹象）。</p>
 <p>报告中又说：</p>
 <p>云南的唐继尧告诉我，“当孙中山上台时，他是个独裁者（Autocrat），从不听任何人的意见；当他下野时，他又变成激进分子布尔什维克（Bolshevik）。”</p>
 <p>雪曼提到广州市内开放赌博等事，陈炯明是绝对干不出来的。孙中山自从广州脱险后，为了打击陈炯明，不惜联络国民党的敌人——滇军的杨希闵、桂军的刘震寰、沈鸿英等，合击陈炯明。前方吃紧，部下向陈炯明要求“开赌筹饷”，陈炯明复电说：“粤军可倒，赌不可开！”此公讲原则、守初志的作风，由此可见。这一作风，导致了他的部队因粮饷不继而失败，但他宁愿不遗祸桑梓而失败。相对的，孙中山引来了滇军、桂军，却又自吃其果，这些部队在广东恶名昭彰，正是雪曼所描写的景象，《吴铁城回忆录》说孙中山有一次气得要“以首碰壁”，孙中山不能控制情绪如此，和他得肝病而死不无关系。</p>
@@ -702,29 +735,29 @@
 <p>1984年12月25日午</p>
 <p>孙中山与林肯名言</p>
 <p>——我对葛底斯堡演说的疑义</p>
-<p>美国宾州南边的葛底斯堡（Gettysburg）小城，在1863年7月1至3日，曾有一场战事，战事下来，美国内战的北军胜了南军。在南北战争中，所争者非一城、所战者非一地，葛底斯堡之役，论争城不是大城、论战地不是胜地，但它却在历史上逐渐脱颖而出，变成了出了名的古战场。这个奇迹无他，乃因林肯战后在该城的一次演说而起，这一演说，就是著名的1863年11月19日葛底斯堡演说（GettysburgAddress）。</p>
+<p>美国宾州南边的葛底斯堡（Gettysburg）小城，在1863年7月1至3日，曾有一场战事，战事下来，美国内战的北军胜了南军。在南北战争中，所争者非一城、所战者非一地，葛底斯堡之役，论争城不是大城、论战地不是胜地，但它却在历史上逐渐脱颖而出，变成了出了名的古战场。这个奇迹无他，乃因林肯战后在该城的一次演说而起，这一演说，就是著名的1863年11月19日葛底斯堡演说（Gettysburg Address）。</p>
 <p>“老百姓失望透了”</p>
-<p>布兰德豪斯（BrantHouse）在《林肯的机智》（Lincoln'Wit）里，提到林肯在葛底斯堡演说前，已经在71号街的摄影师那儿，先看到了大演说家爱德华埃弗里特（EdwardEverett）准备同时演说的讲稿，那讲稿是埃弗里特先送给林肯过目的，林肯称赞埃弗里特的周到，埃弗里特因为先讲，显然怕林肯的讲稿内容跟他重复，给林肯带来不便。林肯看过后，表示不会有重复的危险，因为他的讲稿“极短、极短、极短”，并且还没写完，还没写完的讲稿他正带在身上，他要在摄影师准备照相那段空档里，看看自己的讲稿。</p>
-<p>詹姆士鲍尔温（JamesBaldwin）在《林肯传》（AbrahamLincoln）里，提到在那天的演说中，埃弗里特的演说被认为是成功的，而林肯的演说却是失败的，林肯的国务卿修华德（WilliamHenrySeward）公然表示：“林肯的演说是大大令人失望的。”（Lincoln'saddresswasagreatdisappointment.）林肯自己也后悔他没有用更多的时间去准备，他向一个朋友说：“我告诉你：它洗不掉了，它是彻底的失败，老百姓失望透了。”（Mr.Lincolnhimselfregrettedthathehadnotgivenmoretimetoit,“Itellyouitwon'tscour，”hesaidtoafriend.“Itisaflatfailure.Thepeoplearedisappointed.”）</p>
+<p>布兰德豪斯（BrantHouse）在《林肯的机智》（Lincoln’Wit）里，提到林肯在葛底斯堡演说前，已经在71号街的摄影师那儿，先看到了大演说家爱德华埃弗里特（EdwardEverett）准备同时演说的讲稿，那讲稿是埃弗里特先送给林肯过目的，林肯称赞埃弗里特的周到，埃弗里特因为先讲，显然怕林肯的讲稿内容跟他重复，给林肯带来不便。林肯看过后，表示不会有重复的危险，因为他的讲稿“极短、极短、极短”，并且还没写完，还没写完的讲稿他正带在身上，他要在摄影师准备照相那段空档里，看看自己的讲稿。</p>
+<p>詹姆士鲍尔温（JamesBaldwin）在《林肯传》（AbrahamLincoln）里，提到在那天的演说中，埃弗里特的演说被认为是成功的，而林肯的演说却是失败的，林肯的国务卿修华德（WilliamHenrySeward）公然表示：“林肯的演说是大大令人失望的。”（Lincoln’saddresswasagreatdisappointment.）林肯自己也后悔他没有用更多的时间去准备，他向一个朋友说：“我告诉你：它洗不掉了，它是彻底的失败，老百姓失望透了。”（Mr.Lincolnhimselfregrettedthathehadnotgivenmoretimetoit,“Itellyouitwon’tscour，”hesaidtoafriend.“Itisaflatfailure.Thepeoplearedisappointed.”）</p>
 <p>那天埃弗里特的演说长达两小时，演说后林肯的演说只有两分钟。本杰明托马斯（BenjaminThomas）《林肯传》（AbrahamLincoln）里说：“听众刚刚注意听讲的时候，林肯已经讲完了，掌声零零落落的。照相的人还没摆好三脚架，林肯已经转身入座了”。</p>
-<p>真正肯定林肯这次演说的，说来奇怪，反倒是抢尽他的风头的埃弗里特。埃弗里特后来写信给林肯，认为自己两小时的演说实在已尽在林肯的两分钟之中（“IshouldbegladifIcouldflattermyselfthatIcameasneartothecentralideaoftheoccasionintwohoursasyoudidintwominutes.”）。可见林肯自己都自认失败的演说，并不是没有知音的。这篇演说在当时虽然不乏知音，但它真正被全美和举世视为第一流政治文献的幸运，显然还是以后的事。</p>
+<p>真正肯定林肯这次演说的，说来奇怪，反倒是抢尽他的风头的埃弗里特。埃弗里特后来写信给林肯，认为自己两小时的演说实在已尽在林肯的两分钟之中（“I should be glad if I could flatter myself that I came as near to the central idea of the occasion in two hours as you did in two minutes.”）。可见林肯自己都自认失败的演说，并不是没有知音的。这篇演说在当时虽然不乏知音，但它真正被全美和举世视为第一流政治文献的幸运，显然还是以后的事。</p>
 <p>“以三介词阐发无剩义”</p>
 <p>葛底斯堡演说场合是国葬典礼，所以演说的主调是凭吊国殇，林肯说：</p>
 <p>在八十七年以前，我们的祖先在这大陆上创设了一个新的国家，它主张自由，并且信仰一种理论，就是所有人类生下来都是平等。</p>
 <p>现在，我们从事于一个伟大的内战，我们在试验，究竟这一个国家——或任何一个有这样主张和这样信仰的国家——是否能长久生存。我们在那个战争的一个伟大的战场上集会。我们现在需要供奉那个战场上的一部分土地，作为那些在此地为那个国家的生存而牺牲了自己的生命的人的永久眠息之所。我们这样的做，是十分地适切和正当。</p>
 <p>可是，从广泛的一方面说，我们不能奉献这片土地——我们不能使之神圣——我们不能使之尊严。这些勇敢的人们，活着的和死去的，他们在这里奋斗，已经使这块土地神圣，远非我们的能力所能予以增减。世界上的人们不大会注意，更不会长久记得我们在此地所说的话，然而他们将永远不能忘记这些人在这里所做的事。这该是活着的我们来献身于这未完成的工作，而那工作固已经由于在作战的人们如此高贵地推动着。因此，这该由我们在此献身于我们眼前所存留的伟大工作——从先烈身上，我们将取得对那事业的更多的忠诚，而他们已为之输出忠诚到最后的完整阶段——我们在此坚决的拿定主意，要使他们不致白白的死去——要使这个国家在上帝庇佑之下，必得到自由的新生——要使那民有、民治、民享的政府必不致在地球上消灭。（徐道邻译：《美国政治思想文献选集》，1959年香港今日世界社出版）</p>
 <p>这篇演说中，最精彩的在它的结尾，在“我们在此坚决的拿定主意……要使那民有、民治、民享的政府必不致在地球上消灭”那一段，林肯的讲稿本有五种，他演说时用的是第二种，原文是：</p>
-<p>……Thatweherehighlyresolvethatthesedeadshallnothavediedinvain;thatthisnationshallhaveanewbirthoffreedom;andthatthisgovernmentofthepeople,bythepeople,forthepeople,shallnotperishfromtheearth.</p>
+<p>……That we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the people, by the people, for the people, shall not perish from the earth.</p>
 <p>到了1864年，他有了一个亲自签名的订正本（第五种），原文是：</p>
-<p>……Thatweherehighlyresolvethatthesedeadshallnothavediedinvain——thatthisnation，underGod，shallhaveanewbirthoffreedom——andthatgovernmentofthepeople,bythepeople,forthepeople，shallnotperishfromtheearth.</p>
-<p>版本虽有不同，但在ofthepeople,bythepeople,forthepeople原文上，并没改动，所以这段以三个前置词带出来的名言，的确是他努力肯定的。徐道邻在中译这篇演说后，加以题解，说：“其论民主政治之真谛，以三介词阐发无剩义，尤为神来之笔。他人千言万语徒为词费矣。”可算确评。</p>
+<p>……That we here highly resolve that these dead shall not have died in vain——that this nation，under God，shall have a new birth of freedom——and that government of the people, by the people, for the people，shall not perish from the earth.</p>
+<p>版本虽有不同，但在of the people, by the people, for the people原文上，并没改动，所以这段以三个前置词带出来的名言，的确是他努力肯定的。徐道邻在中译这篇演说后，加以题解，说：“其论民主政治之真谛，以三介词阐发无剩义，尤为神来之笔。他人千言万语徒为词费矣。”可算确评。</p>
 <p>中译的变化</p>
-<p>徐道邻把ofthepeople,bythepeople,forthepeople译为“民有、民治、民享”，显然是根据孙文的中译而来的。孙文的中译，根据我的细查，来龙去脉是很复杂的。最早是1919年，孙文在《文言本三民主义》中，有着这样的中译：</p>
+<p>徐道邻把of the people, by the people, for the people译为“民有、民治、民享”，显然是根据孙文的中译而来的。孙文的中译，根据我的细查，来龙去脉是很复杂的。最早是1919年，孙文在《文言本三民主义》中，有着这样的中译：</p>
 <p>有美国共和，尔后始有政府为民而设之真理出现于世。林肯氏曰：“为民而有，为民而治，为民而享”者，斯乃人民之政府也。有如此之政府，而民者始真为一国之主也。</p>
 <p>又过了两年（1921年6月），孙文演说《三民主义之具体办法》，他的中译开始修正：</p>
-<p>兄弟所主张底三民主义，实在是集合古今中外底学说，顺应世界底潮流，在政治上所得的一个结晶品。这个结晶的意思，和美国大总统林肯所说的：ofthepeople，bythepeople，andforthepeople的话是相通的。这句话的中文意思，没有适当的译文，兄弟就把它译作：民有、民治、民享。ofthepeople就是民有，bythepeople就是民治，forthepeople就是民享。林肯所主张的这民有、民治和民享主义，就是兄弟所主张的民族、民权和民生主义！由此，可知兄弟的三民主义，在新大陆的伟人是已经先得我心的。回想兄弟从前在海外的时候，外国人不知道什么是叫三民主义，总拿这个意思来问我。兄弟在当时苦无适当的译语回答，只可援引林肯的主义告诉他们，他们才完全了解我的主义。由此更可知兄弟的三民主义，不但是专为迎合现代的潮流，并且是很有来历的。</p>
+<p>兄弟所主张底三民主义，实在是集合古今中外底学说，顺应世界底潮流，在政治上所得的一个结晶品。这个结晶的意思，和美国大总统林肯所说的：of the people，by the people，and for the people的话是相通的。这句话的中文意思，没有适当的译文，兄弟就把它译作：民有、民治、民享。of the people就是民有，by the people就是民治，for the people就是民享。林肯所主张的这民有、民治和民享主义，就是兄弟所主张的民族、民权和民生主义！由此，可知兄弟的三民主义，在新大陆的伟人是已经先得我心的。回想兄弟从前在海外的时候，外国人不知道什么是叫三民主义，总拿这个意思来问我。兄弟在当时苦无适当的译语回答，只可援引林肯的主义告诉他们，他们才完全了解我的主义。由此更可知兄弟的三民主义，不但是专为迎合现代的潮流，并且是很有来历的。</p>
 <p>一个月后（1921年7月），孙文演说《五权宪法》，进一步说明这一中译：</p>
-<p>三民主义就是民族主义、民权主义和民生主义，这三民主义和美国林肯总统所说的ofthepeople,bythepeople,andforthepeople是相通的。兄弟从前把他这个主张，译作“民有”“民治”“民享”，他这个民有民治民享主义，相当于兄弟的民族民权民生主义，人民必要能够治，才能够享；不能够治，便不能够享。如果不能够享，就是空说民有，也都是假的。</p>
+<p>三民主义就是民族主义、民权主义和民生主义，这三民主义和美国林肯总统所说的of the people, by the people, and for the people是相通的。兄弟从前把他这个主张，译作“民有”“民治”“民享”，他这个民有民治民享主义，相当于兄弟的民族民权民生主义，人民必要能够治，才能够享；不能够治，便不能够享。如果不能够享，就是空说民有，也都是假的。</p>
 <p>四个月后（1921年11月），孙文演说《党员须宣传革命主义》，他再说：</p>
 <p>吾党之三民主义，即民族、民权、民生三种。此三主义之内容，亦可谓之民有、民治、民享，与自由、平等、博爱无异，故所向有功。以名言之，可称民有、民治、民享。今欲将此三主义详细解释，非一二点钟可能尽，质而言之，民族即民有也。天下者，天下人之天下，非一二人所可独占。民权即民治也。从前之天下，在专制时代，则以官僚武人治之，本总理则谓人人皆应有治之之责，亦应负治之之责，故余极主张以民治天下。民生即民享也。天下既为人人所共有，则天下之利权，自当为天下人人所共享。自此三主义推行以来，无坚不入、无人不从。</p>
 <p>同一个月，孙文演说《实行三民主义及开发阳朔富源方法》，他再说：</p>
@@ -732,11 +765,11 @@
 <p>再一个月后（1921年12月7日），孙文演说《三民主义为造成新世界之工具》，他再说：</p>
 <p>三民主义，就是民族主义、民权主义、民生主义。这三个主义，和美国大总统林肯所说的“民有”“民治”“民享”三层意思，完全是相通的。民有的意思，就是民族主义。我们革命党为什么要提倡民族主义呢？因为满清专制二百多年，我们汉族受过亡国的痛苦，后来又受世界潮流的压迫，恐怕还要灭种，所以有少数人出来提倡鼓吹，要除去专制的异族。到后来全国觉悟，便把征服中国的满清根本推翻，把中国的统治权收回到汉人手里，中国领土完全为汉族所有。十年前革命的成功，就是民族主义成功。所以“民族主义”就是和“民有”的意思一样。革命成功以后，中国的土地和主权，已经由满清皇帝的手里，夺回到中国人民的手里来了。但是我们人民，徒有政治上主权之名，没有政治上主权之实，还是不能治国。必须把政治上的主权，实在拿到人民手里来，才可以治国，才叫做民治。这个达到民治的道理，就叫做民权主义。至于民生主义，是由人类思想觉悟出来的。因为我们既有了土地和主权，自然要想一个完全方法来享受，才能够达到生活上圆满的幸福。怎么样享受生活上幸福的道理，便叫做民生主义。所以说“民有”“民治”“民享”就是本大总统生平所提倡的三民主义。</p>
 <p>再过两年（1923年10月20日），孙文演说《国民要以人格救国》，他再说：</p>
-<p>我们要想是真正以人民为主，造成一个驾乎万国之上的国家，必须要国家的政治做成一个“全民政治”。世界上把“全民政治”说到最完全最简单的，莫过于美国大总统林肯所说的“ofthepeople，bythepeople，andforthepeople”。这个意思译成中文，便是“民有”“民治”“民享”。就我们现在国情和这三层意思解释起来，自推翻满清政府，成立民国以来，可以说是民有一层已经做到了。十二年以来，政府之内，都是武人官僚把持，人民不但是不能管国事，并且日日受兵灾之祸，流离失所，何能够说到民治民享呢？真正的“全民政治”，必须先要有“民治”，然后才能够说真是“民有”、真是“民享”。</p>
+<p>我们要想是真正以人民为主，造成一个驾乎万国之上的国家，必须要国家的政治做成一个“全民政治”。世界上把“全民政治”说到最完全最简单的，莫过于美国大总统林肯所说的“of the people，by the people，and for the people”。这个意思译成中文，便是“民有”“民治”“民享”。就我们现在国情和这三层意思解释起来，自推翻满清政府，成立民国以来，可以说是民有一层已经做到了。十二年以来，政府之内，都是武人官僚把持，人民不但是不能管国事，并且日日受兵灾之祸，流离失所，何能够说到民治民享呢？真正的“全民政治”，必须先要有“民治”，然后才能够说真是“民有”、真是“民享”。</p>
 <p>再过两个月（1923年12月30日），孙文演说《国民党奋斗之法宜兼注重宣传不宜专注重军事》，他又说：</p>
 <p>何谓三民主义？简单的说，便是“民有”“民治”“民享”。详细的说，便是民族主义、民权主义和民生主义。这三项主义的意思，是要把全国的主权都放在本族人民手内；一国的政令都是由人民所出；所得的国家利益由人民共享。这三项意思，便可用“民有”“民治”“民享”六个字包括起来。</p>
 <p>孙文经过试译阶段</p>
-<p>从上面这些排比看来，ofthepeople,bythepeople,forthepeople的中译，即使孙文自己，也是经过试译阶段的。我见过孙文早年为居正（觉生）的题字，原文是：</p>
+<p>从上面这些排比看来，of the people, by the people, for the people的中译，即使孙文自己，也是经过试译阶段的。我见过孙文早年为居正（觉生）的题字，原文是：</p>
 <p>美语曰民国者民之国也为民而设由民而治者也</p>
 <p>觉生先生正</p>
 <p>孙文</p>
@@ -747,73 +780,73 @@
 <p>这段长话是不能短说的，因为它牵涉到诚实的林肯的一件涉嫌文抄公的事，这件事要靠另一种排比来发现真相，让我由最早的开始。</p>
 <p>为名言寻根</p>
 <p>远在林肯出世前十四年（1795），美国科学家、教育家、政治思想家托马斯库珀（ThomasCooper），就有过在“政府”字眼后连用前置词of,for的造句：</p>
-<p>Governmentofthepeopleandforthepeople.（SomeInformationRespectingAmerica，1795）①</p>
+<p>Government of the people and for the people.（Some Information Respecting America，1795）①</p>
 <p>远在林肯出世前十一年（1798年），美国第二任总统约翰亚当斯（JohnAdams），就有过在“政府”字眼后连用前置词by，for的造句：</p>
-<p>……Agovernmentmadebythemselves,forthemselves,andconductedbythemselves……（Address,“tothecitizensofWestmorelandCo.”，Virginia,1798.）</p>
+<p>……A government made by themselves, for themselves, and conducted by themselves……（Address,“to the citizens of Westmoreland Co.”，Virginia, 1798.）</p>
 <p>二十一年（1819年）后，美国大法官约翰马歇尔（JohnMarshall）首先在“政府”字眼后，以ofthepeople造句：</p>
-<p>ThegovernmentoftheUnion，thenisemphaticallyandtrulyagovernmentofthepeople……（CaseofMcCullochvs.Maryland,1819.Wheaton,iv,316.）</p>
-<p>十一年（1830年）后，美国演说家韦伯斯特（DanielWebster）首先在“政府”字眼后，以forthepeople，bythepeople造句：</p>
-<p>Thepeople'sgovernmentmadeforthepeople，madebythepeople，andanswerabletothepeople.（SecondSpeechonFoote'sResolution，26Jan.,1830.）</p>
-<p>二十年后（1850年），美国神学家、社会改革家帕克（TheodoreParker)，首先在“政府”字眼后，以ofallthepeople,byallthepeople,forallthepeople造句：</p>
-<p>TheAmericanidea……demands……ademocracy——thatis,agovernmentofallthepeople,byallthepeople,forallthepeople.（Speech,attheAnti-SlaveryConvention,Boston,29May,1850.）</p>
+<p>The government of the Union，then is emphatically and truly a government of the people……（Case of McCulloch vs. Maryland ,1819. Wheaton, iv, 316.）</p>
+<p>十一年（1830年）后，美国演说家韦伯斯特（Daniel Webster）首先在“政府”字眼后，以for the people，by the people造句：</p>
+<p>The people’s government made for the people，made by the people，and answerable to the people.（Second Speech on Foote’s Resolution，26 Jan. ,1830.）</p>
+<p>二十年后（1850年），美国神学家、社会改革家帕克（Theodore Parker)，首先在“政府”字眼后，以of all the people, by all the people, for all the people造句：</p>
+<p>The American idea……demands……a democracy——that is,a government of all the people, by all the people, for all the people.（Speech, at the Anti - Slavery Convention, Boston,29 May ,1850.）</p>
 <p>帕克这段话是1850年5月说的，到了11月，他又简化如下：</p>
-<p>Ademocracy,agovernmentofall,forall,byall.（TheStateoftheNation.Sermonpreached28Nov.,1850.）</p>
+<p>A democracy, a government of all, for all,by all.（The State of the Nation. Sermon preached 28 Nov. , 1850.）</p>
 <p>四年以后（1854年），他又这样说出：</p>
-<p>Thereisthedemocraticidea：that……governmentistobeofallthepeople,byallthepeople，andforallthepeople.（Address,“beforetheAnti-SlaverySociety”，Boston,13May,1854.）</p>
+<p>There is the democratic idea：that……government is to be of all the people, by all the people，and for all the people.（Address,“before the Anti -Slavery Society”，Boston, 13 May, 1854.）</p>
 <p>再过了四年（1858年），他又有了这样的句子：</p>
 <p>Democracyisdirectself——government,overallthepeople，forallthepeople,byallthepeople.（SermonsdeliveredatMusicHall,Boston,4July,1858.）</p>
 <p>在排比之下，我们一眼就可以看到，帕克远在林肯葛底斯堡演说前十三年，就有了林肯演说中的句子！林肯演说中的名言，原来是其来有自的！</p>
-<p>据《林肯的一生》（LifeofLincoln）的作者赫恩登（Herndon）考证：帕克当年把他的名言印在一本小册子里（这小册子叫OntheEffectofSlaveryontheAmericanPeople），他送过一本给林肯，林肯在第五页这句名言下做了记号，所以林肯的名言在寻根之下，已经昭然若揭。</p>
-<p>我认为林肯涉嫌文抄公，原因有二：第一，他并不认为这句名言是帕克的一家之言，以前人对一种言论的所有权，并不像后来那样认真，中国的古圣先贤如此；美国的古圣先贤亦复如此。例如杰斐逊（ThomasJefferson）的“life,libertyandthepursuitofhappiness.”论，是公然来自洛克（JohnLocke）的；他的独立宣言论，是公然来自潘恩（ThomasPaine）的，这都是无伤大雅的。第二，帕克死在1860，林肯演说在1863，帕克虽然并非无名之辈，但是人死了，总归啰嗦少了，所以也就放胆引用了（帕克的定本全集是他死后近百年才陆续出版的，自1907出到1913，有十五卷之多）。</p>
-<p>其实，以上的一连串寻根，只是在美国本地上的寻根而已，若要真的寻上瘾来，则名言的根中之根，本在英国。远在1384年，英国宗教改革家兼《圣经》译者威克利夫（JohnWycliffe），就在导言里有了这类的名言，虽然这类的名言，林肯极可能并不知道。</p>
+<p>据《林肯的一生》（Life of Lincoln）的作者赫恩登（Herndon）考证：帕克当年把他的名言印在一本小册子里（这小册子叫On the Effect of Slavery on the American People），他送过一本给林肯，林肯在第五页这句名言下做了记号，所以林肯的名言在寻根之下，已经昭然若揭。</p>
+<p>我认为林肯涉嫌文抄公，原因有二：第一，他并不认为这句名言是帕克的一家之言，以前人对一种言论的所有权，并不像后来那样认真，中国的古圣先贤如此；美国的古圣先贤亦复如此。例如杰斐逊（Thomas Jefferson）的“life, liberty and the pursuit of happiness.”论，是公然来自洛克（John Locke）的；他的独立宣言论，是公然来自潘恩（Thomas Paine）的，这都是无伤大雅的。第二，帕克死在1860，林肯演说在1863，帕克虽然并非无名之辈，但是人死了，总归啰嗦少了，所以也就放胆引用了（帕克的定本全集是他死后近百年才陆续出版的，自1907出到1913，有十五卷之多）。</p>
+<p>其实，以上的一连串寻根，只是在美国本地上的寻根而已，若要真的寻上瘾来，则名言的根中之根，本在英国。远在1384年，英国宗教改革家兼《圣经》译者威克利夫（John Wycliffe），就在导言里有了这类的名言，虽然这类的名言，林肯极可能并不知道。</p>
 <p>应该怎么翻译？</p>
 <p>照前面提到豪斯的说法，林肯的葛底斯堡演说稿，是打算在摄影师准备照相那段空档里完工的。据我所知，关于林肯起草这篇演说的经过，说法有异：林肯的长子罗伯特林肯（RobertToddLincoln）1885年说这演说稿是林肯坐火车去葛底斯堡途中，写在一张旧信封背面的。但是专家研究结果，却是林肯早在两星期前（11月8日）就起草了，并且写在他在白宫经常使用的一种纸上。可能的情况是：林肯在火车上又一改再改他的演说稿，或者默写他的演说稿，因而有了不同的却又都合理的情况。</p>
 <p>但是，不论是那种情况，两百六十八个字的演说稿，是“很短、很短、很短”的，短的好处是简明，但坏处也就在此。因为林肯的原义，显然因过分简明而被弄拧了，这种弄拧，国民党的宣传要负绝大责任。</p>
-<p>对林肯演说中ofthepeople,bythepeople,forthepeople的中译，因为中文英文结构的不同，早就发生困难了。最早试译它们的，是1916年的留美学生。据这年4月18日的《胡适留学日记》，有这样的记录：</p>
-<p>赵宣仲（元任）寄书问林肯“葛底斯堡（Gettysburg）演说”中之“Thegovernmentofthepeople，bythepeople，forthepeople”一语当如何译法。此语梁任公尝以为不可迻译。今姑试为之：</p>
+<p>对林肯演说中of the people, by the people, for the people的中译，因为中文英文结构的不同，早就发生困难了。最早试译它们的，是1916年的留美学生。据这年4月18日的《胡适留学日记》，有这样的记录：</p>
+<p>赵宣仲（元任）寄书问林肯“葛底斯堡（Gettysburg）演说”中之“The government of the people，by the people，for the people”一语当如何译法。此语梁任公尝以为不可迻译。今姑试为之：</p>
 <p>此吾民所自有、所自操、所自为之政府。</p>
 <p>然殊未能得原语之神情也。又译：</p>
 <p>此主于民、出于民，而又为民之政府。</p>
-<p>则三段不同文法矣。不如用反身动词（Reflexiveverb）之为佳也。</p>
+<p>则三段不同文法矣。不如用反身动词（Reflexive verb）之为佳也。</p>
 <p>胡适感觉出应用“三段不同文法”来翻译这段名言，是接近正确翻译的一个起点。</p>
 <p>那么，又如何判断呢？</p>
 <p>这就要追踪美国人的原始观念了。这要循着林肯的“思”路之旅，才能判断出他的真正意义。</p>
 <p>前面说过，林肯的思路来自帕克，帕克思路中最令人注意的句子是他最后一次（1858年）那一段。帕克说：</p>
 <p>Democracyisdirectself——government,overallthepeople,forallthepeople,byallthepeople.</p>
-<p>这里用上了over这个字，非常明显的，thepeople是“被”统治了的（受格）意思了，相对的，政府就是统治了的（主格）意思了。可见在帕克原始观念中ofthepeople中的thepeople不是主格，而是受格，这是非常明显的。林肯既是帕克的细心读者，林肯的原始观念是主格还是受格，还不明显吗？</p>
+<p>这里用上了over这个字，非常明显的，the people是“被”统治了的（受格）意思了，相对的，政府就是统治了的（主格）意思了。可见在帕克原始观念中of the people中的the people不是主格，而是受格，这是非常明显的。林肯既是帕克的细心读者，林肯的原始观念是主格还是受格，还不明显吗？</p>
 <p>帕克以外，从早于帕克二十年前韦伯斯特的思路里，我们也可有触类旁通的领悟。韦伯斯特说：</p>
-<p>Thepeople'sgovernmentmadeforthepeople，madebythepeople，andanswerabletothepeople.</p>
-<p>这里用上了answerable这个字，非常明显的，thepeople是“被”负责的对象了，相对的，政府——人民的政府（thepeople'sgovernment）——就是统治者的意思了。可见再往前追踪思路，也愈追愈分明了。</p>
+<p>The people’s government made for the people，made by the people，and answerable to the people.</p>
+<p>这里用上了answerable这个字，非常明显的，the people是“被”负责的对象了，相对的，政府——人民的政府（the people’s government）——就是统治者的意思了。可见再往前追踪思路，也愈追愈分明了。</p>
 <p>向前追踪过了，我们再向后“思”路之旅一下。</p>
 <p>1861年7月1日，林肯就对他的秘书表示过：</p>
 <p>在我看来，战争的中心意旨，是要证明民治的政府不是荒谬的理论。我们现在必须解决这项问题，在自由的政府内，少数人是不是有权任意和政府脱离。如果我们失败，就可证明人民还没有能力管理自己。</p>
 <p>三天以后，他对国会致词时又说：</p>
 <p>我们的民治政府，时常被人称为试验的政府。其中两个问题我们已经解决了，那就是政府很顺利的建立、很顺利的治理。其余一个问题还没有解决，那就是政府是不是可以很顺利的维持，而不会被强有力的人推翻。现在要美国的人民对世界证明，能够获选的人亦能够平靖叛乱。</p>
 <p>林肯在这种人民是否“有能力管理自己”的挑战里，在这种“试验的政府”的“维持”里，有这样一段话：</p>
-<p>AndthisissueembracesmorethanthefateoftheseUnitedStates.Itpresentstothewholefamilyofmanthequestionwhetheraconstitutionalrepublicordemocracy——aGovernmentofthepeoplebythesamepeople——canorcannotmaintainitsterritorialintegrityagainstitsowndomesticfoe.</p>
-<p>在这段话里，林肯明确的用了aGovernmentofthepeoplebythesamepeople的表达法，主宾意味业已明显：of后的thepeople是宾的thepeople；相对的，by后的thepeople却是主的thepeople，同一（same）人民，是主，也是宾；该主时主，该宾时宾。在林肯ofthepeople的政治用意中，of后面的thepeople是宾，既为宾，自与后面的bythepeople,forthepeople并无强烈平行的意思，既无强烈平行的意思，把它译为平行的形态——如“民有”“民治”“民享”之类，就未免不妥的了。</p>
+<p>And this issue embraces more than the fate of these United States. It presents to the whole family of man the question whether a constitutional republic or democracy——a Government of the people by the same people——can or cannot maintain its territorial integrity against its own domestic foe.</p>
+<p>在这段话里，林肯明确的用了a Government of the people by the same people的表达法，主宾意味业已明显：of后的the people是宾的the people；相对的，by后的the people却是主的the people，同一（same）人民，是主，也是宾；该主时主，该宾时宾。在林肯of the people的政治用意中，of后面的the people是宾，既为宾，自与后面的by the people, for the people并无强烈平行的意思，既无强烈平行的意思，把它译为平行的形态——如“民有”“民治”“民享”之类，就未免不妥的了。</p>
 <p>天马行空的宣传</p>
 <p>正确的翻译该是把governmentofthepeople,bythepeople,forthepeople中ofthepeople的意思，与紧接而来的bythepeople，forthepeople做主宾用意的分开，林肯的原始观念显然是为人民服务的（forthepeople）、被人民选出的（bythepeople）、治理人民的（ofthepeople）政府，其中ofthepeople固无“民有”的意味，forthepeople也无“民享”的意味，只是bythepeople有一点“民治”的意味，但此一“民治”，却又是狭义的特指民选而言。林语堂《当代汉英词典》民治条下说governmentbythepeople,nowusu.called民主②，林肯的原意却明明是民主的运作——民选的结果。林肯在1861年7月1日到4日之间的言论，在在都显示了林肯相信民主政治，但却是经人民选出的反过来治理人民的。林肯这种原始观念，只是杰斐逊以来的美国人的老观念，林肯的伟大显然日后被神化了、美化了，其实他有着很可怕的自我矛盾与分裂：理查霍夫施塔特（RichardHofstadter）在《美国政治传统》（TheAmericanPoliticalTradition）中，已举证证明林肯有“一个职业政客在拉票时的行为”。他在内战时所做的违宪行为，也不在少③。林肯的民主气质，比起真正的伟大民主运动者来，显然还有距离。罗素（BertrandRussell）说杰斐逊是“为人民，但本身并非人民一分子的民主主义者”（ademocratforthepeople,notofthepeople），林肯的出身，虽然比杰斐逊乡土得多，但他的政治哲学是否高明光大，却很可疑。</p>
-<p>中译林肯葛底斯堡演说的不妥，是把并非对等的意思，给译成了对等的“民有”“民治”“民享”，并且译得也与英文原意不相称④。纵使“民有”相当于ofthepeople，也不过是“本然之事实”；即使“民享”相当于forthepeople，也不过是“最终之目的”，重点还是“民治”⑤。这一并不对等的情况，孙文自己并非不知道，他说林肯的话：</p>
+<p>中译林肯葛底斯堡演说的不妥，是把并非对等的意思，给译成了对等的“民有”“民治”“民享”，并且译得也与英文原意不相称④。纵使“民有”相当于of the people，也不过是“本然之事实”；即使“民享”相当于for the people，也不过是“最终之目的”，重点还是“民治”⑤。这一并不对等的情况，孙文自己并非不知道，他说林肯的话：</p>
 <p>译成中文，便是“民有”“民治”“民享”。就我们现在国情和这三层意思解释起来，自推翻满清政府，成立民国以来，可以说是民有一层已经做到了。十二年以来，政府之内，都是武人官僚把持，人民不但是不能管国事，并且日日受兵灾之祸，流离失所，何能够说到民治民享呢？真正的“全民政治”，必须先要有“民治”，然后才能够说真是“民有”、真是“民享”。</p>
 <p>虽然如此，孙文为了宣传之便，最后，抛弃了他自己其他的中译，做了简明有余、明确不足的翻译。“民有”“民治”“民享”固不与林肯原义相当，“民族”“民权”“民生”也与“民有”“民治”“民享”并不贴切，至于后来说“自由”“平等”“博爱”又与“民有”“民治”“民享”无异了，乃至国民党进一步宣传说“情”“法”“理”就是“民族”“民权”“民生”了，“伦理”“民主”“科学”也是“民族”“民权”“民生”了。……层出不穷，其实全是附会、全是层层“文字障”而已，全部缺乏精确的含义。正因为如此，所以任何戏法都可凭国民党代而换之，任何词汇都可与其他词汇比而出之，任何情况都可拈出三个名词同而化之、统而战之，例如说“民生”即“民享”，此向美国人统战也；说“民生”即“博爱”，此向法国人统战也；说“民生”即“共产”，此向共产党统战也；说“民生”即“科学”，此向五四人士统战也。这样子统战结果，什么都是，也什么都不是。中文定义的一片混乱、国民党宣传的一片天马行空，也就全套在此了。</p>
-<p>1939年，英国小说家阿伦（MichaelArlen），在他的名著《凌云记》（TheFlyingDuthman）里说：</p>
-<p>Thedemocraticsystemwhichwecallthegovernmentofthepeople，forthepeople,bythepeople,andtohellwiththepeople.</p>
-<p>我年纪愈大，受国民党统治愈久，我愈发现这段话中tohellwiththepeople的真义所在了。原来它不是为人民下地狱的政府，而是把人民下地狱的政府。“民有”“民治”“民享”、“民有”“民治”“民享”、“民有”“民治”“民享”，几十年来，“吊民伐罪”的国民党，最后的革命结局却是“吊民而罚民之罪”！这种德政，可真教我们不敢领教了！——我们对挟林肯之言而来的一片混乱、一片天马行空，可真要弄个清楚了⑥！</p>
+<p>1939年，英国小说家阿伦（Michael Arlen），在他的名著《凌云记》（The Flying Duthman）里说：</p>
+<p>The democratic system which we call the government of the people，for the people, by the people, and to hell with the people.</p>
+<p>我年纪愈大，受国民党统治愈久，我愈发现这段话中to hell with the people的真义所在了。原来它不是为人民下地狱的政府，而是把人民下地狱的政府。“民有”“民治”“民享”、“民有”“民治”“民享”、“民有”“民治”“民享”，几十年来，“吊民伐罪”的国民党，最后的革命结局却是“吊民而罚民之罪”！这种德政，可真教我们不敢领教了！——我们对挟林肯之言而来的一片混乱、一片天马行空，可真要弄个清楚了⑥！</p>
 <p>1984年7月3日晨</p>
 <p>①戴维斯（A.PowellDavies）说：“托马斯库拍（ThomasCooper）在1795年所提出的民主的定义是最扼要最简洁的一个：‘民有、民享的政府’。但根据这一定义，一个专制暴君也能宣称他的政府是民主的，这种事实也屡见不鲜。”（何欣译：《民主真诠》，《自由中国》第十一卷第十期）</p>
 <p>②英文democracy（民主）这个字，美国即使在独立时也不常用。独立宣言上、各州宪法上、美国宪法上都没有这个字的出现。</p>
 <p>③查理毕尔德（CharlesA.Beard）在他的《共和国》（TheRepublic）一书，以对话的手法，写林肯的违宪行为如下：</p>
 <p>斯医生：那么林肯的批评家所指斥关于林肯的所谓违宪及高压手段，是怎么回事呢？</p>
-<p>毕尔德：我绝没有意思说这些批评不太重要，事实上，我手头现在就有一个很长的单子，可以写满好几页。斯太太，在靠近你的那个书架子那儿，有一本很厚的羊皮精装书是马歇尔（JohnA.Marshall）写的美国巴士底狱——内战后期有关美国公民不法拘禁史（AHistoryoftheIllegalArrestsandImprisonmentofAmericanCitizensduringtheLateCivilWar），你和罗拔（即斯太太的丈夫斯医生的名字）如果愿意把它带回去看看，你一定会从书里找到一大堆批评林肯的资料。反对林肯的人认为在林肯主政之下，有许多措施都是以违宪和高压的手段做出来的。譬方说，在马里兰州州议会会期中，林肯就施压力要州议会压制脱离联邦的提案活动。在北方很多距离战火相当远的地区，就有很多人民被政府肆加逮捕，许多批评林肯政府的报纸编辑和演说的人都被政府拘禁入狱，不少报纸都被当局封闭停刊。当然究竟有多少人被捕，确数很难决定，但被关起来的人则以千计。</p>
-<p>如果把林肯的所谓的违宪和高压措施统统加在一起乘上十；即便是为了辩论，说我们把对一切反对林肯的批评统统都接受了；尽管在许多违法措施是林肯自己事先一无所知，而是由许多政府文武官员以林肯政府的名义不法进行的，我们姑且把这笔总账都算在林肯一个人身上；尽管我们忘掉林肯曾经下令赦免了许多政治犯——例如普赖尔（RogerPryor）曾因任职南方联邦被捕，而林肯迭次拒绝将普赖尔正法——和一再颁发大赦令；我们就算把一切所能想到的罪名都加在林肯头上，可是，这些所谓违宪和高压的手段的宪法问题还是值得辩论的。这个问题本身是相当复杂的。</p>
+<p>毕尔德：我绝没有意思说这些批评不太重要，事实上，我手头现在就有一个很长的单子，可以写满好几页。斯太太，在靠近你的那个书架子那儿，有一本很厚的羊皮精装书是马歇尔（John A. Marshall）写的美国巴士底狱——内战后期有关美国公民不法拘禁史（A History of the Illegal Arrests and Imprisonment of American Citizens during the Late Civil War），你和罗拔（即斯太太的丈夫斯医生的名字）如果愿意把它带回去看看，你一定会从书里找到一大堆批评林肯的资料。反对林肯的人认为在林肯主政之下，有许多措施都是以违宪和高压的手段做出来的。譬方说，在马里兰州州议会会期中，林肯就施压力要州议会压制脱离联邦的提案活动。在北方很多距离战火相当远的地区，就有很多人民被政府肆加逮捕，许多批评林肯政府的报纸编辑和演说的人都被政府拘禁入狱，不少报纸都被当局封闭停刊。当然究竟有多少人被捕，确数很难决定，但被关起来的人则以千计。</p>
+<p>如果把林肯的所谓的违宪和高压措施统统加在一起乘上十；即便是为了辩论，说我们把对一切反对林肯的批评统统都接受了；尽管在许多违法措施是林肯自己事先一无所知，而是由许多政府文武官员以林肯政府的名义不法进行的，我们姑且把这笔总账都算在林肯一个人身上；尽管我们忘掉林肯曾经下令赦免了许多政治犯——例如普赖尔（Roger Pryor）曾因任职南方联邦被捕，而林肯迭次拒绝将普赖尔正法——和一再颁发大赦令；我们就算把一切所能想到的罪名都加在林肯头上，可是，这些所谓违宪和高压的手段的宪法问题还是值得辩论的。这个问题本身是相当复杂的。</p>
 <p>④沈刚伯在《高中历史》中说美国：</p>
-<p>到1828年大选的时候，各州的总统选举人，除两州外，已经是由人民直接选出而非由州议会推定，许多州并将选举权的财产限制也大加放宽，让平民都能参加选举。平民选举的结果产生了第一个“人民的总统”（ThePeople'sPresident），把那六十一岁的杰克逊（Jackson）拥进白宫。他连任一次，开始了好些大刀阔斧的改革，把杰斐逊式的各州民主（JeffersonianStateDemocracies）变成了杰克逊式的全国民主（JacksonianNationalDemocracy），使政府于民有、民享之外，更进为民治。</p>
+<p>到1828年大选的时候，各州的总统选举人，除两州外，已经是由人民直接选出而非由州议会推定，许多州并将选举权的财产限制也大加放宽，让平民都能参加选举。平民选举的结果产生了第一个“人民的总统”（The People’s President），把那六十一岁的杰克逊（Jackson）拥进白宫。他连任一次，开始了好些大刀阔斧的改革，把杰斐逊式的各州民主（Jeffersonian State Democracies）变成了杰克逊式的全国民主（Jacksonian National Democracy），使政府于民有、民享之外，更进为民治。</p>
 <p>他又在注里说：</p>
 <p>《人权宣言》本由杰斐逊起草，他承认政治终极的主权在民，并主张政府应以谋人民的福利为其唯一职责；但他不承认未受过教育的人有参与政治的能力，更不愿那些无恒产的人有过问政治的资格。他心目中的国家只是民有、民享，而绝非民治，美国独立后五十年的政治便是如此。</p>
 <p>杰克逊认为政治是大众的事，任何人，无论贫富智愚，都应该有直接参加联邦政府之权；从他被选起，美国才算真走入民治之途。</p>
 <p>沈刚伯这些话，显然不明白美国“民治”的真正情况与真正来龙去脉。他又把“民有”和“民享”扯进，混成鼎立而三的对等意思，殊不知是不能这样硬分而三的。这种硬分而三，凡是国民党和吃国民党奶水长大的，都会犯同一错误。我举费希平《民主主义与民本主义》一段话为例：</p>
-<p>民主政治是今日最理想的政治制度，也是世界各国普遍实行的政治制度。什么是民主政治呢？美国林肯总统所下的定义最为正确，他说：Democracymeansgovernmentofthepeople,bythepeople,forthepeople，译成中文就是：民主政治是民有、民治、民享的政治。所以，民主政治所涵盖的意义，可分三个层次加以说明：首先，我们应该知道，民主国家主权的归属。谈到这个问题，使我想起历史上两件不朽之文献，一件是美国的独立宣言，一件是法国的人权宣言，在这两个文献中，都认为国家的主权应该属于人民，具体地说，人民是国家的主人，政府为人民所有，这就是林肯所说的ofthepeople。人民虽然有了主权，如果不能运用其主权来治理国家，主权就变成了空中楼阁，因此，由主权所引申出来的选举权和罢免权，就是林肯所说的bythepeople。人民有了选举权，当然要选为人民忠诚服务的、为人民谋福利的官吏与民意代表；人民若是发现他们所选出的官吏或民意代表，没有实践他们的诺言，人民可运用罢免权罢免之；所以，在一个实行民主政治的国家中，官吏与民意代表都在兢兢业业地为人民服务，人民才能享受幸福的生活，这就是林肯所说的forthepeople。总之，民主政治应该包括民有、民治、民享三种意义，缺少其中任何一个，就不能称为民主政治。（《深耕》杂志，1982年5月25日）</p>
+<p>民主政治是今日最理想的政治制度，也是世界各国普遍实行的政治制度。什么是民主政治呢？美国林肯总统所下的定义最为正确，他说：Democracy means government of the people, by the people, for the people，译成中文就是：民主政治是民有、民治、民享的政治。所以，民主政治所涵盖的意义，可分三个层次加以说明：首先，我们应该知道，民主国家主权的归属。谈到这个问题，使我想起历史上两件不朽之文献，一件是美国的独立宣言，一件是法国的人权宣言，在这两个文献中，都认为国家的主权应该属于人民，具体地说，人民是国家的主人，政府为人民所有，这就是林肯所说的of the people。人民虽然有了主权，如果不能运用其主权来治理国家，主权就变成了空中楼阁，因此，由主权所引申出来的选举权和罢免权，就是林肯所说的by the people。人民有了选举权，当然要选为人民忠诚服务的、为人民谋福利的官吏与民意代表；人民若是发现他们所选出的官吏或民意代表，没有实践他们的诺言，人民可运用罢免权罢免之；所以，在一个实行民主政治的国家中，官吏与民意代表都在兢兢业业地为人民服务，人民才能享受幸福的生活，这就是林肯所说的for the people。总之，民主政治应该包括民有、民治、民享三种意义，缺少其中任何一个，就不能称为民主政治。（《深耕》杂志，1982年5月25日）</p>
 <p>费希平错引林肯原文于先，又乱做解人于后，林肯有知，当暗笑九泉！中国俗话说：“无心雕做木居士，便有无穷求福人”，林肯的一句顺手拈来、“无心”说出的一段应景演说，竟可被国民党和吃国民党奶水长大的，年复一年，以长篇大论“阐发无剩义”，借以“求福”、借以欺尽苍生，真不能不说是今古奇观了！</p>
 <p>⑤顾敦鍒《中国议会史》说：“美国总统林肯之言曰：‘德谟克拉西之政府，一民有、民治、民享之政府也。’民有为本然之事实，民享为最终之目的，在今日政治开明、学术进步、人权发展之时代，已为天下所公认，可以毋费讨论。唯民治一端，则重在方法。而方法本无一定，辄随情境而异，则大有研究之价值。”荆知仁《对宪法宪政的基本观念和认识》说：“林肯曾解释民主为民有、民治及民享。就此一解释的内容来分析，民有为前提，民治为方法，民享为目的。这三者之中，民有之前提，乃理论上的假设；民享的目的，乃古往今来，无分专制或民主，所共同追求的目标；民治之方法，却是贯彻民有前提，达成民享目标正当而有效的手段。极权和民主的真正分野，不在于民有的前提和民享的目的，而在于民治的方法。”（《成长的民主》）李声庭《没有自由如何民主》说广民主的定义，最简单的莫过于美国林肯总统所说的：‘政府为民所有，政府为民所治，政府为民所享。’其中最重要的却是政府为民所治。”（《名人杂志》，1982年6月15日）</p>
 <p>⑥对林肯演说提出疑义的，最早见于钱歌川先生的《英文疑难详解》，我写这篇疑义，是就钱先生的疑义，加以论证发挥的，基本的解释，是钱先生的，不是我的，特此声明。从文法学家的解释观点，自可对疑义加以疑义。例如写overallthepeople的over，也可不做“在……上头”的解释而做“通由所有人民”或“在所有人民中”的另一种解释，而agovernmentofthepeople中，government和thepeople自可视为从属关系等等。总之，我这篇疑义的主旨，在抛开文法上、修辞上的字面拘泥，而从林肯的政治思路上溯本探源，从而证明原义不是如文法解释观点那样简略的、平行的、望文生义的。我们这些饱受林肯演说移植中国以为宣传、以为政治广告下的受害人，实在不该轻信才好！</p>
@@ -848,7 +881,7 @@
 <p>孙中山不掩饰他对“女人”的兴趣，显示了他至性的一面。他一直把第一兴趣“革命”和第二兴趣“女人”兼顾，在他早年革命中的陈夫人（陈粹芬），是革命党兼女人；在他晚年革命中的宋夫人（宋庆龄），是女人兼革命党。虽然，这种一贯作业，有时并不为人所赞同。陆丹林《革命史谭》中有这样的故事：</p>
 <p>民国十年，总理亲率大军，出发广西，实行北伐。此役孙夫人宋庆龄女士没有偕行。其原因传为廖仲恺谏阻。盖廖以中国古来出征，多不携带家眷，女子在军，视为不祥，且恐惹起其他误会。总理本大无畏之精神，打破一切封建陋习思想，即答廖说，此为不可为训的恶习，革命党人不该存此思想。并引梁红玉辅佐韩世忠大破金兀术故事来说明女子在军中的贡献。但因部属既存有此种思想，故亦勉从众意，孙夫人乃暂留广州，未即随同入桂。</p>
 <p>由此可见，孙中山的“韩夫人”革命法，有时会给他惹来观点上的歧见。</p>
-<p>我生平看了不少以“革命”为第一兴趣的故事，他们在“革命”以后，有的转入第二兴趣，像富兰克林（BenjaminFranklin），他晚年派赴法国，折冲尊俎之余，与洋婆子寻欢以为乐，在温柔乡以终老；但有的却转不过来，像富兰克林的朋友潘恩（ThomasPaine），他却仍旧为第一兴趣中风狂走，在美国革完命，又跑到法国去革命。我想这种“革命狂”未免兴趣太窄了一点。又如格瓦拉（Ernesto‘Che’Guevara）也是一样。他在古巴革完命，放着“中央银行总裁”和“工业部长”不做，又跑到玻利维亚去革命，最后被“美帝”派人来，予以围捕枪决，其一生第一兴趣过显，第二兴趣欠明，最后“大头对不起小头”而去，亦可哀矣！</p>
+<p>我生平看了不少以“革命”为第一兴趣的故事，他们在“革命”以后，有的转入第二兴趣，像富兰克林（Benjamin Franklin），他晚年派赴法国，折冲尊俎之余，与洋婆子寻欢以为乐，在温柔乡以终老；但有的却转不过来，像富兰克林的朋友潘恩（Thomas Paine），他却仍旧为第一兴趣中风狂走，在美国革完命，又跑到法国去革命。我想这种“革命狂”未免兴趣太窄了一点。又如格瓦拉（Ernesto‘Che’Guevara）也是一样。他在古巴革完命，放着“中央银行总裁”和“工业部长”不做，又跑到玻利维亚去革命，最后被“美帝”派人来，予以围捕枪决，其一生第一兴趣过显，第二兴趣欠明，最后“大头对不起小头”而去，亦可哀矣！</p>
 <p>也许，潘恩和格瓦拉的毛病，都出在第一兴趣的“不知止”，这种人应该知道，第一兴趣在成功以后，应该立刻收敛他们的“革命狂”，真正从事革命以外的大业，而不要以为除非他继续革命，革命就尚未成功。以为天下非他不可、必须靠他一革再革的人，其实是一种悲剧角色。有“革命狂”的人，如能从第一兴趣转为第二兴趣，功成身退，退而老去寻春而不悲秋，才是喜剧的扮演者。革命并非不好，但是做了职业革命家可就不太好。一旦做了职业革命家，革命就会变为“国民革命”第一期、第二期、第三期……而被革命的国民就吃不消矣，最后这种人令人厌烦，也就不在话下了。</p>
 <p>1984年8月25日晨</p>
 <p>孙中山与陈粹芬</p>
@@ -868,7 +901,7 @@
 <p>予四年前在重庆，题冯自由革命逸史三集，述及陈粹芬老太太，冯自由且为之注。抗战以来，粹芬老太太先居澳门，后由孙乾供养，今年高龄七十五矣。闻予至中山石岐，喜曰：刘某予四十余年未见面，今尚在人间耶？予抵石岐，即往晋谒，述当年亡命情形。粹芬老太太慨然曰：我未做饭与汝等吃，已四十八年矣。今日重逢，下午请吃饭。于是大备盛筵，亲送孙陈粹芬红帖曰：不似在横滨街头买菜，而今请吃饭也有格式了。</p>
 <p>午后前往，粹芬老太太已在门首欢迎曰：我辈五十年来，各人都在，回忆当年亡命受苦，直一大梦耳，不可不留一纪念。于是宾主共摄一影入座。老太太畅谈经过身世，甚多珍贵史料，足供搜釆也。</p>
 <p>陈老太太为言革命时期惠州之役。香港李纪堂、梁慕光等商议在惠州起事，军械皆由海员公会海员秘密输运，经日本邮船与美国、高丽等邮船运来者最多，以横滨为居中策应，视情势如何，在横滨定行止。陈老太太任来往船只起落密件之责，故横滨邮船一到，老太太即往接船，以港方确实消息，转告密运枪械之海员。日本因妇女上下，毫未注意。及事败，梁慕光来横滨，盛称陈老太太英勇不已。老太太曰：我当时传递书简，并不害怕，大家拼命做去，总有办法。</p>
-<p>予此行，在孙家获睹先生所留金表一枚及金链一条，链头小印一颗。金表大如小蟹，有金盖可开合，金盖面刻英文“Y.S.Sun”。盖先生伦敦蒙难归国，康德黎博士临行所赠物也。先生在横滨时，屡出以示人，今再见之，真革命史上传世之宝也。</p>
+<p>予此行，在孙家获睹先生所留金表一枚及金链一条，链头小印一颗。金表大如小蟹，有金盖可开合，金盖面刻英文“Y. S. Sun”。盖先生伦敦蒙难归国，康德黎博士临行所赠物也。先生在横滨时，屡出以示人，今再见之，真革命史上传世之宝也。</p>
 <p>陈粹芬在近半个世纪后，故友重逢，为老同志再开饭局，且用“孙陈粹芬”名义下帖子，其为孙文的夫人，一清二楚矣！</p>
 <p>“一位被遗忘的革命女性”</p>
 <p>刘成禺回忆这一久别重逢，真是场面感人。李又宁在《一位被遗忘的革命女性——陈粹芬》（1981年10月《传记文学》第三十九卷第四期）里说：</p>
@@ -898,17 +931,17 @@
 <p>①据刘成禺《世载堂诗待删稿》，冯自由原注为“横滨华侨邮船会社经理香山张能之，亦名仁之，与先总理有通家之好，亡命食宿，均主张宅。总理眷属陈夫人瑞芬，原名香菱，亦曾寄寓张家。陈夫人居日本、越南、新加坡，恒为来往同志洗衣供食，异常辛勤，总理大得其助。”</p>
 <p>②原注：1906年前后，池亨吉曾追随孙中山先生到南洋参加中国革命工作，担任英文秘书任务，并曾参加镇南关之役，著有《支那革命实见记》一文，当时在日本报纸发表，文内提到的孙夫人，就是陈粹芬。“肃然的参谋本部，忽然就变为繁忙的事务室了……各事各人，不遗余力地进行。就中孙氏的夫人，就自己担当印刷檄文，非常忙碌。”（上海三民书局出版的中译本，第13页）又说：“12月3日，午前4时，大家会集于食堂，共斟离别酒。孙氏的夫人虽是很刚毅的广东妇人，但也不堪别凤离凰之悲。后来，我们一启程，她的眼边人情也表露出来了。”（第36-37页）此中译本，有乐炳嗣写的序。乐将陈粹芬误为卢夫人。其实，卢夫人当时在檀香山。</p>
 <p>③刘成禺回忆住在中山石岐的陈夫人后，又有一段回忆住在澳门的卢夫人如下：“既抵澳门，晋谒卢太夫人，太夫人年八十三矣，和蔼康健，步履与少年人无异。其次女戴夫人亦出见，时戴君恩赛适去香港，晤谈数语，即辞出。按先生家世，长兄眉公，经营农商业于檀香山；眉公子曰孙昌，在旧金山医科大学毕业，先生在广州大元帅府，奉命收海军，为流弹所中阵亡。昌有二子，长曰孙满，现任士敏土厂总理；次孙乾，即今之中山县长。乾卒业日本士官学校，再赴意大利习陆空军，抗战时任闽军副总司令，今治中山，颇著政绩，此眉公世系也。先生生孙哲生科；长女媛，年未及笄，早卒；次女婉，适戴君恩赛。戴君曾留学美国，得博士学位，后任梧州关监督、巴西公使，今与夫人同居澳门，并侍卢太夫人。卢太夫人云，在澳门居处甚适，可常与平民亲友晤言，颇足娱晚景也。”卢夫人死在1952年，活了八十六岁。</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/12.人物研究类/孙中山研究.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/12.人物研究类/孙中山研究.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../12.人物研究类/大江大海骗了你.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../12.人物研究类/孙逸仙和中国西化医学.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -918,16 +951,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../12.人物研究类/大江大海骗了你.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../12.人物研究类/孙逸仙和中国西化医学.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -936,12 +974,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

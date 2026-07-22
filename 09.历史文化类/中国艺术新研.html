@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,88 +81,109 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="中国艺术新研"><a class="header" href="#中国艺术新研">中国艺术新研</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E4%B8%AD%E5%9B%BD%E8%89%BA%E6%9C%AF%E5%8F%B2%E4%B8%80%E4%B8%AA%E6%96%AD%E5%B1%82%E7%9A%84%E9%87%8D%E5%BB%BA">中国艺术史一个断层的重建</a></li>
-<li><a href="#%E5%91%A8%E8%B6%8A%E5%A2%A8%E8%BF%B9%E7%A0%94%E7%A9%B6%E5%BA%8F">《周越墨迹研究》序</a></li>
-<li><a href="#%E5%8F%B0%E6%B9%BE%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%99%A2%E4%B9%83%E6%98%AF%E6%95%85%E5%AE%AB%E8%B5%83%E7%89%A9%E9%99%A2">台湾“故宫”博物院乃是“故宫”赃物院</a></li>
-<li><a href="#%E8%B4%A8%E8%AF%A2%E7%A7%A6%E5%AD%9D%E4%BB%AA%E5%85%88%E7%94%9F">质询秦孝仪先生</a></li>
-<li><a href="#%E5%86%92%E5%B7%A2%E6%B0%91%E8%91%A3%E5%B0%8F%E5%AE%9B%E5%A4%AB%E5%A6%87%E5%90%88%E7%92%A7%E5%8D%B7%E7%9C%9F%E8%BF%B9%E7%A5%9E%E5%93%81%E8%AF%B4%E6%98%8E">《冒巢民董小宛夫妇合璧卷真迹神品》说明</a></li>
-<li><a href="#%E6%9D%8E%E6%95%96%E6%89%80%E8%97%8F%E4%B8%AD%E5%9B%BD%E7%BE%8E%E6%9C%AF%E7%B2%BE%E5%93%81%E5%9B%BE%E8%AF%B4">李敖所藏中国美术精品图说</a></li>
-<li><a href="#%E8%AE%B8%E5%9C%B0%E5%B1%B1%E8%AE%BA%E4%B9%A6%E6%B3%95">许地山论书法</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#中国艺术史一个断层的重建">中国艺术史一个断层的重建</a></li>
+<li><a href="#周越墨迹研究序">《周越墨迹研究》序</a></li>
+<li><a href="#台湾故宫博物院乃是故宫赃物院">台湾“故宫”博物院乃是“故宫”赃物院</a></li>
+<li><a href="#质询秦孝仪先生">质询秦孝仪先生</a></li>
+<li><a href="#冒巢民董小宛夫妇合璧卷真迹神品说明">《冒巢民董小宛夫妇合璧卷真迹神品》说明</a></li>
+<li><a href="#李敖所藏中国美术精品图说">李敖所藏中国美术精品图说</a></li>
+<li><a href="#许地山论书法">许地山论书法</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -204,7 +237,7 @@
 <p>文臣周越字子发，淄州人。官至主客郎中。天圣、庆历间，以书显，学者翕然宗之。落笔刚劲足法度，字字不妄作，然而真、行尤入妙，草字入能也。越之家，昆季子侄无不能书，亦其所渐者然耶？说者以谓怀素作字，正合越之俭劣，若方古人，固为得笔；傥灭俗气，当为第一流矣！在庆历中，有马寻者，尝知利州，而善仿越书，观者不复真赝，人谓韩门弟子云。又御府所藏草书三：贺知章赋、诗句、千文。</p>
 <p>在《宣和书谱》这一著录后，周越的真迹，就神秘飘零，连佚目都没有留存了④。真到《石渠宝笈》出现，才有唯一的王著《千文》跋登录。</p>
 <p>周越的墨迹为什么神秘飘零？照马宗霍《书林藻鉴》卷九引王安石论周越和他哥哥周起的话：“起与其弟越，皆以能书为世所称，每书辄为人取去。”——字写得太好，“每书辄为人取去”，竟变得湮没不彰了，岂不可叹？黄庭坚《跋周越书后》一文认为周越的功力应不止“独行于今代”，但是“今代”以后，书法飘零，要行于异代后代，岂不难哉？</p>
-<p>周越的真迹飘零的情况是：在海峡两岸的故宫博物院收藏里，完完全全找不到他的字。秦孝仪发行、笑料迭出的《中华五千年文物集刊-法书篇》⑤，收“绝大部分为散佚之清宫旧藏，而沦陷神州故土者”，其中宋人部分四册，收有北宋书家作品，却没有周越的字，是大陆方面，无周越真迹留存；另一方面，台北“故宫博物院”出版《故宫历代法书全集》三十巨册、出版《故宫法书》线装本《宋人墨迹集册》六册，虽名家作品，莫不照收，却没有周越的字，是台湾方面，亦无周越真迹留存。在“故宫博物院”里如此，其他博物院里，不论是大陆的、日本的、美国的、欧洲的……也完全找不到他的字；在全世界收藏家手中，也完全找不到他的字。正因为找不到他的字，所以他的名，也湮没不彰了。很多古物专家甚至不知周越是谁了。专精书法史的学者，如傅申，在其巨著TracesoftheBrush-StudiesinChineseCalligraphy里，也只能在脚注中有周越真迹难觅，今之所存募拓而已（ChouYueh'sworksarerareandextantmainlyinrubbingform）之憾。周越的真迹，似乎真的碧落黄泉、两不得见了。</p>
+<p>周越的真迹飘零的情况是：在海峡两岸的故宫博物院收藏里，完完全全找不到他的字。秦孝仪发行、笑料迭出的《中华五千年文物集刊-法书篇》⑤，收“绝大部分为散佚之清宫旧藏，而沦陷神州故土者”，其中宋人部分四册，收有北宋书家作品，却没有周越的字，是大陆方面，无周越真迹留存；另一方面，台北“故宫博物院”出版《故宫历代法书全集》三十巨册、出版《故宫法书》线装本《宋人墨迹集册》六册，虽名家作品，莫不照收，却没有周越的字，是台湾方面，亦无周越真迹留存。在“故宫博物院”里如此，其他博物院里，不论是大陆的、日本的、美国的、欧洲的……也完全找不到他的字；在全世界收藏家手中，也完全找不到他的字。正因为找不到他的字，所以他的名，也湮没不彰了。很多古物专家甚至不知周越是谁了。专精书法史的学者，如傅申，在其巨著TracesoftheBrush-StudiesinChineseCalligraphy里，也只能在脚注中有周越真迹难觅，今之所存募拓而已（ChouYueh’sworksarerareandextantmainlyinrubbingform）之憾。周越的真迹，似乎真的碧落黄泉、两不得见了。</p>
 <p>事实上，却有一件唯一的绝品，它是周越的真迹，历经千年，默默流转到今天。</p>
 <p>这唯一的绝品，一千年前也曾在朝显赫过，它是一件纵二十五厘米、横四十五厘米，写在黄绢蓝格里的称臣之作。它写呈的对象是宋朝真宗皇帝，内容谈的是宋真宗的父亲宋太宗和书法名家王著的故事，它，不是别的，就是上面《石渠宝笈》所登录的王著《千文》后面的第一个跋——周越的跋！</p>
 <p>周越这个跋，其实早就脱离了王著《千文》的“后幅”附属地位，而独立流传，与“本幅”分开了，最后流传到台湾；不但“后幅”分开了，甚至“前隔水”后面的乾隆皇帝的七言律诗，也独立流传，最后也流传到台湾了。——一千年的名家原件、二百年的帝王手书，竟在乱世浩劫之后，双双自大陆中土浮海流传到台湾岛上，这种际遇与奇闻，岂不正是千载难逢么？</p>
@@ -323,7 +356,7 @@
 <p>杨仁恺先生以“沉浮”字眼施之于国宝，是很有哲理见地的。几千年来，中国国宝固多万劫不复，但在玄黄乍变、阴错阳差之间，往往在意想不到的时候、意想不到的地方，竟有一二国宝，像鬼使神差一般，得以劫后重生、再现人间。这种奇迹、这种不死凤凰式的载沉载浮，似乎只有用哲理的解释，才能尽其玄妙。当年王珣《伯远帖》自内府流出民间，千年以后，董其昌跋语说：“既幸予得见王珣，又幸珣书不尽湮没，得见吾也。”这种我见青山、青山见我的际遇，除了哲理的解释外，很难有更好的解释了。</p>
 <p>这种一二国宝得以再现人间的奇迹，有一个最精彩的事例，就是周越（周子发）墨迹的“出土”。</p>
 <p>《国宝沉浮录》是名家权威之作，在第八章《〈佚目〉书画总目简注》中，开出清单，逐一考订，功力令人赞叹。其中《王著〈千文〉》项下，指出“据当时留长春之于莲客所云，原件已毁”。另一方面，启功先生《论书绝句》一书中也提到：“周子发书，为北宋一大家，而遗迹流传极少。石渠旧藏王著书真草千文，后有周跋，四十年前已成劫灰”。这些话告诉我们：王著《千文》和它后面的“周跋”都“已毁”“已成劫灰”了。</p>
-<p>不过，事实并不如此。事实是：王著的《千文》虽然毁了，但它后面的《周跋》却比翼而不双飞，它在1945年伪满“小白楼事件”中劫后余生后，反倒飞到台湾，流落民间，然后，鬼使神差一般的，它被有心人给“挖掘”出来，这种奇迹、这种不死凤凰式的载沉载浮。正好为前面所说的哲理的解释提供了活证。并且，此一活证却又“此马来头大”，因为这一国宝的复出，可不是普通的国宝，它根本改写了中国艺术史、修正了中国艺术史，并且把蒋介石的伪中华民国的伪故宫博物院泄了底、漏了气。它的复出，在艺术史上，相当于themissinglink（承上启下情况中所缺少的那一环节）的出现，它的地位与身价，因而更为惊人。</p>
+<p>不过，事实并不如此。事实是：王著的《千文》虽然毁了，但它后面的《周跋》却比翼而不双飞，它在1945年伪满“小白楼事件”中劫后余生后，反倒飞到台湾，流落民间，然后，鬼使神差一般的，它被有心人给“挖掘”出来，这种奇迹、这种不死凤凰式的载沉载浮。正好为前面所说的哲理的解释提供了活证。并且，此一活证却又“此马来头大”，因为这一国宝的复出，可不是普通的国宝，它根本改写了中国艺术史、修正了中国艺术史，并且把蒋介石的伪中华民国的伪故宫博物院泄了底、漏了气。它的复出，在艺术史上，相当于the missing link（承上启下情况中所缺少的那一环节）的出现，它的地位与身价，因而更为惊人。</p>
 <p>这一《周跋》，全称应是《王著书千文真迹周越跋》。今天谈中国艺术史的人，一谈到宋朝书法，便一跳跳到“宋四家”苏、黄、米、蔡身上，这是绝对不合乎进化原理的。宋朝天下前后三百一十九年，其中宋太祖在位十六年、宋太宗在位二十二年、宋真宗在位二十五年、宋仁宗在位四十一年。“宋四家”中，蔡襄在真宗即位后十四年才出生；而苏轼、黄庭坚、米芾在宋仁宗死时，不过分别为二十七岁、十八岁、十二岁的年轻人。在他们以前几十年中，也有前辈书法名家，但墨迹留存至今的，自李建中《土母帖》以下，已极罕见。并且李建中生在后晋，苏轼说他的书法“犹有唐以来衰陋之气”，严格说来，他算唐末五代的流风，不纯属宋人书法。自李建中以后，到“宋四家”以前，纯属宋人书法的收藏，显然发生了断层。断层中最明显的现象是，一举出宋人书法，就从宋朝开国一跳跳到“宋四家”，苏、黄、米、蔡四大家好像是蓦地里跳出来的，这是绝对错误的解释。事实上，在“宋四家”以前几十年，有重要的前辈书法名家被忽略了。原因是他们的墨迹亡佚了，再加上今天嗜古之人却罕读古书，所以纵“宋四家”并不忽略他们前辈的拓展之功，但是后人却给跳开了。</p>
 <p>前辈书法名家最重要的是王著，但他自己仅余的作品《千文》也毀于火焚，可说是不幸人物。王著以后，前辈书法名家周越是另一位不幸人物。周越和王著一样，不但自己能写字，还有论书法的著作。《宋史-艺文志》著录“周越《古今法书苑》十卷”。《宋史》有周越的哥哥周起的传，传中只有二十九个字顺便提到周越，说“起能书，弟超（越字之误）亦能书，集古今人书并所更体法，为《书苑》十卷，累官主客郎中。”——一代前辈书法名家，在《宋史》中，只是区区二十九个字。今天编《中国美术家人名辞典》的人，你抄我我抄你，在“周越”条下注明出处说见《宋史-本传》，其实《宋史》根本没有他的本传，编书的人根本就没好好看看《宋史》，更别提只会查查辞典就算古物专家的今天嗜古之人了。后人对周越陌生至此，可真算“忘了我是谁”了。</p>
 <p>事实上，走过从前，宋代人物可太知道周越是谁了。以“宋四家”为例。蔡襄是先学了周越的字，再学张芝、钟繇、王羲之、王献之、李阳冰、颜真卿、张旭、怀素、智永的；而苏轼呢，他写《六观堂老人草书诗一首》，一面赞扬六观堂老人的“草书非学聊自娱”，一面却点破：虽然非学，但一出手，“落笔已唤周越奴”的局面，便于焉出现。——原来周越的魔力是那样大！苏轼以外，黄庭坚更是周越的顶礼者。黄庭坚是先学了周越，“以周越为师”，三十年学书过程中，被周越压了二十年，才脱颖而出的。到他死前四年，他还写《跋周越书后》一文，对周越顶礼不绝。至于米芾，早从十岁起就是周越的追随者。这些事证，都说明了宋朝书法名家人人都无所逃于周越天地之间。周越是五代书家到“宋四家”之间的关键衔接者，自无疑义。而周越墨迹，历尽沧桑与浩劫，却在千年以后，“出土”与人相见，这不是千载难逢又是什么呢？</p>
@@ -348,7 +381,7 @@
 <p>因为豁免了外审，我转请黄昭明助教，问他扣除了外审时间，也许我可以晚一点缴定稿，俾便多一点时间补充初稿。黄助教说可延至1月30前缴稿，我就同他约定了1月30日。</p>
 <p>不期1月11日，我忽接王主任电话，委婉商请我全删初稿中批评“故宫博物院”院长秦孝仪那一段，并提到系中教授等话，似谓此议不是他一人所为。我当时告诉王主任，我的定稿还没写好呢，怎么初稿就给删起来了？他表示抱歉，并请我“帮帮忙”。我似有所悟，乃在第二天寄他一信，表示：</p>
 <p>昨日吾兄赐电，委婉建言，拟请我删去文中批秦之事。我在日记中自嘲：“‘秦公公’势力无所不在也！”</p>
-<p>我自知文中批秦之事，直笔过甚，与此岛之学报规格不合。但我实不愿委曲自己。并且事实上，我又查出“故宫博物院”院长在序文中捏造黄山谷的话，更要加强批秦，并于月底定稿时送达黄助教呢。——我还要加呢，怎么能删哪！（吾兄美国史专家，1779年JohnPaulJones之言“Ihavenotyetbeguntofight!”恰似我要说的，“我还没开始打呢！”又何能言删啊。）</p>
+<p>我自知文中批秦之事，直笔过甚，与此岛之学报规格不合。但我实不愿委曲自己。并且事实上，我又查出“故宫博物院”院长在序文中捏造黄山谷的话，更要加强批秦，并于月底定稿时送达黄助教呢。——我还要加呢，怎么能删哪！（吾兄美国史专家，1779年John Paul Jones之言“I have not yet begun to fight!”恰似我要说的，“我还没开始打呢！”又何能言删啊。）</p>
 <p>虽然如此，我决定不再为难别人、连累学报，承蒙邀稿之事，就此作罢；我决定撤回此文，连同其他批秦之文，另出一书（书名“秦孝仪捏造历史败坏学风的秘密”），发表个痛快！</p>
 <p>王主任收信当晚即电告我，他尊重我撤回的决定，并再次向我抱歉。</p>
 <p>在使王主任如释重负之后，我回头仔细看看我的“系争之作”，查初稿中，正文有“秦孝仪发行、笑料迭出的《中华五千年文物集刊-法书篇》”二十二个字。下有注⑤一则，注中全文如下：</p>
@@ -794,51 +827,51 @@
 <p>⑨[宋]尹洙，《书禹庙碑阴》，《河南先生文集》，卷四。收入《四部丛刊正编》第四十册（台北：商务印书馆，1979），第21页。</p>
 <p>⑩同⑥，卷——九，第2808页。</p>
 <p>(11)同⑥，卷一四五，第3496页。</p>
-<p><a href="%E6%B8%85">12</a>陆增祥，《八琼室金石补正》（台北：文海出版社，1967），卷一〇四，第1750页。</p>
-<p><a href="%E5%AE%8B">13</a>朱长文，《墨池编》，卷一〇。收入于《中国书画全书》第一册（上海：上海书画出版社，1992），第289页。</p>
-<p><a href="%E5%AE%8B">14</a>米芾，《书史》。收入于《中国书画全书》第一册，第974页。按《我太宗秘阁图书之印》有些版本作“我太祖秘阁图书之印”，后者应有误，按“秘阁”建于太宗端拱元年（988），藏三馆真本书籍及书画。故米芾所言的“秘阁图书”“上阁图书”二印应指宋太宗之印。</p>
+<p><a href="清">12</a>陆增祥，《八琼室金石补正》（台北：文海出版社，1967），卷一〇四，第1750页。</p>
+<p><a href="宋">13</a>朱长文，《墨池编》，卷一〇。收入于《中国书画全书》第一册（上海：上海书画出版社，1992），第289页。</p>
+<p><a href="宋">14</a>米芾，《书史》。收入于《中国书画全书》第一册，第974页。按《我太宗秘阁图书之印》有些版本作“我太祖秘阁图书之印”，后者应有误，按“秘阁”建于太宗端拱元年（988），藏三馆真本书籍及书画。故米芾所言的“秘阁图书”“上阁图书”二印应指宋太宗之印。</p>
 <p>(15)《宋会要-职官》十八之四十七：“太宗端拱元年5月，诏就崇文院中堂建秘阁，择三馆真本书籍万余卷及内出古画、墨迹藏其中。凡史馆先贮天文、占候、谶纬、方术书五千一十二卷，图书百四十轴，尽付秘阁。”（台北：世界书局，1964），第2764页。</p>
-<p><a href="%E5%AE%8B">16</a>钱惟演，《玉堂逢辰录》，收入《笔记小说大观》三十八编五册（台北：新兴书局，1985），第1页。</p>
+<p><a href="宋">16</a>钱惟演，《玉堂逢辰录》，收入《笔记小说大观》三十八编五册（台北：新兴书局，1985），第1页。</p>
 <p>(17)《宋史-艺文志》，卷二〇二，第5088页。</p>
 <p>(18)有关宋代度量衡资料，详见郭正忠《3-14世纪中国的权衡度量》（北京：中国社会科学出版社，1993），第255-312页。</p>
-<p><a href="%E5%AE%8B">19</a>王应麟，《玉海》（上海：江苏古藉出版社，上海书局，1988），卷一六八，第3081页。</p>
+<p><a href="宋">19</a>王应麟，《玉海》（上海：江苏古藉出版社，上海书局，1988），卷一六八，第3081页。</p>
 <p>(20)台湾故宫博物院，《石渠宝笈续编》（台北：故宫博物院，1971），第五册，第2656页。</p>
 <p>(21)同⑥，卷九六，第332页。</p>
 <p>(22)同③，卷四六五，第22589页。</p>
-<p><a href="%E5%AE%8B">23</a>欧阳修，《集古录》，卷七，见《欧阳修全集》（台北：世界书局，1961），第1177页。</p>
+<p><a href="宋">23</a>欧阳修，《集古录》，卷七，见《欧阳修全集》（台北：世界书局，1961），第1177页。</p>
 <p>(24)同(13)，第974页。</p>
 <p>(25)同(13)，第967页。</p>
 <p>(26)关于《越州石氏帖》的讨论可参见吕长生，《宋拓颜、柳、白、米四家法帖》，《文物》（1979年8月），第54-56页。顾学颉，《白居易所书诗书志石刻考释》，《文物》（1979年8月），第57-64页。吕长生，《越州石氏之谜》，《书法丛刊》（1994年3月），第26-35页。</p>
 <p>(27)东京国立博物馆，《东京国立博物馆图版目录》（东京：东京国立博物馆，1980），第18页。</p>
 <p>(28)中国古代书画鉴定组编，《中国古代书画图目》第三册（北京：文物出版社，1987），第19页。</p>
-<p><a href="%E6%B8%85">29</a>高士奇，《江村销夏录》（台北：汉华文化事业股份有限公司，1971），卷二，第185-191页。</p>
-<p><a href="%E5%AE%8B">30</a>桑世昌，《兰亭考》，收入于《中国书画全书》第二册，第609页。</p>
-<p><a href="%E6%98%8E">31</a>吴升，《大观录》（台北：汉华文化事业股份有限公司，1970），卷三，第283-285页。</p>
-<p><a href="%E5%AE%8B">32</a>无名氏，《道山清话》，收入《笔记小说大观》八编五册（台北：新兴书局，1975），第2845-2846。</p>
-<p><a href="%E5%85%83">33</a>虞集，《徽政院使张忠献公神道碑》《道园学古录》，卷一七。收入《景印文渊阁四库全书》第一二〇七册（台北：商务印书馆，1983），第242页。</p>
+<p><a href="清">29</a>高士奇，《江村销夏录》（台北：汉华文化事业股份有限公司，1971），卷二，第185-191页。</p>
+<p><a href="宋">30</a>桑世昌，《兰亭考》，收入于《中国书画全书》第二册，第609页。</p>
+<p><a href="明">31</a>吴升，《大观录》（台北：汉华文化事业股份有限公司，1970），卷三，第283-285页。</p>
+<p><a href="宋">32</a>无名氏，《道山清话》，收入《笔记小说大观》八编五册（台北：新兴书局，1975），第2845-2846。</p>
+<p><a href="元">33</a>虞集，《徽政院使张忠献公神道碑》《道园学古录》，卷一七。收入《景印文渊阁四库全书》第一二〇七册（台北：商务印书馆，1983），第242页。</p>
 <p>(34)史书关于张金界奴之记载相当有限，只有寥寥数语。参见《元史-张九思传》，卷一六九，第3981页。以及柯绍忞，《新元史-张九思传》（北京：中国书店，1988），卷一八六，第754页。</p>
-<p><a href="%E6%B8%85">35</a>王梓材、冯云濠辑，《宋元学案补遗》（台北：新文丰出版公司，1988），卷九二，第99页。</p>
-<p><a href="%E6%98%8E">36</a>尹梓等纂修，《丰县志》（国家图书馆藏隆废三年刊万历间增补本），第41页。</p>
+<p><a href="清">35</a>王梓材、冯云濠辑，《宋元学案补遗》（台北：新文丰出版公司，1988），卷九二，第99页。</p>
+<p><a href="明">36</a>尹梓等纂修，《丰县志》（国家图书馆藏隆废三年刊万历间增补本），第41页。</p>
 <p>(37)由《王著千文》后欧阳玄跋末题“跋袁侍御亨伯家所见，至正丁酉七月初吉”此句，得知袁涣于此年担任御史台侍御史。</p>
-<p><a href="%E6%98%8E">38</a>宋濂，《元故国子监祭酒孔公神道碑》中云：“（至正）十九年……公（孔克坚）及中丞袁涣诤曰……，涣亦被劾去。”见《宋学士文集》（台北：商务印书馆，1965），卷六八，第1083页。</p>
+<p><a href="明">38</a>宋濂，《元故国子监祭酒孔公神道碑》中云：“（至正）十九年……公（孔克坚）及中丞袁涣诤曰……，涣亦被劾去。”见《宋学士文集》（台北：商务印书馆，1965），卷六八，第1083页。</p>
 <p>(39)以上四条见《元史-宰相年表》，卷一一三，第1858、1859、1860、2862页。</p>
-<p><a href="%E6%98%8E">40</a>权衡编辑，《庚申外史》卷一记载曰：“丁未，至正二十七年，扩廓增兵入关，……朝廷因差左丞袁涣，及知院安定臣中丞明安帖木儿传旨，令两家息兵罢攻，各率所部，共清江淮。”由此知袁涣此年仍居中丞位。收入《笔记小说大观》四编四册（台北：新兴书局，1974），第2490页。</p>
+<p><a href="明">40</a>权衡编辑，《庚申外史》卷一记载曰：“丁未，至正二十七年，扩廓增兵入关，……朝廷因差左丞袁涣，及知院安定臣中丞明安帖木儿传旨，令两家息兵罢攻，各率所部，共清江淮。”由此知袁涣此年仍居中丞位。收入《笔记小说大观》四编四册（台北：新兴书局，1974），第2490页。</p>
 <p>(41)同(33)。按宋濂于神道碑碑文中指出在洪武三年（1370），孔克坚卒；十年后，其子孔希学以袁涣之状来请宋濂为其父撰写神道碑文，故可知至洪武十三年，袁涣仍在世。</p>
-<p><a href="%E5%85%83">42</a>欧阳玄，《永新龙母吴氏墓铭》，《圭斋文集》卷十。收入《四库全书》第一二一〇册，第125页。</p>
-<p><a href="%E6%98%8E">43</a>陶宗仪，《书史会要》，卷七。收入《中国书画全书》第四册，第61页。</p>
+<p><a href="元">42</a>欧阳玄，《永新龙母吴氏墓铭》，《圭斋文集》卷十。收入《四库全书》第一二一〇册，第125页。</p>
+<p><a href="明">43</a>陶宗仪，《书史会要》，卷七。收入《中国书画全书》第四册，第61页。</p>
 <p>(44)那志良，《项子京及其印章》，《大陆杂志》十三卷八期，第22-26页。</p>
-<p><a href="%E6%98%8E">45</a>姜绍书，《韵石斋笔谈》，卷下。收入《笔记小说大观》二十二编五册（台北：新兴书局，1978），第2748页。</p>
+<p><a href="明">45</a>姜绍书，《韵石斋笔谈》，卷下。收入《笔记小说大观》二十二编五册（台北：新兴书局，1978），第2748页。</p>
 <p>(46)同上。</p>
 <p>(47)此表乃根据郑银淑，《项元汴之书画收藏与艺术》（台北：文史哲出版社，1984），第209-211页之调查而成。</p>
 <p>(48)同上，第84页。</p>
-<p><a href="%E6%B8%85">49</a>吴其贞，《书画记》（上海：人民美术出版社，1963），卷三，第319页。</p>
+<p><a href="清">49</a>吴其贞，《书画记》（上海：人民美术出版社，1963），卷三，第319页。</p>
 <p>(50)同上，第325-326页。</p>
 <p>(51)关于高道素、高承埏父子二人生平，可参考清修《嘉兴府志》（台北：成文书局，1970），卷五一，第49-50、53-54页。</p>
-<p><a href="%E6%B8%85">52</a>朱彝尊，《前进士高公墓表》《曝书亭乐》，卷七二。收入于《四库全书》第一三一八册，第456页。</p>
-<p><a href="%E6%B8%85">53</a>朱赛尊，《静志居诗话》，卷一九。收入《明代传记丛刊》第十册（台北：明文书局，1991），第44页。</p>
-<p><a href="%E6%B8%85">54</a>朱辰应，《高承埏传》，《国朝耆献类征初编》，卷四六一。收入《淸代传记丛刊》第一八七册（台北：明文书局，1985），第344页。</p>
+<p><a href="清">52</a>朱彝尊，《前进士高公墓表》《曝书亭乐》，卷七二。收入于《四库全书》第一三一八册，第456页。</p>
+<p><a href="清">53</a>朱赛尊，《静志居诗话》，卷一九。收入《明代传记丛刊》第十册（台北：明文书局，1991），第44页。</p>
+<p><a href="清">54</a>朱辰应，《高承埏传》，《国朝耆献类征初编》，卷四六一。收入《淸代传记丛刊》第一八七册（台北：明文书局，1985），第344页。</p>
 <p>(55)同①，第72页。</p>
-<p><a href="%E6%B8%85">56</a>安岐，《墨缘汇观》（江苏：江苏美术出版社，1992），第1-2页。</p>
+<p><a href="清">56</a>安岐，《墨缘汇观》（江苏：江苏美术出版社，1992），第1-2页。</p>
 <p>(57)同(16)第2655页。</p>
 <p>(58)关于溥仪将清宫收藏运出宫外之过程可参考：溥仪，《我的前半生》（北京：群众出版社，1964），第143-144页。以及溥佳，《1924年溥仪出宫前后琐记》，收于《文史参考资料选集》第三十五辑（北京：中国文史出版社，1986），第249-250页。</p>
 <p>(59)《赏溥仪书画目》，第11页。见“国立”故宫博物院编，《故宫已佚书籍书画目录四种》（台中国立”故宫博物院，1954年据1934年本油印）。</p>
@@ -846,48 +879,48 @@
 <p>(61)同上，第508页。</p>
 <p>(62)启功，《论书绝句》（香港：商务印书馆香港分馆，1985），第130页。</p>
 <p>(63)同①，第69页。</p>
-<p><a href="%E6%98%8E">64</a>顾复，《平生壮观》（上海：人民美术出版社，1962），卷二，第页。</p>
+<p><a href="明">64</a>顾复，《平生壮观》（上海：人民美术出版社，1962），卷二，第页。</p>
 <p>(65)同(27)。</p>
 <p>(66)同(51)，第19页。</p>
 <p>(67)同(12)。</p>
 <p>(68)《宣和书谱》，卷一九。收入《中国书画全书》第二册，第56页。</p>
-<p><a href="%E5%AE%8B">69</a>苏轼，《六观堂老人草书诗一首》，《苏东坡全集》（台北：世界书局，1974），第466页。</p>
-<p><a href="%E5%AE%8B">70</a>黄庭坚，《跋周子发帖》《山谷题跋》，卷九。收入《中国书画全书》第一册，第720页。</p>
+<p><a href="宋">69</a>苏轼，《六观堂老人草书诗一首》，《苏东坡全集》（台北：世界书局，1974），第466页。</p>
+<p><a href="宋">70</a>黄庭坚，《跋周子发帖》《山谷题跋》，卷九。收入《中国书画全书》第一册，第720页。</p>
 <p>(71)同(63)。</p>
-<p><a href="%E5%AE%8B">72</a>米芾《海岳名言》。</p>
+<p><a href="宋">72</a>米芾《海岳名言》。</p>
 <p>(73)同(56)。</p>
 <p>(74)同(65)。《书草老杜诗后与黄斌老》，卷七，第698页。</p>
 <p>(75)同(65)。《跋与徐德修草书后》，卷六，第689页。</p>
-<p><a href="%E6%98%8E">76</a>张丑，《真迹日录》。收入《中国书画全书》第四册，第415页。</p>
-<p><a href="%E5%AE%8B">77</a>苏轼。《评草书》《东坡题跋》，卷四。收入《中国书画全书》第一册，第629页。</p>
-<p><a href="%E5%AE%8B">78</a>米芾，《画史》。收入《中国书画全书》第一册，第983页。</p>
-<p><a href="%E5%AE%8B">79</a>陆游，《老学庵笔记》，卷二，第21页。见《陆放翁全集》（台北：世界书局，1961）。</p>
+<p><a href="明">76</a>张丑，《真迹日录》。收入《中国书画全书》第四册，第415页。</p>
+<p><a href="宋">77</a>苏轼。《评草书》《东坡题跋》，卷四。收入《中国书画全书》第一册，第629页。</p>
+<p><a href="宋">78</a>米芾，《画史》。收入《中国书画全书》第一册，第983页。</p>
+<p><a href="宋">79</a>陆游，《老学庵笔记》，卷二，第21页。见《陆放翁全集》（台北：世界书局，1961）。</p>
 <p>(80)同(63)。</p>
 <p>(81)于敏中语。</p>
-<p><a href="%E6%B8%85">82</a>冯班，《钝吟书要》，收入《清人书学论著》（台北：世界书局，1962），第3-4页。</p>
-<p><a href="%E5%AE%8B">83</a>张邦基，《墨庄漫录》，收入《笔记小说大观》第二十二编二册（台北：新兴书局，1978），卷一〇，第823页。</p>
-<p><a href="%E5%AE%8B">84</a>蔡襄，《观宋中道家藏书画》，《端明集》，卷二。收入《四库全书》第一〇九〇册，第356页。</p>
+<p><a href="清">82</a>冯班，《钝吟书要》，收入《清人书学论著》（台北：世界书局，1962），第3-4页。</p>
+<p><a href="宋">83</a>张邦基，《墨庄漫录》，收入《笔记小说大观》第二十二编二册（台北：新兴书局，1978），卷一〇，第823页。</p>
+<p><a href="宋">84</a>蔡襄，《观宋中道家藏书画》，《端明集》，卷二。收入《四库全书》第一〇九〇册，第356页。</p>
 <p>(85)同(13)，第975页。</p>
 <p>(86)同(65)。《跋蔡君谟帖》，卷五，第691页。</p>
 <p>(87)此处引自[宋]董史，《皇宋书录》中篇。收入《中国书画全书》第二册，第635页。</p>
 <p>(88)同(72)。《跋君谟飞白》，卷四，第628页。</p>
 <p>(89)同(72)。《评杨氏所藏欧蔡书》，卷四，第630页。</p>
 <p>(90)同(72)。《杂评》，卷四，第630页。</p>
-<p><a href="%E6%B8%85">91</a>刘熙载，《书概》《艺概》（台北：广文书局，1964），卷五，第16页。</p>
-<p><a href="%E5%AE%8B">92</a>欧阳修，《笔说》。见《欧阳修全集》，第1046页。</p>
-<p><a href="%E5%AE%8B">93</a>葛立方，《韵语阳秋》，卷一四。收入《笔记小说大观》四十三编三册（台北：新兴书局，1986），第787页。</p>
-<p><a href="%E5%AE%8B">94</a>刘克庄，《后村先生大全集》，卷一〇四。收入《四部丛刊正编》第六十二册（台北：商务印书馆，1979）。第905页。</p>
+<p><a href="清">91</a>刘熙载，《书概》《艺概》（台北：广文书局，1964），卷五，第16页。</p>
+<p><a href="宋">92</a>欧阳修，《笔说》。见《欧阳修全集》，第1046页。</p>
+<p><a href="宋">93</a>葛立方，《韵语阳秋》，卷一四。收入《笔记小说大观》四十三编三册（台北：新兴书局，1986），第787页。</p>
+<p><a href="宋">94</a>刘克庄，《后村先生大全集》，卷一〇四。收入《四部丛刊正编》第六十二册（台北：商务印书馆，1979）。第905页。</p>
 <p>(95)同(87)。</p>
 <p>(96)同(12)。</p>
-<p><a href="%E5%AE%8B">97</a>黄伯思，《东观余论》，收入《中国书画全集》第一册，第898、890页。</p>
-<p><a href="%E5%AE%8B">98</a>李弥逊，《筠谿集》，卷二一。收入《四库全书》第一一三〇册，第793页。</p>
+<p><a href="宋">97</a>黄伯思，《东观余论》，收入《中国书画全集》第一册，第898、890页。</p>
+<p><a href="宋">98</a>李弥逊，《筠谿集》，卷二一。收入《四库全书》第一一三〇册，第793页。</p>
 <p>(99)同⑩。</p>
-<p><a href="%E5%AE%8B">100</a>陈睽等编，《中兴馆阁书目》。收入于《书目类编》第一册（台北：成文出版社，1978），第167页。此书编于宋孝宗淳熙五年（1178）。</p>
-<p><a href="%E5%AE%8B">101</a>晁公武，《郡斋读书志》（台北：广文书局，1979），卷四，第436页。</p>
+<p><a href="宋">100</a>陈睽等编，《中兴馆阁书目》。收入于《书目类编》第一册（台北：成文出版社，1978），第167页。此书编于宋孝宗淳熙五年（1178）。</p>
+<p><a href="宋">101</a>晁公武，《郡斋读书志》（台北：广文书局，1979），卷四，第436页。</p>
 <p>(102)同(74)。卷一〇，第64页。</p>
-<p><a href="%E5%AE%8B">103</a>陈振孙，《直斋书录解题》（上海：上海古籍出版社，1987），卷一四，第407页。</p>
+<p><a href="宋">103</a>陈振孙，《直斋书录解题》（上海：上海古籍出版社，1987），卷一四，第407页。</p>
 <p>(104)同(89)。</p>
-<p><a href="%E5%AE%8B">105</a>陈槱，《负暄野录》，卷上。收入《中国书画全书》第二册，第647页。</p>
+<p><a href="宋">105</a>陈槱，《负暄野录》，卷上。收入《中国书画全书》第二册，第647页。</p>
 <p>(106)同(19)，卷四五，第849页。</p>
 <p>(107)同③。</p>
 <p>(108)同④。</p>
@@ -895,7 +928,7 @@
 <p>(110)据《赵孟頫书禊帖源流》，书于至大二年（1309）。见《石渠宝笈三编》，第1573页。</p>
 <p>(111)据《唐李怀琳书晋嵇中散绝交书》后汤垕跋语，书于延祐七年（1320）。见《孙氏书画钞》之著录，收入《中国书画全书》第三册，第889页。</p>
 <p>(112)据《赵魏公楷书洛神赋》后袁泰跋语，书于至治三年（1323）。见《郁氏书画题跋记》，卷八之著录，收入《中国书画全书》第四册，第729-730页。</p>
-<p><a href="%E5%85%83">113</a>陶宗仪，涵芬楼百卷本《说郛》（台北：商务印书馆，1972），据涵芬楼藏明钞本影印，卷七八，第1125页。</p>
+<p><a href="元">113</a>陶宗仪，涵芬楼百卷本《说郛》（台北：商务印书馆，1972），据涵芬楼藏明钞本影印，卷七八，第1125页。</p>
 <p>(114)宛委山堂百二十卷本《说郛》，据台大图书馆藏清顺治三年（1646）李际期宛委山堂刊本，卷八六。与《四库全书》本相互对照，第八八一册，第37-38页。</p>
 <h2 id="台湾故宫博物院乃是故宫赃物院"><a class="header" href="#台湾故宫博物院乃是故宫赃物院">台湾“故宫”博物院乃是“故宫”赃物院</a></h2>
 <p>大陆国家文物局局长张德勤4月29日表示，海峡两岸的交流可从不存在意识形态和政治敏感争议的文化交流着手，将海峡两岸故宫博物院的交流推动起来，即北京、台北故宫博物院收藏的古物相互举行文物交流展览，及大陆新近出土的古文物如兵马俑的去台湾展览。</p>
@@ -911,7 +944,7 @@
 <p>四、自家宝物是要开放给国人看的，吝于展出，是王世杰之流“宫廷藏宝”式大脑结构，请问以贵“院长”掌权与牛步速度，六十四万六千两百一十三件中，何年何月方使国人得窥多少百分比？请列表说明。</p>
 <p>五、上距1991年第三次总清点，文物多出四百二十九件，其中除捐赠者外，收购“法书”部分有多少？请逐件列出。</p>
 <p>六、请列出贵“院长”就职以来全部收购预算之开支情形，并列表以明已收购细目及预算剩余情况。</p>
-<p>七、宋代书法名家周越，其大名，明见于“故宫博物院”出版《宋黄庭坚书发愿文》中前院长序文。黄庭坚“以周越为师”二十年之久，周越书法承上启下，衔接五代书家至宋四家中间近百年断层，其重要性自不待言。贵“院长”发行《中华五千年文物集刊-法书篇》，收“绝大部分为散佚之清宫旧藏，而沦陷神州故土者”，其中宋人部分四册，收有北宋书家作品，却无周越的字，是大陆方面，无周越墨迹留存；另一方面，“故宫博物院”出版《故宫历代法书全集》三十巨册、出版《故宫法书》线装本《宋人墨迹集册》六册，虽名家作品，莫不照收，却无周越的字，是台湾方面，亦无周越墨迹留存。在“故宫博物院”里如此，世界其他博物院里，也完全找不到周越的字；在全世界收藏家手中，也完全找不到周越的字。专精书法史的学者，如傅申，在其巨著TracesoftheBrush-StudiesinChineseCalligraphy里，也只能在脚注中有周越真迹难觅今之所存摹拓而已（ChouYueh'sworksarerareandextantmainlyinrubbingform）之憾。不期在此千年绝迹之时，竟有举世唯一遗品出现，经杨西昆大使洽请贵“院长”把握千载难逢机会，但贵“院长”竟看都不看、一口回绝。贵“院长”如此颟顸、玩忽、无知、怪异，实与“故宫博物院院长”身份绝不相称，令人惊讶。请详为说明并提出补救之道。（附录一——周越真迹说明）</p>
+<p>七、宋代书法名家周越，其大名，明见于“故宫博物院”出版《宋黄庭坚书发愿文》中前院长序文。黄庭坚“以周越为师”二十年之久，周越书法承上启下，衔接五代书家至宋四家中间近百年断层，其重要性自不待言。贵“院长”发行《中华五千年文物集刊-法书篇》，收“绝大部分为散佚之清宫旧藏，而沦陷神州故土者”，其中宋人部分四册，收有北宋书家作品，却无周越的字，是大陆方面，无周越墨迹留存；另一方面，“故宫博物院”出版《故宫历代法书全集》三十巨册、出版《故宫法书》线装本《宋人墨迹集册》六册，虽名家作品，莫不照收，却无周越的字，是台湾方面，亦无周越墨迹留存。在“故宫博物院”里如此，世界其他博物院里，也完全找不到周越的字；在全世界收藏家手中，也完全找不到周越的字。专精书法史的学者，如傅申，在其巨著TracesoftheBrush-StudiesinChineseCalligraphy里，也只能在脚注中有周越真迹难觅今之所存摹拓而已（ChouYueh’sworksarerareandextantmainlyinrubbingform）之憾。不期在此千年绝迹之时，竟有举世唯一遗品出现，经杨西昆大使洽请贵“院长”把握千载难逢机会，但贵“院长”竟看都不看、一口回绝。贵“院长”如此颟顸、玩忽、无知、怪异，实与“故宫博物院院长”身份绝不相称，令人惊讶。请详为说明并提出补救之道。（附录一——周越真迹说明）</p>
 <p>八、贵“院长”或以避嫌为遁辞，不知杨西昆“大使”用心如日月，为“国宝重器”谋归处，谋国者求之犹恐不及，又有何嫌可避？请即逐件列出历来收购来源及介绍人，俾便追查所谓避嫌真相。</p>
 <p>九、历来凡涉及古物职务者，无不以自己不收藏古物为自勉尺度，此乃真正避嫌之道。但历任“故宫博物院院长”中，竟以贵“院长”最富收藏。此次“阳光法案”，贵“院长”且以高达七位数字之财产申报收藏古物，可见端倪。惟贵“院长”只报出总价格，却不报出单项清单及价格，而外界盛传贵“院长”收藏总价远逾申报者。为昭公信，请即逐件列出送査，并请比照美国部长级大员涉及同性质职务必须抛售手中股票前例，抛售全部收藏，期树典范且以自明。</p>
 <p>十、贵“院长”主持下“故宫博物院”黑幕重重，此由目前台湾“高检署”发交士林分检署侦办集体诈领学术研究费案可见一斑。检方调査发现，此为一集体贪渎弊案。贵“院长”身为机关首长，当然责无旁贷。请即说明贵“院长”对此丑闻应负何种责任并列出诈领者及非诈领者全部名册送査。</p>
@@ -1020,17 +1053,17 @@
 <p>他又说：“书法本是有闲者的消遣，假如用它来替代赌博、吸烟等等，我倒不反对，假如行将就木的人，轻事毋须他做，重事他做不了，用写字来消磨他的时间，我也不反对。假如驱使一般有为的青年，费很多宝贵的时间去练字，我总觉得太冤枉，而且是一种罪恶。”</p>
 <p>这位一直在名大学中文系执教的学者，竟有上面这些脱俗之言，真可佩服。</p>
 <p>1991年4月9日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/09.历史文化类/中国艺术新研.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/09.历史文化类/中国艺术新研.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../09.历史文化类/中国现代史正论.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../09.历史文化类/中国近代史新论.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1040,16 +1073,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../09.历史文化类/中国现代史正论.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../09.历史文化类/中国近代史新论.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1058,12 +1096,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

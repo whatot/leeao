@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,77 +81,98 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <p>#《李敖生死书》目录</p>
 <ul>
@@ -212,21 +245,21 @@
 <p>我将漠然无语，</p>
 <p>比你多一倍。</p>
 <p>莎拉替滋代尔（SaraTeasdale）死在1933年1月28日，自杀在浴缸里。四十四年后，1977年4月19日，我在“中心诊所“病房，就她的IShallNotCare一诗改作《四月之死》，就是上面这首。附原诗于后：</p>
-<p>WhenIamdeadandovermebrightApril</p>
-<p>Shakesoutherrain-drenchedhair,</p>
-<p>Thoughyoushouldleanabovemebroken-hearted,</p>
-<p>Ishallnotcare.</p>
-<p>Ishallhavepeace,asleafytreesarepeaceful</p>
-<p>AndIshallbemoresilentandcold-hearted</p>
-<p>Thanyouarenow.</p>
+<p>When I am dead and over me bright April</p>
+<p>Shakes out her rain-drenched hair,</p>
+<p>Though you should lean above me broken-hearted,</p>
+<p>I shall not care.</p>
+<p>I shall have peace, as leafy trees are peaceful</p>
+<p>And I shall be more silent and cold-hearted</p>
+<p>Than you are now.</p>
 <p>1977年4月19日</p>
 <p>头颅无价，师出有名</p>
 <p>今天路透社电讯说：“1789年7月14日法国大革命爆发，代表法国王朝的路易十六被送上断头台；1989年7月14日，法国庆祝革命两百周年的庆典上，法国总统密特朗公开表示，路易十六是个好人，把他处死是件悲剧，但也是不可避免的。”“路易十六是否罪当该死，一直是法国大革命历史中备受争议的焦点。许多同情皇室的人以为，革命激烈的手段并不可取，推翻王室可以，但不一定要处死路易十六。就像密特朗所说，路易十六领导的王朝虽是革命推翻的目标，但是谈到王朝的腐败，路易十六所要负起的责任还远不及他的前任者。”“事实上，现在大多数法国人也都这么认为。去年法国电视举办一场审判路易十六的模拟审判，百分之五十五的观众就反对处死路易十六。”“密特朗在一九八一年上台后做的第一件事就是废除死刑。他表示，如果是他，他现在一定不赞成处死路易十六，况且目前法国法律中也禁止死刑。”“但密特朗以为，处死路易十六虽然是个悲剧，但是处决他的人同时也成功地达成埋葬过去的愿望，因为路易十六的死亡，代表与过去王朝时代一刀两断新时代的来临。以1793年的时代背景而言，无疑是不可避免的。”</p>
 <p>法国总统公开表示“路易十六是个好人”，但在当年竟不得不被处死，因为处死他，使对手“成功地达成埋葬过去的愿望”。这一公开表示，使我忍不住要一谈我的感想。</p>
-<p>“路易十六是个好人”，他是个仪态平庸的胖子，在国务会议上会打瞌睡。他爱国家、信宗教、对老百姓也不错。他的毛病在优柔寡断，即使在大臣堵哥（Turgot）提醒他，英国皇帝查理一世（CharlesI）因优柔寡断，而最后上了断头台，他也无法汰旧立新。法国大革命起来后，他在二十五个小时的表决中，以叛国罪定了死刑，曾经引起许多人们的不满。一个投赞成死刑票的议员圣法哥（St.Fargeau），晚上碰到禁卫军的军官，这军官当场用刀把他扎死，以示痛恨。</p>
+<p>“路易十六是个好人”，他是个仪态平庸的胖子，在国务会议上会打瞌睡。他爱国家、信宗教、对老百姓也不错。他的毛病在优柔寡断，即使在大臣堵哥（Turgot）提醒他，英国皇帝查理一世（Charles I）因优柔寡断，而最后上了断头台，他也无法汰旧立新。法国大革命起来后，他在二十五个小时的表决中，以叛国罪定了死刑，曾经引起许多人们的不满。一个投赞成死刑票的议员圣法哥（St. Fargeau），晚上碰到禁卫军的军官，这军官当场用刀把他扎死，以示痛恨。</p>
 <p>1793年1月21日执行路易十六的死刑。死刑前一天，律师告诉了他这一判决。路易十六根本不相信，他说律师听错了。因为他一生并没做过对不起国家的事，何况法国大革命后，他无意恋栈王位，表示愿退隐国外、不问国事。可是，他却不知道，政治是没有是非的。正如罗伯斯庇尔所说：“判处路易十六死刑，是基于政治需要，非关任何法理与人道问题。”也正如崇拜罗伯斯庇尔的议员圣朱斯特（Juste）所说：“光凭路易十六是法国国王，就该判他死刑。”可见在政治挂帅之下，没有是非可言。要路易十六这个好人的大好头颅，目的只在满足一些人的政治需要。在政治需要之下，好人又算老几呢？</p>
 <p>路易十六死后，三十八岁的皇后、七岁的小太子，后来也都不能自保。小太子在母亲也上断头台后，被关在小牢之中，一天只送一回食物给他，大小便就地解决，恶臭扑鼻。他蜷伏其中，背驼肢肿，头和身体都已化脓生虫。劳伦（Laurent）为监理人时，诉请国会请准小太子洗澡就医，可是国会拒绝，因为基于政治需要，把小太子虐待以死，是为原案。最后，这小孩十岁年纪，就夭折了。</p>
-<p>这种基于政治需要、祸延无辜的局面，并非路易十六一家是倒霉鬼。古往今来，史例颇多。俄国革命后，末代皇帝尼古拉二世（NicholasII），在1918年7月17日，包含皇后、四个公主、一个小太子，都被惨杀并毁尸在政治需要之下。政治没有是非，此又一证。</p>
+<p>这种基于政治需要、祸延无辜的局面，并非路易十六一家是倒霉鬼。古往今来，史例颇多。俄国革命后，末代皇帝尼古拉二世（Nicholas II），在1918年7月17日，包含皇后、四个公主、一个小太子，都被惨杀并毁尸在政治需要之下。政治没有是非，此又一证。</p>
 <p>又如明朝的于谦，处理“土木之变”，于国有大功，对被掳皇帝明英宗的保全，也尽了大力。不料明英宗复辟之日，竟决定要杀于谦。一开始明英宗尚有点犹豫，他说：“于谦实有功。”可是徐有贞说：“不杀于谦，此举为无名。”意思是说，不杀他，则反证我们复辟的理由，师出无名了。正因为杀于谦是基于政治需要，所以，好人又算老几呢？</p>
 <p>我生平不喜欢政治，因为一政治就没有是非。路易十六的惨死，使我们重温这类的史实与至理，在法国大革命两百年后的今天，不妨从这一角度，吸取教训。</p>
 <p>1989年7月15日</p>
@@ -246,7 +279,7 @@
 <p>我要谈的自杀主人翁，不是别人，就是戴传贤。</p>
 <p>一千年的大言状语</p>
 <p>戴传贤，字季陶，晚号孝园，1890年生，浙江吴兴人。他十四岁时候，就有了排满思想。十六岁起到日本留学，自师范而法科，日文学得不错。二十岁回国。二十一岁办《天铎报》，惹出文字狱。二十二岁亡命日本，革起命来。二十三岁辛亥革命成功后，做孙文机要秘书。此后青云直上，二十八岁做大元帅府法制委员会委员，又兼帅府秘书长、外交部次长。三十五岁做国民党中央执行委员、政治委员、宣传部长。三十七岁做中山大学委员长后改为校长。三十九岁做考试院长，长达二十年。最后做的是国史馆馆长和国民党中央常务委员。以这种显赫的履历，可知他在国民党中的地位，是炙手可热的。</p>
-<p>美国诗人弗罗斯特写《预防》（Precaution）一诗，说他年轻时不敢做一个急进派，因为怕他年老时变成一个保守派（Ineverdaredberadicalwhenyoung/Forfearitwouldmakemeconservativewhenold.）。综看戴传贤的一生，正好是个自急进派转变保守派的两极写照。戴传贤年轻时是急进的革命党，年老后却愈来愈反动，整天吃斋拜佛写毛笔字，他的考试院，也就变成了一个活宝衙门，连大门口站岗的，都要穿孔子时代的古装亮相，此公的莫名其妙，由此可知矣！</p>
+<p>美国诗人弗罗斯特写《预防》（Precaution）一诗，说他年轻时不敢做一个急进派，因为怕他年老时变成一个保守派（I never dared be radical when young/For fear it would make me conservative when old.）。综看戴传贤的一生，正好是个自急进派转变保守派的两极写照。戴传贤年轻时是急进的革命党，年老后却愈来愈反动，整天吃斋拜佛写毛笔字，他的考试院，也就变成了一个活宝衙门，连大门口站岗的，都要穿孔子时代的古装亮相，此公的莫名其妙，由此可知矣！</p>
 <p>但是，戴传贤虽然是个莫名其妙的人，但他在国民党中，却是少有的颇有“纯纯的信仰”的一位，他关怀国民党的前途，总是真诚的、情见乎词的。1944年，他在重庆曾家岩发豪语：“周朝的天下是八百年，国民党至少要掌握政权一千年。”这种“纯纯的信仰”，在国民党中，又有谁比得上他呢？</p>
 <p>一千年减二十年</p>
 <p>对戴传贤美中不足的是：国民党的一千年天下，在他做了考试院长二十年后，遭遇到严重的挑战，国民党所掌握的地盘，已经“日蹙百里”以上了。今年5月22日《新生报》上一篇文章说当时国民党“望风降贼”，这正是他们自己无法讳言的。戴传贤早在1946年就感慨于“五十年来救国，三民主义为宗，……民元以至于今，几于无人信从”了，他内心的悲愤，和他对那一千年“纯纯的信仰”的动摇，使他最后无法适应了。于是，在1949年2月12日，他在随国民党政府自南京逃到广州后，突然自杀了。</p>
@@ -331,7 +364,7 @@
 <p>去年（1982）12月31日刊于中国时报第三版的苏南成的《恢复党籍有感》（当然是指中国国民党），此篇文章竟然一开头就引用王国维在《人间词话》一书中的论述做为开头，真是侮辱了人品高洁的王国维①。</p>
 <p>苏南成自作践不要紧，又将“五十之年，只欠一死，经此世变，义无再辱”的王国维拉出来，做为他自作践的陪衬。我真是为王国维感到悲哀，死后还要再被凌辱。</p>
 <p>王国维为何自沉于昆明湖？这个疑问恐怕也要偏劳深具慧眼、勇猛精进的你来为世人“拨云雾见青天”了。</p>
-<p>W．M．L1983年1月12日</p>
+<p>W．M．L 1983年1月12日</p>
 <p>这位台大学生的程度，是很优异的，因为他居然知道《人间词话》作者的一些其他的事，这在台湾，此时此地的台湾，不算是很容易的事。他想进一步知道“王国维为何自沉于昆明湖”，是一个好问题，我很高兴为他解答。</p>
 <p>王国维的学术地位</p>
 <p>王国维，字静安，号观堂，浙江海宁人。他的祖籍是河南开封，远祖王禀，在北宋亡国前守山西太原，城陷死节。王禀的孙子随宋高宗南渡，就变成浙江人。</p>
@@ -436,9 +469,9 @@
 <p>《“太原五百完人”调查报告》说：“1949年4月24日上午10时，解放太原的战斗结束。太原市公安局立即派出人员，一面搜捕特务分子，一面带领自首的特务分子及知情人，清理特警处废墟，辨认已自杀的特务分子的尸体。后来根据现场清理的结果，写了《特种警宪指挥处首要特务分子集体自杀调查报告》。这次调查，我们在省公安厅档案馆查阅了这份《调查报告》，又访问了许多知情人，得知自杀者以及被胁迫或因其他原因与自杀者同归于尽者，全部只有四十六人。”</p>
 <p>从这四十六人的名单核对下，可知死难的人连五百完人的十分之一都不到！并且其中死的，还有“被胁迫或其他原因与自杀者同归于尽者”。由此可知，1969年4月24日蒋介石《总统训词》中所谓“城陷之日，偕同僚五百人从容仰药成仁”，自属不实之言。</p>
 <p>《“太原五百完人”调查报告》说：“自杀的人确是有的。这主要的是以山西省政府代主席、同志会工委会主任、太原绥靖公署特种警宪指挥处（以下简称特警处）中将处长梁敦厚为首的骨干特务分子。他们满身血污，在抗战胜利后三年多的时间内，残杀了数以千计的共产党员、进步人士和无辜群众。他们自知罪恶深重，难逃法网，遂按照阎锡山的指示，一面疯狂地杀人，仅在解放前一个多月的时间内，即残杀所谓‘伪装分子’及内部不稳定分子二百余人，一面花天酒地‘加大享受，缩短阳寿’。解放军对太原发起总攻后，特种警宪指挥处代处长徐端发给处内中层干部安家费黄金一至数条（每条十两）不等，命令他们送回家后回处集中。之后即不许外出，焚毁档案，准备自杀。原组训科长，当时任秘书主任的王定一，是在送安家费时化装成伤兵隐蔽于医院而逃脱自杀的。其余的中层干部则集中于徐端办公室下面的地下室内。此外，在东缉虎营二号友仁中学院内，集中了该处军政干部训练队队长范养德等十余人，在坝陵桥十八号集中了太原特警队代主任王九如等十余人。这时，他们继续残酷地杀害所谓‘伪装分子’。四月二十二日夜，在坝陵桥十八号即杀害五十六人。范养德也将关押在军政训练队内的被解放军俘虏、又释放归来的军政人员十余人残酷杀死。”</p>
-<p>报告中又说：“4月24日晨八时左右，梁敦厚得知解放军攻入城内后，即与阎锡山的五堂妹阎慧卿在绥署钟楼下的避弹室内服毒自杀。之后，梁的卫士柏光元根据梁在事先的安排，在室内浇上汽油，引火焚尸。”这一死法，活像德国法西斯头子希特勒（AdolfHitler）的死法。</p>
+<p>报告中又说：“4月24日晨八时左右，梁敦厚得知解放军攻入城内后，即与阎锡山的五堂妹阎慧卿在绥署钟楼下的避弹室内服毒自杀。之后，梁的卫士柏光元根据梁在事先的安排，在室内浇上汽油，引火焚尸。”这一死法，活像德国法西斯头子希特勒（Adolf Hitler）的死法。</p>
 <p>报告中又说：“在特警处本部徐端办公室地下室内的特警处代处长徐端、副处长兰风、李紫云以及中层骨干特务等二十余人，得悉解放军已进抵特警处附近时，特宪队长曹树声将前来报告情况的特务连副连长汤守庭击毙，徐端命令‘特招室’主任孙沫冰将木笼内残留的几名‘伪装分子’全部杀死，并放火烧了木笼。然后，他们有的服毒，有的相互枪击，除了机警的安紫氾、李鹤龄、畅涛、王耀堂四人趁机逃脱外，其余均相继倒于血泊之中，结束了他们罪恶的一生。地下室接着被炮弹击中起火。”</p>
-<p>报告中又说：“在坝陵桥十八号，太原特警队代主任王九如等十人；在东缉虎营二号，军政训练队队长范养德等四人，于解放军入城后也相继自杀。此外，山西省会警察局局长师则程击毙其小老婆史爱英后，自杀于柳巷派出所（原柳巷北口东侧）。”师则程的小老婆是日本人，他这种“先杀妻子，次以自杀”的死法，又活像希特勒手下戈培尔（JosephGoebbels）的死法。当然，这种强迫小老婆陪做“完人”的也不止师则程一人，像徐端的小老婆刘建德就是其中之一。她是山西徐沟人，死时才十九岁。兰风霸占的晋剧女演员王桂燕也陪做“完人”了，她本要逃走，被兰风当场击毙了，死时才十八岁。</p>
+<p>报告中又说：“在坝陵桥十八号，太原特警队代主任王九如等十人；在东缉虎营二号，军政训练队队长范养德等四人，于解放军入城后也相继自杀。此外，山西省会警察局局长师则程击毙其小老婆史爱英后，自杀于柳巷派出所（原柳巷北口东侧）。”师则程的小老婆是日本人，他这种“先杀妻子，次以自杀”的死法，又活像希特勒手下戈培尔（Joseph Goebbels）的死法。当然，这种强迫小老婆陪做“完人”的也不止师则程一人，像徐端的小老婆刘建德就是其中之一。她是山西徐沟人，死时才十九岁。兰风霸占的晋剧女演员王桂燕也陪做“完人”了，她本要逃走，被兰风当场击毙了，死时才十八岁。</p>
 <p>以上所述“自杀的人确是有的”，但是只是一些特例，基本上，大家不但没自杀，并且都一一投降了。乔家才在丁玉山《太原保卫战琐记》序中指出：“太原保卫战的高级将领，除了六十一军军长赵恭阵亡外，其余悉数被俘，未能与城共亡，反不如文官表现之壮烈。”可见这一漏气，已不可掩。《“太原五百完人”调查报告》指出：“太原绥靖公署副主任兼第十五兵团司令官孙楚，第十兵团司令官兼太原守备司令王靖国以及太原绥靖公署参谋长赵世铃，在部分高级人员的敦促下，曾派人举白旗表示不再顽抗，但解放军已攻进绥署，结束战斗。他们以及阎锡山同志会的高干和候补高干吴绍之、李江（冠洋）、孟际丰、薄毓相、续如楫、白志沂、杨贞吉等人，以及绝大部分同志会基干，并没有服毒自杀，而是举手投降了。”</p>
 <p>由此可见，所谓轰轰烈烈，满朝文武集体成仁，吹牛耳！</p>
 <p>《“太原五百完人”调查报告》指出：“太原解放时，阎特连同几名被胁迫者，自杀的总共不过四十六人。这一事实，留在太原的原军政人员大体上是清楚的，从太原转移到广州的原军政人员大体上也是明白的。把它夸大为五百人，稍动脑筋的人都会提出一连串的疑问：五百基干自杀成仁，位于基干之上的同志会高干和候补高干孙楚、王靖国、吴绍之、李江、孟际丰、薄毓相、续如楫、白志沂等人，不是更应该自杀吗？他们为什么没有自杀？杨贞吉是阎锡山另一个特务组织政卫组的头子，他的双手也沾满了革命人民的鲜血。血债要用血来还，他是清楚的，但他并没有去自杀。《太原五百完人题名录》（以下简称《题名录》）上列的一些队员、科员，甚至消防队员，与共产党并没有什么深仇大恨，为什么要自杀？”</p>
@@ -611,7 +644,7 @@
 <p>杜均衡的例子，杜九森的事件，又十足说明了整天嘴巴上提倡家庭伦理道德的国民党，在行为上，怎样使人不能团圆、怎样使人不得见最后一面、怎样使人“不准看死爸爸”。只有“观其行而察其言”，我们才能对一切恍然大悟，而对国民党的假面具，也就思过另一半矣！</p>
 <p>1983年12月23日在台湾</p>
 <p>活人不要要死尸</p>
-<p>希腊特洛伊之战（TrojanWar），特洛伊城被围，国王普瑞姆（Priam）的儿子赫克托（Hector）出战，被阿奇里斯（Achilles）杀死，普瑞姆大恸，入夜单骑见阿奇里斯，索还儿子的尸体；英国哈斯丁斯之战（BattleofHastings），盎格鲁撒克逊族最后国王哈罗德二世（HaroldⅡ）被箭射死，其母大恸，彳亍求见征服者威廉（WilliamtheConqueror），索还儿子的尸体。了解古代史的人都会知道，这种索尸的行为，绝不像表面那么简单，而大有文章在。什么文章呢？</p>
+<p>希腊特洛伊之战（Trojan War），特洛伊城被围，国王普瑞姆（Priam）的儿子赫克托（Hector）出战，被阿奇里斯（Achilles）杀死，普瑞姆大恸，入夜单骑见阿奇里斯，索还儿子的尸体；英国哈斯丁斯之战（Battle of Hastings），盎格鲁撒克逊族最后国王哈罗德二世（HaroldⅡ）被箭射死，其母大恸，彳亍求见征服者威廉（William the Conqueror），索还儿子的尸体。了解古代史的人都会知道，这种索尸的行为，绝不像表面那么简单，而大有文章在。什么文章呢？</p>
 <p>死尸的宗教意义</p>
 <p>原来古人迷信人死后，死者仍活在人间，只不过转入地下而已，死者的灵魂没上天堂，也没下地狱（天堂地狱之说，在西方是较晚的事），而是与尸体同生，一起埋在坟里。从希腊诗人平德尔（Pindar）的诗中，我们可以看到菲克索斯（Phryxos）老死他乡，但现形在裴利阿斯（Pelias）面前，请裴利阿斯自他乡取回尸体，因为灵魂必须依附于尸体，没有尸体，死者是不能魂归故国的。再从罗马诗人维吉尔（Virgil）的诗中，我们可以看到布里达尔（Polydore）出殡后，有“藏其魂于墓”的记录，因为灵魂必须依附于尸体，没有尸体，死者是不能死得其所的。</p>
 <p>正因为古人相信人死后不能魂无所依，所以畏死后不葬，甚于畏死。古代法律中有不许入葬的惩罚，大家都怕，怕的就是这种惩罚，可以罚及灵魂，这一罚，就会永无宁日，害得死后受苦，永恒的受苦。所以，大家对这一招，都小生怕怕，也老生怕怕。</p>
@@ -777,7 +810,7 @@
 <p>当天，中央致电张国焘：“陈谈右路军南下电令，中央认为是不适宜的。中央现恳切指出，目前方针，只有向北才是出路，向南则敌情、地形、居民、给养，都对我极端不利，将要使红军陷于空前未有之环境。中央认为：北上方针绝对不应改变，左路军应速即北上，在东出不利时，可以西渡黄河占领甘、青交通新地区，再行向东发展。”晚上，毛主席亲自来到我的住处，站在院子里问我：向前同志，你的意见怎么样？我说：两军既然已经会合，就不宜再分开，四方面军如分成两半恐怕不好。毛主席见我是这种态度，便没再说别的，要我早点休息，遂告辞而归。</p>
 <p>毛主席和党中央决定，单独带一、三军团北上，速出甘南。他们于十日夜间开拔，第二天凌晨，我们才知道。那天早晨，我刚刚起床，底下就来报告，说叶剑英同志不见了，指挥部的军用地图也不见了。我和陈昌浩大吃一惊。接着，前面的部队打来电话，说中央红军已经连夜出走，还放了警戒哨。何畏当时在红军大学，他跑来问：是不是有命令叫走？陈昌浩说：我们没下命令，赶紧叫他们回来！发生了如此重大的意外事件，使我愣了神，坐在床板上，半个钟头说不出话来。心想这是怎么搞的呀，走也不告诉我们一声呀，我们毫无思想准备呀，感到心情沉重，很受刺激，脑袋麻木得很。前面有人不明真相，打电话来请示：中央红军走了，还对我们警戒，打不打？陈昌浩拿着电话筒，问我怎么办？我说：哪有红军打红军的道理！叫他们听指挥，无论如何不能打！陈昌浩不错，当时完全同意我的意见，作了答复，避免了事态的进一步恶化。他是政治委员，有最后决定权，假如他感情用事，下决心打，我是很难阻止的。在这点上，不能否认陈昌浩同志维护团结的作用。那天上午，前敌指挥部开了锅，人来人往，乱哄哄的。我心情极坏，躺在床板上，蒙起头来，不想说一句话。陈昌浩十分激动，说了些难听的话，还给张国焘写了报告。</p>
 <p>“男儿有泪不轻弹。”然而，那两天我想来想去，彻夜难眠，忍不住偷偷哭了一场。我的内心很矛盾。一方面，几年来自己同张国焘、陈昌浩共事，一直不痛快，想早点离开他们。两军会合后，我对陈昌浩说，想去中央做点具体工作，的确是心里话。我是左思右想，盘算了很久，才说出来的。另一方面，右路军如单独北上，等于把四方面军分成两半，自己也舍不得。四方面军是我眼看着从小到大发展起来的，大家操了不少心、流了不少血汗，才形成这么支队伍，真不容易啊！分成两半，各走一方，无论从理智上或感情上说，我都难以接受。这也许是我的弱点所在吧！接着，中央又来电报要我们带着队伍北上。并说：中央已另电朱、张取消八日南下电令。陈昌浩的态度很坚决，骂中央是什么“右倾机会主义”啦、“逃跑主义”啦，决心南下。我想，是跟着中央走还是跟着部队南下呢？走嘛，自己只能带上个警卫员，骑着马去追中央。那时，陈昌浩的威信不低于我，他能说会写，打仗勇敢，又是政治委员。他不点头，我一个人是带不动队伍的，最多只能悄悄带走几个人。想来想去，还是决定和部队在一起，走着看吧！这样，我就执行了张国焘的南下命令，犯了终生抱愧的错误。</p>
-<p>从徐向前这一回忆里，我们看到张国焘所说：“毛泽东等破坏了中共和红军一致行动的最高原则，私率一、三军团单独行动，结果造成中共和红军的分裂。”“毛等此次行动，完全是秘密的，事先并未通知徐陈等。”完全属实。徐向前笔下虽然最后自承“抱愧”，认为“南下”是“错误”，但是，中央取消南下命令是八日下来的，在“中央”私自北上之后，在八日以前，南下之令，有中央明文，又何能怪有南北战争时李将军（RobertEdwardLee）气质的徐向前“舍不得”自己这一边？</p>
+<p>从徐向前这一回忆里，我们看到张国焘所说：“毛泽东等破坏了中共和红军一致行动的最高原则，私率一、三军团单独行动，结果造成中共和红军的分裂。”“毛等此次行动，完全是秘密的，事先并未通知徐陈等。”完全属实。徐向前笔下虽然最后自承“抱愧”，认为“南下”是“错误”，但是，中央取消南下命令是八日下来的，在“中央”私自北上之后，在八日以前，南下之令，有中央明文，又何能怪有南北战争时李将军（Robert Edward Lee）气质的徐向前“舍不得”自己这一边？</p>
 <p>后来，经过调停，双方沟通了，大家都北上。由张国焘系四方面军夺取甘肃河西走廊，与陕西北边的毛泽东系一方面军平行形成西北抗日局面。张国焘写道：</p>
 <p>陕北同志赞成我们这个军事计划，一直在催促我们北进，似乎没有我们的实力做资本，就不能形成西北的抗日局面。二、四两方面军的同志都很满意这个决定。在二方面军来说，他们居于中路，无论在军事上或政治上都可起桥梁作用，而四方面军的同志，也觉得河西走廊将是未来西北抗日局面的交通要道，正是我们可以大显身手的地方，而且因此也不致与一方面军挤在一块，再发生摩擦。可是，后来的事实发展，这个计划并没有实现，这是四方面军的失败，也是我的失败。</p>
 <p>照毛泽东的说法，“红西路军的失败，主要是张国焘机会主义错误的结果，他不执行中央的正确路线，他惧怕国民党反动力量，又害怕日本帝国主义，不经过中央，将队伍偷偷地调过黄河。”事实上，“将队伍调过黄河，”是出于毛泽东的命令。据一九八四年六月十五日李先念接受访问的回忆，他看了毛泽东打来的电报，他把电报看了二十遍，以确保“深刻领会电报的精神”。李先念确信：“这跟张过去分裂红军的企图不一样，渡河符合中央委员的具体指示。”再看1985年10月徐向前的《历史的回顾》：</p>
@@ -913,7 +946,7 @@
 <p>印度新闻社报导，印度国大党领袖、前总理拉吉夫甘地（RajivGandhi）今天在南部从事竞选活动时，不幸遭遇炸弹炸死。</p>
 <p>在这次炸弹爆炸事件中，与现年四十五岁的甘地一同遭炸死的尚有十余名民众。拉吉夫甘地曾在1984年至1989年担任印度总理。</p>
 <p>拉吉夫甘地的外祖父，就是大名鼎鼎的尼赫鲁（JawaharlalNehru）。尼赫鲁年轻时即从事印度独立运动。独立成功后，他担任印度第一任总理，长达十七年。七十四岁时死去。他一生中，坐牢九次，长达九年。他虽从外国人手中，争取到印度的独立，但却无法阻止独立后自己国家的分裂，他一生牺牲奋斗的结果，未尝不留下重大的问号。</p>
-<p>尼赫鲁死后，再传而由他的女儿甘地夫人（IndiraGandhi）担任总理。（国民党教授郎裕宪在《云五社会科学大辞典》中把甘地夫人说成是“尼嚇鲁之妹”，真是大笑话！）从1966到1984，除了其中十二个月的中断外，她一直统治印度，直到1984年被暗杀为止。</p>
+<p>尼赫鲁死后，再传而由他的女儿甘地夫人（Indira Gandhi）担任总理。（国民党教授郎裕宪在《云五社会科学大辞典》中把甘地夫人说成是“尼嚇鲁之妹”，真是大笑话！）从1966到1984，除了其中十二个月的中断外，她一直统治印度，直到1984年被暗杀为止。</p>
 <p>甘地夫人死后，拉吉夫甘地继起，从1984到1989，都担任总理。</p>
 <p>自尼赫鲁以还，他们一家祖孙三代，都担任印度总理，表面看来，颇有“世袭”味道，其实却经民主程序。这是英国帝国主义留给印度的“遗爱”。试看1977年10月，甘地夫人被控贪污、被逐出国会、乃至下狱，但她仍能东山再起。这种现象，在台湾蒋家三代是看不到的。相比起来，可看到蒋介石三代的可耻。</p>
 <p>再看尼赫鲁三代，他们不死于异族之手、却死于本国人之手，争独立而祖国分裂、争民主而两代横尸，其下场也，亦足云悲。世之搞政治者，在印度亦难矣！比较之下，如印度一直在帝国主义统治下，结果也不一定更坏吧？人间谑画，我于印度见之矣！</p>
@@ -947,17 +980,17 @@
 <p>英国人统治印度时，曾大力禁止这一陋习，时在1829至1830年间。但是后来，仍时有所闻。</p>
 <p>今天我看到寡妇桑妮雅在火葬堆边的照片，比对起我收藏的印度“色替”照片，深感古今之殊、时代之变。——把女人当成独立的人，这是几千年熊熊烈火、死同身受的血泪换来的，今之不挨火烧的新女性们，可知先辈之苦否？</p>
 <p>1991年5月25日午</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/16.李敖祸台十书/李敖生死书.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/16.李敖祸台十书/李敖生死书.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../16.李敖祸台十书/李敖智慧书.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../16.李敖祸台十书/笑傲五十年.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -967,16 +1000,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../16.李敖祸台十书/李敖智慧书.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../16.李敖祸台十书/笑傲五十年.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -985,12 +1023,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

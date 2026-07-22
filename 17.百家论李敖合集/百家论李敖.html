@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,77 +81,98 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <p>#《百家论李敖》目录</p>
 <ul>
@@ -687,7 +720,7 @@
 <p>爸爸说，不认识我们的人喜欢看我们的文章，认识我们的人喜欢听我们的讲话，了解我们的人喜欢我们这个人，我们做人比我们讲的话好，我们的讲话比我们的文章好。光看我们的文章，一定会以为我们是穷凶极恶的家伙，可是听了我们的讲话，一定会觉得我们比我们的文章更可爱，等对我们有了更深一层的了解，你会发现我们又厉害又善良。</p>
 <p>别人是恶霸，我们是善霸。我们也是一霸，绝对不是窝囊没用、被人欺负的滥好人。真正理解我和我爸爸的人都知道我们是刀子嘴豆腐心。</p>
 <p>爸爸非常爱我，常常将他收集的一些名人语录送予我。在他过完74岁生日的时候，他对我说感觉自己老了，头脑不再像以前那样灵活，有时候甚至会做错事。他提到自己正在“逝去”，意思是他可能会在不久的将来离开人世，而他也已接受这个事实。爸爸让我将“逝去”原文语录找出来，在此呈现如下献给爸爸：</p>
-<p>“Oldsoldiersneverdie；theyjustfadeaway.”（老兵不死，只会慢慢凋零）</p>
+<p>“Old soldiers never die；they just fade away.”（老兵不死，只会慢慢凋零）</p>
 <p>我的爸爸李敖（李文）</p>
 <p>1985年李敖的女儿——李文如是说</p>
 <p>独家越洋访问：李敖的女儿李文</p>
@@ -715,7 +748,7 @@
 <p>答：疼我。我觉得三姑比较疼我。六姑有太多孩子。</p>
 <p>问：你知道你爸爸是很有名的人吗？</p>
 <p>答：我如道，我以他为傲。我希望我可以回去看他，我也希望他来美国。可是我知道，他来美国不是简单的事情。我曾经跟刘会云和我干爹讲过，我会做任何事情把爸爸接来美国。</p>
-<p>我并不是很讨厌台湾，可是我很讨厌台湾的政府，因为，我不喜欢——他们自称republicofchina，可是不是那么自由，你不能像在美国一样可以大声骂总统，骂这个、骂那个，在台湾都要在暗地里。我很喜欢我爸爸的作风，人家要讲的话，要骂政府，骂不出来的话，我爸爸骂得出来。因为大家都是胆小鬼，他们不敢讲。我爸爸讲出来，被抓去坐牢，我觉得这是很不公平的事情。所以，我不喜欢台湾政府，我也不喜欢我爸爸待在台湾。</p>
+<p>我并不是很讨厌台湾，可是我很讨厌台湾的政府，因为，我不喜欢——他们自称republic of china，可是不是那么自由，你不能像在美国一样可以大声骂总统，骂这个、骂那个，在台湾都要在暗地里。我很喜欢我爸爸的作风，人家要讲的话，要骂政府，骂不出来的话，我爸爸骂得出来。因为大家都是胆小鬼，他们不敢讲。我爸爸讲出来，被抓去坐牢，我觉得这是很不公平的事情。所以，我不喜欢台湾政府，我也不喜欢我爸爸待在台湾。</p>
 <p>问：你爸爸那么有名，朋友满天下、敌人也满天下，你有没有碰到你爸爸的朋友或敌人？</p>
 <p>爸爸的敌人是笨人</p>
 <p>答：我住在美国的小镇，中国人很少。不过，我并不觉得我爸爸有敌人。如果有的话，他是笨人，不懂我爸爸为的书。我没碰到这种人，碰到了我也不会跟他做朋友。有些人很笨，知道我爸爸是李敖，对我说：“我知道你爸爸，你爸爸就是娶胡茵梦那个人”。我就说：“你是因为胡茵梦才知道我爸爸，那就是你不懂了。你觉得胡茵梦比我爸爸有名，那你就太小看我爸爸了。”我知道我爸爸不是结婚的料子，他自己也承认，他不喜欢结婚。他跟我生活在一起，有一次吵架，他跟我说我是私生子。那时候我对他说“你怎么可以讲这种话？”他说“事实上是这样”。可是，我想了半天，我爸爸还是爱我，不管怎么样，自从他把我从外婆那里抢过来，他一直照顾我，给我钱，给我学费，他一句话都不讲。我不能因为他讲那话，我就气，因为我还是他女儿，我还是李敖的女儿。</p>
@@ -793,7 +826,7 @@
 <p>记者：你看起来很年轻，皮肤也特别有光泽，频繁的投诉没有让你感到心情郁闷？</p>
 <p>李文：你没看我一直在笑吗？你不让我说出来我会更难受的。我的美容秘诀是：吃饭、睡觉和投诉，投诉可以让我血液循环。每天在家里做瑜珈的时候，就把心里的气都排了出去。另外，我的美容师每周到我家里给我做两次皮肤护理也可以帮助我减压。</p>
 <p>只是打官司要往里贴钱，我在北京花的都是以前挣的美金。这次起诉阳光卫视一下子交了7000元诉讼费，花掉了一个买包的钱，心疼死了。没钱我就问爸爸要，哈哈。</p>
-<p>李文博士（Dr.HedyW.Lee），1964年生于美国。英语教授、作家、演讲人、维权者和批评家。台湾著名作家李敖的长女。出生于美国纽约，在台湾和美国两地长大，深受中西文化的熏陶。在纽约大学政治与东亚研究专业取得学士学位后，又获得了哥伦比亚大学教育学硕士学位，并从旧金山私立大学国际与多元文化教育专业取得教育学博士学位。</p>
+<p>李文博士（Dr. Hedy W. Lee），1964年生于美国。英语教授、作家、演讲人、维权者和批评家。台湾著名作家李敖的长女。出生于美国纽约，在台湾和美国两地长大，深受中西文化的熏陶。在纽约大学政治与东亚研究专业取得学士学位后，又获得了哥伦比亚大学教育学硕士学位，并从旧金山私立大学国际与多元文化教育专业取得教育学博士学位。</p>
 <p>在美国，李文博士一直从事英语教学和研究工作，曾任职任教于加利福尼亚大学伯克利分校三藩艺术学院和台北台湾大学英语学院。2002年底，李文博士到北京定居，继续从事英语教学与研究工作。</p>
 <p>与其父李敖一样，李文也有一种疾恶如仇的性格。她把自己在中国一年的生活写进《我和李敖一起骂》一书中，探讨了中国的国民素质及社会文明领域方面的问题。引起了海内外媒体的关注。</p>
 <p>李敖私生女李随父开骂（李文）</p>
@@ -987,7 +1020,7 @@
 <p>白头宫女话天宝，听起来总是有点苍凉的意味，李敖头尚未白，但是却亦已经在话天宝旧事，在我的感觉里，苍凉中更透出了一份无奈。</p>
 <p>李敖是学历史的，由于受过专业训练的关系，他善于运用资料的本领，是每一个朋友都钦佩的，当他还住在信义路的时候，我常常到他家去，就亲眼见识过他对资料收集和整理的功夫，那时候，他和他母亲住在一起，老太太除了照顾他的光棍生活以外，还有一个工作，就是每天为他剪报，而剪报的范围，尤其广泛，除了中外各大报以外，很多名不见经传的小报以及其他出版物，他都有涉猎，每一份剪下来的资料，都会制成卡片，作好索引，然后分门别类的归档。李敖的藏书很多，不过，在我的朋友之中，藏书可以媲美李敖的，亦颇有人在，唯独以剪报资料来说，李敖个人所拥有的质和量，以及所下的整理功夫，应该可以称得上是独步台湾了。</p>
 <p>《文风》事件，在我来说，已经是尘封了十五六年的往事了，而李敖能够重新使他在我的记忆中鲜活了起来，这实在不得不拜谢他保存资料的功夫了。</p>
-<p>李敖在文中说：我告诉他。汤炎光先生弄到了一张《文风》杂志的执照，我们可以和汤合作，这一个过程，可能是李敖记错了！事实上，杂志的执照，是我们决定和汤先生合作了以后，才正式登记申请的，《文风》的中文名字，以及英文名字literaryspirit，亦是事后决定的，办文风，原先以为是一件极为简单的事，汤先生挂名发行人，编辑部在李敖家里，半个月一期，八开一张，分为四个版，整个所谓杂志社，就只有我和李敖两个人，所有文字由他和我“赶角分色”，在第一期所发表的文章，他写了十分之八，我写了十分之二。十几篇文章，我们用了八九个不同的笔名，我还记得有一篇批判中央研究院院长王世杰的文章，李敖用的笔名是“龙眠”，但是却马上被徐高阮看了出来。</p>
+<p>李敖在文中说：我告诉他。汤炎光先生弄到了一张《文风》杂志的执照，我们可以和汤合作，这一个过程，可能是李敖记错了！事实上，杂志的执照，是我们决定和汤先生合作了以后，才正式登记申请的，《文风》的中文名字，以及英文名字literary spirit，亦是事后决定的，办文风，原先以为是一件极为简单的事，汤先生挂名发行人，编辑部在李敖家里，半个月一期，八开一张，分为四个版，整个所谓杂志社，就只有我和李敖两个人，所有文字由他和我“赶角分色”，在第一期所发表的文章，他写了十分之八，我写了十分之二。十几篇文章，我们用了八九个不同的笔名，我还记得有一篇批判中央研究院院长王世杰的文章，李敖用的笔名是“龙眠”，但是却马上被徐高阮看了出来。</p>
 <p>孤零零的一小张</p>
 <p>杂志印了出来，只是孤零零的一小张，没有彩色封底面，没有PVC也没有装订，看上去实在很寒酸，李敖大概看出了我的那一份自卑，那一天，他除了带我和蕾蕾（他当时的小女友）去吃了一顿很像样的西餐，而且还拼命的夸赞自己的杂志，他把刚印好的《文风》，折成了一种比较“过得去”的样子，而且兴致勃勃的赞扬这种型态，将是杂志界的突破，他一再向蕾蕾强调，他要和我把这份短小精干的杂志，办个像模像样。</p>
 <p>但是，尽管我们如此的自我安慰，而在书报摊上，这实在是一份极不起眼的东西，我们在杂志上市的几天中，分别到各书报摊去“巡视”，很多摊贩，根本连挂都不挂，有一位四川老乡很老实的告诉我，这种“书不像书，报不像报”的玩艺，一份卖三元钱（照当时的币值，可能相当于今天的30元），他实在不敢卖，因为以这种价钱卖这么一张小纸片会给人骂的。</p>
@@ -1003,7 +1036,7 @@
 <p>李敖在《文风》的发刊词中说：“在废墟中盖一些小建筑，寄一些小希望……”口气是何等之小，格局是何等之小，而实际的形象，亦是小得不能再小，在一片沙漠中，根本只能称是一丛发育不良的小草而已，把它留下来，为经过的旅人，稍微增添些微绿意，未尝不是一件好事。但是，我们的庙堂人士，却偏偏要以万钧之力来对付这么一丁点微不足道的玩艺，岂不是煞风景的事。</p>
 <p>自从夏禹先生的令尊鯀先生用围堵的方法治水失败，被砍下了尊头以来，今天任何一位水利学家都已经了解到，治理洪水最好的方法，并不是围堵，而是疏导。</p>
 <p>但是，一直到今天，我们的政治家们，却还是不能触类旁通到用疏导方法来治水的道理，还是不断的到处筑坝造桥。我们一再地在呼吁，要建立社会上的祥和之气，殊不知，真正要建立祥和之气的基础，就是要多培养一些容忍的气度，即使这份容忍出于不屑，对祥和之气亦不无小补，有一位英国的特务人员向乔治皇帝提出一份名单，报告皇帝有好几十个“心怀叵测”的份子，正准备合起来举行一场演讲会，很很的攻讦朝政。</p>
-<p>乔治笑了笑，说了一句后来留在教科书上的名言：“随他去好了，当孩子们什么事儿也不干的时候，那才真的在搞鬼了……”（whenchildrenaredoingnothingtheyaredoingmischief。）</p>
+<p>乔治笑了笑，说了一句后来留在教科书上的名言：“随他去好了，当孩子们什么事儿也不干的时候，那才真的在搞鬼了……”（when children are doing nothing they are doing mischief。）</p>
 <p>台湾“挤”“挤”“挤”“挤”（方豪）</p>
 <p>jarvisdd：在《李敖回忆录》的《前程》，提到了──</p>
 <p>有一件事，倒是怪怪的，那就是《新闻天地》登出的一篇匿名的《台湾挤挤挤挤》，里面骂到吴相湘，也骂到我，吴相湘阅后大怒，直接质问国民党文化特务卜少夫（《新闻天地》负责人）是谁写的？卜少夫说是方豪。</p>
@@ -1060,7 +1093,7 @@
 <p>大陆票票票票</p>
 <p>从竹幕里脱身出来的人，到了香港，获得自由，自有一身轻松之感。其中，最感快意的，是不必终日给那些“票”和“券”搞得头昏眼花了。</p>
 <p>粗率计算一下，在上海，便有以下这二三十种票券：</p>
-<p>钞票、米票、鱼票、肉票、糖票、购粮票、小菜卡、就餐券、糖点券、饼干、盐、酱油卡、香烟券、工业券、饭票、饭卡、菜票、火柴票、肥皂票、布票、洋线团票、红卡（实工业品）、单人卡（实工农品）、黄酒票、白酒票、干菜票、啤酒票、大水果票、小水果票、茶叶票、海味票、蛋品票、华侨家族购买证等......</p>
+<p>钞票、米票、鱼票、肉票、糖票、购粮票、小菜卡、就餐券、糖点券、饼干、盐、酱油卡、香烟券、工业券、饭票、饭卡、菜票、火柴票、肥皂票、布票、洋线团票、红卡（实工业品）、单人卡（实工农品）、黄酒票、白酒票、干菜票、啤酒票、大水果票、小水果票、茶叶票、海味票、蛋品票、华侨家族购买证等……</p>
 <p>而每一票券，都有不同的数字，记这些票券和数字，就大伤脑筋的。</p>
 <p>李敖与我（曾心仪）</p>
 <p>说起来，我和李敖认识，还和《民众日报》多少有点关系呢！</p>
@@ -1183,8 +1216,8 @@
 <p>他听不进父母的回答——他不懂得国民党与共产党的仇恨，在他心目中，中国是属于中国人的，中国人是和平的、完整的、统一的。”</p>
 <p>三、精神准备</p>
 <p>60年代的新生代大部份是台大学生，例如陈鼓应、刘福增、杨国枢、许登源、洪成完、包奕明等等，而其中以李敖为最典型、最其代表性的愤怒青年。</p>
-<p>李敖是彻头彻尾的angryyoungman，更可说是60年代的angryyoungman之首。从写《老年人和棒子》开始，他就没有停止过对周遭环境的强烈不满与攻击。他不甘于消极与退让，更不愿意做无声的抗议。他将愤怒投向环境，对环境作出最尖锐、最深刻的攻击。他或许近于“犬儒主义”，但绝不沉默却是他的信念和特征。</p>
-<p>自主编“文星”以后，李敖“在十三个月里快速的投射他的力量，使自由中国文化界有一点小小的波澜”，跟其它愤怒青年比较起来，他的成绩无疑是最凸出、最使人吃惊和赞叹的。与李敖同期的新生代，例如陈鼓应和张化民诸人，虽然也是积极型的愤怒青年，但做出来的成绩却始终远逊于“暴得大名”的李敖，其中的主要原因，是李敖作为一个具爆炸力的angryyoungman，曾经作出长期和刻苦的精神准备与实质准备。</p>
+<p>李敖是彻头彻尾的angry young man，更可说是60年代的angry young man之首。从写《老年人和棒子》开始，他就没有停止过对周遭环境的强烈不满与攻击。他不甘于消极与退让，更不愿意做无声的抗议。他将愤怒投向环境，对环境作出最尖锐、最深刻的攻击。他或许近于“犬儒主义”，但绝不沉默却是他的信念和特征。</p>
+<p>自主编“文星”以后，李敖“在十三个月里快速的投射他的力量，使自由中国文化界有一点小小的波澜”，跟其它愤怒青年比较起来，他的成绩无疑是最凸出、最使人吃惊和赞叹的。与李敖同期的新生代，例如陈鼓应和张化民诸人，虽然也是积极型的愤怒青年，但做出来的成绩却始终远逊于“暴得大名”的李敖，其中的主要原因，是李敖作为一个具爆炸力的angry young man，曾经作出长期和刻苦的精神准备与实质准备。</p>
 <p>李敖祖籍山东潍县（远籍是云南乌撒，他说自己的祖先“很可能是苗族”），北方人一向脾气耿直，性格强烈，李敖自然不会例外。他说过自己的耿直脾气曾受一位叫温茂林的山西人影响。</p>
 <p>温茂林是淳朴率直的山西人，曾在李敖家中工作，负责照顾李敖起居的一切。李敖在自传中说自己“日后的一些耿直脾气，深受他的影响”，又提到一件有关自己的怪脾气的小故事。他回忆道：</p>
 <p>“我小时候，道学得很。……</p>
@@ -1227,9 +1260,9 @@
 <p>李敖是“西化派”的领导人物，他主编《文星》，不断抨击政府的法律、政治、文化政策。他似乎希望为自由中国提供一套全面性的发展指示。他在《文星》四年，发表的文字涉及历史、政治、文化、思想、法律、文学、爱情……无所不包，掀起了一股“文星风潮”，那时候的新生代，没有一个赶得上李敖。在读者眼中，李敖的确成为一个博学的思想型人和“深得民心的英雄”。他提出的思想观念，例如“全盘西化”、自由、民主等等其实许多均为五四时代的旧调，但在台湾当时的低气压下，这些旧调仍然不失前进和新鲜，仍然在知识界掀起一阵震撼。李敖对年青人的影响力，确实非常深远，例如台大的学生里团就曾集会讨论“李敖其人其文”，在那时候几乎没有人敢说自己没有看过李敖的文章。如果说胡适是五四时代的启蒙思想家，那么李敖便是继殷海光以后的再启蒙思想家。他带给年青人的，“是促进合理改革的热情与引线”，是对眼前环境的深刻反省和思虑。就算是不满意李敖的人，也绝不敢忽视或低估李敖对群众的影响力，因此他们才发动围剿，大骂“文化太保放毒气”。作为再启蒙的思想家，李敖把他二十多年来培养起来的力量迅速地投射出来，“以文字形式冲决网罗”，成为最有影响力的新生代。</p>
 <p>是优点，也是缺点</p>
 <p>李敖的学问固然渊博，可是为什么能够在短短的时间内将力量投射出来泥？</p>
-<p>李敖仿似墨顿（Merton）的“社会压力论”（socialstraintheory）中的反叛者，在迫人的社会压力下作出激烈的反抗行为。反叛者的特点是喜欢采用新方法来对现存社会结构和文化结构作出批判，他们不惜标新立异、不惜哗众取宠，在社会上“放野火”，挑起问题，而李敖将问题呈现在读者面前的形式，是利用他的一手好文章。</p>
+<p>李敖仿似墨顿（Merton）的“社会压力论”（social strain theory）中的反叛者，在迫人的社会压力下作出激烈的反抗行为。反叛者的特点是喜欢采用新方法来对现存社会结构和文化结构作出批判，他们不惜标新立异、不惜哗众取宠，在社会上“放野火”，挑起问题，而李敖将问题呈现在读者面前的形式，是利用他的一手好文章。</p>
 <p>李敖为自己的《李敖文存》写宣传广告，说“白话文在李敖手里，已经出神入化。……李敖‘纵笔所至不检束’，把白话文写得气象万千，光芒万丈，这种中国功夫，是谁也抹杀不了的”，显非过誉之词。他的文字功力是深为读者折服的，一个陈年的老问题到了他笔下，立即变为新鲜的怪问题。他行文锋利、爽快、言人之不敢言，自成一体，深深吸引着读者。李敖搞的学问很全面，也很有深度，从历史考据到文化思想，他都有自己的独特见解。可是由于个人的性格特质和认知观点，他偏偏选择了一种“哗众取宠”的方法，用通俗的形式来搞学问。他能够利用活泼爽快的文字，把他的研究结果“深入浅出”地呈现在读者面前。李敖自承“是本性嘻嘻哈哈的一个人”，这使他“不太能用扳着面孔的方法去做人处世写文章”；在认知上，他更认为自己所研究的历史和文化是一个“粪坑”，“没什么好写的，没什么意思”，“如果要有系统的写，太浪费了，不值得”，因此，他嬉笑怒骂皆文章，以最通俗的文字形式来搞最严肃的学术问题，胡秋原骂他的是“儿戏学问”，一点也不假。李敖搞“儿戏学问”，有好处，也有坏处。好处是“儿戏学问”有大众化性格，能够吸引大量的、普遍的读者，更可让他们简单明白地了解问题的所在；坏处呢，是以李敖的史才、史学、史识而不写出几部“中国思想史”、“中国现代史”等不朽名著，实在是中国学术界的大损失！由于坚持通俗、为了吸引读者、为了达到打击敌人的目的，李敖喜欢作概括论断（generalization），例如一口咬定中国传统是死文化；他甚至不措摘取片面的资料来支持自己的论证，例如他评论吴稚晖就是一个好例子（详见第二章——“从保守到激进”）。</p>
-<p>李敖的“儿戏学问”似乎十分全面，他讨论的问题包括、历史、考据、政治各方面，他也以“天文地理，无所不通；三教九流，无所不晓”来期许自己。这种全面性固然可以使读者有“此人何其渊博”的感觉，但也未尝没有“博而不精”的不满。李敖有意把自己塑造成一个“全面人”（universalman）或百科全书式的通人，他的用功和博学的确使他在某些程度上达到了目的，但反过来说，李敖的博大使他只成为一个“玩票者”（dilettante），给人一种不够专精的感觉。过早的“暴得大名”，使李敖忙于应付笔战与官司，而未能出国接受更严格的学术训练，这对他的学术工作来说，可能是一个非常巨大的损失。</p>
+<p>李敖的“儿戏学问”似乎十分全面，他讨论的问题包括、历史、考据、政治各方面，他也以“天文地理，无所不通；三教九流，无所不晓”来期许自己。这种全面性固然可以使读者有“此人何其渊博”的感觉，但也未尝没有“博而不精”的不满。李敖有意把自己塑造成一个“全面人”（universal man）或百科全书式的通人，他的用功和博学的确使他在某些程度上达到了目的，但反过来说，李敖的博大使他只成为一个“玩票者”（dilettante），给人一种不够专精的感觉。过早的“暴得大名”，使李敖忙于应付笔战与官司，而未能出国接受更严格的学术训练，这对他的学术工作来说，可能是一个非常巨大的损失。</p>
 <p>李敖的内在性格限制</p>
 <p>前面说过，李敖只是一个反叛者或改革者，若从心理学的观点来看，他始终未能转变为一个革命者。</p>
 <p>革命者不满权威，并推翻权威，自己当然也不想做权威。但反叛者则不然。反叛者讨厌权威，想尽办法推翻权威，但在他们的心灵下面，却是另一套以权威形式存在着的信仰和观念。他们本身往往会有意无意地表现出权威姿态，因为在他们的潜意识里面，本来就有对权威取而代之的冲动。</p>
@@ -1553,7 +1586,7 @@
 <p>之后各家网站为争取李敖加盟，自然会有高层次的说客提出优渥条件。后来李敖决定在SEEDNet发行电子报。或许是受到921大地震的影响，直到11月1日，“李敖电子报”才正式发刊。</p>
 <p>让我感慨的是，由于台湾文化人对网络的疏离，反而使得不会使用计算机（更别提上网）的李敖，成为第一个积极成立个人网络媒体的著名文化人。以后几乎每天都可以在网络上看到李敖刚出炉的文章，李敖参选总统大选落选后，或许更能在网络上发挥他下笔万言、文思泉涌的长处，把他几十年来念的书重新整理一番。从前李敖可以六个月足不出户，专心写文章，或许电子报事业可以再把他留在书桌前，重现十年前出版“求是报”的丰采。</p>
 <p>不只李敖，其实许多人都有能力建立属于自己的网络媒体。只要肯写、肯用心做学问，加上适当的包装，每个人都有机会办一个属于自己的小型报纸，每天以一两千字的篇幅，或许是评论，或许是杂文，也有可能是小说连载，逐渐累积起一套完整的思想脉络。就算找不到大型网站鼎力支持，只要有普通的网络流量，如果一天能增加五十位新订户，三年下来，也就可以形成五万人的群众基础。五万人，就足以支撑一套具体而微的生产工具：作家、助理、办公室、网络、书报和其它设备。</p>
-<p>对文化人来说，经营网络媒体，也只需要注意创作、论述以及适当的包装。其它的技术问题、广告业务甚至网页制作，都可以交给商业网站来负责。甚至，只要有一点网络的概念，文化人就可以想一些招数留下“死忠支持者”的emailaddress，如果跟原先合作的网站拆伙，还可以带着支持者的名单另起炉灶，维持自己发言的独立性。</p>
+<p>对文化人来说，经营网络媒体，也只需要注意创作、论述以及适当的包装。其它的技术问题、广告业务甚至网页制作，都可以交给商业网站来负责。甚至，只要有一点网络的概念，文化人就可以想一些招数留下“死忠支持者”的email address，如果跟原先合作的网站拆伙，还可以带着支持者的名单另起炉灶，维持自己发言的独立性。</p>
 <p>但“思想家”会因网络而诞生吗？</p>
 <p>最后的重点还是在于“人心”，而不在于“技术”。这时代，“典范”、“风骨”似乎已不太重要，多数人想着一夕成名，对于成为“思想家”大概没什么兴趣。有志于个人网络事业的创作者一定会越来越多，但恐怕大部份都会想着如何吸引大众、如何早一步进入商业市场、如何跟自己原有的事业结合。当累积五万读者时，恐怕大多数人想的不是要维持自己的独立性与批判性，而是要进一步和大媒体、大企业进行更深层的资源交换和结盟。网络上能孕育出台湾新一代的“思想家”吗？还是更多以娱乐大众为生存目的的“文字表演家”？</p>
 <p>我不禁又忧虑起来。</p>
@@ -1859,7 +1892,7 @@
 <p>玄关处左转，左手边（西边）一小面墙是由底至顶的开放式书架，书架宽11格，高6层，共有66个格子，每一格子被书塞实全满（书书立连无间，立书上的空间，又被几本书横塞其内），每一格子约有10至12本书，这一小面墙的书，保守估计是660至792本书。西边这一小面墙的后面是一小房间，是什么房间、房间内有多少藏书、宝物，不得而知。</p>
 <p>再向前些，西边凹入处是张大书桌，依我读了李大师十余本书的了解，这是他的“工作桌”之一。若坐在这张大书桌的坐椅上，右手边是一面宽有5格、高有6层的开放式书架，共30格，这一小面墙的书，保守估计是300至360本书；左手边主要是一面档案柜，也有些小茶几（对不起，或许该称为小书几）；大书桌前还有一长桌，长桌上古物（有一笨重古老的英文打字机呢）、史典、书籍也不少。</p>
 <p>再向前些，西边有一宽5格、高6层的开放式书架，再来是一扇门，再来是一宽3格、高6层的开放式书架，这一小面墙的书，保守估计是480至576本书；这一扇门后应是一小房间，我猜想，这间应是卫浴室。</p>
-<p>再向前些，西边有一门，之后有一由底至顶的封闭式书柜，书柜太深远，估计不出有多少书籍藏入其中；此门后面，乃一书房兼休息室（称之为“工作房”亦可吧！）李大师当日曾引领着大侠一同进入此书房，用他的ipad、入他的新浪微博“哈囉李敖”、看他的微博文章，为我解释他微文中“无剩义”的意义，写下“makethemostofit”、“无剩义”、“按下不表”，在此我也先按下不表。</p>
+<p>再向前些，西边有一门，之后有一由底至顶的封闭式书柜，书柜太深远，估计不出有多少书籍藏入其中；此门后面，乃一书房兼休息室（称之为“工作房”亦可吧！）李大师当日曾引领着大侠一同进入此书房，用他的ipad、入他的新浪微博“哈囉李敖”、看他的微博文章，为我解释他微文中“无剩义”的意义，写下“make the most of it”、“无剩义”、“按下不表”，在此我也先按下不表。</p>
 <p>西边谈完谈北边。北边是一面宽8格、由底至顶的封闭式书柜；严格说来，这面封闭式书柜分上下两部，上半部是由玻璃框着、下半部是木制，上半部的玻璃框内都塞满着书，太远，测不出有多少书、是何书？下半部木制区则着不知其内宝物为何。</p>
 <p>北边谈完谈东边。东边底部除一小面由底至顶的封闭式书柜外，一整面都是窗户，窗明几净地板洁，窗户外则是敦化南路。沿窗户下缘，是一整排档案柜，档案柜上陈列宝物不少：书籍、相片、书画、台灯、画像、沙漏、青花瓷、古物、古董等等等等，一派思古之幽情。陈学长本人也是收藏家，他送给李大师四件古董，都在此处，陈学长私下一一为我指出：一对日本瓷盘、一尊佛像、一只英国的茶壶、一只英国的糖壶（与茶壶为一对）。</p>
 <p>东边谈完谈南边。南边与北边遥相呼应，也是一面宽8格、由底至顶的封闭式书柜；这封闭式书柜分也是上下两部，上半部是由玻璃框着，估计有书约400册，下半部是木制，不知其内宝物为何。这面书柜之后有一房间，是何房间、房内有何宝物，不得而知。</p>
@@ -1877,12 +1910,12 @@
 <p>③离开李府时，陈学长又对我咬耳朵：“李敖在别处另有一豪宅，藏书量更丰呢！”</p>
 <p>“李敖的文字艺术”演讲大纲（金庆松）</p>
 <p>2013年11月16日我将在华府书友会11月份讲座上讲“李敖的文字艺术”，新闻发出，收到不少询问，我就在此一次说明、透露。</p>
-<p>小时候的志向是“伟大惊人”的李敖，就像重45.52克拉的希望钻石（hopediamond），色泽“奇妙深灰蓝”，最硬又最重、大颗又多面，岂是两小时内可探其一亳、一面？“李敖的文字艺术”不讲李敖的情人、敌人、骂人、前妻、诉讼、批评、坐牢、思想、史学、古董、洁癖、养生、政论、演讲、义举、灵与肉、性爱观、众女友、摄护腺、政治主张、立法委员、电视节目、娱乐八卦、裸体图片，“李敖的文字艺术”只讲李敖的文字艺术。</p>
+<p>小时候的志向是“伟大惊人”的李敖，就像重45.52克拉的希望钻石（hope diamond），色泽“奇妙深灰蓝”，最硬又最重、大颗又多面，岂是两小时内可探其一亳、一面？“李敖的文字艺术”不讲李敖的情人、敌人、骂人、前妻、诉讼、批评、坐牢、思想、史学、古董、洁癖、养生、政论、演讲、义举、灵与肉、性爱观、众女友、摄护腺、政治主张、立法委员、电视节目、娱乐八卦、裸体图片，“李敖的文字艺术”只讲李敖的文字艺术。</p>
 <p>“李敖的文字艺术”中您可以看到、学到李敖的文字锤炼、语法魔术，见到、听到大师的炉火纯青、出神入化、鬼斧神工、奇门遁甲，将中文文字七十二变、将中文词汇排列重组、将中文成语十面埋伏、将中文语法百花齐放、将中文句子希望钻石、将中文文章伟大惊人。</p>
 <p>欢迎华府书友会的会员、朋友同好、旧雨新知、李敖的书迷、李敖的朋友、李敖的粉丝、李敖的敌人，一同出席共襄盛会！李敖的书迷，可由本次演讲中重温李敖的大作；李敖的朋友，可由本次演讲中重见李敖的义勇；李敖的粉丝，可由本次演讲中重睹李敖的风采；李敖的敌人，可由本次演讲中重验李敖的为人。</p>
 <p>时间：2013年11月16日（星期六）下午1:30至4:00</p>
-<p>地点：twinbrooklibrary（双溪图书馆）</p>
-<p>地址：202meadowhalldrive,rockville,md20851</p>
+<p>地点：twinbrook library（双溪图书馆）</p>
+<p>地址：202 meadow hall drive, rockville, md 20851</p>
 <p>演讲大纲条列如下：</p>
 <p>一、李敖生平简介</p>
 <p>二、用字遣词造句</p>
@@ -1940,7 +1973,7 @@
 <p>1971，三十六岁。软禁、跟踪至3月19日晚上被捕。在不见天日的保安处，住了近一年。</p>
 <p>监狱（1971-1976）——坐牢五年八个月又21天</p>
 <p>1972，三十七岁。2月28日自警总保安处移军法处看守所。旋以叛乱判十年。李敖不写答辩状、不上诉，准备坐十年。</p>
-<p>1975，四十岁。四月二十五日，在二坪小房里过四十岁生日，等李敖十个月后已嫁人的小蕾送来一部（thebestoflife）。赶上因蒋中正之死而来的减刑，又改判为八年六个月。</p>
+<p>1975，四十岁。四月二十五日，在二坪小房里过四十岁生日，等李敖十个月后已嫁人的小蕾送来一部（the best of life）。赶上因蒋中正之死而来的减刑，又改判为八年六个月。</p>
 <p>1976，四十一岁。十一月十九日服刑期满，无保出狱。出狱后第十一天（十二月一日），有了生平第一个正式职业，任国际关系研究中心副研究员的职务。</p>
 <p>隐居（1976-1979）</p>
 <p>1977，四十二岁。与martha同居。做土木包工。坚辞国际关系研究中心职务。</p>
@@ -2926,7 +2959,7 @@
 <p>他认为：李敖是当代知识分子的一面镜子，因为，“作为知识分子，我们在李敖的镜子面前应该怎样的忏悔？我们站起来过吗？”</p>
 <p>他还认为：李敖是政府的一面镜子，“李敖在摸老虎的屁股，李敖揭穿了皇帝真的没穿衣服，他每一句话都说到了皇帝的痛处！他不怕！他不是不怕，他着急，为这个国家和民族！‘在祖国大地上，没有人不爱国。言论有问题，思想要慢慢来？……我愿意等待！我70岁了，等不及了，希望大家要改！要快！’拳拳赤子之心表露无遗！他是一面镜子，用如此光明磊落来照亮你的阴暗，警醒沉睡不觉的睡狮灵魂！只身面对，毫无惧色，何等气概！”</p>
 <p>他也认为：李敖是假爱国人士的一面镜子，“他能为国家的自由几十年如一日抗争。李敖不只是口水爱国，他为抵抗小日本将自己的珍藏拍卖捐钱给慰安妇，他为鼓励自由为胡适造铜像，他解囊为高金素梅抗争，他不屑强势却要见一个身患绝症的小狂人，他甚至不顾一切在大陆痛心疾呼！”</p>
-<p>他还认为：李敖是普通中国人的一面镜子。“李敖是刚烈的，他说自己‘不是猛龙不过江！’的确我们看到了一条过江猛龙。他可以数次坐牢，可以几十年如一日骂腐败，骂黑暗，骂小日本，骂美国（右幼们总是因此而对他咬牙切齿，说他是地下党，准备看他到大陆捧GCD），可是他到大陆通篇都在骂GCD，宣传的都是GCD所害怕的民主自由，连他的一些赞扬也暗含了警醒和希望（右幼们如今应该知道自己是何等浅薄！）。他不怕异见，推崇务实治国，公然说希望大家听了他的讲话后，和‘马克思主义byebye’；他说胡在他这里不是书记，是兄弟；他说‘我就摸了老虎的屁股’，‘不去长城去秦城’！这种刚烈，不正是真正中国人的丧失已久的风骨吗！历史上我们知道岳飞、屈原、江姐、张治中，李敖的视死如归如出一辙，让我觉得只有李敖才是真正的脊梁的传人，觉得他才有资格做一个用智慧、坚贞和勇气追求真理的真正的GCD员！”</p>
+<p>他还认为：李敖是普通中国人的一面镜子。“李敖是刚烈的，他说自己‘不是猛龙不过江！’的确我们看到了一条过江猛龙。他可以数次坐牢，可以几十年如一日骂腐败，骂黑暗，骂小日本，骂美国（右幼们总是因此而对他咬牙切齿，说他是地下党，准备看他到大陆捧GCD），可是他到大陆通篇都在骂GCD，宣传的都是GCD所害怕的民主自由，连他的一些赞扬也暗含了警醒和希望（右幼们如今应该知道自己是何等浅薄！）。他不怕异见，推崇务实治国，公然说希望大家听了他的讲话后，和‘马克思主义bye bye’；他说胡在他这里不是书记，是兄弟；他说‘我就摸了老虎的屁股’，‘不去长城去秦城’！这种刚烈，不正是真正中国人的丧失已久的风骨吗！历史上我们知道岳飞、屈原、江姐、张治中，李敖的视死如归如出一辙，让我觉得只有李敖才是真正的脊梁的传人，觉得他才有资格做一个用智慧、坚贞和勇气追求真理的真正的GCD员！”</p>
 <p>白云浪子称：“李敖是一盏明灯”。认为他是“一位忧国忧民、舍身取义的思想家！一位不仅用高超的笔和纸，更用身体和行动忍辱爱国的思想家！一个大无畏的时代先行者！”他觉得“看内行的人知道，北大清华复旦甚至当今大陆的知识分子今天经历了怎样的洗刷！李敖的演讲，完全可以是当代民主启蒙思想的经典教科书，中国的人文救赎之道！一个不再孬下去的北大清华和知识分子，应该为李敖的演讲树立一座丰碑，掀起一场从灵魂深处的反思浪潮；一如当年的五四，破除自己的陈旧，引领一个新时代的文化思想洪流。如此，中国富强指日可待，中华民族长盛不衰才会从神话变成现实！若此，思想家的李敖将仅仅是个开始。有李敖，中华幸甚！”</p>
 <p>李敖“神州文化之旅”在中国引起了思想文化届、新闻媒体等多方位的振荡，网络之上评论如潮，以上之“悟空”、“白云浪子”算是两方面的代表。细细品味，前者似乎是一位老者，并在文化届或学届有一定资历，但是贬低人的手段实在有些卑劣。后者似是一位大学里的学子，但不乏独到的冷静思考。</p>
 <p>关于“‘神州文化之旅’是‘媚俗’之旅”</p>
@@ -3556,13 +3589,13 @@
 <p>懂了吗，这才是真正的英雄本色啊。</p>
 <p>慷慨激昂到这里，正为发现了我们自己的伟大而得意不已时，忽然眼角瞥到了李敖的一篇《我是天安门》，随即又想起了他的其他一些文章。搞什么啊，原来李敖批评过啊。那我怎么办？啧啧，还是像钱钟书说的“白纸上黑字是收不回来的，扯个淡收场罢”。</p>
 <p>2003年7月12日15时45分</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/17.百家论李敖合集/百家论李敖.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/17.百家论李敖合集/百家论李敖.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../17.百家论李敖合集/李敖研究fashion文集.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
 
@@ -3573,13 +3606,18 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../17.百家论李敖合集/李敖研究fashion文集.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -3588,12 +3626,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

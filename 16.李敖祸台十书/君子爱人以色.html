@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,77 +81,98 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <p>#《君子爱人以色》目录</p>
 <ul>
@@ -204,15 +237,15 @@
 <p>我这里说现代人失败，并非说老祖宗们“灵肉合一”得成功，而是觉得：以现代人的进步和头脑清楚，理应比老祖宗们处理得高明、处理得漂亮、处理得达生近情、处理得和谐有致，可是细看之下，显然并不如此。现代人仍在灵上肉下里兜圈子，又不能不肉，结果只好在“灵魂纯洁”“肉体不纯洁”的迷宫里打转，在仟情与罪恶感之中周而复始。现代人一方面追寻琼瑶《窗外》的纯情派十六岁，一方面浪迹宝斗里巷内的人肉市场，这是他们最大的羞耻。真正的灵肉一致者，绝不如此。他的境界，是《列子》书中的“心凝形释”的境界，他发乎灵，止乎肉，但绝不花钱买肉。扬州二十四桥的诗人杜牧，形式上是逛窑子，实质上该是因妓谈情，因灵生肉。他若是花钱打炮的粗汉，也不会“赢得青楼薄倖名”了。现代买肉青楼的知识分子，实在无倖可薄，他们只是一团俗物，俗得连“摸修女的奶”的伪善都不配，——只该吃奶嘴！</p>
 <p>十九世纪的英国大诗人勃朗宁，曾用美妙的诗句，告诉我们——</p>
 <p>……灵之对肉，并不多于肉之对灵。</p>
-<p>（“Norsoulhelpsfleshmore，nowthanfleshhelpssoul.”）</p>
+<p>（“Nor soul helps flesh more，now than flesh helps soul.”）</p>
 <p>这是多么匀衡的启示！真盼望这种启示，能够使我们灵中有肉、肉中有灵，从此既有灵感，也有肉感，在爱河与大化之中，俯仰一世。最后人人都美死了！美死了！美死了！那该多好！</p>
 <p>《中国时报》1979年8月15日</p>
 <p>“不见可欲”与“见可欲”</p>
-<p>法国文学家法朗士（AnatoleFrance）在1890年有名作《泰绮思》（Thais）。写尼罗河岸沙漠里有圣地旦白依特（Thebaid）修道院，院中僧侣过着禁欲、苦修、出世的生活。其中有一位叫法非愚斯(Paphnutius)的，修道有成，回想起十年前他认识的一位女优泰绮思，身陷红尘之苦，乃计划去亚历山大城(Alexandria)救她、使她归依天主。法非愚斯把这计划告诉另一苦行者柏莱蒙（Palemon），柏莱蒙说：“法非愚斯兄，天主作证，我绝不怀疑你老兄的意向。但是我们神父汪督亚那（Anthony）说：‘放在旱地上的鱼都要死的，同样，走出了独居小房屋、到世俗的中间去的僧侣，就脱离了善境。’”（徐蔚南自法文译文。ErnestTristan英译这段话是：Fish,whichareputupondryland,die!Inthesameway,monkswholeavetheircellsandmixwiththeworlddeviatefromtheirholypurpose.）但是法非愚斯有信心离开修道院去救人，就出发了。最后，他说服了泰绮思，使她看破红尘，烧掉了她的华丽衣服手饰，把她送到沙漠中的女修道院。不过，泰绮思虽得救了，做了修女，这位神父法非愚斯却把持不住了。他回到修道院，日夜想起泰绮思来，痛苦不堪。最后，任何苦行的招数都不灵了。全书的结局是：泰绮思死后上了天堂。而伏在她尸体上的法非愚斯，却哭喊着：“我爱你，不要死呀！请听我，我的泰绮思呀，我欺骗了你，我只是一个不幸的呆子。上帝哪，天哪，这种东西能算什么呢，只有在地上有生命的一切的爱情才是真实的。我爱你呀！不要死。……”（中英译文同上。Iloveyou,donotdie!Listen,myThais,Ihavedeceivedyou,andIwasbutamiserablefool.God,heaven,botharenothing.Nothingistruebutlifeonearth,andcarnallove.）</p>
+<p>法国文学家法朗士（Anatole France）在1890年有名作《泰绮思》（Thais）。写尼罗河岸沙漠里有圣地旦白依特（Thebaid）修道院，院中僧侣过着禁欲、苦修、出世的生活。其中有一位叫法非愚斯(Paphnutius)的，修道有成，回想起十年前他认识的一位女优泰绮思，身陷红尘之苦，乃计划去亚历山大城(Alexandria)救她、使她归依天主。法非愚斯把这计划告诉另一苦行者柏莱蒙（Palemon），柏莱蒙说：“法非愚斯兄，天主作证，我绝不怀疑你老兄的意向。但是我们神父汪督亚那（Anthony）说：‘放在旱地上的鱼都要死的，同样，走出了独居小房屋、到世俗的中间去的僧侣，就脱离了善境。’”（徐蔚南自法文译文。Ernest Tristan英译这段话是：Fish, which are put upon dry land, die! In the same way, monks who leave their cells and mix with the world deviate from their holy purpose.）但是法非愚斯有信心离开修道院去救人，就出发了。最后，他说服了泰绮思，使她看破红尘，烧掉了她的华丽衣服手饰，把她送到沙漠中的女修道院。不过，泰绮思虽得救了，做了修女，这位神父法非愚斯却把持不住了。他回到修道院，日夜想起泰绮思来，痛苦不堪。最后，任何苦行的招数都不灵了。全书的结局是：泰绮思死后上了天堂。而伏在她尸体上的法非愚斯，却哭喊着：“我爱你，不要死呀！请听我，我的泰绮思呀，我欺骗了你，我只是一个不幸的呆子。上帝哪，天哪，这种东西能算什么呢，只有在地上有生命的一切的爱情才是真实的。我爱你呀！不要死。……”（中英译文同上。I love you, do not die! Listen, my Thais, I have deceived you, and I was but a miserable fool. God, heaven, both are nothing. Nothing is true but life on earth, and carnal love.）</p>
 <p>法朗士这本《泰绮思》是挖苦天主教的，但是，他借法非愚斯最后的哭喊，道出了神职人员的假面目与真觉悟：什么出世的上帝哪、什么天哪，都是狗屁，都赶不上人生在世和那男欢女爱！</p>
 <p>另一方面，《泰绮思》引发出一个主题。就是，如果神父只住在修道院中，根本远离女色、见不到女色，不“到世俗的中间去”，则那禁欲、苦修、出世的生活，就有“成功在望”的可能。这在宗教里，叫做“避世禁欲主义”(Ascetzcism)。这种主义，本是宗教中的歪道魔道，但在印度教里、在佛教里、在埃及诺斯替教派(Gnostics)里、在犹太以西尼教派(Essenes)里、以及在天主教里，都不乏此道。</p>
 <p>为什么见不到女色是重要的禁欲条件呢？因为一见到，“有鳏在下”的“小和尚”就蠢蠢欲动了。</p>
-<p>《老子》中说：“不见可欲，使民心不乱。”古本《老子》无“民”字，全文则是“不见可欲，使心不乱”。意思是说：不看见足以引起欲望的事物，心就不会乱了（R.B.Blakney在TheWayofLifeLaoTzu里英译此句为Ifthingsmuchdesiredarekeptundercover,disturbancewillceaseinthemindsofthepeople.更有遮盖可欲之意）。在古文中，“见”就是“现”，不见可欲就是不显现可欲，但照今文读法，把不见就当看不见直接解说，反倒更近原意。</p>
+<p>《老子》中说：“不见可欲，使民心不乱。”古本《老子》无“民”字，全文则是“不见可欲，使心不乱”。意思是说：不看见足以引起欲望的事物，心就不会乱了（R. B. Blakney在The Way of Life Lao Tzu里英译此句为If things much desired are kept under cover, disturbance will cease in the minds of the people.更有遮盖可欲之意）。在古文中，“见”就是“现”，不见可欲就是不显现可欲，但照今文读法，把不见就当看不见直接解说，反倒更近原意。</p>
 <p>照《老子》的理论推知，要想不为女色所惑，唯一办法，就是看不见女色，眼不见心不烦，禁起欲来，方有可能。这种理论，从根救起，可谓与西方“避世禁欲主义”东西辉映。</p>
 <p>司马相如《美人赋》中有这种对话：</p>
 <p>王曰：“子不好色，何若孔墨乎？”</p>
@@ -239,14 +272,14 @@
 <p>这种没把女人当主体的情形、这种不把小娘当人的情形，其实不始于汉武帝，也不终于汉武帝，而是大中华自盘古开天辟地以来，一直绵延不断的杰作，这才真是东西文化的一项根本差异。当东方的盘古扭动骨盘，把四肢五体转成四极五岳的时候，西方的亚当却大梦先觉，把肋骨转成原料，奉献给女人。这一差距，分离出两千年前的一幕对比：当亚当的子孙，正把埃及皇宫的美女可李敖巴特拉（Cleopatra）往家里抢的时候，我们盘古的后人，却正把自己皇宫的美女王昭君朝外头送！——人家宁肯为女人惹起战争，我们却甘愿用女人换取和平！你说多菜！</p>
 <p>在权力与女人不可兼得的时候，西方的爱德华第八的表现是“不爱江山爱美人”；而东方的唐明皇呢？表现却是“江山情重美人轻”！中国人家喻户晓的《长恨歌》恋史，男方指手画脚，发了不少“在天愿做比翼鸟”“愿世世为夫妇”的假誓，到头来却不能同生、不能共死、不能横刀救美，反倒竖子不足与谋——自己逃难去了！你说多菜！</p>
 <p>有情感/没有勇敢</p>
-<p>这些对比，都多少显示了我们大中华的老祖宗，在处理小娘子的小爱情问题上，好像有点特别。他们好像从来不为女人花脑筋，既不屑花，也不肯花，甚至压根儿就没想到花，这样子“看女人没有起”，若要产生漂亮的爱情故事，岂不是妄想？大体说来，老祖宗们是不来恋爱这一套的，他们只会为几个抽象的大名词肝脑涂地、九死无悔，却不会为几个可爱女人鞠躬尽瘁、怒发冲冠。吴三桂在爱情宇宙里，只不过闪了一点“冲冠一怒为红颜”的灵光，就被道学之士一连臭骂三百二十年！中国历史上有“红粉”，也有“干戈”，但这两个名词总结合不上，老祖宗不允许“红粉干戈”，为女人打仗吗？去你的！那是爱伦坡笔下的希腊荣光和罗马壮丽（……theglorythatwasGreece,／AndthegrandeurthatwasRome.），中国文化是不为女人打仗的！</p>
+<p>这些对比，都多少显示了我们大中华的老祖宗，在处理小娘子的小爱情问题上，好像有点特别。他们好像从来不为女人花脑筋，既不屑花，也不肯花，甚至压根儿就没想到花，这样子“看女人没有起”，若要产生漂亮的爱情故事，岂不是妄想？大体说来，老祖宗们是不来恋爱这一套的，他们只会为几个抽象的大名词肝脑涂地、九死无悔，却不会为几个可爱女人鞠躬尽瘁、怒发冲冠。吴三桂在爱情宇宙里，只不过闪了一点“冲冠一怒为红颜”的灵光，就被道学之士一连臭骂三百二十年！中国历史上有“红粉”，也有“干戈”，但这两个名词总结合不上，老祖宗不允许“红粉干戈”，为女人打仗吗？去你的！那是爱伦坡笔下的希腊荣光和罗马壮丽（……the glory that was Greece,／And the grandeur that was Rome.），中国文化是不为女人打仗的！</p>
 <p>中国文化的一大正宗是道学——不管真道学或假道学，在道学的魑光魅影下，人人都被道德迷你，做成了道德迷，并且迷到不近人情的程度。流风所及，男女间的爱情问题，自然也就一律道德挂帅，谁谈情说爱谁就不是好东西，就要被摒于孔圣人的门墙之外，死了以后，也分不到孔庙的冷猪肉吃！人人想吃冷猪肉，所以人人都不敢公然谈情说爱。至多有多多的情感，却没有少少的勇敢。</p>
 <p>清朝有一个朱彝尊，算是一颗彗星，他居然有了爱情的故事，并把这故事写成了《风怀诗》。不但把诗写好，还要把诗收进他的《曝书亭集》。他的道学朋友一看，可急了，劝他注重清议，别把这不三不四的咸湿诗放到集子里去。可是朱彝尊不肯，他说：“吾宁不食两庑豚，不删风怀二百韵！”（大好猪肉宁不吃，也不删掉这首诗！）</p>
 <p>不了解中国历史背景的人，很难想像朱彝尊这种勇气有多么大！很难想像这种坦白是多么的不容易！因为在道德挂帅下，在真假道学桎梏下——匍匐在下面的，很少不是双重人格，双重得至少有两副以上的脸孔来应付人间世：一副是道貌岸然的脸孔，一副是暗度陈仓的脸孔，前者用来说教，撑门面；後者用来发泄，调剂满口大道理後的紧张情绪。</p>
 <p>这种现象，试拿清朝的“南袁北纪”来说吧：袁子才袁枚，一边写《小仓山房文集》来说教，一边写《子不语》（即《新齐谐》）来发泄；纪晓岚纪昀，一边写《四库全书总目提要》来撑门面，一边写《阅微草堂笔记》来调剂情绪，他们的作品，道貌岸然与陈仓暗度前后辉映，乍看起来，简直不是同一个人作的，事实上却明明同一个人干的好事。袁枚、纪晓岚两位，其实还算有点真情至性的，至於别人，人格分裂得就更严重：元稹为老情人莺莺写的诗，不敢收入他的《长庆集》；孙原湘为女朋友屈、钱两人写的诗，不敢收入他的《天真阁文集》；陈文述的情词艳句，不敢收入他的《颐道堂集》；而和凝呢，索性乾脆得一乾二净——他做了大官以后，居然把他作的“香艳诗”全部赖掉，竟说不是他作的，是韩偓作的！</p>
 <p>这些人格分裂的现象，都表示了在爱情的态度下，大家都变成了胆小鬼，戴上了面具，转入了地下。大家谁也不敢表露真情，至多做到暗通与私恋，表露到一片反常、一片变态、一片自我陷溺（self-absorption）、一片假惺惺！</p>
 <p>难乎为妓</p>
-<p>中国传统中爱情出了毛病，最基本原因，是男女结交不靠自由恋爱，而靠“父母之命、媒妁之言”。男女间事，一开始就不是两个人间的私事（privateaffairs），而是父母媒妁“大锅炒”的亲事。这样的结交，一开始就以家族本位代替了爱情本位，夫妻之间，想在这种本位下产生罗曼蒂克的爱情，实在气氛不足。所以，中国的爱情故事，像《浮生六记》式的闺房记趣，为数就少。中国的女人结婚后，相夫教子，做黄脸婆，已无罗曼蒂克余地；男人结婚后，如果想爱你爱在心坎里，对象却很特别，被选中的对象，不是别人，却是青楼情孽——妓女。</p>
+<p>中国传统中爱情出了毛病，最基本原因，是男女结交不靠自由恋爱，而靠“父母之命、媒妁之言”。男女间事，一开始就不是两个人间的私事（private affairs），而是父母媒妁“大锅炒”的亲事。这样的结交，一开始就以家族本位代替了爱情本位，夫妻之间，想在这种本位下产生罗曼蒂克的爱情，实在气氛不足。所以，中国的爱情故事，像《浮生六记》式的闺房记趣，为数就少。中国的女人结婚后，相夫教子，做黄脸婆，已无罗曼蒂克余地；男人结婚后，如果想爱你爱在心坎里，对象却很特别，被选中的对象，不是别人，却是青楼情孽——妓女。</p>
 <p>以前的妓女和现代不一样。现代妓女都很忙，忙得不打话，就上床，实不考究任何水准与情调；以前妓女却斯文扫床，大家得先“小红低唱我吹箫”一番，绝不许公鸡见母鸡、公鸭见母鸭式办事。骚人墨客去找她们，必须经过基本的过门儿。这种情形，在唐朝发展得最具“规模”。唐朝知识分子以走动妓院为正业之一，从元白到李杜无一例外。在杜牧的诗里，可以看到太多太多“不饮赠官妓”、“娼楼戏赠”等作品，这说明了男欢女爱，不在别处，正在秦楼楚馆之中。秦楼楚馆是中国式爱情的大尾闾和大市场，中国式爱情沦落至此，想来也真可悲。</p>
 <p>另一种变相的沦落，是佛寺道观的媒孽。由于传统中男女交际层层设限，大家只好借可以公开见面的所在、公开见人的职业，得到不少偷情的自由。唐朝的女道士许多都是私娼，其中水准与情调，有的很高，自然就是大家漫爱的最佳人选。李白有送女道士褚三清的诗，施肩吾有赠女道士郑玉华的诗，例子举不胜举。这种文人和“尼姑”的恋爱，相对方面，也就是太太小姐跟“和尚”眉来眼去的张本。传统里所以有这些畸形的爱情故事，究其原因，都是社会环境封杀爱情的缘故。</p>
 <p>男乎为妓</p>
@@ -336,7 +369,7 @@
 <p>我现在建议，马英九别跑了，换个花样吧。根据1987年3月9日的路透社传真，二十八岁的模特儿安妮佛瑞儿宣称，为了支持马可仕，她决定在马可仕返国前，“为马可仕停止性交！”我建议从今以后，马英九宣布停止性交，这样一来，群雌可得“马英九也不在家里跟别人搞”的良好印象，小马可以有利仕途，自然尤佳。另一方面，我再建议不论国民党、民进党，如有跑难忍，不如也以停止性交代替，这样大家一绝“交”，对减轻台湾的人口压力，也可不无小补呢！</p>
 <p>1991年4月24日</p>
 <p>妇人梦与鬼交</p>
-<p>西方自中古以来，出现了两个字，一个字是incubus，意思是指女人睡梦中和她性交的邪魔（animaginarydemonorevilspiritsupposedtodescenduponsleepingpersons,esp.oneinmaleformfabledtohavesexualintercoursewithwomenintheirsleep.）。梁实秋《远东英汉大辞典》把它翻成“压在熟睡者身上的恶魔”，显然翻得太斯文上床了。另一个字是succubus，意思是指男人睡梦中和他性交的邪魔（ademoninfemaleform,saidtohavesexualintercoursewithmenintheirsleep.）。梁实秋辞典中把它翻成“在男人睡梦中与其性交之女妖”，这回阴阳易位、姿式变换，不“压在熟睡者身上”了，总算翻对了。</p>
+<p>西方自中古以来，出现了两个字，一个字是incubus，意思是指女人睡梦中和她性交的邪魔（an imaginary demon or evil spirit supposed to descend upon sleeping persons, esp. one in male form fabled to have sexual intercourse with women in their sleep.）。梁实秋《远东英汉大辞典》把它翻成“压在熟睡者身上的恶魔”，显然翻得太斯文上床了。另一个字是succubus，意思是指男人睡梦中和他性交的邪魔（a demon in female form, said to have sexual intercourse with men in their sleep.）。梁实秋辞典中把它翻成“在男人睡梦中与其性交之女妖”，这回阴阳易位、姿式变换，不“压在熟睡者身上”了，总算翻对了。</p>
 <p>不管是incubus还是succubus，都是性心理学中性梦的范畴，但是中国中古以来，却不来什么心理学，干脆把它分到医学的范畴内，并且只分女的，不分男的。所分的类，也很有趣，叫做“妇人梦与鬼交”。至于与鬼如何交法，查书便知。</p>
 <p>宋朝陈自明《妇人良方》写道：</p>
 <p>人禀五行秀气而生、承五脏神气而养，若调理失节、血气虚衰，则鬼邪干其正，隐避而不欲见人、时独言笑、时或悲泣，是其候也。脉息迟伏，或如鸟啄、或绵绵而来，不知度数，面颜不变，亦其候也。</p>
@@ -382,7 +415,7 @@
 <p>《溱洧》是一首很不错的情诗，但它的命运，和《诗经》中其他情诗一样，都被历代老夫子给曲解了，不是解释成臣子爱慕君主的诗、就解释成“刺淫”（斥责淫乱）的诗。宋朝的朱熹倒是一个例外，他说：“《郑》（郑风）、《卫》（卫风）诗多是淫奔之诗。《郑》诗如《诗仲子》以下，皆鄙俚之言，只是一时男女淫奔相诱之语。”“《卫》犹为男悦女之辞，而《郑》皆为女惑男之语。”理学家朱熹虽然仍把好端端的情诗以“淫奔之诗”定位，但他终能以男女之诗来看它们，这是很不得了的前进眼光了！</p>
 <p>朱熹说《郑风》“皆为女惑男之语”，这是很有趣的归纳与卓见。在这类情诗中，的确女的多为主动。这首《溱洧》也是如此。不过，原来解诗者往往把这种主动程度，给过滤了、给打折了。例如此诗中“女曰观乎”，大家都把“观”字当成“看”字来解释，这是错的。“观”在古文中固有“看”的意义，但也另有“游览”、“检阅”、“显示”等等其他意义。此外，还另有别解。郭沫若《释祖妣》说：“溱洧之诗詠溱洧之间游春士女既殷且盈而两相欢乐。‘女曰观乎？士曰既且’，观者欢也，委言之也；且者祖也，言已与他女欢御也。”这就是另有别解。</p>
 <p>郭沫若的另有别解，解得还不脱学究气。说明白点，“且”字的意思根本是“鸡巴”一名词的当动词用（参看李敖著《中国性研究》一书），“既且”就是“鸡巴刚刚用过了”之意。所以，诗中“女曰观乎”，意思是女的挑逗问：“乐一下吧？”“士曰既且”，意思是男的说：“鸡巴刚刚用过了（跟别的马子用过了）。”女的再说：“且往观乎？洧之外，洵訏且乐。”意思是说：“鸡巴再乐一下吧？洧水河岸那边有块好地方，实实在在让大鸡巴再乐一下吧！”</p>
-<p>《吕氏春秋》中《本生篇》高诱注说：“郑国淫辟，男女私会于溱洧之上，有询訏之乐、芍药之和。”“询訏”高诱引鲁诗改“洵”为“询”。高本汉（BernhardKarlgren）《国风注释》（GlossesonKuo-feng）对“洵訏且乐”解说精审，但也止于“真是有大（地方）而且快乐”的说法。事实上，其为大也，乃在描写下一句的鸡巴，再非上一句的“洧之外”。正因是男女“伊其将谑”的话，所以才这样打情骂俏。</p>
+<p>《吕氏春秋》中《本生篇》高诱注说：“郑国淫辟，男女私会于溱洧之上，有询訏之乐、芍药之和。”“询訏”高诱引鲁诗改“洵”为“询”。高本汉（Bernhard Karlgren）《国风注释》（Glosses on Kuo-feng）对“洵訏且乐”解说精审，但也止于“真是有大（地方）而且快乐”的说法。事实上，其为大也，乃在描写下一句的鸡巴，再非上一句的“洧之外”。正因是男女“伊其将谑”的话，所以才这样打情骂俏。</p>
 <p>在不同期的旧《花花公子》（PLAYBOY）等杂志中，我收集有三幅图片，第一幅是女的仰卧，上身全裸，下身穿黑色裤袜，而做“女惑男之语”说：“Sorry,butIalreadygaveattheoffice.”意思是说，抱歉呀，我今天已经在办公室来过了。既然跟老板搞过了、满足了，不拟再做爱了。第二幅是阻街女郎盛装倚门，用手指勾过客，而过客貌似老板者对她说：“Sorry,Ijustgaveattheoffice!”意思是说，抱歉呀，我刚刚在办公室“既且”了。既然跟女秘书搞过了、满足了，不拟再做爱了。第三幅是一对男女在卧房，男已裸卧床上，摊开衣服，上有I’VEJUSTHADSEX字眼，意思是说，我刚来过了，轮不到你啦！</p>
 <p>人家说李敖“学贯中西”，早在花一小时五十分钟写这篇小文，谈中国文化，最后“中学为用，西学为用”，续西学以证之。</p>
 <p>1991年12月23日</p>
@@ -393,7 +426,7 @@
 <p>中正中正，唯我鸡巴。</p>
 <p>1991年2月14日</p>
 <p>乱世中的乱伦</p>
-<p>希腊有俄狄浦斯（Oedipus）神话。底比斯（Thebes）国王伊俄斯（Laius）得到神谕警告说，他的儿子将把他杀死，因此他在太太伊俄卡斯忒（Iocaste）生下儿子时，命奴隶弃婴于山。但一个牧人救起这弃婴，弃婴就是俄狄浦斯。后来科林斯（Corinth）国王把俄狄浦斯养育，视若己出，抚养长大后，俄狄浦斯也得到神谕，说他命中注定杀父妻母，于是他决定远离科林斯而去底比斯。路遇他的生父，相逢不识，发生口角，乃将对方杀死。由于他破解了女妖斯芬克斯（theSphinx）的谜语，底比斯人拥他为王，娶了守寡的王后，原来就是他母亲。后来真相大白，他母亲自杀，他弄瞎自己眼睛，自我流放国外。——人生受命运拨弄，一至于此！</p>
+<p>希腊有俄狄浦斯（Oedipus）神话。底比斯（Thebes）国王伊俄斯（Laius）得到神谕警告说，他的儿子将把他杀死，因此他在太太伊俄卡斯忒（Iocaste）生下儿子时，命奴隶弃婴于山。但一个牧人救起这弃婴，弃婴就是俄狄浦斯。后来科林斯（Corinth）国王把俄狄浦斯养育，视若己出，抚养长大后，俄狄浦斯也得到神谕，说他命中注定杀父妻母，于是他决定远离科林斯而去底比斯。路遇他的生父，相逢不识，发生口角，乃将对方杀死。由于他破解了女妖斯芬克斯（the Sphinx）的谜语，底比斯人拥他为王，娶了守寡的王后，原来就是他母亲。后来真相大白，他母亲自杀，他弄瞎自己眼睛，自我流放国外。——人生受命运拨弄，一至于此！</p>
 <p>俄狄浦斯的遭遇，在希腊是神话；但在中国，却是活生生的人间故事。</p>
 <p>1948年4月5日的天津《大公报》上，有这样一则报导：</p>
 <p>从军廿年妻女流亡</p>
@@ -489,7 +522,7 @@
 <p>1989年2月5日农历除夕</p>
 <p>病中散记</p>
 <p>一</p>
-<p>我从来不养病，病中读写剪贴，一切照常。我住院时，人溜下床，床铺当成桌子，满床是书报资料。医生看了，直皱眉头。拉丁文谚语有道是：Dumvivimus,vivamus.英文意思是Whilewelive,letuslive.中文意思是“生时且做生时事”、“做一天和尚撞一天钟”，这是一种看来有点消极、其实非常积极的人生态度，我就是如此。我不但在病房如此，在牢房也一样。我被关进牢房，照例先把马桶洗净，没一会儿就设法弄来木板或纸箱，搭成桌子，开起工来。——我的随遇而开工，有如是者。</p>
+<p>我从来不养病，病中读写剪贴，一切照常。我住院时，人溜下床，床铺当成桌子，满床是书报资料。医生看了，直皱眉头。拉丁文谚语有道是：Dum vivimus, vivamus.英文意思是While we live, let us live.中文意思是“生时且做生时事”、“做一天和尚撞一天钟”，这是一种看来有点消极、其实非常积极的人生态度，我就是如此。我不但在病房如此，在牢房也一样。我被关进牢房，照例先把马桶洗净，没一会儿就设法弄来木板或纸箱，搭成桌子，开起工来。——我的随遇而开工，有如是者。</p>
 <p>二</p>
 <p>王企祥（刘宾雁的学生、李远哲的老师）对我说：“你不能得罪犹太人，得罪了犹太人一如得罪了李敖，他跟你没完没了。”我听了大笑，我说：“你终于学到了跟李敖做朋友的窍门了。”</p>
 <p>三</p>
@@ -525,9 +558,9 @@
 <p>三十年前我主持文星时，马宏祥曾写《血色鲜红的美国姑娘》登文星五十九期（1962年9月1日），见者喜其奇趣。但是后来他很少写作，原因他自己说了一大堆，我看一个懒字而而已。</p>
 <p>6月20日傍晚收到他的信，内有《瑞士妇女大示威》一文及附图，可惜当天早上，求是报已在“纵横中外”版上以大篇幅登出这一事件了。但马宏祥的文字，别有异趣，我特为书后，以广宣传。</p>
 <p>瑞士名称在台湾，并不陌生，因为不论国民党、民进党，无不把台湾以“东方瑞士”自期。1989年10月27日，华视电视演讲会，国民党关中即曾如此强调；而民进党方面，更是以“建立东方瑞士的台湾国”为口头禅，在关中强调后第五天（1989年11月1日），李逸洋就在自立早报上登广告《为建立&lt;东方瑞士的台湾国&gt;而战！》了。同一时间，民进党新潮流系也以同样诉求为政见，看来简直是瑞士症候群一般。</p>
-<p>把瑞士跟台湾扯在一起，倒也好有一比。瑞士面积四万一千平方公里、台湾面积三万六千平方公里，大小相近。两者都多山、都缺乏自然资源。最耐人寻味的，是它的种族与语言问题。瑞士有百分之六十五的人讲德国话、有百分之十八的人讲法国话、有百分之十二的人讲意大利话、有百分之一的人讲罗曼什话（Rhaeto-Romanic,Romansch）。事实上也没这样硬分，方豪神父去瑞士归来告诉我，他在一条街上看到吵架，德人后代以法国话骂法人后代；法人后代以德国话骂德人后代，极为有趣。盖能操二三种语言者，比比皆是也。</p>
+<p>把瑞士跟台湾扯在一起，倒也好有一比。瑞士面积四万一千平方公里、台湾面积三万六千平方公里，大小相近。两者都多山、都缺乏自然资源。最耐人寻味的，是它的种族与语言问题。瑞士有百分之六十五的人讲德国话、有百分之十八的人讲法国话、有百分之十二的人讲意大利话、有百分之一的人讲罗曼什话（Rhaeto-Romanic, Romansch）。事实上也没这样硬分，方豪神父去瑞士归来告诉我，他在一条街上看到吵架，德人后代以法国话骂法人后代；法人后代以德国话骂德人后代，极为有趣。盖能操二三种语言者，比比皆是也。</p>
 <p>瑞士能在这种种族与语言的矛盾中，和平存在至今，重要原因只有一个，人民有教养、实行真民主耳。它的民主制度，长达七百年之久，这种功力之深，使他们成为世界上民主典范。</p>
-<p>英国史家蒲徕士（JamesBryce）论瑞士特色甚多，值得特别注意的有几点：</p>
+<p>英国史家蒲徕士（James Bryce）论瑞士特色甚多，值得特别注意的有几点：</p>
 <p>一、瑞士没有以政治为职业的人，长于口才的政治首领少见，也无必要。</p>
 <p>二、瑞士政府不但经费节省为世界各国所不及，并且还很有效率。</p>
 <p>三、瑞士没有贪污。</p>
@@ -562,7 +595,7 @@
 <p>1995年3月28日</p>
 <p>读旧约笔记</p>
 <p>第七天休息</p>
-<p>圣经创世纪写上帝把天地万物都造齐了，到第七天，就安息了。这表示说，连上帝在第七天都要休息，都要不干事；小说里记希腊那个妓女，星期一到星期六接客，但到第七天，却NeveronSunday，第七天她去谈恋爱，这天身体是属于情人的，不卖！</p>
+<p>圣经创世纪写上帝把天地万物都造齐了，到第七天，就安息了。这表示说，连上帝在第七天都要休息，都要不干事；小说里记希腊那个妓女，星期一到星期六接客，但到第七天，却Never on Sunday，第七天她去谈恋爱，这天身体是属于情人的，不卖！</p>
 <p>第七天不休息</p>
 <p>上帝第七天都要休息，但不知道魔鬼第七天干什么？我想，魔鬼才智不如上帝，他可能第七天都不休息。</p>
 <p>造女人的理由与后果</p>
@@ -622,7 +655,7 @@
 <p>遗精、性交、月经</p>
 <p>利未记第十五章记遗精和性交，“必不洁净到晚上”；月经，“必污秽七天”，凡摸她的、她的床的，“必不洁净到晚上”。</p>
 <p>乱伦、男色、兽奸</p>
-<p>利未记第十八章以开清单法列举禁止乱伦细目，并在第二十章明定罚则。又明列男色与兽奸。这种开清单法，倒很符合BillofRights的周密原则。</p>
+<p>利未记第十八章以开清单法列举禁止乱伦细目，并在第二十章明定罚则。又明列男色与兽奸。这种开清单法，倒很符合Bill of Rights的周密原则。</p>
 <p>自我呼唤</p>
 <p>利未记第十九章每在下达命令后，以“我是耶和华”“你们的神”收尾，声声自我呼唤、叮咛，真是好玩。</p>
 <p>纹身</p>
@@ -648,12 +681,12 @@
 <p>从《旧约》《民数记》第十二章中、《申命记》第二十五章中，我们可以看到吐口水是不入流的一种动作，用来羞辱人。但是，《以赛亚书》第五十章中，却明说：“……人辱我吐我，我并不掩面。主耶和华必帮助我，所以我不抱愧。我硬着脸面好像坚石，我也知道我必不至蒙羞。”耶稣式的“唾面自干”，自然有得于《旧约》的信仰。耶稣的伟大，证实给世人，即使无知小人吐了你口水，又与你何伤？真正该蒙羞的，乃是他们自己啊！</p>
 <p>1989年1月21日</p>
 <p>贞德的选择</p>
-<p>中文版大英百科全书有贞德一条，全文如下：“贞德JoanofArc,Saint（1412年1月6日-1431年5月30日）一译圣女贞德。欧洲战争历史上最富有传奇色彩的人物之一，曾把法国从英格兰的统治下解放出来。生于谬斯河谷中的小村庄多姆雷米，农民出身。从虔信宗教的母亲那里学习纺织、缝纫和烹饪，同兄弟姐妹一起放牧牛羊和耕种田地。她虽然十分忙碌，但仍有时间唱歌、跳舞、同其他孩童一道游戏和为教堂圣坛采集鲜花。当时，欧洲的主要国家正在进行百年战争，英格兰人占领了法国北部的大部分地区，她的家乡谬斯河谷经常遭到军队的侵扰。由于爱国心的驱使，她想去投奔当时还未加冕的国王查理七世。但是她的父亲不准她前往。她的一些朋友给她弄到男装和马匹，同她一起长途跋涉，终于到达查理七世在希农的宫廷。她对国王说曾梦见上帝，上帝叫她来协助国王杀敌。查理七世和他的近臣认为荒诞无稽，没有置理。她耐心等了几个月，国王才命人给她配备盔甲和马匹，并特制一面专用的旗帜。一支法军向奥尔良进发。贞德虽然不是这支军队的司令官，但是只要她在队伍中，士气就高涨起来，官兵都充满必胜的信心。贞德提出一个良好的作战计划，安全地进入奥尔良城。她以奥尔良城为据点，多次率兵出击，把英军打得一败涂地，终于撤退。1429年5月8日举行奥尔良城祝捷大会。同年7月14日贞德的军队进入兰斯。两天后，查理七世正式加冕，贞德持旗站在国王的身旁。她的军队下定决心收复巴黎，但是查理七世优柔寡断，使她的士兵无法发动进攻。不过，他们已经占领了贡比涅和一些邻近的城镇。当他们向巴黎的一角进攻的时候，被敌人赶了回来。贞德负伤。查理七世解散了军队，退往南方。在过冬的几个月中，贞德由于王室的拖延而感到焦躁不安。第二年春天，贞德重返贡比涅，那时贡比涅正处于协助英军作战的勃艮第军队的包围之中。1430年5月23日贞德深入勃艮第军杀敌，因与部下失散而被俘。敌人把她囚禁在博尔瓦尔城堡。她企图逃跑，但在从塔楼跳下时受伤。后来，勃艮第军把她卖给英格兰人，英格兰人要把她处死，将她移至卢昂。英格兰人企图借刀杀人，把贞德交给教会法庭处理。在勃艮第人控制下的巴黎大学成为起诉人，控告贞德施行巫术。巴黎大学派人充当法官，首席法官为博韦主教。1431年1月3日英格兰人将贞德交给主教。1月21日开庭，这次审理一直进行了几个月。贞德请求由教皇审判，遭到拒绝。5月23日宣判：除非她公开承认错误，否则将处以重刑。这时贞德已经被监禁好几个月，遭受严刑拷打和轮番审讯的折磨。尽管如此，她依然坚贞不屈，大义凛然，使迫害她的人们无可奈何。结果教会法庭判处她无期徒刑。英格兰人对如此宽大处理非常恼火，1431年5月30日将她移交市政当局。市政当局将她在火型柱上烧死，时年仅十九岁。查理七世没有营救贞德。大约二十五年以后，贞德的家属上诉教皇。1456年，教皇法庭撤销1431年的判决。1920年5月16日，天主教会追谥贞德为圣女。”</p>
+<p>中文版大英百科全书有贞德一条，全文如下：“贞德Joan of Arc, Saint（1412年1月6日-1431年5月30日）一译圣女贞德。欧洲战争历史上最富有传奇色彩的人物之一，曾把法国从英格兰的统治下解放出来。生于谬斯河谷中的小村庄多姆雷米，农民出身。从虔信宗教的母亲那里学习纺织、缝纫和烹饪，同兄弟姐妹一起放牧牛羊和耕种田地。她虽然十分忙碌，但仍有时间唱歌、跳舞、同其他孩童一道游戏和为教堂圣坛采集鲜花。当时，欧洲的主要国家正在进行百年战争，英格兰人占领了法国北部的大部分地区，她的家乡谬斯河谷经常遭到军队的侵扰。由于爱国心的驱使，她想去投奔当时还未加冕的国王查理七世。但是她的父亲不准她前往。她的一些朋友给她弄到男装和马匹，同她一起长途跋涉，终于到达查理七世在希农的宫廷。她对国王说曾梦见上帝，上帝叫她来协助国王杀敌。查理七世和他的近臣认为荒诞无稽，没有置理。她耐心等了几个月，国王才命人给她配备盔甲和马匹，并特制一面专用的旗帜。一支法军向奥尔良进发。贞德虽然不是这支军队的司令官，但是只要她在队伍中，士气就高涨起来，官兵都充满必胜的信心。贞德提出一个良好的作战计划，安全地进入奥尔良城。她以奥尔良城为据点，多次率兵出击，把英军打得一败涂地，终于撤退。1429年5月8日举行奥尔良城祝捷大会。同年7月14日贞德的军队进入兰斯。两天后，查理七世正式加冕，贞德持旗站在国王的身旁。她的军队下定决心收复巴黎，但是查理七世优柔寡断，使她的士兵无法发动进攻。不过，他们已经占领了贡比涅和一些邻近的城镇。当他们向巴黎的一角进攻的时候，被敌人赶了回来。贞德负伤。查理七世解散了军队，退往南方。在过冬的几个月中，贞德由于王室的拖延而感到焦躁不安。第二年春天，贞德重返贡比涅，那时贡比涅正处于协助英军作战的勃艮第军队的包围之中。1430年5月23日贞德深入勃艮第军杀敌，因与部下失散而被俘。敌人把她囚禁在博尔瓦尔城堡。她企图逃跑，但在从塔楼跳下时受伤。后来，勃艮第军把她卖给英格兰人，英格兰人要把她处死，将她移至卢昂。英格兰人企图借刀杀人，把贞德交给教会法庭处理。在勃艮第人控制下的巴黎大学成为起诉人，控告贞德施行巫术。巴黎大学派人充当法官，首席法官为博韦主教。1431年1月3日英格兰人将贞德交给主教。1月21日开庭，这次审理一直进行了几个月。贞德请求由教皇审判，遭到拒绝。5月23日宣判：除非她公开承认错误，否则将处以重刑。这时贞德已经被监禁好几个月，遭受严刑拷打和轮番审讯的折磨。尽管如此，她依然坚贞不屈，大义凛然，使迫害她的人们无可奈何。结果教会法庭判处她无期徒刑。英格兰人对如此宽大处理非常恼火，1431年5月30日将她移交市政当局。市政当局将她在火型柱上烧死，时年仅十九岁。查理七世没有营救贞德。大约二十五年以后，贞德的家属上诉教皇。1456年，教皇法庭撤销1431年的判决。1920年5月16日，天主教会追谥贞德为圣女。”</p>
 <p>以上的文字，大体无误，但在剪裁之间，有一个重大的疏漏，就是在叙述贞德“已被监禁好几个月，……依然坚贞不屈，大义凛然，使迫害她的人们无可奈何。……”那一段中，不无瞒天过海之失。</p>
 <p>为什么？因为真的在这段时间，曾有一段软弱的表现，而被故意疏漏了。</p>
 <p>贞德是在1430年11月，以一万六千法郎的身价，被勃艮第人卖给英国人的。后来被审问，从1431年1月到5月。由于她的抗拒，在1431年5月24日，她被带到圣奥恩（St.Ouen）的墓地，警告她如不低头，就当场烧死她。她害怕了，便发誓认罪，声言痛改前非，而被判为终身监禁。可是，由于英国人的压力，六天以后，她还是被带到卢恩的老市场（Rouen’sOldMarket），被当场烧死了。</p>
 <p>贞德在5月24日签字悔过后，她的内心，至为不安，三天以后，5月27日，她终于恢复自我，宣告悔过作废，以至于死。</p>
-<p>《贞德传》（“JoanofArc”）的作者，文卧尔（FrancesWinwar）描写贞德认罪后的心境，至为逼真。（ItwasonlywhenJoanfoundherselfoncemorealone,intheshameofhershornhairandthedressthatcouldnotbutremindherofhercowardice,thatsheunderstoodthefullmeaningofwhatshehaddonethatmorning.Inthehysteria,theterror,thethreatsandprayers,thehubbubofthemob,shehadsignedthepaper,inamomentofpanicweakness,thinkingonlytoescapethefire.……Shewasalone,aloneandlost.Shehaddoneacowardlyandterriblething,andthiswasherpunishment.）最后，贞德在矛盾中选择成功，她光荣的死了。</p>
+<p>《贞德传》（“Joan of Arc”）的作者，文卧尔（Frances Winwar）描写贞德认罪后的心境，至为逼真。（It was only when Joan found herself once more alone, in the shame of her shorn hair and the dress that could not but remind her of her cowardice, that she understood the full meaning of what she had done that morning. In the hysteria, the terror, the threats and prayers, the hubbub of the mob, she had signed the paper, in a moment of panic weakness, thinking only to escape the fire.……She was alone, alone and lost. She had done a cowardly and terrible thing, and this was her punishment.）最后，贞德在矛盾中选择成功，她光荣的死了。</p>
 <p>贞德的故事告诉了人们，志士仁人也有他软弱的一面、也有他贪生怕死的一面，但是，经过内心的挣扎，他们最后选择了求仁得仁。——志士仁人并不是那样自始至终都不动摇的，他们也动摇过，可是最后却在动摇中完成了自我。这种历程，看来似不够英雄，其实却真是好汉。真的好汉都是勉强做成的，正因为要勉强，才正显出人性、真实、难能、与可贵，贞德的历程，是这种选择的最佳样板。</p>
 <p>1990年5月8日</p>
 <p>教皇谴责堕胎是伪善的</p>
@@ -672,9 +705,9 @@
 <p>1989年7月19日</p>
 <p>妖僧亡国记</p>
 <p>《中庸》里头，有一句政治预言是：“国家将兴，必有祯祥；国家将亡，必有妖孽。”意思很明显，就是妖孽的出现，乃是亡国的征象。《中庸》这种政治预言，在中国历史上不乏显例，像元朝亡国皇帝元顺帝，请来一位妖僧——喇嘛伽璘真为帝师，大搞“演楠儿”（大喜乐禅定）等淫乐，最后完蛋大吉，就是最有名的。一国之亡也，固然原因甚多，但有妖僧加入，自速其死，则更有戏剧性、警世性，我们不可不知也。</p>
-<p>《中庸》这种政治预言，不但在中国适用，施之四海，也皆准呢。其中最有名的，就是妖僧拉斯普丁（GrigoryYefimovichRasputin）的故事。</p>
-<p>拉斯普丁是帝俄时代的“林云大师”，他在十九世纪的1865年（一说1871年或1872年）出生在西伯利亚的一个农家。他青年时期，荒唐无赖，且是一个偷马贼。他没有受过什么教育，在三十多岁的时候，从事神棍生涯，别妻弃子，浪迹全俄罗斯，以播放预言和施展神医为绝活。由于他预言出俄罗斯某地的三月干旱，和治疗好尼克莱大公爵（GrandDukeNikolai）的爱犬，因而声名大噪。那时的俄国皇帝是尼古拉二世（CzarNicholasⅡ），他的小太子阿赖克西斯（Aleksei）身罹血友病（hemophillia），病情一发，不得稳定。皇后亚丽珊黛（Alexandra）是妇道人家，妇道人家最易坠入妖道，1905年，她请来拉斯普丁来给小太子催眠。拉斯普丁两眼炯炯有神，搞催眠非常在行，对小太子的稳定，不无帮助，自此大得皇后的信任。这位走火入魔的第一夫人相信拉斯普丁是上帝派到俄国来的使徒，以沟通朝野，结合上下为职志，因此对这妖僧的举手投足，都奉若神明。她把这妖僧用过的梳子给皇帝用，认为皇帝梳了头发后，可在宫廷会议中，表现得坚强如刚。</p>
-<p>由于皇后的走火入魔，皇帝本人，也就跟着顶礼有加。拉斯普丁在这样宠信的局面下，自然更得君行道。不过他行的道，却是无法无天，纵酒宣淫。他声称女人和她发生肉体关系，便等于灵魂纯洁（Heclaimedthatphysicalcontactwithhimwastantamounttospiritualpurification.）此论一出，雌性贵族趋之若鹜，甚至雄性贵族也以绿帽压顶为荣。俄罗斯天下闹成了这个样子，还成个什么体统呢？</p>
+<p>《中庸》这种政治预言，不但在中国适用，施之四海，也皆准呢。其中最有名的，就是妖僧拉斯普丁（Grigory Yefimovich Rasputin）的故事。</p>
+<p>拉斯普丁是帝俄时代的“林云大师”，他在十九世纪的1865年（一说1871年或1872年）出生在西伯利亚的一个农家。他青年时期，荒唐无赖，且是一个偷马贼。他没有受过什么教育，在三十多岁的时候，从事神棍生涯，别妻弃子，浪迹全俄罗斯，以播放预言和施展神医为绝活。由于他预言出俄罗斯某地的三月干旱，和治疗好尼克莱大公爵（Grand Duke Nikolai）的爱犬，因而声名大噪。那时的俄国皇帝是尼古拉二世（Czar NicholasⅡ），他的小太子阿赖克西斯（Aleksei）身罹血友病（hemophillia），病情一发，不得稳定。皇后亚丽珊黛（Alexandra）是妇道人家，妇道人家最易坠入妖道，1905年，她请来拉斯普丁来给小太子催眠。拉斯普丁两眼炯炯有神，搞催眠非常在行，对小太子的稳定，不无帮助，自此大得皇后的信任。这位走火入魔的第一夫人相信拉斯普丁是上帝派到俄国来的使徒，以沟通朝野，结合上下为职志，因此对这妖僧的举手投足，都奉若神明。她把这妖僧用过的梳子给皇帝用，认为皇帝梳了头发后，可在宫廷会议中，表现得坚强如刚。</p>
+<p>由于皇后的走火入魔，皇帝本人，也就跟着顶礼有加。拉斯普丁在这样宠信的局面下，自然更得君行道。不过他行的道，却是无法无天，纵酒宣淫。他声称女人和她发生肉体关系，便等于灵魂纯洁（He claimed that physical contact with him was tantamount to spiritual purification.）此论一出，雌性贵族趋之若鹜，甚至雄性贵族也以绿帽压顶为荣。俄罗斯天下闹成了这个样子，还成个什么体统呢？</p>
 <p>1911年，由于他强行认命一名目不识丁的农夫朋友做主教，以致丑闻翻新；第一次世界大战发生后，由于皇帝在前方忙于军务，皇后在后方坐镇，拉斯普丁更权倾一时。大臣的启用和罢黜，他都一把抓，满朝乌烟瘴气，已经难以收拾。</p>
 <p>1916年，三名保守派贵族认为这妖僧不除，俄国将亡，遂在邀宴之际，谋杀了拉斯普丁，并将他的尸体，扔在大河的冰块下。拉斯普丁虽除去，可是仍旧太迟了，俄国不久发生了革命，皇帝下台，全家被囚。最后皇帝、皇后、小太子、四位公主，全部被枪杀毁尸。迷信妖僧，以致国破家亡，下场竟一至于此！</p>
 <p>拉斯普丁虽然死了，但是他阴魂不散，别有二支：一支是他女儿玛利亚拉斯普丁（MariaG.Rasputin）在多年后为他翻案，翻了半天，乏人相信；另一支是中国的新一代拉斯普丁却成了他的传人，法名“林云大师”，虽然势力不如乃师显赫，但因朝廷相对狭小，妖孽所及，自亦有余，至今犹在快活中。我实在看不过去，因此揭出史事以声讨之。</p>
@@ -813,7 +846,7 @@
 <p>1995年6月8日</p>
 <p>和尚与女人</p>
 <p>民间习语中把男人生殖器上的“龟头”叫“小和尚”，因为光秃秃的，一如和尚头。做为和尚，形而上虽是和尚，形而下却人人也有“小和尚”在焉。做为和尚的使命，就是要管住“小和尚”，佛门理论叮咛“色即是空”，所以，和尚不能扯女人。——管住“小和尚”，是做为和尚的形式要件之一。这种形式要件，不论中国和尚或洋和尚（教会僧侣、神父），都不例外。</p>
-<p>但是，“小和尚”动员起来的力量，是揭竿而起的、大势所趋的。所以，一旦“小和尚”发难，什么理论也莫之能御。薄伽丘（Boccaccio）《十日谈》（Decameron）中有洋和尚自谓我虽是僧侣也有男人的欲望之语；莫里哀（Moliere）《伪君子》（LeTartuffeouI’Hypocrite）中也有我虽披上袈裟但我仍是一个男人之语。此西方佛祖所无法禁绝之番僧之行也！</p>
+<p>但是，“小和尚”动员起来的力量，是揭竿而起的、大势所趋的。所以，一旦“小和尚”发难，什么理论也莫之能御。薄伽丘（Boccaccio）《十日谈》（Decameron）中有洋和尚自谓我虽是僧侣也有男人的欲望之语；莫里哀（Moliere）《伪君子》（Le Tartuffe ou I’Hypocrite）中也有我虽披上袈裟但我仍是一个男人之语。此西方佛祖所无法禁绝之番僧之行也！</p>
 <p>洋和尚如此，中国和尚也一样。《西厢记》写和尚见了崔莺莺要“贪看”；《金瓶梅》写和尚见了潘金莲要“昏迷了佛性禅心”、要“七颠八倒，酥成一块”、要“从前苦行一时休，万个金刚降不住”！至于《水济传》中写花和尚海阇黎裴如海，更是一绝：</p>
 <p>这和尚把那妇人一引，引到一处楼上，却是海阇黎的卧房，铺设得十分整齐。妇人看了，先自五分欢喜，便道：“你端的好个卧房，干干净净！”和尚笑道：“只是少一个娘子。”那妇人也笑道：“你便讨一个不得？”和尚道：“哪里得这般施主？”妇人道：“你且教我，看佛牙则个。”和尚道：“你叫迎儿下去了，我便取出来。”妇人道：“迎儿，你且下去，看老爷醒也未？”</p>
 <p>迎儿自下的楼来。去看潘公。和尚把楼门关上。妇人笑道：“师兄，你关我在这里怎的？”这贼秃淫心荡漾，向前搂住那妇人道：“我把娘子十分爱慕，我为你下了两年心路；今日难得娘子到此，这个机会，做成小僧则个！”妇人道：“我的老公不是好惹的，你却要骗我？倘若他得知，却不饶你！”和尚跪下道：“只是娘子，可怜见小僧则个！”那妇人张着手，说道：“和尚家，倒会缠人！我老大耳刮子打你！”和尚嘻嘻的笑着说：“任从娘子打，只怕娘子闪了手。”那妇人淫心飞动，便搂起和尚道：“我终不成当真打你？”</p>
@@ -890,7 +923,7 @@
 <p>问：你对“龙发堂”一案和李焜泰被捕有何看法？</p>
 <p>答：我认为，姑且不论李焜泰是否假冒和尚，龙发堂是否合法登记，从龙发堂由李焜泰主持，能主动收容精神病患进行看护，应属善行义举，法律上纵不能减轻李焜泰的刑责，但在某方面未尝不可法内施仁，网开一面，自应尽速派员妥善照顾龙发堂的二百多名精神病患，千万不要让这些病患受到伤害或伤害到他人。（《民众日报》，1984年5月2日）</p>
 <p>回向</p>
-<p>印度诗人泰戈尔（RabindranathTagore）第一次到中国是1924年，他在中国演说，遭到急进分子的攻击，据胡适回忆：</p>
+<p>印度诗人泰戈尔（Rabindranath Tagore）第一次到中国是1924年，他在中国演说，遭到急进分子的攻击，据胡适回忆：</p>
 <p>有一次他在真光戏园演讲，主持的人要我做主席，要我介绍他，并劝告大家尊重他老人家说话的自由。</p>
 <p>有一天，他对我说：“你听过我的演讲，也看过我的稿子。他们说我反对科学，我每次演讲不是总有几句话特别赞叹科学吗？”我安慰他，劝他不要烦恼、不要失望。我说，这全是分两轻重的问题。你的演讲往往富于诗意，往往侧重人的精神自由，听的人就往往不记得你说过赞美近代科学的话了。我们要对许多人说话，就无法避免一部分人的无心误解或有意的曲解。“尽人而悦之”，是不可能的。</p>
 <p>因此，在他生日的前夕，我把我的一首《回向》诗写成一条横幅送他做生日贺礼，我把诗的大意说给他听。他懂得我的意思是借此诗安慰他，他要我把此诗译做英文，写了送给他。（《追忆泰戈尔在中国》）</p>
@@ -990,17 +1023,17 @@
 <p>不知自己是老几，</p>
 <p>歪嘴专造滥新闻。</p>
 <p>——1990年3月8日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/16.李敖祸台十书/君子爱人以色.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/16.李敖祸台十书/君子爱人以色.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../16.李敖祸台十书/只爱一点点.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../16.李敖祸台十书/启发你的小故事.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1010,16 +1043,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../16.李敖祸台十书/只爱一点点.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../16.李敖祸台十书/启发你的小故事.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1028,12 +1066,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

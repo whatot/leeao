@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,77 +81,98 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <p>#《蒋介石研究六集》目录</p>
 <ul>
@@ -281,8 +314,8 @@
 <p>张爱萍应温柏格之邀，今天开始他两周的访美行程。</p>
 <p>看了《联合报》所下的标题，重点无非是“美方说法则大异其趣”，但是，据我们所知，这被救的三名飞行员是“分别自加州、德州和麻州专程赶来华府和张爱萍相会”（6月14日《中国时报》）的，他们这么起劲的和中共人员有缘千里来相会，其中必有渊源可寻，这渊源又在哪里呢？</p>
 <p>这渊源又在哪里呢？</p>
-<p>在陈纳德（ClaireLeeChennault）的书里。</p>
-<p>陈纳德是当时来华助战的空军头子，1947年，他在回忆录——WayofAFighter里，有这样“为匪宣传”的文字与“通匪”事实：</p>
+<p>在陈纳德（Claire Lee Chennault）的书里。</p>
+<p>陈纳德是当时来华助战的空军头子，1947年，他在回忆录——Way of A Fighter里，有这样“为匪宣传”的文字与“通匪”事实：</p>
 <p>中国人对于美国人的情感，并非空虚或想象的。它是用许多具体的行为来表现的，这其中且大都是一切有关系的人们生死的关键。在许多美国的假日，中国人总要给十四航空队在中国各地的分队送礼。十四航空队成立一周年纪念那一天，滇省中国人访问团送给我的人员母牛一头、酒一百坛和猪三只，以表示感念他们的功劳，这令我深切地感动了。每在地方空战之后，附近各城的市民常常特制纪念的丝绶带赠给飞行员。当日军对桂林的首次攻击暂时受阻的时候，商人们卡车满载礼品，送到城外各机场去。我源源不绝地接得了中国人的来信，用种种措辞来贡献意见、慰劳和鼓励。其中一封由一个华东难民寄来的，可算为代表作。他附了一张他家乡无锡（上海附近）的地图和一纸中国币二万元的支票，请我把它赏给第一个去炸那城市的美国驾驶员。他在信上写道：“你不妨在我家投一枚炸弹，可是千万请勿殃及我的邻居。请在中国新年实行，别让那些无耻的日本人安乐。”中国人的友谊最宝贵的表现，无过于在日军占领区救援被击落的美国飞行员和从那些地区不绝地传递情报。为了应付这些事情，我跟各种政见不同的中国人交往，有共产党人、有独立的游击队，也有反国民党分子。蒋主席完全允许我这么做，他相信我只致力于进行战争，而不欲操纵当地的政治。最显著的例子是我们跟共党新四军的关系。新四军一直在反对蒋主席的军队，同时也向日军作战，且在我们目标很多的长江流域活动。他们在日军面前救了我们许多航空人员，而我们也投桃报李地供给他们医药、无线电设备、袖珍指南针和时表等物。蒋主席本人对新四军虽然十分痛恨，但他从未干预过这种举动。</p>
 <p>日军极少俘获十四航空队员。在日军阵地后方降落而未死的美国航空人员，至少有百分之九十五受中国人救助，而送回他们的基地去。日军在1942年初杜立特空袭日本后大兴问罪之师时，曾宣告凡协助美国航空人员的，不但一律处死，并且要连坐家属和当地民众。然而在其后的战争期间，却还不见有一个中国人不肯在日军阵地后面协助美国航空人员的实例。每当航空人员打开降落伞从空中降落，他们得到的协助，有的来自华南海面的海盗和私枭、有的来自长江沿岸的游击队、有的从各战线的国共军队，又有的从来未谋面的农民。这些救助，向来没有什么地下组织，也没有出过什么奖金。我们在可能时总要报酬帮助我们的中国人，但他们大都分文不受。这些救助是历来中国人对美国人的善意最妤的明证。同时也是在传统的无组织之下，把中国乡村系在一起的几乎不可见的地方组织的有力表现。所有被从日军阵地背后救出的美国驾驶员中，只有一人因了个人的虚荣，不计利害，而公开宣布他的脱险，结果坐令他的恩人受到日军的报复。</p>
 <p>这些冒险事业，可以详细地写成一卷比任何小说都要引人入胜的书。这里我只愿略述其中一两个荦荦大者而已。</p>
@@ -1000,8 +1033,8 @@
 <p>去年炎夏，居浩然自波士顿西来，在敝寓住了五天，这五天里上下古今谈了一番，他却特别推崇你老兄，说是“念书太多，我们不可及”云云，使我对你的印象颇深。大著《千秋评论》洛杉矶只有长青书局有售，我全看过了（只缺第十一期），在十四期第一二九页中有“……因为岸信介当年做日本驻天津总领事（？）负责窝藏溥仪七年……”此节有待再考。我的印象中应是吉田茂之误。因为我生长平津，在天津住家最久，和陈宝琛更有不平凡的世谊（见拙著《文化城故事》），故有此怀疑也。</p>
 <p>这段小消息，迹近招摇，你可借知我是“前代人物”了。</p>
 <p>童轩荪伉倆金婚之喜，文化界人士举觞庆贺</p>
-<p>〔洛杉矶讯〕新闻界的老前辈、资深的名作家童轩荪先生旅居圣地亚哥已达十五年，今(20)日他的家人和亲友，在DelMar的真北平饭店，举行盛大宴会，庆祝童轩荪和夫人结婚五十年的金婚之喜，参加的有朱葆瑨、孙立轩等学术界人士，电影明星卢燕也特自金山飞至圣地亚哥赴宴。</p>
-<p>童轩荪写作极为丰富，来美国后曾出版《生的哀歌日记》，是感于“临老去国，昔人所悲，唯借楮墨，以遣旅怀”，及所居SanDiego谐音而命名，语意双关，足见他为人的风趣幽默。（1982年11月25日刊于洛杉矶《世界日报》）</p>
+<p>〔洛杉矶讯〕新闻界的老前辈、资深的名作家童轩荪先生旅居圣地亚哥已达十五年，今(20)日他的家人和亲友，在Del Mar的真北平饭店，举行盛大宴会，庆祝童轩荪和夫人结婚五十年的金婚之喜，参加的有朱葆瑨、孙立轩等学术界人士，电影明星卢燕也特自金山飞至圣地亚哥赴宴。</p>
+<p>童轩荪写作极为丰富，来美国后曾出版《生的哀歌日记》，是感于“临老去国，昔人所悲，唯借楮墨，以遣旅怀”，及所居San Diego谐音而命名，语意双关，足见他为人的风趣幽默。（1982年11月25日刊于洛杉矶《世界日报》）</p>
 <p>此文系今年5月间应加州论坛报征求（该报主持人是你的乡长齐世英先生令郎齐振一兄，想也是熟人），为纪念“老先生”逝世七周年所写，文末有些“乡愿”之辞，为的是不使朋友为难便于发表而已。请勿见哂。</p>
 <p>我看蒋老先生</p>
 <p>谈起蒋介石先生生平，为他写传的人已多。所提到的不是东征北伐，便是讨赤抗日这些“丰功伟业”，很少涉及其终局逼处海隅，一挫至此的原因，不能不使我们慨叹所谓“史学家”的良心。至于二十多年前大陆方面有一本“郑三发子”的小书，更是摭拾传闻，存心侮蔑，不足取信，只是向海外作为统战宣传，另有居心。</p>
@@ -1064,7 +1097,7 @@
 <p>③英文书名MARXAGAINSTTHEPEASANT，作者是美国普林斯顿髙等研究院终身院士兼教授D.米特兰尼（DavidMitrany），译者是明君。1954年香港友联出版社版。</p>
 <p>④这是梁实秋在二十多年前，亲口告诉我的。据1983年6月《亚洲人》第36页，曾有这样三段，可供参考：</p>
 <p>曾有一个关于此间检查制度的真实笑话，说我们是反共的，所以不许读任何马克思有关的书，设在海关的检查员一看到任何“马”字头、M开头及书中内容提到马先生的书，都扣起来不许进口。于是，有好一阵子，莘莘学子向国外采购罗马皇帝奥瑞留斯及社会学家韦伯的书籍都收不到。</p>
-<p>后来经过查访，才恍然大悟，原来我们那些敏感又尽责的检查员看到奥瑞留斯的名字MarcusAurelius及韦伯的名字MaxWeber，若非错认为马克思从Marx，就是认为姓马的一定有亲戚关系，Marcus,Max与Marx不是兄弟，就是连襟，大约都不是好东西。在宁可错杀一百，不能放过一个，荼毒了同胞纯净的心灵，就干脆也禁掉了吧！</p>
+<p>后来经过查访，才恍然大悟，原来我们那些敏感又尽责的检查员看到奥瑞留斯的名字Marcus Aurelius及韦伯的名字Max Weber，若非错认为马克思从Marx，就是认为姓马的一定有亲戚关系，Marcus, Max与Marx不是兄弟，就是连襟，大约都不是好东西。在宁可错杀一百，不能放过一个，荼毒了同胞纯净的心灵，就干脆也禁掉了吧！</p>
 <p>这是一位国立大学的教授告诉我的真实笑话。据他说，故事是真实的，但实在是个笑话。讲给外国人听，他们一定捧腹大笑，我们自己听了却笑不出来，还有点欲哭无泪的感觉。</p>
 <p>⑤胡颂平《胡适之先生晚年谈话录》1961年5月18日条下：“今早先生在报上，看见李崇道在核子显微镜里，发现猪瘟的病毒，是生存于发病细胞核内的滤过性病毒，十分注意。说：‘李崇道是李政道的哥哥，一直到了李政道得了诺贝尔奖金后，才准他出去的，他在康乃尔大学发现猪瘟的病菌是很有用的，我很高兴。’”</p>
 <p>⑥童轩荪在《会见晚境凄凉的赛金花》（《传记文学》第十八卷第六期）中说：</p>
@@ -1080,7 +1113,7 @@
 <p>政治比赛中有许多规则，其中最重要的是“公平竞争”，但“公平竞争”迹近理想化，实行起来，很不容易，所以搞政治的，多把“公平竞争”奉为目标而已，骨子里也未免狗屁倒灶。只是在民主国家里，狗屁倒灶也有其规格与限度，不能胡来、不能离谱，胡来离谱者，就要天下共弃之了。</p>
 <p>和运动比赛一样，政治比赛中，也是强者和强者的竞争，弱者是没份儿的，搞政治的可以忽视、排挤、压迫弱者，但他无法忽视、排挤、压迫强者。把弱者看扁，还算人之常情；但把强者看扁，就是胡来离谱了。</p>
 <p>好笑的是，国民党几十年来，却正好扮演着这样胡来离谱的角色。</p>
-<p>国民党的戏路，是它老是想“唯我独尊”，但“唯我独尊”的地位，必须采取“公平竞争”的运动规则以取之，在“公平竞争”中你考了第一，自然你就是老大。可是国民党却不如此。美国老罗斯福推动反托拉斯法案时候，大法官霍姆兹说：“修曼法案是不公道的，因为它不让强者在比赛中获胜。”（TheShermanActisn'tfair,itwon'tletthestrongmanwintherace.）国民党的悲剧不在它忽视、排挤、压迫弱者，而在它忽视、排挤、压迫强者，它错估了别人，把别人都看扁了，结果当它被强者翻身一扑的时候，它就眼冒金星了。国民党狗眼看人低，招惹了李敖，被李敖翻身一扑，国民党为之内伤累累；它又狗眼看人低，招惹了施性忠，被施性忠翻身一扑，国民党为之土脸灰头。施性忠第二次当选后，国民党说为“尊重新竹市选民的决定”，不再把施性忠拉下马了，但它忘了，施性忠第一次当选，又何尝不是“新竹市选民的决定”？——国民党“不让强者在比赛中获胜”，但是强者是忽视、排挤、压迫不倒的，国民党被赶到台湾来，就是谁是强者的最后说明。</p>
+<p>国民党的戏路，是它老是想“唯我独尊”，但“唯我独尊”的地位，必须采取“公平竞争”的运动规则以取之，在“公平竞争”中你考了第一，自然你就是老大。可是国民党却不如此。美国老罗斯福推动反托拉斯法案时候，大法官霍姆兹说：“修曼法案是不公道的，因为它不让强者在比赛中获胜。”（The Sherman Act isn’t fair, it won’t let the strong man win the race.）国民党的悲剧不在它忽视、排挤、压迫弱者，而在它忽视、排挤、压迫强者，它错估了别人，把别人都看扁了，结果当它被强者翻身一扑的时候，它就眼冒金星了。国民党狗眼看人低，招惹了李敖，被李敖翻身一扑，国民党为之内伤累累；它又狗眼看人低，招惹了施性忠，被施性忠翻身一扑，国民党为之土脸灰头。施性忠第二次当选后，国民党说为“尊重新竹市选民的决定”，不再把施性忠拉下马了，但它忘了，施性忠第一次当选，又何尝不是“新竹市选民的决定”？——国民党“不让强者在比赛中获胜”，但是强者是忽视、排挤、压迫不倒的，国民党被赶到台湾来，就是谁是强者的最后说明。</p>
 <p>1966年，左舜生到台湾来，向我说：他在延安时候，见到湖南老乡毛泽东。毛泽东激越的说：“蒋介石总以为天无二日，民无二王，我‘不信邪’，偏要打出两个太阳给他看！”①国民党在日落余晖的今天，能不能临终悔悟到太阳不只一个，没人相信它会，也许国民党已自大狂到迷信它是“燔如羿射九日落”中的神性人物，但是，又怎样呢，九个太阳落了，后羿还不是身死族灭、为天下笑了吗？</p>
 <p>1984年8月21日</p>
 <p>①左舜生《近三十年见闻杂记》中是这样写的：“在我们离开延安的前一天——7月4日，毛泽东特别要周恩来通知我和章伯钧，说他要邀我和伯钧到他私人住的地方去吃午饭，并且可作竟日之谈，我的目的本来是要来探探行情，同时也想进一步研究研究毛泽东这个人的，既有这个机会，当然是欣然同意。毛住在延安城外的延园（原名枣园，不久以前才改的），这一天，除毛和我们两个客人以外，还有周恩来和朱德，从早上九十点左右谈起，一直谈到下午的四五点左右才走，真可算得是一次长谈。谈话的内容异常广泛，甚至连《水浒》和《红楼梦》，乃至我的《万竹楼随笔》，毛也发表了他的批评。朱德也说了不少的话，我始终觉得他是一个老实而朴素的军人，貌似李德邻，而稳重过之。谈到时局问题，毛很激越的说：‘蒋先生总以为天无二日，民无二王，我‘不信邪’，偏要出两个太阳给他看看！’（‘不信邪’是一句道地的湖南话，意即不管三七二十一之谓。）谈到美国，他说：‘我这几条烂枪，既可同日本人打，也就可以同美国人打，第一步我要把赫尔利赶走了再说！’毛有这一股子湖南人的蛮劲，我是早知道的，所以，并不觉得奇怪。”</p>
@@ -1100,17 +1133,17 @@
 <p>由于当年蒋介石慷全国人民之慨，“以德报怨”，日本那边的马屁精，也在搞什么“蒋介石先生遗德显彰会”，如今我出版《蒋介石研究》，就是要用千秋之笔，证明蒋介石对中国人，根本就没什么“遗德”可言，哈哈哈！</p>
 <p>你是“千秋评论”的“开国元勋”，如今五年下来，“闻鼓鼙而思良将”，非常感念你。也感念圣康，他最近在美国再婚了，新娘是纯种洋婆子。即祝光华和你大好</p>
 <p>敖哥1986年10月21日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/12.人物研究类/蒋介石研究六集.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/12.人物研究类/蒋介石研究六集.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../12.人物研究类/蒋介石研究五集.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../12.人物研究类/蒋介石研究四集.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1120,16 +1153,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../12.人物研究类/蒋介石研究五集.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../12.人物研究类/蒋介石研究四集.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1138,12 +1176,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

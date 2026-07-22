@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,77 +81,98 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <p>#《李敖发电集》目录</p>
 <ul>
@@ -188,7 +221,7 @@
 </ul>
 <p>1999年12月1日</p>
 <p>会错了意，先表了情</p>
-<p>1978年11月“阁楼”（PENTHOUSE）杂志上登有一幅漫画，画的是一对情侣，碰到一个收恋爱税的，女的一见来者举枪，就赶快脱裤子。她的男朋友急了，说停下来别动嘛！（只是抢钱而已）没人说要搞你呀！（Nowjustholditonegoddamnminute-noonesaidanythingaboutrape……）这幅漫画的妙处，就在这位女的会错了意，却先表了情。</p>
+<p>1978年11月“阁楼”（PENTHOUSE）杂志上登有一幅漫画，画的是一对情侣，碰到一个收恋爱税的，女的一见来者举枪，就赶快脱裤子。她的男朋友急了，说停下来别动嘛！（只是抢钱而已）没人说要搞你呀！（Now just hold it one goddamn minute - no one said anything about rape……）这幅漫画的妙处，就在这位女的会错了意，却先表了情。</p>
 <p>漫画以外，还有一个笑话。一位乡下孕妇，到妇产科去检查。医生说：“请你先把裤子脱下来。”说完就转身去做别的事了，不料再转回来的时候，看到这孕妇裤子还是没脱。医生问她为什么，孕妇脸红了，低下头来，小声说：“你先脱嘛！”这个故事的妙处，就在这位孕妇会错了意，却先表了情。</p>
 <p>阿扁这回选总统，在宋楚瑜来势汹汹的强势下，想要“弃连保扁”以为挽救。他释放出总统要选台南人的口号，表面说他和连战都是台南人，选谁都可以，骨子里却希望“弃连保扁”，但连战那边却希望“弃扁保连”，变成了一副窘局。阿扁这边，没信心，不搞选举搞弃保，一如一看人来势汹汹，就要脱裤子，会错了意，先表了情；而连战这边，却又扭扭捏捏，要求“你先脱嘛”，也会错了意，先表了情，比照起前面的漫画和笑话来，真逗极了。（1999/12/1）</p>
 <p>我就不信什么“人死为大”</p>
@@ -271,12 +304,12 @@
 <p>你不知道的“一国两制”（下）</p>
 <p>二、台湾与联合国</p>
 <p>问：那联合国所代表的国际社会如何处理两岸政府的问题？</p>
-<p>答：中国（包括台湾与大陆）是联合国的创始会员国，登记的国名叫“中华民国”（RepublicofChina），代表的政府叫“中华民国政府”。</p>
+<p>答：中国（包括台湾与大陆）是联合国的创始会员国，登记的国名叫“中华民国”（Republic of China），代表的政府叫“中华民国政府”。</p>
 <p>韩战爆发后，蒋介石的中华民国法统政府获得美国及其盟邦的支持，继续代表“一个中国”，在联合国内代表大陆与台湾，但随着中共政权的稳定与茁壮，联大中国代表权案成为两岸外交斗争的拉锯战。不过，两岸政府均坚持“一个中国”立场，为免列强炮制的“两个中国案”轻易过半数表决过关，两岸各自动员本身盟邦，从1968年起，连续四年把中国代表权案定为“重大议题案”，需要三分之二多数通过。这是两岸联手捍卫“一个中国”原则。联大斗争的最高潮是1971年第26届联合国大会的中国代表权争夺战。联合国大会第2758号决议案，决定“恢复中华人民共和国的一切权利，承认它的政府的代表为中国在联合国组织的唯一合法代表，并立即把蒋介石的代表从它在联合国组织及其所属一切机构中所非法占据席位上驱逐出去。”注意，这个决议案以国际法的形式，同时封杀了“两个中国”案及“台湾独立案”与“台湾地位未定案”。列强提出“双重代表权案”即“两个中国案”，遭到封杀。《旧金山和约》炮制的“台湾地位未定论”也因为“代表一个中国”（包括台湾与大陆）的代表权决议，连带承认台湾是中国的一部分，当然也就不存在台湾独立问题了。</p>
 <p>问：建国党的法律专家说，我们若宣布台湾独立，才能以新国家名称参加联合国。</p>
 <p>答：不管叫什么国号，“台湾”、“台湾共和国”、“中华台湾国”、“中华民国在台湾”，甚至叫“蒋经国”、“蒋纬国”等，“台湾独立”的法律意涵就在宣布台湾（或中华民国）的主权不及于大陆以及中国（或中华人民共和国）的主权不及于台湾。李登辉在1992年的修宪宣告中华民国“治权”不及于大陆，希望宪法不承认一个主权国家有两个主权代表政府，所以李登辉事实上在搞“一族两国”，或“两个中国”或“顶着中华民国招牌的台湾独立”。</p>
 <p>问：那么，台湾就不可能加入联合国了？</p>
-<p>答：做为中国的一省或一部分，台湾根本没有退出过联合国，也就不存在“加入”的问题了。至于联合国的中国代表团内，台湾地区想要有人参与，这个可与中共谈判。换句话说，想要参与联合国，必须先参与中国。根据民国初年南北洋政府共组国联代表团的先例，两岸也可共组联合国的中国代表团——这对“中华民国”并不吃亏，因为联大中国的国号还叫“RepublicofChina”，就是中华民国的英译名称。其次，与中共有邦交的160个国家都可以在台北设立总领事（这也比照当年承认北洋政府的国家可在广州设立总领事馆的先例），台湾不但参与联合国，还立即有双边外交关系。</p>
+<p>答：做为中国的一省或一部分，台湾根本没有退出过联合国，也就不存在“加入”的问题了。至于联合国的中国代表团内，台湾地区想要有人参与，这个可与中共谈判。换句话说，想要参与联合国，必须先参与中国。根据民国初年南北洋政府共组国联代表团的先例，两岸也可共组联合国的中国代表团——这对“中华民国”并不吃亏，因为联大中国的国号还叫“Republic of China”，就是中华民国的英译名称。其次，与中共有邦交的160个国家都可以在台北设立总领事（这也比照当年承认北洋政府的国家可在广州设立总领事馆的先例），台湾不但参与联合国，还立即有双边外交关系。</p>
 <p>三、“一国两制”</p>
 <p>问：根据陆委会主委苏起日前的说法，台湾不会有人赞成中共主张的“一国两制”，你怎么会提出“一国两制”做为两岸政策？</p>
 <p>答：现在台湾是资本主义制度，大陆是社会主义制度，两种不同的社会经济制度并存，这是客观存在的事实。苏起他瞎子吃汤圆，心里有数。台湾当局并不是反对“两制”，而是反对“一国”。这好象倒洗澡水，却连婴儿也一块儿倒掉。大陆海协会会长汪道涵就曾经问过台湾去访的客人：“‘两制’保持台湾的资本主义你不要，难道你希望台湾也搞社会主义的‘一制’？”</p>
@@ -333,14 +366,14 @@
 <p>11月23日《民众日报》登：“平地原住民议员洪国治昨天批评吕秀莲县长只会以华丽的言辞欺骗原住民，连许多县市都已设立的原住民行政局，身为全国第四多原住民的桃园县竟未设；吕秀莲表示主因局长人才不易寻觅，未来等桃园县升格为直辖市时将列为施政重点。洪国治议员指出，他担任议员两年多来，一直希望以平和、理性的态度争取政府对原住民的重视和照顾，但两年多过去了，不但他的各项建议没有付诸执行，甚至连原住民相关的预算也因精省和缩水。洪国治说，桃园县原住民人口数，在全省排名第四，但是，除台北市和高雄市早在三年前就成立原住民行政局外，全省也有六个县市成立原住民行政局，并且由原住民担任主管。而桃园县，虽有议员们一再建议增设原住民行政局，县府却置之不理。”</p>
 <p>这一消息，告诉了我们：吕秀莲以“置之不理”的方法欺骗了真正的台湾人原住民。（1999/12/9）</p>
 <p>武器未开战，单位先开战</p>
-<p>10月21日美国《太平洋时报》报导：9月23日，NASA的JetPropulsionLab，对LockheedMartin（洛基马丁）制造的MarsClimateOrbiter（火星气象卫星）在太空中失去了联络。结果损失了美金一亿二千五百万元和探测火星（Mars）的机会！原来洛基马丁是采用英制，以哩、吋、磅、加仑为单位，而NASA却以为是公里、公尺、公升、公克为计算单位，因而导致错误。当全世界各国都改采用公里、公升、公克、公尺为单位时，像美国的波音仍用吋、呎的单位在制造飞机，要改可不容易，所有器械、螺丝钉……都要改，工人也要改掉根深蒂固的记忆，要花很多钱，据说光是要改公路上车速的牌子，由哩为公里，就需要四亿两千万元！</p>
+<p>10月21日美国《太平洋时报》报导：9月23日，NASA的Jet Propulsion Lab，对Lockheed Martin（洛基马丁）制造的Mars Climate Orbiter（火星气象卫星）在太空中失去了联络。结果损失了美金一亿二千五百万元和探测火星（Mars）的机会！原来洛基马丁是采用英制，以哩、吋、磅、加仑为单位，而NASA却以为是公里、公尺、公升、公克为计算单位，因而导致错误。当全世界各国都改采用公里、公升、公克、公尺为单位时，像美国的波音仍用吋、呎的单位在制造飞机，要改可不容易，所有器械、螺丝钉……都要改，工人也要改掉根深蒂固的记忆，要花很多钱，据说光是要改公路上车速的牌子，由哩为公里，就需要四亿两千万元！</p>
 <p>台湾乱买武器，以空军为例，又要开以英制为单位的美国飞机，又要开以公制为单位的法国飞机（幻象机），地面操控也要两套，一路下去，武器未开战，单位先开战，日后苦头有得吃呢。（1999/12/9）</p>
 <p>刘泰英秘密批示的文件（续）</p>
 <p>欣和娱乐事业评估分析：</p>
 <p>1.欣和娱乐事业成立于5月初，初始股东以每股面额0.01元投资成立，至6月份之现金增资即以每股二美元办理现金增资，认购价格较初始股东差距二百倍，而初始股东出资十六万八千美元即占股权67.5%，而现金增资股东则出资一千六百二十五万美元，仅占股权32.5%。据刘先生解释，主要价格之差异为弥补刘先生购买汐止土地资产的汇差损失及贷款利息，以及刘先生减少EMI公司之版权收入，但持有土地成本增加不宜以提高其它投资人股价来处理及作为价差解释之原因。</p>
 <p>2.博新原股东出售持股予刘家昌先生，刘家昌先生并无现金可购买；按正常会计作业，股权交易必须有现金流入，刘导演希望华夏公司先代他出资，华夏公司并无会计名目，也不符合交易常规替刘先生代垫本笔款项。而若会计师于年底财务报表揭露本项交易并出具保留意见，将会使华夏公司之借款行库收缩资金。若以华夏直接投资台湾欣和则可较快速进行拨款增资，俟其购入家欣之资产（刘先生之资产）后，刘家昌先生即可将款项交付华夏冲帐，符合会计程序。</p>
 <p>3.欣和娱乐事业为海外之纸上控股公司，实际之经营事业及实质资产均为未来在台设立之台湾欣和（百分之百之子公司）所有，若本公司此次投入海外之公司，并无法实质掌控台湾欣和之营运状况，投资之管理风险相当高。</p>
-<p>4.欣和娱乐事业目前由扬顺财务顾问公司规划办理美国Nasdaq上柜交易事宜，扬顺公司规划欣和娱乐事业与目前已上柜公司进行合并，并宣称相关之作业已进行相当顺利，若此次现金增资顺利完成（于7月底之前），应可顺利于8月底前与该上柜公司合并；但经查证该公司以往辅导之美国上市购并个案（AmericomUSAInc.），目前虽已有成交代码，但并无实际成交纪录，辅导之纪录并不优良。因此，欣和娱乐事业之股票并非上市股票，无法在公开市场交易，虽然可能透过并购上市公司间接上市但无法确定并购是否成功及购并完成之时间。</p>
+<p>4.欣和娱乐事业目前由扬顺财务顾问公司规划办理美国Nasdaq上柜交易事宜，扬顺公司规划欣和娱乐事业与目前已上柜公司进行合并，并宣称相关之作业已进行相当顺利，若此次现金增资顺利完成（于7月底之前），应可顺利于8月底前与该上柜公司合并；但经查证该公司以往辅导之美国上市购并个案（Americom USA Inc.），目前虽已有成交代码，但并无实际成交纪录，辅导之纪录并不优良。因此，欣和娱乐事业之股票并非上市股票，无法在公开市场交易，虽然可能透过并购上市公司间接上市但无法确定并购是否成功及购并完成之时间。</p>
 <p>5.本公司若参与此次欣和娱乐事业之现金增资，即为欣和娱乐事业之大股东，具美国证券法定规定，持有之股票，需自合并上市取得股票后一年使得转让持股，而转让持股之比例亦受到法令之限制；而美国上市、上柜公司繁多，即使欣和娱乐事业顺利合并上柜，亦必须面对市场之考验，如何创造适当的交易量，使本公司之投资有顺利获利出售之管道。经本公司投资部同仁评估，投资欣和娱乐事业似以风险过高，若参加台湾欣和之投资，可实质掌控公司之经营，应可降低相当之风险。</p>
 <p>四、本公司建议由华夏投资欣和娱乐事业旗下所设立之台湾欣和公司，同时华夏、光华、启圣出售博新公司之所得亦投资台湾欣和公司（台湾欣和之整体架构以中华开发公司八十七年12月份所作之投资计划书为准据，架构如附件四），所考量之原因如下：</p>
 <p>1.为考量中广、中影公司未来上市、上柜证管机关之查核，拟由本公司全数认购现金增资之额度四亿一千万元。</p>
@@ -376,7 +409,7 @@
 <p>5.由打官司所获徐贤修与李卓皓之间的信件得知，a.徐贤修在1977年12月22日写给李卓皓的密函，请李卓皓找专家以高水平评审我的论文（附件二），李卓皓在1978年2月27日回信，说由三位一流的结晶学家看过，皆认为是一个高水平的成就（附件三）。徐当时把此信压下不给人看，国内当时无人知道。b.徐贤修又在1978年5月16日再去信给李卓皓要他再评审，并附上与此事无关的Freeman给沉君山的信及Hughs给我的信（此信在1965年所发）（附件四）。</p>
 <p>李卓皓遂在1978年7月6日写此毁谤信（附件五），在台湾我已无法立足，香港也不可能，只好在美国暗助之下去了沙特阿拉伯教书约三年，因突发心肌梗塞而回加拿大（当时已全家移民），1986年去看我在加州理工的指导老师VernerSchomaker（1997年故去），我把这信给他看，他只指出Freeman给沉君山的信是一切事的关键，然后就不再提这件事。</p>
 <p>6.在1988年我回台湾想翻案时蒋经国已死，美国总统布什刚当选。一位美国教授要同我谈这件事，我把Freeman给沉君山的信给他看，他说这是一封假信，没有日期，沈君山的名字是贴上去的，除非是白痴，皆可断定此信是假信，他说我可找一个我可信任而又有名声的科学家写信问Freeman，他一定会否认，则此事可解，我问他是否CIA，他说是。1989年我再到Caltech见Schomaker，他只说这是Szymanski做的，当时他失业。他讲这两句话不再提了。我回台湾后，在1972到1976年的ChemicalAbstract中找到Szymanski曾与刘兆玄合作的论文，又在清大教授著作集内，刘兆玄（时兼理学院院长）也有与Szymanski合作论文之记录（附件六），所以这封假信是刘兆玄用钱（当然是公款）由Szymanski处得到。只是不知Freeman是写给何人，后来把沈君山的名字贴上去，再把日期涂去，就是现在的样子（附件七），此信由美国法院转给我。刘兆玄在我解聘之后，任化学系主任，把李卓皓的第二封毁谤信件印了数百份，在化学系办公室门外散发给来往学生，当时何世延教授看不过去，把还没有发完的文件收了回来，并告诉李曾遹教授，他告诉我才知道。</p>
-<p>7.我把Freeman给沈君山的信与Schomaker提到此信与Szymanski的关系，及刘兆玄与Szymanski的证据，用挂号信寄给李远哲，请他问一问是否是Freeman写的，大概是1990年末，在这同时我遇到一个年轻的美国人JayJensen，他同我聊天，突然间说：“Freeman的信是假的，我们都知道”（他连看都没看过）。到1991年春我同李远哲在他的办公室见面，他正式宣布他已写信给Freeman，而Freeman给他回信说此信是真的，而他说此信看后就烧掉了，我一头雾水（附件八），因为李远哲从来没有向我说过谎，不过之后一星期左右，Jay告诉我，李远哲在说谎，他根本没有去信也没有回信，他说沈、刘、徐这一批人皆是Thugs（中文“下三滥”）。</p>
+<p>7.我把Freeman给沈君山的信与Schomaker提到此信与Szymanski的关系，及刘兆玄与Szymanski的证据，用挂号信寄给李远哲，请他问一问是否是Freeman写的，大概是1990年末，在这同时我遇到一个年轻的美国人Jay Jensen，他同我聊天，突然间说：“Freeman的信是假的，我们都知道”（他连看都没看过）。到1991年春我同李远哲在他的办公室见面，他正式宣布他已写信给Freeman，而Freeman给他回信说此信是真的，而他说此信看后就烧掉了，我一头雾水（附件八），因为李远哲从来没有向我说过谎，不过之后一星期左右，Jay告诉我，李远哲在说谎，他根本没有去信也没有回信，他说沈、刘、徐这一批人皆是Thugs（中文“下三滥”）。</p>
 <p>1992年春，在Caltech见Schomaker，他第一句话是李远哲向你说谎，在1992年时美政府也派人问李远哲为什么不给王企祥一个办公室，他回答说：他很努力为王企祥找一个办公室，可是王企祥向一个部长拍了桌子，因此告吹。美国人一听就知是谎言，因为若有这种事他们早就知道了。Schomaker在1994年为我写一信，这是代表美政府的意见，说Freeman给沉君山的信是伪造的（附件九）。</p>
 <p>李远哲与王企祥（右）</p>
 <p>1999年12月15日</p>
@@ -429,7 +462,7 @@
 <p>（三）弟日来虽饱受流言所困，理当回避，但仍请广电处同仁于会见吴董时，如认为有必要，可随时邀其至弟处一谈，或能为两造撮合，共同经营环球（如能实现当初弟所提出之“股权分散，专业治台”理想，岂不大妙！）。尤其，新闻局为之管官署，岂有甘为“黑手”之理！犹记前次谋面，弟蒙阁下谬赞为“老实人”，弟虽不敢妄称“老实人”，但自许为一介具有是非观念与高度理想性之知识分子，岂令自甘下流，和一般居心阴恻，卖友求荣之辈看齐？</p>
 <p>（四）有关“叶岛蕾案”，小弟绝未有丝毫涉及，叶与弟同年入明大，印象中既乖巧，又单纯，叶案爆发时，弟深感意外。弟虽于留学期间激于义愤，投入爱国运动，却未曾做过昧心之事；当时，既非领取公费或党费之留学生，返国后，亦从未谋求一官半职，至今，也未尝受到当政者之青睐，或可证明弟之清白也。</p>
 <p>（五）弟与众多同辈朋侪一般，自幼即捧读大作，衷心仰慕，至今犹然。走笔至此，唯有一事无法释怀——以吾兄超人之智能，竟亦遭人蒙蔽？以“李敖先生”一付代表之正义形象，竟亦黑白不分，运用媒体优势，诬指一介原已受尽不平对待的、老实的“好友”？其谁能信！</p>
-<p>尝听人说：任何人与李敖交往，必留下纪录为档案，随时将出以示人云云。今弟仍执意传此小笺，实因心中疑惑难解也。李大哥，您于节目中如此这般放言指陈，是真不知情，有所误会？抑或是了然于胸，蓄意攻讦？如系前者，弟亟愿趋见一谈，让真相大白，还我公道--这不是您终其一生所努力以赴的崇高目标吗？提笔仓促，言不尽意，但能略表心迹，于愿足以！端此</p>
+<p>尝听人说：任何人与李敖交往，必留下纪录为档案，随时将出以示人云云。今弟仍执意传此小笺，实因心中疑惑难解也。李大哥，您于节目中如此这般放言指陈，是真不知情，有所误会？抑或是了然于胸，蓄意攻讦？如系前者，弟亟愿趋见一谈，让真相大白，还我公道–这不是您终其一生所努力以赴的崇高目标吗？提笔仓促，言不尽意，但能略表心迹，于愿足以！端此</p>
 <p>1999年12月17日</p>
 <p>原来刘泰英是宋系人马！</p>
 <p>中国民间有一种“告地状”的风气，就是一个人自以为受了什么委屈，请人代他写满一大张纸，上面语无伦次啰啰嗦嗦的写上一大堆，摊在地上，用石块压住纸，自己跪在旁边，或哭或诉，以求各界同情。看了《联合晚报》传来的老友刘家昌广告稿，我笑着对自己说：“现代中国人真进步了，‘告地状’可以告到报纸上来了，只是不知道他要跪在什么地方。”</p>
@@ -450,7 +483,7 @@
 <p>新闻局指出，关于环球电视10月22日《挑战李敖》节目播出日本女星叶月里绪菜全裸写真集一事，该局原将该节目提列11月10日召开之“第二次广播电视评鉴委员会”第五次会议之十个讨论议题中，惟是次会议仅评鉴六项议案，尚有《挑战李敖》节目等四个议案未及讨论；为此，该局特于11月22日加开第六次会议中评鉴讨论，评鉴会决议：限制级出版品内容不宜用做“普”级电视节目内容，且经重复播出，函请改进。该局已于日前依评鉴委员会决议函请该公司改进，并未核处罚锾。</p>
 <p>这一新闻稿，就闹得满城风雨的“环球电视台”两大案（所谓“经营权争议案”和“露阴毛案”）都做了明确的官方立场，这两个案子，本来都被传言指为打压吴子嘉和李敖的言论自由的，现在既经新闻局悬崖勒马，温和处理了，可见新任的赵怡局长功不可没，俨然有点“德政”的味道而非“苛政”了，是亦可喜也，赵怡老弟勉之。（1999/12/20）</p>
 <p>Pubic走向Public</p>
-<p>英文有一个形容词叫pubic，是“阴部的”“阴毛的”的意思，例如thepubicregion，就是“阴部”的意思。英文又有一个形容词叫public，是“大众的”“公开的”“为人民的”的意思，例如apublicman，就是“政府官员”的意思。把pubic与public两相比较，只为一个L字母的有无，完全有了不同的含义。</p>
+<p>英文有一个形容词叫pubic，是“阴部的”“阴毛的”的意思，例如the pubic region，就是“阴部”的意思。英文又有一个形容词叫public，是“大众的”“公开的”“为人民的”的意思，例如a public man，就是“政府官员”的意思。把pubic与public两相比较，只为一个L字母的有无，完全有了不同的含义。</p>
 <p>但我常发奇想，认为这两个字其实大可结合一下，方式就是由pubic走向public，也就是从“阴毛的”走向“公开的”。</p>
 <p>我们欣赏人体美，在绘画作品中，尚勉强让全裸在艺术名下过关，但在摄影上和电影上，却仍不能完全以艺术认定，反倒色情随之，官方的新闻局且以“限制级”箝制之。本来官方的尺度是三点不露，近年来对上面两点多予放松，唯对下面的阴毛仍然戒慎恐惧，这是不好的，也太落伍、太保守了。11月22日，我在环球电视台《挑战李敖》节目中公然亮出日本女明星叶月里绪菜的露毛写真集，群情大哗，现经新闻局“决议函请……改进，并未核处罚锾”，可算是一大进步。使pubic走向public，是心灵开放、视野开放、言论自由开放的重要过门，开放之道无他，新闻局去睡觉可也，古人说“大梦谁先觉”，今则是“大梦即先觉”，你睡觉，他开放，进步之道，集于是矣！（1999/12/20）</p>
 <p>1999年12月21日</p>
@@ -491,17 +524,17 @@
 <p>李登辉究竟是如何高攀进入张女士的夫家，又是在什么情况下走进张女士的内心世界的呢？据我的深入了解，有两个主要的说法，一说是张女士第三高女一位交情很深的同班同学告诉我的；另说则是和张女士关系极亲近的张女士夫家家族成员透露的。</p>
 <p>原来，张女士的先生过世后，家中事无大小，几乎都落在张女上一个人的肩头，这个年幼的孩子逐渐成长迈入学龄，并且开始识字读书，偏偏孩子的玩心重，对书本兴趣缺缺。夫家向来很重视门第观念，孩子的教育尤其受重视。夫家家大业大，丈夫年幼时代，公公沿习几代以来的老规矩，延请家教，到家里教大少爷读书。所以，如今孩子到了启蒙时期，自然不能免俗照例得请个家庭教师，到家里督促并教导孩子读书。但是，张女士镇日忙着家务，到底该请谁来担任家庭老师，确是一件令她烦心而难以拿定主意的事。很巧，有天一位曾经在淡水中学担任过李登辉老师之日本友人来访，无意中提及小孩家教事，日本老师告诉张女士，你先生过去有一位学弟叫岩里政男，你说不定也见过或者认识，他中国名字叫李登辉，你应该也认识吧？此人台湾大学毕业，先前在台湾省政府农林厅服务，目前在合作金库做研究员，学问不错，如果你聘请他担任家庭教师，教导令公子，也是很适合的人选。</p>
 <p>“LEETOKI桑”——李登辉的日文译名，这个名字对张女士来说，并不陌生，她想起丈夫在世时，一些台北高校前后期的同窗契友，会聚集到蔡家宽阔的厅房里摆龙门阵，批判现状，嘲骂时政，大伙清谈半天谈饿了，张女士的丈夫就叫厨房准备几桌酒菜，大家饮酒作乐，醉罢而归；其中一位LEETOKI桑高大而斯文的身影，高亢而激越的言论，都在张女士脑中，留下深刻的印象。夫家有钱有势，先生的同窗好友知道跟着他，非但不愁吃喝，说不定日后还可大展鸿图。从台北高校时期，前后期的同窗，便自然围绕着蔡家大少爷，结合成一个小圈子。</p>
-<p>丈夫过世之后，昔日称兄道弟的老同窗，较少出现在蔡府。大家想法里边都认为，毕竟张女士孀居其间，任何大男人上门，终归不便，更何况和张女士也不像她先生那么熟，再说人在人情在，人既然不在了，过往的情谊也就淡薄了；即使继续进出张女士夫家的人，又何尝不是基于过去和张女士丈夫的一点情面，或者说看在张女士夫家终归还是万华一大家族。因此，当多数同窗老友都避讳再到蔡家时，唯独LEETOKI桑逢年过节进出蔡家，对蔡家大小嘘寒问暖，问张女士有什么他可以帮忙的，叫他尽管讲别客气。张女士因而对李登辉的热忱留下极佳的印象。</p>
-<p>更由于日本老师引介，张女士毫不考虑地延聘LEETOKI桑，为蔡府“西席”，外边的亲友也都将李登辉进出张女士家门，视为寻常事情，不会将它和什么背离人伦的印象连络在一块儿。自此，李登辉每天从合作金库下班后，就到蔡家帮张女士的几个儿女教导功课，在他的严格教导下，蔡大少爷的这几位稚龄的少爷、小姐，课业有了长足的进步。</p>
-<p>但是，据张女士夫家一位家族成员告诉我另外一种说法，李登辉和张女士的先生已经是旧识，会在张女士的丈夫去世后仍继续出入其夫家，“担任家庭老师”仅仅是对外的一项托辞。事实上，LEETOKI桑在张女士丈夫过世不久，即经常出入张女士夫家，为争取家产权益问题，甚至在张女士的丈夫停棺在家期间，李登辉也尽了不少力，张女士甚为感激。后来又以代为照顾学长家族为借口，和张女士的夫家老小及张女士接近，以拉拢关系。当时，张女士的孩子们进入就学阶段，李登辉经常出入蔡家的缘故，经常教导张女士的儿女们读书，补习功课，所以，即使不经由日本老师的引介，李登辉仍然名正言顺会成为张女士夫家家庭老师的。</p>
-<p>李登辉既然做了家庭老师，对张女士夫家家族内部错综复杂的朱门恩怨，当然了然于心。张女士委身夫家这种旧社会大家族里，又是孤苦无依的妇道人家，要拋头露面料理家族内外各种事务，有时候难免诸多不便。李登辉既然应聘为西席先生，和张女士的先生又是台北高校前后期的同窗旧识，除了好好管教好张女士和学长生的儿女们，李登辉不免使命感油然而生，自认有责任代替已过世的学长照料家小，所以，初入张女士夫家的李登辉，总是极尽细腻之能事地为张女士百般设想。日子一久，张女士似乎也在无形中对这位LEETOKI桑，产生了依赖的心理。张女士凡是遇到任何棘手难办的麻烦事，都会找LEETOKI桑商量，请他动脑筋出个主意，甚至请他出面帮忙解决；而李登辉也尽量都能不负所托，圆满解决。他曾经不止一次告诉张女士，帮学长照顾学嫂，是天经地义的事，帮这点小忙实在不足挂齿。张女士对乐于助人的李登辉，始终心存感激，李登辉协助她渡过了漫长的凄寂岁月，更给予她撑持这个家族的勇气。</p>
-<p>LEETOKI桑的协助，对张女士这位弱女子，该是多大的一股助力啊！</p>
+<p>丈夫过世之后，昔日称兄道弟的老同窗，较少出现在蔡府。大家想法里边都认为，毕竟张女士孀居其间，任何大男人上门，终归不便，更何况和张女士也不像她先生那么熟，再说人在人情在，人既然不在了，过往的情谊也就淡薄了；即使继续进出张女士夫家的人，又何尝不是基于过去和张女士丈夫的一点情面，或者说看在张女士夫家终归还是万华一大家族。因此，当多数同窗老友都避讳再到蔡家时，唯独LEE TOKI桑逢年过节进出蔡家，对蔡家大小嘘寒问暖，问张女士有什么他可以帮忙的，叫他尽管讲别客气。张女士因而对李登辉的热忱留下极佳的印象。</p>
+<p>更由于日本老师引介，张女士毫不考虑地延聘LEE TOKI桑，为蔡府“西席”，外边的亲友也都将李登辉进出张女士家门，视为寻常事情，不会将它和什么背离人伦的印象连络在一块儿。自此，李登辉每天从合作金库下班后，就到蔡家帮张女士的几个儿女教导功课，在他的严格教导下，蔡大少爷的这几位稚龄的少爷、小姐，课业有了长足的进步。</p>
+<p>但是，据张女士夫家一位家族成员告诉我另外一种说法，李登辉和张女士的先生已经是旧识，会在张女士的丈夫去世后仍继续出入其夫家，“担任家庭老师”仅仅是对外的一项托辞。事实上，LEE TOKI桑在张女士丈夫过世不久，即经常出入张女士夫家，为争取家产权益问题，甚至在张女士的丈夫停棺在家期间，李登辉也尽了不少力，张女士甚为感激。后来又以代为照顾学长家族为借口，和张女士的夫家老小及张女士接近，以拉拢关系。当时，张女士的孩子们进入就学阶段，李登辉经常出入蔡家的缘故，经常教导张女士的儿女们读书，补习功课，所以，即使不经由日本老师的引介，李登辉仍然名正言顺会成为张女士夫家家庭老师的。</p>
+<p>李登辉既然做了家庭老师，对张女士夫家家族内部错综复杂的朱门恩怨，当然了然于心。张女士委身夫家这种旧社会大家族里，又是孤苦无依的妇道人家，要拋头露面料理家族内外各种事务，有时候难免诸多不便。李登辉既然应聘为西席先生，和张女士的先生又是台北高校前后期的同窗旧识，除了好好管教好张女士和学长生的儿女们，李登辉不免使命感油然而生，自认有责任代替已过世的学长照料家小，所以，初入张女士夫家的李登辉，总是极尽细腻之能事地为张女士百般设想。日子一久，张女士似乎也在无形中对这位LEE TOKI桑，产生了依赖的心理。张女士凡是遇到任何棘手难办的麻烦事，都会找LEE TOKI桑商量，请他动脑筋出个主意，甚至请他出面帮忙解决；而李登辉也尽量都能不负所托，圆满解决。他曾经不止一次告诉张女士，帮学长照顾学嫂，是天经地义的事，帮这点小忙实在不足挂齿。张女士对乐于助人的李登辉，始终心存感激，李登辉协助她渡过了漫长的凄寂岁月，更给予她撑持这个家族的勇气。</p>
+<p>LEE TOKI桑的协助，对张女士这位弱女子，该是多大的一股助力啊！</p>
 <p>李登辉和张女士都受过近二十年日本殖民教育，两人的家庭在日本统治时期，都是所谓的“国语家庭”（作者按：“国语家庭”通常是彻底屈服于日本统治者的“荣誉”表征，只要台湾人全家老小平日都讲日本话、冠日本姓氏、供奉祭拜日本神位，就可以得此“殊荣”，并享受较丰足的战时食物配给）出身，因此两人之间相处很容易就变得热络起来。李登辉的太太曾文惠，亦是张女士台北第三高女的前后期学姐学妹关系，曾文惠虽是张女士前期学姐，曾、张两人在学校时，彼此并不熟稔，两人逐渐熟识，还是因为李登辉担任张女士夫家家庭老师以后的事。</p>
-<p>所谓“近水楼台先得月”，张女士对心目中这位满腹学问的LEETOKI桑，也由先前的依赖，不自觉地发展产生了敬爱的情愫。这厢，李登辉一方面甚是怜惜张女士的孤苦无依，另方面也颇为心仪张女士的秀外慧中。</p>
+<p>所谓“近水楼台先得月”，张女士对心目中这位满腹学问的LEE TOKI桑，也由先前的依赖，不自觉地发展产生了敬爱的情愫。这厢，李登辉一方面甚是怜惜张女士的孤苦无依，另方面也颇为心仪张女士的秀外慧中。</p>
 <p>有一次，一位张女士夫家家族成员亲口透露，李登辉曾经亲口很感叹地告诉她，张女士无论是气质、内涵和外貌，都是此生遇过最具代表性的杰出时代妇女，强过自己身边所有的女性，哪怕自己太太都远不如她哩！李登辉每讲到这儿，就不禁唉声叹气，意谓真可惜啊，这么好的时代女性，偏偏红颜薄命，天不从人愿啊！</p>
 <p>尽管两人相互倾心，但毕竟张女士是新寡之身，固不论背后还有大家族的严峻门规，也无法罔顾社会的道德戒律；况且，李登辉本身也是有家室妻小的人，还曾经是省政府农林厅年轻的公务员、合作金库研究员、后来转任农复会技士，台湾大学为人师表的教职员，本身虽然尚谈不上是社会上有头有脸的士绅阶级，也是个知书达礼的读书人，岂可在行为举止上稍有造次？门风规矩也好，道德戒律也罢，有似天罗地网，但是，人心终归是肉做的，人终究不是神，即使能坐怀不乱、四大皆空，三百六十五天里，难免会有动心忍性、意乱情迷的时候。此刻，不管是门风戒律，不论是道德规范，再圣洁的人都逃不过内心世界天人交战的挑衅。</p>
-<p>张女士和LEETOKI桑之间，随着时间酝酿的情愫，慢慢在两人内心世界中发酵，两人关系的微妙转变，最后连张女士的尚未成年的子女都觉察到特异状况。民国四十年代末期，李登辉和张女士最密切的那段时期，李登辉中午下班后，时常不回自己家里，而直奔张女士家。张女士为他准备好菜饭，招待他用餐，再留他在家里休息，服侍他睡午觉。到接近上班时间，再由张女士叫醒他，赴农复会上班。</p>
-<p>但是，基于LEETOKI桑是他们的西席先生，是望之俨然的严师、长辈，怎可质疑他的人品和行为？所以，明知LEETOKI桑和张女士相互依赖，眉目对望之间异乎寻常，大家也只有睁只眼、闭只眼了。</p>
+<p>张女士和LEE TOKI桑之间，随着时间酝酿的情愫，慢慢在两人内心世界中发酵，两人关系的微妙转变，最后连张女士的尚未成年的子女都觉察到特异状况。民国四十年代末期，李登辉和张女士最密切的那段时期，李登辉中午下班后，时常不回自己家里，而直奔张女士家。张女士为他准备好菜饭，招待他用餐，再留他在家里休息，服侍他睡午觉。到接近上班时间，再由张女士叫醒他，赴农复会上班。</p>
+<p>但是，基于LEE TOKI桑是他们的西席先生，是望之俨然的严师、长辈，怎可质疑他的人品和行为？所以，明知LEE TOKI桑和张女士相互依赖，眉目对望之间异乎寻常，大家也只有睁只眼、闭只眼了。</p>
 <p>自称曾经吃过“白色恐怖”苦头的李登辉，从年轻时代以来，虽然放言高论，骄矜自持，眼睛经常放在头顶上，但平日行事风格向来十分谨慎，他自认即使中午和妻子曾文惠撒个谎，找个冠冕堂皇的借口，兀自一人跑到张女士家里吃饭、小憩片刻，妻子纵使再怎么细微精明，明察秋毫，也不会察觉自己去了什么地方。</p>
 <p>所谓聪明反被聪明误，纸终究是包不住火的，女人也永远比男人多一分敏感，特别是当她的男人露出异状的蛛丝马迹的时候。（待续）（1999/12/22）</p>
 <p>1999年12月23日</p>
@@ -517,15 +550,15 @@
 <p>原本根本不会为外人知悉的一桩“隐密”，要不是曾文惠这么一闹，哪会演变成“隐密”外泄的结局呢？</p>
 <p>父亲的建议，泪眼婆娑的曾文惠深感认同，她便决定出发去美国和李登辉会面，在她的想法里，是去千里寻夫，试图维护濒临破碎的婚姻。毕竟当时孩子都尚在就学阶段，临走前，曾文惠不放心家里，特意央托宝贝姐和自己的妹妹，就近照料李宪文、李安娜，李安妮三兄妹。</p>
 <p>曾文惠为了护夫，不得不忍痛暂时离开儿女，但是想想当年张女士何尝不是了为李登辉做同样的牺牲，可见李登辉魅力无穷。</p>
-<p>民国五十四年，当LEETOKI桑初到美国，面对新大陆陌生世界的一瞬间，很难说他的内心是否曾经真正惦念着远在台北的曾文惠，还是有了新人忘了旧人。也许，正如他在日后写“台湾的主张”书中声称的——“信仰的开端，不外乎是相信自己身边的人。”可是，此刻他所谓“自己身边的人”，已经不是曾文惠而是张女士了。</p>
+<p>民国五十四年，当LEE TOKI桑初到美国，面对新大陆陌生世界的一瞬间，很难说他的内心是否曾经真正惦念着远在台北的曾文惠，还是有了新人忘了旧人。也许，正如他在日后写“台湾的主张”书中声称的——“信仰的开端，不外乎是相信自己身边的人。”可是，此刻他所谓“自己身边的人”，已经不是曾文惠而是张女士了。</p>
 <p>接到妻子要来“陪伴”他的信息，李登辉当然只有被迫要求张女士离开美国，先行返台。李登辉则重回自己窄小拥挤的宿舍，等待妻子的到来。但是，根据熟知李登辉个性的人叙述，以李登辉大男人主义的个性，他压根儿也没有要和张女士断绝来往的打算。李登辉对这种事情的想法是很果断的，女人在闹的时候，只要男人赏颗糖吃，安抚安抚马上就没事的。女人看重的就是钱，有钱能使鬼推磨，钱也能浇熄女人心中愤怒的妒火。</p>
 <p>虽然曾文惠是以“照顾”李登辉的美名千里寻夫，但是，和李登辉见面后，免不了一阵勃溪争吵，李登辉这时充分展现了他的“务实精神”和男女关系方面的“两国论”特质，精明而功利的李登辉当然不会去做现代陈世美，他狡黠地向曾文惠作了一番解释，他辩称，他之所以会和张女士保持密切的交往，没别的目的，就是费心帮她一点忙，而这忙也不是白帮的，张女士的夫家有的是钱，如今我们停薪留职负笈美国，三个孩子都还小，正是缺钱的时候，有人帮助，对家庭有正面的帮助。妳就别再吵了吧！</p>
 <p>李登辉对妻子的这番说辞，曾文惠自然难以置信，她已经调查清楚，从民国四十三、四年到眼下赴美深造，李登辉和张女士的交往少说有十一、二年了，张女士究竟有什么“大忙”，需要李登辉“帮”上十一、二年的？丈夫什么时候变得如此侠肝义胆、慈悲为怀？即使真的是基于恻隐之心，也不必要帮忙帮到两人“形影不离”、“难分难舍”吧？更别说“被帮忙”的人，居然千里迢迢从台湾追到美国和李登辉会合，这到底算是哪门子的“帮忙”？</p>
-<p>尽管“理”字站在曾文惠这边，可是，曾文惠终究脱离不了受日本教育妇女的思维窠臼，她们这一代的台湾妇女，只要丈夫表现出强势嘴脸，哪怕小女子有天大的理字可依靠，她们都会乖乖低头听训，任凭丈夫继续我行我素。尽管理直气壮，“欧巴桑”SUMIKO（曾文惠的日本名字叫“文子”）遇上“欧基桑”LEETOKI，偏偏没办法。</p>
+<p>尽管“理”字站在曾文惠这边，可是，曾文惠终究脱离不了受日本教育妇女的思维窠臼，她们这一代的台湾妇女，只要丈夫表现出强势嘴脸，哪怕小女子有天大的理字可依靠，她们都会乖乖低头听训，任凭丈夫继续我行我素。尽管理直气壮，“欧巴桑”SUMIKO（曾文惠的日本名字叫“文子”）遇上“欧基桑”LEE TOKI，偏偏没办法。</p>
 <p>飞奔新大陆千里寻夫的曾文惠，本来的目的何尝没有几分要到美国给张女士一些颜色瞧瞧的企图，但某些顾虑，却使曾文惠色厉内荏起来，她从自己怀疑李登辉和张女士间有非比寻常关系起，她便担心自己会从此失去丈夫。曾文惠忧虑的不是没有道理，那时，李登辉当然不会料想到自己会是日后的中华民国总统，心理上没有太大的顾忌。但反观曾文惠，已经替李登辉生了三个孩子，自己年纪也二三十好几，她若真正走上“宁为玉碎，不为瓦全”的路子，最后将成为最大的牺牲者。因此，尽管她考虑过对李登辉发飙耍狠，却顾虑到自己若做得太绝，反而刺激李登辉拂袖而去，硬逼李登辉投奔到张女士的怀抱。因而，在曾文惠内心深处，一种日本“小女人主义”委屈求全的软弱心理因素开始作祟。哪怕自己明明立场站得住脚。</p>
 <p>所以，“千里寻仇”最后成了“千里侍奉”，曾文惠在新大陆成为李登辉的“台佣”。</p>
 <p>后来李登辉学成归国，又跟“张女士”旧欢重拾。徐渊涛先生写道：</p>
-<p>每天中午，李登辉只要不应酬，照例下班后就直奔张女士宅邸赶吃中饭，张女士和典型的日本妇女一样，在LEETOKI桑抵达之前，早已将午餐的各色可口菜肴依序整齐摆好在饭桌上，等李登辉进饭厅，张女士已经和传统日本妇女似的，端端正正地蹲踞在饭桌前，服侍李登辉用餐。她必定等李登辉开始进食，她才敢拿起碗筷，并随时观察李登辉进食的状况，只要是他碗里没饭菜了，自己必定暂停用餐，立刻为李登辉盛饭、舀汤，饭后再为李登辉备妥甜点和水果，然后再为他泡壶日本风味的茶水，休息片刻后，再服侍他进房间小憩一会儿。</p>
+<p>每天中午，李登辉只要不应酬，照例下班后就直奔张女士宅邸赶吃中饭，张女士和典型的日本妇女一样，在LEE TOKI桑抵达之前，早已将午餐的各色可口菜肴依序整齐摆好在饭桌上，等李登辉进饭厅，张女士已经和传统日本妇女似的，端端正正地蹲踞在饭桌前，服侍李登辉用餐。她必定等李登辉开始进食，她才敢拿起碗筷，并随时观察李登辉进食的状况，只要是他碗里没饭菜了，自己必定暂停用餐，立刻为李登辉盛饭、舀汤，饭后再为李登辉备妥甜点和水果，然后再为他泡壶日本风味的茶水，休息片刻后，再服侍他进房间小憩一会儿。</p>
 <p>后来的婚外情发展是：</p>
 <p>李登辉和张女士的这段密切交往，一直到李先生被经国先生拔擢为台湾省主席，也就是民国七十年以后，大概李登辉认为自己地位日益显赫，成为众所瞩目的公众人物，言行举止更应拘谨小心，不得不和张女士保持适当距离。恰巧，张女士为了孩子在美国的求学和发展，正式移民美国。如此一来，李登辉和张女士之亲密交往，才在大环境驱使下，不得不划下休止符。</p>
 <p>综计李登辉和张女士的“交往”，从民国四十五年，到民国七十年李登辉当省主席阶段，两人关系维持长达近二十五年之久。民国七十一年，张女士正式移民美国，定居于美西。</p>
@@ -643,7 +676,7 @@
 <p>李敖先生：</p>
 <p>您令我六体投地</p>
 <p>加劲！</p>
-<p>罗展鸿25,Nov.'99</p>
+<p>罗展鸿25, Nov.’99</p>
 <p>（P.S.他是我先生，他是香港人）</p>
 <p>二、李敖覆黄珊珊</p>
 <p>珊珊：</p>
@@ -741,7 +774,7 @@
 <p>（1999/12/30）</p>
 <p>1999年12月31日</p>
 <p>诺贝尔文学奖候选人李敖简介</p>
-<p>李敖是世界上最特立独行的理想主义者，他写过一百多本书，可是其中九十六本被查禁，自人类有史以来，写禁书之多，被查禁量之大，他居世界第一。这种连“吉尼斯世界纪录”（GuinnessBookofWorldRecords）都遗漏了的不可思议的纪录，充分看出这个理想主义者的渊博、坚韧与顽强。</p>
+<p>李敖是世界上最特立独行的理想主义者，他写过一百多本书，可是其中九十六本被查禁，自人类有史以来，写禁书之多，被查禁量之大，他居世界第一。这种连“吉尼斯世界纪录”（Guinness Book of World Records）都遗漏了的不可思议的纪录，充分看出这个理想主义者的渊博、坚韧与顽强。</p>
 <p>李敖的远祖大概不是汉族而是中国的少数民族苗族，他们在14世纪，被强迫移民到山东。到山东后五百年，他的文盲祖父偷渡到东北。他的父亲用吉林省公费在国立北京大学念书，从此李敖就登记为吉林人。</p>
 <p>1935年李敖在哈尔滨出生的时候，东北已是日本人侵略下末代皇帝溥仪的“满洲国”，李敖常说他一出生就是“遗民”，就像孔夫子一出生就是“遗民”一样。由于不甘心“泪尽胡尘里”，他们全家搬到北京。李敖在北京念书，自新鲜胡同小学以至市立四中初一上，然后转到上海缉规中学初一上。1949年5月12日，他随家到了台湾，随身带了五百多本藏书，年纪只不过十四岁。</p>
 <p>到台湾后，李敖跳班考入台中一中，进入初二上，可是到了高三上他就自动休学了，他讨厌令人窒息的中学教育。后来以同等学历考入台大，先学法律，后学历史。毕业后做了一年半少尉预备军官，退伍再入台大历史研究所，可是他又自动休学了。——他写文章攻击起自己学校的黑暗，他不高兴再念了。</p>
@@ -756,30 +789,30 @@
 <p>官方的特务不但到处盯着他，还在他家装了窃听器。去年12月，李敖向一位来访的美国人表示，他在家里搜出过一具窃听器，并且寄给联合国人权委员会了。</p>
 <p>这位美国人和李敖一道吃午饭，他说有两个人跟着，一直站在餐厅外面。</p>
 <p>另一些李敖的朋友表示，他之所以受到监视，是因为政府怕他逃出国去。……</p>
-<p>ThediaryofapopularyoungwriterarrestedlastmonthbythepoliticalpoliceinTaiwanhasreachedfriendsintheUnitedStates.</p>
-<p>Apparentlysuspectingthathemightonedaybearrested,thewriter,LiAo,sentsomemanuscriptsabroadlastyear,includingpartsofhisdiary.The37-year-oldwriteriswellknownforhissatiricalessays,inwhichhepokesfunatindividuals,institutionsandsocietyingeneral.</p>
-<p>Thediary,writteninahumorousvein,describestheactivitiesofthepoliticalpolice,whokepthimunder24-hoursurveillanceforayearbeforehisarrest,theintelligenceagenciesinvolved,andthequestioningandarrestofhisfriends.Itisnowcirculatingprivatelyandisbeingtranslatedandeditedforpossiblepublication.</p>
-<p>FriendsofthewriterarereluctanttomakeknowndetailsofthediaryforfearthatthepublicitywillbeharmfultoMr.Li.However,theysaythattheywillpublishitifMr.Liisnotreleasedsoon.</p>
-<p>TheGovernmenthasnotmadeknownanychargesagainstMr.Li.</p>
-<p>Thepoliticalpolice,besidesfollowinghimwhereverhewent,aresaidtohaveplantedanumberoflisteningdevicesinhishouse.InaconversationlastDecemberwithavisitingAmerican,Mr.Lisaidhehadremovedoneofthe"bugs"andmailedittotheHumanRightsCommissionoftheUnitedNations.</p>
-<p>TheAmerican,whometthewriterforlunch,recalledthatMr.Liwasfollowedbytwomen,whoremainedoutsidetherestaurant.</p>
-<p>OtherfriendsofMr.LisayhewaswatchedconstantlybecauseoftheGovernment'sfearthathemightescapefromthecountry.</p>
+<p>The diary of a popular young writer arrested last month by the political police in Taiwan has reached friends in the United States.</p>
+<p>Apparently suspecting that he might one day be arrested, the writer, Li Ao, sent some manuscripts abroad last year, including parts of his diary. The 37-year-old writer is well known for his satirical essays, in which he pokes fun at individuals, institutions and society in general.</p>
+<p>The diary, written in a humorous vein, describes the activities of the political police, who kept him under 24-hour surveillance for a year before his arrest, the intelligence agencies involved, and the questioning and arrest of his friends. It is now circulating privately and is being translated and edited for possible publication.</p>
+<p>Friends of the writer are reluctant to make known details of the diary for fear that the publicity will be harmful to Mr. Li. However, they say that they will publish it if Mr. Li is not released soon.</p>
+<p>The Government has not made known any charges against Mr. Li.</p>
+<p>The political police, besides following him wherever he went, are said to have planted a number of listening devices in his house. In a conversation last December with a visiting American, Mr. Li said he had removed one of the “bugs” and mailed it to the Human Rights Commission of the United Nations.</p>
+<p>The American, who met the writer for lunch, recalled that Mr. Li was followed by two men, who remained outside the restaurant.</p>
+<p>Other friends of Mr. Li say he was watched constantly because of the Government’s fear that he might escape from the country.</p>
 <p>事实上，李敖这个理想主义者从来没想到逃出国去，他深信，只有在自己国家里同黑暗相持、战斗，才是实现理想主义的不二法门。这一深信，使他在中国台湾岛上一住五十年，未曾离开过一天，即使在近年来，国民党政府已表示不再拦阻他，但他也不愿离境了；即使他的故乡中国大陆那边邀请他，他也不再回去，他说“重温旧梦就是破坏旧梦”，他准备死在台湾。他在第二本自传里写道：</p>
 <p>耶稣说没有先知在自己乡土上被接受，大陆是李敖的乡土，但我不在其内；台湾是李敖的乡土，但我被见于外，不过，对我说来，在内与见外，皆属过眼烟云，总归中国是我的乡土，在这乡土上，大陆也好、台湾也罢，对我都是一样，我的终极是在无何有之乡、在广漠之野、在中国与人类的历史上定位。</p>
-<p>采取这样定位的视野，台湾对他太小了，他会被误会成目无台湾。相对的，台湾也目无他过，国民党政府行政院文化建设委员会编印的《中华民国作家作品目录》，全书九百页，收有七百零三个作家，可是没有李敖，可见李敖在台湾岛上何等不入流。虽然这种抹杀，在台湾岛外多年来却公道在兹：例如英国伦敦《中国季刊》（TheChinaQuarterly）说二十八岁的李敖是“一个得人心的英雄”（apopularhero）。美国《圣路易邮讯报》（St.LouisPost-Dispatch）说三十三岁的李敖是“著名的中国传统批评家”（Well-knowncriticoftheChinesetradition），写的书多被查禁。美国《今日台湾》（FormosaToday）说三十四岁的李敖带领《文星》成为台湾知识界的“唯一生命的火花”（TheonlysparkoflifeinTaiwan'sintellectualworld），而李敖则是火花的“点火者”（firebrand）。《太平洋星条旗报》（PacificStars&amp;Stripes）说三十六岁的李敖是“台湾知名的历史家和作家”（awell-knownTaiwanhistorianandwriter）。香港《远东经济评论》（TheFarEasternEconomicReview）说三十七岁的李敖是大部分著作都被查禁的“著名的散文家和编者”（thewell-knownessayistandeditor），被判十年徒刑。美国《时代周刊》（Time）说三十九岁的李敖是“最著名的”（themostnotable）作家，自1971年迄今，犹在狱中。英国《国际特赦组织》（AmnestyInternational）刊出李敖照片，提醒世人，李敖自1971迄今，犹在狱中，该组织选出全世界三位良心犯，四十一岁的李敖是三位之一。美国“全美华人协会”（TheNationalAssociationofChineseAmericans）颁发最佳成就奖给五十五岁的“台湾著名的作家”（thereknownedwriter）。美国《花花公子杂志》（Playboy）《1990年企业年报》（PlayboyEnterprises,Inc.1990AnnualReport）1990年12月刊出李敖照片，指出五十五岁的李敖曾接受该年六月分外语版访问，该外语版共十五国、每年十二位，李敖是全世界一百八十位名人中选出的三位之一。……直到他六十四岁时候，亚洲周刊（ASIAWEEK）在1999年9月3日还做了这样报导：</p>
+<p>采取这样定位的视野，台湾对他太小了，他会被误会成目无台湾。相对的，台湾也目无他过，国民党政府行政院文化建设委员会编印的《中华民国作家作品目录》，全书九百页，收有七百零三个作家，可是没有李敖，可见李敖在台湾岛上何等不入流。虽然这种抹杀，在台湾岛外多年来却公道在兹：例如英国伦敦《中国季刊》（The China Quarterly）说二十八岁的李敖是“一个得人心的英雄”（a popular hero）。美国《圣路易邮讯报》（St. Louis Post - Dispatch）说三十三岁的李敖是“著名的中国传统批评家”（Well - known critic of the Chinese tradition），写的书多被查禁。美国《今日台湾》（Formosa Today）说三十四岁的李敖带领《文星》成为台湾知识界的“唯一生命的火花”（The only spark of life in Taiwan’s intellectual world），而李敖则是火花的“点火者”（firebrand）。《太平洋星条旗报》（Pacific Stars &amp; Stripes）说三十六岁的李敖是“台湾知名的历史家和作家”（a well-known Taiwan historian and writer）。香港《远东经济评论》（The Far Eastern Economic Review）说三十七岁的李敖是大部分著作都被查禁的“著名的散文家和编者”（the well-known essayist and editor），被判十年徒刑。美国《时代周刊》（Time）说三十九岁的李敖是“最著名的”（the most notable）作家，自1971年迄今，犹在狱中。英国《国际特赦组织》（Amnesty International）刊出李敖照片，提醒世人，李敖自1971迄今，犹在狱中，该组织选出全世界三位良心犯，四十一岁的李敖是三位之一。美国“全美华人协会”（The National Association of Chinese Americans）颁发最佳成就奖给五十五岁的“台湾著名的作家”（the reknowned writer）。美国《花花公子杂志》（Playboy）《1990年企业年报》（Playboy Enterprises, Inc. 1990 Annual Report）1990年12月刊出李敖照片，指出五十五岁的李敖曾接受该年六月分外语版访问，该外语版共十五国、每年十二位，李敖是全世界一百八十位名人中选出的三位之一。……直到他六十四岁时候，亚洲周刊（ASIAWEEK）在1999年9月3日还做了这样报导：</p>
 <p>多采多姿的参选人</p>
 <p>台湾明年春天的总统大选，赞成统一的新党不可能胜选。但新党总统参选人李敖矢言绝对选到底。李敖是位颇具争议性的作家，也主持电视节目。他秉持一贯理念痛批政客而卓然有成。他义无反顾勇往直前。他曾宣称他是这次选战中“真正的男人”，挖苦其它的参选人为“雄性的动物”。长年来他直言不讳，著名的人物如孙中山和蒋介石都没逃过。反政府的激烈言论，使他在70年代及80年代两度入狱。他成为地下英雄及国际知名的人权斗士。这几年，《笑傲江湖》的电视节目让他重回舞台，吸引数百万观众每晚看他横批政治。</p>
-<p>TURNINGTHETABLES</p>
-<p>∥AcriticofTaiwan'spoliticians,talk-showhostLihasnowbecomeonecolorfulcandidates.∥</p>
-<p>Taiwan'stinypro-unificationNewPartymaybeanunlikelyvictorinnextspring'spresidentialelection,butitscandidate,LiAo,promisestolivenuptherace.Thecontroversialwriter,talk-showhostandactivisthasbuilthiscareeraroundlambastingpoliticians.Andheshowsnosignsoflettingupjustbecausehehasnowbeennominatedtobecomeonehimself.He'salreadydeclaredhimselftheonly"realman"intherace,dismissingtheothersasmere"maleanimals."TheoutspokenLihasalonghistoryofpoliticalattacks,targetingsuchnotablesasSunYat-senandChiangKai-shek.Hisanti-governmenttiradeslandedhiminprisontwiceduringthe1970sand1980s,makinghimanundergroundheroandinternationalhumanrightscause.Inrecentyears,TVshowslikethecurrentLiAo'sProudSmilingWorldhaveputhimbackinthespotlight,allowinghimtovoicehispoliticaldiatribestomillionsofviewers.</p>
+<p>TURNING THE TABLES</p>
+<p>∥A critic of Taiwan’s politicians, talk-show host Li has now become one colorful candidates.∥</p>
+<p>Taiwan’s tiny pro-unification New Party may be an unlikely victor in next spring’s presidential election, but its candidate, Li Ao, promises to liven up the race. The controversial writer, talk-show host and activist has built his career around lambasting politicians. And he shows no signs of letting up just because he has now been nominated to become one himself. He’s already declared himself the only “real man” in the race, dismissing the others as mere “male animals.” The outspoken Li has a long history of political attacks, targeting such notables as Sun Yat-sen and Chiang Kai-shek. His anti-government tirades landed him in prison twice during the 1970s and 1980s, making him an underground hero and international human rights cause. In recent years, TV shows like the current Li Ao’s Proud Smiling World have put him back in the spotlight, allowing him to voice his political diatribes to millions of viewers.</p>
 <p>这就是李敖。事实上，国民党政府只是首当其冲而已，李敖的威力半径，把一切人间的错误与不义，都统统加以扫荡，因此他得罪的，不止国民党。他树敌之多，史所罕见，并且每周以几何级数增加中，但他毫不在乎，他绝不怕得罪人。他说敌人不分大小，他都有耐心一个个解决，他绝不做烂好人，不做没是非的乡愿。多少年来，他一直以“虽千万人，吾往矣”的气魄独行其是，而无惧小人们争言其非。为了真理与信念，他绝不怕孤立。因此，这个工作狂，整天把自己埋在十万本藏书中，东征西讨，使人血压高。</p>
 <p>李敖有他独特的做人方式。他性好扶弱抑强，主持正义，霹雳手段，菩萨心肠。他在穷困时候，一顿顿饿饭帮助老师；他在富有时候，一把把钞票支持难友；他在坐牢时候，一篇篇文章抢救奇冤异惨的死魂灵。李敖自诩他是顽童、是战士、是善霸、是文化基度山、是社会罗宾汉、是侠骨柔情的大作家兼大坐牢家；另一方面，他是坦白的思想家、挖黑的历史家、同时还是黑白分明的文章大家。1918年，美国理想主义者关在牢里得到一百万总统选票的戴布兹（EugeneVictorDebs）的句子，也正是李敖的画像：</p>
 <p>只要有下层阶级，我就同俦；</p>
 <p>只要有犯罪成分，我就同流；</p>
 <p>只要狱底有游魂，我就不自由。</p>
-<p>WhilethereisalowerclassIaminit.</p>
-<p>WhilethereisacriminalelementsIamofit.</p>
-<p>WhilethereisasoulinprisonIamnotfree.</p>
+<p>While there is a lower class I am in it.</p>
+<p>While there is a criminal elements I am of it.</p>
+<p>While there is a soul in prison I am not free.</p>
 <p>这就是李敖，中国不可救药的理想主义者。（1999/12/31）</p>
 <p>2000年1月3日</p>
 <p>李登辉的牙医改名了</p>
@@ -807,7 +840,7 @@
 <p>二、李敖答陆晋德</p>
 <p>晋德兄：</p>
 <p>不怕“被统一”而勇敢的“统一中国”，的确是一个挺进的、前瞻的构想。过去我多次引拿破仑为例，说明此公身为科西嘉人却放弃“科独”，转而进军大陆，最后当了法国皇帝。其眼光与气魄，确属非凡。我在十二年前就写道：</p>
-<p>拿破仑献身“科独”运动，他可以举出一千个科西嘉应该独立的理由，但是，一朝他有了世界性的眼光和“大陆”的胸襟，他觉悟到他不该再以一个小岛褊狭之见来夜郎自大，当然也毫不自卑，你看，他以一个又矮又小的科西嘉人，最后统治了“大陆”。--只有有自卑感的守财奴，才斤斤保护小台面，声声要躲开“大陆”；真正有大志的人，他不怕“大陆”统治小岛，而要用小岛统治“大陆”。</p>
+<p>拿破仑献身“科独”运动，他可以举出一千个科西嘉应该独立的理由，但是，一朝他有了世界性的眼光和“大陆”的胸襟，他觉悟到他不该再以一个小岛褊狭之见来夜郎自大，当然也毫不自卑，你看，他以一个又矮又小的科西嘉人，最后统治了“大陆”。–只有有自卑感的守财奴，才斤斤保护小台面，声声要躲开“大陆”；真正有大志的人，他不怕“大陆”统治小岛，而要用小岛统治“大陆”。</p>
 <p>三万六千平方公里的台湾，只不过比八千七百平方公里的科西嘉大一点点儿，有眼光和胸襟的台独豪杰们，不妨想一想。如今中国问题，“统一”是用讲的，不是用打的；是用开放的，不是用闭塞的；是用选举的，不是用独占的，如此做“切入点”，自属义正辞严，自然可把难题丢回，由中共反省处置。</p>
 <p>专此奉答，顺请双安</p>
 <p>李敖2000年1月3日（2000/1/3）</p>
@@ -900,9 +933,9 @@
 <p>（2000/1/6）</p>
 <p>我看处女寇乃馨</p>
 <p>三十五年前，1963年10月，我写了一篇两万多字的论文——《论“处女膜整型”》，探讨有关处女的种种问题，这是有史以来探讨这一问题的空前绝后之作。我做梦也没想到，在多年以后，一个梦样的可爱女人，却现身说法、身体力行，以处女的肉身，发扬唯灵的真义，这一对比，自是空前绝后外一章。这个可爱女人，就是寇乃馨。</p>
-<p>1963年9月号的“骑士”（Cavalier）杂志有一幅漫画，画中一对情侣在汽车中幽会，女的说：“我是个处女，可是对它并不‘执迷’。”（I'mavirgin,butI'mnotfanaticaboutit.）寇乃馨正好相反，她对处女非常“执迷”，她自台大外文系毕业后，徜徉演艺圈四年，被称为“台湾演艺圈最后一个处女”，自属“异类”，因为别人落红成阵之时，当然怪她何以自处。乃馨说：“坦白说，我才不是无聊地为了做处女才是处女，只是因为基督徒的信仰，让我更珍惜、更尊重自己的身体。”</p>
+<p>1963年9月号的“骑士”（Cavalier）杂志有一幅漫画，画中一对情侣在汽车中幽会，女的说：“我是个处女，可是对它并不‘执迷’。”（I’m a virgin, but I’m not fanatic about it.）寇乃馨正好相反，她对处女非常“执迷”，她自台大外文系毕业后，徜徉演艺圈四年，被称为“台湾演艺圈最后一个处女”，自属“异类”，因为别人落红成阵之时，当然怪她何以自处。乃馨说：“坦白说，我才不是无聊地为了做处女才是处女，只是因为基督徒的信仰，让我更珍惜、更尊重自己的身体。”</p>
 <p>乃馨的立论，落脚在“基督徒的信仰”上，我认为她上了没读懂《圣经》的传教士们的当。《圣经》提到处女之处分见于《创世纪》第二十四章第十六节、《利未记》第二十一章第三节、《申命记》第二十二章第十九节、第二十八节、《列王记-下》第十九章第二十一节、《以赛亚书》第七章第十四节、第二十三章第十二节、第三十七章第二十二节、《耶利米书》第十四章第十七节、第十八章第十三节、第三十一章第四节、第十三节、第二十一节、《阿摩司书》第五章第二节、《马太福音》第一章第二十三节、《路加福音》第一章第二十七节、《哥林多前书》第七章第二十五节、第三十七节。细查这些章节，完全做不出乃馨的立论，甚至也做不出类似的推论，所以，“更珍惜、更尊重自己的身体”而守身如处，实与“基督徒的信仰”无关。虽然如此，乃馨的“执迷”并不失落，因为她可以自成一说而不必靠神说或耶稣说。乃馨相信“欲望的满足会降低爱情的强度”，因此坚持要她的情人“爱她，就是为她憋着”，坚持要她的情人为她自抑自制，不可发生婚前性行为。由此看来，乃馨的“处女癖”实在驾乎有“处女癖”的男士之上，她执此一念，为了精神的愉悦，宁可年复一年舍肉体的快乐而不辞，这种“异类”，洵属罕见；这种“执迷”，几近“疯狂”，也无异暴殄天物与尤物。虽然她“疯狂”得如此慧黠、如此曼妙，但是有朝一日或一夜或一日一夜，当她初尝到灵肉一致的极致，她未免要为她多年虚度青春而悔恨。——没有肉，哪有灵？没有欲，哪有情？过度的唯灵抑肉，过度的非欲崇情，在许多方面，是一种自误。虽然它非常诗意，令人依恋与流连。</p>
-<p>乃馨也不必为我这些话而震撼、而困惑，事已如此，还是把握一些可肯定的光明面吧。看看赛尔迈斯（RobertSermaise）那本《肉欲的前奏》（TheFleshlyPrelude），整本小说只写一个故事，就是一个珍惜、尊重自己处女之身的女孩子，最后如何缠绵献身。乃馨的多年云深知处，若能化为文学名著以传千古，亦是大好，不过，得先找到文学家才成，乃馨勉之。（2000/1/6）</p>
+<p>乃馨也不必为我这些话而震撼、而困惑，事已如此，还是把握一些可肯定的光明面吧。看看赛尔迈斯（Robert Sermaise）那本《肉欲的前奏》（The Fleshly Prelude），整本小说只写一个故事，就是一个珍惜、尊重自己处女之身的女孩子，最后如何缠绵献身。乃馨的多年云深知处，若能化为文学名著以传千古，亦是大好，不过，得先找到文学家才成，乃馨勉之。（2000/1/6）</p>
 <p>2000年1月7日</p>
 <p>“出卖台湾、买回大陆！”</p>
 <p>李敖1999年8月22日在新党六周年庆祝大会总统提名人演讲</p>
@@ -1069,7 +1102,7 @@
 <p>大胆西进赚取两百亿美金</p>
 <p>今天我们的结论就是要真正面对大陆问题，经济是台湾最大的问题，经济垮了，台湾就完了。李登辉的政策是不要和中国大陆发生关系，要跟南洋做生意，就是所谓“南进政策”，结果印尼一个暴动我们就吃不消了。经济发展必须有腹地，而中国大陆最大的特色就是有广大的腹地，我的老朋友许信良只讲了一句“大胆西进”，就被民进党打在地上。政治人物如果跟不上商人，我们多么悲哀。这么多台商到大陆开发大陆市场，而大商人王永庆、张荣发去不了，难怪王永庆说，我再等十八个月，意思就是等李登辉下台，所以我们有很好的机会都失掉了。既使如此，我们每年还占大陆两百亿美金的便宜。</p>
 <p>阿扁提出的中国政策白皮书，里面有六条前提是不可行的；前提说我和你是不同的两个国家、单向直航，对方怎么会接受呢？前提不成立，谈判就不会成功，所以阿扁的大陆政策是骗人的政策、是自欺欺人的政策。另一方面，国民党的大陆政策被李登辉掐的很死，因为李登辉对大陆充满仇视，他有日本人的优越感，这话不是我说的，还是新加坡前总理李光耀的观察。</p>
-<p>美国对台湾的政策就是一个字——leashon（拉狗用的皮带），过去拉的狗是蒋介石，狗的政策和主人的政策是不一样的，狗要反攻大陆，美国政策是不要反攻大陆，守着台湾就好。蒋介石不肯，把三十万军队放在金门，毛泽东发动八二三炮战时，美国人只好把重炮运到金门帮忙，结果蒋介石胜利了。今天拉的狗叫李登辉，他买通国会议员请他到康乃尔大学，结果飞弹打过来，美国航空母舰立即要开到台湾海峡，可是中国沿海的七艘核子潜艇都不见了，朝着美国的西海岸过来，美国只好把台湾海峡的舰队撤离，两岸的紧张关系才停下来。</p>
+<p>美国对台湾的政策就是一个字——leash on（拉狗用的皮带），过去拉的狗是蒋介石，狗的政策和主人的政策是不一样的，狗要反攻大陆，美国政策是不要反攻大陆，守着台湾就好。蒋介石不肯，把三十万军队放在金门，毛泽东发动八二三炮战时，美国人只好把重炮运到金门帮忙，结果蒋介石胜利了。今天拉的狗叫李登辉，他买通国会议员请他到康乃尔大学，结果飞弹打过来，美国航空母舰立即要开到台湾海峡，可是中国沿海的七艘核子潜艇都不见了，朝着美国的西海岸过来，美国只好把台湾海峡的舰队撤离，两岸的紧张关系才停下来。</p>
 <p>今年两国论后，美国对台湾的态度强硬起来，我们可以看到联合国投票，美国、英国、法国都投了反对票，清清楚楚告诉你只有一个中国，进联合国是不可能的。我希望东吴大学的小朋友们、李敖的学生们、听李敖演讲的小朋友们，从今天开始想想看，我们是不是被人家骗了！（整理/新党新月刊编辑部）</p>
 <p>（2000/1/13）</p>
 <p>2000年1月14日</p>
@@ -1133,7 +1166,7 @@
 <p>星座：不信这一套，迷信。</p>
 <p>座右铭：散见李敖1500万着作中</p>
 <p>最喜爱的运动：快走</p>
-<p>最拿手的歌：DannyBoy</p>
+<p>最拿手的歌：Danny Boy</p>
 <p>最喜欢的（男＆女）明星：莫文蔚，我不喜欢男的。</p>
 <p>最喜欢的（男＆女）歌手：莫文蔚，我不喜欢男的。</p>
 <p>最喜爱的宠物：猫、狗，跟新党交朋友后，又喜欢兔子。</p>
@@ -1153,7 +1186,7 @@
 <p>最讨厌上的课：所有的课。</p>
 <p>最感谢的人：照镜子即知。</p>
 <p>最难忘的事：请看我写的那本《我最难忘的事和人》。</p>
-<p>第一次的初吻：好多第一次，Whichone？</p>
+<p>第一次的初吻：好多第一次，Which one？</p>
 <p>我的资产：人说我是共产党，共产党有资产吗？</p>
 <p>最喜欢的内裤造型＆颜色：不穿内裤。</p>
 <p>学历：台大史研所肄业。</p>
@@ -1181,7 +1214,7 @@
 <p>在新党与我关系“一日数惊”之际，我在下面重刊六年前（1994年11月24日）我的一篇文字——《三个臭皮党，诸葛怎样想》给读者，看看我跟新党的渊源和我对新党的好意。</p>
 <p>自1949年我十四岁来台湾起，直到今天，我从没离开过台湾一步，但我却以自己坐牢的代价，帮助别人偷渡离开台湾。那个人，就是彭明敏。彭明敏与我患难之交，返台后请我吃饭，对我说：“我二十二年没回来了！”我答道：“这有什么稀奇，我四十四年还没走呢！”——四十四年还没走，先是拜国民党政府不让我出境之赐；后是怪我爱台湾爱得着了魔、大有“去此一步，即无死所”之故。这样跟台湾纠缠几十年，难怪“外来政权”要以台独罪名刑求我、陷我于狱，乃至查禁我九十六种著作。因为在“外来政权”眼中，你李敖是大陆人，居然多年义助台湾人，并且居心叵测，一路跟政府捣蛋，把你以台独罪名一关多年，还冤枉吗？</p>
 <p>多年来，我在台湾四面树敌、八面威风、只认真里、不认六亲，固然罪该万死，但也有功足录。那个功，就是我最了解台湾，并且讲了真话。正如民进党文宣部——因为他早就走在别人前面。</p>
-<p>正因如此，所以我在领导以党外杂志围攻国民党的同时（那时我“手下”的“小弟”之一是陈水扁，他是我领导众多杂志中的一家社长），我发表了一篇半开玩笑为题目的文章——《我为什么支持王八蛋》。主旨是说国民党是龟儿子，为了民主政治的权力制衡，只好支持王八蛋来打倒他。王八蛋是搞政治的人，这种人追求的是权力、败坏的是道德，最后多以败德收场。英国历史家阿克顿（LordActon）早就指出“权力使人腐化，绝对的权力绝对使人腐化”（Powertendstocorrupt,andabsolutepowercorruptsabsolutely.）。我李敖一生慧眼求真、冷眼论政、白眼看人，搞政治的人是什么货色，早就在我愤世之言中了。</p>
+<p>正因如此，所以我在领导以党外杂志围攻国民党的同时（那时我“手下”的“小弟”之一是陈水扁，他是我领导众多杂志中的一家社长），我发表了一篇半开玩笑为题目的文章——《我为什么支持王八蛋》。主旨是说国民党是龟儿子，为了民主政治的权力制衡，只好支持王八蛋来打倒他。王八蛋是搞政治的人，这种人追求的是权力、败坏的是道德，最后多以败德收场。英国历史家阿克顿（Lord Acton）早就指出“权力使人腐化，绝对的权力绝对使人腐化”（Power tends to corrupt, and absolute power corrupts absolutely.）。我李敖一生慧眼求真、冷眼论政、白眼看人，搞政治的人是什么货色，早就在我愤世之言中了。</p>
 <p>党外杂志围攻国民党功成，民进党因而诞生。我就在写《国民党研究》、《国民党研究续集》二书之后，写了一本《民进党研究》，先知式的警告人们：国民党固然腐化，跟国民党学的民进党也必然腐化，并且因为几十年来受国民党教育与宣传的污染，可悲的连腐化都不自知了、受了不肖外省人之害都不自知了。例如国民党政权的法宝之一是，它专门训练人民做幼稚而天真的“一厢情愿”的思考模式，其中“反攻大陆”就是最典型的。“反攻大陆”根本没有可行性，叫嚣“反攻大陆”只是自欺欺人。我在领导党外杂志时代，曾以“意淫大陆，手淫台湾”八字名言拆穿国民党，“意淫大陆”就是“一厢情愿”的思考模式。但是，国民党反攻梦碎之后，照样模式不改，汤药都不换，变成“三民主义统一中国”了，其与“意淫大陆”，并无二致，只是老蒋换老孙而已。民进党口口声声反国民党，其实是国民党的好学生而不自知、是不肖外省人的好学生而不自知。试看民进党的台湾独立也、进联合国也、送李登辉去广岛也。……从根本没有可行性上看，无异“意淫台独”、“意淫联合国”、“意淫广岛”，全属“一厢情愿”的思考模式，而与国民党毫无不同，真可谓有其师必有其徒。而这种“一厢情愿”的幼稚而天真，流风所及，不但无知的市井小民嚼着槟榔大喊爽，就便是朝野上下的高级知识分子也众口一声齐说赞了。我实在看不过去了。前一阵子，我秘密写信给彭明敏，我说根本进不了联合国，别人可以不知道，你这位国际法专家怎会不知道？搞总统直选会引起独裁与混乱、根本违反现代政治学学理，别人可以不知道，你这位前台大政治系主任怎会不知道？高级知识分子不能为真理挺身而出，纠正群众的错误，我为我的老朋友可惜！——连台湾人中最优秀、最有教养、最伟大的高级知识分子彭先生，都被“一厢情愿”的思考模式给淹没了，谁还敢否定国民党和不肖外省人不是台湾人的好老师呢？国民党以身作则，台湾人有样学样，学坏了学笨了学混了以后，还洋洋自得以为在反老蒋小蒋，蒋氏父子有知，早窃笑于地下矣！</p>
 <p>自1949年以来，蒋介石有二十六年的机会搞民主，他不搞；他死后，蒋经国有十三年的机会搞民主，他不搞；他死后，又有六年的机会搞民主，但国民党民进党却给搞得中台二分、拳头四向、金权纵贯、血肉横飞。天天政治挂帅，人无宁日；日日宦海生波，举世称奇。我们多少年来一路追求真民主的人，看到这种古之所无，今之罕有的假民主，能不痛心吗？我们眼巴巴等死了老蒋、等死了小蒋，如今等到了所谓出头天，难道民主的头，竟是这样出法吗？</p>
 <p>如今在全岛为政治天翻地覆之际，我愿以民进党文宣部主任陈芳明所肯定的李敖最了解台湾现实政治的身份，对目前台湾政治提出两点该清楚想通的重点：</p>
@@ -1364,17 +1397,17 @@
 <p>所以这时我们就要考虑到底要做什么选择，这些政治人物都不重要，重要的是你们自己，你们会成长、长大，未来的时候你们要做什么？我觉得人生最重要也是最快乐的一点，就是说我是一个聪明人，没有被别人骗。当然你可以说，你李敖站在这里，李敖也可能来骗我们。可是我告诉各位，我把白纸黑字摊开给大家看，我拿出证据来给你们看；对政治的解释可能见仁见智，可能有妇人之见、井蛙之见，可是证据是唯一的，我的言论都是跟着证据来走。所以我劝各位，要相信证据，才能把稳你的方向，才能真正的“中正”而不“中邪”，这是一个重要的方法。</p>
 <p>我一再讲过，今天台湾的大学生之可怜，八十年前的大学生是什么气魄，学生走出来，带领着政客、匹夫匹妇，站在第一线；可是现在的大学生没有站在第一线，藏在校园，而让那些政客们站到台上来骗你们，让你们跟着他们走。在五四时代，以北大为例，学生写信给教育部说，以后给任何命令，我们都不要，给我钱我要，其它一概不要。所以我觉得，你们应该联合一些糟糕名字的学校改名字。</p>
 <p>（整理／新党新月刊编辑部）（2000/1/31）</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/11.李敖电子报合集/李敖发电集.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/11.李敖电子报合集/李敖发电集.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../11.李敖电子报合集/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../11.李敖电子报合集/李敖放电集.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1384,16 +1417,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../11.李敖电子报合集/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../11.李敖电子报合集/李敖放电集.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1402,12 +1440,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

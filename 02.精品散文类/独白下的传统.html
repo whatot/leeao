@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,102 +81,123 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="独白下的传统目录"><a class="header" href="#独白下的传统目录">《独白下的传统》目录</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E5%BF%AB%E7%9C%8B%E7%8B%AC%E7%99%BD%E4%B8%8B%E7%9A%84%E4%BC%A0%E7%BB%9F">快看《独白下的传统》</a></li>
-<li><a href="#%E7%9B%B4%E7%AC%94%E4%B9%B1%E8%87%A3%E8%B4%BC%E5%AD%90%E6%83%A7">直笔——“乱臣贼子惧”</a></li>
-<li><a href="#%E9%81%BF%E8%AE%B3%E9%9D%9E%E5%B8%B8%E4%B8%8D%E6%95%A2%E8%AF%B4">避讳——“非常不敢说”</a></li>
-<li><a href="#%E8%B0%8F%E8%AF%A4%E5%AE%81%E9%B8%A3%E8%80%8C%E6%AD%BB%E4%B8%8D%E9%BB%98%E8%80%8C%E7%94%9F">谏诤——“宁鸣而死，不默而生！”</a></li>
-<li><a href="#%E4%BC%A0%E4%BB%A4%E5%85%A8%E5%9B%BD%E5%A4%A7%E8%B7%91%E9%A9%AC">传令——全国大跑马</a></li>
-<li><a href="#%E6%96%B0%E9%97%BB%E6%8A%A5%E7%BA%B8%E5%83%8F%E6%9D%82%E5%BF%97">新闻——报纸像杂志</a></li>
-<li><a href="#%E5%BE%81%E5%85%86%E6%9D%A5%E5%A4%B4%E5%8F%AF%E4%B8%8D%E5%B0%8F">征兆——来头可不小</a></li>
-<li><a href="#%E5%90%83%E4%BA%BA%E5%8A%A8%E7%89%A9%E5%90%83%E4%BA%BA%E4%BA%BA%E4%B9%9F%E5%90%83%E4%BA%BA">吃人——动物吃人，人也吃人</a></li>
-<li><a href="#%E5%96%9D%E9%85%92%E5%96%9D%E4%B9%9F%E4%B8%8D%E8%A1%8C%E4%B8%8D%E5%96%9D%E4%B9%9F%E4%B8%8D%E8%A1%8C">喝酒——喝也不行，不喝也不行</a></li>
-<li><a href="#%E9%9F%B3%E4%B9%90%E5%8D%8E%E5%A4%B7%E4%BA%A4%E5%93%8D%E4%B9%90">音乐——华夷交响乐</a></li>
-<li><a href="#%E5%AE%B6%E6%97%8F%E4%BA%BA%E6%84%88%E5%A4%9A%E6%84%88%E5%A5%BD">家族——人愈多愈好</a></li>
-<li><a href="#%E5%A5%B3%E6%80%A7%E7%89%8C%E5%9D%8A%E8%A6%81%E5%A4%A7%E9%87%91%E8%8E%B2%E8%A6%81%E5%B0%8F">女性——牌坊要大，金莲要小</a></li>
-<li><a href="#%E5%85%89%E7%BB%AA%E6%9C%9D%E5%AF%B9%E8%8A%82%E5%A6%87%E8%B4%9E%E5%A5%B3%E7%9A%84%E6%97%8C%E8%A1%A8">光绪朝对节妇贞女的旌表</a></li>
-<li><a href="#%E4%BB%8E%E9%AB%98%E7%8E%89%E6%A0%91%E4%B8%BA%E5%84%BF%E5%AD%90%E5%86%A5%E5%A9%9A%E7%9C%8B%E4%B8%AD%E5%9B%BD%E4%B8%A4%E9%9D%A2%E6%96%87%E5%8C%96">从高玉树为儿子“冥婚”看中国两面文化</a></li>
-<li><a href="#%E6%AC%A2%E5%96%9C%E4%BD%9B">欢喜佛</a></li>
-<li><a href="#%E4%B8%AD%E5%9B%BD%E6%B0%91%E6%97%8F%E6%80%A7">中国民族“性”</a></li>
-<li><a href="#%E4%BA%BA%E8%83%BD%E6%84%9F%E5%8A%A8%E8%9D%99%E8%9D%A0%E8%AE%BA">人能感动蝙蝠论</a></li>
-<li><a href="#%E4%BA%BA%E8%83%BD%E6%84%9F%E5%8A%A8%E8%80%81%E8%99%8E%E8%AE%BA">人能感动老虎论</a></li>
-<li><a href="#%E9%BC%93%E5%A3%B0%E5%92%9A%E5%92%9A%E7%9A%84%E4%B8%AD%E5%9B%BD%E4%B9%8B%E9%9F%B3">鼓声咚咚的中国之音</a></li>
-<li><a href="#%E4%B8%80%E7%A7%8D%E5%A4%B1%E4%BC%A0%E4%BA%86%E7%9A%84%E8%A8%80%E8%AE%BA%E9%81%93%E5%85%B7">一种失传了的言论道具</a></li>
-<li><a href="#%E8%AE%B0%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%90%88%E4%BD%9C%E4%B8%BB%E4%B9%89%E8%80%85">记一个不合作主义者</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#快看独白下的传统">快看《独白下的传统》</a></li>
+<li><a href="#直笔乱臣贼子惧">直笔——“乱臣贼子惧”</a></li>
+<li><a href="#避讳非常不敢说">避讳——“非常不敢说”</a></li>
+<li><a href="#谏诤宁鸣而死不默而生">谏诤——“宁鸣而死，不默而生！”</a></li>
+<li><a href="#传令全国大跑马">传令——全国大跑马</a></li>
+<li><a href="#新闻报纸像杂志">新闻——报纸像杂志</a></li>
+<li><a href="#征兆来头可不小">征兆——来头可不小</a></li>
+<li><a href="#吃人动物吃人人也吃人">吃人——动物吃人，人也吃人</a></li>
+<li><a href="#喝酒喝也不行不喝也不行">喝酒——喝也不行，不喝也不行</a></li>
+<li><a href="#音乐华夷交响乐">音乐——华夷交响乐</a></li>
+<li><a href="#家族人愈多愈好">家族——人愈多愈好</a></li>
+<li><a href="#女性牌坊要大金莲要小">女性——牌坊要大，金莲要小</a></li>
+<li><a href="#光绪朝对节妇贞女的旌表">光绪朝对节妇贞女的旌表</a></li>
+<li><a href="#从高玉树为儿子冥婚看中国两面文化">从高玉树为儿子“冥婚”看中国两面文化</a></li>
+<li><a href="#欢喜佛">欢喜佛</a></li>
+<li><a href="#中国民族性">中国民族“性”</a></li>
+<li><a href="#人能感动蝙蝠论">人能感动蝙蝠论</a></li>
+<li><a href="#人能感动老虎论">人能感动老虎论</a></li>
+<li><a href="#鼓声咚咚的中国之音">鼓声咚咚的中国之音</a></li>
+<li><a href="#一种失传了的言论道具">一种失传了的言论道具</a></li>
+<li><a href="#记一个不合作主义者">记一个不合作主义者</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -989,7 +1022,7 @@
 <p>有父子，然后有君臣；</p>
 <p>有君臣，然后有上下；</p>
 <p>有上下，然后礼义有所错（措）。</p>
-<p>这是一篇很简单的演绎，从“条件述辞”（conditionalstatement）中，我们可以知道，“男女”一项，在我们老祖宗的眼睛里，究竟占着怎样重要的地位——它是“天地”“万物”以下，最被我们老祖宗重视的一环。它的地位，不但远在“父子”“君臣”“上下”“礼义”之上，甚至还是产生这些抽象名词的必要条件。</p>
+<p>这是一篇很简单的演绎，从“条件述辞”（conditional statement）中，我们可以知道，“男女”一项，在我们老祖宗的眼睛里，究竟占着怎样重要的地位——它是“天地”“万物”以下，最被我们老祖宗重视的一环。它的地位，不但远在“父子”“君臣”“上下”“礼义”之上，甚至还是产生这些抽象名词的必要条件。</p>
 <p>在同一部《易经》的《系辞》下传里，又有一段看来跟上段有点矛盾的文字，简直把“男女”的地位，超过“万物”以上去了。原文是：</p>
 <p>天地絪緼，万物化醇；</p>
 <p>男女构精，万物化生。</p>
@@ -1010,14 +1043,14 @@
 <p>二、他们缺乏贞操观念。</p>
 <p>三、他们缺乏羞耻观念。</p>
 <p>四、他们缺乏亲父子的观念。</p>
-<p>五、他们缺乏“罗曼蒂克恋爱”（romanticlove）观念。</p>
+<p>五、他们缺乏“罗曼蒂克恋爱”（romantic love）观念。</p>
 <p>这五项重要的特征，我们在古代的文书和实物里，可以找到许多证据。这些证据，可以为我们描绘出一种景象——一种性开放的景象。</p>
 <p>在这种性开放的景象里，我们可以看到老祖宗们如何在生殖器崇拜、如何重视阴阳的理论、如何公然宣淫、如何“男女杂游、不媒不娉”、如何血族相奸、如何私通野合、如何同性恋和鸡奸、如何性变态、如何写《素女经》《洞玄子》、如何因“性”的因素成为中国历史的重要一环，并且影响到部分中国民族的历史。</p>
 <p>仔细研究中国民族的历史，会令人惊讶的发现，由于性的因素，直接影响了历史、改写了历史的，例证又多，又层出不穷。夏桀是以“荧惑女宠”妹喜亡了国的，商封是以“荧惑女宠”妲己亡了国的，性的原因使人亡国，不能说不重要。赵婴的私通，引出赵氏孤儿；齐庄公的私通，引出臣弑其君，性的原因造成政变，不能说不重要。吕不韦的奇货可居，祸延秦皇显考；吕后的人彘奇妒，祸延刘家命脉；唐高宗的倒扒一灰，祸延武后临朝；杨贵妃的顺水人情，祸延安史之乱，性的原因闹出君权争夺，不能说不重要。白登的美女图片，可以使匈奴不打汉家；汉家的美女自卑，可以使汉家要打匈奴；昭君出塞，香妃入关，一一都牵动战争和平大计，性的原因，不能说不重要。齐襄公乱伦，出来了母忘在莒；陈后主好色，出来了井底游魂；慕容熙的跣步送亡妻，出来了回不去；花蕊夫人的被劫入宫，出来了送子张仙；咸丰的天地一家春，出来了祸国殃民四十七年的西太后……</p>
 <p>这样随手写来，好像大可“唯性史观”一下了。其实我并不这样想。作为一个“非唯主义者”，我不承认“唯性史观”可用来解释所有的历史现象，如同不承认“唯物史观”或“唯心史观”或“唯什么什么史观”可用来解释所有的历史现象一样。因此，我看这类事，也只是就中国历史现象中，可从“性”的观点来观察的为限。有均衡感的人，当然该知道，除了这种性的观点与对象的历史以外，还有许许多多“性以外的”丢人历史和光辉历史。</p>
-<p>在中国许多“肯定‘性’的”（pro-sexual）历史现象以外，另有一种“反对‘性’的”（anti-sexual）历史现象，这种现象的表现是对“性”的规律、约束，乃至压抑。它的发生，约有四种原因：</p>
+<p>在中国许多“肯定‘性’的”（pro-sexual）历史现象以外，另有一种“反对‘性’的”（anti - sexual）历史现象，这种现象的表现是对“性”的规律、约束，乃至压抑。它的发生，约有四种原因：</p>
 <p>一、对“性”生神秘与恐惧：老祖宗们缺乏生产知识，他们对异性相交而产生的结果，感到神秘，也感到恐惧。</p>
-<p>二、对“性”的疲乏：“性的疲乏”（sexualfatigue）是由性满足后或过度后而生的现象，这种现象，很容易导致一种反动——对性感到憎恶或厌倦，走向节欲或弃世绝欲的信仰。</p>
+<p>二、对“性”的疲乏：“性的疲乏”（sexual fatigue）是由性满足后或过度后而生的现象，这种现象，很容易导致一种反动——对性感到憎恶或厌倦，走向节欲或弃世绝欲的信仰。</p>
 <p>三、嫉妒心和占有心：在古代，女人只是男人财产的一部分。由于对产业的占有心，引发嫉妒心，再配合家庭、子女等观念，慢慢建构出许许多多规律、约束，乃至压抑“性”的理论。</p>
 <p>四、精神因素：由于有人不能满足现状，要寻求精神上的慰藉来弥补尘世上的空虚，因而有“禁欲主义”（asceticism）或类似禁欲主义的思想产生。于是，不得不宣扬“性”的罪状，夸大或栽诬有关“性”的一切。</p>
 <p>上面四种原因，构成了“反对‘性’的”条件，因而老祖宗们开始说明什么是“唯禽兽无礼，故父子聚麀”了，什么是“防隔内外，禁止淫佚”了，什么是“妇道”“女诫”了，什么是“男女不通衣裳”了，什么是“富贵不能淫”了，什么是“坐怀不乱”“秉烛通宵”了，什么是“去势”“幽闭”了，什么是“绝房事”的好处了……</p>
@@ -1027,9 +1060,9 @@
 <p>我们的历史书，传统写法总是一派忠贞、英烈、圣贤、豪杰的历史，搭配上贰臣、叛逆、奸佞、巧宦的活动，交织成历来的众生相。但是，受过现代方法训练的人，他们不能承认这种“春秋之笔”“忠奸之判”能够解释整个历史现象，也不承认单靠一些相杀相砍的政治史、耀武扬威的军事史、仁义道德的思想史、四通八达的交通史等等就能了解过去。有现代方法训练的人，他们尝试用新的方向和角度、新的辅助科学（像性心理学、行为病理学、记号学、行为科学、团体动力学、统计学等等）来解释历史现象，来从夹缝中透视历史。在这种新的方法的光照之下，以前所视为神奇的，如今可能化为朽腐了；过去所看做朽腐的，现在可能又化为神奇了；过去当做不重要的或忽视的，现在我们要“无隐之不搜”了；过去当做不能登大雅之堂的，现在我们不再“见笑于大方之家”了。</p>
 <p>有了上面所说的种种认识，我们必然发现：“性”在中国历史上，是一个何等被有意忽略的大题目！我们必然关切：我们老祖宗们的“性”生活，到底是一个什么样子？他们的“性”行为，怎样成为中国历史上重要的一环？我们必然提出：“性”的因素，对中华民族的部分历史，究竟影响到什么程度？</p>
 <p>能够满足这些声音的，很显然的，起码是心理学家和历史学家的责任。但是，事实上，我们的心理学家和历史学家始终在“回避”（？）这个重大的研究主题，我们不能在这个主题上做一次“科际整合”的示范，也不能在乌烟瘴气的“性”的暗流里做一次学理的澄清，为小百姓和大官人做点指示迷津的依据……这些因“回避”而生的缺憾，十足证明了我们在真理面前的萎缩，证明了我们在寻求真理上面的无能和胆怯。</p>
-<p>这篇文字的用意，是尝试用现代的方法，提出一些确定的解释和“解释草案”（explanationsketch），求出历史上中国人“性”生活的真相和可能的真相，至少我提供的，是一种可供讨论的合理怀疑，也许值得专家和学者的评判。</p>
-<p>在现代方法的妙用下，历史万象虽多，其实不乏理路可寻。例如真的专家，一眼就可以看出《易经》中的“咸卦”等卦是描写性交姿势的；《诗经》中《褰裳》里说的“且”字是男人生殖器；《周礼》中《地官》里“令会男女”、“奔者不禁”的话是一种“交配季”（matingseason）、一种“节期杂交”（feastpromiscuity）；《老子》中的“元牡”是女人生殖器；《论语》中孔夫子骂女人的缘故是因为他离过婚；伶玄《赵飞燕外传》中的汉成帝有“足恋”，常璩《华阳国志》中的关云长背离曹操是因为他吃醋；徐应秋《玉芝堂谈荟》中“女子男饰”里的六朝女子娄逞是性戾换；柳宗元《柳河东集》中《河间传》是写唐朝一个女人的花旋风；徐士鸾的《宋艳》中《残暴》里记宋朝的王继勋是一种虐恋（虐待狂）；陶宗仪《辍耕录》中《奇遇》一篇是写元朝人性爱的白日梦；明朝张岱《琅环文集》中《鲁云谷传》是描写洁癖；清朝薛福成《庸盦笔记》中《入相奇缘》里写和珅“对影谈笑”是一种影恋……所有的大量历史文化，都禁不得真正专家的一双法眼，用这种法眼来“复兴中华文化”，才够资格，否则只是口号。</p>
-<p>关于这类性质的写作，在西方很多。性质近的像泰勒（G.RattrayTaylor）的“SexinHistory”（1953年伦敦Thames&amp;Hudson版）就是一例。西方过去，在基督教的禁欲主义笼罩下，对性的禁忌，跟历史上的中国，真可说是老兄老弟。可是他们在近几十年的努力之下，终于摆脱了传统上对性的不合理的规律、约束与压抑，终于使他们逐步走上一个开放的社会，建立一种“约定俗成”的性道德，培养了风俗、修正了法律，使他们的青年男女，又恢复了在“伊甸园”里没吃苹果前的歌唱。</p>
+<p>这篇文字的用意，是尝试用现代的方法，提出一些确定的解释和“解释草案”（explanation sketch），求出历史上中国人“性”生活的真相和可能的真相，至少我提供的，是一种可供讨论的合理怀疑，也许值得专家和学者的评判。</p>
+<p>在现代方法的妙用下，历史万象虽多，其实不乏理路可寻。例如真的专家，一眼就可以看出《易经》中的“咸卦”等卦是描写性交姿势的；《诗经》中《褰裳》里说的“且”字是男人生殖器；《周礼》中《地官》里“令会男女”、“奔者不禁”的话是一种“交配季”（mating season）、一种“节期杂交”（feast promiscuity）；《老子》中的“元牡”是女人生殖器；《论语》中孔夫子骂女人的缘故是因为他离过婚；伶玄《赵飞燕外传》中的汉成帝有“足恋”，常璩《华阳国志》中的关云长背离曹操是因为他吃醋；徐应秋《玉芝堂谈荟》中“女子男饰”里的六朝女子娄逞是性戾换；柳宗元《柳河东集》中《河间传》是写唐朝一个女人的花旋风；徐士鸾的《宋艳》中《残暴》里记宋朝的王继勋是一种虐恋（虐待狂）；陶宗仪《辍耕录》中《奇遇》一篇是写元朝人性爱的白日梦；明朝张岱《琅环文集》中《鲁云谷传》是描写洁癖；清朝薛福成《庸盦笔记》中《入相奇缘》里写和珅“对影谈笑”是一种影恋……所有的大量历史文化，都禁不得真正专家的一双法眼，用这种法眼来“复兴中华文化”，才够资格，否则只是口号。</p>
+<p>关于这类性质的写作，在西方很多。性质近的像泰勒（G. Rattray Taylor）的“Sex in History”（1953年伦敦Thames &amp; Hudson版）就是一例。西方过去，在基督教的禁欲主义笼罩下，对性的禁忌，跟历史上的中国，真可说是老兄老弟。可是他们在近几十年的努力之下，终于摆脱了传统上对性的不合理的规律、约束与压抑，终于使他们逐步走上一个开放的社会，建立一种“约定俗成”的性道德，培养了风俗、修正了法律，使他们的青年男女，又恢复了在“伊甸园”里没吃苹果前的歌唱。</p>
 <p>反观我们中国，相对起来，我们不得不惭愧我们还是一个老大的闭锁社会。对“性”的不合理的规律、约束与压抑，还是这个闭锁社会的主要闭锁项目之一。从电影检査到出版管制，从教条宣扬到性教育的空白，从警察的冲动到道德家阳痿以后的阴谋，已经把我们的“性”空气搅得极不清洁。在这些不清洁的空气里，我们呼吸到的，是禁忌、是妈妈跟在屁股后面的恋爱、是买卖式的婚姻、是手铐式的离婚、是情杀与毁容、是通奸的残忍惩罚、是电影接吻的禁止、是情书的火葬与公布、是春药广告、是春牛横行、是廉价的初夜权、是文坛的新鸳鸯蝴蝶派、是姨太太第一号第二号、是婚姻法律的莫名其妙、是灵肉分裂、是衣服暴露的管制、是政府纵容的公娼、是私娼的七折优待、是节育的反对、是李敖这类先知式专题讨论的完全缺乏……</p>
 <p>所谓“礼仪之邦”的“国情不同”，以及所谓“有伤风化”的管制法令等等，都不足作为上述这些“性空气不清洁”的护符，一切的护符，都更会增助我们耻辱的标记——那跟西方文明社会比起来，“性水准低落”的耻辱标记。</p>
 <p>漫无心肝的中国知识分子，漫无心肝的日子太久了，实在应该认清自己，振作一下，洗洗这些耻辱的标记。</p>
@@ -1059,7 +1092,7 @@
 <p>1979年5月14日三小时写成</p>
 <h2 id="人能感动老虎论"><a class="header" href="#人能感动老虎论">人能感动老虎论</a></h2>
 <p>校对《人能感动蝙蝠论》的时候，意犹未尽，再写一篇。</p>
-<p>中国书中，关于这类记录极多。大体上说，这都是一种“动物泛灵信仰”（Zoologicalanimism）的流变。鳄鱼问题并不是韩愈以后就完了，照《欧阳文忠集》的说法，好像鳄鱼又回国了。欧阳修《陈文惠神道碑》说：</p>
+<p>中国书中，关于这类记录极多。大体上说，这都是一种“动物泛灵信仰”（Zoological animism）的流变。鳄鱼问题并不是韩愈以后就完了，照《欧阳文忠集》的说法，好像鳄鱼又回国了。欧阳修《陈文惠神道碑》说：</p>
 <p>潮州恶溪，鳄鱼食人不可近。公命捕得，伐鼓于市，以文告而僇之，鳄患屏息。潮人叹曰：昔韩公谕之而听，今公戮之而惧。所为虽异，其能动异物丑类，革化而利人，一也。</p>
 <p>足证韩老一死，鳄老又率其丑类，北归中国了。欧阳修笔下的陈文惠就是陈尧佐，他在潮州，也写过大作《戮鳄鱼文》：</p>
 <p>己亥岁，予于潮州，作昌黎先生祠堂，作招韩词，载鳄鱼事以旌之。明年夏，郡之境上，地曰万江，村曰硫磺，张氏之子，年甫十六，与其母濯于江涘，为鳄鱼尾去。其母号之勿能，披乎中流，则食之无余。予闻而伤之，命郡邑李公，将郡吏往捕之。前后力之者，凡百夫，曳之而出。缄其吻，械其足，槛以巨舟，顺流而至。</p>
@@ -1266,17 +1299,17 @@
 <p>大官人看到御笔题字，又逼他写谢表，李二曲说他不会做“庙堂文字”，大官人说不写会失礼，不行，逼他写。他故意写了一篇像乡下人写的作文敷衍，大官人看了，不敢往上呈，不了了之了。</p>
 <p>李二曲晚年闭户不出，不见客。四方之士老远跑来看他，都吃了闭门羹。有见识的高人，了解他为什么这样做；不识大体的俗人，自会骂他“懦种”。俗人当然不了解李二曲的大勇、李二曲的远见、李二曲的决绝，和李二曲在淫威之下辛苦抱持的不合作主义。</p>
 <p>1979年5月18日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/02.精品散文类/独白下的传统.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/02.精品散文类/独白下的传统.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../02.精品散文类/波波颂.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../03.惊世杂文类/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1286,16 +1319,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../02.精品散文类/波波颂.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../03.惊世杂文类/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1304,12 +1342,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

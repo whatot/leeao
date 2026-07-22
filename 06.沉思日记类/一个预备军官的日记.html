@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,107 +81,128 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="一个预备军官的日记"><a class="header" href="#一个预备军官的日记">一个预备军官的日记</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E8%99%BD%E9%9D%9E%E5%86%A4%E5%AE%B6%E5%8D%B4%E4%B9%9F%E8%B7%AF%E7%AA%84%E6%BD%98%E6%AF%93%E5%88%9A">虽非冤家，却也路窄（潘毓刚）</a></li>
-<li><a href="#%E7%9C%9F%E5%AE%9E%E7%9A%84%E5%8E%86%E5%8F%B2-%E7%B4%A0%E6%9C%B4%E7%9A%84%E8%AE%B0%E5%BD%95%E6%9D%A8%E5%B0%94%E7%90%B3">真实的历史-素朴的记录（杨尔琳）</a></li>
-<li><a href="#%E5%8F%AF%E7%88%B1%E7%9A%84%E5%AE%B6%E4%BC%99%E5%88%98%E8%80%80%E7%A5%96">可爱的家伙（刘耀祖）</a></li>
-<li><a href="#%E5%86%99%E5%BA%8F%E4%B8%8D%E8%83%BD%E4%B9%9F%E4%B8%8D%E4%BC%9A%E6%96%BD%E7%8F%82">写序，不能也不会（施珂）</a></li>
-<li><a href="#%E8%B0%88%E5%90%90%E6%AD%A3%E5%A6%82%E5%90%8C%E4%BB%96%E6%89%80%E5%86%99%E7%9A%84%E4%B8%9C%E8%A5%BF%E9%99%88%E7%91%9E%E6%B4%B2">谈吐正如同他所写的东西（陈瑞洲）</a></li>
-<li><a href="#%E9%A2%84%E5%AE%98%E6%97%A5%E8%AE%B0%E5%BA%8F%E9%99%B6%E8%8B%B1%E6%83%A0">《预官日记》序（陶英惠）</a></li>
-<li><a href="#%E5%BC%95%E8%A8%80">引言</a></li>
-<li><a href="#%E6%A8%AA%E6%A7%8A%E9%9B%86-1959%E5%B9%B49%E6%9C%88">横槊集-1959年9月</a></li>
-<li><a href="#%E6%A8%AA%E6%A7%8A%E9%9B%86%E6%8F%92%E7%BE%BD%E9%9B%86-1959%E5%B9%B410%E6%9C%88">横槊集、插羽集-1959年10月</a></li>
-<li><a href="#%E6%8F%92%E7%BE%BD%E9%9B%86-1959%E5%B9%B411%E6%9C%88">插羽集-1959年11月</a></li>
-<li><a href="#%E6%8F%92%E7%BE%BD%E9%9B%86%E9%87%91%E6%88%88%E9%9B%86-1959%E5%B9%B412%E6%9C%88">插羽集、金戈集-1959年12月</a></li>
-<li><a href="#%E9%87%91%E6%88%88%E9%9B%86%E6%9D%80%E6%B0%94%E4%B8%8D%E8%84%B1%E9%9B%86-1960%E5%B9%B41%E6%9C%88">金戈集、杀气不脱集-1960年1月</a></li>
-<li><a href="#%E6%9D%80%E6%B0%94%E4%B8%8D%E8%84%B1%E9%9B%86%E5%8F%8C%E6%9E%AA%E5%B0%91%E5%B0%89%E9%9B%86-1960%E5%B9%B42%E6%9C%88">杀气不脱集、双枪少尉集-1960年2月</a></li>
-<li><a href="#%E5%8F%8C%E6%9E%AA%E5%B0%91%E5%B0%89%E9%9B%86-1960%E5%B9%B43%E6%9C%88">双枪少尉集-1960年3月</a></li>
-<li><a href="#%E5%8F%8C%E6%9E%AA%E5%B0%91%E5%B0%89%E9%9B%86%E5%9C%A8%E9%82%A3%E4%B8%80%E8%BF%9E%E4%B8%B2%E8%8B%A6%E6%96%97%E7%9A%84%E6%97%A5%E5%AD%90-1960%E5%B9%B44%E6%9C%88">双枪少尉集、在那一连串苦斗的日子-1960年4月</a></li>
-<li><a href="#%E5%9C%A8%E9%82%A3%E4%B8%80%E8%BF%9E%E4%B8%B2%E8%8B%A6%E6%96%97%E7%9A%84%E6%97%A5%E5%AD%90-1960%E5%B9%B45%E6%9C%88">在那一连串苦斗的日子-1960年5月</a></li>
-<li><a href="#1960%E5%B9%B46%E6%9C%88">1960年6月</a></li>
-<li><a href="#1960%E5%B9%B47%E6%9C%88">1960年7月</a></li>
-<li><a href="#1960%E5%B9%B48%E6%9C%88">1960年8月</a></li>
-<li><a href="#1960%E5%B9%B49%E6%9C%88">1960年9月</a></li>
-<li><a href="#1960%E5%B9%B410%E6%9C%88">1960年10月</a></li>
-<li><a href="#%E4%B8%8D%E4%B8%8E%E9%9B%86-1960%E5%B9%B411%E6%9C%88">不与集-1960年11月</a></li>
-<li><a href="#%E4%B8%8D%E4%B8%8E%E9%9B%86%E5%85%B9%E7%96%91%E5%BD%95-1960%E5%B9%B412%E6%9C%88">不与集、兹疑录-1960年12月</a></li>
-<li><a href="#%E6%BE%8E%E6%B9%96%E6%97%A5%E8%AE%B0-1961%E5%B9%B41%E6%9C%88">澎湖日记-1961年1月</a></li>
-<li><a href="#%E6%BE%8E%E6%B9%96%E6%97%A5%E8%AE%B0-1961%E5%B9%B42%E6%9C%88">澎湖日记-1961年2月</a></li>
-<li><a href="#%E9%80%80%E4%BC%8D%E6%97%A5%E8%AE%B0">退伍日记</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#虽非冤家却也路窄潘毓刚">虽非冤家，却也路窄（潘毓刚）</a></li>
+<li><a href="#真实的历史-素朴的记录杨尔琳">真实的历史-素朴的记录（杨尔琳）</a></li>
+<li><a href="#可爱的家伙刘耀祖">可爱的家伙（刘耀祖）</a></li>
+<li><a href="#写序不能也不会施珂">写序，不能也不会（施珂）</a></li>
+<li><a href="#谈吐正如同他所写的东西陈瑞洲">谈吐正如同他所写的东西（陈瑞洲）</a></li>
+<li><a href="#预官日记序陶英惠">《预官日记》序（陶英惠）</a></li>
+<li><a href="#引言">引言</a></li>
+<li><a href="#横槊集-1959年9月">横槊集-1959年9月</a></li>
+<li><a href="#横槊集插羽集-1959年10月">横槊集、插羽集-1959年10月</a></li>
+<li><a href="#插羽集-1959年11月">插羽集-1959年11月</a></li>
+<li><a href="#插羽集金戈集-1959年12月">插羽集、金戈集-1959年12月</a></li>
+<li><a href="#金戈集杀气不脱集-1960年1月">金戈集、杀气不脱集-1960年1月</a></li>
+<li><a href="#杀气不脱集双枪少尉集-1960年2月">杀气不脱集、双枪少尉集-1960年2月</a></li>
+<li><a href="#双枪少尉集-1960年3月">双枪少尉集-1960年3月</a></li>
+<li><a href="#双枪少尉集在那一连串苦斗的日子-1960年4月">双枪少尉集、在那一连串苦斗的日子-1960年4月</a></li>
+<li><a href="#在那一连串苦斗的日子-1960年5月">在那一连串苦斗的日子-1960年5月</a></li>
+<li><a href="#1960年6月">1960年6月</a></li>
+<li><a href="#1960年7月">1960年7月</a></li>
+<li><a href="#1960年8月">1960年8月</a></li>
+<li><a href="#1960年9月">1960年9月</a></li>
+<li><a href="#1960年10月">1960年10月</a></li>
+<li><a href="#不与集-1960年11月">不与集-1960年11月</a></li>
+<li><a href="#不与集兹疑录-1960年12月">不与集、兹疑录-1960年12月</a></li>
+<li><a href="#澎湖日记-1961年1月">澎湖日记-1961年1月</a></li>
+<li><a href="#澎湖日记-1961年2月">澎湖日记-1961年2月</a></li>
+<li><a href="#退伍日记">退伍日记</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -203,7 +236,7 @@
 <h2 id="虽非冤家却也路窄潘毓刚"><a class="header" href="#虽非冤家却也路窄潘毓刚">虽非冤家，却也路窄（潘毓刚）</a></h2>
 <p>李敖冒“通匪”之嫌，要我为《预备军官日记》写个序，通常作者都喜欢找个比自己有名的人写序，而李敖找知名度还不如他的我来写，算是保持他的一点反传统性格吧！在他日记里有一首祝我寿的歪诗，里面提到不知为何在台大时没认识我，相见恨晚，其实我在台大校园早已见过这位身穿长袍，阴阳怪气，类似青洪帮的人物，只是我那时不喜欢管闲事，对这种人物不屑去打听他的姓名罢了。虽非冤家，却也路窄，受预备军官训练时竟和他同一区队，他喜欢高谈阔论，哗众取宠，引起我的注意。接触多了觉得他倒见多识广，有时谈吐也不俗，且颇具娱乐性，尤其他的黄色掌故和笑话颇能解除一些军中性饥渴的苦闷，对他渐生好感，而且他反传统的性格顽劣得可爱，所以与他交往就慢慢多了，尤其每次被派公差去观赏劳军晚会时，在下面和他聊聊天，可以不看台上无聊的节目，因此增进了不少性知识。李敖说郑清茂、小猴和我等人常偷看他的日记，那完全是他自抬身价的说法，最少我从没偷看过他的日记，都是别人传给我看的，我相信别人也没主动去偷，而是李敖纵容或挑逗他们去拿来看，以达到他哗众取宠之目的。日记里确有不少精彩记述，但也有许多并不很确实的地方，读者要以严谨的态度来读，才能防止他伪造历史。例如他说我不喜欢洗澡，与小猴同性恋（其实是他自己喜欢吃小猴的豆腐，解他军中无女人玩之苦闷），完全是有意中伤，怕我抢他的女朋友。李敖的女朋友们（不管是过去的、现在的或未来的）请注意听着：本人卫生习惯良好，且无艾滋病，千万别上李敖的当，是以为序。</p>
 <p>1988年1月15日</p>
-<p>由Amsterdam至Boston的TWAFlightNo.815飞机上</p>
+<p>由Amsterdam至Boston的TWA Flight No.815飞机上</p>
 <h2 id="真实的历史-素朴的记录杨尔琳"><a class="header" href="#真实的历史-素朴的记录杨尔琳">真实的历史-素朴的记录（杨尔琳）</a></h2>
 <p>在台湾，一个身体健康、没有特殊免役原因的适龄役男，几乎没有不入营当上一长段时间的兵的。想到当兵这件事，在大的所谓国家安全、群体意识塑造上所占的地位，小的所谓个人生命历程、家庭生活中所占的时光，相信无人能否认它是关系重大的。</p>
 <p>自数十万“国军”陆续进驻台湾地区，以及接续推行兵役制度以来，转眼将届四十年。四十年是相当漫长的一段时间，想想看：在这四十年中，多少人已因尽“国民的天职”进出了这个军中社会？在这四十年的进出之中，个人、军营、家庭、社会之间，相互所产生的激荡、推动又是如何？尤其是我们的军中社会极为特殊，而在军中社会以外，却是看似平静实是暗流汹涌。</p>
@@ -421,9 +454,9 @@
 <p>二、每日少睱，不得不利用每小段休息时间，十分二十分在所珍惜也。</p>
 <p>三、上课时不能多写，只有写诗及读书。</p>
 <p>四、我该多念几次胡家伦的话算做我个人的“训词”：</p>
-<p>Youknow,stillwaterrunningdeep!</p>
+<p>You know, still water running deep!</p>
 <p>但是我仍然深信，你的“玩世不恭”和“愤世嫉俗”只是表面上的一层霉，只要一旦经过阳光照射，终会消散的。</p>
-<p>我欣赏你的开朗、活力和immatureoriginality，让我们拭目以待你的ReconstructionofMentalLife!</p>
+<p>我欣赏你的开朗、活力和immature originality，让我们拭目以待你的Reconstruction of Mental Life!</p>
 <p>五、上下课看同学多打盹，且午睡亦不眠，颇感我精力练习得实在过人了。</p>
 <p>六、《凤山杂诗》（续集）：</p>
 <p>(3)白天世仇为烈日，</p>
@@ -906,7 +939,7 @@
 <p>1959年10月10日-1959年12月4日（插羽集）</p>
 <p>10月10日星期六</p>
 <p>一、国庆日，早上开纪念会，看齐也不知多少次，三令五申放假规则后、服装一再检查后，允许入营三十四天来第一次的外出。</p>
-<p>二、先独访陈先生（绍鹏），找了好久才找到，三年多没见了，畅谈甚欢，观其三年来购置的新东西如EncyclopediaBritannica打字机等，力赞其走学术之路，期一二年后转赴台北。陈先生静中有呆气，在社会人事上是一个生手，易为人所算，陈师母则健谈多言如旧，乃慈长大了，已小学二年级，极活泼天真。午饭于陈家吃了四碗。下午同赴高雄，在大舞台看《日本人》（《人间の条件》）：</p>
+<p>二、先独访陈先生（绍鹏），找了好久才找到，三年多没见了，畅谈甚欢，观其三年来购置的新东西如Encyclopedia Britannica打字机等，力赞其走学术之路，期一二年后转赴台北。陈先生静中有呆气，在社会人事上是一个生手，易为人所算，陈师母则健谈多言如旧，乃慈长大了，已小学二年级，极活泼天真。午饭于陈家吃了四碗。下午同赴高雄，在大舞台看《日本人》（《人间の条件》）：</p>
 <p>（一）人既不是诗，也不是道德，是充满欲望及排泄的动物。</p>
 <p>（二）不知你是中国人的还是日本人的工具。</p>
 <p>（三）火车载来的饿囚，争食豆饼而胀死。</p>
@@ -1034,10 +1067,10 @@
 <p>桂树阴里伴群星。</p>
 <p>五、中午与善培、鸿飞去福利社，鸿飞赞我戒烟之决心。</p>
 <p>六、美国近日连死名人，马龙奥兰沙死于前，14日埃洛弗林又死，16日马歇尔又死。埃洛弗林死前犹与一十七岁少女在一起，自谓：“女人吗？我喜欢年轻的，因为她们给人一种青春的感觉。”1942、1951皆以强奸罪被控，1959在古巴与卡斯特罗并肩作战。自传今秋出版。其妻以二十五元之棺葬之，而十七岁之少女却订了一个一千元之棺材。三怪癖：冒险、女人、诉讼（多逃税、欠债、赡养），曾参加西班牙内战及古巴革命。腿受伤。最喜陈年烈酒、年轻姑娘。晚年游艇被迫十万卖掉。每日五瓶酒。</p>
-<p>七、BernardBerensou上周死于意大利，九十四岁，私人收集书报画图五万件，甚尖刻，伪画贩子最恨之，为第一艺术鉴定家。</p>
+<p>七、Bernard Berensou上周死于意大利，九十四岁，私人收集书报画图五万件，甚尖刻，伪画贩子最恨之，为第一艺术鉴定家。</p>
 <p>八、1939年马歇尔任作战计划处长，准将，罗斯福越三十四资深军官而升为陆军参谋长（升三级），其处同事拘谨有礼，对人从不叫名而道姓。</p>
-<p>九、1739、10、18。AntonioJosedaSiloa葡戏剧家，皇后召宴，却当面揭其淫私，后终被加罪名，与母妻火刑而死,时年三十四，大有方正学气概。</p>
-<p>十、下午与善培、鸿飞、华俊等在康乐中心研究ChinaPost等很有趣。</p>
+<p>九、1739、10、18。Antonio Jose da Siloa葡戏剧家，皇后召宴，却当面揭其淫私，后终被加罪名，与母妻火刑而死,时年三十四，大有方正学气概。</p>
+<p>十、下午与善培、鸿飞、华俊等在康乐中心研究China Post等很有趣。</p>
 <p>十一、庄因来的信摘录：</p>
 <p>7月14日：</p>
 <p>你也许需要与我以前一样的来个环境的大变。自来军中后，感觉许多新的感觉，而这些也绝非想象及平时可知的，用新的尺度来衡量自己，也是件值得的测验潜能的方式。</p>
@@ -1053,7 +1086,7 @@
 <p>四十二天军营的生活与海明威的影响，使我颇想修正我的“零标尺”。多少年来，我只在书本上做人而未在行动上做人，历史系的书呆生活我愈来愈厌倦，我幸亏没考研究所，我现在才感到，那根本不是我去埋首的地方！我现在正努力听你的劝告——“找寻自己潜在的另一面！”希望不久能有点收获与结论。</p>
 <p>十二、勉玉衡一信：</p>
 <p>你广植兴趣最对，趁年轻，多培养一些有益的兴趣，终生有助于你增广见闻，分散烦恼。</p>
-<p>Abusybeehasnotimeforsorrow!盼你做一个忙碌的小孩子！</p>
+<p>A busy bee has no time for sorrow!盼你做一个忙碌的小孩子！</p>
 <p>十三、写信采取上二信之方式为一大收割，总之要言之有物，总以能记出摘出为准。</p>
 <p>十四、温静波已于15日飞港转赴马德里（16日《联合报》）。</p>
 <p>十五、白天整天未外出，晚饭后即去陈家，思为陈购一镜框。与陈先生谈译诗，谈天说地，品茗看书，5:30—8:00甚欢，介绍周正见面。见到黄立三的两个小孪生妹妹甚可爱；大妹妹教小学亦有忠琳之风韵，唯在室内外望，甚不能清楚。唯已有点爱她了。在陈家读报，补抄有关EirolElynn史料，今天才算大略了解一个“可爱的恶棍”，其自传因出版商要求删数段不予同意以致未能出版，我发现我有点崇拜他了，我现在忽然喜欢起一切行动的人来了。他活了五十岁，自传名《我的恶劣的生涯》。</p>
@@ -1072,7 +1105,7 @@
 <p>10月20日星期二</p>
 <p>一、洗脸至早饭成一诗：</p>
 <p>(72)食欲尤进性欲退，</p>
-<p>“自我人道”不可能（“自我人道”乃今早神来而出之一term，极佳妙。指sixfingers），</p>
+<p>“自我人道”不可能（“自我人道”乃今早神来而出之一term，极佳妙。指six fingers），</p>
 <p>纵有多情精子在，</p>
 <p>无奈anti-荷尔蒙。</p>
 <p>二、上午自动步枪预习时成四诗：</p>
@@ -1147,7 +1180,7 @@
 <p>“青出于蓝”古有训，</p>
 <p>不必赧颜为人师。</p>
 <p>九、什么是最好的relaxation？</p>
-<p>十、Powerandformality是在这儿最易接触到的两个东西，很想详读BertrandRussell的《权威与个人》和《权力论》。</p>
+<p>十、Power and formality是在这儿最易接触到的两个东西，很想详读Bertrand Russell的《权威与个人》和《权力论》。</p>
 <p>十一、信报妈妈、彦增、至正、昌平、又亮、英善、鼓应、玉森、英星。除彦增外皆附照片及题诗。</p>
 <p>十二、地图判读及统御学考试成绩皆“丙下”，幸免补考，多人补考（丁）。</p>
 <p>十三、夜晚会话剧，马区队长言我有进步。手电没电，今晚不能多读书。</p>
@@ -1184,7 +1217,7 @@
 <p>旧式文人最普遍的毛病是“缩头主义”，或叫“王八主义”，就是像乌龟一样，横逆当头，把头（龟头）一缩，任你千呼万唤，也不与“恶势力”合作，可是他也绝不能奈恶势力何，正所谓：</p>
 <p>手无柯斧，</p>
 <p>奈龟山何！</p>
-<p>陶潜是这种主义底下的高明的，刘伶是低级的（当然，我在这儿所指的旧式文人，是指“君子儒”而言，叔孙通以下等拍马的御用文人，自不在话下）。我当然不春秋责贤，要用今天的眼光苛责古人，我只是说，他们的人生态度消极有余，积极不足；深度差强，幅度不够。我总是傻想：“设使陶渊明屈就些，少自惜羽毛一些，跟敌人合作——像长乐老冯先生那样多叫几声‘老佛爷’，以他的地位，对当时的国计、民生，未尝不有小补，何必一定自己‘缪得固穷节’式地赍志讨饭以没呢？我当时若是檀道济，我想我可以说服他！以上所写是‘积极不足’一面，下面再说‘幅度不够’：我最近觉得对人世间残酷、无情、暴力等方面，多做广泛的了解与肤受，也是一件好事情，可惜旧式文人无此观念，歌颂战争与爱情对人生有深刻影响的Byron颇能就此着眼，可惜他忍受不了fever的侵袭，又是跛子，所以在协助希腊独立战争中演了一出‘身先死’的悲剧，Landor和Hemingway在这方面做得最好，尤其是后者，最能深刻的代表一个新式文人的生涯。旧式文人至多只能写一篇《吊古战场文》，可是新式文人却能写出TheNakedandTheDead的佳构，这是旧时代与新时代的最大分野！新时代的文人信奉的是‘臭虫主义’——臭虫的世界不过是一张床，和睡在床上的臭皮囊，可是它却整天打着这个臭皮囊的主意，在臭皮囊上爬来爬去，咬东咬西，咬到芳唇不以为荣，咬到阴毛不以为辱，绝不局限自己于象牙塔中，做一个白首太玄经寂寞投阁的老文士。（其实杨雄还算是勇者！）新式文人大都走出了象牙塔、走出了书房、走出了无何有之乡、走出了天鹅绒的梦幻，王德毅的诗说：‘难得惊人过一生’，而真正的新式文人却‘偏要惊人过一生’！”</p>
+<p>陶潜是这种主义底下的高明的，刘伶是低级的（当然，我在这儿所指的旧式文人，是指“君子儒”而言，叔孙通以下等拍马的御用文人，自不在话下）。我当然不春秋责贤，要用今天的眼光苛责古人，我只是说，他们的人生态度消极有余，积极不足；深度差强，幅度不够。我总是傻想：“设使陶渊明屈就些，少自惜羽毛一些，跟敌人合作——像长乐老冯先生那样多叫几声‘老佛爷’，以他的地位，对当时的国计、民生，未尝不有小补，何必一定自己‘缪得固穷节’式地赍志讨饭以没呢？我当时若是檀道济，我想我可以说服他！以上所写是‘积极不足’一面，下面再说‘幅度不够’：我最近觉得对人世间残酷、无情、暴力等方面，多做广泛的了解与肤受，也是一件好事情，可惜旧式文人无此观念，歌颂战争与爱情对人生有深刻影响的Byron颇能就此着眼，可惜他忍受不了fever的侵袭，又是跛子，所以在协助希腊独立战争中演了一出‘身先死’的悲剧，Landor和Hemingway在这方面做得最好，尤其是后者，最能深刻的代表一个新式文人的生涯。旧式文人至多只能写一篇《吊古战场文》，可是新式文人却能写出The Naked and The Dead的佳构，这是旧时代与新时代的最大分野！新时代的文人信奉的是‘臭虫主义’——臭虫的世界不过是一张床，和睡在床上的臭皮囊，可是它却整天打着这个臭皮囊的主意，在臭皮囊上爬来爬去，咬东咬西，咬到芳唇不以为荣，咬到阴毛不以为辱，绝不局限自己于象牙塔中，做一个白首太玄经寂寞投阁的老文士。（其实杨雄还算是勇者！）新式文人大都走出了象牙塔、走出了书房、走出了无何有之乡、走出了天鹅绒的梦幻，王德毅的诗说：‘难得惊人过一生’，而真正的新式文人却‘偏要惊人过一生’！”</p>
 <p>十、下午多人看我诗，晚饭时又写，宏谋言：“又来了，又来了，李敖真是随时随地都有灵感。”</p>
 <p>十一、邱镇京言我照片“凶”。</p>
 <p>10月23日星期五</p>
@@ -1247,7 +1280,7 @@
 <p>10月19日：</p>
 <p>祝痛快。</p>
 <p>十、迩来友朋来信，皆能先摘录其要，后再归档，此法甚好。</p>
-<p>十一、玉森寄来TheOldManandTheSea.“Everythingabouthimwasoldexcepthiseyesandtheywerethesamecolorastheseaandwerecheerfulandundefeated.”</p>
+<p>十一、玉森寄来The Old Man and The Sea.“Everything about him was old except his eyes and they were the same color as the sea and were cheerful and undefeated.”</p>
 <p>十二、发下中兴烟，送给维信。</p>
 <p>10月25日星期日</p>
 <p>一、光复节。</p>
@@ -1415,15 +1448,15 @@
 <p>好几次想提笔写信给你，却不知你现在究竟是在家里还是在营里。现在姑且寄到你家里。</p>
 <p>小鬼悄悄地离开台北，也不告诉我一声，到了台中又不来信，更该打！你们见面时，应该互打十板手心。</p>
 <p>你的来信使我有一点领悟，这可以用一句英诗表示：</p>
-<p>Youknownstillwaterrunningdeep!</p>
+<p>You known still water running deep!</p>
 <p>看你表面“玩世不恭”、“满不在乎”，不料触到“人性”深处时，你倒能异乎常人地感受，而不像一贯地左耳进右耳出。我该谢谢你很看重我对你的分析。虽然我自已（也与华俊有同感）觉得对你的批评稍嫌过分，但是我有预感，有信心你会不反对这种bona-fideexaggeration。</p>
 <p>我要声明一点：我不喜欢（因此也极少）对人做这种血淋淋的解剖。即使对我自己，我也很少“自剖”。我喜欢一个人以完整人格存在，相互交往，而不能常被解剖得鸡零狗碎的。</p>
-<p>我不敢夸言对你的personality的发展充分了解。但是由你的behaviour，我似乎能揣摩出一个轮廓和趋势的蛛丝马迹。举一个例说，当我发觉你谈吐中关于sex的词汇愈来愈丰富的时候，我意料到tropicalprematurity和社会性的“社交隔离”，对你的压力愈来愈大，甚至产生一些psychogeniciconoclasm(strongantitradition)。从坏的方面说，假如你继续对自己的理智“装糊涂”，那么你早期的一点“灵性”，在成熟前就要受到“物欲”的啃啮了！但是我仍然深信你的“玩世不恭”和“愤世嫉俗”只是表面上的一层霉，只要一旦经过阳光照射，终会消散的，因此，我才努力尝试将它暴露出来。</p>
-<p>另外，我还要告诉你一点，我之所以加入百分之五十的夸大，并不是要强调暗荫。你知道即使在我对你做最强烈的反对时，我也并没有抹杀你的特点，我欣赏你的开朗、活力和immaturecriginality。让我们拭目以待你的ReconstructionofMentalLife!</p>
+<p>我不敢夸言对你的personality的发展充分了解。但是由你的behaviour，我似乎能揣摩出一个轮廓和趋势的蛛丝马迹。举一个例说，当我发觉你谈吐中关于sex的词汇愈来愈丰富的时候，我意料到tropical prematurity和社会性的“社交隔离”，对你的压力愈来愈大，甚至产生一些psychogenic iconoclasm(strong antitradition)。从坏的方面说，假如你继续对自己的理智“装糊涂”，那么你早期的一点“灵性”，在成熟前就要受到“物欲”的啃啮了！但是我仍然深信你的“玩世不恭”和“愤世嫉俗”只是表面上的一层霉，只要一旦经过阳光照射，终会消散的，因此，我才努力尝试将它暴露出来。</p>
+<p>另外，我还要告诉你一点，我之所以加入百分之五十的夸大，并不是要强调暗荫。你知道即使在我对你做最强烈的反对时，我也并没有抹杀你的特点，我欣赏你的开朗、活力和immature criginality。让我们拭目以待你的Reconstruction of Mental Life!</p>
 <p>关于你说我“‘nian’儿不鸡”，我承认。</p>
 <p>我也有一点辩白：</p>
 <p>在我碰到“你”的时候，我特别感觉到“词穷言拙”。因为你所读到的topics，我不熟悉，无“资谈之料”。因此你常发觉我瞠目不知所答，我无法侃侃而谈“宋代的婚姻的构成……和……和解消……”，我也未研究过“历代娼妓史”或“历代丧礼变迁史”或……。你假如经常坚持这些谈话中心的话，我想不单是我一个人会“三缄其口”。我也劝你改改！</p>
-<p>再说，有人认为taciturnity是美德，有人又认为vociferousness是有生气。我不管这些，我只能本我性之所近，追求cogency和laconism，我认为朋友之间要想谈话能“投机”，必须大家具有一些共同兴趣的fields，但是我总觉得你的兴趣范围太窄——“野史”和“野女人”！——因此我们很难找到一些commoninterest。有之，则“诗”也？</p>
+<p>再说，有人认为taciturnity是美德，有人又认为vociferousness是有生气。我不管这些，我只能本我性之所近，追求cogency和laconism，我认为朋友之间要想谈话能“投机”，必须大家具有一些共同兴趣的fields，但是我总觉得你的兴趣范围太窄——“野史”和“野女人”！——因此我们很难找到一些common interest。有之，则“诗”也？</p>
 <p>我很遗憾这四年多时间里，没有机会能常常看到你的新旧诗，也没有与你谈过对诗的欣赏。但是在这四年里，我对诗的追求和投于中英文诗的注意，恐怕是你意料之外的事。让我稍稍追述一下：</p>
 <p>在你知道我读诗甚至于“诌”诗的时候（高三），我对诗尚完全是“门外汉”。那是徐志摩的《再别康桥》开始引起我的注意；和你的《打油三百首》引起我的好奇。</p>
 <p>其后，我读到较多五四年代的作品，但仍是无头绪地、无目标地“涉足”。其中间或也有颇打动心弦的作品，例如徐志摩的《在病中》：</p>
@@ -1445,7 +1478,7 @@
 <p>在这广漠无声的宇宙，</p>
 <p>只要知道还有谁伴我不寐，</p>
 <p>就能够欣然向前奔走。</p>
-<p>我也读到以活泼的观察力描写自然的小诗，例如EmilyDickenson的《仙径》（我想你能想象那是在花丛中）：</p>
+<p>我也读到以活泼的观察力描写自然的小诗，例如Emily Dickenson的《仙径》（我想你能想象那是在花丛中）：</p>
 <p>一条非人间所造的幽径，</p>
 <p>唯眼睛能窥到，</p>
 <p>只能通行蜜蜂的驿马，</p>
@@ -1518,7 +1551,7 @@
 <p>早晨面条代稀饭，</p>
 <p>上午宣誓大效忠，</p>
 <p>中午鱼肉忽出现。</p>
-<p>五、午走路吸烟受责，我真讨厌这种滥用的LoveofPower，只有奴才才最爱这样！</p>
+<p>五、午走路吸烟受责，我真讨厌这种滥用的Love of Power，只有奴才才最爱这样！</p>
 <p>六、被我否定的人，我实在懒得跟他说任何一个字。</p>
 <p>七、忘了记上了！前几天曾梦到谭凝晖。</p>
 <p>八、午后在康乐中心自由活动，碰到周春塘，相谈不休，谈新旧文学、谈今后出路，很投机，他向我说“灵感独占”的意思，劝我勿为小诗杂事分去精神，我早有此感，今天经他一说，我决心给我的生活来一次大调节：</p>
@@ -1548,7 +1581,7 @@
 <p>（一）不跟被我否定的人多废话。</p>
 <p>（二）写信内容力求能多谈问题，少谈琐事。</p>
 <p>（三）一有空就多读书。</p>
-<p>（四）少在日记上gettingpsychoanalyzed。</p>
+<p>（四）少在日记上getting psychoanalyzed。</p>
 <p>（五）不在外面跑，不去高雄。</p>
 <p>你近况从庄因处颇得闻一二，知你很能从稳健中积极读书，这是我最高兴的，我提议我们先把口闭起来，笔放下来，不在空言和书信上面起波折，先各自埋头读些书，再进一步的讨论。</p>
 <p>三、送镇京一小女人照片，他贴于日记上。</p>
@@ -1557,15 +1590,15 @@
 <p>六、给庄因鼓应合一信，英善玉森各一片。</p>
 <p>七、见人考试读书，心中好笑。</p>
 <p>八、在第一节自习后，吃水泡蛋二个后脱鞋读书，极舒适有韵味。</p>
-<p>Lytton：“Icomeasthewind,andasthewinddepart.”</p>
-<p>Goethe：“Lifeliesbeforeus,asahugequarryliesbeforethearchitect.”</p>
+<p>Lytton：“I come as the wind, and as the wind depart.”</p>
+<p>Goethe：“Life lies before us, as a huge quarry lies before the architect.”</p>
 <p>11月3日星期二</p>
 <p>一、瑞洲对我写诗的看法与春塘持相反意见，他说不见得是大材小用。</p>
 <p>二、每课后同学多伏案小眠，这些青年人的精力真不行。</p>
-<p>三、上午一—二节“急救”，偷读C.H.p.19一面。众人却是boredomandsleep，吾颇自憙吾之不凡。三—四节又偷读一面。</p>
+<p>三、上午一—二节“急救”，偷读C. H. p. 19一面。众人却是boredom and sleep，吾颇自憙吾之不凡。三—四节又偷读一面。</p>
 <p>四、至正来信谓吾照“美不亚兄穿长褂者，盖一为威武，一为潇洒也”。</p>
 <p>五、下午在成功坡，相思树林中风景极佳。“地形地物识别利用”，就地形做各种射击姿势，扑倒时伤左肘。老班长们的神气与客气。</p>
-<p>六、夜看球赛，静读TheOldManandTheSea数页。</p>
+<p>六、夜看球赛，静读The Old Man and The Sea数页。</p>
 <p>七、夜集合，队长言有人向外写信述伙食不好，及刚华民事，已经“上面”查扣下来了！（交到队上了。）</p>
 <p>11月4日星期三</p>
 <p>一、上午“掩蔽与伪装”课，在成功坡高地，以水筒射人以证隐蔽与掩蔽之别，别有风味。清茂言我“做坏人会比做好人更成功”。</p>
@@ -1578,7 +1611,7 @@
 <p>我认为每个人的生活要自已寻出一条规律来，如果他能一天工作十小时以上而不倦。那么就不要去管什么卫生（健康）理论和三八制，如果他必须玩耍一阵后，在半惭悔心情下，方能灵感愤（奋）发，也无妨荒唐一下，这两种只是极端的例子，我的意思是不要学哪一个，要自己给自己以规律，当然是以配合生活的主要目的为主。</p>
 <p>杰克伦敦说：对自己我是一个个人主义者，因为我是一个强者；对众人我是一个社会主义者，因为众人是懦弱的、需要帮助的。</p>
 <p>很高兴听到你渐形“严肃”，生活粗略言之有两种，一种是乐群，一种是孤独。在前一种需要心胸广阔，能领导别人或服从别人，但是其情绪的脉络必须是不深刻的，因为在群众中传染着喜和悲各种情绪，如果他太易感，他便损失太大了，所以能处群的人必然是乐天的、外向的、不易感的。反之则以过孤独生活为佳，过去我们（不止你和我和他）大家都有一个毛病，以为“寂寞心情好读书”，其实这个想法只有部分正确，如果你之乐于孤独，只是因为你要读书，那么你只是孤独之国一个挂单和尚而已！孤独是一种生活方式，其中的情趣，读书只是一种——可以自已念和写的一种，其他还有多少呢！譬如自已到一个桥头去看西天的落日，到电影院看一场电影，给自己闹别扭，自言自语（海明威笔下的“老人”就有自语习惯！），“笑而不言心自闲”……孤独只是一种外观的形式，其内容一点也不寂寥的，只是完全由自已来惨淡的经菅，不受外界的干扰而已！</p>
-<p>这种情趣如果不能理会、不能把握，那么我可以说大半孤独的害处要多于益处，在孤独的境域中，我们的心灵生活得到很多满足，而且对于治纯学术工作的人是相当适宜的，但是在群居中也不是没有好处，令人吸收他人的智能，了解人物和世事，孤独或者乐群，这是一个气质问题，可以慢慢改，不可强致，其中各有苦乐、各有得失，并非哪一个优于另一个，而是You,onlyyoupersonal,prefertowhich。</p>
+<p>这种情趣如果不能理会、不能把握，那么我可以说大半孤独的害处要多于益处，在孤独的境域中，我们的心灵生活得到很多满足，而且对于治纯学术工作的人是相当适宜的，但是在群居中也不是没有好处，令人吸收他人的智能，了解人物和世事，孤独或者乐群，这是一个气质问题，可以慢慢改，不可强致，其中各有苦乐、各有得失，并非哪一个优于另一个，而是You, only you personal, prefer to which。</p>
 <p>新汉有次来信说我们这群人谁也不能影响谁，我回他信时未详谈此点，其实正好相反，我们都在互相影响着，在你给我的信中，我看到你受我影响的地方，在你给庄因信中，我看到你是多么热情的记取他入伍时的宝贵经验，而从我给你的信中，也许你能找到你对我影响的影子，也许它们不如从前浓烈了，每一个“我”都在新陈代谢中，否则这个人也就没有进步了。</p>
 <p>对你目前的生活方式，我不愿做任何具体的批评，只希望你能行之尽可能地有效而且自然，负作用不多，一切东西都是不能常住的，今天的生活方式到明天也许在同一方向下更精细和深刻了，也许为我们所扬弃了，不论如何，今天是要过得平实而光耀的——也许那光只照亮了我们的内心。</p>
 <p>最近读书很杂，也很多，所以没有时间写日记，也没有时间写信，想法和感受很多，如果来信讨论我很欢迎，只要我们定范围、只要我们诚恳。</p>
@@ -1589,7 +1622,7 @@
 <p>对于这样一封信，一定惹起你的疑窦，我是怎么了，我只能说我是在一天天地变着，变得我都快不认识自己了，或者说我是一天天地成熟了，可是成熟有什么用？如果不是“军部”一月给我七百多元，我还不是为衣食奔走，现在坐在遮风的楼角，欣赏名著，侈谈修养，将来雷霆万钧的“生活”来了，我是否能应付得很好，而且更茁壮，我自己都不晓得。</p>
 <p>谈到生活，并非人人有份，有许多女子，就一生给关在生活的门外，在单调而无聊的学生生活后跟着来的如果贫苦，就得一生摸锅台，如果富厚就成天打麻将，她们脆弱的心灵不敢去想：生活是什么？为什么？许多男人，终生富厚，或者逃避到学院，或者哪儿去，也终是个“槛外人”，那些出入红尘的人，有的慧根不够、有的识力不足，即使不会为生活压扁，也终不能了解生活，我们是幸运的，具有了教育和学力，而生活又在鞭策我们，如果你进研究所，你能学到什么？我为你庆幸。智慧，真的是来自知识与经验。</p>
 <p>搁笔多日，信手不能自己，很喜欢我又能说些肺腑的话，而且是我日来所想到体验到的比较精彩的部分——也许是硬写出来的，欢迎听到你的意见。希望你会给老景看，我不另给他写信了，最近比较忙。</p>
-<p>《权力论》日内定能寄去，我已看过，从图书馆借的ConqustofHappiness早失于台大校园，内有我的眉批多项，曾招贴寻找，奈何渺然，君忆此事否？过些日子也可购一册寄去，居浩然之《十论》颇佳，我购一册，如有兴趣，读竟当寄你。</p>
+<p>《权力论》日内定能寄去，我已看过，从图书馆借的Conqust of Happiness早失于台大校园，内有我的眉批多项，曾招贴寻找，奈何渺然，君忆此事否？过些日子也可购一册寄去，居浩然之《十论》颇佳，我购一册，如有兴趣，读竟当寄你。</p>
 <p>再谈，祝</p>
 <p>愉快</p>
 <p>宏祥11月3日</p>
@@ -1598,8 +1631,8 @@
 <p>六、毓刚言：“你这个小本子一定内容很丰富。”“看你又剪又贴。”我笑谓：“你给我写信，我也贴进去。”他说：“有这个荣幸，将来一定写信给你。”</p>
 <p>七、最近老有把小说先写成英文的念头。</p>
 <p>八、宏谋言“你这用功的精神实在可嘉，应该加零点五”。</p>
-<p>九、“Itdoesnotmatterwhatpeoplethink.”（Gregory）</p>
-<p>十、Marden:“IcanandIwilldowhatIlongtodo.IwillbewhatIdesiretobe.”</p>
+<p>九、“It does not matter what people think.”（Gregory）</p>
+<p>十、Marden:“I can and I will do what I long to do. I will be what I desire to be.”</p>
 <p>11月5日星期四</p>
 <p>一、上次讲演班中第一，弄假指仁甦未成，今晨指导员又以准备见催。</p>
 <p>二、上午体育课，做许多动物的行走，掌为荆棘所伤。</p>
@@ -1625,15 +1658,15 @@
 <p>很留恋台大，也很怀念它，现在快是杜鹃花开的时节了吧？每年杜鹃花开的时候，我都有不同的心情，今年更不要提啦！</p>
 <p>……</p>
 <p>你如有兴趣，可告张曼：我欢迎她在这次访问团南下时来“劳军”。</p>
-<p>七、下午倦而不思读书，因写信为遣。HowlongisitsinceIsawyoulast?离别与怀念是成正比发展的，它们之间是一个“衬托的关系”，没有离别的讨厌，衬托不出怀念的经验与思旧的心情。</p>
-<p>八、宏祥寄赠Power:ANewSocialAnalysis，傍晚收到，极兴奋，指导员见了问我为什么要看，我笑谓：“因为我爱权力。”讲演事屡向其辞不获，他说我这一次一定要好好准备，讲正经话。宏垚在旁言我乃口蜜腹剑的人，指导员亦笑我肚子里面男盗女娼。</p>
+<p>七、下午倦而不思读书，因写信为遣。How long is it since I saw you last?离别与怀念是成正比发展的，它们之间是一个“衬托的关系”，没有离别的讨厌，衬托不出怀念的经验与思旧的心情。</p>
+<p>八、宏祥寄赠Power: A New Social Analysis，傍晚收到，极兴奋，指导员见了问我为什么要看，我笑谓：“因为我爱权力。”讲演事屡向其辞不获，他说我这一次一定要好好准备，讲正经话。宏垚在旁言我乃口蜜腹剑的人，指导员亦笑我肚子里面男盗女娼。</p>
 <p>11月6日星期五</p>
 <p>一、晨起大练双单杠，与指导员开玩笑，他总是骂我没正经的。</p>
 <p>二、给宏祥：</p>
 <p>看你的信，有的我很欣赏、很赞同，有的仍旧不太敢领教。但它们都是你的生活规律与方式，我也实在不必带着“驳正”或“笔伐”的傲岸心理，硬要把意见掏出来——这并不是对老朋友不坦白，而是我觉得与其老指责别人的，反倒不如宣传自己的“高论”来得更使老朋友开心。</p>
 <p>……</p>
 <p>在军中有两个小心得：第一是对“困难”的新认识，许多看起来想起来似乎不太可能的事，到这儿都变得可能了。并且做得从容不迫了，例如晨起三十分钟内做那么多的事，绝非当初“老百姓时代”所能想象的。第二是对“残忍”的新认识，在打靶、劈刺、看炮轰的当儿，多少能够想象出残忍的景象，教士是救人精神的，医生是救人肉体的，而在这儿整天学的这行却是杀人的——毁灭人的精神和肉体的，懦夫与烂好人、小孩与女人，都是不合要求的，没用的，在这个时代中要能站得住，适度的残忍是必要的，妇人之仁又能给我们什么防身本领呢？</p>
-<p>在陈先生处见到一书名TheIdleThoughtsofAnIdleFellow，副书名是Abookforanidleholiday，作者是英人JemoreK.Jemore（1859-1927）中言“偷懒”之论甚有巧思：“Idleness,likekisses,tobesweetmustbestolen.”</p>
+<p>在陈先生处见到一书名The Idle Thoughts of An Idle Fellow，副书名是A book for an idle holiday，作者是英人Jemore K. Jemore（1859-1927）中言“偷懒”之论甚有巧思：“Idleness, like kisses, to be sweet must be stolen.”</p>
 <p>而他所谓的偷懒，并非真正的懒散，乃是以勤来衬懒，以忙来托闲，举例如闲居无事，外出散步，见一老人劈柴，从旁助之，累得大汗满身，就一荫下小卧，悠哉闲哉。若无忙迫来“衬”，终日闲居无事，则无所谓“偷”了。因忆及有一联：</p>
 <p>为公忙，为私忙，忙里偷闲，吃杯茶去；</p>
 <p>求名苦，求利苦，苦中作乐，拿壶酒来。</p>
@@ -1690,10 +1723,10 @@
 <p>前途禄位见太平，</p>
 <p>浮云扫退终无事，</p>
 <p>可保祸患不临身。</p>
-<p>极切合孤意，吾虽不迷信，然抽之读之亦一极好玩之事也。尤其保安宫之签最奇。与清茂在华北小吃店小吃水饺三十、葱油饼三块、牛肉、蛋，后同看五点二十大舞台之《春风秋雨》（ImitationofLife）。</p>
+<p>极切合孤意，吾虽不迷信，然抽之读之亦一极好玩之事也。尤其保安宫之签最奇。与清茂在华北小吃店小吃水饺三十、葱油饼三块、牛肉、蛋，后同看五点二十大舞台之《春风秋雨》（Imitation of Life）。</p>
 <p>感想：</p>
 <p>a.加片中李丝丽卡侬的鼻子最像Rosa。</p>
-<p>b.SandraDee真是最可爱的小人儿，我不相信世界上还有人说她不是可爱的。挤眼与天真，真是夺人心魂，因想起眼前女人之无人能匹，与夫电影明星成名之不易（“正当手段”），与女孩子皆工于假戏耳。</p>
+<p>b.Sandra Dee真是最可爱的小人儿，我不相信世界上还有人说她不是可爱的。挤眼与天真，真是夺人心魂，因想起眼前女人之无人能匹，与夫电影明星成名之不易（“正当手段”），与女孩子皆工于假戏耳。</p>
 <p>c.那种酒吧。</p>
 <p>d.女黑人之厌世歌。由肤色问题想到心胸之广大，西方人的冒险性与狂飙性。</p>
 <p>五、我言我对女人无大需求，清茂言我已至一境界，此境界彼屡思而未能企及，至此境界即不为女人所扰矣。我以无钱行为颇检束，大有一介不取之概（我穷时尤不愿沾别人情）。清茂说：“你有时客气得和你性情不大相合。”他的观察力真不错。今日花二十四点五元，实在吃不消，以后当努力避免，除非必要，不得过这种生活了！</p>
@@ -1713,7 +1746,7 @@
 <p>在高雄抽二签，保安宫的签是“求财下半年好”，三山国王庙的签是“求财：微微”。此二签殊可恶，财星向老夫一再低照，实在天理安在，神明不仁。</p>
 <p>四、荣团会，讲话没技术的人太多，太啰嗦了。一句话可说完的一定要说十句，真要命。我提修正案一事实在没有必要，还是不该说话！</p>
 <p>五、五一六节“近战”课，小爬铁丝网，七一八节在东山“战斗间心理训练”，我是第四组，以不惯用腿的力量，多用肘爬，故爬最末一名，枪声爆炸声不绝于耳，黑烟弥漫，副队长以竹枝击赶，实在好玩，宏谋一直陪我，其意甚可感。归途甚长，尽是厚黄土路，因忆及：</p>
-<p>AFarewelltoArms：——“Troopswentbythehouseanddowntheroadandthedusttheyraisedpowderedtheleavesofthetrees.Thetrunksofthetreestooweredustyandtheleavesfellearlythatyearandwesawtroopsmarchingalongtheroadandthedustrisingandleaves，stirredbythebreeze,fallingandthesoldiersmarchingandafterwardtheroadbareandwhiteexceptfortheleaves.”</p>
+<p>A Farewell to Arms：——“Troops went by the house and down the road and the dust they raised powdered the leaves of the trees. The trunks of the trees too were dusty and the leaves fell early that year and we saw troops marching along the road and the dust rising and leaves，stirred by the breeze, falling and the soldiers marching and afterward the road bare and white except for the leaves.”</p>
 <p>清茂途中言我跋扈（今晨命其吃药，彼复言之。1959年11月11日）。</p>
 <p>六、毓刚言我派头。</p>
 <p>七、晚上鹏飞来，言善培晨于打M1前突犯宿疾，急去其舍看之，小谈，并收到天培信，很快乐。我觉得照顾善培的功夫还不够，当再留心些。</p>
@@ -1728,16 +1761,16 @@
 <p>六、夜仁甦由队长陪同受总队长训，归来说欲不言：“我要学你了！”</p>
 <p>11月12日星期四</p>
 <p>一、昨夜梦到Rosa，替她拿黑乳罩。在外等我。不肯去咖啡馆坐，在冰店一角不肯走。后终答应去南夜。醒来颇想念也。</p>
-<p>“Pagesfullofunlikelywords，</p>
-<p>Handfulsofhot，bittertears.</p>
-<p>Theycalltheauthorasillyfool,</p>
-<p>Fortheyknownotwhathemeans.”</p>
+<p>“Pages full of unlikely words，</p>
+<p>Handfuls of hot，bitter tears.</p>
+<p>They call the author a silly fool,</p>
+<p>For they know not what he means.”</p>
 <p>二、7时方起，在床上想起写英文情书事，此法似极好。</p>
 <p>三、洗脸时英惠言我近来之沉默。</p>
-<p>四、鸿毅金门归来，约在高相会，午前与绍辉去亚细亚，竟未遇。独自午饭于华北经济小吃部（水饺二十，葱油饼两块）。后在金城独看《月下野猫》（TheNightinHeavenFell）此影颇能道出一个小女人为情所驱，奋不顾身的性格，很富romantic意味。有B.B.卧下裸乳一镜头甚动人。</p>
+<p>四、鸿毅金门归来，约在高相会，午前与绍辉去亚细亚，竟未遇。独自午饭于华北经济小吃部（水饺二十，葱油饼两块）。后在金城独看《月下野猫》（The Night in Heaven Fell）此影颇能道出一个小女人为情所驱，奋不顾身的性格，很富romantic意味。有B. B.卧下裸乳一镜头甚动人。</p>
 <p>五、去时在火车站前所见的一两个可爱的中学女生，最有年轻纯洁的美，不像大学或成年女人的“老”“油条”。公路局3078号车掌也满清秀。</p>
-<p>六、归途内心感触很多。要之以“该做怎样的一个人”为念，我简直有点混乱，我不太知道我将来走哪一条路才好，人间的成败、腾达的种类、幸与不幸、目的与手段问题等等，都干扰着我，我想我大概不可能甘心做胡适之一样的学者，更不可能做方东美一样的学者，我的本质上是一个manofaction，也许我会演电影，也许我会做一些惊天动地的狂飙事业，也许我会组织一个裸体园，一个怕太太协会，谁知道我会做什么呢？我想我终必会是一个“捣乱鬼”、一个“不安分的人”、一个“异端”、一个“惹是生非的人”、一个“波澜人物”、一个“使旧社会头痛的家伙”、一个“专门会耍花枪的人”、一个“永远使人不停地惊异的人”。我还要好好再想想、再摸索、再制造花样、再一变二变大变一阵。</p>
-<p>七、看到B.B.那丰满柔嫩的小乳房时想起，这么可爱的肉体能给大众看看，对任何人似乎都是好的，我们既可以表现才华、表现能力，为什么不能表现上帝给我们那丰满的胴体呢？这是一个大收割，我该好好在这方面发表些高论，今日有此灵感，很高兴，暂定给宏祥一信论此事。</p>
+<p>六、归途内心感触很多。要之以“该做怎样的一个人”为念，我简直有点混乱，我不太知道我将来走哪一条路才好，人间的成败、腾达的种类、幸与不幸、目的与手段问题等等，都干扰着我，我想我大概不可能甘心做胡适之一样的学者，更不可能做方东美一样的学者，我的本质上是一个man of action，也许我会演电影，也许我会做一些惊天动地的狂飙事业，也许我会组织一个裸体园，一个怕太太协会，谁知道我会做什么呢？我想我终必会是一个“捣乱鬼”、一个“不安分的人”、一个“异端”、一个“惹是生非的人”、一个“波澜人物”、一个“使旧社会头痛的家伙”、一个“专门会耍花枪的人”、一个“永远使人不停地惊异的人”。我还要好好再想想、再摸索、再制造花样、再一变二变大变一阵。</p>
+<p>七、看到B. B.那丰满柔嫩的小乳房时想起，这么可爱的肉体能给大众看看，对任何人似乎都是好的，我们既可以表现才华、表现能力，为什么不能表现上帝给我们那丰满的胴体呢？这是一个大收割，我该好好在这方面发表些高论，今日有此灵感，很高兴，暂定给宏祥一信论此事。</p>
 <p>八、今日刮风，天很阴沉，3点归来，与队长马区队长同学等小谈后写此日记，心情是三分沉二分静，更一分孤寂。</p>
 <p>九、晚饭后与新汉在第一大队饭厅谈，新汉言我搞政治是块很好的材料：</p>
 <p>（一）、将将。</p>
@@ -1778,11 +1811,11 @@
 <p>三、那敏忠忽来访，七年没见了。在十六队三十一号。</p>
 <p>四、伏地挺身打破二十一纪录。与天中比赛。右臂11.5，胸围34.5，队长说我比天中棒。</p>
 <p>五、人多爱忏悔别人的罪恶。</p>
-<p>六、索菲亚罗兰：“所有的男人都说DonJuan，他们大都只有DonJuan的眼睛。”</p>
-<p>七、GerhartHauptmann雕匠出身：“体会深刻而后始得领悟平凡人生之不平凡。”</p>
+<p>六、索菲亚罗兰：“所有的男人都说Don Juan，他们大都只有Don Juan的眼睛。”</p>
+<p>七、Gerhart Hauptmann雕匠出身：“体会深刻而后始得领悟平凡人生之不平凡。”</p>
 <p>八、午后与队长聊天，他看我日记并赞扬，说将来可出版。</p>
-<p>九、下午独赴高雄，到沈家，与沈氏兄弟谈，皆赞我身体之茁壮，臂几与鸿骏相埒矣。沈家小妹已初二，颇清丽动人。沈家八宝饭小尝。鸿骏请看《弱者女人》（Foiblesfemmes）于华侨，并以一元价购赠酷似Rosa的照片（今日他共花5.5元）。</p>
-<p>十、看后步行到市中心，独购“HowtoStopWorryingandStartLiving”。译本，花五元。此书久识之，颇不恶，很实用。旋赴真川味花11.5元吃酱爆肉，极舒服过瘾，百日不亲此矣。</p>
+<p>九、下午独赴高雄，到沈家，与沈氏兄弟谈，皆赞我身体之茁壮，臂几与鸿骏相埒矣。沈家小妹已初二，颇清丽动人。沈家八宝饭小尝。鸿骏请看《弱者女人》（Foibles femmes）于华侨，并以一元价购赠酷似Rosa的照片（今日他共花5.5元）。</p>
+<p>十、看后步行到市中心，独购“How to Stop Worrying and Start Living”。译本，花五元。此书久识之，颇不恶，很实用。旋赴真川味花11.5元吃酱爆肉，极舒服过瘾，百日不亲此矣。</p>
 <p>十一、台大今日校庆。</p>
 <p>十二、绍辉今日返中，带回羊毛衫，老太太另赏三十元。</p>
 <p>十三、秋原言愈看山大王愈像你。</p>
@@ -1799,9 +1832,9 @@
 <p>2.欠缺内在美的——美只外在的</p>
 <p>在我看来，我真看不出这种型的女人做太太有什么不合适，至少她们对“家庭”的好处，不会比那些“贤妻良母型”的女人更来得少。她们的能干、社交性、独立性、困难时的担当、活泼、创造性……都不是“贤妻良母型”的女人所能企及的。这是我所要说的第一点——做太太在走向工业化的潮流里，旧式的纯粹倚赖丈夫的“贤妻良母型”的女人，不见得比太妹出身的女人更有办法，或更合乎“时代要求”的。</p>
 <p>进一步，我认为女人的本质实在是差不多的，她们共同的色彩是intangible性格，在“环境”的压力下变得极为可塑，你的X小姐即为一例，过去尽管是太妹型，但在现实环境下，也不得不有洗心革面的打算，虽然她转变的成绩我们无法逆料，但我敢说她们是最能适应环境的一种动物。只要大势所趋、有利可图，你要她们怎么变她们就会怎么变的。本性尽管难移，但是表面的江山至少是可以改的，至少能够变得暂时骗倒你。</p>
-<p>这个月的Reader’sDigest中有一篇文章，记社会学教授RobertJ.Winch在那本《择偶》的书中，记他在West-NorthUniversity里，用八年的工夫研究二十五对小夫妻的结果，发现每个男女都有一种倾向——就是爱那些“可补偿自己性格中的缺陷”的人，用这种爱来解除他无法达成的性格的苦闷。例如一个粗暴的男人，他的内心深处可能潜存着一个成为受人爱抚的男孩子的渴望，但是他无法达成，于是便转而爱抚一个娇柔的女孩子以为补偿。女人也一样，一个生性娇柔的女人，由于不能达成一种程度的坚强，往往爱上一个强壮的男人以间接满足她性格上的缺陷。RobertJ.Winch认为此种心理需要，比性欲、美丽、兴致的接近、教育程度、经济等等因素，对择偶的影响更来得重要。我们往往看到许多小夫妻看起来是不相称的，一个多嘴的长舌妇你我都不爱她，但是一个沉默寡言的男人却可能欣赏她要死。</p>
+<p>这个月的Reader’s Digest中有一篇文章，记社会学教授Robert J. Winch在那本《择偶》的书中，记他在West-North University里，用八年的工夫研究二十五对小夫妻的结果，发现每个男女都有一种倾向——就是爱那些“可补偿自己性格中的缺陷”的人，用这种爱来解除他无法达成的性格的苦闷。例如一个粗暴的男人，他的内心深处可能潜存着一个成为受人爱抚的男孩子的渴望，但是他无法达成，于是便转而爱抚一个娇柔的女孩子以为补偿。女人也一样，一个生性娇柔的女人，由于不能达成一种程度的坚强，往往爱上一个强壮的男人以间接满足她性格上的缺陷。Robert J. Winch认为此种心理需要，比性欲、美丽、兴致的接近、教育程度、经济等等因素，对择偶的影响更来得重要。我们往往看到许多小夫妻看起来是不相称的，一个多嘴的长舌妇你我都不爱她，但是一个沉默寡言的男人却可能欣赏她要死。</p>
 <p>一般人以为找性格相近、气味相投的异性相爱才能幸福，其实那个结果只是一种“人格的重复”。许多表面或第三者看来不太适合的男女们，他们却往往因潜在的“心理需要”相合，而成为美满的婚姻。</p>
-<p>你说你要“设法陶冶她的内在美，以观后效”。其实照RobertJ.Winch的看法，即使一方能够把他方改造成功，却反而会因此失掉他们心理上的契合与寄托，反倒可能招致不良的后果。（事实上，改造一方实在是不太可能的，因为大家都是定了形的人了！）</p>
+<p>你说你要“设法陶冶她的内在美，以观后效”。其实照Robert J. Winch的看法，即使一方能够把他方改造成功，却反而会因此失掉他们心理上的契合与寄托，反倒可能招致不良的后果。（事实上，改造一方实在是不太可能的，因为大家都是定了形的人了！）</p>
 <p>故一般说来，一个领袖欲强的丈夫。往往娶个唯命是从的妻子；一个不慌不忙的老娘，往往嫁给性急如火的大汉；一个正大忠厚的袁祝公，实在该娶个活活泼泼太妹出身的小丫头。</p>
 <p>我给彦增信，主张劝你“赶快结婚”，你的家庭环境、个人的种种，我觉得都适合去组织一个你自己的家庭了，我劝你不必太斤斤苛求于女人，十全十美的人究竟是理想上的幻影，何况在现实的社会中，碰到或结识一个情投意合的伴侣又是何等的不容易！</p>
 <p>我的意思拉杂如上，想你知我的私意是快快能够吃到你的喜酒。</p>
@@ -1819,20 +1852,20 @@
 <p>“交友须带三分侠气；做人要存一点素心。”（此句似出自《菜根谭》。）</p>
 <p>11月18日星期三</p>
 <p>一、昨夜早睡一小时，很舒服。</p>
-<p>二、Disraeli:“Nexttoknowingwhentoseizeanopportunity,themostimportantthinginlifeistoknowwhentoforegoanadvantage.”</p>
+<p>二、Disraeli:“Next to knowing when to seize an opportunity, the most important thing in life is to know when to forego an advantage.”</p>
 <p>三、我说我日记史料很完整，施大哥说：“将来你死了以后有被研究的价值。”</p>
 <p>四、上午第四节代表第一班参加队中讲演比赛，演说七分钟，极受欢迎，我深以他人（十一人）皆犯高调俗套的毛病，使人困恼欲眠。我演说前，或以黄色相嘱、或以有趣相嘱，我果不负众望，众大笑不止，由早到晚，人每以此事为谈资，马区队长言我讲话颇实在，可做记者，指导员谓我学胡适之。谓我信口开河。指导员似有怪我非圣无法之意，谓我学者讲演。瑞洲言我有教授学者讲话派头，必照言我胜过胡适，盖胡适亦不能使众哄堂若是也，罗白正瞠目不安，人咸谓其内惭也。官长张口，相视摇头。指导员说我“讲些什么，今天胡说八道”。说我根本没准备，要给我特别第一，要枪毙五分钟，说听我讲这一番话，即可推知我的思想状况。晚饭后一直跟他开玩笑，他说我逗得他没办法，连打我好几拳。人多说我该得第一。宏垚说：“佩服你能把爱情和革命扯在一起。”天中说：“李敖神唬人家。”康后说我讲得最成功。维信说：“李敖小子很聪明，很能把握心理、把握重点。”德毅说：“讲话干呀干的，太粗鲁了，唯人家笑得要死，你却还一本正经的讲，颇具幽默感。”施珂说：“我要是评判，一定给李敖第一。”秋原说：“你这次讲演得罪了不少人。”政彦说：“我最爱听你讲的。”人或言：“你今天出够了风头。”或言最喜欢听我说的，或言我讲过后，前后人皆无光，没人听了。或言我逗得他一直忍不住笑。我音量控制还欠佳，抑扬中有时后面听不见，此当注意。队长一直忍不住笑。老方恨不得打我一拳，说要到法院告我一状。我手势之好，人亦言及。</p>
 <p>五、维信：“你这日记是不是留给子孙将来为你写传记时用的？”</p>
 <p>六、衣着史、旗袍史……这才是活的历史，“历史的复活”，“活的历史论”。</p>
 <p>七、下午队中逃出，事发，镇京被罚，我乃自首以解其危，愿同受罚。队长晚不露我等之名，亦一够朋友之举也。</p>
-<p>八、清茂约我译passportoffriendship，我译“友谊的凭借”。</p>
+<p>八、清茂约我译passport of friendship，我译“友谊的凭借”。</p>
 <p>九、今日阴雨，上午及晚上的射击皆受阻，众不快，予亦忻然。</p>
 <p>十、给宏祥信，粗成十页，意犹未已，待续。</p>
 <p>11月19日星期四</p>
 <p>一、昨夜梦着一书，书名是“WhoLikesWho？”唯所梦仅及于物物之相似（犹忆梦中谓折起之自动步枪像折起之行军床），今晨写此日记，乃悟此书当指人而言，如戴高乐之眼似麦米伦，嘴似艾德诺者是，此梦甚奇。又梦战斗于东港，详情惘然。</p>
 <p>二、昨夜刮风，早起着羊毛衫，跑步最远。</p>
 <p>三、侯德礼：“Gentleman的派头！”（见我吸烟斗时语。）</p>
-<p>四、美国调解协会（AmericanArbitrationAssociation)有一万三千的义务职的志愿调解人，多为众望所归的人，如商业巨子。此法可减少讼案及讼费。对方或许有其充分理由。中国该设置。法院多交下案件于此会。</p>
+<p>四、美国调解协会（American Arbitration Association)有一万三千的义务职的志愿调解人，多为众望所归的人，如商业巨子。此法可减少讼案及讼费。对方或许有其充分理由。中国该设置。法院多交下案件于此会。</p>
 <p>五、固州：“李敖讲得真够劲，李敖真幽默。”</p>
 <p>六、珂：“床上功夫，李敖第一。”</p>
 <p>七、张雪堂：“哪天请你开爱情讲座，你昨天那篇讲演太精彩了，胜读十年书。”</p>
@@ -1844,7 +1877,7 @@
 <p>十三、余梧桐言我“幽默大师”。明宏言我为台大之怪。</p>
 <p>十四、写成给宏祥十五页长信：</p>
 <p>宏祥：</p>
-<p>看B.B.的《月下野猫》（TheNightinHeavenfell），看到她那副春情动荡的样子，那裸露的乳房——虽仰卧却仍然那样丰满、那样高耸。还有那些在电影检查处被“中国道学家”剪刀所割爱的部分想象，使我忽然起了一个鬼念头，我把这鬼念头大略而初步的给新汉说过，并说要写给你。</p>
+<p>看B. B.的《月下野猫》（The Night in Heaven fell），看到她那副春情动荡的样子，那裸露的乳房——虽仰卧却仍然那样丰满、那样高耸。还有那些在电影检查处被“中国道学家”剪刀所割爱的部分想象，使我忽然起了一个鬼念头，我把这鬼念头大略而初步的给新汉说过，并说要写给你。</p>
 <p>一千七百年前，阮籍和酒家女睡觉，送嫂子回家，人言啧啧，他却傲然说礼不是为我辈设的，幸亏他处身于一个清谈放旷的风气和时代里，又在社会中有地位，否则早做了李卓吾了。我觉得中国的大不幸是文化太悠久，太早就在蛮夷的蒙昧之中成为华夏的“礼义之邦”，又因为缺乏个秦始皇第二，不能把《礼记》、《仪礼》、《周礼》等鬼书烧光，以致两千年来，在“礼义之邦”里竟然找不到多少合乎人情的真正的“礼”来，流毒所至，除了使人人有着一个“泛道德”（pan-moral）的头脑外，剩下的，就完全是形式与躯壳了。</p>
 <p>对“性”的问题的看法不正常，是我们这个民族的一大病症。自古以来，我们的祖宗从来就未曾对性的问题有一个好办法，礼法与道德的教条，并未给人们带上正途，反倒招致了许多恶果；设想一个荒谬的贞节观念害了多少人！一个畸形的审美观念（如束胸、缠足、柔弱）害了多少人！一个野兽文学的作品（如《金瓶梅》、《肉蒲团》）害了多少人！</p>
 <p>如果单就女人衣着的演变来看，你会发现五十年来，我们的female实在有着惊人的进步，五十年前一个女人连手臂都不能给人看到（小时听外婆说，曾有手臂被人看到即须嫁给那人的例子），更不要提大腿小腿了！可是曾几何时，胡蝶等明星出来了，她们给中国女人的服装上带来一点洋味儿，留学生、十里洋场的娼妓，都是服装改良上的功臣，到了今天，在party里，你居然可以看到袒胸露背的小姐们了；在西门町你也可以看到旗袍开衩直到大腿上部的仕女们了（这一点，简直比洋婆子们更前进）。</p>
@@ -1854,7 +1887,7 @@
 <p>鉴于世人这种近乎可笑的心理状态，我忽然感到群众的好恶的标准与尺度，实在是可以很轻易的予以引导和改变的。只要使群众感到有追求新观念的需要，他们可能也会像追求时装一样的赶摩登的。例如我们要使中国人有新观念，诸如电影检查的放宽；衣裳暴露的少予限制；（台北曾有警察干涉女人穿衣的例子！）提倡天体运动（没有裸体园，竟有地下电影、地下春宫、人兽奸表演，这是中国人的耻辱！又：祢衡和刘伶可说是中国天体会的老前辈）；少乱给书刊戴黄色的帽子；鼓吹节育；少干涉情侣的活动；离婚少予法律的限制等等。这些都是一个文明国家的必要措施与态度。我们骂瑞典男女关系浪漫，可是人家全国没有一个操皮肉生涯的神女，反观我们呢？五百元就可以买一个女人的初夜权！十二岁的女孩就沦入青楼！妓女户甚至在电影院做广告（屏东）！起死回生的医师居然专做处女膜整形的生意（10月11日《中华日报》南部版）！这就是我们的“礼义之邦”！</p>
 <p>这个“礼义之邦”的最大可羞的事，就是对“性”的方面没有一种较高级的正常发展，只知道打着“礼教之防”的招牌，去乱扼杀一阵，他们宁愿公开承认宝斗里的小绿灯，而不愿公开施行学校中的性教育；他们宁愿剪掉电影中的完整镜头，而放任地下的春宫电影；他们宁愿让人们偷偷乱摸乱看，而不愿让人们看到可看的和走上可行的正途！</p>
 <p>提到“正途”，我且举一个例：记得你说过：“男人既可以出卖灵魂，为什么女人不能出卖肉体？”我所要谈的，不是女人“出卖肉体”的问题，而是“暴露肉体”的问题。多久以来，我就提过一个标准：“只要是不能持之有故，言之成理，而又使我们心服的理由和证据来支持的传统，一律可以不尊重！”就女人暴露肉体来说，实在看不出有什么“伤风败俗”之可言，甚至说它能收“移风易俗”之功也未可知。一个文人，可以表现他的才华；一个拳师，可以表现他的体魄；一个射手，可以表现他的枪法；一个赌徒，可以表现他的牌技，为什么一个女人不能表现她的肉体呢？一个运动家可以表现他先天的禀赋，为什么一个小女人不能表现她先天的健美呢？文人、拳师、射手、赌徒、运动家，无不欢迎有广大的群众欣赏他，为什么一个女人不能要求有广大的群众欣赏她呢？上帝给她美丽的脸，动人的肩，丰满的乳房，细小的腰肢，可爱的小腹、阴部和大腿，为什么她不能全部表现给人们呢？设使人们爱看，她又爱给人们看，里面并没有买卖和强迫的成分，这又有什么不可以呢？有什么大逆不道呢？一个女人实在应该有随她自己的意思，愿意把肉体给谁看就给谁看的权利！（甚至愿意跟谁性交就跟谁性交！）只要没有买卖和强迫的成分，她这种行为一点都无可非议的！总戴着道德的眼镜来看人间的色相，未免太失之迂腐了！</p>
-<p>因此我很佩服B.B.。一个制片家说她随时肯为“艺术”而脱光衣服，但我相信她脱得赤身裸体的本意绝不止此，天生如此美丽的胴体，只让少数的男人享受，饱眼福，这未免太狭窄、太可惜了！该让广大的群众同饱眼福。</p>
+<p>因此我很佩服B. B.。一个制片家说她随时肯为“艺术”而脱光衣服，但我相信她脱得赤身裸体的本意绝不止此，天生如此美丽的胴体，只让少数的男人享受，饱眼福，这未免太狭窄、太可惜了！该让广大的群众同饱眼福。</p>
 <p>敖1959年11月19日的下午写成</p>
 <p>11月20日星期五</p>
 <p>八九年前，张世民曾跟我谈到：“在游泳池中看到半裸的女人，我们并不觉得奇怪；可是若在十字街头看到，我们便要惊奇，警察便要干涉了。”他的话引起我一个想法：我们既然可在游泳池中看女人的半裸，为什么不能在十字街头上看呢？女人可以在游泳池中、选美会里公开半裸出现，为什么不能在熙来攘往的街上展露她们夏娃的本色呢？</p>
@@ -1886,13 +1919,13 @@
 <p>六、指导员有我信，原来是乱七八糟的小丢来的：“Miss张下落不明，日内当替你打听，想不到你对她们还不死心，这点你比我强，我对女人，爱得突然，忘得也干脆。”“元旦望你来台北，我们准备举行盛大舞会欢迎你。”“星期天周弘开舞会，……刘美瑞若肯来，我会为你而搂紧些。”</p>
 <p>11月22日星期日</p>
 <p>一、因逃队事除扣零点四外，并以劳作代禁足。晨劳作是挖沙坑，与定远、德毅、镇京合作一小时，队长玩笑“不能翻身”在我日记上。</p>
-<p>二、Max Pinner与BanjaminF.Miller合编WTieraDoctorsarePatients（1952）。</p>
+<p>二、Max Pinner与Banjamin F. Miller合编WTiera Doctors are Patients（1952）。</p>
 <p>三、“蚂蟥客人”。</p>
-<p>四、佛罗里达大学W.E.Moore教授开幽默感研究一课。古帝王用滑稽家，为“帝王消化药”。甲乙二组，甲组吃饭时谈严肃的科学问题，乙组吃饭时看滑稽表演，二周后乙组消化力比甲组强。</p>
+<p>四、佛罗里达大学W. E. Moore教授开幽默感研究一课。古帝王用滑稽家，为“帝王消化药”。甲乙二组，甲组吃饭时谈严肃的科学问题，乙组吃饭时看滑稽表演，二周后乙组消化力比甲组强。</p>
 <p>五、丈夫失踪，妻于警局描述“高大英俊”，或言汝夫“短小奇丑”，太太低言：“我知道，不过那种男人要他回来干吗？”</p>
 <p>六、她：“爸知道你是诗人很高兴。”他：“啊，他喜欢诗人吗？”她：“不，上次给爸轰出去的那个是个拳师。”</p>
 <p>七、南北战后，G 席梦思把人从板床上移到弹簧上。</p>
-<p>八、美海军MatthewC.Perry率舰至函馆，始叩日本之关，日子是1852年7月14日。</p>
+<p>八、美海军Matthew C. Perry率舰至函馆，始叩日本之关，日子是1852年7月14日。</p>
 <p>九、讲演比赛没上名，乃意料中事，清茂言昨晚队长跟他们说：“李敖当然说得对呀，可是这是军队呀！”早上队上颁奖状，内中好笑。队长今日又怨我给他胡说乱讲（写到这儿指导员来，说他要下周禁我足，因我讲得不好。汉卿说他们同学给我第一，他要额给我一奖状，我是“大众化的演说家”）。维信说我是煽动式的演说，军人不喜欢。清茂言我在这“不得势”，以仁说我演说使队上皆知我调皮。培炽言赞同我中国人不够洒脱一节。指导员言我“该下地狱”。</p>
 <p>十、午与新汉去福利社大吃，新汉送烟盒一，幸世香来。</p>
 <p>十一、午后独在康乐中心看杂志、报纸，手记数则，颇有益。当作长书论幽默给宏祥。</p>
@@ -2018,7 +2051,7 @@
 <p>回首望中原。</p>
 <p>人世的代谢本是天理，我觉得她们实在可以骑上启示录中的“灰色马”了，她们是另一个时代的投影，那阴暗的一面是给我们人类的一种讽刺——告诉我们迟早我们也是被岁月和时代淘汰的人，早年的青春与时髦，都只是烟云一般的过眼，不肯走在时代前面的人，时代迟早要把他抛在后面的，时代是一个最现实的“与我们赛跑的选手”。你抓不住它的challenge，你就是一个可怜的被遗弃的落伍者了。</p>
 <p>十、曾才给德毅信：</p>
-<p>我记得罗素在NewHopeforaChangingWorld中曾引用Spinoza一句话：“Fromaspectofeternity,wecanhavemorepowerofendurance.”这实在是一句受用不尽的话。</p>
+<p>我记得罗素在New Hope for a Changing World中曾引用Spinoza一句话：“From aspect of eternity, we can have more power of endurance.”这实在是一句受用不尽的话。</p>
 <p>夜给曾才一片。并画一紫衣、绿裤、红手足小牛鼻子。</p>
 <p>十一、老方笑死人，“光比声快”（晚报人数）。</p>
 <p>11月29日星期日</p>
@@ -2026,7 +2059,7 @@
 <p>二、午后与英善、彦增、新汉聚会于高雄之南风，英善四月未见了，大家畅叙极欢，大吸烟，今日所吸有七七、乐园、新乐园、中兴、克难、祝寿等六种。南风的上身半透明露乳罩、下黄毛裙的小丫头甚似Rosa，小腿尤美，凝望久之。给鼓应买一礼物（三人合买的），我用祝寿烟纸书：</p>
 <p>敬祝鼓应寿星长寿似王八</p>
 <p>新汉彦增英善李敖同上1959年11月29日</p>
-<p>以礼物是一尼龙红王八也。彦增请看电影——《大洪水》（FloodsofFear，他已看过），此女颇动人，男颇义气而重fairplay，观其弃手枪而与仇徒手斗可证，且其人颇忠厚正直，对囚徒、对囚徒官、对孤女，皆见其为人之可风。此影颇好，颇动我心。夜请三位食于真川味，花四十八元小费两元，食酱爆肉、鱼香牛肉丝、砂锅豆腐等极尽兴，今日之高雄行很愉快、很痛快。买旧拾穗三册，FreeChina这期三版了，最想买，新汉、彦增阻之。买黄药片、电池。</p>
+<p>以礼物是一尼龙红王八也。彦增请看电影——《大洪水》（Floods of Fear，他已看过），此女颇动人，男颇义气而重fair play，观其弃手枪而与仇徒手斗可证，且其人颇忠厚正直，对囚徒、对囚徒官、对孤女，皆见其为人之可风。此影颇好，颇动我心。夜请三位食于真川味，花四十八元小费两元，食酱爆肉、鱼香牛肉丝、砂锅豆腐等极尽兴，今日之高雄行很愉快、很痛快。买旧拾穗三册，Free China这期三版了，最想买，新汉、彦增阻之。买黄药片、电池。</p>
 <p>三、赴高前与新汉参观高雄县议会，设计未脱土气，尤以四周所悬横幅字为最。</p>
 <p>四、与戴兆兰小谈。</p>
 <p>五、忽发现包电池的纸为这期中的二页，真有缘。</p>
@@ -2038,7 +2071,7 @@
 <p>三、中午草地上小憩聊天。</p>
 <p>四、詹笑兰昨天结婚了。</p>
 <p>五、成功来信说阿八也做起油诗来了。</p>
-<p>六、庄因来信寄来Jayne在TooHottoHandle中的戏照，并寄来近作《灵感》，信谓：</p>
+<p>六、庄因来信寄来Jayne在Too Hot to Handle中的戏照，并寄来近作《灵感》，信谓：</p>
 <p>我忽然想到许多本来不成问题的问题，自苦了很久，现在拨云见日，又快活起来了。我似乎不易长久感到悲哀和寂寞，我有法子排遣它。</p>
 <p>陈彦增来信称：“我在课堂上时，教室中常有笑声，亦常有掌声，放任已极。课余亦虽耳闻口哨，眼见飞吻，然仍无艳事可言。”</p>
 <p>在女校教书，洵如是也，女孩子一成堆，脸皮就厚了，并且男人在她面前一有相当时间的展露，她们就会爱他了。</p>
@@ -2099,7 +2132,7 @@
 <p>3.表演性的——如演戏。</p>
 <p>攻击性的诙谐是人类好战本性的一种升华，一日美景良辰，高朋满座，一厮脑满肠肥，面目可憎，口沫横飞，言之有“物”，喋喋不休，正不可一世之际，忽为老子片言面折，揭其隐处，精神上痛予“擦擦”之，顿时一室哄堂，四座并欢，该厮面红耳赤，啼笑皆非，嚅嚅不能以一辞逆袭，狼狈窘迫，丑态可掬，不亦快哉！</p>
 <p>报道性的诙谐以Lincoln做得最好，在讨论天大一般的问题之前，他也要先讲个笑话再说。</p>
-<p>表演性的诙谐最早是帝王们的弄臣，再就是丑角，最后才发展为丹尼凯和BobHope，在“正统”的道学家眼里，在持身严肃的“正派”人士眼里，他们肯定“庄重”是好的，嬉皮笑脸的即使不低级，也有点abnormal，这种传统的观点，我实在找不出什么了不得的大道理来支持它，在所有的动物中，上帝只给了人类有笑的ability，人类为什么不尽量利用他们这种禀赋呢？少板几分面孔，多做两个鬼脸；少讲几句训词，多说两句俏皮话，这岂不更能流露出一些真性情来么？</p>
+<p>表演性的诙谐最早是帝王们的弄臣，再就是丑角，最后才发展为丹尼凯和Bob Hope，在“正统”的道学家眼里，在持身严肃的“正派”人士眼里，他们肯定“庄重”是好的，嬉皮笑脸的即使不低级，也有点abnormal，这种传统的观点，我实在找不出什么了不得的大道理来支持它，在所有的动物中，上帝只给了人类有笑的ability，人类为什么不尽量利用他们这种禀赋呢？少板几分面孔，多做两个鬼脸；少讲几句训词，多说两句俏皮话，这岂不更能流露出一些真性情来么？</p>
 <p>最近每见一个暴跳发怒的人，我就联想到一只狺狺狂吠的四眼狗，但每当我看到一个口含烟斗，用色迷迷的安详眼光微笑地向一个老憨挑衅调侃的时候，我就想起腓特烈大帝称赞Goethe那句话：——</p>
 <p>这才是一个“人”！</p>
 <p>敖1959年12月2日上午连续九页完成此信</p>
@@ -2128,7 +2161,7 @@
 <p>三、每小时走2.5哩，合1760码。归途一口气走到凤山郊外，落日时见山边针叶林之棱线甚美。途经新建之忠烈祠大门，颇雄伟，军队分两路而过，大有联军过凯旋门的心情（我有这种感想，瑞洲亦与我言之）。途中有小童数队伍中之眼镜。齐步走在凤山街头，山大王随之，甚疲累。（阿里山草裙舞，王八蛋！）万家灯火中归来，完成了入营以来最艰苦劳累的一次。</p>
 <p>四、指导员代取来老马的欠资信。</p>
 <p>敖：</p>
-<p>前言未复，次封又到，不容人再不做速复信，何况后信中充满了逼人的火热之气，事实上我喜欢真诚的、热烈的东西的，我也同情你的关于B.B.的看法，因为有一度我也十分欣赏（或者说喜欢）她的，但是我认为“性”是整个文化的一部分，如果不是全部的解决，或者基本的思考方法改变，那么枝节的改变，只会造成更大的紊乱和不平衡。</p>
+<p>前言未复，次封又到，不容人再不做速复信，何况后信中充满了逼人的火热之气，事实上我喜欢真诚的、热烈的东西的，我也同情你的关于B. B.的看法，因为有一度我也十分欣赏（或者说喜欢）她的，但是我认为“性”是整个文化的一部分，如果不是全部的解决，或者基本的思考方法改变，那么枝节的改变，只会造成更大的紊乱和不平衡。</p>
 <p>譬如个人主义就是一项，服装是个人的事，我们可以自己穿洋装，但是不需要反对别人穿旗袍，我们可以个人做个禁欲主义者，但也不需要反对别人风流潇洒一些，你把持了“善”，还不把“美”让给别人！</p>
 <p>譬如理智便又是一项，我们可以扬弃传统，推翻无聊的乡论……但是我们无法看清理智，因为人在群体生活中要有一种透彻的理解和观照的，而且价值观念更是人类无法舍弃的，而价值的认识和创造便仗着理智，如果人人都崇尚理智（重思考的习惯，尚批评的态度），那么便能保持一种独立的人格和作风，不会向传统讨生活，也不会为新奇所迷乱！能够勇敢地说自己所想说的和要说的，能够做自己想做的和要做的，创造自己理想新的价值，为自已，偶尔也能为别人。</p>
 <p>诸如此类的思考态度很多，如果没有，便无法谈“性”的自由和教育，正如你从前提到过的：一个人没有经济的平等，还谈什么政治的，思想不能独立和自由，如何能要求他在行动上做到独立和完整，那不是做作，也是狂乱。</p>
@@ -2165,7 +2198,7 @@
 <p>蜻蜓点水飘然过，</p>
 <p>不知窍门那才傻。</p>
 <p>五、连日出汗，衣服有酸味。</p>
-<p>六、下午去七一四高地附近挖修防空洞，洞内一大块呈咖啡色，坚似石，立意除而去之，用锄、用棒，终被我铲去，一大快事也，未成前别人休息我亦不休息、亦不喝水，大有“TheOldMan”之作风。我挖出一蜈蚣，瑞洲除挖出一蜈蚣外并得一小蛇，挖成后并予伪装，马区队长来谈，询以过去情史。</p>
+<p>六、下午去七一四高地附近挖修防空洞，洞内一大块呈咖啡色，坚似石，立意除而去之，用锄、用棒，终被我铲去，一大快事也，未成前别人休息我亦不休息、亦不喝水，大有“The Old Man”之作风。我挖出一蜈蚣，瑞洲除挖出一蜈蚣外并得一小蛇，挖成后并予伪装，马区队长来谈，询以过去情史。</p>
 <p>七、因赶在晚饭前大便，便后又忘带手纸，只好去洗澡，结果全队都集合了，见我裸体哄笑不止，刘区队长怒责，我以嬉笑对之，及赶到饭厅，刘区队长说要扣五分（今日拿火箭筒向其邀功，他说：“那天五分还没扣你的哪！还敢来要？”1959年12月7日夜）。</p>
 <p>八、宏祥寄来六页信。</p>
 <p>九、夜一二大队篮球赛，偷暇在喧闹中读《权力论》及写日记。也许是读这本书引起的精神上的痛苦，练歌时非常不愉快起来，冲清茂吼了一阵，又不唱歌，顶了绍辉一阵，刘区队长跟我啰嗦一番，叫我下来，躺了一会，听外面的歌声与走路声，心烦得很，精神实在不痛快，我感到我几乎忘了我自己（主动的），也失去我自己（被动的）。宏垚等跟我讲话，也懒得理他们。又跟维信吼一次。</p>
@@ -2278,7 +2311,7 @@
 <p>二、上午机枪角度测量课，与舞阳连教官谈，连言处部队要把看不顺眼的设法看顺眼，要少讲话，无为而治，只指挥班长可也，有的责备要背后讲才行，泰然处之，甚至自罚，罚主管者而不罚当事人。副队长责以不守规格。</p>
 <p>三、早晨梦到L在排队于一“魔术会？”中，吃昏头粥。</p>
 <p>四、给妈一信，并寄去老百姓衣鞋。</p>
-<p>五、B.B.与她公司闹翻，盖她坚持要演脱光的镜头的剧本，否则有违上帝创造之本意而糟蹋了，此点大非梦露所及也，梦露弃“低”而“高”，不肯复为冯妇岂对也耶？</p>
+<p>五、B. B.与她公司闹翻，盖她坚持要演脱光的镜头的剧本，否则有违上帝创造之本意而糟蹋了，此点大非梦露所及也，梦露弃“低”而“高”，不肯复为冯妇岂对也耶？</p>
 <p>六、考国际现势，大概三四分钟就交了卷，维信问我为什么那么快，我说是天才儿童。</p>
 <p>七、晚话剧，又是不得已而去，又很不高兴，报数不报，为刘区队长啰嗦。晚会时溜出找善培等，又大便洗澡而后方回，与毓刚、清茂、天中等谈一阵情史。</p>
 <p>12月12日星期六</p>
@@ -2300,9 +2333,9 @@
 <p>二、为“乱命”与サル当众大吵，又在其室中续吵，华民、清茂屡止未成，サル言我不肯认错，我说我很对，错的是你，他说你这样任性会吃亏，我说我吃亏不是第一次了，他说教你不做下去已经很客气了，我说这是应该的。总之，这是我人营来第一次最痛快的吵架，他气死了。哈哈。</p>
 <p>三、广诚来言一故事：一出国者万事倶备，只因“在预训班中言语不检”一纪录，不能出国门矣。</p>
 <p>四、给启庆、彦增、良矩信。</p>
-<p>五、午后与善培及二米赴高雄，拦军车去的，到中广小坐，途过南风，PseudoRosa穿红衣。合买大木瓜、二西瓜，“野猫”满像李香兰的，大新楼上的Model再去看，极美，与善培不谋而同喜其一,大米兴致甚高——“什么都喜欢”。读胡适之讲演词，言我们也是有权势的人，此意甚是。同看电影后在真川味吃饭，我食饭四碗、小馒头二，清茂同桌来食。买小剪刀、红本及SandraDee照片，极可爱。本日花钱四十五元，归来又悔又心痛了。车上守仁言我在荣团会中之意见甚好。</p>
+<p>五、午后与善培及二米赴高雄，拦军车去的，到中广小坐，途过南风，PseudoRosa穿红衣。合买大木瓜、二西瓜，“野猫”满像李香兰的，大新楼上的Model再去看，极美，与善培不谋而同喜其一,大米兴致甚高——“什么都喜欢”。读胡适之讲演词，言我们也是有权势的人，此意甚是。同看电影后在真川味吃饭，我食饭四碗、小馒头二，清茂同桌来食。买小剪刀、红本及Sandra Dee照片，极可爱。本日花钱四十五元，归来又悔又心痛了。车上守仁言我在荣团会中之意见甚好。</p>
 <p>六、サル屈服了，夜在解散前言我拾到十元及谢我红药水事，人皆暗笑，谓我完全胜利了。</p>
-<p>七、看ATimetoLove,andaTimetoDie。</p>
+<p>七、看A Time to Love, and a Time to Die。</p>
 <p>12月14日星期一</p>
 <p>一、晨周会，站死人。</p>
 <p>二、上次总队基本教练居然及格，七十一点四（七十分及格）。</p>
@@ -2319,7 +2352,7 @@
 <p>（一）体力上颇能吃苦耐劳。</p>
 <p>（二）许多看起来似乎不是个人能力所能办到的事，现在也可以勉为其难了。换句话说，许多困难已不成其为困难（我说这话：并没有Napoleon那种口气）。</p>
 <p>（三）我想到如果想在这个时代中站得住，起码的“必要的残忍”是必要的，“妇人之仁式的人道主义”是好的，可惜是没用的。</p>
-<p>（四）BertrandRussell的Power：ANewSocialAnalysis所写的对象，更有进一步的肤尝身受的经验与意义。</p>
+<p>（四）Bertrand Russell的Power：A New Social Analysis所写的对象，更有进一步的肤尝身受的经验与意义。</p>
 <p>（五）对战争的看法与所持的态度，我选择了——Hemingway。</p>
 <p>五、夜音乐课，听唱片并唱歌。</p>
 <p>12月16日星期三</p>
@@ -2341,16 +2374,16 @@
 <p>七、整日在赤崁山搞机枪，击六十发，成绩甚佳。午卧竹林下，与文藻摔跤。サル又为腰带事啰嗦，硬是装聋跟他磨，他叫我过去，我亦不肯，他也无法。夜间射击时之机枪曳光弹交织之火网甚好看。</p>
 <p>八、擦枪时骂清茂，为副座制止。又开清茂玩笑，说“副队长骂你”。副座火了，叫我说话检点。以后还是少开涉及他（们）的玩笑才好。</p>
 <p>九、夜紧急集合演习。旋即集合，三区队搞鬼，吾戏サル领导有方，三区队皆圣人，副座喝止之。</p>
-<p>十、程有美来信，谓我照片“看来好像个初中学生”，又寄来Italy货的圣诞卡“Withrichhappinessforyou!”。</p>
+<p>十、程有美来信，谓我照片“看来好像个初中学生”，又寄来Italy货的圣诞卡“With rich happiness for you!”。</p>
 <p>12月18日星期五</p>
 <p>一、给老太太一片。</p>
-<p>二、清茂言我“小事聪明，大事糊涂”，谓我充满了prideandprejudice，谓我芝麻大的事也要往日记上记。</p>
+<p>二、清茂言我“小事聪明，大事糊涂”，谓我充满了pride and prejudice，谓我芝麻大的事也要往日记上记。</p>
 <p>三、完成给宏祥的十页书：</p>
 <p>我要提出一个老问题，就是“将来我们干什么？”这个问题，“我们走哪条路？”我们的择业，我们的兴趣所在，我们终身“死生以之”的理想与事业，我觉得目前已经是开始选择和决定的时候了，我很愿意跟你仔细讨论一下这个问题。</p>
 <p>我个人择业的第一个标准是“这个职业的本身一定是你我感到兴趣的”，许多人对他们的职业的本身竟毫无兴趣，只对职业带给他的金钱有兴趣，这是最可怜的事，我是干不了的，我看张世民整天在办公桌上等因奉此，一年如一日，我实在佩服他这种“本领”，这种生活我可过不下去。兴趣对我最重要，没有兴趣我是不能做好（长时期的做好）任何事情的。“勉为其难”这是多么痛苦的事！</p>
-<p>择业的第二个标准是“个人的ability的限度”，BertrandRussell在ConquestofHappiness第一章中说：“Now,onthecontrary，Ienjoylife；ImightalmostsaythatwitheveryyearthatpassesIenjoyitmore.ThisisduepartlytohavingdiscoveredwhatwerethethingsthatImustdisired,andhavinggraduallyacquiredmanyofthesethings.Partlyitisduetohavingsuccessfullydismissedcertainobjectsofdesire-suchastheacquisitionofindubitableknowledgeaboutsomethingorother-asessentiallyunattainable.”譬如说我对心理学兴趣本很浓，可惜是我的理科基础太差，所以只有兴叹而已，对天文学也是一样，对这些事情我至多只能一知半解的在commonsense的阶段，很难在这上面有成就的。</p>
-<p>择业的第三个标准是“最好与个人的志愿相配合”，像A.E.Housman那样一面在公牍中保饭碗，一面研究诗的生活，究竟和自己的志愿的方向相去过远，记得过去你我曾讨论过先赚钱再做大事业的问题，我总觉得这是一种可怕的浪费与赌注。</p>
-<p>择业的第四个标准是“能用世”，要能对世道人心民生国计有直接或较直接的影响（当然希望是好的影响），我希望个人是amanofaction，而不是一个蛀书虫，也不是一个不痛不痒的人物，我现在愈来愈讨厌什么考据——这根本不是一个有血有肉的知识分子的精力所在，“置四海困穷不言，而讲危微精一。……我弗敢知也。”读书人中最缺乏这种自觉，我们万万不可再走他们那条老路，搬弄那些玩物丧志的勾当，我们不该做这些“白首太玄经”的老文人。</p>
+<p>择业的第二个标准是“个人的ability的限度”，Bertrand Russell在Conquest of Happiness第一章中说：“Now, on the contrary，I enjoy life；I might almost say that with every year that passes I enjoy it more. This is due partly to having discovered what were the things that I must disired, and having gradually acquired many of these things. Partly it is due to having successfully dismissed certain objects of desire-such as the acquisition of indubitable knowledge about something or other-as essenti ally unattainable.”譬如说我对心理学兴趣本很浓，可惜是我的理科基础太差，所以只有兴叹而已，对天文学也是一样，对这些事情我至多只能一知半解的在common sense的阶段，很难在这上面有成就的。</p>
+<p>择业的第三个标准是“最好与个人的志愿相配合”，像A. E. Housman那样一面在公牍中保饭碗，一面研究诗的生活，究竟和自己的志愿的方向相去过远，记得过去你我曾讨论过先赚钱再做大事业的问题，我总觉得这是一种可怕的浪费与赌注。</p>
+<p>择业的第四个标准是“能用世”，要能对世道人心民生国计有直接或较直接的影响（当然希望是好的影响），我希望个人是a man of action，而不是一个蛀书虫，也不是一个不痛不痒的人物，我现在愈来愈讨厌什么考据——这根本不是一个有血有肉的知识分子的精力所在，“置四海困穷不言，而讲危微精一。……我弗敢知也。”读书人中最缺乏这种自觉，我们万万不可再走他们那条老路，搬弄那些玩物丧志的勾当，我们不该做这些“白首太玄经”的老文人。</p>
 <p>以上四点是我所提出的择业标准的原则部分，下面再谈我对个人的未来的趋向的一种豫想：</p>
 <p>旧说法中三不朽，立德与立言实际上可并为一类，因为不立言而妄想立德的，大抵都是世界道德重整会的代表和万国道德会的会员——这些道德家是我们不敢领教的。我觉得我们必须要做成一个能“救时弊、造新因”的新时代的文人。我们的成就可能偏重在立德立言，大概我们不会走上政治上的立功的道路（尤其是你）。</p>
 <p>提到立言，我目前最有兴趣的问题是和sex有关的一切事：家庭、恋爱、结婚、离婚、娼妓、人口……社会性的问题，都是我所要选择的，也许诚如你所说，这些都是经不起价值判断的“小问题”，我想这种轩轾是很难一致的，我的看法正好跟你相反，我现在深信个人的力量是多么小，个人这一生能对浩如烟海的社会的不合理与黑暗有一点点小改革，这就很不容易了，做了一件，再做第二件，总比大而无当一事无成的乱吵一辈子来得好。我不相信你所顾虑的一部分改革可能导致全面的混乱，我反倒觉得一部分的改革可能反倒有助于全面的改革——它会带给人们一个感到Thechangeisbetter的启示，这是一种促进进步的好酵素，E.J.Hopkins的一部OurLawlessPolice对美国警界有了不少的改革，何尝对社会其他的部分有过失掉balance的影响？好像一个病人一样，四肢五脏都不健康，而有一个医生仅能治好他的一只胳膊，我们能说这只胳膊好了会对其他不健康的部分有坏的影响吗？我们能拒绝医治吗？我们能骂他是个不懂“价值判断”的医生吗？</p>
@@ -2370,7 +2403,7 @@
 <p>马戈于不愠楼角1959年12月3日</p>
 <p>新汉同此，问他可有使我之处。</p>
 <p>四、良榘来信，建园来贺年片。</p>
-<p>五、下午论文比赛，论“革命军人之品德与革命事业之成败”。我举B.C.3世纪阿格卓克里斯（Agathocles）与Napoleon为例，力避八股甚成功。</p>
+<p>五、下午论文比赛，论“革命军人之品德与革命事业之成败”。我举B. C. 3世纪阿格卓克里斯（Agathocles）与Napoleon为例，力避八股甚成功。</p>
 <p>六、夜球赛，看罗素书并谈天，临睡前与马区队长谈北平。</p>
 <p>12月19日星期六</p>
 <p>一、头二节座谈，八队指导员江隐涛主持本区队，尔琳先发言，谓艾克当先访Formosa云云，以示决心，吾怪其有夸大狂，且多谬见，立起驳之，兼驳及主席广定远，余趁势发表一串大论，颇引赞笑，定远谓：“不愧为历史系的，人名记得这么熟。”又与孙玉华辩，起立三四次，驳其无完肤，令难堪无言为止，众哄笑数次。结论中江指导员言：“尤其是李同学，讲话非常幽默轻松，使人听了非常有兴趣。”宏垚在第二队，后言见我数度发言一定是跟别人辩了，我“除了这些没别的事”。</p>
@@ -2382,7 +2415,7 @@
 <p>二、被抽中参加“军人读训”测验，幸得全对。</p>
 <p>三、午前在十八队聊天。</p>
 <p>四、午饭后与新汉华俊“善培帮”一行坐“转身车”去高雄，先与树森看《百花妙舞》，极劣，不知所演为何物也。只加片中一段脱衣舞勉强可看，亦吾第一次看也。正片中有裸露乳房、公开脱衣，足见法人浪漫情形之一斑。</p>
-<p>五、旋赴南风晤彦增、新汉、英善等，由于我“惹祸”（三瓶鲜泡十八元），害得新汉花了三十七元。彦增请晚饭于新亚粤菜馆。后集体逛街，在大新撩起模特儿裙子看，众大笑阻。鸣飞在地摊上以三块五购TheBeachGirls中有Leo，以四元转购过来。</p>
+<p>五、旋赴南风晤彦增、新汉、英善等，由于我“惹祸”（三瓶鲜泡十八元），害得新汉花了三十七元。彦增请晚饭于新亚粤菜馆。后集体逛街，在大新撩起模特儿裙子看，众大笑阻。鸣飞在地摊上以三块五购The Beach Girls中有Leo，以四元转购过来。</p>
 <p>六、夜仍参加晚点，包庇迟到之特别假，整理夜间内务，至11时始睡。</p>
 <p>七、成功寄来贺年片。</p>
 <p>12月21日星期一</p>
@@ -2410,17 +2443,17 @@
 <p>一、“押解”打扫教室者，晨因得暇，少事工作。</p>
 <p>二、某言在东海见我及听说我之名声事。</p>
 <p>三、耳鸣症甚重。</p>
-<p>四、下午去田寮巷。“第一线步兵排防御”，写自传，读TheBeachGirls，就地而卧，此地竹林甚多，中多幽境。归途坐车沿林凤公路而归（林园-凤山）。</p>
+<p>四、下午去田寮巷。“第一线步兵排防御”，写自传，读The Beach Girls，就地而卧，此地竹林甚多，中多幽境。归途坐车沿林凤公路而归（林园-凤山）。</p>
 <p>五、明日总队装备检查，我之枪参加，夜擦枪近两小时，从未如是仔细过，用了许多牙签与棉花，好像牙医。</p>
 <p>六、明日演习，老马选我为排长。</p>
 <p>七、庄因寄来贺年片（玛莎海雅），启庆来书：</p>
 <p>敖之：</p>
 <p>接到来信快一周了，这一周来比较忙些，所以直到今天才回信。</p>
-<p>您的信中流露出很浓厚的伤感意味，可见您已改变了不少。记得您借给我看的那本Camus的TheStronger说：“一个人只要过过一天生活，便足够他回味一辈子。”留恋过去是人的天性，何况您更有一个远胜于一般人充满浪漫色彩的过去。我相信，以您的才华、能力与气魄，只要肯努力，一定会得到一个远胜于过去的光明的未来，何必苦苦留恋于那些高飞远飏的人们，和那些褪了色的往事呢？您现在需要的是冷静而不是感伤，是沉默而不是忧郁。我常常想，您的可爱之处是在于您特立独行的精神和元气淋漓的个性，这是您的特点，也是您的美德，在千百人中难得一见的。我希望在过年时所看到的仍是一个生龙活虎，谈笑风生，带有几分傲气的LeoThePride，而不是一位忧郁的、感伤的、在往事的纪念碑前徘徊踯躅的“哲人”，而且我也深信您是不会走上“哲人”的路子的。</p>
+<p>您的信中流露出很浓厚的伤感意味，可见您已改变了不少。记得您借给我看的那本Camus的The Stronger说：“一个人只要过过一天生活，便足够他回味一辈子。”留恋过去是人的天性，何况您更有一个远胜于一般人充满浪漫色彩的过去。我相信，以您的才华、能力与气魄，只要肯努力，一定会得到一个远胜于过去的光明的未来，何必苦苦留恋于那些高飞远飏的人们，和那些褪了色的往事呢？您现在需要的是冷静而不是感伤，是沉默而不是忧郁。我常常想，您的可爱之处是在于您特立独行的精神和元气淋漓的个性，这是您的特点，也是您的美德，在千百人中难得一见的。我希望在过年时所看到的仍是一个生龙活虎，谈笑风生，带有几分傲气的Leo The Pride，而不是一位忧郁的、感伤的、在往事的纪念碑前徘徊踯躅的“哲人”，而且我也深信您是不会走上“哲人”的路子的。</p>
 <p>中文系的书已办妥转户手续，并写了一封信给施启扬，把我在研究室的时间告诉了他。</p>
 <p>我自己近来的生活，可以一“空”字概括之。忙，但不知忙些什么。完全是一个吃饭、排泄、睡觉和工作的生理机关，甚至连梦都不做了。</p>
 <p>我们毕业已经半年了，现在我虽还在台大，但味道和以前完全不是一回事。我常常想起你们在校时，大家一起聊天吹牛的盛况。今晨曾想起半年以前，欢送会的那天，您说早上吃了一枚生鸡蛋滋润喉咙，准备一展歌喉的那股可笑的神态。有几个中午，我都想到寿尔康去吃粉蒸肉，但我一个人是懒得走如此远路的，何处去找您这样一位“饭友”呢？</p>
-<p>刚才读您所藏的《人的义务》，JosephMazzini的一支笔确有很大的煽惑力，真不愧是革命家！</p>
+<p>刚才读您所藏的《人的义务》，Joseph Mazzini的一支笔确有很大的煽惑力，真不愧是革命家！</p>
 <p>希望在过年时能在台北看到您，有许多事要请您当面指教！</p>
 <p>启庆四十八年12月20日夜11时半</p>
 <p>12月24日星期四</p>
@@ -2539,7 +2572,7 @@
 <p>（二）中国文学之历来大病在不能面对现实、探讨现实之问题。</p>
 <p>（三）不能逃避，以其本为Coward，故欲逃避反不能成功，只好迎上前去——以不逃避的手段，达成“逃避”的目的。</p>
 <p>（四）最好的逃避办法是自欺自解，归咎别人别事。故不当找理由，当自讼。</p>
-<p>（五）“超验自我之孤独”（lonelinessoftranscendentalego）。</p>
+<p>（五）“超验自我之孤独”（loneliness of transcendental ego）。</p>
 <p>（六）巴枯宁之死。</p>
 <p>（七）对殷等人“请出去”乃一极好之办法（流放法）。</p>
 <p>（八）要搞东西必须终身为之，并不是中个特奖就算了。</p>
@@ -2549,7 +2582,7 @@
 <p>对问题须一件一件来，就事论事，因事而论，不求笼统概论之。此方法甚是，而为吾三人共同之协议。</p>
 <p>1960年1月6日夜追记</p>
 <p>1月2日星期六</p>
-<p>一、晨5:30即起床，尚义宏祥尚在梦中，予先独返第一宿舍，开始整理书，幸未大受鼠劫。张森贾教官来谈，善培来，彦增来，祝泰小两口来，老马尚义来，良榘来，弘来，同逛校园，见一女孩酷似洁力，有一二女人颇可爱，皆新人也。知昨晚彦增又亮候我甚久。接大中来信，极高兴，大中似一仍旧态，淳朴之气不脱，糊涂幽默仍旧。午饭马戈、尚义、彦增、鼓应、祝泰两口、良榘请食于寿尔康，老板胖了。饭后与马王CC同去万华访景未遇，乃转赴远东看TheSummerPlace，前曾在对面冰店小坐，看女人，寻访本期《文星》中《罗素访问记》未遇。</p>
+<p>一、晨5:30即起床，尚义宏祥尚在梦中，予先独返第一宿舍，开始整理书，幸未大受鼠劫。张森贾教官来谈，善培来，彦增来，祝泰小两口来，老马尚义来，良榘来，弘来，同逛校园，见一女孩酷似洁力，有一二女人颇可爱，皆新人也。知昨晚彦增又亮候我甚久。接大中来信，极高兴，大中似一仍旧态，淳朴之气不脱，糊涂幽默仍旧。午饭马戈、尚义、彦增、鼓应、祝泰两口、良榘请食于寿尔康，老板胖了。饭后与马王CC同去万华访景未遇，乃转赴远东看The Summer Place，前曾在对面冰店小坐，看女人，寻访本期《文星》中《罗素访问记》未遇。</p>
 <p>附大中信：</p>
 <p>李敖：</p>
 <p>（1）这么久没有给你写信，你一定连骂都懒得再骂我了，但我自从把那个记通讯处的本子遗失了之后，一直想不出一个可以把信转给你的人，现在决定寄到一舍四室试一试，糟糕的是四室的人的名字我也一个都记不得了。</p>
@@ -2668,7 +2701,7 @@
 <p>四、夜在教室整理，新汉来谈，订此册为《杀气不脱集》，此名甚好。与景在福利社谈天。</p>
 <p>五、在大众书局看见的那位女管账颇可爱。</p>
 <p>六、晚集合，大队长实在不给马区队长面子。</p>
-<p>七、新汉夜谈“保护自己”（protectyourself）。</p>
+<p>七、新汉夜谈“保护自己”（protect yourself）。</p>
 <p>1月11日星期一</p>
 <p>一、开始“反共抗俄”斗争教育第一天。上午大量“读训”。</p>
 <p>二、下午课间，指査笔记本，宏谋情书被收，我则以反面用得脱。</p>
@@ -2704,7 +2737,7 @@
 <p>敖1960年1月13日</p>
 <p>七、晚与邦新、其龙商讨辩论比赛事，我口才之锋利与头脑之灵活实无人可及。</p>
 <p>1月13日星期三</p>
-<p>一、“领袖与国家”专题讨论，我论的是第一节“人民需要国家吗？”举OneWorld及世界公民为例。</p>
+<p>一、“领袖与国家”专题讨论，我论的是第一节“人民需要国家吗？”举One World及世界公民为例。</p>
 <p>二、第二节与玉华大谈，玉华言东北老辈人人皆大骂我事，他深受影响，然他闻我之自白，渐对我了解，并谓我之特立独行之勇气，迥非一般青年人所可及，而他们却平平庸庸平淡一辈子，我大可大臭一阵，一臭到底。我亦自思将来之命运大可能身败名裂也。</p>
 <p>三、三—四节，邦新听到反面组窃语：“我们最主要是抓住李敖的缺点。”</p>
 <p>四、日来邱镇京老说我鼻子漂亮，清茂早有此论。汉卿亦和之。</p>
@@ -2813,7 +2846,7 @@
 <p>对这种暴行有一种“过人的敏感的反应”，在我已有好几年的历史了，你还记得两年前台北发生的李丽养女李幼冬被仆人强奸的事情吧？为那件事，我不舒服了好几天，李幼冬的自杀更使我一夜没睡好，罗惠芳告诉我她的一位朋友的朋友——一个漂亮可爱的女孩子，被一个有名的老淫棍灌醉强奸的事，也使我一夜没睡好。</p>
 <p>更远在我高中的时候，父亲告诉我□□□在东北跑到女中去包围礼堂，当场挑选女学生，就讲台上强奸的事，至今我意不能平。我现在还藏有《中国抗战画史》中的日本兵暴行的照片，有一张是揉躏一个青年女人的，另有一张是一排裸体的女人，是被轮奸后割乳剖腹的，有孕的胎儿也给挖出来，并且阴部不插着稻草也插着树枝木棍（有一个女孩子曾被三十三个人轮奸）；在《人间の条件》那部书里，你也可以看到日本人自己的记述。总之，这类事大同小异。在沈刚伯的口里，我听到日本兵在南京的大学里有计划的对女学生做些什么；在步校的一位教官口里，我也听到日本兵强奸女学生的史实。……</p>
 <p>人间的惨象，本是形形色色不胜枚举的，我这里随手写出惨象中的一种，是使人触目惊心的一种，我觉得这是人类最最可耻的一种绝不能饶恕的暴行，我不愿意想象假使我是那种情况下的一个女人，我会怎么办？我更不能想象假使那个女人就是我心爱的情人或太太，我的反应是怎样的？小时候看过一本反日的短篇，描写一个男人赶回来看到日本兵正在强奸他的妻子，当他拿刀扎下去的时候，竟连他自己的妻子也扎死了！在卡斯特罗革命未成以前的古巴，就有当着一个被捕的政治犯面前轮奸其妻的暴政！我不能想象我们身历其境会怎样？我不能想象！</p>
-<p>我早就考虑到写一部《中国残忍史》，这实在是一个新颖的题目，我觉得不但这个题目可以成立，并且比那些死的“兵制史”、“制度史”有意义得多，上自吕后的“人彘”、隋炀帝的“迷楼”，下迄魏忠贤的“东厂”、“西厂”，上海的狗奸少女表演……无一不是绝妙的、活生生的史料。这才是一个悲天悯人的历史家所应走的新方向！ADiaryofAYoungGirl不是一部史乘，可是我相信读了它而流泪的人，不太可能是一个强奸犯或暴行犯的！我深信缺乏这种人道主义的教育，是招致这些残暴行径的主要原因，我也深信只有教育和法律（在强奸罪上比现在更科刑较重的法律），才能防止这种令人发指的现象。</p>
+<p>我早就考虑到写一部《中国残忍史》，这实在是一个新颖的题目，我觉得不但这个题目可以成立，并且比那些死的“兵制史”、“制度史”有意义得多，上自吕后的“人彘”、隋炀帝的“迷楼”，下迄魏忠贤的“东厂”、“西厂”，上海的狗奸少女表演……无一不是绝妙的、活生生的史料。这才是一个悲天悯人的历史家所应走的新方向！A Diary of A Young Girl不是一部史乘，可是我相信读了它而流泪的人，不太可能是一个强奸犯或暴行犯的！我深信缺乏这种人道主义的教育，是招致这些残暴行径的主要原因，我也深信只有教育和法律（在强奸罪上比现在更科刑较重的法律），才能防止这种令人发指的现象。</p>
 <p>敖1960年1月22日</p>
 <p>九、夜与尔琳谈，尔琳言我不是好东西。</p>
 <p>十、你若离了她不能活，她就不让你活。</p>
@@ -2832,7 +2865,7 @@
 <p>十一、夜去教室，指导员与玉华、清茂、镇京、宏谋、秋原、毓刚、定远、天中等围论我，指导员言我才华、口才、能力、头脑、智慧皆上选，就是思想偏差，今晚又被“围论”一阵，我举双手说：“我投降啦！屈服啦！不然指导员是没完的！”清茂言指导员最喜欢我，指导员然之。</p>
 <p>十二、考试又第一缴卷出，在床上与毓刚谈，清茂加入，谈及科学家过问政治等问题。王区队长谈其身世，在金门三年受苦及工作情况，甚动人，其言：“只有享不到的福，没有吃不到的苦。”他的话引起我的不少感想。春节即届，他因值星不能离营，多年来，此为首次，很想送他点小礼物。</p>
 <p>1月24日星期日</p>
-<p>一、西班牙驻古大使JuanPablodeLojendio抢赴电视台去整卡斯特罗，真是好玩，也是好汉，卡已限其二十四小时内离境。</p>
+<p>一、西班牙驻古大使Juan Pablo de Lojendio抢赴电视台去整卡斯特罗，真是好玩，也是好汉，卡已限其二十四小时内离境。</p>
 <p>二、早上与善培、鸣飞、树森、华俊等在一起，久不练杠子，与华俊比赛，竟输了。</p>
 <p>三、午饭前刘区队长劝我少言，除非学者之流读书甚多者，不能了解我，闻我中国人“不如人”之论，闻我说实话之论，必不能了解，军中必当少言为是，天中等从旁亦劝我，彼等好意甚是。要之，万事以嬉笑出之，亦为一甚佳之保身与发泄双关之道。唯此点唯我能为之。别人则如水帘洞中之サル所言：“祸事了！”</p>
 <p>四、午饭后指说要请我看电影，吾拱手谢了。</p>
@@ -2843,7 +2876,7 @@
 <p>九、善培购送丁皓半裸照片，三元。</p>
 <p>十、王区队长在我站夜卫兵之前约我赴其室中小谈。他说他最喜欢我之直爽，并言再在社会中混一两年此气即敛矣。其言岂其然乎？又欲挽我为实习值星，送橘子给我，请我吃烟。</p>
 <p>十一、静波来片，凤翰来信，启庆来书，读之甚快。</p>
-<p>DearPrideLee：</p>
+<p>Dear Pride Lee：</p>
 <p>20日的信巳收到，和您的信同时送达的还有天中和维信的来书，老友皆不我弃，这是在繁忙的日子里的最大快慰。</p>
 <p>看过你的信，我有一点感想：过去一直是“家无担石，一掷千金”的您，现在居然也顾虑到金钱问题了，为了区区七十元，便甘愿放弃五天宝贵的假期，过去的您是一定不会如此做的。半年来，我一直无缘和您长谈，但由来信的文字间，可看到您有许多可喜的、令人佩服的转变。是军训的成效，抑是人生观的转变，我不知道。但我确知：李敖变了（不过，元旦在火车站里，您那震动栋宇的声音表现了您昔曰雄風犹在）。</p>
 <p>本期《大学生活》里有一条台大的花絮，列举台大的四怪、三丑，其一曰“长袍怪”，又曰：“不用说，这是文学院里的‘特产’，此公长得一表人才，风流潇洒，唯一袭夹布长衫，无论春夏秋冬，阴晴雨雾，永不离身。有名士之风。”其人为谁，您自然知道，作为“长袍怪”的挚友的我，亦深觉“与有荣焉”。但现在您已卸下长衫，离开台大，令人不无风流云散的怅惘之感。</p>
@@ -2894,7 +2927,7 @@
 <p>四、与逢时同整理内务后小谈，逢时言我之口才在第九队中为第一，我之大本领在声稳气定，妙趣横生。</p>
 <p>五、林智堂言父亲言女人夜摸金马生殖器以求子事。</p>
 <p>六、非常喜欢丁皓这张半裸体，夜睡半夜及晨起皆看之，甚对她的大腿着迷。今早简直懒得起床。</p>
-<p>七、米高扬去美，人询数次整肃何竟未波及其身？其言甚妙：“因为我运气好。”（LaVie中载此故事，家煜昨日为我言之。）</p>
+<p>七、米高扬去美，人询数次整肃何竟未波及其身？其言甚妙：“因为我运气好。”（La Vie中载此故事，家煜昨日为我言之。）</p>
 <p>八、下午上课第七节方毕，经同学要求，教官终辍课，第八节整行装及吃晚饭，匆匆上车赴高雄，幸尔琳得识熟人，得有座位，车中挤得已不成话。与尔琳聊天，尔琳言及在组会（国民党小组会议）中，袁言：“今天早上我驳李敖了！”广言：“李敖这小子王八蛋。”车中买橘子吃便当，喝西北风——车门关不上，一试终能关上——益证“可能石块并不太大”之谚。抵中已2点多，尔琳请豆浆点心方归，近4时始睡。</p>
 <p>1月27日星期三</p>
 <p>一、玉衡来一片。</p>
@@ -2913,7 +2946,7 @@
 <p>一、晨华俊来。</p>
 <p>二、宏祥来限时信，明日南来。</p>
 <p>三、访述古，同赴仁龙家，又齐赴尔琳家，尔琳的妹妹果不虚传，的确很可爱，穿的是粉毛衫，尔琳留宴，谢辞之。</p>
-<p>四、述古在家午饭，饭后候尔琳未至，转赴东海看电影，在门前碰到许多熟人，家旦、袁纯、伟力、世昌，知潭伟力去年暑假已婚，竟未见报。伟力赞我注意黄埔校史稿之事（伟力的父亲谭煜鱗，是黄埔一期。我在凤山看到他送给陆军军官学校的校史书。1984年8月7日李敖追记）。又碰见曾厚成，述其排长经：不参加赌，有距离，不称兄道弟，语意和缓，语气坚定。我怪家旦怕麻烦不写信，可托人转，家旦言感情不能反射。烈辉请我和尔琳看电影——《父亲离家时》（OldYeller），Rank出品：</p>
+<p>四、述古在家午饭，饭后候尔琳未至，转赴东海看电影，在门前碰到许多熟人，家旦、袁纯、伟力、世昌，知潭伟力去年暑假已婚，竟未见报。伟力赞我注意黄埔校史稿之事（伟力的父亲谭煜鱗，是黄埔一期。我在凤山看到他送给陆军军官学校的校史书。1984年8月7日李敖追记）。又碰见曾厚成，述其排长经：不参加赌，有距离，不称兄道弟，语意和缓，语气坚定。我怪家旦怕麻烦不写信，可托人转，家旦言感情不能反射。烈辉请我和尔琳看电影——《父亲离家时》（Old Yeller），Rank出品：</p>
 <p>（一）你要的东西都认为是美丽的。</p>
 <p>（二）他说谎——他说话富想象力。</p>
 <p>（三）牛不进天堂，那天堂何来牛奶？</p>
@@ -2988,7 +3021,7 @@
 <p>2月7日星期日</p>
 <p>一、因为是部队实习，下午6点即须归营，故早上提前一小时放假，与新汉拟去屏东，既而怕累，改去高雄，修理手电筒（修好换好后遗失了），参观“天主教事业展览会”，盖去年为来台传教一百年也（归时见长达数街之大游行，中多渔民），各地神父蚁集于此。展览中之几张大教堂的图片最令人神往，与新汉论宗教之势力与神父之精神，深觉此问题当作进一步之探究与体验。</p>
 <p>二、午与新汉食于真川味，我做东，吃酱爆肉及什锦砂锅。</p>
-<p>三、午饭后去光复看《风流女伯爵》（TheNakedMaja），午前曾在书店查得有关此画之资料。此影引起我之民本主义色彩，及对艺术家气质、西方社会（贵族）对妇女之尊重，乃至对跳舞看法之新理解。</p>
+<p>三、午饭后去光复看《风流女伯爵》（The Naked Maja），午前曾在书店查得有关此画之资料。此影引起我之民本主义色彩，及对艺术家气质、西方社会（贵族）对妇女之尊重，乃至对跳舞看法之新理解。</p>
 <p>四、看电影后甚令人沉郁，与新汉赴南风会善培、英善，又与英善同去台湾银行取雪茄三十九支，英善分我二十支，一半与新汉（五支给善培等，二支给王区队长，一支给宏谋，一支给瑞洲，自吸二支，此烟极好），英善言及我“专横”，我在台大有“恶势力”云云。</p>
 <p>五、新汉数度欲为我买手电筒，皆谢却之，新汉待我之厚，实使我感动。今日吃冰、看电影、车票又是他掏腰包。</p>
 <p>六、6时集合部队实习，我分在第六连，是警卫连，也是臭虫连。休息时访善培、鸿飞未见，留烟而去，心情欠佳，归途漫步月下，强横之态驱走了不少愁思。</p>
@@ -3066,7 +3099,7 @@
 <p>五、完成给启庆六页书，言及《大学生活》上郭钧度曾先有一文论及长袍云云，又谈史学方法与方向。</p>
 <p>我可说是个有着浓厚的反叛性的异端。多年来，我经常在“老鼠过街，人人喊打”的状态下过日子，自大的说：我真可说是一个“名满台大，谤亦随之”的第一号怪物，老冉将至的三闾大夫，恐修名之不立，我实在也该有这种“孤愤”了，哈哈。</p>
 <p>你说岛田正郎他们的史学方法“几乎完全使用社会科学的方法。这种方法当然有缺点——历史资料不能与社会科学资料相比……只有仰赖于推论，但过多过远的推论便不可靠”。我那篇鬼论文便是大部采取了岛田他们的途径。虽然是力有未逮，但我深信胡适之以下倡“治学方法”所揭橥的方法实在不足以解释历史。理学式的方法，在解释太多。只在拟似演绎（Pseudo-deductive）中打圈子，固是可笑，可是乾嘉余孽们的朴学式的方法又嫌解释太少了，甚至根本不能解释，历史掉在他们的手里，永远是不会得到正当的出路的。</p>
-<p>LustforLife一书的方法倒是值得我们想想的，此书行文虽全属构想——甚至不合乎正宗的传记文学，但我读后却感到一个活生生的凡高出现在脑里，这种效果绝非章注派的史学家所能传出的，试想假使姚老来写凡高传，则成一部什么样的书？那一定是一部死的历史，我总迷信史学家若不能把死人事写成活的人与事，他就是一个失败的史学家，刘子玄“晚谈史传，颇减价于知己”，这实在怪他不能使史传起死回生，朱东润张居正大传的方法还有那么点味儿，南宫博的杨贵妃就胡闹了。我近来的心理甚至认为历史与其被章注派的史家搞得死气沉沉，倒不如交到稍有社会科学方法训练的文人手里！</p>
+<p>Lust for Life一书的方法倒是值得我们想想的，此书行文虽全属构想——甚至不合乎正宗的传记文学，但我读后却感到一个活生生的凡高出现在脑里，这种效果绝非章注派的史学家所能传出的，试想假使姚老来写凡高传，则成一部什么样的书？那一定是一部死的历史，我总迷信史学家若不能把死人事写成活的人与事，他就是一个失败的史学家，刘子玄“晚谈史传，颇减价于知己”，这实在怪他不能使史传起死回生，朱东润张居正大传的方法还有那么点味儿，南宫博的杨贵妃就胡闹了。我近来的心理甚至认为历史与其被章注派的史家搞得死气沉沉，倒不如交到稍有社会科学方法训练的文人手里！</p>
 <p>《西潮》写得杂乱无章。我个人的《西潮》只写成与张丽珍及谭凝晖那两段，现久已“绝笔”，材料不在手边，时间太少与心情的转变都是我暂停的原因。</p>
 <p>六、见瑞洲、宏谋情书来去不断，深觉麻烦扰神。</p>
 <p>七、熊十力骂徐复观读书专挑书中缺点，而不择其优点。</p>
@@ -3076,7 +3109,7 @@
 <p>2月15日星期一</p>
 <p>一、毓刚一度攻儿童心理学，盖其酷爱儿童也。</p>
 <p>二、报祝泰一信，未提分发事。</p>
-<p>三、读抄TheLettersofKatherineMansfield(EditedbyJ.MiddletonMurry,London,Constable&amp;Co.)对洋文实在有点worehip的感觉，中国文学的表达力实在不行！株守中文真不行！中文真严肃，不够活泼。也决心先在洋文上下几年功夫，再回过头来写西化了的、有洋味儿的方块字吧！我要在英文上下些硬功夫苦练。过去多年未在这方面着根，真是失计。</p>
+<p>三、读抄The Letters of Katherine Mansfield (Edited by J. M iddleton Murry, London, Constable &amp; Co.)对洋文实在有点worehip的感觉，中国文学的表达力实在不行！株守中文真不行！中文真严肃，不够活泼。也决心先在洋文上下几年功夫，再回过头来写西化了的、有洋味儿的方块字吧！我要在英文上下些硬功夫苦练。过去多年未在这方面着根，真是失计。</p>
 <p>四、和老马老景等也该以英文通信。</p>
 <p>五、毓刚说我英文学好全靠淫书及爱情信，他以后要建议在中学行此法，则人人英文大佳矣。</p>
 <p>六、我任何事皆趣味化，正所谓“群籁虽参差，适我无非新”。我总是从夹缝中寻出一道天光。故任何枯燥无味之事与俗不可耐之人，我皆能以一副“忍俊不禁的尊容”去笑它。</p>
@@ -3099,7 +3132,7 @@
 <p>二、早上看小潘刮胡子，抹白胡膏，抿嘴一笑，可爱极了！</p>
 <p>三、毓刚说我的笑完全是奸诈的笑。</p>
 <p>四、下午又校阅，参观单杠表演，甚令人咋舌。</p>
-<p>五、晚又与景谈。看其手录仲则诗及PortryandPoets。</p>
+<p>五、晚又与景谈。看其手录仲则诗及Portry and Poets。</p>
 <p>六、晚考试后与潘去康乐中心看杂志，“e.e.cummings妒”六十五岁了，Ourrebelpoetstillrebels.其人孤僻，不参加任何集会社团。</p>
 <p>七、九队睡眠五相：</p>
 <p>（一）一江春水式——张宏谋，一夜要起来撒尿好几次。</p>
@@ -3146,9 +3179,9 @@
 <p>五、彦增来一片，约星期日去高。</p>
 <p>六、晚占前，队长看我这面日记，学愚说我“下流诗”，清茂说“下流文人”。</p>
 <p>七、洗浴前华民向瑞洲说我大腿甚美。</p>
-<p>八、余梧桐见我照镜，说我是wonderfulman，盖“喜照镜子的人必重视自己且必有所作为”。此何等论理乎？</p>
+<p>八、余梧桐见我照镜，说我是wonderful man，盖“喜照镜子的人必重视自己且必有所作为”。此何等论理乎？</p>
 <p>九、夜访十八队，与善培、鸿飞及树森去康乐中心谈天，我的团体合照相照得很smart。</p>
-<p>十、可口可乐的头子JamesA.Farley助Roosevelt又反对其三任，此人可记十万人名。</p>
+<p>十、可口可乐的头子James A. Farley助Roosevelt又反对其三任，此人可记十万人名。</p>
 <p>十一、夜上床后，华俊来，出来小谈数语，华俊颇动感情，我则作自若状，相约或在金门见也，我笑谓我早晚死在你们打炮学校出身的手里。</p>
 <p>2月19日星期五</p>
 <p>一、晨在厕读“唐罗结婚节目表”，深觉婚礼之改革刻不容缓，此俗之铺张真可怕，昨日见报，罗实在很美。传有师大校花之称。</p>
@@ -3160,14 +3193,14 @@
 <p>七、午前珂告以分发事，我看我十九是去外岛啦！</p>
 <p>八、下午先去横岭再去田子寮测验。</p>
 <p>九、夜与广诚、学备等酒肉花生麻花于福利社，喝的是红露酒，第一次喝这种酒，颇不恶，此酒酒精仅19%。朱刘互言我名气之大，骂我者之多，刘言我在台大之风云种种。</p>
-<p>十、夜晚会，未参加，与瑞洲在教室大谈往史，瑞洲甚赞我之不凡，我言我颇有剑及履及之本领，因引Browning之诗Wheremyheartlies,letmybrainliesalso.，言行一致，我庶几有之，此人格之统一，人多不能。邦新在旁向瑞洲道我博学而多怪。</p>
+<p>十、夜晚会，未参加，与瑞洲在教室大谈往史，瑞洲甚赞我之不凡，我言我颇有剑及履及之本领，因引Browning之诗Where my heart lies, let my brain lies also.，言行一致，我庶几有之，此人格之统一，人多不能。邦新在旁向瑞洲道我博学而多怪。</p>
 <p>十一、夜队长借走此日记。</p>
 <p>十二、夜站卫兵，看报良久，代宏谋站一班，时已1时矣。</p>
 <p>2月20日星期六</p>
 <p>一、早上在操场照全队合照相。</p>
 <p>二、给锡昌、老太太、陈、周各一信。</p>
 <p>三、思成一信论“痴聋哲学”。</p>
-<p>四、午后补假，与善培、鸿飞、一方、老孟去高，看电影于光复——《阿丁征服女人》（AubeyBaja）。</p>
+<p>四、午后补假，与善培、鸿飞、一方、老孟去高，看电影于光复——《阿丁征服女人》（Aubey Baja）。</p>
 <p>五、吃蛋卷冰淇淋，又去小野猫处，小野猫很不错。转赴真川味聚餐，吃砂锅及鱼等，我坚不让他们请客，故今天一切仍是美国式的。</p>
 <p>六、在美荣号买了两张仰卧的裸体照，三元。</p>
 <p>七、买到一册去年9月21日出版的《大学生活》中有新汉提及的《台大四年》一文，文内提及我：</p>
@@ -3179,14 +3212,14 @@
 <p>三、上午洗澡，玉华为照裸体照。人闻而笑之。</p>
 <p>四、队长送还日记，说“乌气八糟”。</p>
 <p>五、刘玉章之不分皇亲国舅，硬要枪毙。</p>
-<p>六、午饭于陈家，吃了两大碗面条，送陈先生Reader’sDigest三册，陈送我两册及《大学生活》一册（后我转送彦增）。谈诗，我怪陈先生仍是折中派，大可不必和他们吵，要否定他们！今日在陈家辞行。</p>
+<p>六、午饭于陈家，吃了两大碗面条，送陈先生Reader’s Digest三册，陈送我两册及《大学生活》一册（后我转送彦增）。谈诗，我怪陈先生仍是折中派，大可不必和他们吵，要否定他们！今日在陈家辞行。</p>
 <p>七、会彦增于万国冰店转赴南风，Pseudo-Rosa来：</p>
 <p>（一）言我之“职业客串论”。</p>
 <p>（二）职业不能久，久则乏味。</p>
 <p>（三）欣赏比去做好。</p>
 <p>（四）对女人有鲜花牛粪感觉，对事业（政治）有居高位感觉。</p>
 <p>（五）下部队有孤单感，在学校中与诸混球气味不投亦相去不远，下部队则更远矣。</p>
-<p>（六）死及成名固是可哀，过早成名亦为不幸。成功（名）是一种负担。RobertFrost诗可证也。</p>
+<p>（六）死及成名固是可哀，过早成名亦为不幸。成功（名）是一种负担。Robert Frost诗可证也。</p>
 <p>（七）对面坐的那个初中（？）的小丫头，黑外套白衣黑点，额发最美，笑最美，给人无限的青春的感觉，睨之良久。</p>
 <p>八、出而逛书店：</p>
 <p>（一）左真硬汉，言宁为无国籍之人。</p>
@@ -3202,7 +3235,7 @@
 <p>一、头两节在荣誉厅（金汤电影院）与第八队参加讲习，召雄言最喜我之热情。</p>
 <p>二、三四节准备。</p>
 <p>三、午洗澡后即赴中正台前集合，1时半出发，买了一元七角的糖，神吃一阵，背包之重，史未曾有，计开</p>
-<p>1.背包12.雨衣13.棉背心24.绒裤15.毛衣16.羊毛衫17.白长裤18.袜子2</p>
+<p>1.背包1 2.雨衣1 3.棉背心2 4.绒裤1 5.毛衣1 6.羊毛衫1 7.白长裤1 8.袜子2</p>
 <p>四、沿途休息二次，看沟中水，忽觉古人之言毫无语意学上之意义者颇多，如</p>
 <p>仁者乐山，</p>
 <p>智者乐水，</p>
@@ -3323,7 +3356,7 @@
 <p>（三三）趣味第一，趣味方能popular，二千字论文，趣味文，趣味史。</p>
 <p>（三四）先在一事上成权威，〔郭〕有遹法。</p>
 <p>（三五）徐讦那书（《一个人的觉醒与民主自由》），不谈经济问题，怎么可以？</p>
-<p>（三六）英美经济问题成立，方能搞繁荣，ProblemsofChina根本与英美不同。目前既无“世界性的处理方法”，只好个别解决。</p>
+<p>（三六）英美经济问题成立，方能搞繁荣，Problems of China根本与英美不同。目前既无“世界性的处理方法”，只好个别解决。</p>
 <p>（三七）对CP看法之大转变。此为大收割。</p>
 <p>（三八）着眼于六亿人的问题。</p>
 <p>（三九）不要只是在小偷主义上着眼自己的一点爱情与感受。过去全是bourgeois的路。</p>
@@ -3335,7 +3368,7 @@
 <p>三、午后施珂说军中事：“提起千斤重，放下没四两。”王大姐说我“不是太老，就是太小，总是不像自己的年岁”。</p>
 <p>四、与启庆、又亮“参观”姚老头研究室，穷翻一阵，此老之剪报及评语最妙，如：“伪学人，土包子”，“雾是什么？”对我的评语是能独立为学，不重视上课。改“士鳌”为“从吾”，此老实在荒谬可笑。又得读油印的《自白书》甚动人。借到《严几道年谱》。</p>
 <p>五、郝伟为我三人合照一像。</p>
-<p>六、启庆请在福利社吃冰淇淋，购FreeChina读之。</p>
+<p>六、启庆请在福利社吃冰淇淋，购Free China读之。</p>
 <p>七、返舍时知至正已来二次。</p>
 <p>八、归途转赴善导寺，留信而去。</p>
 <p>九、去第四宿舍，遇正澄显昌等，在成功处留条，转赴法学院访启扬，启扬送《十周年校庆特刊》一册，又与宏武谈。看到老景的汪秉泽在三轮车上，甚鲜艳。</p>
@@ -3345,15 +3378,15 @@
 <p>一、早上周弘送裸体日历。</p>
 <p>二、静波来，同访曲先生谈。</p>
 <p>三、与家伦、铸人逛校园，看理学院注册，在傅园大谈，惊悉Y已死（大概在1956年），为之深恸，感怀云集（Y是严侨，胡家伦当时告诉我严侨已死于火烧岛。到了1961年，胡适写信给我，说严侨还活着，证明了胡家伦的消息是讹传。1984年10月4日，李敖附识）。</p>
-<p>铸人言L好事近，有人打听其过去历史也，哈哈。家伦说：“神经病与精神病的分别是前者认为2+2=5，后者虽承认=4，但是他痛恨这个答案。”为是否妥协事与二人辩析良久，家伦之论甚持平，我斥责二人，家伦谓无谓之牺牲甚无意义。铸人谓完全民主之社会对我最适合，以我可任意攻讦也。家伦颇怪我之犬儒色彩。铸人则骂我英雄式的自由主义。在傅园见黄梅莉之背影。</p>
+<p>铸人言L好事近，有人打听其过去历史也，哈哈。家伦说：“神经病与精神病的分别是前者认为2 + 2 = 5，后者虽承认=4，但是他痛恨这个答案。”为是否妥协事与二人辩析良久，家伦之论甚持平，我斥责二人，家伦谓无谓之牺牲甚无意义。铸人谓完全民主之社会对我最适合，以我可任意攻讦也。家伦颇怪我之犬儒色彩。铸人则骂我英雄式的自由主义。在傅园见黄梅莉之背影。</p>
 <p>四、午后骑车访姚先生、吴相湘（未见到）、李玄伯、刘主任，又过永康街，访有美（未见到），访三姐（未见到），后去逍遥池洗澡，心情颇恶，旧事旧地，无不增我营扰者，台北似非吾之所居矣，决定一年内不再北来。赴校，在新兴喝柠檬水。下午鼓应送十元。归与贾教官谈很久，贾言部队事。</p>
-<p>五、鼓应为我借旅费成行、英星送我至汽车站，在汽车中与林炯隆小谈，抵车站时周弘、鼓应及庄因、又亮已先候。临行周弘劝以宁下“流”而勿上说，我谓“宁下毋上”，大笑而去，车内甚松，18:30开，一人坐四椅，书物狼藉，孤身南下，颇增遐思，车过中坜，往事油然。车中读又亮借我之MyLifeandLovers，吸庄因送之Kent，读《人生修养》（对我影响很大，内言修养多我所未逮者，决心力致之，归家即用在三轮车夫身上及车上倒茶小孩身上）及《性心理学》，很愉快，实在是两本好书。</p>
+<p>五、鼓应为我借旅费成行、英星送我至汽车站，在汽车中与林炯隆小谈，抵车站时周弘、鼓应及庄因、又亮已先候。临行周弘劝以宁下“流”而勿上说，我谓“宁下毋上”，大笑而去，车内甚松，18:30开，一人坐四椅，书物狼藉，孤身南下，颇增遐思，车过中坜，往事油然。车中读又亮借我之My Life and Lovers，吸庄因送之Kent，读《人生修养》（对我影响很大，内言修养多我所未逮者，决心力致之，归家即用在三轮车夫身上及车上倒茶小孩身上）及《性心理学》，很愉快，实在是两本好书。</p>
 <p>六、老太太为准备大肠及面包，与日历女郎。</p>
 <p>3月2日星期三</p>
 <p>一、老太太赏一百五十元，9点17分普通车南下，结织邱瑞芳（东吴法律系）。又与木匠上等兵谈，彼方归自马祖，言洗澡于民家，三元一桶水，又言老班长杖击之。车上有乞丐，一元与之。忽思结束后何不转心理系或旁听其中？（昨曾与胡、吴言我欲治心理学，夜读《性心理学》益增此意，吾志已决，决心致力于Sex之研究。潘序及赫理斯促成了我这种决定。）车4时抵高雄。</p>
-<p>二、归途在公共汽车上立看第一排右角落之rose-lips-girl，头发最美，极蕴风情，白衬衫蓝长裤，相望即躲开，又相望，为之心动不止。她在前庄下车。</p>
+<p>二、归途在公共汽车上立看第一排右角落之rose- lips - girl，头发最美，极蕴风情，白衬衫蓝长裤，相望即躲开，又相望，为之心动不止。她在前庄下车。</p>
 <p>三、收拾行装，缴物品，准星罩等扣去十余元，最末一次上等兵薪水只领到三十余元。指导员、马区队长试穿我之长袍。与述古谈。与毓刚去二五二，送他少尉阶，请他吃牛肉汤，毓刚请吃木瓜。访善培等，送天培《丁故总干事文江逝世二十周年纪念刊》。归又与广诚谈。召雄来，又长谈，召雄劝我在军中勿谈政治。又与队长小谈。在王区队长室中吃瓜子、谈天，他劝我勿多言，以人之程度不能了解我，反正误解也，则殊不值得，他说我第一次讲话即给他印象甚深。</p>
-<p>四、还了一批小债务：毓刚二十，Q.P.二十，宏谋五。</p>
+<p>四、还了一批小债务：毓刚二十，Q. P.二十，宏谋五。</p>
 <p>五、北上的夜里3点钟就起来了，吵了一阵。</p>
 <p>3月3日星期四</p>
 <p>一、8点出发，行前收到玉华照的我的NakedPicture，此照甚妙。与宏谋毓刚等等友人呼别，在车上得知所谓“思想游移，媚外思想甚重”（这天分发时，大家坐一辆军车，上车前指导员把一牛皮纸口袋交给带队同学，其中是我们思想考核资料，要这位同学转往新单位。在路上，我们很技巧的价拆了这口袋，在我的资料卡片上，赫然有上面十字评语！指导员跟我折腾半年，最后以此十字为谥，政战人员之可怕，由此可见！1984年1月27日，李敖追记）。其他诸如学识渊博、守正不阿、能力高强、对政党不感兴趣云云似皆为马、林所批也。自五块厝转入第二军团，二十八人中刚华民以总司令关系留下了（顶走了本该留下的江树生！），十八人分到十七师。</p>
@@ -3409,7 +3442,7 @@
 <p>九、晚请刘瑞甫打弹子于小丫头处，小丫头真可爱，今晚得仔细看她，她只挣三百五十元（弹子技术佳者可挣六百元），管吃，每月只一天假，人皆叫她“小妹”，小妹替我打了不少弹球，其撒赖之态甚可人（今天午后看她发脾气很好玩）。</p>
 <p>十、夜9时后连长来聊天一个多小时。</p>
 <p>3月9日星期三</p>
-<p>一、今天是这儿的第一次的“星期天”，早饭都没吃就溜了出来（把门以绳索缠住，未能从排长嘱——跳窗），搭7点25分高雄客运车直奔凤山，等车及在车上读KissMeAgain,Stranger，在凤山街上逛书店，忆及与新汉初游之时，而今孤零零举目无一相识矣。步行到步校，见候官班上课，旧教室，不胜感系，访王区队长，惊呼我来，以烟糖茶等相待，另购花生等，与秋原、添斌等教官聚谈甚欢，午饭于老饭厅，与队长马区队长同桌。午访善培、鸿飞等于示范连，在二五二逗留，看他们打弹子及逃避纠察。去第六连看那条小黄狗，还是那样可爱，它咬与舐极令人舒服，我忽想起女人被咬舐乳房的味道，那一定是一种wonderfulfeelings。召雄请晚饭于凤山四川面店，牛肉面甚佳，召雄甚刻苦而努力，这一点实在很可佩，又要请我看电影，我谢绝，终同其侄等以四分之一Jeep送我归，约九公里，夜过“梦里桥”。</p>
+<p>一、今天是这儿的第一次的“星期天”，早饭都没吃就溜了出来（把门以绳索缠住，未能从排长嘱——跳窗），搭7点25分高雄客运车直奔凤山，等车及在车上读Kiss Me Again, Stranger，在凤山街上逛书店，忆及与新汉初游之时，而今孤零零举目无一相识矣。步行到步校，见候官班上课，旧教室，不胜感系，访王区队长，惊呼我来，以烟糖茶等相待，另购花生等，与秋原、添斌等教官聚谈甚欢，午饭于老饭厅，与队长马区队长同桌。午访善培、鸿飞等于示范连，在二五二逗留，看他们打弹子及逃避纠察。去第六连看那条小黄狗，还是那样可爱，它咬与舐极令人舒服，我忽想起女人被咬舐乳房的味道，那一定是一种wonderful feelings。召雄请晚饭于凤山四川面店，牛肉面甚佳，召雄甚刻苦而努力，这一点实在很可佩，又要请我看电影，我谢绝，终同其侄等以四分之一Jeep送我归，约九公里，夜过“梦里桥”。</p>
 <p>二、六又三分之二天的副排长生活完蛋了，回来进甲送来派令，明天早上报告，连长晚上请去面授机宜，带兵之道。</p>
 <p>（一）待人勿有厚薄。</p>
 <p>（二）留意神情有异者。</p>
@@ -3519,7 +3552,7 @@
 <p>八、我对用功感到很大的兴趣与热忱，这是一个好现象，念英文，目前对我说来是最迫切的事，最重要最使我心安的事，我此后要多给男女朋友写一些英文信，甚至在信中抄一段书也是好的，总之，每日尽量与英文多多接触。</p>
 <p>九、萧镜昌实在是一个虚怀纯挚的人。我觉得他目前仍犯一般人的“心浮病”，不能静心看书。</p>
 <p>十、现代主义（Modernism），刻意追求别于传统的一切。以画家Gauguin为例，彼逃出巴黎，于大溪地小岛中度其蛮荒生活，以求表现为画材。</p>
-<p>十一、晚始不外出，一人读书甚愉快，读KissMeAgain,Stranger毕。</p>
+<p>十一、晚始不外出，一人读书甚愉快，读Kiss Me Again, Stranger毕。</p>
 <p>十二、夜与步岳谈文艺路线，校正其作文。睡卧床上与其谈很投机，他深是吾言。</p>
 <p>3月15日星期二</p>
 <p>一、梦到黄梅莉，好像在述古处打桥牌，她好像不像以前那样漂亮了，我在梦里说：“我要专心追Rosa了！”</p>
@@ -3534,8 +3567,8 @@
 <p>十、在军便服肩上钉阶级，几乎出了洋相。</p>
 <p>十一、华士恒言马祖乐园，8时开始，4时黄牛即去买票。</p>
 <p>3月16日星期三</p>
-<p>一、早晨师朝会后集体去参观四二炮连，第三排之上士韩乾忠被枪决，去时人已死，众大骂：“人死了还看个鸟！”头两节基本教练后又跑去看，已下坑，距我宿处不过一百米。香火鞭炮正起，只看到两只球鞋，此人去年6月4日因打百分输香烟，上士大胖子总是好牌，被激，以枪击上士，因救治不得法，血流入而死，俯放之反倒不致死。今早仍言：“我不过吓唬吓唬他，想不到枪就响了！”浙江人。甚矣，冲动之可畏也！中国人婚用鞭炮犹可说也，丧用鞭炮，此何说乎？（放鞭炮当是避邪作用。1984年10月4日，李敖附识。）丧礼改革，此为一事。军中枪决及自杀三百埋葬费，火葬皆不够，亦无棺，此人一破席而已。病死者六百元，战死者反倒什么也没有。写到这里，忽使我想起Y之死，大概也是这样被埋了。Withruemyheartisladen。我不愿再想了！</p>
-<p>二、上午两小时基本教练，背DouglasMacArthur之“AsYoungAsYourFaith”，深觉他们皆不能利用及珍惜时间，都在混日子。他们出操时我读小黑皮本，忽想起比萨斜塔，在社会成名成势，非“偏奇哲学”不为功。</p>
+<p>一、早晨师朝会后集体去参观四二炮连，第三排之上士韩乾忠被枪决，去时人已死，众大骂：“人死了还看个鸟！”头两节基本教练后又跑去看，已下坑，距我宿处不过一百米。香火鞭炮正起，只看到两只球鞋，此人去年6月4日因打百分输香烟，上士大胖子总是好牌，被激，以枪击上士，因救治不得法，血流入而死，俯放之反倒不致死。今早仍言：“我不过吓唬吓唬他，想不到枪就响了！”浙江人。甚矣，冲动之可畏也！中国人婚用鞭炮犹可说也，丧用鞭炮，此何说乎？（放鞭炮当是避邪作用。1984年10月4日，李敖附识。）丧礼改革，此为一事。军中枪决及自杀三百埋葬费，火葬皆不够，亦无棺，此人一破席而已。病死者六百元，战死者反倒什么也没有。写到这里，忽使我想起Y之死，大概也是这样被埋了。With rue my heart is laden。我不愿再想了！</p>
+<p>二、上午两小时基本教练，背Douglas MacArthur之“As Young As Your Faith”，深觉他们皆不能利用及珍惜时间，都在混日子。他们出操时我读小黑皮本，忽想起比萨斜塔，在社会成名成势，非“偏奇哲学”不为功。</p>
 <p>三、王霖昨天走了，真有点想他呢，此君甚性格，那天他伏在床上恭楷写了一天情书，真是傻子——傻屌。</p>
 <p>四、盱衡当前的时局。</p>
 <p>五、韩国选举，张勉已退出，为了对不合法的抗议（舞弊），李承晚以八十四高龄亲投自己一票（没人跟他竞选）。</p>
@@ -3545,8 +3578,8 @@
 <p>九、午小睡六册旧日记，每见一则（好像旅馆那房号箱一样），那件往事就在我心中亮了一下，拈之即来，历历不忘，我明显的看出这十九个月来我成长的痕迹与脚印，我发现毕业以后我有了不少转变，在步校中那些油诗和长信是我最精彩的一种成绩的表现，我本来是以闷闷的心绪去翻开日记的，看过后带给我不少信心与cheer，现在——在服役以来，我又给自己一个新的“进程”——保持高度的平静，集中时间和脑力，努力用一年的功，把英文彻底搞好，其他一切情绪问题、人事问题、生活问题（如清洁），统统尽量予以简化和敷衍，或者予以英文化，我要知道我的运气并不算是好的，我不像那些用功的人，同时又有好运气贪到那么多空闲，几年来，我一直未曾有一段长时间（有恒的、持续不断的）专一性的用功，为了弥补往年的遗憾与缺陷，我希望我能在这一年中有一点像样的用功的成绩拿出来，多年的经验告诉我，不要把计划订得太大太广泛，因此我只给自己立下这么一个小里程碑：一年之中尽量摆脱杂务、摆脱中文书——这是一个何等大的决心和决定！我自信我是可以做得到的，集中所有的时间和脑力，用在达成一个里程碑的工作上，我相信我可以做得像我预期的那样好，多年的经验已使我了解如何去摆脱俗务，如何去利用零碎的时间，并且对我自己有了一种从来所未有的自信——对我意志力的自信，多年的经验，已使我走向成熟，如今在某些方面已经是结果的时候！例如我已学得不轻易乱订计划、不轻易乱掷时间，我会为虚掷时间而难过，我也学得不轻易给情绪做无谓的骚扰，并且我实在已不是一个多愁善感的脆弱的男人了，我已变得很稳健，变得经得起痛苦的现实的任何种类的冲击，而在我内心深处，我却是坚定不摇的，咬着牙齿的，我决心由我自己的意志把我“打”成一把锋利的斧头，而不再是一片锋利的刀片！（1960年3月16日午后3时，伏在朱排附的内务箱上记的。）</p>
 <p>〔附记〕这三十行的日记是我这几年来所结晶的一篇重要的文献，它凝固了我的过去的生活方式，而又指示给我一条要走三百六十五天的长路，我要多读它几遍。</p>
 <p>十、留美学生三千六百人。</p>
-<p>十一、又把AFarewellToArms“仔细略读”一遍。</p>
-<p>十二、略读PoemsFromChina毕。</p>
+<p>十一、又把A Farewell To Arms“仔细略读”一遍。</p>
+<p>十二、略读Poems From China毕。</p>
 <p>十三、我要求我每天都交得出大量的读书成绩。</p>
 <p>3月17日星期四</p>
 <p>一、晨起跑步最远，渐渐习惯，并不觉得怎样了。</p>
@@ -3558,11 +3591,11 @@
 <p>七、周排附背乐园小姐号数（佳者）。</p>
 <p>八、周排附说打压妓女小腹，她暗装之套帽即出。</p>
 <p>九、凤山军中乐园比仁武味还重。</p>
-<p>十、晚点前读BertonBraley之Loyalty（忠义），喜而译之，中经晚点，自9时起，至0时55分完成底稿，兴致涌起，竟不肯按时就寝。</p>
+<p>十、晚点前读Berton Braley之Loyalty（忠义），喜而译之，中经晚点，自9时起，至0时55分完成底稿，兴致涌起，竟不肯按时就寝。</p>
 <p>3月18日星期五</p>
 <p>一、又是朝会，副师长之啰嗦是早闻其名了，今日亲受之。</p>
 <p>二、用了足足一上午的功。</p>
-<p>三、在W.C.，闻周毅言其过去杀人如麻，刀砍一漂亮的十七岁的女汉奸。亲手枪决多人，以屠狗为乐。他乳上有伤，给我看，乃肉搏所遗也。他说：“当兵的不狠怎么行？”跟他一比，我觉得我在这方面的经历与阅历太少了！我想到在《中国抗战画史》图片中的日兵暴行，多少人都可以做得出来，至少睡在我邻床的这位老兵就可以泰然行之。昨晚闻华排长言一兵一连枪决四俘虏，被官长喝止，如此好杀，真令人不解者也！</p>
+<p>三、在W. C.，闻周毅言其过去杀人如麻，刀砍一漂亮的十七岁的女汉奸。亲手枪决多人，以屠狗为乐。他乳上有伤，给我看，乃肉搏所遗也。他说：“当兵的不狠怎么行？”跟他一比，我觉得我在这方面的经历与阅历太少了！我想到在《中国抗战画史》图片中的日兵暴行，多少人都可以做得出来，至少睡在我邻床的这位老兵就可以泰然行之。昨晚闻华排长言一兵一连枪决四俘虏，被官长喝止，如此好杀，真令人不解者也！</p>
 <p>四、午后去洗澡。收到英善及毓田各一片。</p>
 <p>五、晚饭后与宁波蔡富康谈，他二十九年开始当兵，今二十年矣，未曾受过伤，这些老兵真可怜。</p>
 <p>六、华排长言他的班长江苏吴德松大胆负责，天不怕地不怕，为跳雷伤十六处，医官为剪肉取破片，动都不动、哼都不哼，其忍耐之程度，关云长不能及也，性强，不肯卧，不肯上担架，伤未好即自医院逃出，别人送他的一千四百元的礼，他全买了东西送还人家了！此真铁汉也。</p>
@@ -3605,7 +3638,7 @@
 <p>二、他们围观我裸体照片，笑我坦率，多笑不可仰。</p>
 <p>三、与步岳参观厕所文学，笑死了，决定写为一集。</p>
 <p>四、湖南一处女，被日本兵六人轮奸，小腹胀起，毎次起来走几步动一动，多少人也没关系，其然，岂不其然乎？</p>
-<p>五、早上搭车直赴高雄，车中二战士频致意，车又经过“凯旋门”。过大贝湖，沿湖而行，湖色甚壮，颇思有暇独游一次，抵高后赴台银访老孔，又去沈家，皆未见到英善及其他任何一熟人，乃转赴书店参观，独行颇索寞，此种心情为历来所未有，很想买点英文书，可是腰包钱不足，未敢妄动，去光复看“北西北”（NothNorthwest）。伊娃玛莉仙好像梦里的人儿，这电影看得我昏沉沉的，出来在真川味吃酱爆肉及豆腐汤等，花了十五元，胃口并不太佳，情绪是一派枯寂。碰到延辉，很高兴的谈了一阵，打电话给繁曦前，那女孩子真美。</p>
+<p>五、早上搭车直赴高雄，车中二战士频致意，车又经过“凯旋门”。过大贝湖，沿湖而行，湖色甚壮，颇思有暇独游一次，抵高后赴台银访老孔，又去沈家，皆未见到英善及其他任何一熟人，乃转赴书店参观，独行颇索寞，此种心情为历来所未有，很想买点英文书，可是腰包钱不足，未敢妄动，去光复看“北西北”（Noth Northwest）。伊娃玛莉仙好像梦里的人儿，这电影看得我昏沉沉的，出来在真川味吃酱爆肉及豆腐汤等，花了十五元，胃口并不太佳，情绪是一派枯寂。碰到延辉，很高兴的谈了一阵，打电话给繁曦前，那女孩子真美。</p>
 <p>六、3点抵凤山，一直与陈先生谈，又谈及往事，在陈家晚饭，耽误了车次，害得我坐三轮到凤山火车站，坐上火车，在车中读借来之MeminiscencesofD.H.Lawrcnce,LifeofThomasHardy,并大便，车至捕梓，不识归路，幸而碰到一预备师之老兵伴归。今日花去近四十元，甚疲倦，大概我又要进一步的“戒去高雄”了，我要更多的努力和更多的节俭。</p>
 <p>3月21日星期一</p>
 <p>一、“搞”字者，“高手”之谓也。</p>
@@ -3644,7 +3677,7 @@
 <p>九、参观营房附近一新盖的私娼，内有五间，皆榻榻米，极简陋，小茅屋耳。</p>
 <p>3月24日星期四</p>
 <p>一、愈想愈后悔，想不到我现在竟把时间看得这么重！这是一个好教训，以后再也不要发生这种事。</p>
-<p>二、早上全队浩浩荡荡直奔观音山翠屏岩，经大社，走了四十三分钟，监督他们打靶，FirstLieutenant又啰嗦，殊可恶。理都懒得理他。应兵之请，打了三发，都是面包，真丢尽了人。午饭后去大觉寺，参观榕树，甚壮硕，此寺计花一百七十万元，今仅成上端，日后正殿要拆掉，到处是诱人捐献的箱子与标语，抽签是“内湖式”的五角丟入，灵签出焉。阿兵哥似信此，几乎人人皆为之，又不解签文，我一一为解之，一兵焚香礼拜诸佛，状至虔笃，我身无一文，步岳请我抽一签，为了好玩，许之。签中有“在夏天宜其南方”语，甚妙：</p>
+<p>二、早上全队浩浩荡荡直奔观音山翠屏岩，经大社，走了四十三分钟，监督他们打靶，First Lieutenant又啰嗦，殊可恶。理都懒得理他。应兵之请，打了三发，都是面包，真丢尽了人。午饭后去大觉寺，参观榕树，甚壮硕，此寺计花一百七十万元，今仅成上端，日后正殿要拆掉，到处是诱人捐献的箱子与标语，抽签是“内湖式”的五角丟入，灵签出焉。阿兵哥似信此，几乎人人皆为之，又不解签文，我一一为解之，一兵焚香礼拜诸佛，状至虔笃，我身无一文，步岳请我抽一签，为了好玩，许之。签中有“在夏天宜其南方”语，甚妙：</p>
 <p>绿柳苍苍正当时</p>
 <p>任君此去作乾坤</p>
 <p>花果结实无残谢</p>
@@ -3678,7 +3711,7 @@
 <p>坐快33000000—9</p>
 <p>跑慢44400000—8</p>
 <p>三、村童抢剩菜，预订者未得到，状殊可怜。</p>
-<p>四、FirstLieutenant又啰唆一二次，我以无言报之耳，反正我是不生气，我总是笑脸对他，心平气和的幽他一默，教他消化不良，我才不在这些小事上动肝火呢！</p>
+<p>四、First Lieutenant又啰唆一二次，我以无言报之耳，反正我是不生气，我总是笑脸对他，心平气和的幽他一默，教他消化不良，我才不在这些小事上动肝火呢！</p>
 <p>五、望远镜中的“纳骨堂”。</p>
 <p>六、生平未尝见山如观音山之似国画中者，于枪声中写生，人多赞之。</p>
 <p>七、林章遗碗，乃于归途向华排长假十元，以六元购一好碗赠之，林章甚感激，此予细心体贴之一例也。</p>
@@ -3696,17 +3729,17 @@
 <p>五、女中辑转传来郭大傅在一中所举“怪癖”之例，以我着长袍为例。</p>
 <p>六、夜善培及梁方印（台大森林系，河北宁河）来，谈后他们即去跳舞，我则读书。晏睡。</p>
 <p>3月27日星期日</p>
-<p>一、彦增上午来，与李梁四人同逛街，后午饭于我家，午饭后彦增请看电影于丰中，《地心历险记》（JourneytotheCenteroftheEarth），詹姆士梅逊及白潘等演，极荒诞之能事。</p>
+<p>一、彦增上午来，与李梁四人同逛街，后午饭于我家，午饭后彦增请看电影于丰中，《地心历险记》（Journey to the Center of the Earth），詹姆士梅逊及白潘等演，极荒诞之能事。</p>
 <p>二、晚玉衡来，同访张世民，美惠为削木瓜。8时后与玉衡去一福堂会善培，方印及连子学（农院森三，河南），喝红茶，甚喜半圆沙发及其后之木板弧形墙，归来又晏睡。</p>
 <p>3月28日星期一</p>
 <p>一、上午在一中图书馆看书借书，并诊耳疾于何大夫，又理发，与理发者言此地数年前为稻田、为煤铺。</p>
 <p>二、李先生只一政工，以车票为赠。图书馆工友老兵老王六十七矣，每月一百五十元。</p>
-<p>三、今晨梦到陈琪，这是第一次梦到她，似我正与一女孩子言，陈琪叫我过去与我谈，其父似在，陈后以脸就我，我亲昵之，后似搂在一起而makelove，似未去衣。此梦甚奇，又做于台中，可怪也。</p>
-<p>四、下午去省党部宿舍就医前，以二元购得PearlS.Buck之ImperialWoman于卖破物篮中，此人欲以送我，我不肯，下里巴人中亦有极慷慨者也。途经运动场，见许多女学生紫衣裤、白鞋准备明日之中上运动会，甚有青春之美。省党部宿舍奇佳，附近多美妙之建筑，一绿楼极美，传为马俊超者，高惜冰寓亦在此，可叹可叹！何医生甚热心为我诊治，耳鸣因有鼻窦炎不能打气，治鼻时甚难受，涕汗甚多。归途中见女学生放学，恍然五六年前事，见彼等之青春，而自觉吾侪垂老矣。</p>
+<p>三、今晨梦到陈琪，这是第一次梦到她，似我正与一女孩子言，陈琪叫我过去与我谈，其父似在，陈后以脸就我，我亲昵之，后似搂在一起而make love，似未去衣。此梦甚奇，又做于台中，可怪也。</p>
+<p>四、下午去省党部宿舍就医前，以二元购得Pearl S. Buck之Imperial Woman于卖破物篮中，此人欲以送我，我不肯，下里巴人中亦有极慷慨者也。途经运动场，见许多女学生紫衣裤、白鞋准备明日之中上运动会，甚有青春之美。省党部宿舍奇佳，附近多美妙之建筑，一绿楼极美，传为马俊超者，高惜冰寓亦在此，可叹可叹！何医生甚热心为我诊治，耳鸣因有鼻窦炎不能打气，治鼻时甚难受，涕汗甚多。归途中见女学生放学，恍然五六年前事，见彼等之青春，而自觉吾侪垂老矣。</p>
 <p>往日浪费之时日殊多，今日努力稍迟，故当更为加倍也。</p>
 <p>五、夜请玉衡吃盒子后访华俊，大谈，归途过华民家，又晏睡。</p>
 <p>3月29日星期二</p>
-<p>一、此次台中行，在家甚不愉快，良以无钱故，今早乘9:17车南下，车中读O.Henry之TheLastLeaf，甫八九页即猜出下半情节，与其结尾相去不远，我意系最后一叶于枝上亦佳。WashingtonIrving之TheSketchfiooA，深善其文笔之美，洵非国文所及也。约三时半抵楠梓，转汽车抵营区，一兵协助我带一箱及一行李带归。</p>
+<p>一、此次台中行，在家甚不愉快，良以无钱故，今早乘9:17车南下，车中读O. Henry之The Last Leaf，甫八九页即猜出下半情节，与其结尾相去不远，我意系最后一叶于枝上亦佳。Washington Irving之The Sketch fiooA，深善其文笔之美，洵非国文所及也。约三时半抵楠梓，转汽车抵营区，一兵协助我带一箱及一行李带归。</p>
 <p>二、以三盒凤梨酥（二十四元）赠同仁，以洗发梳送步岳。</p>
 <p>三、收到包裹，内有三十元，有老太太一信及宏谋3月9日一片，他现在在小金门。</p>
 <p>四、夜洗澡，好几天没洗了。</p>
@@ -3735,26 +3768,26 @@
 <p>一、昨夜冷甚，梦及一怪梦，胡适被判死刑，我以兵劫持救之。</p>
 <p>二、晨大冷，取来羊毛衫转赴四二炮连，我或可留于连中，对分发事，想来想去，还是以听其自然为上策。</p>
 <p>三、上午学汽车、机械构造及停止间换挡练习，自己练习颇久。</p>
-<p>四、下午一口气略读完The SketchBook，此法读书甚好。</p>
+<p>四、下午一口气略读完The Sketch Book，此法读书甚好。</p>
 <p>五、晚饭前诸兵围我，谈及英文等。多央我代拼姓名。</p>
 <p>六、请丁忠等吃零食。</p>
 <p>七、天酷冷，棉背心及绒裤皆上身，几不支。</p>
-<p>八、RobertHerrick(1591-1674)“TotheVirginstoMakeMuchofTime”：——</p>
-<p>Gatheryerose——budswhileyemay，</p>
-<p>OldTimeisstilla-flying：</p>
-<p>Andthissameflowerthatsmilesto-day，</p>
-<p>Tomorrowwillbedying.</p>
+<p>八、Robert Herrick (1591-1674)“To the Virgins to Make Much of Time”：——</p>
+<p>Gather ye rose——buds while ye may，</p>
+<p>Old Time is still a-flying：</p>
+<p>And this same flower that smiles to-day，</p>
+<p>Tomorrow will be dying.</p>
 <p>4月2日星期六</p>
-<p>一、昨晚梦及赶火车，有火山爆发（似受JourneytotheCenteroftheEarth影响），及Lo文，有许多手图，余断定非Lo所作（似受昨晚读GeorgeWilson〔1818—1859〕TheHand之影响）。</p>
+<p>一、昨晚梦及赶火车，有火山爆发（似受Journey to the Center of the Earth影响），及Lo文，有许多手图，余断定非Lo所作（似受昨晚读George Wilson〔1818—1859〕The Hand之影响）。</p>
 <p>二、吴稚晖《黄花岗薤露歌》：</p>
 <p>呜呼！大名举自娱，他人头血换得来，黄花落，黄花开，花开花落年年在，斯人一去不复回！</p>
 <p>呜呼！论功行赏客，不记万人头刀推，黄花落，黄花开，花开花落年年在，斯人一去不复回！</p>
 <p>三、午起接值星官，本周不得外出矣。</p>
-<p>四、读TheStruggleofAGirl毕，茫然久之，举凡男女之离合，与冤狱之可怖，皆动吾心，个人在旧社会下之独立奋斗，实有可歌可泣者，而男女间之爱情，好像永远是一个悲剧，只有用一种必然的眼光去看它，才能减除许多无谓的痛苦。</p>
+<p>四、读The Struggle of A Girl毕，茫然久之，举凡男女之离合，与冤狱之可怖，皆动吾心，个人在旧社会下之独立奋斗，实有可歌可泣者，而男女间之爱情，好像永远是一个悲剧，只有用一种必然的眼光去看它，才能减除许多无谓的痛苦。</p>
 <p>五、华俊下午来，带他在附近跑了一阵。欠他足二百元。</p>
 <p>六、值星，检查武器，马马虎虎。</p>
 <p>七、华俊甚赞我之在英文上之努力与热劲。</p>
-<p>八、翻完LifeofThomasHardyVol.I.。</p>
+<p>八、翻完Life of Thomas Hardy Vol. I.。</p>
 <p>九、夜泛读，决定还是先写定“应考用”的作文，约以一周两篇为准。</p>
 <p>十、鱼口——触目惊心，我一定要设法准他的假去就医！</p>
 <p>4月3日星期日</p>
@@ -3767,7 +3800,7 @@
 <p>你托清茂转给我的那封信已经收到了，我觉得看你那封信，比看晚会更富康乐的意义，你该满意我对你那封信的评语了吧？我还要谢谢你那首“歪诗”，你可不必再去买什么礼物了，因为那已是一件很有趣的礼物，我会好好保存它，万一我阵亡，我还会把它列为赠给“明尼苏达”的遗物之一。说不定赵依依还可以欣赏它呢！我在这里的大概情形在前封信已略有述及（托清茂转给你的），我在前线还没有以被贬龙场的王阳明自拟，你竟敢发起这牢骚来，实在太不应该，我们同来的同学，一下船后也是东流西散，来此已快二十天，我只见过陈守仁、钟藏泰、钟秉光、萧茂盛和王培荣等人一面，多是在军官讲堂（想不到出来当官，还要坐八小时硬板凳，听讲课）上见到的，匆匆忙忙谈不上几句话就分手了，缜京、宏谋分到哪里到现在还不知道，所以暂时无法代你向他们致意。我们这里雨季已届，相当潮湿，厕所离我住的地方只有十数步之遥，可说非常方便，但任何事有利必有弊，苍蝇也特别多，而且因厕所是在山丘上，没顶没门，晚上西北风强，相当冷，有时晚上想小便，都忍到第二天才解决。浴室据说到本月底要关门（不烧热水了），这对我是一大威胁，我到此地是每周洗澡一次（因浴室远离我驻地有二十分钟路程，而且一周只开两次，我洗个人池，每次要花四元……总之，理由很多，借口也不少，所以一周洗一次澡算很多的了）。最近我晚上多了一件差事——教我们副团长英文和补习大代数，他为人谦和，所以我还愿意赠送他一点公余之暇的时间。我有一张克难桌，自己还设计了一套电池台灯，看起书来还方便。排长的职务也颇能胜任愉快，讨厌的是指导员一天到晚要我写论文、墙报稿……老班长要我当他代书人，写交谊信……花的时间不少。我们最近早晨都有基本教练，我因是最年轻的官长，刚从学校出来，一切姿势也比他们做得正确，所以还不会出洋相，连长还叫我去讲解了一次礼节及敬礼动作。我走上去胡吹一阵，什么古今中外……礼节如何重要……随即叫各排带开练习。自己站在旁边欣赏别人出洋相。虽然有一点缺德，但这是避免自己出洋相的好办法。副团长又打电话来要我去上课了，有暇再谈，匆此问</p>
 <p>近好</p>
 <p>潘毓刚3月24日晚7时7分</p>
-<p>六、看吴志敏的病，他今天打了一针（venerealdisease）。</p>
+<p>六、看吴志敏的病，他今天打了一针（venereal disease）。</p>
 <p>七、晚至福利社吃花生、牛肉汤及酸梅，皆甚贵且劣。</p>
 <p>八、主持晚点名，步岳说我快而慌。后赴厨房解决伙夫们的吵闹。</p>
 <p>4月4日星期一</p>
@@ -3786,8 +3819,8 @@
 <p>八、每天都看吴志敏的病，今天他又打了一针。</p>
 <p>九、设想若是古人生病最要命，药之难吃，实可惊，拔牙亦可怖。不知古人是怎样治牙的？他们一定不刷牙。</p>
 <p>十、人译Confucius之言：</p>
-<p>①Learningwithoutthoughtislaborlost；thoughtwithoutlearningisperilous.</p>
-<p>②Tostudymeanslaborlostifonehasnothinking；thinkingisdangerousifonedoesnotstudy.</p>
+<p>①Learning without thought is labor lost；thought without learning is perilous.</p>
+<p>②To study means labor lost if one has no thinking；thinking is dangerous if one does not study.</p>
 <p>皆译“殆”字为危险，殊不似原意，原意并不如是严重。</p>
 <p>十一、1960年3月31日台北《联合报》：</p>
 <p>十四岁少女被迫落火坑，虎口余生正侦办中</p>
@@ -3801,7 +3834,7 @@
 <p>4月5日星期二</p>
 <p>一、早起投手榴弹，成绩不恶，值星出洋相二次，群为之笑，点名时志明老冲我笑，我几不能忍。</p>
 <p>二、我以王八画法喻中外文明，尔琳来信以之转喻古今文明，其喻甚佳，甚可耐人寻味。当为文论之。</p>
-<p>三、下午与步岳散步，看一起重车，值十四万美金。又看五个大肥猪，晚饭后为步岳讲JuliusCaesar，旋被阿兵哥所围，乃大谈故事，直至晚点名，余口才奇佳，引喻无不可笑者，言语极能吸人神往。</p>
+<p>三、下午与步岳散步，看一起重车，值十四万美金。又看五个大肥猪，晚饭后为步岳讲Julius Caesar，旋被阿兵哥所围，乃大谈故事，直至晚点名，余口才奇佳，引喻无不可笑者，言语极能吸人神往。</p>
 <p>4月6日星期三</p>
 <p>一、今日晨间保养，早饭前一小时又“一人演说”而过，我要检讨我自己了！时间这样支出是报不了账的！</p>
 <p>（一）我不再允许多以疲劳为借口去散起步来了——我要换样读些书，用以代替散步。</p>
@@ -3820,7 +3853,7 @@
 <p>我希望在回来以后能有很大的改变，犹如凤山六月是我生活上的分水岭一样，把旧日的生活以及其他完全隔开，这种想法是可笑的，自己也不晓得是怎样会发生的，自然不会实现，实则改变很少，甚至于完全没有改变，然而也就算了，并不感到失望或者不快，反而在许多不如意的事上，生出许多连自己也惊讶其宽大的容忍和退让的思想。显然，过去几个月的生活对我发生了很大的作用，第一、我成熟了，第二、我老了，第三、我麻木了。不管怎样，这总是一件好事。所以，在近些日子里，不管是大事或者小节，总能逆来顺受，有时，反以从前对这类事情的坚持为愚蠢和可笑了。我想，人，或者没有出息的人，都可能是这样的，初则野心勃勃，或思成龙，或欲变蛇，终于“屈就”了每月十数元的小事，“娶个黄脸婆娘，生儿子去也。”（此两句似曲中语，君试为完卷如何？）我或者还未“没有出息”到这种地步，但终能自“lustforlife”中解放出来，万念倶消，心如明镜，不染粒尘，自无所谓快与不快了。曩者诵经念佛，寻求解脱，自以为解脱，终于不能解脱，今始悟唯于人生经验中，自可求得真解脱也。</p>
 <p>马戈曾来谈数次，但庄因诸人则久未晤面矣。某晚于西门町遇祝公，俨然小公务员矣。</p>
 <p>闻君在台北时，曾往探伊人，终晤面否？经过如何？可得而闻乎？</p>
-<p>英文信甚佳，有与敝行抢饭碗之嫌，造句用字之典雅，吾弗如也，然以为，除非欲创造TheDeclineandFallofRomanEmpire之类巨著，似不必如此费力，以简单、平易、有力为宜，美人为文以make、get等俗字代替多种动词，可见现代英文之趋势，对此点不可忽略。</p>
+<p>英文信甚佳，有与敝行抢饭碗之嫌，造句用字之典雅，吾弗如也，然以为，除非欲创造The Decline and Fall of Roman Empire之类巨著，似不必如此费力，以简单、平易、有力为宜，美人为文以make、get等俗字代替多种动词，可见现代英文之趋势，对此点不可忽略。</p>
 <p>近况如何？颇欲知悉，如需购买书籍，或缺钱用，宜速来信。夜已深，就此结束，明后日当再写信给你。</p>
 <p>凤仪候安4月3日晚12时</p>
 <p>附件一，望查收。</p>
@@ -3833,14 +3866,14 @@
 <p>四、从早饭后到晚饭前，一口气给启庆写成英文长信，甚倦，头为之昏昏然，如是辛苦用功，成果一出，极为愉快，今晚要搞点轻松的。</p>
 <p>五、晚饭后与步岳谈了一阵往史，步岳说我永远是快乐外溢，绝对看不出有那么辛酸史。我口才实在愈来愈妙了。为步岳解诗，忽见A.E.Housman(1859-1936)之“FouSmileUponYourFriendToday”，喜而以五言古诗译之：</p>
 <p>死别（1960年4月7日夜9时）</p>
-<p>久病得君笑，Yousmileuponyourfriendto-day,</p>
-<p>沉疴似欲除；To-dayhisillsareover；</p>
-<p>万语逢重诉，Youhearkentothelover’ssay,</p>
-<p>余欢若云浮。Andhappyisthelover.</p>
-<p>意转何迟暮，Iislatetohearken，latetosmile</p>
-<p>慰情聊胜无；Butbetterlatethannever；</p>
-<p>余生未忍去，Ishallhavelivedalittlewhile</p>
-<p>柩马立踟蹰。BeforeIdieforever.</p>
+<p>久病得君笑，You smile upon your friend to-day,</p>
+<p>沉疴似欲除；To-day his ills are over；</p>
+<p>万语逢重诉，You hearken to the lover’s say,</p>
+<p>余欢若云浮。And happy is the lover.</p>
+<p>意转何迟暮，Iis late to hearken，late to smile</p>
+<p>慰情聊胜无；But better late than never；</p>
+<p>余生未忍去，I shall have lived a little while</p>
+<p>柩马立踟蹰。Before I die for ever.</p>
 <p>六、不同病而找人怜，不可说也。</p>
 <p>4月8日星期五</p>
 <p>一、最末一次去观音山打靶，以值星故，未能得暇多读书，是一憾事。中午在庙中，曹梓华言其往事，脚臭，新球鞋上挖洞方行，现在正积钱谋娶妻。归在冰果店棚下竟再度见到2月11日在南风见到的那个“初中（？）的小丫头”，五十余日不见，年纪大一些了，稚气未除，与太保们在一起，笑起来仍是那样迷人，她最使我一见难忘，神情风韵，历历在脑。今日她浅绿衫，白绒外套上有红绿点，红手帕，金表，上有白边，绿蓝褐色手提袋，喝汽水时的小样子真美。</p>
@@ -3849,41 +3882,41 @@
 <p>四、朱廷恒说我是书呆子，只歇一下就拿起书来了。</p>
 <p>五、吴兆鳞说永远看我在工作。</p>
 <p>六、夜读英诗，晚点名前后译成《大麦诗》：</p>
-<p>大麦诗（LikeBarleyBending）</p>
+<p>大麦诗（Like Barley Bending）</p>
 <p>麦穗曲身偃，Likebarleybending</p>
-<p>滨海低田瘠，Inlowfieldsbythesea，</p>
-<p>疾风动地来，Singinginhardwind</p>
+<p>滨海低田瘠，In low fields by the sea，</p>
+<p>疾风动地来，Singing in hard wind</p>
 <p>高歌何能已。Ceaselessly；</p>
 <p>麦穗曲身偃，Likebarleybending</p>
-<p>既偃又复起，Andrisingagain,</p>
-<p>颠扑不为折，SowouldI,unbroken,</p>
-<p>昂然疮痛里。Risefrompain；</p>
-<p>我生亦柔弱，SowouldIsoftly，</p>
-<p>日夜逝如彼，Daylong,nightlong,</p>
-<p>强把万斛愁，Changemysorrow</p>
-<p>化作临风曲。Intoasong.</p>
-<p>——SaraTeasdale</p>
+<p>既偃又复起，And rising again,</p>
+<p>颠扑不为折，So would I, unbroken,</p>
+<p>昂然疮痛里。Rise from pain；</p>
+<p>我生亦柔弱，So would I softly，</p>
+<p>日夜逝如彼，Day long, night long,</p>
+<p>强把万斛愁，Change my sorrow</p>
+<p>化作临风曲。Into a song.</p>
+<p>——Sara Teasdale</p>
 <p>4月9日星期六</p>
 <p>一、午卸值星官，无官一身轻。</p>
 <p>二、善培自台中来信，明日不能去台南矣：</p>
 <p>你家那条狗实在要命，逢人便咬，连令弟阿八也被那畜生咬得直叫，我十分讨厌它！</p>
 <p>三、抄车次表时，那卖车票的老太太正给旁边抱小孩的那女子念经，焚了一束香，向那小鬼念念有词，可是那小鬼仍哭叫，不为所动。</p>
-<p>四、去五十团访明宏及树生，看到他们做行政官也真是麻烦，真是smallchoiceinrotteneggs,树生说我到处是风云人物。</p>
+<p>四、去五十团访明宏及树生，看到他们做行政官也真是麻烦，真是small choice in rotten eggs,树生说我到处是风云人物。</p>
 <p>五、施珂来一片，后天或可相见也。</p>
 <p>六、猫王父再婚，猫王为傧相，亦一佳话也。</p>
 <p>七、日本新出特效避孕药，Sampoortサニブーンルーブ锭，中文“生保片”，药房有售。</p>
 <p>八、高县省议员女性候选人名扬潜闺，妙名也。</p>
-<p>九、晚饭后译成JuliaA.FletcherCarney之小诗：</p>
-<p>小东西（LittleThings）</p>
-<p>小水滴，Littledropsofwater,</p>
-<p>小沙粒，Littlegrainsofsand,</p>
-<p>汇成无情海，Makethemightyocean</p>
-<p>堆起极乐地。Andthepleasantland.</p>
-<p>分秒时光何卑小，Thusthelittleminutes,</p>
-<p>一线牵出几世纪？Humblethoughtheybe,MakethemightyagesOfeternity.</p>
+<p>九、晚饭后译成Julia A. Fletcher Carney之小诗：</p>
+<p>小东西（Little Things）</p>
+<p>小水滴，Little drops of water,</p>
+<p>小沙粒，Little grains of sand,</p>
+<p>汇成无情海，Make the mighty ocean</p>
+<p>堆起极乐地。And the pleasant land.</p>
+<p>分秒时光何卑小，Thus the little minutes,</p>
+<p>一线牵出几世纪？Humble though they be, Make the mighty ages Of eternity.</p>
 <p>三日来每日晚饭后译一小诗，期有小成，聊以遣怀。</p>
 <p>十、独自在“家”（以军为家）用功，周排附说我是当卫兵的。</p>
-<p>十一、又译MaryCarolynDavies之《挑梦夫》（TheDream-bearer）</p>
+<p>十一、又译Mary Carolyn Davies之《挑梦夫》（The Dream-bearer）</p>
 <p>梦神</p>
 <p>那令人疲惫的劳苦地方，黑烟弥漫，</p>
 <p>只听到汽笛的鸣声，</p>
@@ -3893,14 +3926,14 @@
 <p>那里曾一度见过晴空，</p>
 <p>我发现他们比我有更多的梦——</p>
 <p>当我使他们坠入梦中。</p>
-<p>Wherewearyfolktoil,blackwithsmoke,</p>
-<p>Andhearbutwhistlesscream,</p>
-<p>Iwent,allfreshfromdawnanddew,</p>
-<p>Tocarrythemadream.</p>
-<p>Iwenttobitterlanesanddark，</p>
-<p>Whooncehadknownthesky，</p>
-<p>Tocarrythemadream——andfound</p>
-<p>TheyhadmoredreamsthanI.</p>
+<p>Where weary folk toil, black with smoke,</p>
+<p>And hear but whistles scream,</p>
+<p>I went, all fresh from dawn and dew,</p>
+<p>To carry them a dream.</p>
+<p>I went to bitter lanes and dark，</p>
+<p>Who once had known the sky，</p>
+<p>To carry them a dream——and found</p>
+<p>They had more dreams than I.</p>
 <p>十二、近日用功皆借用排长的小竹桌来用，搬来搬去，亦多情趣。</p>
 <p>十三、一丝不挂歌：</p>
 <p>风吹“卵教”摆又摇，</p>
@@ -3969,10 +4002,10 @@
 <p>富贵荣华天付汝，</p>
 <p>福如东海寿如山。</p>
 <p>庙中甚阴森可怕，台南古庙甚多，香火有的甚盛，民间迷信，古之箭靶人物，甚可深味。</p>
-<p>四、看世界先生的《霸王贵妃》（“IlerroredeiBarbari”）只得一句：</p>
+<p>四、看世界先生的《霸王贵妃》（“Ilerrore dei Barbari”）只得一句：</p>
 <p>你知道得太多，它会带给你噩运。</p>
 <p>决定除非“有把握”之电影，否则不看，以免虚耗金钱与时间也。</p>
-<p>五、大逛书店，颇多旧日逛书店之情趣，华俊赞我内行，我亦以内行自诩，终在一小书店中访得廉价（二十二元）之Mathews'Chinese-EnglishDictionary（另一种卖六十六元），非常高兴，二人各买一册，华俊乱买书，颇似昔日之我，我则以穷故，颇不以乱买书为然，旧日买之书，有价值者殊少，今则矜慎矣，新观念与新看法有以致之也。</p>
+<p>五、大逛书店，颇多旧日逛书店之情趣，华俊赞我内行，我亦以内行自诩，终在一小书店中访得廉价（二十二元）之Mathews’Chinese-English Dictionary（另一种卖六十六元），非常高兴，二人各买一册，华俊乱买书，颇似昔日之我，我则以穷故，颇不以乱买书为然，旧日买之书，有价值者殊少，今则矜慎矣，新观念与新看法有以致之也。</p>
 <p>六、午晚饭皆在吴抄手，泡菜甚佳，午酱爆豆砂锅，晚榨菜、白砂锅。今日共花八十余元。</p>
 <p>七、晚华俊请三轮至车站。今日一切吾坚行美国式。</p>
 <p>八、归途请天昭在冰店吃木瓜等，天昭强拖我至弹子房，我不肯打，看了一下黄玉华，我一句话也没说，天昭逗她一阵。</p>
@@ -3992,7 +4025,7 @@
 <p>一、今日《联合报》：“合众国际社美国伊利诺州香宾9日电：因讲授性学而被撤职的一位大学教授，今天在他的两位门徒结婚典礼中，担任男傧相，他否认是一个主张滥爱的人。高区教授系因劝告学生们在婚前发生性关系，而于周四被伊利诺大学解聘。其后，约有一千五百名学生携带标语在校园内游行，向学校当局抗议，声称高区教授的解聘乃学术自由的死亡。”</p>
 <p>二、接宏谋五页书。</p>
 <p>4月13日星期三</p>
-<p>一、给庄因、锡昌、四室VeterinarySurgeonLai各一片，周弘，孙英善、陈鼓应三人合十三页信。</p>
+<p>一、给庄因、锡昌、四室Veterinary Surgeon Lai各一片，周弘，孙英善、陈鼓应三人合十三页信。</p>
 <p>二、晚点后与步岳练杠子，做了二十多，当每晚如是为之。</p>
 <p>三、夜包装日记本，自1958年6月8日至1960年4月10日，共一年零十个月的日记，计七册。</p>
 <p>4月14日星期四</p>
@@ -4018,7 +4051,7 @@
 <p>（三）谈诗谈书。</p>
 <p>（四）陈先生改老马信，深令我叹，英文诚不易学也，臻于陈之程度已非易易。</p>
 <p>（五）力劝陈先生走英文为文寄外国之路，这是我给他的第二大建议，第一大建议——搞英诗，已在这几年里有了成绩——副教授干起来了。</p>
-<p>五、在凤山夜购得活页纸两本，ToRepeatFromMemory一册，共花十三元。</p>
+<p>五、在凤山夜购得活页纸两本，To Repeat From Memory一册，共花十三元。</p>
 <p>六、下车后买鞋油等预储。花了二十一元九角。</p>
 <p>4月16日星期六</p>
 <p>周志明说我：“有你那么安静的心就好了。”</p>
@@ -4027,8 +4060,8 @@
 <p>二、报载淡水洋人当街接吻，引起路人围观，警察以“有伤风化”请入派出所，见此则新闻，可知国人真保守迂腐得可怕！</p>
 <p>三、张曼竞选中国小姐，早是我意料中事，今日见报，果然。</p>
 <p>四、善培今值星不能来，又知其失款，限时挂号寄去五十七元六角。并信嘱其小心。</p>
-<p>五、与华俊逛书店，在吴抄手午饭后看《所罗门王》（SolomenandSheba），尤伯连纳眼甚有神，珍纳露露布丽姬妲的肉真美。练习听英语，颇得一二。</p>
-<p>六、买ThePocketBookofPopularVerse及美国英语发音，共二十元，送毓刚（毓刚的生日小礼物）及步岳。</p>
+<p>五、与华俊逛书店，在吴抄手午饭后看《所罗门王》（Solomen and Sheba），尤伯连纳眼甚有神，珍纳露露布丽姬妲的肉真美。练习听英语，颇得一二。</p>
+<p>六、买The Pocket Book of Popular Verse及美国英语发音，共二十元，送毓刚（毓刚的生日小礼物）及步岳。</p>
 <p>七、与华俊合送英善日记一册，十三元。日记里页有我之“序文”。在吴抄手夜饭，我为省钱，吃的是红烧牛肉及花卷。</p>
 <p>八、买袜子一双，十元。</p>
 <p>九、力劝华俊戒弹子等以向学。</p>
@@ -4039,7 +4072,7 @@
 <p>三、又在作“大”文上花了太多的时间，虽亦为搞英文，却属不可，明当戒之。</p>
 <p>4月19日星期二</p>
 <p>一、早上步岳陪我交涉不参加前瞻五天讲习事，并去看左眼及牙。</p>
-<p>二、午后天昭及镜昌来，强邀天昭之宴，屡却不获，只好勉为我难，同行者四二炮连连长、副连长、排长及尔昭等，先看《尼罗王与妖姬》（LesWeek-EndsDeNeron即Nero'sWeekEnds），此影颇富浪漫主义之味儿。B.B.镜头照例被剪去许多。</p>
+<p>二、午后天昭及镜昌来，强邀天昭之宴，屡却不获，只好勉为我难，同行者四二炮连连长、副连长、排长及尔昭等，先看《尼罗王与妖姬》（Les Week-Ends De Neron即Nero’s Week Ends），此影颇富浪漫主义之味儿。B. B.镜头照例被剪去许多。</p>
 <p>三、赴南风小坐，Pseudo-Rosa似不若当年之美，唯其臂及小腿仍极动人。</p>
 <p>四、戴家为三层楼，在前金（中正二路）为木行，装饰太土气。在彼处大量读《中日画报》，深感其功用之大，图片令人神往，明星之浪漫，甚是。晚饭颇丰，鱼肉蛤蜊，应有尽有，有几道菜皆无台湾味。天昭兄弟待人甚厚，心中甚感，然囊中只五元七角，不能发生任何作用。</p>
 <p>五、夜归车中碰到文藻，三轮车归，今日甚悔恨此行，我之意志不坚之咎不可辞。人情人情，吾当从老马之标语矣，与这些人扯什么？他们恰如那些掉在海中的可怜虫，自己沉沦还不说，还要把你拖下水去！我决心要“硬板些”——这是今天的大教训。夜多工作一些，写信给清茂、玉华。</p>
@@ -4108,14 +4141,14 @@
 <p>一、梦到张敏英，坐火车，还她七百多债，她说还有一百没还她。</p>
 <p>二、又是朝会，副师长一讲一小时，我干脆拿出小本子来背了。</p>
 <p>三、上午在仁武，背英文，与老兵谈，协助传令演习。逗小牛，小牛极可爱。</p>
-<p>四、锡昌挂号寄来如AnOutlineofEnglishPhonetics。</p>
+<p>四、锡昌挂号寄来如An Outline of English Phonetics。</p>
 <p>五、庄因寄来《翻译之艺术》。</p>
 <p>六、傍晚与丁忠谈，劝其考候官。</p>
-<p>七、夜为连长译TheOrderofBattleoftheChineseCommunists。</p>
+<p>七、夜为连长译The Order of Battle of the Chinese Communists。</p>
 <p>4月24日星期日</p>
-<p>一、晨假赴步校借教科图之名去台南，副师长抓人，今日不许外出，以躲在小店中得免。与善培、华俊、明琳去吴抄手午饭，后看了一场《金钱女人与枪》（Money,WomenandGuns），场内之嘈乱闷热，生平仅见。</p>
+<p>一、晨假赴步校借教科图之名去台南，副师长抓人，今日不许外出，以躲在小店中得免。与善培、华俊、明琳去吴抄手午饭，后看了一场《金钱女人与枪》（Money, Women and Guns），场内之嘈乱闷热，生平仅见。</p>
 <p>二、3时后即先上归途，我愈来愈感到交游之乏味，今日收割得此念，也许我真能从此就做到一个“不在世俗式的交游上落形迹”的人，无聊沉闷的交游、礼貌上的过从、习惯性的接人送人、客套性的写信、肤浅的娱乐（如电影，可看者十不得一），这些都将不是使我满意的“时间的支出”，过去我一直剪不破这层网，现在我要开始在这些事情上做一次“惊人之举”了——老马的理想，我来实行了，老马消极的一个想法，被我积极化起来了。这是我二十四岁尾声的一个大收割——我要养成一个任何人所不能及的忍耐寂寞的能力。</p>
-<p>三、夜读AlgernonC.Swinbums之TheGardenofProserpins中二句，最喜Iamtiredoftearsandlaughter/Andmenthatlaughandweep.</p>
+<p>三、夜读Algernon C. Swinbums之The Garden of Proserpins中二句，最喜I am tired of tears and laughter/And men that laugh and weep.</p>
 <p>四、归见清茂二信，一为限时，附之于此：</p>
 <p>敖：</p>
 <p>本来早就想给你写信，没想到一拖再拖，拖到今天。主要的原因是计划给你写封十三张以上的信，但一直等不到那股劲儿，看样子，该向你敬谢不敏，投降了。不久以前，尔琳告诉我，你日内将会给我信，于是我天天等着，等到今天，竟无片纸只字，很感失望。我只好提起笔，先问候李排长的安。</p>
@@ -4149,7 +4182,7 @@
 <p>将信箱写成7750退回，故于4月22日再寄。</p>
 <p>六、夜成一长信（六页），报马戈。另给老太太一信（限时）。</p>
 <p>马戈：</p>
-<p>这次该记你一个大功！去年我过生日，佯言避寿，你竟信以为真，未来申贺，至今思之，尚代为汝歉，悻悻不已。今日是我二十五岁生日，仅得你一函及“冰炭敬”半百，实在觉得你比他们都好！——虽然这只是个巧合，因为你糊糊涂涂一定不记得我生日的，但我仍愿把它当作你的LetterofCongratulation，愿记你一个大功！</p>
+<p>这次该记你一个大功！去年我过生日，佯言避寿，你竟信以为真，未来申贺，至今思之，尚代为汝歉，悻悻不已。今日是我二十五岁生日，仅得你一函及“冰炭敬”半百，实在觉得你比他们都好！——虽然这只是个巧合，因为你糊糊涂涂一定不记得我生日的，但我仍愿把它当作你的Letter of Congratulation，愿记你一个大功！</p>
 <p>这个的“寿”真“避”得彻底，远处南台，孤家寡人，实在妙哉妙哉，故人多我遐弃，最是可恨，我在人言寿，我去人额手，真是妈妈的。</p>
 <p>今早一起来照旧是没水洗脸，每天我都先不洗脸，今天因为华诞良辰，所以费了半天劲搞来一盆水，洗了一阵便去跑步，一千米下来，伫立在野外看从云层里溜出来的晨曦，又看青山隐隐，实在很痛快。</p>
 <p>今天又是我开讲“地雷与诡雷”之日，上下午各两小时，累得满身大汗，元气消耗不少，可是收获也很多——这些老兵好像对我很着迷，多次鼓掌欢迎李教官，他们欢迎这位满口“生殖器”、“私窑子”、“欢喜佛”、“王八兔子”的“老百姓”，四小时中讲到地雷的大概加起来不到半小时，其余的时间，全是节外生枝借题发挥：例如从“坑道战”一扯扯到曾国荃打金陵，转而扯到太平军与女人的小脚；从“铁道雷”一扯扯到张作霖的“凤还巢”，转而比较吴大舌头与嫪毐生殖器的大小；从“M1延期信管”一扯扯到陈涉的大泽乡，转而扯到楚汉的争雄与韩信之死……天南地北，古往今来，信口乱扯，换来的是一片嗟叹与谀誉声，有的说：“别的教官讲课，我都要睡觉，只有你讲课，我最高兴听，一点也不困了。”有的说：“我在别的教官上课时都在下面偷看小说，可是你今天却害得我没看成——你讲得太好了。”还有的说：“你讲的是我一生中所听的最好的。”……</p>
@@ -4183,9 +4216,9 @@
 <p>三、曹梓华言周毅之跋扈，甚好玩。其一老友昨死于荣誉之家。五十八岁。枪穿一目，给他信，令焚之。</p>
 <p>四、又是4月27了，本拟给黄梅莉写封短短的英文信，既而又拟改寄白纸一张，表示无言——“没有什么可谈的”，又以地址不在手边终又作罢，罢，罢，罢，算了，算了。假如我写短短的中文信，我就这样写：</p>
 <p>写给黄梅莉</p>
-<p>也许我永远不会忘记一年前的今天在电话里，你对我说的那句话，我想起ChristinaGeorginaRossetti的两句诗：</p>
-<p>Betterbyfaryoushouldforgetandsmile；</p>
-<p>Thanthatyoushouldrememberandbesad.</p>
+<p>也许我永远不会忘记一年前的今天在电话里，你对我说的那句话，我想起Christina Georgina Rossetti的两句诗：</p>
+<p>Better by far you should forget and smile；</p>
+<p>Than that you should remember and be sad.</p>
 <p>也许那句话在我心里永不褪色，但我希望它不再使我耿耿于怀。契阔经年，我不知道我该说些什么，只愿你快乐、纯真，永远的。</p>
 <p>李敖1960年4月27日在仁武乡</p>
 <p>晚饭前本拟写一中文短信玩——并不寄，不料一写即油然而生投邮之念，晚饭后誊出以限时托鼓应“代转”，另给鼓应一片（限时），语以勿偷看。</p>
@@ -4206,7 +4239,7 @@
 <p>十一、今晚睡得甚晏。</p>
 <p>4月28日星期四</p>
 <p>一、我早就说军中男似女，整日喋喋，斤斤小事，实无远谋气象。</p>
-<p>二、梦及Y在ConcentrationCamp中带队，衣中山装。</p>
+<p>二、梦及Y在Concentration Camp中带队，衣中山装。</p>
 <p>三、对造句兴趣奇高。</p>
 <p>四、上午四小时地雷，最末一节考试，想不到他们竟如此认真，今日讲故事亦多，副座来査课，我忽转话锋于地雷上，他走我又转回来，机巧过人，丁忠等言我口才好，说话动听。我表情亦极自然微妙，潇洒放浪不已。能设今譬古（如坐三轮车）最佳。</p>
 <p>五、午后洗澡，步校背心烂得报销一件，连长高升，醉醺醺的与我穷谈了一阵，许久才得脱身。明宏言施珂归来，走访未遇。明宏、树生说讲课是我看家本领。</p>
@@ -4233,7 +4266,7 @@
 <p>六、李起鹏全家自杀，亦一可叹之新闻也。彼死可也，何必二子一妻同死耶？李承晚亦黯然离总统府矣。</p>
 <p>七、夜珂来，请其吃凤梨花生等，珂言“小事不愿做，大事做不了”。</p>
 <p>八、居然把我分到第四连兵器排！真是意外！这回有车坐了，真是好消息！此事益使我深信“绝不要有意去安排自己的命运”！兵器排人事较复杂，据说老油条的最多，好在我也是老油条——大家一起耍油条。夜深研究此排编制表。</p>
-<p>九、看到新汉在“联副”上的《未成的交易》。新汉此文盖写我之故事也。此文甚佳，文锋深受Hemingway影响，夜以一信述LauraKieler被Ibsen用作模特儿事，并附照片。</p>
+<p>九、看到新汉在“联副”上的《未成的交易》。新汉此文盖写我之故事也。此文甚佳，文锋深受Hemingway影响，夜以一信述Laura Kieler被Ibsen用作模特儿事，并附照片。</p>
 <p>十、给弘一信，附照一片。</p>
 <p>4月30日星期六</p>
 <p>一、要好好复习一下七五（罗列所谓“炮后喷火的七五山炮”）及六〇炮，真出了洋相就糟了！这回该向张宏谋“学习”了。</p>
@@ -4271,7 +4304,7 @@
 <p>此事实在令我不胜感动，这热水瓶使他们每人至少花了十余元，以他们微薄的收入，这实在是一件大罪过，我怪我作俑了，我决定要在我发薪后好好表示一下，并且我永远不要忘记这些“另一个阶层的人们”。副连长说，这些老兵们就是这样，只要你对他们好，你走时他们当衣服也要买件像样的礼物送给你。这是我有生以来收到的最可贵的礼物之一，它象征着：</p>
 <p>（一）一个初出茅庐的排长，在短短五十二天中带兵的一点小成功。</p>
 <p>（二）一群“另一阶层的人们”的投桃报李。</p>
-<p>（三）Theypaidthebiggestpriceanyonecaneverpay.</p>
+<p>（三）They paid the biggest price anyone can ever pay.</p>
 <p>这是一个多么令人愉快的经验与回忆。</p>
 <p>九、王佐又送来接替令。</p>
 <p>十、与充员林船夫、廖金城等谈，旧排长楚炳勋（河南）为我介绍兵器排中事。他也有耳疾——“连耳疾也移交了。”连长说。</p>
@@ -4421,7 +4454,7 @@
 <p>偶尔，在那些人的谈话声和笑声停下来的时候，你会发现，那家小冰店仍然很静，很静。</p>
 <p>附马戈来信：</p>
 <p>敖生（李教官）：</p>
-<p>今天几乎玩了一天，十分颓丧，回家接到来信，方才衷心开朗，很高兴能够凑巧地赶上你的生日，除了Venetia的，我几乎连自己的都会马虎过去，去年“避”你的寿，至今犹引以为憾，可以律己以理，却为能不待人以情，有时你又说我温，真是天晓得，其实我的“无情”之处真是罄竹难书，否则不会到现在还是孤单如此！“生日”对自己和关心自己的人毕竟是有意义的，至少是一个盛会的借口，今年闰六月（哪一天你可知道？）我准备两个生日好生过它一过（两次希望你都能参加！），第一个我预备搞一个大舞会，将我和我相识的couples以及旷男怨女们都请来，狂欢一夜，并且订名为Mid-SummerNightDreamParty，希望大家能够在此找到他们的otherhalf。第二个生日预备只请我认识的一群“才子”或称“雅士”好生聚它一次，或者买醉、或者出游，至于我算是二十几岁的生日，得麻烦你推算一下，我是二十三年生的，照我的想法应该是二十七岁才对。</p>
+<p>今天几乎玩了一天，十分颓丧，回家接到来信，方才衷心开朗，很高兴能够凑巧地赶上你的生日，除了Venetia的，我几乎连自己的都会马虎过去，去年“避”你的寿，至今犹引以为憾，可以律己以理，却为能不待人以情，有时你又说我温，真是天晓得，其实我的“无情”之处真是罄竹难书，否则不会到现在还是孤单如此！“生日”对自己和关心自己的人毕竟是有意义的，至少是一个盛会的借口，今年闰六月（哪一天你可知道？）我准备两个生日好生过它一过（两次希望你都能参加！），第一个我预备搞一个大舞会，将我和我相识的couples以及旷男怨女们都请来，狂欢一夜，并且订名为Mid-Summer Night Dream Party，希望大家能够在此找到他们的other half。第二个生日预备只请我认识的一群“才子”或称“雅士”好生聚它一次，或者买醉、或者出游，至于我算是二十几岁的生日，得麻烦你推算一下，我是二十三年生的，照我的想法应该是二十七岁才对。</p>
 <p>下午在到上班去的车上想到一件非立刻告诉你不可的事，可是等回来却再想也想不起来了，不知在结束此信之前，记忆会不会助我。</p>
 <p>你自寿的浣溪沙颇佳，甚愿你在诗词上多下功夫。</p>
 <p>小老弟来，见我忙着念书，走时也未来辞行，大家都是解人，当不在乎，幸好我与鼓应曾宴他于寿尔康，我又请他和二爷看电影，我又和他同去外语学校看新汉，他不会以我薄情，你听我叙来，也一定不会。</p>
@@ -4434,7 +4467,7 @@
 <p>风雨如故，而夜已过半，满纸荒唐，至此暂停，再谈，祝</p>
 <p>愉快</p>
 <p>宏祥4月27日</p>
-<p>听说你给黄梅莉有信，Isn’tit？何不以具体手段，鱼雁已是前一generation的武器了。</p>
+<p>听说你给黄梅莉有信，Isn’t it？何不以具体手段，鱼雁已是前一generation的武器了。</p>
 <p>下礼拜四英善的妞生日，又得蓬拆一番。</p>
 <p>书籍寄去。</p>
 <p>再：请常给彦增去信，给他打打气，他很佩服你，我在凤山寄你的信，现在何处？如方便请转给我，彦增约我们6月25日去台中他家，希望你能来。</p>
@@ -4522,7 +4555,7 @@
 <p>一、接华俊寄来之《基础历史学》。</p>
 <p>二、下午又病重，夜接召雄电话，满身大汗。</p>
 <p>5月13日星期五</p>
-<p>一、病重，去卫生连打针吃药，转赴凤山，先修鞋花十元，转赴四川面店吃面后渐佳，在陈家见新汉寄来之NewYorkTimes及手条，陈先生为改文，获益良多，晚饭于陈家，归于车站遇黄容。</p>
+<p>一、病重，去卫生连打针吃药，转赴凤山，先修鞋花十元，转赴四川面店吃面后渐佳，在陈家见新汉寄来之New York Times及手条，陈先生为改文，获益良多，晚饭于陈家，归于车站遇黄容。</p>
 <p>二、在凤山碰到李伯芬。</p>
 <p>三、准备搬家。接鼓应限时片。</p>
 <p>5月14日星期六</p>
@@ -4686,9 +4719,9 @@
 <p>有美：</p>
 <p>你考倒我了！当兵9月，老底子早已荒疏，哪里还有资格纵横于史乘之间，所以在接到你的信的当夜，我便致书“萧大硕士”，请他捉刀，不料他一病累月，昨晚才来信详复，特将原信附上，请你阅后寄还，以便将来收入“萧李书简集”，希望启庆的答案能使你满意。</p>
 <p>谢谢你寄来的笔记本，五册全收到了，遗憾的是我今年大概（99%）无法参加了，因为在这儿基地训练，事假一概不准，除非奇迹。</p>
-<p>烈日下全副武装行军九十二里抵此间，人人脚下生水泡，其艰苦可想，一小台湾兵边走边哭，但哭有什么用？在这里不要多情与眼泪，要的是像磐石一般的心肠！九个月来，我远离了台大的杜鹃与月色，也远离了书卷与长装，浮沉在另一个阶层里，使过去的我不认识今日的我，我记起ErnestDowson的诗句：</p>
-<p>Ihaveforgetmuch,Cynara!Gonewiththewind，</p>
-<p>Flungroses,roses,ristouslywiththethrong.</p>
+<p>烈日下全副武装行军九十二里抵此间，人人脚下生水泡，其艰苦可想，一小台湾兵边走边哭，但哭有什么用？在这里不要多情与眼泪，要的是像磐石一般的心肠！九个月来，我远离了台大的杜鹃与月色，也远离了书卷与长装，浮沉在另一个阶层里，使过去的我不认识今日的我，我记起Ernest Dowson的诗句：</p>
+<p>I have forget much, Cynara! Gone with the wind，</p>
+<p>Flung roses, roses, ristously with the throng.</p>
 <p>我正好借它来描述我自已。</p>
 <p>二十五岁照相，送你一张。</p>
 <p>李敖1960年5月29日屈平跳河那天</p>
@@ -4702,12 +4735,12 @@
 <p>我现在努力准备着高考和其他的考试，先奠定下我就业的基础，再问鼎于明年的中山奖学金，生活算安定，之昂也住在我这里，我在基隆也为他觅一家教，他7月底去海专任助教。小林舞会很成功，老马来了，老景没有来，华俊去金门了，曾来我这里，但未见面，以后再给他联络好吧！何时能来北部一玩？我相信你对排长生涯有很多心得，这可从你那富有历史性的日记里看得出，可不要间断的记下去啊，改日再谈，谨以无数个祝福和问候给在南部的敖。</p>
 <p>英善和小林共同祝福你于5月26，1960年</p>
 <p>四、端午节加菜，王慕唐来，颇似姚渔湘，河南商城。</p>
-<p>五、与连长去台南，跃上四分之三（开动的），几压坏生殖器。看《白发红颜未了情》（MiddleoftheNight），金露华与佛德烈马区合演。</p>
+<p>五、与连长去台南，跃上四分之三（开动的），几压坏生殖器。看《白发红颜未了情》（Middle of the Night），金露华与佛德烈马区合演。</p>
 <p>六、为了赶5点10分的归车，未及晚饭即回。在新化碰到黄容，他判四个月的，师长改判三年。</p>
 <p>七、买多益命一瓶，还是要继续吃才行。又买红汞等。</p>
 <p>八、用海绵洗澡真舒服，十二元，早就该买了，极省力、极方便、极出肥皂。读西洋史而眠。</p>
 <p>5月30日星期一</p>
-<p>一、为伙委事我甚不愉快，我已练习得忍住怒气，当然本领还是不到家，连长很支持，班教练时仍叫李金生来。我已练习认清fox总是不能concealhistail的，Suchashamefuldog.Iamtiredoftalkingwithhim!</p>
+<p>一、为伙委事我甚不愉快，我已练习得忍住怒气，当然本领还是不到家，连长很支持，班教练时仍叫李金生来。我已练习认清fox总是不能conceal his tail的，Such a shameful dog. I am tired of talking with him!</p>
 <p>二、整个上午准备六〇炮，下午三—五讲班攻击防御二小时，成绩不恶，金魁赞我举例佳，无睡觉者，何排长力赞我讲得好，我已做到“按摩”他的手法：“我不会的可请教何排长。”以蒙古女人例喻一般支持等，颇见巧思。</p>
 <p>三、午后吃皮蛋，久矣未食此味矣。</p>
 <p>四、夜花二元与金海看（立看挤看）丁皓之《人财两得》，丁皓真可爱。</p>
@@ -4730,7 +4763,7 @@
 <p>七、夜接金门来信三封，华俊二页，宏谋一页，毓刚一页并二照片，毓刚言夜读书时感“精神不支”，精力必须苦练方能愈用愈出。</p>
 <p>八、连长就职一年，我恰一月，晚同庆祝，打弹子二盘，并应女孩子之邀喝菊花茶，我不爱喝。那像谭洁力的女孩子一再为言。</p>
 <p>6月2日星期四</p>
-<p>一、整日操60m.m.班攻击，上午与营长谈，营长对此炮是一生手，下午团长又来。何排长等多人皆盛言我之为人，都说第四连那排长最好，尔昭太胡来。</p>
+<p>一、整日操60m. m.班攻击，上午与营长谈，营长对此炮是一生手，下午团长又来。何排长等多人皆盛言我之为人，都说第四连那排长最好，尔昭太胡来。</p>
 <p>二、彦增又劳军五十元，故人多为“冰炭敬”，实令我受慰不少。晚饭后一诗记之：</p>
 <p>卧龙高卧兵器排，又爱朋友又爱财，</p>
 <p>“难兄难弟”能怜我，四十五十寄钱来。</p>
@@ -4759,7 +4792,7 @@
 <p>（二）有一肚子鸟气，必泄之于臭门板而后快。</p>
 <p>（三）必大便干燥，致“‘便’有余力，则以学文”。</p>
 <p>（四）必伤风——鼻子不通，不怕臭，灵感不致为臭气所扰。</p>
-<p>（五）必知识水准仅及于W.C.文学程度或稍过之。</p>
+<p>（五）必知识水准仅及于W. C.文学程度或稍过之。</p>
 <p>（六）必有创作欲而又不得于凡夫，故作题壁之举以期藏之名山。</p>
 <p>（七）必有予岂好辩或予不得已也的亚圣心怀。</p>
 <p>（八）必为精神上善将人阿Q式“擦擦”者流。</p>
@@ -4788,19 +4821,19 @@
 <p>四、夜干部Party，以我非其党，故独被遗（Party指国民党小组会。1985年9月10日，李敖补记）。</p>
 <p>五、施珂一片，其近况已趋平静。</p>
 <p>6月5日星期日</p>
-<p>一、珂事使我回忆起过去，并使我记下Dryden的TheIndianEmperor,IV,1——</p>
-<p>Forallthehappinessmankindcangain</p>
-<p>Isnotinpleasure，butinrestfrompain.</p>
+<p>一、珂事使我回忆起过去，并使我记下Dryden的The Indian Emperor, IV,1——</p>
+<p>For all the happiness mankind can gain</p>
+<p>Is not in pleasure，but in rest from pain.</p>
 <p>二、廷有言今早老鸨带席于树林中兜生意，许多兵随之。</p>
 <p>三、整日未外出，省钱省精力，得整日读英文，成绩不恶，如是度星期日，胜外逐多多矣，以后当每周日皆力求如此。此为今日一大收割。</p>
-<p>四、夜以高速度准备60m.m.班防御，原教案编得真是王八蛋，错误不通，乱七八糟。</p>
+<p>四、夜以高速度准备60m. m.班防御，原教案编得真是王八蛋，错误不通，乱七八糟。</p>
 <p>6月6日星期一</p>
 <p>一、昨晚梦及査letter事，甚严。</p>
-<p>二、营长晨言60m.m.训练最好。</p>
+<p>二、营长晨言60m. m.训练最好。</p>
 <p>三、上午张桐凤及林栋材来，故“陆军特殊事件防止法”之讨论未参加，请林栋材等吃冰。又认识一林栋材。</p>
 <p>四、诸顺友摔饭盒，我写购一新的，金魁又退回钱于小店。早上徐菊生摔馒头，二事皆出自兵器排，副座一一责之。吴忠庆罚小充员举枪，我这无为而治的排长，实在是懒得闻问——有大臣之风也耶？</p>
-<p>五、下午讲60m.m.班防御，述十六年前今日诺曼底登陆故事，及英人在印以猪牛油擦武器故事。又大雨，均逃至金马馆中，金马馆为一退役连长所开，房子是老兵们给他盖的。</p>
-<p>六、晚饭后给华俊二页信，附照片，劝慰他。又给彦增四纸书，一气呵成，颇佳。语气颇重，勉以Tobealldeedandnotalk，当多作这类鼓励信及谈问题信。又给英善二片。给周陈合一信。</p>
+<p>五、下午讲60m. m.班防御，述十六年前今日诺曼底登陆故事，及英人在印以猪牛油擦武器故事。又大雨，均逃至金马馆中，金马馆为一退役连长所开，房子是老兵们给他盖的。</p>
+<p>六、晚饭后给华俊二页信，附照片，劝慰他。又给彦增四纸书，一气呵成，颇佳。语气颇重，勉以To be all deed and no talk，当多作这类鼓励信及谈问题信。又给英善二片。给周陈合一信。</p>
 <p>6月7日星期二</p>
 <p>一、上午在山头偷暇不少，读袖珍册。</p>
 <p>二、下午又及时雨，避于猪栏，看新生的小仔，从来未曾看过这么小的猪。</p>
@@ -4808,10 +4841,10 @@
 <p>四、夜收马戈片：“老景见人即劝给你写信，我不能阻，想来你甚忙，不定有暇通信也。”</p>
 <p>五、善培又放假北归，今晚来一片。</p>
 <p>6月8日星期三</p>
-<p>一、又是6月8日了，这段日记足足写了两周年，两年前开始写的时候，并没想到一写就这么长、这么活泼、这么愈写愈有劲，试看一开始写，半年间只不过写了一本，可是后来的一年半里，竟有七册之多（或厚或薄），这是很可观的。两年来，在这些灰格本子里，我也有了不少的变化与进境，正如英善上月26日的信中所说：这是一部“富有历史性的日记”。因为个人的变化与进境很大，所以在这两年的日记中，尤其可以看到我个人历史性的演变及“突变”（evolutionand“mutation”），所以这是一部最可宝贵的原始史料。</p>
-<p>二、用B.B.的裸体图片为七五炮组购解前置量（lead），甚明晰。</p>
+<p>一、又是6月8日了，这段日记足足写了两周年，两年前开始写的时候，并没想到一写就这么长、这么活泼、这么愈写愈有劲，试看一开始写，半年间只不过写了一本，可是后来的一年半里，竟有七册之多（或厚或薄），这是很可观的。两年来，在这些灰格本子里，我也有了不少的变化与进境，正如英善上月26日的信中所说：这是一部“富有历史性的日记”。因为个人的变化与进境很大，所以在这两年的日记中，尤其可以看到我个人历史性的演变及“突变”（evolution and“mutation”），所以这是一部最可宝贵的原始史料。</p>
+<p>二、用B. B.的裸体图片为七五炮组购解前置量（lead），甚明晰。</p>
 <p>三、马戈寄来史地书三册。</p>
-<p>四、又打一针VitaminB6，甚痛。</p>
+<p>四、又打一针Vitamin B6，甚痛。</p>
 <p>五、给华民：“我写一篇洋文的作文，寄给陈琪，看你气不气？”</p>
 <p>六、真感谢雨，它带给人一点清凉与空闲。</p>
 <p>七、下午小读，在山头谈天。</p>
@@ -4828,12 +4861,12 @@
 <p>6月10日星期五</p>
 <p>一、夜半失眠，幻想与Rosa小亲昵。</p>
 <p>二、兵器排之班测验取消了，一大可喜事，轻松多了。</p>
-<p>三、FromW.SomersetMaugham“ThePhilosopher”；</p>
-<p>Youlovedmenot：yourvoicewassweet;</p>
-<p>Youreyeswerefulloflaughter；yourhandsweretender.</p>
-<p>Andthenyoulovedme：yourvoicewasbitter；</p>
-<p>Youreyeswerefulloftears;yourhandswerecruel.</p>
-<p>Sad,sadthatloveshouldmakeyou</p>
+<p>三、From W. Somerset Maugham“The Philosopher”；</p>
+<p>You loved me not：your voice was sweet;</p>
+<p>Your eyes were full of laughter；your hands were tender.</p>
+<p>And then you loved me：your voice was bitter；</p>
+<p>Your eyes were full of tears; your hands were cruel.</p>
+<p>Sad, sad that love should make you</p>
 <p>Unlovable.</p>
 <p>爱情没有了“无为主义”来限制它，就太热烈了、太求功了、太不美了。</p>
 <p>我若写《红玫瑰》，当就此意发挥之。</p>
@@ -4846,7 +4879,7 @@
 <p>6月11日星期六</p>
 <p>一、凌晨又艳梦。</p>
 <p>二、昨晚命令下来，训练期间，风雨无阻，但阿兵哥有的白日无雨衣（有亦宁肯遮武器而不肯自遮），晚上无蚊帐，此又何说乎？此何等补给制度也耶？非暂时性者也，数月矣！军常服又于数日前收去两套，湿衣更难轮换矣！</p>
-<p>三、上午在家操炮，张永亭见我走了，溜回来睡觉，排附密报，我在他屁股后一拳，把他打醒，赶他去看操。为75m.m.组讲分解后各部名称。</p>
+<p>三、上午在家操炮，张永亭见我走了，溜回来睡觉，排附密报，我在他屁股后一拳，把他打醒，赶他去看操。为75m. m.组讲分解后各部名称。</p>
 <p>四、午后作词，始自去茅房小便。</p>
 <p>水调歌头（述狂想耳）</p>
 <p>秋风吹古渡，</p>
@@ -4886,11 +4919,11 @@
 <p>讼则终凶君记取</p>
 <p>诚干静夜把心扪</p>
 <p>本境众弟子敬献</p>
-<p>我又代毓刚抽一签玩，太不祥。午饭于吴抄手，砂锅酱爆，一仍旧例，卖奖券小女子强兜售，不买则捏人。同赴大全成看《宝贝从军记》（BabetteGoesToWar），加片中之叶凤黛卡罗极似Rosa，极喜之，如见Rosa也，出来睨照片久之，不忍去也，清茂说我看任何女人皆似Rosa，并由我对Rosa来信之反应证我为人“太容易满足”了。</p>
-<p>此影据说是B.B.穿衣服最多的一次，许多镜头仍被“检查”去了，最可恨之人为此类瘟生也。</p>
+<p>我又代毓刚抽一签玩，太不祥。午饭于吴抄手，砂锅酱爆，一仍旧例，卖奖券小女子强兜售，不买则捏人。同赴大全成看《宝贝从军记》（Babette Goes To War），加片中之叶凤黛卡罗极似Rosa，极喜之，如见Rosa也，出来睨照片久之，不忍去也，清茂说我看任何女人皆似Rosa，并由我对Rosa来信之反应证我为人“太容易满足”了。</p>
+<p>此影据说是B. B.穿衣服最多的一次，许多镜头仍被“检查”去了，最可恨之人为此类瘟生也。</p>
 <p>五、电影后，又吃蛋卷，买稿纸、2B铅笔、铅笔帽（尼龙的）、夹子、日记本、信封、最好橡皮，代天昭洗照片（钱我出，以欠天昭人情太多故），4时后搭车归，可省晚饭钱矣，车来回只一元五角，真便宜。</p>
 <p>六、钱穆刘姥姥逛大观园，在耶鲁得名誉博士位，真是姚老头所谓的土包子！</p>
-<p>七、在摊上读F.E.真淋漓快人心。</p>
+<p>七、在摊上读F. E.真淋漓快人心。</p>
 <p>八、受车限制，不得尽兴而返，亦一佳事，可保精力省时间金钱也。</p>
 <p>九、日来接济陷于贫病之八十二岁康南海夫人及其子六十余岁之康寿曼者人颇多，寿曼真好人耳，穷了一辈子，除无名氏外，诸如</p>
 <p>伤患梁伯川先生三十元</p>
@@ -4935,7 +4968,7 @@
 <p>新汉6月13日寄发</p>
 <p>6月15日星期三</p>
 <p>一、我对早饭的豆浆及白馒头实在感到难下咽，“口中淡出个鸟来！”今早单独买了五毛花生米，买了一个皮蛋以助下咽。</p>
-<p>二、外面班测验，一子弹由第六连长玻璃窗打进，打到毡子上，打破了。日前五连温班长食W.C.旁草菇中毒，真可怜，孰令为之也耶？</p>
+<p>二、外面班测验，一子弹由第六连长玻璃窗打进，打到毡子上，打破了。日前五连温班长食W. C.旁草菇中毒，真可怜，孰令为之也耶？</p>
 <p>三、昔在仁武所刻之印，出自工匠之手，实在难看。我则久不事此道矣。</p>
 <p>四、读新汉信深感我在朋友中之地位，此点甚受胡适之影响。</p>
 <p>五、题卷宗夹为胜无录。</p>
@@ -4960,7 +4993,7 @@
 <p>五、给开云一信，称兄道弟一阵。</p>
 <p>六、毓刚来一片，谓祖母死可能返台一行，欢迎我北上。以一信报之。</p>
 <p>七、见报中电影广告，多美的大腿，很像Rosa的，虽然我没有看过Rosa的大腿。“想其然也！”</p>
-<p>八、下午池中有清水，得洗一尽兴之澡，时值雨，75m.m.组围观。</p>
+<p>八、下午池中有清水，得洗一尽兴之澡，时值雨，75m. m.组围观。</p>
 <p>九、给景马各一信。周陈合一信。</p>
 <p>十、熙云来信说书已还我，真是胡说。</p>
 <p>十一、我有二怕：一怕开收音机放肉麻歌曲，更怕浑小子在旁同唱肉麻歌曲。</p>
@@ -4972,11 +5005,11 @@
 <p>三、本连步兵排测验皆为末名，只好看这次兵器排的了，上午校操两个多小时，亲为督导示范。搞得很疲倦，不想读书。</p>
 <p>四、每夜躺在床上多不欲眠去，盖每日最舒服之一段也，总想多享受一会，军人生活不能享受早起不起之乐，最是痛苦，聊以晏睡偿之。</p>
 <p>五、幻想Rosa之乳房大腿，为之心动不已。</p>
-<p>Earth'snoblestthing,awomanperfected.(Lowell)</p>
-<p>六、JohnStuartMill：</p>
-<p>Ihavelearnedtoseekmyhappinessbylimitingmydesires,ratherthanattemptingtosatisfythem.</p>
-<p>七、GeorgeBernardShaw:</p>
-<p>ALearnedmanisanidlerwhokillstimebystudy.（有学问的人是以用功来消磨时光的懒蛋。）</p>
+<p>Earth’s noblest thing, a woman perfected. (Lowell)</p>
+<p>六、John Stuart Mill：</p>
+<p>I have learned to seek my happiness by limiting my desires, rather than attempting to satisfy them.</p>
+<p>七、George Bernard Shaw:</p>
+<p>A Learned man is an idler who kills time by study.（有学问的人是以用功来消磨时光的懒蛋。）</p>
 <p>八、Rosa的信带给我不少的欢欣。</p>
 <p>九、留学考后再做几篇大文字，把到十七师以来的作文裒为一集，算做我第一册的英文著作。</p>
 <p>十、周瑞芝说我“一天三忙”：</p>
@@ -4985,12 +5018,12 @@
 <p>（三）写信忙。</p>
 <p>十一、晚饭前炮操，营长来，出了一阵洋相。</p>
 <p>十二、干事又推我代表参加政治考试，急却之，结果以每周做一次时事讲座，做交换条件，免了这件公差。</p>
-<p>十三、永亭跟75m.m.组说：“排长说操不好要剥我的皮！他剥我的皮我就剥你们的皮。”夜请他看电影，吃水果，我没看。</p>
+<p>十三、永亭跟75m. m.组说：“排长说操不好要剥我的皮！他剥我的皮我就剥你们的皮。”夜请他看电影，吃水果，我没看。</p>
 <p>十四、打羽毛球一阵。</p>
-<p>十五、Goethe:Wealwayshavetimeenoughifwewillbutuseitaright.</p>
-<p>Carlyle：Silenceismoreeloquentthanwords.（沉默比言辞更动人。）</p>
-<p>Dryden：Silenceintimesofsufferingisthebest.（在苦难的时候，沉默是最好的。）</p>
-<p>Syrus：IregretoftenthatIhavespoken；neverthatIhavebeensilent.（我常因说了话而后悔，从未因沉默而后悔。）</p>
+<p>十五、Goethe: We always have time enough if we will but use it aright.</p>
+<p>Carlyle：Silence is more eloquent than words.（沉默比言辞更动人。）</p>
+<p>Dryden：Silence in times of suffering is the best.（在苦难的时候，沉默是最好的。）</p>
+<p>Syrus：I regret often that I have spoken；never that I have been silent.（我常因说了话而后悔，从未因沉默而后悔。）</p>
 <p>十六、图中一双愈看愈美的大腿，令人愈看愈生非非之想。</p>
 <p>十七、干事公开言政治大考带书去抄。“生平无大志，但求六十分。”</p>
 <p>6月18日星期六</p>
@@ -5051,7 +5084,7 @@
 <p>六、送丁忠照片一张。</p>
 <p>七、下午几乎全被旧日记浪费掉了，以后要尽力避免。</p>
 <p>八、一天要听他妈的“江山美人”中那个要死的调调儿好几遍，真要命。副连长还死命的爱听，穷推荐。好容易逃掉了周毅的“弹棉花”，又碰到这么一个“话匣子”，真是命途多舛。</p>
-<p>九、明日又保密检查，又要上锁。——inappearance.</p>
+<p>九、明日又保密检查，又要上锁。——in appearance.</p>
 <p>十、午后一浴，穿内裤工作一下午，甚舒适。</p>
 <p>十一、晚饭前连长请吃水果，后在茶馆小坐，最喜看那女孩子冷冷的样子，知有许多无聊透顶之兵与其作对，经常哭，甚令人悯，她一直看我笑，问我昨天为什么和她笑，她不笑的时候最美。</p>
 <p>十二、干事今日去高宾归来言一小女孩尚未开苞，索价一千元，此何等人权保障乎？</p>
@@ -5066,7 +5099,7 @@
 <p>六、下午兵器排攻击，看老万示范直至对面山头，在沙墙上刻一王八而归。</p>
 <p>七、祁德武及邓浦玄受训归来，浦玄江西宜黄人，其兄浦亮在五十团，人甚诚笃。</p>
 <p>八、林成自动把枪擦好。</p>
-<p>九、Emerson：Inthemidstofthecrowdkeepswiththeindependenceofsolitude.</p>
+<p>九、Emerson：In the midst of the crowd keeps with the independence of solitude.</p>
 <p>十、夜做“夜间撤退”（任务交接）至11时始归，今晚困甚，在土地上躺了许久。</p>
 <p>6月22日星期三</p>
 <p>一、又得晏起，并逃掉副师长之疲劳轰炸——周会。极想性交。</p>
@@ -5218,9 +5251,9 @@
 <p>（四）容忍别人的倾听（收音机）的自由。</p>
 <p>三、给毓刚、黄容各一简信。</p>
 <p>四、下午得偷闲。治西史。</p>
-<p>五、训练官以一译诗问我，疑为ThomasGray所作，查之果然。</p>
+<p>五、训练官以一译诗问我，疑为Thomas Gray所作，查之果然。</p>
 <p>六、晚饭后助永亭推演七五组攻击教案。</p>
-<p>七、团长49、6、28(49)智安年字3773号令，全团兵器排炮操比赛，第四连第一名，内75m.m.第一、89.5。60m.m.第二、87。平均88.25，为冠军。阿万排为第九名——背榜。此事极令我愉快，到第四连来，第一炮即打响，给迩来迭生不幸之四连（如内务最末一名，步兵排测验最末一名……），带来（挣来）不少面子。</p>
+<p>七、团长49、6、28(49)智安年字3773号令，全团兵器排炮操比赛，第四连第一名，内75m. m.第一、89.5。60m. m.第二、87。平均88.25，为冠军。阿万排为第九名——背榜。此事极令我愉快，到第四连来，第一炮即打响，给迩来迭生不幸之四连（如内务最末一名，步兵排测验最末一名……），带来（挣来）不少面子。</p>
 <p>八、来了新桌椅。</p>
 <p>九、昌平来一信，二页。</p>
 <p>十、马戈及弘皆寄来简章，报名事竟有麻烦。附马戈信：</p>
@@ -5262,7 +5295,7 @@
 <p>六、晚点全团集合，还是为了军纪全国最坏之缘故。</p>
 <p>七、马戈提议以“阿娇”做李先生情人的通名，此名甚好。</p>
 <p>6月30日星期四</p>
-<p>一、早起即主持75m.m.装弹练习，颇小心。</p>
+<p>一、早起即主持75m. m.装弹练习，颇小心。</p>
 <p>二、给广诚一片。</p>
 <p>三、整个下午在菜寮附近行75m.m.炮组测验，先坐四分之三，烈日下行抵，结识医院中东吴毕业的，其姊未嫁，其妹即不能先嫁，竟有此俗。七五射击尚不恶，捏汗不少，曾于第一发后大骂“混蛋”——向林船夫，又命金海班攻阵地，我虽外行，人多不如我，连长亲来，步岳为裁判——给他一拳，拜托一阵。炮声震耳，多月来稍愈之耳鸣症恐又复发矣。此为当兵器排排长来首以七五射击，不得不担心——抽签又抽到是全团第一名，无前组可资鉴也。冒雨归。</p>
 <p>四、在雨中洗一澡，有点冷，此有生以来第一次在雨中洗澡也，水极佳，皮肤摸起来极舒服，多幻想。</p>
@@ -5281,7 +5314,7 @@
 <p>独立发遐想</p>
 <p>无语对晨光</p>
 <p>最后一句中“对”字原作“沐”，当改“傲”字较胜。</p>
-<p>60m.m.组测验，尚无大恶，一发故障。归时近9时，班排测验全部完成，只是没有耍到兵器排长自己。</p>
+<p>60m. m.组测验，尚无大恶，一发故障。归时近9时，班排测验全部完成，只是没有耍到兵器排长自己。</p>
 <p>二、那种学校出身的全是一丘之貉，在利用人的时候，自然露出不同的face来，平时即原形毕露了。对这些无耻的动物，最好的办法就是少理他（“那种学校”，指政工干校也。1985年10月28日，李敖补注）。</p>
 <p>三、弘来限时信。</p>
 <p>四、我嫌我“外抛”得太多，话说得太多，故今早甚少言。这是一个更需要人们“内敛”的地方，多说什么呢？有哪句话是值得说的呢？仔细想一想，多少话都是可以不必说的，可以免矣。</p>
@@ -5301,7 +5334,7 @@
 <p>附新汉6月30日来书：</p>
 <p>敖：</p>
 <p>28日信收到，有一种感觉，即是好像很久没有写信给你，也没有收到你的“来鸿”了（不过16日的信似乎收到），此处25日结业，27日晚曾写了一封信给你，但未寄出，好在信件没有时间性，不会使人有明日黄花之感，也许等一等和此信一并寄出，担心的是，此批信未到，你已启程北来了。分发地点，28日始宣布，侥幸得很，留在台北，免于第二次做“玫园逐客”。但明日才去报到，焉知不会被撵往别处？所幸早就没有“患得患失”之心，任他去吧。</p>
-<p>我不知道老马曾对你说过那样的话，不过我的意思和他绝对不同，我的意思是，冲动、狂乱、脆弱，经受不起挑动和打击，固是小孩子，但“稳健”却不一定是中年人或老年人，而却是一个受过“磨炼”的年轻人的应有作风，唯其稳健、坚定和刚强，才足以表示我们是活生生的、“生龙活虎”似的年轻人。自然，这些话只是慨乎言之，和张丽珍的事没有什么关系，我愿意留在你返北后畅谈，如你近日不能北返，再在信中讨论也不迟。倒是贵连长的话深合我意，如做出于哲学的思考，必定得自实际生活的宝贵经验，不得等闲视之（足下可以自转告也，并代为致仰慕之忱）。不过我自始至终未曾考虑到所谓婚姻问题，十年之内也许仍然不会考虑到，但是我看朋友们一个比一个更像三月里的Catonthehottinroof，不觉感到寒心和好笑，所寒心者，是他们对“女人”认真的程度，绝非进大学时，找个女友点缀点缀生活那种心情可比了。至于好笑，好笑而已，并非有任何恶意或是鄙视的意味，盖此为人生正事，应该之至，固不当“好笑”也。</p>
+<p>我不知道老马曾对你说过那样的话，不过我的意思和他绝对不同，我的意思是，冲动、狂乱、脆弱，经受不起挑动和打击，固是小孩子，但“稳健”却不一定是中年人或老年人，而却是一个受过“磨炼”的年轻人的应有作风，唯其稳健、坚定和刚强，才足以表示我们是活生生的、“生龙活虎”似的年轻人。自然，这些话只是慨乎言之，和张丽珍的事没有什么关系，我愿意留在你返北后畅谈，如你近日不能北返，再在信中讨论也不迟。倒是贵连长的话深合我意，如做出于哲学的思考，必定得自实际生活的宝贵经验，不得等闲视之（足下可以自转告也，并代为致仰慕之忱）。不过我自始至终未曾考虑到所谓婚姻问题，十年之内也许仍然不会考虑到，但是我看朋友们一个比一个更像三月里的Cat on the hot tin roof，不觉感到寒心和好笑，所寒心者，是他们对“女人”认真的程度，绝非进大学时，找个女友点缀点缀生活那种心情可比了。至于好笑，好笑而已，并非有任何恶意或是鄙视的意味，盖此为人生正事，应该之至，固不当“好笑”也。</p>
 <p>留学考试准备得怎样了？如准备参加，须在7月5日报名截止前北来，如不能及时赶来就免了吧，倒是请他数日小假，到台北来与诸友人小聚一番，我于7月10日前大概不会办公。数日来台北酷热，中午以后，午夜以前，坐立不安。再谈，等你到台北来。</p>
 <p>玫园候安6月30日晨</p>
 <p>7月2日星期六</p>
@@ -5426,10 +5459,10 @@
 <p>二、今日装载练习，我甚累，连长叫我留在家里。</p>
 <p>三、南下前马戈送照片，照得像个大老板，势甚稳壮。</p>
 <p>四、在台北几次欲作书给Rosa，皆因逡巡延误未果，思给凝晖寄一佛教会章，亦未成事实，有点怕她告诉Rosa。</p>
-<p>五、午小眠，梦到Lo，醒后有点All isvanity，也许正如新汉所说：我已经不是小孩子，不再是小孩子，我不会（很难）再有那种深刻的不宁的情绪，我知道如何用“大量不停的”工作引开我自己。何以解忧，唯有Rosa，很想Rosa。</p>
+<p>五、午小眠，梦到Lo，醒后有点All is vanity，也许正如新汉所说：我已经不是小孩子，不再是小孩子，我不会（很难）再有那种深刻的不宁的情绪，我知道如何用“大量不停的”工作引开我自己。何以解忧，唯有Rosa，很想Rosa。</p>
 <p>六、买肥阜伪装网等花了二十多元。</p>
 <p>七、部队外出，第一次军营中感到这么静，晚饭独食便当，加皮蛋一，后理发、洗浴。</p>
-<p>八、很想译几部书，如MyLifeandLovers等，要之以轰动一世为主。</p>
+<p>八、很想译几部书，如My Life and Lovers等，要之以轰动一世为主。</p>
 <p>九、想写一篇张竞生传。</p>
 <p>7月20日星期三</p>
 <p>一、晨起甚冲动。</p>
@@ -5475,16 +5508,16 @@
 <p>7月24日星期日</p>
 <p>一、梦到HsiehYo’sdaughter，混血儿，似与之结婚，对我颇好。</p>
 <p>二、赶到经纬书局迟到，未遇见清茂。与伯高逛街，买“借据”，午饭于吴抄手，喝清酒一杯。</p>
-<p>三、在赤崁看《俾斯麦舰歼灭战》（SinktheBismark）。</p>
-<p>四、又看《惊险重重》（TheLastVoyage），RobertStack,DorothyMalone主演。最后用乙炔把太太救出来，小女儿甚可爱，“船长们都迷信他们的船是最好的。”甚对左面那女孩子的臂着迷，我感到我需要一个女人（午间伯高讲在北投花一百五洗澡事），我感到我太久没有接触到女人的肉体，那动人心魂的肉体了，电影是在延平看的。</p>
-<p>五、看电影出来买笔记本，Vitamin B($17)及镜子等，归途挤在车中，本日共花一百多元。</p>
-<p>六、夜CompanyCommander“训话”。Whenthemapunrolled,adaggerwasrevealed.我想起伯高的劝告，该写条子以为据了。</p>
+<p>三、在赤崁看《俾斯麦舰歼灭战》（Sink the Bismark）。</p>
+<p>四、又看《惊险重重》（The Last Voyage），Robert Stack, Dorothy Malone主演。最后用乙炔把太太救出来，小女儿甚可爱，“船长们都迷信他们的船是最好的。”甚对左面那女孩子的臂着迷，我感到我需要一个女人（午间伯高讲在北投花一百五洗澡事），我感到我太久没有接触到女人的肉体，那动人心魂的肉体了，电影是在延平看的。</p>
+<p>五、看电影出来买笔记本，Vitamin B ($17)及镜子等，归途挤在车中，本日共花一百多元。</p>
+<p>六、夜Company Commander“训话”。When the map unrolled, a dagger was revealed.我想起伯高的劝告，该写条子以为据了。</p>
 <p>7月25日星期一</p>
-<p>一、Preliminary Infantry-teamTraining上午这门课，我逃掉了。</p>
-<p>二、注意分组循环教育法（countyfairmethod）。</p>
+<p>一、Preliminary Infantry-team Training上午这门课，我逃掉了。</p>
+<p>二、注意分组循环教育法（countyfair method）。</p>
 <p>三、嘉义人李嘉骘调来五连，晨与之小谈。</p>
 <p>四、给珂一片。</p>
-<p>五、没有你想象的那么严重，努力还不是那么一个下场！我要大力施行anattitudeofindifference。</p>
+<p>五、没有你想象的那么严重，努力还不是那么一个下场！我要大力施行an attitude of indifference。</p>
 <p>六、下午3时半以副连长前任排长周年纪念日，强拉我喝酒。大醉，晚饭皆不能食，生平首次大醉也。夜8时半起，半醉下成诗：</p>
 <p>我竟醉</p>
 <p>半瓶糯米酒，</p>
@@ -5520,7 +5553,7 @@
 <p>一、朝会，师长来，神气一阵。</p>
 <p>二、（一）苦其心志。（二）劳其筋骨。（三）动心忍性增益其所不能。这三点我全遭到了，人生的八宝饭，难道老天爷有“大任”付与洒家吗？</p>
 <p>三、浑身起痱子甚多。</p>
-<p>四、上午开始动笔译TheConquestofHappiness，开笔大吉！</p>
+<p>四、上午开始动笔译The Conquest of Happiness，开笔大吉！</p>
 <p>五、午后照镜见乱发，忽起灵感，去厕归来，涌成——</p>
 <p>老子歌（志“气派”也）</p>
 <p>当年老子骑牛去，</p>
@@ -5550,7 +5583,7 @@
 <p>六、李先生之诗，旧典、新词、韵脚、气势，是四绝，常人所不能及者也，此次北行，见老马弟妹一再背我诗打趣马戈，殊觉好玩，我诗最易使人上口，今之白乐天也耶？</p>
 <p>七、今日下午亦逃课未去，苦热、苦风沙。</p>
 <p>八、毓刚一信来，尚未返金。</p>
-<p>九、心理学家CarlG.Jung答应苏黎克大学，再埋头十年后再来主持其心理系，十年后果如约。</p>
+<p>九、心理学家Carl G. Jung答应苏黎克大学，再埋头十年后再来主持其心理系，十年后果如约。</p>
 <p>十、一十九岁女孩子</p>
 <p>先被卖 1900</p>
 <p>再被卖 2600</p>
@@ -5559,7 +5592,7 @@
 <p>结果是一身恶疮，此何等社会、何等人身保障乎？</p>
 <p>十一、夜请副座吃水果后读书，好几天没有这样读书了。</p>
 <p>7月27日星期三</p>
-<p>一、古人惜分阴寸阴，老子当惜尺阴丈阴，还是那个老想法——许多人的机会比我好，读书时间多（如今日之施珂，除了有时晚上教教英文外，鸟事都没有！），而我摊到机会既这样妈妈的，所以只好尽量（再写一次！尽量）抢到或偷到一尺或一丈光阴，只要我这一天是尽量去抢去偷，那样我安心了，晚上睡在床上也可以尽情与幻想中的Rosa做爱了，否则我是不敢的。此为第一事，亦为唯一事，其他人间浮事，管他妈！Downwiththeindifferentpersonandmatter!</p>
+<p>一、古人惜分阴寸阴，老子当惜尺阴丈阴，还是那个老想法——许多人的机会比我好，读书时间多（如今日之施珂，除了有时晚上教教英文外，鸟事都没有！），而我摊到机会既这样妈妈的，所以只好尽量（再写一次！尽量）抢到或偷到一尺或一丈光阴，只要我这一天是尽量去抢去偷，那样我安心了，晚上睡在床上也可以尽情与幻想中的Rosa做爱了，否则我是不敢的。此为第一事，亦为唯一事，其他人间浮事，管他妈！Down with the indifferent person and matter!</p>
 <p>二、现在那些漂亮的丫头们对于我，只不过是生活里的一片而已——并且是可以或缺或暂时冻结的一小片，有时我很厌倦她们，她们能给我什么了不得的好处呢？</p>
 <p>（一）一种不可取代的欣慰（相处时）</p>
 <p>（二）肉体的满足（做爱时）</p>
@@ -5567,11 +5600,11 @@
 <p>（四）一片人生的意义与回味</p>
 <p>除此之外，还有些什么呢？像一个玩尽女人的英雄，也像一个看破此道的哲人，我不再把女人看得那么重要了，这一点转变，也许是眼前这些男人们所不及的。</p>
 <p>7月28日星期四</p>
-<p>一、JohnHay(1838-1905)“GoodandBadLuck(AfterHeine)”：</p>
-<p>GoodLuckisthegayestofallgaygirls,</p>
-<p>Longinoneplaceshewillnotstay,</p>
-<p>Backfromyourbrowshestrokesthecurls，</p>
-<p>Kissesyouquickandfliesaway.</p>
+<p>一、John Hay (1838-1905)“Good and Bad Luck (After Heine)”：</p>
+<p>Good Luck is the gayest of all gay girls,</p>
+<p>Long in one place she will not stay,</p>
+<p>Back from your brow she strokes the curls，</p>
+<p>Kisses you quick and flies away.</p>
 <p>二、给毓刚片：</p>
 <p>……南下后又照例是奔波野宿，古人“乐天知命”，而我却嫌“知命”有余，“乐天”不足。</p>
 <p>三、给胖谋信：</p>
@@ -5617,11 +5650,11 @@
 <p>二、李嘉骘到连上当行政官，上午照拂之。</p>
 <p>三、洗澡时被催回开会。</p>
 <p>四、下午刘义超来，并晚饭，连长言：“李排长最有人情味了。”</p>
-<p>五、明日起又要大走路，人多以为惧，嘉骘尤甚，我独满不在乎，且喜之。HeisaMan,aManofaction.“他真是好汉，一个奔波驰骋的好汉。”我不是——不再是——书生了，我是一条硬汉。</p>
+<p>五、明日起又要大走路，人多以为惧，嘉骘尤甚，我独满不在乎，且喜之。He is a Man, a Man of action.“他真是好汉，一个奔波驰骋的好汉。”我不是——不再是——书生了，我是一条硬汉。</p>
 <p>六、</p>
 <p>O,mylovelikeared，redrose/That’snewlysprunginJune；</p>
 <p>O，mylove’slikethemelodie/That’asweetlyplay’dintune.</p>
-<p>——Burns：ARed，RedRose</p>
+<p>——Burns：A Red，Red Rose</p>
 <p>今日以台风故，天气冷清萧瑟，仍不能忘情于Rosa。</p>
 <h2 id="1960年8月"><a class="header" href="#1960年8月">1960年8月</a></h2>
 <p>8月1日星期一</p>
@@ -5746,7 +5779,7 @@
 <p>六、午饭后独赴台南，车上一女孩甚丽，先在民权路126号兴文斋书局访得郑天挺《清史探微》及郭箴一《中国妇女问题》，各花八元，甚廉而难得，真可喜也！转赴何大夫处治牙，不期上左之缺牙前未曾被台大医院之庸医拔尽，何大夫为我除去牙根，只索五元，真便宜也，打针亦不觉痛。在中正路中国眼镜行仔细选得一粗黑之眼镜，索二百，一百五得购，督其磨成，甚满意，二十五年夙愿，今日稍偿，此架为日本货，自今日起将取代君若为我选购的这副Shoron了！独在吴抄手食葱炒酱爆肉、食花卷，为省钱不肯食汤，以茶代之（路过台南茶店，甚香，很想喝一杯，但舍不得），6时坐车归，又碰上这女孩子，又看到一女孩子甚冷而瘦，在看《小说报》之流。今日台南行一切顺利痛快。得逃掉营测验看地形。</p>
 <p>七、善培来信促返中。</p>
 <p>八、启庆来信：</p>
-<p>华昌平日前沉溺于（小）福隆，据说由于家庭间的不和而自沉的，这位自称“不属于这个世界”的朋友，现在真进入了另一个世界，但不知曾否寻到他所要寻觅的“伟大的未知”（GreatUnknown）。</p>
+<p>华昌平日前沉溺于（小）福隆，据说由于家庭间的不和而自沉的，这位自称“不属于这个世界”的朋友，现在真进入了另一个世界，但不知曾否寻到他所要寻觅的“伟大的未知”（Great Unknown）。</p>
 <p>吴信忠说：“这个（自杀者）对不起父母。”</p>
 <p>附华昌平前来信两封：</p>
 <p>敖兄：</p>
@@ -5755,7 +5788,7 @@
 <p>祝好</p>
 <p>华昌平5月7日</p>
 <p>李兄：</p>
-<p>信今天才看到，你寄到我的旧址，由人转来。我很好，暑假将很安静，常去奕园，津津于黑白之道，大概是要就业，何处栖身立命，还未确定；研究所没有准备要考，而是对这种生活不再向慕，希望有变动，此后是StudentofLife；听说你要考留学考，我们将会见面，考一下放在那里，并无放洋幻影，你来台北可通知27871，我的打算便是如此，一切顺从安排，不强求什么，只取我份所应得，当不致有不如意事，此就教于有道之士。</p>
+<p>信今天才看到，你寄到我的旧址，由人转来。我很好，暑假将很安静，常去奕园，津津于黑白之道，大概是要就业，何处栖身立命，还未确定；研究所没有准备要考，而是对这种生活不再向慕，希望有变动，此后是Student of Life；听说你要考留学考，我们将会见面，考一下放在那里，并无放洋幻影，你来台北可通知27871，我的打算便是如此，一切顺从安排，不强求什么，只取我份所应得，当不致有不如意事，此就教于有道之士。</p>
 <p>暑安</p>
 <p>华昌平6月27日</p>
 <p>七、夜洗澡甫接两盆水，即泥浆大来，不及洗完，其实不洗也好，如演习一样，少洗也可混过去了，并可省了许多时间。</p>
@@ -5769,8 +5802,8 @@
 <p>方壶员峤，乃仙子所居。</p>
 <p>他也许找到了他真正的归宿。他6月27日的信中说：</p>
 <p>何处栖身立命，还未确定；研究所没有准备要考，而是对这种生活不再向慕，希望多变动，此后是StudentofLife……我的打算便是如此，一发顺从安排，不强求什么，只取我份所应得，当不致有不如意事。</p>
-<p>现在他“栖身”有所了，可是“命”却没有“立”起来，反倒断送了，他把自己“安排”了一个无“变动”的无何有之乡，希望他能看到他最欣赏的那位“超人哲学的大宗师”，Nietzsche在他BeyondGoodandEvil（HelenZimmem译本）里写道：</p>
-<p>Thethoughtofsuicideisagreatconsolation：bymeansofitonegetssuccessfullythroughmanyabadnight.</p>
+<p>现在他“栖身”有所了，可是“命”却没有“立”起来，反倒断送了，他把自己“安排”了一个无“变动”的无何有之乡，希望他能看到他最欣赏的那位“超人哲学的大宗师”，Nietzsche在他Beyond Good and Evil（Helen Zimmem译本）里写道：</p>
+<p>The thought of suicide is a great consolation：by means of it one gets successfully through many a bad night.</p>
 <p>可怜的是，对华昌平说来，“自杀”对于他并不止于是一个thought，而是一个活生生的事实！</p>
 <p>左右的人们惋惜这个结实、漂亮、又刚得到学士学位的年轻人，他们的结论是“书念得愈多，人愈糊涂”，“亲在而死，是谓不孝”……我却默然不语，指导员说：“你们学历史的人，都寡情得很！”难道这是真的么？</p>
 <p>自杀也是一种勇气、一种解脱，也许我不会自杀，也许我会。</p>
@@ -5784,7 +5817,7 @@
 <p>八、连长说我长得很讨人喜欢。</p>
 <p>九、我的文章全要有漂亮奇颖的名字。</p>
 <p>十、接广诚一片。</p>
-<p>十一、今晚起决定开读ASurveyofEuropeanCivilization，自二十四章第342页读起。</p>
+<p>十一、今晚起决定开读A Survey of European Civilization，自二十四章第342页读起。</p>
 <p>十二、夜菊生等以做工余款来请客，拒未参加。</p>
 <p>十三、晚请副座、阿周吃冰及花生米。福利社老板说我白，阿周说他是我的老岳公。小妹腋下还未生毛。</p>
 <p>十四、张永亭夜来央我帮其赎手表（求我向行政官说项，准其借钱），并说此后一定不赌了。我说：“羊忘不了吃草，狗忘不了吃屎。”你能不赌么？他妈的不要再啰嗦，这个忙不帮，这二十元拿去，算我送你的，拿去明天吃杯老酒，在河边打自己几个嘴巴子，死了这颗心吧！（后来他走了，还连说明天再找我来赎表。阿周等怪我送他钱，我以其可怜，终不忍也。）</p>
@@ -5792,8 +5825,8 @@
 <p>一、把黄衬衫送给桂伯高。</p>
 <p>二、益觉许多传统的道德教条徒增虚伪乡愿耳！按传统尺度，我给马戈那封责怪王德昭之信殊不当，传统做法只要你躬身自反，不责于人，可是我却不这样——我要把我内心的喜怒哀乐好恶皆不掩饰的表示出来，我是活生生的有血有肉的人，不是道学家的门徒。</p>
 <p>三、给小潘三页信：</p>
-<p>……我好像有生以来从未像现在这样对女人乏味，我现在只把那漂亮的女人看做一些小花草、一些奇花异草，她们再也引不起我的重视与热爱，我对她们好像倒了胃口，这种现象是祸是福还很难说；正常与不正常也不易肯定，但我只觉得对我很合适、很愜意，一点不觉勉强，也许我还不是一个“米搜杰尼斯忒”（misogynist），但我现在一定已是一个“米搜格密斯忒”（misogamist），我对顺手牵羊逢场作戏的扯扯还感兴趣，可是要论及婚姻我就怕了！看到亲友们一个个“成家立业”，或急于做“成家立业”的打算，我实在忍不住窃笑，他们真有胃口，而我呢，却显然是一个消化不良的人。O.Henry在他MemorisofaYellowDog里写道：</p>
-<p>Ifmenknewhowwomenpassthetimewhentheyarealone，they'dnevermarry.</p>
+<p>……我好像有生以来从未像现在这样对女人乏味，我现在只把那漂亮的女人看做一些小花草、一些奇花异草，她们再也引不起我的重视与热爱，我对她们好像倒了胃口，这种现象是祸是福还很难说；正常与不正常也不易肯定，但我只觉得对我很合适、很愜意，一点不觉勉强，也许我还不是一个“米搜杰尼斯忒”（misogynist），但我现在一定已是一个“米搜格密斯忒”（misogamist），我对顺手牵羊逢场作戏的扯扯还感兴趣，可是要论及婚姻我就怕了！看到亲友们一个个“成家立业”，或急于做“成家立业”的打算，我实在忍不住窃笑，他们真有胃口，而我呢，却显然是一个消化不良的人。O. Henry在他Memoris of a Yellow Dog里写道：</p>
+<p>If men knew how women pass the time when they are alone，they’d never marry.</p>
 <p>也许我对女人太领教了——“余悸犹存”，而我又太爱个人的independence（此字有浓厚的“自主”意味），我深不愿为了一些“性的快乐”而连带找来许许多多的麻烦与营扰，因此，因此，因此，我写了这篇“Anti-Women论”来请你做一番分析，科学家总比我们这些玄学鬼来得客观的。</p>
 <p>敖1960年8月15日</p>
 <p>尔琳地址请告我。这厮迟不来信，该砍一刀。</p>
@@ -5853,14 +5886,14 @@
 <p>六、今日收到弘来信及送三小姐之一百元，真教人不好受，受人太多，殊非佳事。弘信中说：“……记得在我三年级最不景气时，你会对我这样的一个生朋友花了不少时间与心血，甚至把你看书的时间完全占据了，这一点我永远记得的，也永远感谢你，可是我却并没有向你说过，所以希望你下次可千万别那么客气了。这次考试真令人不满，在我想来你是一定会取的……据王其允的老头（王德昭）说，满六十分的只有两人，他这种作风令人憎恶，一言蔽之，无聊。他自己是拿公家钱出国念书的，现在却来找自费留学生的麻烦，虽然我知道你的得失心不太大，但总很难服气的。”</p>
 <p>8月19日星期五</p>
 <p>一、晨起读《虚云和尚年谱》，一派玄学语句。背英文，决定做一“重温手册”，善培言我精神佳：“你实在是精神堡垒。”访得彭排附故人于玉书书局，午请善培于公园小馆，碰到金、刚二位。刚言陈琪在台中。</p>
-<p>二、下午高惜冰、王铁汉等几个赃官主席来，我怪老太太表现殊小气，“师姥姥”责我不是……决定不在家吃饭，夜善培不肯Dutchtreat，结果请他吃饭，饭前曾在南夜小坐，颇起旧忆，转赴世民处筹款，财务上，我二人皆不支矣。</p>
+<p>二、下午高惜冰、王铁汉等几个赃官主席来，我怪老太太表现殊小气，“师姥姥”责我不是……决定不在家吃饭，夜善培不肯Dutch treat，结果请他吃饭，饭前曾在南夜小坐，颇起旧忆，转赴世民处筹款，财务上，我二人皆不支矣。</p>
 <p>三、送善培《日美会话必携》《英文三民主义》等。夜尔琳来谈。</p>
 <p>四、不在家居，仍睡慎斋堂老床上，没被没枕，亦颇有味。今早参观慎斋堂正殿，颇有感。</p>
 <p>8月20日星期六</p>
 <p>一、晨见八十九岁老妪，真是寿星的样儿，我向善培说，慎斋堂的老太婆们年纪加起来大概有一千岁！（慎斋堂为尼姑庵，可是尼姑太少了，都是老太婆居士。）</p>
 <p>二、善培请早饭后，一起归家换衣服，新娘子在家穷打扮，老太太亦随之，车来接，我却与善培走，不肯坐车也。今日我着灰袍罗褂，达克龙裤（借自绍辉），路经华南商业银行，善培偷摄我像，抬头时适开麦拉按动。</p>
 <p>三、婚礼开始，东北的主席们一一上台，老八也把老太太扶上去了，乐声起处，新郎伴郎（金绍辉）新娘伴娘（六小姐）像扭秧歌一般地边走边停的进来了，行礼如仪，内订好的人士一一发表演说，殊可厌，我肚子已饿，已等得不耐烦了，好歹算是开动了，开始大吃“老本”——“把老本吃回来主义”，酒席贵而不佳，满礼堂喜幛最讨厌（喜幛自陈诚送的以下，满墙都是）。菜来时，我照顾美惠及金惠瑛，据三姐说，金惠瑛可能做修女，今日其不愉快之态溢于眉宇。酒席中善培为摄二图，大喝清酒，看华民侄女甚不坏，最后与世民干一杯后感到有点醉了，告辞出来，在市中居仁楼摄影，潇洒透了，我最喜欢。在居仁楼里，坐在会客厅的沙发上，又摄一影，醉意甚盎。今日遇到不少老友，赃官们我一个也没理。（8月25日诗题照片：“酒醉楼前浑无语，漫笑斯人不得已！心中块垒一时休，千万女人只想你。”）</p>
-<p>四、下午独看《太阳谷》（TheEarthisMine）于成功，珍茜蒙丝有几个镜头真像Rosa，火车追送别那一段尤见活泼天真与动人，令我苦不能忘，出场后仍怅怅然，这种电影看多了我会失掉自持与平静的。</p>
+<p>四、下午独看《太阳谷》（The Earth is Mine）于成功，珍茜蒙丝有几个镜头真像Rosa，火车追送别那一段尤见活泼天真与动人，令我苦不能忘，出场后仍怅怅然，这种电影看多了我会失掉自持与平静的。</p>
 <p>五、出在中央书局浏览时，忽有人叫我，乃小钊也，想不到竟于明日结婚，请“准夫妇”赴一福堂吃冰淇淋，即席以午间世间假来之百元强其收下。一两年不见，小钊仍然如昨日，知赵四嫁书记官。小钊喜事，我一定要这样送礼才安心。</p>
 <p>六、转赴南夜找善培，两人只好再分头筹款，老吴自动以十元美金为借，换得四百三十元，与善培济燃眉之急。夜同在南夜，我吃猪排三文治及清茶等，二人相谈夜深，始坐三轮车返尼姑庵。</p>
 <p>8月21日星期日</p>
@@ -5889,7 +5922,7 @@
 <p>8月25日星期四</p>
 <p>一、启庆挂号寄来两页书，谢赠书事及论昌平之死。</p>
 <p>二、作书给“鼓应准硕士”劝其暂勿念研究所：</p>
-<p>……最重要的一点是你该暂时远离一下在台大那种“没有起色的”（dispiritedandlistless）生活，而先把自己置于另一个完全不同的阶层与环境里头“磨”它一年——起码要像我目前这样，也许对你说来有不少的启发与暗示，那时候再回到老圈子里重做冯妇，再扮刘郎，保险对你更有益处，你以为如何？勿因李敖没有准硕士的资格而轻其言也！</p>
+<p>……最重要的一点是你该暂时远离一下在台大那种“没有起色的”（dispirited and listless）生活，而先把自己置于另一个完全不同的阶层与环境里头“磨”它一年——起码要像我目前这样，也许对你说来有不少的启发与暗示，那时候再回到老圈子里重做冯妇，再扮刘郎，保险对你更有益处，你以为如何？勿因李敖没有准硕士的资格而轻其言也！</p>
 <p>信凡三页，另嘱勿告友朋我闹穷，而命他先寄五十元，其中先扣去一海绵钱，算做我前许他的礼物。</p>
 <p>三、午后与一二连预官行政官谈，二人皆牢骚甚，都与连长处得不愉快。</p>
 <p>四、两三天来胃口奇佳，可是没钱“摸哈豆”，午后3时后就开始饿起来了。</p>
@@ -5909,7 +5942,7 @@
 <p>七、给玉衡一片，请其寄五十来。</p>
 <p>八、给启庆两页书，请其寄一百来。并送其照片一张。</p>
 <p>九、昨连长请电影，永亭送十元，今阿周请理发皆拒之。但是身上一毛都没有，衣鞋皆取不回来。</p>
-<p>十、午饭后读旧日记，听AuleLangSyne，心中有一种难言的味儿，真不是味儿。大便后决定宣告几件事是没有意义的：</p>
+<p>十、午饭后读旧日记，听Aule Lang Syne，心中有一种难言的味儿，真不是味儿。大便后决定宣告几件事是没有意义的：</p>
 <p>（一）谈天是没有意义的。</p>
 <p>（二）为往事花时间是没有意义的。</p>
 <p>（三）乱跑是没有意义的。</p>
@@ -5924,10 +5957,10 @@
 <p>苏秦之问嫂，良有以也；</p>
 <p>志坚之送归，岂徒然哉！</p>
 <p>“经济上的”原因，形成了另一种不愉快，可笑的是，在家庭财权的掌握上，她们好像就不认为我是“长子”了，也不用传统的旧习俗来委托“长子”了，哈哈。</p>
-<p>JohnFlorio(1553?-1625)说穷不是vice，可是它却是一种inconvenience，我现在真真感受到这种痛苦了，大概我不是“安贫”的“君子”，所以实在不能像唐朝朱桃椎那样大叫一声：</p>
+<p>John Florio(1553?-1625)说穷不是vice，可是它却是一种inconvenience，我现在真真感受到这种痛苦了，大概我不是“安贫”的“君子”，所以实在不能像唐朝朱桃椎那样大叫一声：</p>
 <p>“命合穷耳！”</p>
 <p>因此，我目前最盼望的一件事便是赶紧退伍下来，顺利的找个一官半职，第一步先使我在经济上独立起来，脱离“一钱难倒英雄汉”的苦海，次一步便是偿清旧债新账，逃掉“旧债寻常处处有”的日子！</p>
-<p>Tobepoorandindependentisverynearlyanimpossibility!</p>
+<p>To be poor and independent is very nearly an impossibility!</p>
 <p>一个酷爱independent这个字的人，却在臭屁股上背了一屁股臭债，这未免和他太不相称了！</p>
 <p>敖之1960年8月26日</p>
 <p>十四、另赠新汉照片并题诗：</p>
@@ -5937,7 +5970,7 @@
 <p>我笑袁大头！</p>
 <p>十五、接彦增片，又去台北了，我写给新汉说：“这厮仆仆于台北台中间，忙啥子鸟事！”</p>
 <p>十六、喜获小潘一片，他说：</p>
-<p>李敖：哪一种人生是理想的人生我虽曾考虑过，但没有很肯定的结论，至于misogamist是否正常我也不敢不断论，不过我觉得一个人结婚并不限于建立sexualrelation，除sexualrelation外似乎还有别的东西，例如我失去FrauleinChang总感到失去一种深厚友谊……</p>
+<p>李敖：哪一种人生是理想的人生我虽曾考虑过，但没有很肯定的结论，至于misogamist是否正常我也不敢不断论，不过我觉得一个人结婚并不限于建立sexual relation，除sexual relation外似乎还有别的东西，例如我失去Fraulein Chang总感到失去一种深厚友谊……</p>
 <p>十七、看窗外狗咬狗，很有趣。</p>
 <p>十八、食量甚大，夜食稀饭六碗，馒头三个。</p>
 <p>十九、有“财神”，不知有否“穷神”？</p>
@@ -5945,7 +5978,7 @@
 <p>8月27日星期六</p>
 <p>一、早饭时众言“共匪战法”，诸如坑道战、人海战、黄蜂战、行军日近二百里，其苦多非吾人所能受。</p>
 <p>二、抓到张永亭给我擦枪，枪此次因坠泥中，膛内皆泥巴。</p>
-<p>三、启庆挂号寄来ModemHistory。</p>
+<p>三、启庆挂号寄来Modem History。</p>
 <p>四、作五言诗：</p>
 <p>室内人相拼，</p>
 <p>窗外狗咬狗，</p>
@@ -5959,17 +5992,17 @@
 <p>南天明月澄如洗，</p>
 <p>心想玫园百里书。</p>
 <p>八、球鞋送给阿周，阿周下午请喝高粱酒等，在偷看我们洗澡的那个女孩子的店里。</p>
-<p>九、夜译英小说家兼诗人HamlinGarland（1860-1940）小诗DoYouFearTheWind?：</p>
-<p>Doyoufeartheforceofthewind，</p>
-<p>Theslashoftherain?</p>
-<p>Gofacethemandfightthem,</p>
-<p>Besavageagain.</p>
-<p>Gohungryandcoldlikethewolf,</p>
-<p>Gowadelikethecrane；</p>
-<p>Thepalmsofyourhandswillthicken，</p>
-<p>Theskinofyourcheekwilltan，</p>
-<p>You'llgrowraggedandwearyandswarthy，</p>
-<p>Butyou'llwalklikeaman!</p>
+<p>九、夜译英小说家兼诗人Hamlin Garland（1860-1940）小诗Do You Fear The Wind ?：</p>
+<p>Do you fear the force of the wind，</p>
+<p>The slash of the rain?</p>
+<p>Go face them and fight them,</p>
+<p>Be savage again.</p>
+<p>Go hungry and cold like the wolf,</p>
+<p>Go wade like the crane；</p>
+<p>The palms of your hands will thicken，</p>
+<p>The skin of your cheek will tan，</p>
+<p>You’ll grow ragged and weary and swarthy，</p>
+<p>But you’ll walk like a man!</p>
 <p>莫怕风吹雨打，</p>
 <p>面对跟它苦战，</p>
 <p>恢复原始强悍。</p>
@@ -5986,7 +6019,7 @@
 <p>三、给清茂片，“可寄二十元来”。</p>
 <p>四、午饭一句话没讲，我不喜欢讲话，外界的安静既不可得，我希望我里面先安静起来，我是一个有意志的人，并非肤浅之徒所能深知。</p>
 <p>五、我要把一个月以前的老话再写一遍：</p>
-<p>Downwiththeindifferentpersonandmatter!</p>
+<p>Down with the indifferent person and matter!</p>
 <p>人事之营扰避之犹恐不及，况向之乎！况为其撄心乎！</p>
 <p>六、多久了，每日都要下雨。每日要开关窗多次，又得注意屋顶漏雨部分之“改道”。</p>
 <p>七、傍晚黄容电话来，我为了“一个争取个人自由的人”关照一阵。</p>
@@ -6001,21 +6034,21 @@
 <p>五、张永亭背心穿了一个礼拜还不肯脱下来。</p>
 <p>六、给毓刚六页信，《再论婚姻与爱情》：</p>
 <p>小潘：</p>
-<p>你说“结婚并不限于建立sexualrelation，除sexualrelation外似乎还有别的东西。”我现在愿意向你盘算看，你所谓的“别的东西”到底是些啥子？</p>
-<p>1.首先，你有了“家”（自己的家）的感觉和实质了，你也许不会再自觉是abirdofpassage了，可是对一个有漂泊与浪迹性格的人说来，“家”对于他，像是行军时的那个背包，虽然军毡雨衣与蚊帐给你一种安全感，可是那同时也是一个相当可怕的burden！</p>
+<p>你说“结婚并不限于建立sexual relation，除sexual relation外似乎还有别的东西。”我现在愿意向你盘算看，你所谓的“别的东西”到底是些啥子？</p>
+<p>1.首先，你有了“家”（自己的家）的感觉和实质了，你也许不会再自觉是a bird of passage了，可是对一个有漂泊与浪迹性格的人说来，“家”对于他，像是行军时的那个背包，虽然军毡雨衣与蚊帐给你一种安全感，可是那同时也是一个相当可怕的burden！</p>
 <p>2.Burden只是一个外形上的累赘，隐藏在它里面的，是许许多多源源不竭的烦恼：</p>
-<p>Needlesandpins,needlesandpins,</p>
-<p>Whenamanmarrieshistroublebegins.</p>
+<p>Needles and pins, needles and pins,</p>
+<p>When a man marries his trouble begins.</p>
 <p>所谓trouble，上自哈老哥式的丈母娘，中自太座的月经带，下至小儿子被隔壁的阿毛打破了头……无一不需要你操心劳形的，这些还只指小事情而言，他如天灾人祸的殃及，生老病死的巨变，更要使你痛心疾首了。</p>
 <p>3.当然，你受了许许多多的限制，譬如说，你不能再东奔西跑了，你要适时在家里陪太太；你不能一掷千金了，你要不例外的像任何已婚的男人一样在婚后变得小气起来了；你不能随心所欲的为所欲为了，也许你为了糊口与家计做你并不愿做的某些没有意义的事；你同时要大有顾忌的选择你走的路了，你不能再冒险，你要为家中每一位“亲爱的”而低首下心的做“顺民”！太太喜欢丈夫出人头地，可是不喜欢自己的丈夫竟是一个“千夫所指”的异端。</p>
 <p>4.最要命的，就是你的感情被一条铁链锁住了，造成这条铁链的是传统的风俗、道德、法律、舆论、良心标准、礼仪、结婚证书、戒指和儿女，这些铁环使你在感情上不能再free了，在这些桎梏的束缚下，你不能再乱爱女人了，也不能再乱接受女人的垂青了，否则人家便认为你不是一个“好”丈夫或“好”父亲了。</p>
-<p>把自己被婚姻锁住，而只对一个女人鞠躬尽瘁，这是教我做不到的，当我仔细盘算的结果，潘毓刚所迷信的sexualrelation以外的“别的东西”竟不过如此，我怎么能对婚姻有信心呢？</p>
-<p>FrauleinChang的远去重洋，使你“总感到失去一种深厚的友谊”，其实你该知道，只有脱离婚姻的“单纯爱情”，才能使你获致这种tragicomedy，悲喜也好，离合也罢，这种味儿都不是婚后所能企及的，婚姻破坏了一切美感与梦幻，也许一个人只有在婚后，才发现他想从结婚中得到的“别的东西”，在事实上完全不是那么一回事！</p>
+<p>把自己被婚姻锁住，而只对一个女人鞠躬尽瘁，这是教我做不到的，当我仔细盘算的结果，潘毓刚所迷信的sexual relation以外的“别的东西”竟不过如此，我怎么能对婚姻有信心呢？</p>
+<p>Fraulein Chang的远去重洋，使你“总感到失去一种深厚的友谊”，其实你该知道，只有脱离婚姻的“单纯爱情”，才能使你获致这种tragicomedy，悲喜也好，离合也罢，这种味儿都不是婚后所能企及的，婚姻破坏了一切美感与梦幻，也许一个人只有在婚后，才发现他想从结婚中得到的“别的东西”，在事实上完全不是那么一回事！</p>
 <p>欲射一马，</p>
 <p>误中一獐。</p>
 <p>这往往是一切已婚男女的嗟叹！</p>
-<p>婚姻是死巷，泛爱女人才是一条活路，只要自由恋爱的风气能像瑞典式的推广，一切“深厚友谊”都不难得到；只要性交不需要“法定”，一切sexualrelation都可以在旅馆中施行；“画眉”“齐眉”的雅事不必再在结婚后希求了，那是没有恋爱自由的古人们婚后的勾当。而我们就不同了，我们可以在婚姻前大量的找寻Fraulein，进而扬弃注册专利式的婚姻！</p>
-<p>卓越的科学方法的训练，使你对这些问题始终“没有很肯定的结论”，我过去也没有，但是近来我有了，现实毕竟是生冷的，它使我不再像你那样抱着稳健的希望，企图去解开这个GordianKnot，我只是一刀砍开它，用一篇奇说僻论（Paradox）来支持我走上那条自由自在的烟火路！</p>
+<p>婚姻是死巷，泛爱女人才是一条活路，只要自由恋爱的风气能像瑞典式的推广，一切“深厚友谊”都不难得到；只要性交不需要“法定”，一切sexual relation都可以在旅馆中施行；“画眉”“齐眉”的雅事不必再在结婚后希求了，那是没有恋爱自由的古人们婚后的勾当。而我们就不同了，我们可以在婚姻前大量的找寻Fraulein，进而扬弃注册专利式的婚姻！</p>
+<p>卓越的科学方法的训练，使你对这些问题始终“没有很肯定的结论”，我过去也没有，但是近来我有了，现实毕竟是生冷的，它使我不再像你那样抱着稳健的希望，企图去解开这个Gordian Knot，我只是一刀砍开它，用一篇奇说僻论（Paradox）来支持我走上那条自由自在的烟火路！</p>
 <p>敖1960年8月29日</p>
 <p>这封信寄给尔琳，请他过目并眉批，或脚注后转寄给你，我想你一定又骂我，说我“妖言惑众”了。</p>
 <p>李敖附识</p>
@@ -6026,7 +6059,7 @@
 <p>八、听收音机的老兵，臭脚放在我床上，真要命。</p>
 <p>九、午间读了一本一百四十面的小书，《国军对匪情报作战经验与教训》，上面发下来的，“仅限国军阅读，不得对外流传”。为情报学校“匪俄军事研究处”编纂，1960年5月20日“国防部”情报参谋次长室核印。</p>
 <p>十、下午在河边督操舟练习，一下午如是而去，坐在泥台上回忆与Rosa在咖啡室那一次，我实在忍不住很想她。</p>
-<p>十一、晚饭后一躺，小寐，并读书直到天黑才起来，伯高送烟一支，抽之读英诗，除了收音机捣乱外，一切尚称平静写意，读AlgernonCharlesSwinburne(1837-1909)的ALeave-Taking诗，凡六段，译其第一段：</p>
+<p>十一、晚饭后一躺，小寐，并读书直到天黑才起来，伯高送烟一支，抽之读英诗，除了收音机捣乱外，一切尚称平静写意，读Algernon Charles Swinburne (1837-1909)的A Leave-Taking诗，凡六段，译其第一段：</p>
 <p>道别（第一段）</p>
 <p>我的歌声，让我们走吧；她不听我们了，</p>
 <p>别怕，让我们一块儿走吧；</p>
@@ -6045,17 +6078,17 @@
 <p>此曲天上有，</p>
 <p>莫得伊人顾。</p>
 <p>附原诗：</p>
-<p>Letusgohence,mysongs；shewillnothear.</p>
-<p>Letusgohencetogetherwithoutfear；</p>
-<p>Keepsilencenow，forsinging-timeisover.</p>
-<p>Andoverallthingsandallthingsdear.</p>
-<p>Shelovesnotyounormeasailweloveher.</p>
-<p>Yea,thoughwesangasangelsinherear,</p>
-<p>Shewouldnothear.</p>
+<p>Let us go hence, my songs；she will not hear.</p>
+<p>Let us go hence together without fear；</p>
+<p>Keep silence now，for singing - time is over.</p>
+<p>And over all things and all things dear.</p>
+<p>She loves not you nor me as ail we love her.</p>
+<p>Yea, though we sang as angels in her ear,</p>
+<p>She would not hear.</p>
 <p>（下略）</p>
 <p>8月30日星期二</p>
 <p>一、外面下着雨，我在屋内穿着棉背心，很想写封长信给Rosa，可是摊开稿纸，想了一阵，觉得还是甭说什么好。</p>
-<p>二、午后连长借到钱，同赴台南，我已一文莫名近一周，好像从来没有这样穷过，看《万世流芳》（BeauGeste）于大全成，贾利古柏、雷密伦、苏珊海华丝合演，述三孤儿为报其养母之恩，乃偷玉之故事。</p>
+<p>二、午后连长借到钱，同赴台南，我已一文莫名近一周，好像从来没有这样穷过，看《万世流芳》（Beau Geste）于大全成，贾利古柏、雷密伦、苏珊海华丝合演，述三孤儿为报其养母之恩，乃偷玉之故事。</p>
 <p>三、出来补牙于一迹近江湖之郎中，花二十元，买玻璃雨布十尺，买小本日记本、癣药等。</p>
 <p>四、坐6点10分最后一班车赶回，晚饭大喝猪蹄汤，看偷看我们洗澡的小女人，其侧笑甚美。</p>
 <p>8月31日星期三</p>
@@ -6100,7 +6133,7 @@
 <p>新汉最近有钱寄你，我如有好事也可寄些，撇开这个无聊的“钱”字不提，你也该和家庭多少融合一些，老话说：“宰相肚里能撑船。”蔡元培能容忍林纾与黄侃，胡适之就不能，这点望你学学蔡先生。</p>
 <p>完了，再谈祝</p>
 <p>高兴</p>
-<p>Happinesscanbeconqueredbyeveryoneintheory,evenindailylife.</p>
+<p>Happiness can be conquered by everyone in theory, even in daily life.</p>
 <p>小老弟事，仍纠缠不清，老太拼命反对，他也无定见，甚无精打釆，可去信痛劝之。五日前仍在台北，但甚少见。</p>
 <p>七、新汉来限时信。</p>
 <p>敖鉴：</p>
@@ -6129,7 +6162,7 @@
 <p>七、夜8时后向隆田国校行，约半小时抵校。夜宿以军毡为垫，以雨衣及羊毛衫被覆，半夜甚冷，以毡两用（被垫）之。</p>
 <p>9月3日星期六</p>
 <p>一、军人节，可是没有假，只有要晒的太阳与要跑的长路。</p>
-<p>二、4时起床，夜行抵山头再防御，时阴霾满天，乃卧于山顶，雨衣甚潮，侧卧及用枪托为垫，乃稍解潮气。赵金魁又闹气，此人实可鄙，连长说他很“贱”，非怒目相向不可，我待之不薄，此人殊求无厌，是可厌耳！两天来之与这些不折不扣的unreasonablefools争吵，使我发现这也是一个不可避免的好办法，这种人你对他客客气气，他就真正的不断的做出种种欺人负人之事，令人可恼，真不如像这样吵翻，“公事公办，私事敲断”来得好！差强人意的人还是很多，可是对一些unreasonablefools，我不这样做又有什么办法呢？这是一个基本的教育的问题，又涉及他嫉妒与自卑种种因素，更值这种enforce的环境里，洵非个人的“婆婆心肠”所能济事的，人道主义是有时空性的，用一句不太恰当的口号：“对（敌）人宽大，就是对自己残忍。”所以我决心疏远这些可怜又可厌的，我要对他们严肃而沉默。</p>
+<p>二、4时起床，夜行抵山头再防御，时阴霾满天，乃卧于山顶，雨衣甚潮，侧卧及用枪托为垫，乃稍解潮气。赵金魁又闹气，此人实可鄙，连长说他很“贱”，非怒目相向不可，我待之不薄，此人殊求无厌，是可厌耳！两天来之与这些不折不扣的unreasonable fools争吵，使我发现这也是一个不可避免的好办法，这种人你对他客客气气，他就真正的不断的做出种种欺人负人之事，令人可恼，真不如像这样吵翻，“公事公办，私事敲断”来得好！差强人意的人还是很多，可是对一些unreasonable fools，我不这样做又有什么办法呢？这是一个基本的教育的问题，又涉及他嫉妒与自卑种种因素，更值这种enforce的环境里，洵非个人的“婆婆心肠”所能济事的，人道主义是有时空性的，用一句不太恰当的口号：“对（敌）人宽大，就是对自己残忍。”所以我决心疏远这些可怜又可厌的，我要对他们严肃而沉默。</p>
 <p>他们粗暴无理性如一只兽，</p>
 <p>小心眼儿如一个女人。</p>
 <p>三、太阳出来了，晒走了草上衣上的露水，晒出了身上的“露水”——我明显的感到胸前一行行汗珠的下淌。一上午是“防御战斗”的课目。</p>
@@ -6150,7 +6183,7 @@
 <p>四、投宿于阿莲国校教室中的四个老爷桌子上，真想洗澡，苦不可能。</p>
 <p>9月5日星期一</p>
 <p>一、清早竟第一次梦到陈琪，她写二信给我，字迹甚美，醒来仍飘飘不止。</p>
-<p>二、走了九公里，抵深坑集结，路中与副营长谈天颇久。上午是“前卫”“集结地区占领”，午后在深坑之竹林下昏睡二小时，最后被转来之阳光照醒，闹胃水欲呕，苦咽之方过。旋开始下午“攻击准备”的课目，到关庙北端山头接受命令，在大树下躲雨并谈天作诗。归遇大雨，幸躲过。自苏国安处借二十元，买花生米食之，读报，为FreeChina社中事惊叹不已（《自由中国》杂志社也。1985年12月29日。李敖附识）。</p>
+<p>二、走了九公里，抵深坑集结，路中与副营长谈天颇久。上午是“前卫”“集结地区占领”，午后在深坑之竹林下昏睡二小时，最后被转来之阳光照醒，闹胃水欲呕，苦咽之方过。旋开始下午“攻击准备”的课目，到关庙北端山头接受命令，在大树下躲雨并谈天作诗。归遇大雨，幸躲过。自苏国安处借二十元，买花生米食之，读报，为Free China社中事惊叹不已（《自由中国》杂志社也。1985年12月29日。李敖附识）。</p>
 <p>三、晚饭民家，幸因此雨，上面取消了就地露宿的计划，改行五里抵关庙国校寄宿，我睡于讲台上，上下身亦多为汗雨所湿，一切照顾停当后，与连长逛夜市。</p>
 <p>四、9时上“台”，迟迟很久不能入睡，一来满室臭气湿气，二来为Free China社事所扰，感触几成强迫观念而不能去，改想Rosa而眠，但因喝了太多的汽水，起夜两次，得睹今晚之月蚀。</p>
 <p>五、七月十五，民间围而拜拜，盛况良多。</p>
@@ -6182,7 +6215,7 @@
 <p>敖哥：</p>
 <p>回到金门即调到观测所来。近来台风一再光顾，我处首当其冲，给惹了不少麻烦。</p>
 <p>三民主义讲习班刚受训完毕，每天跑一大段路去上课，感觉很累。不久以后又将有一个观测所的作业测验，这一阶段过去后，我决心静养一番了。这里我具有一方自己的小天地，平时谁也不来打扰我。初来偶尔也颇有耐不住寂寞的苦恼，现在却日益爱好它了。我在尝试一种不抑制自己而亦勿须外求的生活。除非是一股自发的兴趣与热衷的情绪，我不愿建立一个“计划”来劳苦自己。和温柔乡中的你、十八层地狱的善培比照，我自觉是一顆堕落于轨道之外的“人造”卫星。</p>
-<p>谢谢你寄来剪报，我算是比你们少了一层“necessarytrouble”，留洋之期似乎还远得很。问候你的连带保证人多多保重。</p>
+<p>谢谢你寄来剪报，我算是比你们少了一层“necessary trouble”，留洋之期似乎还远得很。问候你的连带保证人多多保重。</p>
 <p>华俊1960年8月29日</p>
 <p>九、德毅来一片。</p>
 <p>9月7日星期三</p>
@@ -6274,14 +6307,14 @@
 <p>我的答复很简单：“当然有！”在旧的传统里面，有许许多多“持之无故”“言之无理”而不能使人心服的霉货，但是经过一些异端与急进者的“推陈出新”“除旧布新”的鼓吹，许多旧的恶习被淘汰了，许多新的规范树立起来了，例如在旧观念里，结婚要“拜天地”，但是当新观念来的时候，新郎新娘甚至相对行礼都没有意义了，这不是“新教条”所具有的意义么？老景说：</p>
 <p>……社会风气之改变，原靠一二有识之士出而倡导的，不过在做法上，应斟酌情势，我们目的在于理想之实现，如果在做法上毫无影响，不能达到目的，则“做法”就有问题了。</p>
 <p>这种持论也难免落“皮相”之讥，因为你的毛病在错认“理想之实现”的程度和“达到目的”的程度，到什么程度才算“实现”、才算“达到”，实在很难说，耶稣死时不是一败涂地么？可是——正如一篇文字所说的——</p>
-<p>Nineteenwidecenturieshavecomeandgone,andtodayheisthecentialfigureofthehumanraceandtheleaderofthecolumnofprogress.</p>
+<p>Nineteen wide centuries have come and gone, and to day he is the cential figure of the human race and the leader of the column of progress.</p>
 <p>你能说耶稣的“做法”有问题么？耶稣当年若像老景这样“稳健”，整天“斟酌情势”，刽子手们也不会赌他的外衣了！</p>
 <p>在这“水深波浪阔”的时代里，我们是多么渺小！多么无力！又多么短暂！如果我们能在环境允许的“极限”下，倚机蠕动一番，说说我们想说的、做做我们想做的，捣一下小乱、冒一下小险，使老顽固们高一高血压，大概这就是我们最大的“能耐”了！我们还能怎样呢？我们岂配做“杀头生意”么？</p>
 <p>因此我说，在环境的“极限”下，我们少做一分懦夫，我们就该多充一分勇士！能表白一下真我，就少戴一次假面，如果我们能高飞，我们希望飞得像只多谋的九头鸟；如果我们与覆巢同下，我们希望不是一个太狼狈的坏蛋；如果我们在釜底，我们希望不做俎肉，而是一条活生生的游魂！本着这点可怜的持身观点，我忍不住骂你们两位不脱“乡愿”之气，你们在血气方刚之年就垂垂“稳健”起来了，就带着老成持重的口吻主张“多少融合一些”（老马）和“何必曰‘绝’”（老景）了！你们也居然浇我凉水、扯我后腿了！</p>
 <p>路是那么长，我们随时会倒下，死就死了，又何必“正首丘”呢？青山多得很，到处都可埋我们这副不算重的骨头，在重归尘土的刹那，愿我们都能刻上几行带有彩色的里程碑！</p>
 <p>敖之1960年9月9日的早晨</p>
 <p>另赠马戈照片。信凡六页，寄给马戈。</p>
-<p>五、读国军军官团教材之战法，欺敌等部分。C.P.用名称之Vividness。</p>
+<p>五、读国军军官团教材之战法，欺敌等部分。C. P.用名称之Vividness。</p>
 <p>六、另给新汉两页信，述债缘（“……还清不远，盼在明年”）及寿诗缘起。</p>
 <p>七、送本月份烟给排附。</p>
 <p>八、镜昌来小谈，连长笑我又大推荐吴抄手之砂锅。送镜昌照片一。</p>
@@ -6333,7 +6366,7 @@
 <p>八、夜宿于短雨檐下，睡前看查哨地形，归以闷热，且砖地上反射日光余威，甚热，请永亭吃花生及一凤梨罐头。今晚不得解衣，很苦恼。</p>
 <p>9月14日星期三</p>
 <p>一、12时阿周叫起我与永亭同查哨，在连正面内一一查之，并予叮嘱，又在纵贯道上黄油管上小坐，在田间拉了一节野屎。1时30归，2时又为金魁叫醒。</p>
-<p>二、6时后醒来，身上露水不算多，午前坐车抵上茄冬，村落破旧而肮脏，午饭后在民房躲雨中又读毕《嘉丽妹妹》，时两时方过，昏日又出，心情搅得很糟糕，多感触，SisterCarriebyTheodoreDreiser，钟宪民译本，1953年11月明华版。此书寓浪漫派于写实主义之中，迥异维多利亚时代矫饰温雅之理想主义，忠于描写人性，无论真伪美丑也。</p>
+<p>二、6时后醒来，身上露水不算多，午前坐车抵上茄冬，村落破旧而肮脏，午饭后在民房躲雨中又读毕《嘉丽妹妹》，时两时方过，昏日又出，心情搅得很糟糕，多感触，Sister Carrie by Theodore Dreiser，钟宪民译本，1953年11月明华版。此书寓浪漫派于写实主义之中，迥异维多利亚时代矫饰温雅之理想主义，忠于描写人性，无论真伪美丑也。</p>
 <p>（一）女人总有一天会把衣服的全部哲学写下来。无论多大年龄，衣服正是女人所能完全了解的一件事。女人遇见男人，就从衣服上分别值得一看与不屑一顾两者间微妙的界线。（第一章）</p>
 <p>（二）我们的文化还在中年时代，一面可说已脱离兽性，因为它已不再为本能所支配；另一面可说未近人性，因为它尚非全以理性为主导。（第七章）</p>
 <p>（三）斯宾塞以及我们现代自然主义的哲学家们，虽各持其见解，分析过道德，但我们对道德的观念还很幼稚。（第八章）</p>
@@ -6361,8 +6394,8 @@
 <p>9月16日星期五</p>
 <p>一、4时就被叫醒，夜行山路与连长为前导寻路，直奔乌角潭及△52，在△52树林中防御，一上午躺着读小说并小寐。</p>
 <p>二、午前转至曾文溪旁一断层上，望长河远山甚美，卧于树下甚快甚快。</p>
-<p>三、下午读完WateringHeight此书以开端啰唆晦昧，昔未得读，今日读完，叙深仇与深情之变态表现，颇离奇。</p>
-<p>四、又花两小时也许还不到读完《地老天荒不了情》（MagnificentObsession），叶由之译本，四四年新兴书局版（Dr.LloydCasselDauglas）。</p>
+<p>三、下午读完Watering Height此书以开端啰唆晦昧，昔未得读，今日读完，叙深仇与深情之变态表现，颇离奇。</p>
+<p>四、又花两小时也许还不到读完《地老天荒不了情》（Magnificent Obsession），叶由之译本，四四年新兴书局版（Dr. Lloyd Cassel Dauglas）。</p>
 <p>五、一砍草小女子，二八年纪，工作甚勤，远看有点像Rosa，看我久之后，送我们甘蔗，相视而笑。</p>
 <p>六、连长昨天中午又有条子来了。</p>
 <p>七、下午起就没小说读了，读书成绩以师教练最好，盖自知在那种枯燥疲惫的状态下读硬读物几乎为不可能之事，不如干脆读小说反可得利不少也，真后悔过去硬逼自己“读硬东西”之失策，结果很容易就流于“相持的局面”，反不讨好。以后记得努力是好的，可是在枯燥疲惫下硬要努力，就不必了、不必了，还是别太自苦吧，每年能在“无可奈何之非一己所能控制的时间里”，偷回读几十部小说的时间,不也很好吗？</p>
@@ -6437,10 +6470,10 @@
 <p>9月24日星期六</p>
 <p>一、新汉请早饭，送到车站，并购双喜烟，此行承新汉假草绿军便服、袜子与大皮鞋等等。与新汉相约“不写信”，我决在此处撙节时力，不做浅薄之行为而误读书之时间，盖我深觉“人情上之交往”殊无意义也！</p>
 <p>二、坐9时15分直达车返中二十五元。车上遇一小妇人着旗袍，甚楚楚，互目多次。</p>
-<p>三、晚与老太太同看看WomanLikeSatan。B.B.甚美而诱人。</p>
+<p>三、晚与老太太同看看Woman Like Satan。B. B.甚美而诱人。</p>
 <p>9月25日星期日</p>
 <p>一、上午读书整理。</p>
-<p>二、下午看《路易游太空》（JerryLewisinaVisittoaSmallPlanet）。</p>
+<p>二、下午看《路易游太空》（Jerry Lewis in a Visit to a Small Planet）。</p>
 <p>三、归来深觉这种“世俗的娱乐”之乏味，深不欲再把有限之青春掷于此种无限之引诱上，乃决计不再看电影，晚上之票亦请八少爷退掉了。</p>
 <p>四、夜读书，忽想起任公的研究学科用“著书法”甚好，决定写《英文汉诂》一书以增吾治英文之兴趣，此书别名或作“英文之趣味”。</p>
 <p>五、老太大意台中各学校无人敢延我执教，果如是，我正好家居五月矣。</p>
@@ -6486,7 +6519,7 @@
 <p>一、起床前竟又梦及看Rosa，似在一文学编辑部中，我先靠一桌上看她坐在那儿画铅笔自画像，真美，我还自谓要多看几眼，莫错过机会，继而代捡黄铅笔，放她手中，她笑接之，我触其小手，柔嫩异常，她笑知我意，我以双手握她左手而吻之，她赠我书我嘱其为题，但以“嬷嬷”来，不果而梦醒。此梦极清晰，醒来若失久之。</p>
 <p>二、上午与镜昌调查台南市军中乐园，二人倚楼梯抄写，人多怪之，营妓乱抢帽子眼镜，只好逃出，香片我不敢喝（茶票即月台票二元）。三十号穿白衫白短裤，皮肤甚白。又同赴康乐街访民间妓女户，真想不到竟如此多，如此公开藐视民法第XX条，如此多招牌与彩色广告！甲级（三绿灯）不拉人，乙级（二绿）拉人甚凶，或以脚勾你裤腿或敲你胸问“为什么不要”？半裸而卧者有之，年幼十二三岁者亦有之（每日至多只能卖四次，多则不支）。此何等人间乎？感想极多，不详记之矣。</p>
 <p>三、请镜昌于吴抄手，他言及天昭事件。晚慰天昭，却未碰到。</p>
-<p>四、等清茂未遇，乃与镜昌看《凉宁虚惊》（TheGazebo）。</p>
+<p>四、等清茂未遇，乃与镜昌看《凉宁虚惊》（The Gazebo）。</p>
 <p>五、买《日语常用二千字》一册，赠连、指文法会话各一册。</p>
 <p>六、夜尔昭说我是“标准世纪末之产品”。</p>
 <p>10月3日星期一</p>
@@ -6496,7 +6529,7 @@
 <p>四、晚又找天昭，彼甚消极，劝慰一番。</p>
 <p>五、夜小读后睡，怎么总是精神不足。</p>
 <p>10月4日星期二</p>
-<p>一、梦到福生，大谈FreeChina事。</p>
+<p>一、梦到福生，大谈Free China事。</p>
 <p>二、每为人情所挽不能读书，今早起决心少因“不好意思”而为累！只剩十六元，被林里年统统借去。</p>
 <p>三、给新汉两页信，由汪秉泽订婚启事论启事的四种形式。</p>
 <p>四、寄送彦增书一册。</p>
@@ -6533,8 +6566,8 @@
 <p>10月10日星期一</p>
 <p>一、上午师庆祝会，烈日下良久，忆及一年前在步校情景。</p>
 <p>二、广诚来一信。</p>
-<p>三、午大吃猪肉后与连长去高雄，先看《粉红色潜艇》（OperationPetticoat）。</p>
-<p>四、晚饭于川菜店中后又同看《盖世霸王》（TheGiantofMarathon），愈看愈觉此种世俗之遣兴法之无聊。</p>
+<p>三、午大吃猪肉后与连长去高雄，先看《粉红色潜艇》（Operation Petticoat）。</p>
+<p>四、晚饭于川菜店中后又同看《盖世霸王》（The Giant of Marathon），愈看愈觉此种世俗之遣兴法之无聊。</p>
 <p>五、夜又大游行，和一年前一样，对这种群众Movement之感想，勿忘也。</p>
 <p>六、伤风头痛，吃药后坐火车及三轮车归。</p>
 <p>10月11日星期二</p>
@@ -6580,7 +6613,7 @@
 <p>杯中湖海士，</p>
 <p>梦里釆花人。</p>
 <p>八、成功来一片。</p>
-<p>九、夜请施珂在大社吃冰吸烟，言谈甚欢，今日正是四年前与Lofirst-inter-course之日，而我之卒能在情绪上获致解脱，不可不说是当兵以后的大成绩，这可说是一种变相的LaborReconstruction，对我实在有数不尽的好处。由于没否定女人（如庄周），故我可说是一个“七折八扣了的自然主义者”。我只是不刻意追求而已，我深知并深信欲获得个人真正自由与独立，非得不为女人所陷不可，珂问是否有我类似遭遇之人必得如此反动，我言大不然，舍我而外，恐无第二人有如此成绩了。</p>
+<p>九、夜请施珂在大社吃冰吸烟，言谈甚欢，今日正是四年前与Lo first-inter-course之日，而我之卒能在情绪上获致解脱，不可不说是当兵以后的大成绩，这可说是一种变相的Labor Reconstruction，对我实在有数不尽的好处。由于没否定女人（如庄周），故我可说是一个“七折八扣了的自然主义者”。我只是不刻意追求而已，我深知并深信欲获得个人真正自由与独立，非得不为女人所陷不可，珂问是否有我类似遭遇之人必得如此反动，我言大不然，舍我而外，恐无第二人有如此成绩了。</p>
 <p>十、发现可在附近豆腐店洗澡。</p>
 <p>10月16日星期日</p>
 <p>一、做体操及举重，甚卖力。</p>
@@ -6650,12 +6683,12 @@
 <p>八、夜请副座吃饺子喝蛋花汤吸烟。</p>
 <p>九、与万细德等谈至10时后。</p>
 <p>10月21日星期五</p>
-<p>一、永亭昨日偷烟，今早又来索烟，后读Job.i，21</p>
-<p>NakedcameIoutofmymother’swomb，andnakedshallIreturnthither；theLordgave，andtheLordhathtakenaway；blessedbethenameoftheLord.</p>
+<p>一、永亭昨日偷烟，今早又来索烟，后读Job. i，21</p>
+<p>Naked came I out of my mother’s womb，and naked shall I return thither；the Lord gave，and the Lord hath taken away；blessed be the name of the Lord.</p>
 <p>方知张永亭说他自杀前，要在河边脱裤子喊“妈，我光着屁股来，现在光着屁股回去了”的话，乃是与西方名著若合符节的。</p>
 <p>二、张福水晨来访。</p>
 <p>三、午饭提早，后与连长去高雄，先赴军中乐园参观。（明星街，满头半裸女于铁栏旁，或吹口哨，做鬼脸。看金魁病于二总医院，逛百货公司，看电影《宝剑神弓》：“肯做的不能，能做的不肯。”）</p>
-<p>四、连长先垫钱，终于再度买来AComprehensiveEnglish-ChineseDictionary，只花六十五元。此书道林纸本要三百二十元，普及本市价一百六十元，至少要一百二十元才可买得，而大新书局竟卖六十六元，我以六十五元购得，极为满意，重藏此书，忆起不禁小有感想也。</p>
+<p>四、连长先垫钱，终于再度买来A Comprehensive English-Chinese Dictionary，只花六十五元。此书道林纸本要三百二十元，普及本市价一百六十元，至少要一百二十元才可买得，而大新书局竟卖六十六元，我以六十五元购得，极为满意，重藏此书，忆起不禁小有感想也。</p>
 <p>五、归在冰店吃猪肉干。</p>
 <p>六、二车掌小姐颇不恶，下车两人皆伸手要票根，我立而不下车，悠然曰：“我给哪一个好？”右面的抢去了！哈！</p>
 <p>七、收到彦增寄来三百元，嘱“读勿填赤字”，尚义同信附来一纸，寄抄板桥词：</p>
@@ -6675,7 +6708,7 @@
 <p>三、午步岳来谈。</p>
 <p>四、无桌无灯，太影响工作成绩。饭后跑到行政官那儿读了一会。</p>
 <p>五、入睡前在蚊帐角中抓臭虫九、十只。两三日不抓即跑出这么多来！</p>
-<p>六、B.B.弹吉他，法国浪漫味儿多浓，此图颇引人远思。</p>
+<p>六、B. B.弹吉他，法国浪漫味儿多浓，此图颇引人远思。</p>
 <p>10月23日星期日</p>
 <p>一、以准备考试为借口，逃掉早上的荣团会及主席职务。</p>
 <p>二、下午在卫兵室小读。</p>
@@ -6717,7 +6750,7 @@
 <p>二、上午“三民主义新中国蓝图”。</p>
 <p>三、翻完《包法利夫人》，此书1956年4月脱稿。</p>
 <p>（一）“他尽了他一天小小的本分，仿佛拉磨的马，蒙住双眼，围着一个地方转，不知道自己磨了什么。”</p>
-<p>（二）贝朗热（PierreJeandeBeranger,1780-1857），其短歌之流行于民间如香山白石也。</p>
+<p>（二）贝朗热（Pierre Jean de Beranger, 1780-1857），其短歌之流行于民间如香山白石也。</p>
 <p>（三）“可是，就这么慢慢地，一天赶去一天，一个春天接着一个冬天，一个秋天接着一个夏天。”</p>
 <p>（四）拉法里耶小姐（LaValliere，1644-1710），路易十四宠姬，腿微跛，却善舞，失爱后，退居修道院修行忏悔。</p>
 <p>（五）铁美人（LaBelleFerronniere,1540?卒），弗朗索瓦一世（Francoisler）情妇，其夫为一国会议员，名拉佛隆（LaFerron），为一铁器商，为报复起见，自染梅毒欲经她传染国王，此与《金瓶梅》毒书故事类似。</p>
@@ -6728,22 +6761,22 @@
 <p>（九）蓬巴杜夫人（Pompadour,1721-1764），路易十五宠姬，她对政治的影响是恶劣的，但她知道保护文艺，使时代成为风格纤巧柔丽的时代，后人称之为彭蓬巴杜艺术。</p>
 <p>（十）沙龙（Salons）即客厅，但它的意义早已超过其字面，为法国特有之传统，一女主人指定一日接见入选的宾客，往往引起社会上风气与波澜，尤其是文艺的沙龙。</p>
 <p>（十一）席英（Sylphe），男性仙子。</p>
-<p>（十二）《画报》（L'llustrution），一种周刊，1843年创于巴黎，以图画说明当时的政风文艺等等。我当创办此图刊，如life。</p>
+<p>（十二）《画报》（L’llustrution），一种周刊，1843年创于巴黎，以图画说明当时的政风文艺等等。我当创办此图刊，如life。</p>
 <p>（十三）樊尚迪瓦尔（VincentDuval,1769-1876），生平研究胎形矫正术，著《跛足研究》（Traitepratquedupiedbot.1839）。</p>
 <p>（十四）“她愈爱那一个人，她愈恨这一个人。”</p>
 <p>（十五）“她和鲁道夫约好了，逢到重要事情，她在百叶窗拴一小块白纸。”</p>
-<p>（十六）一印章上刻的是“心心相印”（意文是AmorNeCor）。</p>
+<p>（十六）一印章上刻的是“心心相印”（意文是Amor Ne Cor）。</p>
 <p>（十七）克拉朗斯（Clarence，1449-1478）公爵，兄为英王爱德华四世，失和，处死刑，兄问其要怎样死，言愿泡在“马茹瓦席酒”（Malvoisie为希腊葡萄酒，以产地而得名）桶中淹死。曹植比他还不够风流。</p>
 <p>（十八）“休息在这种理想的幸福的阴影，仿佛休息的茫司尼耶（Mancenillier产西印度群岛，浆有毒，土人用以涂箭）的阴影，并不预计后来的结果。”</p>
-<p>（十九）法17世纪新拉丁诗人桑特（JeandeSanteul）拟了一句喜剧格言（拉丁文的）：</p>
-<p>Castigatridendomores.（一边笑，一边就改易了风俗。）</p>
+<p>（十九）法17世纪新拉丁诗人桑特（Jean de Santeul）拟了一句喜剧格言（拉丁文的）：</p>
+<p>Castigat ridendo mores.（一边笑，一边就改易了风俗。）</p>
 <p>笑盈盈兮，风移俗易（或：谈笑间陋习灰飞烟灭。）</p>
-<p>（二十）“……因为政府虐待我们，统制我们的荒谬法制，悬在我们的头上，就像‘达摩克利斯’（B.C.4Dmocles在Syracuse的暴君Denys廷上为臣，一来就羡国王幸福，王请其试一日，大宴时，忽看到头上以一艮马鬣系剑，方知王不易为也），一把真正的宝剑。”</p>
+<p>（二十）“……因为政府虐待我们，统制我们的荒谬法制，悬在我们的头上，就像‘达摩克利斯’（B. C. 4 Dmocles在Syracuse的暴君Denys廷上为臣，一来就羡国王幸福，王请其试一日，大宴时，忽看到头上以一艮马鬣系剑，方知王不易为也），一把真正的宝剑。”</p>
 <p>（二一）西雷纳（Sirtee），希腊神话中美人鱼，歌声吸人而食之，迷人精也。</p>
-<p>（二二）Giganteque可译以中文之“呜呼！”</p>
+<p>（二二）Gigan te que可译以中文之“呜呼！”</p>
 <p>此书分三部，附录为关于此书之讼案：“发表与诉讼”“辩护状”“判决书”。此书之注极佳，可从译本中吸取或重温不少“洋典（故）”。如此之札记法极新颖有用，可喜也可喜也。此书刻画女性心理之转变，与医生丈夫不能满足需求而通奸之始末颇佳。</p>
 <p>四、我想我不会是一个（这类小说）译家，因为我耐心太不够，我是蜜蜂，并不是花匠，我采擷最精彩的一部分就高飞了，我并不要占有它，或做植物学那样深入研究——枯燥的、费时的。</p>
-<p>五、下午读完二百四十五页之《我的安东尼娅》（MyAntonia），作者WillaCather，她得普利策奖前的著作除此书外，还有：（一）《开垦的人》（OPioneers!）、（二）《亚历山大之桥》（Alexander’sBridge）、（三）《百灵鸟之歌》（TheSongoftheLank）。</p>
+<p>五、下午读完二百四十五页之《我的安东尼娅》（My Antonia），作者Willa Cather，她得普利策奖前的著作除此书外，还有：（一）《开垦的人》（O Pioneers!）、（二）《亚历山大之桥》（Alexander’s Bridge）、（三）《百灵鸟之歌》（The Song of the Lank）。</p>
 <p>Cather的乡土味极浓——总是离不开密苏里州和落基山中间那块大平原。</p>
 <p>（一）小孤儿初奔祖父母，喜庆自然：“……也许我们死了和万物混合一体，便有这种感觉……融化在这伟大的混沌之中，就是快乐。如果它一旦来临，来得就好像睡眠似的那么自然。”</p>
 <p>（二）迁来波西米亚新邻居——安东尼娅她们一家，“她望着我，两眼亮亮发光，似乎充满了她所不能说的话。”</p>
@@ -6913,7 +6946,7 @@
 <p>三、午睡前“放走”镜昌及桐凤等。</p>
 <p>四、风沙太多，精神不起劲，读书太少故也。一定要多多读书才行。</p>
 <p>五、夜以剪报为遣。日记上栏空白可多贴小剪报。</p>
-<p>六、AnnHaywood二十岁高中毕业后在摄影场当化妆师。看过她的《大洪水》，一直未能忘情于这个冷而艳的女人。</p>
+<p>六、Ann Haywood二十岁高中毕业后在摄影场当化妆师。看过她的《大洪水》，一直未能忘情于这个冷而艳的女人。</p>
 <p>七、华民写来一封信，言“去了旧愁又添新愁”。</p>
 <p>八、昨晚梦到赫鲁晓夫竟把我日记本抢走了，贴耳拍肩穷讨了一阵，这胖厮硬是不肯给，真是妙梦也！</p>
 <p>九、夜副座找我，盖因师长指定其为本师克难英雄之候选人，请我为其写传略，限用第三人称，为之写六百九十五字之简略，并代其印刷装订，闹至2时半始毕，今晚得睱读《曹魏篡汉》（即《三国演义》）一部分，久违矣。</p>
@@ -6949,8 +6982,8 @@
 <p>绳墨之侧，不拒曲木；</p>
 <p>师儒之席，不拒曲士。</p>
 <p>这真可说是老师对我的风度了！</p>
-<p>读TheEducationofHenryAdams在第二十章中有这么一段话：</p>
-<p>Ateacheraffectseternity,hecannevertellwherehisinfluencestops.</p>
+<p>读The Education of Henry Adams在第二十章中有这么一段话：</p>
+<p>A teacher affects eternity, he can never tell where his influence stops.</p>
 <p>我抄这段话送给老师，谢谢老师！</p>
 <p>李敖敬上1960年11月7日的深夜</p>
 <p>明年2月可退伍，最近又有提前至下月说，退伍后当北上，面候起居。</p>
@@ -6958,7 +6991,7 @@
 <p>一、改好给大本师的信，并抄好。</p>
 <p>二、到仁武，足足一个月了！</p>
 <p>三、珂送邮票明信片，他说我信封上写“姚从吾老师”字样人或吾怪也。珂言孔孟学说如食春药，猛硬一阵而后歇，此语甚足尽之，上面要其讲“科学的学庸”故也。</p>
-<p>四、珂读ConquestofHappiness竟，谓其言我等已行之，此书大可不须我们读，而该读它的人，又都不肯去读。</p>
+<p>四、珂读Conquest of Happiness竟，谓其言我等已行之，此书大可不须我们读，而该读它的人，又都不肯去读。</p>
 <p>五、《三不一赛歌》祝袁祝公寿：</p>
 <p>娘们不妨追；</p>
 <p>心眼不可黑；</p>
@@ -7002,7 +7035,7 @@
 <p>自是思量渠不与，人间总被思量误。</p>
 <p>苕华词奉敖命录珂1960年11月12日高雄仁武</p>
 <p>11月9日星期三</p>
-<p>一、镜昌为借来八十元，独赴高雄，路上康乐队之黄七贤说董学英为人很好。在华明书局看天主教之宣传品，略读罗光著《陆征祥传》，彼与其洋婆子故事甚动人。午饭吃十锅贴。12时起在南风候广诚，真Rosa既去，Pseudo-Rosa亦不知何往矣。新来一长卷发白衣红裙白圆点女郎，很美，很周到，折出报上电影广告给我看，她也发现我吸烟看她，表情很好玩，看而幻想颇多：“也许我实在需要一个girl。”1时20分广诚来，八月未见，相见甚欢，彼后来居上，现掌全营党务，为海军陆战队，薪高于我二十元。逛街，市日记本、小本及小烟袋五支于大新（自用一支，余送广诚、国钧、瑞芝、宏炳）。大新之Model真美。有日本美容专家来讲演——伊藤常子女士。大逛杂志摊，遍览aboutLei（指雷震事。因为防日记军中被偷查，故用英文。1986年7月2日，李敖补记），真过瘾，HuShih拍桌嫌太重。近5时即去川菜馆，二人吃砂锅豆腐，回锅肉，小菜五盘，烧酒一瓶，曾玩笑为名女人Lo结婚祝，广诚思成家之意甚浓，友朋多循惯例走上此路矣，本拟请广诚，但因钱不够，只能请他吃冰两次。坐6时45分车先归，广诚送我，旧人重聚，真是愉快，广诚似悔，我语之party之为物，有之不必然，无之必不然。</p>
+<p>一、镜昌为借来八十元，独赴高雄，路上康乐队之黄七贤说董学英为人很好。在华明书局看天主教之宣传品，略读罗光著《陆征祥传》，彼与其洋婆子故事甚动人。午饭吃十锅贴。12时起在南风候广诚，真Rosa既去，Pseudo-Rosa亦不知何往矣。新来一长卷发白衣红裙白圆点女郎，很美，很周到，折出报上电影广告给我看，她也发现我吸烟看她，表情很好玩，看而幻想颇多：“也许我实在需要一个girl。”1时20分广诚来，八月未见，相见甚欢，彼后来居上，现掌全营党务，为海军陆战队，薪高于我二十元。逛街，市日记本、小本及小烟袋五支于大新（自用一支，余送广诚、国钧、瑞芝、宏炳）。大新之Model真美。有日本美容专家来讲演——伊藤常子女士。大逛杂志摊，遍览about Lei（指雷震事。因为防日记军中被偷查，故用英文。1986年7月2日，李敖补记），真过瘾，Hu Shih拍桌嫌太重。近5时即去川菜馆，二人吃砂锅豆腐，回锅肉，小菜五盘，烧酒一瓶，曾玩笑为名女人Lo结婚祝，广诚思成家之意甚浓，友朋多循惯例走上此路矣，本拟请广诚，但因钱不够，只能请他吃冰两次。坐6时45分车先归，广诚送我，旧人重聚，真是愉快，广诚似悔，我语之party之为物，有之不必然，无之必不然。</p>
 <p>二、晚车在凉风中疾驶，我吸烟望窗外灯火与山影树影，心中的味儿是说不出来的，以我之修炼，当然不会为情所伤，我心中只是感触多端，且有“这一天终于到来了”的感觉。</p>
 <p>三、英善寄来宪法书，并谓：“我很高兴你这块‘硬骨头’不再‘心酸酸’了，你用红笔画的‘心’很好看，别出心裁。”英善并言周辰要订婚，程建英即结婚。</p>
 <p>四、珂读日人译法人之《雾の夜》，记纳粹拔去金牙剪去头发后，毒杀人犯以为肥料事。电影中“罢工”、“解放”字幕被涂去。现在德人又喜日人，每以中国留学生为日人也。</p>
@@ -7052,7 +7085,7 @@
 <p>只是叶生迟。</p>
 <p>（后两句中，“是”字改“道”字，可作一可爱之小对联。）</p>
 <p>此正符合我那“相逢恨在我微诗”之论，“郎”字改“君”字稍好。</p>
-<p>八、与人妻（尤指与吾有旧缘者）写信调侃，“气煞老瘟生”（她丈夫）倒是件好的恶作剧，使其不到以妨碍家庭罪告我之程度，该多有意思！至于扯别人感情已深之女友，犹其余事也——只能说是小型的此种恶作剧耳。若身死之日如Jean-JacquesRousseau于1778年被情敌鸩杀，亦一可爱之死法——也是一个很好的死的理由（参看12月8日之四）。</p>
+<p>八、与人妻（尤指与吾有旧缘者）写信调侃，“气煞老瘟生”（她丈夫）倒是件好的恶作剧，使其不到以妨碍家庭罪告我之程度，该多有意思！至于扯别人感情已深之女友，犹其余事也——只能说是小型的此种恶作剧耳。若身死之日如Jean-Jacques Rousseau于1778年被情敌鸩杀，亦一可爱之死法——也是一个很好的死的理由（参看12月8日之四）。</p>
 <p>九、下午劈刺，我在操场上一口气来了十六个伏地挺身，看了一阵董学英发钱给跳伞的，明宏（五十团七连）过来说要给我介绍。</p>
 <p>十、文笔还钱来，拒之。</p>
 <p>十一、晚饭张永亭给换来两个馒头，比吃饭够劲多了！</p>
@@ -7094,7 +7127,7 @@
 <p>敖之：</p>
 <p>那些总爷真是三生修得，能聆君一席妙法真谛。观你信知那些人哄笑惊奇赞赏（我想不多）瞪眼，但真正了解你的却在几百里外，哀哉！如果他们也做记录，是该记录你的言论的。傅布莱特和傅斯年皆有大炮之称，你则该叫做“炸弹”的，你的言论真是“石破天惊”，自然我最称道的不是你的历史修养，锐利的辩才，而是你的“不妥协的大无畏的求真精神”，朋友们顶多釆不合作，但是能够毫无顾忌旁如无人的真言（口延横飞！）的，唯君一人耳，借用千古大英雄孟德话：天下豪杰唯使君耳。前天在景府，新汉极口称道你的才华。有此身手，总该为苍生（那是最无辜、最可怜的一群）造点福，才不负选物、不负友人期望，我希望你认真干点事，我愿意同你合作，南港的人雕虫，我们为什么不可以“雕龙”？可以做的事真是太多了！什么时候来台北，愿详谈一下。</p>
 <p>你千万不要失望，没有无果之因的，苏格拉底为真理而殉命，他自己还得靠永生的信念来支持，他一直未死的，他的“法身”长存在人间，现代的倒更多，不赘，“种瓜得瓜，种豆得互”真是千古不移之论。</p>
-<p>最近我深切觉得你的“女人一丘论”真是高明，从前，我还幻想着可能有典雅而聪明热情的女子，我现在才知道所有女孩子全是没有头脑的，搽胭抹粉的衣服架子或花瓶，在这方面你也能面对现实，“是什么就说什么”，我愿意拥戴你做Anti-Woman会的会长，以保持才智之士的心理版图，不为它的敌人所玷污、削弱及扰乱，至于马戈做一名会员足矣；因为我还幻想着欧洲的女子可能不坏，如有机会到欧洲去享受一下TrueLove。而且我仍幻想即使在中国可能仍有遗珠，只是不易遇到，只是就统计意义言，可视为无。女人只能以金屋贮之，而吾等茅屋阙如，只好免谈了。</p>
+<p>最近我深切觉得你的“女人一丘论”真是高明，从前，我还幻想着可能有典雅而聪明热情的女子，我现在才知道所有女孩子全是没有头脑的，搽胭抹粉的衣服架子或花瓶，在这方面你也能面对现实，“是什么就说什么”，我愿意拥戴你做Anti-Woman会的会长，以保持才智之士的心理版图，不为它的敌人所玷污、削弱及扰乱，至于马戈做一名会员足矣；因为我还幻想着欧洲的女子可能不坏，如有机会到欧洲去享受一下True Love。而且我仍幻想即使在中国可能仍有遗珠，只是不易遇到，只是就统计意义言，可视为无。女人只能以金屋贮之，而吾等茅屋阙如，只好免谈了。</p>
 <p>彦增班上昨日旅行，本邀我与景同往，景有事所以我也没有去，少女的纯洁终于丧失，而代之以卑鄙、功利、糊涂……的，何必去欣赏这短暂而变幻的“无知与幼稚”，追求永恒和绝对是人类的根性，而一切矛盾便根源于此，何处再能遇到乔治桑与XX（首倡芭蕾——仓促忘其名）——当然女人也只是一个得不到正常调适的苟延残喘的文化的一面，其他面又何尝不如此，青年一辈是迷失了，老年一辈又隐遁了，像乾嘉诸老一般，环顾神州，有生气者仅海光先生等数人，不胜悲凉之至！我辈奋起，此其时矣！当然，我们不一定投身到政治里，因为那要讲权术，要厚要黑，你虽绝顶聪明，但病在心太直情太热也。世界上影响最大的是思想家、历史家、小说家、宗教家，我们可以任做一家的。</p>
 <p>梁任公有诗曰：十年以后方知我，举世如狂欲语谁。以任公名气之高、影响之远，尚如此寂寥，况迟熟晚意之我等，而任公终不寂寞，至少戈即其膜拜者！</p>
 <p>我的毛笔字实在不行，将我的思路全驱走了，最后告诉你一件琐事，文石已走，我任编辑助教仍有望，如兼两事，便有力助你了。</p>
@@ -7119,7 +7152,7 @@
 <p>四、烟瘾日来又大发，每日吸烟甚多，减轻压力不少。</p>
 <p>五、有假不出，上床临窗小坐，空气清新，亦一快也。</p>
 <p>六、给培片：</p>
-<p>……给公狗当月老；为母狗做媒婆，当增unostentatiousbenevolence（阴骘）不少，地藏菩萨必将向阎王老爷说项，将来教你少下一层地狱！本月份仍忙，下月发饷或阳历年可好好团聚一次，听你报告性生活。……我已记功两次，藐你！</p>
+<p>……给公狗当月老；为母狗做媒婆，当增unostentatious benevolence（阴骘）不少，地藏菩萨必将向阎王老爷说项，将来教你少下一层地狱！本月份仍忙，下月发饷或阳历年可好好团聚一次，听你报告性生活。……我已记功两次，藐你！</p>
 <p>七、给老太太、英善各一片。</p>
 <p>八、自珂处以红厚纸写贺片限时寄“周辰小两口儿”：</p>
 <p>周薛两家本乏秦晋之好；无奈丝萝有托，两小绸缪，情孚意契，何劳柯斧？此新时代喜剧派之罗密欧与朱丽叶也！纳釆前日，李敖驰书以贺之。1960年11月12日于高雄县仁武乡。</p>
@@ -7185,7 +7218,7 @@
 <p>三、高速用破军裤缝便当袋一个。</p>
 <p>四、文笔昨日，绍良今早，还钱皆拒之。</p>
 <p>五、花了十块钱，买了十支烟——张永亭给排长我办事所得的厚利。</p>
-<p>六、坐四分之一看地形，过鸟松、凤山、屏东（又经过团管区），转入大新，再下大新勘地形，有竹林沿路，甚深幽，下有窄窄小河，是地下泉水所出，清澈可爱，洗手于其中，把头低下去望，酷似JeanSimmons在《王子复仇记》中浮船漂死那镜头。归途过盐埔，转里港，经九如到屏东，一村中女儿甚俏。8时后归营，喝醉，菜汤都洒到裤子上了。坐了一天汽车，屁股都痛了。野外一日甚开畅。</p>
+<p>六、坐四分之一看地形，过鸟松、凤山、屏东（又经过团管区），转入大新，再下大新勘地形，有竹林沿路，甚深幽，下有窄窄小河，是地下泉水所出，清澈可爱，洗手于其中，把头低下去望，酷似Jean Simmons在《王子复仇记》中浮船漂死那镜头。归途过盐埔，转里港，经九如到屏东，一村中女儿甚俏。8时后归营，喝醉，菜汤都洒到裤子上了。坐了一天汽车，屁股都痛了。野外一日甚开畅。</p>
 <p>11月14日星期一</p>
 <p>一、晨大约3点半左右就醒了，决心展开晨读生活，又写灵感又读书，一直到起床号，吾精力如此，实在可喜，想作二文：</p>
 <p>（一）有余论：十四月亮好，星期六下午佳。</p>
@@ -7217,7 +7250,7 @@
 <p>三、为借钱不遂事心中起反动，我真该节流才行，我花钱太浪费。行政官那个鸟作风实在给预官班丢人。为了鼓励节俭，我决定从今天就开始“每天花一元运动”，期于下月发饷时买一个表。</p>
 <p>四、自昨日起心脏不舒服。今日尤甚。</p>
 <p>五、中午一睡，醒来迷糊良久，以后万万睡不得，强撑一下就过去了。</p>
-<p>六、在满室B.H.C.味中，用毛笔给马戈抄去二词，并写一纸：</p>
+<p>六、在满室B. H. C.味中，用毛笔给马戈抄去二词，并写一纸：</p>
 <p>女人走掉，马戈来书，满纸壮语，“可儿可儿！”</p>
 <p>七、晚饭后开人事会议。</p>
 <p>八、想到尚义，乃作</p>
@@ -7289,7 +7322,7 @@
 <p>十、为什么在Pressure下肉体可供驱使而精神不肯出卖呢？我该好好想想这个问题，为什么出卖肉体（如参加某种训练或折磨）就可自圆其说，而出卖精神就是大不韪呢？</p>
 <p>十一、整日在床上曲膝而坐，两腿入夜甚酸。</p>
 <p>11月17日星期四</p>
-<p>一、早读，研究NiagaraFalls（我深信伴同书本的神游法最可采行，甚至比实勘还来得彻底而周密。1960年11月22日，教在五甲村）。</p>
+<p>一、早读，研究Niagara Falls（我深信伴同书本的神游法最可采行，甚至比实勘还来得彻底而周密。1960年11月22日，教在五甲村）。</p>
 <p>二、为吴照写自传六页，用毛笔，未涂改一字，封面题“黄先生的自传”。</p>
 <p>三、早与镜昌边谈边整理，大体就绪。</p>
 <p>四、给广诚、华民、尔琳各一片，请尔琳代找军中乐园材料，并说：</p>
@@ -7338,7 +7371,7 @@
 <p>一、一早即出发，我捆了一行李袋大被、脸盆、布帽，第一排一小兵被车撞脚，以止痛药与之。7时起出发，坐在二又二分之一前头直抵关庙边，沿路傻想一阵、张望一阵，旧路皆依稀可记，过去都是一步步走过多次的。在村边相思短树下菠萝地旁，与德武棋战一早上，互有胜负。午睡时开读《林肯传》。</p>
 <p>二、永亭拿来两包烟，昨晚在尔昭处抢来4.6元，此为此十日之零钱与零食也。</p>
 <p>三、下午棋战，亦互有胜负。</p>
-<p>四、张中尾读青春花朵一类书，郑班长以内容有月经等禁其读，我为释之，内容言性交次数为年龄÷10x2。以我年龄代入换算，正好五日一次也。</p>
+<p>四、张中尾读青春花朵一类书，郑班长以内容有月经等禁其读，我为释之，内容言性交次数为年龄÷10 x 2。以我年龄代入换算，正好五日一次也。</p>
 <p>五、夜宿上课时小学生赤脚老师穿木屐的五甲国民学校，想不到又重来此校就宿，四桌并起，厚被铺成，日光灯照下，痛快痛快，非常开心。</p>
 <p>11月20日星期日</p>
 <p>一、4时后醒，想作一文《记者论》，用毛遂之言，讽此职业之人。记者警察宪兵等人皆唯恐天下不乱者也，犹医生恐人不病，棺材店老板恐人不死也。</p>
@@ -7356,7 +7389,7 @@
 <p>二、因晨无灯，早读改成早觉，睡得充足而舒服，起床时犹赖了一阵不肯起来。</p>
 <p>三、还未下床小学生就来了，见我是排长尤奇异，我又耍了一次手枪，小孩子们大惊奇。</p>
 <p>四、王宇见我买灰手写簿，说我“硬是有点文人味儿”。副连长然之。</p>
-<p>五、扫谷子那个穿花点睡衣的小女人颇不恶，笑起来很像B.B.，白皙而流盼动人。她发现我在盯着她。</p>
+<p>五、扫谷子那个穿花点睡衣的小女人颇不恶，笑起来很像B. B.，白皙而流盼动人。她发现我在盯着她。</p>
 <p>六、上午棋战，斩获颇丰。</p>
 <p>七、午食军用携带口粮，真难吃，内饼干二百五十克，鱼松二十克，橘汁粉十五克，姜糖十六克。</p>
 <p>八、下午又与德武大量棋赛。</p>
@@ -7373,19 +7406,19 @@
 <p>只能撤退不能追，</p>
 <p>由早扯谈到天黑。</p>
 <p>四、朱由全说祁德武的麻脸该用木刨刨一刨。</p>
-<p>五、第六连为了给“亲校”，全部C.P.装潢，很逼真。</p>
+<p>五、第六连为了给“亲校”，全部C. P.装潢，很逼真。</p>
 <p>六、早上国安、起祥言阿兵哥虐待军中乐园姑娘事，或在腹部用气功，或扭其腿。</p>
 <p>七、</p>
-<p>（一）《巴泰》（Pata）B.C.2100Egypt作品，Anonymous，Pata为农民，拒与嫂通，嫂谮之于兄，兄欲杀之，牲口告之得免，兄追，突降鸿沟隔二人，Pata乃得隔沟倾原委，兄乃杀嫂谢之，此犹中国翠屏山故事也。Pata又被妻所杀，妻去做妃嫔，生子竟自言Pata再世而处罚其母。此小说充满了东方色彩的果报观念。</p>
-<p>（二）《塞特那》（Setraa）B.C.2100Egypt作品，Anonymous,述Setna亲王欲盗一死皇帝坟中魔法书故事，结果偷鸡不成，反被抓公差把死皇帝之妻的肉身找回来。</p>
-<p>（三）《死书》（TheBookoftheDead）B.C.2900Egypt作品，Anonymous,凡二百章，赞咒死人，回复肉体方法，第一百二十五章记死者对审判他的第四十二神（犹阎王也）之自白，宣告无罪后给死者穿上白皮鞋。</p>
+<p>（一）《巴泰》（Pata）B. C. 2100 Egypt作品，Anonymous，Pata为农民，拒与嫂通，嫂谮之于兄，兄欲杀之，牲口告之得免，兄追，突降鸿沟隔二人，Pata乃得隔沟倾原委，兄乃杀嫂谢之，此犹中国翠屏山故事也。Pata又被妻所杀，妻去做妃嫔，生子竟自言Pata再世而处罚其母。此小说充满了东方色彩的果报观念。</p>
+<p>（二）《塞特那》（Setraa）B. C. 2100 Egypt作品，Anonymous,述Setna亲王欲盗一死皇帝坟中魔法书故事，结果偷鸡不成，反被抓公差把死皇帝之妻的肉身找回来。</p>
+<p>（三）《死书》（The Book of the Dead）B. C. 2900 Egypt作品，Anonymous,凡二百章，赞咒死人，回复肉体方法，第一百二十五章记死者对审判他的第四十二神（犹阎王也）之自白，宣告无罪后给死者穿上白皮鞋。</p>
 <p>八、</p>
-<p>（一）《吠陀》（Veda）B.C.3000-B.C.2800India宗教诗.Anonymous.1.Rig-Veda（赞）2.Sama-Veda（歌）3.Yajur-Veda（祭）。</p>
-<p>（二）《麻哈布哈拉塔》（Mahabharata）B.C.500-B.C.300India,Anonymous叙事诗，十万行，史上第一长诗，凡十八卷，附录一卷，述五兄弟流亡归争王位后，皆倦于国事，死后升天矣。</p>
-<p>（三）《喇嘛耶涅》（Ramayana）B.C.500-B.C.300Indiaby?Valmiki（法尔弥吉）叙事诗，二万四千行，Ramayana之自愿去国，甚类伯夷。</p>
-<p>（四）《泥车》（MudCart）B.C.6Indiadrama,Anonymous，述婆罗门的情仇。</p>
-<p>（五）《夏根泰拉》（Shakuntala）India诗剧，byKalidasa（卡列达沙），述Shakuntala与国王相恋，后国王不识之，她出示纪念戒指，乃复认其为妻。</p>
-<p>（六）《邮局》（ThePostOffice）byR.Tagore，一少年盼国王派他做邮差。</p>
+<p>（一）《吠陀》（Veda）B. C. 3000 - B. C. 2800 India宗教诗.Anonymous. 1. Rig-Veda（赞）2. Sama - Veda（歌）3. Yajur - Veda（祭）。</p>
+<p>（二）《麻哈布哈拉塔》（Mahabharata）B. C. 500 - B. C. 300 India, Anonymous叙事诗，十万行，史上第一长诗，凡十八卷，附录一卷，述五兄弟流亡归争王位后，皆倦于国事，死后升天矣。</p>
+<p>（三）《喇嘛耶涅》（Ramayana）B. C. 500 - B. C. 300 India by? Valmiki（法尔弥吉）叙事诗，二万四千行，Ramayana之自愿去国，甚类伯夷。</p>
+<p>（四）《泥车》（Mud Cart）B. C. 6 India drama, Anonymous，述婆罗门的情仇。</p>
+<p>（五）《夏根泰拉》（Shakuntala）India诗剧，by Kalidasa（卡列达沙），述Shakuntala与国王相恋，后国王不识之，她出示纪念戒指，乃复认其为妻。</p>
+<p>（六）《邮局》（The Post Office）by R. Tagore，一少年盼国王派他做邮差。</p>
 <p>九、一农家老婆婆，七十余矣，鹑衣、大耳，工作累日不停，午饭午睡皆不见其少暇，想到那些漂亮风云的丫头们到如此年纪时不知是什么样儿，何等狼狈。那时才大快老夫心！</p>
 <p>十、倾囊买小灯泡，又买了一包乐园。</p>
 <p>十一、午后再去小沟洗一澡，我做老百姓时代，万万想不到如此浑水还能刷牙洗澡也。</p>
@@ -7477,9 +7510,9 @@
 <p>二、报载有“淫妇”捏丈夫睪丸致死，苏国安言小时曾见家乡族里私刑“淫妇”，裹棉浇煤油，吊而活焚之，名曰“点天灯”。</p>
 <p>三、庙中香火不断，整日善男信女烧纸焚香掷茭。</p>
 <p>四、</p>
-<p>（一）《范斯特卡芦纸手录》（WestcarPapyrus），波斯B.C.2700,Anonymous，述魔法师以鳄鱼食与其妻通之青年佃户，请皇帝来看，皇帝又烧死其淫妇，抛其骨灰于河中。</p>
-<p>（二）《鲁拜集》（Rubaiyet），OmarKhayydm（约1050-约1123），为波斯算学家、天文学家，其诗名在本国并不显，经英人E.Fitzgerald英译后始行。其诗多四行，一、二、四句押韵，类中国绝句也。版本有四五种，多者五百一十六首，少者一百五十八首，E.Fitzgerald本一百一十首，盖节略者也。</p>
-<p>（三）《七个肖像》（The HaftPaykar）传奇诗，波斯尼达米（Nidhami）作，1140-1202，述国王巴兰看了七美女像，有的是中国公主，有的是西方公主，有的是印度公主，皆请来结婚。</p>
+<p>（一）《范斯特卡芦纸手录》（Westcar Papyrus），波斯B. C. 2700, Anonymous，述魔法师以鳄鱼食与其妻通之青年佃户，请皇帝来看，皇帝又烧死其淫妇，抛其骨灰于河中。</p>
+<p>（二）《鲁拜集》（Rubaiyet），Omar Khayydm（约1050-约1123），为波斯算学家、天文学家，其诗名在本国并不显，经英人E. Fitzgerald英译后始行。其诗多四行，一、二、四句押韵，类中国绝句也。版本有四五种，多者五百一十六首，少者一百五十八首，E. Fitzgerald本一百一十首，盖节略者也。</p>
+<p>（三）《七个肖像》（The Haft Paykar）传奇诗，波斯尼达米（Nidhami）作，1140-1202，述国王巴兰看了七美女像，有的是中国公主，有的是西方公主，有的是印度公主，皆请来结婚。</p>
 <p>（四）《巴利诺狄亚》（Palinodia），Amvari（安瓦里）作，波斯12世纪。Anwari初习科学，一日见一人骑大马，四周奴隶侍者围之，询之乃诗人，叹曰：“科学地位如此高，而我却如此穷；诗的等级如此低，而他却如此显赫，誓言今日起做诗矣！”因城中人误以某讽诗出自他手，女饰游街以侮之，友人救之，乃作Palinodia。——现在正相反了，治科学者显荣矣！</p>
 <p>1960年11月29日起床号声中</p>
 <p>五、副座请喝米酒，此酒甚力，头为之晕。</p>
@@ -7489,13 +7522,13 @@
 <p>九、晚副座不在，营长及作战官来商战法。</p>
 <p>十、迫炮排返庙后睡于尚未完全修竣之新客房中，不久醒来，指导官起夜，询之方知是1时半也（向人问时间，因为那时候我没钱买手表。1986年11月9日。李敖附识）。读书良久，起床为卫兵送棉衣，嘱有情况则叫我，归点起油灯再读，阅西方文人传记：</p>
 <p>（一）非用英文著作，不足为大功。</p>
-<p>（二）要博大广泛（如EdwardBulwerLytton1805-1873，全集凡三十大册，包括诗歌、戏剧、小说、论文、历史、政论、翻译）。</p>
-<p>（三）要量多（如AlexandreDumas1803-1870，写剧本二十五本，小说二百五十本，虽然其中可能有别人代作的）。</p>
+<p>（二）要博大广泛（如Edward Bulwer Lytton 1805-1873，全集凡三十大册，包括诗歌、戏剧、小说、论文、历史、政论、翻译）。</p>
+<p>（三）要量多（如Alexandre Dumas 1803-1870，写剧本二十五本，小说二百五十本，虽然其中可能有别人代作的）。</p>
 <p>十一、我精力真是惊人！陈悉下卫兵见我犹未睡去。将来性交后亦当读书。</p>
 <p>11月27日星期日</p>
 <p>一、大概3时后睡去，4时30分再起，未几庙中开始诵经，此庙无一和尚或女尼，两老太婆居士领头耳，怪声怪调，闻之如坐死囚中，再加庙中无电灯，益增此种气氛。</p>
 <p>二、郭绍良说耶稣是玛利亚人。</p>
-<p>三、天方明车队过旗山，中山公园大门及石级甚壮，车小停于长老会一礼拜堂前，跑进去参观。此教会成立于1912年，1949年重建，肃穆之气甚浓，建筑亦极古典，门右角有小钟楼，装了三四个喇叭，欲吵人者也，此堂名“吴万顺纪念礼拜堂”（Go-Ban-SunMemorialChurch）。在慈云寺抽一签玩：</p>
+<p>三、天方明车队过旗山，中山公园大门及石级甚壮，车小停于长老会一礼拜堂前，跑进去参观。此教会成立于1912年，1949年重建，肃穆之气甚浓，建筑亦极古典，门右角有小钟楼，装了三四个喇叭，欲吵人者也，此堂名“吴万顺纪念礼拜堂”（Go-Ban-Sun Memorial Church）。在慈云寺抽一签玩：</p>
 <p>只恐前途命有变</p>
 <p>劝君作急可宜先</p>
 <p>且守长江无大事</p>
@@ -7503,47 +7536,47 @@
 <p>早饭于慈云寺，地在隘口，饭后洗头刮须，他们聚谈我之“攻击老太太的文章”，皆言返家必遭老太太“清算”。</p>
 <p>四、旗山附近，蕉林整齐，为本省香蕉荟集之区。</p>
 <p>五、在庙堂侧室一脏桌上小坐，写点笔记：</p>
-<p>（一）《一千零一夜》（ThousandandOneNights)）又名《天方夜潭》（ArabianNights'Entertainment），阿拉伯Anonymous，有全译的英译本，十七册byRichardBurton，“天方”一名不确，盖故事多出自波斯、巴格达及开罗三处也。</p>
+<p>（一）《一千零一夜》（Thousand and One Nights)）又名《天方夜潭》（Arabian Nights’Entertainment），阿拉伯Anonymous，有全译的英译本，十七册by Richard Burton，“天方”一名不确，盖故事多出自波斯、巴格达及开罗三处也。</p>
 <p>（二）《安泰尔传奇》（Antaratales），阿拉伯Anonymous，11世纪，为阿拉伯民族代表名诗，原文三十二册，原为话本，传为大语言学家Asmni记录之，主角Antaral为诗人为勇士，父为名门，母为奴隶，故其父不准其喊爸爸。</p>
-<p>六、《吉尔伽麦西》（Gilgamesh）B.C.3000，巴比伦Anonymous'B.C.6,Arryria帝Assurbanipal命楔形于砖，藏于Nineveh图书馆，后被火，抄本皆焚，可是砖存，三主角：</p>
+<p>六、《吉尔伽麦西》（Gilgamesh）B. C. 3000，巴比伦Anonymous’ B. C. 6, Arryria帝Assurbanipal命楔形于砖，藏于Nineveh图书馆，后被火，抄本皆焚，可是砖存，三主角：</p>
 <p>（一）Gilgamesh ；</p>
 <p>（二）Eabani（厄巴尼，半兽半人）；</p>
 <p>（三）Utnapishtim（乌特那庇什廷）海水英雄，后肉身成神。</p>
 <p>七、《圣经》（Bible）旧约为希伯来文，新约为希腊文。</p>
 <p>Byron：如果曾经有过人是神或神是人，基督就是那个人了。</p>
 <p>八、希腊作品：</p>
-<p>（一）Illiad,B.C.9Homer?二十四卷一万五千六百九十三句，德学者Wolf以拉丁文考证非Homer作。</p>
-<p>（二）Oddyssey,B.C.9Homer?二十四卷。</p>
-<p>（三）Prometheus（《普罗米修斯》），byAeschylusB.C.525-456，写悲剧七十篇，今存七篇，Prometheus为人类而触天神，天神囚之于高加索山，鹰鹫日琢其心脏，然其心脏为月中之精，随即生新肉，生命不断，痛苦无歇。</p>
-<p>（四）OedipustheKing《俄狄浦斯王》），bySophocles，漂亮，六十年写一百一十三本剧本，现存七，B.C.495-406。</p>
+<p>（一）Illiad, B. C. 9 Homer?二十四卷一万五千六百九十三句，德学者Wolf以拉丁文考证非Homer作。</p>
+<p>（二）Oddyssey, B. C. 9 Homer?二十四卷。</p>
+<p>（三）Prometheus（《普罗米修斯》），by Aeschylus B. C. 525-456，写悲剧七十篇，今存七篇，Prometheus为人类而触天神，天神囚之于高加索山，鹰鹫日琢其心脏，然其心脏为月中之精，随即生新肉，生命不断，痛苦无歇。</p>
+<p>（四）Oedipus the King《俄狄浦斯王》），by Sophocles，漂亮，六十年写一百一十三本剧本，现存七，B. C. 495-406。</p>
 <p>Oedipus猜破Sphinx谜，Sphinx羞愤自杀。</p>
 <p>Oedipus以毒其母，自挖一目。</p>
-<p>其父LaiusOedipus调查元凶，竟是自己。</p>
+<p>其父Laius Oedipus调查元凶，竟是自己。</p>
 <p>（五）Antigone（《安提戈理》），Sophocles写Antigone冒法理兄尸，另一聂婴也。</p>
-<p>（六）Ion（《伊洪》），Euripides(B.C.480-407)与Aeschylus皆二十五岁出其悲剧。此剧写Ion之母之爱与恨，甚好，及女祭司说明Ion乃其子而非其夫之私生子时，方认Ion。</p>
-<p>（七）TroianWomen（《特洛伊妇女》），Euripides述城亡后，妇女沦为奴，而祸首Helen却得巧言与夫言归于好，在别的女人登上希腊船时，她又回斯巴达去了。</p>
-<p>（八）TheFrogs（《蛙》），Aristophanes(B.C.448-385)作喜剧五三，今传一一，此书调笑Euripides，充分发挥文人相轻。</p>
+<p>（六）Ion（《伊洪》），Euripides (B. C. 480-407)与Aeschylus皆二十五岁出其悲剧。此剧写Ion之母之爱与恨，甚好，及女祭司说明Ion乃其子而非其夫之私生子时，方认Ion。</p>
+<p>（七）Troian Women（《特洛伊妇女》），Euripides述城亡后，妇女沦为奴，而祸首Helen却得巧言与夫言归于好，在别的女人登上希腊船时，她又回斯巴达去了。</p>
+<p>（八）The Frogs（《蛙》），Aristophanes (B. C. 448-385)作喜剧五三，今传一一，此书调笑Euripides，充分发挥文人相轻。</p>
 <p>（九）Banqucters（《宴客》），表新旧思想对照，佚。</p>
 <p>（十）Babylonians（《巴比伦尼亚人》），讽民主政治家，佚。</p>
-<p>（十一）TheClouds（《云》），讽Scholates。</p>
-<p>（十二）TheEcclesiazusae（《女议院》），讽Plato书Republic中之男女平权论。</p>
-<p>（十三）Aesop'sFables,B.C.7Aesop复自由身后，以拒偿债，被推于悬崖之下，不辱使命而死。传说此人五官不正、奇丑、跛脚、驼背、口吃。</p>
-<p>（十四）ParallelLivesofGreeksandRomans，1-2，Plutarch，骂Casesar及Antony。</p>
+<p>（十一）The Clouds（《云》），讽Scholates。</p>
+<p>（十二）The Ecclesiazusae（《女议院》），讽Plato书Republic中之男女平权论。</p>
+<p>（十三）Aesop’s Fables, B. C. 7 Aesop复自由身后，以拒偿债，被推于悬崖之下，不辱使命而死。传说此人五官不正、奇丑、跛脚、驼背、口吃。</p>
+<p>（十四）Parallel Lives of Greeks and Romans，1-2，Plutarch，骂Casesar及Antony。</p>
 <p>九、阿兵哥日来多求我为之解签。多赞我用功之勤。王宇说我是“不得了，了不起”的人物。</p>
 <p>十、庙墙上贴“劝世文”（有句“莫听妇人话”，“三民主义共同心”，“人有万物个生灵，头脑不足事不成”），三个阿兵哥皆抄写此文。</p>
 <p>十一、罗马作品：</p>
-<p>（一）Aeneid（《伊尼诗》），十二卷B.C.70-19，Virgil,TheBattleofPhilippi后田被没收，以统治者皆以文人故，与之识，颇受优待。</p>
-<p>（二）Metamorphroses（《变形记》），B.C.43-17,Ovide神话诗，Ovide初治法律，后改治诗，后失欢于帝，亡命而死，凡婚三次，此书十五卷，如Ceres变童子为壁虎，Bacchus使Phrygia王Midas指触皆金，Pygmalion恋其所雕女像，女像活而嫁之。</p>
-<p>（三）ArsAmatoria（《爱之艺术》）。</p>
+<p>（一）Aeneid（《伊尼诗》），十二卷B. C. 70-19，Virgil, The Battle of Philippi后田被没收，以统治者皆以文人故，与之识，颇受优待。</p>
+<p>（二）Metamorphroses（《变形记》），B. C. 43-17, Ovide神话诗，Ovide初治法律，后改治诗，后失欢于帝，亡命而死，凡婚三次，此书十五卷，如Ceres变童子为壁虎，Bacchus使Phrygia王Midas指触皆金，Pygmalion恋其所雕女像，女像活而嫁之。</p>
+<p>（三）Ars Amatoria（《爱之艺术》）。</p>
 <p>（四）Fasti（《法西蒂》）。</p>
-<p>（五）TheGoldenAss（《金驴记》），十二卷，A.D.2，LuciusApuleius小说，述误饮巫药成驴，为求解药之奇遇，《十日谈》及《唐吉诃德传》曾吸收其中情节。</p>
-<p>（六）Apologia（《辩护状》），LuciusApuleius，娶寡妇，妇族人以不能承妇产，乃控以魔术诱妇。自辩甚有名，此书使其免罪。</p>
+<p>（五）The Golden Ass（《金驴记》），十二卷，A. D. 2，Lucius Apuleius小说，述误饮巫药成驴，为求解药之奇遇，《十日谈》及《唐吉诃德传》曾吸收其中情节。</p>
+<p>（六）Apologia（《辩护状》），Lucius Apuleius，娶寡妇，妇族人以不能承妇产，乃控以魔术诱妇。自辩甚有名，此书使其免罪。</p>
 <p>十二、驾驶黄吴利，广东人，甚好，抓到一个大王八，一佛徒请放生，从之。</p>
 <p>十三、午后在井边一浴。</p>
 <p>十四、意大利作品：</p>
-<p>（一）Vitanowva（《新生》），Dante（1265-1321），二十五岁入军队，二子Pietro与Jocopo皆曾为《神曲》做过注释。此部抒情诗，述其九岁一见富女贝德丽采（Beatrice）未曾语，九年后复遇之于涂，她望他一眼，似有情，后嫁一银行家，1290年二十五岁死，她始终不知道这位未交一语的诗人对她倾倒终生。</p>
-<p>（二）DivineComedy，一百章，一万四千二百三十三行，分地狱篇、净土篇、天堂篇，在地狱时曾闻Beatrice欲救他的声音，后随她上天堂。</p>
-<p>（三）Decameron，A.D.12，短篇传奇，Boccaccio（1313-1375），为商人私生子，二十五岁识Maria，理想化此女，取名Fiammetta。</p>
+<p>（一）Vita nowva（《新生》），Dante（1265-1321），二十五岁入军队，二子Pietro与Jocopo皆曾为《神曲》做过注释。此部抒情诗，述其九岁一见富女贝德丽采（Beatrice）未曾语，九年后复遇之于涂，她望他一眼，似有情，后嫁一银行家，1290年二十五岁死，她始终不知道这位未交一语的诗人对她倾倒终生。</p>
+<p>（二）Divine Comedy，一百章，一万四千二百三十三行，分地狱篇、净土篇、天堂篇，在地狱时曾闻Beatrice欲救他的声音，后随她上天堂。</p>
+<p>（三）Decameron，A. D. 12，短篇传奇，Boccaccio（1313-1375），为商人私生子，二十五岁识Maria，理想化此女，取名Fiammetta。</p>
 <p>（四）以父召其返乡，只好别此女，乃用伊自述口气写一书Fiammetta，为后世自叙体小说之滥觞。Decameron述1348年Florence痕疫，七少女与三公子到别墅避疫，互讲故事，每日每人一则，十日正好一百篇。</p>
 <p>（五）Facetiae（《谐谨集》），GianFrancescoPoggioBracciolini（1380-1459），在罗马元老院（Romancuria）为秘书凡五十年。古抄本不能用正当方式获得，他就用诈骗手段，为死人的颂赞者，活人的驳击者，曾为史官，我生五百年前（1435），以三十五岁与十八岁Vaggia结婚，六十岁作此短篇小说集，攻击傻头傻脑的贵族、收买人命的医生。……当时以卫道自任者皆痛诋之，丑其伤风败俗，如他写：</p>
 <p>1.你的酒罐是又旧又老，只可惜已经返老还童了！</p>
@@ -7551,12 +7584,12 @@
 <p>3.英人在从大酒杯把酒斟出后，又把蝇放入：“我个人虽不喜欢酒里有苍蝇，但我怎敢武断你们也不喜欢呢？”</p>
 <p>4.马尔科医生亲自送信，交出信后，不语而返。</p>
 <p>最后一则，大有中国乘兴而来的故事风味。</p>
-<p>（六）OrlandoFurioso，LodvicoAriosto（1474-1533）写此诗十年，大名突起，以穷故，任荒地大官，落于盗手，盗知其为此书作者，乃释之，据言同时代之Galileo可背诵此诗，此诗描写基督教武士与异教徒武士之间的恶斗，与夫爱情与冒险等。</p>
-<p>（七）TheBetrothed（《订婚者》），AlessandroManzoni（曼佐尼，1785-1873），为三卷之长篇小说，述已订婚之小两口受主人及流氓压迫，历经许多沧桑才得结婚。</p>
-<p>（八）Coure（《心》），EdmondodeAmicis（1846-1908），军人出身。</p>
-<p>（九）Gabriele D'Annunzio1863-1938，诗人、小说家、戏剧家、飞行家、政治家，欧战时曾为骑、陆、海、空，一目受伤，和平会议中因不满于法国，乃占Fiume，十五月抗政府命，表现他冲动的爱国精神。TheTriumphofDea认（《死之胜利》）长篇小说，五年写成，充满了19世纪的怀疑思潮，述一青年与一有夫之妇同归于尽，沉重的黑色忧郁，像丧衣般地包围着他们的心境。</p>
-<p>（十）TheStoryoftheRose（《蔷薇的故事》）：</p>
-<p>1.TerraVergirae（《处女地》）</p>
+<p>（六）Orlando Furioso，Lod vico Ariosto（1474-1533）写此诗十年，大名突起，以穷故，任荒地大官，落于盗手，盗知其为此书作者，乃释之，据言同时代之Galileo可背诵此诗，此诗描写基督教武士与异教徒武士之间的恶斗，与夫爱情与冒险等。</p>
+<p>（七）The Betrothed（《订婚者》），Alessandro Manzoni（曼佐尼，1785-1873），为三卷之长篇小说，述已订婚之小两口受主人及流氓压迫，历经许多沧桑才得结婚。</p>
+<p>（八）Coure（《心》），Edmondo de Amicis（1846-1908），军人出身。</p>
+<p>（九）Gabriele D’Annunzio 1863-1938，诗人、小说家、戏剧家、飞行家、政治家，欧战时曾为骑、陆、海、空，一目受伤，和平会议中因不满于法国，乃占Fiume，十五月抗政府命，表现他冲动的爱国精神。The Triumph of Dea认（《死之胜利》）长篇小说，五年写成，充满了19世纪的怀疑思潮，述一青年与一有夫之妇同归于尽，沉重的黑色忧郁，像丧衣般地包围着他们的心境。</p>
+<p>（十）The Story of the Rose（《蔷薇的故事》）：</p>
+<p>1.Terra Vergirae（《处女地》）</p>
 <p>2.Gladness（《快车》）</p>
 <p>3.Linnocente（《牺牲》）</p>
 <p>十五、前日与副连长相约，谁看到对方抽烟即须送对方双喜一包，相持至今犹未破戒，二人每相笑作互监视状，很有趣。</p>
@@ -7575,7 +7608,7 @@
 <p>二十、毓刚来一片。</p>
 <p>二一、弘来一片，果已参加留学生军训。</p>
 <p>二二、善培来一片，言开始记日记，盼我“不时指点鼓舞”。</p>
-<p>二三、尔琳来一片，已俨然名教官，居然讲起TheStreamintheDesert（蒋介石提倡之“荒漠甘泉”也！1986年7月2日。李敖补注）来了！此书正所谓一人倡之，兆民和之，Party中之必然现象也。</p>
+<p>二三、尔琳来一片，已俨然名教官，居然讲起The Stream in the Desert（蒋介石提倡之“荒漠甘泉”也！1986年7月2日。李敖补注）来了！此书正所谓一人倡之，兆民和之，Party中之必然现象也。</p>
 <p>二四、玉森来一片：</p>
 <p>您的大作已见诸报上副刊，我首先向您道贺，您那曾被“退回”的稿件终于“得志”了，不过您在家还是在野党，令堂政权稳固，岂是您一小排长政变得了。</p>
 <p>彼等“室变”成功，已搬进二十一室，赖贼毛执政，第四室完蛋矣！</p>
@@ -7655,7 +7688,7 @@
 <p>五、给善培前信限时寄去。</p>
 <p>六、给朱由全赶做报告，为“入党训练甲种读物之八”名《怎样做一个中国国民党党员》，1957年6月“周国光印”，二十六页的小册子，以用过的人太多，书有臭味。“党的利益，高于一切。”（P.22）</p>
 <p>七、我文登出，陈立森走告老太，同学面告六小姐，为之轰动，誉我者多，骂我者亦多，或谓“李敖的大逆不道又来了”！</p>
-<p>八、家中置National牌新唱机，有A DearJohnLetter唱片，大听一阵，歌声轻巧而流露性灵，我很少如此被歌声感动过，这真是今天最有意义的事！查出Rosa之园名“新新菜圃”。</p>
+<p>八、家中置National牌新唱机，有A Dear John Letter唱片，大听一阵，歌声轻巧而流露性灵，我很少如此被歌声感动过，这真是今天最有意义的事！查出Rosa之园名“新新菜圃”。</p>
 <p>九、夜大量读书，改旧稿，兴味大浓，夜深犹矻矻不已，难得有如此环境也。</p>
 <p>11月30日星期三</p>
 <p>一、很早就睡起，写作，加上一个上午写了二十六首打油诗，午后看了看，又不想发表了。</p>
@@ -7687,20 +7720,20 @@
 <p>六、善培寄来八十元，且嘱Don’tworryaboutmoney，很令人感念，老朋友多自顾不暇或转冷淡（如新德），幸有善培、彦增等故人“依然健在”，未使我心凉耳。</p>
 <p>七、在台中三日半，分文未花。</p>
 <p>八、下午浴后逛街，赴特约茶室抄材料，众人围观此长袍怪人怪行，一小妓女从旁倚我良久，管理员来问，抄我名及步校信箱去，我语以欲修改我们营区规则，故抄之以为借镜也。彼一面解释茶票多要二元乃单行法规定，盖疑我为调查人员也。</p>
-<p>九、夜大听MyRifle,MyPonyandMe。</p>
+<p>九、夜大听My Rifle, My Pony and Me。</p>
 <p>12月3日星期六</p>
-<p>一、先搭公路局车到潭子，坐8点55车南下。1956年，MarianAnderson(Philadelphia)出自传MyLord，WhataMorning有可记者：</p>
+<p>一、先搭公路局车到潭子，坐8点55车南下。1956年，Marian Anderson (Philadelphia)出自传My Lord，What a Morning有可记者：</p>
 <p>（一）以为妹妹是（接生）医生从黑皮包里带来的。</p>
 <p>（二）六岁即露头角于幼童唱诗班。</p>
-<p>（三）第一位声乐教师MarySaundersPatterson不收费教她，且送她第一袭晚礼服。</p>
-<p>（四）《黑人专用车》（JimGrow）：“诚然我的肤色有所不同，可是不是我的情感啊！”</p>
-<p>（五）教师AgnesReifsneider反对唱歌耍噱头或粗脖子红脸地卖弄嗓子。</p>
+<p>（三）第一位声乐教师Mary Saunders Patterson不收费教她，且送她第一袭晚礼服。</p>
+<p>（四）《黑人专用车》（Jim Grow）：“诚然我的肤色有所不同，可是不是我的情感啊！”</p>
+<p>（五）教师Agnes Reifsneider反对唱歌耍噱头或粗脖子红脸地卖弄嗓子。</p>
 <p>（六）“在终身追逐一项事业中，往往遇有如此的时会，你觉得自属于一样东西，而那样东西也正属于你。”</p>
-<p>（七）教师GiuseppeBoghetti：“他明白，这次〔我〕在纽约唱砸了，丢人现眼，给我的打击有多么大；所以他对于我不经常上课，并没有郑重当一回事提出来过。”</p>
+<p>（七）教师Giuseppe Boghetti：“他明白，这次〔我〕在纽约唱砸了，丢人现眼，给我的打击有多么大；所以他对于我不经常上课，并没有郑重当一回事提出来过。”</p>
 <p>（八）“当我十几岁的时候，我记得，往往拿起一张纸，一支笔，把我认得的一些男孩子的名字写来写去，呆呆地混过大半天。”</p>
 <p>（九）“……两天后罗斯福夫人也要占用这同一间房，因而我就在大镜子上留下了欢迎之词，是用肥皂来写的。”</p>
 <p>（十）“当你叨天之惠，灵思大启，对人有所特别给予时，如贪求无餍，便是亵渎神明了。”</p>
-<p>车中见一黄埔（教师）太太，继美惠以后美丽的本省小姐，红唇、红毛衣、红旗袍、红高跟鞋。大儿子甚顽皮可爱，实在操心。我望她很久很久，看她哺乳时的乳房、白乳罩，看她小腹大腿，由于几种坐的姿势，使我从好几处看到她的大腿，非非许久。看小孩子，更增加了我的“儿童恐怖症”。在车中吃橘，又想到翻译LifeWithMother，车厢新式，令我回忆那次返中行。</p>
+<p>车中见一黄埔（教师）太太，继美惠以后美丽的本省小姐，红唇、红毛衣、红旗袍、红高跟鞋。大儿子甚顽皮可爱，实在操心。我望她很久很久，看她哺乳时的乳房、白乳罩，看她小腹大腿，由于几种坐的姿势，使我从好几处看到她的大腿，非非许久。看小孩子，更增加了我的“儿童恐怖症”。在车中吃橘，又想到翻译Life With Mother，车厢新式，令我回忆那次返中行。</p>
 <p>二、由于火车误点，返营已晚饭过，与副座吃饺子。</p>
 <p>三、尔琳寄来关渡乐园史料。</p>
 <p>四、祝公约元旦北上，四室同人小聚，并谓：“出洋相的小排长：等我女儿长大后，定叫她命你喝她的洗脚水，也让你与乌龟比寿。”反击我矣。</p>
@@ -7987,7 +8020,7 @@
 <p>五、与国钧逛书店，转赴“逢缘妓女户”，为一二层楼房，门口三蓝灯，两旁有红底金字之联：</p>
 <p>逢场作戏且喜千樽留醉意</p>
 <p>缘分相投莫笑一吻寄相思</p>
-<p>内部有许多平房，正大兴土木，一个个天蓝门，迷宫筑法，约三四十间，妓女或抢我烟斗、或敲我头，要我来，我以“卵叫坏了”答之。逃出等吴，他的“不来”反成了“不出来”或“不下来”了（非不来也，乃不出来也），他花了二十元。同买台语歌本后去四川面店吃牛肉面，去西瓜大王吃西瓜，二者味皆美，小女孩脚及发甚美，持台语歌本唱歌，此种歌本销路真惊人！看《肉搏》（FixedBayoriefcs）后归。花二十七元。</p>
+<p>内部有许多平房，正大兴土木，一个个天蓝门，迷宫筑法，约三四十间，妓女或抢我烟斗、或敲我头，要我来，我以“卵叫坏了”答之。逃出等吴，他的“不来”反成了“不出来”或“不下来”了（非不来也，乃不出来也），他花了二十元。同买台语歌本后去四川面店吃牛肉面，去西瓜大王吃西瓜，二者味皆美，小女孩脚及发甚美，持台语歌本唱歌，此种歌本销路真惊人！看《肉搏》（Fixed Bayoriefcs）后归。花二十七元。</p>
 <p>六、晚方欲小做用功，式泮来，连长来，副连长来，围床大坐大谈甚欢，而一晚时间去矣。式泮言先找一职业，再做“骑驴找马”之计。连长说：“与其结婚而后悔，不如光棍而遗憾。”</p>
 <p>12月9日星期五</p>
 <p>一、今日起射击训练第二日，我胡乱扯了一阵六〇炮各部名称，拉出朱由全来做助教，然后就“各排带开”。与连长参谋退伍事。</p>
@@ -7999,7 +8032,7 @@
 <p>本月17日是胡适之七十岁生日，此时我写这篇微寓褒贬的掌故也许有一点历史意味，也许可算是一篇应时的文章。敬祝</p>
 <p>您好</p>
 <p>李敖1960年12月9日</p>
-<p>四、剪报上SandraDee的《我的自白》一文，此文可开眼界，女孩儿算什么呢？SandraDee为一观止式的代表。</p>
+<p>四、剪报上Sandra Dee的《我的自白》一文，此文可开眼界，女孩儿算什么呢？Sandra Dee为一观止式的代表。</p>
 <p>五、晚同利来问字，由全来缠不去，乃寻出《中国小姐》一书“解围”。</p>
 <p>六、大理街来限时信，马景各一，另接新汉挂号寄来免费车票二张。助教若能干上，论文若能印出，倒是两件可喜之事。真盼赶快退下伍来，好好有番作为，好好施展一番。教老景也尝尝鲤鱼不来的味儿！</p>
 <p>“马戈于玫园伴凤仪堂主人及宁安秀士致书”：</p>
@@ -8022,7 +8055,7 @@
 <p>玫园12月5日夜</p>
 <p>速来信，此令。</p>
 <p>12月10日星期六</p>
-<p>一、昨晚梦到我的FrancoiseAmoul在文学院，先是她与人聚谈，我从旁走过，继而我站在文学院门口，面向里，她在二〇教室门口向我示意，可是我没过去，也一直没说话。</p>
+<p>一、昨晚梦到我的Francoise Amoul在文学院，先是她与人聚谈，我从旁走过，继而我站在文学院门口，面向里，她在二〇教室门口向我示意，可是我没过去，也一直没说话。</p>
 <p>二、上午在操场晒太阳写小说而过。</p>
 <p>三、五言产生：</p>
 <p>想吃牛肉面，</p>
@@ -8079,9 +8112,9 @@
 <p>一、早点后营长穷讲了一阵，讲他为什么要打人。</p>
 <p>二、发现施珂已为我送来新式夜壶，一个大蓝药瓶，君子之爱人也以溺器，今晚起可开怀痛饮高枕无忧矣。</p>
 <p>三、给善培：</p>
-<p>……新年是否北上？我拟北上谈判——姚老头聘我做“国家讲座研究助理”，每月一千，其他皆光屁股，我如有女中可教，仍想教书，不干这雕虫生意。去年12月13日我们曾每人买了一张SandraDee照片，一年后的今天，你又收到一张她亲笔签名的照片。</p>
+<p>……新年是否北上？我拟北上谈判——姚老头聘我做“国家讲座研究助理”，每月一千，其他皆光屁股，我如有女中可教，仍想教书，不干这雕虫生意。去年12月13日我们曾每人买了一张Sandra Dee照片，一年后的今天，你又收到一张她亲笔签名的照片。</p>
 <p>照片背后我戏写：</p>
-<p>ToMyDearBuddhistDevotee——SandraDee</p>
+<p>To My Dear Buddhist Devotee——Sandra Dee</p>
 <p>四、文最后改定寄出。三千五百字。</p>
 <p>五、重读Rosa来信，为之心动。</p>
 <p>六、下午师长亲查武器，抓到胖东东的张中尾给我擦枪。</p>
@@ -8100,7 +8133,7 @@
 <p>三、午前荣团会，大写日记，缝好表带。最后我虽下令炮排皆投江排长的票，可是我仍以七十多票压倒多数，当选为下届主席。</p>
 <p>四、马戈限时寄来五十元。请河同吃橘补鞋。</p>
 <p>五、忠明拿了许多词汇来问，还有一部分请我改，如“情调”彼等解为“有情的流浪”。</p>
-<p>六、下午开笔译MotherandBessieSkinner'sRing，不久，副座又来，扯了许久。</p>
+<p>六、下午开笔译Mother and Bessie Skinner’s Ring，不久，副座又来，扯了许久。</p>
 <p>七、夜庆祝买表成功，约珂来谈，珂以吾表声大丑诋，最是可恶，今晚吾谈锋甚健：</p>
 <p>（一）做学问一定要能剪书，能有助手，起码我该请个抄手（也算“吴抄手”也）。</p>
 <p>（二）我一定是个江湖学人。</p>
@@ -8147,7 +8180,7 @@
 <p>三、1时即换外出服准备欢送师长，整天换衣服，简直成了康乐队的丫头们（丫字定为象形字）。</p>
 <p>四、写指导员交下之“调査资料”，我手写全排干部，颇能一一写其“真形”。</p>
 <p>五、我之著作：1.设计精美。2.名称新颖。3.种类繁多。4.重数目（以炫世也），量次之。</p>
-<p>六、下午欢送——应该叫“悲送”——师长，队中连长言老妓事，我以伯高嘴喻之，众大笑，伯高大骂下流。师长走withtearfuleyes，泪汪汪的，沉着而有力。</p>
+<p>六、下午欢送——应该叫“悲送”——师长，队中连长言老妓事，我以伯高嘴喻之，众大笑，伯高大骂下流。师长走with tearful eyes，泪汪汪的，沉着而有力。</p>
 <p>七、善培来信，文辞颇不恶。</p>
 <p>敖：</p>
 <p>飞飞来信报佳音，他以闪电似的奇袭战术，竟夺得一颗芳心，小两口要闹订婚。</p>
@@ -8182,7 +8215,7 @@
 <p>十二、与副座、国安大吃饺子。归来小读。夜甚静。</p>
 <p>12月17日星期六</p>
 <p>一、5时醒，我感觉我的努力不太够。</p>
-<p>二、上午政治课，得暇，适镜昌来，送我TheConductofLife、《中国国粹论》及《世界文学家传略》三书。又访尔昭，尔昭出示其最得意之“保单”——剪报一则，有关男女恋爱，女子因失恋而自杀，男子无刑责。我抢来贴之于日记。原文云：“争执多年未获解决的一个法律问题，于最近一次司法座谈会议法律研究中获得解决。这个问题是：‘男女相恋，且有超友谊关系，男风流成性，始乱终弃，移情别恋，女则死缠不放，羞愤交迫，扬言以死抗议，再三交涉成婚，但仍难成局，果尔服毒身死，男对女之死应否负责？’经研究结果，认为男方不应负以刑责。今后各级审判这类案件时，将以此结论为参考。司法座谈会在研究这个悬之多年未获解决的法律问题时，曾发生热烈争执。甲方因主张男方应负消极杀人刑责，理由是女之羞愤服毒男方始乱终弃所引起。当女扬言自杀，男应有负防止其结果发生之义务。因违背其作为义务，致结果发生，不能谓无《刑法》第15条第2项之适用，应构成消极杀人罪。但乙方面则认为男子不应负消极杀人之责，理由是：男女相恋，事所恒有，女因失恋而以死威胁成婚未果，终至服毒而死。是其死系服毒所致，非失恋必应有之结果。则行为与结果间无相当因果关系。就甲方所说，男对自己行为虽不无防止结果，而所谓‘防止’，系指死亡之结果之发生而言。女之致死原因，不外为服毒，女之服毒与否，为女之心内事，男无法防止。再则女服毒又为男所不知，亦无由防止其结果之发生。依法律不能强人所难之原则，男应不为罪，经热烈讨论的结果，获得如下结论：以乙说为是。女子自失恋自杀，与男之行为，并无因果关系存在其间。甲男自不负消极杀人之责任。”——这种决定是法律的一项进步，一种不从道义干扰而重视人权的一项进步。</p>
+<p>二、上午政治课，得暇，适镜昌来，送我The Conduct of Life、《中国国粹论》及《世界文学家传略》三书。又访尔昭，尔昭出示其最得意之“保单”——剪报一则，有关男女恋爱，女子因失恋而自杀，男子无刑责。我抢来贴之于日记。原文云：“争执多年未获解决的一个法律问题，于最近一次司法座谈会议法律研究中获得解决。这个问题是：‘男女相恋，且有超友谊关系，男风流成性，始乱终弃，移情别恋，女则死缠不放，羞愤交迫，扬言以死抗议，再三交涉成婚，但仍难成局，果尔服毒身死，男对女之死应否负责？’经研究结果，认为男方不应负以刑责。今后各级审判这类案件时，将以此结论为参考。司法座谈会在研究这个悬之多年未获解决的法律问题时，曾发生热烈争执。甲方因主张男方应负消极杀人刑责，理由是女之羞愤服毒男方始乱终弃所引起。当女扬言自杀，男应有负防止其结果发生之义务。因违背其作为义务，致结果发生，不能谓无《刑法》第15条第2项之适用，应构成消极杀人罪。但乙方面则认为男子不应负消极杀人之责，理由是：男女相恋，事所恒有，女因失恋而以死威胁成婚未果，终至服毒而死。是其死系服毒所致，非失恋必应有之结果。则行为与结果间无相当因果关系。就甲方所说，男对自己行为虽不无防止结果，而所谓‘防止’，系指死亡之结果之发生而言。女之致死原因，不外为服毒，女之服毒与否，为女之心内事，男无法防止。再则女服毒又为男所不知，亦无由防止其结果之发生。依法律不能强人所难之原则，男应不为罪，经热烈讨论的结果，获得如下结论：以乙说为是。女子自失恋自杀，与男之行为，并无因果关系存在其间。甲男自不负消极杀人之责任。”——这种决定是法律的一项进步，一种不从道义干扰而重视人权的一项进步。</p>
 <p>三、午珂介绍我读《民族晚报》中连载之胡秋原长文，语重颇动人，远望时艰，颇令人浩叹也。</p>
 <p>四、自尔昭处借来《魏德迈报告》，走路大便皆读之。</p>
 <p>五、逃课请丁忠吃西瓜、酥饼、花生等。</p>
@@ -8194,7 +8227,7 @@
 <p>附来信：</p>
 <p>敖鉴：</p>
 <p>免费车票两张已于上周挂号寄上，收到与否，祈即来信示知，盖此间尚余一张，亦以12月底为期，前信如未收到，当再将此张寄往，由于上月中旬以来，即未接你来信，不由怀疑月来我所作诸信是否寄达，又近况如何，何时北返度假，均所深念也。庄因已于14日结训，不知你是否前往送行并代表诸友人向其致贺否？照珍小姐特前赴台中将为良人亲解戎装，想此刻已是“却话巴山夜雨时”，个中乐趣非你我所能道也。月来有无聊男子在台北纠缠袁小姐，彼原为袁姝初中国文教师，近忽官拜某陶瓷公司经理，向袁小姐大送其艺术花瓶，闻已有五六个之多，可开展览会矣。袁姝为之苦恼不堪，庄二营中闻悉大急，特限时驰函，“表示严重关切”，着我前往探看，彼固不怀疑袁姝之“忠贞”，唯担心其应付不当或太自苦耳，睹其焦急之状，深感“光棍之乐”，稍觉快意。</p>
-<p>GoneWiththeWind一片卷土重来，在远东上映，独自往观，殊觉自由自在，纵有茹华、秉泽之流在侧，其乐万难及比也。旧片新观，收获良多，此处愿一提者，仅为一件小事，即男主角CaptainRhettButler在爱情事件中潇洒脱俗之态度，于彼已获得所爱之人——女主角ScarletteO'Hara——之爱情时，既不深信，亦不怀疑，却飘然远引，片中此场戏尤佳，彼走出大门，投身浓雾中，人影终与雾色合而为一，益增其“神龙不见首尾”之传奇性，如此洒脱之大丈夫气概，岂是吾辈所可及也？（吾辈中我可及。1960年12月17日敖跋。）</p>
+<p>Gone With the Wind一片卷土重来，在远东上映，独自往观，殊觉自由自在，纵有茹华、秉泽之流在侧，其乐万难及比也。旧片新观，收获良多，此处愿一提者，仅为一件小事，即男主角Captain Rhett Butler在爱情事件中潇洒脱俗之态度，于彼已获得所爱之人——女主角Scarlette O’Hara——之爱情时，既不深信，亦不怀疑，却飘然远引，片中此场戏尤佳，彼走出大门，投身浓雾中，人影终与雾色合而为一，益增其“神龙不见首尾”之传奇性，如此洒脱之大丈夫气概，岂是吾辈所可及也？（吾辈中我可及。1960年12月17日敖跋。）</p>
 <p>今午返家，突接“中副”退稿，拆阅之，赫然“蔡某人与胡某人”也，稿上未着日期，不知是新稿抑为旧作，亦未知曾否发表，只读数句，似曾相识，不知为何又炒陈饭耳，“联副”前作甚佳，可多写那种作品，似此种稿件，早不合时宜矣，奈何不察以至于此？君书袋子亦丰，如欲骗取稿费，何不“故事新编”，以你文之Style，颇合于作此类笔墨也。尊意如何？</p>
 <p>下周起开始翻译预算，预计年底竣工，闻说工作将甚忙，除加夜班外，星期例假或亦取消，闻之心惊，前本希望你能早日北返，现在则希望你最好把年假尽量后延，如能年底（30、31日）抵此最佳，盖过年后我当可清闲一阵子了。何日北来，迟早时间尚请你自己决定。</p>
 <p>鼓应远行，我等为之饯行，想已南下候船矣。马戈彦增近况均佳，姚老善意欲聘你为“国家助教”，Miao惨台大助教老马矣，此非“施舍”，望能乐意接受，勿再使性也。君北来前，我将不再去信，唯盼能来信告知近况，今日心绪不佳，就此为止，祝佳，保重！</p>
@@ -8208,7 +8241,7 @@
 <p>十四、每日6时起，11时30分睡，我之精力真是惊人！视每日午睡与9时即眠之众人，真无伦比也。</p>
 <p>12月18日星期日</p>
 <p>一、要缴体格检查表，医官为我造假账，一霎时天花、破伤风、霍乱、伤寒等针，皆打上了，他说：“在中国当官的不会作假还行？”并问我体位要哪一等，他随我挑。</p>
-<p>二、Shakewellbeforeusing—Keeptightlycloseddonotfreeze。人间事，多可作如是观。</p>
+<p>二、Shake well before using—Keep tightly closed do not freeze。人间事，多可作如是观。</p>
 <p>三、珂还来九十五元。</p>
 <p>四、花1.5元犹豫买来尤敏照片，酷似Lo，酷似Lo。</p>
 <p>五、下午操课及内务礼节示范，我大读书，晚读毕《魏德迈报告》，很动人的传记。</p>
@@ -8223,12 +8256,12 @@
 <p>四、给清茂限时片促其寄钱。</p>
 <p>五、给华民一片。</p>
 <p>六、西班牙：</p>
-<p>（一）PoemadelCid（《息德歌》）——12世纪史诗，为三千七百四十四行之残诗。Cid为Casti贵族，西班牙史上大英雄，或抗“耶”杀“回”、或抗“回”诛“耶”、或焚礼拜堂、或烧清真寺，但此书却将之神明化而不再是反复无常之Cid。</p>
-<p>（二）InfantesdeLara（《拉兰的七亲王》）——中世纪歌瑶。记Castil之Lara附近七亲王恩仇。</p>
-<p>（三）DonQuixots——16世纪Cervantes因战争致左手残废，又被劫于海岛，无赎钱，五年后始得归。又曾为公账问题下狱，又因有谋杀贵族嫌疑下狱。1610年识Naples总督莱蒙斯伯爵（CountofLemons），受其资助及靠个人版税，才于临终前出版此书下卷。</p>
-<p>（四）LaEstrelladeSevilla（《赛维拉的名花》）——LopedeVega（费加）1562-1635。生平作剧本一千五百部。每二十四小时即可出一部，今存三百部与Cervantes为好友，但时反目。Castile王爱女，此女恋德，其兄阻王，王使德杀女兄而置德于狱，女入庵为尼。</p>
-<p>（五）TheFourHorsemenoftheApocalypse（《启示录的四骑士》）——1916。伊本纳兹（VicenteBlascoIbanez1887-1928）早年革命入狱，后为国会议员，借法国的爱国故事以激西班牙人。</p>
-<p>（六）TheButterflyOvertheSea（《渡海的蝴蝶》）——贝纳文特（JacintoBenaventeyMartinez,1866-1954）1922年得诺贝尔奖，述女伶为艺术而死。</p>
+<p>（一）Poema del Cid（《息德歌》）——12世纪史诗，为三千七百四十四行之残诗。Cid为Casti贵族，西班牙史上大英雄，或抗“耶”杀“回”、或抗“回”诛“耶”、或焚礼拜堂、或烧清真寺，但此书却将之神明化而不再是反复无常之Cid。</p>
+<p>（二）Infantes de Lara（《拉兰的七亲王》）——中世纪歌瑶。记Castil之Lara附近七亲王恩仇。</p>
+<p>（三）Don Quixots——16世纪Cervantes因战争致左手残废，又被劫于海岛，无赎钱，五年后始得归。又曾为公账问题下狱，又因有谋杀贵族嫌疑下狱。1610年识Naples总督莱蒙斯伯爵（Count of Lemons），受其资助及靠个人版税，才于临终前出版此书下卷。</p>
+<p>（四）La Estrella de Sevilla（《赛维拉的名花》）——Lope de Vega（费加）1562-1635。生平作剧本一千五百部。每二十四小时即可出一部，今存三百部与Cervantes为好友，但时反目。Castile王爱女，此女恋德，其兄阻王，王使德杀女兄而置德于狱，女入庵为尼。</p>
+<p>（五）The Four Horsemen of the Apocalypse（《启示录的四骑士》）——1916。伊本纳兹（Vicente Blasco Ibanez 1887-1928）早年革命入狱，后为国会议员，借法国的爱国故事以激西班牙人。</p>
+<p>（六）The Butterfly Over the Sea（《渡海的蝴蝶》）——贝纳文特（Jacinto Benaventey Martinez, 1866-1954）1922年得诺贝尔奖，述女伶为艺术而死。</p>
 <p>七、在操场冷风中写此，值团长及刘蕴富来，相谈甚久，团长言及钱穆及胡适皆为治史的，又杂谈家世及出路，神经营长笑握我手，左手又握上来，我也握过去，四手握在一起。他连说我们是三民主义讲习班同学，我说不敢当不敢当，后来他问我是不是受过什么刺激，看我好像有点神经病。我心里想：问这话的人心里就有神经病！他劝我入世后小心讲话。</p>
 <p>八、尔昭戏谓，我如包个女人，他可介绍，佣金一百，大概是他妹妹吧？</p>
 <p>九、庄因寄来贺年片，郎世宁仙萼长春册之四，极美。</p>
@@ -8242,16 +8275,16 @@
 <p>12月20日星期二</p>
 <p>一、因朝会，礼节服装，照例多嘱。</p>
 <p>二、葡萄牙：</p>
-<p>（一）AmadisdeGaul（《高尔的阿玛迭司》）——14世纪瓦斯科洛勃腊（VascoLobeira）传奇小说，骑士文学作品。不过很难确定是作者一人之手，类《水浒》、《三国》，VascoLobeira不过总其成耳。</p>
+<p>（一）Amadis de Gaul（《高尔的阿玛迭司》）——14世纪瓦斯科洛勃腊（Vasco Lobeira）传奇小说，骑士文学作品。不过很难确定是作者一人之手，类《水浒》、《三国》，Vasco Lobeira不过总其成耳。</p>
 <p>述私生子被放于橡木空斡中，浮海故事。</p>
-<p>（二）Lusiad（《路西亚特》）——16世纪卡蒙斯（LuisDeCamoens1525-1580）叙事诗，此人二十五岁起放荡三年，曾因伤国王之马夫而下狱，作战时伤一目，又以渎职下狱。他为葡萄牙的国语文学建立了大功劳。</p>
+<p>（二）Lusiad（《路西亚特》）——16世纪卡蒙斯（Luis De Camoens 1525-1580）叙事诗，此人二十五岁起放荡三年，曾因伤国王之马夫而下狱，作战时伤一目，又以渎职下狱。他为葡萄牙的国语文学建立了大功劳。</p>
 <p>述葡人东略，穿插神只与海盗。</p>
 <p>三、我以穿衣多及背驼著名，今早出操，阿周鬼叫：“棉被带来没有？”阿周最爱打闹，我决心对他严肃些（我练习不发怒）。朱班长敲我背讽曰：“背包放下来！”阿何对我很赞赏。</p>
 <p>四、以开玩笑报告借五十元，代连长（吴国钧）戏准之。</p>
 <p>五、奥地利：</p>
-<p>（一）NibelungenLied（《尼伯龙根歌》）——12世纪叙事诗，骑士文学。述西格弗里德（Siegfied）曾杀龙而在其血中沐浴。只因菩提叶落于其两肩之间，故只有此处刀剑可入。彼还有一件隐身衣。</p>
-<p>（二）DieFrauantdemFenster（《窗前之女》）——霍夫曼斯塔尔（HugoVonHofmannSthal1874-1914）诗剧（独白）。</p>
-<p>（三）AnatoZe（《阿那托尔》，又名《男女之间》）——施尼茨勒（ArthurSchnitzler1862-1931）戏剧，为一“独幕的连环剧”（OneactCycle），此书七幕，男主角永为阿那托尔，只换了七个女人，每幕一女主角，甚别致。施尼茨勒为医生，因此书成名而改行。</p>
+<p>（一）Nibelungen Lied（《尼伯龙根歌》）——12世纪叙事诗，骑士文学。述西格弗里德（Siegfied）曾杀龙而在其血中沐浴。只因菩提叶落于其两肩之间，故只有此处刀剑可入。彼还有一件隐身衣。</p>
+<p>（二）Die Frau ant dem Fenster（《窗前之女》）——霍夫曼斯塔尔（Hugo Von Hofmann Sthal 1874-1914）诗剧（独白）。</p>
+<p>（三）AnatoZe（《阿那托尔》，又名《男女之间》）——施尼茨勒（Arthur Schnitzler 1862-1931）戏剧，为一“独幕的连环剧”（One act Cycle），此书七幕，男主角永为阿那托尔，只换了七个女人，每幕一女主角，甚别致。施尼茨勒为医生，因此书成名而改行。</p>
 <p>六、午饭前营长“训话”一小时，大谈男女私情应隐蔽，使人见则不敬，又言军中伦理。我则把小笔记本通读一过，以免浪费时间。</p>
 <p>七、午间第一营营长遥呼“李敖”，且问吃饭否，此人对我大施攻势矣。</p>
 <p>八、午珂请吃小橘，味酸而美。</p>
@@ -8265,7 +8298,7 @@
 <p>三、碰到式泮，请我坐公路车，车上得借观同学录，我之奇态可掬，照片缩小，亦颇不恶，Rosa状甚动人，Lo照得还好，依依及凝晖照得皆不佳，其中怪模怪样牛头马面者极多，刘道平脑后光圈一道，好像圣母玛利亚第二也。</p>
 <p>四、找到两三家印刷厂，文藻为翻译，方算花四十元印到卡片（文字是：李敖站在这儿/恭恭敬敬的/祝您把年过得/高高兴兴的），我一直任“督印人”，同时饱观印刷术，许多皆非我所知或所想象者也。午饭吃锅贴稀饭、咸菜，花七元。</p>
 <p>五、一女人身段极好，藏青瘦裙紧裹住她的小屁股。</p>
-<p>六、在大舞台花四元看电影两场，一为《南太平洋浴血战》（BioodandSteel），颇能刻画逐岛战之情况，继演《滑稽春秋》（TheGoldenAgeofComedy），等于一部电影界之谐剧史，共十余幕，中以Laurel&amp;Hardy（1927年两人合作配戏）占大多数，又有谐星贝文，转动布景，培特平一声枪响，弄堂两旁窗口皆有奸夫跳出。谐星表情及快动作极好、极令人效法，令人吃吃不已。</p>
+<p>六、在大舞台花四元看电影两场，一为《南太平洋浴血战》（Biood and Steel），颇能刻画逐岛战之情况，继演《滑稽春秋》（The Golden Age of Comedy），等于一部电影界之谐剧史，共十余幕，中以Laurel &amp; Hardy（1927年两人合作配戏）占大多数，又有谐星贝文，转动布景，培特平一声枪响，弄堂两旁窗口皆有奸夫跳出。谐星表情及快动作极好、极令人效法，令人吃吃不已。</p>
 <p>七、在南风吃西瓜，上次那个小女人也不见了。吸烟怅惘一阵。</p>
 <p>八、理发，九元，从来没理过这么贵的发，这次改变发型了。</p>
 <p>九、花五元选了两本有大腿的画报。</p>
@@ -8447,7 +8480,7 @@
 <p>一、晨又晏起，写小说稿。早饭后想，我这部（或几部）小说大可使我突成一家——也许是野兽派小说家吧，总之，我不但以历史家名，并且以小说家闻世。我又想，我何妨现在就利用遐想时刻去构思呢？何妨现在就开笔写写呢？</p>
 <p>二、上午出了一回操就混回来了。</p>
 <p>三、如果报纸肯登，我想登个“李敖不结婚启事”。</p>
-<p>四、司令台前模型展览，珂言若置于军乐园门口，效果方大。模型从“脓漏眼后之角膜葡萄肿”（BlennorrhoicHomhoustaphyloma，一女一目盲、一目突出黑肿烂白脓）“扁平湿疣”（CondylomataLata，男腿间及睾丸烂出如半腊肠，或成点、或成片）“下疳性横痃”（ChancrousBubo，男鱼口烂开，内黄红点）“鼠溪淋巴肉芽肿”（LymphogranulomatosisInguinalis，男腿间及睾丸红肿成片）“硬性下疳”（HardChancre，女阴粉红烂，一阴唇红紫肿大似阴口）“淋毒性睾丸炎”（GonorrhealOrchitis，男睾丸下红粉肿）“丘疹性脓疱性霉毒疹”（PapularPustulousSyphilid，男浑身红点，点上有黄脓）“软性下疳”（SoftChancre，包皮下烂红中有黄脓破）重要性病，一应俱全。</p>
+<p>四、司令台前模型展览，珂言若置于军乐园门口，效果方大。模型从“脓漏眼后之角膜葡萄肿”（Blennorrhoic Homhoustaphyloma，一女一目盲、一目突出黑肿烂白脓）“扁平湿疣”（Condylomata Lata，男腿间及睾丸烂出如半腊肠，或成点、或成片）“下疳性横痃”（Chancrous Bubo，男鱼口烂开，内黄红点）“鼠溪淋巴肉芽肿”（Lymphogranulomatosis Inguinalis，男腿间及睾丸红肿成片）“硬性下疳”（Hard Chancre，女阴粉红烂，一阴唇红紫肿大似阴口）“淋毒性睾丸炎”（Gonorrheal Orchitis，男睾丸下红粉肿）“丘疹性脓疱性霉毒疹”（Papular Pustulous Syphilid，男浑身红点，点上有黄脓）“软性下疳”（Soft Chancre，包皮下烂红中有黄脓破）重要性病，一应俱全。</p>
 <p>五、马真吾来贺片。</p>
 <p>六、英善来一片，弘元旦有订婚舞会。</p>
 <p>七、永亭来索二元看电影，另送他烟三支。</p>
@@ -8575,8 +8608,8 @@
 <p>三、5时抵善导寺，善培引见其父，老头儿盛夸我贺年片之别致，大出我意料！父子强留我在庙上吃饭，我以不惯素食却之。鸿飞协拿行李袋，散步去车站，途过华明书局小观，善培车票上无印，我以红笔画押，似一王八。碰到锡昌，强送我彼著作，且强我审其书与图，我被迫不过，乃不客气批评数点，敲其竹杠，他请吃豆腐干等。碰到正明，语其一二排长经，他似乎有点“外岛恐惧”。善培在车站买《古事今判》送我，他又买橘，我又请他吃排骨饭——就是桂伯高所谓的“饭上有肉的那种饭”。夜车舒适而无慢的感觉，离台北又远了！</p>
 <p>四、近10时抵家，与老太小谈，今晚锡昌慨允我把其纪念册中之Rosa照片割下，乃今晚极兴奋之一件事。</p>
 <p>1月3日星期二</p>
-<p>一、七小姐的情报，告我老太为六小姐男朋友事烦恼，三姐亦诋此男人，我早起委婉侧面劝老太太可不必为女儿这一类事烦恼，且谓如此不开明，直为“罗老太婆之翻版”也！与善培强约老太逛街，选购唱片，重买DearJohn等二张，我投资七元。归听唱片，心里有一种说不出的味儿。又同买菜，我真忍不了菜场气氛。我向善培说，如果结婚，我真舍不得我的小太太在菜场消磨青春。</p>
-<p>二、广诚来，强邀午饭后与善培看《黑色肖像》（PortraitinBlack），有个漂亮的情妇真好！出来逛街逛书店，晚会应老太之请看《都市之鼠》（TheRatRace，为钱竞赛使人变鼠）于金都。</p>
+<p>一、七小姐的情报，告我老太为六小姐男朋友事烦恼，三姐亦诋此男人，我早起委婉侧面劝老太太可不必为女儿这一类事烦恼，且谓如此不开明，直为“罗老太婆之翻版”也！与善培强约老太逛街，选购唱片，重买Dear John等二张，我投资七元。归听唱片，心里有一种说不出的味儿。又同买菜，我真忍不了菜场气氛。我向善培说，如果结婚，我真舍不得我的小太太在菜场消磨青春。</p>
+<p>二、广诚来，强邀午饭后与善培看《黑色肖像》（Portrait in Black），有个漂亮的情妇真好！出来逛街逛书店，晚会应老太之请看《都市之鼠》（The Rat Race，为钱竞赛使人变鼠）于金都。</p>
 <p>1月4日星期三</p>
 <p>一、与善培坐新竹开来的早车南下，老太送三十元、发刷一，在车上合写一明信片给华俊，告他去台南，“吾二人只好偕‘精神上之李华俊’同玩一场了”。在车中读报吸烟大便，一时抵台南，在吴抄手吃砂锅、炒饭，真过瘾。卖奖券长小胡的小女儿又来兜生意，与善培看《霸王焚城录》，终于赶上这场电影了，为之失魄不已。</p>
 <p>二、买日记本，看裸画后（买不起，十元一册）与善培分手，坐公路车行南雄道上，晚色看之不衰，我心里总是有一股说不出的味儿。</p>
@@ -8590,7 +8623,7 @@
 <p>连长你走了</p>
 <p>四连的老伴儿送的。</p>
 <p>可是副座要刻“荣调”云云，结果连长不高兴，笔一百四十五元，大新小姐二人皆夸我字写得好。碰到王区队长，他说看到我的文章，今日认得吕彻雄（动物系助教，与我同届，记得我长袍）、颜惠威（师大音乐系）。</p>
-<p>五、看《五个便士》（TheFivePennies）于光复。</p>
+<p>五、看《五个便士》（The Five Pennies）于光复。</p>
 <p>六、今日买刮胡膏、梳、发乳、刀片、小夹、日记本、裸照一册三元，半裸明星一帧一元、洗热水淋浴及擦鞋八元，共花六十多元。晚车归，喜看晚景于汽车疾驰中。</p>
 <p>七、与连座等打了一小会儿牌。</p>
 <p>八、请排附夜食，花二十元，排附赞我为最佳之官儿。</p>
@@ -8662,19 +8695,19 @@
 <p>三、下午与镜昌、尔昭、周、江去凤山，我抄特约茶室作息表时，一穿红衣小女子（长得及身材尚可）要我来，我说我卵叫坏了不能来，众哄笑之时，她突抓我生殖器，紧捏龟头一把，有点痛。又请他们吃西瓜，后参观龙凤阁及满意园，诸老妓打闹吵架，甚乱，生意好，故拉人者少，周、江皆流连不出。龙凤阁门上有联：</p>
 <p>龙蟠瑶池玉女献春情</p>
 <p>凤翔金府仙童戏花枝</p>
-<p>我说如有可看者，当摸摸而与之谈，可是看没有到。周、江不见，请镜昌看《智斗黄石岗》（HillBentForLeather），男主角为奥迪墨菲，女主角为费利西娅法（FeliciaFare），有冷清之美。“我恨告密于警吏”——老江湖宁挨打不肯说。买日历后等车时，又看到高雄客运公司那一二女孩子。</p>
+<p>我说如有可看者，当摸摸而与之谈，可是看没有到。周、江不见，请镜昌看《智斗黄石岗》（Hill Bent For Leather），男主角为奥迪墨菲，女主角为费利西娅法（Felicia Fare），有冷清之美。“我恨告密于警吏”——老江湖宁挨打不肯说。买日历后等车时，又看到高雄客运公司那一二女孩子。</p>
 <p>四、赶回欢送世清晚餐已近尾声，胡乱吃了一点，死不肯多喝酒，朱班长说他可派公差替我打扫，我亦不肯，我同样出了二十元。</p>
 <p>五、请排附（值星官）吃西瓜，送他长寿一包，说是补送他生日礼物，老连长来，我被邀打了一两下弹子。</p>
 <p>六、副座又来鬼缠，我今晚很为这没有自我的环境而烦躁。</p>
 <p>1月13日星期五</p>
-<p>一、与连长洽得，再来当司令，可是琐事亦讨厌，在电话中与接线那浑小子吵了一阵，溜回连上，午饭前读了OurSecretKisses（《铸错记》），原载1952年11月份True Romance，述一推销员一夜为替一女郎不平，是夜女郎被杀而受牵累。</p>
+<p>一、与连长洽得，再来当司令，可是琐事亦讨厌，在电话中与接线那浑小子吵了一阵，溜回连上，午饭前读了Our Secret Kisses（《铸错记》），原载1952年11月份True Romance，述一推销员一夜为替一女郎不平，是夜女郎被杀而受牵累。</p>
 <p>（一）假使我们之间有什么不快发生时，我常常会以工作为理由而离家，在彼此隔离的情形下，我们的感情便会很快的恢复了（此法可适合许多夫妇）。</p>
 <p>（二）忘记了我，我们恰像是两只夜航的轮船，在那无边的海上，偶然擦肩而过罢了。</p>
 <p>二、我实在有点厌烦四周，我把床以军毡遮起来，午浴后倒在里面，不亦快哉！以一小时读毕《珍妮幽像》（PortaitofJennie即《倩影泪痕》），作者RobertNathan在哈佛时曾任哈佛月刊编辑，发表早期作品于其上，作品甚多。</p>
-<p>（一）《又是一个春天》（OneMoreSpring）</p>
+<p>（一）《又是一个春天》（One More Spring）</p>
 <p>（二）《失魂的旅行》（Enchanted Voyage）</p>
-<p>（三）《四月的冬天》（WinterinApril）</p>
-<p>（四）《泰比阿拉之旅》（JourneyofTaipiola）</p>
+<p>（三）《四月的冬天》（Winter in April）</p>
+<p>（四）《泰比阿拉之旅》（Journey of Taipiola）</p>
 <p>此书颇使我感动而能测准其情节之演变。我躺在床上，计划我的小说间架，我很想先写出英文的。</p>
 <p>（一）“我愿望你等着我长大，”她说，“但是你不会等待的，我想。”</p>
 <p>（二）但是人们不可能等待别人长大的，人们都是彼此齐头并肩，亦步亦趋，同时一起长大的，他们儿时在一起，老年时在一起……</p>
@@ -8688,9 +8721,9 @@
 <p>（十）她先呼痛，后来再用针刺自己。</p>
 <p>（十一）我在想着这世界多美……并且它是如何才保持着美丽——不论我们遭遇了什么。</p>
 <p>（十二）然后她将嘴唇，信托的、天真的凑上了我的。</p>
-<p>（十三）珍妮（JennieApplenton）八年后归国，被海浪自船上卷去。</p>
+<p>（十三）珍妮（Jennie Applenton）八年后归国，被海浪自船上卷去。</p>
 <p>三、珂传条约我，晚饭后访之于五十一团六连，他急行军，两脚走出血，我送其草纸一包、橘、西红柿、糖、麻花。</p>
-<p>四、晚饭前又读完INeverHadAChanceTobeGood.1952，12，《自供》，十六岁即在未产时遭弃。</p>
+<p>四、晚饭前又读完I Never Had A Chance To be Good. 1952，12，《自供》，十六岁即在未产时遭弃。</p>
 <p>五、罗文虎说：“女朋友，到处都有，花十块钱到处都有。”</p>
 <p>六、康同利说我为人之佳很难找到。今晚又教他辞句少许。</p>
 <p>七、指导员住院，今晚晚点后官长部欢宴之，我颇抑乌梅酒，及唇而已。</p>
@@ -8779,7 +8812,7 @@
 <p>六、下午在床上神做计划，审度局势，似仍以渡海西去为先，仍以英文为主，史学为次，我必集中精力于“工作”不可，大量工作，压得我喘不过气来，无暇于俗务，天下最可惜之事，莫过于为俗务而耽误自己的时间，这是我由于军中的痛苦教训所得来的结语，我决心彻底实行它。时间不多了，哪有工夫花在这些事情上！</p>
 <p>七、他们又说我是干政工的好材料！</p>
 <p>八、两三日来，每晚饭后皆去福利社小读，然后再回卫兵室。</p>
-<p>九、又大用功起来，晚读AbrahamLincoln六页。当持续之。</p>
+<p>九、又大用功起来，晚读Abraham Lincoln六页。当持续之。</p>
 <p>十、很想吃东西再睡，可是忍住了，有点舍不得花钱。</p>
 <p>十一、接香港基督教福利与救济协会职业训练学校四姑两页信。</p>
 <p>亲爱的小敖：</p>
@@ -8810,13 +8843,13 @@
 <p>五、技术若好，五十三加仑油（柴油）可烧光一个人。</p>
 <p>六、我们当代的许多历史家都是些“谙”古而昧今的动物。</p>
 <p>七、贾成文的红帖子决定不理他。</p>
-<p>八、“MagnificentObsession”（宏大的强迫观念），郝德逊医生为善事又怕人知之。兰多夫：“如果你自己能力太微薄……不是用别人的人格来建造，而是建造到别人的人格里去。”如输血。——此可名之为“输血论”。</p>
+<p>八、“Magnificent Obsession”（宏大的强迫观念），郝德逊医生为善事又怕人知之。兰多夫：“如果你自己能力太微薄……不是用别人的人格来建造，而是建造到别人的人格里去。”如输血。——此可名之为“输血论”。</p>
 <p>九、给尔琳两页：</p>
 <p>尔琳：</p>
 <p>六小姐交到一个男朋友，但自老太太以下对他皆极端不满，大有过去罗家老少攻讦我之概！几乎全是干涉恋爱自由的翻版！</p>
 <p>我因是新时代开明人物，且曾身受他人干涉之痛，故对此事采取相当保留之评论。</p>
 <p>老太向我哭诉说：“像样子的大学生多得是，为什么看上这么一个不伦不类的家伙？”我答道：“你该考虑到一个女孩子的虚荣心，女孩子不能忍受别人有男朋友而她却没有，像样子的大学生虽多，可是不一定有机会追你的女儿，男朋友和衣服一样，有件坏的也比没有好！”</p>
-<p>Womanisabhorrentofvacuum!可是由于传统上与生理上“被动性”的限制，所以“钓”到男朋友全是一种“偶发”（abiogenesis），这真是一件抱歉的事，故周末晚上女生宿舍门前虽如过江之鲫，但是在同一房间之内，应接不暇者有之，“花径不曾缘客扫”者亦有之。（台大女生多有搽好口红整装以待猎者的，及会客时间过，仍不见“偶发”来，凄然抹去口红，其春怨可以想见也！）</p>
+<p>Woman is abhorrent of vacuum!可是由于传统上与生理上“被动性”的限制，所以“钓”到男朋友全是一种“偶发”（abiogenesis），这真是一件抱歉的事，故周末晚上女生宿舍门前虽如过江之鲫，但是在同一房间之内，应接不暇者有之，“花径不曾缘客扫”者亦有之。（台大女生多有搽好口红整装以待猎者的，及会客时间过，仍不见“偶发”来，凄然抹去口红，其春怨可以想见也！）</p>
 <p>面傅朱粉，</p>
 <p>心如死灰，</p>
 <p>没有chance</p>
@@ -8825,7 +8858,7 @@
 <p>敖之1961年1月19日夜</p>
 <p>来信请寄新址。</p>
 <p>十、为抓那些缩头不出的老浑蛋，晚上又跑路，又打电话。</p>
-<p>十一、“WutheringHeights”</p>
+<p>十一、“Wuthering Heights”</p>
 <p>（一）让上帝去处罚可恶的人，我们要学习忍耐，学习宽容一切。“不，上帝不会替我报复的，我得自己去做。”“我是要灵魂永坠在地狱里以作为对造物者的惩罚才高兴的。”</p>
 <p>（二）假如我说是在天堂里，我也必定会感到痛苦的，“因为你不配到那里去，任何有罪的人在天堂里都必会感到痛苦的。”</p>
 <p>（三）把他从你脑中赶走吧，小姐，他是一只不吉祥的鸟，而不是你的伴侣。</p>
@@ -8840,7 +8873,7 @@
 <p>二、午交下卫兵司令，如释重负，此职干不得也，尤其当此时匆乱之际，出了事情就没有好事情。</p>
 <p>三、向行政官软硬兼施，“诈”借得八十元（向他借钱，第一要恫吓，第二要加倍借，他打对折，适为所欲借之数），与新干事赴高，车上碰到永亭和他那刚结了婚的姘头，黑胖结实，粗眉大眼，且有胡须，比永亭至少还体重一倍以上，煞是吓人，天下竟有如此女人也！（今早我跟永亭说：“你好容易赢了几个钱，为什么不逛逛窑子，何必还跟有夫之妇乱扯，又多花钱，又划不来？”他答道：“我没钱时，她跟我来，不要钱；现在有钱了，就不理人家，怎么好意思？”1961年1月21日，敖记。）</p>
 <p>四、大业书店出一新书——《六十年年代诗选》。内有秀陶、伯谷、威廉的诗，我真不相信他们这些人能搞出些什么气候！浅学胡闹之徒，徒为门面主义耳、装潢主义耳，作旧诗的是老顽固，作“现代诗”是“自己也莫名其妙的烂文人”。</p>
-<p>五、不愿看伤脑筋的电影，乃在金城看《降伞雄兵》（ParatroopCommand）加片中有TheJazz（JazzDance），疯狂之至。“波止场”（码头）。花40.5买前门牌白色下开衩卫生裤一条（“卫生”二字在中国滥用矣！卫生裤、卫生套、卫生带，似皆与下体有关。1961年1月21日，敖之）。</p>
+<p>五、不愿看伤脑筋的电影，乃在金城看《降伞雄兵》（Paratroop Command）加片中有The Jazz（Jazz Dance），疯狂之至。“波止场”（码头）。花40.5买前门牌白色下开衩卫生裤一条（“卫生”二字在中国滥用矣！卫生裤、卫生套、卫生带，似皆与下体有关。1961年1月21日，敖之）。</p>
 <p>六、6时与新干事坐车归，我独吃饺二十，蛋汤一碗。</p>
 <p>1月21日星期六</p>
 <p>一、早上营长集合讲两小时，与尔昭在草地战，被他用女人手法扭吾一指，卒告失败，全营围笑。右手中指也搞破了。</p>
@@ -8858,7 +8891,7 @@
 <p>七、晚饭后与朱萍生棋战两盘皆贏，他们这些人都不肯服输。</p>
 <p>八、夜伯高带逃兵归。余目之良久，彼戴手铐吃物，平时则以衣遮手铐。两眼有异光，我的感觉很复杂。伯高言老太为我凑了一百元，伯高送她橘子四斤。夜请伯高花了22.6。</p>
 <p>1月23日星期一</p>
-<p>一、由于连长请假北上会女友，今早我和江涛同做大贝湖之游，久以未能于兴建后重游为憾，今日决定去一次。缺乏立体，是大贝湖的缺点之一，圣诞红甚好，禁止牌太多，买白长烟斗三元，游览指南一册两元伍角，有垂柳，甚喜之，荷池亦佳，水真好，上浮水鸭以十计，招待所隔湖而望，极喜之，建筑亦美，有别墅姿态，人生无此种享受，真虚度矣。在众信亭（Johnson’sPavilion）大吃橘汁、加里包，与女店员说笑，迎花架红柱甚美，又在平源阁租望远镜远眺，两女店员亦艳，又在车站及大门楼前纪念碑阴下杂谈。大贝游给我印象很好很好，也许唯一的遗憾不外是缺少一个女人来同玩。1时后转赴高雄，买书后吃西瓜汁，那位小李香兰极可爱，在逗小孩子，跟这种女人性交才有意思！晚饭于国光川菜馆后散步去明星街，小妓女拉我，我拒之，候江涛“解决问题”出来，车站候车时看到荣耀那老鸨又在冰店内带人来做生意了，附近皆旅馆也。今日花了百元。归途碰到李钟，浙人，畜牧系，高雄中学毕业。</p>
+<p>一、由于连长请假北上会女友，今早我和江涛同做大贝湖之游，久以未能于兴建后重游为憾，今日决定去一次。缺乏立体，是大贝湖的缺点之一，圣诞红甚好，禁止牌太多，买白长烟斗三元，游览指南一册两元伍角，有垂柳，甚喜之，荷池亦佳，水真好，上浮水鸭以十计，招待所隔湖而望，极喜之，建筑亦美，有别墅姿态，人生无此种享受，真虚度矣。在众信亭（Johnson’s Pavilion）大吃橘汁、加里包，与女店员说笑，迎花架红柱甚美，又在平源阁租望远镜远眺，两女店员亦艳，又在车站及大门楼前纪念碑阴下杂谈。大贝游给我印象很好很好，也许唯一的遗憾不外是缺少一个女人来同玩。1时后转赴高雄，买书后吃西瓜汁，那位小李香兰极可爱，在逗小孩子，跟这种女人性交才有意思！晚饭于国光川菜馆后散步去明星街，小妓女拉我，我拒之，候江涛“解决问题”出来，车站候车时看到荣耀那老鸨又在冰店内带人来做生意了，附近皆旅馆也。今日花了百元。归途碰到李钟，浙人，畜牧系，高雄中学毕业。</p>
 <p>二、镜昌留字：</p>
 <p>敖：</p>
 <p>我们连上有几个老广杀狗吃，我原想请你来“共享”的，可惜我今晚就要登轮赴澎。</p>
@@ -8883,7 +8916,7 @@
 <p>诚意的祈求、两位男士征婚、求养女会帮助</p>
 <p>〔本报讯〕昨天又有两位男士向养女会表示他们如饥似渴的求偶心情，一位在海关任职的龚姓男子，昨天一早去养女会，并带去一份美丽的月份牌作为礼物，他说他已征婚四年，可是至今仍无着落，希望该会这次帮帮他忙，一定为他物色一位美女成婚。他表示有满腔忧怨，四年前因为没有经济基础，没法找到女友，四年来日日节省，现已略有积蓄，但仍然找不到对象，他说他觉得如此虚度年华，忧心如焚，经养女会几位好心的小姐予以安慰登记后离去。</p>
 <p>有一位中学教员写信给养女会这样说：“我极度兴奋，又觉得很不好意思，经深思良久，带着羞惭的心情写下我这封求偶信，我今年三十三岁，湖北人，曾入陆军官校受训，现为省中教员，有积蓄，如黄小姐不弃，我愿永久照顾她，使她生活得自由幸福。我写完以上的话，平静的心海里仿佛荡起涟漪，最高兴是黄小姐有中等程度，相信她一定可与我讨论学术思想上的问题，花前月下，也可散步谈心。报上说黄小姐很美丽，其实即使她是丑八怪，我也要爱她。”</p>
-<p>七、赛珍珠的The HiddenFlower（《樱花姑娘》）写日本比与中国的TheGodEarth认识较深，虽然后者使她得到诺贝尔及普利策奖金。1951年11月份RedBook载有她的《赛尔薇亚》（Sylvia），述Sylvia偏不嫁给与父亲同行的奈德（报馆助手），而嫁给小厂主布莱德。</p>
+<p>七、赛珍珠的The Hidden Flower（《樱花姑娘》）写日本比与中国的The God Earth认识较深，虽然后者使她得到诺贝尔及普利策奖金。1951年11月份Red Book载有她的《赛尔薇亚》（Sylvia），述Sylvia偏不嫁给与父亲同行的奈德（报馆助手），而嫁给小厂主布莱德。</p>
 <p>八、夜与江涛吃蛋保养，快行军了。</p>
 <p>1月25日星期三</p>
 <p>一、早起打包完成。</p>
@@ -8927,7 +8960,7 @@
 <p>除早晚点名每日三餐须在乱石房中走段长路至大庙前见“高级长官”外，其他时间或暂可逃秦于万一，这是最开心的事，不但当兵以来所未有，亦“汉唐以来所未有也”！</p>
 <p>副连长本来在连部替我预备好了床，可是我怕他们又整日缠个不休找我谈天，所以甘心离开了那边较为方便的所在，也疏远了那“穿睡衣的小女人”和小店里的那两个向我贼笑、贼以好感相示的丫头们。</p>
 <p>出门即可望到军中乐园和房顶，阿兵哥纷纷去逛“八三一”，我尚无暇，且腰酸腿酸，不宜多动。</p>
-<p>午间勉强在七分之一的比较下，应副座郑重推荐在赤崁码头旁的一家公厕开门点烟匆匆拉了四十八小时来的宿屎，墙上门棱上皆抹得是屎，真是可怕的一间W.C.，便后参观赤崁码头，海风甚大，此尚属平时，风季来时，更不得了了。在赤崁我忆起《讨武瞾文》的作者的：</p>
+<p>午间勉强在七分之一的比较下，应副座郑重推荐在赤崁码头旁的一家公厕开门点烟匆匆拉了四十八小时来的宿屎，墙上门棱上皆抹得是屎，真是可怕的一间W. C.，便后参观赤崁码头，海风甚大，此尚属平时，风季来时，更不得了了。在赤崁我忆起《讨武瞾文》的作者的：</p>
 <p>日远长安，处蓬门而西笑；</p>
 <p>神游上国，依赤崁以诙谐。</p>
 <p>“蓬门”“赤崁”云云，何其巧也！</p>
@@ -8949,7 +8982,7 @@
 <p>昨日抵此，先报行踪，久不来信，莫非醋意？谕华民。</p>
 <p>五、给郑清茂：</p>
 <p>清茂：</p>
-<p>比我高一班现在大陆杂志社做你以前老差使的马宏祥看中了你，要我拉皮条，此人头脑颇佳，甚有思考力，可深交，他要我写介绍信，我看不必了，你可跟他联络，不必摆“准讲师”的架子，干脆去大陆杂志社一次算了，打电话亦可（TEL27437）</p>
+<p>比我高一班现在大陆杂志社做你以前老差使的马宏祥看中了你，要我拉皮条，此人头脑颇佳，甚有思考力，可深交，他要我写介绍信，我看不必了，你可跟他联络，不必摆“准讲师”的架子，干脆去大陆杂志社一次算了，打电话亦可（TEL 27437）</p>
 <p>军舰海上跳恰恰，</p>
 <p>谁不晕船是王八，</p>
 <p>老子浮海难自保，</p>
@@ -9029,7 +9062,7 @@
 <p>十、拿破仑长妹伊利莎给他信说：“……就是这女人（约瑟芬），你要小心！你可以倒在她怀里，可是不要掉在她手掌里！”</p>
 <p>十一、为人有气节，如阴丹士林，保不褪色。</p>
 <p>十二、他们午睡时我在克勤的办公室里摘抄他的剪贴册。</p>
-<p>十三、W.C.文学：</p>
+<p>十三、W. C.文学：</p>
 <p>为了替打扫厕所的人想想，</p>
 <p>请当心你的后门！</p>
 <p>十四、下午把给Rosa的信写成，对张丽珍，我愿意掉在她的怀里，可是不想掉在她的手里！</p>
@@ -9058,15 +9091,15 @@
 <p>我忍不住很喜欢这张小照片，当然我更希望能得到它的“原版”，但我知道你不会给我的，所以我也不会向你要——我才不那么傻！</p>
 <p>我的李敖自传已写了几章，和你那一段往事已全部写成，字数相当可观，夸大之处恐未能免，你看到也许要生气，不过你是看不到的，我并不想给你这个机会，除非你答应以某些条件来交换，但我又怎能相信你答应的事？你是不守信的。</p>
 <p>敖1961年2月1日在澎湖的白沙岛</p>
-<p>（一）、在中山北路华明书局替我买一本AModernMartyrTheaphaneVenard好不好？中译本的名字好像叫《一朵红玫瑰》，摆在一进门左面那一排橱中第二格里（右起第六本）。</p>
+<p>（一）、在中山北路华明书局替我买一本A Modern Martyr Theaphane Venard好不好？中译本的名字好像叫《一朵红玫瑰》，摆在一进门左面那一排橱中第二格里（右起第六本）。</p>
 <p>（二）、如果你不能在旧历年前寄来，就请不要寄了，因为那时候我不知道又飘到哪儿去了。</p>
 <p>李敖附及</p>
 <p>四、军中各科讲授图表该由国防部统一印制，由各教官乱编殊属浪费且不标准也，黄皮书既可发，为何不发一些黄皮图？</p>
-<p>五、梦到FreeChina复刊，胡秋原主编，大不如前激烈，我向Lei慨乎言之。</p>
+<p>五、梦到Free China复刊，胡秋原主编，大不如前激烈，我向Lei慨乎言之。</p>
 <p>六、辽宁辽阳张宏保（商学系）在队中任干事，忽见我名，来看我，述从鼓应处慕我之名。</p>
 <p>七、我的书后可印：</p>
 <p>①有版权，属老李。要偷印，不可以。或②版权属我自己。偷印绝不可以。</p>
-<p>八、可写一部书翰体小说（EpistolaryNovel）。</p>
+<p>八、可写一部书翰体小说（Epistolary Novel）。</p>
 <p>九、梭罗亲见狐咬断己脚以逃捕兽机。</p>
 <p>十、Franklin起床裸体室中十分钟，Balzac不点烛不能写作，Schiller或浸双足于水中方得为诗，Montaine星期五及13号绝不书一字，Gray畏火，Donne置棺。</p>
 <p>十一、爱迪生考试用人：“手中三个8，是否赌下去？”取了从不玩扑克的人。</p>
@@ -9086,10 +9119,10 @@
 <p>十七、1923年5月13日：“……如五字写错至五就抹去，是不可以的。凡后遇有写错的字，虽落笔已发觉，亦应写个完全，再为抹去……”可见其idea之一斑（此段引蒋介石之言而发感慨也，1987年9月10日，李敖追记）。</p>
 <p>十八、林肯主张消灭敌人的方法就是和他做朋友。</p>
 <p>十九、掷瓶典礼蜕自古人祭旗，后以酒代血，船为新生儿，故多由女性行此礼。</p>
-<p>二十、美名摄影女记者MissMargaretBourke-White自小练习胆量，服膺其母所鼓励她的一句话：</p>
+<p>二十、美名摄影女记者Miss Margaret Bourke-White自小练习胆量，服膺其母所鼓励她的一句话：</p>
 <p>面对恐惧，做你应做的事！</p>
 <p>二一、下午五十七师忽来即日退伍消息，人心大浮动，我却显得甚有担当，并不介怀也。九队老人多夸我，说我是“赫鲁晓夫专家”。又需我日记，欣义言，别的可以不看，李敖的日记不可不看。</p>
-<p>二二、夜读完《修女传》（TheNun'sStorybyKathrynC.Hulm），此书极动人，刻画极深刻。</p>
+<p>二二、夜读完《修女传》（The Nun’s Story by Kathryn C. Hulm），此书极动人，刻画极深刻。</p>
 <p>2月2日星期四</p>
 <p>一、小充员官打电话给团长，向接线生即乱“报告团长”，等到真团长来接电话了，他又“喂，团长……”</p>
 <p>二、俗说所谓长生不老之术：</p>
@@ -9122,7 +9155,7 @@
 <p>金玉其外，</p>
 <p>旷古美人，</p>
 <p>风华绝代！</p>
-<p>十二、晚饭后向队长告假，与俞萧坐二又二分之一去马公，晚风极劲，夜色苍茫，真是非常喜欢这儿，看电影《风流下女》（UpstairsandDownstairs），影院设备殊不佳，此影想不到有AnnHeywood，真是喜出望外。Ann真美真美，真绝世之色。</p>
+<p>十二、晚饭后向队长告假，与俞萧坐二又二分之一去马公，晚风极劲，夜色苍茫，真是非常喜欢这儿，看电影《风流下女》（Upstairs and Downstairs），影院设备殊不佳，此影想不到有Ann Heywood，真是喜出望外。Ann真美真美，真绝世之色。</p>
 <p>十三、又同洗热水澡，1.7元，甚畅快，去垢良多。浴后同逛文石店数家，太贵，克勤欲我选一小物，彼送我以为澎湖纪念，我拒之，逛澎湖初辟时之避风小街，甚好玩，又吃鸡肉饭及排骨汤，在中正路古今书局选得《今日澎湖》一册，价五元，10时30分归途，退伍提前似已确定。</p>
 <p>2月3日星期五</p>
 <p>一、午前凤鸣来，我返连缴退伍照片，午后与士官长黄杰聊天后折回，请永亭吃橘，跑到卫生所大便。</p>
@@ -9145,7 +9178,7 @@
 <p>（十四）到处演说，以老采矿为介绍：“诸位……关于这个人我只知道两点：第一、他从来未坐过牢；第二、我不知道为什么。”</p>
 <p>（十五）或自己先弹钢琴唱小调儿开始；或自穿衣服当介绍人，诡言他今晚不能来，在叹声中举二臂言马已抵台上矣（灯光大亮）。</p>
 <p>（十六）先在查理士兰登舱房中见欧丽维亚像，大倾倒，后以翻车假伤逗留彼家中，结婚三十三年后伊死。</p>
-<p>（十七）演说广告曾印旧金山各界发表的假抗议，集演说稿成《蛮子游记》（AVandalAbroad）。</p>
+<p>（十七）演说广告曾印旧金山各界发表的假抗议，集演说稿成《蛮子游记》（A Vandal Abroad）。</p>
 <p>（十八）准公公说：“他们一致公认你是个极有才华与本事——一个有前途的人，可是如果一结婚，即将成为有史以来最要不得的坏丈夫。”“难道你没有别的朋友可以提出来替你说话吗？”“说话的可没有一个。”“你至少有一个，我相信你，我比他们更认识你。”</p>
 <p>（十九）他主持正义时笔调辛辣有力，使干坏事的人不得不住手。</p>
 <p>（二十）与邻居查理斯得得雷华纳合写《镀金时代》——两人太太提议的，由于两人批评太太们正看着的小说，马写人物，华写情节。</p>
@@ -9192,7 +9225,7 @@
 <p>二、由于作笔记，想到黄祝贵不买书之言良佳。</p>
 <p>三、充员官皆沉不住气、皆逃课而去。</p>
 <p>四、副官组糊里糊涂，归建令竟把我名字漏去，午后打电话去催，营长又帮我找副团长，第一营长笑说我干脆留下来做算了，营长说我身体不行。团长说我太着忙，我说我算最不着忙的了！与式泮逃课搭便车去马公，澎湖风景实在可爱。抵澎防部访毓田，我把我的名字填到囚犯栏去了，看守所颇佳，清洁而有阳光，毓田胖而强颜欢笑，我知其欲哭而忍泪，我说：“只有你能做出这种事，也只有你能够忍受它（这种环境）。”又说：“该著本《鲁滨逊漂流记》，这正是相同的环境！”又说：“历史上的大人物都是从这儿出来的！”留地址及嘱托路线而别。其房为第一间，有粗铁栏，白瓷马桶，很干净，书报很多，可订《联合报》，亦一奇事也。毓田看到我助理事。不准带烟给他。我想我大可在这儿住住，绝没问题。</p>
-<p>五、看船期买到七美人冢照片，一元。与式泮同去喝红豆汤，读报。又洗澡后在饺子王吃狡子，看《光头冤家》（OnceMoreWithFeelingbyYulBrynnerandKayKendall）。</p>
+<p>五、看船期买到七美人冢照片，一元。与式泮同去喝红豆汤，读报。又洗澡后在饺子王吃狡子，看《光头冤家》（Once More With Feeling by Yul Brynner and Kay Kendall）。</p>
 <p>六、夜归，知归建令来，他们催我回连，我却睡了再说！</p>
 <p>2月5日星期日</p>
 <p>一、早起等车不到，镜昌又替我把行李背回来。午饭后归建，碰到施珂来，又接到他的信，小店的杨二小姐知我要退伍，并家住台中。下午理什物，我被他们“瓜分”了，或换衣、或索阶，与克勤、王宇逛赤崁码头，临水小坐，见渔船有“金满盈号”，看海蟹、浪花、远船、死鲨鱼，多感而少言，傍晚克勤拿来胶卷，照了一阵相，码头竟被保安人员出而禁止摄影，很扫兴，自恃被相信的选民总是不相信别人的。晚饭应官长部欢送宴，俞萧参加，阿周这次破例护我，代我喝酒不少，饭后送镜昌归，颇尽殷殷之意，与行政官办移交，真是浑蛋的行政官！8时后参加排中欢宴，大吃小喝，敬酒送照片一类，排附即席亮出送我之钢笔。散席后我一一嘱别，德武、永亭等皆惜我之去，难过溢于言表，与他们谈至夜深，收拾东西，忠明强送我“川资”，我强拒之，一时后始睡。</p>
@@ -9252,7 +9285,7 @@
 <p>四、翻出镇京来的贺片。</p>
 <p>五、请玉衡在家午饭。</p>
 <p>六、买刨一支，三十元。</p>
-<p>七、下午请玉衡看RoadToBali（《春满巴厘岛》）。</p>
+<p>七、下午请玉衡看Road To Bali（《春满巴厘岛》）。</p>
 <p>2月12日星期日</p>
 <p>一、上下午在一中图书馆。</p>
 <p>二、午取善培寄来之二百元，并理发（三姐送十元）。</p>
@@ -9274,10 +9307,10 @@
 <p>一、装上牙，了了一心愿！</p>
 <p>二、给国钧寄还二百五十元。</p>
 <p>三、华俊晨来，言Lo夫婿之奸猾手残云云。今天我数次想到这件事。我觉得我与她们的距离愈来愈遥远，我愈来愈变得不能与她们在一条路上行走，她们愈来愈庸俗，而在市井圈内打转，我却愈来愈扶摇直上，我真厌恶她们！</p>
-<p>四、午请俞与彦增吃年午饭，有鸡等，说笑不已，老太说我不是使客人不好意思，就是使主人不好意思，连长说人言我笑最美。饭后请他们看TheLostWorld（《宇宙洪荒》），女星甚美，望之“意交”之。出来见报，胡蓉裳本月11日在美结婚，“报上相见”第三起也！转赴台中医院看三小姐。</p>
+<p>四、午请俞与彦增吃年午饭，有鸡等，说笑不已，老太说我不是使客人不好意思，就是使主人不好意思，连长说人言我笑最美。饭后请他们看The Lost World（《宇宙洪荒》），女星甚美，望之“意交”之。出来见报，胡蓉裳本月11日在美结婚，“报上相见”第三起也！转赴台中医院看三小姐。</p>
 <p>五、年夜饭后分糖果，三姐、老太各送五十压岁，我又打赌生男的贏老太十元。</p>
 <p>六、夜整理洗浴，老太为明日北上送四橘。</p>
-<p>七、今日旧历除夕，又是情人节（Valentine'sDay），Valentine，3世纪罗马基督教殉道者。</p>
+<p>七、今日旧历除夕，又是情人节（Valentine’s Day），Valentine，3世纪罗马基督教殉道者。</p>
 <p>2月15日星期三</p>
 <p>一、锡昌一早又送修订本来。外人穷来拜年，光锦来，拉我访华俊，碰于路上，为其小侄市弹弓，俊言其妹寄我文于金门事。午请光锦，华俊作陪，连长来送行，且送礼，我只留华俊、述古送我，4时车开，读书，向车中一小童做手戏。善培接我，为洗尘，同赴第一宿舍，破窗而入，见珂所留信、诗、漫画、衣帽。不久士振、之昂及其敖小姐来，后与孙李等煮蛋，喝酒，闹至2时，小读书始睡去。</p>
 <p>二、接小潘一片。</p>
@@ -9323,17 +9356,17 @@
 <p>纸短诗多，不及备载。</p>
 <p>大哥8日午彰化车次</p>
 <p>珂言李敖丢人事迹尽于是页矣。</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/06.沉思日记类/一个预备军官的日记.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/06.沉思日记类/一个预备军官的日记.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../06.沉思日记类/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../06.沉思日记类/大学日记后期乙集.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -9343,16 +9376,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../06.沉思日记类/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../06.沉思日记类/大学日记后期乙集.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -9361,12 +9399,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

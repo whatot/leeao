@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,81 +81,102 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="中国近代史新论"><a class="header" href="#中国近代史新论">中国近代史新论</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#目录">目录</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -172,7 +205,7 @@
 <p>第二阶段（1851-1911）——自清朝咸丰元年到清朝终止，包括19世纪的后半个世纪和20世纪的前十年。</p>
 <p>近代第一个到中国的西方传教士是西班牙人方济各沙勿略（SaintFranciosdeXavier，他当时没有中文名字，这个名字还是以后的人译的），他在16世纪刚过了一半到达中国,但是却不得其门而入，最后赍志以没，死在中国海岸边的上川岛。</p>
 <p>方济各沙勿略死了以后，又有六个葡萄牙的传教士想进入中国,可是都不能成功。他们至多只能在澳门歇歇脚。</p>
-<p>真正完成这个使命的是意大利人利玛窦（MATTEORicci）。</p>
+<p>真正完成这个使命的是意大利人利玛窦（MATTEO Ricci）。</p>
 <p>利玛窦出生的时候，正是方济各沙勿略到达中国的时候。他年轻时候在罗马学法律，旁及自然科学。他在三十岁（明神宗万历十年，1582）到达中国的澳门开始传教。他是最懂得收揽人心的人，他知道如何先吸引人的好感和信任，而不是先刺激人。他起了中国的名字（号称利亚泰）、说中国话、吃中国菜、穿中国的衣服、读中国的典籍，甚至在家里都不挂圣母玛利亚的肖像。最后，他透过一个有权的宦官的帮助，在千辛万苦之下，终于向中国的皇帝“进攻”！</p>
 <p>试看他的上皇帝的表文，何等洞达、何等谦冲：</p>
 <p>大西洋陪臣利玛窦，谨献土物于皇帝陛下：臣本国鸾远，从来贡献不通，逖闻天朝之声教文物，窃愿霑被余溉，终身为氓，始为不虚所生；因此辞离本国，航海远来，时历三年，路经三万余里，始达广东。语言未通，有同喑哑，因僦居而习华文，淹留于肇庆韶州府，垂十五年；颇知中国古先圣人之学，于经籍略能记诵，而通其旨。乃复越岭由江西至南京，又淹留五年。伏念堂堂天朝，且招徕四夷，遂奋志努力，经趋阙廷。谨以天主像一幅，天主母像二幅，天主经一本，珍珠镶嵌十字架一座，报时钟二架，万国图志一册，西琴一张，奉献于御前；物虽不腆，然从极西贡来，差足贵异耳。臣从幼慕道，年齿逾艾，迄未婚娶，都无系累，他非所望，谨以所献之宝像祝万世，祈纯嘏，佑国保民，实则区区之忠悃也。伏乞皇上怜臣诚悫来归，将所献土物俯赐收纳，则益感皇恩浩荡，无所不容，远臣慕义之忱，庶少伸于万一。抑臣在本国，忝列科名，已叨禄位。天地图及度数，深测其秘，所制观象考验曰晷，与中国古法吻合，倘皇上不弃疏微，使臣得于至尊之前，罄其愚昧，又区区之大愿，而未敢必者；臣不胜感激待命之至。</p>
@@ -273,7 +306,7 @@
 <p>……劫库之说，盖由兑军费口故讹传耳。西洋先生（敖按：当时称传教士为“先生”）被南北礼部参论，不知所由，大略事起东南，而沈宗伯（敖按：即沈漼）又平昔称通家还往者，一旦反颜，又不知其由也。遽云为细作，此何等事，待住京十七年方言之？（敖按：十七年前利玛窦至南京。）</p>
 <p>皇上藐若不闻，想已洞烛（近日又问近侍云：西方贤者如何有许多议论？内侍答言：在这里一向闻得他好，主上甚明白也）。余年伯不甚知诸先生，疏中略为持平之论，亦颇得其力矣。南京诸处移文驱迫，一似不肯相容，杭州谅不妨，如南京先生有到海上者，可收拾西堂与住居也。（1962年台北光启出版社《徐文定公家书墨迹》家书第十一件）</p>
 <p>从这封家书里，可以看到当时反对西方传教士的人士如何在用“戴帽子”的手法，来栽诬传教士们，栽诬他们是奸细（细作）。</p>
-<p>这次排教的运动，在魏特（AlfonsBathS.J.）的《汤若望传》里（杨丙辰译本），有记述如下：</p>
+<p>这次排教的运动，在魏特（Alfons Bath S. J.）的《汤若望传》里（杨丙辰译本），有记述如下：</p>
 <p>这一次教徒迫害之主动人物是南京礼部侍郎沈漼。他对于南京城内信奉天主教之官吏李之藻和杨廷筠之关系，在表面上很是规规矩矩的。他绝不令人瞧出他的主要目的，是要打击他的信奉基督教的同寅同僚，他所谈论的只是传教士，他所直接打击的，也是传教士和信奉基督教的老百姓。当时的传教士们因为相信奉教官吏之权威可做靠山，所以都开始要摆脱掉利玛窦（Ricci）所主张的暂避态度，而公然实行传教。在南京王丰肃神甫（P.Vagnoni又名高一志）尤其喜欢尽量庄严地铺排教会内之神事。他甚至还曾备妥一份上皇帝的奏折，在这奏折中，他所请求的，颇非小事，就是请求准许基督教自由传布的事宜。奉教官吏们，尤其是人人知晓的徐光启劝阻进呈这奏折。因为他们认为那时时机尚未成熟。总而言之，当时传教士们欲到社会里公开传教的举动，或许是过早了的。无论如何，这个举动底结果确是更惹起沈漼底敌意，而加深了他的憎恶的程度。</p>
 <p>惨刑与迫害</p>
 <p>沈漼的打击行动在第二年就发生了效力，皇帝在这年（1617）的春天开始准许仇教的行动，其中教士王丰肃因而曾受惨刑，受刑后一个多月还站不起来：</p>
@@ -320,7 +353,7 @@
 <p>礼部一位高级官员于1639年1月6日，在例行的仪式之下，把这一方牌匾送至耶稣会会所。在送达这一方牌匾的人马底前部，有四位宣令官高踞马背，向前开道。礼部底高级官员骑御马，着红袍，处在全队中央。后面便是服装鲜明，或骑马步行的军队跟随护送。全队鼓号震响的乐声引动了半北京底人民。李天经、汤若望、龙华民以及钦天监之各官员和历局之各学员，全皆着制服在耶稣会会所恭谨迎接牌匾，他们把这牌匾安放在大厅的中央，然后照例向御赐的礼物施行叩头的谢恩礼。继续着作乐开筵，款待各官员，这时在耶稣会会所门口所聚集瞧热闹的人们，已经人山人海了，他们对于皇帝向传教士们所表示的这崇敬，都是惊奇不止的。传教士们在会所大门前面扎起彩楼一座，以便安置御赐牌匾，令来往的人众得以瞻仰。</p>
 <p>虽然中国皇帝跟传教士们有这样密切的关系，可是格于成例，中国皇帝跟传教士们仍旧终生没见过面——就像过去的中国皇帝从来没见过传教士一样。</p>
 <p>1640年，崇桢皇帝在宫中发现了过去利玛窦送给万历皇帝的一架钢琴，他想听听。这事惹得传教士们极大的兴致，因为乘机使中国皇帝施以宗教的影响，是他们最高的决策与计划。魏特在《汤若望传》里写道：</p>
-<p>崇祯皇帝登极之十三年，即西历1640年，在皇帝之宝库中，偶然发现按照欧洲初创钢琴时的钢琴形式，所制造之钢琴一架（原名Klavizymbel，为近代钢琴模型之先范）。这是利玛窦神甫当初进呈万历皇帝的礼品。因此崇祯皇帝便动了愿一聆欧洲音乐之念头。但是这必须得要先把这架乐器加以修理，并且把琴弦调好，然后方能演奏的。自然汤若望是被委任办理这件事情的人物了。这钢琴上用金色字体所书写的赞美天主的诗句：“你们为主子唱一首新歌吧（SingetdemHerrneinneuesLied）。”亦是要他翻译的。皇帝甚至还愿人们给他再造一架类似的乐器。</p>
+<p>崇祯皇帝登极之十三年，即西历1640年，在皇帝之宝库中，偶然发现按照欧洲初创钢琴时的钢琴形式，所制造之钢琴一架（原名Klavizymbel，为近代钢琴模型之先范）。这是利玛窦神甫当初进呈万历皇帝的礼品。因此崇祯皇帝便动了愿一聆欧洲音乐之念头。但是这必须得要先把这架乐器加以修理，并且把琴弦调好，然后方能演奏的。自然汤若望是被委任办理这件事情的人物了。这钢琴上用金色字体所书写的赞美天主的诗句：“你们为主子唱一首新歌吧（Singet dem Herrn ein neues Lied）。”亦是要他翻译的。皇帝甚至还愿人们给他再造一架类似的乐器。</p>
 <p>汤若望受到这个命令便非常欣跃了起来。他要借这个机会，以歌声与乐声把基督教输入官殿之中。钢琴底演奏是他在幼年时代曾学习过的。这样他就写了一篇中文的《钢琴学》，并且还附入一篇《圣歌调之解释》。</p>
 <p>但是，尽管传教士们用尽心机来巴结中国皇帝，苦命的中国皇帝明思宗到底“寿禄不永”，终于大明江山换成了清朝的天下。</p>
 <p>汤若望与新皇帝</p>
@@ -412,7 +445,7 @@
 <p>此时临朝之清帝（按即乾隆）乃一天才洋溢之君王，且求知之心极热。1747年时，见一喷水机之画图，即征教士郎世宁为之解说，且询朝廷中，是否有三数欧人，能做一与此相类似之机。此教士而兼艺术家者，其谦让冲虚之态度，更足以增光其才能，立即做一坚决之答复，小心翼翼，敬告清帝，彼将起田野乡村，讲道于各教堂。但清帝甫退入私殿，一内侍出而告彼，若有欧洲人，能担任制造喷水池者，明日彼应即使其高升。末后数语，乃朝廷官话，即命令彼任意出价，寻觅能办此事之人。任何教士均不致误解此令之用意，于是大众全注目于神父蒋友仁。</p>
 <p>彼遂致力于此工作，旋即谒见清帝，谓彼以书籍之助，能指导工人，制造水法或喷机。清帝大为喜悦，蔼然与彼交谈，极示恩宠之意，且谓即将颁发命令，彼凡调遣工人所为之事，均须遵照实行。（《圆明园兴亡史》第40页转引）</p>
 <p>这个圆明园的建筑，主要是采取法国式和意大利式的混合，图式很自由，并不局限于西方建筑的哪一国的固定形式。它的艺术价值并不比它的另一个价值大——那就是由一二生手的西洋传教士，力学速成，带着一班生手的中国工人，努力完成了中西合璧的大园榭。尤其是圆明园中的“西洋楼”和“大水法”，更是象征西方文化的具体表示。</p>
-<p>“西洋楼”是一组西式的宫殿建筑。法国人格罗西（M.L'abbeGrosier）曾有记载如后：</p>
+<p>“西洋楼”是一组西式的宫殿建筑。法国人格罗西（M. L’abbe Grosier）曾有记载如后：</p>
 <p>圆明园中，有一特别区域，其中建筑宫殿，尽为欧式，乃先清帝依意大利教士及名画家郎世宁之计划，所建筑者。神父蒋友仁施展才能，制造抽水机关，即为点缀此等宫殿，及其邻近之地面。此修士费无限心力之后，竟能制就圣彼尔谷之最好机器，对于宫苑之此部，供给水源。借蒋氏指导，制成之无数喷水机关中，吾人可见“象兽战”之形者，林中猎狗逐鹿之情景，及水制之时钟。上文已述及中国一日为十二时辰，双倍我国之小时，华人并以十二种不同之动物表现之。神父蒋友仁异想天开，思欲聚此十二动物，于一欧式宫殿之前，位于一广阔三角形池之两边，形成一继续不断之时钟。此灵机特出之意念，竟得完成。此等兽类，轮流值班，口中喷水两小时，表现全日时间之区分。（《圆明园兴亡史》第50页转引）</p>
 <p>从这段描述中，我们可以依稀神游到这个西化的大建筑是如何的多彩多姿、神奇幻化，对当时西方文化在中国第一流宫廷建筑的影响，也就不难想见了！</p>
 <p>语文学</p>
@@ -421,12 +454,12 @@
 <p>1934年在罗马耶稣会档案室发见一古抄本葡华字典（Dizionarioportoghese-chinese），系利玛窦与罗明鉴（敖按：罗明鉴当作罗明坚，北平图书馆钞本中作罗明鉴）所合编者，中文名“平常问答词意”，撰于万历十二年（1584）至十六年之间，是为第一部中西文字典。附罗马注音，书于中国纸，共一百八十九页，为未完成之作。大小为23x16乃公分。</p>
 <p>这里所提到的意大利人罗明坚，他在1584年用中国语写成《圣教实录》一卷，在这年冬天刻于广州，这是欧洲人第一个用中文写成的著作，是一部教义的纲领。</p>
 <p>二十一年以后，利玛窦出版了他的《西字奇迹》一卷。这部书是用拉丁文来注汉字，刻于北京。这是一部划时代的兼及中西语文的作品。据费赖之《入华耶稣会士列传》：</p>
-<p>《西字奇迹》一卷，1605年北京刻本Theoph.Boyer，《中国文法》第4页（Musaeumsinic.tI.）称玛窦刻有汉字译写之拉丁字母名曰“大西字母”者，殆指此书。</p>
+<p>《西字奇迹》一卷，1605年北京刻本Theoph. Boyer，《中国文法》第4页（Musaeum sinic. t I.）称玛窦刻有汉字译写之拉丁字母名曰“大西字母”者，殆指此书。</p>
 <p>利玛窦对语文学的贡献，在此书中又说：</p>
-<p>AbelRemusat曾云：最先编辑中国字书而附以欧洲语言之解释者，似为玛窦。此说不误，盖特里戈神甫曾谓其与郭居静神甫钟鸣礼修士共旅行时，曾编辑此种字书，注明五声清浊也。此写本似已无存。里戈并谓：“其曾编有其他书籍数种，以备吾人易习此土语言之用。”</p>
-<p>又过了二十年（天启五年，1625）法国人特里戈（NicolasTrigault）又撰了《西儒耳目资》三卷，天启六年（1626）在杭州有刻本问世。“中分三谱”，“以西洋之音通中国之音”，是为中西音韵学开山的著作。这部书比利玛窦编纂的字典来得清楚详赡。方豪《中西交通史》第五册中曾录特里戈致友人书说：</p>
+<p>Abel Remusat曾云：最先编辑中国字书而附以欧洲语言之解释者，似为玛窦。此说不误，盖特里戈神甫曾谓其与郭居静神甫钟鸣礼修士共旅行时，曾编辑此种字书，注明五声清浊也。此写本似已无存。里戈并谓：“其曾编有其他书籍数种，以备吾人易习此土语言之用。”</p>
+<p>又过了二十年（天启五年，1625）法国人特里戈（Nicolas Trigault）又撰了《西儒耳目资》三卷，天启六年（1626）在杭州有刻本问世。“中分三谱”，“以西洋之音通中国之音”，是为中西音韵学开山的著作。这部书比利玛窦编纂的字典来得清楚详赡。方豪《中西交通史》第五册中曾录特里戈致友人书说：</p>
 <p>余应中国教友之请，曾以汉文编一字典（余不感汉文困难），凡三册，使汉字与吾邦之元音辅音接近，俾中国人得于三日内通晓西洋文字之系统。此一文典式之工作，颇引起中国人之惊奇。彼等目睹一外国人矫正其文字上久待改善之疵病，自觉难能可贵也。此书且为吸引偶像教人（按指佛教人）进入天主教网罟之饵。前礼部尚书某公捐资刊刻，并作一极有价值之序。为之增色。</p>
-<p>《西儒耳目资》一书问世以后，研究语文学的人也很多，如方以智的《旋韵图》（著有《通雅》《物理小识》）、杨选杞的《同然图》（著有《声韵同然集》）以及葡萄牙人鲁德照（AlvarodeSemedo）的《字说》等等，都是显例。</p>
+<p>《西儒耳目资》一书问世以后，研究语文学的人也很多，如方以智的《旋韵图》（著有《通雅》《物理小识》）、杨选杞的《同然图》（著有《声韵同然集》）以及葡萄牙人鲁德照（Alvaro de Semedo）的《字说》等等，都是显例。</p>
 <p>西洋语文在中国政治上发生影响最明显的，是用拉丁文来签条约。最早的《尼布楚条约》（康熙二十八年，1689）就是用拉丁文签订的，做译员的且是外国教士张诚和徐日昇。据钱良择《出塞纪略》：</p>
 <p>其俗素奉天主教，文移俱用蜡谛诺（敖按：即拉丁）字，蜡谛诺者，即今中国所传西洋字也，大抵风尚与西洋国不远，故遣使时皇上特命西洋二臣同行。</p>
 <p>又据杨宾《柳边纪略》：</p>
@@ -481,7 +514,7 @@
 <p>俄国进入黑龙江的那一年，正是中国满族进人中原那一年。满族自北而南发展，俄罗斯正自西而东，清朝大帝国讨厌这个在它背后贼头贼脑的白种人不断的欺负当地土人，何况他们还抢土人的貂皮，这些貂皮是该向中国皇帝进贡的。</p>
 <p>这样纠缠不清，拖了四十年。清朝大帝国的第二任皇帝康熙，终于忍不住了。1689年，康熙皇帝派出了八千官兵，浩浩荡荡，走了一个半月，出现在尼布楚，与俄国谈判。谈判要带这么多的人，外交史上可说破天荒。俄国人弄糊涂了，他们搞不清中国人到底要打仗还是要议和。俄国的代表因为交通不便，迟到了二十天，弄得空气更是紧张。最后协议面对面幵会，双方各带七百六十人参加，但其中五百人须留在场外，只各带二百六十人人场，站在双方代表身后。俄国人不喜欢这样子，但是中国人坚持，只好这样。中国人谈判，喜欢拿武器的人站在身后，那样谈才过瘾。中国人觉得情势不利，谈判代表愈少愈好，少到最好一个人去，所谓“单刀赴会”；如果一旦情势有利，就喜欢全体出场，人人都是代表，有参与感。中国人谈判，有时候甚至自带水瓶，不喝对方的水，以免中毒。中国人在谈判上多疑，因为中国历史习惯上很喜欢杀谈判代表，虽有“两国交兵，不斩来使”的古训，但有的人认为对方太可恶了，杀一个少一个，所以照斩来使不误。或割掉来使的耳朵鼻子之类放回去，表示警告与泄愤。至于对方是否也会斩割中国的来使以为报复，中国人不大管。中国人有他单行道的国际公法，中国人不管那么多。</p>
 <p>但中国人并不苟刻，他很宽大，尼布楚这一次谈判，中国人希望只是双方把国界要划清楚，不要像过去那样简直没有划清界限、分不清你的我的。俄国人喜欢的地，中国人从来没有看在眼里，因为太北了、太远了、太冷了，中国人只确定中国东北和今天俄国的阿穆尔省与滨海省是中国领土，其他都不计较，你们俄国人喜欢，就是你的。中国人所要确认的，只是八十万平方英里（二百零七万平方公里）就够了。在自然地理条件上，整个的大东北角东面南面都有海为界，北面有山（大兴安岭）为界，已有国防上的完整，中国人就很满意。</p>
-<p>谈判拖了三天，俄国人斤斤计较、不爽快，中国人火了，把军队开到尼布楚城下，为什么这么近？因为马要吃草，这边正好有草。叫来谈判的翻译官传教士张诚（JeanFrancoisGerbil-lon），就这样通知了对方。</p>
+<p>谈判拖了三天，俄国人斤斤计较、不爽快，中国人火了，把军队开到尼布楚城下，为什么这么近？因为马要吃草，这边正好有草。叫来谈判的翻译官传教士张诚（Jean Francois Gerbil-lon），就这样通知了对方。</p>
 <p>俄国人屈服。因为俄国的彼得大帝正忙着杀他儿子、用吊在窗前的死尸吓他姐姐，没工夫也没能力跟千万里外的中国皇帝斗法。1689年9月7日，俄国代表在一份俄文、一份拉丁文的约本上签了字、盖了章；中国代表在一份满文、一份拉丁文的约本上签了字、盖了章，签订后，两国代表起立，手持约本，各以自己皇帝之名，宣誓忠实遵守，并祈“无所不能的上帝，万物之主，作他们意志忠实的监视者”。同时双方军队鸣炮庆祝。张诚说，康熙帝曾有正式命令，要中国代表们以基督教的上帝之名宣誓，认为只有这样，才可以使俄国人永远遵守。所以这个约是经过鸣炮誓天的。中国人真是实际的民族，通权达变，伸缩自如，康熙皇帝为了整住野蛮人、为了叫野蛮人的上帝帮他整住野蛮人，不惜客串一下，叫自己的代表，临时信一下野蛮人的上帝！</p>
 <p>从此中国与俄国有了一百五十年的和平。中国人得到足够的时间，面朝南方，去把自己的帝国腐化。</p>
 <p>1984年5月5日改定旧稿</p>
@@ -491,11 +524,11 @@
 <p>六十五年以后（1644，清世祖顺治元年），俄国人正式跟中国人碰了头——他们已经到达了黑龙江。</p>
 <p>这一年，正是清朝率兵入关，明朝皇帝吊死煤山的时候，所以可说明清交接之日，正是清俄碰头之时。</p>
 <p>当时清朝政府正专心进略中原，没有工夫对付北方的俄国人，于是俄国的势力遂坐大，他们在北方积极的建筑基地，如：</p>
-<p>1678年（康熙十七年）老柴斯克（OldZeisk）——在精奇里河上流</p>
+<p>1678年（康熙十七年）老柴斯克（Old Zeisk）——在精奇里河上流</p>
 <p>1679年（康熙十八年）赛林宾斯克（Selimbinsk）——在西里穆的河口</p>
 <p>1679年（康熙十八年）图胡尔斯克（Dolonskoi）——在笃陇遮河口</p>
-<p>1681年（康熙二十年）新柴斯克（NewZeisk）——在精奇里河口</p>
-<p>1682年（康熙二十一年）西里米冷斯克（UstNemilenskoi）——在阿穆公河上</p>
+<p>1681年（康熙二十年）新柴斯克（New Zeisk）——在精奇里河口</p>
+<p>1682年（康熙二十一年）西里米冷斯克（Ust Nemilenskoi）——在阿穆公河上</p>
 <p>这样的扩张势力，终于使清朝政府无法容忍了，于是经过三年多的准备（1682—1685），决定正式向老毛子进军。</p>
 <p>雅克萨之战的胜利和失策（1685）</p>
 <p>在《平定罗刹方略》里，清朝的皇帝有这样的话：</p>
@@ -510,9 +543,9 @@
 <p>一、他认为“抚绥外国，在使之心服，不在震之以威”。</p>
 <p>二、他讨厌“用兵无已”的胶着局面。</p>
 <p>第二次的雅克萨战事给康熙皇帝带来了胶着的局面，因此他趁着荷兰使者来朝的时候，转致国书给俄皇，主张和平。</p>
-<p>和平谈判是在1688年（清圣祖康熙二十七年）7月，清朝派索额图等在尼布楚与俄国费奥多罗（TheodoreAlexievitehGolovin）会晤，中国方面的翻译是耶稣会的两名传教士：</p>
-<p>一、张诚（JoanFranciscusGebillon）法兰西人。</p>
-<p>二、徐日昇（ThomasPereyra）——葡萄牙人。</p>
+<p>和平谈判是在1688年（清圣祖康熙二十七年）7月，清朝派索额图等在尼布楚与俄国费奥多罗（Theodore Alexieviteh Golovin）会晤，中国方面的翻译是耶稣会的两名传教士：</p>
+<p>一、张诚（Joan Franciscus Gebillon）法兰西人。</p>
+<p>二、徐日昇（Thomas Pereyra）——葡萄牙人。</p>
 <p>在中国方面，谈判的“底牌”有了变化：</p>
 <p>1688年，康熙皇帝第一次训令本主张尼布楚必须归中国。</p>
 <p>1689年，康熙皇帝第二次训令却自动放弃尼布楚，而主张可以额尔古纳河为界。</p>
@@ -557,7 +590,7 @@
 <p>自此以后，自1698年（康熙三十七年）到1718年（康熙五十七年），二十年内，俄国官商队共有十次到北京来，一方面通商，同时也做情报的工作。这种情形，最后因为准噶尔的问题而闹僵，以致终止。</p>
 <p>准噶尔与俄国的勾结，引起康熙皇帝的不满与愤怒，1722年，康熙在他即位六十一年的时候死去，三年以后（1725年），俄国的彼得大帝也去世了。于是中国的雍正皇帝和俄国的叶卡捷琳娜女王之间，又订立了《恰克图条约》。</p>
 <p>雍正皇帝因为帝位继承的斗争，开始怀恨由海洋而来的耶稣会士而亲近喇嘛；正巧俄国的教士来自大陆，又号称喇嘛，自然讨得雍正皇帝的欢喜；再加上准噶尔的问题，更使雍正皇帝倾向用怀柔的政策来对付俄国。</p>
-<p>1727年（雍正五年），雍正皇帝召见俄国使臣萨瓦（SavaLukitchVlabislavitch），最后据《大清会典事例》，在外交方面，有这些结果：</p>
+<p>1727年（雍正五年），雍正皇帝召见俄国使臣萨瓦（Sava Lukitch Vlabislavitch），最后据《大清会典事例》，在外交方面，有这些结果：</p>
 <p>雍正五年，议准，俄罗斯馆内设立庙宇，令在京之俄罗斯僧一人居住，并照该国所请，增俄罗斯僧三人，俟送到时，一并给与口粮食物，听其于庙内行俄罗斯教，礼拜念经，无庸禁止。又使臣萨瓦及留京学书之俄罗斯四人，教习二人，亦令在馆居住，一例给与口粮食物。</p>
 <p>另在国界方面，据《东华录》，有结果如下：</p>
 <p>据萨瓦云：“此次幸为使臣，瞻仰天颜，既优赐我察罕汗，复赏赉奉使人众，皇恩优渥。今既秉公办理，即可永定为界。”臣等随派侍卫胡毕图郎中纳延泰与俄罗斯副使一番诺费池（按即伊凡诺维奇）等指定东西界址，议立界石，俟其回时，即将界址山河地名，缮写绘图，恭呈御览。</p>
@@ -607,11 +640,11 @@
 <p>清朝的乾隆皇帝在位时间是六十年（1736—1796），贯串了18世纪。在这个阶段，正是西方大变化的时期。其中包括了英法两国在欧、亚、美三洲殖民地的竞争，包括了美国的立国、包括了法国的大革命，并且，在这个世界上，发明了蒸汽机，造成了工业革命的基本动力。</p>
 <p>这种中国以外的大变化是保守的中国的最大威胁。但是这种威胁还在潜在着，还没有正式化为兵祸。</p>
 <p>这种威胁的基本原因实际上是一种优势文化，就是说，这是一种比中国文化更行的优势文化。在这种文化的猛扑下，中国固有文化已经逐渐暴露了失常与败绩。</p>
-<p>18世纪的最后十年里，在乾隆五十八年（1793），英国派来了到中国的特使马嘎尔尼（GeorgeLordMacartney）。这个特使当时对中国有过很深入的观察。他说他用自来火点火，惹得接待他的“赵大人”大为惊奇。由此一例，可见中国科学技术的落后。</p>
+<p>18世纪的最后十年里，在乾隆五十八年（1793），英国派来了到中国的特使马嘎尔尼（George Lord Macartney）。这个特使当时对中国有过很深入的观察。他说他用自来火点火，惹得接待他的“赵大人”大为惊奇。由此一例，可见中国科学技术的落后。</p>
 <p>落后并不可怕，可怕的是落后而死不肯承认自己落后。马嘎尔尼提到他劝中国士大夫当聘请外国的专门技师来协助发展科学，可是中国士大夫们却故步自封，毫不虚心改善。在《乾隆英使觐见记》里，这位英国特使曾向“福大人”说：</p>
 <p>“大人为中国兵家，功业彪炳，良使敝使钦慕。敝使拟请大人观操，藉聆雅教。勿审大人，亦肯赏光否？”福大人意颇冷淡，岸然答曰：“看亦可，不看亦可。这火器操法，谅来没有什么稀罕！”余聆此答语，心乃不胜大异。余于福大人虽能断定其曾否一睹火器之式样。而中国目下之军队，则可决言其必无火器。既无火器，而犹以没有什么稀罕一语了之，吾诚不解其用意所在矣！</p>
 <p>这是何等故步自封，岸然自大！这种自大，甚至连个“老太监”都要岸然有之：</p>
-<p>殿之一角，有一八音时辰钟，拨其奏乐之键，能奏乐十二阕，如BalkJoke、Lillibullero以及《乞丐》一剧中之歌曲等类，均为英国旧时流行之乐曲。钟上饰物，均为旧式。有透明及五色之宝石多枚，此钟虽非珍品，然以历年既久，余不得不以其为古董而贵之。钟面有英文数字，曰伦敦理敦赫尔街乔治克拉克钟表店造（一老太监语我此钟系中国人自造，子不屑与辩，付之一笑）。</p>
+<p>殿之一角，有一八音时辰钟，拨其奏乐之键，能奏乐十二阕，如Balk Joke、Lillibullero以及《乞丐》一剧中之歌曲等类，均为英国旧时流行之乐曲。钟上饰物，均为旧式。有透明及五色之宝石多枚，此钟虽非珍品，然以历年既久，余不得不以其为古董而贵之。钟面有英文数字，曰伦敦理敦赫尔街乔治克拉克钟表店造（一老太监语我此钟系中国人自造，子不屑与辩，付之一笑）。</p>
 <p>中国的朝野除了傲岸自大，不肯虚心承认并学习西方的科学技术以外，还要以极不平等的礼节来屈辱外国人。《掌故丛编》中曾记：</p>
 <p>再梁肯堂征瑞折内俱称筵宴时该使臣等免冠叩首等语。……向闻西洋人用布扎腿，跪拜不便，是其国俗，不知叩首之礼，或只系免冠鞠躬点首……遂指为叩首，亦未可定。着传谕征瑞，如该使臣于筵宴时实则叩首则已，如仍止免冠点首，则当于无意闲谈时婉词告知以各处藩封，到天朝进贡觐光者，不特陪臣俱行三跪九叩首之礼，即国王亲自来朝者，亦同此礼。今尔国王遣尔等前来祝嘏，自应遵天朝法度。虽尔国俗俱用布扎缚，不能拜跪，但尔叩见时何妨暂时松解，俟行礼后，再行扎缚，亦属甚便。若尔等拘泥国俗，不行此礼，转失尔国王遣尔航海远来，祝厘纳赆之诚，且贻各藩部使臣讥笑，恐在朝引礼大臣亦不容也。</p>
 <p>可见“三跪九叩之礼”是被看得多么严重！事实上，这个礼节问题也是当时中国人心理模式（pattern）的重要表征，用这个问题来透视，我们可以得到举一反三的了解。</p>
@@ -788,7 +821,7 @@
 <p>自蔚丹入狱后，所著《革命军》风行海内外，销售逾百十万册，占清季革命群书销场第一位。各地书肆以避关邮检查故，多易名贩运，或称革命先锋，或称图存篇，或称救世真言，或与章太炎《驳康有为书》并列，而简称曰章邹合刻。此书文辞不如太炎之驳康书，论理不如秦力山之革命箴言，徒以通俗浅显，适合当时社会需要，几于人手一编，卒赖其言为驱胡建国之本，功不在孙、黄、章诸公下也。</p>
 <p>孙文在1906年（光绪三十二年）的一封信里，曾提到《革命军》的作用：</p>
 <p>海外各地日来亦多进步，托东京印《革命军》者有数处。兹将河内同志所印就者寄上一本，照此版式，每万本印费三百四十元，二千本印费九十元。前贵地同志巳集款欲印，未知款已收齐否？若已收齐，宜从速印之，分派各处，必能大动人心，他日必收好果。南洋各埠，现在风气初开，必要先觉之同志，多用工夫，竭力鼓吹，不避劳苦，从此日进，不久风气可以大开，则功者当有多人，而革命之事，容易进行矣(15)。</p>
-<p>从上面这些举例里，我们不难感到邹容的《革命军》，对革命的功劳之大，比起美国革命前夜的潘恩（ThomasPaine）的《常识》（CommonSense），真有过之而无不及了。</p>
+<p>从上面这些举例里，我们不难感到邹容的《革命军》，对革命的功劳之大，比起美国革命前夜的潘恩（Thomas Paine）的《常识》（Common Sense），真有过之而无不及了。</p>
 <p>“《苏报》案”</p>
 <p>章太炎《自订年谱》三十六岁条下回忆：</p>
 <p>威丹著书称《革命军》，属余为序。行严亦就《苏报》昌言革命。学社诸子又时会林下演说，远近和者浸众。适康有为腾书主君主立宪，力护清虏，余作书驳之。侵寻闻于清廷。清廷责两江总督魏光焘不觉察，甚厉。光焘遣候补道俞明震赴上海查办，余与威丹就逮，羁系租界。时五月上旬也。清廷求各国领事引渡，不许。愿以沪宁路权易之，亦不许。余驳康书虽无效，而清政府至遣律师代表，与吾辈对质，震动全国，革命党声气大盛矣。</p>
@@ -800,7 +833,7 @@
 <p>这下子把洋鬼子给吓坏了，洋鬼子没想到“礼仪之邦”的法律竟这样野蛮。照清政府的法律，要“凌迟处死”，就是一刀一刀剐死，幸亏统治者过生日，优待，改为“永远监禁”，就是无期徒刑，这样重的刑，洋鬼子是看不过去的，所以，洋鬼子只肯抓人，要办人、要审人、要关人，都行，可是都得由他们代办，拒绝引渡。</p>
 <p>于是，清政府只好请了外国律师，在洋鬼子的文明法律内施展天威，结果，只不过“载潲小丑”等构成了侮辱元首等罪名，而“清政府至遣律师代表，与吾辈对质，震动全国，革命党声气大盛矣”！</p>
 <p>铜像主人的反革命</p>
-<p>洋鬼子在上海租界里，有由各国洋人组成的一个掌权机构，叫ShanghaiMunicipalCouncil，是上海市议会的意思，中文却错译成“工部局”。清政府抓人的意思，转到工部局后，内情极有过门，蒋维乔回忆如下：</p>
+<p>洋鬼子在上海租界里，有由各国洋人组成的一个掌权机构，叫Shanghai Municipal Council，是上海市议会的意思，中文却错译成“工部局”。清政府抓人的意思，转到工部局后，内情极有过门，蒋维乔回忆如下：</p>
 <p>清政府严谕两江总督魏光焘有“爱国党在上海张园集众开会，昌言革命，该督形同聋瞆”等语。魏奉谕后，惶急无措。乃遵谕密电上海道拿办蔡元培、吴稚晖、章炳麟、邹容、陈梦坡、宗仰等六人。领袖领事巳签字，而工部局以保护政治犯为文明各国通例，不允执行，压搁多时。魏不得已，谋于南洋法律顾问担文（李敖按：英文是Drummond），用其计，乃以政府名义，控爱国党六人于上海会审公堂。闰五月初，复特派道员俞明震，来沪查办。</p>
 <p>此案既依法起诉，工部局自不得不办，出票拘人。事前，工部局屡传吴稚晖等六人去问话，表示保护，亦即示意令各人出走，并无严办之意。而俞明震之侄大纯，在日本与稚晖有旧，密约稚晖，往见明震。明震以拿办六人即行正法之公文示之。且曰：“此等举动，真是笑话。”并留吴吃面。恐吴怀疑，即举箸先食。食毕，谓吴宜速去。吴乃即日遁往法国。事后，章炳麟矢口断定，稚晖自诣明震处告密：且献革命军以求脱祸云云。稚晖至今，莫能自明也。蔡孑民之胞兄，闻此事，自绍兴赶至，促孑民离沪，孑民初无去意，其兄逼之，孑民无奈，以爱国女学校委于余。余允维持至暑假。孑民即悄然赴青岛，习德语，预备出国。宗仰避于哈同花园。梦坡亦遁至日本。独章炳麟不肯去。谓邹容曰：“吾巳被清廷查拿七次，今第八次矣，志在流血，焉用逃为。”且戒邹容亦勿去。闰五月初六日，西捕持拘票，至爱国学社，问谁是章炳麟，炳麟正危坐客室。自指曰：“我是也。”欣然随之去。邹容毕竟年少，心志不定，自后门遁去。炳麟至狱后，复驰书劝之。越日，自行投到。而搜查《苏报》馆时，梦坡之子泰生被拘去。同时办理国民议政会之龙积之，亦被拘。</p>
 <p>闰月十四日，第一次开审。原告为中国政府，代表者为魏光焘，所聘律师为英国人担文，被告为章炳麟等六人。而裁判官则为会审委员，英国领事。原被两造，不伦不类，至为可笑。所控罪状，则摘取《苏报》中之论说，及《革命军》《驳康有为论革命书》之语句，但须翻译英文。有我国视为大逆不道之文句，一经英译，反平淡无奇者，如《苏报》论说中有“革命之宣告，殆巳为全国之所公认，如铁案之不可移”。当时译者并不高明，此数语译成之英文，失却原意，乃为“我等之意，欲逐去满族，以表示中国国民之意”。指控《革命军》则重第一第二两章。指控《驳康有为论革命书》，重在中间排除满人之文字，内有“载湉小丑”一语，译者不得其意，译作“载湉小贼”。在中国观念，目皇帝为小丑，是大不敬；在英领事闻小贼之称，亦殊不以为怪(16)。</p>
@@ -902,8 +935,8 @@
 <p>谁忠谁奸</p>
 <p>——兼评曹汝霖《一生之回忆》的一些错误</p>
 <p>中国正史中，从宋朝欧阳修主编的《新唐书》开始，有所谓“奸臣”传，后来的正史，像《宋史》《辽史》《元史》《明史》，纷纷援例，于是忠奸之分，在历史上和观念上，也就愈发显明。正史以外，中国的小说戏剧，对忠奸的判决影响极大。尤其在戏剧里，为了帮助观众有“忠奸立判”的效果，“红脸”和“粉白脸”，也就应运而生。忠肝义胆的自然是勾红脸，如关公；权奸误国的自然是勾粉白脸，如曹操，这种“二分法”的利落，实在给了观众不少方便，于施展爱憎之间，少掉了不少麻烦。</p>
-<p>不过，在一个人阅历较多一点以后，他有时难免会发现，人间许多对立的问题（如是非、正邪、善恶、好坏等等），并不都是很草率就能断定的。同时对立的情况，往往并不如想象中那样明显，对立的双方可能有混同的成分、相似的成分，甚至还有完全相反的尴尬场面发生，就以上面举的正史为例，一个阅历较多的人，翻开了《宋史》一读，就不难发现，“奸臣”传中被戴上奸臣帽子的，有的根本不算奸臣（像赵嗣）！而该戴奸臣帽子的（像史弥远），却又逍遥于“奸臣”传之外！这种错误，岂不教人很苦恼吗？这种苦恼，在正史以外，同样可从小说中找到例子，看过克莱因（AlexanderKlein）名作《伪叛国者》（TheCounterfeitTraitor）的人，我想都会油然而生“忠未易明，奸未易察”的感觉。这些例子，都说明一项事实，就是阅历可以使我们练习对忠奸等真相，慢慢采取审慎一点的检证。换句话说，我们不能因为怕麻烦就擅用“二分法”来定人功罪，我们也不能随便采用“这是好人”“那是坏人”的小学生式思想方法。</p>
-<p>在忠奸问题底下，古往今来，不知有多少人盗得大名，也不知有多少人横被恶名了。如法国的“德赖弗斯事件”（TheDreyfusAffair），德赖弗斯于1894年被诬卖国，被判无期徒刑，幸赖文豪左拉等写《我控诉》（J'accuse）等文为他洗刷，于1906年才得免罪，然而直到1930年“斯威兹可本文件”（Schwartzkoppen'spapers）公布，德赖弗斯的清白才完全澄清，可是时间已在沉冤三十六年之后；又如中国宋朝的“岳飞事件”，男主角却没有这位法国将军的好运气，岳飞生前不但冤死狱中，死后拖了七十年，才算“还我清白”完毕。岳飞的孙子岳珂在《吁天辩诬通叙》里，曾有一段话说：</p>
+<p>不过，在一个人阅历较多一点以后，他有时难免会发现，人间许多对立的问题（如是非、正邪、善恶、好坏等等），并不都是很草率就能断定的。同时对立的情况，往往并不如想象中那样明显，对立的双方可能有混同的成分、相似的成分，甚至还有完全相反的尴尬场面发生，就以上面举的正史为例，一个阅历较多的人，翻开了《宋史》一读，就不难发现，“奸臣”传中被戴上奸臣帽子的，有的根本不算奸臣（像赵嗣）！而该戴奸臣帽子的（像史弥远），却又逍遥于“奸臣”传之外！这种错误，岂不教人很苦恼吗？这种苦恼，在正史以外，同样可从小说中找到例子，看过克莱因（Alexander Klein）名作《伪叛国者》（The Counterfeit Traitor）的人，我想都会油然而生“忠未易明，奸未易察”的感觉。这些例子，都说明一项事实，就是阅历可以使我们练习对忠奸等真相，慢慢采取审慎一点的检证。换句话说，我们不能因为怕麻烦就擅用“二分法”来定人功罪，我们也不能随便采用“这是好人”“那是坏人”的小学生式思想方法。</p>
+<p>在忠奸问题底下，古往今来，不知有多少人盗得大名，也不知有多少人横被恶名了。如法国的“德赖弗斯事件”（The Dreyfus Affair），德赖弗斯于1894年被诬卖国，被判无期徒刑，幸赖文豪左拉等写《我控诉》（J’ accuse）等文为他洗刷，于1906年才得免罪，然而直到1930年“斯威兹可本文件”（Schwartzkoppen’s papers）公布，德赖弗斯的清白才完全澄清，可是时间已在沉冤三十六年之后；又如中国宋朝的“岳飞事件”，男主角却没有这位法国将军的好运气，岳飞生前不但冤死狱中，死后拖了七十年，才算“还我清白”完毕。岳飞的孙子岳珂在《吁天辩诬通叙》里，曾有一段话说：</p>
 <p>独以先臣受暧昧不根之谤，于今几七十载，虽忠义之心昭昭乎天下，而山林之史疑以传疑。或者犹有以议先臣之未尽，臣窃痛焉！</p>
 <p>岳珂本人虽然并非善类，但他在为他祖父辩诬一点上，却做得很卖力，同时他也没装作一个假左拉，学《我控诉》姿态，为洗刷岳家人物而攀诬别人。岳珂另一段话说得很动人：</p>
 <p>臣闻天下之不可泯没者，唯其理之正也！藏于人心，散于事情，虽或晦而未彰、抑而未扬，然是理之在人心，自有隐然而不可诬者。是故伸屈有时而不同，荣辱既久而自判。昔日之辱，未必不为今日之荣；今日之屈，未必不基后日之伸也。</p>
@@ -1096,17 +1129,17 @@
 <p>十四、《中国近代史大纲》——重刊《中国近代史大纲》前有小序，写于1959年6月1日。</p>
 <p>以上十四大项，已全部囊括了蒋廷黻这一方面的主要著作。至于文星书店、传记文学出版社及其他翻印商有《蒋廷黻选集》的出版，本书并不跟它冲突：一来本书为专辑中国近代史论部分；二来本书所收，为《近代中国外交史资料辑要》上中卷之各章节引论、《中国近代史大纲》等，都为《蒋廷黻选集》所无；三来本书编排次序上，都重加订正，而《蒋廷黻选集》中的次序，却偶有误差之处。</p>
 <p>1970年4月25日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/09.历史文化类/中国近代史新论.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/09.历史文化类/中国近代史新论.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../09.历史文化类/中国艺术新研.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../09.历史文化类/中国迷信新研.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -1116,16 +1149,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../09.历史文化类/中国艺术新研.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../09.历史文化类/中国迷信新研.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -1134,12 +1172,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

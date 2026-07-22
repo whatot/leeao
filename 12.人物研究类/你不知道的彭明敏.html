@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,77 +81,98 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <p>#《你不知道的彭明敏》目录</p>
 <ul>
@@ -185,7 +218,7 @@
 <p>包括反对台独的李敖</p>
 <p>明明《中国时报》当天的原文有这九字真言，却在《彭明敏看台湾》书中给删掉了，这是什么意思呢？事实上，“1992年10月14日”的《中国时报》原文，最早刊出在前一年——1991年11月的海外版《时报周刊》上，标题“在流氓的旅途中悬念着台湾”，分两期刊出，原文也有“包括反对台独的李敖”九个字无误，为什么1991年流亡时的原文，却在三年后1994年回归后偷偷删掉了呢？这一不光明的举动，的确引起我的好奇。</p>
 <p>彭先生以粗糙谎言来圆谎</p>
-<p>一次偶然的机会，远景出版社沈登恩要出一本政治犯的书，请彭先生写序，他告诉了我。我顺便请他侧面了解一下删掉这九个字的原因。沈登恩很客气的问到了彭先生。彭先生想了一下，拿出一本《彭明敏回航报导辑》的剪报印本给他，指出其中第五十八页收有“1992年10月14日”的《中国时报》的剪报，彭先生说该页第三栏第二十行与第二十一行间，正好剪漏了李敖的名字，以致造成误会。3月9日，沈登恩带回《彭明敏回航报导辑》给我看，并代彭先生解释。我是何等精细的人，看了以后，反问沈登恩，请你看该书同页最后一行，明明有“台独的李敖，这说明我绝不是一个狭隘的省籍主义者”一行出现，可见这行正好跟第二十行尾段“也有外省籍的好友，包括反对”上下衔接，可见《彭明敏回航报导辑》虽然在第二十一行起漏贴，但随即在最后一行补出了，仍旧出现了李敖的名字，这证明了编剪报的人并未有意删除李敖的名字，而是彭先生自己编《彭明敏看台湾》一书时，才暗中动了手脚。彭先生托言剪报者之误，现在查出剪报者只是贴报时跳了行，原文并没删掉，而彭先生自己编的书却给删掉了，这是什么意思呢？如果根据剪报漏贴而排版，则应连同一行的下文——“这说明我绝不是一个狭隘的省籍主义者”一起都排不出来，为什么不多不少，只删去上一行的“包括反对”四个字和下一行“台独的李敖”五个字呢？由此可见，彭先生用这本《彭明敏回航报导辑》来澄清，其实愈澄愈不清，反倒反证了他自己编《彭明敏看台湾》的心劳计拙。《彭明敏看台湾》的底本根本根据的不是《彭明敏回航报导辑》，而是原本的《中国时报》，他偷偷删掉九字真言，再用《彭明敏回航报导辑》来蒙混沈登恩转而蒙混李敖，实在是一种又不光明又怯懦的行为——他不敢承认他干了对不起李敖的事，却又以粗糙的谎话来圆谎，未免太小看李敖的精细了。19至20世纪的英国小说家巴特勒（SamuelButler）说，他不在乎人家对他说谎话，但他恨粗制滥造的谎话（Idonotmindlying,butIhateinaccuracy）。彭先生想以粗糙的谎话来骗跟他共患难、为他坐牢的老朋友，这种作风未免令人心寒，也跟他那温柔敦厚的君子形象太不相称了。</p>
+<p>一次偶然的机会，远景出版社沈登恩要出一本政治犯的书，请彭先生写序，他告诉了我。我顺便请他侧面了解一下删掉这九个字的原因。沈登恩很客气的问到了彭先生。彭先生想了一下，拿出一本《彭明敏回航报导辑》的剪报印本给他，指出其中第五十八页收有“1992年10月14日”的《中国时报》的剪报，彭先生说该页第三栏第二十行与第二十一行间，正好剪漏了李敖的名字，以致造成误会。3月9日，沈登恩带回《彭明敏回航报导辑》给我看，并代彭先生解释。我是何等精细的人，看了以后，反问沈登恩，请你看该书同页最后一行，明明有“台独的李敖，这说明我绝不是一个狭隘的省籍主义者”一行出现，可见这行正好跟第二十行尾段“也有外省籍的好友，包括反对”上下衔接，可见《彭明敏回航报导辑》虽然在第二十一行起漏贴，但随即在最后一行补出了，仍旧出现了李敖的名字，这证明了编剪报的人并未有意删除李敖的名字，而是彭先生自己编《彭明敏看台湾》一书时，才暗中动了手脚。彭先生托言剪报者之误，现在查出剪报者只是贴报时跳了行，原文并没删掉，而彭先生自己编的书却给删掉了，这是什么意思呢？如果根据剪报漏贴而排版，则应连同一行的下文——“这说明我绝不是一个狭隘的省籍主义者”一起都排不出来，为什么不多不少，只删去上一行的“包括反对”四个字和下一行“台独的李敖”五个字呢？由此可见，彭先生用这本《彭明敏回航报导辑》来澄清，其实愈澄愈不清，反倒反证了他自己编《彭明敏看台湾》的心劳计拙。《彭明敏看台湾》的底本根本根据的不是《彭明敏回航报导辑》，而是原本的《中国时报》，他偷偷删掉九字真言，再用《彭明敏回航报导辑》来蒙混沈登恩转而蒙混李敖，实在是一种又不光明又怯懦的行为——他不敢承认他干了对不起李敖的事，却又以粗糙的谎话来圆谎，未免太小看李敖的精细了。19至20世纪的英国小说家巴特勒（Samuel Butler）说，他不在乎人家对他说谎话，但他恨粗制滥造的谎话（I do not mind lying, but I hate inaccuracy）。彭先生想以粗糙的谎话来骗跟他共患难、为他坐牢的老朋友，这种作风未免令人心寒，也跟他那温柔敦厚的君子形象太不相称了。</p>
 <p>值得特别一提的是沈登恩的态度。沈登恩是倾向“台独”的台湾人，他佩服彭先生，兴冲冲拿来《彭明敏回航报导辑》，想代彭先生澄清误会，经我查证结果，证明绝非误会而是彭先生居心不良以后，他动摇了，也不想再谈这件事了。前几天他请我吃饭，饭后说：“我本来宁愿相信是你李先生错了，彭先生实在无心之误。但当我日前在书店看到《彭明敏看台湾》已印到第五版，竟然还不肯把删掉的李敖名字恢复，补进去，以谋挽救，我真对彭先生失望了，我再也无法替他辩解了，他真的错了。”</p>
 <p>谢聪敏魏廷朝笔下的李敖</p>
 <p>彭先生为什么要在新书里，在“外省籍的好友”一句下，删掉“包括反对台独的李敖”呢？我的看法有二：第一、彭先生是越王勾践型的寡情人物，是“可与同患，难与处安”（可以共患难，不可以共安乐）的人，在“台湾人出头天”的时代到来以后，李敖的利用价值已近于零，所以对李敖要敬而远之；第二、由于李敖有一定的影响力，又反对“台独”，而他们当年又诬陷李敖是“台独”，使李敖家破人散、冤狱缠身、饱受刑求、坐牢多年，他们对李敖的定位、跟李敖的关系变得十分复杂，造成他们内疚和不便，因此便愿渐行渐远，力谋“脱身”，以策安全。不过，李敖待朋友虽然宽厚，却非易与之辈，你对他过分不起，他极为难缠。而彭先生、魏廷朝、谢聪敏三位，“脱身”之道，随其智愚，各有不同。谢聪敏最识大体，他在牢里诬攀李敖是“台独”，为人卑鄙，但出狱后，在彭明敏等“台独分子”恩将仇报，在海外发行攻击李敖杂志之际，曾挺身而出，写文点破：“就李敖和台湾人的关系来说，我认为台湾人欠他的比他欠台湾人的更多。”这是谢聪敏的公道处，他在诚惶诚恐中，仍不忘仗义执言；至于魏廷朝，他和我私交极深，我不在家的时候，他可以替我看家，可见我对他的信任。以他跟我的深交，在牢里诬攀我是台独，我想他内疚最深。他出狱后只和叶菊兰、谢聪敏来看过我一次，从此形同隔世。1986年7月，在康宁祥的杂志刊出“台湾历史家”李筱峰假托魏廷朝之言做出攻击李敖的造谣文字后，魏廷朝曾写信驳斥。他说：“假托我的话，来攻击李敖，实在毫无道理。”他又说：“攻击李敖，应该攻其所短，岂能攻其所长？说他专门打小报告，陷害朋友，可以说适得其反；既不合事实，尤其不是魏廷朝口中所言。李敖是最可靠的朋友（也是最难缠的敌人），在困难的环境中，经常接济难友，有许多受过他的恩惠的人，在十几年后始终对他怀念不已，这恐怕是他自己当初所料想不到的。他对看不顺眼的人和事，反应过分强烈，往往马上使小性子用剌骨的言词、伤人的冷漠、明显的动作，当面让人难堪；但他不会放暗箭。”——这是魏廷朝的公道处，他在渐行渐远中，仍勉为临去秋波之言。</p>
@@ -291,7 +324,7 @@
 <p>“国际特赦协会”派人来台</p>
 <p>彭先生1970年1月偷渡后，消息传来，国民党立刻把我软禁，由专车一辆、专人若干，对我紧迫盯人起来。这一紧迫盯人，先由警察单位派人、后由警总单位接力，前后“跟监”（跟踪监视）了我十四个月，直到我在1971年3月19日被捕为止。</p>
 <p>在我被捕以后，国民党对我疲劳审问、严刑拷打，一一追问我过去多年所做“害”国民党的事，尤其是“跟监”我的十四个月中，我竟神通广大，在被“跟监”中做的许多“害”他们的事，例如援救柏杨事件、泰源监狱名单事件、接雷震出狱事件、窃听器偷运事件，乃至八竿子打不着的美国商业银行爆炸事件等等，不一而足。这些事件有的他们不便上判决书，所以在判决书上，我的“犯罪事实”是以偏概全了的，是以协助彭明敏并帮他偸渡为主轴的，我初判十年，形式上罪名不过两类耳：一类是知彭明敏叛乱而不检举且加协助；一类是将泰源监狱名单外泄。当时办案人员明告我：你李敖知“台独”分子而不报，且加以协助，是典型的“台独同路人”；你李敖把“国防部”泰源监狱政治犯名单交给外国人，且加以公布，是典型的“妨害军机罪”。我们要一并用“惩治叛乱条例”办你！所以，在判决书上，我被判的“主文”是“预备以非法之方法颠覆政府”。</p>
-<p>泰源监狱名单的得以外泄，得力于一个人的帮忙，这人就是“国际特赦协会"（AMNESTYINTERNATIONAL)秘书长马丁恩纳尔斯（MartinEnnals）。在我被“跟监”的日子里，马丁恩纳尔斯到了台湾。魏廷朝、谢聪敏到我家，约我一起去看马丁。我说我李敖架子很大，对洋鬼子尤其大，马丁如果真来帮助我们，就请他到我家来看我吧，我不会去看他的。听了我的话，他们都认为有理，就转告马丁。马丁倒有服善之勇，他同意到我寒来，登门拜访，“行客拜坐客”。于是，就约定一天晚上来。当时我虽处境自顾不暇，却很想托马丁为在牢中的柏杨想点办法，为了加深马丁的印象，我请小情人小蕾给柏杨太太艾玫打公用电话（我家的怕窃听），问她愿不愿意跟马丁见见面。电话中艾玫说她愿意来，可是到时候，她爽约了。为什么爽约，我至今还不清楚。</p>
+<p>泰源监狱名单的得以外泄，得力于一个人的帮忙，这人就是“国际特赦协会“（AMNESTYINTERNATIONAL)秘书长马丁恩纳尔斯（MartinEnnals）。在我被“跟监”的日子里，马丁恩纳尔斯到了台湾。魏廷朝、谢聪敏到我家，约我一起去看马丁。我说我李敖架子很大，对洋鬼子尤其大，马丁如果真来帮助我们，就请他到我家来看我吧，我不会去看他的。听了我的话，他们都认为有理，就转告马丁。马丁倒有服善之勇，他同意到我寒来，登门拜访，“行客拜坐客”。于是，就约定一天晚上来。当时我虽处境自顾不暇，却很想托马丁为在牢中的柏杨想点办法，为了加深马丁的印象，我请小情人小蕾给柏杨太太艾玫打公用电话（我家的怕窃听），问她愿不愿意跟马丁见见面。电话中艾玫说她愿意来，可是到时候，她爽约了。为什么爽约，我至今还不清楚。</p>
 <p>马丁到台湾，国民党对他又恨又怕，于是派三个人跟踪他。那时跟踪我的是三个人，跟踪魏廷朝、谢聪敏的各两个人。马丁他们上楼后，大家自四楼窗前朝下望，只见下面各路跟踪人马大集合，有趣之至！我指给他们说：“你们看，我家对门变成警察局了！”大家俯视一笑，深感国民党治安良好，真名不虚传。</p>
 <p>就在这次“行客拜坐客”里，我把一些被“跟监”的照片和泰源监狱名单，交给了马丁。我没交代他怎么处理，他也没说怎么处理，一切都好像心照不宣似的。但据我的本意，当然是交由国际人权团体传布到联合国人权委员会，给王八蛋国民党好看。因为马丁的身份，正是干这行的，并且，根据我被捕后，“国际特赦协会”向全世界发布了一张举了世界三个有名的良心犯的宣传单，李敖名列其一，这可算是我接见马丁的唯一“后福”，除此之外，这个会反倒害了我，在牢里吃了更多的苦头。</p>
 <p>名单竟落到彭先生手里！</p>
@@ -354,7 +387,7 @@
 <p>彭先生深知“台独”分子的卑鄙</p>
 <p>从彭先生纽约记者会看，仿佛他宣示“四十年来，为台湾民主努力付出代价的许多人士如李敖”等未曾“平反、复权”，他就不回来，事实上，彭先生迟迟其行是在等对他有利的机会，他深知不回来就绝无机会。1991年4月29日，他写信给我，说“知心之间，无所不谈，毫无忌惮”，谈出“台独”分子在美国的真正内幕。他写道：</p>
 <p>在美国搞“台湾政治”者（在美国或其他外国，怎能搞“台湾政治”，荒唐之至），煞有介事，其实都是拼命从事你所说的“意淫”而已（而且都是不能达到Orgasms）。有的在美搞得声名狼藉，混不下去，便逃回台湾，自称“侨领”或“教授”（在台者不知所谓教授实是在美学界无人看得起的市立野鸡专科学校厮混误人子弟者），在台自立山头，自任“民主运动健将”，继续以似是而非的浅薄言论敛财骗人。在美国搞“中国”或“台湾”政治者，基本上都是conmen，利用或abuse侨民“爱乡心”之切，自我膨胀，诈财骗人而已。令人感慨者，古今东西，地球上似乎充满着无数suckers（包括所谓知识分子），那些conmen骗之不尽，吃了一批以后，马上又有一批自投罗网。海外这些conmen之奇形怪状丑相变态很想为文分析之。</p>
-<p>可见私底下，在“知心之间，无所不谈，毫无忌惮”的情况下，真的彭明敏是深知“台独”分子的卑鄙的。我的一贯立场是主张真正第一流知识分子影响政治而不涉足政治，我期望的彭先生和我一样洁身自爱却战斗不衰。彭先生自然知道。他在1991年5月18日写信给我，说：“你言中了，在目前情况下，我实在无法考虑回去（而且回去也想不出要做什么，你想我应该回去做什么？难道开餐馆、咖啡厅？）。台湾情势似在恶化，怪事丑闻频频，令人深忧，有时忍不住想为文评论之。”1991年8月12日写信给我，说：“通缉撤销，反而各种压力接踵而来，不堪困扰。你已经看出，不少人在打我的主意，又如你所说，报上看到台湾政客、政治那个样子，实在恶心之至。有时很想脱俗入山，不问世事了。”……从这些知心话里，可以看到彭先生的另一面——努力去作为独来独往的伟大知识分子的一面。而这一面，举世除了向李敖“输诚”，也别无其人够资格。彭先生此时不但一再写信来说知心话，还特请IreneLee从美国带来照片给我。IreneLee留言给我说：“彭先生（明敏）嘱我带给您一帧我所拍摄的黑白近照，他说：‘平生君子之交得李敖，足矣。’”可见彭先生和他眼中李敖的交情。</p>
+<p>可见私底下，在“知心之间，无所不谈，毫无忌惮”的情况下，真的彭明敏是深知“台独”分子的卑鄙的。我的一贯立场是主张真正第一流知识分子影响政治而不涉足政治，我期望的彭先生和我一样洁身自爱却战斗不衰。彭先生自然知道。他在1991年5月18日写信给我，说：“你言中了，在目前情况下，我实在无法考虑回去（而且回去也想不出要做什么，你想我应该回去做什么？难道开餐馆、咖啡厅？）。台湾情势似在恶化，怪事丑闻频频，令人深忧，有时忍不住想为文评论之。”1991年8月12日写信给我，说：“通缉撤销，反而各种压力接踵而来，不堪困扰。你已经看出，不少人在打我的主意，又如你所说，报上看到台湾政客、政治那个样子，实在恶心之至。有时很想脱俗入山，不问世事了。”……从这些知心话里，可以看到彭先生的另一面——努力去作为独来独往的伟大知识分子的一面。而这一面，举世除了向李敖“输诚”，也别无其人够资格。彭先生此时不但一再写信来说知心话，还特请Irene Lee从美国带来照片给我。Irene Lee留言给我说：“彭先生（明敏）嘱我带给您一帧我所拍摄的黑白近照，他说：‘平生君子之交得李敖，足矣。’”可见彭先生和他眼中李敖的交情。</p>
 <p>“平生君子之交得李敖，足矣。”</p>
 <p>不过，正如我预料的，彭先生“脱俗入山，不问世事”是说说而已，他毕竟忍不住要回来了。1992年9月18日，我有长信给他。10月21日，彭先生写出在美也可能是此生写给我的最后一封信，他说：</p>
 <p>刚由日本回来，接到你的快信。很感谢你的关切。你所说的话，会铭记在心。确有人为了我的“晚节”而担心。但那是杞忧。多年在外流亡、折磨、锻炼，难道到此时还会出卖灵魂，“失身、失节”么？简直无法想象的。</p>
@@ -378,7 +411,7 @@
 <p>信发出后，彭先生、魏廷朝全无回音，理都不理；谢聪敏来电话，大意说老彭说政治是要夺权的，你李敖谈那么多是非干嘛。我说知识分子不谈是非只搞权力，是你们最大的堕落，我真为大家悲哀。</p>
 <p>这封信写了我最后的劝告——三十年后最后的劝告，我知道彭先生是执迷不悟了。他永远不再是三十年前还有灵光、清气与理想的“脱俗”彭先生了。</p>
 <p>“应予适当教训”</p>
-<p>彭先生1989年4月21日秘密写信给我，大骂他的学生蔡同荣说：“蔡此人实际乱来，应予适当教训。”当然，彭先生口中的“教训”不是“情报局”局长对江南式的，只是口诛笔伐而已。当谢聪敏感到事情不妙，李敖要把因厚道和隐忍了三十多年的事写出来要“适当教训”的时候，遂有7月5日彭先生要同我吃饭之举。可是，一切都太迟了，我拒绝了筷子，拿起了笔杆。想当年美国南北战争时，南方总司令李将军（Gen.RobertLee）手下有位大将杰克逊（StonewallJackson），受了重伤，失去左臂。当他受伤时，李将军曾写封信给他，说道：“你的情况比我还好些，你失掉了你的左臂，我却丢掉了我的右臂。”（“YouarebetteroffthanIam，forwhileyouhavelostleft,Ihavelostmyrightarm.”）杰克逊收到这封信六天以后，便死了。彭先生当年失去了左臂，他偷渡消息传来，我顿起李将军之情。遗憾的是，二十四年后，我终于自愿有断臂之举。这是李将军浮生多变了呢？还是杰克逊老而不死了呢？多么难答的答案啊！答案难答，可是将军令下，我决定不再留一手。</p>
+<p>彭先生1989年4月21日秘密写信给我，大骂他的学生蔡同荣说：“蔡此人实际乱来，应予适当教训。”当然，彭先生口中的“教训”不是“情报局”局长对江南式的，只是口诛笔伐而已。当谢聪敏感到事情不妙，李敖要把因厚道和隐忍了三十多年的事写出来要“适当教训”的时候，遂有7月5日彭先生要同我吃饭之举。可是，一切都太迟了，我拒绝了筷子，拿起了笔杆。想当年美国南北战争时，南方总司令李将军（Gen. Robert Lee）手下有位大将杰克逊（Stonewall Jackson），受了重伤，失去左臂。当他受伤时，李将军曾写封信给他，说道：“你的情况比我还好些，你失掉了你的左臂，我却丢掉了我的右臂。”（“You are better off than I am，for while you have lost left, I have lost my right arm.”）杰克逊收到这封信六天以后，便死了。彭先生当年失去了左臂，他偷渡消息传来，我顿起李将军之情。遗憾的是，二十四年后，我终于自愿有断臂之举。这是李将军浮生多变了呢？还是杰克逊老而不死了呢？多么难答的答案啊！答案难答，可是将军令下，我决定不再留一手。</p>
 <p>事实倶在，我与彭先生的破裂，过在彭先生，爆发点是彭先生在书中捏删《中国时报》卜大中及杨宪村的专访文字（昨天杨宪村电话来，还为此事觉得不可思议。彭先生做得太不光明了）。离奇的是，二三十年来，不该有李敖这名字出现时，彭先生不仁不义，在印刷品（台独机关刊物《台湾青年》）中把李敖栽诬列入；另一方面，在该有李敖这名字出现时，彭先生又不仁不义，在印刷品（《彭明敏看台湾》）中把李敖“开脱”出局。今日的出局和当年的列入，都象征彭先生对真相的变造、对历史的窜改、对友情的凉薄，和对伟大台湾人民忠厚品格的亵渎与出卖。</p>
 <p>相对的，也许有人奇怪，以快意恩仇为人生观的李敖，为何却能忠厚隐忍彭先生这么多年对他的不仁不义。原因有二：第一、我痛恨国民党，彭先生有志气不加入国民党，我认为这是很难得的。格于“岛国”局面，台湾人本来像样的、成材的就不多，我一直珍惜这样的台湾人朋友，我希望他变成台湾的胡适，做最有志气、最有学问、最有高度教养的伟大知识分子。第二、大家只看到我穷凶极恶一面，却忘了我豁达大度一面，政治上，我被“台独”分子诬陷，我不介意。另一方面我又极重感情，老同学刘显叔的太太陈烈看到此文在《商业周刊》前几期的连载，笑着点破：“我现在才知道你李敖的弱点了，原来你是温情主义者！”——我的温情，使我对患难之交有了隐忍。</p>
 <p>如今，在彭先生非但不能做“台湾的胡适”，在思想上为台湾人清醒带路的时候、在彭先生没有“历史观”“热衷追逐权利”的时候，（彭先生曾说：“公共人物年过了六十，应该有历史观，要开始去思考自己在历史的地位，或者将来的墓碑怎么写，不要太热衷追逐权利。”）我想我写出真相的时机已经到来。</p>
@@ -397,16 +430,16 @@
 <p>明敏老师：</p>
 <p>你的《狱床索思之一》——《“全体主义”的迷惘》原稿，我细看过。我应命表示意见如下：</p>
 <p>1.“狱床索思”似乎改写“狱床思索”较好。</p>
-<p>2.officialideology你译“公定的‘理论’或‘主义’”，ideology—词，中文的“理论”“主义”似乎不足以尽之。周德伟译为“意理”（这是从《三国志》中来的），有人译为“意的牢结”（音译）或“意识形态”……但都不能使人满意。我认为还是以“意识形态”稍好。</p>
+<p>2.official ideology你译“公定的‘理论’或‘主义’”，ideology—词，中文的“理论”“主义”似乎不足以尽之。周德伟译为“意理”（这是从《三国志》中来的），有人译为“意的牢结”（音译）或“意识形态”……但都不能使人满意。我认为还是以“意识形态”稍好。</p>
 <p>3.“这种公定的理论或主义，又必为国家或人类的未来，绘出一幅美丽的远景，将目前社会指摘为腐败堕落，将这公定的理论或主义，宣称为救世济人的不二圣典，强迫国民相信只有接受并履行它，才能实现理想的新社会。”——我的意思在这一段下面，加上三十六个字：“强迫的方法如‘牺牲这一代，为了下一代！’如‘牺牲个人自由，为了国家自由！’等等动听的法宝。”</p>
 <p>4.“党首”似仍用“党魁”较为通俗。</p>
 <p>5.“党的宣传机关必把党首绘成‘超人’（super-human)，尽量把他‘神圣化’（deification)，在他周围制造出神秘不可侵的气氛，不是要使人民爱戴他而是要使人民畏惧他。”——这段最后“不是要使人民爱戴他”一句，最好不用肯定语气。因为独裁者和他的文警武警们，有的也曾真的妄想或深信人民有“爱戴”的可能或成分，所以也常常有“笑脸”“吊丧”“施恩”“德意”等等出现。一些“奴性过多”的人民，也多少会发生“盲目爱戴”的情形。</p>
 <p>6.“墨索利尼”似仍用“墨索里尼”较为通俗。</p>
 <p>7.Bureaucracy通常译为“官僚政治”，这种译法稍有语病，因为中国人对“官僚”一词有过度感情成分，我认为译成“机关政治”还比较好一点。</p>
-<p>8.“教理"（dogma）是否还是译为“教条”好一点？</p>
-<p>9.Totalitarianism之完全成功，在“统制技术”的高度进步下，并非绝不可能。GeorgeOrwell的NineteenEighty-Four，至少描绘出“个人”无法击溃“集体”的状态。自由人必须刻意努力，方能阻止“1984”的来临。一般说法太偏重在“独裁必败”等预言，而不知“独裁之败”，“必”自由人努力以赴，才能得到，否则真可能“万劫不复”矣！尊文最后，似宜就此点多加论列一下（若做比喻或举例用，GoreVidal的小说Messiah，在某些方面，更可补助GeorgeOrwell的书）。</p>
-<p>10.参考书方面，WilliamEbenstein的Today’sIsms、EricHoffer的TheTrueBeliever等等，较为通俗，似可酌予列举。</p>
-<p>以上十条，是我对你这篇一万字长文的读后“条陈”，草草上言，不成意思，只是聊报尊命，表示对这篇功力甚深的文字的敬意而已。中国人政治意识太低太低，实在需要这类的文字，来指示涂辙、来普渡迷津。我辈文人，只是集体主义者的俎上肉，生逢乱世，盼能于苟活之外，多做些理论建树，少做（或不做）manofaction。凡是涉身中国实际政治，我的成见是：“善恶皆不可为！”因为在普遍的观点上，不论你的“敌人”或你的“友人”，他们的政治意识都在水准以下，他们都不脱盲动蛮来的味道，结果总是为他们所害所浼，使吾人之素志更不得伸，这又何苦来？</p>
+<p>8.“教理“（dogma）是否还是译为“教条”好一点？</p>
+<p>9.Totalitarianism之完全成功，在“统制技术”的高度进步下，并非绝不可能。George Orwell的Nineteen Eighty-Four，至少描绘出“个人”无法击溃“集体”的状态。自由人必须刻意努力，方能阻止“1984”的来临。一般说法太偏重在“独裁必败”等预言，而不知“独裁之败”，“必”自由人努力以赴，才能得到，否则真可能“万劫不复”矣！尊文最后，似宜就此点多加论列一下（若做比喻或举例用，Gore Vidal的小说Messiah，在某些方面，更可补助George Orwell的书）。</p>
+<p>10.参考书方面，William Ebenstein的Today’s Isms、Eric Hoffer的The True Believer等等，较为通俗，似可酌予列举。</p>
+<p>以上十条，是我对你这篇一万字长文的读后“条陈”，草草上言，不成意思，只是聊报尊命，表示对这篇功力甚深的文字的敬意而已。中国人政治意识太低太低，实在需要这类的文字，来指示涂辙、来普渡迷津。我辈文人，只是集体主义者的俎上肉，生逢乱世，盼能于苟活之外，多做些理论建树，少做（或不做）man of action。凡是涉身中国实际政治，我的成见是：“善恶皆不可为！”因为在普遍的观点上，不论你的“敌人”或你的“友人”，他们的政治意识都在水准以下，他们都不脱盲动蛮来的味道，结果总是为他们所害所浼，使吾人之素志更不得伸，这又何苦来？</p>
 <p>昨天看到你在房子旁边监工，真羡慕你有“弃政教而从商”的“福气”。我真盼望我能在两三年内多赚些钱，然后搬到乡下山上去“隐居”起来，这是清朝诗人“草间偷活”的干法。这种干法，正是晋朝诗人所描写的——</p>
 <p>何世无奇才，</p>
 <p>遗之在草泽！</p>
@@ -415,19 +448,19 @@
 <p>二</p>
 <p>明敏老师：</p>
 <p>中午睡醒，重看尊稿《“全体主义”的迷惘》，又有两点意思，作为对昨天的信的补充：</p>
-<p>1.稿中可加注“全体主义”的英名Totalitarianism。S.Andreski在ADictionaryoftheSocialSciences（EditedbyJuliusGould,WilliamL.Kolb）为它所下的定义颇完善，或可酌译，作为一个脚注。</p>
-<p>2.引StephenDecatur语中，Ourcountry,rightorwrong之前，似可加删节号，或把前段（Ourcountry!Inherintercoursewithforeignnationsmayshealwaysbeintheright,but…）引出，则意义更为周详。StephenDecatur这话说于19世纪的1816年。在他前一世纪，CharlesChurchill、WilliamCowper等，都先说过类似的极端国家主义的话（CharlesChurchill说BeEnglandwhatshewill,/withallherfaultssheismycountrystill；WilliamCowper说England，withallthyfaultsIlovetheestill,/Mycountry!），有了这些狂热的，才出现后来“反动”的进步之论。如StephenDecatur这段ToastataDinner后三十一年（1847），JohnQuincyAdams就改口说：</p>
-<p>Andsaynotthou“Mycountryrightorwrong”，</p>
-<p>Norshedthybloodforanunhallowedcause.</p>
+<p>1.稿中可加注“全体主义”的英名Totalitarianism。S. Andreski在A Dictionary of the Social Sciences（Edited by Julius Gould, William L. Kolb）为它所下的定义颇完善，或可酌译，作为一个脚注。</p>
+<p>2.引Stephen Decatur语中，Our country, right or wrong之前，似可加删节号，或把前段（Our country! In her intercourse with foreign nations may she always be in the right,but…）引出，则意义更为周详。Stephen Decatur这话说于19世纪的1816年。在他前一世纪，Charles Churchill、William Cowper等，都先说过类似的极端国家主义的话（Charles Churchill说Be England what she will,/with all her faults she is my country still；William Cowper说England，with all thy faults I love thee still,/My country!），有了这些狂热的，才出现后来“反动”的进步之论。如Stephen Decatur这段Toast at a Dinner后三十一年（1847），John Quincy Adams就改口说：</p>
+<p>And say not thou“My country right or wrong”，</p>
+<p>Nor shed thy blood for an unhallowed cause.</p>
 <p>又过了二十五年（1872），CarlSchurz在演说时也宣称：</p>
-<p>Ourcountry,rightorwrong.Whenright,tobekeptright；</p>
-<p>Whenwrong,tobeputright.</p>
-<p>又过了二十九年（1901），在G.K.Chesterton的笔下，更有了抽象的修正：</p>
-<p>“Mycountry,rightorwrong”islikesaying,</p>
-<p>“Mymother,drunkorsober.”</p>
+<p>Our country, right or wrong. When right, to be kept right；</p>
+<p>When wrong, to be put right.</p>
+<p>又过了二十九年（1901），在G. K. Chesterton的笔下，更有了抽象的修正：</p>
+<p>“My country, right or wrong”is like saying,</p>
+<p>“My mother, drunk or sober.”</p>
 <p>这种修正，可说是“婉而谑兮”了！</p>
-<p>以上这些修正，都可明显的看到人类对国家看法的演变痕迹，Machiavelli时代的“双重道德”（doublemorality）说，大都限于“人与国家”的关系。如今的“双重道德”，逐渐演化为“国家与国家”的关系了，这种情况，甚至可说是“三重道德”了！</p>
-<p>从近代西洋政治思想史看来，对国家看法的演变痕迹，大体是进步的，这种进步，我们文人也分了一份。至少今日世界中，再也找不到一个法西斯式大文学家邓南遮（GabrieleD’Anmmzio）了！为拿巨棒者张目，论“文学侍从之臣”则有之，论“思想警察”亦有之，然皆为以文字为业者中的三流货或不入流货，真正第一流的知识人与文人，再也不肯“为帝王鹰犬”地走那条老路了！</p>
+<p>以上这些修正，都可明显的看到人类对国家看法的演变痕迹，Machiavelli时代的“双重道德”（double morality）说，大都限于“人与国家”的关系。如今的“双重道德”，逐渐演化为“国家与国家”的关系了，这种情况，甚至可说是“三重道德”了！</p>
+<p>从近代西洋政治思想史看来，对国家看法的演变痕迹，大体是进步的，这种进步，我们文人也分了一份。至少今日世界中，再也找不到一个法西斯式大文学家邓南遮（Gabriele D’Anmmzio）了！为拿巨棒者张目，论“文学侍从之臣”则有之，论“思想警察”亦有之，然皆为以文字为业者中的三流货或不入流货，真正第一流的知识人与文人，再也不肯“为帝王鹰犬”地走那条老路了！</p>
 <p>以上拉杂为“外道之言”，不避“弄斧之讥”。一发呈奉，或可供先生参考也。</p>
 <p>敖之，1966年5月12日下午</p>
 <p>附录</p>
@@ -436,7 +469,7 @@
 <p>一、“全体主义专制”的本质和特征</p>
 <p>二、“全体主义专制”下的个人和社会</p>
 <p>三、“全体主义专制”的存续和症结</p>
-<p>“全体主义”的政治制度，严格说来，应称为“全体主义专制”（TotalitarianDictatorship）。它是20世纪的特异产物。它的思想和形态，都与“自由主义民主制”（LiberalDemocracy）完全相反。</p>
+<p>“全体主义”的政治制度，严格说来，应称为“全体主义专制”（Totalitarian Dictatorship）。它是20世纪的特异产物。它的思想和形态，都与“自由主义民主制”（Liberal Democracy）完全相反。</p>
 <p>一、“全体主义专制”的本质和特征</p>
 <p>全体主义专制的本质是什么？对这问题，现代政治学者，包括全体主义国家的学者在内，都有一致的解答，已无争论的余地。他们都承认：任何全体主义政权都具有几个共通的基本要素。这些基本要素，互相交织和支持，恰如有机体内部组织一般，构成着全体主义专制的本质。这些基本要素，可以列举如下：</p>
 <p>（一）公定的“理论”或“主义”（officialideology）在全体主义政权之下，必有一种公定的理论或主义。这一理论或主义渗透到每一国民的公私生活里；每一国民，不论主动也好、被动也好，必须依附它。这种公定的理论或主义，又必为囯家或人类的未来，绘出一幅美丽的远景，将目前社会指摘为腐败堕落，将这公定的理论或主义，宣称为救世济人的不二圣典，强迫国民相信：只有接受并履行它，才能实现理想的新社会。</p>
@@ -446,7 +479,7 @@
 <p>（五）武器的独占或管制：在全体主义专制之下，绝不准人民私有武器，一切军械，都由政府独占或严格管制。这可以与自由主义民主制，如美国宪法的规定将私有武器承认为个人权利之一，比较对照。</p>
 <p>（六）全国经济的强力统制在全体主义专制之下，全国经济由中央政府强力统制，规定致密详细的全体计划，由中央加以严格管理和指挥。</p>
 <p>“全体主义专制”的特点既如上述，那么，它与“自由主义民主制”的差异在哪里？两者基本差异之一，在于对“政治”的本质和任务，了解不同。</p>
-<p>自由主义的政治观在“自由民主”的观念下，“政治”不过是人类诸社会活动的一种而已。政治与人类其他社会活动，界限分明，并驾齐驱，互不干涉。在这种观念下，政治必受空间和时间的限制。它是时代和环境的相对产物，跟着时空而变迁。所以，在政治上，并没有“绝对的真理”存在。政治行为不过是“摸索”（search）、“尝试”（trial)、“失策”（error）和“改进”（reform）的无限反复而已。在自由民主观念之下，“自由”系指“个体”（individual）的最高价值、尊严、创意（spontaneity）、不受强制（absenceofcoercion）而言。“自由民主”不相信在政治上有永恒不变的“真理”，所以“政治上的宽容”（politicaltolerance）成为它的本质；它也不相信人类社会正在向着一个既定的终极目标演进中，所以它认为政治个体自由的侵犯是一种罪恶。它却相信：每一个个体的自由，如果受到十分的尊重，人类社会则于经过长期无数次的摸索、尝试、失策和改进之后，将会逐渐创造出一个较和谐理想的世界。</p>
+<p>自由主义的政治观在“自由民主”的观念下，“政治”不过是人类诸社会活动的一种而已。政治与人类其他社会活动，界限分明，并驾齐驱，互不干涉。在这种观念下，政治必受空间和时间的限制。它是时代和环境的相对产物，跟着时空而变迁。所以，在政治上，并没有“绝对的真理”存在。政治行为不过是“摸索”（search）、“尝试”（trial)、“失策”（error）和“改进”（reform）的无限反复而已。在自由民主观念之下，“自由”系指“个体”（individual）的最高价值、尊严、创意（spontaneity）、不受强制（absence of coercion）而言。“自由民主”不相信在政治上有永恒不变的“真理”，所以“政治上的宽容”（political tolerance）成为它的本质；它也不相信人类社会正在向着一个既定的终极目标演进中，所以它认为政治个体自由的侵犯是一种罪恶。它却相信：每一个个体的自由，如果受到十分的尊重，人类社会则于经过长期无数次的摸索、尝试、失策和改进之后，将会逐渐创造出一个较和谐理想的世界。</p>
 <p>全体主义的政治观与自由主义相反，“全体主义”却相信在政治有永恒不变的“绝对真理”。全体主义的统治者则以这个“绝对真理”的发现者或维护者自居。依他们的观念，整个人类的历史，是这个“真理”实现的过程，而人类社会正在向这终极的目标进行着。政治的任务和目的，则是在于加速促进这个演进。为了要达到这个目标，为了要早日实现这个“真理”，任何牺牲都要接受，任何代价都要付出。于此，政治便成为一种绝对的哲学、绝对的信仰。它已不与人类其他社会活动立于同一平面上；它要包括一切、领导一切。一切都要服侍政治。西欧有一政治戏谚：“在民主国家里，凡未明文禁止的，都属自由；在独裁国家里，凡未明文许可的，都属禁止；在全体主义国家里，凡未明文禁止的，都属强制。”依全体主义的观念，政治行为不是自由主义所了解那种摸索、尝试、失策和改进的无穷反复，而是一种绝对哲学或绝对信仰强施于社会的单行过程；所以，什么是“政治上的宽容”，全体主义者无法了解。当这绝对哲学或绝对信仰克服一切，终于支配了人类所有社会关系和社会活动的时候，便是政治的终极成功。全体主义不闭口不谈“自由的”，不过，它所谓“自由”却是牺牲个体而追求得到的“集体”（collectivity）的绝对存在价值而言。这种意义的“自由”，实与上述自由主义所指自由毫不相干，甚至完全冲突。</p>
 <p>二、“全体主义专制”下的个人与社会</p>
 <p>个性的消失经过全体主义熏陶的人，其特征是“个性的消失”（impersonality）。纳粹刽子手Eichmann是一个典型例子。这种人完全淹没在他所隶属的“党”和他所狂信的“主义”里面，心灵麻木，既无感情，又无欲望，不愤懑、不知恶、不后悔，他已变成“至高全能的组织”里面的一个小零件。全体主义专制要将国家、社会、个人融化为一，所以必图将全体国民一律塑成固定类型。譬如法西斯意大利曾图改变意大利人传统性格，要将每一个意大利人改成“严肃、勤劳、有效率、不苟言笑、残忍黩武、不解柔情”。纳粹德国则曾要将德国国民练成彻底顺从，一奉命令，不论它如何罪恶，也要至死服从。全体主义专制为了要将每一个人铸成它观念上的理想模型，对于私人生活一切琐节，无不加以干涉和规律，绝不放过，以达到“整齐划一”的目标。法国大革命时，狂热的爱国主义者，穿的是“爱国装”、吃的是“爱国饭”、睡的是“爱囯床”、行的是“爱国礼”、看的是“爱国剧”。同样地，现代全体主义专制政权如纳粹或法西斯，恨不能命令每一国民，把“主义”当作饭吃、当作水喝，每日二十四小时，无时不想“主义”、爱“主义”、呼吸“主义”。在这类国家里教育的主要目的，在于灌输党义，背诵标语口号，经常演的是英雄忠贞故事剧，放的是阅兵、演习、战斗、军舰、飞机的电影，奏的不是军乐，便是歌颂“主义”、赞咏党魁的歌曲。规定的制服，最好命令国民全体一律穿用，至少也可以统一党员、官吏和学生的服装。甚至幽默笑话也要有分寸，不忘严肃，不得过分轻松放肆，须符合党的路线，最好能用以揭露敌人弱点，而发生政治宣传的效果。凡是独立、客观、自由、活泼、幸福、快乐、美丽、独创、有智慧、有理性、无拘束、无偏见、不狂信、不愚昧、多彩多姿、不合党义、不为政权或主义宣传的，不但没有价值，甚至有害，应加以取缔或处罚。从这种全体主义的模型中造出来的，是一种机器人，他至多只有单行的“反射本能”，对其头脑，不论加以如何刺激或按摩，都无法使它恢复“思考”的能力。正常人所有的人生各种烦恼或忧虑，他已经没有，一味愿供党魁任意驱使，在战场成为灰烬，以此为无上光荣。纳粹和法西斯确曾将其党员锻炼到这个程度。</p>
@@ -474,13 +507,13 @@
 <p>1965年10月31日于美国麻州</p>
 <p>（李敖按：此文作于狱中，却在文后有“于美国麻州”字样，想彭老师别有原因也。）</p>
 <p>本书主要参考书：</p>
-<p>1.HarryEcksteinandDavidE.Apter,IntroductiontoTotalitarianismandAutocracy，ComparativePolitics,1951.</p>
-<p>2.HannahArendt,TheOriginofTotalitarianism,1951.</p>
-<p>3.J.L.Talmon,TheOriginofTotalitarianDemocracy.</p>
-<p>4.CarlJ.FriedrichandZ.K.Brezinski,TotalitarianDictatorshipandAutocracy,1956.</p>
-<p>5.AlexInkeles,TheTotalitarianMystique，1954.</p>
-<p>6.ElseFrenkel-Brunswick,EnvironmentControlandtheImpoverishmentofThought,1954.</p>
-<p>7.KarlW.Deutch，CracksintheMonolith：PossibilitiesandPatternofDisintegrationinTotalitarianSystems,1954.</p>
+<p>1.Harry Eckstein and David E. Apter, Introduction to Totalitarianism and Autocracy，Comparative Politics, 1951.</p>
+<p>2.Hannah Arendt, The Origin of Totalitarianism, 1951.</p>
+<p>3.J. L. Talmon, The Origin of Totalitarian Democracy.</p>
+<p>4.Carl J. Friedrich and Z. K. Brezinski, Totalitarian Dictatorship and Autocracy ,1956.</p>
+<p>5.Alex Inkeles, The Totalitarian Mystique，1954.</p>
+<p>6.Else Frenkel-Brunswick, Environment Control and the Impoverishment of Thought, 1954.</p>
+<p>7.Karl W. Deutch，Cracks in the Monolith：Possibilities and Pattern of Disintegration in Totalitarian Systems ,1954.</p>
 <p>我才“妨害军机”呢！</p>
 <p>——《孟绝子给李敖的信》读后</p>
 <p>读了《孟绝子给李敖的信》，我有一些感想。</p>
@@ -540,7 +573,7 @@
 <p>“警备总部”军法判决我的三类罪名，其实成立的关键只在我是不是参加了以彭明敏为首的叛乱活动、是不是做了“台湾本部”的委员而已，其他的罪名其实都是笑话。例如：</p>
 <p>一、说我明知彭明敏特赦出狱后叛国之念未泯云云，事实上，我根本不知道，彭明敏脑袋里的念，泯也好、不泯也罢，我又从何知道？判决书上所说，都是诬我之言，都不能成立，并且认定这种事实也全无物证及其他必要之证据（违反《刑事诉讼法》第156条）。</p>
 <p>二、说我秘密与彭明敏交往云云，事实上，我跟彭明敏交往，完完全全公然行之，毫无秘密可言。其没有秘密，甚至到了彭明敏要请情治人员吃饭，都托我代约的程度。1967年7月3日，彭明敏有信给我，想约“调查局”处长王淦吃饭，就是证据（证五号）；又如“调查局”局长沈之岳请吃饭，也是专门请彭明敏和我两人的，说秘密与彭明敏交往，竟秘密到情治人员头上，天下有如此秘密乎？</p>
-<p>三、说我介绍某外籍人士为彭明敏带信到海外未加检举云云，事实上，信是封口的，我又不是喜欢偷拆人信的情治人员，何能窥知其中内容？托外国朋友梅心怡（LynnA.Miles）带一封信，而不经过邮政局，难道就犯法不成？这犯了什么法？不犯法，又检举什么？带一封信，就判人十年徒刑吗？</p>
+<p>三、说我介绍某外籍人士为彭明敏带信到海外未加检举云云，事实上，信是封口的，我又不是喜欢偷拆人信的情治人员，何能窥知其中内容？托外国朋友梅心怡（Lynn A. Miles）带一封信，而不经过邮政局，难道就犯法不成？这犯了什么法？不犯法，又检举什么？带一封信，就判人十年徒刑吗？</p>
 <p>四、说我接受谢聪敏交阅叛乱宣言及月刊多件云云，事实上，这是瞒天过海之言。因为谢聪敏给我的宣言，乃是五年前（1965年）他们那张宣言的英译本，它是历史文件，在我这学历史的眼中，它与檀香山兴中会成立宣言等所有宣言都别无二致，都是史料而已。如果交阅的是即将发出的新宣言，也许还可以这样罗织我，事实根本上没有这种新宣言。而该五年前宣言的英译本，还是国民党大员连战翻译的，译者连战无罪，读者李敖却何来刑责？至于说月刊多件，月刊都是外文杂志之类，又犯什么法？看看外国杂志，就判人十年徒刑吗？连军事法庭公设辩护人的辩护书，都说：“李敖仅系阅读资料，收集叛乱犯名单，并无意图破坏政府之组织，更不得指为‘预备颠覆政府’”（证六号）呢！</p>
 <p>五、说我把泰源监狱名单交某外籍人士带赴国外，作为攻讦政府之运用云云，事实上，1970年8月14日，“国际特赦协会”（英文名字是AmnestyIntemationai,简称AI，也有人译成“国际大救组织”、“国际救免组织”）秘书长马丁思纳尔斯（MartinErmals）（证七号）到我家，我把泰源监狱名单给他，目的只是请他透过这一人道组织（证八号），对政治犯援之以手而已。“国际特赦协会”对共产国家的人权纠正报告，台湾的国民党都一再引用之大加宣扬，最近一次见于1987年7月10日《中华日报》（证九号），为什么我跟这个会有接触，就变为攻讦政府了？难道一个政府合法抓了人，被抓的名单也是机密吗？这是哪一国的机密？如果是机密，足见其为非法也无疑。是非法就休怪人揭发！但无论如何，这样子把名单带到国外却并不犯法的。</p>
 <p>以上五点，都分别驳斥了“警备总部”给我的三类罪名，都是笑话，都不能成立。剩下来唯一成立的关键，就在我是不是参加了彭明敏为首的叛乱活动、是不是“台湾本部”的委员了。</p>
@@ -739,8 +772,8 @@
 <p>我与这位好心肠的名学者第一次通信时，很使我发窘，不过倒使他感觉有趣。1951年圣诞节是我第一次在加拿大过节，我寄出一些圣诞卡片。那时，我就想到在礼貌上也应该寄一张给在经济上支持我的基金会的负责人。不久，我就接到胡先生寄来友善的回卡。不过，在里面他加了一段话说，他既然是我的长辈，他愿意坦白告诉我，我寄给他的那张卡片，是专用于赠钱的。我还以为卡片上的一个洞只是作为装饰哩！</p>
 <p>彭明敏这里所说胡适的“坦白告诉”态度，可说是这位前辈学者的一种认真习惯，在胡适给我的贺年卡里，也有类似的纠正，我在给他的诗里写了一个错字，他就纠正出来，“坦白告诉”我。</p>
 <p>去年，《胡适的日记》出版了，在1961年9月9日，胡适有这样的日记：</p>
-<p>彭明敏是本省青年学人。约在1951-1952，他得了中基会的Follow-ship要到PrincetonUniv.跟Prof.JohnC.Cooper学“空中国际法”。那时Cooper正要去McGillUniv.创立“InstituteofInternationalLawoftheAir”，我帮助彭君，使他可以去McGill，还使他多住一年，以很高的荣誉毕业，得硕士。他的论文都是用法文发表的，故他去法国，不久即得巴黎大学的博士学位（他现为NCSD的研究讲座）。</p>
-<p>不到十年，今年他来说，他收到McGill的DeanScott的信，说TheInstituteofAir&amp;SpaceLaw（新改名）的第二任所长（Director)Dr.Rosercar要退休了，他们要彭君考虑去做继任人。</p>
+<p>彭明敏是本省青年学人。约在1951-1952，他得了中基会的Follow-ship要到Princeton Univ.跟Prof. John C. Cooper学“空中国际法”。那时Cooper正要去McGill Univ.创立“Institute of International Law of the Air”，我帮助彭君，使他可以去McGill，还使他多住一年，以很高的荣誉毕业，得硕士。他的论文都是用法文发表的，故他去法国，不久即得巴黎大学的博士学位（他现为NCSD的研究讲座）。</p>
+<p>不到十年，今年他来说，他收到McGill的Dean Scott的信，说The Institute of Air &amp; Space Law（新改名）的第二任所长（Director) Dr. Rosercar要退休了，他们要彭君考虑去做继任人。</p>
 <p>这段日记可以印证彭明敏的部分回忆，可是彭明敏笔下的胡适那些动人小故事，却隐而未显。由此可见，《胡适的日记》尚不足以显示此公的幽光潜德也。</p>
 <p>1991年2月6日</p>
 <p>附录</p>
@@ -749,7 +782,7 @@
 <p>1951年，我在台大任助教时，得到“中美文化教育基金会”奖学金，赴加拿大麦基尔大学进修。这个奖学金使我初次身入西欧世界，也使我得以认识胡适先生（他是该基金会的实际负责人）。</p>
 <p>从那时起，直到他在台湾去世，我受到他的关怀和爱护。回想起来，我在台大任教时所发生许多事，如“中美文化合作会议”代表、“国家科学发展委员会”国家讲座、“阳明山会议”代表、“联合国代表团”顾问等任命，多多少少都与胡先生有关，他似乎都在幕后支持。使我最钦佩、也最表露他风格的，他推举我，却不让我知道。尤有一件事，终生难忘的，我于1951年所得“中美文化教育基金会”奖学金，为期一年，无法延长。麦大釆英国制，要修得硕士，至少需要二年。我的奖学金一年结束，第二年学费和生活费就无着落了。我只有向胡先生和麦大研究所Cooper所长说明情形。Cooper所长对我第一年的表现相当满意，所以他就与胡先生商量。胡先生便来信说要试想办法。不久，胡先生再来信说，已找到了一位匿名人士，愿继续资助一年，使我完成麦大学业。我高兴之余，立刻回信谢谢胡先生，也请他代向那位匿名人士深谢。此事就这样过去，我于1953年毕业麦大后，转往巴黎大学了。1954年，我从法国回台大任教，不久，胡先生接掌“中央研究院”，移住南港，我们接触的机会比前较多，但彼此对于匿名人资助之事，未再提起。胡先生猝逝那晚，我赶到“中央研究院”时，他已猝倒在地，以一席白巾覆盖之，亲友们则在周围欷歔着。台大钱思亮校长即当场悄悄地告诉我，曾经资助我读完麦大的匿名人士，不是别人，实在是胡适先生本人。那瞬，我才恍然大悟，很感动而且内疚，怪自己太天真，多年来全未想到有这种可能，亲向他道谢的机会，如何永失了。</p>
 <p>其后，我的环境大变，许多遭遇常使我感慨万千，也使我更加思念胡先生为人之风格，尤其是他助人之道。</p>
-<p>西谚谓“成功者多爹，失败者孤儿”（Successhasmanyfathers，failureisorphan），意思是说：你一旦成功，必有多人冒出来邀功，令人不堪其扰，盖欲做“成功之父”者，皆是；反之，你一旦失败，则大家退避三舍，装作无涉，令人不堪孤单，盖欲做“失败之父”者，无也。相信每人都有过类似经验。就我来说，有二件事特别彰显这种人性，一是1965年被特赦，另一是1970年逃离台湾。</p>
+<p>西谚谓“成功者多爹，失败者孤儿”（Success has many fathers，failure is orphan），意思是说：你一旦成功，必有多人冒出来邀功，令人不堪其扰，盖欲做“成功之父”者，皆是；反之，你一旦失败，则大家退避三舍，装作无涉，令人不堪孤单，盖欲做“失败之父”者，无也。相信每人都有过类似经验。就我来说，有二件事特别彰显这种人性，一是1965年被特赦，另一是1970年逃离台湾。</p>
 <p>我于1964年被捕时，所谓亲友，无不大起恐慌，纷纷逃避，彭氏九族，无人敢接触，也无人敢为我说话，因以当时蒋介石心态，为政治犯说项者，同罪也。在那种环境中，无人欲做我“失败之父”不足为怪，令人惊骇的却是我于1965年11月3日被释放后，竟有人要邀功图赏，我明知那是无中生有的。被释放不算什么“成功”，但仍有人欲为其“父”，可见世风人心之一斑。_</p>
 <p>1970年逃离台湾，真的需人帮助。在每天二十四小时严密监视之下，独臂人一个，逃人耳目，身无证件，越山跨海，穿过几国，逃至瑞典，不是易事。其过程之复杂错综、牵涉之广泛多歧，恐不下于图飞月球。所需援助也多方多端，如经费、人际、文书、通信、联络、保密和其他后勤。援助者既须可靠，又须分在各地，如台湾、加拿大、美国、日本、香港、欧洲、北欧等。整个过程每一关节同等重要，失一即全败。为了保密，我一人全盘计划、联系和执行，别人则仅各负责一关，互不相识，也不联络。事成之后，我曾对每人表示最深谢意，应报答者报答，债也还清了。</p>
 <p>上述诸种经验，使我领悟，世上助人者，风格层次极不相同，其间差异，有如天渊。有如胡适先生者，好施阴德，不让受惠人知道。有如助我之西人，对于助人之事坦然处之，既不邀功，也不夸口，深识大体，对受惠人立场和意向，十分尊重，言行谨慎，以事之成功为己足，别无所求。也有如海外一些台人，事成之后，得意忘形，吹擂自夸，归全功于己，高抬身价，借机敛财。这艰险作业，本极严肃纯洁，却被其私心私欲糟蹋亵渎了。他们帮助，固值得感谢回报，但它究竟止于全环之一节，倘硬欲独占功名，则不仅暴露无知和贪婪，对那些忠厚西人之更有贡献者以及我本人，太不公允。我不得不指出之，则老羞成怒，中伤诽谤；我思念胡适先生助人之道，则说那等于“台奸”，因为我称赞了“中国人胡适”。</p>
@@ -774,11 +807,11 @@
 <p>李敖致书彭明敏，大谈白头宫女事</p>
 <p>明敏老师：</p>
 <p>《求是报》一办转眼两个月了，忙得没有好好回信给你。前一阵子看电视张学良说他是“很胆大妄为的”，我想我办《求是报》，也属“胆大妄为”的一种。因为按情按理按实力，我实在没有办报的财力，正因为如此，报却办了出来，除“胆大妄为”外，殊乏其他解释。</p>
-<p>《求是报》开办以后，我个人倒还好，因为即使不办报，我也是“工作狂”，每天由早到晚忙个不停，所以办报只是忙上加忙而已。倒是跟我办报的同人，忙得人仰马翻，以致屡生“逃兵”事件，其中孟祥柯是第一叛徒，他是过惯闲云野鹤生活的，这一忙，吓坏了他，乃留书出走，略谓GeorgeSantayana与阳春有约，他老孟与乡村有约云，一走了之，潇洒无比。</p>
+<p>《求是报》开办以后，我个人倒还好，因为即使不办报，我也是“工作狂”，每天由早到晚忙个不停，所以办报只是忙上加忙而已。倒是跟我办报的同人，忙得人仰马翻，以致屡生“逃兵”事件，其中孟祥柯是第一叛徒，他是过惯闲云野鹤生活的，这一忙，吓坏了他，乃留书出走，略谓George Santayana与阳春有约，他老孟与乡村有约云，一走了之，潇洒无比。</p>
 <p>虽然屡生叛逃事件，但李敖是何等人，岂怕别人叛我的变，仍旧“天行有常，不为尧存，不为桀亡”，何况老孟并非夏桀也乎？</p>
 <p>老孟写文章，考究环境，他说最理想的地方是狮头山庙里，青山绿水、清风徐来，才有灵感。他问我为何随意下笔就千言，不要靠灵感，我说妓女接客，要不要靠性欲？靠有性欲才能接客，还能干这行吗？</p>
 <p>不管怎么责人而不责己，《求是报》办出来，可谓“恶有恶‘报’”。当年我曾说“如果你想害一个人，你就劝他办杂志”（这一名言，大家都忘了是我说的），如今当修正为“劝他办报纸”了。</p>
-<p>不过，不论怎么“悔不当初”，《求是报》总算做到了一点，就是全部都是可读的东西。OscarWide说Morethanhalfofmodemculturedependsonwhatoneshouldn’tread，其实台湾其他报纸不成东西比例，远超一半以上。就光凭这一点，《求是报》就是鹤立鸡群啦！</p>
+<p>不过，不论怎么“悔不当初”，《求是报》总算做到了一点，就是全部都是可读的东西。Oscar Wide说More than half of modem culture depends on what one shouldn’t read，其实台湾其他报纸不成东西比例，远超一半以上。就光凭这一点，《求是报》就是鹤立鸡群啦！</p>
 <p>虽然理由头头是道，可是夜里3点泡在浴盆里，未免自笑。周作人打油诗说“老去无端玩古董”，我倒有点“老去无端办报纸”之感。盖办报之事，在去年11月12日以前，我一直认为对我是天方夜谭。报办成后，可好了，每天不要“跑三点半”了——每天跑夜里“十二点半”了。《求是报》每天夜里四点钟由DHL快传到美国出美洲版，“十二点半”，正是“‘夜正当中’”呢！</p>
 <p>你说“每日出报，太辛苦了，但是很值得的”，多谢打气。</p>
 <p>美幸来了，16日晚上我同她见了面。诚如你所说：“她能向你说明些海外台人社会的实情。”从她口里，得知不少你的处境，故旧情深，令人远念。我觉得海外台人回台自谓打拼者，有二大类，一类是蔡同荣型。蔡同荣的情况，今早《自立早报》上登：</p>
@@ -792,7 +825,7 @@
 <p>另一类是郭倍宏型。前年11月23日我据“情报”写道：郭倍宏在台大学土木工程时，是国民党的党棍，1980年去美国留学后，还是国民党的“职业学生”、“国民党的线民”。从他做“职业学生”到“线民”到背离国民党，于今才不过短短的六年时间，论在国民党内作恶，有功可录；论在为台湾人真正打拼，却乏善足陈。他没冒过一点险、没犯过一次难、没坐过一天牢、没吃过一点苦，仅以暴风雨中在外国一待九年的半做线民半逃兵，竟摇身一变成为台湾人的英雄。这种英雄，未免当得也太荒谬、太容易、太没是非了吧！</p>
 <p>11月26日我看报，得知郭倍宏的双亲在25日公开提出声明，其中透露：“对一个由拥有国民党龄十一年、校园特务半年、留美‘中国同学会’干部一年，到台湾独立建国联盟美国本部主席。这一个铁的事实，是倍宏心灵经过正义和邪恶的战争的抉择，倍宏给正义抬头，让邪恶沉沦。阿宏不只是我的后生，更加是傲骨凛然的台湾男子汉。”可见我的“情报”还太轻了呢！原来郭倍宏根本就是“特务”，国民党的特务，这种人人品之差劲，原来是有案底的！说郭倍宏“心灵经过正义和邪恶的战争”而知所“抉择”，这是好的，不过，我们忍不住要纳闷，他的抉择，为什么抉择得这么迟？这么晚？真正男子汉们前仆后继“给正义抬头，让邪恶沉沦”而受苦受难的时候，他郭倍宏在干什么？在干的，正是人人看不起的特务啊！郭倍宏要做男子汉，自然为我们所乐见。但是，做男子汉不是嘴巴说的，尤其不是在海外国民党恶势力所不及的安全地方说的，要真见诸行动才算，但郭倍宏的“铁的事实”，呈现给我们的，却是一连串的助纣为虐、为虎作伥，今天给国民党做狗腿，明天又以立地成佛姿态，夤缘而成“台独”主席。这样反复无常的小人、投机靠大边的懦夫、没有任何实际成绩来立功于台湾的假货，如今居然以“傲骨凛然的台湾男子汉”招摇撞骗，台湾的男子汉，都跳浊水溪可也！</p>
 <p>除了蔡同荣型和郭倍宏型外，海外台人在台，似无实绩可寻，事实上也难有实绩，有点好处，在台台人还自己都抢破头呢！</p>
-<p>至于蔡同荣所推动的公民投票，我总觉得以公民投票做夺权工具，未免太笨了。公民投票能证明什么？昏昏噩噩的匹夫匹妇，岂能决定什么台湾前途！他们懂个屁！BenjaminDisraeli说谎话有三：“谎话”、“可恶的谎话”和“统计学”。（Therearethreekindsoflies:lies，damnedlies,andstatistics.）今天应改“统计学”为“公民投票”，方更符合也！</p>
+<p>至于蔡同荣所推动的公民投票，我总觉得以公民投票做夺权工具，未免太笨了。公民投票能证明什么？昏昏噩噩的匹夫匹妇，岂能决定什么台湾前途！他们懂个屁！Benjamin Disraeli说谎话有三：“谎话”、“可恶的谎话”和“统计学”。（There are three kinds of lies: lies，damned lies, and statistics.）今天应改“统计学”为“公民投票”，方更符合也！</p>
 <p>聪敏附和蔡同荣搞公民投票，实在不该。聪敏常来我这儿，我总觉得他颇有“冠盖京华独憔悴”的可怜。前年我写《背影》一篇，自憙颇得老友心迹，全文或堪老师一读，剪之于下：</p>
 <p>背影</p>
 <p>昨天下午搭火车去看我那在大学里读书的小女生，到台中时已是一片暮色。她开车到火车站来接我，一起去全国饭店吃烤肉。在庭园中配佐料时候，小女生提醒我：“那不是谢聪敏吗？”我抬头一望，隔着落地窗，一个人正走过去，但却侧过头来，机警地看着我。一看我抬起头，他停住了，对我笑起来。那么熟悉的笑。</p>
@@ -834,7 +867,7 @@
 <p>6月初收到一封怪信。信封是电脑打字放大的，收件人是“李敖先生亲启”，左边一行是“记者反应投书，姓名地址内详”，但打开一看，却没有地址，姓名是“郝正义”，也是假的。全信也是打字，不落一点笔迹在上，内容如下：</p>
 <p>李敖先生大鉴：</p>
 <p>非常冒昧地写这封信给您，为了避免白色恐怖，我不能使用本名，也不能使用手写，希望您不介意！</p>
-<p>在一次偶然的机会下，我参加了1991年3月25日在HOTELREGENT举行的国际鉴识科学研讨会，听到了1991年最耸人听闻的白色恐怖事件的罪行与自白。以下便是本人的分析：</p>
+<p>在一次偶然的机会下，我参加了1991年3月25日在HOTEL REGENT举行的国际鉴识科学研讨会，听到了1991年最耸人听闻的白色恐怖事件的罪行与自白。以下便是本人的分析：</p>
 <p>一、在一份由XX局提出的研究报告里，公开承认他们利用电话窃听方面的研究设备，来搜集情报和侦查犯罪。该份报告的部分影印资料附在本信中以资佐证。</p>
 <p>二、所谓的白色恐怖指的是不依照法定程序，对一般人民进行思想钳制与压迫，不论这种压迫是秘密的或是公开的。当然，这个法字指的是民主政治体制下的一般法律。</p>
 <p>三、台湾当局的民主制度在国际上一直甚受争议，尤其在国民党一党专政的体制下，人民的政治思想几乎被套成一个模式，凡是反模式的都要受到严密的监视，警察、邻居、同事、特务，甚至毫不相关的人，都可能是秘密监视网中的一部分。在该份报告里，提到配合（先登先锋作业）时，可自动录下对象电话谈话语音信号或传真信号来；“XX作业”是特务机关称呼不可告人的工作时一贯的方法。</p>
@@ -895,17 +928,17 @@
 <p>彭老师说“台湾当局数年来一些政策确在沿着我们曾经提倡的大方向进行着”，只是太慢。但是，纵太慢，也似有进境，可是，三十年后的三位先知本人呢？三十年来的进境又在哪里？难道进境只在“总统直选”一类么？易卜生（Ibsen）1882年写《人民公敌》（AnEnemyofthePeople），写那当时饱受打击的先知，后来易卜生自道，说当人民在十年后脚步跟上先知的时候，先知自己又超出了人民十年。彭老师啊、聪敏啊、廷朝啊，你们超出的，又在哪里？三十年前，你们是先知；三十年后，你们跟他们当然有不同，但不同又有多少？当人民跟先知人云亦云，先知堕人魔道自说自话的时候，这就未免太对不起当年的自己了。</p>
 <p>你们是我共患难的朋友，素知我为人，我可以容忍朋友的无情，但不容忍朋友的大错误——大是大非上的错误。因此，虽然我与彭老师渐行渐远、与廷朝形同隔世，我仍忍不住要写这封信向你们进言。天下能被彭老师虚心受言的人，恐怕也不多了，我敢说我是最后的一位。印度诗人说感谢光明但别忘了在黑暗中执灯的朋友。——我久历人间冷暖，我从黑暗中来，也将回归黑暗而去，我不奢求别人的感谢，但不希望与我同行过的老朋友在光明中目为之眩。该说的话，总归还是不免一说。先“自救”方足以言“台湾自救”，你们三位先知，三十年后难道全无“自救”之处吗？我真的不信啊！即颂进步</p>
 <p>敖之，1994年8月27日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/12.人物研究类/你不知道的彭明敏.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/12.人物研究类/你不知道的彭明敏.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../12.人物研究类/丑陋的中国人研究.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../12.人物研究类/大江大海骗了你.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -915,16 +948,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../12.人物研究类/丑陋的中国人研究.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../12.人物研究类/大江大海骗了你.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -933,12 +971,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

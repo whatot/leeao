@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,12 +35,24 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-ca57c65c.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
+        <script src="../toc-9a6e163c.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -69,146 +81,167 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
                     </div>
 
                     <h1 class="menu-title">大李敖全集</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="爱情的秘密"><a class="header" href="#爱情的秘密">爱情的秘密</a></h1>
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
-<li><a href="#%E7%88%B1%E6%83%85%E7%9A%84%E7%A7%98%E5%AF%86%E5%89%8D%E7%BD%AE%E8%AF%8D">《爱情的秘密》前置词</a></li>
-<li><a href="#%E7%88%B1%E6%83%85%E7%9A%84%E7%A7%98%E5%AF%86">爱情的秘密</a></li>
-<li><a href="#%E6%B2%99%E4%B8%98%E5%BF%86">沙丘忆</a></li>
-<li><a href="#%E9%99%A4%E5%8D%B4%E4%B8%80%E5%AF%92%E5%86%AC">除却一寒冬</a></li>
-<li><a href="#%E4%B8%80%E9%A6%96%E8%AF%97%E5%87%A0%E4%BB%B6%E4%BA%8B">一首诗几件事</a></li>
-<li><a href="#%E8%AF%84%E6%94%B9%E4%BD%99%E5%85%89%E4%B8%AD%E7%9A%84%E4%B8%80%E9%A6%96%E8%AF%91%E8%AF%97">评改余光中的一首译诗</a></li>
-<li><a href="#%E5%B0%8F%E5%AD%9D%E5%AD%90">小孝子</a></li>
-<li><a href="#%E5%B0%8F%E5%A4%A7%E7%94%B1%E4%B9%8B">小大由之</a></li>
-<li><a href="#%E5%A6%82%E5%BD%B1%E9%9A%8F%E5%BD%A2">如影随形</a></li>
-<li><a href="#%E7%8C%AA%E5%B0%8F%E5%A7%90">猪小姐</a></li>
-<li><a href="#%E4%B8%89%E8%A8%80%E7%BB%9D%E5%8F%A5">三言绝句</a></li>
-<li><a href="#%E7%8B%AD%E8%B7%AF%E7%9B%B8%E9%80%A2">狭路相逢</a></li>
-<li><a href="#%E6%9D%8E%E8%AF%97%E5%9B%9B%E9%A6%96">李诗四首</a></li>
-<li><a href="#%E9%A2%98%E6%B3%B0%E5%9B%BD%E6%BC%AB%E7%94%BB">题泰国漫画</a></li>
-<li><a href="#%E9%BC%93%E9%87%8C%E4%B8%8E%E9%BC%93%E4%B8%8A">鼓里与鼓上</a></li>
-<li><a href="#%E6%83%85%E8%AF%97%E5%8D%81%E5%9B%9B%E9%A6%96">情诗十四首</a></li>
-<li><a href="#%E8%80%81%E5%85%B5">老兵</a></li>
-<li><a href="#%E4%B8%A4%E9%A6%96%E5%8F%8D%E4%B8%AD%E7%AB%8B%E7%9A%84%E8%AF%97">两首反中立的诗</a></li>
-<li><a href="#%E5%A2%93%E4%B8%AD%E4%BA%BA%E8%AF%AD">墓中人语</a></li>
-<li><a href="#%E6%83%85%E5%BE%8B">情律</a></li>
-<li><a href="#%E8%8F%A9%E8%90%A8%E5%86%99%E8%AF%97">菩萨写诗</a></li>
-<li><a href="#%E5%89%AA%E4%BB%96%E4%B8%89%E5%88%86%E5%A4%B4">剪他三分头！</a></li>
-<li><a href="#%E7%99%A3%E4%B8%8E%E5%B1%81">“癣”与“屁”</a></li>
-<li><a href="#%E6%88%91%E7%88%B1%E5%A4%A7%E7%8C%A9%E7%8C%A9">我爱大猩猩</a></li>
-<li><a href="#%E8%87%AA%E8%B5%9E%E4%BA%94%E9%A6%96">自赞五首</a></li>
-<li><a href="#%E6%B4%8B%E5%92%8C%E5%B0%9A%E5%92%8C%E5%BD%95%E9%9F%B3%E5%B8%A6">洋和尚和录音带</a></li>
-<li><a href="#%E5%8F%8D%E5%92%AC%E9%AB%98%E4%BA%BA%E5%90%95%E6%B4%9E%E5%AE%BE">反咬高人吕洞宾</a></li>
-<li><a href="#%E4%BB%96">他</a></li>
-<li><a href="#%E4%BA%8E%E4%BA%BA%E6%9B%B0%E6%B5%A9%E7%84%B6%E6%B2%9B%E4%B9%8E%E5%A1%9E%E8%8B%8D%E5%86%A5">“于人曰浩然，沛乎塞苍冥”</a></li>
-<li><a href="#%E5%B1%85%E7%84%B6%E5%8F%AB%E8%89%BA%E6%9C%AF%E5%AE%B6">居然叫艺术家</a></li>
-<li><a href="#%E5%AD%94%E6%98%8E%E6%AD%8C">孔明歌</a></li>
-<li><a href="#%E6%89%93%E5%80%92%E5%B0%B1%E6%98%AF%E8%A6%81%E6%89%93%E5%80%92">打倒就是要打倒</a></li>
-<li><a href="#%E8%B0%81%E8%A6%81%E5%90%83%E9%A6%99%E8%95%89">谁要吃香蕉？</a></li>
-<li><a href="#%E6%92%92%E5%B0%BF%E6%AD%8C">撒尿歌</a></li>
-<li><a href="#%E8%A6%81%E5%BB%BA%E8%AE%BE%E5%85%88%E7%A0%B4%E5%9D%8F">要建设，先破坏</a></li>
-<li><a href="#%E4%B8%87%E5%8F%A4%E9%A3%8E%E9%AA%9A%E4%B8%80%E7%BE%BD%E6%AF%9B">万古风骚一羽毛</a></li>
-<li><a href="#%E4%B8%A4%E4%BA%BF%E5%B9%B4%E5%9C%A8%E4%BD%A0%E6%89%8B%E9%87%8C">两亿年在你手里</a></li>
-<li><a href="#%E7%88%B1%E6%98%AF%E7%BA%AF%E5%BF%AB%E4%B9%90">爱是纯快乐</a></li>
-<li><a href="#%E6%8A%8A%E5%A5%B9%E6%94%BE%E5%9C%A8%E9%81%A5%E8%BF%9C">把她放在遥远</a></li>
-<li><a href="#%E7%88%B1%E7%9A%84%E7%A7%98%E8%AF%80">爱的秘诀</a></li>
-<li><a href="#%E4%BD%95%E5%A6%A8%E7%9C%8B%E4%B8%80%E7%BA%BF%E5%A4%A9">何妨看一线天</a></li>
-<li><a href="#%E4%B8%80%E7%89%87%E6%AC%A2%E5%96%9C%E5%BF%83%E5%AF%B9%E5%A4%9C%E5%9D%90%E7%9D%80%E7%AC%91">一片欢喜心，对夜坐着笑</a></li>
-<li><a href="#%E4%B8%8D%E8%AE%A9%E5%A5%B9%E5%81%9A%E5%A4%A7%E7%89%8C">不让她做大牌</a></li>
-<li><a href="#%E6%88%91%E4%B8%BA%E5%A5%B9%E9%9B%95%E5%87%BA%E7%9F%B3%E5%83%8F">我为她雕出石像</a></li>
-<li><a href="#%E4%B8%8D%E5%A4%8D%E6%98%A5%E5%BD%92%E7%87%95%E5%8D%B4%E4%BC%BC%E5%A6%82%E6%9D%A5%E4%BD%9B">不复春归燕，却似如来佛</a></li>
-<li><a href="#%E5%8F%AA%E6%9C%89%E5%B9%B2%E5%B9%B2%E5%B9%B2">只有干干干！</a></li>
-<li><a href="#%E8%B5%8C%E7%9A%84%E5%93%B2%E5%AD%A6">赌的哲学</a></li>
-<li><a href="#%E5%8F%AF%E6%83%9C%E7%9A%84%E6%98%AF%E6%88%91%E5%B7%B2%E9%9A%BE%E9%86%89">可惜的是我已难醉</a></li>
-<li><a href="#%E8%84%B1%E8%84%B1%E8%84%B1%E8%84%B1%E8%84%B1">脱脱脱脱脱</a></li>
-<li><a href="#%E4%B8%80%E4%B8%AA%E6%96%87%E6%B3%95%E5%AD%A6%E5%AE%B6%E7%9A%84%E8%91%AC%E7%A4%BC">《一个文法学家的葬礼》</a></li>
-<li><a href="#%E8%80%81%E8%99%8E%E6%AD%8C">老虎歌</a></li>
-<li><a href="#%E6%88%91%E4%BB%AC%E4%B8%83%E4%B8%AA">《我们七个》</a></li>
-<li><a href="#%E4%B8%83%E7%BB%9D%E5%8D%81%E4%B8%83%E9%A6%96">七绝十七首</a></li>
-<li><a href="#%E4%B9%9F%E6%9C%89%E8%AF%97%E5%85%B4">也有诗兴</a></li>
-<li><a href="#%E8%BF%98%E6%9C%89%E8%AF%97%E5%85%B4">还有诗兴</a></li>
-<li><a href="#%E8%A2%AD%E5%94%90%E8%AF%97%E4%B8%83%E7%BB%9D%E5%9B%9B%E9%A6%96%E6%9C%89%E5%BA%8F">袭唐诗七绝四首有序</a></li>
-<li><a href="#%E9%AB%98%E6%A5%BC%E4%B9%A6%E6%84%9F">高楼书感</a></li>
-<li><a href="#%E6%97%A7%E8%AF%8D%E6%96%B0%E6%94%B9">旧词新改</a></li>
-<li><a href="#%E5%8D%83%E7%A7%8B%E8%AF%84%E8%AE%BA%E6%BB%A1%E4%BA%94%E5%B9%B4%E4%BA%86">《千秋评论》满五年了！</a></li>
-<li><a href="#%E4%BB%A5%E5%B1%B1%E8%B0%B7%E4%B9%8B%E9%81%93%E8%BF%98%E6%B2%BB%E5%85%B6%E8%BA%AB">以山谷之道，还治其身</a></li>
-<li><a href="#%E5%85%B3%E4%BA%8E%E4%B8%BD%E8%BE%BE%E4%B8%8E%E5%A4%A9%E9%B9%85">关于《丽达与天鹅》</a></li>
-<li><a href="#%E5%90%91%E6%B2%A7%E6%B5%B7%E5%87%9D%E7%A5%9E">向沧海凝神</a></li>
-<li><a href="#%E8%AF%97%E5%8F%A5%E7%9A%84%E5%AE%9E%E9%AA%8C%E8%80%85">诗句的实验者</a></li>
-<li><a href="#%E7%8C%AB%E7%8B%97%E8%AF%97%E5%92%8C%E9%9D%9E%E7%8C%AB%E7%8B%97%E8%AF%97">猫狗诗和非猫狗诗</a></li>
-<li><a href="#%E5%BC%97%E7%BD%97%E6%96%AF%E7%89%B9%E7%9A%84%E9%9B%AA%E8%8A%B1%E7%BA%B7%E9%A3%9E">弗罗斯特的《雪花纷飞》</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#爱情的秘密前置词">《爱情的秘密》前置词</a></li>
+<li><a href="#爱情的秘密">爱情的秘密</a></li>
+<li><a href="#沙丘忆">沙丘忆</a></li>
+<li><a href="#除却一寒冬">除却一寒冬</a></li>
+<li><a href="#一首诗几件事">一首诗几件事</a></li>
+<li><a href="#评改余光中的一首译诗">评改余光中的一首译诗</a></li>
+<li><a href="#小孝子">小孝子</a></li>
+<li><a href="#小大由之">小大由之</a></li>
+<li><a href="#如影随形">如影随形</a></li>
+<li><a href="#猪小姐">猪小姐</a></li>
+<li><a href="#三言绝句">三言绝句</a></li>
+<li><a href="#狭路相逢">狭路相逢</a></li>
+<li><a href="#李诗四首">李诗四首</a></li>
+<li><a href="#题泰国漫画">题泰国漫画</a></li>
+<li><a href="#鼓里与鼓上">鼓里与鼓上</a></li>
+<li><a href="#情诗十四首">情诗十四首</a></li>
+<li><a href="#老兵">老兵</a></li>
+<li><a href="#两首反中立的诗">两首反中立的诗</a></li>
+<li><a href="#墓中人语">墓中人语</a></li>
+<li><a href="#情律">情律</a></li>
+<li><a href="#菩萨写诗">菩萨写诗</a></li>
+<li><a href="#剪他三分头">剪他三分头！</a></li>
+<li><a href="#癣与屁">“癣”与“屁”</a></li>
+<li><a href="#我爱大猩猩">我爱大猩猩</a></li>
+<li><a href="#自赞五首">自赞五首</a></li>
+<li><a href="#洋和尚和录音带">洋和尚和录音带</a></li>
+<li><a href="#反咬高人吕洞宾">反咬高人吕洞宾</a></li>
+<li><a href="#他">他</a></li>
+<li><a href="#于人曰浩然沛乎塞苍冥">“于人曰浩然，沛乎塞苍冥”</a></li>
+<li><a href="#居然叫艺术家">居然叫艺术家</a></li>
+<li><a href="#孔明歌">孔明歌</a></li>
+<li><a href="#打倒就是要打倒">打倒就是要打倒</a></li>
+<li><a href="#谁要吃香蕉">谁要吃香蕉？</a></li>
+<li><a href="#撒尿歌">撒尿歌</a></li>
+<li><a href="#要建设先破坏">要建设，先破坏</a></li>
+<li><a href="#万古风骚一羽毛">万古风骚一羽毛</a></li>
+<li><a href="#两亿年在你手里">两亿年在你手里</a></li>
+<li><a href="#爱是纯快乐">爱是纯快乐</a></li>
+<li><a href="#把她放在遥远">把她放在遥远</a></li>
+<li><a href="#爱的秘诀">爱的秘诀</a></li>
+<li><a href="#何妨看一线天">何妨看一线天</a></li>
+<li><a href="#一片欢喜心对夜坐着笑">一片欢喜心，对夜坐着笑</a></li>
+<li><a href="#不让她做大牌">不让她做大牌</a></li>
+<li><a href="#我为她雕出石像">我为她雕出石像</a></li>
+<li><a href="#不复春归燕却似如来佛">不复春归燕，却似如来佛</a></li>
+<li><a href="#只有干干干">只有干干干！</a></li>
+<li><a href="#赌的哲学">赌的哲学</a></li>
+<li><a href="#可惜的是我已难醉">可惜的是我已难醉</a></li>
+<li><a href="#脱脱脱脱脱">脱脱脱脱脱</a></li>
+<li><a href="#一个文法学家的葬礼">《一个文法学家的葬礼》</a></li>
+<li><a href="#老虎歌">老虎歌</a></li>
+<li><a href="#我们七个">《我们七个》</a></li>
+<li><a href="#七绝十七首">七绝十七首</a></li>
+<li><a href="#也有诗兴">也有诗兴</a></li>
+<li><a href="#还有诗兴">还有诗兴</a></li>
+<li><a href="#袭唐诗七绝四首有序">袭唐诗七绝四首有序</a></li>
+<li><a href="#高楼书感">高楼书感</a></li>
+<li><a href="#旧词新改">旧词新改</a></li>
+<li><a href="#千秋评论满五年了">《千秋评论》满五年了！</a></li>
+<li><a href="#以山谷之道还治其身">以山谷之道，还治其身</a></li>
+<li><a href="#关于丽达与天鹅">关于《丽达与天鹅》</a></li>
+<li><a href="#向沧海凝神">向沧海凝神</a></li>
+<li><a href="#诗句的实验者">诗句的实验者</a></li>
+<li><a href="#猫狗诗和非猫狗诗">猫狗诗和非猫狗诗</a></li>
+<li><a href="#弗罗斯特的雪花纷飞">弗罗斯特的《雪花纷飞》</a></li>
 </ul>
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <ul>
@@ -286,26 +319,26 @@
 <h2 id="爱情的秘密-1"><a class="header" href="#爱情的秘密-1">爱情的秘密</a></h2>
 <p>在北京四中念初一时候，学校请朱光潜来讲演，因为礼堂太小，只准高班生听，所以只看到他在教室前走过，心中不无遗憾。那时他写的《给青年的十二封信》早已是畅销书。其中附录的《无言之美》一篇，我最喜欢。</p>
 <p>《无言之美》中有这样几段：</p>
-<p>就实际生活方面说，世间最深切的莫如男女爱情。爱情摆在肚子里面比摆在口头上面来得恳切。“齐心同所愿，含意俱未伸”和“但无言语空相骂”，比较“细语温存”“怜我怜卿”的滋味还要更加甜蜜，英国诗人布莱克（Blake）有一首诗叫做《爱情之秘》（Love'sSecret）里面说：</p>
+<p>就实际生活方面说，世间最深切的莫如男女爱情。爱情摆在肚子里面比摆在口头上面来得恳切。“齐心同所愿，含意俱未伸”和“但无言语空相骂”，比较“细语温存”“怜我怜卿”的滋味还要更加甜蜜，英国诗人布莱克（Blake）有一首诗叫做《爱情之秘》（Love’s Secret）里面说：</p>
 <p>（一）切莫告诉你的爱情，爱情是永远不可以告诉的，因为她像微风一样，不做声不做气的吹着。</p>
 <p>（二）我曾经把我的爱情告诉而又告诉，我把一切都披肝沥胆地告诉爱人了，打着寒颤，耸头发地苦诉，然而她终于离我去了！</p>
 <p>（三）她离我去了，不多时一个过客来了。不做声不做气地，只微叹一声，便把她带去了。</p>
 <p>这首短诗描写爱情上无言之美的势力，可谓透辟已极了。本来爱情全是一种心灵的感应，其深刻处老子所谓不可道不可名的。所以许多诗人以为“爱情”两个字本身就太滥太寻常太乏味，不能拿来写照男女间神圣深挚的情绪。</p>
 <p>其实何只爱情？世间有许多奥妙，人心有许多灵悟，都非言语可以传达，一经言语道破，反如甘蔗渣滓，索然无味。</p>
 <p>这首布莱克的诗，颇有《诗品》中“不着一字，尽得风流”的境界。原诗如下：</p>
-<p>Love'sSecret</p>
-<p>NeverSeektotellthylove，</p>
-<p>Lovethatnevertoldcanbe；</p>
-<p>Forthegentlewinddothmove</p>
+<p>Love’s Secret</p>
+<p>Never Seek to tell thy love，</p>
+<p>Love that never told can be；</p>
+<p>For the gentle wind doth move</p>
 <p>Silently，invisibly.</p>
-<p>Itoldmylove，Itoldmylove，</p>
-<p>Itoldherallmyheart，</p>
-<p>Tremblingcold，inghastlyfears，</p>
-<p>Ah!shediddepart!</p>
-<p>Soonaftershewasgonefromme,</p>
-<p>Atravellercameby，</p>
-<p>Silently,invisibly：</p>
-<p>Hetookherwithasigh.</p>
+<p>I told my love，I told my love，</p>
+<p>I told her all my heart，</p>
+<p>Trembling cold，in ghastly fears，</p>
+<p>Ah! she did depart!</p>
+<p>Soon after she was gone from me,</p>
+<p>A traveller came by，</p>
+<p>Silently, invisibly：</p>
+<p>He took her with a sigh.</p>
 <p>我对照起朱光潜的翻译来，总觉得达意有余，诗意不足。</p>
 <p>1962 年 3 月 18 日，我试用古体诗来翻译它，内容如下：</p>
 <p>（一）</p>
@@ -330,8 +363,8 @@
 <p>教学过程开始后，陌生人的鱼饵，“总是白白让鱼吃了，因为羊齿鱼轻轻吞饵时候，他感觉不出来；但是钓不到鱼，他好像也无所谓”。显然的，他志不在鱼。</p>
 <p>陌生人告诉小男孩他是英文教员，在海边附近，最近租了一幢旧房，为了是要避一避，不是避警察或是什么，只是避避亲友。</p>
 <p>就这样的，两个人的忘年交便开始了，小男孩第一次结交了一个可以平起平坐的成年朋友，陌生人教他读书，他教陌生人看风向、看潮汐、看比目鱼如何巧妙的躲藏。</p>
-<p>陌生人教小男孩，注意生活里的节奏（rhythm）。他说：“生活充满了节奏；语言文字也该有节奏。不过你得先训练耳朵。听听静夜的涛声，可以体会其中的韵律；看看海风在干沙上的痕迹，可以体会句子里应有的抑扬顿挫。你懂我意思吗？”（“Lifeisfullofit；wordsshouldhaveit,too.Butyouhavetotrainyourear.Listentothewavesonaquietnight;you'Ilpickupthecadence.Lookatthepatternsthewindmakesindrysandandyou'llseehowsyllablesinasentenceshouldfall.DoyouknowwhatImean?”）</p>
-<p>为了做这种节奏实验，有一次，陌生人举出 15 世纪马洛礼（SirThomasMalory）《亚瑟王之死》（LeMorted'Arthur）中“骏马悲撕”（Andthegreathorsegrimlyneighed）—段，要小孩子把眼睛闭上，慢慢念出这一句、体味这一句，问小男孩，你有什么感觉？小男孩说他闭眼一念，就“寒毛直竖”（“Itgivesmetheshivers.”）。陌生人大乐。</p>
+<p>陌生人教小男孩，注意生活里的节奏（rhythm）。他说：“生活充满了节奏；语言文字也该有节奏。不过你得先训练耳朵。听听静夜的涛声，可以体会其中的韵律；看看海风在干沙上的痕迹，可以体会句子里应有的抑扬顿挫。你懂我意思吗？”（“Life is full of it；words should have it, too. But you have to train your ear. Listen to the waves on a quiet night; you’Il pick up the cadence. Look at the patterns the wind makes in dry sand and you’ll see how syllables in a sentence should fall. Do you know what I mean?”）</p>
+<p>为了做这种节奏实验，有一次，陌生人举出 15 世纪马洛礼（Sir Thomas Malory）《亚瑟王之死》（Le Morte d’Arthur）中“骏马悲撕”（And the great horse grimly neighed）—段，要小孩子把眼睛闭上，慢慢念出这一句、体味这一句，问小男孩，你有什么感觉？小男孩说他闭眼一念，就“寒毛直竖”（“It gives me the shivers.”）。陌生人大乐。</p>
 <p>陌生人还教小男孩看云，他指着一片云，问：“你看见了什么？看见五颜六色吗？这不够。要找尖塔、吊桥，要找云龙、飞狮，要找千奇百怪的野兽。”（Whatdoyouseethere?Colors?That’snotenough.Lookfortowersanddrawbridges.Lookfordragonsandgriffinsandstrangeandwonderfulbeasts.）</p>
 <p>陌生人的花样还多呢！他不但教小男孩如何看云，还教小男孩如何看蟹。他抓起一只蟹，照小男孩教他的抓蟹脚的法子，抓住后脚，问小男孩：“用麦秆似的眼睛，你看到了什么？用乱七的脚，你碰到了什么？你的小脑袋里想到了什么？试试看，只要五秒钟就行了。不要把自己当成男孩，把自己当成蟹！”（Whatdoyouseethroughthosestalk-likeeyes?Whatdoyoufeelwiththosecomplicatedlegs?Whatgoesoninyourtinybrain?Tryitforjustfiveseconds.Stopbeingaboy.Beacrab!）小男孩照做了，他的小小而平静的世界，显然动提了。</p>
 <p>这样子的天地教室、这样子的代沟友谊，最后，随着陌生人健康的恶化，慢慢接近了尾声。他们出游的次数渐渐少了，因为陌生人的体力已经不行了。他经常坐在河边，看小男孩钓鱼、看海鸥盘旋在天际、看河水逝者如斯。</p>
@@ -343,33 +376,33 @@
 <p>自悲身须臾，莫怪此情哀，</p>
 <p>逝者得其静，烟直上高台。</p>
 <p>忆我沙丘侧，呼名入君怀。</p>
-<p>Ifthereisanylifewhendeathisover,</p>
-<p>Thesetawnybeacheswillknowmuchofme,</p>
-<p>Ishallcomeback,asconstantandaschangeful</p>
-<p>Astheunchanging,many-coloredsea.</p>
-<p>Iflifewassmall,ifithasmademescornful,</p>
-<p>Forgiveme;Ishallstraightenlikeaflame</p>
-<p>Inthegreatcalmofdeath,andifyouwantme</p>
-<p>Standonthesea-warddunesandcallmyname.</p>
+<p>If there is any life when death is over,</p>
+<p>These tawny beaches will know much of me,</p>
+<p>I shall come back, as constant and as changeful</p>
+<p>As the unchanging, many-colored sea.</p>
+<p>If life was small, if it has made me scornful,</p>
+<p>Forgive me ; I shall straighten like a flame</p>
+<p>In the great calm of death, and if you want me</p>
+<p>Stand on the sea-ward dunes and call my name.</p>
 <p>在沙丘上，小男孩一直没有呼唤陌生人的名字，因为他根本不知道陌生人的名字。小男孩后来离开了河边，长大了，也变成成年人了。他忘掉了这个成年的朋友，只在偶然的文字节奏里，偶然的云龙、偶然的蟹脚里，他忽然想起旧游往事，当然，生离于先，死别于后，那消逝了的陌生人，是永远不会重来了。</p>
 <p>1983 年 9 月 16 日晨</p>
 <p>〔后记〕1971 年 6 月 18 日，我在警备总部不见天日的牢房里独居，想到萨拉蒂斯代尔这首诗，我用一小时把它译成，就是上面这首。</p>
 <p>萨拉蒂斯代尔是美国浪漫派女诗人。她在我出生前两年（1933）死去，是自杀的，活了四十九岁。《火焰与阴影》是她三十六岁（1920）出版的。我译这首诗的时候，整三十六岁，如今我也快四十九了。因为这首译诗是我“台北蒙难”时残存的作品，对我有特别的意义，所以我特别为它写了这篇衬托性的文字。</p>
 <h2 id="除却一寒冬"><a class="header" href="#除却一寒冬">除却一寒冬</a></h2>
-<p>莎士比亚剧本《随你欢喜》（AsYouLikeIt）第五幕中有两首诗，第一首是——</p>
-<p>Underthegreenwoodtree</p>
-<p>Wholovestoliewithme,</p>
-<p>Andturnhismerrynote</p>
-<p>Untothesweetbird’sthroat,</p>
+<p>莎士比亚剧本《随你欢喜》（As You Like It）第五幕中有两首诗，第一首是——</p>
+<p>Under the greenwood tree</p>
+<p>Who loves to lie with me,</p>
+<p>And turn his merry note</p>
+<p>Unto the sweet bird’s throat,</p>
 <p>Comehither,comehither,comehither.</p>
 <p>Hereshallhesee</p>
 <p>Noenemy</p>
 <p>Butwinterandroughweather.</p>
 <p>第二首是——</p>
-<p>Whodothambitionshun,</p>
-<p>Andlovestoliveithesun,</p>
-<p>Seekingthefoodheeats，</p>
-<p>Andpleasedwithwhathegets，</p>
+<p>Who doth ambition shun,</p>
+<p>And loves to live i the sun,</p>
+<p>Seeking the food he eats，</p>
+<p>And pleased with what he gets，</p>
 <p>Comehither,comehither,comehither.</p>
 <p>Hereshallhesee</p>
 <p>Noenemy</p>
@@ -417,34 +450,34 @@
 <p>不为幽明永隔，</p>
 <p>它正为你哀悼。</p>
 <p>1972 年 10 月 27 夜</p>
-<p>这诗因为是意译，所以在用字遣词方面，小有更动，例如其中 IaminvolvedinMankinde 有难分难解意味，neversendtoknow 有何须打听意味，我都更动了。</p>
-<p>胡虚一兄说 acold 如不译为“一块土地”而译为“一小块泥土”会更好，我觉得很对。但为了保持狱中成果的原样，我还是照旧译刊出了。孟绝子（祥柯）也提出了很好的意见，只是我要保持狱中原译的纪念性，也就不再改了。</p>
+<p>这诗因为是意译，所以在用字遣词方面，小有更动，例如其中 I am involved in Mankinde 有难分难解意味，never send to know 有何须打听意味，我都更动了。</p>
+<p>胡虚一兄说 a cold 如不译为“一块土地”而译为“一小块泥土”会更好，我觉得很对。但为了保持狱中成果的原样，我还是照旧译刊出了。孟绝子（祥柯）也提出了很好的意见，只是我要保持狱中原译的纪念性，也就不再改了。</p>
 <p>1983 年 4 月 6 日病中</p>
 <h2 id="评改余光中的一首译诗"><a class="header" href="#评改余光中的一首译诗">评改余光中的一首译诗</a></h2>
 <p>余光中《英诗译注》共收三十七首英诗。“译者希望这本小册子能符合初学英文诗者的需要。每首诗都中英对照，并附原文难解字句的诠释、创作的背景、形式的分析、作者的生平等等。”</p>
 <p>余光中的目的在“务求初习者有此一篇，不假他求，且能根据书中所示的途径，进一步去了解、欣赏更多的英美作品”。</p>
 <p>余光中说他是“新诗的信徒，也是现代诗的拥护者”。但这本书中所选，“并非尽属一流作品”。因为“译诗一如钓鱼，钓上一条算一条，要指定译者非钓上海中那一条鱼不可，是很难的”。这是余光中的精巧声明。</p>
-<p>书中包括的名家，自琼森（BenJonson）起，共三十一人。其中英国人占六分之五强。即除了西班牙人桑塔亚纳（GeorgeSantayana），加拿大人麦克瑞（JohnMcCrae）和美国人昂特迈耶（LouisUntermeyer）、弗朗西斯（RobertFrancis）、纳什（OgdenNash）等五人外，都是清一色的英国人。</p>
-<p>书中最引我注意的是桑塔亚纳那首《悲悼》。余光中把英文原题印成 WithYouaPartofme，显然就有问题。因为这诗本是桑塔亚纳《给 W.P.》（ToW.P.）诗的第二首，余光中的错误，可断定是照抄 LouisUntermeyer 的“TheConciseTreasuryofGreatPoems”而来。因为 LouisUntermeyer 书中第 397 页里，有介绍桑塔亚纳的原文是：</p>
-<p>ASpaniardbybirth(Madrid,December16,1863),sonofSpanishparents,SantayanawastakentoBostonattheageofnine.EducatedattheBostonLatinSchoolandHarvard,hebeganteachingphilosophyatHarvardinhismid-twenties.Inthe1900'shisstudents-amongwhomwereT.S.EliotConradAiken,andFelixFrankfurter-consideredhimaninspiredteacher,butSantayanaactivelydislikedtheacademictradition.Shortlybeforehisfiftiethbirthdayhereceivedaninheritance,resignedhisprofessorship,andwentabroad.HelivedforawhileinOxfordandParisandfinallysettledinRomewhere,inhiseighty-ninthyear,hediedofastomachcancer,september26,1952.</p>
+<p>书中包括的名家，自琼森（Ben Jonson）起，共三十一人。其中英国人占六分之五强。即除了西班牙人桑塔亚纳（George Santayana），加拿大人麦克瑞（John McCrae）和美国人昂特迈耶（Louis Untermeyer）、弗朗西斯（Robert Francis）、纳什（Ogden Nash）等五人外，都是清一色的英国人。</p>
+<p>书中最引我注意的是桑塔亚纳那首《悲悼》。余光中把英文原题印成 With You a Part of me，显然就有问题。因为这诗本是桑塔亚纳《给 W. P.》（To W. P.）诗的第二首，余光中的错误，可断定是照抄 Louis Untermeyer 的“The Concise Treasury of Great Poems”而来。因为 Louis Untermeyer 书中第 397 页里，有介绍桑塔亚纳的原文是：</p>
+<p>A Spaniard by birth (Madrid,December 16,1863), son of Spanish parents, Santayana was taken to Boston at the age of nine. Educated at the Boston Latin School and Harvard, he began teaching philosophy at Harvard in his mid-twenties. In the 1900’s his students-among whom were T. S. Eliot Conrad Aiken, and Felix Frankfurter-considered him an inspired teacher, but Santayana actively disliked the academic tradition. Shortly before his fiftieth birthday he received an inheritance, resigned his professorship, and went abroad. He lived for a while in Oxford and Paris and finally settled in Rome where, in his eighty-ninth year, he died of a stomach cancer, september26,1952.</p>
 <p>而余光中书中第 78 页里，竟有这样介绍桑塔亚纳的中文：</p>
-<p>作者：桑塔亚纳（GeorgeSantayana），西班牙籍的美国哲学家，1863 年 12 月 16 日生于西班牙首都马德里，九岁时迁往美国。他毕业于哈佛大学，二十七岁起以迄五十岁止的二十三年间，一直在原校任哲学教授，艾略特（T.S.Eliot）、艾肯（ConradAiken）和弗兰克浮特（FelixFrankfurter）等都是十分敬佩他的学生。但是桑塔亚纳却非常厌恶学院的传统，果然在五十岁那一年，他继承了一笔遗产，便立刻辞去教职，去欧洲漫游，先后在牛津和巴黎各住了一个时期，终于定居在罗马。1952 年 9 月 26 日，在该城患胃癌逝世，享年八十九岁。</p>
+<p>作者：桑塔亚纳（George Santayana），西班牙籍的美国哲学家，1863 年 12 月 16 日生于西班牙首都马德里，九岁时迁往美国。他毕业于哈佛大学，二十七岁起以迄五十岁止的二十三年间，一直在原校任哲学教授，艾略特（T. S. Eliot）、艾肯（Conrad Aiken）和弗兰克浮特（Felix Frankfurter）等都是十分敬佩他的学生。但是桑塔亚纳却非常厌恶学院的传统，果然在五十岁那一年，他继承了一笔遗产，便立刻辞去教职，去欧洲漫游，先后在牛津和巴黎各住了一个时期，终于定居在罗马。1952 年 9 月 26 日，在该城患胃癌逝世，享年八十九岁。</p>
 <p>这段中文不注明出处。但与上面的英文一对照，我们自然立刻恍然大悟：原来如此，来源如此！真不知道这算不算“以翻译代替著作”也！</p>
-<p>桑塔亚纳的《给 W.P.》诗的第二首原文是：</p>
-<p>Withyouapartofmehathpassedaway；</p>
-<p>Forinthepeopledforestofmymind</p>
-<p>Atreemadeleaflessbythiswintrywind</p>
-<p>Shallneverdonagainitsgreenarray.</p>
-<p>ChaPelandfireside，countryroadandbay，</p>
-<p>Havesomethingoftheirfriendlinessresigned；</p>
-<p>Another,ifIwould，Icouldnotfind，</p>
-<p>AndIamgrownmucholderinaday.</p>
-<p>ButyetItreasureinmymemory</p>
+<p>桑塔亚纳的《给 W. P.》诗的第二首原文是：</p>
+<p>With you a part of me hath passed away；</p>
+<p>For in the peopled forest of my mind</p>
+<p>A tree made leafless by this wintry wind</p>
+<p>Shall never don again its green array.</p>
+<p>ChaPel and fireside，country road and bay，</p>
+<p>Have something of their friendliness resigned；</p>
+<p>Another, if I would，I could not find，</p>
+<p>And I am grown much older in a day.</p>
+<p>But yet I treasure in my memory</p>
 <p>Yourgiftofcharity,andyoungheart’sease,</p>
-<p>Andthedearhonourofyouramity；</p>
-<p>Fortheseoncemine，mylifeisrichwiththese.</p>
-<p>AndIscarceknowwhichpartmaygreaterbe，——</p>
-<p>WhatIkeepofyou，oryourobfromme.</p>
+<p>And the dear honour of your amity；</p>
+<p>For these once mine，my life is rich with these.</p>
+<p>And I scarce know which part may greater be，——</p>
+<p>What I keep of you，or you rob from me.</p>
 <p>余光中《英诗译注》的译文是：</p>
 <p>我生命的一部已随你而消亡；</p>
 <p>因为在我心里那人物的林中，</p>
@@ -475,7 +508,7 @@
 <p>是你带走的我，</p>
 <p>还是我留下的你。</p>
 <p>对照之下，余光中译文既韵脚不严，又生硬不通，有识之士一看就分出高下。</p>
-<p>桑塔亚纳的《给 W.P.》原诗共四首，原收入 1895 年的 SonnetsandOtherVerses,1970 年 RobertHutchinson 收入 PoemsofGeorgeSantayana 里。原诗苍茫深邃，读来感人心弦，被余光中那样拙手一译，简直不成东西矣！</p>
+<p>桑塔亚纳的《给 W. P.》原诗共四首，原收入 1895 年的 Sonnets and Other Verses, 1970 年 Robert Hutchinson 收入 Poems of George Santayana 里。原诗苍茫深邃，读来感人心弦，被余光中那样拙手一译，简直不成东西矣！</p>
 <p>1988 年 1 月 17 日</p>
 <h2 id="小孝子"><a class="header" href="#小孝子">小孝子</a></h2>
 <p>师道不可测，</p>
@@ -894,22 +927,22 @@
 <p>有个“中”字真不好！</p>
 <p>1982 年 1 月 29 日狱中作</p>
 <h2 id="墓中人语"><a class="header" href="#墓中人语">墓中人语</a></h2>
-<p>爱尔兰民歌《丹尼少年》（DannyBoy），是我生平最喜欢的一首歌。歌中写情人在生死线外，幽明永隔，死者不已，生者含悲，缠绵凄凉，令人难忘。尤其听到汤姆琼斯的变调唱法，更把它唱得多情感人。</p>
+<p>爱尔兰民歌《丹尼少年》（Danny Boy），是我生平最喜欢的一首歌。歌中写情人在生死线外，幽明永隔，死者不已，生者含悲，缠绵凄凉，令人难忘。尤其听到汤姆琼斯的变调唱法，更把它唱得多情感人。</p>
 <p>我一直想把这首歌译成中文，但是迁就用韵，未能如愿。一年前我试译了一半，还没译完，就入狱了。今天上午整理旧稿，发现了这一半译文，决心把它译完。花了一个半小时，用直译意译混合法，居然把它译成了。</p>
-<p>DannyBoy</p>
-<p>OhDannyboy,thepipes,thepipesarecalling</p>
-<p>Fromglentoglenanddownthemountainside</p>
-<p>Thesummer'sgoneandalltherosesarefalling</p>
-<p>It'syou,it'syoumustgoandI,Imustbide,</p>
-<p>Butcomeyebackwhensummerisinthemeadow</p>
-<p>Andwhenthevalleyishushedandwhitewithsnow</p>
-<p>ThenI'llbehereinsunshineorinshadow</p>
-<p>OhDanny,DannyBoy,ohDannyBoy,Iloveyouso</p>
-<p>Butcometome,myDanny,Danny,ohsayyouloveme</p>
-<p>IfIamdeadasdeadIwellmaybe</p>
-<p>YoucomeandfindaplacewhereI'lllie</p>
-<p>Andkneelandkneelandsay,yes,andsayanAve,anAve</p>
-<p>You，llfindme</p>
+<p>Danny Boy</p>
+<p>Oh Danny boy, the pipes, the pipes are calling</p>
+<p>From glen to glen and down the mountainside</p>
+<p>The summer’s gone and all the roses are falling</p>
+<p>It’s you, it’s you must go and I, I must bide,</p>
+<p>But come ye back when summer is in the meadow</p>
+<p>And when the valley is hushed and white with snow</p>
+<p>Then I’ll be here in sunshine or in shadow</p>
+<p>Oh Danny, Danny Boy, oh Danny Boy ,I love you so</p>
+<p>But come to me, my Danny, Danny, oh say you love me</p>
+<p>If I am dead as dead I well may be</p>
+<p>You come and find a place where I’ll lie</p>
+<p>And kneel and kneel and say, yes, and say an Ave ,an Ave</p>
+<p>You，ll find me</p>
 <p>译文</p>
 <p>哦，DannyBoy，</p>
 <p>当风笛呼唤，幽谷成排，</p>
@@ -930,7 +963,7 @@
 <p>请把我找到，找到，</p>
 <p>寻我遗骸。</p>
 <p>1982 年 12 月 27 日下午</p>
-<p>〔附记〕照爱尔兰民歌的原始意味，这首歌是写父子之情，DannyBoy 最后寻找到的，是父子之爱。我这里意译，当然别有所延伸，特此声明如上。</p>
+<p>〔附记〕照爱尔兰民歌的原始意味，这首歌是写父子之情，Danny Boy 最后寻找到的，是父子之爱。我这里意译，当然别有所延伸，特此声明如上。</p>
 <h2 id="情律"><a class="header" href="#情律">情律</a></h2>
 <p>何必三千饮 ①？</p>
 <p>天生只一根 ②！</p>
@@ -943,7 +976,7 @@
 <p>1983 年 1 月 8 日晨</p>
 <p>①“弱水三千，我只取一瓢饮。”</p>
 <p>② 十多年前，家昌装出一副苦脸，对我感叹说：“敖之啊，我怎么办？就是浑身上下长七千根鸡巴，也肏不完天下美女！”我听了，为之大笑。</p>
-<p>③ 这首诗的寓意是：我相信爱情一部分是灵肉一致的关系，另一部分是纯灵的关系。灵肉一致的关系有它的极限，但是纯灵的关系却没有。所以，柏拉图式爱情（Platoniclove，精神恋爱），对某些情人说来，是有道理的。我和一些我心爱的情人并不上床，或并不急于上床，其意在此。当然另有上床的，那是灵肉一致的关系，不是纯灵的关系。这两种关系，都是令人神往的。</p>
+<p>③ 这首诗的寓意是：我相信爱情一部分是灵肉一致的关系，另一部分是纯灵的关系。灵肉一致的关系有它的极限，但是纯灵的关系却没有。所以，柏拉图式爱情（Platonic love，精神恋爱），对某些情人说来，是有道理的。我和一些我心爱的情人并不上床，或并不急于上床，其意在此。当然另有上床的，那是灵肉一致的关系，不是纯灵的关系。这两种关系，都是令人神往的。</p>
 <h2 id="菩萨写诗"><a class="header" href="#菩萨写诗">菩萨写诗</a></h2>
 <p>李筱峰在去年 12 月 10 日“人权日夜”，在贺年片上写《叙近况致敖之先生》七绝一首，原诗是——</p>
 <p>半年学做书呆瓜，未上草山看乌鸦。</p>
@@ -1180,7 +1213,7 @@
 <p>细味他乡水，难饮青春泉。斯人斯疾也！青藤终病猿。</p>
 <p>世人皆欲杀，君独对我怜。芜诗哪忍寄？青出自胜蓝。</p>
 <p>沛乎苍冥塞，死矣谢愁颜。愁颜化涕泪，泪下人影寒。</p>
-<p>这诗要读《论语》《楚辞》《陶渊明集》《寸心集》（居浩然著）《陆放翁集》《徐文长逸稿》《文文山集》等书以及蓬斯德莱昂（PonceDeLeon）《青春泉》（FountainofYouth）等中外典故，才能完全读懂，我无法一一细为笺注了。只是有一个典故，倒颇该细说，那就是“青藤”一典。“青藤”是徐文长的号。</p>
+<p>这诗要读《论语》《楚辞》《陶渊明集》《寸心集》（居浩然著）《陆放翁集》《徐文长逸稿》《文文山集》等书以及蓬斯德莱昂（Ponce De Leon）《青春泉》（Fountain of Youth）等中外典故，才能完全读懂，我无法一一细为笺注了。只是有一个典故，倒颇该细说，那就是“青藤”一典。“青藤”是徐文长的号。</p>
 <p>徐渭（1521-1593），字文长，号青藤，别署天池山人、田水月，浙江绍兴人。他只是明朝的秀才，但是他文思敏捷，以才气被浙江巡抚胡宗宪赏识。《明史》说：</p>
 <p>渭知兵，好奇计，宗宪擒徐海，诱王直，皆预其谋。藉宗宪势，颇横。及宗宪下狱，渭惧祸，遂发狂，引巨锥剚耳，深数寸，又以椎碎肾囊，皆不死。已，又击杀继妻，论死系狱，里人张元忭力救得免。</p>
 <p>徐文长用锥子扎自己耳朵，是四十五岁的事。第二年就杀了老婆，此后一直在狱。四十八岁母亲死了，他出来办好丧事，再回去坐牢，五十三岁才出狱。袁宏道《徐文长传》说他：</p>
@@ -1477,14 +1510,14 @@
 <p>高空里清照，</p>
 <p>一片欢喜心，</p>
 <p>对夜坐着笑。</p>
-<p>Thesundescendinginthewest,</p>
-<p>Theeveningstardoesshine；</p>
-<p>Thebirdsaresilentintheirnest,</p>
-<p>AndImustseekformine.</p>
-<p>Themoon,likeaflower</p>
-<p>Inheaven'shighbower,</p>
-<p>Withsilentdelight</p>
-<p>Sitsandsmilesonthenight.</p>
+<p>The sun descending in the west,</p>
+<p>The evening star does shine；</p>
+<p>The birds are silent in their nest,</p>
+<p>And I must seek for mine.</p>
+<p>The moon, like a flower</p>
+<p>In heaven’s high bower,</p>
+<p>With silent delight</p>
+<p>Sits and smiles on the night.</p>
 <p>今天午餐时，边吃边译英国诗人布莱克（WilliamBlake）《子夜歌》（Night）的前二节，顺便写些感想。</p>
 <p>我年轻时候，也未尝不有“强说愁”的情况，虽然并没像骚人墨客那样多愁善感、伤春悲秋，但是某种程度的“滥情”，还是有的。这种“滥情”，使我不喜欢一个人独自欣赏月色，我觉得，月色只有在跟美女一起时候，才有情怀。若无美女在旁，自己一个人，就有冷清之感和苍茫之感，反倒使自己若不胜情。</p>
 <p>如今我年纪渐大，我已有“识尽愁滋味”的历练，我历练得看月怀远，已经全无“滥情”存在，“月可使人愁，定不能愁我”。——我已全然是快活的欣赏者了。</p>
@@ -1499,7 +1532,7 @@
 <p>不把黑的涂白。</p>
 <p>不让黑白颠倒，</p>
 <p>即使她不再来。</p>
-<p>拿破仑流放到南大西洋圣赫勒拿（St.Helena）岛，在日记里写道：“女人是我们的财产，而我们却不是她的财产。……她是他的财产，一如果树是园丁的财产一样。”拿破仑对女人的这种隶属观念，远在他制订法典时代就形成了。他在制订会议上说：“丈夫有权向他的女人说：‘太太，你不得出门！太太，你不得到戏院去！太太，你不得见某人、某人！’这个就是说：‘太太，你的身体、你的灵魂，都是属于我的。’”拿破仑这种观念，在平等观点上，是错误的，但这一观念，不论他一生中是得意或失意、是飞黄腾达或穷途末路，他都坚信不疑。在这一基调上，他对女人，显然存有一种悲观的了解，虽然这种了解，并没阻却他对美女的喜爱。只是喜爱之中，他不容女人占上风而已。因为人间的事，被女人占了上风，常常毁了男人，也毁了女人自己。</p>
+<p>拿破仑流放到南大西洋圣赫勒拿（St. Helena）岛，在日记里写道：“女人是我们的财产，而我们却不是她的财产。……她是他的财产，一如果树是园丁的财产一样。”拿破仑对女人的这种隶属观念，远在他制订法典时代就形成了。他在制订会议上说：“丈夫有权向他的女人说：‘太太，你不得出门！太太，你不得到戏院去！太太，你不得见某人、某人！’这个就是说：‘太太，你的身体、你的灵魂，都是属于我的。’”拿破仑这种观念，在平等观点上，是错误的，但这一观念，不论他一生中是得意或失意、是飞黄腾达或穷途末路，他都坚信不疑。在这一基调上，他对女人，显然存有一种悲观的了解，虽然这种了解，并没阻却他对美女的喜爱。只是喜爱之中，他不容女人占上风而已。因为人间的事，被女人占了上风，常常毁了男人，也毁了女人自己。</p>
 <p>今天清早四点半起床，写了这八行小诗，想起这跟美女纠缠不清的拿破仑，特别写他几句。</p>
 <p>1984 年 2 月 8 日</p>
 <h2 id="我为她雕出石像"><a class="header" href="#我为她雕出石像">我为她雕出石像</a></h2>
@@ -1632,7 +1665,7 @@
 <p>① 日本最怪的地方，是和歌山县新宫市新宫驿西部的“浮岛”。这岛长方形，面积只数平方里，因为浮在沉没的沼泽上，所以长年不息的浮动。岛上的水多金黄色。</p>
 <p>② 在日本插花中，最古的式样是“立华”，影响了其他的许多样式，一如日本受中华影响而变出了许多样式。</p>
 <h2 id="一个文法学家的葬礼"><a class="header" href="#一个文法学家的葬礼">《一个文法学家的葬礼》</a></h2>
-<p>19 世纪英国诗人勃朗宁（RobertBrowning）有一首长诗，叫《一个文法学家的葬礼》（AGrammarian'sFunercd），写一个文法学家死了，他的学生们抬着棺材，到高山去埋。他们一面向上走，一面谈论死者的种种。这位学者一辈子发愤治学，死而后已，在易篑之前，他口不能说话了、腰以下都僅硬了，但还在考订文法、辨正词性，毫不停止。这种伟大的精神，使他的学生最后高歌——</p>
+<p>19 世纪英国诗人勃朗宁（RobertBrowning）有一首长诗，叫《一个文法学家的葬礼》（AGrammarian’sFunercd），写一个文法学家死了，他的学生们抬着棺材，到高山去埋。他们一面向上走，一面谈论死者的种种。这位学者一辈子发愤治学，死而后已，在易篑之前，他口不能说话了、腰以下都僅硬了，但还在考订文法、辨正词性，毫不停止。这种伟大的精神，使他的学生最后高歌——</p>
 <p>这个人绝不恋生，而在求知——</p>
 <p>哪儿才是他埋骨之地？</p>
 <p>这儿——这儿就是，</p>
@@ -1646,18 +1679,18 @@
 <p>势必终于长眠高致。</p>
 <p>高高的生、高高的死，</p>
 <p>他超越了世俗的猜忌。</p>
-<p>Thismandecidednottolivebutknow-</p>
-<p>Burythismanthere?</p>
-<p>Here-here'shisplace,wheremeteorsshoot，cloudsform,</p>
-<p>Lightningareloosened，</p>
-<p>Starscomeandgo!Letjoybreakwiththestorm，</p>
-<p>Peaceletthedewsend!</p>
-<p>Loftydesignsmustcloseinlikeeffects：</p>
-<p>Loftilylying,</p>
-<p>Leavehim-stillloftierthantheworldsuspects，</p>
-<p>Livinganddying.</p>
+<p>This man decided not to live but know -</p>
+<p>Bury this man there?</p>
+<p>Here - here’s his place, where meteors shoot，clouds form,</p>
+<p>Lightning are loosened，</p>
+<p>Stars come and go! Let joy break with the storm，</p>
+<p>Peace let the dew send!</p>
+<p>Lofty designs must close in like effects：</p>
+<p>Loftily lying,</p>
+<p>Leave him - still loftier than the world suspects，</p>
+<p>Living and dying.</p>
 <p>这种伟大的精神，真不愧是志士仁人的最好榜样。</p>
-<p>1914 年，格拉宾（HarveyCarsonGrumbine）写《勃朗宁故事》（StoriesfromBrowning），在信心部分（ConcerningFaith）中，有专章讨论这首诗的理想主义色彩，最值得我们重视。</p>
+<p>1914 年，格拉宾（Harvey Carson Grumbine）写《勃朗宁故事》（Stories from Browning），在信心部分（Concerning Faith）中，有专章讨论这首诗的理想主义色彩，最值得我们重视。</p>
 <p>1984 年 4 月 30 日夜</p>
 <h2 id="老虎歌"><a class="header" href="#老虎歌">老虎歌</a></h2>
 <p>俗话说“虎落平阳被犬欺”，我生也懔悍，虽为平阳之虎，仍可不为犬欺，但虎威所镇，毕竟一一是犬，其为虎之乏味，亦可知矣！感而有诗，打油一首——</p>
@@ -1682,78 +1715,78 @@
 <p>维青兄：</p>
 <p>承你逼令我译这首诗，你说你的朋友们试译，都译不成，你硬要我译。我很滑头，我先转给胡虚一去译。9 月 23 日，虚一译来了，他附信说：“恐译得不好，故还盼文字高手如兄者，再做斟酌和润色。”我细看虚一的译作，诗情意境都能把握，可惜他有点书呆，把小女孩的口气，译得太“文”了，于是我决定大胆“斟酌和润色”。不料我太忙了，就拖了下来。</p>
 <p>昨天峰松、金珠和小女儿到我家，看我只“斟酌和润色”了第一段，催我快译，说你等着要。于是今天早起，就花了一个半小时，把“胡译本”改成“胡李译本”。因为原诗除最末一节外，都是 abab 的四行体，我为扣紧二、四行韵脚，迁就贫乏的中文词汇，偶尔也不无“增字解经”之处、“掺以己意”之处，凡此错妄，自当由我负全责，与虚一无涉也。下面就是全文：</p>
-<p>《我们七个》（WeAreSeven）</p>
-<p>华兹华斯（WilliamWordsworth）作（胡虚一、李敖译）</p>
-<p>一个单纯的小孩，Asimplechild,</p>
-<p>他呼吸，轻快无比，Thatlightlydrawsitsbreath,</p>
-<p>每只手脚都充满了生命，Andfeelsitslifeineverylimb,</p>
-<p>他哪管什么叫死。Whatshoulditknowofdeath?</p>
-<p>我碰到一个小女孩，ImetalittlecottageGirl：</p>
-<p>住乡下小屋，说她八岁。Shewaseightyearsold，shesaid；</p>
-<p>她有着一头乱发，Herhairwasthickwithmanyacurl</p>
-<p>在头上，一一下坠。Thatclusteredroundherhead.</p>
-<p>她一派乡野土气，Shehadarustic，woodlandair,</p>
-<p>穿着随便失体；Andshewaswildlyclad；</p>
-<p>她眼睛漂亮、真漂亮，Hereyeswerefair,andveryfair；</p>
-<p>——她的美使我欢喜。——Herbeautymademeglad.</p>
-<p>“小姑娘啊，”我问道，“Sistersandbrothers，littleMaid,</p>
+<p>《我们七个》（We Are Seven）</p>
+<p>华兹华斯（William Wordsworth）作（胡虚一、李敖译）</p>
+<p>一个单纯的小孩，A simple child,</p>
+<p>他呼吸，轻快无比，That lightly draws its breath,</p>
+<p>每只手脚都充满了生命，And feels its life in every limb,</p>
+<p>他哪管什么叫死。What should it know of death?</p>
+<p>我碰到一个小女孩，I met a little cottage Girl：</p>
+<p>住乡下小屋，说她八岁。She was eight years old，she said；</p>
+<p>她有着一头乱发，Her hair was thick with many a curl</p>
+<p>在头上，一一下坠。That clustered round her head.</p>
+<p>她一派乡野土气，She had a rustic，woodland air,</p>
+<p>穿着随便失体；And she was wildly clad；</p>
+<p>她眼睛漂亮、真漂亮，Her eyes were fair, and very fair；</p>
+<p>——她的美使我欢喜。——Her beauty made me glad.</p>
+<p>“小姑娘啊，”我问道，“Sisters and brothers，little Maid,</p>
 <p>“你可有几个兄弟姊妹？”Howmanymayyoube?”</p>
-<p>“几个呢？一共七个。”她答着，“Howmany?Seveninall，”shesaid,</p>
-<p>看着我，奇怪有什么不对。Andwonderinglookedatme.</p>
-<p>“告诉我，他们都在哪儿？”“Andwherearethey?IprayyoutelL。”</p>
-<p>她答道：“一共七位，Sheanswered，“Sevenarewe；</p>
-<p>两个去航海，AndtwoofusatConwaydwell，</p>
-<p>两个住康卫。Andtwoaregonetosea；</p>
-<p>哥哥姐姐两个，Twousinthechurch-yardlie,</p>
-<p>埋在坟里。Mysisterandmybrother；</p>
-<p>靠近他们，那小屋 And,inthechurch-yardcottage,</p>
-<p>妈妈和我住在一起。”IDwellnearthemwithmymother.”</p>
-<p>“你说两个去航海，“YousaythattwoatConwaydwell，</p>
-<p>两个住康卫。Andtwoaregonetosea,</p>
-<p>但你们有七个，Yetyeareseven!——Iprayyoutell,</p>
-<p>可爱的小姑娘，这有点不对。”SweetMaid，howthismaybe.”</p>
-<p>小姑娘还是照说：ThendidthelittleMaidreply,</p>
-<p>“我们七个不差，“Sevenboysandgirlsarewe；</p>
-<p>两个埋在坟里，Twoofusinthechurch-yardlie</p>
-<p>就在那棵树下。”Beneaththechurch-yardtree.”</p>
-<p>“我的小姑娘，活着的才算，“Yourunabout,mylittleMaid；</p>
-<p>你说得不对，Yourlimbstheyarealive；</p>
-<p>坟里躺着两个，Iftwoareinthechurch-yardlaid，</p>
-<p>你们只有五位。”Thenyeareonlyfive.”</p>
-<p>“他们坟上有青草，“Theirgravesaregreen,</p>
-<p>看得到他们，那么明显”，theymaybeseen,”</p>
-<p>小姑娘回答道，“ThelittleMaidreplied,</p>
-<p>他们在一起做邻居，“Twelvestepsormorefrommymother'sdoor</p>
-<p>离妈妈家门十二步远。”Andtheyaresidebyside.”</p>
-<p>“我常在那儿织袜子，“MystockingsthereIoftenknit,</p>
-<p>我常在那儿缝手帕，MykerchiefthereIhem，</p>
-<p>我坐在那儿地上，AndthereuponthegroundIsit,</p>
-<p>对他们唱歌说话。Andsingasongtothem.</p>
-<p>我常在太阳下山，Andoftenaftersunset,Sir,</p>
-<p>看天上又睛又亮。Whenitislightandfair,</p>
-<p>我端着我的小碗，Itakemylittleporringer,</p>
-<p>在那儿把晚饭吃上。Andeatmysupperthere.</p>
-<p>珍姐死得最早，ThefirstthatdiedwassisterJane；</p>
-<p>她躺在床上喊疼。Inbedshemoaninglay，</p>
-<p>最后她终于走了，TillGodreleasedherofherpain；</p>
-<p>当上帝慈悲万能。Andthenshewentaway.</p>
-<p>当草地又枯又干，Sointhechurch-yardshewaslaid；</p>
-<p>她的坟出现眼前，And,whenthegrasswasdry,</p>
-<p>绕着坟，约翰和我 Togetherroundhergraveweplayed，</p>
-<p>在一起大家游玩。MybrotherJohnandI.</p>
-<p>当地上雪白一片，Andwhenthegroundwaswhitewithsnow,</p>
-<p>又跑步又滑冰，我可真忙，AndIcouldrunandslide,</p>
-<p>这时候约翰走了，MybrotherJohnwasforcedtogo，</p>
-<p>也埋在珍姐身旁。”Andheliesbyherside.”</p>
-<p>“如果两位在天上，”我问道，“Howmanyareyou,then，”saidI，</p>
-<p>“那么还有几个？”“Iftheytwoareinheaven?”</p>
-<p>“啊，先生，我们七个。”QuickwasthelittleMaid’sreply，</p>
-<p>她回答，干净利落。“0Master!weareseven.”</p>
-<p>“但他们死了，两个死了，“Buttheyaredead；thosetwoaredead!</p>
-<p>他们的灵魂，上了天了！”Theirspiritsareinheaven!”</p>
-<p>这些话，是耳边风，一说而过。Twasthrowingwordsaway；forstill</p>
-<p>小姑娘执意她没有错，ThelittleMaidwouldhaveherwill，</p>
-<p>小姑娘照说：“不对，我们七个！”Andsaid，“Nay，weareseven!”</p>
+<p>“几个呢？一共七个。”她答着，“How many? Seven in all，”she said,</p>
+<p>看着我，奇怪有什么不对。And wondering looked at me.</p>
+<p>“告诉我，他们都在哪儿？”“And where are they? I pray you telL。”</p>
+<p>她答道：“一共七位，She answered，“Seven are we；</p>
+<p>两个去航海，And two of us at Conway dwell，</p>
+<p>两个住康卫。And two are gone to sea；</p>
+<p>哥哥姐姐两个，Two us in the church-yard lie,</p>
+<p>埋在坟里。My sister and my brother；</p>
+<p>靠近他们，那小屋 And,in the church-yard cottage,</p>
+<p>妈妈和我住在一起。”I Dwell near them with my mother.”</p>
+<p>“你说两个去航海，“You say that two at Conway dwell，</p>
+<p>两个住康卫。And two are gone to sea,</p>
+<p>但你们有七个，Yet ye are seven!——I pray you tell,</p>
+<p>可爱的小姑娘，这有点不对。”Sweet Maid，how this may be.”</p>
+<p>小姑娘还是照说：Then did the little Maid reply,</p>
+<p>“我们七个不差，“Seven boys and girls are we；</p>
+<p>两个埋在坟里，Two of us in the church-yard lie</p>
+<p>就在那棵树下。”Beneath the church-yard tree.”</p>
+<p>“我的小姑娘，活着的才算，“You run about, my little Maid；</p>
+<p>你说得不对，Your limbs they are alive；</p>
+<p>坟里躺着两个，If two are in the church-yard laid，</p>
+<p>你们只有五位。”Then ye are only five.”</p>
+<p>“他们坟上有青草，“Their graves are green,</p>
+<p>看得到他们，那么明显”，they may be seen,”</p>
+<p>小姑娘回答道，“The little Maid replied,</p>
+<p>他们在一起做邻居，“Twelve steps or more from my mother’s door</p>
+<p>离妈妈家门十二步远。”And they are side by side.”</p>
+<p>“我常在那儿织袜子，“My stockings there I often knit,</p>
+<p>我常在那儿缝手帕，My kerchief there I hem，</p>
+<p>我坐在那儿地上，And there upon the ground I sit,</p>
+<p>对他们唱歌说话。And sing a song to them.</p>
+<p>我常在太阳下山，And often after sunset, Sir,</p>
+<p>看天上又睛又亮。When it is light and fair,</p>
+<p>我端着我的小碗，I take my little porringer,</p>
+<p>在那儿把晚饭吃上。And eat my supper there.</p>
+<p>珍姐死得最早，The first that died was sister Jane；</p>
+<p>她躺在床上喊疼。In bed she moaning lay，</p>
+<p>最后她终于走了，Till God released her of her pain；</p>
+<p>当上帝慈悲万能。And then she went away.</p>
+<p>当草地又枯又干，So in the church-yard she was laid；</p>
+<p>她的坟出现眼前，And, when the grass was dry,</p>
+<p>绕着坟，约翰和我 Together round her grave we played，</p>
+<p>在一起大家游玩。My brother John and I.</p>
+<p>当地上雪白一片，And when the ground was whitewith snow,</p>
+<p>又跑步又滑冰，我可真忙，And I could run and slide,</p>
+<p>这时候约翰走了，My brother John was forced to go，</p>
+<p>也埋在珍姐身旁。”And he lies by her side.”</p>
+<p>“如果两位在天上，”我问道，“How many are you, then，”said I，</p>
+<p>“那么还有几个？”“If they two are in heaven?”</p>
+<p>“啊，先生，我们七个。”Quick was the little Maid’s reply，</p>
+<p>她回答，干净利落。“0 Master! we are seven.”</p>
+<p>“但他们死了，两个死了，“But they are dead；those two are dead!</p>
+<p>他们的灵魂，上了天了！”Their spirits are in heaven!”</p>
+<p>这些话，是耳边风，一说而过。Twas throwing words away；for still</p>
+<p>小姑娘执意她没有错，The little Maid would have her will，</p>
+<p>小姑娘照说：“不对，我们七个！”And said，“Nay，we are seven!”</p>
 <p>这首诗承老兄选定，命我翻译，若不是老兄提醒，我真没注意到这首好诗，真要感谢你。</p>
 <p>这诗写一个纯真的小女孩，置哥哥姐姐死亡于度外，不论生死，手足照算，视亲人虽死犹生、若亡实在。这种境界，看似童稚，其实倒真与参悟大化的高人境界若合符节。高人的境界在能“乐入哀不入”，在生死线外，把至情至乐结合在一起。这种至情至乐是永恒的，不因生死而变质，纵情随事迁，并无感慨，反倒只存余味。人生有了这种境界，自然不会生无谓的伤感、自然不会否定过去或逃避过去、自然会真正达到“所过者化，所存者神”的新水准（“所过者化，所存者神”在这里，“化”字该解做化境，“神”字兹解做余味）。达到这种水准，才是真正正确的水准。相对的，轻易“多愁善感”是没水准的、“哀乐不能入”也是没水准的，高人的水准是“乐人哀不入”，只有轻快，没有重忧；只有达观，没有闲愁，这样的境界才是修养最高的境界。华兹华斯诗中小女孩的境界，恰恰是这种境界。虽然小女孩一派天真，全无哲学与理论，但是她“举重若轻”，所以兴怀，其致一也。特写数语附识，此上</p>
 <p>维青老兄</p>
@@ -1765,8 +1798,8 @@
 <p>四年前，惨绝人寰的林家祖孙命案发生当时，连不认识林义雄的我，都感悲愤万分，甚至当众放声号泣过。我真不忍想象，当黑衫队员举起利刀，刺杀奂均、亮均、亭均的时候，她们三个姊妹的眼神是怎样一种表情。她们不会抵抗，只会喊疼，不知道逃命，只会望着那黑衫人说“不要”，她们像献祭的小羔羊，不知道罪恶、不知道死亡，正如这首诗所说的：“Whatshoulditknowofdeath?”结果，那地狱使者还是夺去亮均、亭均的生命。</p>
 <p>但是，死者已矣，对死里逃生的奂均，我们要用什么方法来平衡她心理上的创伤呢？有一段时间，我为这件事终日感到欲吐不得的难过，希望能有机会亲眼看到奂均的情况。这希望，很快地就实现了，就在同年的一个冬天晚上，秋堇小姐陪我到奂均舅舅家（当时她们母女二人住在这里），为她的钢琴调音。这时候，我才亲眼看到奂均，我看她和普通一般同年龄的小女孩并无两样，看她那可爱的笑容、那天真无邪的表情与举动，并没有丝毫被夺去而感到无限的安慰与祝福。</p>
 <p>看到奂均的情况后，使我联想到华兹华斯的《我们七个》这首诗（很巧，当时奂均的年龄跟诗中小女孩的年龄同为八岁），重翻读之，愈使我对奂均放心，自己愈感到安慰。大人们总是容易低估小孩子的心灵境界和生命力了，大人们的多愁善感，对小孩子来讲是多余的，我们未免太操心了吧！现在如果有人问奂均，你有几个姊妹，她一定回答“Threeinall”，而且会一直坚持“Wearethree”到底，愈是手足情深，愈会如此。</p>
-<p>华兹华斯这首 WeAreSeven 的诗，非常美，朗诵时，诗中小女孩外表的模样和与大人对话的神情，会浮现于眼前，怜惜之情，油然而生，实在太美太美了。今“胡李译本”已竣，我仍希望能借着你的丽笔，公之于世，飨宴你的读者，证明你也具有“软体”成分的一面。</p>
-<p>另外拜托你翻译的华兹华斯的一首 sonnet1802inLondon，如果译好了，请赶快寄给我，因为我有一篇文章想引用它，我总认为，急件应该请忙人办，这样会比较快，你说对不对？耑此，顺祝</p>
+<p>华兹华斯这首 We Are Seven 的诗，非常美，朗诵时，诗中小女孩外表的模样和与大人对话的神情，会浮现于眼前，怜惜之情，油然而生，实在太美太美了。今“胡李译本”已竣，我仍希望能借着你的丽笔，公之于世，飨宴你的读者，证明你也具有“软体”成分的一面。</p>
+<p>另外拜托你翻译的华兹华斯的一首 sonnet 1802 in London，如果译好了，请赶快寄给我，因为我有一篇文章想引用它，我总认为，急件应该请忙人办，这样会比较快，你说对不对？耑此，顺祝</p>
 <p>安好</p>
 <p>维青 10 月 24 日</p>
 <h2 id="七绝十七首"><a class="header" href="#七绝十七首">七绝十七首</a></h2>
@@ -1828,7 +1861,7 @@
 <p>曹家书法蔡家碑，乱世人情总成灰。</p>
 <p>东山苍生阿瞒泪，只救文姬一人归。</p>
 <p>1985 年 6 月 7 日</p>
-<p>“飞去来”（TheBoomerang）</p>
+<p>“飞去来”（The Boomerang）</p>
 <p>将往复旋入我怀，青眼独钟“飞去来”。</p>
 <p>迂回取人千里外，要打就打中国牌。</p>
 <p>1985 年 8 月 9 日</p>
@@ -2019,21 +2052,21 @@
 <p>1986 年 9 月 8 日傍晚</p>
 <h2 id="关于丽达与天鹅"><a class="header" href="#关于丽达与天鹅">关于《丽达与天鹅》</a></h2>
 <p>爱尔兰诗人叶慈（WilliamButlerYeats,1865-1932），写了一首名诗，叫《丽达与天鹤》（LedaandtheSwan），原诗如下：</p>
-<p>Asuddenblow；thegreatwingsbeatingstill</p>
-<p>Abovethestaggeringgirl,herthighscaressed</p>
-<p>Bythedarkwebs,hernapecaughtinhisbill,</p>
-<p>Heholdsherhelplessbreastuponhisbreast.</p>
-<p>Howcanthoseterrifiedvaguefingerspush</p>
-<p>Thefeatheredgloryfromherlooseningthighs?</p>
-<p>Andhowcanbody,laidinthatwhiterush,</p>
-<p>Butfeelthestrangeheartbeatingwhereitlies?</p>
-<p>Ashudderintheloinsengendersthere</p>
-<p>Thebrokenwall，theburningroofandtower</p>
-<p>AndAgamemnondead.</p>
-<p>Beingsocaughtup,</p>
-<p>Somasteredbythebrutebloodoftheair,</p>
-<p>Didsheputonhisknowledgewithhispower</p>
-<p>Beforetheindifferentbeakcouldletherdrop?</p>
+<p>A sudden blow；the great wings beating still</p>
+<p>Above the staggering girl, her thighs caressed</p>
+<p>By the dark webs,her nape caught in his bill,</p>
+<p>He holds her helpless breast upon his breast.</p>
+<p>How can those terrified vague fingers push</p>
+<p>The feathered glory from her loosening thighs?</p>
+<p>And how can body, laid in that white rush,</p>
+<p>But feel the strange heart beating where it lies?</p>
+<p>A shudder in the loins engenders there</p>
+<p>The broken wall，the burning roof and tower</p>
+<p>And Agamemnon dead.</p>
+<p>Being so caught up,</p>
+<p>So mastered by the brute blood of the air,</p>
+<p>Did she put on his knowledge with his power</p>
+<p>Before the indifferent beak could let her drop?</p>
 <p>余光中的翻译</p>
 <p>谄媚国民党大员的西洋文学专家兼“诗人”佘光中，在他的《英美现代诗选》里，曾把这首诗中译。译文如下：</p>
 <p>猝然一攫：巨翼犹兀自拍动，</p>
@@ -2055,17 +2088,17 @@
 <p>胡虚一评余光中的翻译</p>
 <p>我请胡虚一注意一下余光中这首译诗，并表示一点意见。本月 17 日，胡虚一写信来，分说如下：</p>
 <p>余教授虽译得大体不差，尤其全照原诗韵脚来译（惜后六行的韵脚，译得乱了），更是不易；唯对照细读之后，窃觉其中译不免失误欠妥之处，有下列若干：</p>
-<p>一、第一行开头“Asuddenblow”的 blow，余译为“攫”，窃以不如仍译“袭”或“击”，较合“天神宙斯窥见丽达某次浴于河上，乃化为天鹅，袭奸丽达”的希腊神话的意思。且“攫”是“用爪抓取”的意思，可引伸为“夺取”，似与 blow 的字义不合。故仍以译“袭”或“击”，既合希腊神话故事原意，又合 blow 的字义。</p>
-<p>二、由第一行之“thegreatwingsbeatingstill”到第二行之“Abovethestaggeringgirl”的英文，余译为“巨翼犹兀自拍动，扇着欲坠的少女”云云，是译错了文法结构，就翻译讲，似是个很大错误。因“Abovethestaggeringgirl”是说明“thegreatwingsbeatingstill”之空间位置的片语也。就片语结构言，为一 prepositionalphrase；就片语作用言，为一 adverbialphrase。再说 staggeringgirl，意为摇摇摆摆的少女，或悬空摇摆的少女，而不宜译为“欲坠的少女”。</p>
+<p>一、第一行开头“A sudden blow”的 blow，余译为“攫”，窃以不如仍译“袭”或“击”，较合“天神宙斯窥见丽达某次浴于河上，乃化为天鹅，袭奸丽达”的希腊神话的意思。且“攫”是“用爪抓取”的意思，可引伸为“夺取”，似与 blow 的字义不合。故仍以译“袭”或“击”，既合希腊神话故事原意，又合 blow 的字义。</p>
+<p>二、由第一行之“the great wings beating still”到第二行之“Above the staggering girl”的英文，余译为“巨翼犹兀自拍动，扇着欲坠的少女”云云，是译错了文法结构，就翻译讲，似是个很大错误。因“Above the staggering girl”是说明“the great wings beating still”之空间位置的片语也。就片语结构言，为一 prepositional phrase；就片语作用言，为一 adverbial phrase。再说 staggering girl，意为摇摇摆摆的少女，或悬空摇摆的少女，而不宜译为“欲坠的少女”。</p>
 <p>三、第二行之“caressed”，余译“摩挲”，似不如译为“抚爱”有表示性爱欲念之意。</p>
-<p>四、第四行之“Heholdsherhelplessbreastuponhisbreast”，余译为“且拥她无助的乳房在他的胸脯”。窃觉余译得似无“泄欲逞暴”的意味。helplessbreast，若译为“可怜的乳房”，似较“无助的乳房”胜；而 upon 在这里，似更有“霸王硬上弓”的“压在或抵住可怜乳房上面逞暴之势”的意味，余译中似都难以觉到此意。</p>
+<p>四、第四行之“He holds her helpless breast upon his breast”，余译为“且拥她无助的乳房在他的胸脯”。窃觉余译得似无“泄欲逞暴”的意味。helpless breast，若译为“可怜的乳房”，似较“无助的乳房”胜；而 upon 在这里，似更有“霸王硬上弓”的“压在或抵住可怜乳房上面逞暴之势”的意味，余译中似都难以觉到此意。</p>
 <p>五、第五行之“vague”，余译为“含糊的”，全照字面意思译，似嫌太呆板。实则受惊少女的手指，此刻已呈麻木失去知感的状态了，故以译“昏麻的”或“失去知感的”为佳。</p>
-<p>六、第六行之“Thefeatheredgloryfromherlooseningthighs”，余译之为“她松弛的股间，那羽化的宠幸”云云，似也没有译出“大鸟宠幸少女作爱之顷的实况”意味。那实况意味，似为“少女的松软双股之间，承受鸟毛宠幸的那阵毛茸茸感受”也。</p>
-<p>七、第八行中开头的那个“But”，在第七行和第八行合成的句中的意义（contextmeaning），是很重要的，不宜忽略，但余译中，将之忽略了，便减损了此句的意味。</p>
-<p>八、第十一行之“AndAgamemnondead”，余译为“而亚嘉曼农死去”。窃以若译为“和亚嘉曼农遭妻杀害”岂不更好些？再者，“亚嘉曼农之被妻杀害”，本是与前面的“残壁断垣”，“被烧毁的屋顶楼城”，都是那“鸟人作爱”酿成的累积祸事。故“Thebrokenwall，theburningroofandtower/AndAgamemnondead”中的这个“And”，语法结构上的词性意义（themeaningofthepartofspeech），是个 accumulativeconjunction（累积连接词）。但余译为“而”，而非“而且”，不仅不足以显示 And 的累积连接词的作用意思，且还会被人看成有 contraryconjunction（反意连接词）的意味了。翻译语词句子，对其中关键字（keyword）的词类功能、语法构造地位，以及字之隐义和显义，都须严格把握住才好。</p>
-<p>九、第十一行之下半“Beingsocaughtup”，及第十二行“Somasteredbythebrutebloodoftheair”，本合为一个形容第十三行之“She”的复合分词片语（compoundparticipialphrase）。这个复合分词片语的语法结构，应如下式：</p>
-<p>Beingsocaughtup，Somastered——bythebrutebloodoftheair.</p>
-<p>如明了其语法结构，则其中译，似不应如余那样，将之译为“就这样被抓/被自天而降的暴力所凌驾”。依我看余译欠妥。且此复合分词片语，复和后面的第十三行与第十四行，在语法结构上，又合为一个 complexsentence 的句型。倘译者能明了之，则后二行之中译，就易捉住原诗意味了。可惜余译将最后两行的诗句意思，译得“咬文嚼字，不知所云”。而且译得也不押韵了，此或因其未能明了其语法结构之故吧？</p>
+<p>六、第六行之“The feathered glory from her loosening thighs”，余译之为“她松弛的股间，那羽化的宠幸”云云，似也没有译出“大鸟宠幸少女作爱之顷的实况”意味。那实况意味，似为“少女的松软双股之间，承受鸟毛宠幸的那阵毛茸茸感受”也。</p>
+<p>七、第八行中开头的那个“But”，在第七行和第八行合成的句中的意义（context meaning），是很重要的，不宜忽略，但余译中，将之忽略了，便减损了此句的意味。</p>
+<p>八、第十一行之“And Agamemnon dead”，余译为“而亚嘉曼农死去”。窃以若译为“和亚嘉曼农遭妻杀害”岂不更好些？再者，“亚嘉曼农之被妻杀害”，本是与前面的“残壁断垣”，“被烧毁的屋顶楼城”，都是那“鸟人作爱”酿成的累积祸事。故“The broken wall，the burning roof and tower/ And Agamemnon dead”中的这个“And”，语法结构上的词性意义（the meaning of the part of speech），是个 accumulative conjunction（累积连接词）。但余译为“而”，而非“而且”，不仅不足以显示 And 的累积连接词的作用意思，且还会被人看成有 contrary conjunction（反意连接词）的意味了。翻译语词句子，对其中关键字（key word）的词类功能、语法构造地位，以及字之隐义和显义，都须严格把握住才好。</p>
+<p>九、第十一行之下半“Being so caught up”，及第十二行“So mastered by the brute blood of the air”，本合为一个形容第十三行之“She”的复合分词片语（compound participial phrase）。这个复合分词片语的语法结构，应如下式：</p>
+<p>Being so caught up，So mastered——by the brute blood of the air.</p>
+<p>如明了其语法结构，则其中译，似不应如余那样，将之译为“就这样被抓/被自天而降的暴力所凌驾”。依我看余译欠妥。且此复合分词片语，复和后面的第十三行与第十四行，在语法结构上，又合为一个 complex sentence 的句型。倘译者能明了之，则后二行之中译，就易捉住原诗意味了。可惜余译将最后两行的诗句意思，译得“咬文嚼字，不知所云”。而且译得也不押韵了，此或因其未能明了其语法结构之故吧？</p>
 <p>胡虚一的翻译</p>
 <p>胡虚一在做了九点评论后，他自己也试译了一次，译文如下：</p>
 <p>一次突击，巨翼仍拍动在飘摇少女之上，</p>
@@ -2119,7 +2152,7 @@
 <p>李敖的总评</p>
 <p>看了这些翻译，虽然有些地方各有所长，但总觉得四人的翻译，都不是痛痛快快的好的中文。例如明明是少女的“大腿”，为什么要硬说成“双股”或“两股”？为什么有话要别别扭扭、不好好说，为什么？</p>
 <p>余光中在《英美现代诗选》序里说：</p>
-<p>诗的难译，非身历其境者不知其苦、非真正行家不知其难。现代诗原以晦涩见称，译之尤难。真正了解英文诗的人都知道，有的诗天造地设，宜于翻译，有的诗难译，有的诗简直不可能译。普通的情形是：抽象名词难译（Athingofbeauty 和 Abeautifulthing 是不完全一样的；中文宜于表达后者，但拙于表达前者）；过去式难译（TotheglorythatwasGreece/AndthegrandeurthatwasRome.）；关系子句难译；有关音律方面的文字特色，例如头韵、谐母音、谐子音、阴韵、阳韵、邻韵等，则根本无能为力。</p>
+<p>诗的难译，非身历其境者不知其苦、非真正行家不知其难。现代诗原以晦涩见称，译之尤难。真正了解英文诗的人都知道，有的诗天造地设，宜于翻译，有的诗难译，有的诗简直不可能译。普通的情形是：抽象名词难译（A thing of beauty 和 A beautiful thing 是不完全一样的；中文宜于表达后者，但拙于表达前者）；过去式难译（To the glory that was Greece/And the grandeur that was Rome.）；关系子句难译；有关音律方面的文字特色，例如头韵、谐母音、谐子音、阴韵、阳韵、邻韵等，则根本无能为力。</p>
 <p>又说：</p>
 <p>我国当代诗人受西洋现代诗的影响至深。理论上说来，一个诗人是可以从译文去学习外国诗的，但是通常的情形是，他所学到的往往是主题和意象，而不是节奏和韵律，因为后者与原文语言的关系更为密切，简直是不可翻译。举个例子，李清照词中“只恐双溪舴艋舟，载不动，许多愁”的意象，译成英文并不太难，但是像“寻寻觅觅，冷冷清清，凄凄惨惨戚戚”一类的音调，即使勉强译成英文，也必然大打折扣了。因此以意象取胜的诗，像斯蒂芬克瑞因的作品，在译文中并不比在原文中逊色太多，但是以音调、语气或句法取胜的诗，像弗罗斯特的作品，在译文中就面目全非了。</p>
 <p>在大道理上，余光中这些话都说得不错，但是，奇怪的是，为什么一从事实务，他的翻译就变得那么糟？在四种翻译中，他的翻译，总体说来，竟然还不如那些非名家。</p>
@@ -2150,25 +2183,25 @@
 <p>天神宙斯跟丽达这一手，趣味在他化为禽类强奸，最后丽达怀孕，却下了二蛋，私生子女都成了卵生的。中国神话记商朝祖奶奶简狄，也是和丽达一样，出浴成孕。但不同的是，《史记-殷本纪》只说：“见玄鸟堕其卵，简狄取吞之，因孕生契。”“玄鸟”就是燕子，东方燕子究竟比较客气，只是“下蛋你呷”而已，而西方的天鹅却野蛮得不成体统，竟要“卵叫你呷”了。</p>
 <p>“天常”在此</p>
 <p>像宙斯这种大屌神仙，他这样处处留情，本来并没有“神谕”之可言。这种“神谕”，显然是后人努力附会的、努力托神改制的，诗人叶慈显然是从事这种努力的一位能手，但他的努力，毕竟有他的限度。蔡源煌的一篇小文章——《给宙斯上了一课》（1983 年 6 月 11 日《联合报》），曾有议论，他说：</p>
-<p>丽达被宙斯“强奸”这个掌故，曾吸引米开朗琪罗作了一幅画。但是西方文学史上，处理丽达与宙斯交媾最具煽议性的，当推爱尔兰诗人叶慈（Yeats）的《丽达与天鹅》一诗。这首诗本来的用意在表现叶慈一贯的灵视——那就是，旧的文明在即将为新的文明取代之前，都要有一种超人力量促成强烈的新生命来作为“图腾”。譬如说，基督教文明取代了巴比伦文明，而耶稣便是那个新文明的图腾代表。圣母玛利亚生了基督完全是源自神与人之交。同样的海伦也是人神之交的产儿。海伦的诞生肇始了希腊罗马文明，所以也是一个“图腾”。可是，叶慈的诗几乎难得窥出此项灵视及历史哲学的推演了——反之，这首诗却把人神交媾写活了，太鲜活了！最教人费解的是，丽达受制于天鹅，一副无助的样子，简直对宙斯的“强暴”毫无反抗。当然，我们可以说，反抗也徒然于事无补，毕竟神的力量远超过一个人间的弱女子。问题是诗中有一个片语不得不教人深省。叶慈描述丽达时，说她的双腿在宙斯的爱抚下张开了。叶慈用的是主动的现在分词 looseningthighs，而不是被动的 loosened。那么，我们怀疑叶慈是不是要让丽达觉得反抗既然无益，莫如不要做无谓的挣扎而静静地玩味？诗中的确是把握这一点去发挥的。我们如果说，丽达也只得认命了，何况天底下焉有比和神交配更大的荣幸？当然，这话绝无幸灾乐祸之意。叶慈既然强调人神之交，以便揭橥丽达与天神之间的一种知识上的沟通，这种非寻常关系发生当时，丽达冥冥中也晓得一个新纪元、新文明即将诞生。同时，按照叶慈的说法，文明替代，此起彼落，是不会停的——长江后浪推前浪，当一个文明陈旧而欲振乏力，价值崩溃时，另一个新的文明就会起而代之。诗的结尾，叶慈问道：丽达是否借着天神之力量而增加了神的智慧？答案应该是肯定的！人们放眼天下大势，洞晓盛衰替代之先机，人这种认识岂是神所能体会的？神住的界域不是永恒不变的吗？所以他们无法了解人所领悟到的人世沧桑与变迁。</p>
+<p>丽达被宙斯“强奸”这个掌故，曾吸引米开朗琪罗作了一幅画。但是西方文学史上，处理丽达与宙斯交媾最具煽议性的，当推爱尔兰诗人叶慈（Yeats）的《丽达与天鹅》一诗。这首诗本来的用意在表现叶慈一贯的灵视——那就是，旧的文明在即将为新的文明取代之前，都要有一种超人力量促成强烈的新生命来作为“图腾”。譬如说，基督教文明取代了巴比伦文明，而耶稣便是那个新文明的图腾代表。圣母玛利亚生了基督完全是源自神与人之交。同样的海伦也是人神之交的产儿。海伦的诞生肇始了希腊罗马文明，所以也是一个“图腾”。可是，叶慈的诗几乎难得窥出此项灵视及历史哲学的推演了——反之，这首诗却把人神交媾写活了，太鲜活了！最教人费解的是，丽达受制于天鹅，一副无助的样子，简直对宙斯的“强暴”毫无反抗。当然，我们可以说，反抗也徒然于事无补，毕竟神的力量远超过一个人间的弱女子。问题是诗中有一个片语不得不教人深省。叶慈描述丽达时，说她的双腿在宙斯的爱抚下张开了。叶慈用的是主动的现在分词 loosening thighs，而不是被动的 loosened。那么，我们怀疑叶慈是不是要让丽达觉得反抗既然无益，莫如不要做无谓的挣扎而静静地玩味？诗中的确是把握这一点去发挥的。我们如果说，丽达也只得认命了，何况天底下焉有比和神交配更大的荣幸？当然，这话绝无幸灾乐祸之意。叶慈既然强调人神之交，以便揭橥丽达与天神之间的一种知识上的沟通，这种非寻常关系发生当时，丽达冥冥中也晓得一个新纪元、新文明即将诞生。同时，按照叶慈的说法，文明替代，此起彼落，是不会停的——长江后浪推前浪，当一个文明陈旧而欲振乏力，价值崩溃时，另一个新的文明就会起而代之。诗的结尾，叶慈问道：丽达是否借着天神之力量而增加了神的智慧？答案应该是肯定的！人们放眼天下大势，洞晓盛衰替代之先机，人这种认识岂是神所能体会的？神住的界域不是永恒不变的吗？所以他们无法了解人所领悟到的人世沧桑与变迁。</p>
 <p>总之，叶慈的诗确凿地指出，丽达不完全是被强奸的。丽达的接受反而给宙斯上了很有意义的一课——这一课，宙斯在奥林匹亚山上（尽管神无所不知）却是学不到的。</p>
 <p>这里说叶慈的诗几乎难得窥出“灵视及历史哲学的推演”，“却把人神交媾写活了，太鲜活了”，事实上，诗的限度，也就在此。诗的本身并没有太大的说理的能力，对诗的过多阐释，事实上是一种乱猜、一种辞费，一如叶慈阐释天神宙斯的行为，事实上是一种乱猜、一种辞费一样。——我大屌神仙肏女人，只是寻乐子而已，何来什么“神谕”、什么“灵视及历史哲学”？叶慈的诗，也是很简单很动人很美的诗而已，也何来什么“神谕”、什么“灵视及历史哲学”？对大屌神仙说来，他自然是深通女人心理的家伙，他会认为对某些女人，行家知道是不能诱之点头的，唯一办法，其唯强奸乎？（这话翻成英文，或可说：Everysexuallyactivemanknowstherearewomenwhocan’tbringthemselvestosay“Yes,”butwhorespondtoalittlepushing.Isitrape?）在强奸之下，丽达之流的美人，大腿自会 loosening 而不 loosened。叶慈《丽达与天鹅》之诗，推其首功，在道出此一“天常”耳！舍此而外，若想把神的“大头”思想，靠“小头”传播，恐怕是开玩笑吧？——美女岂知其他“天常”哉？</p>
 <p>1986 年 10 月 19 日</p>
 <h2 id="向沧海凝神"><a class="header" href="#向沧海凝神">向沧海凝神</a></h2>
-<p>美国诗人弗罗斯特（RobertFrost）有诗《不远也不深》（NeitherOutFarNorinDeep），最后一节是：</p>
-<p>他们望不到多远，Theycannotlookoutfar</p>
-<p>他们望不了多深。Theycannotlookindeep.</p>
-<p>可是谁能挡住 Butwhenwasthateverabar</p>
-<p>他们向沧海凝神？Toanywatchtheykeep?</p>
-<p>“向沧海凝神”，是一种浩瀚的心灵情怀，它最使人有“天人合一”的博大感觉。这种博大，会使随之而来的任何主题，即是本来很普通的，也跟着变为光彩夺目、壮阔动人。梅尔维尔（HermanMelville）笔下的《白鲸记》（Moby-Dick）主角“向沧海凝神”，意在寻仇；海明威（ErnestHemingway）笔下的《老人与海》（TheOldManandTheSea）主角“向沧海凝神”，意在不屈。这种寻仇与不屈，都因为寄情沧海，而变得使心灵浩瀚，一切情怀也就大不相同。</p>
+<p>美国诗人弗罗斯特（Robert Frost）有诗《不远也不深》（Neither Out Far Nor in Deep），最后一节是：</p>
+<p>他们望不到多远，They cannot look out far</p>
+<p>他们望不了多深。They cannot look in deep.</p>
+<p>可是谁能挡住 But when was that ever a bar</p>
+<p>他们向沧海凝神？To any watch they keep?</p>
+<p>“向沧海凝神”，是一种浩瀚的心灵情怀，它最使人有“天人合一”的博大感觉。这种博大，会使随之而来的任何主题，即是本来很普通的，也跟着变为光彩夺目、壮阔动人。梅尔维尔（Herman Melville）笔下的《白鲸记》（Moby-Dick）主角“向沧海凝神”，意在寻仇；海明威（Ernest Hemingway）笔下的《老人与海》（The Old Man and The Sea）主角“向沧海凝神”，意在不屈。这种寻仇与不屈，都因为寄情沧海，而变得使心灵浩瀚，一切情怀也就大不相同。</p>
 <p>在我个人方面，在“向沧海凝神”之际，寻仇与不屈两种情怀，也就更形澎湃。我会随波而去，偶尔幻想是散仙、是海神、是浪里白条或是尤利西斯（Ulysses）。……这种幻想不是白日梦，而是一种“天人合一”带来的“古今同调”。这种经验，只有寄情沧海，所获最多。所以，我喜欢“向沧海凝神”，如果真是沧海的话。</p>
 <p>1987 年 1 月 9 日夜 10 时</p>
 <h2 id="诗句的实验者"><a class="header" href="#诗句的实验者">诗句的实验者</a></h2>
 <p>欧洲大陆的文豪歌德有诗名 Harfenspieler，隔海的文豪卡莱尔译之如下：</p>
-<p>Whoneveratehisbreadinsorrow,</p>
-<p>Whoneverspentthemidnighthours</p>
-<p>Weepingandwaitingforthemorrow,</p>
-<p>Heknowsyounot,yeheavenlypowers.</p>
+<p>Who never ate his bread in sorrow,</p>
+<p>Who never spent the midnight hours</p>
+<p>Weeping and waiting for the morrow,</p>
+<p>He knows you not, ye heavenly powers.</p>
 <p>谁不曾心里难过咽着饭？</p>
 <p>谁不曾半夜难眠以泪洗？</p>
 <p>等待着黑暗的复旦，</p>
@@ -2213,7 +2246,7 @@
 <p>1987 年 10 月 19 日</p>
 <p>（附记）陆啸钊答诗：“旧画一幅情意长，故旧交恶心暗伤，轻重先后何用告？人情之常哪算帮。”</p>
 <h2 id="弗罗斯特的雪花纷飞"><a class="header" href="#弗罗斯特的雪花纷飞">弗罗斯特的《雪花纷飞》</a></h2>
-<p>弗罗斯特（RobertFrost）有《雪花纷飞》一诗，昨天午饭时，与小屯合译如下：</p>
+<p>弗罗斯特（Robert Frost）有《雪花纷飞》一诗，昨天午饭时，与小屯合译如下：</p>
 <p>雪花纷飞</p>
 <p>途中一乌鸦，</p>
 <p>飘然落身上。</p>
@@ -2223,29 +2256,29 @@
 <p>顿间变两样。</p>
 <p>解我一日忧，</p>
 <p>前后殊世相。</p>
-<p>DustofSnow</p>
-<p>Somedaysfeel“buttonedonwrong.”Theystartuncomfortably.Theycontinuebadly</p>
-<p>Then,sometimes,blessedly,inamomentallischanged.</p>
-<p>Thewayacrow</p>
-<p>Shookdownonme</p>
-<p>Thedustofsnow</p>
-<p>Fromahemlocktree</p>
-<p>Hasgivenmyheart</p>
-<p>Achangeofmood</p>
-<p>Andsavedsomepart</p>
-<p>OfadayIhadrued.</p>
+<p>Dust of Snow</p>
+<p>Some days feel“buttoned on wrong.”They start uncomfortably. They continue badly</p>
+<p>Then, sometimes, blessedly, in a moment all is changed.</p>
+<p>The way a crow</p>
+<p>Shook down on me</p>
+<p>The dust of snow</p>
+<p>From a hemlock tree</p>
+<p>Has given my heart</p>
+<p>A change of mood</p>
+<p>And saved some part</p>
+<p>Of a day I had rued.</p>
 <p>1989 年 1 月 1 日</p>
-<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/05.诗集语录类/爱情的秘密.md">Edit this page on GitHub.</a></footer>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/main/05.诗集语录类/爱情的秘密.md">Edit this page on GitHub.</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../05.诗集语录类/李语录.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../06.沉思日记类/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -2255,16 +2288,21 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../05.诗集语录类/李语录.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../06.沉思日记类/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -2273,12 +2311,16 @@
         </script>
 
 
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
-        <script src="../clipboard.min.js"></script>
-        <script src="../highlight.js"></script>
-        <script src="../book.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>
