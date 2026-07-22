@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>20151119《新台湾加油》 - 大李敖全集</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-d279d366.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/leeao-e9ced672.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-47e392f3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">大李敖全集</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="李敖政论综艺集20151119新台湾加油"><a class="header" href="#李敖政论综艺集20151119新台湾加油">李敖政论综艺集：20151119《新台湾加油》</a></h1>
+<ul>
+<li><a href="#20151119新台湾加油">20151119《新台湾加油》</a></li>
+</ul>
+<h2 id="20151119新台湾加油"><a class="header" href="#20151119新台湾加油">20151119《新台湾加油》</a></h2>
+<p>廖筱君：观众朋友晚安！在选举进入倒数计时，在变与不变当中，怎么看未来不到60天的大趋势？今天节目当中为你邀请到好久没有在荧光幕前那么出现的李敖大师来到我们现场。李敖大哥晚安！</p>
+<p>李敖：筱君你好！</p>
+<p>廖筱君：我们来看今天的过去24小时当中，最热门的话题就是副手了，而副手当中最热门的人物就昨天我们独家专访画面当中，您看到就是陈建仁的部分。我们看到这三组都大势底定之后，包括我们从时间序来开始，昨天10点钟所宣布的是宋莹配。这是一个中华民国在进行民选总统以来，第一次有两个政党，首度两个政党来搭档正副总统来参选。那诸多的所谓的评论在进行当中，所谓的宋楚瑜搭配了民国党党主席徐欣莹的部分。为什么你觉得这个组合是非常非常有趣的？你还用四个字来形容来，你的观察是什么？先从宋莹配开始。</p>
+<p>李敖：我认为宋楚瑜有点无奈，接受了这个配合，并不是说这个副总统的搭档不好，而是副总统在台湾民间里面，他们单独一个势力，这批人接近民间的宗教，接近民间的信仰，他不是很高层的。虽然这位徐副总统她得到最高的立法委员的票，可是他们这个阶层是另外一个阶层，离我们很远的一个阶层。</p>
+<p>廖筱君：她特别强到她不是妙天党，那所谓的妙天禅师在这一场……</p>
+<p>李敖：这就是另外一个阶层。在中国传统里面，像妙天的这个造型，这两个眼睛那么精神，是很凶的眼睛。像林云那么丑的男人，像尹衍梁那么像个凶僧的，或者像徐旭东这个造型的人都爬不起来的。只有在台湾这个奇怪的地方，国民党那个时代的人是人面兽心，可是民进党是兽面兽心，长得都不考究了。所以我们对很多人的选择已经不考究他们长的样子了。虽然我承认徐副总统她的面貌非常的友善慈祥，和蔡英文一样。</p>
+<p>廖筱君：为什么您认为这个组合对宋楚瑜来讲是走投无路。</p>
+<p>李敖：因为宋楚瑜他是政治方面很高段的，讲究细腻，讲究这个行政技巧的。可是他现在接触这个族群，这个副总统这个族群，他是台湾民间的、很淳朴的，所以很多民间信仰是跟这些人结合的，民间的迷信是跟这些人结合的，他们有很多群众，有很多选票，甚至他们有10万票。可是令我们不快乐的是说这些族群过去在中国大陆是起不来的。换句话说像西藏的喇嘛在中国大陆起不来的，原因他是黑教，他是我们不能肯定的。到了台湾，被林云他们加工以后，变成一个正式宗教了，满街跑，喇嘛脏兮兮的。在中国大陆是不可以的。</p>
+<p>廖筱君：但是这样一个组合，她是徐欣莹，今年43岁，73岁的宋楚瑜。您说这样的组合是叫做走投无路，那走投无路总是有一个选择，这叫做什么样结合，你的解读？</p>
+<p>李敖：这个组合正式报名的时候，徐女士一定是亲民党，那个叫李敖条款，就在15年前我选总统的时候，那一次是阿扁我们一起选的时候，我代表新党，可是我不是新党党员。后来他们中央选委会这个地下衙门，他们觉得很不妥，就立个条款来，就是总统跟副总统的候选人要一个党。所以登记的时候他们是一个党，她一定是亲民党。</p>
+<p>廖筱君：噢，这样子吗？现在中选举委员会有这个规定吗？</p>
+<p>李敖：有，就是李敖条款，就针对我。</p>
+<p>廖筱君：今天徐欣莹特别强调她没有带嫁妆嫁过去的，您怎么看？</p>
+<p>李敖：我认为她有嫁妆，她有这么多的票来支持她就是嫁妆，她有民间的信仰就是嫁妆，她有幕后的妙天，这个凶僧恶道，就是嫁妆。</p>
+<p>廖筱君：别忘了妙天背后还是有非常多的信众。</p>
+<p>李敖：所以我说的没错，这是民主政治的悲哀，就是很多人他们跟我一样一票，为什么新加坡或者跟有些人，他们以为知识程度高的人，他的票要占两票或者多一点？就是觉得善男信女的票是不可靠的。作为民主政治里面，他们的选择常常会上当的。</p>
+<p>廖筱君：是，那怎么看英仁配呢？这是昨天我很罕见在PTT针对这项专访几乎是零负评，那认为陈建仁的出现对于蔡英文来讲是有极大的加分作用，甚至《苹果日报》的社论都认为这是一张好牌，甚至国民党籍立法委员在我们节目当中都替朱立伦感到羡慕。你怎么看蔡英文打出陈建仁这一张副手的牌？</p>
+<p>李敖：我首先要说，我跟蔡英文不认识。在立法院里面，我坐在墙角里面，有一次蔡英文左右无人，她经过我身边偷偷跟我讲，她说：李大师，我们都佩服你。蔡英文是个非常友善的可爱的小姑娘。可是民进党的这些人，很多政客恨她入骨。为什么恨她？就是说民进党成立的时候，你不是民进党，你又没有跟我们鬼混过，你怎么进来以后不动声色把民进党这些第一代的投机分子一个一个赶走？像苏贞昌多么讨厌投机分子，谢长廷投机分子全部消灭。</p>
+<p>廖筱君：你什么证据显示她把他们消灭？</p>
+<p>李敖：只有你女人出来选，对不起，你老先生靠边站。所以民进党成立的时候没有蔡英文，她忽然混进来以后，把老一辈的人赶走，事实上老一辈的人是投机分子，因为别人在坐牢，美丽岛的人在坐牢。除了吕秀莲跟陈菊以外，他们都在坐牢。而这些美丽岛的律师们，陈水扁了，谢长廷了，苏贞昌了，他们都是美丽岛别人的辩护律师，别人在战场上牺牲，他们在战场上捡战利品，忽然竄起来了。</p>
+<p>廖筱君：2008在整个败选之后，谁让民进党在废墟当中重新浴火重生，这个人不是蔡英文吗？</p>
+<p>李敖：这是蔡英文有本领，就不动声色之间，受益于败军之际，就把它解决了。她现在推出来的这个新的副总统人选，他跟民进党根本不搭轧的。可这批人进来了，什么原因？就是老一代的民进党的这些党工，或者这些投机分子，在蔡英文的不动声色之间全部出局。所以我说告诉大家，不要搞党了，不要搞革命了，也不要搞假革命了，都没有用。当你碰到优秀的蔡英文，你们都灰飞烟灭。</p>
+<p>廖筱君：所以你的分析是她现在用陈建仁是一记高招。</p>
+<p>李敖：当然，她可已控制陈建仁。他要是苏贞昌能能控制吗？她控制不了了。因为他位阶比她高，或者资格比她老。所以蔡英文用的这批人。可是这批人在民进党这些老的投机分子心里面，当然恨得要死，心里很恨。怎么蔡英文把我们资源抢走了？所以我认为蔡英文这一点她是很了不起。</p>
+<p>廖筱君：是，但是尊重李敖大师的言论，可是从昨天的收视率跟民众的反应出来，其实民众要的是一个什么样核心价值的政治人物，在这个台湾诡谲气氛长期在双方面蓝绿对立的过程当中，陈建仁这张牌我相信获得了不分蓝绿，许多人民的认同。我相信从昨天网路各方面的反应可以看得出来专业的大数据趋势。</p>
+<p>李敖：陈建仁是靠着蔡英文给他加持，没什么了不起。</p>
+<p>廖筱君：那朱立伦的大战略是什么？真的是为了胜选吗？为什么推出一个副手马上就被质疑，第一条就在说谎，甚至可能旁边国民党的立院党团所有人要急于帮她辩护。这是为胜选推出一个副手的大战略吗？</p>
+<p>李敖：问题就是朱立伦根本不够看，他是个搞会计的人，本来就是鸡毛蒜皮的一个人。他本人也是国民党集团里面后起之秀得利者，他不够看。他因为掌握了党产，所以才叫朱立伦，他如果不能掌握党产，他什么都不是。我今天带个文件给你看，这是15年以前蔡英文做了陆委会主任委员当时最重要的一场立法院对谈，质问她的人就是洪秀柱。洪秀柱问蔡英文，你做了陆委会主任委员，你的政策。她说我根据宪法架构，跟今天讲的一样的。可是蔡英文讲一段话很清楚，她维系并且尊重《国统纲领》，比现在还严格。可是这个资料告诉我们15年前蔡英文的言论就是口口声声宪法，口口声声尊重国统会，国统会就是四不一没有。什么叫一没有？没有国统会的废除问题。我们看到马英九是台独分子，因为七年半以前陈水扁废除了国统会，跟我们人民承诺四不一没有，一没有就是没有国统会的废除问题。可是马英九上台以后，遵守了陈水扁的规则，到今天七年半来，国统会没有解散，可是也没有运作，有预算，有这衙门，可是没有人。所以马英九七年半来，就走着四不一没有的没有的路线，走陈水扁的路线。可是蔡英文在15年前承认国统会。我这结论什么意思？就是我们不要忧虑蔡英文，我认为她说了很多正面的话。</p>
+<p>廖筱君：你提出这个证据，又戴上她的一个帽子，叫做她支持一个中国，又说不要忧虑，那是什么意思？</p>
+<p>李敖：因为蔡英文做不了主，什么人做主？</p>
+<p>廖筱君：即使她2016做了国家元首，她做不了主？</p>
+<p>李敖：我看了你们做这么好的节目，这么多可爱的人谈这些问题，每天晚上谈，谈的兴高采烈，你是第一名，别人也跟进。在我看起来，这是另外一个层次，比我的层次低。为什么？我关心台湾前途，台湾前途什么东西？台湾人从来没有说过算过，没有你说了算的余地。我们以为我们谈半天台湾前途，选这个，选那个，都是假的。什么假的？在美国人面前都是假的。美国人出卖台湾多少次？我告诉你两个纪录，一个《钱复回忆录》，说美国骗我们骗了40次。第二个就是台湾最后一任驻美大使沈剑虹的回忆录，说美国人骗我们52次。最后一次骗我们的时候，说7个小时以后我就跟你断绝邦交。那时候宋楚瑜很机警，美国驻华大使给他延长一点时间。美国人这样7个小时间出卖我们，换句话说，美国人跟台湾没有感情，他今天需要及就要你，不需要把你一脚踢开。台湾还很高兴、很神气，神气什么呢？说美国《台湾关系法》保护我们，筱君，我在立法院仔细研究过《台湾关系法》，从来没有说保护台湾。《台湾关系法》说是台湾海峡有情况的时候，美国严重关切。严重关切不等于我出兵来救你啊！全世界发生四次严重关切，到了乌克兰这一次五次严重关切，美国出兵没有？没有出兵。严重关切并不等于我美国人出兵。那好，台湾你要保护自己，卖给台湾什么武器我们看到了，爱国者飞弹我告诉你，爱国者飞弹只能保护台北的介寿馆、总统府，用完了以后，高雄要不要保护？没人保护。台南要不要保护？不爱台南、不爱台中、不太花莲，只保护台北。这爱国者飞弹我们花钱买的，结果是这个结果。并且爱国者飞弹还保护不了总统府，什么原因呢？共产党的东风飞弹过来的时候，东风飞弹是水平进来的，它打你是打你腹部或者打你下体，爱国者飞弹是60度角，根本达不到它。所以你想想看，我们买的武器打不到共匪的东风飞弹，我们的钱白花了。这就是我所说的，台湾按照《台湾关系法》，美国人不能向我们要钱的。像以色列，我每年武器送给你，因为你跟我美国利益有关。如果美国人发现台湾跟他利益有关，他应该主动给我们武器。不能说装个长程雷达，全世界只有五个，两个装在台湾，叫我们付保养费。我们为什么付保养费？长程雷达好贵，是共匪从新疆发射的飞弹，这边就知道了。可是共产党打我们，会从新疆发飞弹吗？它从福建发飞弹嘛！最近嘛！所以我们买东西是给美国人买的，要我们保养，要我们花钱。</p>
+<p>廖筱君：所以现在认为美中不管是在南海主权或经济大战的过程当中，您还是忧心台湾的未来。</p>
+<p>李敖：当然，筱君，我很感谢你找我来，我今天告诉你真话，我们影响不了台湾前途。我们是主权独立的国家，到今天为止，关于太平岛的立场马英九不敢讲。为什么呢？因为菲律宾现在到国际法院告我们，国际法院说你这不是岛，所以台湾盖跑道非法的，就变成公海。</p>
+<p>廖筱君：人造礁、人造岛。</p>
+<p>李敖：可是美国私下跟台湾说你不要说你是岛，你承认是岛就有权力，台湾不敢说它在太平岛有权力。真正为了台湾的尊严、台湾的国格，我们是主权独立国家或者为了宪法里面中华民国，你要说太平岛、南海岛屿是我的固有疆域，不是临时的岛。不敢讲！可是我怀疑马英九在下台以前，他可能会讲，为什么呢？因为外交部放的讯息，外交部否认菲律宾到国际法院告我们太平岛的问题，台湾赶紧否认。我猜马英九下台的时候，美国人也管不着他，他也没有前途了，干脆放一次水，太平岛承认是中华民国领土。他承认是中华民国领土，共匪才能够衔接，跟联合国一样，他能够衔接中华民国，保护太平岛。</p>
+<p>廖筱君：是我们的，为什么中华人民共和国要衔接？</p>
+<p>李敖：我们保护不了，因为我们不敢承认是我们的，现在就不敢承认。</p>
+<p>廖筱君：那就要逼迫国家元首啊！</p>
+<p>李敖：他不敢承认，因为美国不肯，美国人说你一承认，共产党盖那个跑道就合法了。美国的航空母舰、主力舰就不能经过了，因为就不是公海了，就不能航行了。可是筱君我跟你假设好了，太平岛我们只有一点点军队，30几个人在那里。假使共产党派了一团人或是两团人，不带武器登陆了，我们怎么办？他不是投降，他没带武器，你不能打他，他要求跟你共同保卫太平岛。怎么办？</p>
+<p>廖筱君：共同保卫啊？叫做国军、共军都是中国军啊？可以这样子啊？</p>
+<p>李敖：对外国人我是中国人，对外国太平岛是中国的，不管是中华人民共和国的或者是中华民国的，或者台湾共和国的，它总是我们的领土嘛！现在马英九不敢承认，就万一共产党这么做。我举个例子，当年在金门防守司令刘玉章上将，国防部长俞大维到了金门就问刘玉章上将：对面多少匪军？刘玉章说：有30万匪军。国防部长俞大维问他：30万匪军，我们怕不怕？刘玉章上将说：不怕，可以打。俞大维说：30万匪军要是投降怎么办？投降怕不怕？刘玉章说：怕。因为他投降过来，你不能开枪；他投降过来，你要给他饭吃，我们没法养30万个闲人。所以共产党在太平岛，最后你马英九不合作或台湾不合作，徒手不带枪登陆的时候，登陆两个团的人，我们只有一个连的人，30个人怎么挡他？挡不了他。并且最有效的，按照现在军法，他们又不是很有罪的人。我们现在台湾的前途是什么前途？我们要保护我们自己，第一我们不要再养军队了，花掉我们这么多钱，买那些没有用的阿帕奇的飞机干什么？买爱国者飞弹保护不了我们。那你说台湾是主权独立的国家，怎么可以没有军队呢？筱君我告诉你，全世界有25个国家是没有军队的，我们的邦交国家哥斯达黎加，冰岛都是没有军队的。台湾可以没有军队，那么台湾怎么维持治安？台湾靠警察。</p>
+<p>廖筱君：你的意思是马总统在卸任之前可能会有一些大胆的作为，是这样吗？</p>
+<p>李敖：他没有这气魄，马英九真正的作为是他当选的时候，他拥有那么高的民意，拥有46%的妇女票，他那时候应该宣布说是我要恢复国统会，两岸促统，他七年半以前就得了诺贝尔和平奖。马英九不敢，马英九有苦说不出，活该！就是七年半以前，他民意最高的时候他不敢动，今天动都是错的。</p>
+<p>廖筱君：那依照这样子一个演变，选后的国民党，包括我们刚刚评了这三组在副总统参选人，我说朱立伦这个部分，好像你认为……</p>
+<p>李敖：我赞成消灭国民党。为什么呢？因为它是给共产党老起歹念的，共产党过去在1921年成立的时候，跟国民党纠缠了28年，其中打了24年仗，可是有两次和谈都占了便宜。所以共产党老以为这个国民党就是当年的国民党，这次马习会看到没有，习近平戴的是红领带，马英九戴的是蓝领带，还是象征着共产党、国民党，国民党应该消灭，因为太可恶了，给我们很多错觉，我完全赞成消灭国民党，把党产追回。阿扁对我们失信，阿扁当时参选的时候说他要用德国模式查国民党的党产，结果当选以后不但没有用德国模式，并且让中央党部通过，阿扁背板了我们。所以我赞成这次选举以后，大家唾弃国民党，然后立法清查国民党党产。国民党党产，我的好朋友做过总统府侍卫长的张光锦中将告诉我，说我们台中一中老同学刘泰英告诉他，当时替国民党管账的时候，500万都要得到李登辉的同意。换句话说，刘泰英根本是傀儡。他这次坐牢是因为偷吃东西，猎人打个鸭子，鸭子下去以后，一条狗要把鸭子叼回来，它现场偷吃鸭子，所以出了事情。</p>
+<p>廖筱君：现在党产谁有主导权？</p>
+<p>李敖：现在主导权在朱立伦跟马英九，技术层面在马英九手里。所以我赞成这次把国民党彻底瓦解，民进党会当家。民进党好处是不会像国民党这样贪污，可是民进党大方向是错误的，什么错误？就是蔡英文是代表，她很混乱，又想台湾独立，又尊重国统纲领。可是结果是看美国人态度，美国人什么态度是看北京态度，北京会跟他翻脸，明明你跟我的建交公报，说台湾是两岸中国人的土地，你怎么支持台独？根据里根跟我的公报，你逐年递减军售的，你为什么武器越卖越多？所以美国人会让步。跟钓鱼台不一样，钓鱼台是美国人放出来，说主权是谁我不管，可是管理权给日本。南海岛屿，美国人说我不承认你是岛屿，我承认你是礁石，可是台湾，美国人没话说。</p>
+<p>廖筱君：我相信您的这些论点给予尊重之外，未必有人会完全认同，甚至在蔡英文的部分。那你给她的建议又是什么呢？我相信过去在老李时代对国统纲领的制定，甚至就是说订下当时所谓的一中的原则，在当时的宪法跟当时要回应那些老国代，有他的特殊背景。我想这个部分其实是非常非常复杂，年轻一辈未必回去认同。那你给蔡英文的建议会是什么？</p>
+<p>李敖：按照民进党的党纲，要台独公投成立新的国家。为什么没有公投？当蔡同荣要公投的时候，陈水扁的电话打过去，不能搞。那一次表决民进党提案要公投，蔡同荣临时跑掉了，每个民进党的立法委员都跑掉了，只有一个人没跑掉叫李文忠，结果李文忠反对自己提案。那么丢人，给你机会台独公投立法院通过，所有民进党都跑掉。证明什么？你们不敢。这个不敢的毛病哪来的？跟着蒋介石学的。蒋介石在台湾搞反攻大陆26年，根据叶昌桐海军总司令的回忆，这26年反攻大陆的梦拖垮了台湾经济。</p>
+<p>廖筱君：在这种处境当中，你不认为身为台湾土地的这一块民众更加让人家觉得怜惜吗？</p>
+<p>李敖：你要听真相吗？我告诉你，50年前有个《台湾自救运动宣言》，彭明敏的案子。谢聪敏到我家来，说今年他们庆祝50年，居然不要他参加。彭案事实上是谢案，因为谢聪敏判的罪比彭明敏还重，稿子是他拟的，不让他参加，怕他讲话。结果世新大学一个教授姓李，跑去找谢聪敏，你可以参加，我们通过让你参加，可是你不能发言，我们替你讲话。他们这样的羞辱真正的台独元老，我是外省人里面唯一一个为台独坐过牢的人。他出卖我们，现在台湾登广告说是台独真的，都是假货，真的话就台独给我们看，台独公投通过嘛！为什么跑掉呢？国民党反攻大陆吹牛26年、骗我们26年，台独骗我们30年。筱君，你年轻漂亮，你还相信他们吗？整个陈水扁时代只把中华邮政改成台湾邮政，花了3000万。中华民国国号改嘛！为什么不改？为什么相信中华民国？全世界好荒谬，三个单位相信中华民国，国民党相信中华民国，为了我会晚一点死；民进党相信中华民国，可以借尸还魂；共产党也相信中华民国，为什么呢？你不许叫中华民国，可是你不许改中华民国，好好笑！我不许你改！你不能叫你廖筱君，可是你要改名不叫廖筱君，你不可以，共产党就这样子。所以中华民国变成一个怪胎。</p>
+<p>廖筱君：那现在习大大习近平此刻的盘算是什么？台湾未来跟中国的互动会怎么演变？</p>
+<p>李敖：我不跟你讲嘛！基辛格出了一本书叫On China《中国论》，他公布了毛泽东跟他的秘密谈话，毛泽东说，台湾只不过是1000多万人的一个岛，都是反动分子，我们可以等待，等它100年，100年以后我们再收拾它。所以共产党给台湾有100年的机会。我们要用这100年干什么？要用这100年修生养息。什么叫修生养息？不要花钱养这些军队。什么黄复兴党部，这些老混蛋打共产党都打败仗，捣乱就都出来了。像黄复兴两类人……</p>
+<p>廖筱君：洪秀柱可能还要靠黄复兴党部拿下党魁，你还这样骂他们。</p>
+<p>李敖：所以黄复兴混蛋嘛！打共匪没有能力，可是抢官很内行，郝龙斌就是典型的例子。郝柏村做行政院长，他的儿子做民进党的环保署长，现在做国民党的副总裁，当官做。另外一个黄复兴就是许历农，最后许历农给我的信证明什么？证明他当年查禁我的书后悔了，他们在反省。可是93阅兵的时候，许历农还是不敢参加。所以国民党这些军人通通走开，打仗也不能打，并且变成反动势力。洪秀柱是我的好朋友，唯一我可以搂着她讲话的。可是她的思想是保卫大台湾时代的思想，很旧式的。别人跟国民党吃香的喝辣的，像马英九的爸爸也做过高级党工。洪秀柱的爸爸是政治犯，她应该像我李敖这样子跟你干到底。可是她跟国民党混在一起，一点好处都没有，说把你拉下来就拉下来，说让你下台你就下台。</p>
+<p>廖筱君：如果你是他的重要幕僚，你是建议她对抗到底，一定要抗争到底？</p>
+<p>李敖：她不可能，因为她的班底就不是那种班底。国民党这些性格的人都不是战士，不是反叛者，她本人重要关头会和稀泥，她不敢翻脸。</p>
+<p>廖筱君：那你觉得打这场选战，朱立伦的大战略到底是什么？</p>
+<p>李敖：朱立伦的大战略是保住他的小台面，他真正竞选的时候，他会败得很惨。可是我赞成他彻底消灭国民党。</p>
+<p>廖筱君：你说借由他的参选……</p>
+<p>李敖：选罢法还没开始实行，还没登记，我现在呼吁……</p>
+<p>廖筱君：下礼拜就要登记了，你讲朱立伦的参选会消灭国民党包括他自己。那他自己说他要拿下国会50席。</p>
+<p>李敖：很难。</p>
+<p>廖筱君：回到现实状况，你觉得他没有这个实力吗？</p>
+<p>李敖：有这个实力怎么样，过去国民党超过半数，可是民进党要锁门的锁门，要堆椅子的堆椅子，他没有战斗力嘛！国民党有战斗力的人是一个人，这个人我告诉你是谁，我的朋友王金平。为什么？他的优点你们没看到，他摧毁了国民党，也摧毁了民进党。为什么？国民党变得腐化、和稀泥，多数没有用，王金平的力量。民进党再也不上街头抗议了。</p>
+<p>廖筱君：你说摧毁了国民党跟民进党？</p>
+<p>李敖：两个都被他摧毁了。民进党有没有上街头抗议？没有了。为什么没有了？因为同流合污了。所以王金平的功劳你们都看不出来，摧毁了国民党，也摧毁了民进党。</p>
+<p>廖筱君：您的好朋友王金平的角色，如果他真的，现在国民党不分区委员第一名是他。现在朱立伦说要拿下50席，你刚刚说国民党有实力，包括又有党产，马英九跟朱立伦来主导。所以王金平如果全面动员起来的话，你觉得国民党的实力……</p>
+<p>李敖：等选完以后，马英九不能主导了，马英九没那个力量了。所以我认为王金平就是和稀泥，半年不到，你马英九就垮台了，马英九先罩不住。可是朱立伦也罩不住这选票，你要想控制国民党选票就要靠王金平，王金平的干法就是这样地下活动，没有什么党不党，全部私人交情。</p>
+<p>廖筱君：全部靠地下活动，你不是对你好朋友很了解，什么叫地下活动？</p>
+<p>李敖：就是表面上是民主政治，骨子里面是政党协商。像我当年共匪请我去北京大学、清华大学演讲那一次，我欠税500万，不能出境。我就跟王金平讲我不能出境，王金平说他去帮我想办法，去关说国税局。为什么关说可以？他去关说国税局，李大师要出境，放假一个月，一个月以内可以去北京，国税局不管，一个月以后再继续追究，这是台湾政治。你说你李敖搞关说，是搞关说，因为你不合理。</p>
+<p>廖筱君：如果在最后不到60天的时间，他真的希望逆转胜的刷，你觉得他应该怎么打法？</p>
+<p>李敖：你讲王金平啊？</p>
+<p>廖筱君：包括朱立伦。</p>
+<p>李敖：朱立伦没救了，我现在公开宣布把国民党消灭，什么王如玄，什么朱立伦，通通消灭，国民党要扫进历史垃圾堆。</p>
+<p>廖筱君：你预估国民党这场选举要花多少钱？</p>
+<p>李敖：普通选总统是150亿，因为暗盘要给桩脚，实际上都没有报出来，都假的账，现在中央选委会也是假的账。马英九赚了很多钱，都是假账，没有报出来。可是现在这个选举100亿跑不掉。宋楚瑜有多少钱……</p>
+<p>廖筱君：你刚刚讲150亿，如果过去要150亿……</p>
+<p>李敖：过去农会、渔会都在国民党手里，他给桩脚很方便，现在就变成比价了，他要给我，你要加价，变得更费钱了。</p>
+<p>廖筱君：这样一个局势当中，您期待辩论会吗？</p>
+<p>李敖：没有用，我记得15年前要辩论的时候，连战不敢跟我辩论，陈水扁也反对跟我辩论，所以我没有机会辩论。</p>
+<p>廖筱君：当时我记得是五组候选人，在1996年的时候，其实我也曾经访问过您……（wjm_tcy注：明明是2000年）</p>
+<p>李敖：你的年纪很轻，可是你的资格很老。</p>
+<p>廖筱君：哈哈！谢谢！所以您期待这一次所谓的三组总统候选人辩论会吗？</p>
+<p>李敖：辩论也一样，因为都不精彩。因为大家不敢提出，蓝绿真正从革命性的眼光，谁愿意接受这个事实。</p>
+<p>廖筱君：如果有辩论会的话，那当然对于选民来讲要更严格的态度检验，让他们说真话。</p>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/10.李敖节目演讲合集/李敖政论综艺集/2015/36-20151119《新台湾加油》.md">Edit this page on GitHub.</a></footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../10.李敖节目演讲合集/李敖政论综艺集/2015/35-20150119《壹起来翻转》.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../10.李敖节目演讲合集/李敖政论综艺集/2016/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../10.李敖节目演讲合集/李敖政论综艺集/2015/35-20150119《壹起来翻转》.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../10.李敖节目演讲合集/李敖政论综艺集/2016/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../../theme/leeao-toc-1313d264.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>澎湖日记·1961年2月—退伍日记 - 大李敖全集</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/leeao-e9ced672.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-47e392f3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">大李敖全集</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="一个预备军官的日记澎湖日记1961年2月退伍日记"><a class="header" href="#一个预备军官的日记澎湖日记1961年2月退伍日记">一个预备军官的日记：澎湖日记·1961年2月—退伍日记</a></h1>
+<ul>
+<li><a href="#澎湖日记1961年2月">澎湖日记·1961年2月</a></li>
+<li><a href="#退伍日记">退伍日记</a></li>
+</ul>
+<h2 id="澎湖日记1961年2月"><a class="header" href="#澎湖日记1961年2月">澎湖日记·1961年2月</a></h2>
+<p>2月1日 星期三</p>
+<p>一、为什么屁股不长一个眼就算了，而要分两半呢？我的答复是为了装饰好看。</p>
+<p>二、盼2月很久了，2月到了。</p>
+<p>三、早上写给Rosa的信，贴了航空条子及八角邮票三张，由镜昌寄去。</p>
+<p>Rosa：</p>
+<p>新年的时候我在台北参加了一个朋友的订婚舞会，我被迫唱了一支Dear John Letter，我发现坐在右边沙发里的一个女孩子在笑我，她在笑我穿长袍唱被我“喜剧化”了的洋文歌。当我仔细看她的时候，我震撼了！她是那样的像Yvonne de Carlo，而Yvonne de Carlo又那样像你！由于这种“连锁反应”，使我对她大为倾倒，为之屡生非非之想，打听之下，她是淡水基督学院的林琼琚，我想到《诗经》中的那首《木瓜》：</p>
+<p>投我以木瓜，</p>
+<p>报之以琼琚，</p>
+<p>匪报也，</p>
+<p>永以为好也！</p>
+<p>我真想寄给她一个大木瓜，可是某种力量阻止了我。五个五天以后，我浮海西行，登上这个彩色荒凉的海岛，住在黑珊瑚垒起来的暗室里，没有阳光，也没有电灯，甚至没有一块玻璃窗户，只有那冷瑟的海风，和海风卷起来的蚌屑与黄沙。到了晚上，到处充溢着一片鬼氛，使我这种神明不容圣母不佑的异端再也没有胆量去“行吟泽畔”了，只好蜷缩在石块架起的床上，去静听晚风的呼啸和那拍岸的涛声。</p>
+<p>我藏身在白沙岛的赤崁海边，我该用骆宾王的句子来作一副门联：</p>
+<p>日远长安，处蓬门而西笑；</p>
+<p>神游上国，依赤崁以诙谐。</p>
+<p>其实我的住处比蓬门还不如，潮湿与残破只能培养写正气歌的灵感，绝不是嘻笑诙谐的所在，何况写信给自己心爱的小女人呢？</p>
+<p>但我也不该为“下笔无神”发愁，因为你正坐在我的面前，戴着学士帽子，凝然不语，也许这张从同学录里割下来的照片是唯一能被我控制的“你”，它不是你的一部分，而是你整个的投影；它不是你诡谲多端的一面，而是你停止捉弄别人的一刹间。</p>
+<p>我忍不住很喜欢这张小照片，当然我更希望能得到它的“原版”，但我知道你不会给我的，所以我也不会向你要——我才不那么傻！</p>
+<p>我的李敖自传已写了几章，和你那一段往事已全部写成，字数相当可观，夸大之处恐未能免，你看到也许要生气，不过你是看不到的，我并不想给你这个机会，除非你答应以某些条件来交换，但我又怎能相信你答应的事？你是不守信的。</p>
+<p>敖 1961年2月1日在澎湖的白沙岛</p>
+<p>（一）、在中山北路华明书局替我买一本A Modern Martyr Theaphane Venard好不好？中译本的名字好像叫《一朵红玫瑰》，摆在一进门左面那一排橱中第二格里（右起第六本）。</p>
+<p>（二）、如果你不能在旧历年前寄来，就请不要寄了，因为那时候我不知道又飘到哪儿去了。</p>
+<p>李敖 附及</p>
+<p>四、军中各科讲授图表该由国防部统一印制，由各教官乱编殊属浪费且不标准也，黄皮书既可发，为何不发一些黄皮图？</p>
+<p>五、梦到Free China复刊，胡秋原主编，大不如前激烈，我向Lei慨乎言之。</p>
+<p>六、辽宁辽阳张宏保（商学系）在队中任干事，忽见我名，来看我，述从鼓应处慕我之名。</p>
+<p>七、我的书后可印：</p>
+<p>①有版权，属老李。要偷印，不可以。或②版权属我自己。偷印绝不可以。</p>
+<p>八、可写一部书翰体小说（Epistolary Novel）。</p>
+<p>九、梭罗亲见狐咬断己脚以逃捕兽机。</p>
+<p>十、Franklin起床裸体室中十分钟，Balzac不点烛不能写作，Schiller或浸双足于水中方得为诗，Montaine星期五及13号绝不书一字，Gray畏火，Donne置棺。</p>
+<p>十一、爱迪生考试用人：“手中三个8，是否赌下去？”取了从不玩扑克的人。</p>
+<p>十二、（一）浣熊爱洁，洗物方食。（二）一种龟卵有弹性，如乒乓球。（三）红灯可逐蚊。（四）驼不出汗，故可长时间不喝水。（五）象记忆力特强。（六）电鳗可点一千瓦灯泡。</p>
+<p>十三、（一）西人不于妻死后娶大小姨。（二）不手抓点心奉客。（三）隔人递物于其背后行。（四）收礼当时打开共享。（五）除非饮茶时，不以烟茶待客，女客在不吸烟。</p>
+<p>十四、月季、蔷薇重观赏，玫瑰重实用，有一百二十种。</p>
+<p>十五、家：胃得三餐，心得千百次满足之地。</p>
+<p>十六、棺——一所永远属于你自己的房子。</p>
+<p>良心——不近人情的东西？事前不禁止你去做，事后却责备你终生。</p>
+<p>教育——教学生所不愿学的，教家长所不能教的，教自己所不愿教的。</p>
+<p>烟——失眠者的太太，失恋者的情人。</p>
+<p>幸运——太太没有咒骂的一天。</p>
+<p>肛门——生财之道，排出废物，收藏黄金。</p>
+<p>表情——没有（不足）人称你是木乃伊；有了（过度）人称你是大明星。</p>
+<p>稿费——是作者永远收不完的债。</p>
+<p>爱情——是喜剧和悲剧的大导演。</p>
+<p>十七、1923年5月13日：“……如五字写错至五就抹去，是不可以的。凡后遇有写错的字，虽落笔已发觉，亦应写个完全，再为抹去……”可见其idea之一斑（此段引蒋介石之言而发感慨也，1987年9月10日，李敖追记）。</p>
+<p>十八、林肯主张消灭敌人的方法就是和他做朋友。</p>
+<p>十九、掷瓶典礼蜕自古人祭旗，后以酒代血，船为新生儿，故多由女性行此礼。</p>
+<p>二十、美名摄影女记者Miss Margaret Bourke-White自小练习胆量，服膺其母所鼓励她的一句话：</p>
+<p>面对恐惧，做你应做的事！</p>
+<p>二一、下午五十七师忽来即日退伍消息，人心大浮动，我却显得甚有担当，并不介怀也。九队老人多夸我，说我是“赫鲁晓夫专家”。又需我日记，欣义言，别的可以不看，李敖的日记不可不看。</p>
+<p>二二、夜读完《修女传》（The Nun’s Story by Kathryn C. Hulm），此书极动人，刻画极深刻。</p>
+<p>2月2日 星期四</p>
+<p>一、小充员官打电话给团长，向接线生即乱“报告团长”，等到真团长来接电话了，他又“喂，团长……”</p>
+<p>二、俗说所谓长生不老之术：</p>
+<p>（一）丹砂：葛洪（《抱朴子》的作者）说需时九月变化九回方能装成，服之可变为鹤。药即今之赤色硫化汞也。</p>
+<p>（二）神鹿：取食灵山药草神鹿之角与生殖器提炼。</p>
+<p>（三）处女：初潮之经水。</p>
+<p>（四）甘菊：仙人王子乔，上寅之日采甘菊，戊日捏成药丸服之，一年发黑，二年生齿，三年返老还童。</p>
+<p>（五）人参。</p>
+<p>（六）不死灵鸟（Phenix）：形如凤凰。</p>
+<p>（七）老人喜剧法（Gerocomic）：只可接不可交，《圣经-列王记》第一章：“大卫王年纪老迈，虽用被遮盖，仍不觉温暖。所以臣仆对他说：不如为我主我王找寻一个处女，使她伺候王，奉养王，睡在王的怀中，好教我主我王得暖。于是在以色列全境寻找美貌的童女，寻得念书的一个童女亚比煞就带到王那里。这童女极其美貌，她奉养王、伺候王，王却没有与她亲近。”</p>
+<p>（八）贤人之石：中世纪的幻想品，既可点石成金，又可长生不死。</p>
+<p>（九）换血法。</p>
+<p>（十）血浴：尤其是罪犯之血尤佳，欧人旧时多争赴刑场买血。</p>
+<p>（十一）晚来的初恋（恋情）：一药房通二街，在甲街卖返老还童丹，买后自后门出，乙街卖男女健身十补丸，自前门出。故出者皆为年轻人，而达广告的目的矣。</p>
+<p>三、Cerventes作家生活四十岁以后才开始，《堂吉诃德》前篇发表于五十八岁、后六十。Goya三十八岁前街无籍籍名，名画多成于六十—七十之间。Whitman三十四岁方开始想以诗人过一生 ，三十六出版《草叶集》一百册，《自选日记》六十三，《十一月树枝》六十六。夏目漱石二十六岁发表卓越之学者论文，三十九岁后开始做作家，三十九—四十作《猫》，四十二作《三四郎》，四十四作《门》，四十六作《行人》，四十八作《心》，四十九作《道草》，五十作《明暗》。</p>
+<p>四、法国恶魔主义诗人波德莱尔说：“人为夸耀自己的长命，并为享受着将死挣扎之乐，欢喜去送朋友临终。”</p>
+<p>五、具原益轩《养生训》（1713，益轩八十四时作）其中《慎色训》等篇多以《素问》及孙思邈《千金方》为本，《千金方》言性欲强者忍精过度就会生疮疖，待考。</p>
+<p>六、每半年当检查牙一次。</p>
+<p>七、孔丘“鱼馁肉败不食”，“不时不食”，“未达不敢尝”，明明都是怕食物中毒，可是一定还要套上礼教的套子。</p>
+<p>八、洗血巾不可用热水。</p>
+<p>九、第四节课与孟昭华遥做手势，我学得</p>
+<p>（一）拍头扯耳转舌法。</p>
+<p>（二）拍掌左手握拇指法。</p>
+<p>（三）拍掌反贴转二拇指法。</p>
+<p>（四）击左肘扭左手法。</p>
+<p>笑不可仰，孟昭华真是活宝！</p>
+<p>十、午大挖苦尔昭，此人面皮奇厚。然后开后门望海，走到水边。</p>
+<p>十一、四言：</p>
+<p>蛇蝎其中，</p>
+<p>金玉其外，</p>
+<p>旷古美人，</p>
+<p>风华绝代！</p>
+<p>十二、晚饭后向队长告假，与俞萧坐二又二分之一去马公，晚风极劲，夜色苍茫，真是非常喜欢这儿，看电影《风流下女》（Upstairs and Downstairs），影院设备殊不佳，此影想不到有Ann Heywood，真是喜出望外。Ann真美真美，真绝世之色。</p>
+<p>十三、又同洗热水澡，1.7元，甚畅快，去垢良多。浴后同逛文石店数家，太贵，克勤欲我选一小物，彼送我以为澎湖纪念，我拒之，逛澎湖初辟时之避风小街，甚好玩，又吃鸡肉饭及排骨汤，在中正路古今书局选得《今日澎湖》一册，价五元，10时30分归途，退伍提前似已确定。</p>
+<p>2月3日 星期五</p>
+<p>一、午前凤鸣来，我返连缴退伍照片，午后与士官长黄杰聊天后折回，请永亭吃橘，跑到卫生所大便。</p>
+<p>二、午与永亭参观军中乐园白沙接待所，一妓女正睡在中尉管理员的被里。</p>
+<p>三、又与永亭看上潮，潮花跃堤而过，此“赤崁码头”之风光也，有石碑。——“雷之夕魑魅魍魉捉缚枷锁”。</p>
+<p>四、读完《马克·吐温传》（Albert Bigelow Paine “The Boys” Life of Mark Twain）：</p>
+<p>（一）最讨厌学校，小学教师要惩罚他，嘱去捡木枝来挨打，他捡一片刨花回来。“他不希望做个伟人，他想做个红番，剥贺尔太太那种人的头皮。”</p>
+<p>（二）“他又见到一个主张废奴的人被暴民攻击。”</p>
+<p>（三）一边偷一边卖浣熊皮（只有一条）。</p>
+<p>（四）喜晚吸烟躺床看书，自制大烟槽置地，以橡皮管通至床上。</p>
+<p>（五）平生两阵使他转运的风：①从报馆排字回家，风吹来贞德历史书之一页；②吹来五十元钞票一张，登启事招领，可是怕人来领。</p>
+<p>（六）比克斯具收他做掌舵徒弟时问他：“骂人吗？”他说：“不随便骂，除非逼不得已。”</p>
+<p>（七）掌舵不过是山姆·雷门斯在密西西比河上所受教育的一部分，他对于人情世故的曲直深浅知道得和河床一样的清楚。</p>
+<p>（八）弟弟死于救人后，山姆伤心甚，就他的精神、脾气与五官来说，显然永远不会真正的老，可是从此也不再真正年轻。</p>
+<p>（九）曾向星象家请教前途，从军当到中尉。</p>
+<p>（十）拓荒采矿失败，走了一百三十英里，背着沉沉的铺盖卷儿。“他在（放弃采矿前）独自走入荒野，进行内心的斗争，拖延他最后投降的时刻——他没知道这个投降只是胜利的开始。”</p>
+<p>（十一）当时的幽默家亚蒂默斯·华德（查理斯·勃朗）抵弗吉尼亚，鼓励他，后写信说：“我此生将永远记得弗吉尼亚，它是个好地方，我可以说，别的地方都不该像它，而且也无法像它。”</p>
+<p>（十二）采矿功亏一篑，失掉一两万元的黄金。</p>
+<p>（十三）与驻华公使蒲安臣甚稔，助其独得“大黄蜂号”生还十五水手之新闻。</p>
+<p>（十四）到处演说，以老采矿为介绍：“诸位……关于这个人我只知道两点：第一、他从来未坐过牢；第二、我不知道为什么。”</p>
+<p>（十五）或自己先弹钢琴唱小调儿开始；或自穿衣服当介绍人，诡言他今晚不能来，在叹声中举二臂言马已抵台上矣（灯光大亮）。</p>
+<p>（十六）先在查理士·兰登舱房中见欧丽维亚像，大倾倒，后以翻车假伤逗留彼家中，结婚三十三年后伊死。</p>
+<p>（十七）演说广告曾印旧金山各界发表的假抗议，集演说稿成《蛮子游记》（A Vandal Abroad）。</p>
+<p>（十八）准公公说：“他们一致公认你是个极有才华与本事——一个有前途的人，可是如果一结婚，即将成为有史以来最要不得的坏丈夫。”“难道你没有别的朋友可以提出来替你说话吗？”“说话的可没有一个。”“你至少有一个，我相信你，我比他们更认识你。”</p>
+<p>（十九）他主持正义时笔调辛辣有力，使干坏事的人不得不住手。</p>
+<p>（二十）与邻居查理斯·得得雷·华纳合写《镀金时代》——两人太太提议的，由于两人批评太太们正看着的小说，马写人物，华写情节。</p>
+<p>（二一）习惯不吃中饭，家人有事，吹号叫之。</p>
+<p>（二二）每次高朋云集，他在壁炉台上写着：“一所房屋的装饰就是来访的朋友。”——此句之前当加一句：“（如果）一面墙壁的装饰是一幅画（的话）。”一般住得近的朋友，通常高兴就来，高兴就去，往往直冲而进，不辞而别。</p>
+<p>（二三）“上帝晓得在何处，魔鬼知道在哪儿，马克·吐温收”复以：“它晓得，他也晓得。”</p>
+<p>（二四）爱桌球。</p>
+<p>（二五）不惜牺牲一切以求幽默。</p>
+<p>（二六）“亲爱的老裘：……感情名列牌上行情发生变化，四个礼拜以前孩子们一直把妈妈排在第一位，可是现在是：(一)琼斯（第三个小女儿）(二)妈妈(三)斑虚(四)小姐（猫）(五)爸爸</p>
+<p>……以前是我与猫互争高低，可是自从猫‘懂事’以后，……”</p>
+<p>（二七）拒绝了五百的股票，使贝尔伤心。</p>
+<p>（二八）书中插图最注意，多请名手为之。</p>
+<p>（二九）又搞出版公司，印《格兰特自传》，美国人真会搞钱，此点甚可学也！</p>
+<p>（三十）吉卜林不速来访后，他告诉太太：“他是个陌生人，然而是个最了不起的人……我则是另一个。”</p>
+<p>（三一）欠七万债，罗吉斯出面议定每一块赔还五角，马曰：“给我时间，我一定把另外的五毛钱也还清。”</p>
+<p>（三二）“可见天日了，眼前债务逐步减轻，我们真高兴。我有生以来初次觉得付钱比赚钱愉快。”不到四年，全部偿清。</p>
+<p>（三三）有人以一万元请推荐他喜欢的那种烟草，他拒绝，有人请他演讲每次一千，他也拒绝了，他说他“可以不要这些钱，保持残余的自尊心过下去”。</p>
+<p>（三四）……凡听过马克·吐温在宴会上的演说以及其他谈话的人，都认出这位作家在言语之间透露一种伟大、严肃的新用意，他仍然使听众笑，可是他非要他们也想一想不可。</p>
+<p>（三五）五十年后，与老友重游童年山头。</p>
+<p>（三六）七十大庆大会说：“古稀之年七十岁，这是《圣经》上所说的寿限，过了这个年龄，你便毋须再尽任何积极的责任……除了熄灯号以外用不着应号角任何之召。如果你一厢情愿的话，你仍可付已经破旧的责任账单，不过你高兴的话，也可以拒付而不会有所伤害，因为这些账单在法律上是收不回来的。……七十岁了，愿意舒舒服服地坐在壁炉旁，抽我的烟斗、看我的书、养我的神，同时以深厚的真情祝你好，希望你将来也到了七十号码头时，也以与世无争的精神上船，而以怡然自得的心将船朝着落日夕阳开去。”</p>
+<p>（三七）传记的作者慢慢的开始发觉他所口述的生平并不完全是历史，而往往有些事甚至于整个部分都是虚构的，马答说：“我年纪还轻时，任何事不管是发生或是没发生过的，我都记得清清楚楚，可是我现在年纪愈来愈大了，不久我将仅能记住没发生过的事。”</p>
+<p>（三八）他是1835（我生的一百年前）哈雷彗星出现那年生的，七十四岁时他说：“哈雷彗星明年将再度出现，我想和它一齐去，如果我不能跟它走，那将是我一生最大的失望。”竟成语谶。</p>
+<p>书中引“摩西之葬”不知为何人手笔，汤新楣译文为下：</p>
+<p>在尼波的孤山旁，</p>
+<p>在约旦河水之畔，</p>
+<p>在摩艾境小谷里，</p>
+<p>有座寂寞的孤坟。</p>
+<p>可是没人知道它，</p>
+<p>从来没人见过它，</p>
+<p>因为天使掀开土，</p>
+<p>将死者轻轻放下。</p>
+<p>五、又读完袁方的《记者生涯》：</p>
+<p>（一）乔·路易斯言对台湾印象说So far so good，一记者竟译为“它如此遥远，又如此美妙”！</p>
+<p>（二）首报西安事变消息的是合众社记者赵敏恒，乃根据孙科的电话与铁路局的消息判断得来。</p>
+<p>（三）蒋两耳耳垂各有一褐痣，传言为“帝王之相”。</p>
+<p>（四）蒋讲演前先不语，先自左——右，右——左端详一番。</p>
+<p>（五）1952年冬检阅，一弹壳落座旁，铮然作响，孙立人胡适之皆回头看，蒋神态自若。</p>
+<p>（六）陈诚：“不吸烟是好人；吸烟的是好国民。”</p>
+<p>六、与谢、萧、俞夜谈，萧多伤心之语，实在可怜。</p>
+<p>2月4日 星期六</p>
+<p>一、标语：</p>
+<p>立万载千秋大志；</p>
+<p>抱青天白日胸襟。</p>
+<p>二、由于作笔记，想到黄祝贵不买书之言良佳。</p>
+<p>三、充员官皆沉不住气、皆逃课而去。</p>
+<p>四、副官组糊里糊涂，归建令竟把我名字漏去，午后打电话去催，营长又帮我找副团长，第一营长笑说我干脆留下来做算了，营长说我身体不行。团长说我太着忙，我说我算最不着忙的了！与式泮逃课搭便车去马公，澎湖风景实在可爱。抵澎防部访毓田，我把我的名字填到囚犯栏去了，看守所颇佳，清洁而有阳光，毓田胖而强颜欢笑，我知其欲哭而忍泪，我说：“只有你能做出这种事，也只有你能够忍受它（这种环境）。”又说：“该著本《鲁滨逊漂流记》，这正是相同的环境！”又说：“历史上的大人物都是从这儿出来的！”留地址及嘱托路线而别。其房为第一间，有粗铁栏，白瓷马桶，很干净，书报很多，可订《联合报》，亦一奇事也。毓田看到我助理事。不准带烟给他。我想我大可在这儿住住，绝没问题。</p>
+<p>五、看船期买到七美人冢照片，一元。与式泮同去喝红豆汤，读报。又洗澡后在饺子王吃狡子，看《光头冤家》（Once More With Feeling by Yul Brynner and Kay Kendall）。</p>
+<p>六、夜归，知归建令来，他们催我回连，我却睡了再说！</p>
+<p>2月5日 星期日</p>
+<p>一、早起等车不到，镜昌又替我把行李背回来。午饭后归建，碰到施珂来，又接到他的信，小店的杨二小姐知我要退伍，并家住台中。下午理什物，我被他们“瓜分”了，或换衣、或索阶，与克勤、王宇逛赤崁码头，临水小坐，见渔船有“金满盈号”，看海蟹、浪花、远船、死鲨鱼，多感而少言，傍晚克勤拿来胶卷，照了一阵相，码头竟被保安人员出而禁止摄影，很扫兴，自恃被相信的选民总是不相信别人的。晚饭应官长部欢送宴，俞萧参加，阿周这次破例护我，代我喝酒不少，饭后送镜昌归，颇尽殷殷之意，与行政官办移交，真是混蛋的行政官！8时后参加排中欢宴，大吃小喝，敬酒送照片一类，排附即席亮出送我之钢笔。散席后我一一嘱别，德武、永亭等皆惜我之去，难过溢于言表，与他们谈至夜深，收拾东西，忠明强送我“川资”，我强拒之，一时后始睡。</p>
+<p>二、收到施珂信：</p>
+<p>敖之老弟：</p>
+<p>别来念念，与弟虽共处蕞尔小岛，比邻竟若天涯，诚非始料所及也，小兄现住西溪，已三游马公，并与老孟把晤，自步吾弟后尘以来，洋相出了不多不少，兹有事相恳，望以“先进姿态”惠予赐教。</p>
+<p>①“陆军体操”吾弟所编之新解请赐一份参考（我现用“灵感式”，即想起哪节就做哪节，亦颇自然）。</p>
+<p>②“科”里叫我推荐继任人选，我想那位准博士如何？（需能胜任英教教学。）他的大名我已不复记得，九期预官中，我相识甚少，请弟提供资料。</p>
+<p>③段肇京（波京世家译者）有个小问题请查明赐复（原函附上）。</p>
+<p>旧年北返否？为了节省盘缠我不打算回去了。</p>
+<p>流书神驰，不尽一一，专此即颂</p>
+<p>排棋 并问</p>
+<p>副座、组座、武大郎好</p>
+<p>珂 1961年1月28日</p>
+<p>2月6日 星期一</p>
+<p>一、4时三刻凤鸣叫醒我，永亭、德武及陶、郑班长皆来送行，车站候车时，菊生又持早饭来，排附也来，江涛又来送我装饰兔子一对，王宇送王八一对（外包以红纸，上写：“不可泄漏天机，至家后再拆！小心放置，不可挤压，王宇赠”字样），陈仪贤送珊瑚领带夹一支。早上空气在卡车中享受——那是一种脱羁的自由的空气，在码头领到退伍证，一纸文书，令人无限感慨，与尔昭话别，有点依依之感，赏了永亭十元（昨晚他只有十元了，为了要送我，特地去赌，可是一下子就输了五块，再也不敢继续下去了），珂又送他十元压岁钱，三一一军舰8时正开，告别马公、告别澎湖矣。望远岛与绿水青水白浪花，与众老友相逢聊天，为之心旷不已，与黄容到船后卧于锚上小眠，并小哼调儿，午后抵高雄，下船前与珂作诗，我作了前两首：</p>
+<p>解甲浮海东“入港”，</p>
+<p>看见台湾心儿痒，</p>
+<p>此去重新做好人，</p>
+<p>不可零落同草莽。</p>
+<p>十五月做阿兵哥，</p>
+<p>千言万语没话说，</p>
+<p>船泊海边来逐臭，</p>
+<p>第一“入港”是施珂（因泊臭鱼下码头，故有第三句也）。</p>
+<p>天连水来水连天，</p>
+<p>三一一进西子湾，</p>
+<p>一年排长没白干，</p>
+<p>带得二十一型还。</p>
+<p>天连水来水连天，</p>
+<p>天水之间是寿山，</p>
+<p>入得港来真痛快，</p>
+<p>李敖今天回台湾。</p>
+<p>我在甲板上一直逗晕船大睡之天昭，逼其以小刀自卫，下船后又以逗他话别，真是别开生面的惜别场面。码头上每人一包“慰劳袋”，食物不恶，彭孟缉署名送的。上印“准备再战”等语。搭4时之慢车返中，同行者黄容，对面坐一被二宪兵押解之政工少校。与容吃喝，不寂寞，过楠梓，看大岗山，为之神驰不已，感想不止。</p>
+<p>二、睡得很迟，第一次睡老百姓身份的觉！</p>
+<h2 id="退伍日记"><a class="header" href="#退伍日记">退伍日记</a></h2>
+<p>——1961年2月7日-2月15日</p>
+<p>2月7日 星期二</p>
+<p>一、整理东西。</p>
+<p>二、午后善培来，相谈愉快开心。夜宿家中。</p>
+<p>2月8日 星期三</p>
+<p>一、与培去农院，归访世民。</p>
+<p>二、给景、萧、孙、李寄去限时片。</p>
+<p>三、四时与世民合送善培，竟碰到谭凝晖，穿了一身天蓝连衣裙，和“男友”在一起，相望点头招呼，她也坐这班车北上，好像也有所归了，有点儿老惫，不若当年之轻盈。</p>
+<p>四、夜访世民，美惠数其“不忠实”罪状，颇好玩，女人都是这样的——在这方面都有惊人的记忆力与重现力，是个天才的演员。</p>
+<p>2月9日 星期四</p>
+<p>一、整理。</p>
+<p>二、夜洗一浴。</p>
+<p>2月10日 星期五</p>
+<p>一、华俊晨来。</p>
+<p>二、午后访述古，转去张家，再转赴尔琳家。他妹妹不在家。</p>
+<p>三、晚与玉衡逛街，同看《赤胆屠龙》，颇好，听英语良多，女明星极美，穿黑长袜一镜头尤其诱惑。</p>
+<p>四、请玉衡吃饺子。</p>
+<p>2月11日 星期六</p>
+<p>一、午前后去区公所办手续。</p>
+<p>二、接启庆信，云姚老转告，不必速北上。</p>
+<p>三、阿八三门不及格，我讥以轮流不及格，只是总分不变耳。</p>
+<p>四、翻出镇京来的贺片。</p>
+<p>五、请玉衡在家午饭。</p>
+<p>六、买铇一支，三十元。</p>
+<p>七、下午请玉衡看Road To Bali（《春满巴厘岛》）。</p>
+<p>2月12日 星期日</p>
+<p>一、上下午在一中图书馆。</p>
+<p>二、午取善培寄来之二百元，并理发（三姐送十元）。</p>
+<p>三、三小姐剖腹出来一个男娃娃。</p>
+<p>四、观善培信，租房事恐碍于财力不能实行，如寄居宿舍亦是一法，可省钱至少二百五十元。</p>
+<p>五、由于补数日来之日记想起，许多事过去了，忘了也就算了！犯不着为过去而浪费现在太多的时间。</p>
+<p>六、新汉来限时信。</p>
+<p>七、夜洗澡后读统计学，兴味甚盈，发现对数学理解力大进，恐惧心消失。</p>
+<p>2月13日 星期一</p>
+<p>一、上午寄书，八十五元，小龙陪我押运。</p>
+<p>二、补牙于子良齿科，八十元。</p>
+<p>三、午后与小龙去团管区，标语有“无条件的服从领袖”，“绝对的信仰主义”。</p>
+<p>四、归访克勤未遇，傍晚俞来，晚饭后逛街，老太送五十元买袜。</p>
+<p>五、接英善一片。</p>
+<p>六、给启庆、善培各限时片，给连上寄去贺片六，副座信二纸，“伯高亲爱的”一纸，“彭宏炳兄和我炮排的老伴儿收”三纸。</p>
+<p>七、三姐夫送快车票54.5元。</p>
+<p>八、克勤带来与我在澎湖照片。</p>
+<p>2月14日 星期二</p>
+<p>一、装上牙，了了一心愿！</p>
+<p>二、给国钧寄还二百五十元。</p>
+<p>三、华俊晨来，言Lo夫婿之奸猾手残云云。今天我数次想到这件事。我觉得我与她们的距离愈来愈遥远，我愈来愈变得不能与她们在一条路上行走，她们愈来愈庸俗，而在市井圈内打转，我却愈来愈扶摇直上，我真厌恶她们！</p>
+<p>四、午请俞与彦增吃年午饭，有鸡等，说笑不已，老太说我不是使客人不好意思，就是使主人不好意思，连长说人言我笑最美。饭后请他们看The Lost World（《宇宙洪荒》），女星甚美，望之“意交”之。出来见报，胡蓉裳本月11日在美结婚，“报上相见”第三起也！转赴台中医院看三小姐。</p>
+<p>五、年夜饭后分糖果，三姐、老太各送五十压岁，我又打赌生男的贏老太十元。</p>
+<p>六、夜整理洗浴，老太为明日北上送四橘。</p>
+<p>七、今日旧历除夕，又是情人节（Valentine’s Day），Valentine，3世纪罗马基督教殉道者。</p>
+<p>2月15日 星期三</p>
+<p>一、锡昌一早又送修订本来。外人穷来拜年，光锦来，拉我访华俊，碰于路上，为其小侄市弹弓，俊言其妹寄我文于金门事。午请光锦，华俊作陪，连长来送行，且送礼，我只留华俊、述古送我，4时车开，读书，向车中一小童做手戏。善培接我，为洗尘，同赴第一宿舍，破窗而入，见珂所留信、诗、漫画、衣帽。不久士振、之昂及其敖小姐来，后与孙李等煮蛋，喝酒，闹至2时，小读书始睡去。</p>
+<p>二、接小潘一片。</p>
+<p>三、施大哥信：</p>
+<p>敖之：</p>
+<p>我8日北返，车上无聊，偶成打油数首呈致。</p>
+<p>小功一个又一个</p>
+<p>还有一个也允诺</p>
+<p>幸有李敖小子在</p>
+<p>预备军官增颜色</p>
+<p>李敖小子人望重</p>
+<p>一年排长未了情</p>
+<p>不忍遽离谁最甚</p>
+<p>相随犹有几臭虫</p>
+<p>排长一年真够本</p>
+<p>连吃带拿不客气</p>
+<p>李敖今天满载归</p>
+<p>笔红兔白乌龟绿</p>
+<p>乌龟语兔子</p>
+<p>目下有余子</p>
+<p>以后为竟先</p>
+<p>冠军李敖的</p>
+<p>师长冲锋在先头</p>
+<p>深入敌阵老命休</p>
+<p>若非李敖来搭救</p>
+<p>“红军”王气黯然收</p>
+<p>子期已死不弹琴</p>
+<p>李敖去了不点名</p>
+<p>但为君故乃如此</p>
+<p>忠贞河北张永亭</p>
+<p>李敖今天回台湾</p>
+<p>卸下戎装着长衫</p>
+<p>文韬武略满腹是</p>
+<p>秀才大兵一身兼</p>
+<p>可笑真可笑</p>
+<p>冲锋七五炮</p>
+<p>莫道战术新</p>
+<p>排长是李敖</p>
+<p>少尉少尉又少尉</p>
+<p>领上已戴肩又佩</p>
+<p>预官笑话从来多</p>
+<p>李敖小子第一位</p>
+<p>纸短诗多，不及备载。</p>
+<p>大哥 8日午彰化车次</p>
+<p>珂言李敖丢人事迹尽于是页矣。</p>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/06.沉思日记类/一个预备军官的日记/08-澎湖日记·1961年2月.md">Edit this page on GitHub.</a></footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../06.沉思日记类/一个预备军官的日记/07-不与集、兹疑录·1960年12月.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../06.沉思日记类/李敖秘藏日记.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../06.沉思日记类/一个预备军官的日记/07-不与集、兹疑录·1960年12月.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../06.沉思日记类/李敖秘藏日记.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/leeao-toc-1313d264.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

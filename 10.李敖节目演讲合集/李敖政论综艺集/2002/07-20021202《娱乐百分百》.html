@@ -1,0 +1,560 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>20021202《娱乐百分百》 - 大李敖全集</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-d279d366.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/leeao-e9ced672.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-47e392f3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">大李敖全集</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="李敖政论综艺集20021202娱乐百分百"><a class="header" href="#李敖政论综艺集20021202娱乐百分百">李敖政论综艺集：20021202《娱乐百分百》</a></h1>
+<ul>
+<li><a href="#20021202娱乐百分百">20021202《娱乐百分百》</a></li>
+</ul>
+<h2 id="20021202娱乐百分百"><a class="header" href="#20021202娱乐百分百">20021202《娱乐百分百》</a></h2>
+<p>主持人——ASOS（徐熙媛、徐熙娣简称“大S小S”）</p>
+<p>嘉宾——李敖（简称“李”）</p>
+<p>嘉宾——周长娟（简称“周”）</p>
+<p>大S小S：欢迎李敖大师、周小姐您好，周小姐是李敖大师的助理，哇今天我们除了请到李敖大师之外，节目组也极力的邀请周小姐，没想到真的有这个荣幸把她邀来了！</p>
+<p>李：可是你们这样吓我一跳，你们做这种事情怎么可以呢？</p>
+<p>大S：没有，因为我们想要问李敖大师很多问题，本身可能不太好意思问。</p>
+<p>李：哈，是你们不敢问，怕我告你？</p>
+<p>大S：是，就是这样子啦！</p>
+<p>李：我现在告诉你，现在台湾的大哥只剩下两个了。本来是杨大哥，罗大哥，李大哥；现在罗大哥被消灭了，只剩下杨大哥和我（注：罗杨分别为罗福助、杨登魁）。</p>
+<p>大S：那李大哥手下留情，我们都知道最近李大哥李大师是最近这个风云人物哦，因为绯闻的关系，是新闻人物。那李大师要不要陈述一下，还是怎么样自我感觉。</p>
+<p>李：我觉得终于轮到我了。我跟我太太说“我都很久没上壹周刊了，好没面子啊”，这次给足了面子。</p>
+<p>大S：只有红人才可以上这样子哈哈！</p>
+<p>李：也不是这样子啊，因为我们早晚会被推出来，因为我太老了，我可能是最老的人上壹周刊的，我告诉你，我现在是六十七岁。</p>
+<p>大小S：真的！？</p>
+<p>李：六十七岁，我跟猫王同岁你忘记啦？</p>
+<p>大S：哦~真的啊！</p>
+<p>李：世界三大男高音那个大胖子跟我同岁（帕瓦罗蒂），你们都忘记啦？</p>
+<p>小S：因为没想到李大师很会保养。</p>
+<p>李：阿兰·德龙（Alain Delon），伍迪·艾伦（Allen Stewart Konigsberg），都跟我同岁啊！</p>
+<p>大S：林青霞跟我妈同岁，我只能拿我妈出来比。哈哈！</p>
+<p>小S：哈哈不过我看过李大师的那个照片，我发现周小姐本人漂亮的多欸！</p>
+<p>大S：本人很有气质！</p>
+<p>李：壹周刊好可恶，把周小姐照的不够漂亮，我太太拼命的抗议说“怎么照的照的那么丑”！</p>
+<p>大S：因为那种形式就是喜欢丑化艺人，像我被拍到也是很丑的样子！</p>
+<p>李：有些人脸还被人拉开的照！</p>
+<p>小S：对对对，什么曝光都有。不过李大师你太太看到这个杂志有没有什么不开心的地方？</p>
+<p>李：她就讲了，这个把她照的太丑了！</p>
+<p>小S：只有为这个生气吗？</p>
+<p>李：为这个生气，还有为其他的生气就不能告诉你啦哈哈！</p>
+<p>大S：呢…关于重点方面，我们来问周小姐。</p>
+<p>李：你看（对周长娟说）那个人问的问题都不怀好意我给你说。</p>
+<p>大S：有什么不怀好意的</p>
+<p>小S：你当做李大师的助理多久了？</p>
+<p>周：呃..我认识他很久了，大概两年多左右。</p>
+<p>小S：哇，李大师对你怎么样？</p>
+<p>周：对我很好。</p>
+<p>大S：他在你心目中两个人的关系是什么样的？</p>
+<p>大S：在你心里觉得，你心里的定位？</p>
+<p>周：他是我男朋友。</p>
+<p>小S：是男朋友！</p>
+<p>大S：是你心里把他当做男朋友。</p>
+<p>小S：是因为崇拜还是？</p>
+<p>大S：还是真的爱他，喜欢他各方面？</p>
+<p>小S：你们两个人不要眉目传情好不好！李大师你不怕你太太来看你电视的？</p>
+<p>李：我太太不看电视。</p>
+<p>小S：那你对李大师有崇拜之情，还是真的有爱意在里面，真的谈恋爱在里面？</p>
+<p>周：（害羞不语）</p>
+<p>小S：你也希望李大师在解救你对不对，李大师你是不是也很想听一听周小姐的想法？</p>
+<p>李：当然，现在我们三个人是一伙的。</p>
+<p>大S：好啦，我们还是吧话讲清楚啦，省的以后麻烦，不明不白，还不如今天把话讲清楚其实是崇拜他，把他当老师的感觉吗？还是？</p>
+<p>周：呃…我真的喜欢他。</p>
+<p>小S：真的喜欢他…唉哟，其实李大师我也是哈哈！</p>
+<p>李：（鼓掌）</p>
+<p>大S：好浪漫啊！</p>
+<p>李：秀一手给你们看，六十七岁的人。有八卦杂志开始说我“李敖开始溺爱高中女生”；她是国中女生欸，长得这么小看到没？</p>
+<p>小S：真的！</p>
+<p>李：我六十七岁，我打败了所有的五十七，四十七，三十七，二十七，十七。</p>
+<p>小S：对，现在这个帅哥二十几岁也未必让周小姐喜欢他，可是李大师有这个魅力！</p>
+<p>大S：坦白讲在同年龄下，有没有男生追你？</p>
+<p>周：呃…有。</p>
+<p>大S：而且你还参加了一些综艺节目啊，也跟一些知名的主播人相处，我猜你也是吴宗宪喜欢的类型的类型，他有没有跟你要过电话或者对视？</p>
+<p>周：呃…有。</p>
+<p>大S：可是你却偏偏喜欢李敖大师。</p>
+<p>小S：对，就是李敖大师哪一点把你迷住了？</p>
+<p>周：（笑）</p>
+<p>小S：一定是知识很丰富。</p>
+<p>李：哪一点都被我迷住了嘛！</p>
+<p>小S：那李大师会让周小姐这么喜欢你，是因为你有展开攻势还是？</p>
+<p>李：我们总是高高在上的，我们是大男子主义你忘了！</p>
+<p>大S：对啊，大男子主义的男生特别疼女生！</p>
+<p>小S：对，嘴巴上说大男人，其实特别疼女生疼的要死！</p>
+<p>李：我陪你俩听这么久我都忘记了；我现在要写一本书叫《赤裸的十七岁》不要怕，还没脱、《赤裸的十七岁》原因就是我要写古往今来很多悲惨的历史，和他们的故事、现在很多女孩子也十七岁，你们过的什么日子；我的意思算是一个对比。你注意，印度的女孩子，很多十七岁的时候丈夫就死了印度人的命都很短，可是印度人火葬的要公开的火葬，当这个火烧起来的时候，这个女孩子要跳到火里面去叫Suttee,这个单词很怪的，干什么呢，叫殉夫，留下来寡妇受气啊，所以印度的寡妇都不能活的，可是如果那个时候是我是印度人讨了你们姐妹花，对不起都要跳下去。</p>
+<p>大S小S：哈哈哈！</p>
+<p>李：小S你不要难过哦，你不一定是小老婆，你还可能是大老婆，我过去的敌人邹郎，他的是妹妹的做大老婆，姐姐做小老婆。所以对不起啊！</p>
+<p>小S：你把两个人都得罪了哈哈！</p>
+<p>李：邹郎的太太，大老婆每天在敦化南路，每天清早照顾这些小孩子过马路，真正的好人！你们去看一位老太太。对不起是老太太啊哈哈，可她真正的好人！，我们要做好人好事、骂她的丈夫；可是要歌颂他的太太。</p>
+<p>大S：喔~就是要公私分明啦，可是我个人还是很好奇就是李敖大师啊，私底下对周小姐，他有那个浪漫的一面吗？</p>
+<p>周：有。</p>
+<p>小S：他最浪漫的是有什么，让你很难忘的事情？</p>
+<p>周：呃..情人节他会买花送我。</p>
+<p>小S：就那么一般吗？</p>
+<p>大S：我情人节都没有收到花欸！</p>
+<p>李：你怎么忘了讲我毛手毛脚的事情？</p>
+<p>大小S：啊哈哈哈，毛手毛脚！</p>
+<p>李：其实我从来不毛手毛脚的，为什么我告诉你、我被她捆起来了，她有虐待狂。</p>
+<p>小S：其实我有看到那个杂志啊，有拍到什么披外套啦，有亲吻了额头。</p>
+<p>李：亲吻的不止额头。</p>
+<p>小S：哎哟~！好害羞，平常李敖大师会对你讲甜言蜜语的话吗？反而还是说在女朋友面前反而就不太会讲话？</p>
+<p>大S：像我就是这种人，平常在镜头前还行、一谈起恋爱啊，就口疾。</p>
+<p>小S：周小姐，他在你面前话多吗？</p>
+<p>周：（对李敖说）话多吗？</p>
+<p>李：我告诉你啊，有一位英国的诗人叫威廉·布莱克（William Blake）他写了一首诗，他说一个男人去追这个女孩子说我爱她爱她然后说我怎么爱她爱她，怎么低三下四怎么求她。就在这个时候，忽然来了路人这个人没有跟她讲话，只对她叹了一口气，她就跟他走了。那个原文的最后一段我给你表述一下：silently安静地invisible看不见地、He took her with his sigh.他叹口气就带走了她，为什么呢一句话都不讲（注：出自《Love’s Secret》最后一句的原文为：He took her with a sigh.）</p>
+<p>小S：欸！</p>
+<p>李：所以你看那个德国，外国的诗人讲我从来不牢牢掌握她、我从来不骚扰她、可是我牢牢地抓住了她。</p>
+<p>小S：这就是魅力！</p>
+<p>李：不要讲那么多话了哦，你们留我在这里讲，给我这么少的节目费，等下我找你们老板算账。还要签名，照相，你们是这样虐待劳工啊，我是大牌啊！</p>
+<p>小S：等下我们的妈妈还要跟你来拍照。</p>
+<p>李：还免费吗？等下我会把你们妈妈抱走哈哈！</p>
+<p>小S：我妈高兴都来不及！</p>
+<p>大S：李大师你买了什么东西送给女孩子了？</p>
+<p>李：你这是什么意思啊？恐怖！</p>
+<p>小S：因为杂志上有这么拍到。</p>
+<p>李：你们就是杂志的被害人，你们还替壹周刊讲话？（生气）</p>
+<p>大S小S：我们也不相信，我们也想好好骂骂他们啊，与你一起骂那个杂志。</p>
+<p>李：好，那你们还相信吗？</p>
+<p>大S：不相信，可是我还是私底下。</p>
+<p>小S：有这个东西嘛（指着镜头），还私底下。</p>
+<p>大S：哈哈我以为还进广告了。</p>
+<p>小S：呢好我们先休息下，等一下广告回来之后呢，我们会有观众传这个简讯来问李大师问题。</p>
+<p>李：人民公审？</p>
+<p>小S：如果不想回答也可以不回答，如果是你特别喜欢的话。</p>
+<p>李：你可以把所有的问题丢给她（指周长娟），让她答。</p>
+<p>大S小S：可以吗？</p>
+<p>周：可以。</p>
+<p>大S：好，休息下回来。</p>
+<p>小S：好的，现在我们回来了，现在是简讯记者会。</p>
+<p>大S：好，周小姐私底下是怎么称呼李敖大师的呢，比如说……</p>
+<p>小S：比如说李大师啊，李老师啊！</p>
+<p>大S：比如说“老宝贝啊”！</p>
+<p>周：我们没有特殊的。</p>
+<p>小S：你是怎么称呼的？</p>
+<p>周：就是走路碰下肩膀，“欸”这样子。</p>
+<p>大S：李大师会特别称呼她什么？</p>
+<p>李：我叫她小娟。</p>
+<p>大S：李大师是不是也不喜欢用那种，sweetie阿、baby阿那种？</p>
+<p>李：那种我都不用的。</p>
+<p>大S：为什么？</p>
+<p>李：因为太肉麻。</p>
+<p>大S：所以李大师不是肉麻人哪！</p>
+<p>李：所以我不讲那种话。</p>
+<p>大S：所以李大师不走肉麻路线。</p>
+<p>李：我为什么会肉麻呢？我又没有被电击过，为什么会肉麻？</p>
+<p>小S：哈哈哈，等一下我还有个人的问题，就是周小姐，你妈妈知道了你的心目中男朋友是李大师这种男生吗？</p>
+<p>周：她知道。</p>
+<p>小S：她知道是什么反应？</p>
+<p>周：她也很喜欢他。</p>
+<p>大S：所以这是跟我妈妈的情况一样吗？哈哈，妈妈是不是还要你多邀请他到你家里吃饭？</p>
+<p>周：是的。</p>
+<p>小S：妈妈是不是会跟你说，比如说这么年轻先不要谈恋爱，或者说要找一个年级相当的男朋友之类的？</p>
+<p>周：呃……她很放心啦！</p>
+<p>大S：很放心，所以跟李敖大师出去没关系。</p>
+<p>小S：因为我觉得跟年轻男生谈恋爱也不见得比较安全，还不如跟……</p>
+<p>李：正好！对这话说的很正点（竖大拇指）</p>
+<p>大S：可是李敖大师我非常担心的就是，今天你回家之后你怎么面对你的太太？</p>
+<p>李：因为我们光明正大的面对太太，我没有做坏事啊！</p>
+<p>小S：如果回家太太说“跪下”；你就光明正大的跪下吗？哈哈！</p>
+<p>大S：现在也有观众问李敖：“和你交往过的美女，那一位是你最回味无穷的？”</p>
+<p>李：我看了她（指周长娟）以后，别人都忘了。</p>
+<p>大S：你还说你不肉麻，你都肉麻成这样！哈哈！</p>
+<p>李：你们都知道，结果故意问我，你们不是……</p>
+<p>大S：没有没有，没有啦！</p>
+<p>李：你们迟早会写到我的回忆录里面，《李敖回忆录》大家请买喔，每本360NT。我让新闻局的人去罚你们节目广告化。</p>
+<p>小S：不会不会，所以这位提问题的同学，你的问题在《李敖回忆录》里有答案。</p>
+<p>大S：可是李大师，周小姐在你的心目中你觉得美在哪里？</p>
+<p>李：她气质非常好，我们一般对于“美”都用错了；我们台湾都乱掉了，好比那个大胖子“游月霞”都变成美女，送到playboy、外国人认为这就是中国美女？你说这还得了吗？所以我李敖创立了一个品牌，使得大家知道像周长娟这种造型的这种漂亮；身高167cm，体重只有41kg。</p>
+<p>小S：哇，高高瘦瘦。</p>
+<p>李：这才是真正的美女，而且她还非常有气质，你看到没有，她非常的秀气。</p>
+<p>大S：所以李敖大师觉得……</p>
+<p>李：所以让大家知道这才是美女，不是游月霞这种货色！</p>
+<p>小S：哈哈，所以李敖大师对她的外表那真的是分数很高，那关于女孩子的内在呢？</p>
+<p>李：女孩子没有内在。</p>
+<p>小S：喔，女孩子不用看内在。</p>
+<p>李：任何女孩子都没有内在。</p>
+<p>大S：所以不需要那种聪明绝顶，然后什么都懂？</p>
+<p>李：你看过那个、《窈窕淑女》没有？My Fair Lady那个、它可以使女孩子有内在，她从一个卖花女，她（指周长娟）不是卖花女啊哈哈；进入一个高等的社会里面，倾倒众生的女人。</p>
+<p>小S：所以女生就要花时间把自己弄的很美，不需要学什么看书啊，才艺什么的不需要。</p>
+<p>李：一开始可以这样，可是久了以后，你讲话、像林青霞一样，林青霞跟我吃饭的时候，不敢讲话，为什么呢？因为她一讲话就泄底了，因为是空的。外表很漂亮但是讲不出话来、里面很贫乏，只会唱个卡拉OK；或者只会哼一个小调，讲话都没有内容的，所以这样的女孩子会迷人，迷人的女孩没有内容。所以女孩才要看书啊，看什么书呢？请大家看《李敖大全集》一套33600NT。</p>
+<p>小S：那周小姐会不会和李大师谈起天来比较那个……</p>
+<p>李：我们是聊天，因为她是我的Model、是我的模特儿。你们所说的“助理”严格说起来是不对的，好比我要写一本书叫《赤裸的十七岁》，我要研究这些十七岁的女孩子，她们是怎么生活，我要找这些美女啊，我要研究。当然有人问李敖你怎么只找美女呢？当然我也会找恐龙族，恐龙族我也会先吃好镇定剂然后我才找。</p>
+<p>大S：李敖大师真的很注重女生的外表欸！</p>
+<p>李：你们没有外表，你们还会坐在这里？你们这两个小鬼坐这里。</p>
+<p>小S：所以女生还是要很注重外表。</p>
+<p>大S：所以丑女是完全没有必要想要跟她那个……</p>
+<p>李：可是我写小说有必要，有人说你写小说怎么没有恐龙呢？所以我只好找恐龙族。</p>
+<p>大S：哦！所以要平衡一下。所以周小姐跟李大师聊天的时候，会不会压力很大，因为他懂得太多了。然后害怕自己讲的话会很无聊什么的会不会有这种感觉？</p>
+<p>周：不会。</p>
+<p>李：对不起我掺和一句，她如果感到有压力的话，不是精神、而是身体，你懂我意思吧！哈哈！</p>
+<p>大S：身体上的压力！哈哈！</p>
+<p>大S：哈哈！现在回家越来越紧张了，我要替你捏汗了。</p>
+<p>小S：对啊，李敖大师你回家要怎么面对你的老婆？</p>
+<p>李：哈哈哈哈！</p>
+<p>小S：不过其实我们，所以以前都有锁定那个李敖大哥大这个节目。然后不是都会有李敖语录吗？然后其中我们都对那个有一段语录是最为觉得非常的精彩，就是打人，然后连方瑀。</p>
+<p>大S：那个要在我们节目由我们来讲好像就不太好吧？</p>
+<p>李：连方瑀么样？</p>
+<p>小S：说连方瑀不用打他，因为她全身都是死肉。</p>
+<p>李：哈哈哈！</p>
+<p>小S：你还记得那个语录吗？</p>
+<p>李：刚才杨老板警告我不许骂人的，结果你们开始骂人。</p>
+<p>大S：我只是重复李敖语录、不是我说的。</p>
+<p>李：杨大哥把她们俩赶走，我来做。</p>
+<p>大S：这明明是李大师说的。</p>
+<p>小S：好另一位观众大概是小女生吧，她说李敖我好喜欢你，要跟你在一起。</p>
+<p>李：（指着周长娟）你有情敌了。</p>
+<p>大S：对怎么办？而且另外一个也是小女生，她说愿意跟小S在一起吗？小S我妹妹。</p>
+<p>小S：如果我热烈追求你。</p>
+<p>李：我讲过，当我火葬的时候，我需要姐妹花一起往里跳的，你们可以争排名，可以一起跳，也可以一、二、三跳。</p>
+<p>小S：大家都有机会吗？</p>
+<p>李：要火葬的话都可以。</p>
+<p>小S：活着的时候行不行？有没有机会？</p>
+<p>李：活着的时候，私下便议。</p>
+<p>小S：所以这位同学先寄照片来，然后把那个身高、体重跟肤质情况都写下来再看有没有机会哈哈。</p>
+<p>大S：可是周小姐、因为真的喜欢李敖大师的女生一定是非常多，周小姐会不会担心被抢走比较大。你会不会？</p>
+<p>周：我不会的，不会担心。</p>
+<p>大S：你觉得你怎么样可以这样牢牢抓住李敖大师的心？</p>
+<p>周：他的眼里只有我。</p>
+<p>大S：哈哈真的吗？</p>
+<p>李：好会讲话，眼里只有她，你看。</p>
+<p>大S：是真的吗？李大师！</p>
+<p>李：你看她说了这么多话，我都不敢说 yes or no 你干什么？因为我有一天我太太看了这电视，你知道什么后果吗？</p>
+<p>小S：我知道什么后果，可以想象啊！哈哈！</p>
+<p>李：你以为九二一大地震只有一次吗（注：里氏震级为7.3左右，震源深度八千米）</p>
+<p>小S：啊哈哈！可能下一次只有在你家发生，别人都不会有。</p>
+<p>大S：然后有观众说，既然那个周小姐觉得很喜欢李敖大师，那李敖大师的基本资料你应该都能够了解吧？ 比如说他最喜欢吃什么？</p>
+<p>周：他不喜欢喝茶，他不喜欢喝冰的东西，然后他不吃太油腻的。</p>
+<p>小S：所以喜欢一些清淡的东西，那最喜欢的动物是什么？</p>
+<p>周：他喜欢猫，喜欢猫。</p>
+<p>小S：平常都穿什么类型的内裤？</p>
+<p>李：狠的问题都出来了，看到没有？我就知道她们会整你，果然。</p>
+<p>小S：是观众问的啦！</p>
+<p>李：我先报告你，我从来不穿内裤，我替你解围了。</p>
+<p>小S：这个应该就不用回答了，不想回答也没关系。李敖大师最喜欢什么颜色？</p>
+<p>李：内裤的颜色还是一般的颜色，你要搞清楚啊！</p>
+<p>周：他还是这样子，黑颜色的，深黑色的</p>
+<p>大S：那你身上的打扮也是特别为李大师，他喜欢你这样打扮才穿，还是你本来就是这样的打扮？</p>
+<p>周：我们两个心有灵犀，我们两个都喜欢这样。</p>
+<p>大S：都喜欢差不多的服装款式。</p>
+<p>小S：那李敖大师有没有跟你说过他最喜欢女孩子的哪一个部位？</p>
+<p>李：我告诉你，俄国的文学家陀思妥耶夫斯基（Fyodor Dostoevsky）讲……</p>
+<p>小S：什么事都可以扯出一些名言来！</p>
+<p>李敖：陀思妥耶夫斯基（Fyodor Dostoevsky）讲说：我喜欢女人从脚开始喜欢、从脚心开始，一路喜欢上去”！问哪一个部位好像把人分尸了一样。</p>
+<p>小S：没有，李大师你看女人第一眼看那个部位？</p>
+<p>李：我先看屁股。</p>
+<p>小S：先看屁股，一定要翘那些的吗？</p>
+<p>李：不要翘，翘的就不要了。我喜欢那种女人小屁股的、越小越好，我痛恨大屁股的女人，也痛恨波霸的女人，波霸的女人都是笨的女人，除了陈文茜以外。</p>
+<p>大S：真有品味！</p>
+<p>小S：我也讨厌波霸！所以李敖大师不喜欢那种波霸的女人，喜欢瘦瘦高高的。</p>
+<p>李：我就喜欢四十一公斤的，我觉得好、因为你有虐待狂的时候，你就发现这个女人越瘦，你有那种感觉。对不起啊，太太！我是讲我的感觉。</p>
+<p>大S：这样，那太太听说是不是有发胖了？</p>
+<p>李：没有，我太太没有发胖。</p>
+<p>小S：只是照片中比较……</p>
+<p>李：当然我认识我太太时候她19岁，当然是非常好看的。我太太那时候也非常好看，现在也好看。不过你知道当然这个经过七年之痒，十四年之痒以后，当然她会变得那种那个很高贵的，不再是少女时代的那种样子。</p>
+<p>大S：周小姐，就是听到男朋友讲太太会不会不开心？</p>
+<p>周：不会。</p>
+<p>小S：才怪！我看到你刚刚眼神……</p>
+<p>大S：都飘到里面去。</p>
+<p>小S：李敖大师，世界上有你怕的人吗？</p>
+<p>李：我怕人的话，我一找的话我就照镜子。</p>
+<p>小S：你才是真妙的，不会怕太太。</p>
+<p>李：太太是哄的；不要怕。我们没有本领哄太太的话，我们也不要混了，我们会哄她的。</p>
+<p>小S：所以说那个李敖大师应该很会哄周小姐喽。</p>
+<p>李：她不需要哄，她需要拍。</p>
+<p>小S：平常李敖大师私底下会不会撒娇？</p>
+<p>周：他有很可爱的一面。</p>
+<p>小S：不会是用娃娃音讲话吧？“小娟，小娟啊”这样。李敖大师喜不喜欢女孩子讲话像娃娃声，就是甜甜嗲嗲的这样子。“大哥，我好崇拜你我好喜欢你”这样。</p>
+<p>李：一个吸引人的女孩子，会有好多种声音出来。有的人有的是细的，都是尖叫的，有着喉咙的声音，有好多种。</p>
+<p>小S：一定要千变万化才行是吗？</p>
+<p>李：是啊你懂我意思吧，要有好多的声音出来，单一的女人声音的话那不是我最喜欢的。</p>
+<p>小S：一定要千变万化。所以李敖大师你刚才提到她可爱的部分，她是什么时候让你觉得可爱呢？</p>
+<p>李：她从15岁我就认识她。你晓得吧，我认识她其实很久了。</p>
+<p>大S：到现在18岁，三年。</p>
+<p>李：她刚刚过18，她9月才过18，到她18岁生日。我跟她来往才放心，不然她爸爸妈妈会告我。她爸爸妈妈非常好。</p>
+<p>小S：但是讲真的，因为这样子的关系，李大师也有太太，然后周小姐把你当做男朋友，而且她是真心的在喜欢你。那最后这个关系要怎么办呢？</p>
+<p>李：这个关系最后就是我死的时候，忽然有两个姐妹花跳出来！</p>
+<p>大S：长远的看是这样的，但是在还没有死之前，你该怎么处理？</p>
+<p>李：你怎么知道我活得过今天！</p>
+<p>小S：因为你很注重健康。</p>
+<p>李：不一定，我可能一出门就被黑道把我干掉了，或者就陈叉叉把我干掉了，杨老板说不许谈政治人物啊，我只好说陈叉叉。（注：陈叉叉为陈水扁）</p>
+<p>小S：那万一都没有被干掉怎么办？万一都一直好的，十年以后都好好的怎么办？那周小姐还要……</p>
+<p>李：当我到77岁的时候她还喜欢我，你们来恭喜我。</p>
+<p>大S：那周小姐你自己觉得，因为李大师是这样子觉得，那因为你还年轻……</p>
+<p>小S：你也不会一直等不到一个结果，想说干脆交一个真的将来可以跟她结婚的男生。</p>
+<p>李：我跟她讲了你会结婚的，可是你要红杏出墙的时候，我就在墙外面。哈哈！</p>
+<p>小S：永远在墙外等着她。</p>
+<p>李：墙外的床上。</p>
+<p>小S：哈，哈李敖大师的尺度越来越……好，那我们今天真的很开心，可以跟李敖大师还有周小姐聊天。那我们先来看一则新闻，就是飞鱼情小哥风华在线的专辑记者会。</p>
+<p>大S：那我们现在最后五分钟。</p>
+<p>小S：李敖大师会说，就给我这么一点钱，要留我这么久，可不可以再留个5分钟？</p>
+<p>李：没问题，既然进来了就只好如此了。</p>
+<p>大S：可是5分钟还要跟我妈拍照，我们也要。</p>
+<p>李：没有问题！</p>
+<p>小S：还要帮我姑妈鉴定一个画，可不可以？</p>
+<p>李：那个贵，那个贵！</p>
+<p>小S：那个贵哈哈，哎哟，你来都来了，拜托了。</p>
+<p>李：你除了让我洗男厕所以外，别的都让我做。</p>
+<p>小S：其他还有很多观众，他们问题其实也蛮尖锐的。哇，这个问题我不知道大师你愿不愿意回答，李敖大师请问一下你比较爱你老婆还是周小姐？</p>
+<p>李：问这种话？爱法是不一样的。</p>
+<p>小S：爱法不一样、、那爱太太是什么？</p>
+<p>李：因为我有很多100%爱女人，给我太100%，可是我给周小姐也100%。我有好多个100%，你们要不要分一点？</p>
+<p>大S：可是是哪两种不同的爱呢？</p>
+<p>李：我在写小说，她是我的模特，你懂我意思吧。她比我太太小20岁，感觉就不一样！她是我的模特，所以我在写美丽的可爱的十七岁她们在怎么生活，所以她是我的首席模特。</p>
+<p>小S：有一种宠的感觉在里面。</p>
+<p>李：还不算，只是溺爱而已。</p>
+<p>小S：溺爱，那周小姐有跟李敖大师吵过架吗？</p>
+<p>周：有。</p>
+<p>小S：是什么情况，你吵得过他吗？</p>
+<p>周：就是任性嘛！</p>
+<p>小S：哦也不是大吵，就是自己闹脾气，有到冷战不打电话吗？</p>
+<p>周：也有！</p>
+<p>小S：那结果是怎么样？李大师会来哄你，还是讲道理给你听，把你骂醒？</p>
+<p>李：我告诉你什么结果！就是她交了个男朋友，我交个女朋友，就这样子，两个人同时间的。</p>
+<p>大S：就这样子互相气对方吗？只是因为要怄气是不是？</p>
+<p>李：我有好多100%你忘记了？哈哈！</p>
+<p>大S：哇其实这样子的男朋友其实心里应该会觉得蛮不安全的吧？</p>
+<p>周：只有在那个时候了。</p>
+<p>小S：会不会自己还要低头回去找李大师？</p>
+<p>周：嗯。</p>
+<p>大S：自己要低头。</p>
+<p>小S：也有观众问说，你跟李大师在一起，你觉得会多久？</p>
+<p>周：这我不敢讲了。但是至少……</p>
+<p>李：她至少会目击你们两个姐妹也跳到火堆里去，她跑掉了，她不要跟你们跳。</p>
+<p>大S：反正你有跳火堆的心理准备吗？</p>
+<p>小S：他会打给我。然后观众也说周小姐跟那个李敖大师的老婆若同时生病，你会陪谁？</p>
+<p>李：同生病，我放在一个病房里。哈哈！</p>
+<p>大S：你看嘛，人家女生都眼睛红哦。</p>
+<p>李：我觉得这个周长娟她最好的一点，她非常的体谅。我是有妇之夫没有错，我也不可能离婚的。我离婚以后我跟她差这么远，我比她大50岁你们搞清楚。这个婚姻会幸福吗？也不可能的意思嘛！因为我太太那么好，我也不会离婚的。我太太那么漂亮、那么好、那么贤惠啊，还给我零花钱，我就根本不可能的。给我零花钱买表送给野女人。所以绝对没有！我太太知情的，你不要搞错！我怎么知道Gucci，我太太才知道Gucci。</p>
+<p>大S：周小姐好像在听到你的答案那一刹那有点难过，是不是眼眶都红了！</p>
+<p>李：没有，她知道是我在开玩笑；她知道我把重话轻说、真话假说、假话真说，她知道的。不能辨别的人就会弄混，我的目的就要弄混嘛，我一辈子直在干的就是颠倒是非，你懂我意思吧！</p>
+<p>大S：所以有镜头在的时候要听真话很难啦。</p>
+<p>小S：我们现在问最后一个问题了，刚才是在那个电梯遇到李敖大师的时候，我们也答应他说这个问题一定要问，因为周小姐看刚才还情绪，被李敖大师的话牵着走，可现在是对李敖大师用情很深，那现在到底是爱不爱李敖大师，有到爱吗？</p>
+<p>周：（点头）</p>
+<p>大S：你点头了，你爱他吗？</p>
+<p>小S：那在你心目中因为像刚刚李敖大师他对这个恋情他其实看得很开，他觉得谈恋爱，那在你心目中也是这样子吗？就是只谈目前的恋爱，以后的事情都不想，付出你所有的爱就对了，你也是100%吗？</p>
+<p>周：(点头）</p>
+<p>小S：李大师你知不知道少女的100%就真的是100%，你听到是什么感觉？</p>
+<p>李：她有好几个100%！哈哈，你们两位是失恋者。</p>
+<p>大S：才怪，少女只有一个100%！</p>
+<p>小S：李敖大师刚刚都不敢过去看她眼神。</p>
+<p>李：表示我不完全不影响她，叫她答复，你看我手也没有这样碰到她，他也没有。你们看得清楚，镜头为证。</p>
+<p>小S：李大师到底怎么样？感觉如何？</p>
+<p>李：我好感动！我告诉你，美国的大法官叫霍姆斯（Oliver Wendell Holmes Jr.）他94岁的时候，他走在纽约街头，看到一个年轻的女孩子。他很感慨说我现在94岁，我多么希望我是74岁；小二十岁他就好快乐。我告诉你，我现在67岁，我多么希望我不再是六十六岁，六十七岁万岁！</p>
+<p>大S：好！反正就是觉得六十七岁好！</p>
+<p>李：我觉得66以下都不好。</p>
+<p>小S：都太小了，都不好，不过李敖真的是非常非常的迷人，我们全家都爱他。所以不管因为李敖大师也说他的爱永远都是100%，不管对哪一个人。所以希望你跟你太太还有跟周小姐都是怎么讲？</p>
+<p>大S：快乐最重要、幸福最重要！</p>
+<p>李：还留下两个100%给你们两个人。</p>
+<p>小S：我们还有机会，哈哈！</p>
+<p>大S：我们这两个100%送给你，哈哈！</p>
+<p>小S：李敖大师你不要伤她的心喔！</p>
+<p>李：不会的！</p>
+<p>小S：真的？</p>
+<p>李：没有没有、大家知道我的整个都在谈笑之间嘛！看到没有，我在开玩笑。</p>
+<p>小S：好的！就祝你们幸福咯，谢谢两位来坐我们的节目。谢谢，谢谢。</p>
+<p>李：谢谢你们送我的5000NT。</p>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/10.李敖节目演讲合集/李敖政论综艺集/2002/07-20021202《娱乐百分百》.md">Edit this page on GitHub.</a></footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../10.李敖节目演讲合集/李敖政论综艺集/2002/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../10.李敖节目演讲合集/李敖政论综艺集/2003/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../10.李敖节目演讲合集/李敖政论综艺集/2002/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../10.李敖节目演讲合集/李敖政论综艺集/2003/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../../theme/leeao-toc-1313d264.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

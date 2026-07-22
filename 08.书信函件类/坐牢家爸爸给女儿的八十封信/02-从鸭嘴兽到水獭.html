@@ -1,0 +1,505 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>从鸭嘴兽到水獭—登天梯 - 大李敖全集</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/leeao-e9ced672.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-47e392f3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">大李敖全集</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="坐牢家爸爸给女儿的八十封信从鸭嘴兽到水獭登天梯"><a class="header" href="#坐牢家爸爸给女儿的八十封信从鸭嘴兽到水獭登天梯">坐牢家爸爸给女儿的八十封信：从鸭嘴兽到水獭—登天梯</a></h1>
+<ul>
+<li><a href="#从鸭嘴兽到水獭">从鸭嘴兽到水獭</a></li>
+<li><a href="#那么让他们吃饼嘛">“那么让他们吃饼嘛！”</a></li>
+<li><a href="#嘴含一根草">嘴含一根草</a></li>
+<li><a href="#我的本领就是臭">我的本领就是臭</a></li>
+<li><a href="#飞上枝头看飞枝">飞上枝头看飞枝</a></li>
+<li><a href="#古国神游">古国神游</a></li>
+<li><a href="#古希腊的辉煌">“古希腊的辉煌”</a></li>
+<li><a href="#古罗马的壮丽">“古罗马的壮丽”</a></li>
+<li><a href="#波澜n多的波兰">波澜N多的波兰</a></li>
+<li><a href="#登天梯">登天梯</a></li>
+</ul>
+<h2 id="从鸭嘴兽到水獭"><a class="header" href="#从鸭嘴兽到水獭">从鸭嘴兽到水獭</a></h2>
+<p>亲爱的小文：</p>
+<p>一个半世纪前，科学家刚听说有一种下蛋的哺乳动物（egg-laying mammal），他们都不相信，说胡扯（a hoax），没想到世界上真有这么一种动物，就是“鸭嘴兽”（platypus）。鸭嘴兽只在澳洲（Australia）东海岸才有，澳洲也叫澳大利亚，是世界上最小的洲，也是一个国家。</p>
+<p>澳洲本来跟亚洲连在一起，但在五千万年以前分开了，所以它自己成为一个特别的地方，老是有些全世界只有它有别人没有的怪东西，鸭嘴兽就是其中之一。（Australia has many kinds of strange animals not found on other continents. This is because the bridge of land that once connected Australia with Asia disappeared about 50 million years ago. From then on, most of Australia’s animal life developed independently）</p>
+<p>另外一种只有澳洲有的小动物，就是koala，爸爸有一封信专门跟你谈过它，你记得吗？</p>
+<p>Koala means “no drink”, and the aboriginal word well describes the gentle marsupial that draws moisture only from its food, the leaves of certain eucalyptus,（油加里树，也叫桉树，是常绿乔木，长得很快）or gum trees. With oddly arranged fingers-the first two oppose the other three-a koala clings to a branch in a sanctuary at Waikerie. Phascolarctos cinereous faced extinction by fur hunters until the 1920’s, when conservation laws began to protect the continent’s dozens of marsupial species.</p>
+<p>Koala也叫袋鼠熊（kangaroo bear）。</p>
+<p>袋鼠（kangaroo）也只有澳洲有。袋鼠前面两只手，很会打拳（boxing），后面两脚，很能跳，大尾巴在跳的时候可帮忙保持平衡（balance）。</p>
+<p>美国有俗语“袋鼠法庭”kangaroo court, U.S. Informal. an unauthorized or unofficial court, usually self constituted, as a mock court by prisoners in a jail or a frontier court：…shot down over North Korea in 1952 and condemned to prison by a Red kangaroo court.（Newsweek），类似中文所说的“私设公堂”。以前在Kansas州，法官巡回各地办案，由这跑到那，很像袋鼠跳来跳去，所以叫袋鼠法庭。（Kangaroo court：A kangaroo court is an illegal mock or sham court, usually one set up by inmates of a prison to levy fines and punishment on other inmates who violate the “code”. Such organizations, usually very informal in nature, exist in most large prisons and are even encouraged by some wardens as a useful device for maintaining order. The name probably originated at the time when Australia, land of the kangaroo, was the penal colony for the British Empire. The term has occasionally-and inaccurately-been applied to the kind of roadside justice of the peace court which exists only to collect fines from motorists caught in speed traps.）</p>
+<p>当然这个kangaroo court是来自有kangaroo的地方才对。澳洲有袋鼠，澳洲以前又是英国的天然监狱，所以kangaroo court的观念（idea）是从澳洲来的。</p>
+<p>英国本来把political prisoners朝美国送的，美国独立以后，英国要找个地方送prisoners，于是选中澳洲，自1787年起，英国在八十年间，送了十六万八千prisoners到澳洲，当时路上很苦，要走四个月。1788年初，prisoners在现在悉尼地方，建了settlement，悉尼就是Sydney，Sydney是当时英国内政大臣的名字，大概是为了拍马屁，才这么叫的。</p>
+<p>悉尼人口不过200万，世界最大的船也可以开到港里去，是世界上最好的港口之一，也是澳洲最老资格的城市。</p>
+<p>丹麦建筑师Utzon设计了Sydney Opera House，后面就是Harbour Bridge，这座桥重五万吨。</p>
+<p>澳洲是脱离英国而独立的国家，所以受英国影响很重，连国旗里面都有英国旗。马路上走，也靠左走，英国就是靠左的（最早宣布澳洲是英国的人是科克船长Captain James Cook，他是发现Hawaii的探险家。五十一岁的时候，在Hawaii被土人杀了。）（Captain James Cook landed at Botany Bay, south of Sydney, in 1770. He claimed Australia’s entire east coast for Great Britain.）</p>
+<p>首都堪培拉（Canberra），有一千五百万以上的树，它的议会大厦（Parliament House），尤其漂亮。</p>
+<p>墨尔本（Melbourne）的名字是一个英国首相的名字，也是拍马屁来的。它的植物园、美术馆，都很有名，有三座大学。本来是首都，1927年迁都到堪培拉去了。</p>
+<p>澳洲南部有两个有名的岛：</p>
+<p>一个是塔斯马尼亚（Tasmania）岛，也曾是英国关prisoners的地方，用了50年。岛上有一种塔斯马尼亚狼，母的也有袋鼠一样的袋，不过是装在背上，不在肚皮上。The Tasmanian wolf’s genus name, Thylacinus, means “pouched dog”. The female has a pouch which opens backwards and contains four teats. The pouch is large enough to hold four pups, although the usual number of young in a litter is two. The period of gestation is not known, but it is probably a little less than one month. The young are born hairless and blind in an incomplete, almost embryonic state of development. They are carried in the pouch for three months-the duration of their semi embryonic life. The cubs are then deposited in a nest of dry leaves and grass until they are old enough to hunt for themselves.</p>
+<p>塔斯马尼亚有台湾两倍大，你看台湾多小！岛上原有一种大牙齿的土人，现在已绝种了。</p>
+<p>另一个岛是袋鼠岛（Kangaroo Island），岛的北边，就面对阿得雷德（Adelaide）城。它是澳洲第三的大城。（Adelaide, South Australia’s capital, is a well planned city, rich in parks and gardens. It is near the great Gulf St. Vincent, 90 miles long, 45 miles across.）</p>
+<p>在澳洲东北海岸外面，有1250英里长的珊瑚礁（大堡礁，The Great Barrier Reef），有声有光，景象离奇，非常好看。好看是好看，可是船很难走，科克船长的船曾在这一带三次遇险。The Great Barrier Reef is one of Australia’s most popular tourist attractions. It is the largest coral reef in the world, stretching for about 1250 miles along the coast of Queensland. The reef has thousands of islands and underwater coral formations. The sandy beaches of the islands and the interesting sea life of the reef mark it an ideal spot for skin diving. 珊瑚礁中有一岛叫“绿岛”（Green Island），真巧，台湾也有一个绿岛！</p>
+<p>羊有绵羊（sheep）和山羊（goat）两种，山羊（billy goat）有胡子，还有羊骚味（goaty odor）。</p>
+<p>羊奶可以造干酪（cheese）和“牛”油，可以从羊身上得到羊毛。</p>
+<p>羊毛出在羊身上（literally）Without a sheep, there can be no wool.—The benefit comes, after all, from a price one has paid. Whatever is the expense, somebody is going to pay for it.做衣服，其他还可吃羊肉、用羊皮、做肥皂、做网球拍……羊的用处多极了！（Sheep yield wool, meat, and leather. They also furnish the raw materials for many byproducts, such as glue, tallow, suet, soap, fertilizer, cosmetics, and the catgut used in stringing tennis rackets.）</p>
+<p>澳洲的羊，占世界第一位。占全世界六分之一。（Long famous as a land of sheep, Australia is the world’s leading producer and exporter of wool and mutton and is a major producer and exporter of beef and wheat. Australia is also a highly industrialized country. Large deposits of coal and iron have become the basis for an iron and steel industry, white an expanding economy provides a large domestic market for a wide range of goods and services.）</p>
+<p>澳洲平均每个人有十四头羊（澳洲旁边的纽西兰（New Zealand）每人有二十头），而中国人平均十个人分不到一头，这太不公平了！（In Australia, there are about 14 sheep for every person. In New Zealand, there are about 20 sheep for every person. Some states in the western United States also have more sheep than people.）</p>
+<p>过分的不公平，没有的人就会叫，这叫“不平则鸣”。（Those who are discriminated again will complain.）</p>
+<p>澳洲比台湾大222倍，但人口比台湾还少！</p>
+<p>亚洲人口平均每方英里（persons to the square mile）122人；澳洲人口平均每方英里4人。</p>
+<p>澳洲“得天独厚”to be particularly favored by nature （said of a land rich in natural resources or a gifted person）却是从不公平来的。澳洲有“白澳政策”，限制有色人种到他们那儿去。但白种人又少，所以将来问题一定很多，不是铁蒺藜（barbed-wire fence）拦得住的。澳洲人自己也说：“We’ve got a big, empty country here, and we have to fill it up. You Know,‘populate or perish’.”</p>
+<p>澳洲的政策是错误的、自私的（wrong and selfish），这叫“狗占马槽”（dog in a manger describes a person who keeps others from using something that he himself cannot use. It comes from Aesop’s fable of a dog that crawled into a manger of hay and prevented a horse from eating, even though dogs do not eat hay.），也叫“占着茅坑不拉屎”，这种人只希望“不惹睡狗”（Let sleeping dogs lie, means to leave a situation undisturbed.）“维持现状”“相安无事”。但这怎么行呢？“每条狗都有得意的一天。”（Every dogs has his day, is an expression used when something pleasant happens to a person, especially one who has been having bad luck.）别的狗会睡醒，澳洲虽然是down-under（在世界另一边），别的穷狗还是会咬到它的。</p>
+<p>爸爸 1975年6月8日</p>
+<p>亲爱的小文：</p>
+<p>你这次信封上写的中文很有进步。</p>
+<p>鸭嘴兽只有澳洲有，水獭却只有澳洲没有。</p>
+<p>水獭是Otter，is a fur-bearing animal that spends much of its time in the water. Otters are related to the weasels and are carnivorous（flesh-eating）mammals. They live on all continents except Australia. They are divided into two groups, river otters and sea otters.</p>
+<p>人会仰泳（backstroke），但水獭却更神气，它会仰吃，它在水里“仰面朝天”地吃，这才叫“仰不愧天”（to feel no shame before God）呢！</p>
+<p>水獭还是一个会用工具的家伙（a tool user），它吃蛤蜊（clam），会朝石头上敲，你说它多聪明！</p>
+<p>每只水獭的皮，可卖到二千五百美金，就是台湾十万块。全世界都不准杀它，所以它的皮就特别值钱。人死了，臭皮没人要，但许多动物死了，皮却成了“千金裘”，这真是“豹死留皮”啊！</p>
+<p>豹死留皮（literally）A leopard leaves behind its skin when it dies.— A man has a reputation to leave to posterity when he dies.</p>
+<p>爸爸 1975年8月17日</p>
+<h2 id="那么让他们吃饼嘛"><a class="header" href="#那么让他们吃饼嘛">“那么让他们吃饼嘛！”</a></h2>
+<p>亲爱的小文：</p>
+<p>法文有一个字叫“顾而媚”（gourmet），就是讲究吃的人（a connoisseur in eating and drinking，善于判别饮食美恶之人；an epicure，美食者），很像中文中的“老饕”，但老饕有一点挖苦的意味。法国的“烹饪”被当做一种艺术（Cooking is considered an art by the French. They are world famous for their salads, sauces, and soups. Almost every region, city, and restaurant of France has its own food specialty. These specialties include truffles（mushroomikel plants）in the Guyenne region, snails in Burgundy, sausages in Arles and Lyou, omelets in Mont St. Michel, and pressed duck in Paris.），一个笑话说美国人嚼口香糖去饭店，法国饭店老板（patron，注意英文patron和法文patron意思不同）拒绝伺候他——阁下嘴含“橡皮”，安能品味！</p>
+<p>法国人因为讲究吃，所以foods的花样也多，cheeses就有两百多种做法。法国的党（party）也多，十个以上（美国英国只有两党），法国英雄戴高乐（Charles de Gaulle）说有两百多种cheese花样的国家岂能只有一个党？（How can one conceive of a one-party system in a country that has over two hundred varieties of cheese.）戴高乐也坐过牢，后来当了法国总统。</p>
+<p>戴高乐的一个老上司叫贝当（Pétain），第一次世界大战时防守凡尔登（Verdun），曾说：“他们过不来！”（They shall not pass!）成为抗德英雄。但是二十四年后，在第二次世界大战的时候，他竟同德国人合作了，那时他已八十四岁。到了八十九岁，被判死刑。戴高乐给他减为无期徒刑（life imprisonment）。他真能活，活到九十五岁才死在牢里！他大概是全世界年纪最大的囚犯了。</p>
+<p>凡尔登是名战场，有“国觞”（a martyr to the national cause）五十万。</p>
+<p>贝当的国防部长叫魏冈（Weygand），被判无罪，虽然坐了三年多牢，但最后证明清白。魏冈也真能活，活了九十八岁！</p>
+<p>还有一个能活的，是法国在第一次世界大战时的总理克里蒙梭（George Clemenceau），活了八十八岁。死的时候叫护士走开，他说他不要死在女人面前！他要人把他的棺材立起来，他说他死也要站着死！他的外号叫“老虎”（The Tiger），这个人有多历害，可想而知。</p>
+<p>第一次世界大战德国没能打进Paris去，最后，德国失败了，于是开了一个“巴黎和会”，在法国凡尔赛宫开的，凡尔赛（Versailles, The Palace of Versailles was built by Louis XIV in the 1600’s. Now a national museum, it contains exhibits of fine painting and sculpture.）可比凡尔登贵多了。法国代表是老虎总理，美国是威尔逊总统（Woodrow Wilson），爸爸跟你谈过威尔逊，威尔逊的像，印在十万美金的钞票上面，你还记得吗？</p>
+<p>凡尔赛离Paris十一miles，有六百多间房子，有三百多年了。五十多年前，美国大富翁洛克菲勒（John D. Rockefeller, Jr.）——就是现在美国副总统的老子，送了近300万美金重修，所以房子虽老，还很漂亮。</p>
+<p>法国大革命的时候，皇帝和皇后（皇帝是路易十六Louis ⅩⅥ，皇后是玛丽安托瓦内特Marie Antoinette）正在凡尔赛宫。当时老百姓吵着要面包，手下报告说巴黎大乱，“因为他们没有面包。”（Because they have no bread.）皇后说：“那么让他们吃饼嘛！”（Then let them eat cake.）中国也有这种不知道民间疾苦的笑话，在玛丽安托瓦内特说这话前一千五百年，中国大乱，手下向皇帝（晋惠帝）报告老百姓没饭吃了，皇帝奇怪，反问：“他们为什么不吃肉啊？”（“何不食肉糜？”）（糜congee；porridge；rice gruel）后来玛丽安托瓦内特死在断头台（guillotine）上。断头台是一个医生发明的。</p>
+<p>法国女人在政治上，虽然到1945年才与男人平等，但有影响力，却早在1945年以前，只是多不得好死。玛丽安托瓦内特死的时候三十八岁，另外一个比她小一半的，十九岁就被烧死的，是圣女贞德（Joan of Arc）。她的“事业”表现在奥尔良（Orléans），她死在卢昂（Rouen），她是法国的民族女英雄（the national, heroine of France），虽然她死的罪名却是假的。（condemned as a witch, Joan of Arc was burned at the stake in 1431 in the market place at Rouen, France. Later, in 1456, the pope pronounced her innocent. She was declared a saint in 1920.）</p>
+<p>在玛丽安托瓦内特才九岁的时候，一个四十三岁的名女人死在凡尔赛宫，她是路易十六的爷爷路易十五Louis XV的情妇（mistress），她影响了法国政治二十年，名字是蓬巴杜夫人（Madame de Pompadour）。她对文学、艺术很赞助（to patronize），被她赞助的人中，有一个叫伏尔泰（Voltaire）。伏尔泰是philosopher（哲学家）、poet（诗人）、historian（历史家）、novelist（小说家）、dramatist（戏剧家）、satirist（讽刺家）。他因为写文章惹祸，在Bastille监狱住过，他的文字极有影响力，影响到French Revolution——在他死后第十一年，French Revolution发生，捣毁Bastille了。</p>
+<p>伏尔泰写文章惹祸太多，他虽生在巴黎，可是在外面二十八年，无法回老家。他很会做生意，赚了钱，在法国靠瑞士日内瓦（Geneva）边上，造了住宅，法国抓他，他就逃到瑞士；瑞士抓他，他就逃到法国，他说哲学家该在地下有两三个洞以防走狗抓他们（Philosophers should always have two or three holes under ground against the dogs hunting them.）。中国古话说“狡兔三窟”（A wily rabbit has three burrows.），他真是狡哲三窟啊！</p>
+<p>下周续写法国。</p>
+<p>爸爸 1975年6月21日</p>
+<p>亲爱的小文：</p>
+<p>法国最大的河叫卢瓦尔河（Loire River），河边有许多古堡（chateaus），非常好看，爸爸替你找了四种——Cheverny、Chambord、Chaumont、Chenonceaux。从画片上，你可以知道castles in Spain（西班牙）是“空中楼阁”。但在法国却不是“空中楼阁”，而是地上的，真的。</p>
+<p>再写四个有French的词念给你：</p>
+<p>一、French doors（法兰西式两用门）门上有玻璃，像是窗户。</p>
+<p>二、French horn（法国号）。</p>
+<p>三、French leave（不辞而别）。</p>
+<p>四、French walk（逐出室外）这是美国俗语，也叫the bum’s rush，是抓一个人，把他推到房子外面去。</p>
+<p>意大利人看起来聪明，人也聪明；</p>
+<p>西班牙人看起来聪明，人是傻瓜；</p>
+<p>法国人看起来傻瓜，人却聪明；</p>
+<p>美国人看起来傻瓜，人也傻瓜；</p>
+<p>爸爸决定给你买架录音机，你把下面一页信给姥姥看。</p>
+<p>爸爸 1975年6月29日</p>
+<p>一、买卡式（cassette）中最新式的一种，就是全自动往复回卷正反面那种。</p>
+<p>二、台湾百鹰股份有限公司总代理美国神鹰美格福斯（Magnavox）牌有最新式的。别的牌子如也有，要买名牌的，像索尼（sony）等。</p>
+<p>三、最小型的最方便，但每次只能装一盒（一卷录音带）小文如想买大一点的录音机，可买美格福斯IK 8844型那种（可装进十二盒，连续录放），声音也比最小型的好。</p>
+<p>四、要托小彭以他电器同业身份买，可打到大折扣。</p>
+<h2 id="嘴含一根草"><a class="header" href="#嘴含一根草">嘴含一根草</a></h2>
+<p>亲爱的小文：</p>
+<p>你看这四张画片多有意思。</p>
+<p>黑猩猩</p>
+<p>我是黑猩猩，</p>
+<p>嘴含一根草。</p>
+<p>事事看不惯，</p>
+<p>专门把乱捣。</p>
+<p>你说我很坏，</p>
+<p>我说你不好。</p>
+<p>将来有机会，</p>
+<p>走上苏花公路我就朝你屁股踢一脚！</p>
+<p>大袋鼠</p>
+<p>我是大袋鼠，</p>
+<p>嘴含一根草。</p>
+<p>你跳我先跳，</p>
+<p>你跑我先跑。</p>
+<p>虽然不爱钱，</p>
+<p>钱也不能少。</p>
+<p>不然没钞票，</p>
+<p>怎么应付袋里那位要喝苹果西打的小宝宝？</p>
+<p>场拨鼠①</p>
+<p>我是场拨鼠，</p>
+<p>嘴含一根草。</p>
+<p>只学狗儿叫，</p>
+<p>不学狗儿咬。</p>
+<p>专门办丧事，</p>
+<p>埋了才拉倒。</p>
+<p>这样够朋友，</p>
+<p>东南西北天上人间你到哪儿找？</p>
+<p>美人儿②</p>
+<p>我是美人儿，</p>
+<p>嘴含一根草。</p>
+<p>不怕心儿变。</p>
+<p>就怕人儿老。</p>
+<p>人老珠儿黄，</p>
+<p>红颜变大嫂。</p>
+<p>还是趁早演个美国杨贵妃，</p>
+<p>一天洗它一百一十一个澡！</p>
+<p>爸爸 1975年8月3日</p>
+<p>①场拨鼠（prairie dog）叫起来像dog叫，所以英文叫prairie dog，这种小动物很能保护同类，这正是人类所不能完全做到的“守望相助”；同类死了或被别人害死了，场拨鼠还会把死的埋起来，这正是人类所不能完全做到的“养生送死”。</p>
+<p>②姥姥会记得这位美人儿，她就是电影明星洛丽泰扬。</p>
+<h2 id="我的本领就是臭"><a class="header" href="#我的本领就是臭">我的本领就是臭</a></h2>
+<p>亲爱的小文：</p>
+<p>中文成语：“各人自扫门前雪（Everybody minds his own business.），休管他人瓦上霜（the frost on neighbor’s roof-none of one’s business.）。”用英文来说，就是Let every man skin his own skunk.（让每个人剥他自己的臭鼬的皮）。</p>
+<p>臭鼬以它的自卫（self-defense；to defend oneself）方法出名，它可以从十二英尺远，由屁股眼射出臭水，立刻“臭气冲天”（stinking smell assaulting one’s nostrils），除非你和它“臭味相投”（persons of similar (atrocious) taste；a meeting of (dirty) minds），否则一定大败而逃。</p>
+<p>驴用腿自卫，狗用嘴自卫，象用鼻子自卫，臭鼬用屁股眼自卫。</p>
+<p>臭鼬“所向无敌”（to encounter no significant opponent on the way；undefeatable；invincible），除了一种大角猫头鹰（great horned owl）不怕它臭以外，谁都怕。</p>
+<p>臭鼬的臭水蕴藏量（deposit）丰富，可以连发六次，好像人类的左轮手枪（左轮可连发六次，所以也叫six-shooter），但人类的手枪要执照（a license），臭鼬的“水枪”却自由。</p>
+<p>被臭鼬的水枪命中（to hit the target）以后，要用汽油或番茄汁才能洗净。</p>
+<p>一二三，</p>
+<p>四五六。</p>
+<p>我是小臭鼬，</p>
+<p>本领就是臭。</p>
+<p>从东臭到西，</p>
+<p>从左臭到右，</p>
+<p>谁惹就臭谁，</p>
+<p>除非你带汽油番茄汁，</p>
+<p>否则臭你一下就没救。</p>
+<p>无独有偶（It happens that there is a similar case.），植物中有一种叫skunkweed或skunk cabbage的，也臭得要死，意思是“臭鼬草”，中国叫“地涌金莲”，也叫“坐禅草”。</p>
+<p>skunk cabbage. 1. A broad-leaved plant, of the arum family, which sends up in the spring a spathe of a disgusting odor, 地涌金莲（天南星科之阔叶植物，春季发佛焰花，其味令人作呕）。2. A somewhat similar plant of the Pacific coast states, 观音莲（美国太平洋沿岸各州所产与地涌金莲略同之植物）。</p>
+<p>爸爸 1975年8月10日</p>
+<h2 id="飞上枝头看飞枝"><a class="header" href="#飞上枝头看飞枝">飞上枝头看飞枝</a></h2>
+<p>亲爱的小文：</p>
+<p>爸爸坐牢前一年（1970），太平洋（Pacific Ocean）里有一个小国独立了，她只有台湾一半大，名字叫飞枝（Fiji，斐济），她原是英国的，所以国旗里头有四分之一的地方是英国国旗。</p>
+<p>飞枝有两个大岛，800个小岛。加在一块儿叫飞枝群岛（Fiji Islands）。</p>
+<p>飞枝共有五十万人，里头有中国人。</p>
+<p>飞枝的国都叫Suva（Capital and Commercial Center of the Fiji Island is Suva. Banks, office, and stores are located in central Suva.）。</p>
+<p>飞枝的警察若跑到台湾来，一定被台湾的警察抓起来，罪名是“有伤风化”（harmful to public morals）——因为飞枝的警察穿裙子，这种裙子叫sulu，裙子很瘦，下面是锯齿（teeth of a saw）状的，怪里怪气，台湾的警察一看一定大生气特生气，于是就抓起来了。</p>
+<p>所以大概飞枝警察不敢到台湾来。</p>
+<p>飞枝的男人也有裙子穿，这种裙子叫tapa skirts，比较短上面有花。他们当然也“有伤风化”，所以也不敢到台湾来。</p>
+<p>现代的飞枝人虽然怕台湾警察，胆子很小，但他们以前胆子可不小，他们是吃人肉的（cannibals——A human being that eats human flesh吃人肉的人；by extension, any animal that eats its own kind，广义来说，吃同类的动物），还是猎头的（head-hunters. head-hunting, n. The custom, characteristic esp. of heathen Malayan peoples, of decapitating enemies and preserving their heads as trophies. 奉异教的马来民族所特有的斩敌人头留作战胜纪念品的习俗）。</p>
+<p>世界上土人有的吃人肉不猎头，有的猎头不吃人肉，飞枝的土人两样全来，真凶来兮（兮，an adjunct with no independent meaning，roughly equivalent to “Oh”or“Ah” in English．）。</p>
+<p>以前台湾的土人，除兰屿的雅美族以外，都猎头，不吃肉。他们猎到一个最有名的头就是吴凤的（吴凤，Wu Feng, an official who, when head hunting was still common among the aborigines of Taiwan, ended the practice at the cost of his own life in 1768.）。</p>
+<p>这样看来，台湾的警察大概也不敢到飞枝去，因为搞不好，飞枝人发起疯来，野蛮复兴，两样来一样，台湾的警察都吃不消（cannot stand or bear；too much to take or endure）。</p>
+<p>Fijians once were cannibals and head-hunters, Most of them are now Christians, but they still observe local customs. They make outrigger canoes from hollowed logs. They also manufacture pottery and personal ornaments of shell, bone, and boar’s tusks. A small clan living near Viti Levu still practices the ancient custom of fire walking. Performers do not walk on fire, but on hot stones. Fijians drink kava（yanggona in Fijian）, a strong but non-in toxicating drink made from the root of a pepper plant. The drink partially numbs the tongue and lips. Fijians use it as part of most ceremonies. They celebrate every occasion with dancing.</p>
+<p>Most Fijians grow crops or catch fish for a living, but many work for the Europeans as clerks, carpenters, and police. People of Indian descent grow most of the island’s sugarcane, and they also keep dairy cattle. Miners take gold, copper, and iron from the rocks of the lager island. The Fiji Island produce coconuts, sugar, gold, timber, and tobacco. They ship tropical fruits to Australia and New Zealand. Most eastern Fiji Islands are volcanic. They only industry there is making copra（dried coconut meat）.</p>
+<p>爸爸 1975年9月7日</p>
+<p>（后记）这封信中所引有关吴凤的英文解说，当然是从“神话”立论的。事实上，吴凤是因背约、骂人、与曹族格斗下被杀的。详见连横《吴凤列传》。</p>
+<h2 id="古国神游"><a class="header" href="#古国神游">古国神游</a></h2>
+<p>亲爱的小文：</p>
+<p>埃及（Egypt）是非洲国家。但她伸了一只胳臂到亚洲，这胳臂就是西奈半岛（Sinai）。胳肢窝（armpit）那里开了条100 miles长的苏伊士运河（the Suez Canal）。苏伊士运河缩短了从英国到印度的距离，缩短6000 miles。</p>
+<p>苏伊士运河挖了十年才挖成，现在已经106岁了。挖它的人是法国外交家李希普（De Lesseps），他在六十四岁那年挖成。他有挖运河的瘾，又去挖巴拿马运河（the Panama Canal），结果公司倒闭，差点坐牢，因为他八十四岁了，所以免了。</p>
+<p>中国的隋炀帝，也喜欢挖运河，后来也倒了霉。大概土地神不喜欢人家挖他。</p>
+<p>埃及的棉花最有名。</p>
+<p>埃及的首都是开罗（Cairo），已经有1135年历史（A. D. 640年就有了）。</p>
+<p>Cairo bazaars很有名，bazaar是东方的小工艺品商店（1. In the East, an exchange, market place, or assemblage of shops, 市场、商场（东方的）。2. A spacious hall or suite of rooms for the sale of goods, as at a fair, 百货商场。also, a fair for the sale of fancy wares, toys, etc. commonly for a charitable object, 又指售卖珍玩以充善举的市场）。</p>
+<p>埃及最有名的是三十五座金字塔（pyramid）。</p>
+<p>金字塔有十个足球场那么大。</p>
+<p>金字塔是埃及国王（埃及叫法老Pharaoh）的坟，里面有金银财宝，所以老是被偷。所以以后的埃及国王就不盖金字塔了。</p>
+<p>金字塔要四十万人盖二十年。古时候人对修坟可真有耐心，小文你记得爸爸跟你谈过的印度那座大坟Taj Mahal吗？那坟也盖了二十多年才盖好。</p>
+<p>金字塔前面的狮身人面像，叫Sphinx（the “Strangler”）。最有名的Sphinx故事是叫人猜谜语的故事。</p>
+<p>谜语是什么东西又四只脚又两只脚又三只脚，后来Oedipus猜出来了。（SPHINX, in Greek mythology, a winged monster with the body of a lion and the head and breast of a woman. According to the myth, the Sphinx destroyed the passersby from the Greek city of Thebes when they failed to guess her riddle：“What is four-footed in the morning, two-footed at noon, three-footed in the evening?”Oedipus solved the riddle by replying：“Man, who in childhood creeps on hands and knees, in manhood walks erect, and in old age uses a staff.”The Sphinx, hearing this, threw herself from a rock and perished, and Oedipus thus became the liberator of Thebes and was made its king.）</p>
+<p>法老们不用金字塔以后，开始在地底下挖坟。1922年，考古学家Howard Carter（an English archaeologist, specialized in excavating ancient Egyptian tombs）挖到了小法老Tutankhamen的坟——3300年前的宝贝全部出土。小法老十八岁就死了，装在金棺材里，棺材盖是用金子做的小法老的全身雕像。坟共有四个房间，在chiff中挖成的，里面宝贝多极了，琳琅满目。（Good gems fill the eyes, a vast array of beautiful and fine things.）小法老Tutankhamen的名字，在3300年后，名闻全世界。Will Rogers（爸爸跟你谈过的美国牛仔哲学家，印地安祖先）甚至把Tutankhamen这个名词（noun）当动词（verb）来用。他说：</p>
+<p>If the father of our country, George Washington, was Tutankhamen tomorrow, and, after being aroused from his tomb, was told that the American people today spend two billion dollars yearly on bathing material, he would say,“What got’em so dirty?”</p>
+<p>埃及有全世界最长的河尼罗河（Nile River），埃及为了利用尼罗河，自1960年起用十亿美金盖了大水库，叫阿斯旺水库（阿斯旺坝The Aswan High Dam）（台湾的石门水库只是一亿美金），有了阿斯旺水库，会使尼罗河的水存起来。但这样一来，许多埃及的古迹都要被淹，尤其是有名的四千年前的大庙阿布辛拜勒（Abu Simbel）。于是进行抢救，全世界五十个国家捐了一千七百万美金救它，救的方法是朝上搬家。于是，这座待在那儿四千年的大庙，就被锯成一块一块的，用起重机搬了家。</p>
+<p>这个大庙里面的名堂很多，设计奇特。每年有两次，阳光照进法老石像的脸上。大庙外面这四个大石像也都是这法老，这法老叫Ramesses II（Ramses II, Ramesses II），在位时间是公元前13三世纪（reigned 1290-1224 B. C.），他把他自己做成四胞胎，替自己的庙守门，他老家伙谁也不信，只信自己。四千年前，他把古人忙得臭死；四千年后，他又把今人忙得臭死，他真有办法，他真行。</p>
+<p>爸爸 1975年9月20日</p>
+<h2 id="古希腊的辉煌"><a class="header" href="#古希腊的辉煌">“古希腊的辉煌”</a></h2>
+<p>亲爱的小文：</p>
+<p>爱伦坡（Edgar Allan Poe，1809-1849）是West Point（西点军校）开除的，但后来西点拍他马屁，给他立了铜像。你在西点时注意到了吗？他是美国文学家，活到爸爸这个年纪（四十岁）就死了，他最会写神秘和侦探小说，他是给神秘和侦探小说开山的人。他也是诗人，他十四岁写了一首有名的诗——《给海伦》（To Helen），诗里最有名的句子是：</p>
+<p>你水仙花的头发，古典的脸，</p>
+<p>水神的风华，把我带到</p>
+<p>古希腊的辉煌</p>
+<p>古罗马的壮丽</p>
+<p>Thy hyacinth hair, thy classic face,</p>
+<p>Thy Naiad airs, have brought me home</p>
+<p>To the glory that was Greece</p>
+<p>And the grandeur that was Rome</p>
+<p>希腊文化是西方文化（Western Civilization）的老祖宗；是西方文化的姥姥的姥姥的姥姥的姥姥……。现在西方文化和希腊文化息息相关（related as closely as each breath is to the next）到处可以看到。</p>
+<p>比方说Poe这首诗里提到hyacinth就是希腊的美少年Hyacinthus。用铁饼（discus）误杀Hyacinthus的，就是太阳神阿波罗（Apollo）。</p>
+<p>Apollo无所不在，到处插一脚，他虽然是神，可是也参加人的纠纷。前面Poe的诗给Helen，她惹出Trojan war、她是天仙化人（as beautiful as an angel from heaven；a stunning beauty）因为她本是Apollo的爸爸Zeus（Jupiter）的私生女。Trojan war就是后来《木马屠城记》的故事。Troy城是个倒霉的城，前后一千八百年间，被毁九次，Helen那次只是第六次。考古家希勒曼（H. Schliemann）不知道Troy城有这么多，他挖过了头，挖到了木马屠城记以前的城——更早一千年的城。</p>
+<p>在《木马屠城记》中，Apollo是帮守城的一边。Apollo的Priest叫Laocoon，他警告说木马有问题，不要信Greeks。即使他们带礼物来，但Laocoon和他儿子共三个被两条海蛇咬死了，结果他的警告没人信，最后木马拖进城来，半夜里，Greeks都从肚子里跳出来了。</p>
+<p>英文谚语A cat has nine lives.（猫有九命）City with nine lives是套这一谚语。</p>
+<p>中国人说“人非圣贤，孰能无过？”但外国人却说圣贤也有过，在英文中，这Even Homer nods.。Even Homer sometimes nods.（连荷马也打磕睡）荷马是第一个西方作家，是个瞎子（中国最老的作家之一左丘明Tso Chiu-ming也是个瞎子！）荷马活的时候穷得讨饭，死后有七个城拍他的马屁，说荷马是他们老乡。</p>
+<p>Seven wealthy towns contend for Homer dead,</p>
+<p>Through which the 1iving Homer begg’d his bread．</p>
+<p>——Thomas Seward：On Homer(1788)</p>
+<p>荷马的Odyssey里说Greeks从Troy回来，路上经过千辛万苦。他们的大英雄是Odysseus（英文多叫他Odysses），带着Greeks逃离了Lotus-Eaters等等要命的地方。</p>
+<p>中国的王宝钏等她丈夫回来，等了十八年。她的纪录被Odysseus的老婆Penelope打破，Penelope等了她丈夫二十年。Odysseus回来的时候，只有老狗还认识他。</p>
+<p>Troy城虽然跟希腊扯不清，但它却不在希腊岛上，它在土耳其。</p>
+<p>希腊岛上的大城是雅典（Athens），这名字是跟智慧女神雅典娜（Athena）来的。你重看一次爸爸六三、五、三一给你的信，注意“运猫头鹰到雅典”那一段，在Trojan war中，雅典娜帮Greeks这一边，她派出两条海蛇，咬死了Laocoon父子，可见她花样很多。她的爸爸也是Zues。Zeus因为怕她太聪明，在她出生前，把她妈妈Metis吃了，但是没用，雅典娜还是从她爸爸头顶上跑了出来。</p>
+<p>崇拜雅典娜的最有名的是公元前5世纪的帕台农神殿（Partheon），在卫城（The Acropolis）上面，是最有名的希腊建筑。The Acropolis rises proudly on 180-foot hill above the Attic Plain. The Parthenon and many large buildings were built in Golden Age of Pericles, 2400 years ago. The Acropolis上面还有许多别的建筑，像The Caryatids等。</p>
+<p>Apollo、Helen、Athena三个人的爸爸Zeus就是天神，中国的老天爷，他是一个风流鬼，跟十五个女人生了二十一个小孩，每个小孩都是名流。十五个女人中，他只跟三个结了婚，其他都没有。他的兄弟就是阎王爷（Pluto）。</p>
+<p>希腊的建筑后来被人学，到处都是。英国哲学家A. N. Whitehead有一段说这种希腊其实最不希腊，因为希腊人并不学人家。（The most un-Greek thing we can do is copy the Greeks. For emphatically they were not copyists.）</p>
+<p>小文你再把六四、五、三一爸爸的信找出来，看看苏格拉底等Philosophers和Alexander the Great关系。Alexander the Great是希腊最有名的皇帝，他从Macedenia老家，一直打到了印度，他使希腊文化普及到好多地方。</p>
+<p>Zeus有一个儿子，叫Heracles，说Heracles的后代就是Alexander the Great，所以老是和Zeus有关系。</p>
+<p>Alexander the Great打到Turkey中部的时候，cut the Gordian knot（an intricate knot tied by Gordius, king of Phrygia, to be undone only by the person who should rule Asia. Alexander the Great cut it through with his sword．）在中文，这叫“快刀斩乱麻”（to find and use a quick, easy way out of a difficulty）。</p>
+<p>跟Alexander the Great的老师Aristotle同时，另有一派哲学家，他们是cynic，就是愤世嫉俗的人。Diogenes白天点了灯笼在大街上找人，就表示现在是黑暗，人也不是人。Alexander the Great去拜访Diogenes，Diogenes却叫皇帝走开，别挡他的太阳。</p>
+<p>Alexander the Great很羡幕这位满不在乎的哲学家，因此才说了这么一句捧人也自捧的话——“如果我不是亚历山大，我就想做Diogenes．”（If I were not Alexander, I would be Diogenes.）他真会说话呵！</p>
+<p>希腊到处是古迹，所以令人怀古。</p>
+<p>希腊有437个岛，岛占全国的面积五分之一，全国只有台湾一个半大，人口只有台湾三分之二。</p>
+<p>爱吾宗（evzones）的制服是希腊的招牌。</p>
+<p>爸爸 1975年10月12日</p>
+<p>Rome下周写</p>
+<h2 id="古罗马的壮丽"><a class="header" href="#古罗马的壮丽">“古罗马的壮丽”</a></h2>
+<p>亲爱的小文：</p>
+<p>Rome（罗马）是现在Italy（意大利）国的首都，也是古代Rome帝国的首都，所以这个字，又是城的名字，又是国的名字。</p>
+<p>英文中带罗马的词儿很多，Roman Nose、Roman numerals……你慢慢都会碰到。带罗马的成语也很多。条条大路通罗马！（All roads lead to Rome.）</p>
+<p>罗马人喜欢修路，留下的大路最有名的是Appian Way。Appian Way is the old highway to Rome from the south, lined with cypress tress.大路通到罗马以后，就要In Rome do as the Romans do.，这就是中文“过路问禁，入乡问俗”的意思，否则就变成了土包子。</p>
+<p>到了罗马，可真好看，到处是古迹。这正是罗马不是一天造成的（Rome was not built in a day.）。</p>
+<p>在地图上你注意Pompeii那个地方。一千九百年前，Vesuvius火山爆发，把Pompeii活埋了。但这一埋却保存了一个两千年前完整的古城。现在这个城的一半已经给挖了出来，使人类看到了两千年前古城的原样，小文你说，多有意思呀！</p>
+<p>罗马把希腊的神都全部搬到自己家里来，所以也有Apollo的庙。</p>
+<p>罗马建筑是抄希腊的，但是加了两点花样。第一点花样是“拱”（arch）；第二点是“混凝土”（concrete）。</p>
+<p>古罗马圆形竞技场叫The Colosseum，是人给狮子吃的地方。Roman Holiday（罗马假期）表示看人受罪以为乐，就是这么来的，最喜欢Roman Holiday的是罗马皇帝尼禄（Nero），有人说他放火烧了罗马，还出来一句英文成语：To fiddle while Rome is burning.</p>
+<p>罗马本来信很多神，但是Christians（基督徒）跑出来说别的不要信，只信他们的God，结果在Nero时候，大抓Christians，Christians吓得躲到catacombs（墓窖）里。 因为罗马法规定不准打扰死人，所以罗马兵不会跑去抓。</p>
+<p>罗马兵穿得很神气。</p>
+<p>罗马最有名的将军是恺撒（Julius Caesar），恺撒也是历史家，也是妇产科医生最头痛的对象。——因为恺撒的妈妈生不下来他，只好开刀从肚子里取出来。这叫剖腹取子手术（Caesarian operation；Caesarian section）。</p>
+<p>从恺撒身上，出来许多英文名句子，像：</p>
+<p>1．to cross the Rubicon——孤注一掷；胜败一举；采取断然手段（the Rubicon是意大利中部的一条河）。</p>
+<p>2．Veni，vidi，vici．（I came, I saw, I conquered．——“我来了，我看到了，我征服了。”（恺撒名言。）</p>
+<p>3．Render therefore unto Caesar the things which are Caesar’s；and unto God the things that are God’s．——“恺撒的东西还给恺撒，上帝的东西还给上帝。”（这是《马太福音》中记耶酥的话。恺撒不但是指Julius Caesar，也指一般的罗马皇帝。）</p>
+<p>英文中7月July就是从恺撒名字Julius来的。7月有三十一天也是他的杰作。</p>
+<p>恺撒打Egypt后，被埃及女皇Cleopatra迷住。恺撒被刺后，他的部下Antony又被Cleopatra迷住。所以法国哲学家Pascal说：如果Cleopatra的鼻子短一点，整个世界的脸蛋都变了。（If the nose of Cleopatra had been a little shorter the whole face of the world would have been changed.）</p>
+<p>还有一个罗马将军叫Quintus Fabius Maximus Rullianus（？—290 B.C.），他拖垮了罗马大号敌人汉尼拔（Hannibal）。</p>
+<p>罗马对面有古国迦太基（Carthage），与罗马打了Punic Wars，前后扯扯拉拉，打了118年。Hannibal是Carthage的将军，他本领真大，他带了三十七条象，越过Pyrenees大山，Rhone大河，从Rome背后打进来。Rome没见过象，把象叫做“像一座房子那么大的”野兽，吓都吓昏了，哪里打得过。 幸亏Rome的Quintus Fabius Maximus Rullinnus将军用了不正面作战和坚壁清野（to fortify the defense works and to leave nothing usable to the invading enemy）的法子，才在最后打败Hannibal。</p>
+<p>这种gradually，影响到两千年后的英国的费边社（Fabian Society），影响到英国工党。</p>
+<p>费边社的人才，爸爸跟你谈过GBS（George Bernard Shaw，萧伯纳），现在再介绍两位。1．英国小说家：威尔斯（H．G．Wells），2．英国社会学家：碧特莱丝·韦伯夫人 （Beatrice Webb）。</p>
+<p>罗马用的是拉丁（Latin）文。最早罗马人的土包子说他不懂希腊文（Greek）。英文成语It is Greek to me．意思是I can’t understand it.。罗马人后来什么都要Greek，最后干脆用起希腊文来，不喜欢用自己的拉丁文了。</p>
+<p>希腊罗马因为文化混在一起，所以一般都说Greco-Roman，像Greco-Roman Civilization，Greco-Roman Wrestling等。</p>
+<p>爸爸 1975年10月19日</p>
+<h2 id="波澜n多的波兰"><a class="header" href="#波澜n多的波兰">波澜N多的波兰</a></h2>
+<p>亲爱的小文：</p>
+<p>你弹过萧邦Frederic Francois Chopin（1810-1849）的作品吗？Chopin是波兰人。只活了三十九岁。Chopin played the piano in public when only eight years old. He began to compose soon afterward. He studied at the Warsaw Conservatory from 1826 to 1829 before leaving Poland in 1830. He settled in Paris in 1831, and, except for some travel, he lived there the rest of his life.</p>
+<p>波兰夹在德国俄国之间，老是被侵略、被瓜分、被瓜剖豆分（[of a county] to be divided or split like a melon or a bean；to be partitioned）。</p>
+<p>Chopin音乐激起波兰人的爱国心。</p>
+<p>The poles also have an insatiable appetite for translations of Molière and Shaw and for their own 19th-century dramatists who wrote from exile, when their country was partitioned among three neighboring empires.</p>
+<p>The plays, novels, and music of this period helped keep the Poles’ sense of nationhood alive. One composer, in particular, has stirred polish pride through the dark years, He, of course, is Chopin, whose birthplace at Zelazowa Wola, 28 miles west of Warsaw, is a national shrine. here, every Sunday in the spring and summer, the public is invited to a Chopin concert.</p>
+<p>波兰在1772、1793、1795、1939年前后被瓜分四次。1914年被瓜分了以后，地图上没有波兰了。1945年苏联（Russia/U. S. S. R.）分了波兰东边，却把德国东边补给波兰。所以波兰“失之东隅，收之桑榆”（to suffer a loss in one place but make a gain somewhere else）。</p>
+<p>苏联这种作风，叫“慷他人之慨”（to show generosity or unselfishness by another’s wealth；to be generous at the expense of others）。爸爸在四、六信中跟你谈过，英文叫Rob Peter to pay Paul（抢彼得赔保罗）。</p>
+<p>波兰的首都是华沙（Warsaw），Warsaw, Warsaw, Warsaw可真saw了war。二次世界大战，华沙城全毁，人死了四分之一。</p>
+<p>格但斯克（Gdańsk）在德文叫但泽（Danzig），是造船中心，这个城和波兰走廊（Polish Corridor）过去都是世界大新闻，因为它们老是和德国扯不清。</p>
+<p>POLISH CORRIDOR is a historic strip of land that was once the ancient polish province of Pomorze. Poland lost the province to Prussia in 1772. When Prussia become a German state in 1871, the area fell into German control.</p>
+<p>After World War I, the Versailles Treaty established the corridor of land to give Poland free access to the Baltic Sea. The corridor separated East Prussia and the port city of Danzig from the rest of Germany. In 1939, Germany regained control of the area when Nazi troops invaded Poland. After World War II, the corridor was returned to Poland.</p>
+<p>波兰成为天主教国家已一千年，Most Poles are Roman Catholics, and religion is important in their lives, Poland has been a Christian country for 1000 years.</p>
+<p>波兰的瓷器很有名，瓷器又叫china，所以，可以说，Poland的china很有名。</p>
+<p>小文你还记得爸爸跟你谈过的一种猪叫Poland China吗？Poland Chinas gain weight rapidly and make excellent meat hogs. Farmers in Ohio developed the Poland China breed.</p>
+<p>Kraków是波兰的文化城，以前是首都（Kraków is the traditional capital of polish culture）波兰天文学家哥白尼（Copernicus）就是在这个城里出头的。</p>
+<p>Copernicus skillfully applied this new idea in his masterpiece, Concerning the Revolutions of the Celestial Spheres（1543）. In this book, Copernicus demonstrated how the earth’s motions could be used to explain the motions of other heavenly bodies. His theory laid the foundations for the telescopic discoveries of Galileo, the planetary laws of Johannes Kepler, and the gravitation principle of Sir Isaac Newton.</p>
+<p>Copernicus was born in the city of Thorn（now Toruń, Poland）, and attended the University of Kraków.</p>
+<p>波兰人跑到外国成名的：</p>
+<p>①在法国有居里夫人Marie Sklodowska Curie（1867-1934），Polish chemist and physicist in France, wife of Pierre Curie, Madame Curie. 她是做下女出身的，苦学成功。她是唯一一个人得过两次Noble Prize的科学家。她的大女儿Iréne后来也得了Nobel Prize；小女儿Eve. Her life of her mother, Madame Curie（1937）, had a great and immediate success, as did Among Warriors（1943）．</p>
+<p>②在英国有康拉德Joseph Conrad（1857-1924）。</p>
+<p>Joseph Conrad的爸爸和一个叔叔都因为反抗俄国，被俄国人抓去，死在牢里（exiled to Siberia）。他原跟他爸爸住在Cracow（就是Kraków），不到四岁时，爸爸被抓，他和妈妈也跟着到了俄国的Siberia（西伯利亚）——政治犯可以带家属在一起。</p>
+<p>他八岁时，妈妈死，十一岁时，爸爸死，他流浪到欧洲，一直做水手。</p>
+<p>他二十岁以前不会英文，后来却变成了英国大文学家。</p>
+<p>他最有名的小说是《吉姆老爷》（Lord Jim）和《黑暗的心》（Heart of Dark）。家里都有。</p>
+<p>③在美国有鲁宾斯坦Artur Rubinstein，爸爸跟你谈过的大钢琴家。</p>
+<p>波兰最有名的文学家是显克维支Henryk Sienkiewicz（1846-1916），他用Rome的Nero做故事，写成了《暴君焚城录》（Quo Vadis，也叫《你往何处去》），这本书和前面居里夫人女儿给她妈妈写的那本Madame Curie，你都该看。家里都有。</p>
+<p>爸爸 1975年10月26日</p>
+<h2 id="登天梯"><a class="header" href="#登天梯">登天梯</a></h2>
+<p>亲爱的小文：</p>
+<p>你注意到警察局里消防车上的云梯（ladder）了吗？那种梯子升起来很高，可高出一百英尺。美国underworld slang把ladder叫做Jacob，你知道Jacob是谁吗？</p>
+<p>Jacob was the son of Isaac, and the father of the 12 sons who founded the Twelve Tribes of Israel, according to the Old Testament. He bought his older brother Esau’s birthright with a bowl of savory stew（“mess of pottage”）. Later, Jacob enforced his claim by pretending to his blind and aged father that he himself was Esau. Thus, he obtained from Isaac the words of blessing Isaac had meant for Esau. Esau was so angry that Jacob fled for his life.</p>
+<p>On the way to his uncle Laban, Jacob slept at a place called Bethel, where he dreamed of a wonderful ladder between heaven and earth. In the dream, God promised to protect and bless him while he was away from home. Much encouraged, Jacob went on to Laban’s home. There he fell on love with Laban’s daughter, Rachel. But Laban forced Jacob to marry hid older daughter. Leah, before he could have Rachel for his wife. After working 20 years for Laban, Jacob left for home.</p>
+<p>On the way, Jacob prayed all night until God reassured him that Esau would spare his life. Esau met him with forgiveness, and they parted good friends. Jacob spent his last years in Egypt, where his son Joseph brought him to live.</p>
+<p>Esau was the son of Isaac and Rebecca, and twin brother of Jacob in the Bible. He is a main character in many stories found in Genesis 25-33. The best known are Jacob’s cheating him out of his birthright for a“mess of pottage”（Gen.25：27-34）, and the loss of his blessing through the plotting of his mother and brother（Gen.27）. Esau was reconciled to Jacob after the latter’s return to Palestine 20 years later.</p>
+<p>Biblical history regards Esau as the founder of the Edomite nation.</p>
+<p>Jacob就是现在以色列（Israel）人的老老老老老老老老老老……老祖宗。</p>
+<p>Mess of pottage就是“因小失大”、“得不偿失”、“划不来”的意思。</p>
+<p>A Jacob’s ladder is a ladder made of rope or cable, usually with wooden rungs. It is dropped over the side of a ship to enable people to ascend from or descend to small boats alongside. Harbor pilots usually come aboard via a Jacob’s ladder.</p>
+<p>The Jacob’s ladder gets its name from an incident in the Book of Genesis（28：12）. The patriarch Jacob falls asleep and the a vision：“And he dreamed, and behold a ladder set up on the earth, and he top of it reached to heaven；and behold the angels of God ascending and descending on it.”</p>
+<p>Jacob’s ladder has been used in at least two other quite earthly meanings. A small plant with a flower-and-leaf formation resembling a ladder bears this name. In England, also what we Americans call“runs”in hosiery were formerly called Jacob’s ladders. Nowadays they are simply ladders.</p>
+<p>Jacob’s ladder可以登天，所以美国黑社会的thieves’ Latin（盗贼的隐语，切口）就把梯子叫Jacob。</p>
+<p>植物里头花葱属（polemoniums）中的一种就叫Jacob’s ladder，因为它们有ladderlike leaves。</p>
+<p>爸爸 1975年11月1日</p>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/08.书信函件类/坐牢家爸爸给女儿的八十封信/02-从鸭嘴兽到水獭.md">Edit this page on GitHub.</a></footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../08.书信函件类/坐牢家爸爸给女儿的八十封信/01-《坐牢家爸爸给女儿的八十封信》自序.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../08.书信函件类/给马戈的五十封信.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../08.书信函件类/坐牢家爸爸给女儿的八十封信/01-《坐牢家爸爸给女儿的八十封信》自序.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../08.书信函件类/给马戈的五十封信.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/leeao-toc-1313d264.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

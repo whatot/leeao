@@ -1,0 +1,931 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>结论：暴风雨与革命—译后记 - 大李敖全集</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/leeao-e9ced672.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-47e392f3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">大李敖全集</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="蒋介石与蒋经国毁灭的种子结论暴风雨与革命译后记"><a class="header" href="#蒋介石与蒋经国毁灭的种子结论暴风雨与革命译后记">蒋介石与蒋经国——毁灭的种子：结论：暴风雨与革命—译后记</a></h1>
+<ul>
+<li><a href="#结论暴风雨与革命">结论：暴风雨与革命</a></li>
+<li><a href="#bibliography">Bibliography</a></li>
+<li><a href="#参考书目">参考书目</a></li>
+<li><a href="#译后记">译后记</a></li>
+</ul>
+<h2 id="结论暴风雨与革命"><a class="header" href="#结论暴风雨与革命">结论：暴风雨与革命</a></h2>
+<p>如果一座建筑物在暴风雨中倒塌了，那它倒塌的原因是什么呢？一个科学的回答将首先要求对建筑物的结构特性，其次对风暴之强度，作出仔细的考察。如果发现这座建筑物的结构已经腐坏，人们就必须仔细掂量：倘若没有暴风雨，它是否就不会倒塌。然而事实是暴风雨已经来过了，建筑物已经倒塌了，那么，可以说暴风雨是建筑物倒塌的原因吗？这个问题颇有些哲理的精妙。国民政府为什么会在1949年败于共产主义革命的问题亦富有同样的哲理。</p>
+<p>国民党人从来未能创造出一个完善的坚固的政治结构。当他们在1927年取得政权时，他们所继承的是一个已经分崩离析达一个世纪之久的政治制度，这个制度在军阀时期（1916—1927）几乎寿终正寝。国民党人如果能够改变这种国家分裂的趋势，这无疑将会提高他们的声望。然而，国民政府的权力却仍然受到继续存在的各省军阀的限制，受到乡村豪绅阶层的抵制。</p>
+<p>国民党人未能创造出一个能够感受到民众需求的、能够实行它所宣称的政治和经济改革的高效率的行政机构，从而使其结构进一步削弱。在其建立政权后不久，以汪精卫、陈公博为首的国民党左翼，就提出了有可能使国民党人维持其政治结构的制度和政策方案。左翼指责蒋介石建立个人独裁，要求国民党恢复1924年孙逸仙领导革命时期的曾经赋予国民运动以活力的政策和精神。他们提倡土地改革，惩罚反革命和国民党内更大的民主。他们还认为国民党应当通过扶助农工和其他群众的自治组织而加强与普通民众的联系。他们坚持认为，只有在这样的群众基础上，才能够防止革命成为官僚主义者和军事寡头的游戏——事实上正是如此。蒋准确地看出这些左翼是对他的领导权的威胁。1928年，他对他们发动了一个强有力的虽然在总体上来说是不流血的镇压。年轻人，正是他们构成了左翼队伍的大部分，被明确地命令离开政治，回到他们的学习中去。其他的左翼分子被有效地剥夺了权力。汪精卫受到谴责，陈公博被“永远开除”出党。因此，从1929年始，蒋介石便能够把他个人关于革命的观念强加于党和政府之上。</p>
+<p>在孙逸仙的时代，军事在国民运动中并不是一个十分重要的因素孙的排序，首先是党，其次是政府，最后是军队。然而，在蒋的领导下，它被彻底颠倒过来。在十年的南京政府统治时期，蒋介石所领导的军队成为政府的统治部门，蒋本人成为政权中凌驾于一切的存在。①正如曾经一度担任过蒋的顾问的何廉（Franklin Ho）所回忆：“委员长走到哪里，真正的政府权力就在那里。就权力而言，他是一切方面的头儿。”②或如蒋本人在1940年对埃德加·斯诺所说的那样，“我到哪里，政府、内阁、抵抗（日本）的中心就到哪里”。③</p>
+<p>由于蒋是这样支配着政权，在决定国民党统治的性质方面，他的政治观就极为重要。就他对政治进程的观点来说，他完全是传统型的。像清朝的皇帝一样，对他来说政治就是在统治层中的争斗。因此为了扩大他的权力，他操纵和联合了一部分上层人士去反对另一部分作为他对手的上层人士。他似乎从来没有意识到那个时代世界上的强国是那些成功地动员了绝大部分民众而不只是以上层社会支持他们的目标的那些国家。他从未意识到——毛泽东则已意识到——通过获取统治结构以外的支持而产生新的权力源泉是可能的。当然，蒋也有许多关于民主的谈论，他无疑也希望得到民众的支持。然而，他关于民主和民众支持的概念是民众应该毫无疑虑地追随他们的领袖，就像士兵服从指挥员一样。这种观念显示出他对于民众政治心理学的理解是多么可怜，它阻止他推进政治参与和经济计划，而这本可以给他的政权打下一个坚实的社会基础。因此，他从来没有超越出上层政治，而使自己陷于玩弄脆弱的平衡以实施统治的活动中。</p>
+<p>前面的章节并无意表明，如果汪精卫和国民党左翼在1928—1929年的权力斗争中成功地取代了蒋，那么通往国家强盛繁荣的道路就一定会是平坦的。实际上，有理由设想，他们也会受到同样的官僚主义、腐败、派别活动和权力欲的侵蚀，这些东西对蒋领导的政权是毁灭性的。④然而，这一点是毫无疑义的；蒋介石压制左翼关于群众自治组织、土地改革、国民党内的民主化进程以及由国民党对政府和军队实施控制的建议，拒绝了有可能为一个有效率的赢得人心的政府创造出坚固基础的措施。</p>
+<p>在国民党对中国20多年的统治时期中，向它的统治结构所袭来的风暴，没有什么比抗日战争更为猛烈，没有什么比它带来更为严酷的损害。这场战争对其政权所造成的最为直接和显而易见的损害便是蒋的军队的削弱。战争的第一年中中央军所遭受的全面损失，在很大程度上使在过去十年中所得到的即使是有限度的人和装备的改善也化为乌有。接下来的战斗、缩减了的物资资源以及长期的对峙局面同样给蒋的军队带来重大损失。军队的虚弱具有重大的政治影响，正如西达·斯考克波尔所说：“即使正统性遭受到巨大的损失后，一个国家仍然可能是相当稳固的——完全可以对付内部的民众暴动——尤其是如果它的强制组织仍然是紧密的和有效率的话。”⑤然而，在这场战争中，国民党的主要强制组织军队已不再是“紧密的和有效率”的了。</p>
+<p>这个政权还由于它向中国西部的被迫撤退而受到削弱。在沿海和东部城市地区，它已经拥有可靠的岁入资源，它已建立起一套管理机构（尽管它在地方这一级不是强有力的）并由此而获得一定的稳定性。它向所有的中国和外国货物征收税款。与之对比，国民党人在华西各省份则发现了一个奇异的、几乎可以说是另一个国家的天地。现代化很少触及那儿，即使是大城市。整个华西占有全部国土的3/4却只占有国家总电量的4%和工厂数的6%。⑥农业是占有压倒性优势的经济，民众对与那些来自“下游”的城市化的官员们很少有认同感。地方社会由秘密社会和农村的豪绅们统治着，他们唯恐失去他们长期的政治、军事和经济的统治，反对来自国民政府的干预和竞争。因此国民政府在华西的资源动员充满着困难，它的岁入很快削减了63%。⑦</p>
+<p>国民党人犯了一个严重的错误，他们未能改变他们的统治和作战方式以适应华西新环境的紧张状态。战前，政府能够无视农村问题，因为城市中心的经济资源已足以维持它的统治。它的军队同样也能够偏重于从西方学来的正统的战术和技术，因为它能够方便地从华东地区的工厂及外国得到武器和物资。</p>
+<p>尽管华西地区的情形全然不同于沿海地区，但国民政府却很少努力去调整它的政治、经济和军事方针以适应那里的未开化状态。事实上，它倒想一夜之间在四川和云南地区创造出一个现代化的工业基地。因此，它投入了巨额资金从沿海地区迁移工厂，从西方进口昂贵的设备和原料，以及修筑新的公路和铁路。由于它缺少税收基础以支撑这些开支，通货膨胀的旋风便开始形成了。对于政府来说，另一可行的方案应是鼓励一种较简单较廉价的工业生产形式，吸引富有传统特色的本土手工业到华西地区。成立于1938年7月的中国工业合作协会，实际上表达了一种非官方的企图，意图开发工业产品的另一类资源。但是，工业合作的充分潜力从来没有被政府首脑们所认识，因为他们认为这种与他们高度官僚化的体制截然不同的以民众为基础的运动是由共产党人所操纵的。⑧</p>
+<p>由于农村（而不是城市）是战时粮食、资金和人力的主要来源，国民党人需要发展这样一种制度，它既使他们从农村地区获取最大限度的资源，又仍然能够保持劳动群众的好感和合作。然而，他们不是调整其政策以达到这些目标，而是继续推行与农村腐败、无能的上层集团不稳定地结合在一起的、机构臃肿开支庞大的官僚政治。国民党人本也可以采取游击战争的战术来对付日本，但是游击战需要军队和老百姓之间的紧密合作，这样的合作只能通过改善军队的纪律和改进政府的社会和经济政策才能达到，这样人民才会有为军队的胜利作出贡献的积极性。</p>
+<p>共产党人在他们的根据地表明，国家落后的贫穷的内地实际上是能够承受一场重大的政治和军事运动的。共产党人依靠游击战术、唤起民众和发展小型的工业生产，随着战争的推移而强大起来。与之相反，国民党人囿于战前的统治和作战观念，在经济上、政治上和军事上均受削弱。</p>
+<p>不能适应变化了的内地环境的最严重结果和战争给国民党人带来的最重大的毁灭性影响是通货膨胀。由于退出了东部沿海地区，国民党政府在相当程度上失去了它的岁入的主要来源，最有影响的如关税、盐税和工业税。由于它对内地的政治控制——横向各省、纵向农村豪绅和城市有产阶级——仍然是软弱的，它从来没有充分地发展岁入的替代来源，结果不得不依赖无节制的赤字财政。通货膨胀便发生了。起初价格上升还比较和缓，在战争的第一年内只增长了40%，但是从1941年下半年到1944年，价格每年都以一倍以上的速度上涨。在这以后上涨率再一次激增，仅在从1945年1月至8月的七个月中，价格就上涨了251%。这个结果是灾难性的，它使整个国家衰弱下去——军队、政府、经济和整个社会。为什么腐败达到了前所未有的地步，为什么大多数人民受着难以忍受的贫困的煎熬，为什么军队缺乏士气和战斗力，通货膨胀是一个重大原因。⑨</p>
+<p>这场战争损害了国民党人还因为正是战争使共产党人成长壮大。在战前的十年中，国民党人在各地追剿共产党人，使他们蒙受重大损失，无法获得一个稳固的大块根据地。但是，1937年以后，国民党的压力减轻了，在日本名义上的占领区内的游击作战使共产党人扩展了他们的革命网络，其规模为战前所无法想象。战争期间，共产党人还发展了他们的组织技能，获得了军事经验，这使他们在内战时期大受裨益。⑩</p>
+<p>战争就是这样打击了国民党政权。然而，这个政权并没有在1944年或1945年崩溃，而在对日战争结束后继续生存了四年。它维持权力地位的资源是什么？具有前面章节已经讲述过的普遍虚弱，它怎么能维持如此之长的时间？一些答案可能在于大多数中国人的低政治意识，以及政府当局奉行的政治高压以窒息国统区内有勇气从事反政府活动的少数人的声音。这两个问题都值得进一步研究。看起来矛盾的是，那些使政权衰弱的体制特性反过来可以为它的继续存在产生作用。例如，缺乏社会基础和组织民众参与政治进程的制度化的手段，使得政府无需直接地负有对它的失职和犯罪作出说明的义务。如果是议会民主制，那么它的执政任期将一定会是短命的。但是，由于它是一个由军队所支持的政权，公众舆论对它的政治寿命几乎没有直接的影响。这个时期军事力量是政治权力的主要来源，如果这个政权要倒台，它很可能就是军队反对的结果。1944年，当一些省的军事首领们形成一个反对重庆的联盟时，这是很可能发生的。然而，蒋是一个操纵他的竞争对手的大师，正像他在20世纪20年代和30年代所做过的若干次那样，他成功地防止了他的对手在战争期间形成一个反对他的坚固同盟。例如，正如我们在第一章中所看到的那样，为了换取省方的让步，他好几次通过给予财政上的补偿来平息龙云和云南人的情绪，在豫湘桂战役中，蒋也通过向他们提供武器来换取他们放弃计划中的暴动。</p>
+<p>这个政权能存在下来，还因为它对现状总的来说是迁就而不是挑战。如果国民党人企图实现他们宣布过的土地改革的纲领，或是如果他们试图在战争中间从地方统治集团手中取得对实物税和征兵制度的控制权，或是再命令各省军事首脑遣散他们的军队，他们将肯定面临着大规模的暴动。然而，因为这个政权对旧社会的统治人物持容忍态度，这些人物也便对政府持容忍态度。这不是一个能产生进步的改革或强有力的政府的方案，但是就短期来说，它至少有助于维持国民党人的权力地位。</p>
+<p>但是，如果不是苏俄在对日战争之后对东北的介入，国民党政府的当权时间可能比实际上要更长一些。在1945年2月雅尔塔协议的基础上，苏联在8月8日——第一颗原子弹在广岛爆炸的两天后——对日宣战，很快占领了整个东北。一旦控制了那里后，苏联人便为中国共产党人进入东北各省提供便利，并向他们移交已经投降了的日本人的大批战争物资。他们还阻挠国民党人在那里重建军事和行政统治的努力，并从东北运走了许多工厂。关于这些事件已有很多著述——这许多行动公然侵犯了中国的主权，并为美国所反对——但是，它们对国民党政权的命运的影响却很少得到重视。(11)</p>
+<p>例如，假使苏联人没有进入东北，并由此而向中国共产党提供一块征服中国关内地区的基地，那么，国民党也许有可能把他们的注意力和资源放到战后重建上去，而不是不得不进行一场全面内战。当然，中国共产党在中国关内地区将仍然具有威胁。但是，敌对行动的规模可以肯定将小得多，反抗力量将不可能由于得到日本武器装备的供应而得到加强。</p>
+<p>对于国民党政权来说，这样一个假定的结果将是重大的。这样，在经济上，东北的丰富资源将能重新并入中国关内经济体系。国民党将无需运送大量的食物和粮食给东北的国民党军队，从而加剧中国关内农民的贫困和愤怒。他们可以用这些向东北供应的大量食物缓和华北的长期短缺。日本人所创造的具有相当规模的工业基础将能够提供重工业产品以便利中国关内工业的复兴，提供轻工业产品以缓和战后消费品的巨大需求。东北能为国家经济复兴作出贡献的潜力可以从这样的事实中看出：如在1944—1945年中，它所生产的生铁就达中国关内地区全年产量的8.5倍，电力达2.5倍，水泥达8.5倍。1944年东北收获了3549000吨大豆，如果国民党在战后时期能收获这一数量，它将能够通过出口每年获得6000万至9000万美元的外币。东北的144家制材厂也将基本上消除进口外国木材的需求。(12)</p>
+<p>而且，由于中国关内工业被战后的一大堆问题，包括原料和燃料（这其中有许多本可以从东北获得）的短缺所困扰，它无法生产出八年战争之后是如此极为需要的消费品。为了缓和这些要求及因此而缓和通货膨胀的压力，国民政府只得鼓励从国外进口，外国货潮涌般进入中国。作为这种政策的一个直接后果，国家的外币储备到1947年2月实际上便已空虚。进口还伤害了中国的民族工业。外国棉花、稻米和其他农业产品的输入压低了农产品的价格，伤害了农民，阻碍了农村地区的恢复。(13)</p>
+<p>但是，东北事件的最具损害性的影响是它所带来的不断上升的通货膨胀。在1945—1949年期间，足有65%—70%的政府开支被用于军事，这其中有许多被用于东北的作战。为了从财政上支持内战，政府就像它在抗日战争中所做的那样，求助于发行纸币。值得注意的是1945年以后的时期中的赤字财政数额——65%——大约等于军费开支的数额因此，如果没有这样庞大的军事预算，国民政府差不多是能够通过税收和其他非通货膨胀的措施来支付它的全部开支的，那样将能够避免极度的通货膨胀。历史已证明，通货膨胀使这个政权和人民为它所付出的代价太过于昂贵了。(14)</p>
+<p>以上这些只是对如果国民党能够在战后重新获得对东北的主权控制，中国的进程将发生怎样的变化的一些看法。国民政府在通过战后时期这个浅滩的航程中虽然仍会充满着困难，但这一说法至少是可以讨论的：这些困难将要小得多，国民政府将能够应付它们，如果不是由于苏俄占领东北而加剧了这些困难的话。</p>
+<p>然而，苏俄对东北的占领至多是政权垮台的直接原因之一。根本原因在更深处，在于一个缺乏社会基础的军事独裁政权的内在的结构虚弱，在于对日战争的削弱作用。作为这两个因素的结果，到1945年，国民党人的运动已完全衰弱。它的弱点在它实现其政治目标的有限性、行政机构的腐败和缺乏效率、派系之间的自我毁灭的倾轧、军队的普遍的无能和士气低落中得到充分体现。考虑到这种全面的瓦解，国民党政权似乎极不可能巩固它对国家的有效统治，甚至连对东北的全面控制也不可能做到。因此可以说，苏联人的干预只不过是有助于摧垮已经腐朽的建筑物的一股狂风。没有这阵风，建筑物可能会矗立得稍长一些，但是它迟早要倒塌——是较早，而不是较迟——看起来是一定的，因为任何政府的存在都不可能不碰到问题，就像我们起初用以比喻的建筑物不可能存在于真空里，不受大自然风雨的吹打一样。</p>
+<p>①关于南京十年时期的国民党人，详见易劳逸《夭折的革命》及《国民党统治下的中国》，第1—82页。</p>
+<p>②何廉，第160页。</p>
+<p>③斯诺，《委员长》，第646页。</p>
+<p>④易劳逸，《夭折的革命》，第306页。</p>
+<p>⑤斯科克波尔，第32页。</p>
+<p>⑥李紫翔，第23页；吴相湘《第二次中日战争史》，下册，第659页。</p>
+<p>⑦卡普，《四川与中华民国》，第156—157页；张嘉璈，第15—16页。</p>
+<p>⑧关于工合运动，参见雷诺德著。</p>
+<p>⑨易劳逸，《国民党统治下的中国》，第136—150页。</p>
+<p>⑩这是片冈铁哉《中国的抵抗与革命》的一个主题。</p>
+<p>(11)例见邹谠，第237—287、324—340页。</p>
+<p>(12)张嘉璈，第222、225页；郑友桂（音），第193页。</p>
+<p>(13)张嘉璈，第223—224页。</p>
+<p>(14)郑友桂，第158页。</p>
+<h2 id="bibliography"><a class="header" href="#bibliography">Bibliography</a></h2>
+<p>The locations and file numbers of hard to find items are indicat ed within parentheses in the Bibliography. Archives and libraries in Tai wan thus referred to are the Bureau of Investigation （under the Minis try of Justice，Hsin tien）； the archives of the National Resources Com mission （in the Academia Historica，or Kuo shih kuan，Ta ch’i chiao）； the Institute of Modern History，Academia Sinica （Nan kang）； the Tang shih hui （Kuomintang Party History Commission，Taipei）； the Sun Yatsen Library （in the Sun Yat sen Memorial Hall，Taipei）； and the Taiwan Branch of the National Central Library （Taipei）.</p>
+<p>Archival materials were obtained also from the following repositories in the United States： the National Archives in Washington，D. C. （reccords of the Department of State，Office of Strategic Services，and Office o War Information）； the Office of the Chief of Military History in Washington，D. C. ； and the Archives of the United Nations in New Y ork City （records of the United Nations Relief and Rehabilitation Adminis tration）.</p>
+<p>I also used the collections of the Chinese Research Institute o Land Economics （Chung kuo ti cheng yen chiu so） in Taipei. This col lection has now been microfilmed and is available from the Chinese Materials Center （Taipei） under the title “Materials on Chinese Problems in Economy，Agriculture，Lands，and Water Utilization in the 1930’s and 1940’s.”</p>
+<p>The Amerasia Papers A Clue to the Catastrophe of China. 2 vols. Washington，D. C. ，1970.</p>
+<p>Barnett，A. Doak. China on the Eve of Communist Takeover. New Y ork，1963.</p>
+<p>Barrett，David D. Dixie Mission The United States Army Observer Group in Yenan，1944. Berkeley，Calif. ，1970.</p>
+<p>Belden，Jack. China Shakes the World，New York，1949.</p>
+<p>Bōei Kenshūjo Senshishitsu. Kanan no Kaisen （The Honan campaign）. Tokyo，1967.</p>
+<p>Boorman，Howard L. ，ed. Biographical Dictionary of Republican China. 4 vols. New York，1967—1970.</p>
+<p>Boyle，John Hunter. China and Japan at War，1937—1945 The Poli tics of Collaboration. Stanford，Calif. ，1972.</p>
+<p>Buck，John Lossing. An Agricultural Survey of Szechwan Province，Chi na. Chungking，1943.</p>
+<p>——. and Chong chan Yien. “Economic Effects of War upon Farm ers in Peng hsien，Szechwan，” Economic Facts，19 （Apr. 1943）.</p>
+<p>Bunker，Gerald E. The Peace Conspiracy Wang Ching wei and the China War，1937—1941. Cambridge，Mass. ，1972.</p>
+<p>Butow，Robert J. C. Tojo and the Coming of the War. Princeton，N. J. ，1961.</p>
+<p>Carey，Arch. The War Years at Shanghai，1941—1945—1948. New Y ork，1963.</p>
+<p>Carlson，Evans Fordyce. The Chinese Army Its Organization and Milit ary Efficiency. New York，1940.</p>
+<p>CC hao men tzu pen nei mu （The inside story of the CC Clique’s wealth）. N. p. [Hong Kong’]，1947.</p>
+<p>Chan shih i cheng （Wartime medical administration）. 1938. （Tang shih-hui #6355/6477.）</p>
+<p>Chang Ch’i ying. “Mi ch’ao te fen hsi” （Analysis of the rice ri ots），Ching-chi p’ing lun，1，no. 9 （May 30，1947）.</p>
+<p>——. “San shih liu nien Chung kuo ching chi kai k’uang（China’s economic situation in 1947），Tung fang tsa chih，44，no. 7 （July 1948）.</p>
+<p>——. “San shih wu nien tu te Chung kuo ching chi” （The Chi nese economy in 1946，part 2），Tung fang tsa chih，43，no. 11 （June 15，1947）.</p>
+<p>Chang Ch’i yün. Tang shih kai yao （Survey of party history），5 vols. Taipei，1951.</p>
+<p>Chang Chia mo et al. P’an pien fu fei fen tzu miu lun （The lies of those who rebelled and defected to the Communists）. N. p. ，n. d. （Bureau of Investigation #213. 52/369.）</p>
+<p>Chang Hsi ch’ang et al. Chan shih te Chung kuo ching ch（China’s wartime economy）. Kweilin，1943.</p>
+<p>Chang Hsi ch’ao. “K’ang chan wu nien yü nung ts’un ching chi（Five years of war and the village economy），Chung kuo nung ts’un，8，no. 5/6 （1942）.</p>
+<p>Chang Hsiang p’u. “Chin shan i chiu” （Memories at Chin shan），Chung-wai tsa chih，12，no. 5 （Nov. 1972）.</p>
+<p>Chang Hsiao mei. Yün nan ching chi （The economy of Yunnan）. Chung-king，1941.</p>
+<p>Chang I fan. “‘Ching chi kai ko fang an’ chih p’i p’ing yü Kuo min-tang ching chi cheng ts’e chih ‘chuan pien’” （A critique of the‘Economic reform proposal’ and the ‘reversal’ of the Kuomintang’s eco nomic policy），Ching chi chou pao，4，no. 19 （May 8，1947）.</p>
+<p>Chang Kan p’ing. K’ang Jih ming chiang Kuan Lin cheng （Kuan Lin cheng，famous general during the war against Japan）. Hong Kong，1969.</p>
+<p>Chang Kia ngau. The Inflationary Spiral The Experience in China，1939—1950. Cambridge，Mass. ，1958.</p>
+<p>Chang P’ei kang. “T’ung huo p’eng chang hsia te nung yeh ho nung-min” （Agriculture and peasants during inflation），Ching chi p’ing lun，1，no. 2 （Apr. 12，1947）.</p>
+<p>Chang Shao tseng. “Ju ho chieh chüeh shih ping t’ao wang wen t’i” （How to resolve the problem of troop desertions），Cheng kung choupao，3，no. 4 （Aug. 8，1941）.</p>
+<p>Chang Wen shih. Yün nan nei mu （Inside story of Yunnan）. Hong Kong，1949.</p>
+<p>Chao Hsiao i. “Fa yang Ch’ung ch’ing ching shen” （Glorify the spirit of Chungking），Chung wai tsa chih，10，no. 6 （Dec. 1，1971）.</p>
+<p>Chao Shih hsün. “‘Wang Yün lao yü chin yüan ch’üan an chih i’ chih pu ch’ung” （Addenda to ‘Doubts about Wang Yün wu and the case of the gold yüan’），Chuan chi wen hsüeh，no. 211 （Dec. 1979）.</p>
+<p>Chassin，Lionel Max. The Communist Conquest of China A History o the Civil War，1945—1949. Cambridge，Mass. ，1965.</p>
+<p>Chen Kuang. “Ch’uan Shan Kan nung ts’un ching chi niao k’an（An overview of the village economy of Szechwan，Shensi，and Kansu），Ching chi chou pao，2，no. 3 （Jan. 17，1946）.</p>
+<p>Chen，Ta. See Ch’en Ta.</p>
+<p>Ch’en Cheng mo. “Cheng chih ko hsin yü hsing cheng hsiao lü（Political renovation and administrative efficiency），Ko hsin chou k’an，1，no. 5 （Aug. 24，1946）.</p>
+<p>——. “T’ien fu cheng shih yü liang shih cheng chieh chih chien t’ao” （An evaluation of the tax in kind and compulsory grain bor rowing），Ssu ch’uan ching chi chi k’an，1，no. 2 （Mar. 15，1944）.</p>
+<p>Ch’en Ch’eng. Pa nien k’ang chan ching kuo kai yao （A summary of experiences in the eight year war of resistance）. N. p. ，n. d. Pub lished by the Ministry of Defense.</p>
+<p>Ch’en Chien fu. “Ko hsin te chi pen yüan wang” （The fundamen tal hope of renovation），Ko hsin chou k’an，1，no. 1 （July 27，1946）.</p>
+<p>Ch’en Han sheng. “Wu chia yü Chung ts’un” （Prices and China’s villages），Chung kuo nung ts’un，8，no. 5/6 （1942）.</p>
+<p>Ch’en Hsiao wei. Wei she ma shih ch’ü ta lu （Why we lost the mainland）. Taipei，1964.</p>
+<p>Ch’en Hung chin. “San shih erh nien chih Ssu ch’uan nung yeh（Szechwan’s economy in 1943），Ssu ch’uan ching chi chi k’an，1，no. 2（Mar. 15，1944）.</p>
+<p>Ch’en，Jerome. Mao and the Chinese Revolution. London，1965.</p>
+<p>Ch’en Li fu. “Chien kuo chih tao” （The way to national recon struction），Ko hsin yüeh k’an，1 （Aug. 1，1946）.</p>
+<p>Ch’en Po ta. Land Rent in Pre Liberation China. Peking，1958.</p>
+<p>Ch’en Pu lei. Ch’en Pu lei hui i lu （Memoirs of Ch’en Pu lei）. Hong Kong，1962.</p>
+<p>Ch’en Shao hsiao. Chin ling ts’an chao chi （Sunset at Nanking）. Hong Kong，1963.</p>
+<p>——. Hei wang lu （Records of the black net）. Hong Kong，1966.</p>
+<p>Ch’en Ta. Lang chi shih nien （Ten years’ wandering）. Shanghai，1946.</p>
+<p>——（Chen Ta）. Population in Modern China. Chicago，1946.</p>
+<p>Ch’en Tun cheng. Tung luan te hui i （Memoirs of upheaval）. Tai pei，1979.</p>
+<p>Ch’en Wei hua. “Pan li i cheng te chi ko chung yao chieh tu an” （Several important phases of managing conscription），Cheng hsün yüeh-k’an，1，no. 2/3 （Mar. 23，1941）.</p>
+<p>Ch’en Ying lung. “K’ang chan ch’i chien wo te sheng huo p’ien tuan” （A slice of my life during the war against Japan），I wen chih，148 （Jan. 1978）.</p>
+<p>Ch’en Yu san，and Ch’en Ssu te. T’ien fu cheng shih chih tu（The system of collecting the land tax in kind）. Chungking，1945.</p>
+<p>Ch’en Yü. “Wei ko hsin yün tung chin i chiao” （Some thoughts on the ko hsin movement），Ko hsin chou k’an，1，no. 7 （Sept. 7，1946）.</p>
+<p>Cheng Chao ch’iu. “Ping i hsün shih so chi” （Observations during a tour of inspection of conscription），Cheng hsün yüeh k’an，1，no. 2/3（Mar. 23，1941）.</p>
+<p>Cheng hsün yüeh k’an （Conscription and training monthly），1940—1941. Published by Headquarters，Hunan Provincial Army Control Area.（Tang shih hui #2824/0277.）</p>
+<p>Cheng kung chou pao （Political work weekly）. 1941. Published by the Political Bureau of the Military Affairs Commission. （Tang shih hui #1814/1037.）</p>
+<p>Cheng，Yu kwei. Foreign Trade and Industrial Development of China. Washington，D. C. ，1956.</p>
+<p>Ch’eng ku ch’ing nien （Ch’eng ku youth）. Shensi. 1941. （Bureau o Investigation #4315/6050.）</p>
+<p>Ch’eng Tse jun. Hsien chieh tuan te ping i wen t’i （Problems o conscription at the present stage）. N. p. ，1942. （Bureau of Investigation # 590. 1107/440.）</p>
+<p>Ch’eng Yüan ch’en. “Ko hsin yün tung chih hsü ch’eng kung pu hsü shih pai” （The renovation movement can only succeed，it must no fail），Ko hsin chou k’an，1，no. 5 （Aug. 24，1946）.</p>
+<p>Chennault，Claire Lee. Way of a Fighter. New York，1949.</p>
+<p>Chi mei. “Tang ch’ien fang chih yeh te wei chi” （The curren textile crisis），Ching chi chou pao，no. 13 （Sept. 25，1948）.</p>
+<p>Chi T’ien. Cheng chih chiang hua （Political talks）. Taipei，1950. Pub lished by the Ministry of Defense.</p>
+<p>Ch’i，Hsi sheng. Nationalist China at War Military Defeats and Polit ical Collapse，1937—1945. Ann Arbor，Mich. ，1982.</p>
+<p>Chiang Ching kuo. Calm in the Eye of a Storm. Taipei，1978.</p>
+<p>——. “Hu pin jih chi” （Shanghai diary），in T’ung ting ssu t’ung.</p>
+<p>——. Tien ti tsai hsin t’ou （Drops in the heart）. Taipei，1978.</p>
+<p>——. T’ung ting ssu t’ung （Contemplating pains of the past）. N. p. ，1955.</p>
+<p>Chiang Kai shek. Chiang tsung t’ung ssu hsiang yen lun chi （A collection of President Chiang’s thoughts and speeches）. 30 vols. Taipei，1966.</p>
+<p>——. Resistance and Reconstruction Messages During China’s Six Years of War，1937—1943. New York，1943.</p>
+<p>——. Soviet Russia in China A Summing Up at Seventy. Taipei，1969. Original edition 1956.</p>
+<p>Chiang kuan ch’ü chen ch’ing shih lu （A true record of conditions in the areas controlled by Chiang Kai shek）. N. p. ，n. d. [1946’]. （Bu reau of Investigation #281/811.）</p>
+<p>Chiang Meng lin. “Hsin ch’ao” （New tide），Chuan chi wen hsüeh，11，no. 2 （Aug. 1967）.</p>
+<p>Chiang Shang ch’ing. Cheng hai mi wen （Inside stories of the po litical world）. Hong Kong，1966.</p>
+<p>——. Wang shih chin t’an （Reminiscences of times past）. 3d ed. Hong Kong，1972.</p>
+<p>Chiang su sheng cheng fu 34/35 nien cheng ch’ing shu yao （Essen tials of the administrative situation of the Kiangsu government in 1945 and 1946）. N. p. ，preface dated Dec. 1946. （Institute of Modern History #927. 214/089.）</p>
+<p>Chiao fei chung yao chan i chih chui shu yü chien t’ao （Recollec tions and evaluations of important Communist suppression campaigns）. 6 vols. N. p. ，1950. （Bureau of Investigation #592. 8/741.）</p>
+<p>Ch’iao Chia ts’ai. T’ieh hsüeh ching chung chuan （A biography o resolve and loyalty）. Taipei，1978.</p>
+<p>Ch’ien Chia chü. Chung kuo ching chi hsien shih chiang hua（Talks on the current condition of the Chinese economy）. Hong Kong，1947.</p>
+<p>Ch’ien Chiang ch’ao. “Tang ch’ien nung min te hsü-yao” （The peasants’ current needs），Nung kung yüeh k’an，4 （July 15，1947）.</p>
+<p>Ch’ien Tuan sheng. The Government and Politics of China. Cam bridge，Mass. ，1961</p>
+<p>Chin Ta k’ai. “Chung kuo ch’ing nien te chüeh hsing” （The awak ening of China’s youth），Min chu p’ing lun，2，no. 4 （Aug. 20，1950）.</p>
+<p>Chin Tien jung. “Hsi nan lao chiang Liu Chen huan chuan chi（Biography of the old general from the southwest，Liu Chen huan，parts 8 and 9），Ch’un ch’iu，173 （Sept. 16，1964），174 （Oct. 1，1964）.</p>
+<p>Ch’in Shou chang. “Kuan liao cheng chih te p’o shih” （A dissec tion of bureaucratic government），Ko hsin yüeh k’an，6 （Jan. 10，1947）.</p>
+<p>——. “Shih hsing tang nei min chu” （Implement democracy within the party），Ko hsin yüeh k’an，1 （Aug. 1，1946）.</p>
+<p>Ch’in Te ch’un. Ch’in Te ch’un hui i lu （Ch’in Te ch’un’s mem oirs）. Taipei，1967.</p>
+<p>China Handbook，1937—1945. New York，1947.</p>
+<p>China Handbook，1950. New York，1950.</p>
+<p>China Weekly Review. Shanghai. 1945—1949.</p>
+<p>Chinese Press Review. Prepared by the U. S. Consulates General in Chung-king and Shanghai. （Microfilm.）</p>
+<p>Ching chi chou pao （Economics weekly）. Shanghai. 1945—1948.</p>
+<p>Ching chi p’ing lun （Economics review）. Shanghai. 1947—1948.</p>
+<p>Ching Sheng. Chan shih Chung kuo ching chi lun k’uo （Survey o China’s wartime economy）. N. p. ，1944.</p>
+<p>Ch’ing Lin. “Shu sung shang ping chuan yüan te kan hsiang（Thoughts about transferring wounded to the hospitals），Chan shih cheng，9 （May 21，1938）.</p>
+<p>Ch’ing nien t’ung hsün （Youth report）. 1943. Published by Centra Head-quarters，Three People’s Principles Youth Corps. （Tang shih hui # 5022/8037.）</p>
+<p>Chou Hsing. “Kuo ch’ü pan li cheng ping chih i pan cheng chieh” （General problems of managing conscription in the past），Cheng hsün yüeh k’an，1，no. 2/3 （Mar. 23，1941）.</p>
+<p>Chou K’ai ch’ing. Ssu ch’uan yü tui Jih k’ang chan （Szechwan and the anti Japanese war）. Taipei，1971.</p>
+<p>Chou pao （Weekly report）. Shanghai. 1945—1946.</p>
+<p>Chou Shun hsin. The Chinese Inflation，1937—1949. New York，1963.</p>
+<p>Chow，Yung teh. Social Mobility in China Status Careers Among Gentry in a Chinese Community. New York，1966.</p>
+<p>Chu. “Liang shih cheng chieh yü liang chia” （The tax in kind and grain prices），Ching chi p’ing lun，1，no. 19 （Aug. 9，1947）.</p>
+<p>Chu Tzu shuang. Chung kuo kuo min tang li tz’u ch’üan kuo ta piao ta hui yao lan （Successive national party congresses of the Chi nese Kuomin-tang，an anthology）. Chungking，1945.</p>
+<p>——. Chung kuo kuo min tang liang shih cheng ts’e （The Chinese Kuo-mintang’s grain policy）. Chungking，1944.</p>
+<p>Chu Wen ch’ang. “Wo tui ‘Wang Yün lao yü chin yüan ch’üan’ te k’an-fa” （My view of ‘Wang Yün wu and the gold yüan’），Chuan chi wen-hsüeh，213 （Feb. 1980），pp. 51—52.</p>
+<p>Chu Yüeh shan，ed. Hsiang mo chi （Record of quelling demons）. N. p. ，1946. （Bureau of Investigation #281/940.）</p>
+<p>Chü-wai jen. “Chi tang nien ch’uan shuo chung te ‘shih san t’a pao’” （Reminiscences of the legendary thirteen princes，parts 1—24），Ch’un-ch’iu，95—118 （June 16，1961—June 1，1962）.</p>
+<p>Chuan chi wen hsüeh （Biographical literature）. Taipei. 1962—1982.</p>
+<p>“Ch’üan kuo ko tan wei t’e ch’ing kai k’uang” （The situation o the secret services in the various units throughout the country）. Pre pared by Chung yang tiao ch’a t’ung chi chü （Central party bureau o investigation and statistics）. Handwritten document，ca. 1941. （Bureau of In vestigation #276/815.）</p>
+<p>Ch’üan kuo liang shih kai k’uang （The national grain situation）. Ed. Hsing-cheng yüan hsin wen chü （News office of the Executive Yüan）. N. p. ，1947. （Bureau of Investigation #554. 6/716.）</p>
+<p>“Ch’üan kuo t’ien fu k’ai shih cheng shih” （The whole nation be gins collecting the tax in kind），Ching chi chou pao，3，no. 6 （Aug. 8，1946）.</p>
+<p>“Ch’üan kuo t’ien liang hui i chi yao” （Essentials of the nationa grain conference），Ts’ai cheng p’ing lun，17，no. 2 （Aug. 1947）.</p>
+<p>Ch’un ch’iu （“The Observation Post”）. Hong Kong. 1957—1982.</p>
+<p>Chung kuo ching chi nien chien，1947 （Chinese Economic Yea Book，1947）. Comp. T’i Ch’ao pai. Hong Kong，1947.</p>
+<p>“Chung kuo kuo min tang tang yüan tang cheng ko hsin yün tung ch’u ch’i kung tso fang an” （Work program for the first stage of the Kuomintang’s party government renovation movement），Ko hsin yüeh k’an，2 （Sept. 1，1946）.</p>
+<p>Chung kuo lao kung yün tung shih （History of the Chinese labo movement），5 vols. Taipei，1959.</p>
+<p>Chung kuo nung ts’un （Village China）. Kweilin. 1942.</p>
+<p>Chung wai tsa chih （“Kaleidoscope Monthly”）. Taipei. 1967—1982.</p>
+<p>“Chung yang cheng wu chi kuan san shih nien tu kung tso ch’eng chi k’ao ch’a pao kao” （A report of an investigation of the achievements of central administrative agencies in 1941）. Comp. Hsing cheng yüan mi shu ch’u （Secretariat of the Executive Yüan）. Handwrit ten，dittoed. （Bureau of Investigation #573/806.）</p>
+<p>Chung yang jih pao （Central daily）. Shanghai. 1945—1949.</p>
+<p>Clubb，Edmund. “Chiang Kai shek’s Waterloo： The Battle of Hwa Hai，” Pacific Historical Review，25，no. 4 （Nov. 1956）.</p>
+<p>Cottrell，A. “Hu nan chi huang te ts’an hsiang” （The tragedy o the Hunan famine），Ching chi chou pao，3，no. 6 （Aug. 8，1946）.</p>
+<p>Dorn，Frank. The Sino Japanese War，1937—1941： From Marco Polo Bridge to Pearl Harbor. New York，1974.</p>
+<p>Eastman，Lloyd E. The Abortive Revolution China Under Nationalis Rule，1927—1937. Cambridge，Mass. ，1974.</p>
+<p>——. China Under Nationalist Rule Two Essays. Urbana，Ill. ，1981.</p>
+<p>——. “Facets of am Ambivalent Relationship： Smuggling，Puppets，and Atrocities During the War，1937—1945，” in Akira Iriye，ed. ，The Chinese and the Japanese Essays in Political and Cultural Interactions. Prince ton，N. J. ，1980.</p>
+<p>Eckstein，Harry. “On the Etiology of Internal Wars，” in Ivo K. Feier abend et al. ，eds. ，Anger，Violence，and Politics Theories and Research. Englewood Cliffs，N. J. ，1972.</p>
+<p>Economic Facts. Published by Department of Agricultural Economics，University of Nanking，Chengtu，1943—1946.</p>
+<p>Epstein，Israel. The Unfinished Revolution in China. Boston，1947.</p>
+<p>Fan Hui. “K’an che yen chung te liang ko yüeh” （Consider these two critical months），Chou pao，30 （Mar. 30，1946）.</p>
+<p>Fang tieh ch’u chien hsü-chih （Essentials for rooting out enemy agents）. N. p. ，n. d. [1943]. （Bureau of Investigation #276. 2/804.）</p>
+<p>Farmer，Rhodes. Shanghai Harvest A Diary of Three Years in the China War. London，1945.</p>
+<p>Fei Hsiao t’ung. China’s Gentry Essays in Rural Urban Relations. Chicago，1953.</p>
+<p>——. “P’ing Yen Yang ch’u ‘K’ai fa min li chien she hsiang ts’ung’” （A critique of Jimmy Yen’s ‘Develop the people’s strength and recon-struct the villages’），Kuan ch’a，5，no. 1 （Aug. 28，1948）.</p>
+<p>Feis，Herbert. The China Tangle The American Effort in China from Pearl Harbor to the Marshall Mission. Princeton，N. J. ，1953.</p>
+<p>Feng I lu. Hsü-P’ang chan i chien wen lu （A record of what saw and heard of the battle of Hsü-P’ang）. Hong Kong，1964.</p>
+<p>Feng Yü-hsiang. Wo so jen shih te Chiang Chieh shih （The Chiang Kai-shek I know）. Hong Kong，1949.</p>
+<p>Feng Yu ta. “Lung Yün t’ao tiao le!” （Lung Yün has escaped!），Hsinwen t’ien ti，54 （Dec. 16，1948）.</p>
+<p>Fessler，Loren. “Who is CCK’ What is Taiwan’” American Universities Field Staff Reports，no. 28 （part 2） and no. 29 （part 3） （1978）.</p>
+<p>Foreign Relations of the United States. Washington，D. C. ，1937—1949.</p>
+<p>Freyn，Hubert. Free China’s New Deal. New York，1943.</p>
+<p>Fujiwara Akira. “The Role of the Japanese Army，” in Dorothy Borg and Shumpei Okamoto，eds. ，Pearl Harbor as History Japanese American Relations，1931—1941. New York，1973.</p>
+<p>Gendai Chūgoku jimmei jiten （Biographical dictionary of Republican China）. Tokyo，1966.</p>
+<p>Gill，Graeme J. Peasants and Government in the Russian Revolution. New York，1979.</p>
+<p>Gillespie，Richard Eugene. “Whampoa and the Nanking Decade （1924—1936）.” Ph. D. diss. ，The American University，1971.</p>
+<p>Gillin，Donald G. “Problems of Centralization in Republican China： The Case of Ch’en Ch’eng and the Kuomintang，” Journal of Asian Stud ies，29，no. 4 （Aug. 1970）.</p>
+<p>Hall，J. C. S. The Yunnan Provincial Faction，1927—1937. Canberra，1976.</p>
+<p>Han Ssu. K’an Cheng hsüeh hsi （Look! The Political Study Clique）. Hong Kong，1947.</p>
+<p>Hanson，Haldore. Humane Endeavor The Story of the China War. New York，1939.</p>
+<p>Hattori Takushirō. Dai Tōa sensō zenshi （The Great East Asian War）. Tokyo，1965.</p>
+<p>Ho，Franklin L. “The Reminiscences of Ho Lien （Franklin L. Ho），as told to Crystal Lorch，postscript dated July 1966. Unpub. ms. in Specia Collections Library，Butler Library，Columbia University.</p>
+<p>Ho Ying ch’in. “Chi nien ch’i ch’i k’ang chan tsai po chung kung te hsü-wei hsüan ch’uan” （Commemorating the Sino Japanese wa and again refuting the Communists’ false propaganda），Tzu yu chung，3，no. 3 （Sept. 20，1972）.</p>
+<p>Ho Yüeh seng. “Ju ho t’ui chin tang te ko hsin yün tung（How to advance the party’s renovation movement），Ko hsin chou k’an，1，no. 5 （Aug. 24，1946）.</p>
+<p>——. “Kan k’uai chiu cheng she hui te p’ien hsiang” （Quickly correct society’s tendencies），She hui p’ing lun，3 （Sept. 16，1945）.</p>
+<p>——. “Tang te fu pai yüan yin chih fen hsi” （An analysis o the party’s decadence），Ko hsin chou k’an，1，no. 4 （Aug. 17，1946）.</p>
+<p>——. “Tang te ping pai yüan yin chih fen hsi” （An analysis o the causes of the party’s sickness），Ko hsin chou k’an，1，no. 3 （Aug. 10，1946）.</p>
+<p>Hsiao Cheng. T’u ti kai ko wu shih nien Hsiao Cheng hui i lu（Fifty years of land reform： memoirs of Hsiao Cheng）. Taipei，1980.</p>
+<p>Hsiao chuang. “T’ou shih Ch’uan hsi te nung ti yü nung ts’un（Western Szechwan’s farmland and villages in perspective），Kuan ch’a，5，no. 4 （Sept. 18，1948）.</p>
+<p>Hsien. “Kuo ying shih yeh ku p’iao k’ai shih ch’u shou” （Sales of shares in state run enterprises begin），Ching chi p’ing lun，3，no. 23 （Sept. 18，1948）.</p>
+<p>Hsin ching chi pan yüeh k’an （New economics semi monthly）. 1939—1945.</p>
+<p>Hsin ch’ou an hui （The new peace planning conference）. N. p. ，1946.</p>
+<p>Hsin Chung hua，fu k’an （New China，supplement）. 1944—1949.</p>
+<p>“Hsin chü-mien ch’ien hsi te p’ai hsi cheng tou chi jen shih pu chih” （Factional conflicts and personnel arrangements on the eve o the new situation），Kuan ch’a，2，no. 8 （Apr. 19，1947）.</p>
+<p>Hsin kuan ch’ang hsien hsing chi （A new “current situation in offi cialdom”）. N. p. ，1946.</p>
+<p>Hsin wen t’ien ti （News world）. Chungking. 1945.</p>
+<p>Hsing tsung chou k’an （CNRRA weekly）. 1946—1947. Published by the Compilation and Translation Department，Chinese National Relief and Rehabilitation Administration. （Tang shih hui #2122/2693.）</p>
+<p>Hsu Dau lin. “Chinese Local Administration Under the Nationa Government： Democracy and Self Government Versus Traditional Central ism.” Unpub. manuscript.</p>
+<p>Hsu Long hsuen and Chang Ming kai，comps. History of the Sino Japanese War （1937—1945）. Taipei，1971.</p>
+<p>Hsü Fu kuan. “Shih shei chi k’uei le Chung kuo she hui fan kung te liliang’” （Who is it that destroys the anti Communist force of Chinese society’），Min chu p’ing lun，1，no. 7 （Sept. 16，1949）.</p>
+<p>Hsü，K’ai yü. Wen I to. Boston，1979.</p>
+<p>Hsü K’an. “Chung kuo chan shih te liang cheng” （China’s wartime grain administration），Liang cheng yüeh k’an，1，no. 1 （Apr. 16，1943）.</p>
+<p>——. Hsü K’o t’ing hsien sheng wen ts’un （Collected papers of Hs K’an）. Taipei，1970.</p>
+<p>——. “K’ang chan shih ch’i liang cheng chi yao” （A record o grain administration during the war against Japan），Ssu ch’uan wen h sien yüeh k’an，11/12 （July 1，1963）.</p>
+<p>Hsü Tao fu. “Chiang hsi liang chia k’uang chang yüan yin chih yen-chiu” （A study of the reasons for the wild increases of grain prices in Kiangsi），Liang cheng yüeh k’an，1，no. 4 （Apr. 1941）.</p>
+<p>Hu Ch’i ju. “Ch’u hsün Ting fan tui ch’ü-pao chia chang chi ko chieh chiang tz’u” （Lecture to heads of ch’ü，pao，and chia and to al circles during an inspection of Ting fan hsien），Ping i hsün k’an，2（Nov. 25，1939）.</p>
+<p>Hu Fa p’eng. “Chiang hsi nung ts’un tsai k’u nan chung（Kiangsi’s villages in distress），Ching chi chou pao，7，no. 18 （Nov. 4，1948）.</p>
+<p>Hu Feng. “Chan shih Che chiang nung ts’un ching chi te hu ku” （A look back at Chekiang’s wartime rural economy），Ching ch chou pao，2，no. 12 （Mar. 28，1946）.</p>
+<p>“Hu nan ‘Nung chien kung ssu’ chiu fen nei mu” （Inside story o the dispute over the Hunan Agricultural Reconstruction Corporation），Ch ing chi chou pao，7，no. 8 （Nov. 4，1948）.</p>
+<p>Hu pei sheng cheng fu pao kao，1942/4—10 （Report of the Hupeh provincial government，Apr. -Oct. 1942）. N. p. ，n. d.</p>
+<p>Hu pei sheng cheng fu shih cheng pao kao 1942/11—1943/9 （Ad ministrative report of the Hupeh provincial government，Nov. 1942—Sept. 1943）. N. p. ，n. d.</p>
+<p>Hu pei sheng cheng fu shih cheng pao kao （t’ien liang pu fen），1942/11—1943/9 （Administrative report of the Hupeh provincial governmen[section on grain]，Nov. 1942—Sept. 1943）. N. p. ，n. d.</p>
+<p>Hu pei sheng cheng fu shih cheng pao kao，1943/10—1944/9 （Ad ministrative report of the Hupeh provincial government，Oct. 1943—Sept. 1944）. N. p. ，n. d.</p>
+<p>Hu shang chiang Tsung nan nien p’u （Chronological biography o General Hu Tsung nan）. Taipei，n. d.</p>
+<p>Huang Chien ch’ing. “Chih yu i t’iao lu： ch’ing tang” （There is only one way： party purge），Ko hsin chou k’an，1，no. 10 （Sept. 28，1946）.</p>
+<p>Huntington，Samuel P. Political Order in Changing Societies. New Haven，Conn. ，1968.</p>
+<p>I cheng yüeh k’an （Conscription monthly）. 1945. Published by Ministry of Conscription. （Tang shih hui #615/2724/1877.）</p>
+<p>I erh i ts’an an t’e chi （Special collection on the December 1 Massacre）. N. p. ，n. d.</p>
+<p>I wen chih （“The Art and Literature Journal”）. Taipei. 1972.</p>
+<p>Jen Chang. “Wei ko hsin yün tung ta pien” （Retorting for the renovation movement），Ko hsin chou k’an，1，no. 2 （Aug. 3，1946）.</p>
+<p>Johnson，Chalmers A. Peasant Nationalism and Communist Power The Emergence of Revolutionary China，1937—1945. Stanford，Calif. ，1962.</p>
+<p>“Ju ho kai chin chin hou te ping i” （How to improve conscrip tion in the future），Ping i hsün k’an，7 （Jan. 15，1940）.</p>
+<p>Juan Hua kuo. “Ko hsin sheng chung ti i p’ao： tang yüan tsung ch’ing- ch’a” （The first shot of renovation： the general review of party members），Ko hsin chou k’an，1，no. 13.</p>
+<p>Jung Chai. Chin ling chiu meng （Old dreams of Nanking）. Hong Kong，1968.</p>
+<p>Kalyagin，Aleksandr Ya. Along Alien Roads. Unpublished translation by Steven I. Levine of Po Neznakomym dorogam （Moscow，1969）.</p>
+<p>K’ang chan pa nien lai ping i hsing cheng kung tso tsung pao kao （General report of administration of military conscription during the eight-year war of resistance）. N. p. ，1945.</p>
+<p>K’ang Tse. “Pen t’uan tsu chih kung tso kai k’uang yü san shih i nien-tu chi chien chung yao kung tso” （The organizational work o this corps and several important tasks in 1942），Ch’ing nien t’ung hsün，3，no. 1 （Jan. 31，1943）.</p>
+<p>Kao Shu k’ang. “Ko hsin yün tung te t’ung chih men hsing tung ch’i-lai!” （Comrades of the renovation movement，become active!），Ko-hsin chou k’an，1，no. 5 （Aug. 24，1946）.</p>
+<p>Kapp，Robert A. “The Kuomintang and Rural China in the War o Resistance，1937—1945，” in F. Gilbert Chan，ed. ，China at the Cross roads Nationalists and Communists，1927—1949. Boulder，Col. ，1980.</p>
+<p>——. Szechwan and the Chinese Republic Provincial Militarism and Central Power，1911—1938. New Haven，Conn. ，1973.</p>
+<p>Kataoka，Tetsuya. Resistance and Revolution in China The Communists and the Second United Front. Berkeley，Calif. ，1974.</p>
+<p>Kirby，William Corbin. “Foreign Models and Chinese Modernization： Germany and Republican China，1921—1941.” Ph. D. diss. ，Harvard University，1981.</p>
+<p>Ko hsin chou k’an （Renovation weekly）. Nanking. 1946. （Tang shih hui #4450/0292.）</p>
+<p>Ko hsin yüeh k’an （Renovation monthly）. Changsha. 1946. （Taiwan Branch，National Central Library #S/005. 05/4072/1.）</p>
+<p>Ko ming wen hsien （Documents of the revolution），vols. 62—63. Tai pei，1973.</p>
+<p>Ku Pao. “Yün nan t’ien fu cheng shih yü nung min fu tan（Yunnan’s tax in kind and the farmers’ burden），Hsin ching chi，6，no. 11（Mar. 1，1942）.</p>
+<p>Kuan ch’a （The observer）. Shanghai. 1946—1948.</p>
+<p>Kuan Chi yü. Chung kuo shui chih （China’s tax system）. N. p. ，1945.</p>
+<p>Kuo fang pu （Ministry of National Defense）. Chung yang chih hsing wei-yüan hui ti liu chieh ti ssu tz’u ch’üan t’i hui i chün shih pao kao （Military report to the 4th plenum of the 6th CEC）. N. p. ，1947. （Bureau of Investigation #166. 517/741.）</p>
+<p>Kuo fang pu shih cheng chü （Office of Military History，Ministry of National Defense）. K’an luan chien shih （Brief history of rebellion suppression）. 4 vols. N. p. ，1962.</p>
+<p>Kuo fang pu tsung cheng chih pu （General Political Bureau，Ministry of National Defense）. Kuo chün cheng chih kung tso chih tao yao tien （Important points to guide political work in the national army）. N. p. ，1950. （Bureau of Investigation #596. 72/741.）</p>
+<p>Kuo Jung chao. Mei kuo Ya erh ta mi yüeh yü Chung kuo （A Critical Study of the Yalta Agreement and Sino American Relations）. Taipei，1967.</p>
+<p>“Kuo min tang chün kuan ping men ch’i lai!” （Officers and men in the Kuomintang army，arise!），in Chang Chia mo et al. ，P’an pien fu fei fen tzu miu lun.</p>
+<p>“Kuo min tang chün tui shen ming ta i kuang jung chuang chü” （Daring and glorious achievements of the Kuomintang’s armed forces），in Chang Chia mo et al. ，P’an pien fu fei fen tzu miu lun.</p>
+<p>“Kuo min tang tang t’uan ho ping ch’ien hou” （The full story of the merger of the Kuomintang’s party and corps），Kuan ch’a，3，no. 5 （Sept. 27，1947）.</p>
+<p>Lefebvre，Georges. The Great Fear of 1789 Rural Panic in Revolution ary France. New York，1973.</p>
+<p>Lei Chao yüan. “Ling i nien lai i cheng chih chien t’ao” （Dis cussion of administering conscription in Ling hsien during the pas year），Cheng-hsün yüeh k’an，1，no. 2/3 （Mar. 23，1941）.</p>
+<p>Lei Chen. Lei Chen hui i lu （Lei Chen’s memoirs）. Hong Kong，1978.</p>
+<p>Lei Ch’in. “Kuang hsi shan hou chiu chi wen t’i ch’u i” （My views on the question of relief and rehabilitation in Kwangsi），Ling piao lun-t’an，1，no. 1 （Dec. 15，1945）.</p>
+<p>Levine，Steven I. “Comments on Chin tung Liang，‘The Sino Sovie Treaty of Friendship and Alliance of 1945： The Inside Story，’” in Pau K. T. Sih，ed. ，Nationalist China During the Sino Japanese War.</p>
+<p>——. “Mobilizing for War： Rural Revolution in Manchuria as an In strument of War.” Paper presented to the Conference on Chinese Commu nist Rural Bases，Cambridge，Mass. ，Aug. 14—21，1978.</p>
+<p>Li I wei. “Pan li Li ling i cheng chih kai shu” （General obser vations on managing conscription in Li ling hsien），Cheng hsün yüeh k’an，1，no. 4 （Apr. 30，1941）.</p>
+<p>Li I yeh. Chung kuo jen min tse yang ta pai Jih pen ti kuo chu i （How the Chinese people defeated Japanese imperialism）. Peking，1951.</p>
+<p>Li P’in hsien. Li P’in hsien hui i lu （Memoirs of Li P’in h sien）. Taipei，1975.</p>
+<p>Li Shou k’ung. Chung kuo hsien tai shih （Chinese contemporary his tory）. 4th ed. Taipei，1967.</p>
+<p>Li Ta. “Ko hsin yün tung te san ta ching shen” （The renovation movement’s three great sources of vitality），Ko hsin chou k’an，1，no. 6 （Aug. 31，1946）.</p>
+<p>Li T’i ch’ien. “T’ien fu ying che cheng fa pi” （The land tax should be collected in fa pi），She hui p’ing lun，24 （Aug. 16，1946）.</p>
+<p>Li Tsung huang. Chu Tien hui i lu （Memoirs of my chairmanship of Yunnan）. Nanking，1947.</p>
+<p>——. Li Tsung huang hui i lu （Memoirs of Li Tsung huang）. Tai pei，1972.</p>
+<p>Li Tsung ying. “Shan hou kung tso chien t’ao” （Discussion of re habilitation work），Hsing tsung chou k’an，22 （Sept. 14，1946）.</p>
+<p>Li Tzu hsiang. “K’ang chan i lai Ssu ch’uan chih kung yeh（Szechwan’s industry during the war），Ssu ch’uan ching chi chi k’an，1，no. 1 （Dec. 15，1943）.</p>
+<p>Liang cheng yüeh k’an （Grain administration monthly）. 1941. Published by the Grain Control Department，Ninth War Zone. （Tang shih hui # 9393/1877.）</p>
+<p>Liang Han ts’ao. “Fa k’an tz’u” （Inaugural statement），Ko hsin chou k’an，1，no. 1 （July 27，1946）.</p>
+<p>Liang hsiung. Tai Li chuan （Biography of Tai Li）. Taipei，1980.</p>
+<p>Liang Sheng chün. Chiang Li tou cheng nei mu （The inside story of the struggle between Chiang Kai shek and Li Tsung jen）. Hong Kong，1954.</p>
+<p>Lin Chen. Chung kuo nei mu （Chinese inside story）. Shanghai，1948.</p>
+<p>Lin Chen yung. Ping i chih kai lun （Survey of the military con scription system）. N. p. ，1940.</p>
+<p>Ling piao lun t’an （Ling piao forum）. Kweilin. 1945—1946. （Tang shih hui #2238/5008.）</p>
+<p>Ling Yün. “Shang hsin wang shih hua ho t’an” （Sadly recounting the peace talks），I wen chih，87 （Dec. 1972）.</p>
+<p>Liu Chien ch’ün. Yin ho i wang （Memories at Yin ho）. Taipei，1966.</p>
+<p>Liu Chih. Wo te hui i （My reminiscences）. Taipei，1966.</p>
+<p>Liu Ch’iu-[’]. “Chan shih Ssu ch’uan liang shih sheng ch’an（Wartime Szechwan’s grain production），Ssu ch’uan ching chi chi-k’an，2，no. 4 （Oct. 1，1945）.</p>
+<p>Liu，F. F. A Military History of Modern China，1924—1949. Princeton，N. J. ，1956</p>
+<p>Liu Pu t’ung. “Lun kuo min tang chih fu hsing” （On revival o the Kuomintang），Ko hsin chou k’an，1，no. 6 （Aug. 31，1946）.</p>
+<p>Lo Tun wei. Wu shih nien hui i lu （Memoirs of fifty years）. Taipei，1952.</p>
+<p>Lou Li chai. “Kuan yü t’ien fu cheng shih” （Regarding the tax in kind），Ching chi chou pao，2，no. 23 （Mar. 13，1946）.</p>
+<p>Ma Hua. “San shih san nien Ssu ch’uan chih t’ien fu cheng shih yü cheng chieh” （Szechwan’s tax in kind and compulsory borrowing in 1944），Ssu ch’uan ching chi chi k’an，2，no. 2 （Apr. 1，1945）.</p>
+<p>——. “Ssu ch’uan t’ien fu cheng shih yü liang shih cheng kou[-chieh] wen t’i” （The problem of the tax in kind and compulsory grain purchases [ borrowing] in Szechwan），Ssu ch’uan ching chi ch k’an，1，no. 2 （Mar. 15，1944）.</p>
+<p>Meng Hsien chang. Chung kuo chin tai ching chi shih chiao ch’eng （Lectures on China’s modern economic history）. Shanghai，1951.</p>
+<p>Miles，Milton E. A Different Kind of War. Garden City，N. Y. ，1967.</p>
+<p>Min chu p’ing lun （“The Democratic Review”）. Hong Kong. 1949—1950.</p>
+<p>Mo Hsüan yüan. “Tang cheng ko hsin te t’u ching” （The path o party and government renovation），Ko hsin yüeh k’an，2 （Sept. 1，1946）.</p>
+<p>——. “Tang cheng ko hsin yün tung chih yao i” （The basic meaning of the party government renovation movement），Ko hsin yüeh k’an，1 （Aug. 1，1946）.</p>
+<p>New York Times. 1937—1949.</p>
+<p>North China Daily News. Shanghai. 1948.</p>
+<p>Nung kung yüeh k’an （Ministry of agriculture and industry month ly）. （Tang shih hui #5523/1077.）</p>
+<p>Oliver，Frank. Special Undeclared War. London，1939.</p>
+<p>Pan，Hong shen. “Marketing of Agricultural Products in Penghsien，Szechwan，” Economic Facts，26 （Nov. 1943）.</p>
+<p>P’an Kuang sheng. “K’ang chan shih ch’i Ssu ch’uan t’e chung kung-ch’eng chi shih” （A record of special building projects in Szech wan during the war），Ssu ch’uan wen hsien，81 （May 1，1969）.</p>
+<p>Panikkar，K. M. In Two Chinas Memoirs of a Diplomat. London，1955.</p>
+<p>Payne，Robert. China Awake. New York，1947.</p>
+<p>Pepper，Suzanne. Civil War in China The Political Struggle，1945—1949. Berkeley，Calif. ，1978.</p>
+<p>The Personalities and Political Machinery of Formosa From Persona Recollections. Cambridge，Mass. ，1954.</p>
+<p>“Ping i chih tu chih san p’ing yüan tse” （The conscription system’s three equals principle），Ping i hsün k’an，2 （Nov. 25，1939）.</p>
+<p>Ping i hsün k’an （Conscription）. 1939—1940. Published by Headquar ters，Kuei Hsing Division Control Area. （Tang shih hui #2727/7280.）</p>
+<p>P’ing erh chung ch’üan hui （Criticizing the second plenum）. N. p. ，n. d. [1946].</p>
+<p>Powell，Lyle Stephenson. A Surgeon in Wartime China. Lawrence，Kans. ，1946.</p>
+<p>P’u Hsi hsiu. “Kuo min tang san chung ch’üan hui chi” （A record of the Kuomintang’s third plenum），Kuan ch’a，2，no. 6 （Apr. 5，1947）.</p>
+<p>Reynolds，Douglas Robertson. “The Chinese Industrial Cooperative Move ment and the Political Polarization of Wartime China，1938—1945.” Ph. D. diss. ，Columbia University，1975.</p>
+<p>Romanus，Charles F. ，and Riley Sunderland. Stilwell’s Command Prob lems. Washington，D. C. ，1956.</p>
+<p>——. Stilwell’s Mission to China. Washington，D. C. ，1953.</p>
+<p>——. Time Runs Out in CBI. Washington，D. C. ，1959.</p>
+<p>Roth，Andrew. “Szechwan： The Key to China’s Resistance，” Amerasia，5，no. 8 （Oct. 1941）.</p>
+<p>San ch’ing t’uan te ch’an sheng yü mu ti ho hsing chih （The or igins，purpose，and nature of the Three People’s Principles Youth Corps）. N. p. ，n. d. Handwritten，dittoed. （Bureau of Investigation #282/804.）</p>
+<p>San min chu i ch’ing nien t’uan ti i tz’ u ch’üan kuo tai piao ta hui t’i an hui-lu （Resolutions of the Youth Corps’ first nationa congress）. N. p. ，1943. （Sun Yat sen Library #038. 16/1：04.）</p>
+<p>San min chu i ch’ing nien t’uan t’uan shih tzu liao ti i ch ch’u kao （Historical materials on the Three People’s Principles Youth Corps，first collection，first draft）. N. p. ，1946. （Sun Yat sen Library # 038. 19/01/1.）</p>
+<p>“Sanmin shugi seinendan no seikaku to ninmu” （The nature and tasks of the Three People’s Principles Youth Corps），Tōa，14，no. 5（May 1，1941）.</p>
+<p>Scott，James C. The Moral Economy of the Peasant Rebellion and Subsistence in Southeast Asia. New Haven，Conn. ，1976.</p>
+<p>Service，John S. Lost Chance in China，ed. Joseph W. Esherick. New York，1974.</p>
+<p>Sha Hsüeh chün. “Chung kung ts’an t’ou kuo fang pu tao chih ta lu pien se” （Communists infiltrate the Ministry of Defense，leading to the mainland’s changing colors），Tung fang tsa chih，7，no. 8 （Feb. 1，1974）.</p>
+<p>“Shan pao liu t’uan ch’üan t’i kuan ping k’ai tso t’an hui” （Al officers and men of the 6th regiment of the Shansi militia hold a meeting），in Chang Chia mo et al. ，P’an pien fu fei fen tzu miu lun.</p>
+<p>She hui p’ing lun （Society review）. 1945—1948. （Tang shih hui # 3421/8001.）</p>
+<p>Shen Tsung han. “Food Production and Distribution for Civilian and Military Needs in Wartime China，1937—1945，” in Paul K. T. Sih，ed. ，Nationalist China During the Sino Japanese War.</p>
+<p>——. The Sino American Joint Commission on Rural Reconstruction Twenty Years of Cooperation for Agricultural Development. Ithaca，N. Y. ，1970.</p>
+<p>Shen Yün lung. “Tui chin yüan ch’üan an ying chin i pu chu tsung yen chiu” （We ought further to pursue and research the case of the gold yüan），Chuan chi wen hsüeh，214 （Mar. 1980）.</p>
+<p>——. “Wang Yün lao yü chin yüan ch’üan an chih i” （Doubts about Wang Yün wu and the case of the gold yüan），Chuan ch wen hsüeh，209 （Oct. 1979）.</p>
+<p>Sheridan，James E. Chinese Warlord The Career of Feng Yü-hsiang. Stanford，Calif. ，1966.</p>
+<p>Shieh，Milton J. T. The Kuomintang Selected Historical Documents，1894—1969. New York，1972.</p>
+<p>Shih chi p’ing lun （“The Century Critic”）. Nanking. 1947—1948.</p>
+<p>Shih Fu liang. “Lun tang ch’ien te ching kuan ch’ing hsing” （On the current state of economic controls），Kuan ch’a，5，no. 10 （Oct. 30，1948）.</p>
+<p>Shih hsin. “Wei yüan chang shih ts’ung shih fu wu chi wang“（Reminiscences of serving in the generalissimo’s office of attendants），Ch’un ch’iu，125 （Sept. 16，1962）.</p>
+<p>Shih yü wen （“Time and Culture”）. Shanghai. 1947—1948.</p>
+<p>“Shō Kai seki no Unnan chūōka kōsaku” （Chiang Kai shek’s central ization of Yunnan），Tōa，13，no. 3 （Mar. 1，1940）.</p>
+<p>Shou chung. “T’ui hsing ping i chih ch’u lun” （On promoting mil itary service），Ping i hsün k’an，34 （Nov. 30，1940）.</p>
+<p>Shyu，Lawrence Nae lih. “China’s ‘Wartime Parliament’： The People’s Political Council，1938—1945，” in Paul K. T. Sih，ed. ，Nationalist China During the Sino Japanese War.</p>
+<p>——. “The People’s Political Council and China’s Wartime Problems，1937—1945.” Ph. D. diss. ，Columbia University，1972.</p>
+<p>Sih，Paul K. T. ，ed. Nationalist China During the Sino Japanese War，1937—1945. Hicksville，N. Y. ，1977.</p>
+<p>Skocpol，Theda. States and Social Revolutions A Comparative Analysis of France，Russia，and China. Cambridge，Eng. ，1979.</p>
+<p>Smith，Robert Gillen. “History of the Attempt of the United States Medical Department to Improve the Effectiveness of the Chinese Army Medical Service，1941—1945.” Ph. D. diss. ，Columbia University，1950.</p>
+<p>Snow，Edgar. The Battle for Asia. New York，1941.</p>
+<p>——. “The Generalissimo，” Asia，Dec. 1940，pp. 646—48.</p>
+<p>Ssu ch’uan ching chi chi k’an （Szechwan economics quarterly）. Chun gking. 1943—1946.</p>
+<p>Ssu ch’uan sheng ching chi tiao ch’a pao kao （Report on an in vestigation of the Szechwan economy）. Comp. Chung kuo nung min yin hang. In Chung hua min kuo shih liao ts’ung pien （Miscellany of his torical materials on the Chinese Republic），vol. A32. Taipei，1976.</p>
+<p>Ssu ch’uan wen hsien yüeh k’an （Szechwan documents monthly）. Tai pei. 1963—1972.</p>
+<p>Ssu t’u Ni ying. “Lung Yün li k’ai Yün nan” （Lung Yün’s dep arture from Yunnan），Hsin wen t’ien ti，21 （Mar. 1，1947）.</p>
+<p>“Statements of Japanese Officers，World War Ⅱ.” Office of the Chie of Military History，Washington，D. C.</p>
+<p>Stilwell，Joseph W. The Stilwell Papers. Arr. and ed. by Theodore H. White. New York，1972.</p>
+<p>Stilwell Papers. National Archives，Washington，D. C.</p>
+<p>Stuart，John Leighton. Fifty Years in China. New York，1954.</p>
+<p>Sun Chen. “K’an luan chung ch’i ta lu lun hsien chih ching kuo” （The middle phase of rebellion suppression： experiences during the fall of the mainland），Ssu ch’uan wen hsien yüeh k’an，58 （June 1，1967）.</p>
+<p>Sung T’ung fu. “T’ien fu cheng shih yü chün hsü min shih” （The tax-in kind and military and civilian rations），in Wu Hsiang hsiang et al. ，eds. ，Chung kuo chin tai shih lun ts’ung （Anthology on mod ern Chinese history），series 1，vol. 9. Taipei，1956.</p>
+<p>Sze，Szeming. China’s Health Problems. Washington，D. C. ，1944.</p>
+<p>Ta hou fang nung ts’un ching chi p’o huai te ts’an hsiang （The tragic situation of the economic bankruptcy of the villages in the wartime rear areas）. N. p. ，n. d. [ 1944]. （Bureau of Investigation # 289/843.）</p>
+<p>Ta I chin. “Cheng i chung te pi chih wen t’i” （The monetary question in debate），Ching chi chou pao，5，no. 7 （Aug. 14，1947）.</p>
+<p>——. “Ch’i ko yüeh lai te Chung kuo ching chi ch’ing shih（China’s economic situation in the past seven months），Kuan-ch’a，4，no. 23/24 （Aug. 7，1948）.</p>
+<p>Ta kung pao （“L’Impartial”）. Chungking and Shanghai. 1937—1949.</p>
+<p>Tai Kao hsiang. “K’ang chan shih ch’i chih Ssu ch’uan i cheng（Conscription in Szechwan during the war of resistance），Ssu ch’uan wen-hsien yüeh k’an，11/12 （July 1，1963）.</p>
+<p>“T’ai yüeh san ch’ing t’uan hsiu cheng fan kung kung tso shou ts’e” （Anti Communist work manual，revised by the Three People’s Principles Youth Corps of T’ai yüeh），in Kuo min tang te t’e wu cheng ts’e （The Kuomintang’s special services policy）. Printed by Shan tung-chün ch’ü cheng chih pu （Political Bureau of the Shangtung milit ary zone）. N. p. ，1944. （Bureau of Investigation #276/803.）</p>
+<p>Tang cheng ko hsin yün tung （The party government renovation movement）. Ed. Chung kuo kuo min tang yün nan sheng chih hsing weiyüan hui （Yunnan provincial executive committee of the Kuomin tang）. N. p. ，n. d. （Taiwan Branch，National Central Library #005. 28/1490.）</p>
+<p>“Tang t’uan t’ung i i hou” （After unification of the party and the corps），Ko hsin yüeh k’an，16 （Dec. 15，1947）.</p>
+<p>Tang t’uan t’ung i tsu chih chung yao wen hsien （Important docu ments pertaining to organizational unification of the party and the corps）. N. p. ，n. d.</p>
+<p>Tang yü t’uan te kuan hsi （The relationship between the party and the corps）. Ed. San min chu i ch’ing nien t’uan chung yang t’uan pu （Central Headquarters，Three People’s Principles Youth Corps）. N. p. ，1940.</p>
+<p>T’ang Eh po hsien sheng chi nien chi （T’ang En po festschrift）. N. p. ，1964.</p>
+<p>Teng Wen i. Mao hsien fan nan chi （A record of braving dangers and withstanding difficulties）. 2 vols. Taipei，1973.</p>
+<p>“Ti hsia tou cheng lu hsien kang ling” （Essentials of the policy of underground struggle），Kung fei yü min meng chih chien （Between the Communist bandits and the Democratic League）. N. p. ，1947. （Bureau of Investigation #263. 31/817.）</p>
+<p>Ti liu chieh chung yang chih hsing wei yüan hui ti erh tz’u ch’üan t’i hui i t’i an yüan wen （Resolutions presented to the 2d ple num of the 6th central executive committee）. 2 vols. （Sun Yat sen Library#036. 1/ 6：24/1.）</p>
+<p>Tien，Hung mao. Government and Politics in Kuomintang China，1927—1937. Stanford，Calif. ，1972.</p>
+<p>Tōa （East Asia）. Tokyo，1928—1945.</p>
+<p>Tōa nisshi （East Asian chronological record）. Tokyo. 1940.</p>
+<p>Tong，Hollington K. China and the World Press. Nanking，Preface dat ed Feb. 1948.</p>
+<p>Tong，Te kong，and Li Tsung jen. The Memoirs of Li Tsung jen. Boulder，Col. 1979</p>
+<p>“T’ou chi chia te hsin lo yüan” （Opportunist’s new playground），Shih-chi p’ing lun，4，no. 14 （Oct. 2，1948）.</p>
+<p>Ts’ai Chen yün. Chiang Ching kuo tsai Shanghai （Chiang Ching kuo in Shanghai）. Nanking，1948.</p>
+<p>Ts’ai cheng nien chien，san pien （Financial administration yearbook，part 3）. Comp. Ts’ai cheng pu ts’ai cheng nien chien pien tsuan ch’u. Nanking，1948.</p>
+<p>Ts’ai cheng p’ing lun （Financial review）. Hong Kong. 1939—1947.</p>
+<p>Ts’ao Sheng fen. “Ts’ung Hsi k’ou tao Ch’eng tu” （From Hs k’ou to Chengtu），Chung wai tsa chih，2，no. 5 （Nov. 1967）.</p>
+<p>Tsou，Tang. America’s Failure in China，1941—1950. Chicago，1963.</p>
+<p>“Tsung chieh che ch’i shih t’ien” （General assessment of these seventy days），Ching chi p’ing lun，7，no. 19 （Nov. 11，1948）.</p>
+<p>“Ts’ung li fa yüan te p’ai hsi shuo tao kuo min tang te ka tsao” （Factions in the Legislative Yüan and Kuomintang reform），Kuan ch’a，4，no. 22 （July 31，1948）.</p>
+<p>T’uan wu huo tung shou ts’e （Manual for corps activities）. N. p. ，1944. （Bureau of Investigation #167. 43/811.）</p>
+<p>Tung Chia mu. “Chiang Ching kuo chi mo fan nao” （Chiang Ch ing-kuo： lonely and troubled），Hsin wen t’ien ti，50 （Oct. 16，1948）.</p>
+<p>Tung fang tsa chih （“Eastern Miscellany”）. Shanghai，1947—1948； Tai wan，1974.</p>
+<p>Tung Shih chin. “K’ang chan i lai Ssu ch’uan chih nung yeh（Szechwan’s agriculture since the beginning of the war against Japan），Ssu ch’uan ching chi chi k’an，1，no. 1 （Dec. 15，1943）.</p>
+<p>——. “T’u ti fen p’ei wen t’i” （The question of land distribu tion），Ching chi p’ing lun，3，no. 10 （June 12，1948）.</p>
+<p>Tzu yu chung （Freedom bell）. Hong Kong. 1972.</p>
+<p>United States Relations with China With Special Reference to the Period 1944—1949. Washington，D. C. ，1949.</p>
+<p>“Unnanshō no seiji keizaiteki chi’i” （The political and economic posi tion of Yunnan），Tōa，15，no. 7 （July 1，1942）.</p>
+<p>Utley，Freda. China at War. New York，1939.</p>
+<p>Wang Cheng. “The Kuomintang： A Sociological Study of Demoraliza tion.” Ph. D. diss. ，Stanford University，1953.</p>
+<p>Wang Chung wen. “Wei fu shang chiang shih hu yü ping kung h sien chi tien chiu shang kung tso shang te i chien” （Appealing on behalf of officers and men，and presenting some suggestions regarding firstaid work），Chan shih i cheng，16 （Aug. 1，1938）.</p>
+<p>Wang Chung wu. “Hsien chieh tuan chih wu chia wen t’i” （The problem of commodity prices at the present time），Tung fang tsa chih，43，no. 16 （Oct. 1947）.</p>
+<p>——. “Wan chiu tang ch’ien ching chi wei chi chih tui ts’e（The means of resolving the current economic crisis），Tung fang tsa chih，44，no. 8 （Aug. 1948）.</p>
+<p>Wang Fei. “Lun sui ch’ing ch’ü t’u ti chai ch’üan te fa hsing chün pei” （On preparations for the issuance of land loans in the pacification areas），Ching chi p’ing lun，3，no. 10 （June 12，1948）.</p>
+<p>Wang Tsu hua. “Chien ch’üan ping i te chi ko hsien chüeh wen t’i” （Several priority questions regarding military conscription），I cheng yüeh k’an，1，no. 1 （Apr. 1945）.</p>
+<p>——. “Kai shan i cheng fa te chi ko ch’ieh yao wen t’i” （Sev eral critical questions regarding improving the conscription law），I cheng yüeh k’an，1，no. 2 （May 1945）.</p>
+<p>Wang Tzu liang. Che hsi k’ang chan chi lüeh （A record of the war of resistance in western Chekiang）. Taipei，1966.</p>
+<p>Wang，Yin yuen. “Changes in Farm Wages in Szechwan，” Economic Facts，43 （Apr. 1945）.</p>
+<p>Wang Yin yüan. “Hsien chia yü t’ien ti hsien tsu” （Price contro and rent control on land），Hsin ching chi，8，no. 9 （Mar. 1，1943）.</p>
+<p>——. “Ssu ch’uan chan shih nung kung wen t’i” （The problem o farm wages in wartime Szechwan），Ssu ch’uan ching chi chi k’an，2，no. 3 （July 1，1945）.</p>
+<p>——. “Ssu ch’uan chan shih wu chia yü ko chi jen min chih kou-mai li” （Commodity prices in Szechwan during the war and the people’s standard of living），Ssu ch’uan ching chi chi k’an，1，no. 3（June 15，1944）.</p>
+<p>Wang Yu chuan. “The Organization of a Typical Guerrilla Area in South Shantung，” in Evans Fordyce Carlson，The Chinese Army Its Or ganization and Military Efficiency.</p>
+<p>Wartime China as Seen by Westerners. Chungking，preface dated 1942.</p>
+<p>Wedemeyer，Albert C. Wedemeyer Reports New York，1958.</p>
+<p>Wei Min. “Ko hsin te chung tien” （The crux of renovation），Ko hsin yüeh k’an，2 （Sept. 1，1946）.</p>
+<p>Weng Kuo kuei. “San shih ssu nien tu i cheng chih chan wang（The outlook for conscription in 1945），I cheng yüeh k’an，1，no. 1 （Apr. 1945）.</p>
+<p>White，Theodore H. In Search of History A Personal Adventure. New York，1978.</p>
+<p>——，and Annalee Jacoby. Thunder Out of China. New York，1946.</p>
+<p>“Wo men te hu sheng” （Our cry），Tang cheng ko hsin yün tung，pp. 1—9.</p>
+<p>Woodbridge，George. UNRRA The History of the United Nations Relie and Rehabilitation Administration. New York，1950.</p>
+<p>Wu Ch’i yüan. Yu chan shih ching chi tao p’ing shih ching ch（From a wartime economy to a peacetime economy）. Shanghai，1946.</p>
+<p>Wu Ching ch’ao. Chieh hou tsai li （Calamity after pillage）. Shang hai，1947.</p>
+<p>Wu Hsiang hsiang. Min kuo pai jen chuan （One hundred biographies of the republican period）. Taipei，1971.</p>
+<p>——. Ti erh tz’u Chung Jih chan cheng shih （History of the sec ond Sino-Japanese war）. 2 vols. Taipei，1973.</p>
+<p>——. “Total Strategy Used by China and Some Major Engagements in the Sino Japanese War of 1937—1945，” in Paul K. T. Sih，ed. ，Na tionalist China During the Sino Japanese War.</p>
+<p>——. “Wang Yün wu yü chin yüan ch’üan te fa hsing” （Wang Yün-wu and the issuance of the gold yüan），Chuan chi wen hsüeh，213 （Feb. 1980）.</p>
+<p>Wu Kuo chen. “Reminiscences of Dr. Wu Kuo cheng （October 21，1953—） for the years 1946—1953 as told to Prof. Nathaniel Peffer，Nov. 1960.” Unpub. ms. in Special Collections Library，Butler Library，Columbia University.</p>
+<p>Wu Shan. “Hu nan te tang t’uan hu tou” （Conflict between the party and the corps in Hunan），Shih yü wen，2，no. 7 （Oct. 24，1947）.</p>
+<p>Wu Tan ko. “Ssu ch’uan sheng ti fang t’an pai” （Szechwan’s loca t’an-pai），Ssu ch’uan ching chi chi k’an，1，no. 2 （Mar. 15，1944）.</p>
+<p>Wu T’ieh ch’eng. Wu T’ieh ch’eng hui i lu （Memoirs of Wu T’ieh ch’eng）. Taipei，1969.</p>
+<p>Wu Ting ch’ang. Hua ch’i hsien pi hsü-chi （Random notes in Hua chi，supplement）. Kweiyang，1943.</p>
+<p>Wu Yuan li. An Economic Survey of Communist China. New York，1956.</p>
+<p>Yang Chia lo，ed. ，Ta lu lun hsien ch’ien chih Chung hua min kuo （The Chinese Republic before the loss of the mainland）. 5 vols. Taipei，1974.</p>
+<p>Yang Li k’uei. “Ch’ing nien hsün lien yü t’ung chih” （The training and control of youth），Ch’eng ku ch’ing nien，1 （Apr. 1941）.</p>
+<p>Yang Yu chiung. “Wo men yao ch’iu kai pien cheng chih feng ch’i” （We demand a change in governmental style），Ko hsin chou k’an，1，no. 1 （July 27，1946）.</p>
+<p>Yao Cheng min. “P’ei tu hsüeh sheng yün tung chih hui ku（Recollections of the student movement at Chungking），Ssu ch’uan wen hsien yüeh k’an，124 （Dec. 1，1972）.</p>
+<p>Yao Sung ling. “Ching tao Chang Kung ch’üan hsien sheng” （In memory of Chang Kia ngau），Chuan chi wen hsüeh，211 （Dec. 1979）.</p>
+<p>Yeh Ch’ing. “Ko hsin yün tung ti i ko chi pen yüan tse” （The first principle of the renovation movement），Ko hsin chou k’an，1，no. 4 （Aug. 17，1946）.</p>
+<p>——. “Shih hsing tang nei min chu” （Implement democracy within the party），Ko hsin chou k’an，1，no. 7 （Sept. 7，1946）.</p>
+<p>——. “Su ch’ing kuan liao chu i” （Eliminate bureaucratism），Ko h sin chou k’an，1，no. 12.</p>
+<p>——. “Ta tao kuan liao tzu pen” （Down with bureaucratic capital ism），Ko hsin chou k’an，1，no. 15 （Nov. 2，1946）. Reprinted in Ch’en Chung min，Kuan liao tzu pen p’i p’an （A critique of bureaucratic capitalism）. Nanking，1948.</p>
+<p>——. “Tang yüan tsung ch’ing ch’a yü ko hsin yün tung” （The general review of party members and the renovation movement），Ko hsin chou k’an，1，no. 13.</p>
+<p>Yeh Feng ch’un. “Wo men yao ch’iu chan k’ai ko hsin yün tung” （We demand the expanding of the renovation movement），Ko hsin chou-k’an，1，no. 2 （Aug. 3，1946）.</p>
+<p>Yen Cheng wu. “Tse yang t’uan chieh ko ming t’ung chih” （How to unite revolutionary comrades），Ko hsin chou k’an，1，no. 4 （Aug. 17，1946）.</p>
+<p>Yen Jen keng. “Ching chi hu’ Cheng chih hu’” （Economics’ Poli tics’），Ching chi p’ing lun，1，no. 12 （June 21，1947）.</p>
+<p>Yen Lin. “Nung ts’un p’o ch’an yü tang ch’ien ching chi we chi” （Rural collapse and the current economic crisis），Ching chi chou pao，3，no. 24 （Dec. 12，1946）.</p>
+<p>Yen Ling. “Ching chi ‘tsung tung yüan’ i hou” （After the genera mobilization of the economy），Ching chi chou pao，5，no. 3 （July 17，1947）.</p>
+<p>Young，Arthur N. China and the Helping Hand，1937—1945. Cam bridge，Mass. ，1963.</p>
+<p>——. China’s Wartime Finance and Inflation，1937—1945. Cambridge，Mass. ，1965.</p>
+<p>Yü Ch’ang ho. “Wo kuo chan shih lao tung cheng ts’e” （China’s wartime labor policy），Hsin Chung hua，fu k’an，2，no. 9 （Sept. 1944）.</p>
+<p>Yün An. Chiang nan mi shih （Secret history of southern Kiangsu）. Hong Kong，1952</p>
+<h2 id="参考书目"><a class="header" href="#参考书目">参考书目</a></h2>
+<p>《亚美杂志论文集：中国灾难的线索》，两卷，华盛顿，1970</p>
+<p>鲍大可：《共产党接管前夕的中国》，纽约，1963</p>
+<p>包瑞德：《迪克西使团：美军驻延安观察组，1944》，伯克利，1970</p>
+<p>杰克·贝尔登：《中国震撼世界》，纽约，1949</p>
+<p>日本防卫研究所战史室：《河南会战》，东京，1967</p>
+<p>包华德编：《中华民国传记辞典》，4 卷，纽约，1967—1970</p>
+<p>约翰·亨特·博依尔：《中日战争，1937—1945：合作政治》，斯坦福，1972</p>
+<p>卜凯：《中国四川省农业调查》，重庆，1943</p>
+<p>卜凯和严中站（音）：《战争对四川彭县农民的经济影响》，《经济统计》第19 期（1943 年4 月）</p>
+<p>杰拉尔德·E. 邦克：《和平阴谋：汪精卫与中国的战争，1937—1941》，麻省剑桥，1972</p>
+<p>罗伯特·J. C. 布托：《东条英机与战争的来临》，普林斯顿，1961</p>
+<p>阿奇·凯利：《上海的战争岁月，1941—45—48》，纽约，1963</p>
+<p>卡尔逊：《中国陆军：编制与战斗力》，纽约，1940</p>
+<p>《CC豪门资本内幕》，出版地不明（香港？），1947</p>
+<p>《战时医政》，1938</p>
+<p>张奇瑛：《米潮的分析》，《经济评论》第1卷第9期（1947年5月30日）；《三十六年中国经济概况》，《东方杂志》第44卷第7期（1948年7月）；《三十五年度的中国经济》，《东方杂志》第43卷第11期（1947年6月）</p>
+<p>张其昀：《党史概要》，5 卷，台北，1951</p>
+<p>张嘉谋等编：《叛变附匪分子谬论》，出版地及出版日期不明</p>
+<p>张锡昌等编：《战时的中国经济》，桂林，1943</p>
+<p>章士钊：《抗战五年与农村经济》，《中国农村》，第8卷第 5/6期（1942年）</p>
+<p>张相普（音）：《青山忆旧》，《中外杂志》，第12卷第5期（1972年11月）</p>
+<p>张肖梅：《云南经济》，重庆，1941</p>
+<p>张一凡：《经济改革方案之批评与国民党经济政策之“转变”》，《经济周报》，第4卷第19期（1947年5月）</p>
+<p>张赣萍：《抗日名将关麟征》，香港，1969</p>
+<p>张嘉璈：《通货膨胀：中国的经历，1939—1950》，麻省剑桥，1958</p>
+<p>张培刚：《通货膨胀下的农业和农民》，《经济评论》，第1卷第1期（1947年4月）</p>
+<p>张少曾（音）；《如何解决士兵逃亡问题》，《成功周报》，第3卷第4期（1941年8月）</p>
+<p>张文实：《云南内幕》，香港，1949</p>
+<p>赵小义（音）：《发扬重庆精神》，《中外杂志》，第10卷第6期（1971年12月）</p>
+<p>赵世洵：《王云老与金元券案质疑之补充》，《传记文学》，第211期（1979年12月）</p>
+<p>莱昂内尔·M·蔡辛：《共产党征服中国，内战史，1945—1949》，麻省剑桥，1965</p>
+<p>振光：《川陕甘农村经济鸟瞰》，《经济周报》，第2卷第3期（1946年1月）</p>
+<p>陈正谟：《政治革新与行政效率》，《革新周刊》，第1卷第5期（1946年8月）；《田赋征实与粮食征借之检讨》，《四川经济季刊》，第1卷第2期（1944年3月）</p>
+<p>陈诚：《八年抗战经过概要》，出版地及出版日期不明</p>
+<p>陈健夫：《革新的基本愿望》，《革新周刊》，第1卷第1期（1946年7月）</p>
+<p>陈翰笙：《物价与农村》，《中国农村》，第8卷第5/6期（1942年）</p>
+<p>陈孝威：《为什么失去大陆》，台北，1964</p>
+<p>陈洪进：《三十二年之四川农业》，《四川经济季刊》，第1卷第2期（1944年3月）</p>
+<p>陈志让：《毛泽东与中国革命》，伦敦，1965</p>
+<p>陈立夫：《建国之道》，《革新月刊》第1期（1946年8月）</p>
+<p>陈伯达：《解放前中国地租》，北京，1958</p>
+<p>陈布雷：《陈布雷回忆录》，香港，1962</p>
+<p>陈少校：《金陵残照记》，香港，1963；《黑网录》，香港，1966</p>
+<p>陈达：《浪迹十年》，上海，1946；《现代中国的人口》，芝加哥，1946</p>
+<p>陈敦正：《动乱的回忆》，台北，1979</p>
+<p>陈卫华（音）：《办理役政的几个重要阶段》，《征训月刊》，第1卷第2/3期（1942年3月）</p>
+<p>陈英龙（音）：《抗战期间我的生活片段》，《艺文志》，第148期（1978年1月）</p>
+<p>陈友三、陈思德编：《田赋征实制度》，重庆，1945</p>
+<p>陈愚：《为革新运动进一招》，《革新周刊》，第1卷第7期（1946年9月）</p>
+<p>郑兆求（音）：《兵役巡视手记》，《征训月刊》，第1卷第2/3期（1941年3月）</p>
+<p>《征训月刊》，湖南省军管区司令部，1940—1941</p>
+<p>《政工周报》，军事委员会政治部，1941</p>
+<p>郑友桂（音）：《中国的对外贸易与工业发展》，华盛顿，1956；《城固青年》，陕西，1941</p>
+<p>程则军（音）：《现阶段的兵役问题》，出版地不明，1942</p>
+<p>程元斟：《革新运动只许成功不许失败》，《革新周刊》第1卷第5期（1946年8月）</p>
+<p>陈纳德：《战士之路》，纽约，1949</p>
+<p>季梅（音）：《当前纺织业的危机》，《经济周报》，第13期（1948年9月）</p>
+<p>季天（音）：《政治讲话》，台北，1950</p>
+<p>齐锡生：《战争中的国民党中国：军事失败与政治崩溃，1937—1945》，密西根，1982</p>
+<p>蒋经国：《 风雨中的宁静》，台北，1978；《沪滨日记》，载《痛定思痛》；《痛定思痛》，出版地不明，1955</p>
+<p>蒋介石：《蒋总统思想言论集》，30卷，台北，1966；《抗战建国：1937—1943六年抗战文电集》，纽约，1943；《苏俄在中国：七十概述》，台北，1969；《蒋管区真情实录》，出版地及出版日期不明</p>
+<p>蒋梦麟：《新潮》，《传记文学》，第11卷第2期（1967年8月）</p>
+<p>江上清：《政海秘闻》，香港，1966；《往事清谈》，香港，1972；《江苏省政府34/35年政情述要》，出版地不明，1946；《剿匪重要战役之追述与检讨》，6卷，出版地不明，1950</p>
+<p>乔家才：《铁血精忠传》，台北，1978</p>
+<p>千家驹：《中国经济现实讲话》，香港，1947</p>
+<p>钱江潮：《当前农民的需要》，《农工月刊》，第4期（1947年7月）</p>
+<p>钱端升：《中国的政府与政治》，麻省剑桥，1961</p>
+<p>金达凯：《中国青年的觉醒》，《民主评论》，第2卷第4期（1950年8月）</p>
+<p>金典戎：《西南老将刘震寰传记》，《春秋》第173期（1964年9月）、第174期（1964年10月）</p>
+<p>秦绶章：《官僚政治的剖析》，《革新月刊》第6期（1947年1月）；《实行党内民主》，《革新月刊》第1期（1946年9月）</p>
+<p>秦德纯：《秦德纯回忆录》，台北，1967；《中华志，1937—1945》，纽约，1947；《中华志，1950》，纽约，1950；《蜜勒氏评论报》，上海，1945—1949；《中国新闻评论》；《经济周报》，上海，1945—1948；《经济评论》，上海，1947—1948</p>
+<p>镜升：《战时中国经济轮廓》，出版地不明，1944</p>
+<p>庆霖：《输送伤兵转院的感想》，《战时医政》第9期（1938年5月）</p>
+<p>三青团中央：《青年通讯》，1943</p>
+<p>周兴（音）：《过去办理征兵之一般症结》，《征训月刊》，第1卷第2/3号（？）（1941年3月）</p>
+<p>周开庆：《四川与对日抗战》，台北，1971；《周报》，上海，1945—1946</p>
+<p>周舜莘：《中国的通货膨胀，1937—1949》，纽约，1963</p>
+<p>周荣德：《中国的社会流动：士绅在中国社会中的地位变迁》，纽约，1966</p>
+<p>朱：《粮食征借与粮价》，《经济评论》，第1卷第19期，（1947年8月）</p>
+<p>朱子爽：《中国国民党历次全国代表大会要览》，重庆，1945；《中国国民党粮食政策》，重庆，1944</p>
+<p>朱文长：《我对王云老与金圆券的看法》，《传记文学》第213期（1980年2月）</p>
+<p>朱岳山（音）：《降魔记》，出版地不明，1946</p>
+<p>局外人：《忆当年传说中的“十三太保”》，《春秋》第95-118期（1961年6月16日-1962年6月）；《传记文学》，台北，1962—1982</p>
+<p>中央调查统计局：《全国各单位特情概况》</p>
+<p>行政院新闻局：《全国粮食概况》，出版地不明，1947；《全国田赋开始征收》，《经济周报》，第3卷第6期（1946年8月）；《全国田粮会议纪要》，《财政评论》，第17卷第2期（1947年8月）；《春秋》，香港，1957—1982；《中国经济年鉴，1947》，香港，1947；《中国国民党党员党政革新运动初期工作方案》，《革新月刊》，第2期（1946年9月）；《中国劳工运动史》，5卷，台北，1959；《中国农村》，桂林，1942；《中外杂志》，台北，1967—1982</p>
+<p>行政院秘书处编：《中央政务机关三十年度工作成绩考察报告》；《中央日报》，上海，1945—1949</p>
+<p>柯乐博：《蒋介石的滑铁卢：淮海战役》，《太平洋历史评论》，第25 卷第4 期（1956 年11 月）</p>
+<p>A. 考特瑞尔：《湖南饥荒的惨相》，《经济周报》，第3 卷第6 期（1946 年8 月）</p>
+<p>弗兰克·多恩：《中日战争，1937—1941 年：从卢沟桥到珍珠港》，纽约，1974</p>
+<p>易劳逸：《夭折的革命：国民党统治下的中国，1927—1937》，麻省剑桥，1974；《国民党统治下的中国：两篇论文》，伊利诺斯，1981；《矛盾关系的多重面相：抗战时期的走私、傀儡与暴行》，载入江昭编：《中国人与日本人：政治与文化互动论文集》，普林斯顿，1980</p>
+<p>哈利·埃克斯坦：《论内战原因》，载伊沃·K.费尔拉本德等编：《愤怒、暴力与政治：理论与研究》，新泽西，1972；《经济统计》，成都，1943—1946</p>
+<p>爱泼斯坦：《中国未完成的革命》，波士顿，1947</p>
+<p>范蕙：《看这严重的两个月》，载《周报》第30期（1946年3月）；《防谍锄奸须知》，出版地及出版日期不明</p>
+<p>罗兹·法默：《上海的收获：中国战争中的三年日记》，伦敦，1945</p>
+<p>费孝通：《中国士绅：城乡关系论文集》，芝加哥，1953；《评晏阳初“开发民力建设乡村”》，《观察》，第5卷第1期（1948年8月）</p>
+<p>赫伯特·菲斯：《中国的纠葛：从珍珠港事变到马歇尔使华的美国在中国的努力》，普林斯顿，1953</p>
+<p>冯亦鲁：《徐蚌战役见闻录》，香港，1964</p>
+<p>冯玉祥：《我所认识的蒋介石》，香港，1949</p>
+<p>冯由达：《龙云逃掉了》，《新闻天地》第54期（1948年12月）</p>
+<p>劳伦·菲斯勒：《CCK是谁，台湾是什么？》，《美国大学教职工报告》，第28、29期（1978）；《美国外交文件集》，华盛顿，1937—1949</p>
+<p>傅瑞：《自由中国的新政》，纽约，1943</p>
+<p>藤原彰：《日本陆军的作用》，载多萝西·博格及冈本俊平编《作为历史的珍珠港事变：日美关系，1931—1941》，纽约，1973；《近代中国人名辞典》，东京，1966</p>
+<p>格雷姆·J. 基尔：《俄国革命中的农民与政府》，纽约，1979</p>
+<p>理查德·尤根·吉莱斯皮：《黄埔与南京十年（1924—1936）》，美利坚大学博士论文，1971</p>
+<p>唐纳德·G.吉林：《民国时期的中央化问题：以陈诚和国民党为例》，《亚洲研究杂志》第29卷第4期，（1970年8月）</p>
+<p>J. C. S. 霍尔：《滇系，1927—1937》，堪培拉，1976</p>
+<p>韩思（音）：《看! 政学系》，香港，1947</p>
+<p>霍尔多·汉森：《人道努力：中国战争的故事》，纽约，1939</p>
+<p>服部卓四郎：《大东亚战争史》，东京，1965</p>
+<p>何廉：《何廉回忆录》，未出版</p>
+<p>何应钦：《纪念七七抗战再驳中国的虚伪宣传》，《自由钟》，第3卷第3期，（1972年9月）</p>
+<p>贺岳僧：《如何推进党的革新运动》，《革新周刊》，第1卷第5期（1946年8月）；《赶快纠正社会的偏向》，《社会评论》第3期（1945年9月）；《党的腐败原因之分析》《革新周刊》，第1卷第4期（1946年8月）；《党的病态原因之分析》，《革新周刊》，第1卷第3期（1946年8月）</p>
+<p>萧铮：《土地改革五十年》，台北，1980</p>
+<p>小庄：《透视川西的农地和农村》，《观察》，第5卷第4期（1948年9月）</p>
+<p>冼（音）：《国营事业股票开始出售》，《经济评论》，第3卷第23期，（1948年9月）；《新经济半月刊》，1939—1945；《新筹安会》，出版地不明，1946；《新中国》副刊，1944—1949；《新局面前夕的派系争斗及人事布局》，《观察》，第2卷第8期（1947年4月）；《新官场现形记》，出版地不明，1946；《新闻天地》，重庆，1945；《行总周刊》，1946—1947</p>
+<p>徐道邻：《国民政府治下的中国地方行政：民主自治与传统集权》，未刊手稿</p>
+<p>许朗轩和张明凯编：《日中战争史（1937—1945）》，台北，1971</p>
+<p>徐复观：《谁是击溃了中国社会反共的力量》，《民主评论》，第1卷第7期，（1949年9月）</p>
+<p>许芥昱：《闻一多》，波士顿，1979</p>
+<p>徐堪：《中国战时的粮政》，《粮政月刊》，第1卷第1期，（1943年4月）；《徐可亭先生文丛》，台北，1970；《抗战时期粮政纪要》，《四川文献月刊》，11/12，（1963年7月）</p>
+<p>许道夫：《江西粮价狂涨原因之研究》，《粮政月刊》，第1卷第4期（1941年4月）</p>
+<p>胡其如：《出巡定蕃县对局、保、甲长及各界讲词》，《兵役旬刊》，第2期（1939年11月）</p>
+<p>胡友鹏：《江西农村在困难中》，《经济周报》第7卷第18期（1948年11月）</p>
+<p>胡风：《战时浙江农村经济的回顾》，《经济周报》第2卷第12期（1946年3月）；《湖南“农建公司”纠纷内幕》，《经济周报》第7卷第8期（1948年11月）；《湖北省政府报告，1942年11月—1943年9月》；《湖北省政府施政报告（田粮部分），1942年11月—1943年9月》；《湖北省政府施政报告，1943年10月—1944年9月》；《胡上将宗南年谱》，台北，出版时间不明</p>
+<p>黄坚清：《只有一条路——清党》，载《革新》周刊第1卷第10期（1946年9月）</p>
+<p>塞缪尔·P.亨廷顿：《变化中的社会的政治秩序》，康涅狄格，1968；《役政月刊》，兵役署，1945；《一二·一惨案特集》，出版地及出版日期不明；《艺文志》，台北，1972</p>
+<p>任彰：《为革新运动答辩》，载《革新周刊》第1卷第2期（1946年8月）</p>
+<p>查默斯·A.约翰逊：《农民的民族主义与共产党政权：革命中国的出现，1937—1945》，斯坦福，1962；《如何改进今后的兵役》，《兵役旬刊》第7期（1940年1月）</p>
+<p>阮华国：《革新声中第一炮：党员总清查》，《革新周刊》第1卷第13期</p>
+<p>荣斋：《金陵旧梦》，香港，1968</p>
+<p>亚历山大·卡利亚金：《它乡之路》，莫斯科，1969；《抗战八年来兵役行政工作总报告》，出版地不明，1945</p>
+<p>康泽：《本团组织工作概况与三十一年度几件重要工作》，载《青年通讯》第3卷第1期（1943年1月）</p>
+<p>高叔康：《革新运动的同志们行动起来!》，《革新周刊》第1卷第5期（1946年8月）</p>
+<p>罗伯特·A.卡普：《抗日战争中的国民党与农业中国，1937—1945》，载F.基尔伯特·陈编《十字路口的中国：国民党与共产党，1927—1949》，科罗拉多，1980；《四川与中华民国：地方军阀主义与中央政权，1911—1938》，康涅狄格，1973</p>
+<p>片冈铁哉：《中国的抗战与革命：共产党与第二次统一战线》，伯克利，1974</p>
+<p>柯伟林：《外国榜样与中国的现代化：德国与中华民国，1921—1941》，哈佛大学博士论文，1981；《革新周刊》，南京，1946；《革新月刊》，长沙，1949；《革命文献》，第62—63卷。</p>
+<p>谷苞：《云南田赋征实与农民负担》，《新经济》，第6卷第11期（1942年3月）；《观察》，上海，1946—1948</p>
+<p>关吉玉：《中国税制》，出版地不明，1945</p>
+<p>国防部：《中央执行委员会第六届第四次全体会议军事报告》，出版地不明，1947</p>
+<p>国防部史政局：《戡乱简史》，4卷，出版地不明，1947；《国军政治工作指导要点》，出版地不明，1950</p>
+<p>郭荣赵：《美国雅尔塔密约与中国》，台北，1967；《国民党军官兵们，起来!》，载张嘉谋等编《叛变附匪分子谬论》；《国民党军队深明大义光荣壮举》，载张嘉谋等编《叛变附匪分子谬论》；《国民党党团合并前后》，《观察》，第3卷第5期（1947年9月）</p>
+<p>乔治·勒菲弗：《1789年大恐惧：法兰西革命时期的农村恐慌》，纽约，1973</p>
+<p>雷兆元（音）：《酃县一年来役政之检讨》，《征训月刊》，第1卷第2/3期（1941年3月）</p>
+<p>雷震：《雷震回忆录》</p>
+<p>雷勤（音）：《广西善后救济问题刍议》，《岭表论坛》，第1卷第1期（1945年第12期）</p>
+<p>梁思文：《评梁敬（錞）1945年中苏友好同盟条约内幕》，载薛光前编《日中战争中的国民党中国》；《战争动员：作为战争工具的东北农村革命》，会议论文，1978</p>
+<p>李一为（音）：《办理醴陵役政之概述》，《征训月刊》第1卷第4期（1941年4月）</p>
+<p>李一叶：《中国人民怎样打败日本帝国主义》，北京，1951</p>
+<p>李品仙：《李品仙回忆录》，台北，1975</p>
+<p>李守孔：《中国现代史》，台北，1967</p>
+<p>李建：《革新运动的三大精神》，《革新周刊》第1卷第6期（1946年8月）</p>
+<p>李体潜：《田赋应折成法币》，《社会评论》第24期（1946年8月）</p>
+<p>李宗黄：《驻滇回忆录》，南京，1947；《李宗黄回忆录》，台北，1972</p>
+<p>李宗瀛：《善后工作检讨》（1946年9月），《行总周刊》第22期（1946年9月）</p>
+<p>李紫翔：《抗战以来四川之工业》，《四川经济季刊》，第1卷第1期（1943年12月）；《粮政月刊》，1941</p>
+<p>梁寒操：《发刊词》，《革新周刊》第1卷第1期（1946年7月）</p>
+<p>梁雄：《戴笠传》，台北，1980</p>
+<p>梁声全：《蒋李斗争内幕》，香港，1954</p>
+<p>林真：《中国内幕》，上海，1948</p>
+<p>林真容（音）：《兵役之概论》，出版地不明，1940；《岭表论坛》，桂林，1945—1946</p>
+<p>凌云（音）：《伤心往事话和谈》，见《艺文志》第87页（1972年12月）</p>
+<p>刘健群：《银河忆往》，台北，1966</p>
+<p>刘峙：《我的回忆》，台北，1966</p>
+<p>刘秋篁：《战时四川粮食生产》，《四川经济季刊》，第2卷第4期（1945年10月）</p>
+<p>刘馥：《现代中国军事史，1924—1929》，普林斯顿，1956</p>
+<p>刘不同：《论国民党之复兴》，《革新周刊》第1卷第6期（1946年8月）</p>
+<p>罗敦伟：《五十年回忆录》，台北，1952</p>
+<p>娄立斋：《关于田赋征实》，《经济周报》第2卷第23期（1946年3月）</p>
+<p>马骅：《三十三年四川之田赋征实与征借》，《四川经济季刊》，第2卷第2期（1945年4月）；《四川田赋征实与粮食征购（借）问题》，《四川经济季刊》，第1卷第2期（1944年3月）</p>
+<p>孟宪章：《中国近代经济史教程》，上海，1951</p>
+<p>密尔顿·E.迈儿斯：《另一种战争》，纽约，1967；《民主评论》，香港，1949—1950</p>
+<p>莫萱元：《党政革新的途径》，《革新月刊》第2期（1946年9月）；《党政革新运动之要义》，《革新月刊》第1期（1946年8月）；《纽约时报》，1937—1949；《字林西报》，上海，1948；《农工月刊》</p>
+<p>欧里渥：《特殊的不宣而战的战争》，伦敦，1939</p>
+<p>潘宏申（音）：《四川彭县的农产品市场》，《经济统计》，第26期（1943年11月）</p>
+<p>潘光声（音）：《抗战时期四川特种工程纪实》，《四川文献》第81期（1969年5月）</p>
+<p>K. M. 潘尼卡：《在两个中国：一个外交官的回忆》，伦敦，1955</p>
+<p>罗伯特·佩恩：《中国觉醒》，纽约，1947</p>
+<p>胡素珊：《中国的内战，1945—1949年的政治斗争》，伯克利，1978；《个性与台湾的政治机器：来自个人的回忆》，麻省剑桥，1954；《兵役制度之三平原则》，《兵役旬刊》第2期（1939年11月）；《兵役旬刊》，1939—1940；《评二中全会》，出版地及出版时间不明（1946？）</p>
+<p>莱尔·斯蒂芬森·鲍威尔：《战时中国的一个军医》，堪萨斯，1946</p>
+<p>浦熙修：《国民党三中全会记》，《观察》第2卷第6期（1947年4月）</p>
+<p>道格拉斯·罗伯逊·雷诺兹：《中国工业合作运动与战时中国的政治两极化，1938—1945》，哥伦比亚大学博士论文，1975</p>
+<p>查尔斯·F. 罗曼纳斯和赖利·桑德兰：《史迪威指挥权问题》，华盛顿，1956；《史迪威赴华使命》，华盛顿，1953；《中印缅战区失去的时机》，华盛顿，1959</p>
+<p>安德鲁·罗斯：《四川：中国抵抗的关键》，《亚美杂志》，第5卷第8期（1941年10月）；《三青团的产生与目的和性质》，出版地及出版时间不明；《三民主义青年团第一次全国代表大会提案汇录》，出版地不明（译者查为重庆），1943；《三民主义青年团团史资料第一辑初稿》，出版地不明（译者查为南京），1946；《三民主义青年团的性质和任务》，载《东亚》，第14卷第5期（1941年5月）</p>
+<p>詹姆斯·C.斯考特：《农民的道德经济：东南亚的造反和生存》，康涅狄格，1976</p>
+<p>谢伟思：《在中国失去的机会》，周锡瑞编，纽约，1974</p>
+<p>沙学浚：《中共渗透国防部导致大陆变色》，《东方杂志》第7卷第8期（1947年2月）；《山保六团全体官兵开座谈会》，载张嘉谋编《叛变附匪分子谬论》；《社会评论》，1945—1948</p>
+<p>沈宗翰：《战时中国的粮食生产和军民需要之分配，1937—1945》，载薛光前编《中日战争时期的国民党中国》；《中美农村复兴联合委员会：农业发展合作20年》，纽约，1970</p>
+<p>沈云龙：《对金圆券案应进一步追踪研究》，《传记文学》第214期（1980年3月）；《王云老与金圆券案质疑》，《传记文学》第209期（1979年10月）</p>
+<p>詹姆斯·E. 谢里登：《中国军阀：冯玉祥一生》，斯坦福，1966</p>
+<p>密尔顿J. T.希尔：《国民党历史文献选编，1894—1969》；《世纪评论》，南京，1947—1948</p>
+<p>施复亮：《论当前的经管情形》，《观察》，第5卷第10期（1948年10月）</p>
+<p>石新（音）：《委员会侍从室服务记往》，《春秋》，第125期（1962年9月）；《时与文》，上海，1947—1948；《蒋介石的云南中央化工作》，《东亚》，第13卷第3期（1940年3月）</p>
+<p>守中（音）：《推行兵役之刍论》，《兵役旬刊》第34期（1940年11月）</p>
+<p>徐乃力：《中国的战时国会：国民参政会，1938—1945》，载薛光前编《中日战争时期的国民党中国》；《国民参政会和中国战时问题，1937—1945》，哥伦比亚大学博士论文，1972</p>
+<p>薛光前编：《中日战争时期的国民党中国，1937—1945》，纽约，1977</p>
+<p>西达·斯科克波尔：《国家和社会革命：法国、俄国和中国的比较分析》，英国剑桥，1979</p>
+<p>罗伯特·吉伦·史密斯：《美国卫生部设法改进中国陆军卫生署效能的史实，1941—1945》，哥伦比亚大学博士论文，1950</p>
+<p>斯诺：《争夺亚洲的战争》，纽约，1941；《大元帅》，载《亚洲》，1940年12月，第646—648页；《四川经济季刊》，重庆，1943—1946；《四川省经济调查报告》，载《中华民国史料丛编》，A32卷；《四川文献月刊》，台北，1963—1972</p>
+<p>司徒霓影：《龙云离开云南》，《新闻天地》，第21期（1947年3月）；《日本军人的声明，第二次世界大战》，华盛顿</p>
+<p>史迪威：《史迪威文件》，白修德编，纽约，1972；史迪威文件，美国国家档案馆</p>
+<p>司徒雷登：《在华五十年》，纽约，1954</p>
+<p>孙震：《戡乱中期大陆沦陷之经过》，《四川文献月刊》，第8期（1967年6月）</p>
+<p>宋同福：《田赋征实与军需民生》，载吴相湘等编《中国近代史论丛》第一辑第9册，台北，1956</p>
+<p>斯思明（音）：《中国的卫生问题》，华盛顿，1944；《大后方农村经济破坏的惨相》，出版地及出版时间不明（1944？）</p>
+<p>笪移今：《争议中的币制问题》，《经济周报》，第5卷第7期（1947年8月）；《七个月来的中国经济形势》，《观察》，第4卷第23/24期（1948年8月）；《大公报》，重庆和上海，1937年—1949年</p>
+<p>戴高翔：《抗战时期之四川役政》，《四川文献月刊》，第11/12期，（1963年7月）；《太原三青团修正反共工作守则》，载山东军区政治部编《国民党的特务政策》，出版地不明，1944</p>
+<p>中国国民党云南省执行委员会编：《党政革新运动》，出版地及出版时间不明；《党团统一以后》，《革新月刊》第16期（1947年12月）；《党团统一组织重要文献》，出版地及出版时间不明（译者查为南京，1947）</p>
+<p>三民主义青年团中央团部：《党与团的关系》，出版地不明（译者查为重庆），1940；《汤恩伯先生纪念集》出版地不明，1964</p>
+<p>邓文仪：《冒险犯难记》，2册，台北，1973；《地下斗争路线纲领》，载《共匪与民盟之间》，出版地不明，1947；《第六届中央执行委员会第二次全体会议提案原文》，2册</p>
+<p>田弘茂：《国民党中国的政府与政治，1927—1937》，斯坦福，1972；《东亚》，东京，1928—1945；《东亚日志》，东京，1940年</p>
+<p>董显光：《中国与世界新闻界》，南京，1948</p>
+<p>唐德刚与李宗仁：《李宗仁回忆录》，科罗拉多，1979；《投机家的新乐园》《世纪评论》第4卷第14期（1948年10月）</p>
+<p>蔡真云：《蒋经国在上海》，南京，1948</p>
+<p>财政部财政年鉴编选处：《财政年鉴，三编》，南京，1948；《财政评论》，香港，1937—1947</p>
+<p>曹圣芬：《从忻口到成都》，《中外杂志》，第2卷第5期（1967年11月）</p>
+<p>邹谠：《美国在中国的失败，1941—1950》，芝加哥，1963；《总结这七十天》，《经济评论》，第7卷第19期（1948年11月）；《从立法院的派系说到国民党的改造》，《观察》，第4卷第22期（1948年7月）；《团务活动手册》，出版地不明，1944</p>
+<p>董佳木：《蒋经国寂寞烦恼》，《新闻天地》，第50期（1948年10月）；《东方杂志》，上海，1947—1948；台湾，1974</p>
+<p>董时进：《抗战以来四川之农业》，《四川经济季刊》，第1卷第1期（1943年12月）；《土地分配问题》，《经济评论》第3卷第10期（1948年6月）；《自由钟》，香港，1972；《美国与中国的关系：尤其是关于1944—1949年时期》，华盛顿，1949；《云南省的政治经济地位》，《东亚》第15卷第7期（1942年7月）</p>
+<p>弗雷达·厄特利：《战争中的中国》，纽约，1939</p>
+<p>王成（音）：《对国民党士气低落的社会学研究》，斯坦福大学博士论文，1953</p>
+<p>王仲文：《为负伤将士呼吁并贡献几点救伤工作上的意见》，《战时医政》，第16期（1938年3月）</p>
+<p>王仲武：《现阶段之物价问题》，《东方杂志》第43卷第16期（1947年10月）；《挽救当前经济危机之对策》，《东方杂志》第44卷第8期（1948年8月）</p>
+<p>王非：《论绥靖区土地债券的发行准备》，《经济评论》第3卷第10期（1948年6月）</p>
+<p>汪祖华：《健全兵役的几个先决问题》，《役政月刊》，第1卷第1期（1945年4月）；《改善役政法的几个切要问题》，《役政月刊》，第1卷第2期（1945年5月）</p>
+<p>王梓良：《浙西抗战记略》，台北，1966</p>
+<p>汪荫元：《四川农工的变化》，《经济统计》，第31期（1945年4月）；《限价与田地限租》，《新经济》，第8卷第9期（1943年3月）；《四川战时农工问题》，《四川经济季刊》，第2卷第3期（1945年7月）；《四川战时物价与各级人民之购买力》，《四川经济季刊》，第1卷第3期（1944年第6期）</p>
+<p>王友传（音）：《鲁南一个典型的游击区的组织》，载卡尔逊《中国陆军：它的组织和作战力》；《西方人眼中的战时中国》，重庆，序于1942</p>
+<p>魏德迈：《魏德迈报告》，纽约，1958</p>
+<p>魏民：《革新的重点》，《革新月刊》第2期（1946年9月）</p>
+<p>翁国柱：《三十四年度役政之展望》，《役政月刊》，第1卷第1期（1945年4月）</p>
+<p>白修德：《寻找历史：一个人的冒险》，纽约，1978</p>
+<p>白修德和贾安娜：《中国暴风雨》，纽约，1946；《我们的呼声》，载《党政革新运动》第1—9页</p>
+<p>乔治·伍德布里奇：《联合国善后救济总署史》，纽约，1950</p>
+<p>伍启元：《由战时经济到平时经济》，上海，1946</p>
+<p>吴景超：《劫后灾黎》，上海，1947</p>
+<p>吴相湘：《民国百人传》，台北，1971；《第二次中日战争史》，两册，台北，1973；《中日战争中中国的总战略与一些主要战役》，载薛光前编《中日战争中的国民党中国》；《王云五与金圆券的发行》，《传记文学》第213期（1980年2月）</p>
+<p>吴国桢：《吴国桢回忆录》，未出版</p>
+<p>伍人：《湖南的党团互斗》，《时与文》第2卷第7期</p>
+<p>伍丹戈：《四川省地方摊派》，《四川经济季刊》第1卷第2期（1944年5月）</p>
+<p>吴铁城：《吴铁城回忆录》，台北，1969</p>
+<p>吴鼎昌：《花溪闲笔续集》，贵阳，1943</p>
+<p>吴远立（音）：《共产党中国经济概览》，纽约，1956</p>
+<p>杨家骆编：《大陆沦陷前之中华民国》，5卷，台北，1974</p>
+<p>杨立奎：《青年训练与统制》，《城固青年》第1期（1941年4月）</p>
+<p>杨幼炯：《我们要求改变政治风气》，《革新周刊》第1卷第1期（1946年7月）</p>
+<p>姚蒸民（音）：《陪都学生运动之回顾》，《四川文献月刊》，第124期（1972年12月）</p>
+<p>姚崧龄：《敬悼张公权先生》，《传记文学》，第211期（1979年12月）</p>
+<p>叶青：《革新运动第一个基本原则》，《革新周刊》第1卷第4期（1946年8月）；《实行党内民主》，《革新周刊》第1卷第7期（1946年9月）；《肃清官僚主义》，《革新周刊》第1卷第12期；《打倒官僚资本》，《革新周刊》第1卷第15期（1946年11月）；《党员总清查与革新运动》，《革新周刊》第1卷第13期</p>
+<p>叶逢春：《我们要求展开革新运动》，《革新周刊》第1卷第2期（1946年8月）</p>
+<p>严铮五：《怎样团结革命同志》，《革新周刊》第1卷第4期（1946年8月）</p>
+<p>严仁庚：《经济乎？政治乎？》，《经济评论》第1卷第12期（1947年6月）</p>
+<p>炎林：《农村破产与当前经济危机》，《经济周报》，第3卷第24期（1946年12月）</p>
+<p>严凌：《经济总动员以后》，《经济周报》，第5卷第3期（1947年7月）</p>
+<p>杨格：《中国与外援，1937—1945》，麻省剑桥，1963；《中国的战时财政与通货膨胀》，麻省剑桥，1965</p>
+<p>余长河：《我国战时劳动政策》，《新中华副刊》，第2卷，第9期（1944年9月）</p>
+<p>云庵：《江南秘史》，香港，1952</p>
+<h2 id="译后记"><a class="header" href="#译后记">译后记</a></h2>
+<p>国民党为什么失败，这是1949年国民党政府垮台后，在太平洋东西两岸长期争论的一个问题，也是现代中国发展过程中一个非常值得反思的问题。</p>
+<p>在中国，对于大陆学者来说，由于各种因素的制约，我们对国民党统治中国二十多年历史的研究还很不够，当然也就对这段历史时期中所包含的许多值得借鉴的历史经验缺乏全面的分析和认识。所以，至今我们也没有产生出一部比较系统的具有一定理论水平的分析国民党为什么失败的著作。同样，对于台湾学者来说，由于国民党人对自己的失败抱着无穷的懊恼、后悔和对共产党人的仇视，所以就竭力掩饰自己的失败。他们或是避而不谈、避重就轻，或是寻找借口、诿罪他人。因此，在台湾出版的有关书中，我们也没有看到一本比较客观且认真地探讨国民党失败原因的著作。</p>
+<p>在西方，尤其在美国，关于国民党为什么失败，曾经是一个相当热门的话题。不管是官僚政客，学者文人，都为此争论不休。因此，在一段时间内，各种各样的评价，众说纷纭的解释充塞于报章杂志、大学讲台和政治集会之中。其中，既有许多学术研究的真知灼见，也不乏危言耸听的政治偏见。归纳起来，大概有这样三种看法：第一，以美国政府在1949年8月发表的《美国与中国的关系》（即白皮书）为代表。它一方面竭力为美国政府干涉中国内政进行辩解，另一方面又不得不说明国民党的失败，不是因为美国政府的援助不力，而是因为国民党自身的腐败无能和人心丧尽。此外，也是苏联政府的阴谋和对中国共产党的怂恿。第二，一些文人政客声称，国民党的失败是美国政府的罪过。他们说，从罗斯福、杜鲁门到马歇尔和艾奇逊，不是坚持反共防线，而是采取妥协绥靖的政策，国民党的失败，也就是这个政策的牺牲品。第三，大多数学者认为国民党的失败是因为其自身的腐败、反动以及对三民主义的背叛。他们以充分的材料，对国民党政权的各个方面进行了剖析，提出了比较客观、公正的看法。到了70年代，尤其是进入80年代后，这种观点逐渐为多数人所赞同，并且出版了不少内容丰富、值得一读的著作。</p>
+<p>《毁灭的种子》就是这类著作中的一本，也是分析国民党失败原因 的最新成果。该书的作者易劳逸先生是美国伊利诺大学历史系教授，他是一位研究中国现代问题的专家，也是一位治学严谨、富有成果的学者。易劳逸先生对国民党统治中国的历史有过系统的研究。在《毁灭的种子》之前，他还发表了另外两本著作：《中国国民党的法西斯组织：蓝衣社》和《流产的革命：国民党统治下的中国（1927—1937）》。 显而易见，这两本书和《毁灭的种子》是一脉相承的姐妹篇，它们比较系统、客观地回答了国民党为什么失败这样一个引人注目的问题。</p>
+<p>正如前面所说，对于国民党失败原因的分析，到目前为止，我们还没有一本在史实和理论上具有一定广度和深度的著作。这不能不说是我们研究工作中的一个很大缺陷。因此，当李宗一老师向我们推荐了这本书时，我们感到，如果能把这本书翻译出来，介绍给国内的读者，不仅会对我们的研究工作起到推动的作用，而且还能使关心这一问题的广大读者从中有所收益。</p>
+<p>令人高兴的是，我们的翻译工作得到了很多人的帮助，进展顺利。李宗一老师给予了热情的支持。本书的作者易劳逸教授也给予了热忱的帮助。在1987年10月初于南京召开的《民国档案和民国史国际学术讨论会》上，我们见到了易劳逸教授，同他谈了我们的想法。他非常爽快地答应了我们的请求，回国后不久，就给我们寄来了中文本的序言。此外，中国青年出版社的潘平同志也为我们的译稿付出了很多心血。借此机会，我们向他们表示衷心的感谢。本书第四、五章由贾维同志翻译，王贤知校对。</p>
+<p>对于原书后的大量注释，由于时间关系，我们只选择了若干重要的、带有说明性的几条。对个别人物的评述，虽有不正确切之处，也按原文照译了。另外，需要说明的是现代书名《蒋介石与蒋经国》，是遵照、编辑意见改的，尽管这段历史在某种程度上说是蒋氏父子主演的，但这里仍要向原书作者致歉。但愿这不是 “点、金成铁”。或许还由于我们工作的疏忽，在翻译中还存在着一些不尽之处，请读者给予指正。</p>
+<p>译者 1988.4</p>
+<p>本书初次翻译出版时，根据中国青年出版社的意见，大部分注释未译。此次再版，将全部注释及参考书目译出，以备读者检索。译者并对译文重新作了校正。本书序言、第一、八章由王贤知校译、第四、五章由贾维校译，其余章节及参考书目由王建朗校译。</p>
+<p>原著中，大部分注释未标明征引书名，只标明作者及所引书目页码。译者依原著格式译出，读者如需进一步查考出处，敬请参阅书后所附参考书目。</p>
+<p>此次再版，承蒙府建明先生耐心督导，在此深表感谢。</p>
+<p>译者 2008. 10</p>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/18.李敖出版社/蒋介石与蒋经国——毁灭的种子/02-结论：暴风雨与革命.md">Edit this page on GitHub.</a></footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../18.李敖出版社/蒋介石与蒋经国——毁灭的种子/01-《蒋介石与蒋经国——毁灭的种子》小引（李敖）.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../18.李敖出版社/蒋家王朝.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../18.李敖出版社/蒋介石与蒋经国——毁灭的种子/01-《蒋介石与蒋经国——毁灭的种子》小引（李敖）.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../18.李敖出版社/蒋家王朝.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/leeao-toc-1313d264.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

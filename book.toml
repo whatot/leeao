@@ -11,10 +11,12 @@ renderer = ["html"]
 [preprocessor.open-on-gh]
 command = "mdbook-open-on-gh"
 renderer = ["html"]
+git-branch = "master"
 
 [output.html]
 git-repository-url = "https://github.com/whatot/leeao"
-git-branch = "master"
+additional-css = ["theme/leeao.css"]
+additional-js = ["theme/leeao-toc.js"]
 
 [output.html.print]
 # print超过github上限50MB，于是默认关闭

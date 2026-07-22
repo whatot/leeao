@@ -1,0 +1,78 @@
+:root {
+  --leeao-content-width: 52rem;
+  --leeao-toc-border: color-mix(in srgb, var(--fg) 18%, transparent);
+  --leeao-toc-bg: color-mix(in srgb, var(--bg) 94%, var(--fg));
+}
+
+.content main {
+  max-width: var(--leeao-content-width);
+  line-height: 1.85;
+}
+
+.content main p {
+  margin-block: 0.85em;
+}
+
+.content main h2,
+.content main h3 {
+  scroll-margin-top: 4.5rem;
+  text-wrap: balance;
+}
+
+.content main h2 {
+  margin-top: 2.4em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--leeao-toc-border);
+}
+
+.leeao-page-toc {
+  margin: 1.25rem 0 2.25rem;
+  border: 1px solid var(--leeao-toc-border);
+  border-radius: 0.5rem;
+  background: var(--leeao-toc-bg);
+}
+
+.leeao-page-toc summary {
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  user-select: none;
+}
+
+.leeao-page-toc > ul {
+  max-height: min(52vh, 32rem);
+  margin: 0;
+  padding: 0.4rem 1rem 1rem 2.4rem;
+  overflow: auto;
+  overscroll-behavior: contain;
+  line-height: 1.55;
+}
+
+.leeao-page-toc li {
+  margin: 0.22rem 0;
+}
+
+.leeao-page-toc a {
+  text-decoration: none;
+}
+
+.leeao-page-toc a:hover,
+.leeao-page-toc a:focus-visible {
+  text-decoration: underline;
+}
+
+@media (min-width: 1500px) {
+  .content main {
+    max-width: 58rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .content main {
+    line-height: 1.75;
+  }
+
+  .leeao-page-toc > ul {
+    max-height: 45vh;
+  }
+}

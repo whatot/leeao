@@ -1,0 +1,409 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>挑战李敖——敖语录 - 大李敖全集</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/leeao-e9ced672.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-47e392f3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">大李敖全集</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="挑战李敖敖语录"><a class="header" href="#挑战李敖敖语录">挑战李敖——敖语录</a></h1>
+<ul>
+<li><a href="#1999年10月">1999年10月</a></li>
+<li><a href="#1999年11月">1999年11月</a></li>
+<li><a href="#1999年12月">1999年12月</a></li>
+<li><a href="#2000年1月">2000年1月</a></li>
+<li><a href="#2000年2月">2000年2月</a></li>
+<li><a href="#2000年3月">2000年3月</a></li>
+<li><a href="#2000年4月">2000年4月</a></li>
+</ul>
+<p>《挑战李敖——敖语录》目录</p>
+<p>001.1999年10月
+002.1999年11月
+003.1999年12月
+004.2000年1月
+005.2000年2月
+006.2000年3月
+007.2000年4月</p>
+<h2 id="1999年10月"><a class="header" href="#1999年10月">1999年10月</a></h2>
+<p>1999.10.1</p>
+<p>女人毒死男人的机会那么多，而被毒死的男人那么少，可证明两种现象：一、毒药不好买；二、女人毕竟太仁慈了。</p>
+<p>1999.10.4</p>
+<p>先知一生有四次跟骂他的蠢人碰头：第一次是讲演时；第二次是在网路上；第三次是在电视Call-In；第四次是在追悼会上。</p>
+<p>1999.10.5</p>
+<p>疯狗与疯子不同的是：疯狗只是咬人就算了，疯子却不只咬人，还会Call-In咬他的偶像。</p>
+<p>1999.10.6</p>
+<p>浑蛋有四种：一、浑蛋；二、大浑蛋；三、大大浑蛋；四、台湾大大浑蛋与外省大大浑蛋。</p>
+<p>1999.10.7</p>
+<p>对男人我先听他讲什么话才看他长什么样，马英九例外；对女人我先看她长什么样才听她讲什么话，陈文茜例外。</p>
+<p>1999.10.8</p>
+<p>五代时候，李振主张把所谓“清流”人士丢到河里，变成“浊流”；一千年过去了，李敖主张把台湾所谓的“清流”也给丢到河里。不过“林浊水”免了，他已经不能再浊了。</p>
+<p>1999.10.11</p>
+<p>长寿的秘诀是慎重选择父母；结婚的秘诀是慎重选择前妻。</p>
+<p>1999.10.12</p>
+<p>我跟男人冲突，要靠形而上和解；我跟女人冲突，要靠形而下和解。生理构造愈不同，愈影响和解速度。所以，我总是最先原谅女人。</p>
+<p>1999.10.13</p>
+<p>好的政治动作是向上提拔，坏的政治动作是向下打压。国民党把坏的提拔，把好的打压，正证明了它是天下第一烂党。</p>
+<p>1999.10.14</p>
+<p>每人都有缺点，我的缺点是爱说真话；每人都有优点，我的优点是愈来愈欣赏我的缺点。</p>
+<p>1999.10.15</p>
+<p>女婴是先天定的，女孩是先天生的，女人是后天变的，女鬼是后天变的女人变的。</p>
+<p>1999.10.18</p>
+<p>爱你的邻居，尤其是他女儿；爱你的敌人，尤其是他太太。</p>
+<p>1999.10.19</p>
+<p>看得见拿不到的钱有三种：一、冥纸；二、玩具钞票；三、国民党给受灾户的一千亿纾困房贷。</p>
+<p>1999.10.20</p>
+<p>鸡同鸭讲有四种：一、鸡同鸭讲；二、鸭同鸡讲；三、人民同国民党政府讲；四、国民党政府同人民讲。</p>
+<p>1999.10.22</p>
+<p>男人用眼睛，女人从他视觉使他神魂颠倒；女人用耳朵，男人从她听觉使她意乱情迷。</p>
+<p>1999.10.25</p>
+<p>有时候会出现这样的奇迹：政治家是死前忏悔的政客，政客是死不悔改的政治家。</p>
+<p>1999.10.26</p>
+<p>情书、传单和道歉信，三者的最大不同是：情书是说她不相信的鬼话，传单是说你不相信的鬼话，道歉信是说她和你都不相信的鬼话。</p>
+<p>1999.10.27</p>
+<p>假民主有三种：一、顺民做主；二、愚民做主；三、暴民做主。台湾三者俱全，另外杠上开花，还来了一个“假民主先生”李登辉，妙极了！</p>
+<p>1999.10.28</p>
+<p>对体重200磅的人来说，当务之急已不是减肥；而是找到205磅的人，站在他前面。</p>
+<p>1999.10.29</p>
+<p>狐群狗党有三种：一、狐群狗党；二、中国国民党；三、台湾国民党。</p>
+<h2 id="1999年11月"><a class="header" href="#1999年11月">1999年11月</a></h2>
+<p>1999.11.1</p>
+<p>当我发现我会把会计小姐用计算机算出来的数字，要用笔算一次才放心时，我惊醒什么是代沟了。</p>
+<p>1999.11.2</p>
+<p>正视问题不一定能解决它，不正视问题一定不能解决它。</p>
+<p>1999.11.3</p>
+<p>在中国大陆，先坐牢后写书；在中国台湾，先写书后坐牢。</p>
+<p>1999.11.4</p>
+<p>如果你的子女已满四十岁，你就不要再瞒你自己的年龄了，再瞒下去他们都变成私生子了。</p>
+<p>1999.11.5</p>
+<p>国民党的选举作弊有两大阶段：一、做票阶段；二、买票阶段。现在是买票阶段，所以不必停电了。</p>
+<p>1999.11.8</p>
+<p>二流的总统是二流的人民选出来的，不入流的总统是不入流的人民选出来的。</p>
+<p>1999.11.9</p>
+<p>霸王硬上弓有四种：第一种——公鸡对母鸡；第二种——公鸭对母鸭；第三种——陈进兴式强奸；第四种——陈水扁式单向直航。</p>
+<p>1999.11.11</p>
+<p>连战用脑不足；宋楚瑜用脑过度；陈水扁无脑可用；陈水扁的沈富雄大脑已停止，小脑却在反射。</p>
+<p>1999.11.12</p>
+<p>对宋张配你会好笑；对连萧配你会冷笑；对陈吕配你会苦笑。</p>
+<p>1999.11.15</p>
+<p>我从来不讲坏话，只讲真话；我从来不讲好话，因为真话就是最好的好话。</p>
+<p>1999.11.16</p>
+<p>国民党开除党员就像妓院开除妓女，李登辉开除宋楚瑜就像老鸨开除名妓。</p>
+<p>1999.11.17</p>
+<p>人生第一快乐是做到自己认为自己做不到的事，人生第二快乐是做到别人认为自己做不到的事。</p>
+<p>1999.11.18</p>
+<p>除非我们自己替天行道，就别想有天道；除非我们自己主持正义，就别想有正义。</p>
+<p>1999.11.19</p>
+<p>结婚多次的男人比结婚多年的男人快乐，结婚多年的男人比结婚多次的男人幸福。</p>
+<p>1999.11.22</p>
+<p>一个政党所有好同志都是一样的，所有坏同志都各有各的坏。</p>
+<p>1999.11.25</p>
+<p>多次不结婚的男人比结婚多次的男人更了解婚姻，多次结婚的男人比多次不结婚的男人更了解女人。</p>
+<p>1999.11.26</p>
+<p>有五种职业最好不要干：第一种——抓蛇的；第二种——枪毙人的；第三种——美容院给吕秀莲化妆的；第四种——殡仪馆给死人化妆的；第五种——新党党主席。</p>
+<p>1999.11.29</p>
+<p>最聪明的女人一涉及自己的感情问题就变成笨蛋，最聪明的男人一涉及自己的感情问题就变成哲学家。</p>
+<h2 id="1999年12月"><a class="header" href="#1999年12月">1999年12月</a></h2>
+<p>1999.12.1</p>
+<p>没人打老婆可以原谅，但连战可以被原谅，因为他的老婆实在该打。</p>
+<p>1999.12.2</p>
+<p>聪明的女人投入男人的怀抱，而不落入男人的手掌；聪明的男人对别有怀抱，易如反掌。</p>
+<p>1999.12.3</p>
+<p>我生平有两大遗憾：一、我无法找到像李敖这样精彩的人做我的朋友；二、我无法坐在台下去听李敖的精彩演说。</p>
+<p>1999.12.6</p>
+<p>用手工作的是劳工；用手脚并用的是艺术家；用自己的脑，别人的手来工作的是总经理；用脑而不用手工作的是新党总统候选人。</p>
+<p>1999.12.7</p>
+<p>宋楚瑜不敢说真话，因为怕认错；陈水扁老是说假话，因为怕认真；连战只能说浑话，因为怕他老婆认不出他是谁。</p>
+<p>1999.12.13</p>
+<p>上帝给人火，人却冒出纵火犯；上帝给人爱，人却冒出强奸犯；上帝给人政党政治，人却冒出国民党和民进党。</p>
+<p>1999.12.20</p>
+<p>要不是没有好人，就不会有坏律师；要不是没有美丽岛的好犯人，就不会有美丽岛的坏律师。</p>
+<p>1999.12.22</p>
+<p>有人有荷尔蒙的时候，没钱；有人有钱的时候，没贺尔蒙；有人全有的时候，又没有好运气；章孝严是也！</p>
+<p>1999.12.23</p>
+<p>只隔着墙对你笑，而不爬过来的才是好邻居。</p>
+<p>1999.12.24</p>
+<p>买人寿保险和赌徒最大的不同是：前者死了才会赢，后者赢了才会死。</p>
+<p>1999.12.27</p>
+<p>死刑犯过一小时算一小时，通缉犯过一天算一天，票据犯过一个月算一个月，大浑蛋李登辉过一年算一年。</p>
+<p>1999.12.30</p>
+<p>年老的男人三大悲剧是：一、低估了年龄，高估了体力；二、重视了性欲，轻视了性能；三、拥护了李登辉，打倒的还是他。</p>
+<p>1999.12.31</p>
+<p>民进党和国民党最大的不同是：民进党拿了钱什么都干，国民党拿了钱什么都不干。</p>
+<h2 id="2000年1月"><a class="header" href="#2000年1月">2000年1月</a></h2>
+<p>2000.1.3</p>
+<p>像连方瑀那类女人：你听她报年龄，要用加法；你听她报佳音，要用减法；你听她报财产，要用乘法；你听她报行善，要用除法。</p>
+<p>2000.1.13</p>
+<p>北极只有两个季节，冬天和下一个冬天；台湾只有两个热季，热季和选举季。</p>
+<p>2000.1.17</p>
+<p>莽夫的伤在胸前，懦夫的伤在背后，奸夫的伤既在胸前也在背后。</p>
+<p>2000.1.18</p>
+<p>有时一个男人不想重婚的原因，不是不想讨两个老婆，而是不想看到两个丈母娘。</p>
+<p>2000.1.19</p>
+<p>老板的关键在脸色好坏，美女的关键在脸蛋美丑，政治的关键在脸皮厚薄。</p>
+<p>2000.1.20</p>
+<p>能对男人煽动、能对女人煽情、能对新党搧风点火的，才算真正有办法。</p>
+<p>2000.1.24</p>
+<p>国民党讲势力，民进党讲势利，新党讲视力；但新党有视力没视野，直到李敖给了她。</p>
+<p>2000.1.25</p>
+<p>怕死的人会死好多次，不敢冒险的人会冒更多的险。</p>
+<p>2000.1.27</p>
+<p>我年轻时候拉着别人跑，我年老时候拉着别人别跑。是进步了？是退步了？我至今茫然不晓！</p>
+<p>2000.1.28</p>
+<p>所有的植物只有洋葱令我哭，所有的动物只有李登辉令我不笑，所有的矿物只有台独分子的“控固力”令我哭笑不得。</p>
+<h2 id="2000年2月"><a class="header" href="#2000年2月">2000年2月</a></h2>
+<p>2000.2.1</p>
+<p>看连战撒谎，要看他眼睛眨不眨；看宋楚瑜撒谎，要看他手捏不捏；看陈水扁撒谎，要看他口开不开，他一开口就是谎话！</p>
+<p>2000.2.3</p>
+<p>所有人都是不同程度的疯子。知道自己怎么疯的，是哲学家；知道自己多么疯的，是科学家；不知道自己怎么疯的、又多么疯的，是台湾记者和选民。</p>
+<p>2000.2.9</p>
+<p>选举的痛苦，不在见人说人话，见鬼说鬼话；而在人是愚人，鬼是笨鬼，你要说愚笨的话，真是他妈的！</p>
+<p>2000.2.10</p>
+<p>我二十年前的精神部份一样都没少，只不过都上升了；我二十年前的肉体部份一样也没少，只不过都下垂了。</p>
+<p>2000.2.11</p>
+<p>美女穿衣给女人看，脱衣给男人看；丑女穿衣给男人看，脱衣给自己看。</p>
+<p>2000.2.14</p>
+<p>没有丑男人，只有坏男人；没有丑女人，只有懒女人。</p>
+<p>2000.2.16</p>
+<p>老兵不会战死，但会死于狼吞虎咽；美女不会饿死，但会死于消化不良。</p>
+<p>2000.2.17</p>
+<p>勇士的伤在胸前，懦夫的伤在背后，弱者的伤在双膝，连战的伤在屁股。连方瑀没有伤，因为一身都是死鸡肉。</p>
+<p>2000.2.23</p>
+<p>上帝是无所不知的，我因为仅次于上帝，所以有所不知。</p>
+<p>2000.2.25</p>
+<p>有人穿名牌像地摊货，有人穿地摊货像名牌，有人穿什么都一样——那就是不讲究穿的美国罗斯福总统和中国的李敖先生。</p>
+<h2 id="2000年3月"><a class="header" href="#2000年3月">2000年3月</a></h2>
+<p>2000.3.7</p>
+<p>民进党是吃国民党奶头的，建国党是吃民进党奶嘴的，国民党是吃新党耳光的，新党拥连派大老是吃国民党狗屎的。</p>
+<p>2000.3.20</p>
+<p>一大群浑蛋选出一个大浑蛋，这就是台湾的选举。</p>
+<p>2000.3.21</p>
+<p>成功的丈夫是钱多到妻子花不完，成功的妻子是找到这种丈夫。</p>
+<p>2000.3.22</p>
+<p>女人的男人其实有五个：心中一个、眼中一个、手中一个、怀中一个、梦中一个，以为女人只有一个男人的男人是笨蛋。</p>
+<p>2000.3.23</p>
+<p>人要衣裳，这句话错了，其实衣裳也要人。曾文惠无论穿上什么高贵的衣裳，她都是一个土蛋。</p>
+<p>2000.3.24</p>
+<p>保护国民党的是共产党，保护国民党主席的是民进党，保护民进党总统提名人的是建国党。</p>
+<p>2000.3.27</p>
+<p>男人有了钱会变坏，女人变坏了会有钱。政战人员变坏了也不会有钱，税捐人员没钱也一样变坏。</p>
+<p>2000.3.28</p>
+<p>投票给连战的是小笨蛋，投票给阿扁的是大笨蛋。大笨蛋比小笨蛋多，所以阿扁当选了。</p>
+<p>2000.3.29</p>
+<p>这一次选举有四大，程度各有不同：一、李登辉大势已去；二、连战大败亏输；三、陈水扁大祸将至；四、吕秀莲大难临头。</p>
+<p>2000.3.30</p>
+<p>有五种情况是很相似的：一、沐猴而冠；二、小人得志；三、穷人乍富；四、叫花子吃死蟹；五、陈水扁当总统。</p>
+<p>2000.3.31</p>
+<p>民进党员像爬树的猴子，爬的越高我们看到的屁股越多。</p>
+<h2 id="2000年4月"><a class="header" href="#2000年4月">2000年4月</a></h2>
+<p>2000.4.4</p>
+<p>我从不鲁莽灭裂的反对民主进步，而是反对鲁莽灭裂的民主进步；我从不鲁莽灭裂的反对民主进步党，而是反对鲁莽灭裂的民主进步党。</p>
+<p>2000.4 .6</p>
+<p>我没有前卫，前卫就是我的锤子；我没有后台，后台就是我的脊梁。</p>
+<p>2000.4.7</p>
+<p>我们不会正眼看吕秀莲，因为她太老；我们不会斜眼看吕秀莲，因为她太丑。我们只会傻眼看吕秀莲，因为她竟当了这鬼地方的副总统。</p>
+<p>2000.4.10</p>
+<p>论黑猫白猫——能抓老鼠的就是好猫；论黑老鼠白老鼠——能不被猫抓到的就是好老鼠。</p>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/05.诗集语录类/挑战李敖——敖语录.md">Edit this page on GitHub.</a></footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../05.诗集语录类/虽千万人，李敖往矣/04-2016年8月.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../05.诗集语录类/李敖语萃/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../05.诗集语录类/虽千万人，李敖往矣/04-2016年8月.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../05.诗集语录类/李敖语萃/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../theme/leeao-toc-1313d264.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,822 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>《英文汉诂》残稿—你笨蛋，你笨蛋 - 大李敖全集</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/leeao-e9ced672.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-47e392f3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">大李敖全集</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/whatot/leeao" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="你笨蛋你笨蛋英文汉诂残稿你笨蛋你笨蛋"><a class="header" href="#你笨蛋你笨蛋英文汉诂残稿你笨蛋你笨蛋">你笨蛋，你笨蛋：《英文汉诂》残稿—你笨蛋，你笨蛋</a></h1>
+<ul>
+<li><a href="#英文汉诂残稿">《英文汉诂》残稿</a></li>
+<li><a href="#联语对比举例">联语对比举例</a></li>
+<li><a href="#他">他</a></li>
+<li><a href="#你笨蛋你笨蛋">你笨蛋，你笨蛋</a></li>
+</ul>
+<h2 id="英文汉诂残稿"><a class="header" href="#英文汉诂残稿">《英文汉诂》残稿</a></h2>
+<p>《英文汉诂》本是我想写的一部怪书，迟迟未能动笔。多年后，约朱良箴合写，言明各写一半。我在2007年春天写了一篇序，和前面的10篇，但朱良箴却生病死了，一篇也没写。如今我犹未忘情，把一篇序和前面的10篇统一发表，纪念良箴，且以自珍，兼自炫也。</p>
+<p>2011年8月</p>
+<p>《英文汉诂》李序</p>
+<p>白色恐怖时代，我独坐牢中，读物管制，但工具书得以漏网。我把1975年版2500页《远东英汉大辞典》通读一过，受益良多，质疑之处，间亦有之。20多年后，母亲暂住养老院，我每周必去，得识朱良箴先生，他正在养老院“纳福”。我早知《远东英汉大辞典》虽挂名“主编梁实秋”，实系“总编辑朱良箴”主其事，我学古代关尹手法，“强为我著书”，鼓动良箴先生选译西方精粹，由我商量定稿。良箴先生被我说动，辛苦多年，积纸等身，但成书稽迟，其误在我。我以良箴先生英文高强，理应著书，选译之事，失之过小，乃翻云覆雨变更计划，提议共著《英文汉诂》，以展先生长才，我愿手写半数，期攀末光。良箴先生又被我说动，约定一年定稿出版。</p>
+<p>《英文汉诂》此书，积良箴先生周旋英汉60余年心得，和我逍遥字海50多年管窥，以札记体裁，随缘抽样，点化为之，不拘系统，以偏概全，自在意中。读者举一反三，从而略知吾等老辈万花学问之片羽吉光，即云幸矣。孔子曰：“斐然成章，不知所以裁之。”狂简之讥，立此存照可也。</p>
+<p>2007年3月6日</p>
+<p>一 点石与点金</p>
+<p>中国道教讲炼丹术，要炼到点石成金。唐朝贯休《禅月集》（拟君子有所思诗之二）：“安得龙猛笔，点石为黄金。”宋朝胡仔《苕溪渔隐丛话后集》（孟浩然）：“诗句以一字为工，自然颖异不凡，如灵丹一粒，点石成金也。”这种一点成金的观念，英文有“金手指”（Golden Touch），凯瑟琳斯陀尔（Catherine Storr）写道：</p>
+<p>The god Dionysus sent amessage to Midas. “I will reward you for looking after my old friend. Tell me what your dearest wish is, and I will grant it.”</p>
+<p>Midas said at once, “I should like best that everything I touch should turn into gold.”</p>
+<p>“Think carefully about what you are asking for,” Dionysus said. But Midas would not stop to think. He wanted to be the richest man in the world. Dionysus said, “Then I will grant your wish. From now on, you have the Golden Touch.”</p>
+<p>足证希腊传统中弗里吉亚（Phrygia）王麦得斯（Midas）有吕洞宾本领且过之，因所点不止于石，全部成金也。英文成语to have the Midas touch（知道如何赚大钱）本此，007电影且光而大之。</p>
+<p>二 中文文法与英文文法</p>
+<p>丹麦语言学家耶斯柏森（Otto Jespersen）赞美中文文法最合逻辑、是最进步的文法。英文文法圣之时者，几百年来，越来越向中看齐了。虽然have与has之分，仍有醉后狐尾，但比起德文、法文，已经超越前进多多矣。德文“这个”有12种变化，第一位英国诗人乔叟（Geoffrey Chaucer）开创所谓“乔叟式文体”（Chaucerism）中，犹见此类凿痕，今日the只有一种而已。英文得以成强势语言，从语言本身看，亦有其道。中文文法是全世界最简单的，中国称强国，从语言本身看，亦着先鞭，洋鬼子想不到也，唯语言学家先得之。</p>
+<p>三 鲁迅之流与余光中之流</p>
+<p>鲁迅之流，讥中文文法，说文法太差，因而强学文章，以“的”“地”“得”等字附丽其后，表示中文有现代文法，其实是林语堂所讥的“盲人摸象，庸人自扰”。林语堂举例说：</p>
+<p>我们且就代名的“牠”说起。左派仁兄看见人家有it，而国语没有，非常惭愧。此“牠”字之所由来也。然而事实并不如此简单。袭人、紫鹃等，可以差小丫头说，东西须收好，“仔细别给丢了”，绝不说“仔细不要丢了牠”。这是纯粹国语。凡宾位说法，平常说，“把人杀了，把钱抢走，把屋子烧了。”绝用不着“牠”字。手表“丢”了，或“给丢”了，用不着说“丢了牠”。国语何时演出此文法构造，应该做语言学上的考据。因为古文未见此种构造。</p>
+<p>其实语言学上并无考据余地，这全是鲁迅之流的怪胎，降至今日，唯罕用“牠”字改为“它”字而已，集大成者，乃余光中之流。余光中晚岁讥中文西化，不知此辈当年正是中文西化“盲人摸象，庸人自扰”等鲁男子人物，好笑呀！</p>
+<p>四 孙中山译错了</p>
+<p>古书因为没有标点，“民可使由之，不可使知之”十个字，即可因标点有异而意思大不同。如标点</p>
+<p>A式，“民可使，由之；不可使，知之。”</p>
+<p>B式，“民可，使由之；不可，使知之。”</p>
+<p>AB两式，便看出主格、受格的不同。今人为民所用、为民所系、为民所谋等用法，语意欠明，亦同此疑义在焉。</p>
+<p>1863年11月19日，林肯（Abraham Lincoln）盖梯斯堡（Gettysburg）演说，最后楬橥“government of the people, by the people, for the people, shall not perish from the earth.”孙中山译为“民有”、“民治”、“民享”，是以人民为主格的。但林肯原意，却在宾主之间。用到by则主格在民；用到of则受之欲出；用到for则受格在民。林肯在这篇演说前两年，1861年7月4日对国会演说，早已明指政府乃“of the people by the same people”，则宾主之间，已极明确，孙中山译错了。</p>
+<p>孙中山传世题字中，有为居正写的一幅，上书：“美语曰民国者，民之国也，为民而设，由民而治者也。觉生先生正。”语意较细，但宾主尽欢，不可得也。</p>
+<p>五 洋泾浜正字</p>
+<p>三民书局《大辞典》洋泾浜条下说：</p>
+<p>“洋泾浜”（pidgin）由两种语文的接触而产生的一种比较简单的辅助性语文。这种语文在文法上是两种语文特色的结合，发音常与两者有很大的差异。洋泾浜一词可能是“必斯诺斯”（business生意）讹误发音而形成。旧时“上海”租界以及其他港口，因“华”、洋人杂处，语言相混，所以称不纯正或杂有“中国”语文的“英”语为洋泾浜“英”文（pidgin English）。而今此词并广泛用来指远东、“美拉尼西亚”（Melanesia）或“西非”等与“英”“美”人士交往的地区，所使用带有与当地语文混杂的“英”文。“洋泾浜”的“浜”字，有人以为是“滨”字的简体字，因而改为“洋泾滨”，是绝对错误的。马英九之流号召正体字挂帅，不知乱正一通，适显其无知耳。</p>
+<p>Pidgeen English字面上是“鸽子英文”，别作pidgin English，pidgin是“混杂语”、“混杂行话”。三民书局《大辞典》把《洋泾浜》一词解释成“讹误发音而形成”，是错的。洋泾浜是上海的一块地名。19世纪上海的“圣若瑟天主堂”就叫“洋泾浜天主堂”，位于洋泾浜南岸（后为四川南路）。</p>
+<p>六 Yes与No</p>
+<p>英文“唯诺之辈”曰yesman；“反调者流”曰no man。美国有笑话说里根（Ronald Reagan）总统手下非yesman（yesmen），因里根以no斥敌人时，彼辈众口一no也。</p>
+<p>杨绛《我们仨》写钱钟书和女儿钱瑷故事：</p>
+<p>钟书爱逗她、惹她、欺她，每次有吃的东西，总说：“Baby no eat.”她渐渐听懂了，总留心看妈妈的脸色。一次爸爸说了“Baby no eat.”她看看妈妈的脸，迸出了她自造的第一句英语：“Baby yes eat！”她那时约6岁。</p>
+<p>这是很有趣的洋泾浜英文，但别忘了，yes虽是副词、名词，也是动词“同意”、“赞同”、“称是”之意也；no是副词、形容词、名词。所以，以词性评定父女二人的洋泾浜，别有高下也。</p>
+<p>七 另</p>
+<p>英文another，有“另一个”和“再一个”歧义，前者是“换一个”，后者是“加一个”。太太对菲佣说：“小心吧，再发生这种事，我要另找一个了。”（Now, mind, if this occurs again, I shall have to get another servant.）菲佣答话说：“太太，真求之不得了。家里事太多了，我一个人忙不过来。”（I wish you would, ma’am; there’s quite enough work here for two of us.）</p>
+<p>刘家昌《往事只能回味》情歌，最后一句是“梦里相依偎”。可是，听来像“另外想一位”。——乐观者之听觉，多图利自己也。</p>
+<p>八</p>
+<p>以具体写抽象</p>
+<p>高明的表达法，除了数学一类以外，都在于以具体写抽象。例如表达什么是“过去式”（past tense）呢？答案是：</p>
+<p>一种从咬紧牙根到张牙咧嘴的状况。</p>
+<p>The condition where you go from gritting your teeth to baring your teeth.</p>
+<p>把past别解作“超越”、把tense别解作“紧张”，然后桃花圣解，别解出“超越紧张”的复合词，呈现出具体意象，这就是高明。</p>
+<p>九 正名哲学</p>
+<p>Spade是铲子，也是纸牌中黑桃。Call a spade a spade，通常译为“是啥说啥”、“有啥说啥”、“直言不讳”、“直言无隐”。都是指铲子而来，不是黑桃。实际上，此中涉及正名哲学，一如孔子所坚持的“觚不觚。觚哉？觚哉？”英国作家本奈特（Arnold Bennett），1911年有作曰“卡”（The Card），中有句曰：</p>
+<p>“ye can call it influenza if yelike,” said Mrs Machin.“There was no influenza inmy young days. We called a cold a cold.”</p>
+<p>沈约有言：“守株胶瑟，难与适变。”动辄以学名为雅者，名正而言不顺，失之雅矣。</p>
+<p>十 铁弗龙</p>
+<p>1983年8月2日美国国会纪录（Congressional Record）有民主党女众议员一分钟发言，批共和党总统里根，说细看此公，在政治技术上试行突破，优为“不沾锅总统”是也（Mr. Speaker, after carefully watching Ronald Reagan, he is attempting a great breakthrough in political technology—he has been perleeting the Teflono-coated presidency.）。</p>
+<p>英文teflon音译“铁弗龙”，即聚四氟乙烯，是一种不沾性涂料。</p>
+<p>中国古人有首相级大员号称“刘棉花”者，百官劾之，安然无恙，耐“弹”者也，古之铁弗龙也。</p>
+<h2 id="联语对比举例"><a class="header" href="#联语对比举例">联语对比举例</a></h2>
+<p>联语是中国特有的语文形式。单音独立、四声抑扬、寥寥数字、功力孔张。陈寅恪有信给刘叔雅，主张大学入学考国文，要考“对对子”，用意有四：①对子可以测验应试者能否分别虚实字及其应用。②对子可以测验应试者能否分别平仄声。③对子可以测验读书之多少及语藏之贫富。④对子可以测验其思想条理。陈寅恪举例说：苏东坡诗有“前生恐是卢行者，后学过呼韩退之”。谓“韩卢”为犬名（李敖按：战国时韩国黑毛名犬名韩卢，矫健善驰。《战国策》秦策三：“以秦卒之勇、车骑之多，以当诸侯，譬若驰韩卢而逐蹇兔也，霸王之业可致。”《新序》杂事五：“于是齐有良狗曰韩卢，亦一旦而走五百里。”）“行”与“退”皆步履进退之动词，“者”与“之”俱为虚字。东坡此联可称极中国对仗文学之能事。因拟对子之题为“孙行者”，实欲应试者对以“胡适之”耳。盖猢狲乃猿猴，而“行者”与“适之”，意义与音韵皆可相对。陈寅恪这一提议，十分有趣。我认为联语之佳者，的确呈现了中文的功力与张力。几年前，我特别搜集了一些有代表性的作为举例留存。对文学革命者而言，联语跡近反动，但我认为用文学革命打杀它，未免可惜，因此特别反革命一下，以昭公允。</p>
+<p>2011年8月17日</p>
+<p>（深心·怀抱）北京故宫三希堂乾隆联：</p>
+<p>深心托毫素；</p>
+<p>怀抱观古今。</p>
+<p>（惟以·岂能）北京故宫弘德殿雍正联：</p>
+<p>惟以一人治天下；</p>
+<p>岂能天下奉一人。</p>
+<p>唐张蕴古上唐太宗“大宝箴”，原文为“故以一人治天下，不以天下奉一人”，雍正改动了其中“故”“不”两字。</p>
+<p>（新意·宿缘）北京故宫弘德殿乾隆联：</p>
+<p>得句因新意；</p>
+<p>耽书是宿缘。</p>
+<p>（迦陵偈·幻海禅）北京故宫玉翠轩乾隆联：</p>
+<p>禽音仍唱迦陵偈；</p>
+<p>花色全标幻海禅。</p>
+<p>（和乐·森沉）北京故宫云光楼联：</p>
+<p>春鸟有言率和乐；</p>
+<p>上林无树不森沉。</p>
+<p>（一龛·半榻）北京故宫云光楼联：</p>
+<p>一龛古佛钟鱼寂；</p>
+<p>半榻天风衣袂寒。</p>
+<p>（谁操·自遣）莫愁湖胜棋楼刘焞联：</p>
+<p>明月几时有，更上层楼，听棋子声中，谁操胜算；</p>
+<p>美人犹未来，且摇小艇，向籍花香里，自遣闲情。</p>
+<p>（饶古色·挹清芬）北京故宫葆中殿联：</p>
+<p>四壁图书饶古色；</p>
+<p>重帘烟篆挹清芬。</p>
+<p>（静照·遐心）北京故宫昭仁殿联：</p>
+<p>独喜惜阴澄静照；</p>
+<p>更因稽古契遐心。</p>
+<p>（而外·之中）北京故宫延春阁联</p>
+<p>转谛在语言而外；</p>
+<p>悟机得真实之中。</p>
+<p>（红尘·青气）北京故宫承光殿慈禧联：</p>
+<p>九陌红尘飞不到；</p>
+<p>十洲青气晓来多。</p>
+<p>（神通力·欢喜心）北京故宫雨华阁乾隆联：</p>
+<p>具神通力；</p>
+<p>生欢喜心。</p>
+<p>（根尘·愿海）北京故宫雨华阁乾隆联：</p>
+<p>三身具足根尘外；</p>
+<p>万法齐归愿海中。</p>
+<p>（四海为家·万年介祉）北京故宫寿康宫乾隆联：</p>
+<p>四海为家钦养志；</p>
+<p>万年介祉永承欢。</p>
+<p>（千古事·十分春）北京故宫寿安宫乾隆联：</p>
+<p>静里远怀千古事；</p>
+<p>意中常满十分春。</p>
+<p>（今日·前身）北京故宫竹香馆乾隆联：</p>
+<p>流水今日；</p>
+<p>明月前身。</p>
+<p>（学未到·做不尽）北京故宫司礼监内书堂联：</p>
+<p>学未到孔孟门墙，须努力趱行几步；</p>
+<p>做不尽家庭事业，且开怀丢在一边。</p>
+<p>（涵道妙·得天和）北京故宫摛藻堂乾隆联：</p>
+<p>左右图书，静中涵道妙；</p>
+<p>春秋风月，佳处得天和。</p>
+<p>（看活泼·挹菁英）北京故宫养性斋乾隆联：</p>
+<p>休道鸢鱼看活泼；</p>
+<p>清闲书史挹菁英。</p>
+<p>（心迹·诗情）北京故宫养性斋康熙联：</p>
+<p>心迹只今偏爱澹；</p>
+<p>诗情到此合添幽。</p>
+<p>（古调·俗缘）北京故宫翠云馆联：</p>
+<p>白雪有古调；</p>
+<p>青山无俗缘。</p>
+<p>（白雪引·黄庭经）北京故宫淑芳斋正殿联：</p>
+<p>绿绮琴弹白雪引；</p>
+<p>乌丝绢写黄庭经。</p>
+<p>（自喜·聊将）北京故宫淑芳斋风雅存小戏台联：</p>
+<p>自喜轩窗无俗韵；</p>
+<p>聊将山水寄清音。</p>
+<p>（皆入咏·总堪寻）北京颐和园宝云阁乾隆联：</p>
+<p>境自远尘皆入咏；</p>
+<p>物含妙理总堪寻。</p>
+<p>（冷然善也·顾而乐之）北京圆明园九洲清宴殿乾隆联：</p>
+<p>润泉无操琴，冷然善也；</p>
+<p>风竹有声画，顾而乐之。</p>
+<p>（偕·与）北京圆明园濂溪乐处乾隆联：</p>
+<p>偕造物者游，仰观俯察；</p>
+<p>与古人相对，左图右书。</p>
+<p>（是耶非耶·秦欤汉欤）北京圆明园圆明园戏台联：</p>
+<p>是耶非耶？其信然耶？</p>
+<p>秦欤汉欤？将近代欤？</p>
+<p>（宝相·空花）北京陶然亭观音大士祠乾隆联：</p>
+<p>泡影乾坤，妆成宝相；</p>
+<p>色香世界，幻出空花。</p>
+<p>（乃圣乃神·自西自东）北京正阳门关帝庙赵翼联：</p>
+<p>乃圣乃神，乃武乃文，扶四百载承尧之运；</p>
+<p>自西自东，自南自北，如七十子服孔之心。</p>
+<p>（咬定·栽成）北京华室郑燮联：</p>
+<p>咬定一两句书，终身得益；</p>
+<p>栽成六七竿竹，四壁皆清。</p>
+<p>（微妙法·清净身）北京雍和宫五福堂书室联：</p>
+<p>以不可思议，说微妙法；</p>
+<p>具无量由旬，作清净身。</p>
+<p>（庄严相·欢喜心）北京雍正宫太和斋联：</p>
+<p>广一切善缘，现庄严相；</p>
+<p>普如是功德，发欢喜心。</p>
+<p>（如斯夫·而已矣）北京都城隍庙联：</p>
+<p>谁毁谁誉，逝者如斯夫；</p>
+<p>不仁不智，孰之而已矣。</p>
+<p>（今犹健·古所无）阅微草堂刘墉联：</p>
+<p>两登耆宴今犹健；</p>
+<p>五掌鸟台古所无。</p>
+<p>（群玉府·大罗天）阅微草堂梁同书联：</p>
+<p>万卷编成群玉府；</p>
+<p>一生修到大罗天。</p>
+<p>（戏中人·弦外意）北京同乐轩戏园：</p>
+<p>作廿四史观，戏中人呼之欲出；</p>
+<p>当三百篇读，弦外意悠然可思。</p>
+<p>（老松·红叶）北京西山龙泉庵听泉山馆联：</p>
+<p>当户老松生夕籁；</p>
+<p>满山红叶入新诗。</p>
+<p>（青山·白眼）夏丐尊用联：</p>
+<p>青山当户；</p>
+<p>白眼看人。</p>
+<p>（惟有·无如）北京七真殿联：</p>
+<p>世间惟有修行好；</p>
+<p>天下无如吃饭难。</p>
+<p>（秋月·春风）北京中南海日知阁乾隆联：</p>
+<p>秋月春风常得句；</p>
+<p>山容水态自成图。</p>
+<p>（烟景·芳洲）北京中南海纯一斋康熙联：</p>
+<p>烟景满前供妙墨；</p>
+<p>芳洲随处引清游。</p>
+<p>（胜地·好山）北京中南海漱芳润联：</p>
+<p>胜地尚传诗句在；</p>
+<p>好山合作画图看。</p>
+<p>（乍雨乍晴·宜诗宜画）北京中南海丰泽园颐年堂联：</p>
+<p>乍雨乍晴春事好；</p>
+<p>宜诗宜画物华殊。</p>
+<p>（水中·天上）北京中南海歌舞升平台乾隆联：</p>
+<p>水中楼阁浮青岛；</p>
+<p>天上笙歌绕碧城。</p>
+<p>（好山·佳景）北京北海一房山联：</p>
+<p>好山一窗足；</p>
+<p>佳景四时宜。</p>
+<p>（观四海·验平生）北京北海罨画轩联：</p>
+<p>一室之中观四海；</p>
+<p>千秋以上验平生。</p>
+<p>（春来早·夜未央）北京颐和园夕佳楼联：</p>
+<p>风生阊阖春来早；</p>
+<p>月到蓬莱夜未央。</p>
+<p>（春常在·水自流）北京颐和园小苏州联：</p>
+<p>庭有小竹春常在；</p>
+<p>山静无人水自流。</p>
+<p>（草木·山林）北京颐和园介寿堂联：</p>
+<p>园中草木春无数；</p>
+<p>湖上山林画不如。</p>
+<p>（真主宰·大权衡）北京宣武门左天主教堂康熙联：</p>
+<p>无始无终，先作形声真主宰；</p>
+<p>宣仁宣义，聿昭拯济大权衡。</p>
+<p>（先民有作·何代无贤）北京先哲祠享殿沈桂芬联：</p>
+<p>三辅黄图，先民有作；</p>
+<p>千秋金鉴，何代无贤。</p>
+<p>（各得·亦将）北京先哲祠享殿桑春荣联：</p>
+<p>学焉各得性之所近；</p>
+<p>贤者亦将有感于斯。</p>
+<p>（几行绿·一抹殷）北京大红门乾隆联：</p>
+<p>旧题在壁几行绿；</p>
+<p>晓日横窗一抹殷。</p>
+<p>（倒坐·回头）北京旧衙门行宫联：</p>
+<p>问大士缘何倒坐；</p>
+<p>恨世人不肯回头。</p>
+<p>（边月·乱山）昌平居庸关联：</p>
+<p>辽海吞边月；</p>
+<p>长城锁乱山。</p>
+<p>（歇脚·开怀）莫愁湖胜棋楼联：</p>
+<p>出郭此间堪歇脚；</p>
+<p>登楼一望已开怀。</p>
+<p>（亦是·半含）莫愁湖胜棋楼江壁联：</p>
+<p>粉黛江山，亦是英雄亦儿女；</p>
+<p>楼台烟雨，半含水色半天光。</p>
+<p>（说什么·且消受）莫愁湖胜棋楼薛时雨联：</p>
+<p>说什么盖世功名，丞相空留遗像在；</p>
+<p>且消受一湖风月，莫愁正是善愁人。</p>
+<p>（本无价·皆有情）莫愁湖郁金堂朱元璋联：</p>
+<p>清风明月本无价；</p>
+<p>远水近山皆有情。</p>
+<p>（山如黛·花想容）莫愁湖六宜亭魏裔集句联：</p>
+<p>水如碧玉山如黛；</p>
+<p>云想衣裳花想容。</p>
+<p>（齐归·尽入）太平天国翼王府联：</p>
+<p>翼载著鸿猷，合四海之人民，齐归掌握；</p>
+<p>王威驰骏誉，率万方之黎庶，尽入版图。</p>
+<p>（三岛客·四时花）随园袁枚集句联：</p>
+<p>放鹤去寻三岛客；</p>
+<p>任人来看四时花。</p>
+<p>（福地·文星）随园钱辛楣联：</p>
+<p>人指所居为福地；</p>
+<p>天留此老应文星。</p>
+<p>（此地·其人）随园鲁沂联：</p>
+<p>此地在城如在野；</p>
+<p>其人非佛亦非仙。</p>
+<p>（皆千古·见一人）随园庄念农联：</p>
+<p>着手成春，卷中著述皆千古；</p>
+<p>有官不仕，林下逍遥见一人。</p>
+<p>（不作公卿·难成仙佛）随园梁章钜联：</p>
+<p>不作公卿，非无福命都缘懒；</p>
+<p>难成仙佛，为爱文章又恋花。</p>
+<p>（六朝烟景·绝代风流）随园黄文炳联：</p>
+<p>只一座楼台，占断六朝烟景；</p>
+<p>问几人诗酒，能争绝代风流。</p>
+<p>（我行我素·君论君评）秦淮河大成殿余清逸联：</p>
+<p>大成殿兴兴毁毁，毁毁兴兴，兴乎？毁乎？早期删诗书，定礼乐，周游天下，我行我素；</p>
+<p>孔仲尼是是非非，非非是是，是耶？非耶？晚年作春秋，赞周易，留传古今，君论君评。</p>
+<p>（近·傍）秦淮河六朝居茶社联：</p>
+<p>近夫子之居，食不厌精，脍不厌细；</p>
+<p>傍秦淮左岸，与花长好，与月长圆。</p>
+<p>（何处是·此间有）秦淮河瞻园钱谦益联：</p>
+<p>大江东去，浪淘尽千古英雄，问楼外青山，山外白云，何处是唐宫汉阙；</p>
+<p>小苑春回，莺唤起一庭佳丽，看池边绿树，树边红雨，此间有舜日尧天。</p>
+<p>（与·为）明孝陵于右任联：</p>
+<p>与钟山终古；</p>
+<p>为民族争光。</p>
+<p>（予意·我闻）灵谷寺侯度联：</p>
+<p>予意云何云何法；</p>
+<p>我闻如是如是观。</p>
+<p>（声声自在·色色皆空）燕子矶弘济寺吴忠礼联：</p>
+<p>松声、竹声、钟磬声，声声自在；</p>
+<p>山色、水色、烟霞色，色色皆空。</p>
+<p>（和·对）南京晓庄师范陶行知联：</p>
+<p>和马牛羊鸡犬豕做朋友；</p>
+<p>对稻梁粟麦黍稷下功夫。</p>
+<p>（谁可论·我定评）南京石头城联：</p>
+<p>龙蟠六十里，俯瞰扬子波澜，千秋功罪谁可论；</p>
+<p>虎踞十三门，仰望钟山风雨，百代兴亡我定评。</p>
+<p>（如棋·似水）南京明故宫遗址朱元璋联：</p>
+<p>世事如棋，一着争来千古业；</p>
+<p>柔情似水，几时流尽六朝春。</p>
+<p>（我辈·先生）南京太白祠联：</p>
+<p>我辈来此须饮酒；</p>
+<p>先生在上莫题诗。</p>
+<p>（人道·自称）苏州拙政园集句联：</p>
+<p>人道君如云里鹤；</p>
+<p>自称臣是酒中仙。</p>
+<p>（入帏·满屋）苏州拙政园联：</p>
+<p>秋月入帏，看花盈切；</p>
+<p>异书满屋，好友在门。</p>
+<p>（三面柳·一房山）苏州拙政园荷风四面亭联：</p>
+<p>四壁荷花三面柳；</p>
+<p>半潭秋水一房山。</p>
+<p>（寄闲情·话往事）苏州拙政园倚玉轩联：</p>
+<p>从北道来游，花月留题，寄闲情在二千里外；</p>
+<p>占东吴名胜，亭台依旧，话往事于三百年前。</p>
+<p>（借月·观山）苏州拙政园梧竹幽居赵之谦联：</p>
+<p>爽借清风明借月；</p>
+<p>动观流水静观山。</p>
+<p>（何须·不在）苏州怡园石舫郑燮联：</p>
+<p>室雅何须大；</p>
+<p>花香不在多。</p>
+<p>（顽石·名山）虎丘可中亭吴铭常联：</p>
+<p>顽石听经，禅心默契；</p>
+<p>名山埋剑，胜迹长留。</p>
+<p>（未知·不可）虎丘仰止亭吴昌硕联：</p>
+<p>未知明年在何处；</p>
+<p>不可一日无此君。</p>
+<p>（大梦·寥梅）虎丘三笑亭联：</p>
+<p>大梦悟禅机，感丘墟红颜，英雄白骨；</p>
+<p>寥梅叠香雪，看湖山依旧，楼阁更新。</p>
+<p>（有感·无机）苏州灵岩山观音洞印光联：</p>
+<p>有感即通，千江有水千江月；</p>
+<p>无机不破，万里无云万里天。</p>
+<p>（圆通法·方便门）苏州灵岩山观音洞印光联：</p>
+<p>冀有情共证真常，本寂灭心，说圆通法；</p>
+<p>期含识同登觉岸，依一实道，开方便门。</p>
+<p>（得寸则寸·种豆是豆）积功堂俞樾联：</p>
+<p>积累譬为山，得寸则寸，得尺则尺；</p>
+<p>功修无幸获，种豆是豆，种瓜是瓜。</p>
+<p>（曲径·园林）曲园俞樾集句联：</p>
+<p>曲径通幽处；</p>
+<p>园林无俗情。</p>
+<p>（圣教·佛家）苏州西园湖心亭联：</p>
+<p>圣教名言，独乐何如同乐；</p>
+<p>佛家宗旨，杀生不若放生。</p>
+<p>（满眼·四时）苏州半园草堂联：</p>
+<p>满眼山河此净土；</p>
+<p>四时风月属闲人。</p>
+<p>（万年药·一房山）玄妙观七星潭阁联：</p>
+<p>千树桃花万年药；</p>
+<p>半潭秋水一房山。</p>
+<p>（飞奔下·跳出来）苏州天平山高义园来燕榭联：</p>
+<p>门前绿水飞奔下；</p>
+<p>屋里青山跳出来。</p>
+<p>（高标·旷致）苏州天平山芝房陈奕禧联：</p>
+<p>想子美高标，水流云在；</p>
+<p>忆尧夫旷致，月到风来。</p>
+<p>（美人身·恒河沙）苏州天平山咒钵庵金粟香联：</p>
+<p>即色即空，现美人身而说法；</p>
+<p>大悲大愿，指恒河沙以为期。</p>
+<p>（朦胧·淡泊）苏州艺圃思嗜轩李景仰联：</p>
+<p>朦胧池畔讶堆雪；</p>
+<p>淡泊风前有异香。</p>
+<p>（依旧·长留）寒山寺樊恭煦联：</p>
+<p>江枫渔火，胜地重来，与国清寺并起宗风，依旧钟声闻夜半；</p>
+<p>木屐桦冠，仰天长笑，有寒山集独参妙谛，长留诗句在吴中。</p>
+<p>（旧观·胜迹）寒山寺邹福保联：</p>
+<p>尘历劫一千余年，重复旧观，幸有名贤来作主；</p>
+<p>诗人题二十八字，长留胜迹，可知佳句不须多。</p>
+<p>（几度·满江）寒山寺何刚德联：</p>
+<p>逍遥作尘外闲观，几度沧桑重说梦；</p>
+<p>次第复燹余元气，满江霜月好寻诗。</p>
+<p>（重新·依旧）寒山寺联：</p>
+<p>待诏碑残，重新庙貌留诗卷；</p>
+<p>蒲牢夜吼，依旧钟声到客船。</p>
+<p>（落日·归云）苏州湖南会馆集陆游句联：</p>
+<p>宾馆喜重逢，同上吴城看落日；</p>
+<p>乡关渺何处，却寻衡岳望归云。</p>
+<p>（千古·天下）苏州上方山王仁堪联：</p>
+<p>千古英雄浪淘尽；</p>
+<p>天下名山僧占多。</p>
+<p>（解脱门开·浮生梦觉）常熟兴福寺门联：</p>
+<p>解脱门开谁肯入；</p>
+<p>浮生梦觉自知归。</p>
+<p>（罗汉果·曼陀花）常熟兴福寺四高僧墓钱谦益联：</p>
+<p>异代并成罗汉果；</p>
+<p>空山时落曼陀花。</p>
+<p>（万年·一卷）常熟古今三庙季厚镕联：</p>
+<p>北山南山，万年享祀；</p>
+<p>知我罪我，一卷发幽。</p>
+<p>（修·改）常熟城隍庙集四书句联：</p>
+<p>德之不修，吾以汝为死矣；</p>
+<p>过而不改，子亦来见我乎。</p>
+<p>（朝·今）常熟翁同龢墓集四书句联：</p>
+<p>朝闻道夕死可矣；</p>
+<p>今而后吾知免夫。</p>
+<p>（岂因·长在）扬州平山堂乾隆联：</p>
+<p>诗意岂因今古异；</p>
+<p>山光长在有无中。</p>
+<p>（幽草·晚晴）扬州夕照亭李商隐句联：</p>
+<p>天意怜幽草；</p>
+<p>人间重晚晴。</p>
+<p>（全依水·直到山）扬州长堤春柳联：</p>
+<p>两岸花柳全依水；</p>
+<p>一路楼台直到山。</p>
+<p>（以少胜多·即小观大）扬州瘦西湖春池草堂吟榭李圣和联：</p>
+<p>以少胜多，瑶草琪花荣四季；</p>
+<p>即小观大，方丈蓬莱见一斑。</p>
+<p>（皆·不）扬州瘦西湖凝翠轩集祝枝山句联：</p>
+<p>四面有山皆入画；</p>
+<p>一年无日不看花。</p>
+<p>（无论·不分）扬州瘦西湖乐善庵岳钟琪联：</p>
+<p>有月即登台，无论春秋冬夏。</p>
+<p>是风皆入座，不分南北东西。</p>
+<p>（大护法·善知识）扬州静慧园康熙联：</p>
+<p>大护法不见僧过；</p>
+<p>善知识能调物情。</p>
+<p>（隔岸·绕城）扬州风漪阁集高适、温庭筠句联：</p>
+<p>隔岸春云邀翰墨；</p>
+<p>绕城波色动楼台。</p>
+<p>（连·接）扬州雨花庵集卢纶、刘兼句联：</p>
+<p>高树夕阳连古巷；</p>
+<p>小桥流水接平沙。</p>
+<p>（朝暮·旧新）扬州宜宇轩李亚如联：</p>
+<p>朝宜调琴，暮宜鼓瑟；</p>
+<p>旧雨适至，新雨初来。</p>
+<p>（胸前·脚底）扬州抱山楼田原联：</p>
+<p>二三星斗胸前落；</p>
+<p>十万峰峦脚底青。</p>
+<p>（声中入·蕊上寻）扬州佳秋阁郑燮联：</p>
+<p>秋从夏雨声中入；</p>
+<p>春在梅花蕊上寻。</p>
+<p>（联吟·纵目）扬州南城楼洪梧联：</p>
+<p>东阁联吟，有客忆千秋词赋；</p>
+<p>南楼纵目，此间对六代江山。</p>
+<p>（何处·到来）扬州史公祠吴大澂联：</p>
+<p>何处吊公坟，看十里平山，空余蔓草；</p>
+<p>到来怜我晚，只二分明月，曾照梅花。</p>
+<p>（养性·怡情）扬州八咏园联：</p>
+<p>读书养性；</p>
+<p>花鸟怡情。</p>
+<p>（高山·大河）仪徵赞化宫联：</p>
+<p>高山仰止；</p>
+<p>大河前横。</p>
+<p>（封·称）泰州小香喦关帝殿联：</p>
+<p>汉封侯，宋封王，清封大帝；</p>
+<p>儒称圣，释称佛，道称天尊。</p>
+<p>（神·王）泰州小香喦关帝殿联：</p>
+<p>先武穆而神，大汉千古，大宋千古；</p>
+<p>后文宣而王，山东一人，山西一人。</p>
+<p>（德兄德弟·龙友龙师）泰州小香喦关帝殿联：</p>
+<p>兄玄德，弟翼德，德兄德弟；</p>
+<p>师卧龙，友子龙，龙友龙师。</p>
+<p>（手执·身披）泰州小香喦灵官殿联：</p>
+<p>手执钢鞭巡世界；</p>
+<p>身披金甲显威灵。</p>
+<p>（尽是·无非）泰州行宫正殿联：</p>
+<p>鸟语花香，尽是经声佛号；</p>
+<p>水流风动，无非暮鼓晨钟。</p>
+<p>（双手·一棒）泰州北山开化禅寺大雄宝殿联：</p>
+<p>两手把大地山河搓圆，捏扁，撕碎了，灰洒空中，浑无实象；</p>
+<p>一棒将混世魔王打死，救活，唤醒来，举头天外，尽作道场。</p>
+<p>（有缘人·难耐事）泰州北山开化禅寺弥勒佛殿联；</p>
+<p>眼前都是有缘人，相近相亲，怎不满腔欢喜；</p>
+<p>世上尽多难耐事，自作自受，何妨大肚包容。</p>
+<p>（穿户·渡江）泰州岳武穆庙伊秉绶联：</p>
+<p>湖光穿户入；</p>
+<p>山色渡江来。</p>
+<p>（切莫放·可晓得）泰州光孝寺联：</p>
+<p>十年河东，十年河西，切莫放年华虚度；</p>
+<p>一脚门里，一脚门外，可晓得脚步留神。</p>
+<p>（名利客·梦迷人）泰州光孝寺最吉祥殿联：</p>
+<p>暮鼓晨钟，惊醒世间名利客；</p>
+<p>经声佛号，唤回苦海梦迷人。</p>
+<p>（山虚水深·天荒地老）无锡贯华阁许国凤联：</p>
+<p>我来青眼高歌，山虚水深，所思不见；</p>
+<p>人似红颜薄命，天荒地老，此恨何穷。</p>
+<p>（同·化）无锡头茅峰道院联：</p>
+<p>万福攸同，同此心同此理，自然获福；</p>
+<p>诸天赞化，化善男化善女，共乐升天。</p>
+<p>（坐看云起·更上层楼）无锡云起楼王成瑞联：</p>
+<p>图书府半日闲偷，坐看云起；</p>
+<p>杖履中百年春在，更上层楼。</p>
+<p>（听法·点头）无锡白衣殿禅室联：</p>
+<p>老龙听法；</p>
+<p>顽石点头。</p>
+<p>（争是非·相讲习）无锡顾端文公祠顾晴芬联：</p>
+<p>立朝与天子宰相争是非，悉宗社远谋，国本重计；</p>
+<p>居恒共师弟朋友相讲习，惟至善性体，小心工夫。</p>
+<p>（声声·事事）无锡顾端文公祠顾宪成东林书院旧址联：</p>
+<p>风声雨声读书声，声声入耳；</p>
+<p>家事国事天下事，事事在心。</p>
+<p>（如此·看来）无锡梅园秋月阁储南强联：</p>
+<p>手种梅花，如此主人真不俗；</p>
+<p>眼空震泽，看来山势亦朝宗。</p>
+<p>（上中下·高平宽）无锡梅园秋月阁沈兆霖联：</p>
+<p>发上等愿，结中等缘，享下等福；</p>
+<p>择高处立，就平处坐，向宽处行。</p>
+<p>（供点缀·共徘徊）无锡梅园秋月阁陆光岳联：</p>
+<p>与物为春，近水远山供点缀；</p>
+<p>同人于野，暗香疏影共徘徊。</p>
+<p>（但看·况复）无锡梅园秋月阁赵人镜联：</p>
+<p>运会本无常，但看今日梅园，昔时桃岭；</p>
+<p>秃岭原持异，况复四围山色，万顷波光。</p>
+<p>（方知·可是）无锡梅园雪浪山大门书禅联：</p>
+<p>大千世界本微尘，看到眼沧桑，方知即色即空，即空即色；</p>
+<p>十万烟华如昨梦，问当头明月，可是无人无我，无我无人。</p>
+<p>（便觉·不知）无锡太湖广福寺联：</p>
+<p>偶然笠屐来游，便觉山中无历日；</p>
+<p>静听钟鱼互答，不知门外有波涛。</p>
+<p>（花开花落·云卷云舒）无锡太湖饭店刘海粟集句联：</p>
+<p>宠辱不惊，看庭前花开花落；</p>
+<p>去留无意，望天上云卷云舒。</p>
+<p>（红拖·绿满）无锡蠡园田一夔联：</p>
+<p>访迹自西来，远瞻霞日缤纷，红拖浙北；</p>
+<p>问春将东去，环视烟波浩渺，绿满江南。</p>
+<p>（游北海·忆西湖）无锡蠡园蒋士松联：</p>
+<p>百尺爱长廊，风景宛如游北海；</p>
+<p>四时饶胜概，烟波不再忆西湖。</p>
+<p>（俨然·愿得）无锡蠡园范廷铨联：</p>
+<p>辋川秀绝人寰，琉璃世界，罨画楼台，俨然在水一方，八景溪山都入妙；</p>
+<p>阆苑飞来天外，花木长廊，烟波别墅，愿得浮生半日，五湖风月坐中看。</p>
+<p>（开粉本·写新词）无锡湖上草堂孙颂陀联：</p>
+<p>眼前风景不殊，宛披摩诘画图，别墅辋川开粉本；</p>
+<p>湖上秋光如许，可有渔洋诗笔，夕阳疏柳写新词。</p>
+<p>（水色山光·夕阳芳草）无锡城中公园露台秦宝瓒联：</p>
+<p>胜地起层楼，水色山光摩诘画；</p>
+<p>名园邻古寺，夕阳芳草少陵诗。</p>
+<p>（画本·诗情）无锡城中公园露台联：</p>
+<p>水色山光皆画本；</p>
+<p>花香鸟语是诗情。</p>
+<p>（何妨·不到）无锡静颐小筑窦晓湘联：</p>
+<p>新样何妨参异域；</p>
+<p>俗尘不到即名山。</p>
+<p>（神·鬼）无锡忠节祠丁植卿：</p>
+<p>神之格思，生为英，死为灵，正气常存，浩劫历庚辛壬癸；</p>
+<p>鬼言归也，弋于山，钓于水，故乡可乐，同堂职桔柚槐榆。</p>
+<p>（所·虽）无锡国学专修馆尊经阁唐文治集句联：</p>
+<p>富贵不能淫，贫贱不能移，威武不能屈，所存者神，所过者化；</p>
+<p>好学近乎智，力行近乎仁，知耻近乎勇，虽愚必明，虽柔必强。</p>
+<p>（视民·修己）无锡县衙大门武承谟联：</p>
+<p>视民如伤，锡邑苍生皆我子；</p>
+<p>修己以敬，东林前辈是吾师。</p>
+<p>（天有·地无）无锡大堂张松灿联：</p>
+<p>阳奉阴违，天有难遮之眼；</p>
+<p>民穷财尽，地无可剥之皮。</p>
+<p>（大帝·小乔）无锡周公瑾祠联：</p>
+<p>大帝君臣同骨肉；</p>
+<p>小乔夫婿是英雄。</p>
+<p>（参偈语·说华严）无锡万福禅院谷僧联：</p>
+<p>万佛名经，好向禅门参偈语；</p>
+<p>福圣承道，重开法会说华严。</p>
+<p>（志在·气塞）宜兴荆溪关帝庙齐梅麓联：</p>
+<p>志在春秋，孔圣人未见刚者；</p>
+<p>气塞天地，孟夫子所谓浩然。</p>
+<p>（举头望·放眼看）江阴望江楼联：</p>
+<p>举头望明月；</p>
+<p>放眼看大江。</p>
+<p>（濒危·垂死）镇江宗泽墓联：</p>
+<p>大宋濒危撑一柱；</p>
+<p>英雄垂死尚三呼。</p>
+<p>（依旧·还将）镇江太白楼李孚青联：</p>
+<p>脱身依旧仙归去；</p>
+<p>撒手还将月放回。</p>
+<p>（岂惟·须信）镇江太白楼闵鹗元联：</p>
+<p>千尺青山，妙句岂惟凌小谢；</p>
+<p>一龛金粟，后身须信是如来。</p>
+<p>（无限·不胜）镇江夕阳楼端方集句联：</p>
+<p>夕阳无限好；</p>
+<p>高处不胜寒。</p>
+<p>（无无·自自）镇江夕阳楼高峋联：</p>
+<p>去无所逐来无恋；</p>
+<p>月自当空水自流。</p>
+<p>（何如·不若）镇江戒幢寺放生池联：</p>
+<p>圣教名言，独乐何如同乐；</p>
+<p>佛家宗旨，杀生不若放生。</p>
+<p>（一句·半生）镇江招隐山虎泉亭李丙荣联：</p>
+<p>一勺励清心，酌水谁含出世想；</p>
+<p>半生盟素老，听泉我爱在山声。</p>
+<p>（此地·斯人）镇江招隐山增华阁薛时雨联：</p>
+<p>景仰古贤风，此地得江山之助；</p>
+<p>熟精文选理，斯人与翰墨为缘。</p>
+<p>（声声自在·色色皆空）江阴湧塔庵大殿联：</p>
+<p>听风声，雨声，鱼磐声，声声自在；</p>
+<p>看山色，水色，花木色，色色皆空。</p>
+<h2 id="他"><a class="header" href="#他">他</a></h2>
+<p>他离开故乡北京57年了，那年秋天，终于回去了一趟。行前记者会上，他散发了几句告白；</p>
+<p>不是怀乡，没有乡愁；</p>
+<p>不是近乡，没有情怯；</p>
+<p>不是还乡，没有衣锦；</p>
+<p>不是林黛玉，没有眼泪。</p>
+<p>真的没有眼泪，他回去了，他笑嘻嘻的做了言近旨远的演讲，人们说他以后会再回来，只有陈文茜看出了玄机，在接机时，文茜悄悄点破：“我看你在跟北京道别。”他听了，会心一笑。真的，他在道别，用一种奇异的方式，在做道别。</p>
+<p>在台湾一住61年，多在台北。那年冬天，他投身台北市长选举。他一生坚持原则，不参加任何政党，所以，在党同伐异的政党夹杀下、在朝野对决的非我族类下，他压根儿不从胜负考量。政治挂帅的人们，没人会理解他意欲何为，只有古代“知其不可而为之”的圣者，知道他意欲所在：他在道别，用一种奇异的方式，在做道别。</p>
+<p>四千年四百年来，台湾从来没走过这样一票人物；六十一年来，台湾从来只有他是这票人物。台湾，他来了，他没有走。可是，他要道别，他要在别人粉墨时以真面目登场、在蓝绿褪色时以“雁来红”（Amarantus tricolor）谢幕，他告诉台湾朋友：还要上当吗，我们上了坏的外省人四十年当而不能反攻、我们上了混的台湾人六十年当而不能台独，我们要抛弃蓝绿，展开新的思维。让智慧的他指出这一新的思维。</p>
+<p>注意啊，他在道别，用一种奇异的方式，在做道别。珍惜这个岛上曾经走过他，从青春走到老去，最后把老去的智慧，以参选方式，挥洒给你。还在怀疑吗？还要跟蓝绿随波逐流吗？拿住选票，你该想一想。</p>
+<p>2011年8月17日改写</p>
+<h2 id="你笨蛋你笨蛋"><a class="header" href="#你笨蛋你笨蛋">你笨蛋，你笨蛋</a></h2>
+<p>一、选所谓总统，按表面人口算，得票半数当选是850万。</p>
+<p>二、泛蓝胜利按表面人口算，要高于850万。</p>
+<p>三、国民党党员108万，只占泛蓝的八分之一。</p>
+<p>四、凭什么八分之一要决定我们前途？凭什么国民党说了算？</p>
+<p>五、凭什么不听它的就是破坏泛蓝团结？</p>
+<p>谁破坏了泛蓝团结？遍查纪录，破坏泛蓝团结的，不是别人，全是只占泛蓝八分之一的国民党。</p>
+<p>一、1994年，国民党说不投黄大洲的，破坏泛蓝团结。票开出来，赵少康多国民党黄大洲60287票，结果陈水扁当选市长。全怪国民党所推非人、你所选有误。</p>
+<p>二、1998年，国民党说不投马英九的，破坏泛蓝团结。票开出来，挤走王建煊，促成陈水扁转成总统。王建煊明明优于马英九、陈水扁也可以不转成总统。全怪国民党所推非人、你所选有误。</p>
+<p>三、2000年，国民党说不投连战的，破坏泛蓝团结。票开出来，宋楚瑜多国民党173万9459票，结果陈水扁当选总统。全怪国民党所推非人、你所选有误。</p>
+<p>四、结论是：陈水扁三次选举都和“自以为投对了票的蓝色选民”选国民党有关，而陈水扁两次当选都和马英九帮忙有关。</p>
+<p>五、为什么？因为——</p>
+<p>2000年马英九背书国民党假民调连战必胜</p>
+<p>结果：陈水扁当选</p>
+<p>2004年马英九阵前放水，并动用警察打散群众</p>
+<p>结果：陈水扁当选</p>
+<p>六、根据以上事实，证明了口口声声怕破坏泛蓝团结的“自以为投对了票的蓝色选民”是一群笨蛋！——连做了三次的笨蛋！看看表吧：</p>
+<p>次别/日期/你笨蛋/结果</p>
+<p>第一次/1994年12月3日/选国民党黄大洲/陈水扁当选市长</p>
+<p>第二次/1998年12月5日/选国民党马英九/陈水扁当选总统</p>
+<p>第三次/2000年3月18日/选国民党连战/陈水扁当选总统</p>
+<p>你笨蛋，你笨蛋。</p>
+<p>2011年8月29日改写</p>
+<footer id="open-on-gh">Found a bug? <a href="https://github.com/whatot/leeao/edit/master/03.惊世杂文类/你笨蛋，你笨蛋/02-《英文汉诂》残稿.md">Edit this page on GitHub.</a></footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../03.惊世杂文类/你笨蛋，你笨蛋/01-送高信疆归大陆序.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../03.惊世杂文类/我梦碎，所以我梦醒.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../03.惊世杂文类/你笨蛋，你笨蛋/01-送高信疆归大陆序.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../03.惊世杂文类/我梦碎，所以我梦醒.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/leeao-toc-1313d264.js"></script>
+
+
+
+    </div>
+    </body>
+</html>
